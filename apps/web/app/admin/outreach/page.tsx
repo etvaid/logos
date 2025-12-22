@@ -1,6 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 
 const professors = [
@@ -15,8 +16,21 @@ const professors = [
 ]
 
 export default function OutreachPage() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
   const [contacts, setContacts] = useState(professors)
   const [selectedContact, setSelectedContact] = useState<typeof professors[0] | null>(null)
+  const router = useRouter()
+
+  useEffect(() => {
+    const token = localStorage.getItem('logos_admin_token')
+    if (!token) {
+      router.push('/admin/login')
+      return
+    }
+    setIsAuthenticated(true)
+    setIsLoading(false)
+  }, [router])
 
   const sendEmail = (id: number) => {
     setContacts(prev => prev.map(c => 
@@ -25,74 +39,76 @@ export default function OutreachPage() {
     setSelectedContact(null)
   }
 
+  const handleLogout = () => {
+    localStorage.removeItem('logos_admin_token')
+    router.push('/admin/login')
+  }
+
+  if (isLoading) {
+    return <main className="min-h-screen bg-obsidian flex items-center justify-center"><p className="text-marble/50">Loading...</p></main>
+  }
+
+  if (!isAuthenticated) return null
+
   return (
     <main className="min-h-screen bg-obsidian">
-      {/* Header */}
-      <header className="glass border-b border-gold/10 px-6 py-4">
+      <nav className="glass border-b border-gold/10 px-6 py-4 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div>
-            <Link href="/" className="font-serif text-xl text-gold">LOGOS</Link>
-            <span className="text-marble/50 ml-4">Harvard Outreach</span>
+          <div className="flex items-center gap-4">
+            <Link href="/" className="font-serif text-2xl font-bold text-gold tracking-widest">LOGOS</Link>
+            <span className="text-marble/50">Admin</span>
           </div>
-          <nav className="flex gap-6">
-            <Link href="/admin" className="text-marble/70 hover:text-gold">Dashboard</Link>
+          <div className="flex items-center gap-6">
+            <Link href="/admin" className="text-marble/70 hover:text-gold transition-colors">Dashboard</Link>
             <Link href="/admin/outreach" className="text-gold">Outreach</Link>
-            <Link href="/admin/growth" className="text-marble/70 hover:text-gold">Growth</Link>
-          </nav>
+            <Link href="/admin/twitter" className="text-marble/70 hover:text-gold transition-colors">Twitter</Link>
+            <Link href="/admin/analytics" className="text-marble/70 hover:text-gold transition-colors">Analytics</Link>
+            <button onClick={handleLogout} className="text-crimson hover:text-crimson/80">Logout</button>
+          </div>
         </div>
-      </header>
+      </nav>
 
       <div className="max-w-7xl mx-auto px-6 py-8">
         <div className="flex justify-between items-center mb-8">
           <div>
             <h1 className="font-serif text-3xl text-gold">Harvard & Ivy Outreach</h1>
-            <p className="text-marble/60 mt-1">Click "Send" to email professors with pre-written templates.</p>
+            <p className="text-marble/60 mt-1">Click to preview and send emails to professors.</p>
           </div>
-          <div className="flex gap-4">
-            <span className="px-4 py-2 bg-obsidian-light rounded-lg text-marble/70">
-              {contacts.filter(c => c.status === 'pending').length} pending
-            </span>
-            <span className="px-4 py-2 bg-emerald/20 rounded-lg text-emerald">
-              {contacts.filter(c => c.status === 'sent').length} sent
-            </span>
+          <div className="text-marble/50 text-sm">
+            {contacts.filter(c => c.status === 'sent').length} / {contacts.length} sent
           </div>
         </div>
 
-        {/* Contacts Table */}
         <div className="glass rounded-xl overflow-hidden">
           <table className="w-full">
-            <thead className="border-b border-gold/20">
-              <tr className="text-left">
-                <th className="px-6 py-4 text-marble/50 font-medium">Name</th>
-                <th className="px-6 py-4 text-marble/50 font-medium">Institution</th>
-                <th className="px-6 py-4 text-marble/50 font-medium">Specialty</th>
-                <th className="px-6 py-4 text-marble/50 font-medium">Status</th>
-                <th className="px-6 py-4 text-marble/50 font-medium">Action</th>
+            <thead className="bg-obsidian-light">
+              <tr>
+                <th className="text-left px-6 py-4 text-marble/70 font-medium">Name</th>
+                <th className="text-left px-6 py-4 text-marble/70 font-medium">Institution</th>
+                <th className="text-left px-6 py-4 text-marble/70 font-medium">Specialty</th>
+                <th className="text-left px-6 py-4 text-marble/70 font-medium">Status</th>
+                <th className="text-left px-6 py-4 text-marble/70 font-medium">Action</th>
               </tr>
             </thead>
             <tbody>
               {contacts.map(contact => (
-                <tr key={contact.id} className="border-b border-gold/10 hover:bg-obsidian-light/50">
+                <tr key={contact.id} className="border-t border-gold/10">
                   <td className="px-6 py-4">
-                    <p className="text-marble font-medium">{contact.name}</p>
-                    <p className="text-marble/50 text-sm">{contact.email}</p>
+                    <div className="text-marble font-medium">{contact.name}</div>
+                    <div className="text-marble/50 text-sm">{contact.email}</div>
                   </td>
                   <td className="px-6 py-4 text-marble/70">{contact.institution}</td>
                   <td className="px-6 py-4 text-marble/70">{contact.specialty}</td>
                   <td className="px-6 py-4">
-                    <span className={`px-3 py-1 rounded-full text-sm ${
-                      contact.status === 'sent' 
-                        ? 'bg-emerald/20 text-emerald' 
-                        : 'bg-amber/20 text-amber'
-                    }`}>
+                    <span className={`px-2 py-1 rounded text-sm ${contact.status === 'sent' ? 'bg-emerald/20 text-emerald' : 'bg-amber/20 text-amber'}`}>
                       {contact.status}
                     </span>
                   </td>
                   <td className="px-6 py-4">
                     {contact.status === 'pending' ? (
-                      <button 
+                      <button
                         onClick={() => setSelectedContact(contact)}
-                        className="px-4 py-2 bg-gold text-obsidian rounded font-medium hover:bg-gold-light transition-colors"
+                        className="px-4 py-2 bg-gold text-obsidian rounded-lg text-sm font-medium hover:bg-gold-light transition-colors"
                       >
                         Preview & Send
                       </button>
@@ -106,7 +122,6 @@ export default function OutreachPage() {
           </table>
         </div>
 
-        {/* Email Preview Modal */}
         {selectedContact && (
           <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
             <div className="glass rounded-xl max-w-2xl w-full max-h-[80vh] overflow-y-auto">
@@ -139,20 +154,20 @@ Would you have 15 minutes this week for a brief demo?
 
 Best regards,
 Ettan Tau Vaid
-LOGOS - logos-classics.com`}
+LOGOS — https://logos-classics.com`}
                   </div>
                 </div>
                 
                 <div className="flex gap-4">
                   <button 
                     onClick={() => setSelectedContact(null)}
-                    className="flex-1 px-4 py-3 border border-gold/20 rounded text-marble/70 hover:text-marble transition-colors"
+                    className="flex-1 px-4 py-3 border border-gold/20 rounded-lg text-marble/70 hover:text-marble transition-colors"
                   >
                     Cancel
                   </button>
                   <button 
                     onClick={() => sendEmail(selectedContact.id)}
-                    className="flex-1 px-4 py-3 bg-gold text-obsidian rounded font-medium hover:bg-gold-light transition-colors"
+                    className="flex-1 px-4 py-3 bg-gold text-obsidian rounded-lg font-medium hover:bg-gold-light transition-colors"
                   >
                     Send Email
                   </button>

@@ -7,24 +7,19 @@ const API_BASE = 'https://logos-production-ef2b.up.railway.app'
 
 interface Discovery {
   id: number
-  order_level: 1 | 2 | 3 | 4
+  order_level: number
   pattern_type: string
   hypothesis: string
   description: string
   confidence: number
   novelty_score: number
   statistical_significance: string
-  evidence: Array<{ type: string; detail: string }>
-  supporting_passages: string[]
-  attributed_to?: string
-  doi?: string
 }
 
 export default function DiscoverPage() {
   const [discoveries, setDiscoveries] = useState<Discovery[]>([])
   const [loading, setLoading] = useState(true)
   const [selectedOrder, setSelectedOrder] = useState<number | null>(null)
-  const [selectedDiscovery, setSelectedDiscovery] = useState<Discovery | null>(null)
   const [generating, setGenerating] = useState(false)
 
   useEffect(() => {
@@ -54,7 +49,6 @@ export default function DiscoverPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ min_order: 3 })
       })
-      // Refresh after generating
       setTimeout(fetchDiscoveries, 2000)
     } catch (err) {
       console.error(err)
@@ -63,19 +57,12 @@ export default function DiscoverPage() {
     }
   }
 
-  const orderColors = {
-    1: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
-    2: 'bg-emerald/20 text-emerald border-emerald/30',
-    3: 'bg-amber/20 text-amber border-amber/30',
-    4: 'bg-gold/30 text-gold border-gold/50'
-  }
-
-  const orderDescriptions = {
-    1: { name: 'First Order', desc: 'Direct relationships (A → B)', icon: '→' },
-    2: { name: 'Second Order', desc: 'Pattern comparisons', icon: '⇄' },
-    3: { name: 'Third Order', desc: 'Correlations across patterns', icon: '⟷' },
-    4: { name: 'Fourth Order', desc: 'Meta-patterns with predictive power', icon: '★' }
-  }
+  const orderInfo = [
+    { level: 1, name: '1st Order', desc: 'Direct allusions (A → B)', color: 'bg-blue-500/20 text-blue-400' },
+    { level: 2, name: '2nd Order', desc: 'Pattern comparisons', color: 'bg-emerald/20 text-emerald' },
+    { level: 3, name: '3rd Order', desc: 'Cross-pattern correlations', color: 'bg-amber/20 text-amber' },
+    { level: 4, name: '4th Order', desc: 'Meta-patterns (predictive)', color: 'bg-gold/30 text-gold' },
+  ]
 
   return (
     <main className="min-h-screen bg-obsidian">
@@ -96,54 +83,46 @@ export default function DiscoverPage() {
         <div className="text-center mb-12">
           <h1 className="font-serif text-4xl text-gold mb-4">Higher-Order Discovery</h1>
           <p className="text-marble/60 max-w-2xl mx-auto">
-            Find patterns in classical literature that no human could see. From simple allusions to meta-patterns with predictive power.
+            Find patterns in classical literature that humans might miss. From simple allusions to meta-patterns with predictive power.
           </p>
         </div>
 
-        {/* Order Level Explanation */}
-        <div className="grid md:grid-cols-4 gap-4 mb-12">
-          {[1, 2, 3, 4].map(order => (
+        <div className="grid md:grid-cols-4 gap-4 mb-8">
+          {orderInfo.map(order => (
             <button
-              key={order}
-              onClick={() => setSelectedOrder(selectedOrder === order ? null : order)}
-              className={`glass rounded-xl p-4 text-left transition-all ${selectedOrder === order ? 'border-gold/50 ring-1 ring-gold/30' : ''}`}
+              key={order.level}
+              onClick={() => setSelectedOrder(selectedOrder === order.level ? null : order.level)}
+              className={`glass rounded-xl p-4 text-left transition-all ${selectedOrder === order.level ? 'border-gold/50' : ''}`}
             >
-              <div className={`inline-flex items-center justify-center w-8 h-8 rounded-full text-lg mb-2 ${orderColors[order as keyof typeof orderColors]}`}>
-                {orderDescriptions[order as keyof typeof orderDescriptions].icon}
-              </div>
-              <h3 className="text-gold font-medium">{orderDescriptions[order as keyof typeof orderDescriptions].name}</h3>
-              <p className="text-marble/50 text-sm mt-1">{orderDescriptions[order as keyof typeof orderDescriptions].desc}</p>
+              <span className={`inline-block px-2 py-1 rounded text-sm mb-2 ${order.color}`}>
+                {order.name}
+              </span>
+              <p className="text-marble/50 text-sm">{order.desc}</p>
             </button>
           ))}
         </div>
 
-        {/* Generate Button */}
         <div className="text-center mb-8">
           <button
             onClick={generateHypothesis}
             disabled={generating}
             className="px-8 py-3 bg-gold text-obsidian rounded-lg font-medium hover:bg-gold-light transition-colors disabled:opacity-50"
           >
-            {generating ? '🔬 Generating Hypothesis...' : '✨ Generate New Hypothesis'}
+            {generating ? 'Generating...' : '✨ Generate New Hypothesis'}
           </button>
-          <p className="text-marble/40 text-sm mt-2">AI will analyze the corpus and find novel patterns</p>
+          <p className="text-marble/40 text-sm mt-2">AI analyzes the corpus for novel patterns</p>
         </div>
 
-        {/* Discoveries List */}
         {loading ? (
           <div className="text-center py-16 text-marble/50">Loading discoveries...</div>
-        ) : (
+        ) : discoveries.length > 0 ? (
           <div className="space-y-6">
             {discoveries.map(discovery => (
-              <div
-                key={discovery.id}
-                onClick={() => setSelectedDiscovery(discovery)}
-                className="glass rounded-xl p-6 cursor-pointer hover:border-gold/30 transition-all"
-              >
+              <div key={discovery.id} className="glass rounded-xl p-6">
                 <div className="flex justify-between items-start mb-4">
                   <div className="flex items-center gap-3">
-                    <span className={`px-3 py-1 rounded-full text-sm border ${orderColors[discovery.order_level]}`}>
-                      {discovery.order_level}{discovery.order_level === 1 ? 'st' : discovery.order_level === 2 ? 'nd' : discovery.order_level === 3 ? 'rd' : 'th'} Order
+                    <span className={`px-3 py-1 rounded text-sm ${orderInfo[discovery.order_level - 1]?.color || 'bg-gold/20 text-gold'}`}>
+                      {discovery.order_level}st Order
                     </span>
                     <span className="text-marble/50 text-sm">{discovery.pattern_type}</span>
                   </div>
@@ -152,82 +131,40 @@ export default function DiscoverPage() {
                     <div className="text-marble/40 text-sm">Novelty: {Math.round(discovery.novelty_score * 100)}%</div>
                   </div>
                 </div>
-
                 <h3 className="text-marble text-lg mb-2">{discovery.hypothesis}</h3>
                 <p className="text-marble/60">{discovery.description}</p>
-
-                {discovery.doi && (
-                  <div className="mt-4 pt-4 border-t border-gold/10">
-                    <span className="text-gold/70 text-sm">DOI: {discovery.doi}</span>
-                  </div>
-                )}
+                <div className="mt-4 pt-4 border-t border-gold/10">
+                  <span className="text-marble/40 text-sm">Statistical significance: {discovery.statistical_significance}</span>
+                </div>
               </div>
             ))}
-
-            {discoveries.length === 0 && (
-              <div className="text-center py-16">
-                <p className="text-marble/50 mb-4">No discoveries found for this filter.</p>
-                <button onClick={() => setSelectedOrder(null)} className="text-gold hover:underline">
-                  View all discoveries
-                </button>
-              </div>
-            )}
+          </div>
+        ) : (
+          <div className="text-center py-16">
+            <p className="text-marble/50 mb-4">No discoveries found.</p>
+            <button onClick={() => setSelectedOrder(null)} className="text-gold hover:underline">
+              View all discoveries
+            </button>
           </div>
         )}
 
-        {/* Discovery Detail Modal */}
-        {selectedDiscovery && (
-          <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4" onClick={() => setSelectedDiscovery(null)}>
-            <div className="glass rounded-xl p-8 max-w-2xl w-full max-h-[80vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
-              <div className="flex justify-between items-start mb-6">
-                <span className={`px-3 py-1 rounded-full text-sm border ${orderColors[selectedDiscovery.order_level]}`}>
-                  {selectedDiscovery.order_level}{selectedDiscovery.order_level === 1 ? 'st' : selectedDiscovery.order_level === 2 ? 'nd' : selectedDiscovery.order_level === 3 ? 'rd' : 'th'} Order Discovery
-                </span>
-                <button onClick={() => setSelectedDiscovery(null)} className="text-marble/50 hover:text-marble text-xl">✕</button>
-              </div>
-
-              <h2 className="font-serif text-2xl text-gold mb-4">{selectedDiscovery.hypothesis}</h2>
-              <p className="text-marble/80 mb-6">{selectedDiscovery.description}</p>
-
-              <div className="grid md:grid-cols-3 gap-4 mb-6">
-                <div className="bg-obsidian-light rounded-lg p-4">
-                  <span className="text-marble/50 text-sm">Confidence</span>
-                  <p className="text-gold text-2xl font-bold">{Math.round(selectedDiscovery.confidence * 100)}%</p>
-                </div>
-                <div className="bg-obsidian-light rounded-lg p-4">
-                  <span className="text-marble/50 text-sm">Novelty Score</span>
-                  <p className="text-gold text-2xl font-bold">{Math.round(selectedDiscovery.novelty_score * 100)}%</p>
-                </div>
-                <div className="bg-obsidian-light rounded-lg p-4">
-                  <span className="text-marble/50 text-sm">Statistical Significance</span>
-                  <p className="text-gold text-lg font-bold">{selectedDiscovery.statistical_significance}</p>
-                </div>
-              </div>
-
-              {selectedDiscovery.evidence && selectedDiscovery.evidence.length > 0 && (
-                <div className="mb-6">
-                  <h3 className="text-gold font-medium mb-3">Evidence</h3>
-                  <div className="space-y-2">
-                    {selectedDiscovery.evidence.map((e, i) => (
-                      <div key={i} className="bg-obsidian-light rounded-lg p-3">
-                        <span className="text-marble/50 text-sm uppercase">{e.type}</span>
-                        <p className="text-marble/80">{e.detail}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {selectedDiscovery.doi && (
-                <div className="pt-4 border-t border-gold/10">
-                  <span className="text-marble/50 text-sm">Citable DOI:</span>
-                  <p className="text-gold">{selectedDiscovery.doi}</p>
-                  <p className="text-marble/40 text-sm mt-1">Attributed to: {selectedDiscovery.attributed_to || 'LOGOS_AI'}</p>
-                </div>
-              )}
+        <div className="mt-12 glass rounded-xl p-6">
+          <h2 className="font-serif text-xl text-gold mb-4">How It Works</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="text-gold/80 font-medium mb-2">Pattern Detection</h3>
+              <p className="text-marble/60 text-sm">
+                Our AI analyzes millions of passages across Greek and Latin literature, identifying verbal echoes, structural parallels, and thematic connections.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-gold/80 font-medium mb-2">Higher-Order Analysis</h3>
+              <p className="text-marble/60 text-sm">
+                Beyond simple allusions, LOGOS finds patterns in patterns — correlations that emerge across multiple intertextual relationships.
+              </p>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </main>
   )
