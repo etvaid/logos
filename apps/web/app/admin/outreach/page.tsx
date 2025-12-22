@@ -138,8 +138,8 @@ I've built LOGOS, an AI-powered platform for classical research that offers:
 Would you have 15 minutes this week for a brief demo?
 
 Best regards,
-Roy Vaid
-LOGOS - logosclassics.com`}
+Ettan Tau Vaid
+LOGOS - logos-classics.com`}
                   </div>
                 </div>
                 
