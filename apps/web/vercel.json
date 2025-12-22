@@ -1,0 +1,10 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "installCommand": "npm install",
+  "env": {
+    "NEXT_PUBLIC_API_URL": "https://logos-api.up.railway.app",
+    "NEXT_PUBLIC_SITE_URL": "https://logosclassics.com"
+  }
+}
