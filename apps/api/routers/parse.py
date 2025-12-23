@@ -1,192 +1,135 @@
-"""
-LOGOS API - Morphological Parsing Router
-Click-word instant parsing and definitions
-"""
-
-from fastapi import APIRouter, HTTPException, Query
+from fastapi import APIRouter
 from pydantic import BaseModel
-from typing import Optional, List, Literal
+from typing import List, Optional
 
 router = APIRouter()
 
-class ParseResult(BaseModel):
+class MorphologyInfo(BaseModel):
     word: str
     lemma: str
-    language: str
-    part_of_speech: str
-    morphology: dict
+    pos: str
+    case: Optional[str] = None
+    number: Optional[str] = None
+    gender: Optional[str] = None
+    tense: Optional[str] = None
+    voice: Optional[str] = None
+    mood: Optional[str] = None
     definition: str
-    frequency: Optional[int] = None
-    examples: Optional[List[str]] = None
+    frequency: int
 
-# Demo parsing data
-GREEK_PARSES = {
-    "μῆνιν": ParseResult(
-        word="μῆνιν",
-        lemma="μῆνις",
-        language="grc",
-        part_of_speech="noun",
-        morphology={
-            "case": "accusative",
-            "number": "singular",
-            "gender": "feminine",
-            "declension": "3rd"
-        },
-        definition="wrath, anger (especially divine or heroic)",
-        frequency=23,
-        examples=["μῆνιν ἄειδε θεὰ (Iliad 1.1)"]
-    ),
-    "ἄειδε": ParseResult(
-        word="ἄειδε",
-        lemma="ἀείδω",
-        language="grc",
-        part_of_speech="verb",
-        morphology={
-            "tense": "present",
-            "mood": "imperative",
-            "voice": "active",
-            "person": "2nd",
-            "number": "singular"
-        },
-        definition="sing, sing of, celebrate in song",
-        frequency=156,
-        examples=["μῆνιν ἄειδε θεὰ (Iliad 1.1)"]
-    ),
-    "θεὰ": ParseResult(
-        word="θεὰ",
-        lemma="θεά",
-        language="grc",
-        part_of_speech="noun",
-        morphology={
-            "case": "nominative/vocative",
-            "number": "singular",
-            "gender": "feminine",
-            "declension": "1st"
-        },
-        definition="goddess",
-        frequency=342,
-        examples=["μῆνιν ἄειδε θεὰ (Iliad 1.1)"]
-    )
-}
+class ParseRequest(BaseModel):
+    text: str
+    language: str = "greek"  # "greek" or "latin"
 
-LATIN_PARSES = {
-    "arma": ParseResult(
-        word="arma",
-        lemma="arma",
-        language="lat",
-        part_of_speech="noun",
-        morphology={
-            "case": "nominative/accusative",
-            "number": "plural",
-            "gender": "neuter",
-            "declension": "2nd"
-        },
-        definition="arms, weapons; warfare",
-        frequency=1247,
-        examples=["Arma virumque cano (Aeneid 1.1)"]
-    ),
-    "virum": ParseResult(
-        word="virum",
-        lemma="vir",
-        language="lat",
-        part_of_speech="noun",
-        morphology={
-            "case": "accusative",
-            "number": "singular",
-            "gender": "masculine",
-            "declension": "2nd"
-        },
-        definition="man, hero; husband",
-        frequency=3421,
-        examples=["Arma virumque cano (Aeneid 1.1)"]
-    ),
-    "cano": ParseResult(
-        word="cano",
-        lemma="cano",
-        language="lat",
-        part_of_speech="verb",
-        morphology={
-            "tense": "present",
-            "mood": "indicative",
-            "voice": "active",
-            "person": "1st",
-            "number": "singular"
-        },
-        definition="sing, sing of; prophesy; play (an instrument)",
-        frequency=892,
-        examples=["Arma virumque cano (Aeneid 1.1)"]
-    )
-}
+class ParseResponse(BaseModel):
+    words: List[MorphologyInfo]
 
-@router.get("/{word}", response_model=ParseResult)
-async def parse_word(
-    word: str,
-    lang: Literal["grc", "lat"] = Query(default="grc", description="Language: grc (Greek) or lat (Latin)")
-):
-    """
-    Parse a Greek or Latin word.
-    
-    Returns:
-    - Lemma (dictionary form)
-    - Part of speech
-    - Full morphological analysis
-    - Definition
-    - Corpus frequency
-    - Example usages
-    """
-    
-    # Check demo data
-    if lang == "grc" and word in GREEK_PARSES:
-        return GREEK_PARSES[word]
-    elif lang == "lat" and word in LATIN_PARSES:
-        return LATIN_PARSES[word]
-    
-    # Generic response
-    return ParseResult(
-        word=word,
-        lemma=word,
-        language=lang,
-        part_of_speech="unknown",
-        morphology={"note": "Full parsing available in production"},
-        definition=f"[Definition for {word}]",
-        frequency=None,
-        examples=None
-    )
-
-@router.post("/batch")
-async def batch_parse(
-    words: List[str],
-    lang: Literal["grc", "lat"] = "grc"
-):
-    """Parse multiple words at once."""
-    results = []
-    for word in words:
-        if lang == "grc" and word in GREEK_PARSES:
-            results.append(GREEK_PARSES[word])
-        elif lang == "lat" and word in LATIN_PARSES:
-            results.append(LATIN_PARSES[word])
-        else:
-            results.append(ParseResult(
-                word=word,
-                lemma=word,
-                language=lang,
-                part_of_speech="unknown",
-                morphology={},
-                definition=f"[{word}]"
-            ))
-    return {"words": results, "total": len(results)}
-
-@router.get("/lemma/{lemma}")
-async def get_lemma_info(
-    lemma: str,
-    lang: Literal["grc", "lat"] = "grc"
-):
-    """Get full information about a lemma (dictionary form)."""
-    return {
-        "lemma": lemma,
-        "language": lang,
-        "forms": [],
-        "definitions": [],
-        "corpus_frequency": 0,
-        "first_attested": None
+# Demo morphological data
+MORPHOLOGY_DATA = {
+    "greek": {
+        "μῆνιν": MorphologyInfo(
+            word="μῆνιν",
+            lemma="μῆνις",
+            pos="noun",
+            case="accusative",
+            number="singular",
+            gender="feminine",
+            definition="anger, wrath, rage",
+            frequency=85
+        ),
+        "ἄειδε": MorphologyInfo(
+            word="ἄειδε",
+            lemma="ἀείδω",
+            pos="verb",
+            number="singular",
+            tense="present",
+            voice="active",
+            mood="imperative",
+            definition="to sing, sing of, celebrate in song",
+            frequency=142
+        ),
+        "θεὰ": MorphologyInfo(
+            word="θεὰ",
+            lemma="θεός",
+            pos="noun",
+            case="nominative",
+            number="singular",
+            gender="feminine",
+            definition="goddess, divine being",
+            frequency=324
+        )
+    },
+    "latin": {
+        "arma": MorphologyInfo(
+            word="arma",
+            lemma="arma",
+            pos="noun",
+            case="accusative",
+            number="plural",
+            gender="neuter",
+            definition="arms, weapons, tools of war",
+            frequency=198
+        ),
+        "virum": MorphologyInfo(
+            word="virum",
+            lemma="vir",
+            pos="noun",
+            case="accusative",
+            number="singular",
+            gender="masculine",
+            definition="man, hero, husband",
+            frequency=456
+        ),
+        "cano": MorphologyInfo(
+            word="cano",
+            lemma="cano",
+            pos="verb",
+            number="singular",
+            tense="present",
+            voice="active",
+            mood="indicative",
+            definition="to sing, chant, recite, proclaim",
+            frequency=89
+        )
     }
+}
+
+@router.post("/", response_model=ParseResponse)
+async def parse_morphology(request: ParseRequest):
+    """
+    Parse text into words with morphological analysis.
+    
+    Returns morphological information for each word including:
+    - word: original word form
+    - lemma: dictionary form
+    - pos: part of speech
+    - case: grammatical case (if applicable)
+    - number: singular/plural
+    - gender: masculine/feminine/neuter (if applicable)
+    - tense: verb tense (if applicable)
+    - voice: active/passive/middle (if applicable)
+    - mood: indicative/subjunctive/imperative/etc (if applicable)
+    - definition: English definition
+    - frequency: usage frequency rank
+    """
+    words = request.text.split()
+    language_data = MORPHOLOGY_DATA.get(request.language.lower(), {})
+    
+    parsed_words = []
+    for word in words:
+        # Clean word of punctuation
+        clean_word = word.strip(".,;:!?")
+        
+        if clean_word in language_data:
+            parsed_words.append(language_data[clean_word])
+        else:
+            # Return basic unknown word info
+            parsed_words.append(MorphologyInfo(
+                word=clean_word,
+                lemma=clean_word,
+                pos="unknown",
+                definition="[definition not found]",
+                frequency=0
+            ))
+    
+    return ParseResponse(words=parsed_words)

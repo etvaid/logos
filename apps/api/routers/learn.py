@@ -1,92 +1,208 @@
-"""
-LOGOS API - Learning Router
-Flashcards, exercises, and progress tracking
-"""
-
-from fastapi import APIRouter, Query
+from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
-from typing import Optional, List
+from typing import List, Dict, Any
+from datetime import datetime, timedelta
 
-router = APIRouter()
+router = APIRouter(prefix="/organic-learning", tags=["Organic Learning"])
 
-class Flashcard(BaseModel):
-    id: int
+# Data models
+class WordExample(BaseModel):
+    sentence: str
+    translation: str
+    source: str
+    context: str
+
+class DailyWord(BaseModel):
     word: str
-    language: str
     definition: str
-    example_urn: Optional[str] = None
-    example_text: Optional[str] = None
-    ease_factor: float = 2.5
-    interval_days: int = 1
-    due: bool = True
+    pronunciation: str
+    etymology: str
+    examples: List[WordExample]
+    date: str
 
-class LearningProgress(BaseModel):
-    vocabulary_mastered: int
-    passages_read: int
-    exercises_completed: int
-    streak_days: int
-    xp_total: int
-    level: int
-    achievements: List[str]
+class VocabularyItem(BaseModel):
+    word: str
+    definition: str
+    difficulty: str
+    mastery_level: int
+    last_reviewed: str
 
-@router.get("/flashcards")
-async def get_due_flashcards(
-    limit: int = Query(default=20, le=100),
-    language: Optional[str] = None
-):
-    """Get flashcards due for review."""
-    demo_cards = [
-        Flashcard(id=1, word="μῆνις", language="grc", definition="wrath, anger", example_urn="urn:cts:greekLit:tlg0012.tlg001.perseus-grc1:1.1"),
-        Flashcard(id=2, word="arma", language="lat", definition="arms, weapons", example_urn="urn:cts:latinLit:phi0690.phi003.perseus-lat2:1.1"),
-        Flashcard(id=3, word="ἀείδω", language="grc", definition="sing, celebrate", example_urn="urn:cts:greekLit:tlg0012.tlg001.perseus-grc1:1.1"),
-    ]
-    
-    if language:
-        demo_cards = [c for c in demo_cards if c.language == language]
-    
-    return {"flashcards": demo_cards[:limit], "total_due": len(demo_cards)}
+class ProgressUpdate(BaseModel):
+    word: str
+    correct: bool
+    time_spent: int
+    difficulty_rating: int
 
-@router.post("/flashcards/review")
-async def submit_review(card_id: int, quality: int = Query(..., ge=0, le=5)):
-    """
-    Submit a flashcard review.
-    
-    Quality: 0 (forgot) to 5 (perfect recall)
-    Uses spaced repetition algorithm.
-    """
-    return {
-        "card_id": card_id,
-        "quality": quality,
-        "new_interval": 3 if quality >= 3 else 1,
-        "new_ease_factor": 2.5,
-        "message": "Review recorded"
+class ProgressResponse(BaseModel):
+    message: str
+    new_mastery_level: int
+    next_review_date: str
+
+# Sample data
+DAILY_WORD_DATA = {
+    "word": "μῆνις",
+    "definition": "wrath, anger, rage (especially divine or heroic anger)",
+    "pronunciation": "MEH-nis",
+    "etymology": "From Proto-Indo-European *men- (to think, mind). Related to Latin mens (mind) and English 'mental'.",
+    "examples": [
+        {
+            "sentence": "μῆνιν ἄειδε θεὰ Πηληϊάδεω Ἀχιλῆος",
+            "translation": "Sing, goddess, of the wrath of Achilles, son of Peleus",
+            "source": "Homer, Iliad 1.1",
+            "context": "The famous opening line of the Iliad, introducing the central theme of Achilles' anger"
+        },
+        {
+            "sentence": "οὐλομένην, ἣ μυρί᾽ Ἀχαιοῖς ἄλγε᾽ ἔθηκε",
+            "translation": "destructive wrath, which brought countless sorrows to the Achaeans",
+            "source": "Homer, Iliad 1.2",
+            "context": "Continuation describing the devastating effects of Achilles' wrath"
+        },
+        {
+            "sentence": "θεῶν μῆνις χαλεπή",
+            "translation": "the harsh wrath of the gods",
+            "source": "Herodotus, Histories 1.34",
+            "context": "Croesus speaking about divine retribution and the anger of the gods"
+        },
+        {
+            "sentence": "μῆνιν καὶ ὀργὴν ἀποθέσθαι",
+            "translation": "to put aside wrath and anger",
+            "source": "Xenophon, Cyropaedia 3.1.38",
+            "context": "Advice on controlling one's temper in leadership situations"
+        },
+        {
+            "sentence": "ἀθανάτων μῆνις βαρεῖα",
+            "translation": "the heavy wrath of the immortals",
+            "source": "Pindar, Pythian 2.34",
+            "context": "Warning about the consequences of offending the gods"
+        }
+    ],
+    "date": datetime.now().strftime("%Y-%m-%d")
+}
+
+VOCABULARY_DATA = [
+    {
+        "word": "μῆνις",
+        "definition": "wrath, anger, rage",
+        "difficulty": "intermediate",
+        "mastery_level": 3,
+        "last_reviewed": "2024-01-15"
+    },
+    {
+        "word": "ἀρετή",
+        "definition": "virtue, excellence",
+        "difficulty": "intermediate",
+        "mastery_level": 4,
+        "last_reviewed": "2024-01-14"
+    },
+    {
+        "word": "σοφία",
+        "definition": "wisdom",
+        "difficulty": "beginner",
+        "mastery_level": 5,
+        "last_reviewed": "2024-01-13"
+    },
+    {
+        "word": "δικαιοσύνη",
+        "definition": "justice, righteousness",
+        "difficulty": "advanced",
+        "mastery_level": 2,
+        "last_reviewed": "2024-01-12"
+    },
+    {
+        "word": "φιλοσοφία",
+        "definition": "love of wisdom, philosophy",
+        "difficulty": "intermediate",
+        "mastery_level": 4,
+        "last_reviewed": "2024-01-11"
     }
+]
 
-@router.get("/progress", response_model=LearningProgress)
-async def get_progress():
-    """Get user's learning progress."""
-    return LearningProgress(
-        vocabulary_mastered=127,
-        passages_read=45,
-        exercises_completed=89,
-        streak_days=7,
-        xp_total=2450,
-        level=5,
-        achievements=["First Word", "Week Streak", "Homer Reader"]
-    )
+@router.get("/daily", response_model=DailyWord)
+async def get_daily_word():
+    """
+    Get the word of the day with examples from classical texts.
+    Returns a curated word with definition, etymology, and contextual examples.
+    """
+    try:
+        return DailyWord(**DAILY_WORD_DATA)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error retrieving daily word: {str(e)}")
 
-@router.post("/exercise")
-async def get_exercise(
-    exercise_type: str = "vocabulary",
-    difficulty: str = "intermediate",
-    language: str = "grc"
+@router.get("/vocabulary", response_model=List[VocabularyItem])
+async def get_vocabulary_list(
+    difficulty: str = None,
+    min_mastery: int = None,
+    limit: int = 20
 ):
-    """Get a practice exercise."""
-    return {
-        "type": exercise_type,
-        "difficulty": difficulty,
-        "language": language,
-        "question": "What is the nominative singular of μῆνις?",
-        "options": ["μῆνις", "μῆνιν", "μήνιδος", "μῆνι"],
-        "correct_index": 0
-    }
+    """
+    Get user's vocabulary list with optional filtering.
+    
+    Args:
+        difficulty: Filter by difficulty level (beginner, intermediate, advanced)
+        min_mastery: Filter by minimum mastery level (1-5)
+        limit: Maximum number of items to return
+    """
+    try:
+        vocabulary = VOCABULARY_DATA.copy()
+        
+        # Apply filters
+        if difficulty:
+            vocabulary = [item for item in vocabulary if item["difficulty"] == difficulty]
+        
+        if min_mastery is not None:
+            vocabulary = [item for item in vocabulary if item["mastery_level"] >= min_mastery]
+        
+        # Apply limit
+        vocabulary = vocabulary[:limit]
+        
+        return [VocabularyItem(**item) for item in vocabulary]
+    
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error retrieving vocabulary: {str(e)}")
+
+@router.post("/progress", response_model=ProgressResponse)
+async def update_progress(progress: ProgressUpdate):
+    """
+    Update user's learning progress for a specific word.
+    
+    Args:
+        progress: Progress data including word, correctness, time spent, and difficulty rating
+    """
+    try:
+        # Find the word in vocabulary
+        word_found = False
+        new_mastery_level = 1
+        
+        for item in VOCABULARY_DATA:
+            if item["word"] == progress.word:
+                word_found = True
+                current_mastery = item["mastery_level"]
+                
+                # Update mastery level based on performance
+                if progress.correct:
+                    new_mastery_level = min(5, current_mastery + 1)
+                else:
+                    new_mastery_level = max(1, current_mastery - 1)
+                
+                # Update the item
+                item["mastery_level"] = new_mastery_level
+                item["last_reviewed"] = datetime.now().strftime("%Y-%m-%d")
+                break
+        
+        if not word_found:
+            raise HTTPException(status_code=404, detail="Word not found in vocabulary")
+        
+        # Calculate next review date based on mastery level
+        days_until_next_review = new_mastery_level * 2
+        next_review_date = (datetime.now() + timedelta(days=days_until_next_review)).strftime("%Y-%m-%d")
+        
+        return ProgressResponse(
+            message=f"Progress updated successfully for '{progress.word}'",
+            new_mastery_level=new_mastery_level,
+            next_review_date=next_review_date
+        )
+    
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error updating progress: {str(e)}")

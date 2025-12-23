@@ -1,194 +1,227 @@
-"""
-LOGOS API - Intertextuality Router
-Discover allusions and connections between texts
-"""
-
 from fastapi import APIRouter, HTTPException, Query
-from pydantic import BaseModel, Field
-from typing import Optional, List, Literal
+from typing import List, Optional, Dict, Any
+from pydantic import BaseModel
+from enum import Enum
 
-router = APIRouter()
+router = APIRouter(prefix="/intertextuality", tags=["intertextuality"])
 
-class IntertextResult(BaseModel):
+class IntertextType(str, Enum):
+    VERBAL = "verbal"
+    STRUCTURAL = "structural"
+    THEMATIC = "thematic"
+    FORMULAIC = "formulaic"
+
+class IntertextualConnection(BaseModel):
     source_urn: str
     target_urn: str
+    connection_type: IntertextType
+    confidence_score: float
     source_text: str
     target_text: str
-    source_translation: str
-    target_translation: str
-    relationship_type: Literal["verbal", "thematic", "structural", "polemic", "generic"]
-    confidence: float
-    evidence: List[str]
-    discovered_by: str = "ai"
+    description: Optional[str] = None
+    author: Optional[str] = None
+    work: Optional[str] = None
 
-class IntertextResponse(BaseModel):
+class DetectionRequest(BaseModel):
+    text: str
+    language: Optional[str] = "latin"
+    min_confidence: Optional[float] = 0.5
+    max_results: Optional[int] = 10
+    connection_types: Optional[List[IntertextType]] = None
+
+class DetectionResponse(BaseModel):
+    text: str
+    connections: List[IntertextualConnection]
+    total_found: int
+    processing_time: float
+
+class PassageIntertexts(BaseModel):
     urn: str
-    intertexts: List[IntertextResult]
-    total: int
+    text: str
+    intertexts: List[IntertextualConnection]
+    total_count: int
 
-# Famous intertextual relationships
-DEMO_INTERTEXTS = {
-    "urn:cts:latinLit:phi0690.phi003.perseus-lat2:1.1": [
-        IntertextResult(
-            source_urn="urn:cts:latinLit:phi0690.phi003.perseus-lat2:1.1",
+# Mock database of intertextual connections
+MOCK_INTERTEXTS = {
+    "urn:cts:latinLit:phi0690.phi003.perseus-lat1:1.1": [
+        IntertextualConnection(
+            source_urn="urn:cts:latinLit:phi0690.phi003.perseus-lat1:1.1",
             target_urn="urn:cts:greekLit:tlg0012.tlg001.perseus-grc1:1.1",
-            source_text="Arma virumque cano",
-            target_text="μῆνιν ἄειδε θεὰ",
-            source_translation="Arms and the man I sing",
-            target_translation="Sing, goddess, the wrath",
-            relationship_type="verbal",
-            confidence=0.98,
-            evidence=[
-                "Both open with imperative to sing/invoke",
-                "cano echoes ἄειδε (sing)",
-                "virum (man) anticipates Odyssey's ἄνδρα",
-                "Programmatic opening declaring epic subject"
-            ],
-            discovered_by="scholarly_consensus"
+            connection_type=IntertextType.STRUCTURAL,
+            confidence_score=0.89,
+            source_text="Arma virumque cano, Troiae qui primus ab oris",
+            target_text="μῆνιν ἄειδε θεὰ Πηληϊάδεω Ἀχιλῆος",
+            description="Epic opening formula with imperative to Muse",
+            author="Homer",
+            work="Iliad"
         ),
-        IntertextResult(
-            source_urn="urn:cts:latinLit:phi0690.phi003.perseus-lat2:1.1",
+        IntertextualConnection(
+            source_urn="urn:cts:latinLit:phi0690.phi003.perseus-lat1:1.1",
             target_urn="urn:cts:greekLit:tlg0012.tlg002.perseus-grc1:1.1",
-            source_text="Arma virumque cano",
-            target_text="Ἄνδρα μοι ἔννεπε, Μοῦσα",
-            source_translation="Arms and the man I sing",
-            target_translation="Tell me, Muse, of the man",
-            relationship_type="structural",
-            confidence=0.97,
-            evidence=[
-                "virum directly echoes ἄνδρα",
-                "Combines Iliadic (arma/war) and Odyssean (virum/man) themes",
-                "Announces Aeneid as fusion of both Homeric epics"
-            ],
-            discovered_by="scholarly_consensus"
-        )
-    ],
-    "urn:cts:greekLit:tlg0012.tlg001.perseus-grc1:1.1": [
-        IntertextResult(
-            source_urn="urn:cts:greekLit:tlg0012.tlg001.perseus-grc1:1.1",
-            target_urn="urn:cts:latinLit:phi0690.phi003.perseus-lat2:1.1",
-            source_text="μῆνιν ἄειδε θεὰ",
-            target_text="Arma virumque cano",
-            source_translation="Sing, goddess, the wrath",
-            target_translation="Arms and the man I sing",
-            relationship_type="verbal",
-            confidence=0.98,
-            evidence=[
-                "Virgil's opening directly alludes to Homer",
-                "Foundational model for Latin epic",
-                "ἄειδε → cano (sing)"
-            ],
-            discovered_by="scholarly_consensus"
+            connection_type=IntertextType.VERBAL,
+            confidence_score=0.92,
+            source_text="Arma virumque cano, Troiae qui primus ab oris",
+            target_text="ἄνδρα μοι ἔννεπε, μοῦσα, πολύτροπον, ὃς μάλα πολλὰ",
+            description="Focus on the hero (virum/ἄνδρα) in epic opening",
+            author="Homer",
+            work="Odyssey"
         )
     ]
 }
 
-@router.get("/{urn:path}", response_model=IntertextResponse)
-async def get_intertexts(
+MOCK_TEXTS = {
+    "urn:cts:latinLit:phi0690.phi003.perseus-lat1:1.1": "Arma virumque cano, Troiae qui primus ab oris"
+}
+
+@router.get("/{urn}", response_model=PassageIntertexts)
+async def get_passage_intertexts(
     urn: str,
-    direction: Optional[Literal["source", "target", "both"]] = "both",
-    relationship_type: Optional[str] = None,
-    min_confidence: float = Query(default=0.5, ge=0, le=1)
+    connection_type: Optional[IntertextType] = Query(None, description="Filter by connection type"),
+    min_confidence: Optional[float] = Query(0.0, ge=0.0, le=1.0, description="Minimum confidence score"),
+    max_results: Optional[int] = Query(None, gt=0, description="Maximum number of results")
 ):
     """
-    Get intertextual relationships for a passage.
+    Get intertextual connections for a specific passage identified by CTS URN.
     
-    Finds allusions, echoes, and connections to other texts.
-    
-    Parameters:
-    - direction: "source" (this text alludes to), "target" (others allude to this), "both"
-    - relationship_type: verbal, thematic, structural, polemic, generic
-    - min_confidence: Minimum confidence score (0-1)
+    Returns all known intertextual connections with the specified passage,
+    including confidence scores and connection types.
     """
+    if urn not in MOCK_INTERTEXTS:
+        raise HTTPException(status_code=404, detail=f"No intertexts found for URN: {urn}")
     
-    intertexts = DEMO_INTERTEXTS.get(urn, [])
+    intertexts = MOCK_INTERTEXTS[urn].copy()
     
-    # Filter by relationship type
-    if relationship_type:
-        intertexts = [i for i in intertexts if i.relationship_type == relationship_type]
+    # Apply filters
+    if connection_type:
+        intertexts = [it for it in intertexts if it.connection_type == connection_type]
     
-    # Filter by confidence
-    intertexts = [i for i in intertexts if i.confidence >= min_confidence]
+    if min_confidence > 0:
+        intertexts = [it for it in intertexts if it.confidence_score >= min_confidence]
     
-    return IntertextResponse(
+    # Sort by confidence score (descending)
+    intertexts.sort(key=lambda x: x.confidence_score, reverse=True)
+    
+    # Limit results
+    if max_results:
+        intertexts = intertexts[:max_results]
+    
+    text = MOCK_TEXTS.get(urn, "")
+    
+    return PassageIntertexts(
         urn=urn,
+        text=text,
         intertexts=intertexts,
-        total=len(intertexts)
+        total_count=len(intertexts)
     )
 
-@router.post("/discover")
-async def discover_intertexts(
-    urn: str,
-    search_scope: Optional[List[str]] = None,
-    min_confidence: float = 0.7
-):
+@router.post("/detect", response_model=DetectionResponse)
+async def detect_allusions(request: DetectionRequest):
     """
-    Discover new intertextual relationships using AI.
+    Detect potential intertextual connections and allusions in the provided text.
     
-    Analyzes a passage and finds potential allusions not yet documented.
+    Uses various algorithms to identify verbal, structural, and thematic connections
+    with known classical texts in the corpus.
     """
+    import time
+    start_time = time.time()
+    
+    # Mock detection logic
+    detected_connections = []
+    
+    # Simple keyword-based detection for demo
+    if "arma" in request.text.lower() and "cano" in request.text.lower():
+        detected_connections.extend([
+            IntertextualConnection(
+                source_urn="urn:cts:user:input:1",
+                target_urn="urn:cts:greekLit:tlg0012.tlg001.perseus-grc1:1.1",
+                connection_type=IntertextType.STRUCTURAL,
+                confidence_score=0.89,
+                source_text=request.text[:50] + "..." if len(request.text) > 50 else request.text,
+                target_text="μῆνιν ἄειδε θεὰ Πηληϊάδεω Ἀχιλῆος",
+                description="Epic opening formula reminiscent of Homeric tradition",
+                author="Homer",
+                work="Iliad"
+            ),
+            IntertextualConnection(
+                source_urn="urn:cts:user:input:1",
+                target_urn="urn:cts:greekLit:tlg0012.tlg002.perseus-grc1:1.1",
+                connection_type=IntertextType.VERBAL,
+                confidence_score=0.92,
+                source_text=request.text[:50] + "..." if len(request.text) > 50 else request.text,
+                target_text="ἄνδρα μοι ἔννεπε, μοῦσα, πολύτροπον, ὃς μάλα πολλὰ",
+                description="Hero-focused epic opening",
+                author="Homer",
+                work="Odyssey"
+            )
+        ])
+    
+    # Apply filters
+    if request.connection_types:
+        detected_connections = [
+            conn for conn in detected_connections 
+            if conn.connection_type in request.connection_types
+        ]
+    
+    if request.min_confidence:
+        detected_connections = [
+            conn for conn in detected_connections 
+            if conn.confidence_score >= request.min_confidence
+        ]
+    
+    # Sort by confidence score
+    detected_connections.sort(key=lambda x: x.confidence_score, reverse=True)
+    
+    # Limit results
+    if request.max_results:
+        detected_connections = detected_connections[:request.max_results]
+    
+    processing_time = time.time() - start_time
+    
+    return DetectionResponse(
+        text=request.text,
+        connections=detected_connections,
+        total_found=len(detected_connections),
+        processing_time=processing_time
+    )
+
+@router.get("/types", response_model=List[str])
+async def get_connection_types():
+    """Get all available intertextual connection types."""
+    return [connection_type.value for connection_type in IntertextType]
+
+@router.get("/{urn}/statistics")
+async def get_intertext_statistics(urn: str):
+    """Get statistical overview of intertextual connections for a passage."""
+    if urn not in MOCK_INTERTEXTS:
+        raise HTTPException(status_code=404, detail=f"No intertexts found for URN: {urn}")
+    
+    intertexts = MOCK_INTERTEXTS[urn]
+    
+    # Calculate statistics
+    type_counts = {}
+    confidence_sum = 0
+    authors = set()
+    works = set()
+    
+    for intertext in intertexts:
+        # Count by type
+        type_str = intertext.connection_type.value
+        type_counts[type_str] = type_counts.get(type_str, 0) + 1
+        
+        confidence_sum += intertext.confidence_score
+        
+        if intertext.author:
+            authors.add(intertext.author)
+        if intertext.work:
+            works.add(intertext.work)
+    
     return {
         "urn": urn,
-        "status": "analyzing",
-        "message": "AI analysis in progress. This may take a few moments.",
-        "search_scope": search_scope or ["all"],
-        "min_confidence": min_confidence
-    }
-
-@router.get("/types")
-async def get_relationship_types():
-    """Get available relationship types and their descriptions."""
-    return {
-        "types": [
-            {
-                "id": "verbal",
-                "name": "Verbal Echo",
-                "description": "Direct verbal borrowing, similar phrasing or vocabulary"
-            },
-            {
-                "id": "thematic",
-                "name": "Thematic Parallel",
-                "description": "Shared themes, motifs, or ideas without verbal similarity"
-            },
-            {
-                "id": "structural",
-                "name": "Structural Allusion",
-                "description": "Similar narrative structure, scene type, or compositional pattern"
-            },
-            {
-                "id": "polemic",
-                "name": "Polemic Response",
-                "description": "Deliberate contrast, correction, or argument against source"
-            },
-            {
-                "id": "generic",
-                "name": "Generic Convention",
-                "description": "Shared genre conventions rather than specific allusion"
-            }
-        ]
-    }
-
-@router.get("/network/{urn:path}")
-async def get_intertext_network(
-    urn: str,
-    depth: int = Query(default=2, ge=1, le=5),
-    limit: int = Query(default=50, le=200)
-):
-    """
-    Get network of intertextual relationships radiating from a passage.
-    
-    Returns a graph structure for visualization.
-    """
-    return {
-        "center": urn,
-        "depth": depth,
-        "nodes": [
-            {"id": urn, "label": "Source", "type": "center"},
-            {"id": "urn:cts:greekLit:tlg0012.tlg001.perseus-grc1:1.1", "label": "Iliad 1.1", "type": "target"}
-        ],
-        "edges": [
-            {"source": urn, "target": "urn:cts:greekLit:tlg0012.tlg001.perseus-grc1:1.1", "type": "verbal", "weight": 0.98}
-        ],
-        "total_nodes": 2,
-        "total_edges": 1
+        "total_connections": len(intertexts),
+        "average_confidence": confidence_sum / len(intertexts) if intertexts else 0,
+        "connections_by_type": type_counts,
+        "unique_authors": len(authors),
+        "unique_works": len(works),
+        "authors_referenced": list(authors),
+        "works_referenced": list(works)
     }
