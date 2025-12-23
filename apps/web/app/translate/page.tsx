@@ -4,13 +4,17 @@ import { useState } from 'react'
 
 const PHRASES: Record<string, {translation: string, words: {word: string, meaning: string}[]}> = {
   "μῆνιν ἄειδε θεὰ": {translation: "Sing, goddess, of the wrath", words: [{word:"μῆνιν",meaning:"wrath"},{word:"ἄειδε",meaning:"sing"},{word:"θεὰ",meaning:"goddess"}]},
-  "arma virumque cano": {translation: "I sing of arms and the man", words: [{word:"arma",meaning:"arms"},{word:"virum",meaning:"man"},{word:"cano",meaning:"I sing"}]},
+  "arma virumque cano": {translation: "I sing of arms and the man", words: [{word:"arma",meaning:"arms"},{word:"virumque",meaning:"man"},{word:"cano",meaning:"I sing"}]},
   "carpe diem": {translation: "Seize the day", words: [{word:"carpe",meaning:"seize"},{word:"diem",meaning:"day"}]},
   "veni vidi vici": {translation: "I came, I saw, I conquered", words: [{word:"veni",meaning:"I came"},{word:"vidi",meaning:"I saw"},{word:"vici",meaning:"I conquered"}]},
   "cogito ergo sum": {translation: "I think, therefore I am", words: [{word:"cogito",meaning:"I think"},{word:"ergo",meaning:"therefore"},{word:"sum",meaning:"I am"}]},
   "γνῶθι σεαυτόν": {translation: "Know thyself", words: [{word:"γνῶθι",meaning:"know"},{word:"σεαυτόν",meaning:"thyself"}]},
   "memento mori": {translation: "Remember you will die", words: [{word:"memento",meaning:"remember"},{word:"mori",meaning:"to die"}]},
 };
+
+const PHRASES_LOWERCASE = Object.fromEntries(
+  Object.entries(PHRASES).map(([key, value]) => [key.toLowerCase(), value])
+);
 
 export default function TranslatePage() {
   const [input, setInput] = useState('')
@@ -19,7 +23,7 @@ export default function TranslatePage() {
 
   const handleTranslate = () => {
     const trimmedInput = input.toLowerCase().trim()
-    const match = PHRASES[trimmedInput]
+    const match = PHRASES_LOWERCASE[trimmedInput]
     
     if (match) {
       setResult(match)

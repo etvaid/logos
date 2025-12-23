@@ -15,12 +15,6 @@ export default function Homepage() {
     }
   }
 
-  const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter') {
-      handleSearch(e as any)
-    }
-  }
-
   const features = [
     {
       title: 'Search & Discovery',
@@ -99,7 +93,6 @@ export default function Homepage() {
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            onKeyPress={handleKeyPress}
             placeholder="Search ancient texts, authors, themes..."
             style={{
               width: '100%',
@@ -114,7 +107,6 @@ export default function Homepage() {
           />
           <button
             type="submit"
-            onClick={handleSearch}
             style={{
               position: 'absolute',
               right: '8px',
