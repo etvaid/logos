@@ -1,5 +1,7 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+
+const API_URL = 'https://logos-production-ef2b.up.railway.app';
 
 export default function TranslatePage() {
   const [sourceText, setSourceText] = useState('');
@@ -14,8 +16,7 @@ export default function TranslatePage() {
     setIsLoading(true);
     setError('');
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://logos-production-ef2b.up.railway.app';
-      const res = await fetch(apiUrl + '/api/translate', {
+      const res = await fetch(API_URL + '/api/translate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text: sourceText, source_lang: sourceLang, style: style }),
@@ -25,45 +26,66 @@ export default function TranslatePage() {
       setTranslation(data.translation);
     } catch (e) {
       setError('Translation failed. Please try again.');
+      console.error(e);
     } finally {
       setIsLoading(false);
     }
   };
 
   return (
-    <div style={{ minHeight: '100vh', background: '#1a1a2e', color: '#fff', padding: '2rem' }}>
-      <h1 style={{ fontSize: '2rem', marginBottom: '2rem' }}>LOGOS Translator</h1>
-      <div style={{ marginBottom: '1rem' }}>
-        <select value={sourceLang} onChange={(e) => setSourceLang(e.target.value)} style={{ padding: '0.5rem', marginRight: '1rem', background: '#333', color: '#fff', border: 'none', borderRadius: '4px' }}>
-          <option value="greek">Greek</option>
-          <option value="latin">Latin</option>
-        </select>
-        <select value={style} onChange={(e) => setStyle(e.target.value)} style={{ padding: '0.5rem', background: '#333', color: '#fff', border: 'none', borderRadius: '4px' }}>
-          <option value="literal">Literal</option>
-          <option value="literary">Literary</option>
-          <option value="student">Student</option>
-        </select>
-      </div>
-      <textarea
-        value={sourceText}
-        onChange={(e) => setSourceText(e.target.value)}
-        placeholder="Enter Greek or Latin text..."
-        style={{ width: '100%', height: '150px', padding: '1rem', fontSize: '1.1rem', background: '#333', color: '#fff', border: 'none', borderRadius: '8px', marginBottom: '1rem' }}
-      />
-      <button
-        onClick={handleTranslate}
-        disabled={isLoading}
-        style={{ padding: '0.75rem 2rem', fontSize: '1rem', background: '#8B2635', color: '#fff', border: 'none', borderRadius: '8px', cursor: 'pointer' }}
-      >
-        {isLoading ? 'Translating...' : 'Translate'}
-      </button>
-      {error && <p style={{ color: '#ff6b6b', marginTop: '1rem' }}>{error}</p>}
-      {translation && (
-        <div style={{ marginTop: '2rem', padding: '1.5rem', background: '#333', borderRadius: '8px' }}>
-          <h2 style={{ marginBottom: '1rem' }}>Translation</h2>
-          <p style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>{translation}</p>
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white p-8">
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-4xl font-bold mb-8 text-center">LOGOS Translator</h1>
+        
+        <div className="flex gap-4 mb-6">
+          <select 
+            value={sourceLang} 
+            onChange={(e) => setSourceLang(e.target.value)}
+            className="px-4 py-2 bg-gray-700 rounded-lg border border-gray-600"
+          >
+            <option value="greek">Greek</option>
+            <option value="latin">Latin</option>
+          </select>
+          
+          <select 
+            value={style} 
+            onChange={(e) => setStyle(e.target.value)}
+            className="px-4 py-2 bg-gray-700 rounded-lg border border-gray-600"
+          >
+            <option value="literal">Literal</option>
+            <option value="literary">Literary</option>
+            <option value="student">Student-friendly</option>
+          </select>
         </div>
-      )}
+
+        <textarea
+          value={sourceText}
+          onChange={(e) => setSourceText(e.target.value)}
+          placeholder="Enter Greek or Latin text here..."
+          className="w-full h-40 p-4 bg-gray-700 rounded-lg border border-gray-600 text-lg mb-4"
+        />
+
+        <button
+          onClick={handleTranslate}
+          disabled={isLoading || !sourceText.trim()}
+          className="w-full py-3 bg-red-800 hover:bg-red-700 disabled:bg-gray-600 rounded-lg font-semibold text-lg transition-colors"
+        >
+          {isLoading ? 'Translating...' : 'Translate'}
+        </button>
+
+        {error && (
+          <div className="mt-4 p-4 bg-red-900/50 border border-red-700 rounded-lg">
+            {error}
+          </div>
+        )}
+
+        {translation && (
+          <div className="mt-8 p-6 bg-gray-700 rounded-lg">
+            <h2 className="text-xl font-semibold mb-4">Translation ({style})</h2>
+            <p className="text-lg leading-relaxed">{translation}</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
