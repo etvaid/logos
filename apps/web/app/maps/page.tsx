@@ -1,43 +1,105 @@
-
 'use client';
 
+import React from 'react';
 import Link from 'next/link';
 
-const MAPS = [
-  { href: "/maps/languages", title: "Language Distribution", desc: "Where Greek and Latin dominated", color: "#3B82F6" },
-  { href: "/maps/political", title: "Political Control", desc: "2000 years of empires", color: "#DC2626" },
-  { href: "/maps/authors", title: "Author Origins", desc: "Where writers came from", color: "#10B981" },
-  { href: "/timeline", title: "Timeline", desc: "Events across 2300 years", color: "#F59E0B" },
+const backgroundColor = '#0D0D0F';
+const textColor = '#F5F4F2';
+const accentColor = '#C9A227';
+
+const eraColors = {
+  archaic: '#D97706',
+  classical: '#F59E0B',
+  hellenistic: '#3B82F6',
+  imperial: '#DC2626',
+  lateAntique: '#7C3AED',
+};
+
+const languageColors = {
+  greek: '#3B82F6',
+  latin: '#DC2626',
+};
+
+const cardData = [
+  {
+    title: 'Language Distribution',
+    description: 'Explore the geographical spread of Greek and Latin.',
+    icon: '🌐',
+    path: '/maps/languages',
+    gradient: `linear-gradient(to right, ${languageColors.greek}, ${languageColors.latin})`,
+  },
+  {
+    title: 'Political Control',
+    description: 'Visualize the shifting political landscape of the era.',
+    icon: '🏛️',
+    path: '/maps/political',
+    gradient: `linear-gradient(to right, ${eraColors.archaic}, ${eraColors.imperial})`,
+  },
+  {
+    title: 'Author Origins',
+    description: 'Discover the birthplaces and movements of key authors.',
+    icon: '✍️',
+    path: '/maps/authors',
+    gradient: `linear-gradient(to right, ${eraColors.classical}, ${eraColors.hellenistic})`,
+  },
+  {
+    title: 'Trade Routes',
+    description: 'Trace the flow of goods and ideas across the ancient world.',
+    icon: '🚢',
+    path: '/maps/trade',
+    gradient: `linear-gradient(to right, ${accentColor}, ${eraColors.imperial})`,
+  },
+  {
+    title: 'Timeline',
+    description: 'A chronological overview of key events and developments.',
+    icon: '⏳',
+    path: '/timeline',
+    gradient: `linear-gradient(to right, ${eraColors.archaic}, ${eraColors.lateAntique})`,
+  },
+  {
+    title: 'Libraries',
+    description: 'Locate and explore the great libraries of antiquity.',
+    icon: '📚',
+    path: '/maps/libraries',
+    gradient: `linear-gradient(to right, ${eraColors.classical}, ${eraColors.imperial})`,
+  },
 ];
 
-export default function MapsPage() {
+const MapsHubPage = () => {
   return (
-    <div className="min-h-screen bg-[#0D0D0F] text-[#F5F4F2]">
-      <nav className="border-b border-gray-800 p-4">
-        <div className="max-w-6xl mx-auto flex justify-between items-center">
-          <Link href="/" className="text-2xl font-bold text-[#C9A227]">LOGOS</Link>
-          <div className="flex gap-6 text-sm">
-            <Link href="/search" className="hover:text-[#C9A227]">Search</Link>
-            <Link href="/translate" className="hover:text-[#C9A227]">Translate</Link>
-            <Link href="/maps" className="text-[#C9A227]">Maps</Link>
-          </div>
-        </div>
-      </nav>
+    <div style={{ backgroundColor, color: textColor, padding: '20px' }}>
+      <h1>Maps Hub</h1>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px' }}>
+        {cardData.map((card, index) => (
+          <Link key={index} href={card.path} passHref style={{ textDecoration: 'none' }}>
+            <div
+              style={{
+                background: card.gradient,
+                padding: '20px',
+                borderRadius: '8px',
+                color: textColor,
+                boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
+                transition: 'transform 0.2s ease-in-out',
+                cursor: 'pointer',
+                height: '200px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between'
 
-      <main className="max-w-4xl mx-auto p-8">
-        <h1 className="text-4xl font-bold mb-2">Interactive Maps</h1>
-        <p className="text-gray-400 mb-8">Visualize the classical world</p>
+              }}
+              >
+              <div>
+                <h2 style={{ marginBottom: '5px' }}>{card.title}</h2>
+                <p style={{ fontSize: '14px', opacity: 0.8 }}>{card.description}</p>
+              </div>
+              <div style={{ fontSize: '2em', textAlign: 'right' }}>{card.icon}</div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {MAPS.map(m => (
-            <Link key={m.href} href={m.href} className="p-6 bg-[#1E1E24] rounded-lg border border-transparent hover:border-[#C9A227]">
-              <div className="w-12 h-12 rounded-lg mb-4 flex items-center justify-center text-2xl" style={{ backgroundColor: m.color + '33' }}>🗺️</div>
-              <h3 className="text-xl font-bold mb-2">{m.title}</h3>
-              <p className="text-gray-400">{m.desc}</p>
-            </Link>
-          ))}
-        </div>
-      </main>
+            </div>
+          </Link>
+        ))}
+      </div>
     </div>
   );
-}
+};
+
+export default MapsHubPage;

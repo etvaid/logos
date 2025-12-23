@@ -1,337 +1,203 @@
-'use client'
+'use client';
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useRef, useEffect } from 'react';
 
-interface TimelineEvent {
-  year: number
-  title: string
-  era: 'archaic' | 'classical' | 'hellenistic' | 'imperial' | 'lateAntique' | 'byzantine'
-  category: 'political' | 'religious' | 'intellectual'
-  importance: number
-  description: string
+interface Event {
+  year: number;
+  title: string;
+  era: string;
+  category: string;
 }
 
-const demoEvents: TimelineEvent[] = [
-  {
-    year: -490,
-    title: 'Battle of Marathon',
-    era: 'archaic',
-    category: 'political',
-    importance: 8,
-    description: 'Athenians defeat Persian forces in decisive battle'
-  },
-  {
-    year: -399,
-    title: 'Death of Socrates',
-    era: 'classical',
-    category: 'intellectual',
-    importance: 9,
-    description: 'Philosopher executed by drinking hemlock'
-  },
-  {
-    year: -323,
-    title: 'Death of Alexander',
-    era: 'classical',
-    category: 'political',
-    importance: 10,
-    description: 'Alexander the Great dies, empire fragments'
-  },
-  {
-    year: -44,
-    title: 'Caesar Assassination',
-    era: 'imperial',
-    category: 'political',
-    importance: 9,
-    description: 'Julius Caesar killed on the Ides of March'
-  },
-  {
-    year: 33,
-    title: 'Crucifixion',
-    era: 'imperial',
-    category: 'religious',
-    importance: 10,
-    description: 'Crucifixion of Jesus Christ'
-  },
-  {
-    year: 313,
-    title: 'Edict of Milan',
-    era: 'lateAntique',
-    category: 'religious',
-    importance: 8,
-    description: 'Constantine legalizes Christianity'
-  },
-  {
-    year: 476,
-    title: 'Fall of Rome',
-    era: 'lateAntique',
-    category: 'political',
-    importance: 10,
-    description: 'Last Western Roman Emperor deposed'
-  },
-  {
-    year: 529,
-    title: 'Academy Closes',
-    era: 'byzantine',
-    category: 'intellectual',
-    importance: 7,
-    description: 'Justinian closes Platonic Academy'
-  }
-]
+const events: Event[] = [
+  { year: -800, title: 'Homer composes epics', era: 'archaic', category: 'intellectual' },
+  { year: -490, title: 'Battle of Marathon', era: 'classical', category: 'political' },
+  { year: -399, title: 'Death of Socrates', era: 'classical', category: 'intellectual' },
+  { year: -323, title: 'Death of Alexander', era: 'hellenistic', category: 'political' },
+  { year: -44, title: 'Caesar assassination', era: 'imperial', category: 'political' },
+  { year: 33, title: 'Crucifixion', era: 'imperial', category: 'religious' },
+  { year: 313, title: 'Edict of Milan', era: 'lateAntique', category: 'religious' },
+  { year: 410, title: 'Sack of Rome', era: 'lateAntique', category: 'political' },
+  { year: 476, title: 'Fall of Western Empire', era: 'lateAntique', category: 'political' },
+  { year: 529, title: 'Academy closes', era: 'byzantine', category: 'intellectual' },
+  { year: 1453, title: 'Fall of Constantinople', era: 'byzantine', category: 'political' },
+];
 
-const eraColors = {
+const eraColors: { [key: string]: string } = {
   archaic: '#D97706',
   classical: '#F59E0B',
   hellenistic: '#3B82F6',
   imperial: '#DC2626',
   lateAntique: '#7C3AED',
-  byzantine: '#059669'
-}
+  byzantine: '#10B981',
+};
 
-export default function TimelinePage() {
-  const [selectedCategories, setSelectedCategories] = useState<string[]>(['political', 'religious', 'intellectual'])
-  const [selectedEvent, setSelectedEvent] = useState<TimelineEvent | null>(null)
-  const [isPlaying, setIsPlaying] = useState(false)
-  const [currentYear, setCurrentYear] = useState(-490)
-  
-  const filteredEvents = demoEvents.filter(event => 
-    selectedCategories.includes(event.category)
-  )
+const backgroundColor = '#0D0D0F';
+const textColor = '#F5F4F2';
+const accentColor = '#C9A227';
 
-  const minYear = Math.min(...demoEvents.map(e => e.year))
-  const maxYear = Math.max(...demoEvents.map(e => e.year))
+const minYear = Math.min(...events.map(e => e.year));
+const maxYear = Math.max(...events.map(e => e.year));
+const timelineWidth = 1000;
+const yearRange = maxYear - minYear;
 
-  const formatYear = (year: number) => {
-    return year < 0 ? `${Math.abs(year)} BCE` : `${year} CE`
-  }
-
-  const getPositionX = (year: number) => {
-    return ((year - minYear) / (maxYear - minYear)) * 100
-  }
+const Timeline = () => {
+  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
+  const [categoryFilter, setCategoryFilter] = useState<string>('all');
+  const [animationYear, setAnimationYear] = useState(minYear);
+  const animationInterval = useRef<number | null>(null);
 
   useEffect(() => {
-    let interval: NodeJS.Timeout
-    if (isPlaying) {
-      interval = setInterval(() => {
-        setCurrentYear(prev => {
-          if (prev >= maxYear) {
-            setIsPlaying(false)
-            return minYear
-          }
-          return prev + 20
-        })
-      }, 200)
+    return () => {
+      if (animationInterval.current) {
+        clearInterval(animationInterval.current);
+      }
+    };
+  }, []);
+
+
+  const handleEventClick = (event: Event) => {
+    setSelectedEvent(event);
+  };
+
+  const handleClosePopup = () => {
+    setSelectedEvent(null);
+  };
+
+  const filteredEvents = categoryFilter === 'all'
+    ? events
+    : events.filter(event => event.category === categoryFilter);
+
+  const getPosition = (year: number) => {
+    return ((year - minYear) / yearRange) * timelineWidth;
+  };
+
+  const handlePlay = () => {
+    if (animationInterval.current) {
+      clearInterval(animationInterval.current);
+      animationInterval.current = null;
+      return;
     }
-    return () => clearInterval(interval)
-  }, [isPlaying, minYear, maxYear])
 
-  const toggleCategory = (category: string) => {
-    setSelectedCategories(prev => 
-      prev.includes(category)
-        ? prev.filter(c => c !== category)
-        : [...prev, category]
-    )
-  }
+    animationInterval.current = setInterval(() => {
+      setAnimationYear(prevYear => {
+        const newYear = prevYear + 10;
+        if (newYear > maxYear) {
+          clearInterval(animationInterval.current);
+          animationInterval.current = null;
+          return minYear; //restart animation
+        }
+        return newYear;
+      });
+    }, 100);
+  };
 
-  const visibleEvents = filteredEvents.filter(event => 
-    !isPlaying || event.year <= currentYear
-  )
 
   return (
-    <div className="min-h-screen bg-[#0D0D0F] text-[#F5F4F2] p-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-[#C9A227] mb-4">Historical Timeline</h1>
-          
-          {/* Controls */}
-          <div className="flex flex-wrap gap-4 items-center mb-6">
-            <div className="flex gap-2">
-              {['political', 'religious', 'intellectual'].map(category => (
-                <button
-                  key={category}
-                  onClick={() => toggleCategory(category)}
-                  className={`px-3 py-1 rounded text-sm font-medium transition-colors ${
-                    selectedCategories.includes(category)
-                      ? 'bg-[#C9A227] text-[#0D0D0F]'
-                      : 'bg-[#1E1E24] text-[#F5F4F2] hover:bg-[#2A2A32]'
-                  }`}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
-            
-            <button
-              onClick={() => setIsPlaying(!isPlaying)}
-              className="px-4 py-2 bg-[#C9A227] text-[#0D0D0F] rounded font-medium hover:bg-[#D4AD2A] transition-colors"
-            >
-              {isPlaying ? '⏸️ Pause' : '▶️ Play'}
-            </button>
-            
-            {isPlaying && (
-              <span className="text-[#C9A227] font-medium">
-                {formatYear(currentYear)}
-              </span>
-            )}
-          </div>
+    <div style={{ backgroundColor, color: textColor, padding: '20px', fontFamily: 'sans-serif' }}>
+      <h1>Classical World Timeline</h1>
 
-          {/* Timeline */}
-          <div className="relative bg-[#1E1E24] rounded-lg p-8 h-64 overflow-hidden">
-            {/* Timeline line */}
-            <div className="absolute top-32 left-8 right-8 h-1 bg-[#2A2A32]"></div>
-            
-            {/* Year markers */}
-            <div className="absolute top-36 left-8 right-8">
-              {[-500, -400, -300, -200, -100, 0, 100, 200, 300, 400, 500].map(year => {
-                if (year >= minYear && year <= maxYear) {
-                  return (
-                    <div
-                      key={year}
-                      className="absolute text-xs text-gray-400"
-                      style={{ left: `${getPositionX(year)}%`, transform: 'translateX(-50%)' }}
-                    >
-                      {formatYear(year)}
-                    </div>
-                  )
-                }
-                return null
-              })}
-            </div>
-
-            {/* Events */}
-            {visibleEvents.map((event, index) => (
-              <div
-                key={index}
-                className="absolute cursor-pointer group"
-                style={{
-                  left: `${getPositionX(event.year)}%`,
-                  top: '50%',
-                  transform: 'translate(-50%, -50%)'
-                }}
-                onClick={() => setSelectedEvent(event)}
-              >
-                <div
-                  className="rounded-full border-2 border-white hover:scale-110 transition-transform"
-                  style={{
-                    backgroundColor: eraColors[event.era],
-                    width: `${event.importance * 4}px`,
-                    height: `${event.importance * 4}px`
-                  }}
-                />
-                <div className="absolute top-8 left-1/2 transform -translate-x-1/2 bg-[#0D0D0F] px-2 py-1 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                  {event.title}
-                </div>
-              </div>
-            ))}
-
-            {/* Current year indicator during animation */}
-            {isPlaying && (
-              <div
-                className="absolute top-0 bottom-0 w-px bg-[#C9A227] opacity-80"
-                style={{
-                  left: `${getPositionX(currentYear)}%`
-                }}
-              />
-            )}
-          </div>
-
-          {/* Legend */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
-            <div>
-              <h3 className="text-lg font-semibold mb-2 text-[#C9A227]">Eras</h3>
-              <div className="space-y-1">
-                {Object.entries(eraColors).map(([era, color]) => (
-                  <div key={era} className="flex items-center gap-2">
-                    <div
-                      className="w-3 h-3 rounded-full"
-                      style={{ backgroundColor: color }}
-                    />
-                    <span className="text-sm capitalize">{era}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            <div>
-              <h3 className="text-lg font-semibold mb-2 text-[#C9A227]">Categories</h3>
-              <div className="space-y-1">
-                <div className="flex items-center gap-2">
-                  <span className="text-sm">🏛️ Political</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-sm">✝️ Religious</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-sm">🎓 Intellectual</span>
-                </div>
-              </div>
-            </div>
-            
-            <div>
-              <h3 className="text-lg font-semibold mb-2 text-[#C9A227]">Size</h3>
-              <div className="space-y-1">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-gray-400"/>
-                  <span className="text-sm">Minor</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-4 h-4 rounded-full bg-gray-400"/>
-                  <span className="text-sm">Major</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-6 h-6 rounded-full bg-gray-400"/>
-                  <span className="text-sm">Critical</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Event Details Modal */}
-        {selectedEvent && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-            <div className="bg-[#1E1E24] rounded-lg p-6 max-w-md w-full">
-              <div className="flex justify-between items-start mb-4">
-                <h2 className="text-xl font-bold text-[#C9A227]">{selectedEvent.title}</h2>
-                <button
-                  onClick={() => setSelectedEvent(null)}
-                  className="text-gray-400 hover:text-white"
-                >
-                  ✕
-                </button>
-              </div>
-              
-              <div className="space-y-3">
-                <div>
-                  <span className="text-sm text-gray-400">Date: </span>
-                  <span>{formatYear(selectedEvent.year)}</span>
-                </div>
-                
-                <div>
-                  <span className="text-sm text-gray-400">Era: </span>
-                  <span className="capitalize" style={{ color: eraColors[selectedEvent.era] }}>
-                    {selectedEvent.era}
-                  </span>
-                </div>
-                
-                <div>
-                  <span className="text-sm text-gray-400">Category: </span>
-                  <span className="capitalize">{selectedEvent.category}</span>
-                </div>
-                
-                <div>
-                  <span className="text-sm text-gray-400">Importance: </span>
-                  <span>{selectedEvent.importance}/10</span>
-                </div>
-                
-                <div>
-                  <span className="text-sm text-gray-400">Description: </span>
-                  <p className="mt-1">{selectedEvent.description}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
+      <div>
+        <label htmlFor="categoryFilter">Filter by Category:</label>
+        <select
+          id="categoryFilter"
+          value={categoryFilter}
+          onChange={(e) => setCategoryFilter(e.target.value)}
+          style={{ backgroundColor: '#333', color: textColor, border: 'none', padding: '5px', margin: '5px' }}
+        >
+          <option value="all">All</option>
+          <option value="political">Political</option>
+          <option value="religious">Religious</option>
+          <option value="intellectual">Intellectual</option>
+        </select>
+        <button onClick={handlePlay} style={{padding: '5px 10px', backgroundColor: accentColor, color: backgroundColor, border: 'none', cursor: 'pointer'}}>
+          {animationInterval.current ? 'Stop' : 'Play'}
+        </button>
       </div>
+
+
+      <div style={{ position: 'relative', width: timelineWidth, height: '50px', backgroundColor: '#222', margin: '20px 0' }}>
+        {Object.entries(eraColors).map(([era, color]) => {
+          const eraEvents = events.filter(e => e.era === era);
+          if (eraEvents.length === 0) return null;
+
+          const startYear = Math.min(...eraEvents.map(e => e.year));
+          const endYear = Math.max(...eraEvents.map(e => e.year));
+          const startPosition = getPosition(startYear);
+          const endPosition = getPosition(endYear);
+          const width = endPosition - startPosition;
+
+          return (
+            <div
+              key={era}
+              style={{
+                position: 'absolute',
+                left: `${startPosition}px`,
+                top: 0,
+                height: '100%',
+                width: `${width}px`,
+                backgroundColor: color,
+                opacity: 0.3,
+                pointerEvents: 'none',
+              }}
+            />
+          );
+        })}
+
+
+        {filteredEvents.map((event) => {
+          const position = getPosition(event.year);
+          const size = event.category === 'political' ? 10 : event.category === 'religious' ? 8 : 6;
+
+          return (
+            <div
+              key={event.year}
+              style={{
+                position: 'absolute',
+                left: `${position - size / 2}px`,
+                top: '50%',
+                transform: 'translateY(-50%)',
+                width: `${size}px`,
+                height: `${size}px`,
+                borderRadius: '50%',
+                backgroundColor: eraColors[event.era],
+                cursor: 'pointer',
+                opacity: event.year <= animationYear ? 1 : 0.3
+              }}
+              onClick={() => handleEventClick(event)}
+              title={event.title}
+            />
+          );
+        })}
+        <div
+        style={{
+          position: 'absolute',
+          left: `${getPosition(animationYear)}px`,
+          top: 0,
+          height: '100%',
+          width: '2px',
+          backgroundColor: accentColor,
+          pointerEvents: 'none',
+        }}
+      />
+      </div>
+
+      <div style={{display: 'flex', justifyContent: 'space-between'}}>
+          <div>{minYear} BCE</div>
+          <div>{maxYear} CE</div>
+      </div>
+
+      {selectedEvent && (
+        <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', backgroundColor: '#333', color: textColor, padding: '20px', borderRadius: '5px' }}>
+          <h3>{selectedEvent.title}</h3>
+          <p>Year: {selectedEvent.year}</p>
+          <p>Era: {selectedEvent.era}</p>
+          <p>Category: {selectedEvent.category}</p>
+          <button onClick={handleClosePopup} style={{ backgroundColor: accentColor, color: backgroundColor, border: 'none', padding: '5px 10px', cursor: 'pointer' }}>Close</button>
+        </div>
+      )}
     </div>
-  )
-}
+  );
+};
+
+export default Timeline;

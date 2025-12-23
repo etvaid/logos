@@ -1,152 +1,218 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { MapContainer, TileLayer, Polygon, Marker, Popup } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
 
-const POLITICAL_DATA = {
-  '500 BCE': {
-    regions: {
-      'region1': 'Persian', // Replace with actual SVG region IDs
-      'region2': 'Persian',
-      'region3': 'Greek',
-      'region4': 'Greek',
-      'region5': 'Greek',
-    },
-    events: ['Rise of Persian Empire']
+// Override default marker icon (needed for Next.js)
+import 'leaflet/dist/leaflet.css';
+
+delete L.Icon.Default.prototype._getIconUrl;
+
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+  iconUrl: require('leaflet/dist/images/marker-icon.png'),
+  shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
+});
+
+interface EmpireData {
+  [key: string]: {
+    name: string;
+    color: string;
+    coordinates: number[][][];
+  };
+}
+
+const empires: EmpireData = {
+  greekCityStates: {
+    name: 'Greek City-States',
+    color: '#D97706',
+    coordinates: [
+      [
+        [36, 23],
+        [40, 25],
+        [39, 28],
+        [36, 26],
+        [36, 23],
+      ],
+      [
+        [35, 21],
+        [38, 23],
+        [37, 25],
+        [34, 23],
+        [35, 21],
+      ],
+    ],
   },
-  '323 BCE': {
-    regions: {
-      'region1': 'Greek',
-      'region2': 'Greek',
-      'region3': 'Greek',
-      'region4': 'Greek',
-      'region5': 'Greek',
-    },
-    events: ['Death of Alexander']
+  persianEmpire: {
+    name: 'Persian Empire',
+    color: '#F59E0B',
+    coordinates: [
+      [
+        [30, 45],
+        [40, 50],
+        [38, 55],
+        [28, 50],
+        [30, 45],
+      ],
+      [
+        [25, 50],
+        [35, 55],
+        [33, 60],
+        [23, 55],
+        [25, 50],
+      ],
+    ],
   },
-  '100 BCE': {
-    regions: {
-      'region1': 'Roman',
-      'region2': 'Roman',
-      'region3': 'Roman',
-      'region4': 'Greek',
-      'region5': 'Greek',
-    },
-    events: ['Roman Expansion']
+  alexandersEmpire: {
+    name: "Alexander's Empire",
+    color: '#3B82F6',
+    coordinates: [
+      [
+        [30, 35],
+        [40, 40],
+        [38, 45],
+        [28, 40],
+        [30, 35],
+      ],
+    ],
   },
-  '1 CE': {
-    regions: {
-      'region1': 'Roman',
-      'region2': 'Roman',
-      'region3': 'Roman',
-      'region4': 'Roman',
-      'region5': 'Roman',
-    },
-    events: ['Roman Empire at its Height']
+  romanRepublic: {
+    name: 'Roman Republic',
+    color: '#DC2626',
+    coordinates: [
+      [
+        [40, 10],
+        [45, 15],
+        [43, 20],
+        [38, 15],
+        [40, 10],
+      ],
+    ],
   },
-  '400 CE': {
-    regions: {
-      'region1': 'Roman',
-      'region2': 'Roman',
-      'region3': 'Roman',
-      'region4': 'Roman',
-      'region5': 'Roman',
-    },
-    events: ['Fall of Western Roman Empire']
-  }
+  romanEmpire: {
+    name: 'Roman Empire',
+    color: '#DC2626',
+    coordinates: [
+      [
+        [35, -5],
+        [50, 30],
+        [35, 45],
+        [25, 35],
+        [35, -5],
+      ],
+    ],
+  },
+  dividedEmpire: {
+    name: 'Divided Empire',
+    color: '#7C3AED',
+    coordinates: [
+      [
+        [35, -5],
+        [50, 15],
+        [35, 30],
+        [25, 20],
+        [35, -5],
+      ],
+    ],
+  },
 };
 
-const SVG_PATH_DATA = {
-  'region1': "M10 10 L50 10 L50 50 L10 50 Z",
-  'region2': "M60 10 L100 10 L100 50 L60 50 Z",
-  'region3': "M10 60 L50 60 L50 100 L10 100 Z",
-  'region4': "M60 60 L100 60 L100 100 L60 100 Z",
-  'region5': "M35 35 L75 35 L75 75 L35 75 Z"
+const eraEmpires: { [key: number]: string[] } = {
+  500: ['greekCityStates', 'persianEmpire'],
+  323: ['alexandersEmpire'],
+  100: ['romanRepublic'],
+  1: ['romanEmpire'],
+  400: ['dividedEmpire'],
 };
 
+const keyEvents: { [key: number]: string } = {
+  500: 'Height of Greek City-States and Persian Empire',
+  323: "Death of Alexander the Great; division of Alexander's empire",
+  100: 'Roman Republic controls much of the Mediterranean',
+  1: 'Start of the Roman Empire under Augustus',
+  400: 'Division of the Roman Empire',
+};
+
+const center = [40, 20]; // Centered around Mediterranean
+const zoom = 3;
 
 const MapComponent = () => {
-  const [selectedYear, setSelectedYear] = useState<string>('500 BCE');
-  const [politicalData, setPoliticalData] = useState(POLITICAL_DATA['500 BCE']);
+  const [year, setYear] = useState(500);
 
-  useEffect(() => {
-    setPoliticalData(POLITICAL_DATA[selectedYear]);
-  }, [selectedYear]);
-
-  const eraColors = {
-    Persian: '#7C3AED', // Purple
-    Greek: '#3B82F6',  // Blue
-    Roman: '#DC2626',  // Red
+  const getDisplayedEmpires = (): EmpireData => {
+    const era = Object.keys(eraEmpires).find(
+      (era) => parseInt(era) <= year
+    );
+    if (!era) return {};
+    const empireKeys = eraEmpires[parseInt(era)];
+    const displayedEmpires: EmpireData = {};
+    empireKeys.forEach((key) => {
+      displayedEmpires[key] = empires[key];
+    });
+    return displayedEmpires;
   };
 
-  const handleYearChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSelectedYear(event.target.value);
+  const displayedEmpires = getDisplayedEmpires();
+
+  const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setYear(parseInt(e.target.value));
   };
-
-
-  const availableYears = Object.keys(POLITICAL_DATA);
 
   return (
-    <div style={{ backgroundColor: '#0D0D0F', color: '#F5F4F2', padding: '20px' }}>
-      <h1>Political Control Map</h1>
+    <div style={{ backgroundColor: '#0D0D0F', color: '#F5F4F2' }}>
+      <MapContainer
+        center={center}
+        zoom={zoom}
+        style={{ height: '600px', width: '100%' }}
+        className="map-container"
+      >
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        />
+        {Object.entries(displayedEmpires).map(([key, empire]) => (
+          <React.Fragment key={key}>
+            {empire.coordinates.map((coords, index) => (
+              <Polygon
+                key={`${key}-${index}`}
+                positions={coords}
+                color={empire.color}
+                fillOpacity={0.7}
+              >
+                <Popup>
+                  <b>{empire.name}</b>
+                </Popup>
+              </Polygon>
+            ))}
+          </React.Fragment>
+        ))}
+      </MapContainer>
 
-      {/* Time Slider */}
-      <div style={{ marginBottom: '20px' }}>
-        <label htmlFor="yearSlider">Year: {selectedYear}</label>
+      <div style={{ padding: '20px' }}>
+        <label htmlFor="year" style={{ display: 'block', marginBottom: '10px' }}>
+          Year: {year}
+        </label>
         <input
           type="range"
-          id="yearSlider"
-          min="0"
-          max={availableYears.length -1}
-          value={availableYears.indexOf(selectedYear)}
-          onChange={handleYearChange}
+          id="year"
+          min="100"
+          max="500"
+          step="1"
+          value={year}
+          onChange={handleSliderChange}
           style={{ width: '100%' }}
-          list="yearMarkers"
         />
-        <datalist id="yearMarkers">
-          {availableYears.map((year, index) => (
-            <option key={index} value={index} label={year} />
-          ))}
-        </datalist>
-        <select value={selectedYear} onChange={(e) => setSelectedYear(e.target.value)}>
-          {availableYears.map((year) => (
-            <option key={year} value={year}>{year}</option>
-          ))}
-        </select>
+        {keyEvents[year] && (
+          <p style={{ marginTop: '10px' }}>Key Event: {keyEvents[year]}</p>
+        )}
       </div>
-
-      {/* SVG Map */}
-      <svg width="500" height="300" style={{ backgroundColor: '#1E1E24' }}>
-        {Object.entries(SVG_PATH_DATA).map(([regionId, pathData]) => (
-          <path
-            key={regionId}
-            d={pathData}
-            fill={eraColors[politicalData.regions[regionId]] || '#808080'} // Default grey if no data
-            stroke="#0D0D0F"
-            strokeWidth="2"
-          />
-        ))}
-      </svg>
-
-      {/* Legend */}
-      <div style={{ marginTop: '20px' }}>
-        <h3>Legend</h3>
-        {Object.entries(eraColors).map(([power, color]) => (
-          <div key={power} style={{ display: 'flex', alignItems: 'center', marginBottom: '5px' }}>
-            <div style={{ width: '20px', height: '20px', backgroundColor: color, marginRight: '10px' }}></div>
-            <span>{power}</span>
-          </div>
-        ))}
-      </div>
-
-      {/* Key Events */}
-      <div>
-        <h3>Events</h3>
-        <ul>
-          {politicalData.events.map((event, index) => (
-            <li key={index}>{event}</li>
-          ))}
-        </ul>
-      </div>
+      <style jsx global>{`
+        .leaflet-popup-content {
+          color: #0D0D0F;
+        }
+      `}</style>
     </div>
   );
 };

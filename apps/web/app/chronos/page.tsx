@@ -1,69 +1,321 @@
-
 'use client';
 
-import { useState } from 'react';
-import Link from 'next/link';
+import React, { useState } from 'react';
 
-const CONCEPTS = {
-  "ἀρετή": [
-    { era: "Archaic", years: "800-500 BCE", color: "#D97706", meaning: "Battle excellence", authors: ["Homer"], pct: 92 },
-    { era: "Classical", years: "500-323 BCE", color: "#F59E0B", meaning: "Moral excellence", authors: ["Plato"], pct: 95 },
-    { era: "Late Antique", years: "284-600 CE", color: "#7C3AED", meaning: "Christian virtue", authors: ["Augustine"], pct: 90 },
-  ],
-  "λόγος": [
-    { era: "Archaic", years: "800-500 BCE", color: "#D97706", meaning: "Speech, story", authors: ["Homer"], pct: 94 },
-    { era: "Classical", years: "500-323 BCE", color: "#F59E0B", meaning: "Reason", authors: ["Plato"], pct: 96 },
-    { era: "Late Antique", years: "284-600 CE", color: "#7C3AED", meaning: "Divine Word", authors: ["John"], pct: 93 },
+const eraColors = {
+  archaic: '#D97706',
+  classical: '#F59E0B',
+  hellenistic: '#3B82F6',
+  imperial: '#DC2626',
+  lateAntique: '#7C3AED',
+};
+
+const languageColors = {
+  Greek: '#3B82F6',
+  Latin: '#DC2626',
+};
+
+const backgroundColor = '#0D0D0F';
+const textColor = '#F5F4F2';
+const accentColor = '#C9A227';
+
+interface EraData {
+  era: string;
+  color: string;
+  meaning: string;
+  keyAuthors: string[];
+  confidence: number;
+  examplePassages: string[];
+}
+
+interface ConceptData {
+  name: string;
+  evolution: EraData[];
+}
+
+const areteData: ConceptData = {
+  name: 'ἀρετή - Virtue',
+  evolution: [
+    {
+      era: 'Archaic',
+      color: eraColors.archaic,
+      meaning: 'Excellence, often in a martial context.  Valor, strength, skill, and effectiveness. Tied closely to honor and reputation.',
+      keyAuthors: ['Homer', 'Hesiod'],
+      confidence: 90,
+      examplePassages: [
+        '“Always be the best, and distinguished above the others.” - Homer, Iliad',
+      ],
+    },
+    {
+      era: 'Classical',
+      color: eraColors.classical,
+      meaning: 'Moral virtue and excellence in all aspects of life. Striving for the highest potential and fulfilling one’s purpose.',
+      keyAuthors: ['Plato', 'Aristotle'],
+      confidence: 95,
+      examplePassages: [
+        '“Virtue, then, is a state of character concerned with choice, lying in a mean.” - Aristotle, Nicomachean Ethics',
+      ],
+    },
+    {
+      era: 'Hellenistic',
+      color: eraColors.hellenistic,
+      meaning: 'Internalized virtue, focused on tranquility (ataraxia) and freedom from disturbance.  Virtue as the path to happiness.',
+      keyAuthors: ['Epicurus', 'Zeno of Citium'],
+      confidence: 85,
+      examplePassages: [
+        '“Pleasure is the beginning and end of living happily.” - Epicurus, Letter to Menoeceus',
+      ],
+    },
+    {
+      era: 'Imperial',
+      color: eraColors.imperial,
+      meaning: 'Virtue emphasized as duty to the state and adherence to traditional Roman values. Strong emphasis on moral uprightness and civic responsibility.',
+      keyAuthors: ['Seneca', 'Marcus Aurelius'],
+      confidence: 75,
+      examplePassages: [
+        '“Live a good life. If there are gods and they are just, then they will not care how devout you have been, but will welcome you based on the virtues you have lived by.” - Marcus Aurelius, Meditations',
+      ],
+    },
+    {
+      era: 'Late Antique',
+      color: eraColors.lateAntique,
+      meaning: 'Virtue reinterpreted through a Christian lens.  Love, faith, hope, and charity become central.  Virtue is seen as obedience to God’s will.',
+      keyAuthors: ['Augustine', 'Boethius'],
+      confidence: 80,
+      examplePassages: [
+        '“Love, and do what thou wilt.” - Augustine, Homilies on the First Epistle of John',
+      ],
+    },
   ],
 };
 
-export default function ChronosPage() {
-  const [selected, setSelected] = useState<keyof typeof CONCEPTS>("ἀρετή");
+const logosData: ConceptData = {
+  name: 'λόγος - Word/Reason',
+  evolution: [
+    {
+      era: 'Archaic',
+      color: eraColors.archaic,
+      meaning: 'Spoken word, narrative, or account.  The power of speech to persuade and influence.',
+      keyAuthors: ['Homer', 'Hesiod'],
+      confidence: 80,
+      examplePassages: [
+        '“[Nestor] whose speech flowed from his mouth sweeter than honey.” - Homer, Iliad',
+      ],
+    },
+    {
+      era: 'Classical',
+      color: eraColors.classical,
+      meaning: 'Reason, principle, or rational order.  The underlying structure of the universe.  Logic and argument.',
+      keyAuthors: ['Heraclitus', 'Plato', 'Aristotle'],
+      confidence: 90,
+      examplePassages: [
+        '“Listening not to me but to the Logos it is wise to agree that all things are one.” - Heraclitus, Fragments',
+      ],
+    },
+    {
+      era: 'Hellenistic',
+      color: eraColors.hellenistic,
+      meaning: 'Cosmic reason, divine principle that governs the universe.  Stoicism: living in accordance with Logos leads to virtue and happiness.',
+      keyAuthors: ['Zeno of Citium', 'Epictetus'],
+      confidence: 85,
+      examplePassages: [
+        '“Do not seek to have events happen as you want them to, but instead want them to happen as they do happen, and your life will go well.” - Epictetus, Enchiridion',
+      ],
+    },
+    {
+      era: 'Imperial',
+      color: eraColors.imperial,
+      meaning: 'Rationality and the ability to persuade, central for a leader. Understanding the Logos helped rulers to govern effectively and justly.',
+      keyAuthors: ['Cicero', 'Seneca'],
+      confidence: 70,
+      examplePassages: [
+        '“Reason governs the soul.” - Cicero, Tusculan Disputations',
+      ],
+    },
+    {
+      era: 'Late Antique',
+      color: eraColors.lateAntique,
+      meaning: 'The Word of God, identified with Jesus Christ.  The divine principle through which the world was created and redeemed.',
+      keyAuthors: ['John the Evangelist', 'Augustine'],
+      confidence: 95,
+      examplePassages: [
+        '“In the beginning was the Word, and the Word was with God, and the Word was God.” - John 1:1',
+      ],
+    },
+  ],
+};
+
+const dikeData: ConceptData = {
+  name: 'δίκη - Justice',
+  evolution: [
+    {
+      era: 'Archaic',
+      color: eraColors.archaic,
+      meaning: 'Custom, right, or justice as a divinely ordained order.  Retribution and vengeance are key aspects.  Maintaining cosmic balance.',
+      keyAuthors: ['Homer', 'Hesiod'],
+      confidence: 85,
+      examplePassages: [
+        '“Zeus, of all the gods, is the avenger of oaths.” - Homer, Iliad',
+      ],
+    },
+    {
+      era: 'Classical',
+      color: eraColors.classical,
+      meaning: 'Justice as a virtue, fairness, and what is right.  Emphasis on law and the state as instruments of justice.  Distributive justice.',
+      keyAuthors: ['Plato', 'Aristotle'],
+      confidence: 90,
+      examplePassages: [
+        '“Justice is the advantage of the stronger.” - Plato, Republic (Thrasymachus’ argument)',
+        '“Justice is giving each person what they deserve.” - Aristotle, Nicomachean Ethics',
+      ],
+    },
+    {
+      era: 'Hellenistic',
+      color: eraColors.hellenistic,
+      meaning: 'Justice seen through the lens of natural law and universal principles.  Emphasis on equality and individual rights.',
+      keyAuthors: ['Epicureans', 'Stoics'],
+      confidence: 75,
+      examplePassages: [
+        '“Natural right is a pledge of mutual benefit, to prevent one man from injuring or being injured by another.” - Epicurus, Principal Doctrines',
+      ],
+    },
+    {
+      era: 'Imperial',
+      color: eraColors.imperial,
+      meaning: 'Justice codified in Roman law. Focus on legal procedures, rights of citizens, and the concept of natural law as the basis for legal systems.',
+      keyAuthors: ['Cicero', 'Justinian'],
+      confidence: 80,
+      examplePassages: [
+        '“Justice is the set and constant purpose which gives to every man his due.” - Justinian, Institutes',
+      ],
+    },
+    {
+      era: 'Late Antique',
+      color: eraColors.lateAntique,
+      meaning: 'Divine justice and judgment.  Justice as an attribute of God.  Emphasis on forgiveness, mercy, and the ultimate reckoning at the end of time.',
+      keyAuthors: ['Augustine', 'Ambrose'],
+      confidence: 95,
+      examplePassages: [
+        '“Justice being taken away, then, what are kingdoms but great robberies?” - Augustine, City of God',
+      ],
+    },
+  ],
+};
+
+const concepts = [areteData, logosData, dikeData];
+
+const ChronosPage: React.FC = () => {
+  const [selectedConcept, setSelectedConcept] = useState<ConceptData | null>(null);
+
+  const handleConceptClick = (concept: ConceptData) => {
+    setSelectedConcept(concept);
+  };
 
   return (
-    <div className="min-h-screen bg-[#0D0D0F] text-[#F5F4F2]">
-      <nav className="border-b border-gray-800 p-4">
-        <div className="max-w-6xl mx-auto flex justify-between items-center">
-          <Link href="/" className="text-2xl font-bold text-[#C9A227]">LOGOS</Link>
-          <div className="flex gap-6 text-sm">
-            <Link href="/search" className="hover:text-[#C9A227]">Search</Link>
-            <Link href="/chronos" className="text-[#C9A227]">CHRONOS</Link>
-            <Link href="/maps" className="hover:text-[#C9A227]">Maps</Link>
-          </div>
-        </div>
-      </nav>
+    <div style={{ backgroundColor, color: textColor, minHeight: '100vh', padding: '20px' }}>
+      <h1 style={{ textAlign: 'center', color: accentColor }}>CHRONOS: Concept Evolution</h1>
 
-      <main className="max-w-4xl mx-auto p-8">
-        <h1 className="text-4xl font-bold mb-2">CHRONOS</h1>
-        <p className="text-gray-400 mb-8">Concept evolution across 1500 years</p>
-
-        <div className="flex gap-4 mb-8">
-          {(Object.keys(CONCEPTS) as Array<keyof typeof CONCEPTS>).map(w => (
-            <button key={w} onClick={() => setSelected(w)}
-              className={`px-6 py-3 rounded-lg font-serif text-xl ${selected === w ? 'bg-[#C9A227] text-black' : 'bg-[#1E1E24] border border-gray-700'}`}>
-              {w}
-            </button>
-          ))}
+      <div style={{ display: 'flex' }}>
+        {/* Concept Selection */}
+        <div style={{ width: '300px', paddingRight: '20px' }}>
+          <h2 style={{ color: accentColor }}>Concepts</h2>
+          <ul>
+            {concepts.map((concept) => (
+              <li
+                key={concept.name}
+                style={{ cursor: 'pointer', marginBottom: '10px', color: accentColor }}
+                onClick={() => handleConceptClick(concept)}
+              >
+                {concept.name}
+              </li>
+            ))}
+          </ul>
         </div>
 
-        <div className="relative">
-          <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gray-700" />
-          {CONCEPTS[selected].map((era, i) => (
-            <div key={i} className="relative pl-16 pb-8">
-              <div className="absolute left-4 w-5 h-5 rounded-full border-4 border-[#0D0D0F]" style={{ backgroundColor: era.color }} />
-              <div className="p-4 bg-[#1E1E24] rounded-lg border-l-4" style={{ borderLeftColor: era.color }}>
-                <div className="flex items-center gap-3 mb-2">
-                  <span className="font-bold" style={{ color: era.color }}>{era.era}</span>
-                  <span className="text-gray-500 text-sm">{era.years}</span>
-                  <span className="ml-auto text-sm text-gray-400">{era.pct}%</span>
+        {/* Concept Evolution Display */}
+        <div style={{ flex: 1 }}>
+          {selectedConcept ? (
+            <>
+              <h2 style={{ color: accentColor }}>{selectedConcept.name} Evolution</h2>
+              <div style={{ display: 'flex', flexDirection: 'row' }}>
+              {/* Vertical Timeline */}
+              <div style={{ position: 'relative', width: '50px' }}>
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    bottom: 0,
+                    left: '50%',
+                    width: '2px',
+                    backgroundColor: 'gray',
+                    transform: 'translateX(-50%)',
+                  }}
+                />
+                  {selectedConcept.evolution.map((eraData, index) => (
+                    <div
+                      key={eraData.era}
+                      style={{
+                        position: 'relative',
+                        marginBottom: index === selectedConcept.evolution.length - 1 ? '0' : '40px',
+                      }}
+                    >
+                      <div
+                        style={{
+                          position: 'absolute',
+                          top: '50%',
+                          left: '50%',
+                          transform: 'translate(-50%, -50%)',
+                          width: '15px',
+                          height: '15px',
+                          borderRadius: '50%',
+                          backgroundColor: eraData.color,
+                          zIndex: 1,
+                        }}
+                      />
+                    </div>
+                  ))}
                 </div>
-                <p className="text-lg mb-1">{era.meaning}</p>
-                <p className="text-sm text-gray-400">Key: {era.authors.join(", ")}</p>
-              </div>
-            </div>
-          ))}
+
+                  {/* Era Data */}
+                  <div style={{marginLeft: '30px'}}>
+                    {selectedConcept.evolution.map((eraData) => (
+                      <div
+                        key={eraData.era}
+                        style={{
+                          marginBottom: '20px',
+                          border: `1px solid ${eraData.color}`,
+                          padding: '15px',
+                          borderRadius: '8px',
+                        }}
+                      >
+                        <h3 style={{ color: eraData.color, marginBottom: '5px' }}>
+                          {eraData.era}
+                        </h3>
+                        <p><strong>Meaning:</strong> {eraData.meaning}</p>
+                        <p>
+                          <strong>Key Authors:</strong> {eraData.keyAuthors.join(', ')}
+                        </p>
+                        <p><strong>Confidence:</strong> {eraData.confidence}%</p>
+                        <p>
+                          <strong>Example Passages:</strong>
+                          <ul>
+                            {eraData.examplePassages.map((passage, index) => (
+                              <li key={index}>{passage}</li>
+                            ))}
+                          </ul>
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+            </>
+          ) : (
+            <p>Select a concept to view its evolution.</p>
+          )}
         </div>
-      </main>
+      </div>
     </div>
   );
-}
+};
+
+export default ChronosPage;
