@@ -2,205 +2,51 @@
 
 import { useState } from 'react'
 
-const TRANSLATIONS = {
-  "veni vidi vici": {
-    translation: "I came, I saw, I conquered",
-    language: "Latin",
-    breakdown: [
-      { word: "veni", meaning: "I came" },
-      { word: "vidi", meaning: "I saw" },
-      { word: "vici", meaning: "I conquered" }
-    ]
-  },
-  "carpe diem": {
-    translation: "Seize the day",
-    language: "Latin",
-    breakdown: [
-      { word: "carpe", meaning: "seize" },
-      { word: "diem", meaning: "day" }
-    ]
-  },
-  "alea iacta est": {
-    translation: "The die is cast",
-    language: "Latin",
-    breakdown: [
-      { word: "alea", meaning: "die/dice" },
-      { word: "iacta", meaning: "cast" },
-      { word: "est", meaning: "is" }
-    ]
-  },
-  "cogito ergo sum": {
-    translation: "I think therefore I am",
-    language: "Latin",
-    breakdown: [
-      { word: "cogito", meaning: "I think" },
-      { word: "ergo", meaning: "therefore" },
-      { word: "sum", meaning: "I am" }
-    ]
-  },
-  "memento mori": {
-    translation: "Remember you must die",
-    language: "Latin",
-    breakdown: [
-      { word: "memento", meaning: "remember" },
-      { word: "mori", meaning: "to die" }
-    ]
-  },
-  "γνῶθι σεαυτόν": {
-    translation: "Know thyself",
-    language: "Greek",
-    breakdown: [
-      { word: "γνῶθι", meaning: "know" },
-      { word: "σεαυτόν", meaning: "thyself" }
-    ]
-  },
-  "εὖ πράττειν": {
-    translation: "To fare well",
-    language: "Greek",
-    breakdown: [
-      { word: "εὖ", meaning: "well" },
-      { word: "πράττειν", meaning: "to do/fare" }
-    ]
-  },
-  "καὶ σὺ τέκνον": {
-    translation: "And you, my child",
-    language: "Greek",
-    breakdown: [
-      { word: "καὶ", meaning: "and" },
-      { word: "σὺ", meaning: "you" },
-      { word: "τέκνον", meaning: "child" }
-    ]
-  },
-  "tempus fugit": {
-    translation: "Time flies",
-    language: "Latin",
-    breakdown: [
-      { word: "tempus", meaning: "time" },
-      { word: "fugit", meaning: "flies" }
-    ]
-  },
-  "e pluribus unum": {
-    translation: "Out of many, one",
-    language: "Latin",
-    breakdown: [
-      { word: "e", meaning: "out of" },
-      { word: "pluribus", meaning: "many" },
-      { word: "unum", meaning: "one" }
-    ]
-  }
-}
-
-const WORDS = {
-  // Latin words
-  "amor": "love",
-  "aqua": "water",
-  "vita": "life",
-  "mors": "death",
-  "homo": "man/human",
-  "deus": "god",
-  "rex": "king",
-  "pax": "peace",
-  "bellum": "war",
-  "terra": "earth/land",
-  "caelum": "sky/heaven",
-  "sol": "sun",
-  "luna": "moon",
-  "ignis": "fire",
-  "mare": "sea",
-  // Greek words
-  "θεός": "god",
-  "ἄνθρωπος": "human",
-  "λόγος": "word/reason",
-  "φιλία": "friendship",
-  "σοφία": "wisdom",
-  "καλός": "beautiful/good",
-  "ἀγαθός": "good",
-  "κακός": "bad/evil",
-  "μέγας": "great/large",
-  "μικρός": "small",
-  "νῦν": "now",
-  "τότε": "then",
-  "ἐγώ": "I",
-  "σύ": "you",
-  "οὗτος": "this"
-}
+const PHRASES: Record<string, {translation: string, words: {word: string, meaning: string}[]}> = {
+  "μῆνιν ἄειδε θεὰ": {translation: "Sing, goddess, of the wrath", words: [{word:"μῆνιν",meaning:"wrath"},{word:"ἄειδε",meaning:"sing"},{word:"θεὰ",meaning:"goddess"}]},
+  "arma virumque cano": {translation: "I sing of arms and the man", words: [{word:"arma",meaning:"arms"},{word:"virum",meaning:"man"},{word:"cano",meaning:"I sing"}]},
+  "carpe diem": {translation: "Seize the day", words: [{word:"carpe",meaning:"seize"},{word:"diem",meaning:"day"}]},
+  "veni vidi vici": {translation: "I came, I saw, I conquered", words: [{word:"veni",meaning:"I came"},{word:"vidi",meaning:"I saw"},{word:"vici",meaning:"I conquered"}]},
+  "cogito ergo sum": {translation: "I think, therefore I am", words: [{word:"cogito",meaning:"I think"},{word:"ergo",meaning:"therefore"},{word:"sum",meaning:"I am"}]},
+  "γνῶθι σεαυτόν": {translation: "Know thyself", words: [{word:"γνῶθι",meaning:"know"},{word:"σεαυτόν",meaning:"thyself"}]},
+  "memento mori": {translation: "Remember you will die", words: [{word:"memento",meaning:"remember"},{word:"mori",meaning:"to die"}]},
+};
 
 export default function TranslatePage() {
   const [input, setInput] = useState('')
-  const [result, setResult] = useState(null)
-  const [breakdown, setBreakdown] = useState([])
+  const [result, setResult] = useState<{translation: string, words: {word: string, meaning: string}[]} | null>(null)
+  const [error, setError] = useState('')
 
   const handleTranslate = () => {
-    const cleanInput = input.trim().toLowerCase()
+    const trimmedInput = input.toLowerCase().trim()
+    const match = PHRASES[trimmedInput]
     
-    // Check for exact phrase match
-    const exactMatch = TRANSLATIONS[cleanInput]
-    if (exactMatch) {
-      setResult({
-        translation: exactMatch.translation,
-        language: exactMatch.language,
-        type: 'phrase'
-      })
-      setBreakdown(exactMatch.breakdown)
-      return
-    }
-
-    // Word-by-word translation
-    const words = cleanInput.split(/\s+/)
-    const wordBreakdown = words.map(word => {
-      const cleanWord = word.replace(/[.,;:!?]/g, '')
-      const translation = WORDS[cleanWord]
-      return {
-        word: cleanWord,
-        meaning: translation || '(unknown)'
-      }
-    })
-
-    const hasTranslations = wordBreakdown.some(w => w.meaning !== '(unknown)')
-    
-    if (hasTranslations) {
-      setResult({
-        translation: wordBreakdown.map(w => w.meaning).join(' '),
-        language: 'Mixed',
-        type: 'words'
-      })
-      setBreakdown(wordBreakdown)
+    if (match) {
+      setResult(match)
+      setError('')
     } else {
-      setResult({
-        translation: 'Translation not found',
-        language: 'Unknown',
-        type: 'none'
-      })
-      setBreakdown([])
+      setResult(null)
+      setError('Translation not found')
     }
   }
 
-  const handleExampleClick = (phrase) => {
+  const handleExample = (phrase: string) => {
     setInput(phrase)
     setResult(null)
-    setBreakdown([])
+    setError('')
   }
 
-  const getLanguageColor = (lang) => {
-    if (lang === 'Greek') return '#3B82F6'
-    if (lang === 'Latin') return '#DC2626'
-    return '#F5F4F2'
-  }
-
-  const getLanguageIcon = (lang) => {
-    if (lang === 'Greek') return 'Α'
-    if (lang === 'Latin') return 'L'
-    return '?'
-  }
+  const isGreek = (text: string) => /[\u0370-\u03FF]/.test(text)
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#0D0D0F', color: '#F5F4F2' }}>
-      <div className="max-w-4xl mx-auto p-6">
-        <div className="text-center mb-8">
+      <div className="container mx-auto px-6 py-8">
+        {/* Header */}
+        <div className="mb-8">
           <h1 className="text-4xl font-bold mb-4" style={{ color: '#C9A227' }}>
-            LOGOS Translation
+            Classical Translation Tool
           </h1>
-          <p className="text-lg opacity-90">
+          <p className="text-xl opacity-80">
             Translate ancient Greek and Latin phrases
           </p>
         </div>
@@ -213,22 +59,19 @@ export default function TranslatePage() {
           <textarea
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            className="w-full h-32 p-4 rounded-lg border-2 text-lg"
-            style={{
-              backgroundColor: '#1A1A1C',
-              borderColor: '#333',
-              color: '#F5F4F2'
+            className="w-full h-32 p-4 rounded-lg text-lg font-mono resize-none focus:outline-none focus:ring-2"
+            style={{ 
+              backgroundColor: '#1E1E24', 
+              color: '#F5F4F2',
+              focusRingColor: '#C9A227'
             }}
-            placeholder="Type your Greek or Latin text here..."
+            placeholder="Type or paste your classical text here..."
           />
+          
           <button
             onClick={handleTranslate}
-            disabled={!input.trim()}
-            className="mt-4 px-8 py-3 rounded-lg font-semibold text-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105"
-            style={{
-              backgroundColor: '#C9A227',
-              color: '#0D0D0F'
-            }}
+            className="mt-4 px-8 py-3 rounded-lg font-semibold text-lg transition-all hover:opacity-90"
+            style={{ backgroundColor: '#C9A227', color: '#0D0D0F' }}
           >
             Translate
           </button>
@@ -237,100 +80,113 @@ export default function TranslatePage() {
         {/* Example Phrases */}
         <div className="mb-8">
           <h2 className="text-2xl font-bold mb-4" style={{ color: '#C9A227' }}>
-            Try these examples:
+            Try These Examples:
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            {Object.keys(TRANSLATIONS).map((phrase, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {Object.keys(PHRASES).map((phrase) => (
               <button
-                key={index}
-                onClick={() => handleExampleClick(phrase)}
-                className="p-3 rounded-lg border-2 text-left transition-all duration-200 hover:scale-105"
-                style={{
-                  backgroundColor: '#1A1A1C',
-                  borderColor: '#333',
-                  color: getLanguageColor(TRANSLATIONS[phrase].language)
+                key={phrase}
+                onClick={() => handleExample(phrase)}
+                className="p-4 rounded-lg text-left transition-all hover:opacity-80 border"
+                style={{ 
+                  backgroundColor: '#1E1E24',
+                  borderColor: isGreek(phrase) ? '#3B82F6' : '#DC2626'
                 }}
               >
-                <div className="flex items-center gap-2">
-                  <span
-                    className="w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold"
-                    style={{
-                      backgroundColor: getLanguageColor(TRANSLATIONS[phrase].language),
-                      color: '#0D0D0F'
+                <div className="flex items-center gap-2 mb-2">
+                  <span 
+                    className="px-2 py-1 rounded text-sm font-bold"
+                    style={{ 
+                      backgroundColor: isGreek(phrase) ? '#3B82F6' : '#DC2626',
+                      color: '#F5F4F2'
                     }}
                   >
-                    {getLanguageIcon(TRANSLATIONS[phrase].language)}
+                    {isGreek(phrase) ? 'Α' : 'L'}
                   </span>
-                  <span className="font-medium">{phrase}</span>
                 </div>
+                <div className="font-mono text-lg mb-2">{phrase}</div>
+                <div className="text-sm opacity-70">{PHRASES[phrase].translation}</div>
               </button>
             ))}
           </div>
         </div>
 
-        {/* Translation Result */}
-        {result && (
+        {/* Results Section */}
+        {(result || error) && (
           <div className="mb-8">
-            <div 
-              className="p-6 rounded-lg border-2"
-              style={{
-                backgroundColor: '#1A1A1C',
-                borderColor: '#333'
-              }}
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <span
-                  className="w-8 h-8 rounded-full flex items-center justify-center font-bold"
-                  style={{
-                    backgroundColor: getLanguageColor(result.language),
-                    color: '#0D0D0F'
-                  }}
+            <h2 className="text-2xl font-bold mb-4" style={{ color: '#C9A227' }}>
+              Translation Result:
+            </h2>
+            
+            {error && (
+              <div 
+                className="p-6 rounded-lg border-l-4"
+                style={{ 
+                  backgroundColor: '#1E1E24',
+                  borderLeftColor: '#DC2626'
+                }}
+              >
+                <p className="text-lg" style={{ color: '#DC2626' }}>{error}</p>
+              </div>
+            )}
+
+            {result && (
+              <div>
+                {/* Translation */}
+                <div 
+                  className="p-6 rounded-lg mb-6"
+                  style={{ backgroundColor: '#1E1E24' }}
                 >
-                  {getLanguageIcon(result.language)}
-                </span>
-                <span className="text-lg font-semibold">{result.language}</span>
+                  <h3 className="text-lg font-semibold mb-2 opacity-80">Translation:</h3>
+                  <p className="text-2xl font-serif italic" style={{ color: '#C9A227' }}>
+                    "{result.translation}"
+                  </p>
+                </div>
+
+                {/* Word Breakdown */}
+                <div>
+                  <h3 className="text-xl font-bold mb-4">Word-by-Word Analysis:</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {result.words.map((word, index) => (
+                      <div
+                        key={index}
+                        className="p-4 rounded-lg border"
+                        style={{ 
+                          backgroundColor: '#1E1E24',
+                          borderColor: '#C9A227'
+                        }}
+                      >
+                        <div className="font-mono text-lg font-bold mb-2" style={{ color: '#C9A227' }}>
+                          {word.word}
+                        </div>
+                        <div className="text-base opacity-90">
+                          {word.meaning}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
-              
-              <div className="text-2xl font-bold mb-2" style={{ color: '#C9A227' }}>
-                {result.translation}
-              </div>
-              
-              <div className="text-sm opacity-70">
-                {result.type === 'phrase' ? 'Complete phrase translation' : 
-                 result.type === 'words' ? 'Word-by-word translation' : 
-                 'No translation available'}
-              </div>
-            </div>
+            )}
           </div>
         )}
 
-        {/* Word Breakdown */}
-        {breakdown.length > 0 && (
-          <div>
-            <h3 className="text-xl font-bold mb-4" style={{ color: '#C9A227' }}>
-              Word Breakdown:
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-              {breakdown.map((item, index) => (
-                <div
-                  key={index}
-                  className="p-4 rounded-lg border-2"
-                  style={{
-                    backgroundColor: '#1A1A1C',
-                    borderColor: '#333'
-                  }}
-                >
-                  <div className="font-bold text-lg mb-1" style={{ color: '#C9A227' }}>
-                    {item.word}
-                  </div>
-                  <div className="opacity-90">
-                    {item.meaning}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+        {/* Instructions */}
+        <div 
+          className="p-6 rounded-lg"
+          style={{ backgroundColor: '#1E1E24' }}
+        >
+          <h3 className="text-lg font-semibold mb-3" style={{ color: '#C9A227' }}>
+            How to Use:
+          </h3>
+          <ul className="space-y-2 opacity-80">
+            <li>• Type or paste classical Greek or Latin text in the input field</li>
+            <li>• Click "Translate" to see the English translation</li>
+            <li>• Use the example buttons to quickly try famous phrases</li>
+            <li>• View word-by-word breakdowns to understand grammar</li>
+            <li>• Greek phrases are marked with Α, Latin phrases with L</li>
+          </ul>
+        </div>
       </div>
     </div>
   )

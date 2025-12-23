@@ -1,177 +1,56 @@
 'use client'
 
-import React, { useState } from 'react'
+import { useState } from 'react';
 
 const DISCOVERIES = [
-  {
-    id: 1,
-    title: "Homer's Wine-Dark Sea in Early Christian Hymnography",
-    type: "Pattern",
-    confidence: 87,
-    novelty: 92,
-    description: "AI detected systematic adaptation of Homeric maritime imagery in 4th-century Christian hymns, particularly the transformation of 'wine-dark sea' into metaphors for spiritual depth and divine mystery.",
-    evidence: [
-      "οἶνοψ πόντος appears in 23 Homeric contexts",
-      "Parallel βαθύς μυστήριον in Ephrem's hymns",
-      "Semantic bridging through 'depth' metaphor",
-      "Geographic clustering in Cappadocian texts"
-    ],
-    language: "Greek",
-    era: "lateAntique"
-  },
-  {
-    id: 2,
-    title: "Stoic Technical Vocabulary in Pauline Epistles",
-    type: "Influence",
-    confidence: 94,
-    novelty: 78,
-    description: "Systematic borrowing of Stoic philosophical terminology in Paul's letters, particularly in discussions of virtue, emotion, and cosmic order, suggesting deeper philosophical engagement than previously recognized.",
-    evidence: [
-      "προκοπή (moral progress) in Phil 1:12",
-      "αὐτάρκεια (self-sufficiency) recontextualized",
-      "15 technical terms with Stoic parallels",
-      "Conceptual frameworks match Epictetus"
-    ],
-    language: "Greek",
-    era: "imperial"
-  },
-  {
-    id: 3,
-    title: "Virgil's Systematic Debt to Ennian Prosody",
-    type: "Pattern",
-    confidence: 91,
-    novelty: 85,
-    description: "Machine analysis reveals previously undetected patterns of Ennian influence on Virgilian hexameter, including specific rhythmic signatures and caesura preferences inherited from the Annales.",
-    evidence: [
-      "67% match in 4th-foot caesura patterns",
-      "Ennian spondaic rhythm clusters",
-      "Alliterative sequences mirror Annales",
-      "Statistical significance p<0.001"
-    ],
-    language: "Latin",
-    era: "imperial"
-  },
-  {
-    id: 4,
-    title: "θεραπεία: From 'Service' to 'Healing' - A Semantic Reversal",
-    type: "Semantic",
-    confidence: 96,
-    novelty: 89,
-    description: "Traced the complete semantic evolution of θεραπεία from 'religious service/attendance' in archaic texts to 'medical healing' in Hellenistic period, revealing key transitional contexts in classical drama.",
-    evidence: [
-      "Archaic: 89% religious contexts (Homer, Hesiod)",
-      "Classical: 34% medical usage emerges (Sophocles)",
-      "Hellenistic: 78% medical (Hippocratic corpus)",
-      "Key pivot in Euripides' Alcestis 1087"
-    ],
-    language: "Greek",
-    era: "classical"
-  },
-  {
-    id: 5,
-    title: "Platonic Forms Theory in Early Islamic Falsafa",
-    type: "Influence",
-    confidence: 88,
-    novelty: 94,
-    description: "AI translation analysis reveals direct textual parallels between Republic VII and early Arabic philosophical texts, suggesting more extensive Greek manuscript availability than historical records indicate.",
-    evidence: [
-      "Cave allegory parallels in al-Farabi's Perfect State",
-      "Technical terminology: 'idea' → 'mithāl'",
-      "Structural argument mapping 85% congruent",
-      "Previously unknown translation pathway"
-    ],
-    language: "Greek",
-    era: "classical"
-  },
-  {
-    id: 6,
-    title: "Hidden Sappho Fragments in Papyrus Marginalia",
-    type: "Discovery",
-    confidence: 82,
-    novelty: 98,
-    description: "Computer vision analysis of papyrus margins identified 12 previously overlooked lines with Sapphic meter and vocabulary patterns, hidden in the margins of P.Oxy 1787 housing Alcaeus fragments.",
-    evidence: [
-      "Aeolic meter signature matches known Sappho",
-      "4 hapax legomena consistent with dialect",
-      "Paleographic analysis confirms 3rd century",
-      "Thematic coherence with fr. 94 (farewell poems)"
-    ],
-    language: "Greek",
-    era: "archaic"
-  }
-]
+  {id:1, title:"Homer's Wine-Dark Sea in Christian Hymns", type:"Pattern", confidence:87, novelty:92, description:"οἶνοψ πόντος appears in 4th century Christian hymns.", evidence:["Homer Od. 5.349","Ephrem Hymn 3.4"]},
+  {id:2, title:"Stoic Vocabulary in Paul's Letters", type:"Influence", confidence:94, novelty:76, description:"23 technical Stoic terms cluster in Romans 7-8.", evidence:["Rom 7:23","Epictetus 1.1"]},
+  {id:3, title:"Virgil's Hidden Ennius Debt", type:"Intertextuality", confidence:82, novelty:88, description:"47 structural parallels between Aeneid and Annales.", evidence:["Aen. 6.847","Ennius fr. 500"]},
+  {id:4, title:"θεραπεία Semantic Reversal", type:"Semantic", confidence:91, novelty:85, description:"From 'service to gods' to 'medical treatment'.", evidence:["Hdt. 2.37","Matt 4:23"]},
+];
 
-const DISCOVERY_TYPES = ['All', 'Pattern', 'Influence', 'Semantic', 'Discovery']
+const TYPE_COLORS: Record<string,string> = {Pattern:"#3B82F6", Influence:"#10B981", Intertextuality:"#F59E0B", Semantic:"#EC4899"};
 
-const TYPE_COLORS = {
-  Pattern: '#3B82F6',
-  Influence: '#DC2626', 
-  Semantic: '#F59E0B',
-  Discovery: '#7C3AED'
-}
+export default function Discovery() {
+  const [filter, setFilter] = useState('all');
 
-const ERA_COLORS = {
-  archaic: '#D97706',
-  classical: '#F59E0B', 
-  imperial: '#DC2626',
-  lateAntique: '#7C3AED'
-}
-
-const LANGUAGE_COLORS = {
-  Greek: '#3B82F6',
-  Latin: '#DC2626'
-}
-
-function DiscoveryEngine() {
-  const [selectedType, setSelectedType] = useState('All')
-  
-  const filteredDiscoveries = selectedType === 'All' 
+  const filteredDiscoveries = filter === 'all' 
     ? DISCOVERIES 
-    : DISCOVERIES.filter(d => d.type === selectedType)
+    : DISCOVERIES.filter(d => d.type === filter);
 
-  const MeterBar = ({ value, label, color }: { value: number; label: string; color: string }) => (
-    <div className="mb-2">
-      <div className="flex justify-between text-xs mb-1">
-        <span className="text-[#F5F4F2]">{label}</span>
-        <span className="text-[#F5F4F2]">{value}%</span>
-      </div>
-      <div className="w-full bg-gray-700 rounded-full h-2">
-        <div 
-          className="h-2 rounded-full transition-all duration-300"
-          style={{ 
-            width: `${value}%`,
-            backgroundColor: color
-          }}
-        />
-      </div>
-    </div>
-  )
+  const filterTypes = ['all', 'Pattern', 'Influence', 'Intertextuality', 'Semantic'];
 
   return (
-    <div className="min-h-screen bg-[#0D0D0F] text-[#F5F4F2]">
-      <div className="max-w-7xl mx-auto px-6 py-8">
+    <div style={{ backgroundColor: '#0D0D0F', color: '#F5F4F2', minHeight: '100vh', padding: '2rem' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-[#C9A227] mb-4">
-            Discovery Engine
+        <div style={{ marginBottom: '3rem', textAlign: 'center' }}>
+          <h1 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '1rem', color: '#C9A227' }}>
+            DISCOVERIES
           </h1>
-          <p className="text-xl text-[#F5F4F2] max-w-3xl mx-auto">
-            AI-powered insights revealing hidden patterns, influences, and connections across classical antiquity
+          <p style={{ fontSize: '1.25rem', color: '#F5F4F2', opacity: 0.8 }}>
+            AI-powered insights across classical antiquity
           </p>
         </div>
 
         {/* Filter Buttons */}
-        <div className="flex justify-center mb-8">
-          <div className="flex gap-2 bg-gray-800 p-1 rounded-lg">
-            {DISCOVERY_TYPES.map(type => (
+        <div style={{ marginBottom: '2rem' }}>
+          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+            {filterTypes.map(type => (
               <button
                 key={type}
-                onClick={() => setSelectedType(type)}
-                className={`px-4 py-2 rounded-md transition-all ${
-                  selectedType === type
-                    ? 'bg-[#C9A227] text-[#0D0D0F] font-semibold'
-                    : 'text-[#F5F4F2] hover:bg-gray-700'
-                }`}
+                onClick={() => setFilter(type)}
+                style={{
+                  padding: '0.75rem 1.5rem',
+                  backgroundColor: filter === type ? '#C9A227' : '#1E1E24',
+                  color: filter === type ? '#0D0D0F' : '#F5F4F2',
+                  border: 'none',
+                  borderRadius: '0.5rem',
+                  fontWeight: 'bold',
+                  cursor: 'pointer',
+                  textTransform: 'capitalize',
+                  transition: 'all 0.2s'
+                }}
               >
                 {type}
               </button>
@@ -180,91 +59,137 @@ function DiscoveryEngine() {
         </div>
 
         {/* Results Count */}
-        <div className="text-center mb-6">
-          <span className="text-[#C9A227] font-semibold">
-            {filteredDiscoveries.length} discoveries found
-          </span>
+        <div style={{ marginBottom: '2rem', textAlign: 'center' }}>
+          <p style={{ color: '#F5F4F2', opacity: 0.7 }}>
+            Showing {filteredDiscoveries.length} discovery{filteredDiscoveries.length !== 1 ? 'ies' : ''}
+            {filter !== 'all' && ` for ${filter}`}
+          </p>
         </div>
 
-        {/* Discovery Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Discovery Cards */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '2rem' }}>
           {filteredDiscoveries.map(discovery => (
-            <div key={discovery.id} className="bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-[#C9A227] transition-colors">
-              {/* Header */}
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex-1">
-                  <h3 className="text-xl font-bold text-[#F5F4F2] mb-2">
-                    {discovery.title}
-                  </h3>
-                  <div className="flex items-center gap-3 flex-wrap">
-                    <span 
-                      className="px-3 py-1 rounded-full text-sm font-semibold text-white"
-                      style={{ backgroundColor: TYPE_COLORS[discovery.type as keyof typeof TYPE_COLORS] }}
-                    >
-                      {discovery.type}
-                    </span>
-                    <span 
-                      className="px-2 py-1 rounded text-xs font-bold text-white"
-                      style={{ backgroundColor: LANGUAGE_COLORS[discovery.language as keyof typeof LANGUAGE_COLORS] }}
-                    >
-                      {discovery.language === 'Greek' ? 'Α' : 'L'}
-                    </span>
-                    <span 
-                      className="px-2 py-1 rounded text-xs text-white"
-                      style={{ backgroundColor: ERA_COLORS[discovery.era as keyof typeof ERA_COLORS] }}
-                    >
-                      {discovery.era}
-                    </span>
+            <div
+              key={discovery.id}
+              style={{
+                backgroundColor: '#1E1E24',
+                borderRadius: '1rem',
+                padding: '2rem',
+                border: '1px solid #333',
+                transition: 'transform 0.2s',
+                cursor: 'pointer'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+              }}
+            >
+              {/* Type Badge */}
+              <div style={{ marginBottom: '1rem' }}>
+                <span
+                  style={{
+                    backgroundColor: TYPE_COLORS[discovery.type],
+                    color: '#FFF',
+                    padding: '0.25rem 0.75rem',
+                    borderRadius: '1rem',
+                    fontSize: '0.875rem',
+                    fontWeight: 'bold'
+                  }}
+                >
+                  {discovery.type}
+                </span>
+              </div>
+
+              {/* Title */}
+              <h3 style={{ 
+                fontSize: '1.5rem', 
+                fontWeight: 'bold', 
+                marginBottom: '1rem',
+                color: '#C9A227'
+              }}>
+                {discovery.title}
+              </h3>
+
+              {/* Description */}
+              <p style={{ 
+                color: '#F5F4F2', 
+                marginBottom: '1.5rem', 
+                lineHeight: '1.6',
+                opacity: 0.9
+              }}>
+                {discovery.description}
+              </p>
+
+              {/* Confidence & Novelty */}
+              <div style={{ 
+                display: 'flex', 
+                gap: '2rem', 
+                marginBottom: '1.5rem' 
+              }}>
+                <div>
+                  <div style={{ fontSize: '0.875rem', color: '#F5F4F2', opacity: 0.7, marginBottom: '0.25rem' }}>
+                    Confidence
+                  </div>
+                  <div style={{ 
+                    fontSize: '1.25rem', 
+                    fontWeight: 'bold', 
+                    color: discovery.confidence > 90 ? '#10B981' : discovery.confidence > 80 ? '#F59E0B' : '#DC2626'
+                  }}>
+                    {discovery.confidence}%
+                  </div>
+                </div>
+                <div>
+                  <div style={{ fontSize: '0.875rem', color: '#F5F4F2', opacity: 0.7, marginBottom: '0.25rem' }}>
+                    Novelty
+                  </div>
+                  <div style={{ 
+                    fontSize: '1.25rem', 
+                    fontWeight: 'bold', 
+                    color: discovery.novelty > 90 ? '#C9A227' : discovery.novelty > 80 ? '#3B82F6' : '#EC4899'
+                  }}>
+                    {discovery.novelty}%
                   </div>
                 </div>
               </div>
 
-              {/* Description */}
-              <p className="text-[#F5F4F2] mb-4 leading-relaxed">
-                {discovery.description}
-              </p>
-
-              {/* Confidence and Novelty Meters */}
-              <div className="mb-4">
-                <MeterBar 
-                  value={discovery.confidence} 
-                  label="Confidence" 
-                  color="#10B981" 
-                />
-                <MeterBar 
-                  value={discovery.novelty} 
-                  label="Novelty" 
-                  color="#C9A227" 
-                />
-              </div>
-
-              {/* Evidence */}
+              {/* Evidence Tags */}
               <div>
-                <h4 className="font-semibold text-[#C9A227] mb-2">Key Evidence:</h4>
-                <ul className="space-y-1">
-                  {discovery.evidence.map((item, index) => (
-                    <li key={index} className="text-sm text-[#F5F4F2] flex items-start">
-                      <span className="text-[#C9A227] mr-2">•</span>
-                      {item}
-                    </li>
+                <div style={{ fontSize: '0.875rem', color: '#F5F4F2', opacity: 0.7, marginBottom: '0.5rem' }}>
+                  Evidence
+                </div>
+                <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                  {discovery.evidence.map((evidence, idx) => (
+                    <span
+                      key={idx}
+                      style={{
+                        backgroundColor: '#0D0D0F',
+                        color: '#F5F4F2',
+                        padding: '0.25rem 0.75rem',
+                        borderRadius: '0.375rem',
+                        fontSize: '0.75rem',
+                        border: '1px solid #333'
+                      }}
+                    >
+                      {evidence}
+                    </span>
                   ))}
-                </ul>
+                </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* No Results */}
+        {/* Empty State */}
         {filteredDiscoveries.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-xl text-gray-400">
+          <div style={{ textAlign: 'center', padding: '4rem 0' }}>
+            <p style={{ color: '#F5F4F2', opacity: 0.6, fontSize: '1.25rem' }}>
               No discoveries found for the selected filter.
             </p>
           </div>
         )}
       </div>
     </div>
-  )
+  );
 }
-
-export default DiscoveryEngine

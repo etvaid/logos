@@ -1,287 +1,252 @@
 'use client'
 
-import { Suspense, useState, useMemo } from 'react'
+import { useState, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 
 const PASSAGES = [
-  {
-    id: 1,
-    author: "Homer",
-    work: "Iliad",
-    text: "μῆνιν ἄειδε θεὰ Πηληϊάδεω Ἀχιλῆος οὐλομένην",
-    translation: "Sing, goddess, of the rage of Achilles, son of Peleus, that destructive rage",
-    language: "Greek",
-    era: "archaic"
-  },
-  {
-    id: 2,
-    author: "Virgil",
-    work: "Aeneid",
-    text: "Arma virumque cano, Troiae qui primus ab oris",
-    translation: "I sing of arms and the man who first came from the shores of Troy",
-    language: "Latin",
-    era: "classical"
-  },
-  {
-    id: 3,
-    author: "Plato",
-    work: "Republic",
-    text: "οὐκοῦν δικαιοσύνη μὲν ἦν τὸ τὰ αὑτοῦ πράττειν καὶ μὴ πολυπραγμονεῖν",
-    translation: "Justice, then, is doing one's own work and not meddling with what isn't one's own",
-    language: "Greek",
-    era: "classical"
-  },
-  {
-    id: 4,
-    author: "Cicero",
-    work: "De Officiis",
-    text: "Sed de genere belli gerendi posteri viderint; mihi autem non dubium est",
-    translation: "But posterity will judge the manner of waging war; for me, however, there is no doubt",
-    language: "Latin",
-    era: "classical"
-  },
-  {
-    id: 5,
-    author: "Sappho",
-    work: "Fragment 31",
-    text: "φαίνεταί μοι κῆνος ἴσος θέοισιν ἔμμεν ὤνηρ",
-    translation: "That man seems to me equal to the gods",
-    language: "Greek",
-    era: "archaic"
-  },
-  {
-    id: 6,
-    author: "Ovid",
-    work: "Metamorphoses",
-    text: "In nova fert animus mutatas dicere formas corpora",
-    translation: "My mind leads me to speak of forms changed into new bodies",
-    language: "Latin",
-    era: "imperial"
-  },
-  {
-    id: 7,
-    author: "Herodotus",
-    work: "Histories",
-    text: "Ἡροδότου Ἁλικαρνησσέος ἱστορίης ἀπόδεξις ἥδε",
-    translation: "This is the display of the inquiry of Herodotus of Halicarnassus",
-    language: "Greek",
-    era: "classical"
-  },
-  {
-    id: 8,
-    author: "Tacitus",
-    work: "Annals",
-    text: "Urbem Romam a principio reges habuere; libertatem et consulatum L. Brutus instituit",
-    translation: "Kings held the city of Rome from the beginning; L. Brutus established freedom and the consulship",
-    language: "Latin",
-    era: "imperial"
-  },
-  {
-    id: 9,
-    author: "Sophocles",
-    work: "Oedipus Rex",
-    text: "ὦ τέκνα Κάδμου τῆς νέας τροφίματα",
-    translation: "O children, nurslings of ancient Cadmus",
-    language: "Greek",
-    era: "classical"
-  },
-  {
-    id: 10,
-    author: "Augustine",
-    work: "Confessions",
-    text: "Inquietum est cor nostrum donec requiescat in te",
-    translation: "Our heart is restless until it rests in you",
-    language: "Latin",
-    era: "lateAntique"
-  },
-  {
-    id: 11,
-    author: "Hesiod",
-    work: "Works and Days",
-    text: "Μοῦσαι Πιερίηθεν ἀοιδῇσι κλείουσαι",
-    translation: "Muses of Pieria who give glory through song",
-    language: "Greek",
-    era: "archaic"
-  },
-  {
-    id: 12,
-    author: "Seneca",
-    work: "Epistles",
-    text: "Omnis vita servitium est",
-    translation: "All life is slavery",
-    language: "Latin",
-    era: "imperial"
-  },
-  {
-    id: 13,
-    author: "Pindar",
-    work: "Olympian Odes",
-    text: "ἄριστον μὲν ὕδωρ, ὁ δὲ χρυσὸς αἰθόμενον πῦρ",
-    translation: "Water is best, and gold like blazing fire",
-    language: "Greek",
-    era: "archaic"
-  },
-  {
-    id: 14,
-    author: "Livy",
-    work: "Ab Urbe Condita",
-    text: "Facturusne operae pretium sim si a primordio urbis res populi Romani perscripserim",
-    translation: "Whether I shall accomplish anything worthy of the labor, if I record completely the deeds of the Roman people from the beginning of the city",
-    language: "Latin",
-    era: "imperial"
-  },
-  {
-    id: 15,
-    author: "John Chrysostom",
-    work: "Homilies",
-    text: "Gloria in excelsis Deo et in terra pax hominibus bonae voluntatis",
-    translation: "Glory to God in the highest, and on earth peace to men of good will",
-    language: "Latin",
-    era: "lateAntique"
-  }
-]
+  {id:1, author:"Homer", work:"Iliad", text:"Μῆνιν ἄειδε θεὰ Πηληϊάδεω Ἀχιλῆος", translation:"Sing, O goddess, the anger of Achilles", era:"archaic", language:"greek"},
+  {id:2, author:"Homer", work:"Odyssey", text:"Ἄνδρα μοι ἔννεπε, μοῦσα, πολύτροπον", translation:"Tell me, O muse, of that ingenious hero", era:"archaic", language:"greek"},
+  {id:3, author:"Plato", work:"Republic", text:"Δικαιοσύνη ἐστίν ἀρετή", translation:"Justice is a virtue", era:"classical", language:"greek"},
+  {id:4, author:"Plato", work:"Apology", text:"ἓν οἶδα ὅτι οὐδὲν οἶδα", translation:"I know that I know nothing", era:"classical", language:"greek"},
+  {id:5, author:"Aristotle", work:"Ethics", text:"Πᾶσα τέχνη καὶ πᾶσα μέθοδος", translation:"Every art and every inquiry", era:"classical", language:"greek"},
+  {id:6, author:"Virgil", work:"Aeneid", text:"Arma virumque cano", translation:"I sing of arms and the man", era:"imperial", language:"latin"},
+  {id:7, author:"Cicero", work:"In Catilinam", text:"Quo usque tandem abutere patientia nostra?", translation:"How long will you abuse our patience?", era:"imperial", language:"latin"},
+  {id:8, author:"Seneca", work:"Letters", text:"Vindica te tibi", translation:"Claim yourself for yourself", era:"imperial", language:"latin"},
+  {id:9, author:"Augustine", work:"Confessions", text:"Magnus es, Domine", translation:"Great are you, O Lord", era:"lateAntique", language:"latin"},
+  {id:10, author:"Ovid", work:"Metamorphoses", text:"In nova fert animus", translation:"My mind inclines to tell of forms changed", era:"imperial", language:"latin"},
+];
 
 const ERA_COLORS = {
   archaic: '#D97706',
-  classical: '#F59E0B', 
+  classical: '#F59E0B',
+  hellenistic: '#3B82F6',
   imperial: '#DC2626',
   lateAntique: '#7C3AED'
 }
 
-function SearchContent() {
+function SearchPageContent() {
   const searchParams = useSearchParams()
-  const [searchTerm, setSearchTerm] = useState(searchParams?.get('q') || '')
-  const [languageFilter, setLanguageFilter] = useState('All')
+  const [query, setQuery] = useState(searchParams.get('q') || '')
+  const [languageFilter, setLanguageFilter] = useState('')
+  const [results, setResults] = useState(PASSAGES)
 
-  const filteredPassages = useMemo(() => {
-    return PASSAGES.filter(passage => {
-      const matchesSearch = !searchTerm || 
-        passage.author.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        passage.work.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        passage.text.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        passage.translation.toLowerCase().includes(searchTerm.toLowerCase())
-      
-      const matchesLanguage = languageFilter === 'All' || passage.language === languageFilter
-      
-      return matchesSearch && matchesLanguage
-    })
-  }, [searchTerm, languageFilter])
+  const performSearch = () => {
+    let filtered = PASSAGES
 
-  const quickSearches = ['Homer', 'Virgil', 'Plato', 'Cicero', 'justice', 'glory']
+    // Filter by query
+    if (query.trim()) {
+      const searchTerm = query.toLowerCase()
+      filtered = filtered.filter(passage =>
+        passage.author.toLowerCase().includes(searchTerm) ||
+        passage.work.toLowerCase().includes(searchTerm) ||
+        passage.text.toLowerCase().includes(searchTerm) ||
+        passage.translation.toLowerCase().includes(searchTerm)
+      )
+    }
+
+    // Filter by language
+    if (languageFilter) {
+      filtered = filtered.filter(passage => passage.language === languageFilter)
+    }
+
+    setResults(filtered)
+  }
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      performSearch()
+    }
+  }
+
+  const handleQuickSearch = (searchTerm: string) => {
+    setQuery(searchTerm)
+    const searchLower = searchTerm.toLowerCase()
+    let filtered = PASSAGES.filter(passage =>
+      passage.author.toLowerCase().includes(searchLower) ||
+      passage.work.toLowerCase().includes(searchLower) ||
+      passage.text.toLowerCase().includes(searchLower) ||
+      passage.translation.toLowerCase().includes(searchLower)
+    )
+
+    if (languageFilter) {
+      filtered = filtered.filter(passage => passage.language === languageFilter)
+    }
+
+    setResults(filtered)
+  }
 
   return (
-    <div className="min-h-screen bg-[#0D0D0F] text-[#F5F4F2] p-6">
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen" style={{ backgroundColor: '#0D0D0F', color: '#F5F4F2' }}>
+      <div className="container mx-auto px-4 py-8">
         {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-4xl font-bold mb-2">
-            Search <span className="text-[#C9A227]">LOGOS</span>
+        <div className="text-center mb-8">
+          <h1 className="text-4xl font-bold mb-2" style={{ color: '#C9A227' }}>
+            LOGOS Search
           </h1>
-          <p className="text-lg opacity-80">Discover passages across classical antiquity</p>
+          <p className="text-lg opacity-90">
+            Search through classical texts and translations
+          </p>
         </div>
 
         {/* Search Controls */}
-        <div className="bg-black/20 p-6 rounded-lg mb-8 border border-gray-800">
-          <div className="flex flex-col md:flex-row gap-4 mb-4">
-            {/* Search Input */}
+        <div className="max-w-4xl mx-auto mb-8">
+          <div className="flex gap-4 mb-4">
             <div className="flex-1">
               <input
                 type="text"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                placeholder="Search authors, works, or text..."
-                className="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg text-[#F5F4F2] placeholder-gray-400 focus:border-[#C9A227] focus:outline-none"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                onKeyPress={handleKeyPress}
+                placeholder="Search authors, works, text, or translations..."
+                className="w-full px-4 py-3 rounded-lg border border-opacity-20"
+                style={{ 
+                  backgroundColor: '#1E1E24', 
+                  borderColor: '#C9A227',
+                  color: '#F5F4F2'
+                }}
               />
             </div>
+            <button
+              onClick={performSearch}
+              className="px-6 py-3 rounded-lg font-semibold transition-colors"
+              style={{ 
+                backgroundColor: '#C9A227', 
+                color: '#0D0D0F'
+              }}
+            >
+              Search
+            </button>
+          </div>
 
-            {/* Language Filter */}
+          {/* Language Filter */}
+          <div className="flex gap-4 items-center mb-6">
+            <label className="text-sm font-medium">Filter by Language:</label>
             <select
               value={languageFilter}
-              onChange={(e) => setLanguageFilter(e.target.value)}
-              className="p-3 bg-gray-900 border border-gray-700 rounded-lg text-[#F5F4F2] focus:border-[#C9A227] focus:outline-none"
+              onChange={(e) => {
+                setLanguageFilter(e.target.value)
+                // Auto-search when filter changes
+                setTimeout(performSearch, 0)
+              }}
+              className="px-3 py-2 rounded border border-opacity-20"
+              style={{ 
+                backgroundColor: '#1E1E24', 
+                borderColor: '#C9A227',
+                color: '#F5F4F2'
+              }}
             >
-              <option value="All">All Languages</option>
-              <option value="Greek">Greek</option>
-              <option value="Latin">Latin</option>
+              <option value="">All Languages</option>
+              <option value="greek">Greek</option>
+              <option value="latin">Latin</option>
             </select>
           </div>
 
           {/* Quick Search Buttons */}
           <div className="flex flex-wrap gap-2">
-            <span className="text-sm text-gray-400 mr-2">Quick searches:</span>
-            {quickSearches.map((term) => (
+            <span className="text-sm font-medium mr-2">Quick searches:</span>
+            {['Homer', 'Plato', 'virtue', 'Virgil', 'Augustine'].map((term) => (
               <button
                 key={term}
-                onClick={() => setSearchTerm(term)}
-                className="px-3 py-1 text-sm bg-[#C9A227]/20 hover:bg-[#C9A227]/30 border border-[#C9A227]/40 rounded-md transition-colors"
+                onClick={() => handleQuickSearch(term)}
+                className="px-3 py-1 rounded text-sm transition-colors border"
+                style={{ 
+                  borderColor: '#C9A227',
+                  color: '#C9A227'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#C9A227'
+                  e.currentTarget.style.color = '#0D0D0F'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'transparent'
+                  e.currentTarget.style.color = '#C9A227'
+                }}
               >
                 {term}
               </button>
             ))}
-            <button
-              onClick={() => { setSearchTerm(''); setLanguageFilter('All'); }}
-              className="px-3 py-1 text-sm bg-red-900/20 hover:bg-red-900/30 border border-red-500/40 rounded-md transition-colors"
-            >
-              Clear
-            </button>
           </div>
-        </div>
-
-        {/* Results Count */}
-        <div className="mb-6">
-          <p className="text-lg">
-            Found <span className="text-[#C9A227] font-semibold">{filteredPassages.length}</span> passages
-            {searchTerm && <span> for "{searchTerm}"</span>}
-          </p>
         </div>
 
         {/* Results */}
-        <div className="space-y-6">
-          {filteredPassages.map((passage) => (
-            <div
-              key={passage.id}
-              className="bg-black/30 border-l-4 border-gray-800 p-6 rounded-lg hover:bg-black/40 transition-colors"
-              style={{ borderLeftColor: ERA_COLORS[passage.era as keyof typeof ERA_COLORS] }}
-            >
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex items-center gap-3">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-2xl font-bold">
+              Search Results
+            </h2>
+            <div className="text-sm opacity-75">
+              {results.length} passage{results.length !== 1 ? 's' : ''} found
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            {results.map((passage) => (
+              <div
+                key={passage.id}
+                className="rounded-lg p-6 border-l-4"
+                style={{ 
+                  backgroundColor: '#1E1E24',
+                  borderLeftColor: ERA_COLORS[passage.era as keyof typeof ERA_COLORS]
+                }}
+              >
+                <div className="flex items-start justify-between mb-3">
+                  <div className="flex items-center gap-3">
+                    <div
+                      className="w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm"
+                      style={{ 
+                        backgroundColor: passage.language === 'greek' ? '#3B82F6' : '#DC2626'
+                      }}
+                    >
+                      {passage.language === 'greek' ? 'Α' : 'L'}
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-lg">
+                        {passage.author}
+                      </h3>
+                      <p className="text-sm opacity-75">
+                        {passage.work}
+                      </p>
+                    </div>
+                  </div>
                   <div
-                    className="w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm"
-                    style={{ backgroundColor: passage.language === 'Greek' ? '#3B82F6' : '#DC2626' }}
+                    className="px-2 py-1 rounded text-xs font-medium uppercase tracking-wide"
+                    style={{ 
+                      backgroundColor: ERA_COLORS[passage.era as keyof typeof ERA_COLORS] + '20',
+                      color: ERA_COLORS[passage.era as keyof typeof ERA_COLORS]
+                    }}
                   >
-                    {passage.language === 'Greek' ? 'Α' : 'L'}
+                    {passage.era}
+                  </div>
+                </div>
+
+                <div className="space-y-3">
+                  <div>
+                    <p className="text-lg font-medium mb-1" style={{ color: '#F5F4F2' }}>
+                      {passage.text}
+                    </p>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-[#C9A227]">{passage.author}</h3>
-                    <p className="text-gray-400">{passage.work}</p>
+                    <p className="italic opacity-90">
+                      "{passage.translation}"
+                    </p>
                   </div>
                 </div>
-                <div
-                  className="px-3 py-1 rounded-full text-xs font-medium text-white capitalize"
-                  style={{ backgroundColor: ERA_COLORS[passage.era as keyof typeof ERA_COLORS] }}
-                >
-                  {passage.era}
-                </div>
               </div>
+            ))}
 
-              <div className="space-y-3">
-                <div className="p-4 bg-gray-900/50 rounded-lg border border-gray-700">
-                  <p className="text-lg font-medium leading-relaxed">{passage.text}</p>
+            {results.length === 0 && (
+              <div className="text-center py-12">
+                <div className="text-6xl mb-4" style={{ color: '#C9A227' }}>
+                  📚
                 </div>
-                <div className="p-4 bg-gray-800/30 rounded-lg">
-                  <p className="text-gray-300 italic leading-relaxed">{passage.translation}</p>
-                </div>
+                <p className="text-xl mb-2">No passages found</p>
+                <p className="opacity-75">
+                  Try adjusting your search terms or filters
+                </p>
               </div>
-            </div>
-          ))}
-        </div>
-
-        {filteredPassages.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-xl text-gray-400 mb-4">No passages found</p>
-            <p className="text-gray-500">Try adjusting your search terms or filters</p>
+            )}
           </div>
-        )}
+        </div>
       </div>
     </div>
   )
@@ -289,15 +254,8 @@ function SearchContent() {
 
 export default function SearchPage() {
   return (
-    <Suspense fallback={
-      <div className="min-h-screen bg-[#0D0D0F] text-[#F5F4F2] flex items-center justify-center">
-        <div className="text-center">
-          <div className="w-8 h-8 border-2 border-[#C9A227] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p>Loading search...</p>
-        </div>
-      </div>
-    }>
-      <SearchContent />
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#0D0D0F', color: '#F5F4F2' }}>Loading...</div>}>
+      <SearchPageContent />
     </Suspense>
   )
 }
