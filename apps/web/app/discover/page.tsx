@@ -71,7 +71,7 @@ const IntertextualityPage: React.FC = () => {
     setError(null);
     
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/discover`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/discovery/patterns`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
