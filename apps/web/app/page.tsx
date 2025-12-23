@@ -1,216 +1,311 @@
-'use client';
+'use client'
 
-import React, { useState } from 'react';
+import { useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { Search, Book, Languages, Compass, Brain, Map, Clock, Users, Database, Zap, ChevronRight, Star } from 'lucide-react'
 
-export default function LandingPage() {
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+export default function HomePage() {
+  const router = useRouter()
+  const [searchQuery, setSearchQuery] = useState('')
 
-  const stats = [
-    { number: '1.7M', label: 'Passages', description: 'Classical texts digitized' },
-    { number: '892K', label: 'Embeddings', description: 'AI-powered connections' },
-    { number: '2.5K', label: 'Authors', description: 'Ancient voices preserved' },
-    { number: '15', label: 'Languages', description: 'Linguistic diversity' }
-  ];
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (searchQuery.trim()) {
+      router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`)
+    }
+  }
 
   const features = [
     {
-      title: 'Search',
-      description: 'Advanced search through classical literature with AI-powered relevance ranking',
-      icon: '🔍'
+      icon: <Search className="w-8 h-8" />,
+      title: "Semantic Search",
+      description: "Find concepts across ancient texts using AI-powered semantic understanding",
+      href: "/search",
+      color: "#3B82F6"
     },
     {
-      title: 'Translate',
-      description: 'Instant translation between ancient and modern languages with context preservation',
-      icon: '🌐'
+      icon: <Languages className="w-8 h-8" />,
+      title: "AI Translation",
+      description: "Translate between Greek, Latin, and modern languages with contextual accuracy",
+      href: "/translate",
+      color: "#F59E0B"
     },
     {
-      title: 'SEMANTIA',
-      description: 'Discover semantic connections and thematic relationships across texts',
-      icon: '🧠'
+      icon: <Compass className="w-8 h-8" />,
+      title: "Discovery Engine",
+      description: "Uncover hidden connections and patterns in classical literature",
+      href: "/discover",
+      color: "#7C3AED"
     },
     {
-      title: 'Discover',
-      description: 'Explore related passages and uncover hidden connections in classical works',
-      icon: '✨'
+      icon: <Brain className="w-8 h-8" />,
+      title: "SEMANTIA",
+      description: "Advanced semantic analysis and conceptual mapping of ancient texts",
+      href: "/semantia",
+      color: "#DC2626"
     },
     {
-      title: 'Verify',
-      description: 'Cross-reference citations and validate textual authenticity with our database',
-      icon: '✓'
+      icon: <Map className="w-8 h-8" />,
+      title: "Interactive Maps",
+      description: "Explore the ancient world through interactive historical geography",
+      href: "/maps",
+      color: "#059669"
     },
     {
-      title: 'Learn',
-      description: 'Interactive lessons and guided exploration of classical literature',
-      icon: '📚'
+      icon: <Clock className="w-8 h-8" />,
+      title: "CHRONOS Timeline",
+      description: "Navigate through time with our comprehensive historical timeline",
+      href: "/chronos",
+      color: "#D97706"
     }
-  ];
+  ]
 
-  const footerLinks = [
-    { title: 'Product', links: ['Features', 'API', 'Documentation', 'Pricing'] },
-    { title: 'Resources', links: ['Blog', 'Guides', 'Research', 'Community'] },
-    { title: 'Company', links: ['About', 'Careers', 'Privacy', 'Terms'] }
-  ];
+  const layers = [
+    { title: "Source Texts", description: "Original Greek and Latin manuscripts" },
+    { title: "AI Processing", description: "Natural language understanding and analysis" },
+    { title: "Semantic Networks", description: "Conceptual relationships and connections" },
+    { title: "Knowledge Graphs", description: "Structured historical and literary data" },
+    { title: "Research Interface", description: "Intuitive tools for scholarly discovery" }
+  ]
 
   return (
     <div className="min-h-screen bg-[#0D0D0F] text-[#F5F4F2]">
-      {/* Header */}
-      <header className="border-b border-gray-800">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="text-2xl font-bold text-[#C9A227]">LOGOS</div>
-          <nav className="hidden md:flex space-x-8">
-            <a href="#" className="hover:text-[#C9A227] transition-colors duration-300">Features</a>
-            <a href="#" className="hover:text-[#C9A227] transition-colors duration-300">Research</a>
-            <a href="#" className="hover:text-[#C9A227] transition-colors duration-300">Documentation</a>
-            <a href="#" className="hover:text-[#C9A227] transition-colors duration-300">About</a>
-          </nav>
-          <button className="bg-[#C9A227] text-[#0D0D0F] px-6 py-2 rounded-lg font-semibold hover:bg-yellow-600 transition-colors duration-300">
-            Sign In
-          </button>
-        </div>
-      </header>
-
       {/* Hero Section */}
-      <section className="relative py-20 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#C9A227]/5 to-transparent"></div>
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight">
-            The World's Largest
-            <span className="block text-[#C9A227]">Classical Corpus</span>
+      <section className="relative overflow-hidden py-20 px-4">
+        {/* Floating Greek Letters Animation */}
+        <div className="absolute inset-0 overflow-hidden">
+          {['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ'].map((letter, i) => (
+            <div
+              key={letter}
+              className="absolute text-4xl opacity-10 animate-pulse"
+              style={{
+                left: `${10 + i * 12}%`,
+                top: `${20 + (i % 3) * 20}%`,
+                animationDelay: `${i * 0.5}s`,
+                fontFamily: 'serif'
+              }}
+            >
+              {letter}
+            </div>
+          ))}
+        </div>
+
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
+          <h1 className="text-6xl font-bold mb-4 bg-gradient-to-r from-[#C9A227] to-[#F59E0B] bg-clip-text text-transparent">
+            LOGOS
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed">
-            1.7 million passages. 892,000 embeddings. AI-powered discovery.
-            <br />
-            Explore the greatest works of human civilization.
+          <p className="text-xl text-gray-300 mb-8">
+            AI-Powered Classical Research Platform
           </p>
-          <button className="bg-[#C9A227] text-[#0D0D0F] px-12 py-4 rounded-xl text-lg font-bold hover:bg-yellow-600 transform hover:scale-105 transition-all duration-300 shadow-2xl">
-            Start Exploring
-          </button>
-        </div>
-        
-        {/* Decorative elements */}
-        <div className="absolute top-20 left-10 w-2 h-2 bg-[#C9A227] rounded-full opacity-60 animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-3 h-3 bg-[#C9A227] rounded-full opacity-40 animate-pulse delay-100"></div>
-        <div className="absolute bottom-20 left-20 w-1 h-1 bg-[#C9A227] rounded-full opacity-80 animate-pulse delay-200"></div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-16 px-6 bg-gradient-to-r from-[#0D0D0F] via-gray-900/20 to-[#0D0D0F]">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center group">
-                <div className="text-5xl md:text-6xl font-bold text-[#C9A227] mb-2 group-hover:scale-110 transition-transform duration-300">
-                  {stat.number}
-                </div>
-                <div className="text-xl font-semibold mb-1">{stat.label}</div>
-                <div className="text-sm text-gray-400">{stat.description}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Features Grid */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Powerful Tools for
-              <span className="text-[#C9A227]"> Classical Research</span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Advanced AI capabilities designed specifically for scholars, students, and enthusiasts of classical literature.
-            </p>
-          </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <div
-                key={index}
-                className={`p-8 rounded-2xl border border-gray-800 bg-gradient-to-br from-gray-900/50 to-gray-800/30 hover:border-[#C9A227]/50 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl cursor-pointer ${
-                  hoveredCard === index ? 'shadow-2xl border-[#C9A227]/50' : ''
-                }`}
-                onMouseEnter={() => setHoveredCard(index)}
-                onMouseLeave={() => setHoveredCard(null)}
+          {/* Search Bar */}
+          <form onSubmit={handleSearch} className="max-w-2xl mx-auto mb-12">
+            <div className="relative">
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search across 1.7M classical passages..."
+                className="w-full pl-12 pr-4 py-4 bg-[#1E1E24] border border-gray-700 rounded-lg focus:border-[#C9A227] focus:outline-none text-lg"
+              />
+              <button
+                type="submit"
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-[#C9A227] hover:bg-[#B8911E] px-6 py-2 rounded-md transition-colors"
               >
-                <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className="text-2xl font-bold mb-4 text-[#C9A227]">{feature.title}</h3>
-                <p className="text-gray-300 leading-relaxed">{feature.description}</p>
+                Search
+              </button>
+            </div>
+          </form>
+
+          {/* Stats */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
+            <div className="text-center">
+              <div className="text-3xl font-bold text-[#C9A227]">1.7M</div>
+              <div className="text-gray-400">Passages</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-[#C9A227]">892K</div>
+              <div className="text-gray-400">Unique Words</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-[#C9A227]">500K</div>
+              <div className="text-gray-400">Semantic Connections</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Feature Cards */}
+      <section className="py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12">
+            Explore Ancient Wisdom
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {features.map((feature) => (
+              <a
+                key={feature.title}
+                href={feature.href}
+                className="group bg-[#1E1E24] p-6 rounded-xl hover:bg-[#2A2A32] transition-all duration-300 hover:scale-105"
+              >
+                <div 
+                  className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
+                  style={{ backgroundColor: `${feature.color}20`, color: feature.color }}
+                >
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-semibold mb-2 group-hover:text-[#C9A227] transition-colors">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-400 mb-4">
+                  {feature.description}
+                </p>
+                <div className="flex items-center text-sm text-[#C9A227] group-hover:translate-x-1 transition-transform">
+                  Explore <ChevronRight className="w-4 h-4 ml-1" />
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-20 px-4 bg-[#1E1E24]">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12">
+            How LOGOS Works
+          </h2>
+          <div className="space-y-8">
+            {layers.map((layer, index) => (
+              <div key={layer.title} className="flex items-center">
+                <div className="flex-shrink-0 w-12 h-12 bg-[#C9A227] rounded-full flex items-center justify-center text-[#0D0D0F] font-bold text-lg mr-6">
+                  {index + 1}
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-1">{layer.title}</h3>
+                  <p className="text-gray-400">{layer.description}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-[#C9A227]/10 via-[#C9A227]/5 to-transparent">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready to Explore the
-            <span className="text-[#C9A227]"> Ancient World</span>?
+      {/* Pricing */}
+      <section className="py-20 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12">
+            Choose Your Plan
           </h2>
-          <p className="text-xl text-gray-300 mb-12">
-            Join thousands of researchers and students already discovering connections across classical literature.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-[#C9A227] text-[#0D0D0F] px-10 py-4 rounded-xl text-lg font-bold hover:bg-yellow-600 transform hover:scale-105 transition-all duration-300">
-              Start Free Trial
-            </button>
-            <button className="border border-[#C9A227] text-[#C9A227] px-10 py-4 rounded-xl text-lg font-bold hover:bg-[#C9A227] hover:text-[#0D0D0F] transition-all duration-300">
-              View Documentation
-            </button>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+            <div className="bg-[#1E1E24] p-8 rounded-xl">
+              <div className="flex items-center mb-4">
+                <Users className="w-6 h-6 mr-2 text-[#3B82F6]" />
+                <h3 className="text-2xl font-bold">Student</h3>
+              </div>
+              <div className="text-3xl font-bold mb-4">
+                Free
+              </div>
+              <ul className="space-y-2 mb-6">
+                <li className="flex items-center">
+                  <Star className="w-4 h-4 mr-2 text-[#C9A227]" />
+                  Basic search access
+                </li>
+                <li className="flex items-center">
+                  <Star className="w-4 h-4 mr-2 text-[#C9A227]" />
+                  Limited translations
+                </li>
+                <li className="flex items-center">
+                  <Star className="w-4 h-4 mr-2 text-[#C9A227]" />
+                  Community support
+                </li>
+              </ul>
+              <button className="w-full py-2 px-4 border border-[#C9A227] text-[#C9A227] rounded-lg hover:bg-[#C9A227] hover:text-[#0D0D0F] transition-colors">
+                Get Started
+              </button>
+            </div>
+            
+            <div className="bg-[#1E1E24] p-8 rounded-xl border border-[#C9A227] relative">
+              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#C9A227] text-[#0D0D0F] px-3 py-1 rounded-full text-sm font-semibold">
+                Popular
+              </div>
+              <div className="flex items-center mb-4">
+                <Book className="w-6 h-6 mr-2 text-[#C9A227]" />
+                <h3 className="text-2xl font-bold">Scholar</h3>
+              </div>
+              <div className="text-3xl font-bold mb-4">
+                $9<span className="text-lg text-gray-400">/month</span>
+              </div>
+              <ul className="space-y-2 mb-6">
+                <li className="flex items-center">
+                  <Star className="w-4 h-4 mr-2 text-[#C9A227]" />
+                  Unlimited access
+                </li>
+                <li className="flex items-center">
+                  <Star className="w-4 h-4 mr-2 text-[#C9A227]" />
+                  Advanced AI features
+                </li>
+                <li className="flex items-center">
+                  <Star className="w-4 h-4 mr-2 text-[#C9A227]" />
+                  Priority support
+                </li>
+                <li className="flex items-center">
+                  <Star className="w-4 h-4 mr-2 text-[#C9A227]" />
+                  Export capabilities
+                </li>
+              </ul>
+              <button className="w-full py-2 px-4 bg-[#C9A227] text-[#0D0D0F] rounded-lg hover:bg-[#B8911E] transition-colors">
+                Start Free Trial
+              </button>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-gray-800 py-16 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-            <div className="col-span-1">
-              <div className="text-3xl font-bold text-[#C9A227] mb-4">LOGOS</div>
-              <p className="text-gray-400 mb-6">
-                Democratizing access to classical literature through advanced AI and semantic analysis.
+      <footer className="bg-[#1E1E24] py-12 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <h3 className="text-xl font-bold mb-4 text-[#C9A227]">LOGOS</h3>
+              <p className="text-gray-400">
+                Bridging ancient wisdom and modern AI for classical research.
               </p>
-              <div className="flex space-x-4">
-                <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-[#C9A227] hover:text-[#0D0D0F] transition-colors duration-300 cursor-pointer">
-                  <span className="font-bold">f</span>
-                </div>
-                <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-[#C9A227] hover:text-[#0D0D0F] transition-colors duration-300 cursor-pointer">
-                  <span className="font-bold">t</span>
-                </div>
-                <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-[#C9A227] hover:text-[#0D0D0F] transition-colors duration-300 cursor-pointer">
-                  <span className="font-bold">in</span>
-                </div>
-              </div>
             </div>
-            
-            {footerLinks.map((section, index) => (
-              <div key={index} className="col-span-1">
-                <h4 className="text-lg font-semibold mb-4 text-[#C9A227]">{section.title}</h4>
-                <ul className="space-y-3">
-                  {section.links.map((link, linkIndex) => (
-                    <li key={linkIndex}>
-                      <a href="#" className="text-gray-400 hover:text-[#C9A227] transition-colors duration-300">
-                        {link}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            <div>
+              <h4 className="font-semibold mb-4">Features</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><a href="/search" className="hover:text-[#C9A227] transition-colors">Search</a></li>
+                <li><a href="/translate" className="hover:text-[#C9A227] transition-colors">Translate</a></li>
+                <li><a href="/discover" className="hover:text-[#C9A227] transition-colors">Discover</a></li>
+                <li><a href="/maps" className="hover:text-[#C9A227] transition-colors">Maps</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Resources</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><a href="/docs" className="hover:text-[#C9A227] transition-colors">Documentation</a></li>
+                <li><a href="/api" className="hover:text-[#C9A227] transition-colors">API</a></li>
+                <li><a href="/help" className="hover:text-[#C9A227] transition-colors">Help Center</a></li>
+                <li><a href="/tutorials" className="hover:text-[#C9A227] transition-colors">Tutorials</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Company</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><a href="/about" className="hover:text-[#C9A227] transition-colors">About</a></li>
+                <li><a href="/contact" className="hover:text-[#C9A227] transition-colors">Contact</a></li>
+                <li><a href="/privacy" className="hover:text-[#C9A227] transition-colors">Privacy</a></li>
+                <li><a href="/terms" className="hover:text-[#C9A227] transition-colors">Terms</a></li>
+              </ul>
+            </div>
           </div>
-          
-          <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400">© 2024 LOGOS. All rights reserved.</p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-400 hover:text-[#C9A227] transition-colors duration-300">Privacy Policy</a>
-              <a href="#" className="text-gray-400 hover:text-[#C9A227] transition-colors duration-300">Terms of Service</a>
-              <a href="#" className="text-gray-400 hover:text-[#C9A227] transition-colors duration-300">Contact</a>
-            </div>
+          <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+            <p>&copy; 2024 LOGOS. All rights reserved.</p>
           </div>
         </div>
       </footer>
     </div>
-  );
+  )
 }

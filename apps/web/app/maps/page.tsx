@@ -1,170 +1,91 @@
 'use client';
-import React, { useState } from 'react';
 
-export default function MapsPage() {
-  const [hoveredCard, setHoveredCard] = useState<string | null>(null);
+import Link from 'next/link';
 
-  const mapCards = [
-    {
-      id: 'trade-routes',
-      title: 'Trade Routes',
-      description: 'Explore the commercial networks that connected medieval civilizations and facilitated cultural exchange.',
-      color: 'amber',
-      bgColor: 'bg-amber-500',
-      textColor: 'text-amber-400',
-      borderColor: 'border-amber-500',
-      icon: '🛣️'
-    },
-    {
-      id: 'language-distribution',
-      title: 'Language Distribution',
-      description: 'Discover the linguistic landscape of medieval Europe and the spread of vernacular literatures.',
-      color: 'blue',
-      bgColor: 'bg-blue-500',
-      textColor: 'text-blue-400',
-      borderColor: 'border-blue-500',
-      icon: '🗣️'
-    },
-    {
-      id: 'political-control',
-      title: 'Political Control',
-      description: 'Visualize the rise and fall of kingdoms, empires, and political boundaries across centuries.',
-      color: 'red',
-      bgColor: 'bg-red-500',
-      textColor: 'text-red-400',
-      borderColor: 'border-red-500',
-      icon: '👑'
-    },
-    {
-      id: 'author-origins',
-      title: 'Author Origins',
-      description: 'Map the geographical distribution of medieval writers and their cultural backgrounds.',
-      color: 'green',
-      bgColor: 'bg-green-500',
-      textColor: 'text-green-400',
-      borderColor: 'border-green-500',
-      icon: '✍️'
-    },
-    {
-      id: 'libraries-schools',
-      title: 'Libraries & Schools',
-      description: 'Locate centers of learning, scriptoriums, and educational institutions of the medieval world.',
-      color: 'purple',
-      bgColor: 'bg-purple-500',
-      textColor: 'text-purple-400',
-      borderColor: 'border-purple-500',
-      icon: '📚'
-    },
-    {
-      id: 'manuscript-survival',
-      title: 'Manuscript Survival',
-      description: 'Track the preservation and distribution of medieval texts across modern collections.',
-      color: 'gray',
-      bgColor: 'bg-gray-500',
-      textColor: 'text-gray-400',
-      borderColor: 'border-gray-500',
-      icon: '📜'
-    }
-  ];
+const BACKGROUND = '#0D0D0F';
+const SECONDARY = '#1E1E24';
+const TEXT = '#F5F4F2';
+const GOLD_ACCENT = '#C9A227';
 
-  const handleCardClick = (mapType: string) => {
-    window.location.href = `/maps/${mapType}`;
-  };
+const eraColors = {
+  archaic: '#D97706', // amber
+  classical: '#F59E0B', // gold
+  hellenistic: '#3B82F6', // blue
+  imperial: '#DC2626', // red
+  lateAntique: '#7C3AED', // purple
+  byzantine: '#059669', // green
+};
 
+const maps = [
+  {
+    title: 'Language Distribution',
+    description: 'Where Greek, Latin dominated',
+    link: '/maps/languages',
+    gradient: `linear-gradient(to right, ${eraColors.classical}, ${eraColors.imperial})`,
+  },
+  {
+    title: 'Political Control',
+    description: '2000 years of empires',
+    link: '/maps/political',
+    gradient: `linear-gradient(to right, ${eraColors.imperial}, ${eraColors.byzantine})`,
+  },
+  {
+    title: 'Trade Routes',
+    description: 'Ancient commerce',
+    link: '/maps/trade',
+    gradient: `linear-gradient(to right, ${eraColors.archaic}, ${eraColors.classical})`,
+  },
+  {
+    title: 'Author Origins',
+    description: 'Where writers came from',
+    link: '/maps/authors',
+    gradient: `linear-gradient(to right, ${eraColors.hellenistic}, ${eraColors.lateAntique})`,
+  },
+  {
+    title: 'Libraries & Schools',
+    description: 'Centers of learning',
+    link: '/maps/libraries',
+    gradient: `linear-gradient(to right, ${eraColors.classical}, ${eraColors.hellenistic})`,
+  },
+  {
+    title: 'Manuscript Survival',
+    description: 'How texts survived',
+    link: '/maps/manuscripts',
+    gradient: `linear-gradient(to right, ${eraColors.lateAntique}, ${eraColors.byzantine})`,
+  },
+];
+
+export default function MapsHub() {
   return (
-    <div className="min-h-screen bg-[#0D0D0F] text-[#F5F4F2]">
-      {/* Header */}
-      <div className="pt-20 pb-12">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-4">
-            <h1 className="text-6xl md:text-7xl font-bold tracking-tight mb-6">
-              <span className="text-[#C9A227]">Maps</span> Hub
-            </h1>
-            <p className="text-xl md:text-2xl text-[#F5F4F2]/80 max-w-4xl mx-auto leading-relaxed">
-              Navigate through interactive visualizations that reveal the geographical dimensions 
-              of medieval literature and culture
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Maps Grid */}
-      <div className="max-w-7xl mx-auto px-6 pb-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {mapCards.map((card) => (
+    <div style={{ backgroundColor: BACKGROUND, color: TEXT, minHeight: '100vh', padding: '2rem' }}>
+      <h1 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '2rem', color: GOLD_ACCENT }}>Maps Hub</h1>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+        {maps.map((map, index) => (
+          <Link key={index} href={map.link} passHref style={{ textDecoration: 'none', color: 'inherit' }}>
             <div
-              key={card.id}
-              className={`group relative bg-[#1A1A1F] border-2 ${
-                hoveredCard === card.id ? card.borderColor : 'border-[#2A2A2F]'
-              } rounded-2xl p-8 cursor-pointer transition-all duration-500 ease-out transform ${
-                hoveredCard === card.id ? 'scale-105 shadow-2xl' : 'hover:scale-102'
-              }`}
-              onMouseEnter={() => setHoveredCard(card.id)}
-              onMouseLeave={() => setHoveredCard(null)}
-              onClick={() => handleCardClick(card.id)}
+              style={{
+                background: map.gradient,
+                padding: '1.5rem',
+                borderRadius: '0.5rem',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                height: '100%',
+                transition: 'transform 0.2s ease-in-out',
+                ':hover': { transform: 'scale(1.05)' },
+              }}
             >
-              {/* Background Glow */}
-              <div 
-                className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 ${card.bgColor}`}
-              />
-              
-              {/* Content */}
-              <div className="relative z-10">
-                {/* Icon */}
-                <div className="mb-6">
-                  <div className={`text-5xl mb-4 transition-all duration-300 ${
-                    hoveredCard === card.id ? 'scale-110' : ''
-                  }`}>
-                    {card.icon}
-                  </div>
-                </div>
-
-                {/* Title */}
-                <h3 className={`text-2xl font-bold mb-4 transition-colors duration-300 ${
-                  hoveredCard === card.id ? card.textColor : 'text-[#F5F4F2]'
-                }`}>
-                  {card.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-[#F5F4F2]/70 leading-relaxed text-base mb-6">
-                  {card.description}
-                </p>
-
-                {/* Action Indicator */}
-                <div className={`flex items-center space-x-2 transition-all duration-300 ${
-                  hoveredCard === card.id ? `${card.textColor} translate-x-2` : 'text-[#C9A227]'
-                }`}>
-                  <span className="text-sm font-semibold tracking-wide uppercase">Explore Map</span>
-                  <svg 
-                    className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
+              <div>
+                <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>{map.title}</h2>
+                <p style={{ fontSize: '1rem', lineHeight: '1.4' }}>{map.description}</p>
               </div>
-
-              {/* Corner Accent */}
-              <div className={`absolute top-0 right-0 w-20 h-20 rounded-bl-full rounded-tr-2xl opacity-10 transition-opacity duration-300 ${
-                hoveredCard === card.id ? card.bgColor + ' opacity-30' : card.bgColor
-              }`} />
+              <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
+                <span style={{ marginRight: '0.5rem' }}>Explore</span>
+                <span>→</span>
+              </div>
             </div>
-          ))}
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <p className="text-lg text-[#F5F4F2]/60 mb-8">
-            Each map reveals unique patterns in medieval literary culture
-          </p>
-          <div className="inline-flex items-center space-x-4 bg-[#1A1A1F] border border-[#2A2A2F] rounded-full px-8 py-4">
-            <span className="text-[#C9A227] text-sm font-semibold">6 Interactive Maps Available</span>
-            <div className="w-2 h-2 bg-[#C9A227] rounded-full animate-pulse" />
-          </div>
-        </div>
+          </Link>
+        ))}
       </div>
     </div>
   );

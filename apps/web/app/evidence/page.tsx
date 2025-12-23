@@ -1,408 +1,355 @@
-import React, { useState, useRef } from 'react';
-import { Search, Filter, Map, Clock, Network, AlertTriangle, CheckCircle, BookOpen, Mountain, Building, Coins, Globe, Calendar, Users, ArrowRight, Eye, Link, TrendingUp, Layers, Database, Target } from 'lucide-react';
+'use client'
 
-const EvidenceExplorer = () => {
-  const [selectedEvidence, setSelectedEvidence] = useState('literary');
-  const [reliabilityThreshold, setReliabilityThreshold] = useState(75);
-  const [viewMode, setViewMode] = useState('grid');
-  const [selectedSource, setSelectedSource] = useState(null);
-  const [timelineView, setTimelineView] = useState('discovery');
+import { useState } from 'react'
 
-  const evidenceTypes = [
-    { id: 'literary', label: 'Literary', icon: '📜', color: '#3B82F6', count: 458723 },
-    { id: 'epigraphic', label: 'Epigraphic', icon: '🪨', color: '#10B981', count: 127834 },
-    { id: 'archaeological', label: 'Archaeological', icon: '🏛️', color: '#8B5CF6', count: 89245 },
-    { id: 'numismatic', label: 'Numismatic', icon: '🪙', color: '#EF4444', count: 34567 },
-    { id: 'papyrological', label: 'Papyrological', icon: '📄', color: '#F59E0B', count: 23891 },
-    { id: 'iconographic', label: 'Iconographic', icon: '🎨', color: '#EC4899', count: 19234 }
-  ];
+interface Evidence {
+  id: string
+  type: 'Archaeological' | 'Epigraphic' | 'Numismatic' | 'Papyrological' | 'Literary' | 'Manuscript'
+  reliability: number
+  icon: string
+  title: string
+  description: string
+  location: string
+  date: string
+  era: 'archaic' | 'classical' | 'hellenistic' | 'imperial' | 'lateAntique' | 'byzantine'
+  language: 'greek' | 'latin'
+  claimId: string
+}
 
-  const evidenceSources = [
-    {
-      id: 1,
-      title: "Caesar's Account of Gallic Wars",
-      type: 'literary',
-      reliability: 87,
-      era: 'Imperial Rome',
-      location: 'Gaul',
-      discovered: '1st century CE',
-      corroborations: 23,
-      conflicts: 3,
-      citations: 156
-    },
-    {
-      id: 2,
-      title: "Res Gestae Divi Augusti",
-      type: 'epigraphic',
-      reliability: 94,
-      era: 'Imperial Rome',
-      location: 'Ancyra',
-      discovered: '1555 CE',
-      corroborations: 41,
-      conflicts: 1,
-      citations: 203
-    },
-    {
-      id: 3,
-      title: "Villa of Papyri Scrolls",
-      type: 'papyrological',
-      reliability: 91,
-      era: 'Imperial Rome',
-      location: 'Herculaneum',
-      discovered: '1750 CE',
-      corroborations: 18,
-      conflicts: 2,
-      citations: 89
-    }
-  ];
+interface Claim {
+  id: string
+  title: string
+  description: string
+  evidenceIds: string[]
+}
 
-  const citationChain = [
-    { author: "Tacitus", work: "Annales", reliability: 89, cites: ["Pliny the Elder", "Acta Senatus"] },
-    { author: "Pliny the Elder", work: "Naturalis Historia", reliability: 82, cites: ["Varro", "Contemporary witnesses"] },
-    { author: "Suetonius", work: "De Vita Caesarum", reliability: 79, cites: ["Imperial archives", "Tacitus"] }
-  ];
+const evidenceTypes = {
+  Archaeological: { reliability: 95, icon: '🏛️' },
+  Epigraphic: { reliability: 90, icon: '🪨' },
+  Numismatic: { reliability: 90, icon: '🪙' },
+  Papyrological: { reliability: 85, icon: '📋' },
+  Literary: { reliability: 75, icon: '📜' },
+  Manuscript: { reliability: 70, icon: '📖' }
+}
 
-  const conflictingEvidence = [
-    {
-      claim: "Date of Caesar's crossing of Rubicon",
-      sources: [
-        { author: "Plutarch", date: "January 10, 49 BCE", reliability: 84 },
-        { author: "Appian", date: "January 12, 49 BCE", reliability: 78 },
-        { author: "Dio Cassius", date: "Early January 49 BCE", reliability: 81 }
-      ]
-    }
-  ];
+const eraColors = {
+  archaic: '#D97706',
+  classical: '#F59E0B',
+  hellenistic: '#3B82F6',
+  imperial: '#DC2626',
+  lateAntique: '#7C3AED',
+  byzantine: '#059669'
+}
 
-  const ReliabilityMeter = ({ score, size = 'sm' }) => {
-    const getColor = (score) => {
-      if (score >= 90) return '#10B981';
-      if (score >= 80) return '#F59E0B';
-      if (score >= 70) return '#EF4444';
-      return '#6B7280';
-    };
+const languageColors = {
+  greek: '#3B82F6',
+  latin: '#DC2626'
+}
 
-    return (
-      <div className={`flex items-center space-x-2 ${size === 'lg' ? 'text-lg' : 'text-sm'}`}>
-        <div className={`w-${size === 'lg' ? '20' : '16'} bg-gray-700 rounded-full h-2`}>
-          <div 
-            className="h-2 rounded-full transition-all duration-300"
-            style={{ 
-              width: `${score}%`, 
-              backgroundColor: getColor(score)
-            }}
-          />
-        </div>
-        <span className="text-gray-300 font-medium">{score}%</span>
-      </div>
-    );
-  };
+const demoEvidence: Evidence[] = [
+  {
+    id: '1',
+    type: 'Archaeological',
+    reliability: 95,
+    icon: '🏛️',
+    title: 'Parthenon Construction',
+    description: 'Physical remains of the Parthenon temple on the Athenian Acropolis',
+    location: 'Athens, Greece',
+    date: '447-432 BCE',
+    era: 'classical',
+    language: 'greek',
+    claimId: 'claim1'
+  },
+  {
+    id: '2',
+    type: 'Epigraphic',
+    reliability: 90,
+    icon: '🪨',
+    title: 'Parthenon Building Accounts',
+    description: 'Inscribed stone records of expenses for Parthenon construction',
+    location: 'Acropolis Museum',
+    date: '440s-430s BCE',
+    era: 'classical',
+    language: 'greek',
+    claimId: 'claim1'
+  },
+  {
+    id: '3',
+    type: 'Literary',
+    reliability: 75,
+    icon: '📜',
+    title: 'Plutarch\'s Life of Pericles',
+    description: 'Account of Pericles\' building program including the Parthenon',
+    location: 'Various manuscripts',
+    date: 'c. 100 CE',
+    era: 'imperial',
+    language: 'greek',
+    claimId: 'claim1'
+  },
+  {
+    id: '4',
+    type: 'Numismatic',
+    reliability: 90,
+    icon: '🪙',
+    title: 'Athenian Tetradrachm',
+    description: 'Silver coins depicting Athena, funding source for Parthenon',
+    location: 'Various collections',
+    date: '450-400 BCE',
+    era: 'classical',
+    language: 'greek',
+    claimId: 'claim1'
+  },
+  {
+    id: '5',
+    type: 'Archaeological',
+    reliability: 95,
+    icon: '🏛️',
+    title: 'Forum Romanum Excavations',
+    description: 'Excavated remains of Roman Forum buildings and structures',
+    location: 'Rome, Italy',
+    date: '500 BCE - 500 CE',
+    era: 'imperial',
+    language: 'latin',
+    claimId: 'claim2'
+  },
+  {
+    id: '6',
+    type: 'Literary',
+    reliability: 75,
+    icon: '📜',
+    title: 'Livy\'s Ab Urbe Condita',
+    description: 'Historical account of early Roman history and Forum development',
+    location: 'Various manuscripts',
+    date: '27-9 BCE',
+    era: 'imperial',
+    language: 'latin',
+    claimId: 'claim2'
+  }
+]
 
-  const CorroborationNetwork = () => (
-    <div className="bg-[#1E1E24] rounded-lg p-6">
-      <h3 className="text-xl font-bold text-[#F5F4F2] mb-4 flex items-center">
-        <Network className="mr-2" />
-        Corroboration Network
-      </h3>
-      <div className="grid grid-cols-3 gap-4">
-        {citationChain.map((source, index) => (
-          <div key={index} className="text-center">
-            <div 
-              className="w-16 h-16 rounded-full border-4 mx-auto mb-2 flex items-center justify-center text-white font-bold"
-              style={{ 
-                borderColor: source.reliability >= 85 ? '#10B981' : source.reliability >= 75 ? '#F59E0B' : '#EF4444'
-              }}
-            >
-              {source.reliability}
-            </div>
-            <div className="text-sm text-[#F5F4F2] font-medium">{source.author}</div>
-            <div className="text-xs text-gray-400">{source.work}</div>
-            {index < citationChain.length - 1 && (
-              <ArrowRight className="w-4 h-4 text-gray-500 mx-auto mt-2" />
-            )}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+const demoClaims: Claim[] = [
+  {
+    id: 'claim1',
+    title: 'Parthenon Built Under Pericles',
+    description: 'The Parthenon was constructed during Pericles\' leadership as part of his building program',
+    evidenceIds: ['1', '2', '3', '4']
+  },
+  {
+    id: 'claim2',
+    title: 'Forum as Center of Roman Life',
+    description: 'The Roman Forum served as the political, commercial, and social center of ancient Rome',
+    evidenceIds: ['5', '6']
+  }
+]
 
-  const EvidenceMap = () => (
-    <div className="bg-[#1E1E24] rounded-lg p-6">
-      <h3 className="text-xl font-bold text-[#F5F4F2] mb-4 flex items-center">
-        <Map className="mr-2" />
-        Evidence Discovery Locations
-      </h3>
-      <div className="h-64 bg-gray-800 rounded-lg relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-green-900/20"></div>
-        <div className="absolute top-1/3 left-1/4 w-3 h-3 bg-[#3B82F6] rounded-full animate-pulse"></div>
-        <div className="absolute top-1/2 left-2/3 w-3 h-3 bg-[#10B981] rounded-full animate-pulse"></div>
-        <div className="absolute bottom-1/3 right-1/4 w-3 h-3 bg-[#8B5CF6] rounded-full animate-pulse"></div>
-        <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-          Interactive map showing {evidenceSources.length} discovery sites
-        </div>
-      </div>
-    </div>
-  );
+export default function EvidenceExplorer() {
+  const [selectedTypes, setSelectedTypes] = useState<string[]>([])
+  const [selectedClaim, setSelectedClaim] = useState<string>('')
 
-  const ConflictAnalysis = () => (
-    <div className="bg-[#1E1E24] rounded-lg p-6">
-      <h3 className="text-xl font-bold text-[#F5F4F2] mb-4 flex items-center">
-        <AlertTriangle className="mr-2 text-yellow-500" />
-        Conflicting Evidence Analysis
-      </h3>
-      {conflictingEvidence.map((conflict, index) => (
-        <div key={index} className="border border-gray-700 rounded-lg p-4">
-          <h4 className="font-semibold text-[#F5F4F2] mb-3">{conflict.claim}</h4>
-          <div className="space-y-2">
-            {conflict.sources.map((source, idx) => (
-              <div key={idx} className="flex items-center justify-between p-2 bg-gray-800 rounded">
-                <div>
-                  <span className="font-medium text-[#F5F4F2]">{source.author}</span>
-                  <span className="text-gray-400 ml-2">{source.date}</span>
-                </div>
-                <ReliabilityMeter score={source.reliability} />
-              </div>
-            ))}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
+  const filteredEvidence = demoEvidence.filter(evidence => {
+    const typeMatch = selectedTypes.length === 0 || selectedTypes.includes(evidence.type)
+    const claimMatch = !selectedClaim || evidence.claimId === selectedClaim
+    return typeMatch && claimMatch
+  })
+
+  const calculateReliability = (evidenceIds: string[]) => {
+    const evidences = demoEvidence.filter(e => evidenceIds.includes(e.id))
+    if (evidences.length === 0) return 0
+    
+    // Combined reliability using probability theory
+    let combinedReliability = 0
+    evidences.forEach(evidence => {
+      const reliability = evidence.reliability / 100
+      combinedReliability = combinedReliability + reliability - (combinedReliability * reliability)
+    })
+    
+    return Math.round(combinedReliability * 100)
+  }
+
+  const toggleType = (type: string) => {
+    setSelectedTypes(prev => 
+      prev.includes(type) 
+        ? prev.filter(t => t !== type)
+        : [...prev, type]
+    )
+  }
 
   return (
     <div className="min-h-screen bg-[#0D0D0F] text-[#F5F4F2]">
-      {/* Header */}
-      <div className="border-b border-gray-800 bg-[#1E1E24]/50 backdrop-blur-sm sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-2xl font-bold text-[#F5F4F2] flex items-center">
-                <Target className="mr-3 text-[#C9A227]" />
-                Evidence Explorer
-              </h1>
-              <p className="text-gray-400 mt-1">Comprehensive evidence tracking & verification system</p>
-            </div>
-            <div className="flex items-center space-x-4">
-              <div className="text-sm text-gray-400">
-                <span className="text-[#C9A227] font-bold">1.7M+</span> passages analyzed
-              </div>
-              <div className="text-sm text-gray-400">
-                <span className="text-[#C9A227] font-bold">500K+</span> connections mapped
-              </div>
-            </div>
-          </div>
+      <div className="max-w-7xl mx-auto px-4 py-8">
+        <div className="mb-8">
+          <h1 className="text-4xl font-bold mb-2">Evidence Explorer</h1>
+          <p className="text-[#F5F4F2]/70">Analyze historical claims through multiple evidence types</p>
         </div>
-      </div>
 
-      <div className="max-w-7xl mx-auto px-6 py-8">
-        {/* Controls */}
-        <div className="mb-8 space-y-6">
-          {/* Evidence Type Filters */}
-          <div className="bg-[#1E1E24] rounded-lg p-6">
-            <h3 className="text-lg font-semibold text-[#F5F4F2] mb-4 flex items-center">
-              <Filter className="mr-2" />
-              Evidence Types
-            </h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-              {evidenceTypes.map((type) => (
+        {/* Filters */}
+        <div className="grid lg:grid-cols-4 gap-6 mb-8">
+          {/* Evidence Type Filter */}
+          <div className="lg:col-span-2">
+            <h2 className="text-xl font-semibold mb-4">Evidence Types</h2>
+            <div className="grid grid-cols-2 gap-2">
+              {Object.entries(evidenceTypes).map(([type, data]) => (
                 <button
-                  key={type.id}
-                  onClick={() => setSelectedEvidence(type.id)}
-                  className={`p-4 rounded-lg border-2 transition-all ${
-                    selectedEvidence === type.id 
-                      ? 'border-[#C9A227] bg-[#C9A227]/10' 
-                      : 'border-gray-700 hover:border-gray-600'
+                  key={type}
+                  onClick={() => toggleType(type)}
+                  className={`p-3 rounded-lg border transition-all ${
+                    selectedTypes.includes(type)
+                      ? 'bg-[#C9A227] border-[#C9A227] text-[#0D0D0F]'
+                      : 'bg-[#1E1E24] border-[#1E1E24] hover:border-[#C9A227]/50'
                   }`}
                 >
-                  <div className="text-2xl mb-2">{type.icon}</div>
-                  <div className="font-medium text-[#F5F4F2]">{type.label}</div>
-                  <div className="text-sm text-gray-400">{type.count.toLocaleString()}</div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <span className="text-lg">{data.icon}</span>
+                      <span className="text-sm font-medium">{type}</span>
+                    </div>
+                    <span className="text-xs font-bold">{data.reliability}%</span>
+                  </div>
                 </button>
               ))}
             </div>
           </div>
 
-          {/* Reliability Controls */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-[#1E1E24] rounded-lg p-6">
-              <h3 className="text-lg font-semibold text-[#F5F4F2] mb-4 flex items-center">
-                <TrendingUp className="mr-2" />
-                Reliability Threshold
-              </h3>
-              <div className="space-y-4">
-                <input
-                  type="range"
-                  min="0"
-                  max="100"
-                  value={reliabilityThreshold}
-                  onChange={(e) => setReliabilityThreshold(e.target.value)}
-                  className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer slider"
-                />
-                <div className="flex justify-between text-sm text-gray-400">
-                  <span>0%</span>
-                  <span className="text-[#C9A227] font-bold">{reliabilityThreshold}%</span>
-                  <span>100%</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-[#1E1E24] rounded-lg p-6">
-              <h3 className="text-lg font-semibold text-[#F5F4F2] mb-4 flex items-center">
-                <Calendar className="mr-2" />
-                Timeline View
-              </h3>
-              <select 
-                value={timelineView}
-                onChange={(e) => setTimelineView(e.target.value)}
-                className="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-[#F5F4F2]"
+          {/* Claims Filter */}
+          <div className="lg:col-span-2">
+            <h2 className="text-xl font-semibold mb-4">Historical Claims</h2>
+            <div className="space-y-2">
+              <button
+                onClick={() => setSelectedClaim('')}
+                className={`w-full p-3 rounded-lg border text-left transition-all ${
+                  !selectedClaim
+                    ? 'bg-[#C9A227] border-[#C9A227] text-[#0D0D0F]'
+                    : 'bg-[#1E1E24] border-[#1E1E24] hover:border-[#C9A227]/50'
+                }`}
               >
-                <option value="discovery">Discovery Date</option>
-                <option value="composition">Composition Date</option>
-                <option value="events">Historical Events</option>
-              </select>
-            </div>
-
-            <div className="bg-[#1E1E24] rounded-lg p-6">
-              <h3 className="text-lg font-semibold text-[#F5F4F2] mb-4 flex items-center">
-                <Eye className="mr-2" />
-                View Mode
-              </h3>
-              <div className="grid grid-cols-2 gap-2">
+                All Claims
+              </button>
+              {demoClaims.map(claim => (
                 <button
-                  onClick={() => setViewMode('grid')}
-                  className={`px-4 py-2 rounded-lg ${
-                    viewMode === 'grid' ? 'bg-[#C9A227] text-black' : 'bg-gray-800 text-gray-300'
+                  key={claim.id}
+                  onClick={() => setSelectedClaim(claim.id)}
+                  className={`w-full p-3 rounded-lg border text-left transition-all ${
+                    selectedClaim === claim.id
+                      ? 'bg-[#C9A227] border-[#C9A227] text-[#0D0D0F]'
+                      : 'bg-[#1E1E24] border-[#1E1E24] hover:border-[#C9A227]/50'
                   }`}
                 >
-                  Grid
+                  <div className="font-medium text-sm mb-1">{claim.title}</div>
+                  <div className="text-xs opacity-70">
+                    Reliability: {calculateReliability(claim.evidenceIds)}% | 
+                    Evidence: {claim.evidenceIds.length} sources
+                  </div>
                 </button>
-                <button
-                  onClick={() => setViewMode('timeline')}
-                  className={`px-4 py-2 rounded-lg ${
-                    viewMode === 'timeline' ? 'bg-[#C9A227] text-black' : 'bg-gray-800 text-gray-300'
-                  }`}
-                >
-                  Timeline
-                </button>
-              </div>
+              ))}
             </div>
           </div>
         </div>
 
-        {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Evidence Sources */}
-          <div className="lg:col-span-2 space-y-6">
-            <div className="bg-[#1E1E24] rounded-lg p-6">
-              <h3 className="text-xl font-bold text-[#F5F4F2] mb-4 flex items-center">
-                <Database className="mr-2" />
-                Evidence Sources
-              </h3>
-              <div className="space-y-4">
-                {evidenceSources
-                  .filter(source => source.reliability >= reliabilityThreshold)
-                  .map((source) => (
-                  <div 
-                    key={source.id} 
-                    className="border border-gray-700 rounded-lg p-4 hover:border-[#C9A227] transition-colors cursor-pointer"
-                    onClick={() => setSelectedSource(source)}
+        {/* Evidence Grid */}
+        <div className="grid lg:grid-cols-3 gap-6">
+          {filteredEvidence.map(evidence => (
+            <div key={evidence.id} className="bg-[#1E1E24] rounded-lg p-6 border border-[#1E1E24] hover:border-[#C9A227]/30 transition-all">
+              <div className="flex items-start justify-between mb-4">
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl">{evidence.icon}</span>
+                  <div>
+                    <div className="font-semibold text-[#F5F4F2]">{evidence.title}</div>
+                    <div className="text-sm text-[#F5F4F2]/70">{evidence.type}</div>
+                  </div>
+                </div>
+                <div className="text-right">
+                  <div className="text-lg font-bold text-[#C9A227]">{evidence.reliability}%</div>
+                  <div className="text-xs text-[#F5F4F2]/60">reliability</div>
+                </div>
+              </div>
+
+              <p className="text-[#F5F4F2]/80 text-sm mb-4">{evidence.description}</p>
+
+              <div className="space-y-2 text-xs">
+                <div className="flex justify-between">
+                  <span className="text-[#F5F4F2]/60">Location:</span>
+                  <span className="text-[#F5F4F2]">{evidence.location}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-[#F5F4F2]/60">Date:</span>
+                  <span className="text-[#F5F4F2]">{evidence.date}</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-[#F5F4F2]/60">Era:</span>
+                  <span 
+                    className="px-2 py-1 rounded text-white text-xs font-medium"
+                    style={{ backgroundColor: eraColors[evidence.era] }}
                   >
-                    <div className="flex items-start justify-between mb-3">
+                    {evidence.era}
+                  </span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-[#F5F4F2]/60">Language:</span>
+                  <span 
+                    className="px-2 py-1 rounded text-white text-xs font-medium"
+                    style={{ backgroundColor: languageColors[evidence.language] }}
+                  >
+                    {evidence.language === 'greek' ? 'Α Greek' : 'L Latin'}
+                  </span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {filteredEvidence.length === 0 && (
+          <div className="text-center py-12">
+            <div className="text-4xl mb-4">🔍</div>
+            <h3 className="text-xl font-semibold mb-2">No Evidence Found</h3>
+            <p className="text-[#F5F4F2]/70">Try adjusting your filters to see more results</p>
+          </div>
+        )}
+
+        {/* Corroboration Analysis */}
+        {selectedClaim && (
+          <div className="mt-12 bg-[#1E1E24] rounded-lg p-6">
+            <h2 className="text-2xl font-semibold mb-4">Evidence Corroboration</h2>
+            {demoClaims
+              .filter(claim => claim.id === selectedClaim)
+              .map(claim => {
+                const claimEvidence = demoEvidence.filter(e => claim.evidenceIds.includes(e.id))
+                const reliability = calculateReliability(claim.evidenceIds)
+                
+                return (
+                  <div key={claim.id}>
+                    <h3 className="text-xl font-medium mb-2">{claim.title}</h3>
+                    <p className="text-[#F5F4F2]/80 mb-4">{claim.description}</p>
+                    
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="text-3xl font-bold text-[#C9A227]">{reliability}%</div>
                       <div>
-                        <h4 className="font-semibold text-[#F5F4F2]">{source.title}</h4>
-                        <div className="flex items-center space-x-4 text-sm text-gray-400 mt-1">
-                          <span className="flex items-center">
-                            {evidenceTypes.find(t => t.id === source.type)?.icon}
-                            <span className="ml-1">{source.type}</span>
-                          </span>
-                          <span>{source.era}</span>
-                          <span>{source.location}</span>
+                        <div className="font-semibold">Combined Reliability</div>
+                        <div className="text-sm text-[#F5F4F2]/70">
+                          Based on {claimEvidence.length} corroborating sources
                         </div>
                       </div>
-                      <ReliabilityMeter score={source.reliability} />
                     </div>
-                    
-                    <div className="grid grid-cols-3 gap-4 text-sm">
-                      <div className="text-center p-2 bg-green-900/20 rounded">
-                        <div className="text-green-400 font-bold">{source.corroborations}</div>
-                        <div className="text-gray-400">Corroborations</div>
-                      </div>
-                      <div className="text-center p-2 bg-red-900/20 rounded">
-                        <div className="text-red-400 font-bold">{source.conflicts}</div>
-                        <div className="text-gray-400">Conflicts</div>
-                      </div>
-                      <div className="text-center p-2 bg-blue-900/20 rounded">
-                        <div className="text-blue-400 font-bold">{source.citations}</div>
-                        <div className="text-gray-400">Citations</div>
-                      </div>
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {claimEvidence.map(evidence => (
+                        <div key={evidence.id} className="bg-[#0D0D0F] rounded-lg p-4">
+                          <div className="flex items-center gap-2 mb-2">
+                            <span>{evidence.icon}</span>
+                            <span className="font-medium text-sm">{evidence.type}</span>
+                            <span className="ml-auto text-[#C9A227] font-bold text-sm">
+                              {evidence.reliability}%
+                            </span>
+                          </div>
+                          <div className="text-xs text-[#F5F4F2]/70">{evidence.title}</div>
+                        </div>
+                      ))}
                     </div>
                   </div>
-                ))}
-              </div>
-            </div>
-
-            <EvidenceMap />
-            <ConflictAnalysis />
+                )
+              })}
           </div>
-
-          {/* Sidebar */}
-          <div className="space-y-6">
-            {/* Reliability Calculator */}
-            <div className="bg-[#1E1E24] rounded-lg p-6">
-              <h3 className="text-xl font-bold text-[#F5F4F2] mb-4 flex items-center">
-                <CheckCircle className="mr-2 text-green-500" />
-                Reliability Calculator
-              </h3>
-              <div className="space-y-4">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-[#C9A227] mb-2">87%</div>
-                  <div className="text-sm text-gray-400">Overall Reliability</div>
-                </div>
-                <div className="space-y-3">
-                  <div className="flex justify-between">
-                    <span className="text-gray-400">Source Quality</span>
-                    <span className="text-[#F5F4F2]">92%</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-400">Cross-references</span>
-                    <span className="text-[#F5F4F2]">85%</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-400">Archaeological Support</span>
-                    <span className="text-[#F5F4F2]">78%</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-400">Modern Consensus</span>
-                    <span className="text-[#F5F4F2]">94%</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <CorroborationNetwork />
-
-            {/* Citation Chain */}
-            <div className="bg-[#1E1E24] rounded-lg p-6">
-              <h3 className="text-xl font-bold text-[#F5F4F2] mb-4 flex items-center">
-                <Link className="mr-2" />
-                Citation Chain
-              </h3>
-              <div className="space-y-3">
-                {citationChain.map((link, index) => (
-                  <div key={index} className="border-l-4 border-[#C9A227] pl-4">
-                    <div className="font-medium text-[#F5F4F2]">{link.author}</div>
-                    <div className="text-sm text-gray-400">{link.work}</div>
-                    <div className="text-xs text-gray-500 mt-1">
-                      Cites: {link.cites.join(', ')}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+        )}
       </div>
     </div>
-  );
-};
-
-export default EvidenceExplorer;
+  )
+}

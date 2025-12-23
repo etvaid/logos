@@ -1,203 +1,193 @@
-'use client';
-import React, { useState } from 'react';
+'use client'
 
-export default function About() {
-  const [activeLayer, setActiveLayer] = useState(0);
+import React from 'react'
+import { Users, BookOpen, Globe, Award, Heart, Shield } from 'lucide-react'
 
-  const methodologyLayers = [
-    {
-      title: "Textual Analysis",
-      description: "Deep linguistic parsing of Greek and Latin manuscripts with morphological and syntactic analysis."
-    },
-    {
-      title: "Historical Contextualization",
-      description: "Temporal mapping of texts within their historical periods and cultural frameworks."
-    },
-    {
-      title: "Cross-Reference Integration",
-      description: "Intelligent linking between related passages across different authors and time periods."
-    },
-    {
-      title: "Semantic Understanding",
-      description: "Advanced comprehension of meaning, metaphor, and literary devices in classical texts."
-    },
-    {
-      title: "Scholarly Synthesis",
-      description: "Integration of modern scholarship with AI-generated insights for comprehensive analysis."
-    }
-  ];
-
-  const corpusData = [
-    { source: "Greek Epic Poetry", count: "2,847 texts", period: "8th-3rd Century BCE" },
-    { source: "Latin Literature", count: "4,231 texts", period: "3rd Century BCE - 6th Century CE" },
-    { source: "Philosophical Treatises", count: "1,892 texts", period: "6th Century BCE - 5th Century CE" },
-    { source: "Historical Works", count: "3,156 texts", period: "5th Century BCE - 4th Century CE" },
-    { source: "Dramatic Literature", count: "987 texts", period: "5th Century BCE - 2nd Century CE" }
-  ];
-
-  const teamMembers = [
-    { name: "Dr. Elena Konstantinou", role: "Lead Classical Scholar", specialty: "Ancient Greek Literature" },
-    { name: "Prof. Marcus Rivera", role: "AI Research Director", specialty: "Natural Language Processing" },
-    { name: "Dr. Sarah Chen", role: "Digital Humanities Lead", specialty: "Computational Philology" },
-    { name: "Dr. Alessandro Rossi", role: "Latin Studies Expert", specialty: "Medieval & Renaissance Latin" }
-  ];
-
-  const partnerships = [
-    { institution: "Oxford Classical Studies", type: "Research Collaboration" },
-    { institution: "Harvard Center for Hellenic Studies", type: "Content Partnership" },
-    { institution: "Digital Corpus of Sanskrit", type: "Technical Integration" },
-    { institution: "Vatican Apostolic Library", type: "Manuscript Digitization" },
-    { institution: "Perseus Digital Library", type: "Data Exchange" }
-  ];
-
+const AboutPage = () => {
   return (
     <div className="min-h-screen bg-[#0D0D0F] text-[#F5F4F2]">
-      <div className="max-w-6xl mx-auto px-6 py-16">
-        {/* Hero Section */}
-        <div className="text-center mb-20">
-          <h1 className="text-6xl font-bold mb-8 bg-gradient-to-r from-[#F5F4F2] to-[#C9A227] bg-clip-text text-transparent">
-            About Corpus
+      {/* Hero Section */}
+      <div className="relative bg-gradient-to-br from-[#1E1E24] via-[#0D0D0F] to-[#1E1E24] py-24">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-[#C9A227] to-[#F59E0B] bg-clip-text text-transparent">
+            About LOGOS
           </h1>
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-gradient-to-r from-[#C9A227] to-[#F5F4F2] p-0.5 rounded-2xl mb-8">
-              <div className="bg-[#0D0D0F] rounded-2xl p-12">
-                <h2 className="text-3xl font-semibold text-[#C9A227] mb-6">Our Mission</h2>
-                <p className="text-2xl leading-relaxed font-light">
-                  Democratizing classical scholarship through AI-powered analysis, making ancient wisdom accessible to scholars, students, and curious minds worldwide.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Methodology Section */}
-        <div className="mb-20">
-          <h2 className="text-4xl font-bold text-center mb-16 text-[#C9A227]">
-            Five-Layer Analysis Methodology
-          </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-            {methodologyLayers.map((layer, index) => (
-              <div
-                key={index}
-                className={`cursor-pointer transition-all duration-500 p-6 rounded-xl border-2 ${
-                  activeLayer === index
-                    ? 'bg-[#C9A227] border-[#C9A227] text-[#0D0D0F] scale-105'
-                    : 'bg-[#1A1A1E] border-[#2A2A2E] hover:border-[#C9A227] hover:scale-102'
-                }`}
-                onMouseEnter={() => setActiveLayer(index)}
-              >
-                <div className="text-center">
-                  <div className={`text-3xl font-bold mb-2 ${
-                    activeLayer === index ? 'text-[#0D0D0F]' : 'text-[#C9A227]'
-                  }`}>
-                    {index + 1}
-                  </div>
-                  <h3 className="text-lg font-semibold mb-3">{layer.title}</h3>
-                  <p className={`text-sm leading-relaxed ${
-                    activeLayer === index ? 'text-[#0D0D0F]' : 'text-[#B5B5B5]'
-                  }`}>
-                    {layer.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Corpus Details */}
-        <div className="mb-20">
-          <h2 className="text-4xl font-bold text-center mb-16 text-[#C9A227]">
-            Our Comprehensive Corpus
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {corpusData.map((item, index) => (
-              <div
-                key={index}
-                className="bg-[#1A1A1E] p-8 rounded-xl border border-[#2A2A2E] hover:border-[#C9A227] transition-all duration-300 hover:scale-105"
-              >
-                <h3 className="text-xl font-semibold mb-4 text-[#C9A227]">{item.source}</h3>
-                <div className="space-y-2">
-                  <div className="flex justify-between">
-                    <span className="text-[#B5B5B5]">Texts:</span>
-                    <span className="font-semibold">{item.count}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-[#B5B5B5]">Period:</span>
-                    <span className="font-semibold text-sm">{item.period}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-12">
-            <div className="inline-block bg-gradient-to-r from-[#C9A227] to-[#F5F4F2] p-0.5 rounded-full">
-              <div className="bg-[#0D0D0F] px-8 py-4 rounded-full">
-                <span className="text-2xl font-bold text-[#C9A227]">13,113</span>
-                <span className="text-lg ml-2">Total Classical Texts</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Team Section */}
-        <div className="mb-20">
-          <h2 className="text-4xl font-bold text-center mb-16 text-[#C9A227]">
-            Our Expert Team
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {teamMembers.map((member, index) => (
-              <div
-                key={index}
-                className="bg-[#1A1A1E] p-6 rounded-xl border border-[#2A2A2E] hover:border-[#C9A227] transition-all duration-300 hover:scale-105 text-center"
-              >
-                <div className="w-20 h-20 bg-gradient-to-br from-[#C9A227] to-[#F5F4F2] rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-2xl font-bold text-[#0D0D0F]">
-                    {member.name.split(' ').map(n => n[0]).join('')}
-                  </span>
-                </div>
-                <h3 className="text-lg font-semibold mb-2 text-[#F5F4F2]">{member.name}</h3>
-                <p className="text-[#C9A227] font-medium mb-2">{member.role}</p>
-                <p className="text-[#B5B5B5] text-sm">{member.specialty}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Academic Partnerships */}
-        <div className="mb-20">
-          <h2 className="text-4xl font-bold text-center mb-16 text-[#C9A227]">
-            Academic Partnerships
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {partnerships.map((partner, index) => (
-              <div
-                key={index}
-                className="bg-[#1A1A1E] p-6 rounded-xl border border-[#2A2A2E] hover:border-[#C9A227] transition-all duration-300 hover:scale-105"
-              >
-                <h3 className="text-lg font-semibold mb-3 text-[#F5F4F2]">{partner.institution}</h3>
-                <span className="inline-block bg-[#C9A227] text-[#0D0D0F] px-3 py-1 rounded-full text-sm font-medium">
-                  {partner.type}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Call to Action */}
-        <div className="text-center">
-          <div className="bg-gradient-to-r from-[#C9A227] to-[#F5F4F2] p-0.5 rounded-2xl">
-            <div className="bg-[#0D0D0F] rounded-2xl p-12">
-              <h2 className="text-3xl font-bold mb-6 text-[#C9A227]">Join Our Mission</h2>
-              <p className="text-xl mb-8 text-[#B5B5B5] max-w-2xl mx-auto">
-                Be part of the revolution in classical scholarship. Explore ancient texts with unprecedented depth and accessibility.
-              </p>
-              <button className="bg-[#C9A227] text-[#0D0D0F] px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-[#C9A227]/25">
-                Start Exploring
-              </button>
-            </div>
-          </div>
+          <p className="text-xl text-[#F5F4F2]/80 max-w-3xl mx-auto leading-relaxed">
+            Bridging the ancient and modern worlds through cutting-edge AI technology
+          </p>
         </div>
       </div>
+
+      <div className="max-w-6xl mx-auto px-6 py-16 space-y-20">
+        {/* Mission Section */}
+        <section className="text-center">
+          <div className="inline-flex items-center gap-3 mb-8">
+            <Heart className="w-8 h-8 text-[#C9A227]" />
+            <h2 className="text-3xl font-bold">Our Mission</h2>
+          </div>
+          <div className="bg-[#1E1E24] rounded-2xl p-8 border border-[#C9A227]/20">
+            <p className="text-2xl font-medium text-[#C9A227] mb-4">
+              Making classical scholarship accessible through AI
+            </p>
+            <p className="text-lg text-[#F5F4F2]/70 max-w-4xl mx-auto leading-relaxed">
+              We believe the wisdom of ancient civilizations should be accessible to everyone. 
+              LOGOS combines advanced artificial intelligence with rigorous classical scholarship 
+              to break down barriers and open new pathways for discovery in the ancient world.
+            </p>
+          </div>
+        </section>
+
+        {/* The Corpus Section */}
+        <section>
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-3 mb-8">
+              <BookOpen className="w-8 h-8 text-[#C9A227]" />
+              <h2 className="text-3xl font-bold">The Corpus</h2>
+            </div>
+            <p className="text-lg text-[#F5F4F2]/70 max-w-3xl mx-auto">
+              Our comprehensive database spans over two millennia of classical literature
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="bg-[#1E1E24] rounded-xl p-6 text-center border border-[#C9A227]/20">
+              <div className="text-4xl font-bold text-[#C9A227] mb-2">1.7M</div>
+              <div className="text-lg font-medium mb-2">Passages</div>
+              <div className="text-sm text-[#F5F4F2]/60">
+                Carefully curated and annotated texts
+              </div>
+            </div>
+
+            <div className="bg-[#1E1E24] rounded-xl p-6 text-center border border-[#3B82F6]/20">
+              <div className="flex items-center justify-center gap-2 mb-4">
+                <span className="w-8 h-8 bg-[#3B82F6] rounded-full flex items-center justify-center text-white font-bold text-sm">
+                  Α
+                </span>
+                <span className="text-xl font-bold text-[#3B82F6]">Greek</span>
+              </div>
+              <div className="text-sm text-[#F5F4F2]/60">
+                From Homer's epics to Byzantine chronicles
+              </div>
+            </div>
+
+            <div className="bg-[#1E1E24] rounded-xl p-6 text-center border border-[#DC2626]/20">
+              <div className="flex items-center justify-center gap-2 mb-4">
+                <span className="w-8 h-8 bg-[#DC2626] rounded-full flex items-center justify-center text-white font-bold text-sm">
+                  L
+                </span>
+                <span className="text-xl font-bold text-[#DC2626]">Latin</span>
+              </div>
+              <div className="text-sm text-[#F5F4F2]/60">
+                From Plautus to Medieval manuscripts
+              </div>
+            </div>
+          </div>
+
+          {/* Era Timeline */}
+          <div className="bg-[#1E1E24] rounded-2xl p-8 border border-[#C9A227]/20">
+            <h3 className="text-xl font-bold mb-6 text-center">Historical Coverage</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+              {[
+                { era: 'Archaic', color: '#D97706', period: '800-480 BCE' },
+                { era: 'Classical', color: '#F59E0B', period: '480-323 BCE' },
+                { era: 'Hellenistic', color: '#3B82F6', period: '323-146 BCE' },
+                { era: 'Imperial', color: '#DC2626', period: '27 BCE-476 CE' },
+                { era: 'Late Antique', color: '#7C3AED', period: '284-641 CE' },
+                { era: 'Byzantine', color: '#059669', period: '330-1453 CE' }
+              ].map((item, index) => (
+                <div key={index} className="text-center">
+                  <div 
+                    className="w-4 h-4 rounded-full mx-auto mb-2"
+                    style={{ backgroundColor: item.color }}
+                  />
+                  <div className="text-sm font-medium" style={{ color: item.color }}>
+                    {item.era}
+                  </div>
+                  <div className="text-xs text-[#F5F4F2]/50">
+                    {item.period}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* The Team Section */}
+        <section className="text-center">
+          <div className="inline-flex items-center gap-3 mb-8">
+            <Users className="w-8 h-8 text-[#C9A227]" />
+            <h2 className="text-3xl font-bold">The Team</h2>
+          </div>
+          <div className="bg-[#1E1E24] rounded-2xl p-12 border border-[#C9A227]/20">
+            <p className="text-lg text-[#F5F4F2]/70 mb-8">
+              Our interdisciplinary team combines expertise in classical studies, 
+              computational linguistics, and artificial intelligence.
+            </p>
+            <div className="text-[#C9A227] font-medium">
+              Detailed team profiles coming soon
+            </div>
+          </div>
+        </section>
+
+        {/* Advisory Board Section */}
+        <section className="text-center">
+          <div className="inline-flex items-center gap-3 mb-8">
+            <Award className="w-8 h-8 text-[#C9A227]" />
+            <h2 className="text-3xl font-bold">Advisory Board</h2>
+          </div>
+          <div className="bg-[#1E1E24] rounded-2xl p-12 border border-[#C9A227]/20">
+            <p className="text-lg text-[#F5F4F2]/70 mb-8">
+              Distinguished scholars and technologists guide our mission to preserve 
+              and democratize classical knowledge.
+            </p>
+            <div className="text-[#C9A227] font-medium">
+              Advisory board announcements coming soon
+            </div>
+          </div>
+        </section>
+
+        {/* Partners Section */}
+        <section className="text-center">
+          <div className="inline-flex items-center gap-3 mb-8">
+            <Globe className="w-8 h-8 text-[#C9A227]" />
+            <h2 className="text-3xl font-bold">Partners</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-[#1E1E24] rounded-xl p-6 border border-[#C9A227]/20">
+              <Shield className="w-8 h-8 text-[#C9A227] mx-auto mb-4" />
+              <h3 className="text-lg font-bold mb-3">Academic Institutions</h3>
+              <p className="text-[#F5F4F2]/70 text-sm">
+                Collaborating with leading universities and research centers 
+                to ensure scholarly accuracy and academic rigor.
+              </p>
+            </div>
+            <div className="bg-[#1E1E24] rounded-xl p-6 border border-[#C9A227]/20">
+              <BookOpen className="w-8 h-8 text-[#C9A227] mx-auto mb-4" />
+              <h3 className="text-lg font-bold mb-3">Digital Libraries</h3>
+              <p className="text-[#F5F4F2]/70 text-sm">
+                Working with digital archives and libraries to expand 
+                access to primary sources and manuscripts.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section className="text-center">
+          <div className="bg-gradient-to-r from-[#C9A227]/10 to-[#F59E0B]/10 rounded-2xl p-12 border border-[#C9A227]/20">
+            <h2 className="text-2xl font-bold mb-4">Join Our Mission</h2>
+            <p className="text-lg text-[#F5F4F2]/70 mb-6 max-w-2xl mx-auto">
+              Whether you're a scholar, educator, student, or enthusiast, 
+              we invite you to be part of this journey to make classical knowledge accessible to all.
+            </p>
+            <div className="text-[#C9A227] font-medium">
+              Contact information and collaboration opportunities coming soon
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
-  );
+  )
 }
+
+export default AboutPage

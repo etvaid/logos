@@ -1,490 +1,309 @@
-'use client';
-import React, { useState } from 'react';
+'use client'
 
-export default function LanguageMaps() {
-  const [selectedEra, setSelectedEra] = useState(0);
-  const [hoveredRegion, setHoveredRegion] = useState('');
+import { useState, useEffect } from 'react'
 
-  const eras = [
-    { name: 'Classical Period', year: '500 BCE', period: 0 },
-    { name: 'Hellenistic Era', year: '300 BCE', period: 1 },
-    { name: 'Early Roman', year: '100 BCE', period: 2 },
-    { name: 'Imperial Rome', year: '100 CE', period: 3 },
-    { name: 'Late Empire', year: '300 CE', period: 4 },
-    { name: 'Byzantine Rise', year: '500 CE', period: 5 }
-  ];
+export default function LanguageDistributionMap() {
+  const [selectedYear, setSelectedYear] = useState(1)
+  const [selectedRegion, setSelectedRegion] = useState<string | null>(null)
+  const [hoveredRegion, setHoveredRegion] = useState<string | null>(null)
 
   const languages = {
-    greek: { name: 'Greek', color: '#2563EB', bgColor: 'bg-blue-600' },
-    latin: { name: 'Latin', color: '#DC2626', bgColor: 'bg-red-600' },
-    hebrew: { name: 'Hebrew/Aramaic', color: '#059669', bgColor: 'bg-emerald-600' },
-    mixed: { name: 'Mixed/Transitional', color: '#7C3AED', bgColor: 'bg-purple-600' }
-  };
+    greek: { color: '#3B82F6', name: 'Greek', icon: 'Α' },
+    latin: { color: '#DC2626', name: 'Latin', icon: 'L' },
+    coptic: { color: '#7C3AED', name: 'Coptic', icon: 'Ⲁ' },
+    aramaic: { color: '#F59E0B', name: 'Aramaic', icon: 'א' },
+    punic: { color: '#D97706', name: 'Punic', icon: 'P' }
+  }
 
-  const regionData = {
-    0: { // 500 BCE
-      italia: 'latin',
-      sicilia: 'greek',
-      gallia: 'latin',
-      hispania: 'latin',
-      africa: 'mixed',
-      aegyptus: 'greek',
-      syria: 'hebrew',
-      asia_minor: 'greek',
-      thracia: 'greek',
-      macedonia: 'greek',
-      achaia: 'greek',
-      creta: 'greek',
-      cyprus: 'greek',
-      judea: 'hebrew'
+  const regions = {
+    greece: {
+      name: 'Greece & Aegean',
+      path: 'M380,200 L420,195 L435,210 L445,220 L440,240 L425,245 L405,250 L385,245 L375,225 Z',
+      languages: {
+        [-500]: { dominant: 'greek', percentage: 95 },
+        [-300]: { dominant: 'greek', percentage: 98 },
+        [0]: { dominant: 'greek', percentage: 92 },
+        [300]: { dominant: 'greek', percentage: 88 },
+        [500]: { dominant: 'greek', percentage: 85 }
+      }
     },
-    1: { // 300 BCE
-      italia: 'latin',
-      sicilia: 'greek',
-      gallia: 'latin',
-      hispania: 'latin',
-      africa: 'mixed',
-      aegyptus: 'greek',
-      syria: 'greek',
-      asia_minor: 'greek',
-      thracia: 'greek',
-      macedonia: 'greek',
-      achaia: 'greek',
-      creta: 'greek',
-      cyprus: 'greek',
-      judea: 'hebrew'
+    italy: {
+      name: 'Italian Peninsula',
+      path: 'M320,180 L340,175 L355,190 L365,210 L360,235 L350,250 L335,240 L325,220 L315,200 Z',
+      languages: {
+        [-500]: { dominant: 'latin', percentage: 70 },
+        [-300]: { dominant: 'latin', percentage: 85 },
+        [0]: { dominant: 'latin', percentage: 95 },
+        [300]: { dominant: 'latin', percentage: 98 },
+        [500]: { dominant: 'latin', percentage: 95 }
+      }
     },
-    2: { // 100 BCE
-      italia: 'latin',
-      sicilia: 'mixed',
-      gallia: 'latin',
-      hispania: 'latin',
-      africa: 'latin',
-      aegyptus: 'greek',
-      syria: 'greek',
-      asia_minor: 'greek',
-      thracia: 'mixed',
-      macedonia: 'mixed',
-      achaia: 'greek',
-      creta: 'greek',
-      cyprus: 'greek',
-      judea: 'hebrew'
+    egypt: {
+      name: 'Egypt',
+      path: 'M450,280 L480,275 L485,295 L490,315 L485,335 L470,340 L455,335 L450,315 L445,295 Z',
+      languages: {
+        [-500]: { dominant: 'greek', percentage: 20 },
+        [-300]: { dominant: 'greek', percentage: 40 },
+        [0]: { dominant: 'greek', percentage: 60 },
+        [300]: { dominant: 'coptic', percentage: 70 },
+        [500]: { dominant: 'coptic', percentage: 85 }
+      }
     },
-    3: { // 100 CE
-      italia: 'latin',
-      sicilia: 'latin',
-      gallia: 'latin',
-      hispania: 'latin',
-      africa: 'latin',
-      aegyptus: 'greek',
-      syria: 'greek',
-      asia_minor: 'greek',
-      thracia: 'latin',
-      macedonia: 'mixed',
-      achaia: 'greek',
-      creta: 'greek',
-      cyprus: 'greek',
-      judea: 'mixed'
+    levant: {
+      name: 'Levant',
+      path: 'M490,240 L520,235 L525,250 L530,270 L525,285 L510,290 L495,285 L485,265 Z',
+      languages: {
+        [-500]: { dominant: 'aramaic', percentage: 80 },
+        [-300]: { dominant: 'greek', percentage: 45 },
+        [0]: { dominant: 'greek', percentage: 55 },
+        [300]: { dominant: 'aramaic', percentage: 60 },
+        [500]: { dominant: 'aramaic', percentage: 75 }
+      }
     },
-    4: { // 300 CE
-      italia: 'latin',
-      sicilia: 'latin',
-      gallia: 'latin',
-      hispania: 'latin',
-      africa: 'latin',
-      aegyptus: 'greek',
-      syria: 'greek',
-      asia_minor: 'greek',
-      thracia: 'latin',
-      macedonia: 'greek',
-      achaia: 'greek',
-      creta: 'greek',
-      cyprus: 'greek',
-      judea: 'greek'
-    },
-    5: { // 500 CE
-      italia: 'latin',
-      sicilia: 'mixed',
-      gallia: 'latin',
-      hispania: 'latin',
-      africa: 'mixed',
-      aegyptus: 'greek',
-      syria: 'greek',
-      asia_minor: 'greek',
-      thracia: 'greek',
-      macedonia: 'greek',
-      achaia: 'greek',
-      creta: 'greek',
-      cyprus: 'greek',
-      judea: 'greek'
+    northAfrica: {
+      name: 'North Africa',
+      path: 'M250,280 L350,275 L360,295 L370,315 L365,335 L340,340 L280,345 L245,340 L240,315 L245,295 Z',
+      languages: {
+        [-500]: { dominant: 'punic', percentage: 85 },
+        [-300]: { dominant: 'punic', percentage: 75 },
+        [0]: { dominant: 'latin', percentage: 60 },
+        [300]: { dominant: 'latin', percentage: 80 },
+        [500]: { dominant: 'latin', percentage: 70 }
+      }
     }
-  };
+  }
 
-  const regionNames = {
-    italia: 'Italia',
-    sicilia: 'Sicilia',
-    gallia: 'Gallia',
-    hispania: 'Hispania',
-    africa: 'Africa',
-    aegyptus: 'Aegyptus',
-    syria: 'Syria',
-    asia_minor: 'Asia Minor',
-    thracia: 'Thracia',
-    macedonia: 'Macedonia',
-    achaia: 'Achaia',
-    creta: 'Creta',
-    cyprus: 'Cyprus',
-    judea: 'Judea'
-  };
+  const getYearFromSlider = (value: number) => {
+    const years = [-500, -300, 0, 300, 500]
+    return years[value]
+  }
 
-  const getRegionColor = (regionId) => {
-    const currentData = regionData[selectedEra];
-    const language = currentData[regionId];
-    return languages[language]?.color || '#6B7280';
-  };
+  const getRegionColor = (regionId: string) => {
+    const region = regions[regionId as keyof typeof regions]
+    const year = getYearFromSlider(selectedYear)
+    const languageData = region.languages[year as keyof typeof region.languages]
+    return languages[languageData.dominant as keyof typeof languages].color
+  }
 
-  const getRegionOpacity = (regionId) => {
-    return hoveredRegion === regionId ? 0.9 : 0.7;
-  };
+  const getRegionOpacity = (regionId: string) => {
+    return hoveredRegion === regionId ? 0.8 : selectedRegion === regionId ? 0.9 : 0.6
+  }
 
   return (
-    <div className="min-h-screen bg-[#0D0D0F] text-[#F5F4F2] p-8">
+    <div className="min-h-screen bg-[#0D0D0F] text-[#F5F4F2] p-6">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-[#C9A227] to-[#F5F4F2] bg-clip-text text-transparent">
+        <div className="mb-8">
+          <h1 className="text-4xl font-bold mb-2 text-[#C9A227]">
             Language Distribution Map
           </h1>
-          <p className="text-xl text-[#F5F4F2]/80 max-w-3xl mx-auto">
-            Explore the evolution of dominant languages across the Mediterranean from Classical Antiquity through the Byzantine Era
+          <p className="text-lg text-[#F5F4F2]/80">
+            Explore how languages spread across the Mediterranean world
           </p>
         </div>
 
-        {/* Era Slider */}
-        <div className="mb-12">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-[#C9A227] mb-4">
-              {eras[selectedEra].name}
-            </h2>
-            <p className="text-xl text-[#F5F4F2]/80">
-              {eras[selectedEra].year}
-            </p>
-          </div>
-          
-          <div className="flex justify-center items-center space-x-4 mb-8">
-            <button 
-              onClick={() => setSelectedEra(Math.max(0, selectedEra - 1))}
-              disabled={selectedEra === 0}
-              className="px-4 py-2 bg-[#C9A227] text-[#0D0D0F] rounded-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[#C9A227]/80 transition-colors"
-            >
-              Previous
-            </button>
-            
-            <div className="flex space-x-2">
-              {eras.map((era, index) => (
-                <button
-                  key={index}
-                  onClick={() => setSelectedEra(index)}
-                  className={`w-4 h-4 rounded-full transition-all ${
-                    selectedEra === index 
-                      ? 'bg-[#C9A227] scale-125' 
-                      : 'bg-[#F5F4F2]/30 hover:bg-[#F5F4F2]/50'
-                  }`}
-                />
-              ))}
-            </div>
-            
-            <button 
-              onClick={() => setSelectedEra(Math.min(eras.length - 1, selectedEra + 1))}
-              disabled={selectedEra === eras.length - 1}
-              className="px-4 py-2 bg-[#C9A227] text-[#0D0D0F] rounded-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[#C9A227]/80 transition-colors"
-            >
-              Next
-            </button>
-          </div>
-        </div>
-
-        <div className="grid lg:grid-cols-4 gap-8">
-          {/* Map */}
-          <div className="lg:col-span-3">
-            <div className="bg-[#F5F4F2]/5 rounded-2xl p-8 backdrop-blur-sm border border-[#F5F4F2]/10">
-              <svg
-                viewBox="0 0 1200 600"
-                className="w-full h-auto"
-                style={{ maxHeight: '600px' }}
-              >
-                {/* Mediterranean Sea */}
-                <rect x="300" y="250" width="600" height="200" fill="#1e40af" opacity="0.3" rx="20"/>
-                
-                {/* Regions */}
-                {/* Italia */}
-                <path
-                  d="M 450 180 L 470 160 L 480 180 L 490 220 L 485 280 L 475 320 L 460 340 L 450 320 L 445 280 L 440 220 Z"
-                  fill={getRegionColor('italia')}
-                  opacity={getRegionOpacity('italia')}
-                  stroke="#F5F4F2"
-                  strokeWidth="2"
-                  className="cursor-pointer transition-all duration-300 hover:stroke-[#C9A227] hover:stroke-4"
-                  onMouseEnter={() => setHoveredRegion('italia')}
-                  onMouseLeave={() => setHoveredRegion('')}
-                />
-                
-                {/* Sicilia */}
-                <circle
-                  cx="460"
-                  cy="360"
-                  r="25"
-                  fill={getRegionColor('sicilia')}
-                  opacity={getRegionOpacity('sicilia')}
-                  stroke="#F5F4F2"
-                  strokeWidth="2"
-                  className="cursor-pointer transition-all duration-300 hover:stroke-[#C9A227] hover:stroke-4"
-                  onMouseEnter={() => setHoveredRegion('sicilia')}
-                  onMouseLeave={() => setHoveredRegion('')}
-                />
-                
-                {/* Gallia */}
-                <path
-                  d="M 300 120 L 420 120 L 440 140 L 430 180 L 400 200 L 350 190 L 300 160 Z"
-                  fill={getRegionColor('gallia')}
-                  opacity={getRegionOpacity('gallia')}
-                  stroke="#F5F4F2"
-                  strokeWidth="2"
-                  className="cursor-pointer transition-all duration-300 hover:stroke-[#C9A227] hover:stroke-4"
-                  onMouseEnter={() => setHoveredRegion('gallia')}
-                  onMouseLeave={() => setHoveredRegion('')}
-                />
-                
-                {/* Hispania */}
-                <path
-                  d="M 200 160 L 290 150 L 300 180 L 290 220 L 270 260 L 220 270 L 180 240 L 180 190 Z"
-                  fill={getRegionColor('hispania')}
-                  opacity={getRegionOpacity('hispania')}
-                  stroke="#F5F4F2"
-                  strokeWidth="2"
-                  className="cursor-pointer transition-all duration-300 hover:stroke-[#C9A227] hover:stroke-4"
-                  onMouseEnter={() => setHoveredRegion('hispania')}
-                  onMouseLeave={() => setHoveredRegion('')}
-                />
-                
-                {/* Africa */}
-                <path
-                  d="M 300 380 L 500 390 L 520 420 L 500 460 L 450 480 L 350 470 L 280 450 L 280 400 Z"
-                  fill={getRegionColor('africa')}
-                  opacity={getRegionOpacity('africa')}
-                  stroke="#F5F4F2"
-                  strokeWidth="2"
-                  className="cursor-pointer transition-all duration-300 hover:stroke-[#C9A227] hover:stroke-4"
-                  onMouseEnter={() => setHoveredRegion('africa')}
-                  onMouseLeave={() => setHoveredRegion('')}
-                />
-                
-                {/* Aegyptus */}
-                <path
-                  d="M 700 380 L 750 390 L 780 420 L 770 480 L 720 490 L 690 460 L 680 420 Z"
-                  fill={getRegionColor('aegyptus')}
-                  opacity={getRegionOpacity('aegyptus')}
-                  stroke="#F5F4F2"
-                  strokeWidth="2"
-                  className="cursor-pointer transition-all duration-300 hover:stroke-[#C9A227] hover:stroke-4"
-                  onMouseEnter={() => setHoveredRegion('aegyptus')}
-                  onMouseLeave={() => setHoveredRegion('')}
-                />
-                
-                {/* Syria */}
-                <path
-                  d="M 780 280 L 850 270 L 880 300 L 870 340 L 840 360 L 800 350 L 770 320 Z"
-                  fill={getRegionColor('syria')}
-                  opacity={getRegionOpacity('syria')}
-                  stroke="#F5F4F2"
-                  strokeWidth="2"
-                  className="cursor-pointer transition-all duration-300 hover:stroke-[#C9A227] hover:stroke-4"
-                  onMouseEnter={() => setHoveredRegion('syria')}
-                  onMouseLeave={() => setHoveredRegion('')}
-                />
-                
-                {/* Asia Minor */}
-                <path
-                  d="M 650 180 L 780 170 L 820 200 L 800 250 L 740 260 L 680 240 L 640 210 Z"
-                  fill={getRegionColor('asia_minor')}
-                  opacity={getRegionOpacity('asia_minor')}
-                  stroke="#F5F4F2"
-                  strokeWidth="2"
-                  className="cursor-pointer transition-all duration-300 hover:stroke-[#C9A227] hover:stroke-4"
-                  onMouseEnter={() => setHoveredRegion('asia_minor')}
-                  onMouseLeave={() => setHoveredRegion('')}
-                />
-                
-                {/* Thracia */}
-                <path
-                  d="M 580 160 L 640 150 L 660 180 L 650 220 L 600 230 L 560 200 Z"
-                  fill={getRegionColor('thracia')}
-                  opacity={getRegionOpacity('thracia')}
-                  stroke="#F5F4F2"
-                  strokeWidth="2"
-                  className="cursor-pointer transition-all duration-300 hover:stroke-[#C9A227] hover:stroke-4"
-                  onMouseEnter={() => setHoveredRegion('thracia')}
-                  onMouseLeave={() => setHoveredRegion('')}
-                />
-                
-                {/* Macedonia */}
-                <path
-                  d="M 530 200 L 580 190 L 600 220 L 580 250 L 540 260 L 510 230 Z"
-                  fill={getRegionColor('macedonia')}
-                  opacity={getRegionOpacity('macedonia')}
-                  stroke="#F5F4F2"
-                  strokeWidth="2"
-                  className="cursor-pointer transition-all duration-300 hover:stroke-[#C9A227] hover:stroke-4"
-                  onMouseEnter={() => setHoveredRegion('macedonia')}
-                  onMouseLeave={() => setHoveredRegion('')}
-                />
-                
-                {/* Achaia */}
-                <path
-                  d="M 520 260 L 560 250 L 580 280 L 570 320 L 530 330 L 500 300 Z"
-                  fill={getRegionColor('achaia')}
-                  opacity={getRegionOpacity('achaia')}
-                  stroke="#F5F4F2"
-                  strokeWidth="2"
-                  className="cursor-pointer transition-all duration-300 hover:stroke-[#C9A227] hover:stroke-4"
-                  onMouseEnter={() => setHoveredRegion('achaia')}
-                  onMouseLeave={() => setHoveredRegion('')}
-                />
-                
-                {/* Creta */}
-                <ellipse
-                  cx="600"
-                  cy="380"
-                  rx="40"
-                  ry="15"
-                  fill={getRegionColor('creta')}
-                  opacity={getRegionOpacity('creta')}
-                  stroke="#F5F4F2"
-                  strokeWidth="2"
-                  className="cursor-pointer transition-all duration-300 hover:stroke-[#C9A227] hover:stroke-4"
-                  onMouseEnter={() => setHoveredRegion('creta')}
-                  onMouseLeave={() => setHoveredRegion('')}
-                />
-                
-                {/* Cyprus */}
-                <ellipse
-                  cx="720"
-                  cy="320"
-                  rx="30"
-                  ry="20"
-                  fill={getRegionColor('cyprus')}
-                  opacity={getRegionOpacity('cyprus')}
-                  stroke="#F5F4F2"
-                  strokeWidth="2"
-                  className="cursor-pointer transition-all duration-300 hover:stroke-[#C9A227] hover:stroke-4"
-                  onMouseEnter={() => setHoveredRegion('cyprus')}
-                  onMouseLeave={() => setHoveredRegion('')}
-                />
-                
-                {/* Judea */}
-                <path
-                  d="M 750 320 L 780 310 L 790 340 L 780 370 L 750 380 L 730 360 L 730 340 Z"
-                  fill={getRegionColor('judea')}
-                  opacity={getRegionOpacity('judea')}
-                  stroke="#F5F4F2"
-                  strokeWidth="2"
-                  className="cursor-pointer transition-all duration-300 hover:stroke-[#C9A227] hover:stroke-4"
-                  onMouseEnter={() => setHoveredRegion('judea')}
-                  onMouseLeave={() => setHoveredRegion('')}
-                />
-                
-                {/* Region Labels */}
-                {Object.entries(regionNames).map(([id, name]) => {
-                  const positions = {
-                    italia: [465, 250],
-                    sicilia: [460, 365],
-                    gallia: [360, 155],
-                    hispania: [240, 210],
-                    africa: [390, 425],
-                    aegyptus: [730, 435],
-                    syria: [825, 305],
-                    asia_minor: [720, 215],
-                    thracia: [600, 185],
-                    macedonia: [545, 225],
-                    achaia: [540, 295],
-                    creta: [600, 385],
-                    cyprus: [720, 325],
-                    judea: [760, 345]
-                  };
-                  
-                  const [x, y] = positions[id] || [0, 0];
-                  
-                  return (
-                    <text
-                      key={id}
-                      x={x}
-                      y={y}
-                      textAnchor="middle"
-                      fill="#F5F4F2"
-                      fontSize="12"
-                      fontWeight="bold"
-                      className="pointer-events-none"
-                    >
-                      {name}
-                    </text>
-                  );
-                })}
-              </svg>
-              
-              {/* Hover Info */}
-              {hoveredRegion && (
-                <div className="mt-4 p-4 bg-[#F5F4F2]/10 rounded-lg border border-[#C9A227]/30">
-                  <h3 className="text-xl font-bold text-[#C9A227] mb-2">
-                    {regionNames[hoveredRegion]}
-                  </h3>
-                  <p className="text-[#F5F4F2]/80">
-                    Dominant Language: <span className="font-semibold" style={{color: languages[regionData[selectedEra][hoveredRegion]]?.color}}>
-                      {languages[regionData[selectedEra][hoveredRegion]]?.name}
-                    </span>
-                  </p>
-                </div>
-              )}
+        {/* Controls */}
+        <div className="mb-6 p-4 bg-[#1E1E24] rounded-lg">
+          <div className="flex items-center gap-6 mb-4">
+            <div className="flex items-center gap-4">
+              <span className="font-semibold">Year:</span>
+              <input
+                type="range"
+                min="0"
+                max="4"
+                step="1"
+                value={selectedYear}
+                onChange={(e) => setSelectedYear(parseInt(e.target.value))}
+                className="w-48 h-2 bg-[#0D0D0F] rounded-lg appearance-none cursor-pointer"
+                style={{
+                  background: `linear-gradient(to right, #C9A227 0%, #C9A227 ${selectedYear * 25}%, #0D0D0F ${selectedYear * 25}%, #0D0D0F 100%)`
+                }}
+              />
+              <span className="text-[#C9A227] font-bold min-w-[80px]">
+                {getYearFromSlider(selectedYear) < 0 
+                  ? `${Math.abs(getYearFromSlider(selectedYear))} BCE`
+                  : `${getYearFromSlider(selectedYear)} CE`
+                }
+              </span>
             </div>
           </div>
 
           {/* Legend */}
-          <div className="lg:col-span-1">
-            <div className="bg-[#F5F4F2]/5 rounded-2xl p-6 backdrop-blur-sm border border-[#F5F4F2]/10 sticky top-8">
-              <h3 className="text-2xl font-bold text-[#C9A227] mb-6">Language Legend</h3>
-              
-              <div className="space-y-4">
-                {Object.entries(languages).map(([key, lang]) => (
-                  <div key={key} className="flex items-center space-x-3">
-                    <div 
-                      className="w-6 h-6 rounded-full border-2 border-[#F5F4F2]/30"
-                      style={{ backgroundColor: lang.color }}
-                    ></div>
-                    <span className="font-medium">{lang.name}</span>
-                  </div>
-                ))}
+          <div className="flex flex-wrap gap-4">
+            {Object.entries(languages).map(([key, lang]) => (
+              <div key={key} className="flex items-center gap-2">
+                <div 
+                  className="w-6 h-6 rounded flex items-center justify-center text-white font-bold text-sm"
+                  style={{ backgroundColor: lang.color }}
+                >
+                  {lang.icon}
+                </div>
+                <span>{lang.name}</span>
               </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex gap-6">
+          {/* Map */}
+          <div className="flex-1">
+            <div className="bg-[#1E1E24] rounded-lg p-6">
+              <svg 
+                viewBox="0 0 700 500" 
+                className="w-full h-auto max-h-[600px] border border-[#F5F4F2]/20 rounded"
+              >
+                {/* Mediterranean Sea */}
+                <rect width="700" height="500" fill="#0D0D0F" />
+                
+                {/* Sea */}
+                <ellipse cx="350" cy="250" rx="280" ry="120" fill="#1E1E24" opacity="0.5" />
+                
+                {/* Regions */}
+                {Object.entries(regions).map(([regionId, region]) => (
+                  <path
+                    key={regionId}
+                    d={region.path}
+                    fill={getRegionColor(regionId)}
+                    opacity={getRegionOpacity(regionId)}
+                    stroke="#F5F4F2"
+                    strokeWidth="2"
+                    className="cursor-pointer transition-all duration-200"
+                    onMouseEnter={() => setHoveredRegion(regionId)}
+                    onMouseLeave={() => setHoveredRegion(null)}
+                    onClick={() => setSelectedRegion(selectedRegion === regionId ? null : regionId)}
+                  />
+                ))}
+
+                {/* Region Labels */}
+                {Object.entries(regions).map(([regionId, region]) => {
+                  const bounds = region.path.match(/\d+/g)?.map(Number) || []
+                  const centerX = Math.max(...bounds.filter((_, i) => i % 2 === 0)) - 
+                                 Math.min(...bounds.filter((_, i) => i % 2 === 0))
+                  const centerY = Math.max(...bounds.filter((_, i) => i % 2 === 1)) - 
+                                 Math.min(...bounds.filter((_, i) => i % 2 === 1))
+                  
+                  return (
+                    <text
+                      key={`${regionId}-label`}
+                      x={Math.min(...bounds.filter((_, i) => i % 2 === 0)) + centerX / 2}
+                      y={Math.min(...bounds.filter((_, i) => i % 2 === 1)) + centerY / 2}
+                      fill="#F5F4F2"
+                      fontSize="12"
+                      fontWeight="bold"
+                      textAnchor="middle"
+                      className="pointer-events-none"
+                    >
+                      {region.name}
+                    </text>
+                  )
+                })}
+              </svg>
+            </div>
+          </div>
+
+          {/* Region Details */}
+          <div className="w-80">
+            <div className="bg-[#1E1E24] rounded-lg p-6">
+              <h3 className="text-xl font-bold mb-4 text-[#C9A227]">
+                Region Details
+              </h3>
               
-              <div className="mt-8 pt-6 border-t border-[#F5F4F2]/20">
-                <h4 className="text-lg font-semibold text-[#C9A227] mb-4">Historical Context</h4>
-                <div className="space-y-3 text-sm text-[#F5F4F2]/80">
-                  <div className="p-3 bg-[#F5F4F2]/5 rounded-lg">
-                    <p className="font-medium text-blue-400">Greek Influence</p>
-                    <p>Hellenistic culture and trade networks</p>
+              {selectedRegion ? (
+                <div>
+                  <h4 className="text-lg font-semibold mb-3">
+                    {regions[selectedRegion as keyof typeof regions].name}
+                  </h4>
+                  
+                  <div className="mb-4">
+                    <p className="text-sm text-[#F5F4F2]/70 mb-2">
+                      Year: {getYearFromSlider(selectedYear) < 0 
+                        ? `${Math.abs(getYearFromSlider(selectedYear))} BCE`
+                        : `${getYearFromSlider(selectedYear)} CE`
+                      }
+                    </p>
+                    
+                    {(() => {
+                      const region = regions[selectedRegion as keyof typeof regions]
+                      const year = getYearFromSlider(selectedYear)
+                      const languageData = region.languages[year as keyof typeof region.languages]
+                      const dominantLang = languages[languageData.dominant as keyof typeof languages]
+                      
+                      return (
+                        <div className="space-y-3">
+                          <div>
+                            <div className="flex items-center gap-2 mb-2">
+                              <div 
+                                className="w-5 h-5 rounded flex items-center justify-center text-white font-bold text-xs"
+                                style={{ backgroundColor: dominantLang.color }}
+                              >
+                                {dominantLang.icon}
+                              </div>
+                              <span className="font-semibold">{dominantLang.name}</span>
+                              <span className="text-[#C9A227]">{languageData.percentage}%</span>
+                            </div>
+                            <div className="w-full bg-[#0D0D0F] rounded-full h-2">
+                              <div 
+                                className="h-2 rounded-full transition-all duration-500"
+                                style={{ 
+                                  backgroundColor: dominantLang.color,
+                                  width: `${languageData.percentage}%` 
+                                }}
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      )
+                    })()}
                   </div>
-                  <div className="p-3 bg-[#F5F4F2]/5 rounded-lg">
-                    <p className="font-medium text-red-400">Latin Expansion</p>
-                    <p>Roman conquest and administration</p>
-                  </div>
-                  <div className="p-3 bg-[#F5F4F2]/5 rounded-lg">
-                    <p className="font-medium text-emerald-400">Semitic Heritage</p>
-                    <p>Hebrew and Aramaic traditions</p>
+
+                  <div className="mt-4 p-3 bg-[#0D0D0F] rounded">
+                    <h5 className="font-semibold mb-2">Historical Context</h5>
+                    <p className="text-sm text-[#F5F4F2]/80">
+                      {selectedRegion === 'greece' && 'Center of Greek civilization and philosophical thought.'}
+                      {selectedRegion === 'italy' && 'Heart of the Roman Empire and Latin literature.'}
+                      {selectedRegion === 'egypt' && 'Hellenistic culture mixing with local traditions.'}
+                      {selectedRegion === 'levant' && 'Crossroads of Greek, Aramaic, and local languages.'}
+                      {selectedRegion === 'northAfrica' && 'Roman colonization replacing Punic influence.'}
+                    </p>
                   </div>
                 </div>
+              ) : (
+                <p className="text-[#F5F4F2]/60">
+                  Click on a region to see detailed language distribution data
+                </p>
+              )}
+            </div>
+
+            {/* Timeline Events */}
+            <div className="mt-6 bg-[#1E1E24] rounded-lg p-6">
+              <h3 className="text-lg font-bold mb-3 text-[#C9A227]">
+                Key Events
+              </h3>
+              <div className="space-y-2 text-sm">
+                {getYearFromSlider(selectedYear) <= -500 && (
+                  <div className="p-2 bg-[#0D0D0F] rounded">
+                    <span className="text-[#3B82F6]">500 BCE:</span> Greek city-states flourishing
+                  </div>
+                )}
+                {getYearFromSlider(selectedYear) <= -300 && (
+                  <div className="p-2 bg-[#0D0D0F] rounded">
+                    <span className="text-[#F59E0B]">323 BCE:</span> Alexander's empire spreads Greek
+                  </div>
+                )}
+                {getYearFromSlider(selectedYear) <= 0 && (
+                  <div className="p-2 bg-[#0D0D0F] rounded">
+                    <span className="text-[#DC2626]">27 BCE:</span> Roman Empire established
+                  </div>
+                )}
+                {getYearFromSlider(selectedYear) <= 300 && (
+                  <div className="p-2 bg-[#0D0D0F] rounded">
+                    <span className="text-[#7C3AED]">313 CE:</span> Christianity legalized
+                  </div>
+                )}
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }

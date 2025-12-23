@@ -1,379 +1,507 @@
-'use client';
+'use client'
 
-import React, { useState } from 'react';
+import { useState } from 'react'
+import { Copy, Check } from 'lucide-react'
 
-export default function DocsPage() {
-  const [activeTab, setActiveTab] = useState('getting-started');
-  const [copiedCode, setCopiedCode] = useState('');
+export default function ApiDocumentation() {
+  const [copiedCode, setCopiedCode] = useState<string>('')
 
   const copyToClipboard = (code: string, id: string) => {
-    navigator.clipboard.writeText(code);
-    setCopiedCode(id);
-    setTimeout(() => setCopiedCode(''), 2000);
-  };
-
-  const endpoints = [
-    {
-      method: 'POST',
-      path: '/api/search',
-      description: 'Search for words with semantic similarity',
-      parameters: [
-        { name: 'query', type: 'string', required: true, description: 'Search term' },
-        { name: 'limit', type: 'number', required: false, description: 'Maximum results (default: 10)' }
-      ]
-    },
-    {
-      method: 'POST',
-      path: '/api/translate',
-      description: 'Translate text between languages',
-      parameters: [
-        { name: 'text', type: 'string', required: true, description: 'Text to translate' },
-        { name: 'from', type: 'string', required: true, description: 'Source language code' },
-        { name: 'to', type: 'string', required: true, description: 'Target language code' }
-      ]
-    },
-    {
-      method: 'GET',
-      path: '/api/semantia/word/{word}',
-      description: 'Get detailed information about a specific word',
-      parameters: [
-        { name: 'word', type: 'string', required: true, description: 'The word to analyze' }
-      ]
-    }
-  ];
-
-  const codeExamples = {
-    search: {
-      curl: `curl -X POST https://api.semantia.com/api/search \\
-  -H "Content-Type: application/json" \\
-  -H "Authorization: Bearer YOUR_API_KEY" \\
-  -d '{
-    "query": "happiness",
-    "limit": 5
-  }'`,
-      python: `import requests
-
-url = "https://api.semantia.com/api/search"
-headers = {
-    "Content-Type": "application/json",
-    "Authorization": "Bearer YOUR_API_KEY"
-}
-data = {
-    "query": "happiness",
-    "limit": 5
-}
-
-response = requests.post(url, headers=headers, json=data)
-result = response.json()
-print(result)`,
-      javascript: `const response = await fetch('https://api.semantia.com/api/search', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-    'Authorization': 'Bearer YOUR_API_KEY'
-  },
-  body: JSON.stringify({
-    query: 'happiness',
-    limit: 5
-  })
-});
-
-const result = await response.json();
-console.log(result);`
-    },
-    translate: {
-      curl: `curl -X POST https://api.semantia.com/api/translate \\
-  -H "Content-Type: application/json" \\
-  -H "Authorization: Bearer YOUR_API_KEY" \\
-  -d '{
-    "text": "Hello world",
-    "from": "en",
-    "to": "es"
-  }'`,
-      python: `import requests
-
-url = "https://api.semantia.com/api/translate"
-headers = {
-    "Content-Type": "application/json",
-    "Authorization": "Bearer YOUR_API_KEY"
-}
-data = {
-    "text": "Hello world",
-    "from": "en",
-    "to": "es"
-}
-
-response = requests.post(url, headers=headers, json=data)
-result = response.json()
-print(result)`,
-      javascript: `const response = await fetch('https://api.semantia.com/api/translate', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-    'Authorization': 'Bearer YOUR_API_KEY'
-  },
-  body: JSON.stringify({
-    text: 'Hello world',
-    from: 'en',
-    to: 'es'
-  })
-});
-
-const result = await response.json();
-console.log(result);`
-    },
-    word: {
-      curl: `curl -X GET https://api.semantia.com/api/semantia/word/happiness \\
-  -H "Authorization: Bearer YOUR_API_KEY"`,
-      python: `import requests
-
-url = "https://api.semantia.com/api/semantia/word/happiness"
-headers = {
-    "Authorization": "Bearer YOUR_API_KEY"
-}
-
-response = requests.get(url, headers=headers)
-result = response.json()
-print(result)`,
-      javascript: `const response = await fetch('https://api.semantia.com/api/semantia/word/happiness', {
-  method: 'GET',
-  headers: {
-    'Authorization': 'Bearer YOUR_API_KEY'
+    navigator.clipboard.writeText(code)
+    setCopiedCode(id)
+    setTimeout(() => setCopiedCode(''), 2000)
   }
-});
 
-const result = await response.json();
-console.log(result);`
-    }
-  };
-
-  const navigation = [
-    { id: 'getting-started', label: 'Getting Started' },
-    { id: 'authentication', label: 'Authentication' },
-    { id: 'endpoints', label: 'Endpoints' },
-    { id: 'examples', label: 'Code Examples' }
-  ];
+  const CodeBlock = ({ code, language, id }: { code: string; language: string; id: string }) => (
+    <div className="relative">
+      <div className="absolute top-3 right-3 z-10">
+        <button
+          onClick={() => copyToClipboard(code, id)}
+          className="p-2 bg-[#1E1E24] hover:bg-[#2A2A32] rounded-lg transition-colors"
+        >
+          {copiedCode === id ? (
+            <Check className="w-4 h-4 text-green-400" />
+          ) : (
+            <Copy className="w-4 h-4 text-[#F5F4F2]" />
+          )}
+        </button>
+      </div>
+      <pre className="bg-[#1E1E24] rounded-lg p-4 overflow-x-auto">
+        <code className="text-[#F5F4F2] text-sm font-mono">{code}</code>
+      </pre>
+    </div>
+  )
 
   return (
     <div className="min-h-screen bg-[#0D0D0F] text-[#F5F4F2]">
-      <div className="container mx-auto px-4 py-12">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-[#C9A227] to-[#F5F4F2] bg-clip-text text-transparent">
-            API Documentation
-          </h1>
-          <p className="text-xl text-[#F5F4F2]/70 max-w-2xl mx-auto">
-            Complete reference for integrating with the Semantia API
-          </p>
-        </div>
-
-        <div className="flex flex-col lg:flex-row gap-8">
+      <div className="max-w-7xl mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Sidebar Navigation */}
-          <div className="lg:w-64 flex-shrink-0">
+          <div className="lg:col-span-3">
             <div className="sticky top-8">
+              <h2 className="font-bold text-lg mb-6 text-[#C9A227]">API Documentation</h2>
               <nav className="space-y-2">
-                {navigation.map((item) => (
-                  <button
-                    key={item.id}
-                    onClick={() => setActiveTab(item.id)}
-                    className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-200 ${
-                      activeTab === item.id
-                        ? 'bg-[#C9A227] text-[#0D0D0F] font-semibold'
-                        : 'hover:bg-[#F5F4F2]/10 hover:text-[#C9A227]'
-                    }`}
-                  >
-                    {item.label}
-                  </button>
-                ))}
+                <a href="#getting-started" className="block py-2 px-3 rounded-lg hover:bg-[#1E1E24] transition-colors">
+                  Getting Started
+                </a>
+                <a href="#authentication" className="block py-2 px-3 rounded-lg hover:bg-[#1E1E24] transition-colors">
+                  Authentication
+                </a>
+                <div className="ml-3 space-y-2">
+                  <a href="#search" className="block py-2 px-3 text-sm text-gray-300 hover:text-[#F5F4F2] transition-colors">
+                    Search
+                  </a>
+                  <a href="#translate" className="block py-2 px-3 text-sm text-gray-300 hover:text-[#F5F4F2] transition-colors">
+                    Translate
+                  </a>
+                  <a href="#semantia" className="block py-2 px-3 text-sm text-gray-300 hover:text-[#F5F4F2] transition-colors">
+                    Semantia
+                  </a>
+                  <a href="#stats" className="block py-2 px-3 text-sm text-gray-300 hover:text-[#F5F4F2] transition-colors">
+                    Statistics
+                  </a>
+                </div>
+                <a href="#examples" className="block py-2 px-3 rounded-lg hover:bg-[#1E1E24] transition-colors">
+                  Code Examples
+                </a>
+                <a href="#rate-limits" className="block py-2 px-3 rounded-lg hover:bg-[#1E1E24] transition-colors">
+                  Rate Limits
+                </a>
               </nav>
             </div>
           </div>
 
           {/* Main Content */}
-          <div className="flex-1">
+          <div className="lg:col-span-9 space-y-12">
             {/* Getting Started */}
-            {activeTab === 'getting-started' && (
-              <div className="space-y-8">
-                <div>
-                  <h2 className="text-3xl font-bold text-[#C9A227] mb-6">Getting Started</h2>
-                  <div className="prose prose-invert max-w-none">
-                    <p className="text-lg text-[#F5F4F2]/80 mb-6">
-                      Welcome to the Semantia API! Our powerful semantic search and language processing API
-                      enables you to build intelligent applications with natural language understanding.
-                    </p>
-                    
-                    <div className="bg-[#F5F4F2]/5 border border-[#F5F4F2]/20 rounded-lg p-6 mb-6">
-                      <h3 className="text-xl font-semibold text-[#C9A227] mb-4">Base URL</h3>
-                      <code className="bg-[#0D0D0F] px-3 py-2 rounded text-[#C9A227]">
-                        https://api.semantia.com
-                      </code>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div className="bg-[#F5F4F2]/5 border border-[#F5F4F2]/20 rounded-lg p-6">
-                        <h3 className="text-xl font-semibold text-[#C9A227] mb-3">Quick Start</h3>
-                        <ol className="list-decimal list-inside space-y-2 text-[#F5F4F2]/80">
-                          <li>Sign up for an API key</li>
-                          <li>Include your key in requests</li>
-                          <li>Make your first API call</li>
-                          <li>Start building amazing features</li>
-                        </ol>
-                      </div>
-                      
-                      <div className="bg-[#F5F4F2]/5 border border-[#F5F4F2]/20 rounded-lg p-6">
-                        <h3 className="text-xl font-semibold text-[#C9A227] mb-3">Rate Limits</h3>
-                        <ul className="space-y-2 text-[#F5F4F2]/80">
-                          <li>• Free tier: 1,000 requests/day</li>
-                          <li>• Pro tier: 10,000 requests/day</li>
-                          <li>• Enterprise: Unlimited</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            <section id="getting-started">
+              <h1 className="text-4xl font-bold mb-6 text-[#C9A227]">API Documentation</h1>
+              <p className="text-xl text-gray-300 mb-8">
+                The LOGOS API provides access to ancient Greek and Latin texts, translations, and linguistic analysis.
+              </p>
+              
+              <div className="bg-[#1E1E24] rounded-lg p-6 mb-8">
+                <h3 className="text-lg font-semibold mb-4">Base URL</h3>
+                <code className="text-[#C9A227] bg-[#0D0D0F] px-3 py-2 rounded">
+                  https://logos-api-production-3270.up.railway.app
+                </code>
               </div>
-            )}
+
+              <div className="bg-blue-900/20 border border-blue-700/30 rounded-lg p-6">
+                <h4 className="font-semibold text-blue-400 mb-2">Note</h4>
+                <p className="text-gray-300">
+                  All API responses are returned in JSON format. Make sure to include appropriate headers in your requests.
+                </p>
+              </div>
+            </section>
 
             {/* Authentication */}
-            {activeTab === 'authentication' && (
-              <div className="space-y-8">
-                <h2 className="text-3xl font-bold text-[#C9A227] mb-6">Authentication</h2>
-                
-                <div className="bg-[#F5F4F2]/5 border border-[#F5F4F2]/20 rounded-lg p-6">
-                  <h3 className="text-xl font-semibold text-[#C9A227] mb-4">API Key Authentication</h3>
-                  <p className="text-[#F5F4F2]/80 mb-4">
-                    All API requests must include your API key in the Authorization header:
-                  </p>
-                  
-                  <div className="relative bg-[#0D0D0F] rounded-lg p-4 border border-[#F5F4F2]/20">
-                    <pre className="text-[#C9A227] overflow-x-auto">
-{`Authorization: Bearer YOUR_API_KEY`}
-                    </pre>
-                    <button
-                      onClick={() => copyToClipboard('Authorization: Bearer YOUR_API_KEY', 'auth')}
-                      className="absolute top-2 right-2 px-3 py-1 bg-[#C9A227] text-[#0D0D0F] text-sm rounded hover:bg-[#C9A227]/80 transition-colors"
-                    >
-                      {copiedCode === 'auth' ? 'Copied!' : 'Copy'}
-                    </button>
-                  </div>
-                </div>
+            <section id="authentication">
+              <h2 className="text-3xl font-bold mb-6">Authentication</h2>
+              <p className="text-gray-300 mb-6">
+                The LOGOS API uses API keys for authentication. Include your API key in the Authorization header.
+              </p>
+              
+              <CodeBlock
+                id="auth-example"
+                language="bash"
+                code={`curl -H "Authorization: Bearer YOUR_API_KEY" \\
+  https://logos-api-production-3270.up.railway.app/api/search?q=logos`}
+              />
 
-                <div className="bg-[#F5F4F2]/5 border border-[#F5F4F2]/20 rounded-lg p-6">
-                  <h3 className="text-xl font-semibold text-[#C9A227] mb-4">Error Responses</h3>
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="font-semibold mb-2">401 Unauthorized</h4>
-                      <p className="text-[#F5F4F2]/70">Missing or invalid API key</p>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-2">429 Too Many Requests</h4>
-                      <p className="text-[#F5F4F2]/70">Rate limit exceeded</p>
-                    </div>
-                  </div>
-                </div>
+              <div className="mt-6 bg-amber-900/20 border border-amber-700/30 rounded-lg p-6">
+                <h4 className="font-semibold text-amber-400 mb-2">API Key Required</h4>
+                <p className="text-gray-300">
+                  Contact our team to obtain an API key for production use. Development endpoints may be available without authentication.
+                </p>
               </div>
-            )}
+            </section>
 
             {/* Endpoints */}
-            {activeTab === 'endpoints' && (
-              <div className="space-y-8">
-                <h2 className="text-3xl font-bold text-[#C9A227] mb-6">API Endpoints</h2>
-                
-                <div className="space-y-6">
-                  {endpoints.map((endpoint, index) => (
-                    <div key={index} className="bg-[#F5F4F2]/5 border border-[#F5F4F2]/20 rounded-lg p-6 hover:border-[#C9A227]/30 transition-colors">
-                      <div className="flex items-center gap-4 mb-4">
-                        <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
-                          endpoint.method === 'GET' 
-                            ? 'bg-green-500/20 text-green-400' 
-                            : 'bg-blue-500/20 text-blue-400'
-                        }`}>
-                          {endpoint.method}
-                        </span>
-                        <code className="text-[#C9A227] font-mono">{endpoint.path}</code>
-                      </div>
-                      
-                      <p className="text-[#F5F4F2]/80 mb-4">{endpoint.description}</p>
-                      
-                      <div>
-                        <h4 className="font-semibold text-[#C9A227] mb-3">Parameters</h4>
-                        <div className="overflow-x-auto">
-                          <table className="w-full text-sm">
-                            <thead>
-                              <tr className="border-b border-[#F5F4F2]/20">
-                                <th className="text-left py-2 text-[#C9A227]">Name</th>
-                                <th className="text-left py-2 text-[#C9A227]">Type</th>
-                                <th className="text-left py-2 text-[#C9A227]">Required</th>
-                                <th className="text-left py-2 text-[#C9A227]">Description</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              {endpoint.parameters.map((param, paramIndex) => (
-                                <tr key={paramIndex} className="border-b border-[#F5F4F2]/10">
-                                  <td className="py-2 font-mono">{param.name}</td>
-                                  <td className="py-2">{param.type}</td>
-                                  <td className="py-2">
-                                    <span className={`px-2 py-1 rounded text-xs ${
-                                      param.required 
-                                        ? 'bg-red-500/20 text-red-400' 
-                                        : 'bg-gray-500/20 text-gray-400'
-                                    }`}>
-                                      {param.required ? 'Required' : 'Optional'}
-                                    </span>
-                                  </td>
-                                  <td className="py-2 text-[#F5F4F2]/70">{param.description}</td>
-                                </tr>
-                              ))}
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
+            <section id="endpoints">
+              <h2 className="text-3xl font-bold mb-8">Endpoints</h2>
+
+              {/* Search Endpoint */}
+              <div id="search" className="mb-12">
+                <div className="flex items-center gap-4 mb-4">
+                  <span className="bg-green-600 text-white px-3 py-1 rounded text-sm font-mono">GET</span>
+                  <h3 className="text-2xl font-bold">Search Texts</h3>
                 </div>
+                
+                <p className="text-gray-300 mb-6">
+                  Search through ancient texts with support for Greek and Latin queries.
+                </p>
+
+                <div className="bg-[#1E1E24] rounded-lg p-4 mb-6">
+                  <code className="text-[#C9A227]">GET /api/search?q={`{query}`}&lang={`{language}`}&era={`{era}`}</code>
+                </div>
+
+                <h4 className="font-semibold mb-4">Parameters</h4>
+                <div className="overflow-x-auto mb-6">
+                  <table className="w-full border border-gray-700 rounded-lg">
+                    <thead className="bg-[#1E1E24]">
+                      <tr>
+                        <th className="text-left p-4 border-b border-gray-700">Parameter</th>
+                        <th className="text-left p-4 border-b border-gray-700">Type</th>
+                        <th className="text-left p-4 border-b border-gray-700">Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b border-gray-700">
+                        <td className="p-4"><code className="text-[#C9A227]">q</code></td>
+                        <td className="p-4">string</td>
+                        <td className="p-4">Search query (required)</td>
+                      </tr>
+                      <tr className="border-b border-gray-700">
+                        <td className="p-4"><code className="text-[#C9A227]">lang</code></td>
+                        <td className="p-4">string</td>
+                        <td className="p-4">Language filter: "greek", "latin"</td>
+                      </tr>
+                      <tr>
+                        <td className="p-4"><code className="text-[#C9A227]">era</code></td>
+                        <td className="p-4">string</td>
+                        <td className="p-4">Era filter: "archaic", "classical", "hellenistic", "imperial", "lateAntique", "byzantine"</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <h4 className="font-semibold mb-4">Example Response</h4>
+                <CodeBlock
+                  id="search-response"
+                  language="json"
+                  code={`{
+  "results": [
+    {
+      "id": "plato-republic-1",
+      "title": "The Republic",
+      "author": "Plato",
+      "text": "ὁ λόγος περὶ δικαιοσύνης...",
+      "translation": "The discourse about justice...",
+      "language": "greek",
+      "era": "classical",
+      "relevance": 0.95
+    }
+  ],
+  "total": 1,
+  "page": 1,
+  "hasMore": false
+}`}
+                />
               </div>
-            )}
+
+              {/* Translate Endpoint */}
+              <div id="translate" className="mb-12">
+                <div className="flex items-center gap-4 mb-4">
+                  <span className="bg-blue-600 text-white px-3 py-1 rounded text-sm font-mono">POST</span>
+                  <h3 className="text-2xl font-bold">Translate Text</h3>
+                </div>
+                
+                <p className="text-gray-300 mb-6">
+                  Translate ancient Greek or Latin text to modern English.
+                </p>
+
+                <div className="bg-[#1E1E24] rounded-lg p-4 mb-6">
+                  <code className="text-[#C9A227]">POST /api/translate</code>
+                </div>
+
+                <h4 className="font-semibold mb-4">Request Body</h4>
+                <CodeBlock
+                  id="translate-request"
+                  language="json"
+                  code={`{
+  "text": "λόγος ἐστὶν ὁ θεός",
+  "from": "greek",
+  "to": "english"
+}`}
+                />
+
+                <h4 className="font-semibold mb-4 mt-6">Example Response</h4>
+                <CodeBlock
+                  id="translate-response"
+                  language="json"
+                  code={`{
+  "originalText": "λόγος ἐστὶν ὁ θεός",
+  "translatedText": "The Word is God",
+  "confidence": 0.92,
+  "alternatives": [
+    "Logic is God",
+    "Reason is divine"
+  ],
+  "grammaticalAnalysis": {
+    "words": [
+      {
+        "word": "λόγος",
+        "lemma": "λόγος",
+        "pos": "noun",
+        "case": "nominative",
+        "gender": "masculine"
+      }
+    ]
+  }
+}`}
+                />
+              </div>
+
+              {/* Semantia Endpoint */}
+              <div id="semantia" className="mb-12">
+                <div className="flex items-center gap-4 mb-4">
+                  <span className="bg-green-600 text-white px-3 py-1 rounded text-sm font-mono">GET</span>
+                  <h3 className="text-2xl font-bold">Word Analysis</h3>
+                </div>
+                
+                <p className="text-gray-300 mb-6">
+                  Get detailed semantic and etymological analysis of ancient words.
+                </p>
+
+                <div className="bg-[#1E1E24] rounded-lg p-4 mb-6">
+                  <code className="text-[#C9A227]">GET /api/semantia/{`{word}`}</code>
+                </div>
+
+                <h4 className="font-semibold mb-4">Example Response</h4>
+                <CodeBlock
+                  id="semantia-response"
+                  language="json"
+                  code={`{
+  "word": "λόγος",
+  "lemma": "λόγος",
+  "language": "greek",
+  "definitions": [
+    "word, speech, account",
+    "reason, explanation",
+    "proportion, ratio"
+  ],
+  "etymology": {
+    "root": "λεγ-",
+    "meaning": "to gather, choose, speak",
+    "cognates": ["Latin: legere", "English: logic"]
+  },
+  "morphology": {
+    "partOfSpeech": "noun",
+    "gender": "masculine",
+    "declension": "second"
+  },
+  "usage": {
+    "frequency": "very high",
+    "contexts": ["philosophy", "rhetoric", "theology"],
+    "authors": ["Plato", "Aristotle", "John the Evangelist"]
+  }
+}`}
+                />
+              </div>
+
+              {/* Stats Endpoint */}
+              <div id="stats" className="mb-12">
+                <div className="flex items-center gap-4 mb-4">
+                  <span className="bg-green-600 text-white px-3 py-1 rounded text-sm font-mono">GET</span>
+                  <h3 className="text-2xl font-bold">Statistics</h3>
+                </div>
+                
+                <p className="text-gray-300 mb-6">
+                  Get corpus statistics and metadata.
+                </p>
+
+                <div className="bg-[#1E1E24] rounded-lg p-4 mb-6">
+                  <code className="text-[#C9A227]">GET /api/stats</code>
+                </div>
+
+                <h4 className="font-semibold mb-4">Example Response</h4>
+                <CodeBlock
+                  id="stats-response"
+                  language="json"
+                  code={`{
+  "corpus": {
+    "totalTexts": 1247,
+    "totalWords": 2847392,
+    "totalAuthors": 156
+  },
+  "languages": {
+    "greek": {
+      "texts": 892,
+      "words": 1923847
+    },
+    "latin": {
+      "texts": 355,
+      "words": 923545
+    }
+  },
+  "eras": {
+    "archaic": 23,
+    "classical": 445,
+    "hellenistic": 287,
+    "imperial": 312,
+    "lateAntique": 134,
+    "byzantine": 46
+  }
+}`}
+                />
+              </div>
+            </section>
 
             {/* Code Examples */}
-            {activeTab === 'examples' && (
+            <section id="examples">
+              <h2 className="text-3xl font-bold mb-8">Code Examples</h2>
+
               <div className="space-y-8">
-                <h2 className="text-3xl font-bold text-[#C9A227] mb-6">Code Examples</h2>
-                
-                <div className="space-y-8">
-                  {Object.entries(codeExamples).map(([endpoint, examples]) => (
-                    <div key={endpoint} className="bg-[#F5F4F2]/5 border border-[#F5F4F2]/20 rounded-lg p-6">
-                      <h3 className="text-2xl font-semibold text-[#C9A227] mb-6 capitalize">
-                        {endpoint.replace('_', ' ')} Examples
-                      </h3>
-                      
-                      <div className="space-y-6">
-                        {Object.entries(examples).map(([lang, code]) => (
-                          <div key={lang}>
-                            <h4 className="text-lg font-semibold mb-3 capitalize text-[#F5F4F2]">
-                              {lang === 'javascript' ? 'JavaScript' : lang}
-                            </h4>
-                            <div className="relative bg-[#0D0D0F] rounded-lg p-4 border border-[#F5F4F2]/20">
-                              <pre className="text-[#C9A227] overflow-x-auto text-sm">
-                                <code>{code}</code>
-                              </pre>
-                              <button
-                                onClick={() => copyToClipboard(code, `${endpoint}-${lang}`)}
-                                className="absolute top-2 right-2 px-3 py-1 bg-[#C9A227] text-[#0D0D0F] text-sm rounded hover:bg-[#C9A227]/80 transition-colors"
-                              >
-                                {copiedCode === `${endpoint}-${lang}` ? 'Copied!' : 'Copy'}
-                              </button>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
+                <div>
+                  <h3 className="text-xl font-semibold mb-4">cURL</h3>
+                  <CodeBlock
+                    id="curl-example"
+                    language="bash"
+                    code={`# Search for texts
+curl "https://logos-api-production-3270.up.railway.app/api/search?q=logos&lang=greek" \\
+  -H "Authorization: Bearer YOUR_API_KEY"
+
+# Translate text
+curl -X POST "https://logos-api-production-3270.up.railway.app/api/translate" \\
+  -H "Content-Type: application/json" \\
+  -H "Authorization: Bearer YOUR_API_KEY" \\
+  -d '{
+    "text": "λόγος ἐστὶν ὁ θεός",
+    "from": "greek",
+    "to": "english"
+  }'`}
+                  />
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-semibold mb-4">Python</h3>
+                  <CodeBlock
+                    id="python-example"
+                    language="python"
+                    code={`import requests
+
+API_BASE = "https://logos-api-production-3270.up.railway.app"
+API_KEY = "your_api_key_here"
+
+headers = {
+    "Authorization": f"Bearer {API_KEY}",
+    "Content-Type": "application/json"
+}
+
+# Search texts
+response = requests.get(
+    f"{API_BASE}/api/search",
+    params={"q": "logos", "lang": "greek"},
+    headers=headers
+)
+results = response.json()
+
+# Translate text
+translate_data = {
+    "text": "λόγος ἐστὶν ὁ θεός",
+    "from": "greek",
+    "to": "english"
+}
+
+response = requests.post(
+    f"{API_BASE}/api/translate",
+    json=translate_data,
+    headers=headers
+)
+translation = response.json()
+
+print(f"Translation: {translation['translatedText']}")`}
+                  />
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-semibold mb-4">JavaScript</h3>
+                  <CodeBlock
+                    id="javascript-example"
+                    language="javascript"
+                    code={`const API_BASE = 'https://logos-api-production-3270.up.railway.app';
+const API_KEY = 'your_api_key_here';
+
+const headers = {
+  'Authorization': \`Bearer \${API_KEY}\`,
+  'Content-Type': 'application/json'
+};
+
+// Search texts
+async function searchTexts(query, language) {
+  const params = new URLSearchParams({ q: query, lang: language });
+  const response = await fetch(\`\${API_BASE}/api/search?\${params}\`, {
+    headers
+  });
+  return await response.json();
+}
+
+// Translate text
+async function translateText(text, from, to) {
+  const response = await fetch(\`\${API_BASE}/api/translate\`, {
+    method: 'POST',
+    headers,
+    body: JSON.stringify({ text, from, to })
+  });
+  return await response.json();
+}
+
+// Example usage
+searchTexts('logos', 'greek').then(results => {
+  console.log('Search results:', results);
+});
+
+translateText('λόγος ἐστὶν ὁ θεός', 'greek', 'english').then(result => {
+  console.log('Translation:', result.translatedText);
+});`}
+                  />
                 </div>
               </div>
-            )}
+            </section>
+
+            {/* Rate Limits */}
+            <section id="rate-limits">
+              <h2 className="text-3xl font-bold mb-6">Rate Limits</h2>
+              
+              <p className="text-gray-300 mb-6">
+                The LOGOS API enforces rate limits to ensure fair usage and optimal performance for all users.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div className="bg-[#1E1E24] rounded-lg p-6">
+                  <h4 className="font-semibold text-[#C9A227] mb-2">Free Tier</h4>
+                  <ul className="space-y-2 text-gray-300">
+                    <li>• 100 requests per hour</li>
+                    <li>• 1,000 requests per day</li>
+                    <li>• No concurrent requests</li>
+                  </ul>
+                </div>
+                
+                <div className="bg-[#1E1E24] rounded-lg p-6">
+                  <h4 className="font-semibold text-[#C9A227] mb-2">Pro Tier</h4>
+                  <ul className="space-y-2 text-gray-300">
+                    <li>• 1,000 requests per hour</li>
+                    <li>• 10,000 requests per day</li>
+                    <li>• Up to 5 concurrent requests</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="bg-[#1E1E24] rounded-lg p-6">
+                <h4 className="font-semibold mb-4">Rate Limit Headers</h4>
+                <p className="text-gray-300 mb-4">
+                  All API responses include the following headers to help you manage your usage:
+                </p>
+                <CodeBlock
+                  id="rate-limit-headers"
+                  language="text"
+                  code={`X-RateLimit-Limit: 100
+X-RateLimit-Remaining: 87
+X-RateLimit-Reset: 1640995200`}
+                />
+              </div>
+
+              <div className="mt-6 bg-red-900/20 border border-red-700/30 rounded-lg p-6">
+                <h4 className="font-semibold text-red-400 mb-2">Rate Limit Exceeded</h4>
+                <p className="text-gray-300">
+                  When you exceed your rate limit, the API will return a 429 status code. Wait until your limit resets or upgrade your plan.
+                </p>
+              </div>
+            </section>
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }
