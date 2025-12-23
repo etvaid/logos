@@ -1,87 +1,172 @@
 'use client';
 import React, { useState } from 'react';
 
-interface WordResult {
-  word: string;
-  language: string;
-  occurrences: number;
-  traditional_def: string;
-  semantia_finding: string;
-  neighbors: { word: string; sim: number }[];
-  challenges_lexicon: boolean;
-}
+export default function Semantia() {
+  const [searchTerm, setSearchTerm] = useState('ἀρετή');
 
-const DEMO: Record<string, WordResult> = {
-  'ἀρετή': {
-    word: 'ἀρετή', language: 'Greek', occurrences: 4523,
-    traditional_def: 'virtue, excellence, goodness (LSJ)',
-    semantia_finding: 'Meaning shifted dramatically over 1500 years. In Homer, clusters with warfare and physical prowess. By Plato, ethics and wisdom. Christian period shows major shift toward moral/religious sense.',
-    neighbors: [{ word: 'φρόνησις', sim: 0.89 }, { word: 'σωφροσύνη', sim: 0.85 }],
-    challenges_lexicon: true,
-  },
-  'λόγος': {
-    word: 'λόγος', language: 'Greek', occurrences: 10663,
-    traditional_def: 'word, speech, reason (LSJ)',
-    semantia_finding: 'Most semantically complex word in Greek. Clusters differently in philosophical (reason), rhetorical (speech), and theological (Word/divine) contexts.',
-    neighbors: [{ word: 'λέγειν', sim: 0.95 }, { word: 'νοῦς', sim: 0.88 }],
-    challenges_lexicon: true,
-  },
-};
-
-export default function SemantiaPage() {
-  const [dark, setDark] = useState(true);
-  const [query, setQuery] = useState('');
-  const [result, setResult] = useState<WordResult | null>(null);
-
-  const handleSearch = () => {
-    const key = Object.keys(DEMO).find(k => query.includes(k));
-    if (key) setResult(DEMO[key]);
+  const demoData = {
+    word: 'ἀρετή',
+    transliteration: 'arete',
+    corpusMeaning: 'Excellence of character; virtue; moral goodness; the fulfillment of purpose or function; human flourishing through the actualization of potential.',
+    lsjDefinition: 'goodness, excellence, of any kind esp. of manly qualities, manhood, valour, prowess, as in Homer, of moral virtue, as in Plato and Aristotle.',
+    semanticNeighbors: [
+      { word: 'καλοκἀγαθία', transliteration: 'kalokagathia', meaning: 'nobility of character' },
+      { word: 'σοφία', transliteration: 'sophia', meaning: 'wisdom' },
+      { word: 'δικαιοσύνη', transliteration: 'dikaiosyne', meaning: 'justice' },
+      { word: 'ἀνδρεία', transliteration: 'andreia', meaning: 'courage' },
+      { word: 'σωφροσύνη', transliteration: 'sophrosyne', meaning: 'temperance' }
+    ],
+    usageData: [
+      { period: '8th-7th BC', frequency: 12 },
+      { period: '6th-5th BC', frequency: 45 },
+      { period: '4th BC', frequency: 89 },
+      { period: '3rd-1st BC', frequency: 67 },
+      { period: '1st-3rd AD', frequency: 34 },
+      { period: '4th-6th AD', frequency: 23 }
+    ],
+    examples: [
+      {
+        author: 'Aristotle',
+        work: 'Nicomachean Ethics',
+        passage: 'ἔστιν ἄρα ἡ ἀρετὴ ἕξις προαιρετική, ἐν μεσότητι οὖσα τῇ πρὸς ἡμᾶς',
+        translation: 'Virtue is therefore a disposition involving choice, lying in a mean relative to us'
+      },
+      {
+        author: 'Plato',
+        work: 'Republic',
+        passage: 'οὐκοῦν καὶ ψυχῆς ἀρετήν τινα εἶναί φαμεν καὶ κακίαν;',
+        translation: 'Do we not say that there is virtue of the soul and vice?'
+      },
+      {
+        author: 'Homer',
+        work: 'Iliad',
+        passage: 'αἰεὶ ἀριστεύειν καὶ ὑπείροχον ἔμμεναι ἄλλων',
+        translation: 'Always to be the best and to excel above others'
+      }
+    ]
   };
 
+  const maxFrequency = Math.max(...demoData.usageData.map(d => d.frequency));
+
   return (
-    <div className={`min-h-screen ${dark ? 'bg-[#0D0D0F] text-[#F5F4F2]' : 'bg-white text-black'}`}>
-      <nav className={`fixed top-0 w-full z-50 backdrop-blur-lg ${dark ? 'bg-[#0D0D0F]/80 border-b border-white/10' : 'bg-white/80 border-b'}`}>
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <a href="/" className="text-2xl font-bold tracking-wider">LOGOS</a>
-          <button onClick={() => setDark(!dark)} className="p-2">{dark ? '☀️' : '🌙'}</button>
+    <div className="min-h-screen bg-[#0D0D0F] text-[#F5F4F2] p-8">
+      <div className="max-w-6xl mx-auto">
+        {/* Header */}
+        <div className="mb-12">
+          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-[#C9A227] to-[#F5F4F2] bg-clip-text text-transparent">
+            SEMANTIA
+          </h1>
+          <p className="text-xl text-[#F5F4F2]/70">Ancient Greek & Latin Semantic Analysis</p>
         </div>
-      </nav>
-      <main className="pt-24 pb-12 px-6 max-w-5xl mx-auto">
-        <div className="text-center mb-12">
-          <span className="px-4 py-2 rounded-full bg-[#8B5CF6]/20 text-[#8B5CF6] text-sm">Layer 2: Semantic</span>
-          <h1 className="text-5xl font-bold mt-4 mb-4">SEMANTIA</h1>
-          <p className={`text-xl ${dark ? 'text-gray-400' : 'text-gray-600'}`}>
-            What words <span className="text-[#C9A227]">ACTUALLY</span> meant — proven by 1.7M passages
-          </p>
-        </div>
-        <div className={`p-6 rounded-2xl mb-8 ${dark ? 'bg-[#1E1E24]' : 'bg-gray-100'}`}>
-          <div className="flex gap-4 mb-4">
-            <input value={query} onChange={e => setQuery(e.target.value)} onKeyDown={e => e.key === 'Enter' && handleSearch()}
-              placeholder="Enter Greek or Latin word (try ἀρετή or λόγος)" className={`flex-1 px-4 py-3 rounded-xl ${dark ? 'bg-[#0D0D0F]' : 'bg-white'}`} />
-            <button onClick={handleSearch} className="px-8 py-3 bg-[#8B5CF6] text-white rounded-xl font-semibold">Analyze</button>
+
+        {/* Search Section */}
+        <div className="mb-12">
+          <div className="relative">
+            <input
+              type="text"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full bg-[#1A1A1F] border border-[#2A2A2F] rounded-lg px-6 py-4 text-2xl text-[#F5F4F2] focus:border-[#C9A227] focus:outline-none transition-all duration-300 hover:border-[#C9A227]/50"
+              placeholder="Enter Greek or Latin word..."
+            />
+            <button className="absolute right-4 top-1/2 -translate-y-1/2 bg-[#C9A227] text-[#0D0D0F] px-6 py-2 rounded-lg font-semibold hover:bg-[#C9A227]/90 transition-all duration-300 transform hover:scale-105">
+              Analyze
+            </button>
           </div>
-          <div className="flex gap-2">
-            {Object.keys(DEMO).map(w => <button key={w} onClick={() => setQuery(w)} className={`px-3 py-1 rounded-lg ${dark ? 'bg-white/10' : 'bg-gray-200'}`}>{w}</button>)}
+        </div>
+
+        {/* Main Analysis */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+          {/* Corpus vs LSJ */}
+          <div className="bg-[#1A1A1F] rounded-xl p-8 border border-[#2A2A2F] hover:border-[#C9A227]/30 transition-all duration-300 transform hover:-translate-y-1">
+            <h2 className="text-2xl font-bold mb-6 text-[#C9A227]">Definition Analysis</h2>
+            
+            <div className="mb-6">
+              <h3 className="text-lg font-semibold mb-3 text-[#F5F4F2]/90">Corpus Meaning</h3>
+              <p className="text-[#F5F4F2]/80 leading-relaxed bg-[#0D0D0F] p-4 rounded-lg border-l-4 border-[#C9A227]">
+                {demoData.corpusMeaning}
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-3 text-[#F5F4F2]/90">LSJ Definition</h3>
+              <p className="text-[#F5F4F2]/80 leading-relaxed bg-[#0D0D0F] p-4 rounded-lg border-l-4 border-[#F5F4F2]/30">
+                {demoData.lsjDefinition}
+              </p>
+            </div>
+          </div>
+
+          {/* Semantic Neighbors */}
+          <div className="bg-[#1A1A1F] rounded-xl p-8 border border-[#2A2A2F] hover:border-[#C9A227]/30 transition-all duration-300 transform hover:-translate-y-1">
+            <h2 className="text-2xl font-bold mb-6 text-[#C9A227]">Semantic Neighbors</h2>
+            <div className="space-y-4">
+              {demoData.semanticNeighbors.map((neighbor, index) => (
+                <div key={index} className="bg-[#0D0D0F] p-4 rounded-lg hover:bg-[#252529] transition-all duration-300 cursor-pointer group">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-lg font-semibold text-[#C9A227] group-hover:text-[#F5F4F2] transition-colors duration-300">
+                      {neighbor.word}
+                    </span>
+                    <span className="text-sm text-[#F5F4F2]/60 italic">
+                      {neighbor.transliteration}
+                    </span>
+                  </div>
+                  <p className="text-[#F5F4F2]/80 text-sm">{neighbor.meaning}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-        {result && (
-          <div className={`p-6 rounded-2xl ${dark ? 'bg-[#1E1E24]' : 'bg-gray-100'}`}>
-            <div className="flex justify-between items-start mb-4">
-              <div>
-                <h2 className="text-3xl font-bold text-[#C9A227]">{result.word}</h2>
-                <p className={dark ? 'text-gray-400' : 'text-gray-600'}>{result.language} • {result.occurrences.toLocaleString()} occurrences</p>
+
+        {/* Usage Over Time */}
+        <div className="bg-[#1A1A1F] rounded-xl p-8 border border-[#2A2A2F] hover:border-[#C9A227]/30 transition-all duration-300 mb-12">
+          <h2 className="text-2xl font-bold mb-8 text-[#C9A227]">Usage Frequency Over Time</h2>
+          <div className="flex items-end justify-between space-x-4 h-64">
+            {demoData.usageData.map((data, index) => {
+              const height = (data.frequency / maxFrequency) * 100;
+              return (
+                <div key={index} className="flex-1 flex flex-col items-center group">
+                  <div className="relative flex-1 flex items-end w-full">
+                    <div 
+                      className="w-full bg-gradient-to-t from-[#C9A227] to-[#C9A227]/70 rounded-t-lg transition-all duration-500 hover:from-[#C9A227]/90 hover:to-[#C9A227] cursor-pointer transform hover:scale-105"
+                      style={{ height: `${height}%` }}
+                    >
+                      <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-[#0D0D0F] px-2 py-1 rounded text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        {data.frequency}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="mt-4 text-xs text-center text-[#F5F4F2]/70 font-medium">
+                    {data.period}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Example Passages */}
+        <div className="bg-[#1A1A1F] rounded-xl p-8 border border-[#2A2A2F] hover:border-[#C9A227]/30 transition-all duration-300">
+          <h2 className="text-2xl font-bold mb-8 text-[#C9A227]">Example Passages</h2>
+          <div className="space-y-8">
+            {demoData.examples.map((example, index) => (
+              <div key={index} className="bg-[#0D0D0F] p-6 rounded-lg border-l-4 border-[#C9A227] hover:bg-[#151518] transition-all duration-300">
+                <div className="flex items-center mb-4">
+                  <span className="text-[#C9A227] font-semibold mr-3">{example.author}</span>
+                  <span className="text-[#F5F4F2]/60 italic">{example.work}</span>
+                </div>
+                <div className="mb-4">
+                  <p className="text-lg text-[#F5F4F2] leading-relaxed mb-2 font-serif">
+                    {example.passage}
+                  </p>
+                  <p className="text-[#F5F4F2]/80 italic">
+                    "{example.translation}"
+                  </p>
+                </div>
               </div>
-              {result.challenges_lexicon && <span className="px-3 py-1 bg-[#F59E0B]/20 text-[#F59E0B] rounded-full text-sm">⚠️ Challenges LSJ</span>}
-            </div>
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
-              <div><h3 className="font-semibold mb-2">Traditional Definition</h3><p className={dark ? 'text-gray-400' : 'text-gray-600'}>{result.traditional_def}</p></div>
-              <div><h3 className="font-semibold mb-2 text-[#8B5CF6]">SEMANTIA Finding</h3><p>{result.semantia_finding}</p></div>
-            </div>
-            <h3 className="font-semibold mb-3">Semantic Neighbors</h3>
-            <div className="flex gap-3">{result.neighbors.map((n, i) => <span key={i} className={`px-4 py-2 rounded-xl ${dark ? 'bg-[#0D0D0F]' : 'bg-white'}`}>{n.word} <span className="text-gray-500">{(n.sim*100).toFixed(0)}%</span></span>)}</div>
+            ))}
           </div>
-        )}
-      </main>
+        </div>
+      </div>
     </div>
   );
 }

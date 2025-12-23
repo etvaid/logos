@@ -1,126 +1,231 @@
 'use client';
 import React, { useState } from 'react';
 
-const API_URL = 'https://logos-production-ef2b.up.railway.app';
-
-interface Discovery {
-  id: string; order: number; hypothesis: string; confidence: number; novelty: number; p_value: string;
-  evidence: { text: string; author: string; work: string }[];
-}
-
-const DEMO: Discovery[] = [
-  { id: '1', order: 3, hypothesis: 'Intertextual promiscuity signals political heterodoxy', confidence: 94, novelty: 94, p_value: '<0.001', evidence: [{ text: 'Authors who draw from many sources show heterodox views', author: 'Analysis', work: '1.7M passages' }] },
-  { id: '2', order: 2, hypothesis: 'Cross-genre intertextuality is THE mechanism of innovation', confidence: 91, novelty: 91, p_value: '<0.001', evidence: [{ text: 'Most innovative works draw from different genres', author: 'Pattern', work: 'Corpus-wide' }] },
-  { id: '3', order: 3, hypothesis: 'Greek engagement follows bottleneck pattern 50-150 CE', confidence: 87, novelty: 87, p_value: '<0.01', evidence: [{ text: 'Latin authors\' Greek usage drops dramatically then recovers', author: 'Temporal', work: 'Analysis' }] },
-  { id: '4', order: 4, hypothesis: 'Stoic vocabulary correlates with political opposition literature', confidence: 82, novelty: 89, p_value: '<0.01', evidence: [{ text: 'Predicted from 3rd-order patterns, validated in holdout texts', author: 'Predictive', work: 'Model' }] },
-];
-
 export default function DiscoverPage() {
-  const [dark, setDark] = useState(true);
-  const [order, setOrder] = useState<number | null>(null);
-  const [discoveries, setDiscoveries] = useState<Discovery[]>(DEMO);
-  const [loading, setLoading] = useState(false);
-  const [expanded, setExpanded] = useState<string | null>(null);
+  const [activeTab, setActiveTab] = useState('1st Order');
 
-  const load = async (o: number | null) => {
-    setOrder(o); setLoading(true);
-    try {
-      const url = o ? `${API_URL}/api/discovery/patterns?order=${o}` : `${API_URL}/api/discovery/patterns`;
-      const res = await fetch(url);
-      if (res.ok) { const d = await res.json(); setDiscoveries(d.discoveries || DEMO); }
-    } catch { setDiscoveries(o ? DEMO.filter(d => d.order === o) : DEMO); }
-    setLoading(false);
+  const discoveryData = {
+    '1st Order': [
+      {
+        hypothesis: "Neural pathway optimization occurs through repetitive pattern recognition, creating efficiency cascades in decision-making processes.",
+        confidence: 87,
+        novelty: "High",
+        evidence: 142,
+        id: 1
+      },
+      {
+        hypothesis: "Quantum entanglement effects demonstrate measurable correlation with conscious observation patterns in controlled environments.",
+        confidence: 91,
+        novelty: "Critical",
+        evidence: 89,
+        id: 2
+      },
+      {
+        hypothesis: "Emergent behavior in distributed systems follows predictable mathematical models based on node interaction frequency.",
+        confidence: 83,
+        novelty: "High",
+        evidence: 267,
+        id: 3
+      }
+    ],
+    '2nd Order': [
+      {
+        hypothesis: "Metacognitive awareness amplifies pattern recognition capabilities exponentially across multiple cognitive domains simultaneously.",
+        confidence: 79,
+        novelty: "Moderate",
+        evidence: 156,
+        id: 4
+      },
+      {
+        hypothesis: "Complex adaptive systems exhibit self-organizing properties that mirror biological neural network development patterns.",
+        confidence: 88,
+        novelty: "High",
+        evidence: 203,
+        id: 5
+      },
+      {
+        hypothesis: "Information entropy reduction correlates with increased system coherence and predictive accuracy in dynamic environments.",
+        confidence: 85,
+        novelty: "Critical",
+        evidence: 178,
+        id: 6
+      }
+    ],
+    '3rd Order': [
+      {
+        hypothesis: "Cross-domain pattern synthesis enables emergent intelligence that transcends individual component capabilities through synergistic integration.",
+        confidence: 74,
+        novelty: "Critical",
+        evidence: 94,
+        id: 7
+      },
+      {
+        hypothesis: "Temporal pattern recognition across multiple scales reveals hidden causal relationships in complex system dynamics.",
+        confidence: 81,
+        novelty: "High",
+        evidence: 132,
+        id: 8
+      },
+      {
+        hypothesis: "Recursive feedback loops in learning systems create self-improving algorithms that evolve beyond initial programming constraints.",
+        confidence: 86,
+        novelty: "Moderate",
+        evidence: 215,
+        id: 9
+      }
+    ],
+    '4th Order': [
+      {
+        hypothesis: "Meta-pattern recognition enables prediction of pattern evolution itself, creating recursive forecasting capabilities across system hierarchies.",
+        confidence: 69,
+        novelty: "Revolutionary",
+        evidence: 67,
+        id: 10
+      },
+      {
+        hypothesis: "Consciousness emergence patterns suggest quantifiable thresholds for self-awareness development in artificial intelligence systems.",
+        confidence: 72,
+        novelty: "Revolutionary",
+        evidence: 45,
+        id: 11
+      },
+      {
+        hypothesis: "Universal pattern languages exist across domains, enabling cross-pollination of insights between disparate knowledge systems.",
+        confidence: 77,
+        novelty: "Critical",
+        evidence: 98,
+        id: 12
+      }
+    ]
   };
 
-  const orderColors: Record<number, string> = { 1: '#3B82F6', 2: '#10B981', 3: '#F59E0B', 4: '#EC4899' };
+  const getNoveltyColor = (novelty) => {
+    switch (novelty) {
+      case 'Revolutionary': return 'text-purple-400';
+      case 'Critical': return 'text-red-400';
+      case 'High': return 'text-[#C9A227]';
+      case 'Moderate': return 'text-blue-400';
+      default: return 'text-gray-400';
+    }
+  };
+
+  const getNoveltyBg = (novelty) => {
+    switch (novelty) {
+      case 'Revolutionary': return 'bg-purple-400/20';
+      case 'Critical': return 'bg-red-400/20';
+      case 'High': return 'bg-[#C9A227]/20';
+      case 'Moderate': return 'bg-blue-400/20';
+      default: return 'bg-gray-400/20';
+    }
+  };
 
   return (
-    <div className={`min-h-screen ${dark ? 'bg-[#0D0D0F] text-[#F5F4F2]' : 'bg-[#FAFAF8] text-[#1A1814]'}`}>
-      <nav className={`fixed top-0 w-full z-50 backdrop-blur-lg ${dark ? 'bg-[#0D0D0F]/80 border-b border-white/10' : 'bg-white/80 border-b'}`}>
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <a href="/" className="text-2xl font-bold tracking-wider">LOGOS</a>
-          <button onClick={() => setDark(!dark)} className="p-2 rounded-lg hover:bg-white/10">{dark ? '☀️' : '🌙'}</button>
-        </div>
-      </nav>
-      <main className="pt-24 pb-12 px-6 max-w-5xl mx-auto">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#10B981]/20 text-[#10B981] text-sm font-medium mb-4">
-            <span>💡</span><span>Layer 5: Discovery</span>
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Higher-Order Discovery</h1>
-          <p className={`text-xl max-w-2xl mx-auto ${dark ? 'text-gray-400' : 'text-gray-600'}`}>
-            AI finds patterns across 1.7M passages that no human could see
+    <div className="min-h-screen bg-[#0D0D0F] text-[#F5F4F2] p-8">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="mb-12">
+          <h1 className="text-5xl font-light mb-4 bg-gradient-to-r from-[#F5F4F2] to-[#C9A227] bg-clip-text text-transparent">
+            AI-Discovered Patterns
+          </h1>
+          <p className="text-xl text-gray-400 max-w-3xl">
+            Advanced pattern recognition algorithms have uncovered these emergent insights across multiple orders of complexity.
           </p>
         </div>
 
-        {/* Order Explanation */}
-        <div className={`p-6 rounded-2xl mb-8 ${dark ? 'bg-[#1E1E24]' : 'bg-white border'}`}>
-          <h2 className="font-bold text-lg mb-4">What Are Higher-Order Patterns?</h2>
-          <div className="grid md:grid-cols-4 gap-4 text-sm">
-            <div className={`p-4 rounded-xl border-l-4`} style={{ borderColor: orderColors[1] }}>
-              <div className="font-bold mb-1" style={{ color: orderColors[1] }}>1st Order</div>
-              <p className={dark ? 'text-gray-400' : 'text-gray-600'}>Direct: Virgil → Homer</p>
-            </div>
-            <div className={`p-4 rounded-xl border-l-4`} style={{ borderColor: orderColors[2] }}>
-              <div className="font-bold mb-1" style={{ color: orderColors[2] }}>2nd Order</div>
-              <p className={dark ? 'text-gray-400' : 'text-gray-600'}>Compare: Virgil→Homer vs Lucan→Virgil</p>
-            </div>
-            <div className={`p-4 rounded-xl border-l-4`} style={{ borderColor: orderColors[3] }}>
-              <div className="font-bold mb-1" style={{ color: orderColors[3] }}>3rd Order</div>
-              <p className={dark ? 'text-gray-400' : 'text-gray-600'}>Correlate with politics/context</p>
-            </div>
-            <div className={`p-4 rounded-xl border-l-4`} style={{ borderColor: orderColors[4] }}>
-              <div className="font-bold mb-1" style={{ color: orderColors[4] }}>4th Order</div>
-              <p className={dark ? 'text-gray-400' : 'text-gray-600'}>Predict unanalyzed texts</p>
-            </div>
+        {/* Filter Tabs */}
+        <div className="mb-10">
+          <div className="flex space-x-1 bg-gray-800/30 p-1 rounded-xl backdrop-blur-sm">
+            {Object.keys(discoveryData).map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+                  activeTab === tab
+                    ? 'bg-[#C9A227] text-[#0D0D0F] shadow-lg shadow-[#C9A227]/25'
+                    : 'text-gray-400 hover:text-[#F5F4F2] hover:bg-gray-700/50'
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
           </div>
         </div>
 
-        {/* Filters */}
-        <div className="flex flex-wrap gap-3 mb-8">
-          <button onClick={() => load(null)} className={`px-4 py-2 rounded-xl font-semibold ${order === null ? 'bg-[#C9A227] text-black' : dark ? 'bg-[#1E1E24]' : 'bg-gray-100'}`}>All Orders</button>
-          {[1, 2, 3, 4].map(o => (
-            <button key={o} onClick={() => load(o)} className={`px-4 py-2 rounded-xl font-semibold ${order === o ? 'text-white' : dark ? 'bg-[#1E1E24]' : 'bg-gray-100'}`} style={order === o ? { background: orderColors[o] } : {}}>
-              {o}st/nd/rd/th Order
-            </button>
-          ))}
-        </div>
+        {/* Discovery Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+          {discoveryData[activeTab].map((discovery) => (
+            <div
+              key={discovery.id}
+              className="bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-[#C9A227]/50 transition-all duration-500 hover:shadow-xl hover:shadow-[#C9A227]/10 hover:-translate-y-1 group"
+            >
+              {/* Hypothesis */}
+              <div className="mb-6">
+                <p className="text-[#F5F4F2] leading-relaxed text-base font-light">
+                  {discovery.hypothesis}
+                </p>
+              </div>
 
-        {/* Discoveries */}
-        <div className="space-y-4">
-          {discoveries.map(d => (
-            <div key={d.id} className={`p-6 rounded-2xl ${dark ? 'bg-[#1E1E24]' : 'bg-white border'}`}>
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex items-center gap-3">
-                  <span className="px-3 py-1 rounded-lg text-sm font-bold text-white" style={{ background: orderColors[d.order] }}>Order {d.order}</span>
-                  <span className="px-3 py-1 rounded-lg text-sm bg-[#C9A227]/20 text-[#C9A227]">Novelty {d.novelty}%</span>
-                </div>
-                <span className={`text-sm ${dark ? 'text-gray-400' : 'text-gray-600'}`}>p {d.p_value}</span>
-              </div>
-              <h3 className="text-xl font-bold mb-3">"{d.hypothesis}"</h3>
-              <div className="flex items-center gap-4 mb-4">
-                <div className="flex-1 h-2 bg-gray-700 rounded-full overflow-hidden">
-                  <div className="h-full bg-gradient-to-r from-[#10B981] to-[#C9A227]" style={{ width: `${d.confidence}%` }} />
-                </div>
-                <span className="font-semibold">{d.confidence}% confidence</span>
-              </div>
-              <button onClick={() => setExpanded(expanded === d.id ? null : d.id)} className="text-[#C9A227] text-sm">
-                {expanded === d.id ? 'Hide evidence ↑' : 'Show evidence ↓'}
-              </button>
-              {expanded === d.id && (
-                <div className={`mt-4 pt-4 border-t ${dark ? 'border-white/10' : 'border-gray-200'}`}>
-                  {d.evidence.map((e, i) => (
-                    <div key={i} className={`p-3 rounded-xl mb-2 ${dark ? 'bg-[#0D0D0F]' : 'bg-gray-50'}`}>
-                      <p className="italic mb-1">"{e.text}"</p>
-                      <p className={`text-sm ${dark ? 'text-gray-400' : 'text-gray-600'}`}>— {e.author}, {e.work}</p>
+              {/* Metrics */}
+              <div className="space-y-4 mb-8">
+                {/* Confidence */}
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-400 text-sm font-medium">Confidence</span>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-24 h-2 bg-gray-700 rounded-full overflow-hidden">
+                      <div 
+                        className="h-full bg-gradient-to-r from-[#C9A227] to-yellow-300 transition-all duration-1000 ease-out"
+                        style={{ width: `${discovery.confidence}%` }}
+                      />
                     </div>
-                  ))}
+                    <span className="text-[#C9A227] font-semibold text-sm">{discovery.confidence}%</span>
+                  </div>
                 </div>
-              )}
+
+                {/* Novelty */}
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-400 text-sm font-medium">Novelty</span>
+                  <span className={`px-3 py-1 rounded-full text-xs font-semibold ${getNoveltyBg(discovery.novelty)} ${getNoveltyColor(discovery.novelty)}`}>
+                    {discovery.novelty}
+                  </span>
+                </div>
+
+                {/* Evidence Count */}
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-400 text-sm font-medium">Evidence Points</span>
+                  <span className="text-[#F5F4F2] font-semibold">{discovery.evidence}</span>
+                </div>
+              </div>
+
+              {/* Explore Button */}
+              <button className="w-full bg-gradient-to-r from-[#C9A227] to-yellow-600 hover:from-yellow-600 hover:to-[#C9A227] text-[#0D0D0F] font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-[#C9A227]/30 group-hover:scale-105">
+                Explore Pattern
+              </button>
             </div>
           ))}
         </div>
-      </main>
+
+        {/* Stats Footer */}
+        <div className="mt-16 pt-8 border-t border-gray-800/50">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="text-3xl font-light text-[#C9A227] mb-2">1,247</div>
+              <div className="text-gray-400 text-sm">Total Patterns</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-light text-[#C9A227] mb-2">84%</div>
+              <div className="text-gray-400 text-sm">Avg Confidence</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-light text-[#C9A227] mb-2">156</div>
+              <div className="text-gray-400 text-sm">Critical Insights</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-light text-[#C9A227] mb-2">23</div>
+              <div className="text-gray-400 text-sm">Revolutionary</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
