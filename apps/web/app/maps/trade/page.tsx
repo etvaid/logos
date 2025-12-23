@@ -1,306 +1,369 @@
-"use client";
+'use client';
 
-import React, { useState, useEffect } from 'react';
-import { MapContainer, TileLayer, Polyline, CircleMarker, Tooltip, FeatureGroup } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
-import Slider from '@mui/material/Slider';
-import Typography from '@mui/material/Typography';
-import { styled } from '@mui/material/styles';
-import { Snackbar, Alert } from '@mui/material';
+import React, { useState } from 'react';
 
-// LOGOS DESIGN SYSTEM
-const ERA_COLORS = {
-  Archaic: '#D97706',
-  Classical: '#F59E0B',
-  Hellenistic: '#3B82F6',
-  ImperialRome: '#DC2626',
-  LateAntiquity: '#7C3AED',
-  Byzantine: '#059669',
-};
+export default function TradeRoutesMap() {
+  const [selectedEra, setSelectedEra] = useState('medieval');
+  const [hoveredRoute, setHoveredRoute] = useState(null);
 
-const LANGUAGE_COLORS = {
-  Greek: '#3B82F6',
-  Latin: '#DC2626',
-  Hebrew: '#059669',
-  Syriac: '#D97706',
-  Coptic: '#EC4899',
-  Arabic: '#7C3AED',
-};
-
-const CONTEXT_LAYER_COLORS = {
-  Political: '#DC2626',
-  Economic: '#059669',
-  Social: '#7C3AED',
-  Religious: '#F59E0B',
-  Intellectual: '#3B82F6',
-};
-
-const EVIDENCE_RELIABILITY = {
-  Archaeological: { icon: '🏛️', reliability: 95 },
-  Epigraphic: { icon: '🪨', reliability: 90 },
-  Numismatic: { icon: '🪙', reliability: 90 },
-  Papyrological: { icon: '📋', reliability: 85 },
-  Literary: { icon: '📜', reliability: 75 },
-  Manuscript: { icon: '📖', reliability: 70 },
-};
-
-const BACKGROUND_COLOR = '#0D0D0F';
-const SECONDARY_COLOR = '#1E1E24';
-const TEXT_COLOR = '#F5F4F2';
-const ACCENT_GOLD = '#C9A227';
-
-// Data Structures
-interface RouteData {
-  id: string;
-  name: string;
-  commodity: string;
-  era: keyof typeof ERA_COLORS;
-  volume: string;
-  path: [number, number][];
-  evidenceType: keyof typeof EVIDENCE_RELIABILITY;
-  startCity: string;
-  endCity: string;
-}
-
-interface CityData {
-    name: string;
-    position: [number, number];
-    tradeVolume: number; // Example trade statistic
-}
-
-// Styled Slider
-const CustomSlider = styled(Slider)(({ theme }) => ({
-    color: ACCENT_GOLD,
-    height: 8,
-    '& .MuiSlider-track': {
-        border: 'none',
-    },
-    '& .MuiSlider-thumb': {
-        height: 24,
-        width: 24,
-        backgroundColor: BACKGROUND_COLOR,
-        border: `2px solid ${ACCENT_GOLD}`,
-        '&:focus, &:hover, &.Mui-active, &.Mui-focusVisible': {
-            boxShadow: 'inherit',
-        },
-        '&:before': {
-            display: 'none',
-        },
-    },
-    '& .MuiSlider-valueLabel': {
-        lineHeight: 1.2,
-        fontSize: 12,
-        background: 'unset',
-        padding: 0,
-        width: 32,
-        height: 32,
-        borderRadius: '50% 50% 50% 0',
-        backgroundColor: ACCENT_GOLD,
-        transformOrigin: 'bottom left',
-        transform: 'translate(50%, -100%) rotate(-45deg) scale(0)',
-        '&:before': { display: 'none' },
-        '&.MuiSlider-valueLabelOpen': {
-            transform: 'translate(50%, -100%) rotate(-45deg) scale(1)',
-        },
-        '& > *': {
-            transform: 'rotate(45deg)',
-        },
-    },
-}));
-
-
-const TradeRoutes: React.FC = () => {
-  const [year, setYear] = useState(500); // Initial year
-  const [routeDetails, setRouteDetails] = useState<RouteData | null>(null);
-  const [snackbarOpen, setSnackbarOpen] = useState(false);
-
-  const handleRouteClick = (route: RouteData) => {
-      setRouteDetails(route);
-      setSnackbarOpen(true);
-  };
-
-  const handleSnackbarClose = () => {
-      setSnackbarOpen(false);
-      setRouteDetails(null);
-  };
-
-  const handleYearChange = (event: Event, newValue: number | number[]) => {
-    if (typeof newValue === 'number') {
-      setYear(newValue);
-    }
-  };
-
-  // Demo Data
-  const routes: RouteData[] = [
-    {
-      id: 'grainRoute',
-      name: 'Grain Route Egypt → Rome',
-      commodity: 'Grain',
-      era: 'ImperialRome',
-      volume: 'High',
-      path: [[31.2357, 30.0444], [41.9028, 12.4964]], // Egypt to Rome
-      evidenceType: 'Archaeological',
-      startCity: 'Alexandria',
-      endCity: 'Rome'
-    },
-    {
-      id: 'silkRoute',
-      name: 'Silk Route China → Rome',
-      commodity: 'Silk',
-      era: 'ImperialRome',
-      volume: 'Medium',
-      path: [[34.6667, 138.2500], [34.5667, 36.5167], [41.9028, 12.4964]], // China to Palmyra to Rome
-      evidenceType: 'Literary',
-      startCity: 'Unknown (China)',
-      endCity: 'Rome'
-    },
-    {
-      id: 'tinRoute',
-      name: 'Tin Route Britain → Mediterranean',
-      commodity: 'Tin',
-      era: 'Archaic',
-      volume: 'Low',
-      path: [[51.5074, 0.1278], [37.9838, 23.7275]], // Britain to Athens
-      evidenceType: 'Archaeological',
-      startCity: 'Britain',
-      endCity: 'Athens'
-    },
+  const eras = [
+    { id: 'ancient', name: 'Ancient (500 BC - 500 AD)', period: 'Classical Antiquity' },
+    { id: 'medieval', name: 'Medieval (500 - 1500 AD)', period: 'Middle Ages' },
+    { id: 'renaissance', name: 'Renaissance (1400 - 1600 AD)', period: 'Age of Exploration' }
   ];
 
-    const cities: CityData[] = [
-      { name: 'Alexandria', position: [31.2357, 30.0444], tradeVolume: 5000 },
-      { name: 'Rome', position: [41.9028, 12.4964], tradeVolume: 7000 },
-      { name: 'Athens', position: [37.9838, 23.7275], tradeVolume: 3000 },
-    ];
+  const commodities = [
+    { id: 'silk', name: 'Silk & Textiles', color: '#C9A227' },
+    { id: 'spices', name: 'Spices', color: '#E74C3C' },
+    { id: 'gold', name: 'Gold & Silver', color: '#F1C40F' },
+    { id: 'grain', name: 'Grain & Food', color: '#27AE60' },
+    { id: 'pottery', name: 'Pottery & Crafts', color: '#8E44AD' },
+    { id: 'slaves', name: 'Slaves', color: '#34495E' }
+  ];
 
-    // Function to filter routes based on the current year
-    const filteredRoutes = routes.filter(route => {
-        const eraStartYears: { [key in keyof typeof ERA_COLORS]: number } = {
-            Archaic: 800,
-            Classical: 500,
-            Hellenistic: 323,
-            ImperialRome: 31,
-            LateAntiquity: 284,
-            Byzantine: 600,
-        };
+  const tradeRoutes = {
+    ancient: [
+      {
+        id: 1,
+        name: 'Phoenician Trade Network',
+        commodity: 'pottery',
+        path: 'M 400 180 Q 350 160 300 170 Q 250 180 200 190 Q 150 200 100 220',
+        origin: 'Tyre',
+        destination: 'Carthage',
+        goods: 'Purple dye, Cedar wood, Glass',
+        value: '500,000 denarii/year'
+      },
+      {
+        id: 2,
+        name: 'Roman Grain Route',
+        commodity: 'grain',
+        path: 'M 300 240 Q 320 220 350 210 Q 380 200 420 190',
+        origin: 'Alexandria',
+        destination: 'Rome',
+        goods: 'Egyptian grain, Papyrus',
+        value: '2,000,000 denarii/year'
+      },
+      {
+        id: 3,
+        name: 'Silk Road Terminal',
+        commodity: 'silk',
+        path: 'M 450 160 Q 480 150 520 160 Q 560 170 600 180',
+        origin: 'Constantinople',
+        destination: 'Antioch',
+        goods: 'Chinese silk, Indian spices',
+        value: '1,500,000 denarii/year'
+      }
+    ],
+    medieval: [
+      {
+        id: 4,
+        name: 'Venetian Spice Route',
+        commodity: 'spices',
+        path: 'M 350 150 Q 380 140 420 150 Q 460 160 500 170 Q 540 180 580 190',
+        origin: 'Venice',
+        destination: 'Constantinople',
+        goods: 'Pepper, Cinnamon, Nutmeg',
+        value: '800,000 florins/year'
+      },
+      {
+        id: 5,
+        name: 'Genoese Gold Route',
+        commodity: 'gold',
+        path: 'M 280 160 Q 250 150 220 160 Q 190 170 160 180 Q 130 190 100 200',
+        origin: 'Genoa',
+        destination: 'Tunis',
+        goods: 'African gold, Ivory',
+        value: '600,000 florins/year'
+      },
+      {
+        id: 6,
+        name: 'Byzantine Silk Trade',
+        commodity: 'silk',
+        path: 'M 500 170 Q 520 160 540 150 Q 580 140 620 150',
+        origin: 'Constantinople',
+        destination: 'Trebizond',
+        goods: 'Byzantine silk, Religious artifacts',
+        value: '400,000 bezants/year'
+      },
+      {
+        id: 7,
+        name: 'Maghreb Caravan Route',
+        commodity: 'slaves',
+        path: 'M 150 220 Q 180 240 220 250 Q 260 260 300 250',
+        origin: 'Fez',
+        destination: 'Tunis',
+        goods: 'Sub-Saharan slaves, Gold dust',
+        value: '300,000 dinars/year'
+      }
+    ],
+    renaissance: [
+      {
+        id: 8,
+        name: 'Ottoman Spice Monopoly',
+        commodity: 'spices',
+        path: 'M 500 170 Q 480 160 450 150 Q 420 140 390 150 Q 360 160 330 170',
+        origin: 'Constantinople',
+        destination: 'Venice',
+        goods: 'Asian spices, Coffee',
+        value: '1,200,000 ducats/year'
+      },
+      {
+        id: 9,
+        name: 'Spanish Silver Fleet',
+        commodity: 'gold',
+        path: 'M 200 180 Q 170 170 140 180 Q 110 190 80 200',
+        origin: 'Seville',
+        destination: 'Genoa',
+        goods: 'American silver, Colonial goods',
+        value: '3,000,000 reales/year'
+      },
+      {
+        id: 10,
+        name: 'Levantine Textile Route',
+        commodity: 'silk',
+        path: 'M 520 180 Q 550 170 580 180 Q 610 190 640 200',
+        origin: 'Aleppo',
+        destination: 'Smyrna',
+        goods: 'Syrian textiles, Raw silk',
+        value: '700,000 piastres/year'
+      }
+    ]
+  };
 
-        const eraEndYears: { [key in keyof typeof ERA_COLORS]: number } = {
-            Archaic: 500,
-            Classical: 323,
-            Hellenistic: 31,
-            ImperialRome: 284,
-            LateAntiquity: 600,
-            Byzantine: 1453,
-        };
+  const cities = [
+    { name: 'Venice', x: 350, y: 150 },
+    { name: 'Genoa', x: 280, y: 160 },
+    { name: 'Rome', x: 320, y: 180 },
+    { name: 'Constantinople', x: 500, y: 170 },
+    { name: 'Alexandria', x: 480, y: 240 },
+    { name: 'Tunis', x: 300, y: 250 },
+    { name: 'Palermo', x: 340, y: 220 },
+    { name: 'Barcelona', x: 220, y: 180 },
+    { name: 'Marseille', x: 250, y: 160 }
+  ];
 
-        const era = route.era;
-        return year >= (eraStartYears[era] || 0) && year <= (eraEndYears[era] || 1453);
-    });
-
-    // Function to calculate reliability score based on evidence
-    const calculateReliability = (evidenceType: keyof typeof EVIDENCE_RELIABILITY): number => {
-        return EVIDENCE_RELIABILITY[evidenceType].reliability;
-    };
+  const currentRoutes = tradeRoutes[selectedEra] || [];
 
   return (
-    <div style={{ backgroundColor: BACKGROUND_COLOR, color: TEXT_COLOR, height: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <Typography variant="h4" align="center" style={{ padding: '20px', color: ACCENT_GOLD }}>
-        Ancient Mediterranean Trade Routes ({year} BCE/CE)
-      </Typography>
-      <div style={{ flex: 1, display: 'flex' }}>
-        <MapContainer
-          center={[34.8021, 23.5185]}
-          zoom={4}
-          style={{ width: '80%', height: '100%', zIndex: 0 }}
-        >
-          <TileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          />
-          {filteredRoutes.map((route) => (
-              <Polyline
-                  key={route.id}
-                  positions={route.path}
-                  color={ERA_COLORS[route.era]}
-                  weight={3}
-                  eventHandlers={{
-                      click: () => handleRouteClick(route),
-                  }}
+    <div className="min-h-screen bg-[#0D0D0F] text-[#F5F4F2] p-8">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-[#C9A227] to-[#F5F4F2] bg-clip-text text-transparent">
+            Mediterranean Trade Routes
+          </h1>
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            Explore the commercial arteries that connected civilizations across the Mediterranean Sea
+          </p>
+        </div>
+
+        {/* Era Selector */}
+        <div className="flex justify-center mb-8">
+          <div className="bg-gray-800 rounded-lg p-2 flex space-x-2">
+            {eras.map((era) => (
+              <button
+                key={era.id}
+                onClick={() => setSelectedEra(era.id)}
+                className={`px-6 py-3 rounded-md transition-all duration-300 ${
+                  selectedEra === era.id
+                    ? 'bg-[#C9A227] text-[#0D0D0F] font-semibold'
+                    : 'text-[#F5F4F2] hover:bg-gray-700'
+                }`}
               >
-                  <Tooltip sticky>
-                      <div>
-                          <strong>{route.name}</strong><br />
-                          Commodity: {route.commodity}<br />
-                          Era: {route.era}<br />
-                          Reliability: {calculateReliability(route.evidenceType)}%
-                      </div>
-                  </Tooltip>
-              </Polyline>
-          ))}
-          {cities.map(city => (
-                <CircleMarker
-                    key={city.name}
-                    center={city.position}
-                    radius={Math.sqrt(city.tradeVolume) / 5}  // Adjust divisor for better scaling
-                    fillColor={ACCENT_GOLD}
-                    color={BACKGROUND_COLOR}
-                    weight={1}
-                    opacity={0.8}
-                    fillOpacity={0.6}
-                >
-                    <Tooltip sticky>
-                        <div>
-                            <strong>{city.name}</strong><br />
-                            Trade Volume: {city.tradeVolume}
-                        </div>
-                    </Tooltip>
-                </CircleMarker>
+                <div className="text-center">
+                  <div className="text-sm font-medium">{era.period}</div>
+                  <div className="text-xs opacity-75">{era.name}</div>
+                </div>
+              </button>
             ))}
-        </MapContainer>
+          </div>
+        </div>
 
-        <div style={{ width: '20%', padding: '20px', backgroundColor: SECONDARY_COLOR }}>
-          <Typography variant="h6" gutterBottom color={ACCENT_GOLD}>
-            Timeline
-          </Typography>
-          <CustomSlider
-              aria-label="Year"
-              defaultValue={500}
-              value={year}
-              onChange={handleYearChange}
-              valueLabelDisplay="auto"
-              step={10}
-              marks
-              min={-800} // BCE
-              max={1453} // End of Byzantine
-          />
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          {/* Map */}
+          <div className="lg:col-span-3">
+            <div className="bg-gray-900 rounded-2xl p-6 border border-gray-800">
+              <svg 
+                viewBox="0 0 700 300" 
+                className="w-full h-auto bg-gradient-to-br from-blue-950 to-blue-900 rounded-xl border border-gray-700"
+              >
+                {/* Mediterranean Sea Background */}
+                <defs>
+                  <radialGradient id="seaGradient" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stopColor="#1e3a8a" />
+                    <stop offset="100%" stopColor="#0f172a" />
+                  </radialGradient>
+                </defs>
+                <rect width="700" height="300" fill="url(#seaGradient)" />
 
-          <Typography variant="body2" style={{ marginTop: '20px' }}>
-            Year: {year} {year < 0 ? 'BCE' : 'CE'}
-          </Typography>
+                {/* Simplified Mediterranean Coastlines */}
+                <path
+                  d="M 50 80 Q 150 60 250 80 Q 350 100 450 90 Q 550 80 650 100 L 650 120 Q 600 110 550 120 Q 500 130 450 140 Q 400 135 350 140 Q 300 145 250 150 Q 200 155 150 160 Q 100 165 50 170 Z"
+                  fill="#2d4a3d"
+                  stroke="#4a6b5c"
+                  strokeWidth="1"
+                  opacity="0.8"
+                />
+                
+                {/* Southern Coastline (North Africa) */}
+                <path
+                  d="M 50 220 Q 100 200 150 210 Q 200 220 250 215 Q 300 210 350 220 Q 400 230 450 225 Q 500 220 550 230 Q 600 240 650 235 L 650 280 L 50 280 Z"
+                  fill="#3d2d1a"
+                  stroke="#5c4a2d"
+                  strokeWidth="1"
+                  opacity="0.8"
+                />
+
+                {/* Eastern Coastline */}
+                <path
+                  d="M 600 100 Q 620 120 630 140 Q 640 160 650 180 Q 660 200 650 220 L 630 210 Q 620 190 610 170 Q 600 150 590 130 Z"
+                  fill="#2d3d1a"
+                  stroke="#4a5c2d"
+                  strokeWidth="1"
+                  opacity="0.8"
+                />
+
+                {/* Trade Routes */}
+                {currentRoutes.map((route) => {
+                  const commodity = commodities.find(c => c.id === route.commodity);
+                  return (
+                    <path
+                      key={route.id}
+                      d={route.path}
+                      fill="none"
+                      stroke={commodity?.color || '#C9A227'}
+                      strokeWidth={hoveredRoute === route.id ? "4" : "2"}
+                      strokeDasharray="5,5"
+                      opacity={hoveredRoute === route.id ? "1" : "0.7"}
+                      className="cursor-pointer transition-all duration-300"
+                      onMouseEnter={() => setHoveredRoute(route.id)}
+                      onMouseLeave={() => setHoveredRoute(null)}
+                    >
+                      <animate
+                        attributeName="stroke-dashoffset"
+                        values="0;10"
+                        dur="2s"
+                        repeatCount="indefinite"
+                      />
+                    </path>
+                  );
+                })}
+
+                {/* Cities */}
+                {cities.map((city, index) => (
+                  <g key={index}>
+                    <circle
+                      cx={city.x}
+                      cy={city.y}
+                      r="4"
+                      fill="#C9A227"
+                      stroke="#F5F4F2"
+                      strokeWidth="1"
+                      className="hover:r-6 transition-all duration-300 cursor-pointer"
+                    />
+                    <text
+                      x={city.x}
+                      y={city.y - 10}
+                      textAnchor="middle"
+                      fill="#F5F4F2"
+                      fontSize="10"
+                      fontWeight="500"
+                      className="pointer-events-none"
+                    >
+                      {city.name}
+                    </text>
+                  </g>
+                ))}
+
+                {/* Route Direction Arrows */}
+                {currentRoutes.map((route) => (
+                  <defs key={`arrow-${route.id}`}>
+                    <marker
+                      id={`arrowhead-${route.id}`}
+                      markerWidth="10"
+                      markerHeight="7"
+                      refX="9"
+                      refY="3.5"
+                      orient="auto"
+                    >
+                      <polygon
+                        points="0 0, 10 3.5, 0 7"
+                        fill={commodities.find(c => c.id === route.commodity)?.color || '#C9A227'}
+                      />
+                    </marker>
+                  </defs>
+                ))}
+              </svg>
+            </div>
+          </div>
+
+          {/* Sidebar */}
+          <div className="space-y-6">
+            {/* Legend */}
+            <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
+              <h3 className="text-xl font-bold text-[#C9A227] mb-4">Commodities</h3>
+              <div className="space-y-3">
+                {commodities.map((commodity) => (
+                  <div key={commodity.id} className="flex items-center space-x-3">
+                    <div
+                      className="w-4 h-4 rounded-full border border-gray-600"
+                      style={{ backgroundColor: commodity.color }}
+                    ></div>
+                    <span className="text-sm">{commodity.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Route Details */}
+            {hoveredRoute && (
+              <div className="bg-gray-900 rounded-xl p-6 border border-[#C9A227] border-opacity-50">
+                <h3 className="text-lg font-bold text-[#C9A227] mb-3">Route Details</h3>
+                {(() => {
+                  const route = currentRoutes.find(r => r.id === hoveredRoute);
+                  if (!route) return null;
+                  return (
+                    <div className="space-y-2 text-sm">
+                      <div><span className="font-semibold">Route:</span> {route.name}</div>
+                      <div><span className="font-semibold">From:</span> {route.origin}</div>
+                      <div><span className="font-semibold">To:</span> {route.destination}</div>
+                      <div><span className="font-semibold">Goods:</span> {route.goods}</div>
+                      <div><span className="font-semibold">Annual Value:</span> {route.value}</div>
+                    </div>
+                  );
+                })()}
+              </div>
+            )}
+
+            {/* Era Statistics */}
+            <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
+              <h3 className="text-lg font-bold text-[#C9A227] mb-3">Era Statistics</h3>
+              <div className="space-y-2 text-sm">
+                <div className="flex justify-between">
+                  <span>Active Routes:</span>
+                  <span className="font-semibold">{currentRoutes.length}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Major Ports:</span>
+                  <span className="font-semibold">{cities.length}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Trade Volume:</span>
+                  <span className="font-semibold">
+                    {selectedEra === 'ancient' ? 'High' : 
+                     selectedEra === 'medieval' ? 'Very High' : 'Peak'}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Instructions */}
+        <div className="mt-8 text-center text-gray-400">
+          <p>Hover over trade routes to see detailed information • Select different eras to explore changing patterns</p>
         </div>
       </div>
-
-      <Snackbar
-          open={snackbarOpen}
-          autoHideDuration={6000}
-          onClose={handleSnackbarClose}
-          anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-      >
-          <Alert onClose={handleSnackbarClose} severity="info" sx={{ width: '100%' }}>
-              {routeDetails && (
-                  <div>
-                      <strong>Route Details: {routeDetails.name}</strong><br />
-                      Commodity: {routeDetails.commodity}<br />
-                      Era: {routeDetails.era}<br />
-                      Start City: {routeDetails.startCity}<br />
-                      End City: {routeDetails.endCity}<br />
-                      Evidence Type: {routeDetails.evidenceType} ({EVIDENCE_RELIABILITY[routeDetails.evidenceType].reliability}%)
-                  </div>
-              )}
-          </Alert>
-      </Snackbar>
     </div>
   );
-};
-
-export default TradeRoutes;
+}
