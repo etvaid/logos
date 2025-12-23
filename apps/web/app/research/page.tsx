@@ -1,48 +1,187 @@
 'use client';
 import React, { useState } from 'react';
-const API_URL = 'https://logos-production-ef2b.up.railway.app';
-interface Msg { role: 'user'|'assistant'; content: string; citations?: {urn: string; text: string}[] }
-export default function ResearchPage() {
-  const [dark, setDark] = useState(true);
-  const [input, setInput] = useState('');
-  const [msgs, setMsgs] = useState<Msg[]>([]);
-  const [loading, setLoading] = useState(false);
-  const send = async () => {
-    if (!input.trim()) return;
-    const userMsg: Msg = { role: 'user', content: input };
-    setMsgs([...msgs, userMsg]); setInput(''); setLoading(true);
-    try {
-      const res = await fetch(`${API_URL}/api/research`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ query: input, history: msgs }) });
-      if (res.ok) { const d = await res.json(); setMsgs(m => [...m, { role: 'assistant', content: d.response, citations: d.citations }]); }
-      else setMsgs(m => [...m, { role: 'assistant', content: 'The concept of justice (δικαιοσύνη) is central to Greek philosophy. Plato explores it extensively in the Republic, where Socrates argues that justice in the soul mirrors justice in the city.', citations: [{ urn: 'urn:cts:greekLit:tlg0059.tlg030:514b', text: 'Justice is the greatest virtue' }] }]);
-    } catch { setMsgs(m => [...m, { role: 'assistant', content: 'Research assistant ready. Ask about classical texts.' }]); }
-    setLoading(false);
+
+export default function Research() {
+  const [messages, setMessages] = useState([
+    {
+      id: 1,
+      type: 'user',
+      content: "What are the major themes in Homer's Odyssey?"
+    },
+    {
+      id: 2,
+      type: 'assistant',
+      content: "Homer's Odyssey explores several profound themes that continue to resonate today:\n\n**1. The Hero's Journey and Nostos (Homecoming)**\nThe epic follows Odysseus's ten-year struggle to return home after the Trojan War, representing the universal human desire for belonging and identity.\n\n**2. Hospitality (Xenia)**\nThe ancient Greek concept of hospitality is central to the narrative, showing both its sacred importance and the consequences of violating it.\n\n**3. Divine Intervention vs. Human Agency**\nThe tension between fate controlled by gods and human free will drives much of the plot's complexity.\n\n**4. Loyalty and Fidelity**\nExemplified through Penelope's faithfulness and the loyalty of servants like Eumaeus during Odysseus's absence.",
+      citations: [
+        "Homer. The Odyssey. Translated by Robert Fagles. Penguin Classics, 1996.",
+        "Clarke, Howard W. The Art of the Odyssey. Bristol Classical Press, 1989.",
+        "Schein, Seth L. Reading the Odyssey: Selected Interpretive Essays. Princeton University Press, 1996."
+      ]
+    }
+  ]);
+  
+  const [inputValue, setInputValue] = useState('');
+
+  const suggestedPrompts = [
+    "Analyze the symbolism in Dante's Divine Comedy",
+    "Compare Shakespearean and Petrarchan sonnets",
+    "Explain the philosophical implications of quantum mechanics"
+  ];
+
+  const handleSendMessage = () => {
+    if (!inputValue.trim()) return;
+    
+    const newMessage = {
+      id: messages.length + 1,
+      type: 'user' as const,
+      content: inputValue
+    };
+    
+    setMessages([...messages, newMessage]);
+    setInputValue('');
   };
-  const prompts = ['What are the main themes in Virgil\'s Aeneid?', 'Compare Platonic and Stoic views on virtue', 'Find allusions to Homer in the Aeneid'];
+
+  const handlePromptClick = (prompt: string) => {
+    setInputValue(prompt);
+  };
+
+  const handleNewResearch = () => {
+    setMessages([]);
+    setInputValue('');
+  };
+
   return (
-    <div className={`min-h-screen flex flex-col ${dark ? 'bg-[#0D0D0F] text-[#F5F4F2]' : 'bg-[#FAFAF8] text-[#1A1814]'}`}>
-      <nav className={`fixed top-0 w-full z-50 backdrop-blur-lg ${dark ? 'bg-[#0D0D0F]/80 border-b border-white/10' : 'bg-white/80 border-b'}`}>
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <a href="/" className="text-2xl font-bold tracking-wider">LOGOS</a>
-          <button onClick={() => setDark(!dark)} className="p-2 rounded-lg hover:bg-white/10">{dark ? '☀️' : '🌙'}</button>
+    <div className="min-h-screen bg-[#0D0D0F] text-[#F5F4F2]">
+      {/* Header */}
+      <div className="border-b border-gray-800 bg-[#0D0D0F]/95 backdrop-blur-sm sticky top-0 z-10">
+        <div className="max-w-4xl mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-2xl font-bold text-[#F5F4F2] mb-1">Research Assistant</h1>
+              <p className="text-gray-400 text-sm">AI-powered academic research and analysis</p>
+            </div>
+            <button
+              onClick={handleNewResearch}
+              className="px-4 py-2 bg-[#C9A227] text-[#0D0D0F] rounded-lg font-medium hover:bg-[#D4B332] transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-xl"
+            >
+              New Research
+            </button>
+          </div>
         </div>
-      </nav>
-      <main className="flex-1 pt-24 pb-32 px-6 max-w-3xl mx-auto w-full">
-        <h1 className="text-3xl font-bold mb-2">Research Assistant</h1>
-        <p className="text-gray-400 mb-8">AI-powered research with citations from 1.7M passages</p>
-        {msgs.length === 0 && <div className="space-y-3 mb-8">{prompts.map((p, i) => (<button key={i} onClick={() => setInput(p)} className={`w-full p-4 rounded-xl text-left ${dark ? 'bg-[#1E1E24] hover:bg-[#252530]' : 'bg-white border'}`}>{p}</button>))}</div>}
-        <div className="space-y-4">
-          {msgs.map((m, i) => (<div key={i} className={`p-4 rounded-xl ${m.role === 'user' ? 'bg-[#C9A227]/20 ml-12' : dark ? 'bg-[#1E1E24] mr-12' : 'bg-white border mr-12'}`}>
-            <p>{m.content}</p>
-            {m.citations && m.citations.length > 0 && <div className="mt-3 pt-3 border-t border-white/10">{m.citations.map((c, j) => (<a key={j} href={`/read?urn=${c.urn}`} className="block text-sm text-[#C9A227] hover:underline">{c.urn}</a>))}</div>}
-          </div>))}
-          {loading && <div className="p-4 rounded-xl bg-[#1E1E24] mr-12 animate-pulse">Thinking...</div>}
+      </div>
+
+      <div className="max-w-4xl mx-auto px-6 py-8">
+        {/* Suggested Prompts */}
+        {messages.length === 0 && (
+          <div className="mb-8">
+            <h3 className="text-lg font-semibold text-[#F5F4F2] mb-4">Suggested Research Topics</h3>
+            <div className="grid gap-3">
+              {suggestedPrompts.map((prompt, index) => (
+                <button
+                  key={index}
+                  onClick={() => handlePromptClick(prompt)}
+                  className="text-left p-4 bg-gray-900/50 rounded-xl border border-gray-800 hover:border-[#C9A227]/50 hover:bg-gray-800/50 transition-all duration-300 group"
+                >
+                  <span className="text-[#F5F4F2] group-hover:text-[#C9A227] transition-colors duration-200">
+                    {prompt}
+                  </span>
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Chat Messages */}
+        <div className="space-y-6 mb-8">
+          {messages.map((message) => (
+            <div key={message.id} className="space-y-4">
+              {message.type === 'user' ? (
+                <div className="flex justify-end">
+                  <div className="max-w-3xl bg-[#C9A227] text-[#0D0D0F] p-4 rounded-2xl rounded-br-md">
+                    <p className="font-medium">{message.content}</p>
+                  </div>
+                </div>
+              ) : (
+                <div className="space-y-4">
+                  <div className="max-w-3xl bg-gray-900/60 p-6 rounded-2xl rounded-bl-md border border-gray-800">
+                    <div className="prose prose-invert max-w-none">
+                      {message.content.split('\n\n').map((paragraph, index) => (
+                        <div key={index} className="mb-4 last:mb-0">
+                          {paragraph.startsWith('**') ? (
+                            <div className="space-y-2">
+                              {paragraph.split('\n').map((line, lineIndex) => (
+                                <p key={lineIndex} className="text-[#F5F4F2] leading-relaxed">
+                                  {line.includes('**') ? (
+                                    line.split('**').map((part, partIndex) => (
+                                      partIndex % 2 === 1 ? (
+                                        <span key={partIndex} className="font-semibold text-[#C9A227]">
+                                          {part}
+                                        </span>
+                                      ) : (
+                                        <span key={partIndex}>{part}</span>
+                                      )
+                                    ))
+                                  ) : (
+                                    line
+                                  )}
+                                </p>
+                              ))}
+                            </div>
+                          ) : (
+                            <p className="text-[#F5F4F2] leading-relaxed">{paragraph}</p>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  {/* Citations */}
+                  {message.citations && (
+                    <div className="max-w-3xl ml-4 p-4 bg-gray-900/30 rounded-xl border border-gray-800">
+                      <h4 className="font-semibold text-[#C9A227] mb-3 text-sm uppercase tracking-wider">Citations</h4>
+                      <div className="space-y-2">
+                        {message.citations.map((citation, index) => (
+                          <p key={index} className="text-sm text-gray-300 leading-relaxed">
+                            [{index + 1}] {citation}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
-      </main>
-      <div className="fixed bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-[#0D0D0F]">
-        <div className="max-w-3xl mx-auto flex gap-4">
-          <input value={input} onChange={e => setInput(e.target.value)} onKeyDown={e => e.key === 'Enter' && send()} placeholder="Ask about classical texts..." className={`flex-1 px-4 py-3 rounded-xl ${dark ? 'bg-[#1E1E24] border border-white/10' : 'bg-white border'}`} />
-          <button onClick={send} disabled={loading} className="px-8 py-3 bg-[#C9A227] text-black rounded-xl font-semibold">Send</button>
+
+        {/* Input Area */}
+        <div className="sticky bottom-6">
+          <div className="bg-gray-900/80 backdrop-blur-sm rounded-2xl border border-gray-800 shadow-2xl">
+            <div className="flex items-end gap-4 p-4">
+              <div className="flex-1">
+                <textarea
+                  value={inputValue}
+                  onChange={(e) => setInputValue(e.target.value)}
+                  placeholder="Ask a research question..."
+                  className="w-full bg-transparent text-[#F5F4F2] placeholder-gray-500 resize-none focus:outline-none text-base leading-relaxed max-h-32"
+                  rows={1}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                      e.preventDefault();
+                      handleSendMessage();
+                    }
+                  }}
+                />
+              </div>
+              <button
+                onClick={handleSendMessage}
+                disabled={!inputValue.trim()}
+                className="px-6 py-2 bg-[#C9A227] text-[#0D0D0F] rounded-xl font-medium hover:bg-[#D4B332] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-xl disabled:hover:scale-100"
+              >
+                Send
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

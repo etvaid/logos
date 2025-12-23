@@ -1,65 +1,44 @@
 'use client';
-import React, { useState, useEffect } from 'react';
 
-const API_URL = 'https://logos-production-ef2b.up.railway.app';
+import React, { useState } from 'react';
 
-export default function AdminPage() {
-  const [dark] = useState(true);
-  const [loggedIn, setLoggedIn] = useState(false);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-
-  useEffect(() => {
-    const token = localStorage.getItem('logos_admin_token');
-    if (token) setLoggedIn(true);
-  }, []);
-
-  const login = async () => {
-    setError('');
-    if (email === 'admin@logosclassics.com' && password === 'raizada2') {
-      localStorage.setItem('logos_admin_token', 'demo_token_' + Date.now());
-      setLoggedIn(true);
-    } else {
-      try {
-        const res = await fetch(`${API_URL}/api/auth/login`, {
-          method: 'POST', headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, password }),
-        });
-        if (res.ok) { const d = await res.json(); localStorage.setItem('logos_admin_token', d.token); setLoggedIn(true); }
-        else setError('Invalid credentials');
-      } catch { setError('Login failed'); }
-    }
-  };
-
-  const logout = () => { localStorage.removeItem('logos_admin_token'); setLoggedIn(false); };
+export default function AdminDashboard() {
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
 
   const stats = [
-    { n: 'Total Users', v: '1,247', c: '+12%' },
-    { n: 'Searches Today', v: '3,892', c: '+8%' },
-    { n: 'Translations', v: '1,456', c: '+15%' },
-    { n: 'Active Sessions', v: '89', c: '' },
+    { title: 'Total Users', value: '1,234', change: '+12%', icon: '👥' },
+    { title: 'Searches', value: '45,678', change: '+8%', icon: '🔍' },
+    { title: 'Translations', value: '12,345', change: '+15%', icon: '🌐' }
   ];
 
-  const actions = [
-    { n: 'Harvard Outreach', d: '10 professors', l: '/admin/outreach', i: '🎓' },
-    { n: 'Twitter', d: '@LogosClassics', l: '/admin/twitter', i: '🐦' },
-    { n: 'Content', d: '7 drafts', l: '/admin/content', i: '📝' },
-    { n: 'Analytics', d: 'View stats', l: '/admin/analytics', i: '📊' },
+  const quickActions = [
+    { title: 'User Management', description: 'Manage user accounts', icon: '👤' },
+    { title: 'Content Moderation', description: 'Review flagged content', icon: '🛡️' },
+    { title: 'Analytics', description: 'View detailed reports', icon: '📊' },
+    { title: 'Settings', description: 'System configuration', icon: '⚙️' },
+    { title: 'Backup', description: 'Database backup', icon: '💾' },
+    { title: 'Support', description: 'User support tickets', icon: '🎧' }
   ];
 
-  if (!loggedIn) {
+  const recentActivity = [
+    { user: 'john.doe@email.com', action: 'User Registration', time: '2 minutes ago', status: 'success' },
+    { user: 'admin@system.com', action: 'Database Backup', time: '15 minutes ago', status: 'success' },
+    { user: 'jane.smith@email.com', action: 'Translation Request', time: '32 minutes ago', status: 'pending' },
+    { user: 'mike.wilson@email.com', action: 'Search Query', time: '1 hour ago', status: 'success' },
+    { user: 'system@auto.com', action: 'System Update', time: '2 hours ago', status: 'warning' }
+  ];
+
+  if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-[#0D0D0F] text-[#F5F4F2] flex items-center justify-center p-6">
-        <div className="max-w-md w-full p-8 rounded-2xl bg-[#1E1E24]">
-          <h1 className="text-2xl font-bold mb-6 text-center">LOGOS Admin</h1>
-          {error && <div className="mb-4 p-3 bg-red-500/20 text-red-400 rounded-xl text-sm">{error}</div>}
-          <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email"
-            className="w-full px-4 py-3 rounded-xl bg-[#0D0D0F] border border-white/10 mb-4" />
-          <input type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password"
-            className="w-full px-4 py-3 rounded-xl bg-[#0D0D0F] border border-white/10 mb-6" />
-          <button onClick={login} className="w-full py-3 bg-[#C9A227] text-black rounded-xl font-bold">Login</button>
-          <p className="mt-4 text-center text-gray-500 text-sm">Demo: admin@logosclassics.com / raizada2</p>
+      <div className="min-h-screen bg-[#0D0D0F] text-[#F5F4F2] flex items-center justify-center">
+        <div className="bg-[#1A1A1D] p-8 rounded-xl shadow-2xl border border-gray-800">
+          <h1 className="text-2xl font-bold mb-6 text-center">Admin Login</h1>
+          <button
+            onClick={() => setIsAuthenticated(true)}
+            className="w-full bg-[#C9A227] text-[#0D0D0F] py-3 px-6 rounded-lg font-semibold hover:bg-[#B8911F] transition-all duration-300"
+          >
+            Login
+          </button>
         </div>
       </div>
     );
@@ -67,57 +46,112 @@ export default function AdminPage() {
 
   return (
     <div className="min-h-screen bg-[#0D0D0F] text-[#F5F4F2]">
-      <nav className="fixed top-0 w-full z-50 bg-[#0D0D0F]/80 backdrop-blur-lg border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <a href="/" className="text-2xl font-bold tracking-wider">LOGOS</a>
-          <div className="flex items-center gap-4">
-            <span className="text-gray-400">Admin</span>
-            <button onClick={logout} className="px-4 py-2 bg-white/10 rounded-lg hover:bg-white/20">Logout</button>
+      {/* Header */}
+      <div className="bg-[#1A1A1D] border-b border-gray-800 px-6 py-4">
+        <div className="flex justify-between items-center">
+          <div>
+            <h1 className="text-3xl font-bold text-[#C9A227]">Admin Dashboard</h1>
+            <p className="text-gray-400 mt-1">Welcome back, Administrator</p>
+          </div>
+          <button
+            onClick={() => setIsAuthenticated(false)}
+            className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-all duration-300"
+          >
+            Logout
+          </button>
+        </div>
+      </div>
+
+      <div className="p-6 max-w-7xl mx-auto">
+        {/* Stats Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          {stats.map((stat, index) => (
+            <div
+              key={index}
+              className="bg-[#1A1A1D] border border-gray-800 rounded-xl p-6 hover:border-[#C9A227] transition-all duration-300 hover:shadow-lg hover:shadow-[#C9A227]/10 group cursor-pointer"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <div className="text-3xl group-hover:scale-110 transition-transform duration-300">
+                  {stat.icon}
+                </div>
+                <span className="text-green-400 text-sm font-semibold bg-green-400/10 px-2 py-1 rounded-full">
+                  {stat.change}
+                </span>
+              </div>
+              <h3 className="text-gray-400 text-sm font-medium mb-2">{stat.title}</h3>
+              <p className="text-3xl font-bold text-[#F5F4F2] group-hover:text-[#C9A227] transition-colors duration-300">
+                {stat.value}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Quick Actions */}
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold mb-6 text-[#C9A227]">Quick Actions</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {quickActions.map((action, index) => (
+              <div
+                key={index}
+                className="bg-[#1A1A1D] border border-gray-800 rounded-lg p-4 hover:border-[#C9A227] transition-all duration-300 cursor-pointer hover:shadow-lg hover:shadow-[#C9A227]/10 group"
+              >
+                <div className="flex items-start space-x-3">
+                  <div className="text-2xl group-hover:scale-110 transition-transform duration-300">
+                    {action.icon}
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-[#F5F4F2] group-hover:text-[#C9A227] transition-colors duration-300">
+                      {action.title}
+                    </h3>
+                    <p className="text-gray-400 text-sm mt-1">{action.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      </nav>
-      <main className="pt-24 pb-12 px-6 max-w-6xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8">Dashboard</h1>
 
-        <div className="grid md:grid-cols-4 gap-4 mb-8">
-          {stats.map((s, i) => (
-            <div key={i} className="p-5 rounded-2xl bg-[#1E1E24]">
-              <div className="text-gray-400 text-sm mb-1">{s.n}</div>
-              <div className="text-3xl font-bold">{s.v}</div>
-              {s.c && <div className="text-green-400 text-sm">{s.c}</div>}
+        {/* Recent Activity */}
+        <div>
+          <h2 className="text-2xl font-bold mb-6 text-[#C9A227]">Recent Activity</h2>
+          <div className="bg-[#1A1A1D] border border-gray-800 rounded-xl overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead className="bg-[#0D0D0F] border-b border-gray-800">
+                  <tr>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#C9A227]">User</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#C9A227]">Action</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#C9A227]">Time</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#C9A227]">Status</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-800">
+                  {recentActivity.map((activity, index) => (
+                    <tr key={index} className="hover:bg-[#0D0D0F] transition-colors duration-200">
+                      <td className="px-6 py-4 text-sm text-[#F5F4F2]">{activity.user}</td>
+                      <td className="px-6 py-4 text-sm text-[#F5F4F2]">{activity.action}</td>
+                      <td className="px-6 py-4 text-sm text-gray-400">{activity.time}</td>
+                      <td className="px-6 py-4 text-sm">
+                        <span
+                          className={`px-2 py-1 rounded-full text-xs font-semibold ${
+                            activity.status === 'success'
+                              ? 'bg-green-400/10 text-green-400'
+                              : activity.status === 'pending'
+                              ? 'bg-yellow-400/10 text-yellow-400'
+                              : 'bg-orange-400/10 text-orange-400'
+                          }`}
+                        >
+                          {activity.status.charAt(0).toUpperCase() + activity.status.slice(1)}
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
-          ))}
+          </div>
         </div>
-
-        <h2 className="text-xl font-bold mb-4">Quick Actions</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-          {actions.map((a, i) => (
-            <a key={i} href={a.l} className="p-5 rounded-2xl bg-[#1E1E24] hover:bg-[#252530] transition">
-              <div className="text-3xl mb-2">{a.i}</div>
-              <div className="font-bold">{a.n}</div>
-              <div className="text-gray-400 text-sm">{a.d}</div>
-            </a>
-          ))}
-        </div>
-
-        <h2 className="text-xl font-bold mb-4">Recent Activity</h2>
-        <div className="rounded-2xl bg-[#1E1E24] p-5">
-          {[
-            { t: '2 min ago', a: 'New user signup', d: 'scholar@harvard.edu' },
-            { t: '15 min ago', a: 'Translation completed', d: 'Iliad 1.1-50 (Literary style)' },
-            { t: '1 hour ago', a: 'Discovery generated', d: '3rd order pattern detected' },
-            { t: '3 hours ago', a: 'SEMANTIA query', d: 'ἀρετή analyzed' },
-          ].map((r, i) => (
-            <div key={i} className={`py-3 ${i > 0 ? 'border-t border-white/10' : ''}`}>
-              <div className="flex justify-between">
-                <span className="font-medium">{r.a}</span>
-                <span className="text-gray-500 text-sm">{r.t}</span>
-              </div>
-              <div className="text-gray-400 text-sm">{r.d}</div>
-            </div>
-          ))}
-        </div>
-      </main>
+      </div>
     </div>
   );
 }
