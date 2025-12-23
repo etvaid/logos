@@ -53,14 +53,8 @@ app = FastAPI(
 # CORS Configuration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",
-        "https://localhost:3000",
-        f"https://{os.getenv('DOMAIN', 'logosclassics.com')}",
-        f"https://www.{os.getenv('DOMAIN', 'logosclassics.com')}",
-        "https://*.vercel.app",
-    ],
-    allow_credentials=True,
+    allow_origins=["*"],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
