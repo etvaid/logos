@@ -1,92 +1,43 @@
+
 'use client';
 
 import Link from 'next/link';
 
-const BACKGROUND = '#0D0D0F';
-const SECONDARY = '#1E1E24';
-const TEXT = '#F5F4F2';
-const GOLD_ACCENT = '#C9A227';
-
-const eraColors = {
-  archaic: '#D97706', // amber
-  classical: '#F59E0B', // gold
-  hellenistic: '#3B82F6', // blue
-  imperial: '#DC2626', // red
-  lateAntique: '#7C3AED', // purple
-  byzantine: '#059669', // green
-};
-
-const maps = [
-  {
-    title: 'Language Distribution',
-    description: 'Where Greek, Latin dominated',
-    link: '/maps/languages',
-    gradient: `linear-gradient(to right, ${eraColors.classical}, ${eraColors.imperial})`,
-  },
-  {
-    title: 'Political Control',
-    description: '2000 years of empires',
-    link: '/maps/political',
-    gradient: `linear-gradient(to right, ${eraColors.imperial}, ${eraColors.byzantine})`,
-  },
-  {
-    title: 'Trade Routes',
-    description: 'Ancient commerce',
-    link: '/maps/trade',
-    gradient: `linear-gradient(to right, ${eraColors.archaic}, ${eraColors.classical})`,
-  },
-  {
-    title: 'Author Origins',
-    description: 'Where writers came from',
-    link: '/maps/authors',
-    gradient: `linear-gradient(to right, ${eraColors.hellenistic}, ${eraColors.lateAntique})`,
-  },
-  {
-    title: 'Libraries & Schools',
-    description: 'Centers of learning',
-    link: '/maps/libraries',
-    gradient: `linear-gradient(to right, ${eraColors.classical}, ${eraColors.hellenistic})`,
-  },
-  {
-    title: 'Manuscript Survival',
-    description: 'How texts survived',
-    link: '/maps/manuscripts',
-    gradient: `linear-gradient(to right, ${eraColors.lateAntique}, ${eraColors.byzantine})`,
-  },
+const MAPS = [
+  { href: "/maps/languages", title: "Language Distribution", desc: "Where Greek and Latin dominated", color: "#3B82F6" },
+  { href: "/maps/political", title: "Political Control", desc: "2000 years of empires", color: "#DC2626" },
+  { href: "/maps/authors", title: "Author Origins", desc: "Where writers came from", color: "#10B981" },
+  { href: "/timeline", title: "Timeline", desc: "Events across 2300 years", color: "#F59E0B" },
 ];
 
-export default function MapsHub() {
+export default function MapsPage() {
   return (
-    <div style={{ backgroundColor: BACKGROUND, color: TEXT, minHeight: '100vh', padding: '2rem' }}>
-      <h1 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '2rem', color: GOLD_ACCENT }}>Maps Hub</h1>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
-        {maps.map((map, index) => (
-          <Link key={index} href={map.link} passHref style={{ textDecoration: 'none', color: 'inherit' }}>
-            <div
-              style={{
-                background: map.gradient,
-                padding: '1.5rem',
-                borderRadius: '0.5rem',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                height: '100%',
-                transition: 'transform 0.2s ease-in-out',
-                ':hover': { transform: 'scale(1.05)' },
-              }}
-            >
-              <div>
-                <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>{map.title}</h2>
-                <p style={{ fontSize: '1rem', lineHeight: '1.4' }}>{map.description}</p>
-              </div>
-              <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
-                <span style={{ marginRight: '0.5rem' }}>Explore</span>
-                <span>→</span>
-              </div>
-            </div>
-          </Link>
-        ))}
-      </div>
+    <div className="min-h-screen bg-[#0D0D0F] text-[#F5F4F2]">
+      <nav className="border-b border-gray-800 p-4">
+        <div className="max-w-6xl mx-auto flex justify-between items-center">
+          <Link href="/" className="text-2xl font-bold text-[#C9A227]">LOGOS</Link>
+          <div className="flex gap-6 text-sm">
+            <Link href="/search" className="hover:text-[#C9A227]">Search</Link>
+            <Link href="/translate" className="hover:text-[#C9A227]">Translate</Link>
+            <Link href="/maps" className="text-[#C9A227]">Maps</Link>
+          </div>
+        </div>
+      </nav>
+
+      <main className="max-w-4xl mx-auto p-8">
+        <h1 className="text-4xl font-bold mb-2">Interactive Maps</h1>
+        <p className="text-gray-400 mb-8">Visualize the classical world</p>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          {MAPS.map(m => (
+            <Link key={m.href} href={m.href} className="p-6 bg-[#1E1E24] rounded-lg border border-transparent hover:border-[#C9A227]">
+              <div className="w-12 h-12 rounded-lg mb-4 flex items-center justify-center text-2xl" style={{ backgroundColor: m.color + '33' }}>🗺️</div>
+              <h3 className="text-xl font-bold mb-2">{m.title}</h3>
+              <p className="text-gray-400">{m.desc}</p>
+            </Link>
+          ))}
+        </div>
+      </main>
     </div>
   );
 }
