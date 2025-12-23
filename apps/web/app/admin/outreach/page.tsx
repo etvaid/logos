@@ -1,182 +1,112 @@
-'use client'
+'use client';
+import React, { useState, useEffect } from 'react';
 
-import { useState, useEffect } from 'react'
-import { useRouter } from 'next/navigation'
-import Link from 'next/link'
-
-const professors = [
-  { id: 1, name: 'Gregory Nagy', email: 'nagy@chs.harvard.edu', institution: 'Harvard', specialty: 'Homer, Greek poetry', status: 'pending' },
-  { id: 2, name: 'Richard Thomas', email: 'rthomas@fas.harvard.edu', institution: 'Harvard', specialty: 'Virgil, intertextuality', status: 'pending' },
-  { id: 3, name: 'Kathleen Coleman', email: 'kcoleman@fas.harvard.edu', institution: 'Harvard', specialty: 'Latin, Roman spectacle', status: 'pending' },
-  { id: 4, name: 'Mark Schiefsky', email: 'schiefsk@fas.harvard.edu', institution: 'Harvard', specialty: 'Ancient science, DH', status: 'pending' },
-  { id: 5, name: 'Emma Dench', email: 'edench@fas.harvard.edu', institution: 'Harvard', specialty: 'Roman history', status: 'pending' },
-  { id: 6, name: 'Emily Greenwood', email: 'emily_greenwood@harvard.edu', institution: 'Harvard', specialty: 'Classics and race', status: 'pending' },
-  { id: 7, name: 'Christopher Krebs', email: 'ckrebs@stanford.edu', institution: 'Stanford', specialty: 'Latin literature', status: 'pending' },
-  { id: 8, name: 'Denis Feeney', email: 'dfeeney@princeton.edu', institution: 'Princeton', specialty: 'Latin poetry', status: 'pending' },
-]
+const PROFESSORS = [
+  { id: 1, name: 'Gregory Nagy', title: 'CHS Director', email: 'nagy@chs.harvard.edu', specialty: 'Homeric poetry', status: 'not_contacted' },
+  { id: 2, name: 'Richard Thomas', title: 'Professor', email: 'rthomas@fas.harvard.edu', specialty: 'Virgil, intertextuality', status: 'not_contacted' },
+  { id: 3, name: 'Mark Schiefsky', title: 'Professor', email: 'schiefsk@fas.harvard.edu', specialty: 'Digital humanities', status: 'not_contacted' },
+  { id: 4, name: 'Kathleen Coleman', title: 'James Loeb Professor', email: 'kcoleman@fas.harvard.edu', specialty: 'Latin literature', status: 'not_contacted' },
+  { id: 5, name: 'Emma Dench', title: 'McLean Professor', email: 'edench@fas.harvard.edu', specialty: 'Roman history', status: 'not_contacted' },
+  { id: 6, name: 'Paul Kosmin', title: 'Professor', email: 'pkosmin@fas.harvard.edu', specialty: 'Hellenistic history', status: 'not_contacted' },
+  { id: 7, name: 'Jan Ziolkowski', title: 'Porter Professor', email: 'ziolkowski@fas.harvard.edu', specialty: 'Medieval Latin', status: 'not_contacted' },
+  { id: 8, name: 'Teresa Morgan', title: 'Professor', email: 'tmorgan@fas.harvard.edu', specialty: 'Ancient education', status: 'not_contacted' },
+  { id: 9, name: 'Adrian Staehli', title: 'Professor', email: 'astaehli@fas.harvard.edu', specialty: 'Greek art', status: 'not_contacted' },
+  { id: 10, name: 'Ivy Livingston', title: 'Senior Preceptor', email: 'ilivingston@fas.harvard.edu', specialty: 'Latin pedagogy', status: 'not_contacted' },
+];
 
 export default function OutreachPage() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false)
-  const [isLoading, setIsLoading] = useState(true)
-  const [contacts, setContacts] = useState(professors)
-  const [selectedContact, setSelectedContact] = useState<typeof professors[0] | null>(null)
-  const router = useRouter()
+  const [dark] = useState(true);
+  const [profs, setProfs] = useState(PROFESSORS);
+  const [modal, setModal] = useState<typeof PROFESSORS[0] | null>(null);
+  const [filter, setFilter] = useState('all');
 
   useEffect(() => {
-    const token = localStorage.getItem('logos_admin_token')
-    if (!token) {
-      router.push('/admin/login')
-      return
-    }
-    setIsAuthenticated(true)
-    setIsLoading(false)
-  }, [router])
+    const token = localStorage.getItem('logos_admin_token');
+    if (!token) window.location.href = '/admin';
+  }, []);
 
-  const sendEmail = (id: number) => {
-    setContacts(prev => prev.map(c => 
-      c.id === id ? { ...c, status: 'sent' } : c
-    ))
-    setSelectedContact(null)
-  }
+  const getTemplate = (p: typeof PROFESSORS[0]) => {
+    const base = `Dear Professor ${p.name.split(' ')[1]},\n\nI hope this message finds you well. I'm reaching out to share LOGOS, an AI-powered research platform for classical literature that I believe may be of interest given your work in ${p.specialty}.\n\n`;
+    const specifics: Record<string, string> = {
+      'Homeric poetry': `LOGOS includes SEMANTIA, which derives word meaning from 1.7M passages rather than dictionaries. For Homeric studies, this reveals semantic fields that traditional lexicons miss—for instance, how μῆνις clusters with divine anger patterns across the corpus.`,
+      'Virgil, intertextuality': `Our intertextuality engine has mapped 500,000+ relationships across the classical corpus, including automatic detection of Virgilian allusions. The system identifies verbal, thematic, and structural parallels with confidence scoring.`,
+      'Digital humanities': `LOGOS represents a new approach to computational classics: 892K semantic embeddings, higher-order pattern detection (1st through 4th order), and a Truth/Verification layer that cross-references historical claims. Built on pgvector, Neo4j, and Claude/GPT-4.`,
+      'Latin literature': `LOGOS provides comprehensive Latin coverage including much of the Patrologia Latina, with AI translation in three styles (literal, literary, student-friendly) and corpus-grounded quality scoring.`,
+    };
+    const specific = specifics[p.specialty] || `LOGOS offers semantic search across 1.7M passages, AI translation with quality scoring, and a Discovery Engine that finds patterns no human could see at scale.`;
+    return base + specific + `\n\nWould you have 15 minutes for a brief demo this week?\n\nBest regards,\nRoy Vaid\nFounder, LOGOS`;
+  };
 
-  const handleLogout = () => {
-    localStorage.removeItem('logos_admin_token')
-    router.push('/admin/login')
-  }
+  const updateStatus = (id: number, status: string) => {
+    setProfs(profs.map(p => p.id === id ? { ...p, status } : p));
+  };
 
-  if (isLoading) {
-    return <main className="min-h-screen bg-obsidian flex items-center justify-center"><p className="text-marble/50">Loading...</p></main>
-  }
-
-  if (!isAuthenticated) return null
+  const filtered = filter === 'all' ? profs : profs.filter(p => p.status === filter);
+  const statusColors: Record<string, string> = {
+    not_contacted: 'bg-gray-500/20 text-gray-400',
+    sent: 'bg-yellow-500/20 text-yellow-400',
+    replied: 'bg-green-500/20 text-green-400',
+    meeting: 'bg-blue-500/20 text-blue-400',
+  };
 
   return (
-    <main className="min-h-screen bg-obsidian">
-      <nav className="glass border-b border-gold/10 px-6 py-4 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center gap-4">
-            <Link href="/" className="font-serif text-2xl font-bold text-gold tracking-widest">LOGOS</Link>
-            <span className="text-marble/50">Admin</span>
-          </div>
-          <div className="flex items-center gap-6">
-            <Link href="/admin" className="text-marble/70 hover:text-gold transition-colors">Dashboard</Link>
-            <Link href="/admin/outreach" className="text-gold">Outreach</Link>
-            <Link href="/admin/twitter" className="text-marble/70 hover:text-gold transition-colors">Twitter</Link>
-            <Link href="/admin/analytics" className="text-marble/70 hover:text-gold transition-colors">Analytics</Link>
-            <button onClick={handleLogout} className="text-crimson hover:text-crimson/80">Logout</button>
-          </div>
+    <div className="min-h-screen bg-[#0D0D0F] text-[#F5F4F2]">
+      <nav className="fixed top-0 w-full z-50 bg-[#0D0D0F]/80 backdrop-blur-lg border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+          <a href="/" className="text-2xl font-bold tracking-wider">LOGOS</a>
+          <a href="/admin" className="text-gray-400 hover:text-white">← Admin</a>
         </div>
       </nav>
+      <main className="pt-24 pb-12 px-6 max-w-5xl mx-auto">
+        <h1 className="text-3xl font-bold mb-2">Harvard Outreach</h1>
+        <p className="text-gray-400 mb-8">10 professors in Harvard Classics Department</p>
 
-      <div className="max-w-7xl mx-auto px-6 py-8">
-        <div className="flex justify-between items-center mb-8">
-          <div>
-            <h1 className="font-serif text-3xl text-gold">Harvard & Ivy Outreach</h1>
-            <p className="text-marble/60 mt-1">Click to preview and send emails to professors.</p>
-          </div>
-          <div className="text-marble/50 text-sm">
-            {contacts.filter(c => c.status === 'sent').length} / {contacts.length} sent
-          </div>
+        <div className="flex gap-2 mb-6">
+          {['all', 'not_contacted', 'sent', 'replied', 'meeting'].map(s => (
+            <button key={s} onClick={() => setFilter(s)} className={`px-4 py-2 rounded-xl capitalize ${filter === s ? 'bg-[#C9A227] text-black' : 'bg-[#1E1E24]'}`}>
+              {s.replace('_', ' ')}
+            </button>
+          ))}
         </div>
 
-        <div className="glass rounded-xl overflow-hidden">
-          <table className="w-full">
-            <thead className="bg-obsidian-light">
-              <tr>
-                <th className="text-left px-6 py-4 text-marble/70 font-medium">Name</th>
-                <th className="text-left px-6 py-4 text-marble/70 font-medium">Institution</th>
-                <th className="text-left px-6 py-4 text-marble/70 font-medium">Specialty</th>
-                <th className="text-left px-6 py-4 text-marble/70 font-medium">Status</th>
-                <th className="text-left px-6 py-4 text-marble/70 font-medium">Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {contacts.map(contact => (
-                <tr key={contact.id} className="border-t border-gold/10">
-                  <td className="px-6 py-4">
-                    <div className="text-marble font-medium">{contact.name}</div>
-                    <div className="text-marble/50 text-sm">{contact.email}</div>
-                  </td>
-                  <td className="px-6 py-4 text-marble/70">{contact.institution}</td>
-                  <td className="px-6 py-4 text-marble/70">{contact.specialty}</td>
-                  <td className="px-6 py-4">
-                    <span className={`px-2 py-1 rounded text-sm ${contact.status === 'sent' ? 'bg-emerald/20 text-emerald' : 'bg-amber/20 text-amber'}`}>
-                      {contact.status}
-                    </span>
-                  </td>
-                  <td className="px-6 py-4">
-                    {contact.status === 'pending' ? (
-                      <button
-                        onClick={() => setSelectedContact(contact)}
-                        className="px-4 py-2 bg-gold text-obsidian rounded-lg text-sm font-medium hover:bg-gold-light transition-colors"
-                      >
-                        Preview & Send
-                      </button>
-                    ) : (
-                      <span className="text-marble/50">Sent ✓</span>
-                    )}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-
-        {selectedContact && (
-          <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
-            <div className="glass rounded-xl max-w-2xl w-full max-h-[80vh] overflow-y-auto">
-              <div className="p-6 border-b border-gold/20">
-                <h2 className="font-serif text-xl text-gold">Email Preview</h2>
-                <p className="text-marble/60">To: {selectedContact.name} ({selectedContact.email})</p>
+        <div className="space-y-4">
+          {filtered.map(p => (
+            <div key={p.id} className="p-5 rounded-2xl bg-[#1E1E24]">
+              <div className="flex justify-between items-start mb-3">
+                <div>
+                  <h3 className="font-bold text-lg">{p.name}</h3>
+                  <p className="text-gray-400">{p.title}</p>
+                  <p className="text-sm text-[#C9A227]">{p.specialty}</p>
+                </div>
+                <span className={`px-3 py-1 rounded-full text-sm capitalize ${statusColors[p.status]}`}>
+                  {p.status.replace('_', ' ')}
+                </span>
               </div>
-              
-              <div className="p-6">
-                <div className="mb-4">
-                  <label className="text-marble/50 text-sm">Subject</label>
-                  <p className="text-marble">LOGOS — AI-powered classical research platform</p>
-                </div>
-                
-                <div className="mb-6">
-                  <label className="text-marble/50 text-sm">Message</label>
-                  <div className="bg-obsidian-light rounded-lg p-4 mt-2 text-marble/80 whitespace-pre-line">
-{`Dear Professor ${selectedContact.name},
-
-I'm reaching out because your work on ${selectedContact.specialty} has been foundational for my project.
-
-I've built LOGOS, an AI-powered platform for classical research that offers:
-
-• Cross-lingual semantic search across 69M words of Greek & Latin
-• AI translation in 3 styles (literal, literary, student)
-• Automated intertextuality detection
-• Higher-order pattern discovery
-
-Would you have 15 minutes this week for a brief demo?
-
-Best regards,
-Ettan Tau Vaid
-LOGOS — https://logos-classics.com`}
-                  </div>
-                </div>
-                
-                <div className="flex gap-4">
-                  <button 
-                    onClick={() => setSelectedContact(null)}
-                    className="flex-1 px-4 py-3 border border-gold/20 rounded-lg text-marble/70 hover:text-marble transition-colors"
-                  >
-                    Cancel
-                  </button>
-                  <button 
-                    onClick={() => sendEmail(selectedContact.id)}
-                    className="flex-1 px-4 py-3 bg-gold text-obsidian rounded-lg font-medium hover:bg-gold-light transition-colors"
-                  >
-                    Send Email
-                  </button>
-                </div>
+              <p className="text-gray-400 mb-4">{p.email}</p>
+              <div className="flex gap-3">
+                <button onClick={() => setModal(p)} className="px-4 py-2 bg-[#C9A227] text-black rounded-xl font-semibold">Compose Email</button>
+                <button onClick={() => updateStatus(p.id, 'sent')} className="px-4 py-2 bg-white/10 rounded-xl">Mark Sent</button>
               </div>
             </div>
+          ))}
+        </div>
+      </main>
+
+      {modal && (
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-6" onClick={() => setModal(null)}>
+          <div className="max-w-2xl w-full max-h-[80vh] overflow-auto p-6 rounded-2xl bg-[#1E1E24]" onClick={e => e.stopPropagation()}>
+            <h2 className="text-xl font-bold mb-4">Email to {modal.name}</h2>
+            <p className="text-gray-400 mb-2">To: {modal.email}</p>
+            <p className="text-gray-400 mb-4">Subject: LOGOS - AI-Powered Classical Research Platform</p>
+            <pre className="whitespace-pre-wrap text-sm bg-[#0D0D0F] p-4 rounded-xl mb-4">{getTemplate(modal)}</pre>
+            <div className="flex gap-3">
+              <a href={`mailto:${modal.email}?subject=LOGOS - AI-Powered Classical Research Platform&body=${encodeURIComponent(getTemplate(modal))}`}
+                className="px-6 py-3 bg-[#C9A227] text-black rounded-xl font-semibold">Open in Mail</a>
+              <button onClick={() => { updateStatus(modal.id, 'sent'); setModal(null); }} className="px-6 py-3 bg-white/10 rounded-xl">Mark as Sent</button>
+            </div>
           </div>
-        )}
-      </div>
-    </main>
-  )
+        </div>
+      )}
+    </div>
+  );
 }

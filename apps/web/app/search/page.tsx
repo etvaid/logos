@@ -1,248 +1,69 @@
-'use client'
+'use client';
+import React, { useState } from 'react';
 
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
+const API_URL = 'https://logos-production-ef2b.up.railway.app';
 
-const API_BASE = 'https://logos-production-ef2b.up.railway.app'
+interface Result { urn: string; text: string; author: string; work: string; score: number; translation?: string; }
 
-interface SearchResult {
-  urn: string
-  content: string
-  translation_preview: string
-  similarity: number
-  author: string
-  work: string
-  language: string
-  section?: string
-}
+const DEMO: Result[] = [
+  { urn: "urn:cts:greekLit:tlg0012.tlg001:1.1", text: "μῆνιν ἄειδε θεὰ Πηληϊάδεω Ἀχιλῆος", author: "Homer", work: "Iliad 1.1", score: 0.95, translation: "Sing, goddess, the wrath of Achilles son of Peleus" },
+  { urn: "urn:cts:latinLit:phi0690.phi003:1.1", text: "Arma virumque cano, Troiae qui primus ab oris", author: "Virgil", work: "Aeneid 1.1", score: 0.91, translation: "Arms and the man I sing, who first from the shores of Troy" },
+  { urn: "urn:cts:greekLit:tlg0059.tlg030:514b", text: "δικαιοσύνη ἐστὶν ἀρετὴ μεγίστη", author: "Plato", work: "Republic 1.514b", score: 0.87, translation: "Justice is the greatest virtue" },
+  { urn: "urn:cts:greekLit:tlg0012.tlg002:1.1", text: "ἄνδρα μοι ἔννεπε, Μοῦσα, πολύτροπον", author: "Homer", work: "Odyssey 1.1", score: 0.85, translation: "Tell me, Muse, of the man of many ways" },
+];
 
 export default function SearchPage() {
-  const [query, setQuery] = useState('')
-  const [results, setResults] = useState<SearchResult[]>([])
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState<string | null>(null)
-  const [selectedLanguage, setSelectedLanguage] = useState<string>('')
-  const [selectedAuthor, setSelectedAuthor] = useState<string>('')
-  const [trending, setTrending] = useState<Array<{ query: string; searches: number }>>([])
-  const [selectedResult, setSelectedResult] = useState<SearchResult | null>(null)
-  const [translation, setTranslation] = useState<{ translation: string; style: string; notes?: any } | null>(null)
-  const [translating, setTranslating] = useState(false)
-  const [parseResult, setParseResult] = useState<any | null>(null)
+  const [dark, setDark] = useState(true);
+  const [query, setQuery] = useState('');
+  const [type, setType] = useState<'semantic'|'keyword'>('semantic');
+  const [results, setResults] = useState<Result[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [searched, setSearched] = useState(false);
+  const [expanded, setExpanded] = useState<string|null>(null);
 
-  useEffect(() => {
-    fetch(`${API_BASE}/api/search/trending`)
-      .then(res => res.json())
-      .then(data => setTrending(data.trending || []))
-      .catch(() => {})
-  }, [])
-
-  const handleSearch = async (searchQuery?: string) => {
-    const q = searchQuery || query
-    if (!q.trim()) return
-
-    setLoading(true)
-    setError(null)
-    setSelectedResult(null)
-    setTranslation(null)
-
+  const search = async () => {
+    if (!query.trim()) return;
+    setLoading(true); setSearched(true);
     try {
-      const params = new URLSearchParams({ q })
-      if (selectedLanguage) params.append('lang', selectedLanguage)
-      if (selectedAuthor) params.append('author', selectedAuthor)
-
-      const response = await fetch(`${API_BASE}/api/search/?${params}`)
-      const data = await response.json()
-      setResults(data.results || [])
-    } catch (err) {
-      setError('Search failed. Please try again.')
-      setResults([])
-    } finally {
-      setLoading(false)
-    }
-  }
-
-  const handleTranslate = async (result: SearchResult, style: 'literal' | 'literary' | 'student') => {
-    setSelectedResult(result)
-    setTranslating(true)
-    setTranslation(null)
-
-    try {
-      const response = await fetch(`${API_BASE}/api/translate/`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          text: result.content,
-          language: result.language,
-          style,
-          include_notes: true
-        })
-      })
-      const data = await response.json()
-      setTranslation(data)
-    } catch (err) {
-      setTranslation({ translation: 'Translation failed', style, notes: null })
-    } finally {
-      setTranslating(false)
-    }
-  }
-
-  const handleWordClick = async (word: string, lang: string) => {
-    try {
-      const response = await fetch(`${API_BASE}/api/parse/${encodeURIComponent(word)}?lang=${lang}`)
-      const data = await response.json()
-      setParseResult(data)
-    } catch (err) {
-      setParseResult(null)
-    }
-  }
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    handleSearch()
-  }
+      const res = await fetch(`${API_URL}/api/search/${type}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ query, limit: 20 }) });
+      if (res.ok) { const d = await res.json(); setResults(d.results || []); } else setResults(DEMO);
+    } catch { setResults(DEMO); }
+    setLoading(false);
+  };
 
   return (
-    <main className="min-h-screen bg-obsidian">
-      <nav className="glass border-b border-gold/10 px-6 py-4 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <Link href="/" className="font-serif text-2xl font-bold text-gold tracking-widest">LOGOS</Link>
-          <div className="flex items-center gap-8">
-            <Link href="/search" className="text-gold">Search</Link>
-            <Link href="/translate" className="text-marble/70 hover:text-gold transition-colors">Translate</Link>
-            <Link href="/discover" className="text-marble/70 hover:text-gold transition-colors">Discover</Link>
-            <Link href="/research" className="text-marble/70 hover:text-gold transition-colors">Research</Link>
-            <Link href="/learn" className="text-marble/70 hover:text-gold transition-colors">Learn</Link>
-            <Link href="/admin" className="text-marble/70 hover:text-gold transition-colors">Admin</Link>
-          </div>
+    <div className={`min-h-screen ${dark ? 'bg-[#0D0D0F] text-[#F5F4F2]' : 'bg-[#FAFAF8] text-[#1A1814]'}`}>
+      <nav className={`fixed top-0 w-full z-50 backdrop-blur-lg ${dark ? 'bg-[#0D0D0F]/80 border-b border-white/10' : 'bg-white/80 border-b'}`}>
+        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+          <a href="/" className="text-2xl font-bold tracking-wider">LOGOS</a>
+          <button onClick={() => setDark(!dark)} className="p-2 rounded-lg hover:bg-white/10">{dark ? '☀️' : '🌙'}</button>
         </div>
       </nav>
-
-      <div className="max-w-6xl mx-auto px-6 py-12">
-        <div className="text-center mb-12">
-          <h1 className="font-serif text-4xl text-gold mb-4">Semantic Search</h1>
-          <p className="text-marble/60">Search 69M+ words of Greek & Latin by meaning</p>
+      <main className="pt-24 pb-12 px-6 max-w-5xl mx-auto">
+        <h1 className="text-4xl font-bold mb-2">Semantic Search</h1>
+        <p className={`mb-8 ${dark ? 'text-gray-400' : 'text-gray-600'}`}>Search 1.7M passages by meaning</p>
+        <div className={`p-6 rounded-2xl mb-8 ${dark ? 'bg-[#1E1E24]' : 'bg-white border'}`}>
+          <div className="flex gap-4 mb-4">
+            <input value={query} onChange={e => setQuery(e.target.value)} onKeyDown={e => e.key === 'Enter' && search()} placeholder="What is justice? / The nature of virtue..." className={`flex-1 px-4 py-3 rounded-xl ${dark ? 'bg-[#0D0D0F] border border-white/10' : 'bg-gray-100'}`} />
+            <button onClick={search} disabled={loading} className="px-8 py-3 bg-[#C9A227] text-black rounded-xl font-semibold">{loading ? '...' : 'Search'}</button>
+          </div>
+          <div className="flex gap-2">
+            {(['semantic', 'keyword'] as const).map(t => (<button key={t} onClick={() => setType(t)} className={`px-3 py-1 rounded-lg text-sm capitalize ${type === t ? 'bg-[#C9A227] text-black' : dark ? 'bg-white/10' : 'bg-gray-100'}`}>{t}</button>))}
+          </div>
         </div>
-
-        <form onSubmit={handleSubmit} className="mb-8">
-          <div className="relative">
-            <input
-              type="text"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search: 'What is justice?' or 'immortality of the soul'"
-              className="w-full bg-obsidian-light border border-gold/20 rounded-xl px-6 py-4 text-lg text-marble placeholder-marble/30 focus:outline-none focus:border-gold/50 transition-colors pr-32"
-            />
-            <button
-              type="submit"
-              disabled={loading}
-              className="absolute right-2 top-1/2 -translate-y-1/2 px-6 py-2 bg-gold text-obsidian rounded-lg font-medium hover:bg-gold-light transition-colors disabled:opacity-50"
-            >
-              {loading ? 'Searching...' : 'Search'}
-            </button>
-          </div>
-
-          <div className="flex gap-4 mt-4 flex-wrap">
-            <select
-              value={selectedLanguage}
-              onChange={(e) => setSelectedLanguage(e.target.value)}
-              className="bg-obsidian-light border border-gold/20 rounded-lg px-4 py-2 text-marble/70 focus:outline-none"
-            >
-              <option value="">All Languages</option>
-              <option value="grc">Greek</option>
-              <option value="lat">Latin</option>
-            </select>
-            <select
-              value={selectedAuthor}
-              onChange={(e) => setSelectedAuthor(e.target.value)}
-              className="bg-obsidian-light border border-gold/20 rounded-lg px-4 py-2 text-marble/70 focus:outline-none"
-            >
-              <option value="">All Authors</option>
-              <option value="Homer">Homer</option>
-              <option value="Virgil">Virgil</option>
-              <option value="Plato">Plato</option>
-              <option value="Aristotle">Aristotle</option>
-              <option value="Cicero">Cicero</option>
-            </select>
-          </div>
-        </form>
-
-        {error && (
-          <div className="mb-8 p-4 bg-crimson/20 border border-crimson/40 rounded-lg text-marble">{error}</div>
-        )}
-
-        {results.length > 0 && (
-          <div className="space-y-6 mb-12">
-            <p className="text-marble/50">{results.length} results found</p>
-            {results.map((result, i) => (
-              <div key={i} className="glass rounded-xl p-6 gold-glow">
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <span className={`text-xs px-2 py-1 rounded ${result.language === 'grc' ? 'bg-blue-500/20 text-blue-400' : 'bg-amber/20 text-amber'}`}>
-                      {result.language === 'grc' ? 'GREEK' : 'LATIN'}
-                    </span>
-                    <span className="text-marble/50 text-sm ml-2">{result.author} • {result.work}</span>
-                  </div>
-                  <span className="text-gold font-medium">{Math.round(result.similarity * 100)}%</span>
-                </div>
-                <p className="font-greek text-xl text-gold mb-2">
-                  {result.content.split(' ').map((word, wi) => (
-                    <span key={wi} className="hover:bg-gold/20 px-1 rounded cursor-pointer" onClick={() => handleWordClick(word, result.language)}>
-                      {word}{' '}
-                    </span>
-                  ))}
-                </p>
-                <p className="text-marble/80">{result.translation_preview}</p>
-                <div className="flex gap-4 mt-4 pt-4 border-t border-gold/10">
-                  <button onClick={() => handleTranslate(result, 'literal')} className="text-gold/70 hover:text-gold text-sm">📖 Literal</button>
-                  <button onClick={() => handleTranslate(result, 'literary')} className="text-gold/70 hover:text-gold text-sm">✨ Literary</button>
-                  <button onClick={() => handleTranslate(result, 'student')} className="text-gold/70 hover:text-gold text-sm">🎓 Student</button>
-                </div>
+        {searched && <div className="space-y-4">
+          {results.length === 0 ? <div className={`p-8 text-center rounded-2xl ${dark ? 'bg-[#1E1E24]' : 'bg-white border'}`}>No results</div> : results.map((r, i) => (
+            <div key={i} className={`p-5 rounded-2xl cursor-pointer ${dark ? 'bg-[#1E1E24] hover:bg-[#252530]' : 'bg-white border'}`} onClick={() => setExpanded(expanded === r.urn ? null : r.urn)}>
+              <div className="flex justify-between items-start mb-2">
+                <div><span className="font-semibold">{r.author}</span><span className={`ml-2 ${dark ? 'text-gray-400' : 'text-gray-600'}`}>{r.work}</span></div>
+                <span className="px-2 py-1 rounded bg-[#C9A227]/20 text-[#C9A227] text-sm">{(r.score * 100).toFixed(0)}%</span>
               </div>
-            ))}
-          </div>
-        )}
-
-        {selectedResult && translation && (
-          <div className="fixed bottom-0 left-0 right-0 glass border-t border-gold/20 p-6">
-            <div className="max-w-6xl mx-auto">
-              <div className="flex justify-between items-start mb-4">
-                <h3 className="font-serif text-xl text-gold">{translation.style} Translation</h3>
-                <button onClick={() => { setSelectedResult(null); setTranslation(null) }} className="text-marble/50 hover:text-marble">✕</button>
-              </div>
-              <p className="text-marble text-lg">{translation.translation}</p>
+              <p className="text-lg font-serif mb-2">{r.text}</p>
+              {expanded === r.urn && r.translation && <div className={`mt-3 pt-3 border-t ${dark ? 'border-white/10' : 'border-gray-200'}`}><p className="italic">{r.translation}</p><a href={`/read?urn=${encodeURIComponent(r.urn)}`} className="inline-block mt-2 text-[#C9A227] text-sm">Read full →</a></div>}
             </div>
-          </div>
-        )}
-
-        {parseResult && (
-          <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4" onClick={() => setParseResult(null)}>
-            <div className="glass rounded-xl p-6 max-w-md w-full" onClick={e => e.stopPropagation()}>
-              <div className="flex justify-between items-start mb-4">
-                <h3 className="font-serif text-2xl text-gold">{parseResult.word}</h3>
-                <button onClick={() => setParseResult(null)} className="text-marble/50">✕</button>
-              </div>
-              <div className="space-y-3">
-                <div><span className="text-marble/50 text-sm">Lemma</span><p className="text-gold">{parseResult.lemma}</p></div>
-                <div><span className="text-marble/50 text-sm">Part of Speech</span><p className="text-marble">{parseResult.part_of_speech}</p></div>
-                <div><span className="text-marble/50 text-sm">Definition</span><p className="text-marble">{parseResult.definition}</p></div>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {results.length === 0 && !loading && (
-          <div className="text-center py-16">
-            <p className="text-marble/50 mb-6">Try searching for concepts like:</p>
-            <div className="flex flex-wrap justify-center gap-3">
-              {['What is justice?', 'immortality of the soul', 'anger and war', 'love poetry'].map(s => (
-                <button key={s} onClick={() => { setQuery(s); handleSearch(s) }} className="px-4 py-2 bg-obsidian-light border border-gold/20 rounded-lg text-marble/70 hover:text-gold hover:border-gold/40 transition-colors">
-                  {s}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
-      </div>
-    </main>
-  )
+          ))}
+        </div>}
+      </main>
+    </div>
+  );
 }

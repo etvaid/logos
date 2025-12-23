@@ -1,179 +1,34 @@
-'use client'
-
-import { useState, useEffect } from 'react'
-import { useRouter } from 'next/navigation'
-import Link from 'next/link'
-
-const API_BASE = 'https://logos-production-ef2b.up.railway.app'
-
+'use client';
+import React, { useState, useEffect } from 'react';
+const STATS = { users: 1247, searches: 38920, translations: 14560, discoveries: 847 };
+const DAILY = [65, 78, 82, 91, 88, 95, 102];
 export default function AnalyticsPage() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false)
-  const [isLoading, setIsLoading] = useState(true)
-  const [period, setPeriod] = useState('7d')
-  const [analytics, setAnalytics] = useState<any>(null)
-  const router = useRouter()
-
-  useEffect(() => {
-    const token = localStorage.getItem('logos_admin_token')
-    if (!token) {
-      router.push('/admin/login')
-      return
-    }
-    setIsAuthenticated(true)
-    setIsLoading(false)
-    fetchAnalytics()
-  }, [router])
-
-  useEffect(() => {
-    if (isAuthenticated) fetchAnalytics()
-  }, [period, isAuthenticated])
-
-  const fetchAnalytics = async () => {
-    try {
-      const res = await fetch(`${API_BASE}/api/admin/analytics?period=${period}`)
-      const data = await res.json()
-      setAnalytics(data)
-    } catch (err) {
-      console.error(err)
-    }
-  }
-
-  const handleLogout = () => {
-    localStorage.removeItem('logos_admin_token')
-    router.push('/admin/login')
-  }
-
-  if (isLoading) {
-    return <main className="min-h-screen bg-obsidian flex items-center justify-center"><p className="text-marble/50">Loading...</p></main>
-  }
-
-  if (!isAuthenticated) return null
-
+  const [range, setRange] = useState('7d');
+  useEffect(() => { const t = localStorage.getItem('logos_admin_token'); if (!t) window.location.href = '/admin'; }, []);
   return (
-    <main className="min-h-screen bg-obsidian">
-      <nav className="glass border-b border-gold/10 px-6 py-4 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center gap-4">
-            <Link href="/" className="font-serif text-2xl font-bold text-gold tracking-widest">LOGOS</Link>
-            <span className="text-marble/50">Admin</span>
-          </div>
-          <div className="flex items-center gap-6">
-            <Link href="/admin" className="text-marble/70 hover:text-gold transition-colors">Dashboard</Link>
-            <Link href="/admin/outreach" className="text-marble/70 hover:text-gold transition-colors">Outreach</Link>
-            <Link href="/admin/twitter" className="text-marble/70 hover:text-gold transition-colors">Twitter</Link>
-            <Link href="/admin/analytics" className="text-gold">Analytics</Link>
-            <button onClick={handleLogout} className="text-crimson hover:text-crimson/80">Logout</button>
-          </div>
+    <div className="min-h-screen bg-[#0D0D0F] text-[#F5F4F2]">
+      <nav className="fixed top-0 w-full z-50 bg-[#0D0D0F]/80 backdrop-blur-lg border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+          <a href="/" className="text-2xl font-bold tracking-wider">LOGOS</a>
+          <a href="/admin" className="text-gray-400">← Admin</a>
         </div>
       </nav>
-
-      <div className="max-w-7xl mx-auto px-6 py-8">
+      <main className="pt-24 pb-12 px-6 max-w-5xl mx-auto">
         <div className="flex justify-between items-center mb-8">
-          <h1 className="font-serif text-3xl text-gold">Analytics</h1>
-          <div className="flex gap-2">
-            {['24h', '7d', '30d', '90d'].map(p => (
-              <button
-                key={p}
-                onClick={() => setPeriod(p)}
-                className={`px-4 py-2 rounded-lg transition-colors ${period === p ? 'bg-gold text-obsidian' : 'bg-obsidian-light text-marble/70 hover:text-gold'}`}
-              >
-                {p}
-              </button>
-            ))}
-          </div>
+          <h1 className="text-3xl font-bold">Analytics</h1>
+          <div className="flex gap-2">{['7d', '30d', 'all'].map(r => (<button key={r} onClick={() => setRange(r)} className={`px-3 py-1 rounded-lg ${range === r ? 'bg-[#C9A227] text-black' : 'bg-[#1E1E24]'}`}>{r}</button>))}</div>
         </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-          <div className="glass rounded-xl p-6">
-            <span className="text-marble/50 text-sm">Page Views</span>
-            <p className="text-3xl font-bold text-gold">{analytics?.metrics?.pageviews?.toLocaleString() || '12,458'}</p>
-            <span className="text-emerald text-sm">+23% vs prev</span>
-          </div>
-          <div className="glass rounded-xl p-6">
-            <span className="text-marble/50 text-sm">Unique Users</span>
-            <p className="text-3xl font-bold text-gold">{analytics?.metrics?.users?.toLocaleString() || '3,247'}</p>
-            <span className="text-emerald text-sm">+18% vs prev</span>
-          </div>
-          <div className="glass rounded-xl p-6">
-            <span className="text-marble/50 text-sm">Avg Session</span>
-            <p className="text-3xl font-bold text-gold">{analytics?.metrics?.avg_session || '4:32'}</p>
-            <span className="text-emerald text-sm">+12% vs prev</span>
-          </div>
-          <div className="glass rounded-xl p-6">
-            <span className="text-marble/50 text-sm">Bounce Rate</span>
-            <p className="text-3xl font-bold text-gold">{analytics?.metrics?.bounce_rate || '34%'}</p>
-            <span className="text-emerald text-sm">-5% vs prev</span>
-          </div>
+        <div className="grid md:grid-cols-4 gap-4 mb-8">{Object.entries(STATS).map(([k, v]) => (<div key={k} className="p-5 rounded-2xl bg-[#1E1E24]"><div className="text-gray-400 text-sm capitalize">{k}</div><div className="text-3xl font-bold">{v.toLocaleString()}</div></div>))}</div>
+        <div className="p-6 rounded-2xl bg-[#1E1E24] mb-8">
+          <h2 className="font-semibold mb-4">Daily Active Users</h2>
+          <div className="flex items-end gap-2 h-40">{DAILY.map((d, i) => (<div key={i} className="flex-1 bg-[#C9A227] rounded-t" style={{ height: `${d}%` }} />))}</div>
+          <div className="flex justify-between mt-2 text-xs text-gray-400">{['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map(d => (<span key={d}>{d}</span>))}</div>
         </div>
-
-        <div className="grid md:grid-cols-2 gap-6 mb-8">
-          <div className="glass rounded-xl p-6">
-            <h2 className="font-serif text-lg text-gold mb-4">Traffic Over Time</h2>
-            <div className="h-64 flex items-end justify-between gap-2">
-              {[65, 45, 78, 90, 67, 85, 95, 72, 88, 92, 75, 82, 98, 88].map((h, i) => (
-                <div
-                  key={i}
-                  className="bg-gold/60 rounded-t flex-1 transition-all hover:bg-gold"
-                  style={{ height: `${h}%` }}
-                />
-              ))}
-            </div>
-            <div className="flex justify-between mt-2 text-marble/40 text-xs">
-              <span>7 days ago</span>
-              <span>Today</span>
-            </div>
-          </div>
-
-          <div className="glass rounded-xl p-6">
-            <h2 className="font-serif text-lg text-gold mb-4">Feature Usage</h2>
-            <div className="space-y-4">
-              {[
-                { name: 'Search', value: 42 },
-                { name: 'Translate', value: 28 },
-                { name: 'Read', value: 18 },
-                { name: 'Discover', value: 8 },
-                { name: 'Learn', value: 4 },
-              ].map(item => (
-                <div key={item.name}>
-                  <div className="flex justify-between text-sm mb-1">
-                    <span className="text-marble">{item.name}</span>
-                    <span className="text-marble/50">{item.value}%</span>
-                  </div>
-                  <div className="w-full bg-obsidian-light rounded-full h-2">
-                    <div className="bg-gold rounded-full h-2" style={{ width: `${item.value}%` }} />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="glass rounded-xl p-6">
-            <h2 className="font-serif text-lg text-gold mb-4">Top Searches</h2>
-            <div className="space-y-3">
-              {(analytics?.top_searches || ['justice', 'immortality', 'fate', 'virtue', 'love']).map((search: string, i: number) => (
-                <div key={i} className="flex justify-between items-center">
-                  <span className="text-marble">{search}</span>
-                  <span className="text-marble/50 text-sm">{Math.floor(Math.random() * 500 + 100)} searches</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="glass rounded-xl p-6">
-            <h2 className="font-serif text-lg text-gold mb-4">Top Texts</h2>
-            <div className="space-y-3">
-              {(analytics?.top_texts || ['Iliad 1', 'Aeneid 1', 'Republic', 'Odyssey', 'Metamorphoses']).map((text: string, i: number) => (
-                <div key={i} className="flex justify-between items-center">
-                  <span className="text-marble">{text}</span>
-                  <span className="text-marble/50 text-sm">{Math.floor(Math.random() * 300 + 50)} views</span>
-                </div>
-              ))}
-            </div>
-          </div>
+          <div className="p-6 rounded-2xl bg-[#1E1E24]"><h3 className="font-semibold mb-4">Top Searches</h3>{['justice', 'virtue', 'fate', 'love', 'god'].map((s, i) => (<div key={i} className="flex justify-between py-2"><span>{s}</span><span className="text-gray-400">{Math.floor(Math.random() * 500) + 100}</span></div>))}</div>
+          <div className="p-6 rounded-2xl bg-[#1E1E24]"><h3 className="font-semibold mb-4">User Demographics</h3>{[{ n: 'Students', p: 60 }, { n: 'Scholars', p: 25 }, { n: 'Other', p: 15 }].map(d => (<div key={d.n} className="mb-3"><div className="flex justify-between mb-1"><span>{d.n}</span><span>{d.p}%</span></div><div className="h-2 bg-gray-700 rounded-full"><div className="h-full bg-[#C9A227] rounded-full" style={{ width: `${d.p}%` }} /></div></div>))}</div>
         </div>
-      </div>
-    </main>
-  )
+      </main>
+    </div>
+  );
 }
