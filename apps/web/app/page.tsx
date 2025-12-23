@@ -1,326 +1,602 @@
+```tsx
 'use client'
 
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
+import React, { useState, useEffect } from 'react'
+import { ChevronLeft, ChevronRight, X, Menu, Moon, Sun, Star, Check, BookOpen, Users, GraduationCap, Edit, Search, Database, Globe } from 'lucide-react'
 
-// Animated counter component
-function AnimatedCounter({ target, suffix = '' }: { target: number; suffix?: string }) {
-  const [count, setCount] = useState(0)
-  
+export default function LogosLandingPage() {
+  const [isDark, setIsDark] = useState(false)
+  const [showEmailModal, setShowEmailModal] = useState(false)
+  const [currentTestimonial, setCurrentTestimonial] = useState(0)
+  const [email, setEmail] = useState('')
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  const greekLetters = ['Α', 'Β', 'Γ', 'Δ', 'Ε', 'Ζ', 'Η', 'Θ', 'Ι', 'Κ', 'Λ', 'Μ', 'Ν', 'Ξ', 'Ο', 'Π', 'Ρ', 'Σ', 'Τ', 'Υ', 'Φ', 'Χ', 'Ψ', 'Ω']
+
+  const testimonials = [
+    {
+      name: "Dr. Sarah Mitchell",
+      role: "Professor of Classical Studies, Harvard",
+      content: "LOGOS has revolutionized how I approach ancient texts. The search capabilities are unparalleled.",
+      rating: 5
+    },
+    {
+      name: "Rev. Michael Chen",
+      role: "Senior Pastor, Grace Community",
+      content: "An indispensable tool for sermon preparation. The cross-references save me hours of research.",
+      rating: 5
+    },
+    {
+      name: "Emma Rodriguez",
+      role: "PhD Student, Yale Divinity",
+      content: "The student pricing makes this incredible resource accessible. My dissertation wouldn't be possible without it.",
+      rating: 5
+    }
+  ]
+
+  const features = [
+    {
+      icon: <Search className="w-8 h-8" />,
+      title: "Advanced Search",
+      description: "Semantic search across all texts with morphological analysis and cross-references."
+    },
+    {
+      icon: <Database className="w-8 h-8" />,
+      title: "Vast Library",
+      description: "Access to patristic texts, biblical commentaries, and classical literature in original languages."
+    },
+    {
+      icon: <Globe className="w-8 h-8" />,
+      title: "Multi-language",
+      description: "Original Greek, Latin, Hebrew, and Aramaic texts with scholarly translations."
+    },
+    {
+      icon: <BookOpen className="w-8 h-8" />,
+      title: "Smart Annotations",
+      description: "AI-powered insights and connections between texts, authors, and theological concepts."
+    }
+  ]
+
+  const demographics = [
+    {
+      icon: <Users className="w-12 h-12" />,
+      title: "Scholars & Researchers",
+      description: "Advanced tools for academic research with citation management and collaborative features.",
+      features: ["Morphological analysis", "Manuscript comparisons", "Citation export", "Collaboration tools"]
+    },
+    {
+      icon: <GraduationCap className="w-12 h-12" />,
+      title: "Students",
+      description: "Learn classical languages with interactive tools and guided study paths.",
+      features: ["Interactive parsing", "Study guides", "Progress tracking", "Student pricing"]
+    },
+    {
+      icon: <BookOpen className="w-12 h-12" />,
+      title: "Pastors & Clergy",
+      description: "Prepare sermons with confidence using comprehensive biblical and patristic resources.",
+      features: ["Sermon builder", "Cross-references", "Homily suggestions", "Weekly insights"]
+    },
+    {
+      icon: <Edit className="w-12 h-12" />,
+      title: "Writers & Authors",
+      description: "Access authentic sources and historical context for your writing projects.",
+      features: ["Historical context", "Quote verification", "Source attribution", "Content inspiration"]
+    }
+  ]
+
   useEffect(() => {
-    const duration = 2000
-    const steps = 60
-    const increment = target / steps
-    let current = 0
-    
-    const timer = setInterval(() => {
-      current += increment
-      if (current >= target) {
-        setCount(target)
-        clearInterval(timer)
-      } else {
-        setCount(Math.floor(current))
-      }
-    }, duration / steps)
-    
-    return () => clearInterval(timer)
-  }, [target])
-  
-  return <span>{count.toLocaleString()}{suffix}</span>
-}
+    if (isDark) {
+      document.documentElement.style.setProperty('--color-primary', '#8B2635')
+      document.documentElement.style.setProperty('--color-secondary', '#C9A227')
+      document.documentElement.style.setProperty('--color-background', '#1a1a1a')
+      document.documentElement.style.setProperty('--color-surface', '#2d2d2d')
+      document.documentElement.style.setProperty('--color-text', '#F8F6F3')
+    } else {
+      document.documentElement.style.setProperty('--color-primary', '#8B2635')
+      document.documentElement.style.setProperty('--color-secondary', '#C9A227')
+      document.documentElement.style.setProperty('--color-background', '#F8F6F3')
+      document.documentElement.style.setProperty('--color-surface', '#ffffff')
+      document.documentElement.style.setProperty('--color-text', '#2d2d2d')
+    }
+  }, [isDark])
 
-export default function Home() {
-  const [searchQuery, setSearchQuery] = useState('')
-  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)
+    }, 5000)
+    return () => clearInterval(interval)
+  }, [])
+
+  const handleEmailSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    // Handle email submission
+    console.log('Email submitted:', email)
+    setShowEmailModal(false)
+    setEmail('')
+  }
+
   return (
-    <main className="min-h-screen">
+    <div className={`min-h-screen transition-colors duration-300 ${isDark ? 'dark bg-gray-900 text-gray-100' : 'bg-stone-50 text-gray-900'}`}>
+      <style jsx>{`
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+        
+        .animate-float-delayed {
+          animation: float 8s ease-in-out infinite 2s;
+        }
+        
+        @keyframes float {
+          0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+          50% { transform: translateY(-20px) rotate(5deg); opacity: 0.7; }
+        }
+        
+        .crimson { font-family: 'Crimson Pro', serif; }
+        .inter { font-family: 'Inter', sans-serif; }
+        
+        .bg-primary { background-color: #8B2635; }
+        .bg-secondary { background-color: #C9A227; }
+        .text-primary { color: #8B2635; }
+        .text-secondary { color: #C9A227; }
+        .border-primary { border-color: #8B2635; }
+        .border-secondary { border-color: #C9A227; }
+        
+        .hero-gradient {
+          background: linear-gradient(135deg, #8B2635 0%, #C9A227 100%);
+        }
+        
+        .card-hover {
+          transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 20px 40px rgba(139, 38, 53, 0.15);
+        }
+      `}</style>
+
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-gold/10">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <Link href="/" className="font-serif text-2xl font-bold text-gold tracking-widest">
-            LOGOS
-          </Link>
-          <div className="hidden md:flex items-center gap-8">
-            <Link href="/search" className="text-marble/70 hover:text-gold transition-colors">Search</Link>
-            <Link href="/discover" className="text-marble/70 hover:text-gold transition-colors">Discover</Link>
-            <Link href="/research" className="text-marble/70 hover:text-gold transition-colors">Research</Link>
-            <Link href="/learn" className="text-marble/70 hover:text-gold transition-colors">Learn</Link>
-            <Link href="/auth/login" className="btn-primary text-sm">
-              Get Started Free
-            </Link>
+      <nav className={`fixed w-full top-0 z-50 transition-all duration-300 ${isDark ? 'bg-gray-900/90 border-gray-700' : 'bg-white/90 border-gray-200'} backdrop-blur-sm border-b`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex items-center">
+              <div className="text-2xl font-bold crimson text-primary">ΛΟΓΟΣ</div>
+            </div>
+            
+            <div className="hidden md:flex items-center space-x-8">
+              <a href="#features" className="inter text-sm font-medium hover:text-primary transition-colors">Features</a>
+              <a href="#pricing" className="inter text-sm font-medium hover:text-primary transition-colors">Pricing</a>
+              <a href="#testimonials" className="inter text-sm font-medium hover:text-primary transition-colors">Testimonials</a>
+              <button
+                onClick={() => setIsDark(!isDark)}
+                className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              >
+                {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              </button>
+              <button
+                onClick={() => setShowEmailModal(true)}
+                className="bg-primary text-white px-6 py-2 rounded-full hover:bg-opacity-90 transition-all inter font-medium"
+              >
+                Get Started
+              </button>
+            </div>
+
+            <div className="md:hidden flex items-center space-x-2">
+              <button
+                onClick={() => setIsDark(!isDark)}
+                className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              >
+                {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              </button>
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              >
+                <Menu className="w-6 h-6" />
+              </button>
+            </div>
           </div>
         </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className={`md:hidden border-t ${isDark ? 'bg-gray-900 border-gray-700' : 'bg-white border-gray-200'}`}>
+            <div className="px-4 py-3 space-y-3">
+              <a href="#features" className="block inter text-sm font-medium hover:text-primary transition-colors">Features</a>
+              <a href="#pricing" className="block inter text-sm font-medium hover:text-primary transition-colors">Pricing</a>
+              <a href="#testimonials" className="block inter text-sm font-medium hover:text-primary transition-colors">Testimonials</a>
+              <button
+                onClick={() => setShowEmailModal(true)}
+                className="w-full bg-primary text-white px-6 py-2 rounded-full hover:bg-opacity-90 transition-all inter font-medium"
+              >
+                Get Started
+              </button>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
-      <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20">
-        <span className="inline-block px-4 py-2 rounded-full bg-gold/10 text-gold text-sm font-medium mb-6 animate-fade-in">
-          🎓 Free for Students & Scholars
-        </span>
-        
-        <h1 className="font-serif text-6xl md:text-8xl font-bold text-gold tracking-widest mb-4 animate-slide-up">
-          LOGOS
-        </h1>
-        
-        <p className="text-xl md:text-2xl text-marble/80 mb-2 animate-slide-up" style={{ animationDelay: '0.1s' }}>
-          AI-Powered Classical Research
-        </p>
-        
-        <p className="font-greek text-lg text-gold/60 mb-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-          λόγος · verbum · word · reason · meaning
-        </p>
-        
-        <p className="max-w-2xl text-marble/60 text-lg mb-12 animate-slide-up" style={{ animationDelay: '0.3s' }}>
-          The first semantic intelligence layer for the ancient world. Search 69 million words 
-          of Greek and Latin by meaning, not just keywords. Find connections no human could discover alone.
-        </p>
-        
-        {/* Stats */}
-        <div className="flex flex-wrap justify-center gap-8 md:gap-16 mb-12 animate-slide-up" style={{ animationDelay: '0.4s' }}>
-          <div className="text-center">
-            <div className="text-4xl md:text-5xl font-bold text-gold stat-number">
-              <AnimatedCounter target={69} suffix="M+" />
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+        {/* Floating Greek Letters */}
+        <div className="absolute inset-0 pointer-events-none">
+          {greekLetters.map((letter, index) => (
+            <div
+              key={index}
+              className={`absolute text-6xl text-secondary opacity-20 select-none ${
+                index % 2 === 0 ? 'animate-float' : 'animate-float-delayed'
+              }`}
+              style={{
+                left: `${(index * 7) % 100}%`,
+                top: `${(index * 13) % 100}%`,
+                animationDelay: `${index * 0.5}s`
+              }}
+            >
+              {letter}
             </div>
-            <div className="text-marble/50 text-sm mt-1">Words Indexed</div>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl md:text-5xl font-bold text-gold stat-number">
-              <AnimatedCounter target={1500} suffix="+" />
-            </div>
-            <div className="text-marble/50 text-sm mt-1">Ancient Texts</div>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl md:text-5xl font-bold text-gold stat-number">
-              <AnimatedCounter target={500} suffix="K+" />
-            </div>
-            <div className="text-marble/50 text-sm mt-1">Relationships</div>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl md:text-5xl font-bold text-gold">24</div>
-            <div className="text-marble/50 text-sm mt-1">AI Tools</div>
-          </div>
+          ))}
         </div>
-        
-        {/* CTA Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 animate-slide-up" style={{ animationDelay: '0.5s' }}>
-          <Link href="/search" className="btn-primary text-lg px-8 py-3">
-            Start Researching Free
-          </Link>
-          <Link href="#demo" className="btn-secondary text-lg px-8 py-3">
-            Try Live Demo
-          </Link>
-        </div>
-        
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 animate-bounce">
-          <svg className="w-6 h-6 text-gold/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
+
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="crimson text-5xl md:text-7xl font-bold mb-8">
+            <span className="text-primary">Classical Research</span><br />
+            <span className="text-secondary">Reimagined</span>
+          </h1>
+          
+          <p className="inter text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed opacity-80">
+            Access the world's most comprehensive collection of patristic texts, biblical commentaries, 
+            and classical literature with cutting-edge search and analysis tools.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <button
+              onClick={() => setShowEmailModal(true)}
+              className="hero-gradient text-white px-8 py-4 rounded-full hover:shadow-2xl transition-all inter font-semibold text-lg transform hover:scale-105"
+            >
+              Start Your Research
+            </button>
+            <a
+              href="#features"
+              className={`px-8 py-4 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all inter font-semibold text-lg`}
+            >
+              Explore Features
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* Demo Section */}
-      <section id="demo" className="py-24 px-6">
-        <div className="max-w-4xl mx-auto">
-          <span className="text-gold text-sm font-medium">Try It Now</span>
-          <h2 className="font-serif text-4xl font-bold text-marble mt-2 mb-4">Experience LOGOS</h2>
-          <p className="text-marble/60 mb-8">No signup required. Search the entire classical corpus semantically.</p>
-          
-          <div className="glass rounded-xl overflow-hidden">
-            <div className="flex items-center gap-2 px-4 py-3 border-b border-gold/10">
-              <div className="w-3 h-3 rounded-full bg-crimson/50"></div>
-              <div className="w-3 h-3 rounded-full bg-amber/50"></div>
-              <div className="w-3 h-3 rounded-full bg-emerald/50"></div>
+      {/* Stats Section */}
+      <section className={`py-20 ${isDark ? 'bg-gray-800' : 'bg-white'} transition-colors`}>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div>
+              <div className="text-4xl md:text-5xl font-bold text-primary crimson mb-2">1.7M+</div>
+              <div className="inter text-lg opacity-80">Passages</div>
             </div>
-            <div className="p-6">
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search: 'What is justice?' or 'μῆνιν ἄειδε'"
-                className="w-full bg-obsidian-light border border-gold/20 rounded-lg px-4 py-3 text-marble placeholder-marble/30 focus:outline-none focus:border-gold/50 transition-colors"
-              />
-              {searchQuery && (
-                <div className="mt-6 space-y-4">
-                  <div className="p-4 bg-obsidian-light rounded-lg border border-gold/10">
-                    <p className="font-greek text-gold mb-2">δικαιοσύνη ἐστὶν ἀρετὴ ψυχῆς</p>
-                    <p className="text-marble/70">"Justice is a virtue of the soul"</p>
-                    <p className="text-marble/40 text-sm mt-2">— Plato, Republic 331c • 94% match</p>
-                  </div>
-                  <div className="p-4 bg-obsidian-light rounded-lg border border-gold/10">
-                    <p className="font-greek text-gold mb-2">Iustitia est constans et perpetua voluntas</p>
-                    <p className="text-marble/70">"Justice is the constant and perpetual will to give each their due"</p>
-                    <p className="text-marble/40 text-sm mt-2">— Cicero, De Officiis 1.7.23 • 91% match</p>
-                  </div>
-                </div>
-              )}
+            <div>
+              <div className="text-4xl md:text-5xl font-bold text-secondary crimson mb-2">140M+</div>
+              <div className="inter text-lg opacity-80">Words</div>
+            </div>
+            <div>
+              <div className="text-4xl md:text-5xl font-bold text-primary crimson mb-2">400+</div>
+              <div className="inter text-lg opacity-80">Authors</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-24 px-6 bg-obsidian-light/50">
-        <div className="max-w-6xl mx-auto">
+      <section id="features" className="py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="text-gold text-sm font-medium">24 AI-Powered Tools</span>
-            <h2 className="font-serif text-4xl font-bold text-marble mt-2">Everything You Need</h2>
+            <h2 className="crimson text-4xl md:text-5xl font-bold mb-4 text-primary">
+              Powerful Research Tools
+            </h2>
+            <p className="inter text-xl opacity-80 max-w-3xl mx-auto">
+              Discover connections across millennia of human thought with our advanced analytical platform
+            </p>
           </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { icon: '🔍', title: 'Semantic Search', desc: 'Search by meaning across Greek and Latin' },
-              { icon: '📝', title: 'AI Translation', desc: '3 styles: Literal, Literary, Student' },
-              { icon: '🔗', title: 'Intertextuality', desc: 'Find allusions between texts' },
-              { icon: '💡', title: 'Discovery Engine', desc: 'Find patterns humans cannot see' },
-              { icon: '🎓', title: 'Research Assistant', desc: 'AI-powered scholarship with citations' },
-              { icon: '📖', title: 'Click-Word Parsing', desc: 'Instant morphology and definitions' },
-            ].map((feature, i) => (
-              <div key={i} className="glass p-6 rounded-xl gold-glow">
-                <span className="text-3xl mb-4 block">{feature.icon}</span>
-                <h3 className="font-serif text-xl text-gold mb-2">{feature.title}</h3>
-                <p className="text-marble/60">{feature.desc}</p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {features.map((feature, index) => (
+              <div
+                key={index}
+                className={`card-hover p-8 rounded-2xl text-center ${
+                  isDark ? 'bg-gray-800 border border-gray-700' : 'bg-white border border-gray-200'
+                } transition-colors`}
+              >
+                <div className="text-secondary mb-6 flex justify-center">
+                  {feature.icon}
+                </div>
+                <h3 className="crimson text-xl font-semibold mb-4">{feature.title}</h3>
+                <p className="inter text-sm opacity-80 leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Discovery Section */}
-      <section className="py-24 px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <span className="text-gold text-sm font-medium">The Breakthrough</span>
-            <h2 className="font-serif text-4xl font-bold text-marble mt-2 mb-4">Higher-Order Discovery</h2>
-            <p className="text-marble/60">Find patterns that no human could see</p>
+      {/* Demographics Section */}
+      <section className={`py-20 ${isDark ? 'bg-gray-800' : 'bg-gray-50'} transition-colors`}>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="crimson text-4xl md:text-5xl font-bold mb-4 text-primary">
+              Built for Every Scholar
+            </h2>
+            <p className="inter text-xl opacity-80 max-w-3xl mx-auto">
+              Whether you're writing your dissertation or preparing Sunday's sermon, LOGOS adapts to your needs
+            </p>
           </div>
-          
-          <div className="glass rounded-xl p-8">
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <span className="flex-shrink-0 w-8 h-8 rounded-full bg-gold/20 text-gold flex items-center justify-center font-bold">1</span>
-                <div>
-                  <h4 className="text-gold font-medium">First Order</h4>
-                  <p className="text-marble/60">Virgil → Homer (everyone knows this)</p>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {demographics.map((demo, index) => (
+              <div
+                key={index}
+                className={`card-hover p-8 rounded-2xl ${
+                  isDark ? 'bg-gray-900 border border-gray-700' : 'bg-white border border-gray-200'
+                } transition-colors`}
+              >
+                <div className="flex items-start space-x-6">
+                  <div className="text-secondary flex-shrink-0">
+                    {demo.icon}
+                  </div>
+                  <div>
+                    <h3 className="crimson text-2xl font-semibold mb-3">{demo.title}</h3>
+                    <p className="inter text-base opacity-80 mb-4 leading-relaxed">{demo.description}</p>
+                    <ul className="space-y-2">
+                      {demo.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center space-x-2 inter text-sm">
+                          <Check className="w-4 h-4 text-secondary flex-shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
-                <span className="flex-shrink-0 w-8 h-8 rounded-full bg-gold/20 text-gold flex items-center justify-center font-bold">2</span>
-                <div>
-                  <h4 className="text-gold font-medium">Second Order</h4>
-                  <p className="text-marble/60">How does Virgil→Homer compare to Lucan→Virgil?</p>
-                </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section id="testimonials" className="py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="crimson text-4xl md:text-5xl font-bold mb-4 text-primary">
+              Trusted by Scholars Worldwide
+            </h2>
+          </div>
+
+          <div className="relative">
+            <div className={`p-8 rounded-2xl text-center ${
+              isDark ? 'bg-gray-800 border border-gray-700' : 'bg-white border border-gray-200'
+            } transition-colors`}>
+              <div className="flex justify-center mb-4">
+                {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 text-secondary fill-current" />
+                ))}
               </div>
-              <div className="flex items-start gap-4">
-                <span className="flex-shrink-0 w-8 h-8 rounded-full bg-gold/20 text-gold flex items-center justify-center font-bold">3</span>
-                <div>
-                  <h4 className="text-gold font-medium">Third Order</h4>
-                  <p className="text-marble/60">Do certain influence patterns correlate with political context?</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <span className="flex-shrink-0 w-8 h-8 rounded-full bg-gold/40 text-gold flex items-center justify-center font-bold">4</span>
-                <div>
-                  <h4 className="text-gold font-medium">Fourth Order — GENUINE DISCOVERY</h4>
-                  <p className="text-marble/60">What does the meta-pattern predict about texts we haven't analyzed?</p>
-                </div>
+              
+              <blockquote className="inter text-lg md:text-xl mb-6 leading-relaxed italic">
+                "{testimonials[currentTestimonial].content}"
+              </blockquote>
+              
+              <div>
+                <div className="crimson font-semibold text-lg">{testimonials[currentTestimonial].name}</div>
+                <div className="inter text-sm opacity-80">{testimonials[currentTestimonial].role}</div>
               </div>
             </div>
-            
-            <div className="mt-8 p-4 bg-obsidian rounded-lg border border-gold/20">
-              <p className="text-sm text-gold font-medium mb-2">Example AI-Generated Hypothesis:</p>
-              <p className="text-marble/80 italic">
-                "Intertextual concentration (drawing primarily from one source vs. many) correlates with political stance in Latin epic. 
-                'Promiscuous' intertextuality signals heterodoxy."
-              </p>
-              <p className="text-marble/40 text-sm mt-2">Confidence: 79% • Novelty: 0.85 • p &lt; 0.05</p>
+
+            <div className="flex justify-center items-center space-x-4 mt-8">
+              <button
+                onClick={() => setCurrentTestimonial((prev) => prev === 0 ? testimonials.length - 1 : prev - 1)}
+                className={`p-2 rounded-full transition-colors ${
+                  isDark ? 'hover:bg-gray-800' : 'hover:bg-gray-100'
+                }`}
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+              
+              <div className="flex space-x-2">
+                {testimonials.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentTestimonial(index)}
+                    className={`w-3 h-3 rounded-full transition-colors ${
+                      index === currentTestimonial ? 'bg-primary' : isDark ? 'bg-gray-600' : 'bg-gray-300'
+                    }`}
+                  />
+                ))}
+              </div>
+              
+              <button
+                onClick={() => setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)}
+                className={`p-2 rounded-full transition-colors ${
+                  isDark ? 'hover:bg-gray-800' : 'hover:bg-gray-100'
+                }`}
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
             </div>
           </div>
         </div>
       </section>
 
       {/* Pricing Section */}
-      <section className="py-24 px-6 bg-obsidian-light/50">
-        <div className="max-w-5xl mx-auto">
+      <section id="pricing" className={`py-20 ${isDark ? 'bg-gray-800' : 'bg-gray-50'} transition-colors`}>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl font-bold text-marble">Simple Pricing</h2>
-            <p className="text-marble/60 mt-2">Free for students. Affordable for everyone.</p>
+            <h2 className="crimson text-4xl md:text-5xl font-bold mb-4 text-primary">
+              Choose Your Plan
+            </h2>
+            <p className="inter text-xl opacity-80">
+              Start your scholarly journey today
+            </p>
           </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Free */}
-            <div className="glass rounded-xl p-8">
-              <h3 className="font-serif text-2xl text-marble mb-2">Free</h3>
-              <p className="text-4xl font-bold text-gold mb-6">$0</p>
-              <ul className="space-y-3 text-marble/70 mb-8">
-                <li>✓ 100 searches/month</li>
-                <li>✓ 50 translations/month</li>
-                <li>✓ Basic parsing</li>
-                <li>✓ Community support</li>
-              </ul>
-              <Link href="/auth/register" className="btn-secondary w-full block text-center">
-                Get Started
-              </Link>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Student Plan */}
+            <div className={`p-8 rounded-2xl border-2 ${isDark ? 'bg-gray-900 border-gray-600' : 'bg-white border-gray-300'} transition-colors`}>
+              <div className="text-center">
+                <h3 className="crimson text-2xl font-bold mb-2">Student</h3>
+                <div className="mb-6">
+                  <span className="text-4xl font-bold text-secondary">Free</span>
+                  <span className="inter text-sm opacity-80 ml-1">with .edu email</span>
+                </div>
+                <ul className="space-y-3 mb-8 text-left">
+                  <li className="flex items-center space-x-2">
+                    <Check className="w-4 h-4 text-secondary" />
+                    <span className="inter text-sm">Basic search access</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <Check className="w-4 h-4 text-secondary" />
+                    <span className="inter text-sm">100+ core texts</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <Check className="w-4 h-4 text-secondary" />
+                    <span className="inter text-sm">Study guides</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <Check className="w-4 h-4 text-secondary" />
+                    <span className="inter text-sm">Email support</span>
+                  </li>
+                </ul>
+                <button
+                  onClick={() => setShowEmailModal(true)}
+                  className="w-full border-2 border-primary text-primary py-3 rounded-full hover:bg-primary hover:text-white transition-all inter font-semibold"
+                >
+                  Get Started
+                </button>
+              </div>
             </div>
-            
-            {/* Scholar */}
-            <div className="glass rounded-xl p-8 border-2 border-gold relative">
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-obsidian text-sm font-bold px-4 py-1 rounded-full">
-                POPULAR
-              </span>
-              <h3 className="font-serif text-2xl text-marble mb-2">Scholar</h3>
-              <p className="text-4xl font-bold text-gold mb-6">$9<span className="text-lg font-normal">/mo</span></p>
-              <ul className="space-y-3 text-marble/70 mb-8">
-                <li>✓ Unlimited searches</li>
-                <li>✓ Unlimited translations</li>
-                <li>✓ Discovery Engine</li>
-                <li>✓ Research Assistant</li>
-                <li>✓ API access</li>
-                <li>✓ Priority support</li>
-              </ul>
-              <Link href="/auth/register?plan=scholar" className="btn-primary w-full block text-center">
-                Start Free Trial
-              </Link>
+
+            {/* Personal Plan */}
+            <div className={`p-8 rounded-2xl border-2 border-secondary relative ${isDark ? 'bg-gray-900' : 'bg-white'} transition-colors transform scale-105`}>
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-secondary text-white px-6 py-1 rounded-full inter text-sm font-medium">
+                Most Popular
+              </div>
+              <div className="text-center">
+                <h3 className="crimson text-2xl font-bold mb-2">Personal</h3>
+                <div className="mb-6">
+                  <span className="text-4xl font-bold text-secondary">$9</span>
+                  <span className="inter text-sm opacity-80">/month</span>
+                </div>
+                <ul className="space-y-3 mb-8 text-left">
+                  <li className="flex items-center space-x-2">
+                    <Check className="w-4 h-4 text-secondary" />
+                    <span className="inter text-sm">Full library access</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <Check className="w-4 h-4 text-secondary" />
+                    <span className="inter text-sm">Advanced search</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <Check className="w-4 h-4 text-secondary" />
+                    <span className="inter text-sm">Export & citations</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <Check className="w-4 h-4 text-secondary" />
+                    <span className="inter text-sm">Personal notebooks</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <Check className="w-4 h-4 text-secondary" />
+                    <span className="inter text-sm">Priority support</span>
+                  </li>
+                </ul>
+                <button
+                  onClick={() => setShowEmailModal(true)}
+                  className="w-full bg-secondary text-white py-3 rounded-full hover:bg-opacity-90 transition-all inter font-semibold"
+                >
+                  Start Free Trial
+                </button>
+              </div>
             </div>
-            
-            {/* Student */}
-            <div className="glass rounded-xl p-8">
-              <h3 className="font-serif text-2xl text-marble mb-2">Student</h3>
-              <p className="text-4xl font-bold text-gold mb-6">FREE</p>
-              <ul className="space-y-3 text-marble/70 mb-8">
-                <li>✓ Everything in Scholar</li>
-                <li>✓ Verify with .edu email</li>
-                <li>✓ Learning tools</li>
-                <li>✓ Flashcards & drills</li>
-              </ul>
-              <Link href="/auth/register?plan=student" className="btn-secondary w-full block text-center">
-                Verify Student Status
-              </Link>
+
+            {/* Professional Plan */}
+            <div className={`p-8 rounded-2xl border-2 ${isDark ? 'bg-gray-900 border-gray-600' : 'bg-white border-gray-300'} transition-colors`}>
+              <div className="text-center">
+                <h3 className="crimson text-2xl font-bold mb-2">Professional</h3>
+                <div className="mb-6">
+                  <span className="text-4xl font-bold text-secondary">$29</span>
+                  <span className="inter text-sm opacity-80">/month</span>
+                </div>
+                <ul className="space-y-3 mb-8 text-left">
+                  <li className="flex items-center space-x-2">
+                    <Check className="w-4 h-4 text-secondary" />
+                    <span className="inter text-sm">Everything in Personal</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <Check className="w-4 h-4 text-secondary" />
+                    <span className="inter text-sm">Collaboration tools</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <Check className="w-4 h-4 text-secondary" />
+                    <span className="inter text-sm">API access</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <Check className="w-4 h-4 text-secondary" />
+                    <span className="inter text-sm">Custom workflows</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <Check className="w-4 h-4 text-secondary" />
+                    <span className="inter text-sm">Phone support</span>
+                  </li>
+                </ul>
+                <button
+                  onClick={() => setShowEmailModal(true)}
+                  className="w-full border-2 border-primary text-primary py-3 rounded-full hover:bg-primary hover:text-white transition-all inter font-semibold"
+                >
+                  Contact Sales
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-16 px-6 border-t border-gold/10">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+      <footer className={`py-16 ${isDark ? 'bg-gray-900 border-gray-700' : 'bg-gray-900 text-white'} border-t transition-colors`}>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <span className="font-serif text-2xl font-bold text-gold">LOGOS</span>
-              <p className="text-marble/50 mt-2">AI-Powered Classical Research</p>
+              <div className="text-2xl font-bold crimson text-secondary mb-4">ΛΟΓΟΣ</div>
+              <p className="inter text-sm opacity-80 leading-relaxed">
+                Advancing classical and biblical scholarship through innovative technology.
+              </p>
             </div>
-            <div className="flex gap-8 text-marble/50">
-              <Link href="/about" className="hover:text-gold transition-colors">About</Link>
-              <Link href="/docs" className="hover:text-gold transition-colors">Docs</Link>
-              <Link href="/privacy" className="hover:text-gold transition-colors">Privacy</Link>
-              <a href="https://twitter.com/LogosClassics" className="hover:text-gold transition-colors">Twitter</a>
+            
+            <div>
+              <h4 className="crimson font-semibold mb-4">Product</h4>
+              <ul className="space-y-2 inter text-sm">
+                <li><a href="#" className="opacity-80 hover:opacity-100 transition-opacity">Features</a></li>
+                <li><a href="#" className="opacity-80 hover:opacity-100 transition-opacity">Pricing</a></li>
+                <li><a href="#" className="opacity-80 hover:opacity-100 transition-opacity">API</a></li>
+                <li><a href="#" className="opacity-80 hover:opacity-100 transition-opacity">Documentation</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="crimson font-semibold mb-4">Resources</h4>
+              <ul className="space-y-2 inter text-sm">
+                <li><a href="#" className="opacity-80 hover:opacity-100 transition-opacity">Blog</a></li>
+                <li><a href="#" className="opacity-80 hover:opacity-100 transition-opacity">Tutorials</a></li>
+                <li><a href="#" className="opacity-80 hover:opacity-100 transition-opacity">Support</a></li>
+                <li><a href="#" className="opacity-80 hover:opacity-100 transition-opacity">Community</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="crimson font-semibold mb-4">Company</h4>
+              <ul className="space-y-2 inter text-sm">
+                <li><a href="#" className="opacity-80 hover:opacity-100 transition-opacity">About</a></li>
+                <li><a href="#" className="opacity-80 hover:opacity-100 transition-opacity">Careers</a></li>
+                <li><a href="#" className="opacity-80 hover:opacity-100 transition-opacity">Privacy</a></li>
+                <li><a href="#" className="opacity-80 hover:opacity-100 transition-opacity">Terms</a></li>
+              </ul>
             </div>
           </div>
-          <div className="text-center text-marble/30 text-sm mt-12">
-            © 2025 LOGOS. Built for classical scholarship.
-          </div>
-        </div>
-      </footer>
-    </main>
-  )
-}
+          
+          <div className="border-t border-gray-700 mt-12 pt-
