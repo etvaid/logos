@@ -3,19 +3,6 @@
 @tailwind utilities;
 
 body {
-  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #0D0D0F;
+  color: #F5F4F2;
 }
-
-@keyframes float {
-  0%, 100% { transform: translateY(0) rotate(0); opacity: 0.03; }
-  50% { transform: translateY(-30px) rotate(5deg); opacity: 0.07; }
-}
-
-.float { animation: float 20s ease-in-out infinite; }
-
-@keyframes pulse-gold {
-  0%, 100% { box-shadow: 0 0 20px rgba(201, 162, 39, 0.3); }
-  50% { box-shadow: 0 0 40px rgba(201, 162, 39, 0.5); }
-}
-
-.pulse-gold { animation: pulse-gold 3s ease-in-out infinite; }

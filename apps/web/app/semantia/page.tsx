@@ -1,176 +1,444 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
+import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
-const WORDS: Record<string, {word:string, translit:string, traditional:string, corpus:string, count:number, drift:{era:string,meaning:string,pct:number,color:string}[], insight:string}> = {
-  "ἀρετή": {
-    word:"ἀρετή", translit:"aretē", traditional:"virtue", 
-    corpus:"excellence → moral virtue → Christian virtue",
-    count:2847,
-    drift:[
-      {era:"Archaic",meaning:"Battle excellence, prowess",pct:92,color:"#D97706"},
-      {era:"Classical",meaning:"Moral excellence, virtue",pct:95,color:"#F59E0B"},
-      {era:"Late Antique",meaning:"Christian virtue",pct:90,color:"#7C3AED"}
-    ],
-    insight:"LSJ misses the shift from Homeric battle prowess to Platonic moral virtue."
-  },
-  "λόγος": {
-    word:"λόγος", translit:"logos", traditional:"word, reason",
-    corpus:"speech → reason → cosmic principle → divine Word",
-    count:12453,
-    drift:[
-      {era:"Archaic",meaning:"Speech, story",pct:94,color:"#D97706"},
-      {era:"Classical",meaning:"Reason, argument",pct:96,color:"#F59E0B"},
-      {era:"Late Antique",meaning:"Divine Word",pct:93,color:"#7C3AED"}
-    ],
-    insight:"Most dramatic semantic transformation in Greek."
-  },
-  "ψυχή": {
-    word:"ψυχή", translit:"psychē", traditional:"soul",
-    corpus:"breath-soul → immortal soul",
-    count:5621,
-    drift:[
-      {era:"Archaic",meaning:"Breath, life-force",pct:93,color:"#D97706"},
-      {era:"Classical",meaning:"Immortal soul",pct:95,color:"#F59E0B"}
-    ],
-    insight:"Homer's psychē is NOT Plato's."
-  }
-};
+interface WordData {
+  word: string;
+  transliteration: string;
+  occurrences: number;
+  traditional: string;
+  corpus: string;
+  insight: string;
+  timeline: {
+    era: string;
+    meaning: string;
+    confidence: number;
+    color: string;
+  }[];
+}
 
-export default function SemantiaPage() {
-  const [selected, setSelected] = useState<typeof WORDS[string] | null>(null)
+export default function Semantia() {
+  const [selectedWord, setSelectedWord] = useState<WordData | null>(null);
+  const [animatedCount, setAnimatedCount] = useState(0);
+  const [showAnalysis, setShowAnalysis] = useState(false);
+
+  const words: WordData[] = [
+    {
+      word: 'ἀρετή',
+      transliteration: 'aretē',
+      occurrences: 2847,
+      traditional: 'virtue',
+      corpus: 'excellence → moral virtue → Christian virtue',
+      insight: 'LSJ misses the shift from Homeric battle prowess to Platonic moral virtue',
+      timeline: [
+        { era: 'Archaic', meaning: 'Battle excellence', confidence: 92, color: '#D97706' },
+        { era: 'Classical', meaning: 'Moral excellence', confidence: 95, color: '#F59E0B' },
+        { era: 'Late Antique', meaning: 'Christian virtue', confidence: 90, color: '#7C3AED' },
+      ]
+    },
+    {
+      word: 'λόγος',
+      transliteration: 'logos',
+      occurrences: 12453,
+      traditional: 'word, reason',
+      corpus: 'speech → reason → cosmic principle → divine Word',
+      insight: 'Most dramatic semantic transformation in Greek',
+      timeline: [
+        { era: 'Archaic', meaning: 'Speech, story', confidence: 94, color: '#D97706' },
+        { era: 'Classical', meaning: 'Reason, argument', confidence: 96, color: '#F59E0B' },
+        { era: 'Hellenistic', meaning: 'Cosmic reason', confidence: 91, color: '#3B82F6' },
+        { era: 'Late Antique', meaning: 'Divine Word', confidence: 93, color: '#7C3AED' },
+      ]
+    },
+    {
+      word: 'ψυχή',
+      transliteration: 'psychē',
+      occurrences: 5621,
+      traditional: 'soul',
+      corpus: 'breath-soul → immortal soul',
+      insight: "Homer's psychē is NOT Plato's",
+      timeline: [
+        { era: 'Archaic', meaning: 'Breath, life-force', confidence: 93, color: '#D97706' },
+        { era: 'Classical', meaning: 'Immortal soul', confidence: 95, color: '#F59E0B' },
+      ]
+    }
+  ];
+
+  useEffect(() => {
+    if (selectedWord && showAnalysis) {
+      let current = 0;
+      const increment = Math.ceil(selectedWord.occurrences / 100);
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= selectedWord.occurrences) {
+          current = selectedWord.occurrences;
+          clearInterval(timer);
+        }
+        setAnimatedCount(current);
+      }, 30);
+      return () => clearInterval(timer);
+    }
+  }, [selectedWord, showAnalysis]);
+
+  const handleWordClick = (word: WordData) => {
+    setSelectedWord(word);
+    setAnimatedCount(0);
+    setShowAnalysis(false);
+    setTimeout(() => setShowAnalysis(true), 100);
+  };
+
+  const closeAnalysis = () => {
+    setSelectedWord(null);
+    setShowAnalysis(false);
+    setAnimatedCount(0);
+  };
 
   return (
-    <div className="min-h-screen" style={{backgroundColor: '#0D0D0F', color: '#F5F4F2'}}>
-      <div className="container mx-auto px-6 py-8">
-        <div className="mb-12">
-          <h1 className="text-4xl font-bold mb-4" style={{color: '#C9A227'}}>
-            SEMANTIA
-          </h1>
-          <p className="text-xl" style={{color: '#F5F4F2'}}>
-            Semantic Drift Analysis | How ancient meanings transform across millennia
-          </p>
-        </div>
+    <div style={{ backgroundColor: '#0D0D0F', minHeight: '100vh', color: '#F5F4F2' }}>
+      {/* Navigation */}
+      <nav style={{
+        backgroundColor: '#1E1E24',
+        padding: '16px 32px',
+        borderBottom: '1px solid #141419'
+      }}>
+        <Link href="/" style={{
+          fontSize: '24px',
+          fontWeight: 'bold',
+          color: '#C9A227',
+          textDecoration: 'none'
+        }}>
+          LOGOS
+        </Link>
+      </nav>
 
-        {/* Word Selection */}
-        <div className="mb-8">
-          <div className="flex gap-4 mb-6">
-            {Object.keys(WORDS).map(key => (
-              <button
-                key={key}
-                onClick={() => setSelected(WORDS[key])}
-                className="px-6 py-3 rounded-lg font-semibold text-lg transition-all hover:opacity-80"
-                style={{
-                  backgroundColor: selected?.word === WORDS[key].word ? '#C9A227' : '#1E1E24',
-                  color: selected?.word === WORDS[key].word ? '#0D0D0F' : '#F5F4F2',
-                  border: `1px solid ${selected?.word === WORDS[key].word ? '#C9A227' : '#1E1E24'}`
-                }}
-              >
-                {WORDS[key].word}
-              </button>
-            ))}
+      {/* Hero Section */}
+      <div style={{ padding: '64px 32px 32px', textAlign: 'center' }}>
+        <h1 style={{
+          fontSize: '72px',
+          fontWeight: 'bold',
+          margin: '0 0 16px 0',
+          background: 'linear-gradient(45deg, #C9A227, #E8D5A3)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          backgroundClip: 'text'
+        }}>
+          SEMANTIA
+        </h1>
+        <p style={{
+          fontSize: '24px',
+          color: '#9CA3AF',
+          maxWidth: '800px',
+          margin: '0 auto',
+          lineHeight: '1.6'
+        }}>
+          Witness the evolution of meaning across millennia. How words transform their essence 
+          through the currents of time, culture, and human understanding.
+        </p>
+      </div>
+
+      {!selectedWord ? (
+        /* Word Cards */
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gap: '32px',
+          padding: '32px',
+          maxWidth: '1200px',
+          margin: '0 auto'
+        }}>
+          {words.map((word) => (
+            <div
+              key={word.word}
+              onClick={() => handleWordClick(word)}
+              style={{
+                backgroundColor: '#1E1E24',
+                border: '1px solid #141419',
+                borderRadius: '16px',
+                padding: '32px',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
+                transform: 'scale(1)',
+                boxShadow: '0 4px 20px rgba(0,0,0,0.3)'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'scale(1.05)';
+                e.currentTarget.style.backgroundColor = '#252530';
+                e.currentTarget.style.borderColor = '#C9A227';
+                e.currentTarget.style.boxShadow = '0 8px 40px rgba(201,162,39,0.2)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'scale(1)';
+                e.currentTarget.style.backgroundColor = '#1E1E24';
+                e.currentTarget.style.borderColor = '#141419';
+                e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.3)';
+              }}
+            >
+              <div style={{
+                fontSize: '48px',
+                fontWeight: 'bold',
+                color: '#C9A227',
+                marginBottom: '8px',
+                textAlign: 'center'
+              }}>
+                {word.word}
+              </div>
+              <div style={{
+                fontSize: '20px',
+                color: '#9CA3AF',
+                fontStyle: 'italic',
+                marginBottom: '16px',
+                textAlign: 'center'
+              }}>
+                {word.transliteration}
+              </div>
+              <div style={{
+                fontSize: '16px',
+                color: '#6B7280',
+                textAlign: 'center',
+                marginBottom: '16px'
+              }}>
+                {word.occurrences.toLocaleString()} occurrences
+              </div>
+              <div style={{
+                fontSize: '18px',
+                color: '#F5F4F2',
+                textAlign: 'center',
+                lineHeight: '1.5'
+              }}>
+                {word.corpus}
+              </div>
+            </div>
+          ))}
+        </div>
+      ) : (
+        /* Full Analysis */
+        <div style={{ padding: '32px', maxWidth: '1400px', margin: '0 auto' }}>
+          {/* Close Button */}
+          <button
+            onClick={closeAnalysis}
+            style={{
+              position: 'fixed',
+              top: '100px',
+              right: '32px',
+              backgroundColor: '#1E1E24',
+              border: '1px solid #C9A227',
+              borderRadius: '50%',
+              width: '48px',
+              height: '48px',
+              color: '#C9A227',
+              fontSize: '24px',
+              cursor: 'pointer',
+              zIndex: 1000,
+              transition: 'all 0.3s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = '#C9A227';
+              e.currentTarget.style.color = '#0D0D0F';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = '#1E1E24';
+              e.currentTarget.style.color = '#C9A227';
+            }}
+          >
+            ×
+          </button>
+
+          {/* Giant Word Display */}
+          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+            <div style={{
+              fontSize: '120px',
+              fontWeight: 'bold',
+              color: '#C9A227',
+              marginBottom: '16px',
+              textShadow: '0 0 20px rgba(201,162,39,0.3)'
+            }}>
+              {selectedWord.word}
+            </div>
+            <div style={{
+              fontSize: '32px',
+              color: '#9CA3AF',
+              fontStyle: 'italic',
+              marginBottom: '24px'
+            }}>
+              {selectedWord.transliteration}
+            </div>
+            <div style={{
+              fontSize: '64px',
+              fontWeight: 'bold',
+              color: '#E8D5A3',
+              marginBottom: '8px'
+            }}>
+              {showAnalysis ? animatedCount.toLocaleString() : '0'}
+            </div>
+            <div style={{
+              fontSize: '20px',
+              color: '#6B7280'
+            }}>
+              corpus occurrences
+            </div>
           </div>
-        </div>
 
-        {/* Word Analysis */}
-        {selected ? (
-          <div className="space-y-8">
-            {/* Header */}
-            <div style={{backgroundColor: '#1E1E24'}} className="rounded-lg p-6">
-              <div className="flex items-center justify-between mb-4">
-                <div>
-                  <h2 className="text-3xl font-bold" style={{color: '#C9A227'}}>
-                    {selected.word}
-                  </h2>
-                  <p className="text-xl italic" style={{color: '#F5F4F2'}}>
-                    {selected.translit}
-                  </p>
-                </div>
-                <div className="text-right">
-                  <div className="text-2xl font-bold" style={{color: '#C9A227'}}>
-                    {selected.count.toLocaleString()}
-                  </div>
-                  <div className="text-sm" style={{color: '#F5F4F2'}}>
-                    corpus instances
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Meanings Comparison */}
-            <div className="grid md:grid-cols-2 gap-6">
-              <div style={{backgroundColor: '#1E1E24'}} className="rounded-lg p-6">
-                <h3 className="text-xl font-semibold mb-3" style={{color: '#DC2626'}}>
-                  Traditional Definition
-                </h3>
-                <p className="text-lg" style={{color: '#F5F4F2'}}>
-                  {selected.traditional}
-                </p>
-              </div>
-              <div style={{backgroundColor: '#1E1E24'}} className="rounded-lg p-6">
-                <h3 className="text-xl font-semibold mb-3" style={{color: '#3B82F6'}}>
-                  Corpus Evolution
-                </h3>
-                <p className="text-lg" style={{color: '#F5F4F2'}}>
-                  {selected.corpus}
-                </p>
-              </div>
-            </div>
-
-            {/* Semantic Drift Timeline */}
-            <div style={{backgroundColor: '#1E1E24'}} className="rounded-lg p-6">
-              <h3 className="text-xl font-semibold mb-6" style={{color: '#C9A227'}}>
-                Semantic Drift Timeline
+          {/* Meaning Comparison */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: '32px',
+            marginBottom: '48px'
+          }}>
+            <div style={{
+              backgroundColor: '#1E1E24',
+              border: '1px solid #141419',
+              borderRadius: '16px',
+              padding: '32px'
+            }}>
+              <h3 style={{
+                fontSize: '24px',
+                color: '#DC2626',
+                marginBottom: '16px',
+                fontWeight: 'bold'
+              }}>
+                Traditional Definition
               </h3>
-              <div className="space-y-6">
-                {selected.drift.map((period, index) => (
-                  <div key={index} className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <span className="font-semibold" style={{color: period.color}}>
-                        {period.era}
-                      </span>
-                      <span className="text-sm" style={{color: '#F5F4F2'}}>
-                        {period.pct}% confidence
-                      </span>
-                    </div>
-                    <div className="w-full bg-gray-700 rounded-full h-3">
-                      <div 
-                        className="h-3 rounded-full transition-all duration-500"
-                        style={{
-                          backgroundColor: period.color,
-                          width: `${period.pct}%`
-                        }}
-                      />
-                    </div>
-                    <p className="text-sm" style={{color: '#F5F4F2'}}>
-                      {period.meaning}
-                    </p>
-                  </div>
-                ))}
-              </div>
+              <p style={{
+                fontSize: '20px',
+                color: '#F5F4F2',
+                lineHeight: '1.6'
+              }}>
+                "{selectedWord.traditional}"
+              </p>
             </div>
-
-            {/* Insight */}
-            <div style={{backgroundColor: '#1E1E24'}} className="rounded-lg p-6">
-              <h3 className="text-xl font-semibold mb-4" style={{color: '#C9A227'}}>
-                Key Insight
+            <div style={{
+              backgroundColor: '#1E1E24',
+              border: '1px solid #141419',
+              borderRadius: '16px',
+              padding: '32px'
+            }}>
+              <h3 style={{
+                fontSize: '24px',
+                color: '#059669',
+                marginBottom: '16px',
+                fontWeight: 'bold'
+              }}>
+                Corpus Evolution
               </h3>
-              <p className="text-lg" style={{color: '#F5F4F2'}}>
-                {selected.insight}
+              <p style={{
+                fontSize: '20px',
+                color: '#F5F4F2',
+                lineHeight: '1.6'
+              }}>
+                {selectedWord.corpus}
               </p>
             </div>
           </div>
-        ) : (
-          <div style={{backgroundColor: '#1E1E24'}} className="rounded-lg p-12 text-center">
-            <h3 className="text-2xl font-semibold mb-4" style={{color: '#C9A227'}}>
-              Select a Word Above
+
+          {/* Visual Timeline */}
+          <div style={{
+            backgroundColor: '#1E1E24',
+            border: '1px solid #141419',
+            borderRadius: '16px',
+            padding: '32px',
+            marginBottom: '32px'
+          }}>
+            <h3 style={{
+              fontSize: '32px',
+              color: '#C9A227',
+              marginBottom: '32px',
+              textAlign: 'center',
+              fontWeight: 'bold'
+            }}>
+              Semantic Timeline
             </h3>
-            <p className="text-lg" style={{color: '#F5F4F2'}}>
-              Click on any word to explore its semantic evolution across ancient history
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+              {selectedWord.timeline.map((era, index) => (
+                <div key={era.era} style={{
+                  opacity: showAnalysis ? 1 : 0,
+                  transform: showAnalysis ? 'translateX(0)' : 'translateX(-50px)',
+                  transition: `all 0.8s ease ${index * 0.2}s`
+                }}>
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    marginBottom: '8px'
+                  }}>
+                    <div style={{
+                      fontSize: '18px',
+                      fontWeight: 'bold',
+                      color: era.color,
+                      width: '120px'
+                    }}>
+                      {era.era}
+                    </div>
+                    <div style={{
+                      fontSize: '18px',
+                      color: '#F5F4F2',
+                      flex: 1,
+                      marginLeft: '16px'
+                    }}>
+                      {era.meaning}
+                    </div>
+                    <div style={{
+                      fontSize: '16px',
+                      color: '#9CA3AF',
+                      width: '60px',
+                      textAlign: 'right'
+                    }}>
+                      {era.confidence}%
+                    </div>
+                  </div>
+                  <div style={{
+                    height: '8px',
+                    backgroundColor: '#141419',
+                    borderRadius: '4px',
+                    overflow: 'hidden',
+                    marginLeft: '136px'
+                  }}>
+                    <div style={{
+                      height: '100%',
+                      backgroundColor: era.color,
+                      width: showAnalysis ? `${era.confidence}%` : '0%',
+                      transition: `width 1s ease ${index * 0.2 + 0.5}s`,
+                      borderRadius: '4px',
+                      boxShadow: `0 0 10px ${era.color}40`
+                    }} />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* LOGOS Insight */}
+          <div style={{
+            backgroundColor: '#141419',
+            border: '2px solid #C9A227',
+            borderRadius: '16px',
+            padding: '32px',
+            textAlign: 'center',
+            opacity: showAnalysis ? 1 : 0,
+            transform: showAnalysis ? 'translateY(0)' : 'translateY(20px)',
+            transition: 'all 1s ease 1.5s'
+          }}>
+            <h3 style={{
+              fontSize: '28px',
+              color: '#C9A227',
+              marginBottom: '16px',
+              fontWeight: 'bold'
+            }}>
+              🔍 LOGOS Insight
+            </h3>
+            <p style={{
+              fontSize: '20px',
+              color: '#F5F4F2',
+              fontStyle: 'italic',
+              lineHeight: '1.6',
+              maxWidth: '800px',
+              margin: '0 auto'
+            }}>
+              "{selectedWord.insight}"
             </p>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
-  )
+  );
 }
