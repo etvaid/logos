@@ -66,433 +66,193 @@ export default function LanguagesMap() {
     ],
     323: [
       { id: 'alexandria', name: 'Alexandria', language: 'Koinē Greek', color: '#3B82F6', type: 'Greek', cx: 540, cy: 250, size: 30, influence: 'Hellenistic scholarship', population: '~400,000', description: 'Scholarly koinē standard', manuscripts: ['P.Hibeh', 'P.Petrie'], variants: ['σύνταξις/τάξις'], paradigm: 'συντάσσω', lsj: 'συντάσσω: to arrange together', semantic_drift: 'συντάσσω: "arrange" → "compose" → "organize"', polytonic: 'συντάσσω, συντάσσεις, συντάσσει' },
-      { id: 'antioch', name: 'Antioch', language: 'Koinē Greek', color: '#3B82F6', type: 'Greek', cx: 580, cy: 140, size: 25, influence: 'Eastern Hellenism', population: '~300,000', description: 'Syrian Greek synthesis', manuscripts: ['P.Dura'], variants: ['διάλεκτος/γλῶσσα'], paradigm: 'διαλέγομαι', lsj: 'διαλέγομαι: to converse, discuss', semantic_drift: 'διαλέγομαι: "select" → "discuss" → "reason"', polytonic: 'διαλέγομαι, διαλέγῃ, διαλέγεται' }
+      { id: 'antioch', name: 'Antioch', language: 'Koinē Greek', color: '#3B82F6', type: 'Greek', cx: 560, cy: 200, size: 22, influence: 'Syriac influence', population: '~150,000', description: 'Blending Hellenic and Semitic cultures', manuscripts: ['P. Dura-Europos'], variants: ['λόγος/ܡܠܬܐ'], paradigm: 'ποιέω', lsj: 'ποιέω: to make, do', semantic_drift: 'ποιέω: "make" → "create" → "perform"', polytonic: 'ποιέω, ποιεῖς, ποιεῖ' },
+      { id: 'rome_hellenistic', name: 'Rome', language: 'Vulgar Latin', color: '#DC2626', type: 'Latin', cx: 340, cy: 180, size: 20, influence: 'Emerging Romance languages', population: '~200,000', description: 'Colloquial spoken register', manuscripts: ['Pompeii graffiti'], variants: ['equos/caballus'], paradigm: 'amare', lsj: 'N/A (Latin)', semantic_drift: 'amare: "love" → "like" → "want"', polytonic: 'N/A' }
     ],
     31: [
-      { id: 'rome_imperial', name: 'Rome', language: 'Imperial Latin', color: '#DC2626', type: 'Latin', cx: 340, cy: 180, size: 35, influence: 'Literary Golden Age', population: '~1,000,000', description: 'Augustan literary standard', manuscripts: ['Codex Mediceus'], variants: ['caelum/coelum'], paradigm: 'impero', lsj: 'N/A (Latin)', semantic_drift: 'impero: "prepare" → "command" → "rule"', polytonic: 'N/A' },
-      { id: 'constantinople', name: 'Byzantion', language: 'Koinē Greek', color: '#3B82F6', type: 'Greek', cx: 500, cy: 140, size: 20, influence: 'Eastern Greek culture', population: '~200,000', description: 'Pre-Byzantine Greek', manuscripts: ['Sinaiticus'], variants: ['βασιλεύς/ἄναξ'], paradigm: 'βασιλεύω', lsj: 'βασιλεύω: to be king, reign', semantic_drift: 'βασιλεύω: "be king" → "rule" → "dominate"', polytonic: 'βασιλεύω, βασιλεύεις, βασιλεύει' }
+      { id: 'rome_imperial', name: 'Rome', language: 'Classical Latin', color: '#DC2626', type: 'Latin', cx: 340, cy: 180, size: 35, influence: 'Imperial administration', population: '~1,000,000', description: 'Golden Age literature', manuscripts: ['Vergilius Romanus'], variants: ['urbs/civitas'], paradigm: 'amare', lsj: 'N/A (Latin)', semantic_drift: 'urbs: "city" → "capital" → "metropolis"', polytonic: 'N/A' },
+      { id: 'athens_imperial', name: 'Athens', language: 'Koinē Greek', color: '#3B82F6', type: 'Greek', cx: 480, cy: 180, size: 28, influence: 'Roman patronage', population: '~200,000', description: 'Second Sophistic movement', manuscripts: ['P.Oxy. 8'], variants: ['χρόνος/καιρός'], paradigm: 'ἔχω', lsj: 'ἔχω: to have, hold', semantic_drift: 'ἔχω: "hold" → "possess" → "control"', polytonic: 'ἔχω, ἔχεις, ἔχει' },
+      { id: 'alexandria_imperial', name: 'Alexandria', language: 'Koinē Greek', color: '#3B82F6', type: 'Greek', cx: 540, cy: 250, size: 32, influence: 'Syncretic philosophy', population: '~500,000', description: 'Greco-Egyptian culture', manuscripts: ['P.Chester Beatty'], variants: ['θεός/νέθερ'], paradigm: 'πιστεύω', lsj: 'πιστεύω: to believe, trust', semantic_drift: 'πιστεύω: "trust" → "believe" → "rely"', polytonic: 'πιστεύω, πιστεύεις, πιστεύει' }
     ],
     284: [
-      { id: 'constantinople_late', name: 'Constantinople', language: 'Byzantine Greek', color: '#3B82F6', type: 'Greek', cx: 500, cy: 140, size: 30, influence: 'Christian scholarship', population: '~500,000', description: 'Ecclesiastical Greek development', manuscripts: ['Vaticanus', 'Alexandrinus'], variants: ['θεολογία/θεοσοφία'], paradigm: 'θεολογέω', lsj: 'θεολογέω: to discourse of the gods', semantic_drift: 'θεολογέω: "speak of gods" → "theologize" → "contemplate"', polytonic: 'θεολογέω, θεολογεῖς, θεολογεῖ' },
-      { id: 'ravenna', name: 'Ravenna', language: 'Late Latin', color: '#DC2626', type: 'Latin', cx: 340, cy: 160, size: 25, influence: 'Imperial administration', population: '~100,000', description: 'Administrative Late Latin', manuscripts: ['Codex Theodosianus'], variants: ['ecclesia/basilica'], paradigm: 'administro', lsj: 'N/A (Latin)', semantic_drift: 'administro: "serve" → "manage" → "govern"', polytonic: 'N/A' }
+      { id: 'rome_late_antique', name: 'Rome', language: 'Late Latin', color: '#DC2626', type: 'Latin', cx: 340, cy: 180, size: 30, influence: 'Christian Latin', population: '~500,000', description: 'Emergence of Vulgar Latin dialects', manuscripts: ['Codex Theodosianus'], variants: ['testa/caput'], paradigm: 'amare', lsj: 'N/A (Latin)', semantic_drift: 'testa: "potsherd" → "head" → "person"', polytonic: 'N/A' },
+      { id: 'constantinople', name: 'Constantinople', language: 'Koinē Greek', color: '#3B82F6', type: 'Greek', cx: 500, cy: 170, size: 35, influence: 'Byzantine capital', population: '~400,000', description: 'Early Byzantine Greek', manuscripts: ['Vienna Genesis'], variants: ['βασιλεύς/ρήξ'], paradigm: 'δείκνυμι', lsj: 'δείκνυμι: to show, point out', semantic_drift: 'δείκνυμι: "show" → "prove" → "demonstrate"', polytonic: 'δείκνυμι, δείκνυς, δείκνυσι' },
+      { id: 'carthage', name: 'Carthage', language: 'Latin/Punic', color: '#DC2626', type: 'Latin', cx: 310, cy: 230, size: 22, influence: 'North African Latin', population: '~150,000', description: 'Influence of Punic substratum', manuscripts: ['Augustine Conf.'], variants: ['domus/casa'], paradigm: 'orare', lsj: 'N/A (Latin)', semantic_drift: 'orare: "speak" → "pray" → "beg"', polytonic: 'N/A' }
     ],
     600: [
-      { id: 'constantinople_byzantine', name: 'Constantinople', language: 'Medieval Greek', color: '#059669', type: 'Greek', cx: 500, cy: 140, size: 40, influence: 'Byzantine Empire', population: '~400,000', description: 'Medieval Greek literary tradition', manuscripts: ['Photian manuscripts'], variants: ['αὐτοκράτωρ/βασιλεύς'], paradigm: 'αὐτοκρατορέω', lsj: 'αὐτοκράτωρ: having full power', semantic_drift: 'αὐτοκράτωρ: "self-ruler" → "emperor" → "sovereign"', polytonic: 'αὐτοκράτωρ, αὐτοκράτορος' },
-      { id: 'rome_papal', name: 'Rome', language: 'Medieval Latin', color: '#7C3AED', type: 'Latin', cx: 340, cy: 180, size: 20, influence: 'Papal authority', population: '~50,000', description: 'Ecclesiastical Latin', manuscripts: ['Vulgate'], variants: ['papa/pontifex'], paradigm: 'benedico', lsj: 'N/A (Latin)', semantic_drift: 'benedico: "speak well" → "bless" → "consecrate"', polytonic: 'N/A' }
+      { id: 'constantinople_byz', name: 'Constantinople', language: 'Medieval Greek', color: '#3B82F6', type: 'Greek', cx: 500, cy: 170, size: 40, influence: 'Byzantine administration', population: '~500,000', description: 'Development of Medieval Greek grammar', manuscripts: ['Codex Sinaiticus'], variants: ['ἄνθρωπος/βροτός'], paradigm: 'γίγνομαι', lsj: 'γίγνομαι: to become, happen', semantic_drift: 'γίγνομαι: "be born" → "become" → "exist"', polytonic: 'γίγνομαι, γίγνῃ, γίγνεται' },
+      { id: 'rome_byz', name: 'Rome', language: 'Vulgar Latin', color: '#DC2626', type: 'Latin', cx: 340, cy: 180, size: 25, influence: 'Papal States', population: '~100,000', description: 'Transition to early Romance languages', manuscripts: ['Greg. Tours Hist.'], variants: ['ignis/focum'], paradigm: 'cantare', lsj: 'N/A (Latin)', semantic_drift: 'cantare: "sing" → "chant" → "tell"', polytonic: 'N/A' },
+      { id: 'cordoba', name: 'Cordoba', language: 'Vulgar Latin/Arabic', color: '#DC2626', type: 'Latin', cx: 280, cy: 200, size: 20, influence: 'Visigothic and Islamic influences', population: '~75,000', description: 'Mozarabic language emergence', manuscripts: ['Isidore Etym.'], variants: ['oculus/ojo'], paradigm: 'habere', lsj: 'N/A (Latin)', semantic_drift: 'habere: "have" → "hold" → "consider"', polytonic: 'N/A' }
     ]
   };
 
+
   const currentRegions = allRegions[selectedEra] || [];
-  const currentEra = eras.find(e => e.year === selectedEra);
+
+  const handleRegionClick = (regionId: string) => {
+    setSelectedRegion(regionId);
+  };
+
+  const selectedRegionData = currentRegions.find(region => region.id === selectedRegion);
+
+
+  const handleEraChange = (year: number) => {
+    setSelectedEra(year);
+    setAnimationPhase(1); // Trigger animation
+    setTimeout(() => setAnimationPhase(0), 300); // Reset after animation duration
+  };
+
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setAnimationPhase(prev => (prev + 1) % 4);
-    }, 2000);
-    return () => clearInterval(interval);
-  }, []);
+      if (mapRef.current) {
+          const svg = mapRef.current;
+          svg.querySelectorAll('circle').forEach(circle => {
+              circle.addEventListener('mouseover', (event) => {
+                  const target = event.target as SVGCircleElement;
+                  target.style.transform = 'scale(1.2)';
+                  target.style.transition = 'transform 0.2s';
+              });
 
-  const generateInfluenceLines = () => {
-    const lines: JSX.Element[] = [];
-    currentRegions.forEach((region, index) => {
-      if (index > 0) {
-        const prevRegion = currentRegions[index - 1];
-        const distance = Math.sqrt(
-          Math.pow(region.cx - prevRegion.cx, 2) + 
-          Math.pow(region.cy - prevRegion.cy, 2)
-        );
-        
-        if (distance < 150) {
-          lines.push(
-            <line
-              key={`influence-${region.id}-${prevRegion.id}`}
-              x1={region.cx}
-              y1={region.cy}
-              x2={prevRegion.cx}
-              y2={prevRegion.cy}
-              stroke={region.color}
-              strokeWidth="1"
-              opacity="0.3"
-              style={{
-                animation: `pulse 3s ease-in-out infinite ${index * 0.5}s`,
-                filter: 'drop-shadow(0 0 2px currentColor)'
-              }}
-            />
-          );
-        }
+              circle.addEventListener('mouseout', (event) => {
+                  const target = event.target as SVGCircleElement;
+                  target.style.transform = 'scale(1)';
+                  target.style.transition = 'transform 0.2s';
+              });
+          });
       }
-    });
-    return lines;
-  };
+  }, [currentRegions]);
 
-  const generateWordCloud = (region: any) => {
-    const words = [...region.variants, region.paradigm, region.polytonic];
-    return words.map((word, idx) => (
-      <text
-        key={`word-${idx}`}
-        x={region.cx + (idx - 1) * 30}
-        y={region.cy - 40 - idx * 8}
-        fill={region.color}
-        fontSize="10"
-        opacity="0.7"
-        style={{
-          fontFamily: 'Georgia, serif',
-          animation: `fadeInOut 4s ease-in-out infinite ${idx * 0.8}s`
-        }}
-      >
-        {word.split('/')[0]}
-      </text>
-    ));
-  };
+
 
   return (
-    <div style={{ 
-      minHeight: '100vh', 
-      backgroundColor: '#0D0D0F', 
-      color: '#F5F4F2',
-      fontFamily: 'system-ui, -apple-system, sans-serif'
-    }}>
-      <style jsx>{`
-        @keyframes pulse {
-          0%, 100% { opacity: 0.3; stroke-width: 1px; }
-          50% { opacity: 0.8; stroke-width: 2px; }
-        }
-        @keyframes glow {
-          0%, 100% { filter: drop-shadow(0 0 5px currentColor); }
-          50% { filter: drop-shadow(0 0 15px currentColor); }
-        }
-        @keyframes fadeInOut {
-          0%, 100% { opacity: 0; transform: translateY(10px); }
-          50% { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes ripple {
-          0% { r: 0; opacity: 1; }
-          100% { r: 50; opacity: 0; }
-        }
-        @keyframes shimmer {
-          0% { background-position: -200px 0; }
-          100% { background-position: 200px 0; }
-        }
-        .shimmer-text {
-          background: linear-gradient(90deg, #F5F4F2 25%, #C9A227 50%, #F5F4F2 75%);
-          background-size: 200px 100%;
-          background-clip: text;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          animation: shimmer 3s infinite;
-        }
-        .floating {
-          animation: float 6s ease-in-out infinite;
-        }
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-10px); }
-        }
-      `}</style>
-
-      {/* Navigation */}
-      <nav style={{ 
-        padding: '1rem 2rem', 
-        borderBottom: '1px solid #1E1E24',
-        background: 'linear-gradient(135deg, #0D0D0F 0%, #141419 100%)'
-      }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <Link href="/" style={{ 
-            fontSize: '1.5rem', 
-            fontWeight: 'bold', 
-            textDecoration: 'none', 
-            color: '#C9A227',
-            textShadow: '0 0 10px #C9A227'
-          }}>
-            <span className="shimmer-text">ΛΟΓΟΣ</span>
-          </Link>
-          <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-            <Link href="/manuscripts" style={{ color: '#9CA3AF', textDecoration: 'none', transition: 'color 0.3s' }}>
-              Manuscripts
-            </Link>
-            <Link href="/lexicon" style={{ color: '#9CA3AF', textDecoration: 'none', transition: 'color 0.3s' }}>
-              Lexicon
-            </Link>
-            <Link href="/analysis" style={{ color: '#9CA3AF', textDecoration: 'none', transition: 'color 0.3s' }}>
-              Analysis
-            </Link>
-          </div>
-        </div>
-      </nav>
-
-      {/* Header */}
-      <header style={{ 
-        padding: '3rem 2rem', 
-        textAlign: 'center',
-        background: 'radial-gradient(ellipse at center, #1E1E24 0%, #0D0D0F 100%)'
-      }}>
-        <h1 style={{ 
-          fontSize: '3.5rem', 
-          fontWeight: 'bold', 
-          marginBottom: '1rem',
-          background: `linear-gradient(135deg, ${currentEra?.color || '#C9A227'} 0%, #F5F4F2 100%)`,
-          backgroundClip: 'text',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-          textShadow: '0 0 30px rgba(201, 162, 39, 0.3)'
-        }}>
-          Ancient Languages Visualization
-        </h1>
-        <p style={{ 
-          fontSize: '1.25rem', 
-          color: '#9CA3AF', 
-          maxWidth: '800px', 
-          margin: '0 auto',
-          lineHeight: '1.6'
-        }}>
-          Explore the evolution of Greek and Latin across historical periods, from Archaic Greece to the Byzantine Empire
-        </p>
+    <div style={{ backgroundColor: '#0D0D0F', color: '#F5F4F2', fontFamily: 'sans-serif', minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px', transition: 'background-color 0.3s, color 0.3s' }}>
+      <header style={{ marginBottom: '20px', textAlign: 'center' }}>
+        <h1 style={{ fontSize: '2.5em', fontWeight: 'bold', color: '#C9A227', transition: 'color 0.3s' }}>Logos: Languages of the Ancient World</h1>
+        <p style={{ color: '#9CA3AF', fontSize: '1.1em', transition: 'color 0.3s' }}>A dynamic visualization of language evolution through time.</p>
       </header>
 
-      <div style={{ display: 'flex', minHeight: 'calc(100vh - 200px)' }}>
-        {/* Sidebar Controls */}
-        <aside style={{ 
-          width: '300px', 
-          backgroundColor: '#141419', 
-          padding: '2rem',
-          borderRight: '1px solid #1E1E24',
-          overflowY: 'auto'
-        }}>
-          <div style={{ marginBottom: '2rem' }}>
-            <h3 style={{ 
-              color: '#C9A227', 
-              marginBottom: '1rem',
-              fontSize: '1.1rem',
-              fontWeight: '600'
-            }}>
-              Historical Periods
-            </h3>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-              {eras.map(era => (
-                <button
-                  key={era.year}
-                  onClick={() => setSelectedEra(era.year)}
-                  style={{
-                    padding: '0.75rem 1rem',
-                    backgroundColor: selectedEra === era.year ? era.color : '#1E1E24',
-                    color: selectedEra === era.year ? '#0D0D0F' : '#F5F4F2',
-                    border: `1px solid ${era.color}`,
-                    borderRadius: '8px',
-                    cursor: 'pointer',
-                    transition: 'all 0.3s ease',
-                    fontSize: '0.9rem',
-                    fontWeight: selectedEra === era.year ? '600' : '400',
-                    boxShadow: selectedEra === era.year ? `0 0 15px ${era.color}40` : 'none'
-                  }}
-                >
-                  {era.name} ({era.label})
-                </button>
-              ))}
-            </div>
+      <section style={{ display: 'flex', flexDirection: 'row', width: '90%', maxWidth: '1200px', gap: '20px' }}>
+
+        <aside style={{ width: '25%', backgroundColor: '#1E1E24', padding: '15px', borderRadius: '8px', transition: 'background-color 0.3s', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.3)' }}>
+          <h3 style={{ color: '#F5F4F2', marginBottom: '10px', fontSize: '1.4em', transition: 'color 0.3s' }}>Time Navigation</h3>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            {eras.map((era) => (
+              <button
+                key={era.year}
+                onClick={() => handleEraChange(era.year)}
+                style={{
+                  backgroundColor: era.year === selectedEra ? era.color : '#374151',
+                  color: '#F5F4F2',
+                  padding: '8px 12px',
+                  border: 'none',
+                  borderRadius: '5px',
+                  cursor: 'pointer',
+                  transition: 'background-color 0.3s, color 0.3s, transform 0.2s',
+                  boxShadow: era.year === selectedEra ? '0 2px 4px rgba(0, 0, 0, 0.5)' : 'none',
+                  transform: era.year === selectedEra ? 'scale(1.05)' : 'scale(1)',
+                  outline: 'none',
+                  fontSize: '1em',
+                }}
+              >
+                {era.label}
+              </button>
+            ))}
           </div>
 
-          <div style={{ marginBottom: '2rem' }}>
-            <h3 style={{ 
-              color: '#C9A227', 
-              marginBottom: '1rem',
-              fontSize: '1.1rem',
-              fontWeight: '600'
-            }}>
-              Language Types
-            </h3>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-              {languageTypes.map(type => (
-                <div
-                  key={type.name}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.75rem',
-                    padding: '0.5rem',
-                    backgroundColor: '#1E1E24',
-                    borderRadius: '6px',
-                    border: `1px solid ${type.color}30`
-                  }}
-                >
-                  <div style={{
-                    width: '24px',
-                    height: '24px',
-                    backgroundColor: type.color,
-                    borderRadius: '50%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '12px',
-                    fontWeight: 'bold',
-                    color: '#F5F4F2'
-                  }}>
-                    {type.symbol}
-                  </div>
-                  <span style={{ fontSize: '0.9rem' }}>{type.name}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h3 style={{ 
-              color: '#C9A227', 
-              marginBottom: '1rem',
-              fontSize: '1.1rem',
-              fontWeight: '600'
-            }}>
-              Visualization Options
-            </h3>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-              <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
-                <input
-                  type="checkbox"
-                  checked={showCriticalApparatus}
-                  onChange={(e) => setShowCriticalApparatus(e.target.checked)}
-                  style={{ accentColor: '#C9A227' }}
-                />
-                <span style={{ fontSize: '0.9rem' }}>Critical Apparatus</span>
-              </label>
-              <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
-                <input
-                  type="checkbox"
-                  checked={showParadigms}
-                  onChange={(e) => setShowParadigms(e.target.checked)}
-                  style={{ accentColor: '#C9A227' }}
-                />
-                <span style={{ fontSize: '0.9rem' }}>Paradigms</span>
-              </label>
-              <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
-                <input
-                  type="checkbox"
-                  checked={showWordEmbeddings}
-                  onChange={(e) => setShowWordEmbeddings(e.target.checked)}
-                  style={{ accentColor: '#C9A227' }}
-                />
-                <span style={{ fontSize: '0.9rem' }}>Word Embeddings</span>
-              </label>
-            </div>
+          <h3 style={{ color: '#F5F4F2', marginTop: '20px', marginBottom: '10px', fontSize: '1.4em', transition: 'color 0.3s' }}>Language Key</h3>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            {languageTypes.map((type) => (
+              <div key={type.name} style={{ display: 'flex', alignItems: 'center', gap: '5px', color: '#9CA3AF', transition: 'color 0.3s' }}>
+                <span style={{ color: type.color, fontWeight: 'bold', fontSize: '1.2em' }}>{type.symbol}</span>
+                <span>{type.name}</span>
+              </div>
+            ))}
           </div>
         </aside>
 
-        {/* Main Map Area */}
-        <main style={{ flex: 1, padding: '2rem' }}>
-          <div style={{ 
-            backgroundColor: '#1E1E24', 
-            borderRadius: '12px', 
-            padding: '2rem',
-            border: '1px solid #2A2A32',
-            boxShadow: '0 8px 32px rgba(0,0,0,0.3)'
-          }}>
-            <div style={{ 
-              display: 'flex', 
-              justifyContent: 'space-between', 
-              alignItems: 'center', 
-              marginBottom: '2rem' 
-            }}>
-              <h2 style={{ 
-                color: currentEra?.color || '#C9A227', 
-                fontSize: '2rem',
-                fontWeight: '700',
-                textShadow: `0 0 10px ${currentEra?.color || '#C9A227'}40`
-              }}>
-                {currentEra?.name} Period ({currentEra?.label})
-              </h2>
-              <div style={{ 
-                fontSize: '0.9rem', 
-                color: '#9CA3AF',
-                padding: '0.5rem 1rem',
-                backgroundColor: '#141419',
-                borderRadius: '6px',
-                border: '1px solid #2A2A32'
-              }}>
-                {currentRegions.length} linguistic regions
-              </div>
-            </div>
-
-            {/* Interactive Map SVG */}
+        <main style={{ width: '50%', backgroundColor: '#1E1E24', borderRadius: '8px', overflow: 'hidden', transition: 'background-color 0.3s', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.3)' }}>
+          <div style={{ position: 'relative' }}>
             <svg
               ref={mapRef}
               width="100%"
-              height="500"
-              viewBox="0 0 800 400"
-              style={{ 
-                backgroundColor: '#0D0D0F',
-                borderRadius: '8px',
-                border: '2px solid #2A2A32'
-              }}
+              height="auto"
+              viewBox="0 0 600 400"
+              style={{ transition: 'opacity 0.3s', opacity: animationPhase === 1 ? 0.5 : 1, display: 'block' }}
             >
-              {/* Background Mediterranean */}
-              <defs>
-                <radialGradient id="mapGradient" cx="50%" cy="50%">
-                  <stop offset="0%" stopColor="#1E1E24" />
-                  <stop offset="100%" stopColor="#0D0D0F" />
-                </radialGradient>
-                <filter id="glow">
-                  <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-                  <feMerge> 
-                    <feMergeNode in="coloredBlur"/>
-                    <feMergeNode in="SourceGraphic"/>
-                  </feMerge>
-                </filter>
-              </defs>
+              <image href="/europe_map.svg" width="600" height="400" style={{pointerEvents: 'none'}}/>
+              {currentRegions.map((region) => (
+                <circle
+                  key={region.id}
+                  cx={region.cx}
+                  cy={region.cy}
+                  r={region.size}
+                  fill={region.color}
+                  style={{
+                    cursor: 'pointer',
+                    opacity: hoveredRegion === region.id || selectedRegion === region.id ? 0.9 : 0.7,
+                    transition: 'opacity 0.2s, transform 0.2s',
+                    transformOrigin: 'center',
+                  }}
+                  onMouseOver={() => setHoveredRegion(region.id)}
+                  onMouseOut={() => setHoveredRegion(null)}
+                  onClick={() => handleRegionClick(region.id)}
+                  title={region.name}
+                />
+              ))}
+            </svg>
+          </div>
+        </main>
 
-              <rect width="100%" height="100%" fill="url(#mapGradient)" />
+        <aside style={{ width: '25%', backgroundColor: '#1E1E24', padding: '15px', borderRadius: '8px', transition: 'background-color 0.3s', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.3)' }}>
+          {selectedRegionData ? (
+            <>
+              <h3 style={{ color: '#F5F4F2', marginBottom: '10px', fontSize: '1.4em', transition: 'color 0.3s' }}>{selectedRegionData.name}</h3>
+              <p style={{ color: '#9CA3AF', fontSize: '1em', transition: 'color 0.3s' }}>Language: {selectedRegionData.language}</p>
+               <p style={{ color: '#9CA3AF', fontSize: '1em', transition: 'color 0.3s' }}>Population: {selectedRegionData.population}</p>
+              <p style={{ color: '#9CA3AF', fontSize: '1em', transition: 'color 0.3s' }}>Influence: {selectedRegionData.influence}</p>
+              <p style={{ color: '#9CA3AF', fontSize: '1em', transition: 'color 0.3s' }}>Description: {selectedRegionData.description}</p>
 
-              {/* Mediterranean coastlines */}
-              <path
-                d="M100,300 Q200,280 300,290 Q400,285 500,295 Q600,290 700,300"
-                stroke="#2A2A32"
-                strokeWidth="2"
-                fill="none"
-                opacity="0.5"
-              />
+              <button
+                onClick={() => setShowCriticalApparatus(!showCriticalApparatus)}
+                style={{
+                  backgroundColor: '#374151',
+                  color: '#F5F4F2',
+                  padding: '8px 12px',
+                  border: 'none',
+                  borderRadius: '5px',
+                  cursor: 'pointer',
+                  transition: 'background-color 0.3s, color 0.3s, transform 0.2s',
+                  marginTop: '10px',
+                  width: '100%',
+                  textAlign: 'center',
+                  fontSize: '0.9em',
+                }}
+              >
+                {showCriticalApparatus ? 'Hide Apparatus' : 'Show Apparatus'}
+              </button>
 
-              {/* Influence lines */}
-              {generateInfluenceLines()}
+              {showCriticalApparatus && (
+                <div style={{ marginTop: '10px', borderTop: '1px solid #6B7280', paddingTop: '10px' }}>
+                  <h4 style={{ color: '#F5F4F2', fontSize: '1.2em', transition: 'color 0.3s', marginBottom: '5px' }}>Critical Apparatus</h4>
+                  <p style={{ color: '#9CA3AF', fontSize: '0.9em', transition: 'color 0.3s' }}>Manuscripts: {selectedRegionData.manuscripts.join(', ')}</p>
+                  <p style={{ color: '#9CA3AF', fontSize: '0.9em', transition: 'color 0.3s' }}>Variants: {selectedRegionData.variants.join(', ')}</p>
+                  <p style={{ color: '#9CA3AF', fontSize: '0.9em', transition: 'color 0.3s' }}>LSJ: {selectedRegionData.lsj}</p>
+                  <p style={{ color: '#9CA3AF', fontSize: '0.9em', transition: 'color 0.3s' }}>Semantic Drift: {selectedRegionData.semantic_drift}</p>
+                  <p style={{ color: '#9CA3AF', fontSize: '0.9em', transition: 'color 0.3s' }}>Polytonic: {selectedRegionData.polytonic}</p>
+                </div>
+              )}
 
-              {/* Language regions */}
-              {currentRegions.map((region, index) => (
-                <g key={region.id}>
-                  {/* Ripple effect for selected region */}
-                  {selectedRegion === region.id && (
-                    <circle
-                      cx={region.cx}
-                      cy={region.cy}
-                      r="0"
-                      fill="none"
-                      stroke={region.color}
-                      strokeWidth="2"
-                      opacity="0.6"
-                    >
-                      <animate
-                        attributeName="r"
-                        values="0;50;0"
-                        dur="2s"
-                        repeatCount="indefinite"
-                      />
-                      <animate
-                        attributeName="opacity"
-                        values="1;0;1"
-                        dur="2s"
-                        repeatCount="indefinite"
-                      />
-                    </circle>
-                  )}
+            </>
+          ) : (
+            <p style={{ color: '#9CA3AF', textAlign: 'center', transition: 'color 0.3s' }}>Select a region to view details.</p>
+          )}
+        </aside>
+      </section>
 
-                  {/* Main region circle */}
-                  <circle
-                    cx={region.cx}
-                    cy={region.cy}
-                    r={region.size}
-                    fill={region.color}
-                    stroke={hoveredRegion === region.id ? '#C9A227' : 'transparent'}
-                    strokeWidth="3"
-                    opacity="0.8"
-                    filter="url(#glow)"
-                    style={{
-                      cursor: 'pointer',
-                      transition: 'all 0.3s ease',
-                      transform: hoveredRegion === region.id ? 'scale(1.2)' : 'scale(1)'
-                    }}
-                    onMouseEnter={() => setHoveredReg
+
+      <footer style={{ marginTop: '30px', textAlign: 'center', color: '#6B7280', transition: 'color 0.3s' }}>
+        <p>&copy; 2024 Logos Project. All rights reserved.</p>
+      </footer>
+    </div>
+  );
+}

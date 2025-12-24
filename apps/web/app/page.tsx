@@ -104,6 +104,8 @@ export default function Home() {
   const [hoveredButton, setHoveredButton] = useState(false);
   const [animationOffset, setAnimationOffset] = useState(0);
   const [showSuggestions, setShowSuggestions] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [scrollY, setScrollY] = useState(0);
   const searchInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -111,6 +113,23 @@ export default function Home() {
       setAnimationOffset(prev => (prev + 1) % 360);
     }, 50);
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+    
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const handleSearch = () => {
@@ -132,52 +151,180 @@ export default function Home() {
 
   const handleSearchBlur = () => {
     setTimeout(() => {
-        setSearchFocused(false);
-        setShowSuggestions(false);
-    }, 100); // Delay to allow click on suggestion
+      setSearchFocused(false);
+      setShowSuggestions(false);
+    }, 100);
   };
     
   const handleSuggestionClick = (suggestion: string) => {
-        setQuery(suggestion);
-        if (searchInputRef.current) {
-            searchInputRef.current.focus(); // Keep focus on the input
-        }
-    };
+    setQuery(suggestion);
+    if (searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  };
+
+  const FloatingParticle = ({ delay, duration }: { delay: number, duration: number }) => (
+    <div
+      style={{
+        position: 'absolute',
+        width: '3px',
+        height: '3px',
+        backgroundColor: '#C9A227',
+        borderRadius: '50%',
+        opacity: '0.3',
+        animation: `float ${duration}s ${delay}s infinite ease-in-out`,
+        left: `${Math.random() * 100}%`,
+        top: `${Math.random() * 100}%`,
+        filter: 'blur(0.5px)',
+        boxShadow: `0 0 10px ${Math.random() > 0.5 ? '#C9A227' : '#3B82F6'}`,
+      }}
+    />
+  );
 
   return (
-    <div style={{ backgroundColor: '#0D0D0F', minHeight: '100vh', color: '#F5F4F2', fontFamily: 'system-ui, -apple-system, sans-serif', overflowX: 'hidden' }}>
+    <div style={{ backgroundColor: '#0D0D0F', minHeight: '100vh', color: '#F5F4F2', fontFamily: 'system-ui, -apple-system, sans-serif', overflowX: 'hidden', position: 'relative' }}>
+      
+      {/* CSS Keyframes */}
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        @keyframes pulse {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.5; }
+        }
+        @keyframes glow {
+          0%, 100% { box-shadow: 0 0 20px rgba(201, 162, 39, 0.2); }
+          50% { box-shadow: 0 0 40px rgba(201, 162, 39, 0.4); }
+        }
+        @keyframes shimmer {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
+        }
+        @keyframes gradientShift {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+      `}</style>
+
+      {/* Dynamic Background Particles */}
+      <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none', zIndex: 1 }}>
+        {Array.from({ length: 15 }, (_, i) => (
+          <FloatingParticle key={i} delay={i * 0.5} duration={3 + i * 0.2} />
+        ))}
+      </div>
+
+      {/* Parallax Background */}
+      <div 
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          background: `
+            radial-gradient(circle at ${mousePosition.x * 0.05}% ${mousePosition.y * 0.05}%, rgba(201, 162, 39, 0.05) 0%, transparent 50%),
+            radial-gradient(circle at ${100 - mousePosition.x * 0.03}% ${100 - mousePosition.y * 0.03}%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+            linear-gradient(135deg, #0D0D0F 0%, #141419 100%)
+          `,
+          transform: `translateY(${scrollY * 0.2}px)`,
+          zIndex: 0,
+        }}
+      />
+
       {/* Navigation */}
       <nav style={{ 
-        backgroundColor: '#1E1E24', 
+        backgroundColor: 'rgba(30, 30, 36, 0.95)', 
         borderBottom: '1px solid #2D3748', 
         padding: '1rem 0',
         position: 'sticky',
         top: 0,
         zIndex: 100,
-        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)',
+        backdropFilter: 'blur(20px)',
+        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
       }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <Link href="/" style={{ textDecoration: 'none' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', transform: 'scale(1.05)', transition: 'transform 0.3s ease-in-out' }}>
-              {/* Animated Logo */}
-              <svg width="32" height="32" viewBox="0 0 100 100" style={{ display: 'block' }}>
+            <div style={{ 
+              display: 'flex', 
+              alignItems: 'center', 
+              gap: '0.75rem', 
+              transform: 'scale(1.05)', 
+              transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+              filter: 'drop-shadow(0 4px 8px rgba(201, 162, 39, 0.2))'
+            }}>
+              <svg width="40" height="40" viewBox="0 0 100 100" style={{ display: 'block' }}>
                 <defs>
                   <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" style={{ stopColor: '#C9A227' }} />
-                    <stop offset="100%" style={{ stopColor: '#F5F4F2' }} />
+                    <stop offset="50%" style={{ stopColor: '#F59E0B' }} />
+                    <stop offset="100%" style={{ stopColor: '#3B82F6' }} />
                   </linearGradient>
+                  <filter id="glow">
+                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                    <feMerge>
+                      <feMergeNode in="coloredBlur"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
                 </defs>
-                <circle cx="50" cy="50" r="45" fill="url(#logoGradient)" stroke="#C9A227" strokeWidth="3" strokeDasharray="200" strokeDashoffset={animationOffset} style={{ transition: 'stroke-dashoffset 0.3s ease' }} />
+                <circle cx="50" cy="30" r="20" fill="url(#logoGradient)" filter="url(#glow)" opacity="0.9" />
+                <circle cx="25" cy="65" r="15" fill="url(#logoGradient)" filter="url(#glow)" opacity="0.7" />
+                <circle cx="75" cy="70" r="12" fill="url(#logoGradient)" filter="url(#glow)" opacity="0.6" />
+                <path d="M30 40 L70 60 M40 25 L60 75 M25 50 L75 55" stroke="url(#logoGradient)" strokeWidth="2" opacity="0.5" filter="url(#glow)" />
               </svg>
-              <span style={{ fontWeight: 'bold', fontSize: '1.25rem', color: '#F5F4F2', letterSpacing: '0.05em' }}>Logos</span>
+              <div>
+                <h1 style={{ 
+                  fontSize: '1.5rem', 
+                  fontWeight: '700', 
+                  margin: 0, 
+                  background: 'linear-gradient(135deg, #C9A227, #F59E0B, #3B82F6)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundSize: '200% 200%',
+                  animation: 'gradientShift 3s ease infinite',
+                }}>
+                  LOGOS
+                </h1>
+                <p style={{ fontSize: '0.7rem', color: '#9CA3AF', margin: 0, letterSpacing: '0.1em' }}>
+                  PHILOLOGICAL AI
+                </p>
+              </div>
             </div>
           </Link>
-          <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-            {navItems.map((item, index) => (
-              <Link href={item.href} key={index} style={{ color: '#9CA3AF', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.3rem', padding: '0.5rem 1rem', borderRadius: '0.375rem', transition: 'background-color 0.2s ease, color 0.2s ease', ':hover': { backgroundColor: '#2D3748', color: '#F5F4F2' } }}
-               onMouseEnter={() => setHoveredButton(true)}
-               onMouseLeave={() => setHoveredButton(false)}>
-                {item.icon} {item.name}
+
+          <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+            {navItems.map((item, idx) => (
+              <Link key={idx} href={item.href} style={{ textDecoration: 'none' }}>
+                <div style={{ 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  gap: '0.5rem', 
+                  padding: '0.75rem 1rem',
+                  borderRadius: '12px',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  backgroundColor: 'rgba(30, 30, 36, 0.5)',
+                  border: '1px solid rgba(201, 162, 39, 0.1)',
+                }} 
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgba(201, 162, 39, 0.1)';
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  e.currentTarget.style.boxShadow = '0 8px 25px rgba(201, 162, 39, 0.2)';
+                  e.currentTarget.style.borderColor = 'rgba(201, 162, 39, 0.3)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgba(30, 30, 36, 0.5)';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = 'none';
+                  e.currentTarget.style.borderColor = 'rgba(201, 162, 39, 0.1)';
+                }}>
+                  <span style={{ fontSize: '1rem' }}>{item.icon}</span>
+                  <span style={{ color: '#F5F4F2', fontSize: '0.875rem', fontWeight: '500' }}>{item.name}</span>
+                </div>
               </Link>
             ))}
           </div>
@@ -185,190 +332,289 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section style={{ padding: '4rem 0', textAlign: 'center', backgroundImage: 'linear-gradient(to bottom, #0D0D0F, #141419)', borderBottom: '1px solid #2D3748' }}>
-        <div style={{ maxWidth: '800px', margin: '0 auto', padding: '0 2rem' }}>
-          <h1 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '1rem', letterSpacing: '-0.05em', color: '#F5F4F2' }}>
-            Unlock the Wisdom of the Ancient World
+      <section style={{ 
+        padding: '6rem 2rem', 
+        textAlign: 'center', 
+        position: 'relative',
+        background: `
+          radial-gradient(ellipse at center, rgba(201, 162, 39, 0.05) 0%, transparent 70%),
+          linear-gradient(135deg, transparent 0%, rgba(59, 130, 246, 0.02) 100%)
+        `,
+        zIndex: 2,
+      }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
+          
+          {/* Animated Title */}
+          <h1 style={{ 
+            fontSize: 'clamp(3rem, 8vw, 6rem)', 
+            fontWeight: '900', 
+            marginBottom: '2rem',
+            background: 'linear-gradient(135deg, #C9A227 0%, #F59E0B 25%, #3B82F6 50%, #8B5CF6 75%, #C9A227 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundSize: '400% 400%',
+            animation: 'gradientShift 4s ease infinite',
+            textShadow: '0 0 80px rgba(201, 162, 39, 0.3)',
+            transform: `perspective(1000px) rotateX(${Math.sin(animationOffset * 0.01) * 2}deg)`,
+            letterSpacing: '-0.02em',
+          }}>
+            PHILOLOGICAL AI
           </h1>
-          <p style={{ fontSize: '1.25rem', color: '#9CA3AF', lineHeight: '1.75', marginBottom: '2rem' }}>
-            Explore a vast digital library of classical texts, powered by AI-driven search, translation, and analysis.
+
+          <p style={{ 
+            fontSize: 'clamp(1.1rem, 3vw, 1.5rem)', 
+            color: '#9CA3AF', 
+            marginBottom: '3rem', 
+            maxWidth: '800px', 
+            margin: '0 auto 3rem',
+            lineHeight: '1.6',
+            fontWeight: '400',
+            textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)',
+          }}>
+            Revolutionary AI-powered platform for{' '}
+            <span style={{ 
+              color: '#C9A227',
+              fontWeight: '600',
+              textShadow: '0 0 20px rgba(201, 162, 39, 0.4)',
+            }}>
+              Classical Philology
+            </span>
+            {' '}• Critical text analysis • Semantic discovery • Manuscript tradition
           </p>
-          <div style={{ position: 'relative', display: 'inline-block', width: '100%', maxWidth: '500px' }}>
-            <input
-              type="text"
-              ref={searchInputRef}
-              placeholder="Search for texts, authors, concepts..."
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              onKeyDown={handleKeyPress}
-              onFocus={handleSearchFocus}
-              onBlur={handleSearchBlur}
-              style={{
-                width: '100%',
-                padding: '1rem 1.5rem',
-                fontSize: '1rem',
-                backgroundColor: '#1E1E24',
-                color: '#F5F4F2',
-                border: '1px solid #2D3748',
-                borderRadius: '0.5rem',
-                transition: 'border-color 0.2s ease, box-shadow 0.2s ease',
-                ':focus': { borderColor: '#C9A227', boxShadow: '0 0 0 3px rgba(201, 162, 39, 0.3)' },
-                outline: 'none',
-              }}
-            />
-            <button onClick={handleSearch} style={{ position: 'absolute', right: '0.5rem', top: '50%', transform: 'translateY(-50%)', backgroundColor: '#C9A227', color: '#0D0D0F', padding: '0.75rem 1.25rem', borderRadius: '0.375rem', border: 'none', cursor: 'pointer', transition: 'background-color 0.2s ease', ':hover': { backgroundColor: '#B89222' } }}>
-              Search
-            </button>
-          </div>
 
-          {showSuggestions && (
+          {/* Enhanced Search Bar */}
+          <div style={{ 
+            position: 'relative', 
+            maxWidth: '700px', 
+            margin: '0 auto 4rem',
+            transform: `perspective(1000px) rotateX(${searchFocused ? -2 : 0}deg)`,
+            transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+          }}>
+            <div style={{
+              position: 'relative',
+              backgroundColor: searchFocused ? 'rgba(30, 30, 36, 0.95)' : 'rgba(30, 30, 36, 0.8)',
+              borderRadius: '20px',
+              border: searchFocused ? '2px solid #C9A227' : '2px solid rgba(201, 162, 39, 0.3)',
+              transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+              boxShadow: searchFocused 
+                ? '0 20px 60px rgba(201, 162, 39, 0.3), 0 0 0 1px rgba(201, 162, 39, 0.2)' 
+                : '0 8px 32px rgba(0, 0, 0, 0.3)',
+              backdropFilter: 'blur(20px)',
+              overflow: 'hidden',
+            }}>
+              
+              {/* Animated border shimmer */}
               <div style={{
-                  position: 'absolute',
-                  top: '100%',
-                  left: 0,
-                  width: '100%',
-                  backgroundColor: '#1E1E24',
-                  border: '1px solid #2D3748',
-                  borderRadius: '0.5rem',
-                  marginTop: '0.25rem',
-                  boxShadow: '0 4px 6px rgba(0, 0, 0, 0.3)',
-                  zIndex: 2,
-                  maxWidth: '500px',
-                  marginLeft: 'auto',
-                  marginRight: 'auto',
-              }}>
-                  <ul style={{ listStyleType: 'none', padding: 0, margin: 0 }}>
-                      {searchSuggestions.map((suggestion, index) => (
-                          <li key={index} style={{ padding: '0.75rem 1.25rem', borderBottom: '1px solid #2D3748', cursor: 'pointer', transition: 'background-color 0.2s ease', ':hover': { backgroundColor: '#2D3748' } }} onClick={() => handleSuggestionClick(suggestion)}>
-                              {suggestion}
-                          </li>
-                      ))}
-                  </ul>
-              </div>
-          )}
-        </div>
-      </section>
+                position: 'absolute',
+                top: 0,
+                left: '-100%',
+                width: '100%',
+                height: '100%',
+                background: 'linear-gradient(90deg, transparent, rgba(201, 162, 39, 0.4), transparent)',
+                animation: searchFocused ? 'shimmer 2s infinite' : 'none',
+              }} />
 
-      {/* Stats Section */}
-      <section style={{ padding: '3rem 0', backgroundColor: '#141419' }}>
-        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem', textAlign: 'center' }}>
-          {stats.map((stat, index) => (
-            <div
-              key={index}
-              style={{
-                backgroundColor: '#1E1E24',
-                padding: '2rem',
-                borderRadius: '0.75rem',
-                boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
-                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                transform: hoveredStat === index ? 'scale(1.05)' : 'scale(1)',
-                cursor: 'pointer',
-                ':hover': { boxShadow: '0 6px 12px rgba(0, 0, 0, 0.3)' },
-              }}
-              onMouseEnter={() => setHoveredStat(index)}
-              onMouseLeave={() => setHoveredStat(null)}
-            >
-              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>{stat.icon}</div>
-              <div style={{ fontSize: '1.75rem', fontWeight: 'bold', color: '#F5F4F2' }}>{stat.value}</div>
-              <div style={{ fontSize: '1rem', color: '#9CA3AF', marginTop: '0.5rem' }}>{stat.label}</div>
-              <div style={{ fontSize: '0.875rem', color: '#6B7280', marginTop: '1rem' }}>{stat.detail}</div>
-            </div>
-          ))}
-        </div>
-      </section>
+              <div style={{ display: 'flex', alignItems: 'center', padding: '0.5rem' }}>
+                <div style={{ 
+                  padding: '1rem 1.5rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.75rem',
+                }}>
+                  <div style={{
+                    fontSize: '1.25rem',
+                    transition: 'transform 0.3s ease',
+                    transform: searchFocused ? 'scale(1.1) rotate(10deg)' : 'scale(1)',
+                  }}>
+                    🔍
+                  </div>
+                </div>
 
-      {/* Features Section */}
-      <section style={{ padding: '4rem 0', backgroundColor: '#0D0D0F' }}>
-        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '3rem', textAlign: 'center', color: '#F5F4F2' }}>
-            Explore Our Powerful Features
-          </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
-            {features.map((feature, index) => (
-              <Link href={feature.href} key={index} style={{ textDecoration: 'none' }}>
-                <div
+                <input
+                  ref={searchInputRef}
+                  type="text"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  onFocus={handleSearchFocus}
+                  onBlur={handleSearchBlur}
+                  onKeyPress={handleKeyPress}
+                  placeholder="Search: ἀρετή, virtus, semantic evolution, manuscript variants..."
                   style={{
-                    backgroundColor: '#1E1E24',
-                    padding: '2rem',
-                    borderRadius: '0.75rem',
-                    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
-                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                    transform: hoveredFeature === index ? 'scale(1.05)' : 'scale(1)',
-                    ':hover': { boxShadow: '0 6px 12px rgba(0, 0, 0, 0.3)' },
-                    height: '100%',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between',
-                    cursor: 'pointer'
+                    flex: 1,
+                    backgroundColor: 'transparent',
+                    border: 'none',
+                    outline: 'none',
+                    color: '#F5F4F2',
+                    fontSize: '1.1rem',
+                    fontWeight: '400',
+                    padding: '1.25rem 0',
+                    fontFamily: 'inherit',
                   }}
-                  onMouseEnter={() => setHoveredFeature(index)}
-                  onMouseLeave={() => setHoveredFeature(null)}
+                />
+
+                <button
+                  onClick={handleSearch}
+                  onMouseEnter={() => setHoveredButton(true)}
+                  onMouseLeave={() => setHoveredButton(false)}
+                  style={{
+                    backgroundColor: hoveredButton ? '#F59E0B' : '#C9A227',
+                    color: '#0D0D0F',
+                    border: 'none',
+                    borderRadius: '15px',
+                    padding: '1rem 2rem',
+                    margin: '0.5rem',
+                    fontWeight: '700',
+                    fontSize: '1rem',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                    transform: hoveredButton ? 'scale(1.05) translateY(-1px)' : 'scale(1)',
+                    boxShadow: hoveredButton 
+                      ? '0 12px 28px rgba(201, 162, 39, 0.4)' 
+                      : '0 6px 16px rgba(201, 162, 39, 0.2)',
+                    fontFamily: 'inherit',
+                  }}
                 >
-                  <div>
-                    <div style={{ fontSize: '2rem', color: feature.color, marginBottom: '0.5rem' }}>{feature.icon}</div>
-                    <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#F5F4F2', marginBottom: '0.75rem' }}>{feature.title}</h3>
-                    <p style={{ fontSize: '1rem', color: '#9CA3AF', lineHeight: '1.6' }}>{feature.desc}</p>
-                  </div>
-                  <div style={{ marginTop: '1.5rem' }}>
-                    <span style={{ backgroundColor: feature.color, color: '#0D0D0F', padding: '0.3rem 0.6rem', borderRadius: '9999px', fontSize: '0.875rem', fontWeight: 'medium' }}>{feature.badge}</span>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Recent Searches Section */}
-      <section style={{ padding: '3rem 0', backgroundColor: '#141419' }}>
-        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '2rem', color: '#F5F4F2' }}>Recent Searches</h2>
-          <ul style={{ listStyleType: 'none', padding: 0, margin: 0 }}>
-            {recentSearches.map((search, index) => (
-              <li key={index} style={{ backgroundColor: '#1E1E24', padding: '1.25rem', borderRadius: '0.5rem', marginBottom: '0.75rem', boxShadow: '0 1px 3px rgba(0, 0, 0, 0.2)', transition: 'background-color 0.2s ease', ':hover': { backgroundColor: '#2D3748' } }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <div>
-                    <div style={{ fontWeight: 'medium', color: '#F5F4F2' }}>{search.query}</div>
-                    <div style={{ fontSize: '0.875rem', color: '#6B7280' }}>{search.results} results</div>
-                  </div>
-                  <div style={{ fontSize: '0.75rem', color: '#6B7280' }}>{search.timestamp}</div>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* Featured Authors Section */}
-      <section style={{ padding: '4rem 0', backgroundColor: '#0D0D0F' }}>
-        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '3rem', textAlign: 'center', color: '#F5F4F2' }}>
-            Featured Authors
-          </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
-            {featuredAuthors.map((author, index) => (
-              <div key={index} style={{ backgroundColor: '#1E1E24', padding: '2rem', borderRadius: '0.75rem', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)', transition: 'transform 0.3s ease, box-shadow 0.3s ease', ':hover': { boxShadow: '0 6px 12px rgba(0, 0, 0, 0.3)' }, transform: 'scale(1)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                <div>
-                  <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#F5F4F2', marginBottom: '0.5rem' }}>{author.name}</h3>
-                  <p style={{ fontSize: '1rem', color: '#9CA3AF', marginBottom: '0.75rem' }}>Works: {author.works}</p>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
-                    <span style={{ fontSize: '0.875rem', color: '#6B7280' }}>Era:</span>
-                    <span style={{ backgroundColor: author.color, color: '#0D0D0F', padding: '0.2rem 0.5rem', borderRadius: '9999px', fontSize: '0.75rem' }}>{author.era}</span>
-                  </div>
-                </div>
-                <div style={{ fontSize: '0.875rem', color: '#6B7280', textAlign: 'right' }}>{author.texts} texts available</div>
+                  SEARCH
+                </button>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
+            </div>
 
-      {/* Footer */}
-      <footer style={{ backgroundColor: '#1E1E24', borderTop: '1px solid #2D3748', padding: '2rem 0', textAlign: 'center', color: '#9CA3AF' }}>
-        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <p>&copy; {new Date().getFullYear()} Logos. All rights reserved.</p>
-        </div>
-      </footer>
-    </div>
-  );
-}
+            {/* Enhanced Suggestions Dropdown */}
+            {showSuggestions && (
+              <div style={{
+                position: 'absolute',
+                top: '100%',
+                left: 0,
+                right: 0,
+                backgroundColor: 'rgba(30, 30, 36, 0.98)',
+                borderRadius: '16px',
+                marginTop: '0.5rem',
+                boxShadow: '0 20px 60px rgba(0, 0, 0, 0.4)',
+                backdropFilter: 'blur(20px)',
+                border: '1px solid rgba(201, 162, 39, 0.2)',
+                zIndex: 1000,
+                overflow: 'hidden',
+              }}>
+                <div style={{ padding: '1rem' }}>
+                  <h3 style={{ 
+                    color: '#C9A227', 
+                    fontSize: '0.875rem', 
+                    fontWeight: '600', 
+                    margin: '0 0 1rem 0',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.05em',
+                  }}>
+                    🎯 Popular Searches
+                  </h3>
+                  {searchSuggestions.slice(0, 6).map((suggestion, idx) => (
+                    <div
+                      key={idx}
+                      onClick={() => handleSuggestionClick(suggestion)}
+                      style={{
+                        padding: '0.875rem 1rem',
+                        cursor: 'pointer',
+                        borderRadius: '10px',
+                        transition: 'all 0.2s ease',
+                        backgroundColor: 'transparent',
+                        border: '1px solid transparent',
+                        margin: '0.25rem 0',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = 'rgba(201, 162, 39, 0.1)';
+                        e.currentTarget.style.borderColor = 'rgba(201, 162, 39, 0.2)';
+                        e.currentTarget.style.transform = 'translateX(4px)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = 'transparent';
+                        e.currentTarget.style.borderColor = 'transparent';
+                        e.currentTarget.style.transform = 'translateX(0)';
+                      }}
+                    >
+                      <span style={{ color: '#F5F4F2', fontSize: '0.95rem' }}>{suggestion}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Recent Searches */}
+                <div style={{ padding: '0 1rem 1rem', borderTop: '1px solid rgba(201, 162, 39, 0.1)' }}>
+                  <h3 style={{ 
+                    color: '#9CA3AF', 
+                    fontSize: '0.875rem', 
+                    fontWeight: '600', 
+                    margin: '1rem 0',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.05em',
+                  }}>
+                    📚 Recent Activity
+                  </h3>
+                  {recentSearches.map((search, idx) => (
+                    <div
+                      key={idx}
+                      onClick={() => handleSuggestionClick(search.query)}
+                      style={{
+                        padding: '0.75rem 1rem',
+                        cursor: 'pointer',
+                        borderRadius: '8px',
+                        transition: 'all 0.2s ease',
+                        backgroundColor: 'transparent',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = 'rgba(59, 130, 246, 0.1)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = 'transparent';
+                      }}
+                    >
+                      <span style={{ color: '#9CA3AF', fontSize: '0.875rem' }}>{search.query}</span>
+                      <span style={{ color: '#6B7280', fontSize: '0.75rem' }}>
+                        {search.results} • {search.timestamp}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Enhanced Stats */}
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
+            gap: '2rem', 
+            marginBottom: '4rem',
+            perspective: '1000px',
+          }}>
+            {stats.map((stat, idx) => (
+              <div
+                key={idx}
+                onMouseEnter={() => setHoveredStat(idx)}
+                onMouseLeave={() => setHoveredStat(null)}
+                style={{
+                  backgroundColor: hoveredStat === idx ? 'rgba(30, 30, 36, 0.9)' : 'rgba(30, 30, 36, 0.6)',
+                  padding: '2.5rem 2rem',
+                  borderRadius: '20px',
+                  border: hoveredStat === idx ? '2px solid #C9A227' : '2px solid rgba(201, 162, 39, 0.2)',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  transform: hoveredStat === idx 
+                    ? 'translateY(-8px) rotateX(5deg) scale(1.03)' 
+                    : 'translateY(0) rotateX(0deg) scale(1)',
+                  boxShadow: hoveredStat === idx 
+                    ? '0 25px 50px rgba(201, 162, 39, 0.3), 0 0 0 1px rgba(201, 162, 39, 0.1)' 
+                    : '0 8px 32px rgba(0, 0, 0, 0.2)',
+                  backdropFilter: 'blur(20px)',
+                  cursor: 'pointer',
+                  position: 'relative',
+                  overflow: 'hidden',
+                }}
+              >
+                {/* Animated background effect */}
+                <div style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: hoveredStat === idx ? '0%' : '-100%',
+                  width: '100%',
+                  height: '100%',
+                  background: 'linear-gradient(135deg, rgba(201, 162, 39, 0.05), rgba(

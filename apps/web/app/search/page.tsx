@@ -14,8 +14,7 @@ const PASSAGES = [
   { id: 8, author: "Seneca", work: "Epistulae", book: "1.1", text: "Ita fac, mi Lucili: vindica te tibi, et tempus quod adhuc aut auferebatur aut subripiebatur aut excidebat collige et serva", translation: "Do this, my dear Lucilius: claim yourself for yourself, and time that has until now been taken away, stolen, or lost, gather and preserve", era: "imperial", language: "latin", topics: ["philosophy", "stoicism", "ethics"], manuscript: "Quirinianus", variants: ["adhuc: ad huc Q", "serva: conserva C"], lemma: ["vindico", "tempus", "colligo"], embeddings: [0.8, 0.9, 0.7], semanticDrift: ["claim→assert", "time→moment"] },
   { id: 9, author: "Augustine", work: "Confessiones", book: "1.1", text: "Magnus es, Domine, et laudabilis valde: magna virtus tua, et sapientiae tuae non est numerus", translation: "Great are you, O Lord, and greatly to be praised; great is your power, and of your wisdom there is no measure", era: "lateAntique", language: "latin", topics: ["theology", "confession", "Christianity"], manuscript: "Sessorianus", variants: ["laudabilis: laudandus S", "numerus: terminus T"], lemma: ["magnus", "virtus", "sapientia"], embeddings: [0.9, 0.8, 0.9], semanticDrift: ["great→magnificent", "wisdom→knowledge"] },
   { id: 10, author: "Sophocles", work: "Antigone", book: "332", text: "Πολλὰ τὰ δεινὰ κοὐδὲν ἀνθρώπου δεινότερον πέλει. τοῦτο καὶ πολιοῦ πέραν πόντου", translation: "Many wonders there are, but none more wondrous than man. This being crosses even the gray sea", era: "classical", language: "greek", topics: ["tragedy", "human nature", "wonder"], manuscript: "Laurentianus", variants: ["δεινὰ: δεινότερα L", "πέλει: ἔφυ Brunck"], lemma: ["πολύς", "δεινός", "ἄνθρωπος"], embeddings: [0.6, 0.9, 0.8], semanticDrift: ["wonder→terrible", "man→mortal"] },
-  { id: 11, author: "Euripides", work: "Medea", book: "214", text: "ἀλλ᾽ οὐ ταὐτὸν ἀνδράσιν τε καὶ γυναιξὶ κεῖται νόμος", translation: "But the same law does not apply to men and women", era: "classical", language: "greek", topics: ["tragedy", "gender", "law"], manuscript: "Marcianus", variants: ["ταὐτὸν: τὸ αὐτὸν M", "κεῖται: τίθεται rec."], lemma: ["ἀνήρ", "γυνή", "νόμος"], embeddings: [0.7, 0.8, 0.6], semanticDrift: ["law→custom", "same→equal"] },
-  { id: 12, author: "Tacitus", work: "Annales", book: "1.1", text: "Urbem Romam a principio reges habuere; libertatem et consulatum L. Brutus instituit", translation: "The city of Rome from the beginning was ruled by kings; liberty and the consulship were established by L. Brutus", era: "imperial", language: "latin", topics: ["history", "politics", "liberty"], manuscript: "Mediceus", variants: ["habuere: habuerunt M", "instituit: constituit C"], lemma: ["urbs", "rex", "libertas"], embeddings: [0.8, 0.7, 0.9], semanticDrift: ["king→ruler", "liberty→freedom"] }
+  { id: 11, author: "Euripides", work: "Medea", book: "214", text: "ἀλλ᾽ οὐ ταὐτὸν ἀνδράσιν τε καὶ γυναιξὶ κεῖται νόμος", translation: "But the same law does not apply to men and women", era: "classical", language: "greek", topics: ["tragedy", "law", "gender"], manuscript: "Mediceus", variants: ["ταὐτὸν: τὸ αὐτὸ M", "κεῖται: τίθεται K"], lemma: ["ταὐτόν", "ἀνήρ", "νόμος"], embeddings: [0.7, 0.8, 0.6], semanticDrift: ["same→equal", "law→custom"] }
 ];
 
 const ERA_COLORS = {
@@ -27,467 +26,438 @@ const ERA_COLORS = {
   byzantine: '#059669'
 };
 
-const TOPIC_COLORS = {
-  epic: '#C9A227',
-  philosophy: '#3B82F6',
-  tragedy: '#7C3AED',
-  rhetoric: '#DC2626',
-  history: '#059669',
-  theology: '#D97706',
-  war: '#DC2626',
-  ethics: '#3B82F6',
-  oratory: '#F59E0B',
-  stoicism: '#6B7280'
+const LANGUAGE_COLORS = {
+  greek: '#3B82F6',
+  latin: '#DC2626'
 };
 
-export default function DataVisualization() {
-  const [selectedPassage, setSelectedPassage] = useState(null);
-  const [viewMode, setViewMode] = useState('timeline');
-  const [filterEra, setFilterEra] = useState('all');
-  const [filterLanguage, setFilterLanguage] = useState('all');
-  const [hoveredNode, setHoveredNode] = useState(null);
-  const [animationFrame, setAnimationFrame] = useState(0);
+export default function TextualVisualization() {
+  const [activeView, setActiveView] = useState('semantic');
+  const [selectedEras, setSelectedEras] = useState(new Set(Object.keys(ERA_COLORS)));
+  const [selectedLanguages, setSelectedLanguages] = useState(new Set(['greek', 'latin']));
+  const [hoveredPassage, setHoveredPassage] = useState(null);
+  const [animationPhase, setAnimationPhase] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setAnimationFrame(prev => (prev + 1) % 360);
+      setAnimationPhase(prev => (prev + 1) % 360);
     }, 50);
     return () => clearInterval(interval);
   }, []);
 
   const filteredPassages = useMemo(() => {
-    return PASSAGES.filter(passage => {
-      const eraMatch = filterEra === 'all' || passage.era === filterEra;
-      const langMatch = filterLanguage === 'all' || passage.language === filterLanguage;
-      return eraMatch && langMatch;
+    return PASSAGES.filter(p => 
+      selectedEras.has(p.era) && selectedLanguages.has(p.language)
+    );
+  }, [selectedEras, selectedLanguages]);
+
+  const toggleEra = useCallback((era) => {
+    setSelectedEras(prev => {
+      const next = new Set(prev);
+      if (next.has(era)) {
+        next.delete(era);
+      } else {
+        next.add(era);
+      }
+      return next;
     });
-  }, [filterEra, filterLanguage]);
+  }, []);
 
-  const timelineData = useMemo(() => {
-    const eraOrder = ['archaic', 'classical', 'hellenistic', 'imperial', 'lateAntique', 'byzantine'];
-    return eraOrder.map((era, index) => ({
-      era,
-      passages: filteredPassages.filter(p => p.era === era),
-      x: (index * 160) + 80,
-      color: ERA_COLORS[era]
-    }));
-  }, [filteredPassages]);
+  const toggleLanguage = useCallback((lang) => {
+    setSelectedLanguages(prev => {
+      const next = new Set(prev);
+      if (next.has(lang)) {
+        next.delete(lang);
+      } else {
+        next.add(lang);
+      }
+      return next;
+    });
+  }, []);
 
-  const semanticNetwork = useMemo(() => {
-    const nodes = [];
-    const edges = [];
+  const SemanticSpaceVisualization = () => {
+    const maxEmbedding = Math.max(...filteredPassages.flatMap(p => p.embeddings));
     
-    filteredPassages.forEach((passage, i) => {
-      const angle = (i / filteredPassages.length) * 2 * Math.PI;
-      const radius = 200 + Math.sin(animationFrame * 0.01 + i) * 20;
-      nodes.push({
-        id: passage.id,
-        x: 300 + Math.cos(angle) * radius,
-        y: 300 + Math.sin(angle) * radius,
-        passage,
-        embedding: passage.embeddings[0] || 0.5
-      });
-      
-      // Create edges based on topic similarity
-      filteredPassages.forEach((other, j) => {
-        if (i < j) {
-          const commonTopics = passage.topics.filter(t => other.topics.includes(t)).length;
-          if (commonTopics > 0) {
-            edges.push({
-              from: passage.id,
-              to: other.id,
-              strength: commonTopics / Math.max(passage.topics.length, other.topics.length),
-              opacity: 0.3 + (commonTopics * 0.3)
-            });
-          }
-        }
-      });
-    });
-    
-    return { nodes, edges };
-  }, [filteredPassages, animationFrame]);
-
-  const renderTimeline = () => (
-    <div style={{ 
-      width: '100%', 
-      height: '600px', 
-      position: 'relative',
-      background: 'linear-gradient(135deg, #1E1E24 0%, #141419 100%)',
-      borderRadius: '12px',
-      overflow: 'hidden',
-      border: '1px solid #C9A227'
-    }}>
-      <svg width="100%" height="100%" style={{ position: 'absolute' }}>
-        {/* Timeline axis */}
-        <line
-          x1="50"
-          y1="300"
-          x2="950"
-          y2="300"
-          stroke="#C9A227"
-          strokeWidth="3"
-          style={{
-            filter: 'drop-shadow(0 0 6px #C9A227)',
-            animation: `pulse 2s ease-in-out infinite`
-          }}
-        />
-        
-        {/* Era markers */}
-        {timelineData.map((era, index) => (
-          <g key={era.era}>
-            <circle
-              cx={era.x}
-              cy="300"
-              r="8"
-              fill={era.color}
-              stroke="#F5F4F2"
-              strokeWidth="2"
-              style={{
-                filter: `drop-shadow(0 0 8px ${era.color})`,
-                transform: `scale(${hoveredNode === era.era ? 1.5 : 1})`,
-                transition: 'transform 0.2s ease'
-              }}
-              onMouseEnter={() => setHoveredNode(era.era)}
-              onMouseLeave={() => setHoveredNode(null)}
-            />
-            
-            {/* Era label */}
-            <text
-              x={era.x}
-              y="280"
-              textAnchor="middle"
-              style={{
-                fill: '#F5F4F2',
-                fontSize: '12px',
-                fontWeight: 'bold',
-                textTransform: 'capitalize'
-              }}
-            >
-              {era.era}
-            </text>
-            
-            {/* Passages for this era */}
-            {era.passages.map((passage, pIndex) => (
-              <g key={passage.id}>
-                <circle
-                  cx={era.x + (pIndex - era.passages.length/2 + 0.5) * 25}
-                  cy="350"
-                  r="6"
-                  fill={passage.language === 'greek' ? '#3B82F6' : '#DC2626'}
-                  stroke="#F5F4F2"
-                  strokeWidth="1"
-                  style={{
-                    cursor: 'pointer',
-                    filter: `drop-shadow(0 0 4px ${passage.language === 'greek' ? '#3B82F6' : '#DC2626'})`,
-                    transform: `scale(${selectedPassage?.id === passage.id ? 1.3 : 1})`,
-                    transition: 'transform 0.2s ease'
-                  }}
-                  onClick={() => setSelectedPassage(passage)}
-                />
-                
-                {/* Connection line */}
-                <line
-                  x1={era.x}
-                  y1="308"
-                  x2={era.x + (pIndex - era.passages.length/2 + 0.5) * 25}
-                  y2="344"
-                  stroke={era.color}
-                  strokeWidth="1"
-                  opacity="0.5"
-                />
-              </g>
-            ))}
-          </g>
-        ))}
-      </svg>
-      
-      {/* Floating info panel */}
-      {hoveredNode && (
-        <div style={{
-          position: 'absolute',
-          top: '20px',
-          right: '20px',
-          background: 'rgba(13, 13, 15, 0.95)',
-          border: `1px solid ${ERA_COLORS[hoveredNode]}`,
-          borderRadius: '8px',
-          padding: '16px',
-          color: '#F5F4F2',
-          backdropFilter: 'blur(10px)',
-          boxShadow: `0 8px 32px rgba(0, 0, 0, 0.3), 0 0 16px ${ERA_COLORS[hoveredNode]}30`
-        }}>
-          <div style={{ fontSize: '14px', fontWeight: 'bold', color: ERA_COLORS[hoveredNode], textTransform: 'capitalize' }}>
-            {hoveredNode} Period
-          </div>
-          <div style={{ fontSize: '12px', color: '#9CA3AF', marginTop: '4px' }}>
-            {timelineData.find(e => e.era === hoveredNode)?.passages.length || 0} passages
-          </div>
-        </div>
-      )}
-    </div>
-  );
-
-  const renderSemanticNetwork = () => (
-    <div style={{ 
-      width: '100%', 
-      height: '600px', 
-      position: 'relative',
-      background: 'radial-gradient(circle at center, #1E1E24 0%, #0D0D0F 100%)',
-      borderRadius: '12px',
-      overflow: 'hidden',
-      border: '1px solid #C9A227'
-    }}>
-      <svg width="100%" height="100%" style={{ position: 'absolute' }}>
-        {/* Background grid */}
-        <defs>
-          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1E1E24" strokeWidth="1" opacity="0.3"/>
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#grid)" />
-        
-        {/* Edges */}
-        {semanticNetwork.edges.map((edge, index) => {
-          const fromNode = semanticNetwork.nodes.find(n => n.id === edge.from);
-          const toNode = semanticNetwork.nodes.find(n => n.id === edge.to);
-          if (!fromNode || !toNode) return null;
-          
-          return (
-            <line
-              key={index}
-              x1={fromNode.x}
-              y1={fromNode.y}
-              x2={toNode.x}
-              y2={toNode.y}
-              stroke="#C9A227"
-              strokeWidth={edge.strength * 3}
-              opacity={edge.opacity}
-              style={{
-                filter: 'drop-shadow(0 0 2px #C9A227)',
-                animation: `pulse ${2 + edge.strength}s ease-in-out infinite`
-              }}
-            />
-          );
-        })}
-        
-        {/* Nodes */}
-        {semanticNetwork.nodes.map((node, index) => {
-          const pulse = Math.sin(animationFrame * 0.05 + index * 0.5) * 0.2 + 1;
-          return (
-            <g key={node.id}>
-              {/* Outer glow */}
-              <circle
-                cx={node.x}
-                cy={node.y}
-                r={15 * pulse}
-                fill={ERA_COLORS[node.passage.era]}
-                opacity="0.1"
-              />
-              
-              {/* Main node */}
-              <circle
-                cx={node.x}
-                cy={node.y}
-                r={8 + node.embedding * 6}
-                fill={node.passage.language === 'greek' ? '#3B82F6' : '#DC2626'}
-                stroke={ERA_COLORS[node.passage.era]}
-                strokeWidth="2"
-                style={{
-                  cursor: 'pointer',
-                  filter: `drop-shadow(0 0 8px ${ERA_COLORS[node.passage.era]})`,
-                  transform: `scale(${selectedPassage?.id === node.id ? 1.5 : hoveredNode === node.id ? 1.2 : 1})`,
-                  transition: 'transform 0.3s ease'
-                }}
-                onClick={() => setSelectedPassage(node.passage)}
-                onMouseEnter={() => setHoveredNode(node.id)}
-                onMouseLeave={() => setHoveredNode(null)}
-              />
-              
-              {/* Language indicator */}
-              <text
-                x={node.x}
-                y={node.y + 2}
-                textAnchor="middle"
-                style={{
-                  fill: '#F5F4F2',
-                  fontSize: '8px',
-                  fontWeight: 'bold',
-                  pointerEvents: 'none'
-                }}
-              >
-                {node.passage.language === 'greek' ? 'Α' : 'L'}
-              </text>
-              
-              {/* Author label on hover */}
-              {hoveredNode === node.id && (
-                <text
-                  x={node.x}
-                  y={node.y - 20}
-                  textAnchor="middle"
-                  style={{
-                    fill: '#F5F4F2',
-                    fontSize: '10px',
-                    fontWeight: 'bold',
-                    textShadow: '0 0 4px rgba(0,0,0,0.8)'
-                  }}
-                >
-                  {node.passage.author}
-                </text>
-              )}
-            </g>
-          );
-        })}
-      </svg>
-      
-      {/* Network stats */}
-      <div style={{
-        position: 'absolute',
-        top: '20px',
-        left: '20px',
-        background: 'rgba(13, 13, 15, 0.9)',
-        border: '1px solid #C9A227',
-        borderRadius: '8px',
-        padding: '12px',
-        color: '#F5F4F2',
-        fontSize: '12px'
-      }}>
-        <div style={{ color: '#C9A227', fontWeight: 'bold' }}>Network Stats</div>
-        <div style={{ marginTop: '4px' }}>Nodes: {semanticNetwork.nodes.length}</div>
-        <div>Edges: {semanticNetwork.edges.length}</div>
-        <div>Density: {(semanticNetwork.edges.length / (semanticNetwork.nodes.length * (semanticNetwork.nodes.length - 1) / 2) * 100).toFixed(1)}%</div>
-      </div>
-    </div>
-  );
-
-  const renderTopicClusters = () => {
-    const topics = [...new Set(filteredPassages.flatMap(p => p.topics))];
-    const topicData = topics.map((topic, index) => {
-      const passages = filteredPassages.filter(p => p.topics.includes(topic));
-      const angle = (index / topics.length) * 2 * Math.PI;
-      const radius = 180 + Math.sin(animationFrame * 0.02 + index) * 30;
-      
-      return {
-        topic,
-        passages,
-        x: 400 + Math.cos(angle) * radius,
-        y: 250 + Math.sin(angle) * radius,
-        size: Math.sqrt(passages.length) * 20,
-        color: TOPIC_COLORS[topic] || '#9CA3AF'
-      };
-    });
-
     return (
       <div style={{ 
+        position: 'relative', 
         width: '100%', 
-        height: '500px', 
-        position: 'relative',
-        background: 'conic-gradient(from 0deg, #1E1E24, #141419, #1E1E24)',
+        height: '600px',
+        background: 'radial-gradient(circle at 50% 50%, #1E1E24 0%, #0D0D0F 100%)',
         borderRadius: '12px',
-        overflow: 'hidden',
-        border: '1px solid #C9A227'
+        border: '1px solid #C9A227',
+        overflow: 'hidden'
       }}>
-        <svg width="100%" height="100%" style={{ position: 'absolute' }}>
-          {/* Topic clusters */}
-          {topicData.map((cluster, index) => (
-            <g key={cluster.topic}>
-              {/* Cluster background */}
-              <circle
-                cx={cluster.x}
-                cy={cluster.y}
-                r={cluster.size + 10}
-                fill={cluster.color}
-                opacity="0.1"
-                style={{
-                  animation: `pulse ${3 + index * 0.5}s ease-in-out infinite`
-                }}
+        {/* Animated background grid */}
+        <svg 
+          style={{ position: 'absolute', width: '100%', height: '100%', opacity: 0.1 }}
+          viewBox="0 0 100 100"
+        >
+          <defs>
+            <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+              <path 
+                d="M 10 0 L 0 0 0 10" 
+                fill="none" 
+                stroke="#C9A227" 
+                strokeWidth="0.5"
+                opacity={0.3 + 0.2 * Math.sin(animationPhase * Math.PI / 180)}
               />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid)" />
+        </svg>
+
+        {/* Semantic space nodes */}
+        {filteredPassages.map((passage, index) => {
+          const x = 100 + (passage.embeddings[0] / maxEmbedding) * 700;
+          const y = 100 + (passage.embeddings[1] / maxEmbedding) * 400;
+          const size = 8 + (passage.embeddings[2] / maxEmbedding) * 20;
+          const pulseScale = 1 + 0.1 * Math.sin((animationPhase + index * 30) * Math.PI / 180);
+          
+          return (
+            <div
+              key={passage.id}
+              style={{
+                position: 'absolute',
+                left: `${x}px`,
+                top: `${y}px`,
+                width: `${size * pulseScale}px`,
+                height: `${size * pulseScale}px`,
+                backgroundColor: ERA_COLORS[passage.era],
+                borderRadius: '50%',
+                border: `2px solid ${LANGUAGE_COLORS[passage.language]}`,
+                cursor: 'pointer',
+                transform: 'translate(-50%, -50%)',
+                transition: 'all 0.3s ease',
+                boxShadow: hoveredPassage === passage.id 
+                  ? `0 0 20px ${ERA_COLORS[passage.era]}80`
+                  : `0 0 10px ${ERA_COLORS[passage.era]}40`,
+                zIndex: hoveredPassage === passage.id ? 10 : 1
+              }}
+              onMouseEnter={() => setHoveredPassage(passage.id)}
+              onMouseLeave={() => setHoveredPassage(null)}
+            >
+              {/* Ripple effect */}
+              <div style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                width: '200%',
+                height: '200%',
+                borderRadius: '50%',
+                border: `1px solid ${ERA_COLORS[passage.era]}`,
+                transform: 'translate(-50%, -50%)',
+                opacity: hoveredPassage === passage.id ? 0.6 : 0,
+                animation: hoveredPassage === passage.id ? 'ripple 1s infinite' : 'none'
+              }} />
+            </div>
+          );
+        })}
+
+        {/* Connection lines between similar passages */}
+        <svg style={{ position: 'absolute', width: '100%', height: '100%', pointerEvents: 'none' }}>
+          {filteredPassages.map((p1, i) => 
+            filteredPassages.slice(i + 1).map((p2, j) => {
+              const similarity = p1.topics.filter(t => p2.topics.includes(t)).length / 
+                                Math.max(p1.topics.length, p2.topics.length);
+              if (similarity < 0.3) return null;
               
-              {/* Main cluster node */}
-              <circle
-                cx={cluster.x}
-                cy={cluster.y}
-                r={cluster.size}
-                fill={cluster.color}
-                stroke="#F5F4F2"
-                strokeWidth="2"
-                opacity="0.8"
-                style={{
-                  cursor: 'pointer',
-                  filter: `drop-shadow(0 0 12px ${cluster.color})`,
-                  transform: `scale(${hoveredNode === cluster.topic ? 1.2 : 1})`,
-                  transition: 'transform 0.3s ease'
-                }}
-                onMouseEnter={() => setHoveredNode(cluster.topic)}
-                onMouseLeave={() => setHoveredNode(null)}
-              />
+              const x1 = 100 + (p1.embeddings[0] / Math.max(...filteredPassages.flatMap(p => p.embeddings))) * 700;
+              const y1 = 100 + (p1.embeddings[1] / Math.max(...filteredPassages.flatMap(p => p.embeddings))) * 400;
+              const x2 = 100 + (p2.embeddings[0] / Math.max(...filteredPassages.flatMap(p => p.embeddings))) * 700;
+              const y2 = 100 + (p2.embeddings[1] / Math.max(...filteredPassages.flatMap(p => p.embeddings))) * 400;
               
-              {/* Topic label */}
-              <text
-                x={cluster.x}
-                y={cluster.y + 4}
-                textAnchor="middle"
-                style={{
-                  fill: '#F5F4F2',
-                  fontSize: '11px',
-                  fontWeight: 'bold',
-                  textTransform: 'capitalize',
-                  pointerEvents: 'none',
-                  textShadow: '0 0 4px rgba(0,0,0,0.8)'
-                }}
-              >
-                {cluster.topic}
-              </text>
-              
-              {/* Passage count */}
-              <text
-                x={cluster.x}
-                y={cluster.y + cluster.size + 20}
-                textAnchor="middle"
-                style={{
-                  fill: '#9CA3AF',
-                  fontSize: '9px',
-                  pointerEvents: 'none'
-                }}
-              >
-                {cluster.passages.length} passages
-              </text>
-              
-              {/* Individual passages around cluster */}
-              {cluster.passages.slice(0, 8).map((passage, pIndex) => {
-                const pAngle = (pIndex / Math.min(8, cluster.passages.length)) * 2 * Math.PI;
-                const pRadius = cluster.size + 25;
-                const px = cluster.x + Math.cos(pAngle) * pRadius;
-                const py = cluster.y + Math.sin(pAngle) * pRadius;
+              return (
+                <line
+                  key={`${p1.id}-${p2.id}`}
+                  x1={x1}
+                  y1={y1}
+                  x2={x2}
+                  y2={y2}
+                  stroke="#C9A227"
+                  strokeWidth={similarity * 3}
+                  opacity={0.2 + similarity * 0.3}
+                  strokeDasharray={`${similarity * 10},${(1-similarity) * 10}`}
+                />
+              );
+            })
+          )}
+        </svg>
+
+        {/* Hover tooltip */}
+        {hoveredPassage && (
+          <div style={{
+            position: 'absolute',
+            top: '20px',
+            right: '20px',
+            backgroundColor: '#1E1E24',
+            border: '1px solid #C9A227',
+            borderRadius: '8px',
+            padding: '16px',
+            maxWidth: '300px',
+            zIndex: 20,
+            boxShadow: '0 10px 30px rgba(0,0,0,0.5)'
+          }}>
+            {(() => {
+              const passage = filteredPassages.find(p => p.id === hoveredPassage);
+              return (
+                <>
+                  <div style={{ 
+                    color: '#C9A227', 
+                    fontWeight: '600', 
+                    fontSize: '14px', 
+                    marginBottom: '8px' 
+                  }}>
+                    {passage.author} - {passage.work}
+                  </div>
+                  <div style={{ 
+                    color: '#F5F4F2', 
+                    fontSize: '12px', 
+                    fontFamily: 'Georgia, serif',
+                    marginBottom: '8px',
+                    lineHeight: '1.4'
+                  }}>
+                    {passage.text.slice(0, 100)}...
+                  </div>
+                  <div style={{ 
+                    color: '#9CA3AF', 
+                    fontSize: '11px',
+                    marginBottom: '8px'
+                  }}>
+                    {passage.translation.slice(0, 100)}...
+                  </div>
+                  <div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap' }}>
+                    {passage.topics.map(topic => (
+                      <span
+                        key={topic}
+                        style={{
+                          backgroundColor: ERA_COLORS[passage.era],
+                          color: '#F5F4F2',
+                          fontSize: '10px',
+                          padding: '2px 6px',
+                          borderRadius: '4px'
+                        }}
+                      >
+                        {topic}
+                      </span>
+                    ))}
+                  </div>
+                </>
+              );
+            })()}
+          </div>
+        )}
+      </div>
+    );
+  };
+
+  const TemporalEvolutionVisualization = () => {
+    const eraOrder = ['archaic', 'classical', 'hellenistic', 'imperial', 'lateAntique', 'byzantine'];
+    const eraData = eraOrder.map(era => ({
+      era,
+      passages: filteredPassages.filter(p => p.era === era),
+      count: filteredPassages.filter(p => p.era === era).length
+    }));
+    
+    const maxCount = Math.max(...eraData.map(e => e.count));
+    
+    return (
+      <div style={{ 
+        position: 'relative', 
+        width: '100%', 
+        height: '600px',
+        background: 'linear-gradient(135deg, #0D0D0F 0%, #1E1E24 100%)',
+        borderRadius: '12px',
+        border: '1px solid #C9A227',
+        padding: '40px'
+      }}>
+        <svg width="100%" height="100%" style={{ overflow: 'visible' }}>
+          {/* Timeline base */}
+          <line
+            x1="50"
+            y1="400"
+            x2="750"
+            y2="400"
+            stroke="#C9A227"
+            strokeWidth="3"
+          />
+          
+          {/* Era segments */}
+          {eraData.map((era, index) => {
+            const x = 50 + (index * 700 / (eraData.length - 1));
+            const height = (era.count / maxCount) * 300;
+            const animatedHeight = height * (0.5 + 0.5 * Math.sin((animationPhase + index * 45) * Math.PI / 180));
+            
+            return (
+              <g key={era.era}>
+                {/* Era column */}
+                <rect
+                  x={x - 20}
+                  y={400 - animatedHeight}
+                  width="40"
+                  height={animatedHeight}
+                  fill={ERA_COLORS[era.era]}
+                  opacity="0.7"
+                  rx="4"
+                />
                 
-                return (
-                  <g key={passage.id}>
-                    <line
-                      x1={cluster.x}
-                      y1={cluster.y}
-                      x2={px}
-                      y2={py}
-                      stroke={cluster.color}
-                      strokeWidth="1"
-                      opacity="0.4"
-                    />
+                {/* Era label */}
+                <text
+                  x={x}
+                  y="430"
+                  textAnchor="middle"
+                  fill="#F5F4F2"
+                  fontSize="12"
+                  fontWeight="600"
+                >
+                  {era.era.charAt(0).toUpperCase() + era.era.slice(1)}
+                </text>
+                
+                {/* Count label */}
+                <text
+                  x={x}
+                  y={400 - animatedHeight - 10}
+                  textAnchor="middle"
+                  fill="#C9A227"
+                  fontSize="14"
+                  fontWeight="bold"
+                >
+                  {era.count}
+                </text>
+                
+                {/* Individual passage dots */}
+                {era.passages.map((passage, pIndex) => {
+                  const dotY = 400 - (pIndex * (animatedHeight / era.count));
+                  const dotScale = 1 + 0.3 * Math.sin((animationPhase + pIndex * 60) * Math.PI / 180);
+                  
+                  return (
                     <circle
-                      cx={px}
-                      cy={py}
-                      r="4"
-                      fill={passage.language === 'greek' ? '#3B82F6' : '#DC2626'}
-                      stroke="#F5F4F2"
-                      strokeWidth="1"
-                      style={{
-                        cursor: 'pointer',
-                        transform: `scale(${selectedPassage?.id === passage.id ? 1.5 : 1})`,
-                        transition: 'transform 0.2s ease'
-                      }}
-                      onClick={() => setSelectedPassage(passage)}
+                      key={passage.id}
+                      cx={x + (Math.random() - 0.5) * 30}
+                      cy={dotY}
+                      r={4 * dotScale}
+                      fill={LANGUAGE_COLORS[passage.language]}
+                      opacity="0.8"
+                      style={{ cursor: 'pointer' }}
+                      onMouseEnter={() => setHoveredPassage(passage.id)}
+                      onMouseLeave={() => setHoveredPassage(null)}
                     />
-                  </g>
-                );
-              })}
-            </g>
-          ))}
+                  );
+                })}
+              </g>
+            );
+          })}
+          
+          {/* Flowing connections between eras */}
+          {eraData.slice(0, -1).map((era, index) => {
+            const x1 = 50 + (index * 700 / (eraData.length - 1));
+            const x2 = 50 + ((index + 1) * 700 / (eraData.length - 1));
+            const curve = 50 * Math.sin((animationPhase + index * 90) * Math.PI / 180);
+            
+            return (
+              <path
+                key={`flow-${index}`}
+                d={`M ${x1} 400 Q ${(x1 + x2) / 2} ${400 + curve} ${x2} 400`}
+                fill="none"
+                stroke="#C9A227"
+                strokeWidth="2"
+                opacity="0.4"
+                strokeDasharray="5,5"
+                strokeDashoffset={-animationPhase / 10}
+              />
+            );
+          })}
+        </svg>
+      </div>
+    );
+  };
+
+  const NetworkVisualization = () => {
+    const nodes = filteredPassages.map((passage, index) => ({
+      ...passage,
+      x: 400 + 300 * Math.cos((index * 2 * Math.PI) / filteredPassages.length + animationPhase * Math.PI / 180),
+      y: 300 + 200 * Math.sin((index * 2 * Math.PI) / filteredPassages.length + animationPhase * Math.PI / 180)
+    }));
+    
+    return (
+      <div style={{ 
+        position: 'relative', 
+        width: '100%', 
+        height: '600px',
+        background: 'radial-gradient(circle at center, #1E1E24 0%, #0D0D0F 100%)',
+        borderRadius: '12px',
+        border: '1px solid #C9A227',
+        overflow: 'hidden'
+      }}>
+        <svg width="100%" height="100%">
+          {/* Connection web */}
+          {nodes.map((n1, i) => 
+            nodes.slice(i + 1).map((n2, j) => {
+              const sharedTopics = n1.topics.filter(t => n2.topics.includes(t)).length;
+              if (sharedTopics === 0) return null;
+              
+              const distance = Math.sqrt((n1.x - n2.x) ** 2 + (n1.y - n2.y) ** 2);
+              const opacity = Math.max(0.1, (sharedTopics / 3) * (500 / distance));
+              
+              return (
+                <line
+                  key={`${n1.id}-${n2.id}`}
+                  x1={n1.x}
+                  y1={n1.y}
+                  x2={n2.x}
+                  y2={n2.y}
+                  stroke="#C9A227"
+                  strokeWidth={sharedTopics}
+                  opacity={opacity}
+                />
+              );
+            })
+          )}
+          
+          {/* Author clusters */}
+          {nodes.map((node, index) => {
+            const pulseRadius = 15 + 5 * Math.sin((animationPhase + index * 45) * Math.PI / 180);
+            
+            return (
+              <g key={node.id}>
+                {/* Outer pulse ring */}
+                <circle
+                  cx={node.x}
+                  cy={node.y}
+                  r={pulseRadius}
+                  fill="none"
+                  stroke={ERA_COLORS[node.era]}
+                  strokeWidth="2"
+                  opacity="0.3"
+                />
+                
+                {/* Main node */}
+                <circle
+                  cx={node.x}
+                  cy={node.y}
+                  r="12"
+                  fill={ERA_COLORS[node.era]}
+                  stroke={LANGUAGE_COLORS[node.language]}
+                  strokeWidth="3"
+                  style={{ cursor: 'pointer' }}
+                  onMouseEnter={() => setHoveredPassage(node.id)}
+                  onMouseLeave={() => setHoveredPassage(null)}
+                />
+                
+                {/* Author label */}
+                <text
+                  x={node.x}
+                  y={node.y - 25}
+                  textAnchor="middle"
+                  fill="#F5F4F2"
+                  fontSize="10"
+                  fontWeight="600"
+                >
+                  {node.author}
+                </text>
+              </g>
+            );
+          })}
         </svg>
       </div>
     );
@@ -506,11 +476,46 @@ export default function DataVisualization() {
         borderBottom: '2px solid #C9A227',
         padding: '24px 0'
       }}>
-        <div style={{ 
-          maxWidth: '1200px', 
-          margin: '0 auto', 
-          padding: '0 24px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between'
-        }
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
+            <div style={{
+              width: '48px',
+              height: '48px',
+              backgroundColor: '#C9A227',
+              borderRadius: '8px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '24px',
+              fontWeight: 'bold',
+              color: '#0D0D0F'
+            }}>
+              📊
+            </div>
+            <div>
+              <h1 style={{ 
+                fontSize: '32px', 
+                fontWeight: '700', 
+                margin: '0',
+                background: 'linear-gradient(135deg, #C9A227, #F5F4F2)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                color: 'transparent'
+              }}>
+                Classical Text Analytics
+              </h1>
+              <p style={{ 
+                color: '#9CA3AF', 
+                margin: '4px 0 0 0',
+                fontSize: '16px'
+              }}>
+                Interactive visualization of ancient Greek and Latin textual data
+              </p>
+            </div>
+          </div>
+
+          {/* View Controls */}
+          <div style={{ display: 'flex', gap: '8px' }}>
+            {[
+              { id: 'semantic', label: 'Semantic Space', icon: '🌌' },
+              { id: 'temporal', label

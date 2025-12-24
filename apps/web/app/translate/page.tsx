@@ -157,228 +157,516 @@ const PARADIGM_TABLES: Record<string, {type: string; forms: Array<{case: string;
       { case: "Accusative", singular: "λόγον", plural: "λόγους" },
       { case: "Vocative", singular: "λόγε", plural: "λόγοι" }
     ]
-  },
-    "virtus": {
-    type: "Third Declension (Feminine)",
-    forms: [
-      { case: "Nominative", singular: "virtūs", plural: "virtūtēs" },
-      { case: "Genitive", singular: "virtūtis", plural: "virtūtum" },
-      { case: "Dative", singular: "virtūtī", plural: "virtūtibus" },
-      { case: "Accusative", singular: "virtūtem", plural: "virtūtēs" },
-      { case: "Ablative", singular: "virtūte", plural: "virtūtibus" },
-      { case: "Vocative", singular: "virtūs", plural: "virtūtēs" }
-    ]
   }
 };
 
-const WordDetail = ({ word }: { word: string }) => {
-  const wordData = WORD_FORMS[word];
-  const variants = MANUSCRIPT_VARIANTS[word] || [];
-
-  if (!wordData) {
-    return <div style={{ backgroundColor: '#0D0D0F', color: '#F5F4F2', padding: '20px', transition: 'background-color 0.3s' }}>Word not found.</div>;
-  }
-
-  return (
-    <div style={{ backgroundColor: '#0D0D0F', color: '#F5F4F2', padding: '20px', fontFamily: 'sans-serif', transition: 'background-color 0.3s' }}>
-      <h2 style={{ color: '#C9A227', marginBottom: '10px', borderBottom: '1px solid #1E1E24', paddingBottom: '5px' }}>
-        {word}
-      </h2>
-
-      <div style={{ backgroundColor: '#1E1E24', padding: '15px', marginBottom: '15px', borderRadius: '5px', transition: 'background-color 0.3s' }}>
-        <h3 style={{ color: '#F5F4F2', marginBottom: '5px' }}>Translation:</h3>
-        <p style={{ color: '#9CA3AF', marginBottom: '10px' }}>{wordData.translation}</p>
-        <h3 style={{ color: '#F5F4F2', marginBottom: '5px' }}>Type:</h3>
-        <p style={{ color: '#9CA3AF', marginBottom: '10px' }}>{wordData.type}</p>
-        <h3 style={{ color: '#F5F4F2', marginBottom: '5px' }}>Forms:</h3>
-        <p style={{ color: '#9CA3AF', marginBottom: '10px' }}>{wordData.forms}</p>
-        {wordData.etymology && (
-          <>
-            <h3 style={{ color: '#F5F4F2', marginBottom: '5px' }}>Etymology:</h3>
-            <p style={{ color: '#9CA3AF', marginBottom: '10px' }}>{wordData.etymology}</p>
-          </>
-        )}
-        {wordData.lsj && (
-          <>
-            <h3 style={{ color: '#F5F4F2', marginBottom: '5px' }}>LSJ Definition:</h3>
-            <p style={{ color: '#9CA3AF', marginBottom: '10px' }}>{wordData.lsj}</p>
-          </>
-        )}
-      </div>
-
-        {wordData.semanticHistory && wordData.semanticHistory.length > 0 && (
-          <div style={{ backgroundColor: '#1E1E24', padding: '15px', marginBottom: '15px', borderRadius: '5px', transition: 'background-color 0.3s' }}>
-            <h3 style={{ color: '#F5F4F2', marginBottom: '10px' }}>Semantic History:</h3>
-            <ul style={{ listStyleType: 'none', padding: 0 }}>
-              {wordData.semanticHistory.map((entry, index) => (
-                <li key={index} style={{ marginBottom: '10px', padding: '10px', borderLeft: `5px solid ${entry.color}`, backgroundColor: '#141419', borderRadius: '5px', transition: 'background-color 0.3s' }}>
-                  <strong style={{ color: entry.color }}>{entry.period}:</strong> {entry.meaning}
-                  <p style={{ color: '#9CA3AF', fontSize: '0.9em' }}>Evidence: {entry.evidence}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-      {variants.length > 0 && (
-        <div style={{ backgroundColor: '#1E1E24', padding: '15px', marginBottom: '15px', borderRadius: '5px', transition: 'background-color 0.3s' }}>
-          <h3 style={{ color: '#F5F4F2', marginBottom: '10px' }}>Manuscript Variants:</h3>
-          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-            <thead>
-              <tr style={{ color: '#9CA3AF' }}>
-                <th style={{ padding: '8px', borderBottom: '1px solid #6B7280', textAlign: 'left' }}>Manuscript</th>
-                <th style={{ padding: '8px', borderBottom: '1px solid #6B7280', textAlign: 'left' }}>Reading</th>
-                <th style={{ padding: '8px', borderBottom: '1px solid #6B7280', textAlign: 'left' }}>Date</th>
-                <th style={{ padding: '8px', borderBottom: '1px solid #6B7280', textAlign: 'left' }}>Location</th>
-              </tr>
-            </thead>
-            <tbody>
-              {variants.map((variant, index) => (
-                <tr key={index} style={{ color: '#F5F4F2' }}>
-                  <td style={{ padding: '8px' }}>{variant.ms}</td>
-                  <td style={{ padding: '8px' }}>{variant.reading}</td>
-                  <td style={{ padding: '8px' }}>{variant.date}</td>
-                  <td style={{ padding: '8px' }}>{variant.location}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )}
-        {PARADIGM_TABLES[word] && (
-            <div style={{ backgroundColor: '#1E1E24', padding: '15px', marginBottom: '15px', borderRadius: '5px', transition: 'background-color 0.3s' }}>
-                <h3 style={{ color: '#F5F4F2', marginBottom: '10px' }}>Declension Table:</h3>
-                <p style={{ color: '#9CA3AF', marginBottom: '10px' }}>Type: {PARADIGM_TABLES[word].type}</p>
-                <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-                    <thead>
-                    <tr style={{ color: '#9CA3AF' }}>
-                        <th style={{ padding: '8px', borderBottom: '1px solid #6B7280', textAlign: 'left' }}>Case</th>
-                        <th style={{ padding: '8px', borderBottom: '1px solid #6B7280', textAlign: 'left' }}>Singular</th>
-                        <th style={{ padding: '8px', borderBottom: '1px solid #6B7280', textAlign: 'left' }}>Plural</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {PARADIGM_TABLES[word].forms.map((form, index) => (
-                        <tr key={index} style={{ color: '#F5F4F2' }}>
-                            <td style={{ padding: '8px' }}>{form.case}</td>
-                            <td style={{ padding: '8px' }}>{form.singular}</td>
-                            <td style={{ padding: '8px' }}>{form.plural}</td>
-                        </tr>
-                    ))}
-                    </tbody>
-                </table>
-            </div>
-        )}
-    </div>
-  );
-};
-
-
-export default function Home() {
-  const [selectedWord, setSelectedWord] = useState<string | null>(null);
+export default function MorphologicalAnalysis() {
+  const [activeWord, setActiveWord] = useState<string | null>(null);
+  const [activeTab, setActiveTab] = useState('overview');
+  const [selectedSentence, setSelectedSentence] = useState(EXAMPLE_SENTENCES[0]);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [hoveredWord, setHoveredWord] = useState<string | null>(null);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
 
   const handleWordClick = (word: string) => {
-    setSelectedWord(word);
+    setActiveWord(word === activeWord ? null : word);
+    setActiveTab('overview');
   };
 
-  const toggleMenu = () => {
-      setIsMenuOpen(!isMenuOpen);
+  const renderSemanticVisualization = (word: string) => {
+    const wordData = WORD_FORMS[word];
+    if (!wordData?.embedding) return null;
+
+    const center = { x: 150, y: 100 };
+    const radius = 60;
+
+    return (
+      <div style={{
+        background: 'linear-gradient(135deg, #1E1E24 0%, #141419 100%)',
+        borderRadius: '16px',
+        border: '1px solid rgba(201, 162, 39, 0.2)',
+        padding: '24px',
+        boxShadow: `
+          0 8px 32px rgba(0, 0, 0, 0.4),
+          inset 0 1px 0 rgba(255, 255, 255, 0.1)
+        `
+      }}>
+        <h4 style={{ 
+          color: '#F5F4F2', 
+          marginBottom: '16px', 
+          fontSize: '18px',
+          fontWeight: '600',
+          textShadow: '0 2px 4px rgba(0, 0, 0, 0.5)'
+        }}>
+          Semantic Embedding
+        </h4>
+        <svg width="300" height="200" style={{ display: 'block', margin: '0 auto' }}>
+          <defs>
+            <radialGradient id="semanticGradient" cx="50%" cy="50%">
+              <stop offset="0%" stopColor="#C9A227" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="#C9A227" stopOpacity="0" />
+            </radialGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          
+          {/* Background grid */}
+          <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(201, 162, 39, 0.1)" strokeWidth="1"/>
+          </pattern>
+          <rect width="300" height="200" fill="url(#grid)" />
+          
+          {/* Semantic space */}
+          <circle cx={center.x} cy={center.y} r={radius} fill="url(#semanticGradient)" />
+          
+          {/* Embedding dimensions */}
+          {wordData.embedding.map((value, index) => {
+            const angle = (index * 2 * Math.PI) / wordData.embedding!.length;
+            const x = center.x + Math.cos(angle) * radius * value;
+            const y = center.y + Math.sin(angle) * radius * value;
+            
+            return (
+              <g key={index}>
+                <line
+                  x1={center.x}
+                  y1={center.y}
+                  x2={x}
+                  y2={y}
+                  stroke="#C9A227"
+                  strokeWidth="2"
+                  filter="url(#glow)"
+                />
+                <circle
+                  cx={x}
+                  cy={y}
+                  r="4"
+                  fill="#C9A227"
+                  filter="url(#glow)"
+                >
+                  <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite" />
+                </circle>
+                <text
+                  x={x + (Math.cos(angle) * 15)}
+                  y={y + (Math.sin(angle) * 15)}
+                  fill="#9CA3AF"
+                  fontSize="10"
+                  textAnchor="middle"
+                  dominantBaseline="central"
+                >
+                  {`D${index + 1}`}
+                </text>
+              </g>
+            );
+          })}
+          
+          {/* Center point */}
+          <circle cx={center.x} cy={center.y} r="3" fill="#F5F4F2" />
+        </svg>
+      </div>
+    );
+  };
+
+  const renderSemanticHistory = (word: string) => {
+    const wordData = WORD_FORMS[word];
+    if (!wordData?.semanticHistory) return null;
+
+    return (
+      <div style={{
+        background: 'linear-gradient(135deg, #1E1E24 0%, #141419 100%)',
+        borderRadius: '16px',
+        border: '1px solid rgba(201, 162, 39, 0.2)',
+        padding: '24px',
+        boxShadow: `
+          0 8px 32px rgba(0, 0, 0, 0.4),
+          inset 0 1px 0 rgba(255, 255, 255, 0.1)
+        `
+      }}>
+        <h4 style={{ 
+          color: '#F5F4F2', 
+          marginBottom: '20px', 
+          fontSize: '18px',
+          fontWeight: '600',
+          textShadow: '0 2px 4px rgba(0, 0, 0, 0.5)'
+        }}>
+          Semantic Evolution
+        </h4>
+        <div style={{ position: 'relative', paddingLeft: '24px' }}>
+          {/* Timeline line */}
+          <div style={{
+            position: 'absolute',
+            left: '8px',
+            top: '0',
+            bottom: '0',
+            width: '2px',
+            background: 'linear-gradient(180deg, #C9A227, rgba(201, 162, 39, 0.2))'
+          }} />
+          
+          {wordData.semanticHistory.map((entry, index) => (
+            <div key={index} style={{
+              position: 'relative',
+              marginBottom: '24px',
+              paddingLeft: '24px'
+            }}>
+              {/* Timeline dot */}
+              <div style={{
+                position: 'absolute',
+                left: '-16px',
+                top: '8px',
+                width: '16px',
+                height: '16px',
+                borderRadius: '50%',
+                backgroundColor: entry.color,
+                border: '2px solid #0D0D0F',
+                boxShadow: `0 0 12px ${entry.color}40`
+              }} />
+              
+              <div style={{
+                backgroundColor: 'rgba(15, 15, 19, 0.6)',
+                borderRadius: '12px',
+                border: `1px solid ${entry.color}40`,
+                padding: '16px',
+                transform: 'translateZ(0)',
+                transition: 'all 0.3s ease',
+                cursor: 'pointer'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-2px) translateZ(0)';
+                e.currentTarget.style.boxShadow = `0 8px 24px rgba(0, 0, 0, 0.3), 0 0 20px ${entry.color}30`;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0) translateZ(0)';
+                e.currentTarget.style.boxShadow = 'none';
+              }}>
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  marginBottom: '8px'
+                }}>
+                  <span style={{
+                    backgroundColor: entry.color,
+                    color: '#0D0D0F',
+                    padding: '4px 8px',
+                    borderRadius: '6px',
+                    fontSize: '12px',
+                    fontWeight: '600',
+                    marginRight: '12px'
+                  }}>
+                    {entry.period}
+                  </span>
+                  <span style={{
+                    color: '#F5F4F2',
+                    fontWeight: '500'
+                  }}>
+                    {entry.meaning}
+                  </span>
+                </div>
+                <div style={{
+                  color: '#9CA3AF',
+                  fontSize: '14px',
+                  fontStyle: 'italic'
+                }}>
+                  {entry.evidence}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  };
+
+  const renderParadigm = (word: string) => {
+    const baseForm = word === 'μῆνιν' ? 'μῆνις' : word;
+    const paradigm = PARADIGM_TABLES[baseForm];
+    if (!paradigm) return null;
+
+    return (
+      <div style={{
+        background: 'linear-gradient(135deg, #1E1E24 0%, #141419 100%)',
+        borderRadius: '16px',
+        border: '1px solid rgba(201, 162, 39, 0.2)',
+        padding: '24px',
+        boxShadow: `
+          0 8px 32px rgba(0, 0, 0, 0.4),
+          inset 0 1px 0 rgba(255, 255, 255, 0.1)
+        `
+      }}>
+        <h4 style={{ 
+          color: '#F5F4F2', 
+          marginBottom: '16px', 
+          fontSize: '18px',
+          fontWeight: '600',
+          textShadow: '0 2px 4px rgba(0, 0, 0, 0.5)'
+        }}>
+          {paradigm.type}
+        </h4>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr 1fr',
+          gap: '1px',
+          backgroundColor: 'rgba(201, 162, 39, 0.2)',
+          borderRadius: '8px',
+          overflow: 'hidden'
+        }}>
+          {/* Header */}
+          <div style={{
+            backgroundColor: '#C9A227',
+            color: '#0D0D0F',
+            padding: '12px',
+            fontWeight: '600',
+            textAlign: 'center'
+          }}>Case</div>
+          <div style={{
+            backgroundColor: '#C9A227',
+            color: '#0D0D0F',
+            padding: '12px',
+            fontWeight: '600',
+            textAlign: 'center'
+          }}>Singular</div>
+          <div style={{
+            backgroundColor: '#C9A227',
+            color: '#0D0D0F',
+            padding: '12px',
+            fontWeight: '600',
+            textAlign: 'center'
+          }}>Plural</div>
+          
+          {/* Rows */}
+          {paradigm.forms.map((form, index) => (
+            <>
+              <div key={`case-${index}`} style={{
+                backgroundColor: '#1E1E24',
+                color: '#9CA3AF',
+                padding: '12px',
+                fontWeight: '500'
+              }}>{form.case}</div>
+              <div key={`sg-${index}`} style={{
+                backgroundColor: '#141419',
+                color: '#F5F4F2',
+                padding: '12px',
+                fontFamily: 'Georgia, serif',
+                fontSize: '16px',
+                textAlign: 'center',
+                position: 'relative'
+              }}
+              onMouseEnter={(e) => {
+                if (form.singular === word) {
+                  e.currentTarget.style.backgroundColor = 'rgba(201, 162, 39, 0.2)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#141419';
+              }}>
+                {form.singular}
+                {form.singular === word && (
+                  <div style={{
+                    position: 'absolute',
+                    top: '0',
+                    left: '0',
+                    right: '0',
+                    bottom: '0',
+                    border: '2px solid #C9A227',
+                    borderRadius: '4px',
+                    pointerEvents: 'none'
+                  }} />
+                )}
+              </div>
+              <div key={`pl-${index}`} style={{
+                backgroundColor: '#141419',
+                color: '#F5F4F2',
+                padding: '12px',
+                fontFamily: 'Georgia, serif',
+                fontSize: '16px',
+                textAlign: 'center'
+              }}>{form.plural}</div>
+            </>
+          ))}
+        </div>
+      </div>
+    );
+  };
+
+  const renderManuscriptVariants = (word: string) => {
+    const variants = MANUSCRIPT_VARIANTS[word];
+    if (!variants) return null;
+
+    return (
+      <div style={{
+        background: 'linear-gradient(135deg, #1E1E24 0%, #141419 100%)',
+        borderRadius: '16px',
+        border: '1px solid rgba(201, 162, 39, 0.2)',
+        padding: '24px',
+        boxShadow: `
+          0 8px 32px rgba(0, 0, 0, 0.4),
+          inset 0 1px 0 rgba(255, 255, 255, 0.1)
+        `
+      }}>
+        <h4 style={{ 
+          color: '#F5F4F2', 
+          marginBottom: '20px', 
+          fontSize: '18px',
+          fontWeight: '600',
+          textShadow: '0 2px 4px rgba(0, 0, 0, 0.5)'
+        }}>
+          Manuscript Tradition
+        </h4>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+          {variants.map((variant, index) => (
+            <div key={index} style={{
+              background: 'linear-gradient(135deg, rgba(15, 15, 19, 0.8) 0%, rgba(30, 30, 36, 0.4) 100%)',
+              borderRadius: '12px',
+              border: '1px solid rgba(107, 114, 128, 0.2)',
+              padding: '16px',
+              transition: 'all 0.3s ease',
+              cursor: 'pointer'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateX(4px)';
+              e.currentTarget.style.borderColor = 'rgba(201, 162, 39, 0.4)';
+              e.currentTarget.style.boxShadow = '0 4px 12px rgba(201, 162, 39, 0.2)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateX(0)';
+              e.currentTarget.style.borderColor = 'rgba(107, 114, 128, 0.2)';
+              e.currentTarget.style.boxShadow = 'none';
+            }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div>
+                  <span style={{
+                    color: '#C9A227',
+                    fontWeight: '600',
+                    marginRight: '12px'
+                  }}>
+                    {variant.ms}
+                  </span>
+                  <span style={{
+                    color: '#F5F4F2',
+                    fontFamily: 'Georgia, serif',
+                    fontSize: '18px'
+                  }}>
+                    {variant.reading}
+                  </span>
+                </div>
+                <div style={{ textAlign: 'right' }}>
+                  <div style={{ color: '#9CA3AF', fontSize: '14px' }}>
+                    {variant.date}
+                  </div>
+                  <div style={{ color: '#6B7280', fontSize: '12px' }}>
+                    {variant.location}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
   };
 
   return (
-    <div style={{ backgroundColor: '#0D0D0F', color: '#F5F4F2', minHeight: '100vh', display: 'flex', flexDirection: 'column', fontFamily: 'sans-serif', transition: 'background-color 0.3s' }}>
-
-      {/* Header */}
-      <header style={{ backgroundColor: '#1E1E24', padding: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', transition: 'background-color 0.3s' }}>
-        <h1 style={{ color: '#C9A227', margin: 0, fontSize: '24px' }}>Logos Professional</h1>
-          <button
-              onClick={toggleMenu}
-              style={{
-                  background: 'none',
-                  border: 'none',
-                  color: '#F5F4F2',
-                  fontSize: '24px',
-                  cursor: 'pointer',
-                  transition: 'color 0.3s'
-              }}
-          >
-              ☰
-          </button>
-      </header>
-
-      {/* Navigation Menu */}
-      <nav style={{ backgroundColor: '#141419', padding: '10px', display: isMenuOpen ? 'block' : 'none', transition: 'display 0.3s, background-color 0.3s' }}>
-          <ul style={{ listStyleType: 'none', padding: 0, margin: 0 }}>
-              <li><Link href="/" style={{ display: 'block', color: '#9CA3AF', padding: '10px', textDecoration: 'none', transition: 'color 0.3s', '&:hover': { color: '#F5F4F2' } }}>Home</Link></li>
-              <li><Link href="/about" style={{ display: 'block', color: '#9CA3AF', padding: '10px', textDecoration: 'none', transition: 'color 0.3s', '&:hover': { color: '#F5F4F2' } }}>About</Link></li>
-              <li><Link href="/contact" style={{ display: 'block', color: '#9CA3AF', padding: '10px', textDecoration: 'none', transition: 'color 0.3s', '&:hover': { color: '#F5F4F2' } }}>Contact</Link></li>
-          </ul>
-      </nav>
-
-      {/* Main Content */}
-      <main style={{ flex: 1, padding: '20px', display: 'flex', transition: 'padding 0.3s' }}>
-        {/* Word List */}
-        <div style={{ width: '250px', marginRight: '20px', backgroundColor: '#1E1E24', padding: '15px', borderRadius: '5px', transition: 'background-color 0.3s' }}>
-          <h2 style={{ color: '#C9A227', marginBottom: '15px', borderBottom: '1px solid #141419', paddingBottom: '5px' }}>Words</h2>
-          <ul style={{ listStyleType: 'none', padding: 0 }}>
-            {Object.keys(WORD_FORMS).sort().map(word => (
-              <li key={word}
-                  style={{
-                    padding: '10px',
-                    marginBottom: '5px',
-                    backgroundColor: hoveredWord === word ? '#141419' : 'transparent',
-                    color: '#F5F4F2',
-                    cursor: 'pointer',
-                    transition: 'background-color 0.3s, color 0.3s',
-                    borderRadius: '5px',
-                  }}
-                  onClick={() => handleWordClick(word)}
-                  onMouseEnter={() => setHoveredWord(word)}
-                  onMouseLeave={() => setHoveredWord(null)}
-              >
-                {word}
-                {word.charCodeAt(0) >= 913 && word.charCodeAt(0) <= 937 ? <span style={{color: '#3B82F6', marginLeft: '5px'}}>Α</span> : null}
-                {word.charCodeAt(0) >= 65 && word.charCodeAt(0) <= 90 ? <span style={{color: '#DC2626', marginLeft: '5px'}}>L</span> : null}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Word Detail */}
-        <div style={{ flex: 1, transition: 'flex 0.3s' }}>
-          {selectedWord && <WordDetail word={selectedWord} />}
-          {!selectedWord && (
-            <div style={{ backgroundColor: '#1E1E24', color: '#9CA3AF', padding: '20px', borderRadius: '5px', textAlign: 'center', transition: 'background-color 0.3s' }}>
-              Select a word to view details.
-            </div>
-          )}
-        </div>
-      </main>
-
-      {/* Example Sentences */}
-      <div style={{ backgroundColor: '#141419', padding: '20px', borderTop: '1px solid #1E1E24', transition: 'background-color 0.3s' }}>
-        <h2 style={{ color: '#C9A227', marginBottom: '15px' }}>Example Sentences</h2>
-        <ul style={{ listStyleType: 'none', padding: 0 }}>
-          {EXAMPLE_SENTENCES.map(sentence => (
-            <li key={sentence.id} style={{ marginBottom: '15px', padding: '15px', backgroundColor: '#1E1E24', borderRadius: '5px', transition: 'background-color 0.3s' }}>
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px' }}>
-                <span style={{ color: sentence.color, fontWeight: 'bold', marginRight: '5px' }}>{sentence.indicator}</span>
-                <span style={{ color: '#F5F4F2' }}>{sentence.language}</span>
-              </div>
-              <p style={{ color: '#F5F4F2', marginBottom: '5px' }}>{sentence.text}</p>
-              <p style={{ color: '#9CA3AF', marginBottom: '5px' }}>{sentence.translation}</p>
-              <p style={{ color: '#6B7280', fontSize: '0.8em' }}>Source: {sentence.source} ({sentence.period})</p>
-            </li>
-          ))}
-        </ul>
+    <div style={{
+      minHeight: '100vh',
+      backgroundColor: '#0D0D0F',
+      color: '#F5F4F2',
+      overflow: 'hidden'
+    }} ref={containerRef}>
+      
+      {/* Animated Background */}
+      <div style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        opacity: 0.03,
+        pointerEvents: 'none'
+      }}>
+        <svg width="100%" height="100%">
+          <defs>
+            <pattern id="morphPattern" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse">
+              <circle cx="60" cy="60" r="2" fill="#C9A227" opacity="0.5">
+                <animate attributeName="opacity" values="0.2;0.8;0.2" dur="4s" repeatCount="indefinite" />
+              </circle>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#morphPattern)" />
+        </svg>
       </div>
 
-      {/* Footer */}
-      <footer style={{ backgroundColor: '#1E1E24', color: '#9CA3AF', textAlign: 'center', padding: '10px', fontSize: '0.8em', transition: 'background-color 0.3s' }}>
-        &copy; 2024 Logos Professional. All rights reserved.
-      </footer>
-    </div>
-  );
-}
+      {/* Floating orbs */}
+      {[...Array(6)].map((_, i) => (
+        <div
+          key={i}
+          style={{
+            position: 'fixed',
+            width: `${20 + Math.random() * 40}px`,
+            height: `${20 + Math.random() * 40}px`,
+            backgroundColor: '#C9A227',
+            borderRadius: '50%',
+            opacity: 0.1,
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            animation: `float ${3 + Math.random() * 4}s ease-in-out infinite`,
+            animationDelay: `${Math.random() * 2}s`,
+            pointerEvents: 'none',
+            filter: 'blur(1px)',
+            zIndex: 1
+          }}
+        />
+      ))}
+
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        @keyframes pulse {
+          0%, 100% { transform: scale(1); opacity: 0.8; }
+          50% { transform: scale(1.05); opacity: 1; }
+        }
+        @keyframes shimmer {
+          0% { background-position: -200% 0; }
+          100% { background-position: 200% 0; }
+        }
+      `}</style>
+
+      {/* Header */}
+      <div style={{
+        position: 'relative',
+        zIndex: 10,
+        background: 'linear-gradient(135deg, rgba(30, 30, 36, 0.95) 0%, rgba(20, 20, 25, 0.95) 100%)',
+        backdropFilter: 'blur(20px)',
+        borderBottom: '1px solid rgba(201, 162, 39, 0.2)',
+        padding: '24px 0'
+      }}>
+        <div style={{
+          maxWidth: '1400px',
+          margin: '0 auto',
+          padding: '0 24px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between'
+        }}>
+          <div>
+            <h1 style={{
+              fontSize: '32px',
+              fontWeight: '700',
+              margin: 0,
+              background: 'linear-gradient(135deg, #F5F4F2 0%, #C9A227 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              textShadow: 'none'
+            }
