@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export default function LibrariesMap() {
   const [selectedLibrary, setSelectedLibrary] = useState(null);
@@ -13,6 +13,7 @@ export default function LibrariesMap() {
   const [animationPhase, setAnimationPhase] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
   const [particleAnimation, setParticleAnimation] = useState(0);
+  const containerRef = useRef(null);
 
   useEffect(() => {
     setIsLoaded(true);
@@ -29,15 +30,15 @@ export default function LibrariesMap() {
   }, []);
 
   const libraries = [
-    { 
-      id: 1, 
-      name: 'Library of Alexandria', 
-      location: 'Alexandria, Egypt', 
-      lat: 31.2, 
-      lng: 29.9, 
-      era: 'Hellenistic', 
-      founded: '295 BCE', 
-      description: 'Greatest library of the ancient world, part of the Mouseion', 
+    {
+      id: 1,
+      name: 'Library of Alexandria',
+      location: 'Alexandria, Egypt',
+      lat: 31.2,
+      lng: 29.9,
+      era: 'Hellenistic',
+      founded: '295 BCE',
+      description: 'Greatest library of the ancient world, part of the Mouseion',
       scrolls: 700000,
       x: 520,
       y: 340,
@@ -50,17 +51,18 @@ export default function LibrariesMap() {
       ],
       catalogSystem: 'Pinakes by Callimachus',
       preservation: 'Papyrus scrolls in cedar boxes',
-      importance: 10
+      importance: 10,
+      language: 'Greek'
     },
-    { 
-      id: 2, 
-      name: 'Library of Pergamon', 
-      location: 'Pergamon, Asia Minor', 
-      lat: 39.1, 
-      lng: 27.2, 
-      era: 'Hellenistic', 
-      founded: '197 BCE', 
-      description: 'Rival to Alexandria, invented parchment', 
+    {
+      id: 2,
+      name: 'Library of Pergamon',
+      location: 'Pergamon, Asia Minor',
+      lat: 39.1,
+      lng: 27.2,
+      era: 'Hellenistic',
+      founded: '197 BCE',
+      description: 'Rival to Alexandria, invented parchment',
       scrolls: 200000,
       x: 480,
       y: 260,
@@ -73,17 +75,18 @@ export default function LibrariesMap() {
       ],
       catalogSystem: 'Attalid royal registry',
       preservation: 'Parchment codices (pergamene invention)',
-      importance: 8
+      importance: 8,
+      language: 'Greek'
     },
-    { 
-      id: 3, 
-      name: 'Trajan\'s Library', 
-      location: 'Rome', 
-      lat: 41.9, 
-      lng: 12.5, 
-      era: 'Imperial', 
-      founded: '112 CE', 
-      description: 'Imperial Roman library complex with Greek and Latin sections', 
+    {
+      id: 3,
+      name: 'Trajan\'s Library',
+      location: 'Rome',
+      lat: 41.9,
+      lng: 12.5,
+      era: 'Imperial',
+      founded: '112 CE',
+      description: 'Imperial Roman library complex with Greek and Latin sections',
       scrolls: 300000,
       x: 380,
       y: 280,
@@ -96,17 +99,18 @@ export default function LibrariesMap() {
       ],
       catalogSystem: 'Bibliotheca Graeca et Latina division',
       preservation: 'Stone niches with bronze nameplates',
-      importance: 9
+      importance: 9,
+      language: 'Both'
     },
-    { 
-      id: 4, 
-      name: 'Library of Hadrian', 
-      location: 'Athens', 
-      lat: 37.98, 
-      lng: 23.73, 
-      era: 'Imperial', 
-      founded: '132 CE', 
-      description: 'Hadrian\'s philhellenic gift to Athens', 
+    {
+      id: 4,
+      name: 'Library of Hadrian',
+      location: 'Athens',
+      lat: 37.98,
+      lng: 23.73,
+      era: 'Imperial',
+      founded: '132 CE',
+      description: 'Hadrian\'s philhellenic gift to Athens',
       scrolls: 16800,
       x: 460,
       y: 300,
@@ -119,17 +123,18 @@ export default function LibrariesMap() {
       ],
       catalogSystem: 'Hadrianic imperial classification',
       preservation: 'Climate-controlled marble chambers',
-      importance: 7
+      importance: 7,
+      language: 'Greek'
     },
-    { 
-      id: 5, 
-      name: 'Library of Celsus', 
-      location: 'Ephesus', 
-      lat: 37.94, 
-      lng: 27.34, 
-      era: 'Imperial', 
-      founded: '135 CE', 
-      description: 'Memorial library for Tiberius Julius Celsus', 
+    {
+      id: 5,
+      name: 'Library of Celsus',
+      location: 'Ephesus',
+      lat: 37.94,
+      lng: 27.34,
+      era: 'Imperial',
+      founded: '135 CE',
+      description: 'Memorial library for Tiberius Julius Celsus',
       scrolls: 12000,
       x: 490,
       y: 290,
@@ -142,53 +147,80 @@ export default function LibrariesMap() {
       ],
       catalogSystem: 'Celsian memorial organization',
       preservation: 'Two-story architectural niches',
-      importance: 6
+      importance: 6,
+      language: 'Greek'
     },
-    { 
-      id: 6, 
-      name: 'Palatine Library', 
-      location: 'Rome', 
-      lat: 41.89, 
-      lng: 12.49, 
-      era: 'Imperial', 
-      founded: '28 BCE', 
-      description: 'Augustus\'s private library adjacent to Temple of Apollo', 
+    {
+      id: 6,
+      name: 'Palatine Library',
+      location: 'Rome',
+      lat: 41.89,
+      lng: 12.49,
+      era: 'Imperial',
+      founded: '28 BCE',
+      description: 'Augustus\'s private library adjacent to Temple of Apollo',
       scrolls: 50000,
       x: 375,
       y: 285,
-      scholars: ['Ovid', 'Horace', 'Propertius', 'Hyginus'],
-      collections: ['Augustan poetry', 'Sibylline books', 'Imperial correspondence', 'Mythographical works'],
-      fate: 'Fire damage under Domitian',
+      scholars: ['Varro', 'Verrius Flaccus', 'Pompeius Trogus'],
+      collections: ['Roman oratory', 'Epic poetry', 'Historical chronicles', 'Grammatical studies'],
+      fate: 'Destroyed in Great Fire of Rome 64 CE',
       manuscripts: [
-        { title: 'Metamorphoses', author: 'Ovid', variants: 33, apparatus: 'Epic poetry with commentary' },
-        { title: 'Odes', author: 'Horace', variants: 19, apparatus: 'Lyric poetry with metrical analysis' }
+        { title: 'Aeneid', author: 'Virgil', variants: 40, apparatus: 'Augustan recension' },
+        { title: 'Ab Urbe Condita', author: 'Livy', variants: 30, apparatus: 'Annalistic history' }
       ],
-      catalogSystem: 'Augustan court library system',
-      preservation: 'Temple precinct with divine protection',
-      importance: 8
+      catalogSystem: 'Augustan imperial registry',
+      preservation: 'Marble shelving with scroll labels',
+      importance: 9,
+      language: 'Latin'
     },
-    { 
-      id: 7, 
-      name: 'Library of Constantinople', 
-      location: 'Constantinople', 
-      lat: 41.01, 
-      lng: 28.98, 
-      era: 'Byzantine', 
-      founded: '357 CE', 
-      description: 'Imperial Byzantine library preserving classical texts', 
+    {
+      id: 7,
+      name: 'Imperial Library of Constantinople',
+      location: 'Constantinople',
+      lat: 41.01,
+      lng: 28.96,
+      era: 'Byzantine',
+      founded: '357 CE',
+      description: 'Extensive collection of Greek and Latin texts in the Byzantine capital',
       scrolls: 120000,
       x: 500,
       y: 270,
-      scholars: ['Photius', 'Constantine VII', 'Michael Psellus'],
-      collections: ['Greek patristics', 'Classical literature', 'Legal codices', 'Theological treatises'],
-      fate: 'Survived until 1453 CE',
+      scholars: ['John Tzetzes', 'Michael Psellos', 'Photios I'],
+      collections: ['Patristic theology', 'Byzantine law', 'Hagiographies', 'Classical commentaries'],
+      fate: 'Destroyed during Fourth Crusade 1204 CE',
       manuscripts: [
-        { title: 'Bibliotheca', author: 'Photius', variants: 22, apparatus: 'Literary criticism and summaries' },
-        { title: 'Chronographia', author: 'Michael Psellus', variants: 16, apparatus: 'Historical narrative' }
+        { title: 'Corpus Juris Civilis', author: 'Justinian I', variants: 50, apparatus: 'Legal code with glosses' },
+        { title: 'Bibliotheca', author: 'Photios I', variants: 28, apparatus: 'Literary reviews' }
       ],
-      catalogSystem: 'Byzantine imperial library classification',
-      preservation: 'Parchment codices with illuminations',
-      importance: 9
+      catalogSystem: 'Byzantine imperial archive',
+      preservation: 'Vaulted stone chambers',
+      importance: 10,
+      language: 'Both'
+    },
+    {
+      id: 8,
+      name: 'Caesarea Library',
+      location: 'Caesarea Maritima',
+      lat: 32.5,
+      lng: 34.9,
+      era: 'Late Antique',
+      founded: '3rd century CE',
+      description: 'Early Christian library with theological and biblical texts',
+      scrolls: 30000,
+      x: 510,
+      y: 350,
+      scholars: ['Origen', 'Eusebius of Caesarea', 'Pamphilus of Caesarea'],
+      collections: ['Biblical exegesis', 'Apologetic literature', 'Church history', 'Theological treatises'],
+      fate: 'Destroyed during Muslim conquest 7th century CE',
+      manuscripts: [
+        { title: 'Hexapla', author: 'Origen', variants: 60, apparatus: 'Critical edition of Hebrew Bible' },
+        { title: 'Ecclesiastical History', author: 'Eusebius', variants: 35, apparatus: 'Church historiography' }
+      ],
+      catalogSystem: 'Early Christian organization',
+      preservation: 'Scroll racks',
+      importance: 8,
+      language: 'Greek'
     }
   ];
 
@@ -201,475 +233,287 @@ export default function LibrariesMap() {
     'Byzantine': '#059669'
   };
 
-  const filteredLibraries = libraries.filter(lib => {
-    const matchesEra = eraFilter === 'all' || lib.era === eraFilter;
-    const matchesSearch = lib.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         lib.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         lib.scholars.some(scholar => scholar.toLowerCase().includes(searchTerm.toLowerCase()));
-    return matchesEra && matchesSearch;
+  const filteredLibraries = libraries.filter(library => {
+    const eraMatch = eraFilter === 'all' || library.era === eraFilter;
+    const searchMatch = library.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      library.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      library.description.toLowerCase().includes(searchTerm.toLowerCase());
+    return eraMatch && searchMatch;
   });
 
-  const generateParticles = () => {
-    const particles = [];
-    for (let i = 0; i < 50; i++) {
-      particles.push({
-        x: Math.random() * 800,
-        y: Math.random() * 600,
-        size: Math.random() * 3 + 1,
-        opacity: Math.random() * 0.6 + 0.2,
-        speed: Math.random() * 0.5 + 0.1,
-        phase: Math.random() * Math.PI * 2
-      });
+  const getLanguageIndicator = (language) => {
+    if (language === 'Greek') {
+      return <span style={{ color: '#3B82F6', fontWeight: 'bold', fontSize: '0.8em' }}>Α</span>;
+    } else if (language === 'Latin') {
+      return <span style={{ color: '#DC2626', fontWeight: 'bold', fontSize: '0.8em' }}>L</span>;
+    } else if (language === 'Both') {
+      return <><span style={{ color: '#3B82F6', fontWeight: 'bold', fontSize: '0.8em' }}>Α</span><span style={{ color: '#DC2626', fontWeight: 'bold', fontSize: '0.8em' }}>L</span></>;
     }
-    return particles;
+    return null;
   };
 
-  const particles = generateParticles();
-
-  const renderConnectionLines = () => {
-    if (!selectedLibrary) return null;
-    
-    return libraries
-      .filter(lib => lib.id !== selectedLibrary.id)
-      .map(lib => (
-        <line
-          key={`connection-${lib.id}`}
-          x1={selectedLibrary.x}
-          y1={selectedLibrary.y}
-          x2={lib.x}
-          y2={lib.y}
-          stroke="#C9A227"
-          strokeWidth="1"
-          opacity="0.3"
-          style={{
-            filter: 'drop-shadow(0px 0px 4px #C9A227)',
-            animation: `pulse 2s infinite alternate`
-          }}
-        />
-      ));
+  const getColorForImportance = (importance) => {
+    const baseColor = '#C9A227'; // Gold
+    const opacity = importance / 10;
+    return `rgba(201, 162, 39, ${opacity})`; // Adjust opacity based on importance
   };
 
-  const render3DLibraryMarker = (library, index) => {
-    const isSelected = selectedLibrary?.id === library.id;
-    const isHovered = hoveredLibrary?.id === library.id;
-    const size = 8 + (library.importance * 2);
-    const glowIntensity = isSelected ? 20 : isHovered ? 15 : 8;
-    const pulsePhase = (animationPhase + index * 60) % 360;
-    
-    return (
-      <g key={library.id} style={{ cursor: 'pointer' }}>
-        {/* Outer glow ring */}
-        <circle
-          cx={library.x}
-          cy={library.y}
-          r={size + Math.sin(pulsePhase * Math.PI / 180) * 5}
-          fill="none"
-          stroke={eraColors[library.era]}
-          strokeWidth="2"
-          opacity="0.4"
+  const MapView = () => (
+    <div style={{ position: 'relative', width: '100%', height: '600px', overflow: 'hidden' }}>
+      <svg width="100%" height="100%" viewBox="0 0 800 500">
+        <defs>
+          <pattern id="water" width="6" height="6" patternUnits="userSpaceOnUse">
+            <path d="M0,2 L6,2 L6,3 L0,3 Z" fill="none" stroke="#1E1E24" strokeWidth="1" />
+            <path d="M2,0 L2,6 L3,6 L3,0 Z" fill="none" stroke="#1E1E24" strokeWidth="1" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#water)" />
+
+        {filteredLibraries.map(library => (
+          <circle
+            key={library.id}
+            cx={library.x}
+            cy={library.y}
+            r={library.importance * 2}
+            fill={getColorForImportance(library.importance)}
+            stroke={hoveredLibrary?.id === library.id ? '#F5F4F2' : 'none'}
+            strokeWidth={2}
+            style={{
+              cursor: 'pointer',
+              transition: 'fill 0.3s, stroke 0.3s',
+              opacity: isLoaded ? 1 : 0,
+            }}
+            onMouseEnter={() => setHoveredLibrary(library)}
+            onMouseLeave={() => setHoveredLibrary(null)}
+            onClick={() => setSelectedLibrary(library)}
+          />
+        ))}
+      </svg>
+    </div>
+  );
+
+  const ListView = () => (
+    <div style={{ width: '100%' }}>
+      {filteredLibraries.map(library => (
+        <div
+          key={library.id}
           style={{
-            filter: `drop-shadow(0px 0px ${glowIntensity}px ${eraColors[library.era]})`
+            backgroundColor: '#1E1E24',
+            color: '#F5F4F2',
+            padding: '15px',
+            marginBottom: '10px',
+            borderRadius: '8px',
+            cursor: 'pointer',
+            transition: 'background-color 0.3s',
+            border: hoveredLibrary?.id === library.id ? `2px solid #C9A227` : 'none',
           }}
-        />
-        
-        {/* Middle energy ring */}
-        <circle
-          cx={library.x}
-          cy={library.y}
-          r={size + 3}
-          fill="none"
-          stroke="#C9A227"
-          strokeWidth="1"
-          opacity={0.6 + Math.sin(pulsePhase * Math.PI / 180) * 0.3}
-          style={{
-            filter: 'drop-shadow(0px 0px 8px #C9A227)',
-            transform: `rotate(${animationPhase}deg)`,
-            transformOrigin: `${library.x}px ${library.y}px`
-          }}
-        />
-        
-        {/* Main library marker */}
-        <circle
-          cx={library.x}
-          cy={library.y}
-          r={size}
-          fill={`url(#gradient-${library.id})`}
-          stroke={isSelected ? '#F5F4F2' : eraColors[library.era]}
-          strokeWidth={isSelected ? 3 : 2}
-          style={{
-            filter: `drop-shadow(0px 4px 12px rgba(0,0,0,0.8)) drop-shadow(0px 0px ${glowIntensity}px ${eraColors[library.era]})`,
-            transform: isHovered ? 'scale(1.2)' : 'scale(1)',
-            transformOrigin: `${library.x}px ${library.y}px`,
-            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
-          }}
-          onClick={() => setSelectedLibrary(library)}
           onMouseEnter={() => setHoveredLibrary(library)}
           onMouseLeave={() => setHoveredLibrary(null)}
-        />
-        
-        {/* Inner highlight */}
-        <circle
-          cx={library.x - 2}
-          cy={library.y - 2}
-          r={size * 0.4}
-          fill="rgba(245, 244, 242, 0.6)"
-          style={{
-            filter: 'blur(1px)'
-          }}
-        />
-        
-        {/* Scroll count indicator */}
-        <text
-          x={library.x}
-          y={library.y + size + 15}
-          fill="#F5F4F2"
-          fontSize="10"
-          textAnchor="middle"
-          style={{
-            fontWeight: 'bold',
-            textShadow: '0px 0px 4px rgba(0,0,0,0.8)',
-            opacity: isHovered || isSelected ? 1 : 0.7
-          }}
+          onClick={() => setSelectedLibrary(library)}
         >
-          {(library.scrolls / 1000).toFixed(0)}k
-        </text>
-        
-        {/* Library name */}
-        {(isHovered || isSelected) && (
-          <text
-            x={library.x}
-            y={library.y - size - 10}
-            fill="#F5F4F2"
-            fontSize="12"
-            textAnchor="middle"
-            style={{
-              fontWeight: 'bold',
-              textShadow: '0px 0px 6px rgba(0,0,0,0.9)',
-              filter: 'drop-shadow(0px 0px 4px #C9A227)'
-            }}
-          >
-            {library.name}
-          </text>
-        )}
-        
-        {/* Era indicator */}
-        <rect
-          x={library.x + size - 8}
-          y={library.y - size + 2}
-          width="12"
-          height="8"
-          fill={eraColors[library.era]}
-          rx="2"
-          style={{
-            filter: 'drop-shadow(0px 0px 4px rgba(0,0,0,0.6))'
-          }}
-        />
-        
-        {/* Gradient definitions */}
-        <defs>
-          <radialGradient id={`gradient-${library.id}`} cx="0.3" cy="0.3">
-            <stop offset="0%" stopColor={eraColors[library.era]} stopOpacity="0.9" />
-            <stop offset="70%" stopColor={eraColors[library.era]} stopOpacity="0.7" />
-            <stop offset="100%" stopColor="#141419" stopOpacity="0.9" />
-          </radialGradient>
-        </defs>
-      </g>
-    );
-  };
+          <h3 style={{ margin: '0 0 5px 0', fontSize: '1.2em' }}>
+            {library.name} {getLanguageIndicator(library.language)}
+          </h3>
+          <p style={{ margin: '0', color: '#9CA3AF' }}>{library.location}</p>
+        </div>
+      ))}
+    </div>
+  );
 
-  const renderParticles = () => {
-    return particles.map((particle, index) => (
-      <circle
-        key={`particle-${index}`}
-        cx={particle.x + Math.sin((particleAnimation + particle.phase) * 0.1) * 20}
-        cy={particle.y + Math.cos((particleAnimation + particle.phase) * 0.1) * 20}
-        r={particle.size}
-        fill="#C9A227"
-        opacity={particle.opacity * (0.3 + Math.sin(particleAnimation * 0.05 + particle.phase) * 0.3)}
-        style={{
-          filter: 'blur(1px) drop-shadow(0px 0px 2px #C9A227)'
-        }}
-      />
-    ));
-  };
 
   return (
-    <div style={{ 
-      backgroundColor: '#0D0D0F', 
-      minHeight: '100vh', 
+    <div style={{
+      backgroundColor: '#0D0D0F',
       color: '#F5F4F2',
-      fontFamily: 'system-ui, -apple-system, sans-serif',
-      position: 'relative',
-      overflow: 'hidden'
+      fontFamily: 'sans-serif',
+      minHeight: '100vh',
+      padding: '20px'
     }}>
-      {/* Animated background gradient */}
       <div style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        background: `radial-gradient(circle at ${50 + Math.sin(animationPhase * 0.01) * 20}% ${50 + Math.cos(animationPhase * 0.01) * 20}%, rgba(201, 162, 39, 0.1) 0%, rgba(13, 13, 15, 0.9) 50%)`,
-        zIndex: -2
-      }} />
-      
-      {/* Header */}
-      <div style={{ 
-        backgroundColor: 'rgba(30, 30, 36, 0.9)', 
-        padding: '20px',
-        borderBottom: '2px solid #C9A227',
-        backdropFilter: 'blur(10px)',
-        boxShadow: '0 8px 32px rgba(0,0,0,0.4)'
+        maxWidth: '1200px',
+        margin: '0 auto'
       }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', maxWidth: '1200px', margin: '0 auto' }}>
-          <div>
-            <h1 style={{ 
-              fontSize: '2.5rem', 
-              margin: 0, 
-              background: 'linear-gradient(135deg, #C9A227, #F5F4F2)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              textShadow: '0 0 30px rgba(201, 162, 39, 0.5)',
-              fontWeight: '800'
-            }}>
-              Ancient Libraries Map
-            </h1>
-            <p style={{ margin: '5px 0 0 0', fontSize: '1.1rem', color: '#9CA3AF' }}>
-              Interactive visualization of classical manuscript repositories
-            </p>
-          </div>
-          
-          <Link href="/" style={{
-            color: '#C9A227',
-            textDecoration: 'none',
-            padding: '12px 24px',
-            border: '2px solid #C9A227',
-            borderRadius: '8px',
-            transition: 'all 0.3s ease',
-            fontWeight: 'bold',
-            background: 'rgba(201, 162, 39, 0.1)',
-            backdropFilter: 'blur(5px)',
-            boxShadow: '0 4px 15px rgba(201, 162, 39, 0.2)'
-          }}
-          onMouseEnter={(e) => {
-            e.target.style.background = '#C9A227';
-            e.target.style.color = '#0D0D0F';
-            e.target.style.transform = 'translateY(-2px)';
-            e.target.style.boxShadow = '0 8px 25px rgba(201, 162, 39, 0.4)';
-          }}
-          onMouseLeave={(e) => {
-            e.target.style.background = 'rgba(201, 162, 39, 0.1)';
-            e.target.style.color = '#C9A227';
-            e.target.style.transform = 'translateY(0)';
-            e.target.style.boxShadow = '0 4px 15px rgba(201, 162, 39, 0.2)';
-          }}>
-            ← Return to Dashboard
-          </Link>
-        </div>
-      </div>
 
-      {/* Controls */}
-      <div style={{ 
-        padding: '20px',
-        background: 'rgba(20, 20, 25, 0.8)',
-        backdropFilter: 'blur(10px)',
-        borderBottom: '1px solid rgba(201, 162, 39, 0.3)'
-      }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', gap: '20px', flexWrap: 'wrap', alignItems: 'center' }}>
-          <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-            <label style={{ color: '#9CA3AF', fontWeight: 'bold' }}>Era Filter:</label>
-            <select 
-              value={eraFilter} 
-              onChange={(e) => setEraFilter(e.target.value)}
+        <h1 style={{
+          fontSize: '2.5em',
+          fontWeight: 'bold',
+          marginBottom: '20px',
+          textAlign: 'center',
+          color: '#C9A227',
+          letterSpacing: '1px',
+          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)'
+        }}>
+          Ancient Libraries of the World
+        </h1>
+
+        <div style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          marginBottom: '20px'
+        }}>
+          <div style={{ display: 'flex', gap: '10px' }}>
+            <button
               style={{
-                backgroundColor: '#1E1E24',
+                backgroundColor: viewMode === 'map' ? '#1E1E24' : '#141419',
                 color: '#F5F4F2',
-                border: '2px solid #C9A227',
-                borderRadius: '6px',
-                padding: '8px 12px',
-                fontSize: '14px',
-                outline: 'none',
-                cursor: 'pointer'
+                padding: '10px 15px',
+                border: 'none',
+                borderRadius: '5px',
+                cursor: 'pointer',
+                transition: 'background-color 0.3s',
+                fontWeight: viewMode === 'map' ? 'bold' : 'normal'
               }}
+              onClick={() => setViewMode('map')}
             >
-              <option value="all">All Eras</option>
-              {Object.keys(eraColors).map(era => (
-                <option key={era} value={era}>{era}</option>
-              ))}
-            </select>
-          </div>
-          
-          <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-            <label style={{ color: '#9CA3AF', fontWeight: 'bold' }}>Search:</label>
-            <input
-              type="text"
-              placeholder="Library, location, or scholar..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
+              Map View
+            </button>
+            <button
               style={{
-                backgroundColor: '#1E1E24',
+                backgroundColor: viewMode === 'list' ? '#1E1E24' : '#141419',
                 color: '#F5F4F2',
-                border: '2px solid #C9A227',
-                borderRadius: '6px',
-                padding: '8px 12px',
-                fontSize: '14px',
-                outline: 'none',
-                minWidth: '250px'
+                padding: '10px 15px',
+                border: 'none',
+                borderRadius: '5px',
+                cursor: 'pointer',
+                transition: 'background-color 0.3s',
+                fontWeight: viewMode === 'list' ? 'bold' : 'normal'
               }}
-            />
+              onClick={() => setViewMode('list')}
+            >
+              List View
+            </button>
           </div>
-          
-          <button
-            onClick={() => setShowManuscripts(!showManuscripts)}
-            style={{
-              backgroundColor: showManuscripts ? '#C9A227' : 'transparent',
-              color: showManuscripts ? '#0D0D0F' : '#C9A227',
-              border: '2px solid #C9A227',
-              borderRadius: '6px',
-              padding: '8px 16px',
-              fontSize: '14px',
-              cursor: 'pointer',
-              fontWeight: 'bold',
-              transition: 'all 0.3s ease'
-            }}
-          >
-            {showManuscripts ? 'Hide' : 'Show'} Manuscripts
-          </button>
-        </div>
-      </div>
 
-      <div style={{ display: 'flex', maxWidth: '1200px', margin: '0 auto' }}>
-        {/* Map Container */}
-        <div style={{ flex: 1, position: 'relative' }}>
-          <svg
-            width="800"
-            height="600"
+          <input
+            type="text"
+            placeholder="Search libraries..."
             style={{
-              backgroundColor: 'rgba(20, 20, 25, 0.5)',
-              border: '1px solid rgba(201, 162, 39, 0.3)',
-              borderRadius: '12px',
-              margin: '20px',
-              backdropFilter: 'blur(5px)',
-              boxShadow: '0 10px 40px rgba(0,0,0,0.4)'
+              backgroundColor: '#141419',
+              color: '#F5F4F2',
+              padding: '10px',
+              border: 'none',
+              borderRadius: '5px',
+              width: '300px'
             }}
-          >
-            {/* Background Mediterranean */}
-            <rect
-              width="800"
-              height="600"
-              fill="url(#mapGradient)"
-            />
-            
-            {/* Animated particles */}
-            {renderParticles()}
-            
-            {/* Connection lines */}
-            {renderConnectionLines()}
-            
-            {/* Libraries */}
-            {filteredLibraries.map((library, index) => render3DLibraryMarker(library, index))}
-            
-            {/* Gradient definitions */}
-            <defs>
-              <radialGradient id="mapGradient" cx="0.5" cy="0.5">
-                <stop offset="0%" stopColor="rgba(59, 130, 246, 0.1)" />
-                <stop offset="50%" stopColor="rgba(13, 13, 15, 0.3)" />
-                <stop offset="100%" stopColor="rgba(13, 13, 15, 0.8)" />
-              </radialGradient>
-            </defs>
-          </svg>
-          
-          {/* Era Legend */}
-          <div style={{
-            position: 'absolute',
-            bottom: '30px',
-            left: '30px',
-            background: 'rgba(30, 30, 36, 0.9)',
-            padding: '15px',
-            borderRadius: '10px',
-            border: '1px solid rgba(201, 162, 39, 0.4)',
-            backdropFilter: 'blur(10px)',
-            boxShadow: '0 8px 32px rgba(0,0,0,0.4)'
-          }}>
-            <h4 style={{ margin: '0 0 10px 0', color: '#C9A227', fontSize: '14px' }}>Historical Periods</h4>
-            {Object.entries(eraColors).map(([era, color]) => (
-              <div key={era} style={{ display: 'flex', alignItems: 'center', gap: '8px', margin: '5px 0' }}>
-                <div style={{ 
-                  width: '12px', 
-                  height: '12px', 
-                  backgroundColor: color, 
-                  borderRadius: '50%',
-                  boxShadow: `0 0 8px ${color}`
-                }} />
-                <span style={{ fontSize: '12px', color: '#F5F4F2' }}>{era}</span>
-              </div>
-            ))}
-          </div>
+            value={searchTerm}
+            onChange={e => setSearchTerm(e.target.value)}
+          />
         </div>
 
-        {/* Info Panel */}
+        <div style={{ display: 'flex', gap: '20px', marginBottom: '20px' }}>
+          <select
+            style={{
+              backgroundColor: '#141419',
+              color: '#F5F4F2',
+              padding: '10px',
+              border: 'none',
+              borderRadius: '5px',
+              cursor: 'pointer'
+            }}
+            value={eraFilter}
+            onChange={e => setEraFilter(e.target.value)}
+          >
+            <option value="all">All Eras</option>
+            <option value="Archaic">Archaic</option>
+            <option value="Classical">Classical</option>
+            <option value="Hellenistic">Hellenistic</option>
+            <option value="Imperial">Imperial</option>
+            <option value="Late Antique">Late Antique</option>
+            <option value="Byzantine">Byzantine</option>
+          </select>
+        </div>
+
+        <div ref={containerRef} style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+          {viewMode === 'map' ? <MapView /> : <ListView />}
+        </div>
+
         {selectedLibrary && (
           <div style={{
-            width: '400px',
-            backgroundColor: 'rgba(30, 30, 36, 0.95)',
+            backgroundColor: '#1E1E24',
+            color: '#F5F4F2',
             padding: '20px',
-            margin: '20px 20px 20px 0',
-            borderRadius: '12px',
-            border: '2px solid #C9A227',
-            backdropFilter: 'blur(10px)',
-            boxShadow: '0 10px 40px rgba(0,0,0,0.4)',
-            maxHeight: '560px',
-            overflowY: 'auto',
-            transform: isLoaded ? 'translateX(0)' : 'translateX(100%)',
-            transition: 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
+            borderRadius: '8px',
+            marginTop: '20px',
+            boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.3)',
+            position: 'relative'
           }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '15px' }}>
-              <h2 style={{ 
-                fontSize: '1.5rem', 
-                margin: 0, 
-                color: '#C9A227',
-                textShadow: '0 0 10px rgba(201, 162, 39, 0.5)'
-              }}>
-                {selectedLibrary.name}
-              </h2>
-              <button
-                onClick={() => setSelectedLibrary(null)}
-                style={{
-                  background: 'none',
-                  border: 'none',
-                  color: '#9CA3AF',
-                  fontSize: '20px',
-                  cursor: 'pointer',
-                  padding: '5px'
-                }}
-              >
-                ×
-              </button>
-            </div>
-            
-            <div style={{ marginBottom: '15px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
-                <span style={{
-                  backgroundColor: eraColors[selectedLibrary.era],
-                  color: '#F5F4F2',
-                  padding: '4px 8px',
-                  borderRadius: '12px',
-                  fontSize: '12px',
-                  fontWeight: 'bold',
-                  boxShadow: `0 0 10px ${eraColors[selectedLibrary.era]}`
-                }}>
-                  {selectedLibrary.era}
-                </span>
-                <span style={{ color: '#9CA3AF', fontSize: '14px' }}>Founded {selectedLibrary.founded}</span>
-              </div>
-              <p style={{ color: '#9CA3AF', margin: '8px 0', fontSize: '14px' }}>📍 {selectedLibrary.location}</p>
-              <p style={{ color: '#F5F4F2', margin: '8px 0', lineHeight: '1.5' }}>{selectedLibrary.description}</p>
-            </div>
+            <button style={{
+              position: 'absolute',
+              top: '10px',
+              right: '10px',
+              backgroundColor: 'transparent',
+              border: 'none',
+              color: '#9CA3AF',
+              cursor: 'pointer',
+              fontSize: '1.2em'
+            }} onClick={() => setSelectedLibrary(null)}>
+              X
+            </button>
+            <h2 style={{ fontSize: '1.8em', fontWeight: 'bold', marginBottom: '10px' }}>{selectedLibrary.name} {getLanguageIndicator(selectedLibrary.language)}</h2>
+            <p style={{ color: '#9CA3AF', marginBottom: '5px' }}>Location: {selectedLibrary.location}</p>
+            <p style={{ color: '#9CA3AF', marginBottom: '5px' }}>Era: {selectedLibrary.era}</p>
+            <p style={{ marginBottom: '10px', lineHeight: '1.6' }}>{selectedLibrary.description}</p>
+            <p style={{ color: '#9CA3AF', marginBottom: '5px' }}>Founded: {selectedLibrary.founded}</p>
+            <p style={{ color: '#9CA3AF', marginBottom: '5px' }}>Estimated Scrolls: {selectedLibrary.scrolls ? selectedLibrary.scrolls.toLocaleString() : 'Unknown'}</p>
+            <p style={{ color: '#9CA3AF', marginBottom: '5px' }}>Catalog System: {selectedLibrary.catalogSystem}</p>
+            <p style={{ color: '#9CA3AF', marginBottom: '5px' }}>Preservation: {selectedLibrary.preservation}</p>
+            <p style={{ color: '#9CA3AF', marginBottom: '5px' }}>Fate: {selectedLibrary.fate}</p>
 
-            <div style={{ 
-              display: 'grid', 
-              gridTemplateColumns: '1fr 1fr', 
-              gap: '15px', 
-              marginBottom: '20px' 
-            }}>
-              <div style
+            {selectedLibrary.scholars && selectedLibrary.scholars.length > 0 && (
+              <>
+                <h3 style={{ fontSize: '1.2em', marginTop: '15px', marginBottom: '5px' }}>Scholars:</h3>
+                <ul style={{ listStyleType: 'none', padding: 0 }}>
+                  {selectedLibrary.scholars.map((scholar, index) => (
+                    <li key={index} style={{ color: '#9CA3AF', marginBottom: '3px' }}>{scholar}</li>
+                  ))}
+                </ul>
+              </>
+            )}
+
+            {selectedLibrary.collections && selectedLibrary.collections.length > 0 && (
+              <>
+                <h3 style={{ fontSize: '1.2em', marginTop: '15px', marginBottom: '5px' }}>Collections:</h3>
+                <ul style={{ listStyleType: 'none', padding: 0 }}>
+                  {selectedLibrary.collections.map((collection, index) => (
+                    <li key={index} style={{ color: '#9CA3AF', marginBottom: '3px' }}>{collection}</li>
+                  ))}
+                </ul>
+              </>
+            )}
+
+            <button
+              style={{
+                backgroundColor: showManuscripts ? '#DC2626' : '#059669',
+                color: '#F5F4F2',
+                padding: '10px 15px',
+                border: 'none',
+                borderRadius: '5px',
+                cursor: 'pointer',
+                marginTop: '20px',
+                transition: 'background-color 0.3s'
+              }}
+              onClick={() => setShowManuscripts(!showManuscripts)}
+            >
+              {showManuscripts ? 'Hide Manuscripts' : 'Show Manuscripts'}
+            </button>
+
+            {showManuscripts && selectedLibrary.manuscripts && selectedLibrary.manuscripts.length > 0 && (
+              <>
+                <h3 style={{ fontSize: '1.2em', marginTop: '15px', marginBottom: '5px' }}>Notable Manuscripts:</h3>
+                <ul style={{ listStyleType: 'none', padding: 0 }}>
+                  {selectedLibrary.manuscripts.map((manuscript, index) => (
+                    <li key={index} style={{ color: '#9CA3AF', marginBottom: '3px' }}>
+                      <strong style={{ color: '#F5F4F2' }}>{manuscript.title}</strong> by {manuscript.author}
+                      {manuscript.variants && <>- {manuscript.variants} variants</>}
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}

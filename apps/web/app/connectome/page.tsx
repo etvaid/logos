@@ -215,8 +215,20 @@ const CONCEPTS: Node[] = [
     x: 580,
     y: 200,
     radius: 27,
-    description: 'Art of persuasive speaking and argumentation, focusing on logical, ethical, and emotional appeals.',
-    connections: ['cicero', 'aristotle']
+    description: 'Art of persuasive speaking and argumentation, essential for political and legal life in ancient Greece and Rome.',
+    connections: ['cicero']
+  },
+  {
+    id: 'ethics',
+    name: 'Ethics',
+    type: 'concept',
+    era: 'classical',
+    language: 'greek',
+    x: 650,
+    y: 350,
+    radius: 30,
+    description: 'Moral principles governing a person\'s behavior or the conducting of an activity.',
+    connections: ['aristotle', 'seneca']
   },
   {
     id: 'tragic-form',
@@ -227,7 +239,7 @@ const CONCEPTS: Node[] = [
     x: 80,
     y: 350,
     radius: 26,
-    description: 'Dramatic structure exploring human suffering, fate, and moral dilemmas.',
+    description: 'Dramatic structure involving a protagonist\'s downfall due to fate, hubris, or tragic flaw.',
     connections: ['sophocles', 'seneca']
   },
   {
@@ -236,11 +248,11 @@ const CONCEPTS: Node[] = [
     type: 'concept',
     era: 'archaic',
     language: 'greek',
-    x: 30,
+    x: 50,
     y: 450,
     radius: 24,
-    description: 'Belief in predetermined destiny and the capricious influence of chance on human lives.',
-    connections: ['homer', 'sophocles']
+    description: 'Belief in predetermined destiny and the role of chance in human affairs.',
+    connections: ['sophocles']
   },
   {
     id: 'divine-order',
@@ -248,11 +260,11 @@ const CONCEPTS: Node[] = [
     type: 'concept',
     era: 'archaic',
     language: 'greek',
-    x: 450,
+    x: 420,
     y: 50,
-    radius: 23,
-    description: 'Conception of a cosmos governed by gods and principles of justice.',
-    connections: ['hesiod', 'plato']
+    radius: 29,
+    description: 'The perceived structure and rules governing the cosmos as ordained by the gods.',
+    connections: ['hesiod']
   },
   {
     id: 'idealism',
@@ -260,56 +272,42 @@ const CONCEPTS: Node[] = [
     type: 'concept',
     era: 'classical',
     language: 'greek',
-    x: 200,
-    y: 550,
-    radius: 29,
-    description: 'Philosophical doctrine emphasizing the primacy of mind, ideas, and spiritual values in shaping reality.',
-    connections: ['plato']
-  },
-  {
-    id: 'ethics',
-    name: 'Ethics',
-    type: 'concept',
-    era: 'classical',
-    language: 'greek',
-    x: 680,
-    y: 380,
+    x: 250,
+    y: 300,
     radius: 31,
-    description: 'Moral principles governing conduct, character, and the pursuit of the good life.',
-    connections: ['aristotle', 'seneca']
+    description: 'The philosophical theory that emphasizes the mental or ideal aspects of experience.',
+    connections: ['plato']
   }
 ];
 
 const EDGES: Edge[] = [
-  { source: 'homer', target: 'virgil', strength: 0.8, type: 'influence', description: 'Virgil emulated Homeric epic style and themes in the Aeneid.' },
-  { source: 'homer', target: 'heroic-code', strength: 0.7, type: 'conceptual', description: 'Homer\'s epics exemplify the values of the heroic code.' },
-  { source: 'homer', target: 'epic-tradition', strength: 0.9, type: 'conceptual', description: 'Homer initiated the epic tradition in Western literature.' },
-  { source: 'hesiod', target: 'virgil', strength: 0.6, type: 'influence', description: 'Hesiod influenced Virgil\'s Georgics with didactic poetry.' },
-  { source: 'hesiod', target: 'divine-order', strength: 0.8, type: 'conceptual', description: 'Hesiod\'s Theogony explores the divine order of the cosmos.' },
-  { source: 'plato', target: 'aristotle', strength: 0.9, type: 'influence', description: 'Aristotle was a student of Plato and developed his philosophy in response.' },
-  { source: 'plato', target: 'cicero', strength: 0.7, type: 'influence', description: 'Cicero translated and adapted Plato\'s philosophical ideas for a Roman audience.' },
-  { source: 'plato', target: 'idealism', strength: 0.8, type: 'conceptual', description: 'Plato\'s theory of Forms is a foundational concept of idealism.' },
-  { source: 'plato', target: 'philosophy', strength: 0.9, type: 'conceptual', description: 'Plato is a central figure in the history of philosophy.' },
-  { source: 'aristotle', target: 'cicero', strength: 0.6, type: 'influence', description: 'Cicero drew upon Aristotle\'s ethics and politics in his own writings.' },
-  { source: 'aristotle', target: 'seneca', strength: 0.5, type: 'influence', description: 'Seneca\'s ethics show some influence from Aristotelian ideas.' },
-  { source: 'aristotle', target: 'philosophy', strength: 0.9, type: 'conceptual', description: 'Aristotle is a central figure in the history of philosophy.' },
-  { source: 'aristotle', target: 'ethics', strength: 0.8, type: 'conceptual', description: 'Aristotle\'s Nicomachean Ethics is a foundational work in ethics.' },
-  { source: 'sophocles', target: 'seneca', strength: 0.7, type: 'influence', description: 'Seneca adapted Sophoclean tragedies for a Roman audience.' },
-  { source: 'sophocles', target: 'tragic-form', strength: 0.9, type: 'conceptual', description: 'Sophocles perfected the form of Greek tragedy.' },
-  { source: 'sophocles', target: 'fate-fortune', strength: 0.8, type: 'conceptual', description: 'Sophocles\' plays explore the role of fate and fortune in human lives.' },
-  { source: 'virgil', target: 'epic-tradition', strength: 0.7, type: 'conceptual', description: 'Virgil continued the epic tradition with the Aeneid.' },
-  { source: 'cicero', target: 'philosophy', strength: 0.8, type: 'conceptual', description: 'Cicero popularized Greek philosophy in Rome.' },
-  { source: 'cicero', target: 'rhetoric', strength: 0.9, type: 'conceptual', description: 'Cicero was a master of Roman rhetoric.' },
-  { source: 'seneca', target: 'stoicism', strength: 0.9, type: 'conceptual', description: 'Seneca was a leading figure in Roman Stoicism.' },
-  { source: 'seneca', target: 'ethics', strength: 0.8, type: 'conceptual', description: 'Seneca\'s letters explore Stoic ethics.' },
-  { source: 'rhetoric', target: 'philosophy', strength: 0.6, type: 'conceptual', description: 'Rhetoric is interconnected to philosophical discourse.' },
-  { source: 'stoicism', target: 'ethics', strength: 0.7, type: 'conceptual', description: 'Stoicism provides an ethical framework.' },
-  { source: 'fate-fortune', target: 'heroic-code', strength: 0.5, type: 'conceptual', description: 'Fate/Fortune and the heroic code interplay in tragic narratives.' },
-  { source: 'divine-order', target: 'philosophy', strength: 0.6, type: 'conceptual', description: 'Concepts of divine order influenced early philosophical thought.' },
-  { source: 'idealism', target: 'philosophy', strength: 0.7, type: 'conceptual', description: 'Idealism is a major branch within philosophy.' }
+  { source: 'homer', target: 'virgil', type: 'influence', strength: 0.8, description: 'Virgil emulated Homer\'s epic style and themes in the Aeneid.' },
+  { source: 'hesiod', target: 'virgil', type: 'influence', strength: 0.6, description: 'Virgil drew inspiration from Hesiod\'s didactic poetry in his Georgics.' },
+  { source: 'plato', target: 'aristotle', type: 'influence', strength: 0.9, description: 'Aristotle was a student of Plato, but developed his own philosophical system.' },
+  { source: 'plato', target: 'cicero', type: 'influence', strength: 0.7, description: 'Cicero translated and adapted Plato\'s philosophical ideas for a Roman audience.' },
+  { source: 'aristotle', target: 'cicero', type: 'influence', strength: 0.6, description: 'Cicero drew on Aristotle\'s rhetoric and political theory in his own works.' },
+  { source: 'aristotle', target: 'seneca', type: 'influence', strength: 0.5, description: 'Seneca engaged with Aristotle\'s ethics, but from a Stoic perspective.' },
+  { source: 'sophocles', target: 'seneca', type: 'influence', strength: 0.7, description: 'Seneca adapted Sophocles\' tragedies for the Roman stage.' },
+  { source: 'homer', target: 'epic-tradition', type: 'conceptual', strength: 1.0, description: 'Homer is the primary example of the epic tradition.' },
+  { source: 'virgil', target: 'epic-tradition', type: 'conceptual', strength: 0.9, description: 'Virgil continued the epic tradition in Roman literature.' },
+  { source: 'homer', target: 'heroic-code', type: 'conceptual', strength: 0.8, description: 'The Iliad and Odyssey exemplify the heroic code.' },
+  { source: 'plato', target: 'philosophy', type: 'conceptual', strength: 1.0, description: 'Plato is a central figure in the history of philosophy.' },
+  { source: 'aristotle', target: 'philosophy', type: 'conceptual', strength: 1.0, description: 'Aristotle is a central figure in the history of philosophy.' },
+  { source: 'cicero', target: 'philosophy', type: 'conceptual', strength: 0.8, description: 'Cicero was a key transmitter of Greek philosophy to Rome.' },
+  { source: 'seneca', target: 'stoicism', type: 'conceptual', strength: 0.9, description: 'Seneca is a major representative of Roman Stoicism.' },
+  { source: 'cicero', target: 'stoicism', type: 'conceptual', strength: 0.7, description: 'Cicero engaged with Stoic ideas in his philosophical works.' },
+  { source: 'cicero', target: 'rhetoric', type: 'conceptual', strength: 0.9, description: 'Cicero was a master of Roman rhetoric.' },
+  { source: 'aristotle', target: 'ethics', type: 'conceptual', strength: 0.8, description: 'Aristotle\'s Nicomachean Ethics is a foundational work in ethics.' },
+  { source: 'seneca', target: 'ethics', type: 'conceptual', strength: 0.7, description: 'Seneca\'s letters and essays explore Stoic ethics.' },
+  { source: 'sophocles', target: 'tragic-form', type: 'conceptual', strength: 0.9, description: 'Sophocles is a master of the tragic form.' },
+  { source: 'seneca', target: 'tragic-form', type: 'conceptual', strength: 0.8, description: 'Seneca adapted the tragic form for the Roman stage.' },
+  { source: 'sophocles', target: 'fate-fortune', type: 'conceptual', strength: 0.7, description: 'Sophocles\' plays explore the role of fate and fortune in human life.' },
+  { source: 'hesiod', target: 'divine-order', type: 'conceptual', strength: 0.8, description: 'Hesiod\'s Theogony describes the divine order of the cosmos.' },
+  { source: 'plato', target: 'idealism', type: 'conceptual', strength: 0.9, description: 'Plato\'s Theory of Forms is a key expression of idealism.' }
 ];
 
-const ERA_COLORS = {
+
+const EraColors: { [key: string]: string } = {
   archaic: '#D97706',
   classical: '#F59E0B',
   hellenistic: '#3B82F6',
@@ -318,32 +316,22 @@ const ERA_COLORS = {
   byzantine: '#059669',
 };
 
-const LANGUAGE_INDICATORS = {
-  greek: '#3B82F6',
-  latin: '#DC2626',
-};
 
-const LANGUAGE_LABELS = {
+const LanguageIndicators: { [key: string]: string } = {
   greek: 'Α',
   latin: 'L',
 };
 
-const App = () => {
+
+const ForceGraph = () => {
+  const [nodes, setNodes] = useState<Node[]>([...AUTHORS, ...CONCEPTS]);
+  const [edges, setEdges] = useState<Edge[]>(EDGES);
   const [selectedNode, setSelectedNode] = useState<Node | null>(null);
   const svgRef = useRef<SVGSVGElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const [transform, setTransform] = useState<Transform>({ x: 0, y: 0, scale: 1 });
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
-  const [eraFilter, setEraFilter] = useState<string | null>(null);
-
-  const applyEraFilter = (node: Node) => {
-    return eraFilter ? node.era === eraFilter : true;
-  };
-
-  const visibleNodes = AUTHORS.concat(CONCEPTS).filter(applyEraFilter);
-  const visibleEdges = EDGES.filter(edge => {
-    return visibleNodes.some(node => node.id === edge.source) && visibleNodes.some(node => node.id === edge.target);
-  });
 
   const handleNodeClick = (node: Node) => {
     setSelectedNode(node);
@@ -353,241 +341,245 @@ const App = () => {
     setSelectedNode(null);
   };
 
+
   const handleWheel = useCallback((event: WheelEvent) => {
     event.preventDefault();
-    const scaleFactor = event.deltaY > 0 ? 0.95 : 1.05;
+    const scaleFactor = event.deltaY > 0 ? 0.9 : 1.1;
+    const newScale = transform.scale * scaleFactor;
+
+    // Limit zoom
+    if (newScale < 0.5 || newScale > 3) {
+      return;
+    }
+
+    const svg = svgRef.current;
+    if (!svg) return;
+
+    const point = svg.createSVGPoint();
+    point.x = event.clientX;
+    point.y = event.clientY;
+    const cursorPoint = point.matrixTransform(svg.getScreenCTM()?.inverse());
+
     setTransform(prev => ({
-      x: prev.x,
-      y: prev.y,
-      scale: Math.max(0.2, Math.min(3, prev.scale * scaleFactor)), // Limit zoom
+      x: cursorPoint.x - (cursorPoint.x - prev.x) * (newScale / prev.scale),
+      y: cursorPoint.y - (cursorPoint.y - prev.y) * (newScale / prev.scale),
+      scale: newScale,
     }));
-  }, []);
+  }, [transform]);
+
 
   const handleMouseDown = useCallback((event: React.MouseEvent<SVGSVGElement>) => {
     setIsDragging(true);
     setDragStart({ x: event.clientX, y: event.clientY });
   }, []);
 
-  const handleMouseUp = useCallback(() => {
-    setIsDragging(false);
-  }, []);
-
   const handleMouseMove = useCallback((event: MouseEvent) => {
     if (!isDragging) return;
-    const dx = event.clientX - dragStart.x;
-    const dy = event.clientY - dragStart.y;
 
     setTransform(prev => ({
-      x: prev.x + dx,
-      y: prev.y + dy,
-      scale: prev.scale,
+      ...prev,
+      x: prev.x + (event.clientX - dragStart.x) / prev.scale,
+      y: prev.y + (event.clientY - dragStart.y) / prev.scale,
     }));
 
     setDragStart({ x: event.clientX, y: event.clientY });
   }, [isDragging, dragStart]);
 
+  const handleMouseUp = useCallback(() => {
+    setIsDragging(false);
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    setIsDragging(false);
+  }, []);
+
+
+
   useEffect(() => {
-    if (svgRef.current) {
-      svgRef.current.addEventListener('wheel', handleWheel as any);
-      svgRef.current.addEventListener('mousemove', handleMouseMove as any);
-      window.addEventListener('mouseup', handleMouseUp); // Use window to catch mouseup outside the SVG
+    if (containerRef.current) {
+      containerRef.current.addEventListener('wheel', handleWheel, { passive: false });
+      window.addEventListener('mousemove', handleMouseMove);
+      window.addEventListener('mouseup', handleMouseUp);
 
       return () => {
-        svgRef.current?.removeEventListener('wheel', handleWheel as any);
-        svgRef.current?.removeEventListener('mousemove', handleMouseMove as any);
+        containerRef.current?.removeEventListener('wheel', handleWheel);
+        window.removeEventListener('mousemove', handleMouseMove);
         window.removeEventListener('mouseup', handleMouseUp);
       };
     }
   }, [handleWheel, handleMouseMove, handleMouseUp]);
 
-  const handleEraFilterClick = (era: string | null) => {
-    setEraFilter(eraFilter === era ? null : era);
-  };
 
   return (
-    <div style={{ backgroundColor: '#0D0D0F', color: '#F5F4F2', fontFamily: 'sans-serif', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <header style={{ padding: '1rem 2rem', borderBottom: '1px solid #1E1E24', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <h1 style={{ margin: 0, fontSize: '1.5rem', fontWeight: 'bold', color: '#C9A227' }}>Logos: Ancient Thought Network</h1>
-        <div>
-          {Object.entries(ERA_COLORS).map(([era, color]) => (
-            <button
-              key={era}
-              onClick={() => handleEraFilterClick(era)}
-              style={{
-                backgroundColor: eraFilter === era ? color : '#1E1E24',
-                color: '#F5F4F2',
-                border: 'none',
-                padding: '0.5rem 1rem',
-                marginRight: '0.5rem',
-                borderRadius: '5px',
-                cursor: 'pointer',
-                transition: 'background-color 0.3s ease'
-              }}
-            >
-              {era.charAt(0).toUpperCase() + era.slice(1)}
-            </button>
-          ))}
-          <button
-            onClick={() => handleEraFilterClick(null)}
-            style={{
-              backgroundColor: eraFilter === null ? '#C9A227' : '#1E1E24',
-              color: '#F5F4F2',
-              border: 'none',
-              padding: '0.5rem 1rem',
-              borderRadius: '5px',
-              cursor: 'pointer',
-              transition: 'background-color 0.3s ease'
-            }}
-          >
-            All Eras
-          </button>
-        </div>
+    <div style={{ backgroundColor: '#0D0D0F', color: '#F5F4F2', minHeight: '100vh', padding: '20px' }}>
+      <header style={{ marginBottom: '20px', textAlign: 'center' }}>
+        <h1 style={{ color: '#C9A227', fontSize: '2.5em', fontWeight: 'bold', letterSpacing: '1px', textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
+          Logos Professional Design System - Ancient Philosophy Network
+        </h1>
+        <p style={{ color: '#9CA3AF', fontSize: '1.2em' }}>
+          Explore the connections between ancient authors and concepts.
+        </p>
       </header>
 
-      <main style={{ flex: 1, display: 'flex' }}>
-        <div style={{ flex: 1, overflow: 'hidden' }}>
-          <svg
-            ref={svgRef}
+      <div ref={containerRef} style={{ position: 'relative', width: '100%', height: '800px', overflow: 'hidden', cursor: isDragging ? 'grabbing' : 'grab' }}>
+        <svg
+          ref={svgRef}
+          width="100%"
+          height="100%"
+          style={{
+            backgroundColor: '#141419',
+            transition: 'background-color 0.3s ease',
+            cursor: isDragging ? 'grabbing' : 'grab',
+          }}
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave}
+
+        >
+          <g transform={`translate(${transform.x}, ${transform.y}) scale(${transform.scale})`}>
+            {edges.map((edge) => {
+              const sourceNode = nodes.find((node) => node.id === edge.source);
+              const targetNode = nodes.find((node) => node.id === edge.target);
+
+              if (!sourceNode || !targetNode) {
+                return null;
+              }
+
+              const dx = targetNode.x - sourceNode.x;
+              const dy = targetNode.y - sourceNode.y;
+              const distance = Math.sqrt(dx * dx + dy * dy);
+              const unitDx = dx / distance;
+              const unitDy = dy / distance;
+
+              const sourceRadius = sourceNode.radius;
+              const targetRadius = targetNode.radius;
+
+              const sourceX = sourceNode.x + unitDx * sourceRadius;
+              const sourceY = sourceNode.y + unitDy * sourceRadius;
+              const targetX = targetNode.x - unitDx * targetRadius;
+              const targetY = targetNode.y - unitDy * targetRadius;
+
+
+              return (
+                <line
+                  key={`${edge.source}-${edge.target}`}
+                  x1={sourceX}
+                  y1={sourceY}
+                  x2={targetX}
+                  y2={targetY}
+                  stroke="#6B7280"
+                  strokeWidth={edge.strength * 2}
+                  style={{ transition: 'stroke 0.3s ease' }}
+                />
+              );
+            })}
+
+            {nodes.map((node) => (
+              <g key={node.id} style={{ cursor: 'pointer', transition: 'transform 0.2s ease' }}
+                onClick={() => handleNodeClick(node)}>
+                <circle
+                  cx={node.x}
+                  cy={node.y}
+                  r={node.radius}
+                  fill={EraColors[node.era]}
+                  style={{
+                    stroke: '#1E1E24',
+                    strokeWidth: 3,
+                    opacity: 0.8,
+                    transition: 'fill 0.3s ease, opacity 0.3s ease',
+                  }}
+                  onMouseOver={(e) => {
+                    const target = e.target as SVGCircleElement;
+                    target.style.opacity = '1';
+                  }}
+                  onMouseOut={(e) => {
+                    const target = e.target as SVGCircleElement;
+                    target.style.opacity = '0.8';
+                  }}
+                />
+                <text
+                  x={node.x}
+                  y={node.y + 5}
+                  fontSize="14"
+                  fontWeight="bold"
+                  textAnchor="middle"
+                  fill="#F5F4F2"
+                  style={{
+                    pointerEvents: 'none',
+                    textShadow: '1px 1px 2px rgba(0,0,0,0.7)',
+                  }}
+                >
+                  {node.name} {LanguageIndicators[node.language]}
+                </text>
+              </g>
+            ))}
+          </g>
+        </svg>
+      </div>
+
+      {selectedNode && (
+        <div style={{
+          position: 'fixed',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          backgroundColor: '#1E1E24',
+          padding: '20px',
+          borderRadius: '8px',
+          boxShadow: '0 4px 8px rgba(0,0,0,0.6)',
+          zIndex: 1000,
+          maxWidth: '600px',
+          width: '90%',
+          transition: 'all 0.3s ease',
+        }}>
+          <h2 style={{ color: '#C9A227', marginBottom: '10px', borderBottom: '1px solid #6B7280', paddingBottom: '5px' }}>
+            {selectedNode.name}
+          </h2>
+          <p style={{ color: '#9CA3AF', marginBottom: '15px' }}>
+            <strong>Type:</strong> {selectedNode.type}
+          </p>
+          <p style={{ color: '#9CA3AF', marginBottom: '15px' }}>
+            <strong>Era:</strong> {selectedNode.era}
+          </p>
+          {selectedNode.birth && (
+            <p style={{ color: '#9CA3AF', marginBottom: '15px' }}>
+              <strong>Birth:</strong> {selectedNode.birth}
+            </p>
+          )}
+          {selectedNode.death && (
+            <p style={{ color: '#9CA3AF', marginBottom: '15px' }}>
+              <strong>Death:</strong> {selectedNode.death}
+            </p>
+          )}
+          <p style={{ color: '#F5F4F2', marginBottom: '20px', lineHeight: '1.6' }}>
+            {selectedNode.description}
+          </p>
+          <button
             style={{
-              width: '100%',
-              height: '100%',
-              backgroundColor: '#141419',
-              cursor: isDragging ? 'grabbing' : 'grab',
+              backgroundColor: '#3B82F6',
+              color: '#F5F4F2',
+              padding: '10px 15px',
+              border: 'none',
+              borderRadius: '5px',
+              cursor: 'pointer',
+              transition: 'background-color 0.3s ease',
             }}
-            onMouseDown={handleMouseDown}
+            onClick={handleCloseDetails}
+            onMouseOver={(e) => {
+              const target = e.target as HTMLButtonElement;
+              target.style.backgroundColor = '#2563EB';
+            }}
+            onMouseOut={(e) => {
+              const target = e.target as HTMLButtonElement;
+              target.style.backgroundColor = '#3B82F6';
+            }}
           >
-            <g transform={`translate(${transform.x}, ${transform.y}) scale(${transform.scale})`}>
-              {visibleEdges.map((edge, index) => {
-                const sourceNode = visibleNodes.find(node => node.id === edge.source);
-                const targetNode = visibleNodes.find(node => node.id === edge.target);
-
-                if (!sourceNode || !targetNode) return null;
-
-                const dx = targetNode.x - sourceNode.x;
-                const dy = targetNode.y - sourceNode.y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-                const normalizedDx = dx / distance;
-                const normalizedDy = dy / distance;
-
-                const sourceX = sourceNode.x + normalizedDx * sourceNode.radius;
-                const sourceY = sourceNode.y + normalizedDy * sourceNode.radius;
-                const targetX = targetNode.x - normalizedDx * targetNode.radius;
-                const targetY = targetNode.y - normalizedDy * targetNode.radius;
-
-                return (
-                  <line
-                    key={index}
-                    x1={sourceX}
-                    y1={sourceY}
-                    x2={targetX}
-                    y2={targetY}
-                    stroke="#6B7280"
-                    strokeWidth={Math.max(0.5, edge.strength * 2)}
-                    opacity={0.7}
-                  />
-                );
-              })}
-
-              {visibleNodes.map(node => (
-                <g key={node.id} transform={`translate(${node.x}, ${node.y})`} style={{ cursor: 'pointer', transition: 'transform 0.2s ease' }} onClick={() => handleNodeClick(node)}>
-                  <circle
-                    r={node.radius}
-                    fill={ERA_COLORS[node.era]}
-                    stroke={LANGUAGE_INDICATORS[node.language]}
-                    strokeWidth={3}
-                    style={{ transition: 'all 0.3s ease' }}
-                  />
-                  <text
-                    textAnchor="middle"
-                    dy=".3em"
-                    fontSize={Math.max(8, node.radius / 3)}
-                    fill="#F5F4F2"
-                    style={{
-                      userSelect: 'none',
-                      pointerEvents: 'none',
-                      fontWeight: 'bold',
-                      textShadow: '1px 1px 2px #000'
-                    }}
-                  >
-                    {node.language === 'greek' ? node.name.substring(0, Math.max(3, node.name.length / 10)) : node.name.substring(0, Math.max(3, node.name.length / 8))}
-                  </text>
-                  <text
-                    x={node.radius + 5}
-                    y={node.radius / 2}
-                    fontSize={10}
-                    fill={LANGUAGE_INDICATORS[node.language]}
-                    style={{
-                      userSelect: 'none',
-                      pointerEvents: 'none',
-                      fontWeight: 'bold',
-                    }}
-                  >
-                    {LANGUAGE_LABELS[node.language]}
-                  </text>
-                </g>
-              ))}
-            </g>
-          </svg>
+            Close
+          </button>
         </div>
-
-        {selectedNode && (
-          <div style={{ width: '350px', backgroundColor: '#1E1E24', padding: '1rem', borderLeft: '1px solid #141419', overflowY: 'auto' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-              <h2 style={{ margin: 0, fontSize: '1.2rem', color: '#F5F4F2' }}>{selectedNode.name}</h2>
-              <button onClick={handleCloseDetails} style={{ background: 'none', border: 'none', color: '#9CA3AF', cursor: 'pointer' }}>
-                Close
-              </button>
-            </div>
-            <p style={{ color: '#9CA3AF', marginBottom: '0.5rem' }}>
-              <strong style={{ color: '#F5F4F2' }}>Type:</strong> {selectedNode.type}
-            </p>
-            <p style={{ color: '#9CA3AF', marginBottom: '0.5rem' }}>
-              <strong style={{ color: '#F5F4F2' }}>Era:</strong> {selectedNode.era.charAt(0).toUpperCase() + selectedNode.era.slice(1)}
-            </p>
-            {selectedNode.birth && (
-              <p style={{ color: '#9CA3AF', marginBottom: '0.5rem' }}>
-                <strong style={{ color: '#F5F4F2' }}>Birth:</strong> {selectedNode.birth}
-              </p>
-            )}
-            {selectedNode.death && (
-              <p style={{ color: '#9CA3AF', marginBottom: '0.5rem' }}>
-                <strong style={{ color: '#F5F4F2' }}>Death:</strong> {selectedNode.death}
-              </p>
-            )}
-            <p style={{ color: '#9CA3AF', marginBottom: '1rem', lineHeight: '1.4' }}>{selectedNode.description}</p>
-            {selectedNode.works && selectedNode.works.length > 0 && (
-              <>
-                <h3 style={{ fontSize: '1rem', color: '#F5F4F2', marginBottom: '0.5rem' }}>Works:</h3>
-                <ul style={{ listStyle: 'none', padding: 0 }}>
-                  {selectedNode.works.map(work => (
-                    <li key={work} style={{ color: '#9CA3AF', marginBottom: '0.25rem' }}>
-                      {work}
-                    </li>
-                  ))}
-                </ul>
-              </>
-            )}
-            {selectedNode.concepts && selectedNode.concepts.length > 0 && (
-              <>
-                <h3 style={{ fontSize: '1rem', color: '#F5F4F2', marginBottom: '0.5rem' }}>Concepts:</h3>
-                <ul style={{ listStyle: 'none', padding: 0 }}>
-                  {selectedNode.concepts.map(concept => (
-                    <li key={concept} style={{ color: '#9CA3AF', marginBottom: '0.25rem' }}>
-                      {concept}
-                    </li>
-                  ))}
-                </ul>
-              </>
-            )}
-          </div>
-        )}
-      </main>
-
-      <footer style={{ padding: '1rem 2rem', borderTop: '1px solid #1E1E24', textAlign: 'center', color: '#9CA3AF' }}>
-        © 2024 Logos Project
-      </footer>
+      )}
     </div>
   );
 };
 
-export default App;
+export default ForceGraph;

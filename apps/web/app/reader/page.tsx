@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, Suspense } from 'react'
+import { useState, useEffect, Suspense, useRef } from 'react'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 
@@ -135,437 +135,353 @@ const eraColors = {
   'Byzantine': '#059669'
 }
 
-function WordInfo({ word, onClose }) {
-  const data = wordData[word];
+function SemanticDriftChart({ data }) {
+  const chartRef = useRef(null);
 
-  if (!data) {
+  useEffect(() => {
+    const canvas = chartRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const width = canvas.width;
+    const height = canvas.height;
+    const padding = 30;
+
+    ctx.clearRect(0, 0, width, height);
+
+    const eras = data.map(item => item.period);
+    const values = data.map(item => item.frequency);
+    const numEras = eras.length;
+
+    // Find max frequency for scaling
+    const maxFrequency = Math.max(...values);
+
+    // Draw background grid
+    ctx.strokeStyle = '#6B7280';
+    ctx.lineWidth = 0.5;
+
+    for (let i = 0; i <= 5; i++) {
+      const y = height - padding - (i / 5) * (height - 2 * padding);
+      ctx.beginPath();
+      ctx.moveTo(padding, y);
+      ctx.lineTo(width - padding, y);
+      ctx.stroke();
+
+      ctx.fillStyle = '#6B7280';
+      ctx.font = '10px sans-serif';
+      ctx.textAlign = 'right';
+      ctx.fillText((maxFrequency * (i / 5)).toFixed(1), padding - 5, y + 4); // Y-axis labels
+    }
+
+
+    // Draw the data points
+    ctx.strokeStyle = '#C9A227'; // Brand Gold Color
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+
+    for (let i = 0; i < numEras; i++) {
+      const x = padding + (i / (numEras - 1)) * (width - 2 * padding);
+      const y = height - padding - (values[i] / maxFrequency) * (height - 2 * padding);
+
+      if (i === 0) {
+        ctx.moveTo(x, y);
+      } else {
+        ctx.lineTo(x, y);
+      }
+    }
+
+    ctx.stroke();
+
+
+    // Draw era labels on the x-axis
+    ctx.fillStyle = '#9CA3AF';
+    ctx.font = '12px sans-serif';
+    ctx.textAlign = 'center';
+    for (let i = 0; i < numEras; i++) {
+      const x = padding + (i / (numEras - 1)) * (width - 2 * padding);
+      const y = height - 5; // Position label slightly above the bottom
+      ctx.fillText(eras[i], x, y);
+    }
+
+
+    // Draw data point circles
+    ctx.fillStyle = '#C9A227'; // Brand Gold Color
+    for (let i = 0; i < numEras; i++) {
+      const x = padding + (i / (numEras - 1)) * (width - 2 * padding);
+      const y = height - padding - (values[i] / maxFrequency) * (height - 2 * padding);
+      ctx.beginPath();
+      ctx.arc(x, y, 4, 0, 2 * Math.PI);
+      ctx.fill();
+    }
+
+  }, [data]);
+
+
+  return (
+    <canvas
+      ref={chartRef}
+      width={600}
+      height={300}
+      style={{
+        width: '100%',
+        maxWidth: '600px',
+        height: 'auto',
+        backgroundColor: '#1E1E24',
+        borderRadius: '12px',
+        marginTop: '16px',
+        border: '1px solid rgba(201, 162, 39, 0.1)',
+        boxShadow: 'inset 0 4px 8px rgba(0, 0, 0, 0.3)',
+        transition: 'background-color 0.3s, border-color 0.3s, box-shadow 0.3s',
+        display: 'block',
+      }}
+    />
+  );
+}
+
+
+function WordDetails({ wordData }) {
+  if (!wordData) {
     return (
       <div style={{
-        position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
-        backgroundColor: '#1E1E24', color: '#F5F4F2', padding: '32px', borderRadius: '16px',
-        boxShadow: '0 20px 40px rgba(0, 0, 0, 0.8), 0 0 80px rgba(201, 162, 39, 0.1)',
-        zIndex: 1000, maxWidth: '400px',
-        border: '2px solid rgba(201, 162, 39, 0.2)',
-        animation: 'modalFadeIn 0.3s ease-out',
+        backgroundColor: '#1E1E24',
+        borderRadius: '12px',
+        padding: '20px',
+        marginTop: '16px',
+        border: '1px solid rgba(201, 162, 39, 0.1)',
+        boxShadow: 'inset 0 4px 8px rgba(0, 0, 0, 0.3)',
+        color: '#9CA3AF',
+        transition: 'background-color 0.3s, border-color 0.3s, box-shadow 0.3s',
+        textAlign: 'center'
       }}>
-        <div style={{ textAlign: 'center' }}>
-          <div style={{
-            fontSize: '48px', marginBottom: '16px',
-            color: '#C9A227', filter: 'drop-shadow(0 2px 8px rgba(201, 162, 39, 0.3))'
-          }}>⚠️</div>
-          <p style={{ margin: '0 0 20px 0', fontSize: '18px', color: '#9CA3AF' }}>
-            Word data not available
-          </p>
-          <button
-            onClick={onClose}
-            style={{
-              backgroundColor: '#C9A227', color: '#0D0D0F', padding: '12px 24px',
-              border: 'none', borderRadius: '8px', cursor: 'pointer',
-              fontSize: '16px', fontWeight: '600',
-              transition: 'all 0.2s ease',
-              boxShadow: '0 4px 16px rgba(201, 162, 39, 0.3)'
-            }}
-            onMouseEnter={(e) => {
-              e.target.style.backgroundColor = '#E5B429';
-              e.target.style.transform = 'translateY(-2px)';
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.backgroundColor = '#C9A227';
-              e.target.style.transform = 'translateY(0)';
-            }}
-          >
-            Close
-          </button>
-        </div>
-        <style jsx>{`
-          @keyframes modalFadeIn {
-            from { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
-            to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-          }
-        `}</style>
+        Select a word to view details.
       </div>
     );
   }
 
   return (
     <div style={{
-      position: 'fixed', top: '0', left: '0', right: '0', bottom: '0',
-      backgroundColor: 'rgba(13, 13, 15, 0.95)', zIndex: 1000,
-      display: 'flex', alignItems: 'center', justifyContent: 'center',
-      padding: '20px', backdropFilter: 'blur(8px)',
-      animation: 'overlayFadeIn 0.3s ease-out'
+      backgroundColor: '#1E1E24',
+      borderRadius: '12px',
+      padding: '20px',
+      marginTop: '16px',
+      border: '1px solid rgba(201, 162, 39, 0.1)',
+      boxShadow: 'inset 0 4px 8px rgba(0, 0, 0, 0.3)',
+      color: '#F5F4F2',
+      transition: 'background-color 0.3s, border-color 0.3s, box-shadow 0.3s'
     }}>
-      <div style={{
-        backgroundColor: '#1E1E24', borderRadius: '24px', maxWidth: '900px',
-        width: '100%', maxHeight: '90vh', overflow: 'auto',
-        boxShadow: '0 32px 64px rgba(0, 0, 0, 0.8), 0 0 120px rgba(201, 162, 39, 0.15)',
-        border: '2px solid rgba(201, 162, 39, 0.2)',
-        position: 'relative',
-        animation: 'modalSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)'
-      }}>
-        {/* Header */}
-        <div style={{
-          padding: '32px 40px 20px 40px',
-          borderBottom: '2px solid rgba(201, 162, 39, 0.2)',
-          background: 'linear-gradient(135deg, rgba(201, 162, 39, 0.1), transparent)',
-          borderRadius: '22px 22px 0 0',
-          position: 'sticky', top: '0', zIndex: 10,
-          backdropFilter: 'blur(16px)'
-        }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-            <div>
-              <div style={{
-                fontSize: '36px', fontWeight: '700', color: '#F5F4F2',
-                marginBottom: '8px', fontFamily: 'serif',
-                textShadow: '0 2px 8px rgba(201, 162, 39, 0.3)'
-              }}>
-                {data.word}
-              </div>
-              <div style={{
-                fontSize: '18px', color: '#C9A227', fontWeight: '600',
-                background: 'rgba(201, 162, 39, 0.1)', padding: '6px 12px',
-                borderRadius: '20px', display: 'inline-block',
-                border: '1px solid rgba(201, 162, 39, 0.3)'
-              }}>
-                {data.lemma}
-              </div>
-            </div>
-            <button
-              onClick={onClose}
-              style={{
-                backgroundColor: 'transparent', border: '2px solid rgba(201, 162, 39, 0.3)',
-                color: '#C9A227', fontSize: '24px', width: '48px', height: '48px',
-                borderRadius: '50%', cursor: 'pointer',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                transition: 'all 0.2s ease'
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.backgroundColor = 'rgba(201, 162, 39, 0.1)';
-                e.target.style.borderColor = '#C9A227';
-                e.target.style.transform = 'rotate(90deg)';
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.backgroundColor = 'transparent';
-                e.target.style.borderColor = 'rgba(201, 162, 39, 0.3)';
-                e.target.style.transform = 'rotate(0deg)';
-              }}
-            >
-              ×
-            </button>
-          </div>
+      <h3 style={{ color: '#C9A227', marginBottom: '8px', fontWeight: 'bold' }}>{wordData.word}</h3>
+      <p style={{ color: '#9CA3AF', marginBottom: '4px' }}>
+        <span style={{ fontWeight: 'bold', color: '#F5F4F2' }}>Lemma:</span> {wordData.lemma}
+      </p>
+      <p style={{ color: '#9CA3AF', marginBottom: '4px' }}>
+        <span style={{ fontWeight: 'bold', color: '#F5F4F2' }}>Part of Speech:</span> {wordData.partOfSpeech}
+      </p>
+      <p style={{ color: '#9CA3AF', marginBottom: '12px' }}>
+        <span style={{ fontWeight: 'bold', color: '#F5F4F2' }}>Definition:</span> {wordData.definition}
+      </p>
+
+      {wordData.etymology && (
+        <div style={{ marginBottom: '12px' }}>
+          <h4 style={{ color: '#C9A227', marginBottom: '4px' }}>Etymology</h4>
+          <p style={{ color: '#9CA3AF' }}>{wordData.etymology}</p>
         </div>
+      )}
 
-        {/* Content */}
-        <div style={{ padding: '40px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px' }}>
-            {/* Left Column */}
-            <div>
-              {/* Grammar Info */}
-              <div style={{
-                backgroundColor: '#141419', borderRadius: '16px', padding: '24px',
-                marginBottom: '24px', border: '1px solid rgba(59, 130, 246, 0.2)',
-                position: 'relative', overflow: 'hidden'
-              }}>
-                <div style={{
-                  position: 'absolute', top: '-50%', right: '-50%',
-                  width: '200%', height: '200%', opacity: '0.03',
-                  background: 'radial-gradient(circle, #3B82F6 0%, transparent 70%)',
-                  pointerEvents: 'none'
-                }} />
-                <div style={{
-                  fontSize: '18px', fontWeight: '600', color: '#3B82F6',
-                  marginBottom: '16px', display: 'flex', alignItems: 'center'
-                }}>
-                  <span style={{
-                    backgroundColor: '#3B82F6', color: 'white', fontSize: '12px',
-                    padding: '4px 8px', borderRadius: '6px', marginRight: '12px',
-                    fontWeight: '700'
-                  }}>Α</span>
-                  Grammar
-                </div>
-                <div style={{ color: '#F5F4F2', fontSize: '16px', lineHeight: '1.6' }}>
-                  {data.partOfSpeech}
-                </div>
-              </div>
-
-              {/* Definition */}
-              <div style={{
-                backgroundColor: '#141419', borderRadius: '16px', padding: '24px',
-                marginBottom: '24px', border: '1px solid rgba(201, 162, 39, 0.2)',
-                position: 'relative', overflow: 'hidden'
-              }}>
-                <div style={{
-                  position: 'absolute', top: '-50%', right: '-50%',
-                  width: '200%', height: '200%', opacity: '0.03',
-                  background: 'radial-gradient(circle, #C9A227 0%, transparent 70%)',
-                  pointerEvents: 'none'
-                }} />
-                <div style={{
-                  fontSize: '18px', fontWeight: '600', color: '#C9A227',
-                  marginBottom: '16px', display: 'flex', alignItems: 'center'
-                }}>
-                  <span style={{
-                    backgroundColor: '#C9A227', color: '#0D0D0F', fontSize: '12px',
-                    padding: '4px 8px', borderRadius: '6px', marginRight: '12px',
-                    fontWeight: '700'
-                  }}>⚡</span>
-                  Definition
-                </div>
-                <div style={{ color: '#F5F4F2', fontSize: '16px', lineHeight: '1.6' }}>
-                  {data.definition}
-                </div>
-              </div>
-
-              {/* Etymology */}
-              {data.etymology && (
-                <div style={{
-                  backgroundColor: '#141419', borderRadius: '16px', padding: '24px',
-                  marginBottom: '24px', border: '1px solid rgba(124, 58, 237, 0.2)',
-                  position: 'relative', overflow: 'hidden'
-                }}>
-                  <div style={{
-                    position: 'absolute', top: '-50%', right: '-50%',
-                    width: '200%', height: '200%', opacity: '0.03',
-                    background: 'radial-gradient(circle, #7C3AED 0%, transparent 70%)',
-                    pointerEvents: 'none'
-                  }} />
-                  <div style={{
-                    fontSize: '18px', fontWeight: '600', color: '#7C3AED',
-                    marginBottom: '16px', display: 'flex', alignItems: 'center'
-                  }}>
-                    <span style={{
-                      backgroundColor: '#7C3AED', color: 'white', fontSize: '12px',
-                      padding: '4px 8px', borderRadius: '6px', marginRight: '12px',
-                      fontWeight: '700'
-                    }}>🌳</span>
-                    Etymology
-                  </div>
-                  <div style={{ color: '#F5F4F2', fontSize: '16px', lineHeight: '1.6' }}>
-                    {data.etymology}
-                  </div>
-                  {data.cognates && (
-                    <div style={{ marginTop: '16px' }}>
-                      <div style={{ color: '#9CA3AF', fontSize: '14px', marginBottom: '8px' }}>
-                        Related words:
-                      </div>
-                      <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-                        {data.cognates.map((cognate, i) => (
-                          <span key={i} style={{
-                            backgroundColor: 'rgba(124, 58, 237, 0.1)', color: '#7C3AED',
-                            padding: '4px 12px', borderRadius: '12px', fontSize: '14px',
-                            border: '1px solid rgba(124, 58, 237, 0.3)'
-                          }}>
-                            {cognate}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              )}
-
-              {/* Frequency & Semantic Field */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
-                <div style={{
-                  backgroundColor: '#141419', borderRadius: '16px', padding: '20px',
-                  border: '1px solid rgba(34, 197, 94, 0.2)', textAlign: 'center'
-                }}>
-                  <div style={{
-                    fontSize: '32px', fontWeight: '700', color: '#22C55E',
-                    marginBottom: '8px'
-                  }}>
-                    {data.frequency}
-                  </div>
-                  <div style={{ color: '#9CA3AF', fontSize: '14px' }}>
-                    Frequency
-                  </div>
-                </div>
-                <div style={{
-                  backgroundColor: '#141419', borderRadius: '16px', padding: '20px',
-                  border: '1px solid rgba(234, 179, 8, 0.2)', textAlign: 'center'
-                }}>
-                  <div style={{
-                    fontSize: '16px', fontWeight: '600', color: '#EAB308',
-                    textTransform: 'capitalize'
-                  }}>
-                    {data.semanticField}
-                  </div>
-                  <div style={{ color: '#9CA3AF', fontSize: '14px', marginTop: '4px' }}>
-                    Semantic Field
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Column */}
-            <div>
-              {/* Paradigm */}
-              {data.paradigm && (
-                <div style={{
-                  backgroundColor: '#141419', borderRadius: '16px', padding: '24px',
-                  marginBottom: '24px', border: '1px solid rgba(59, 130, 246, 0.2)'
-                }}>
-                  <div style={{
-                    fontSize: '18px', fontWeight: '600', color: '#3B82F6',
-                    marginBottom: '20px', display: 'flex', alignItems: 'center'
-                  }}>
-                    <span style={{
-                      backgroundColor: '#3B82F6', color: 'white', fontSize: '12px',
-                      padding: '4px 8px', borderRadius: '6px', marginRight: '12px',
-                      fontWeight: '700'
-                    }}>📚</span>
-                    Paradigm
-                  </div>
-                  <div style={{ display: 'grid', gap: '12px' }}>
-                    {Object.entries(data.paradigm).map(([form, value]) => (
-                      <div key={form} style={{
-                        display: 'flex', justifyContent: 'space-between',
-                        padding: '12px 16px', backgroundColor: 'rgba(59, 130, 246, 0.05)',
-                        borderRadius: '8px', border: '1px solid rgba(59, 130, 246, 0.1)'
-                      }}>
-                        <span style={{ color: '#9CA3AF', fontSize: '14px' }}>{form}</span>
-                        <span style={{ 
-                          color: '#F5F4F2', fontSize: '14px', fontFamily: 'serif',
-                          fontWeight: form.includes(data.word) ? '700' : '400'
-                        }}>
-                          {value}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Manuscript Evidence */}
-              {data.manuscripts && (
-                <div style={{
-                  backgroundColor: '#141419', borderRadius: '16px', padding: '24px',
-                  marginBottom: '24px', border: '1px solid rgba(220, 38, 38, 0.2)'
-                }}>
-                  <div style={{
-                    fontSize: '18px', fontWeight: '600', color: '#DC2626',
-                    marginBottom: '20px', display: 'flex', alignItems: 'center'
-                  }}>
-                    <span style={{
-                      backgroundColor: '#DC2626', color: 'white', fontSize: '12px',
-                      padding: '4px 8px', borderRadius: '6px', marginRight: '12px',
-                      fontWeight: '700'
-                    }}>📜</span>
-                    Manuscript Evidence
-                  </div>
-                  <div style={{ display: 'grid', gap: '12px' }}>
-                    {data.manuscripts.map((ms, i) => (
-                      <div key={i} style={{
-                        display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-                        padding: '12px 16px', backgroundColor: 'rgba(220, 38, 38, 0.05)',
-                        borderRadius: '8px', border: '1px solid rgba(220, 38, 38, 0.1)'
-                      }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                          <span style={{
-                            backgroundColor: '#DC2626', color: 'white',
-                            padding: '4px 8px', borderRadius: '6px', fontSize: '12px',
-                            fontWeight: '700'
-                          }}>
-                            {ms.siglum}
-                          </span>
-                          <span style={{ color: '#F5F4F2', fontFamily: 'serif' }}>
-                            {ms.reading}
-                          </span>
-                        </div>
-                        <span style={{
-                          color: ms.confidence === 'certain' ? '#22C55E' : '#EAB308',
-                          fontSize: '12px', fontWeight: '600',
-                          backgroundColor: ms.confidence === 'certain' ? 'rgba(34, 197, 94, 0.1)' : 'rgba(234, 179, 8, 0.1)',
-                          padding: '4px 8px', borderRadius: '12px'
-                        }}>
-                          {ms.confidence}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Semantic Evolution */}
-              {data.semanticDrift && (
-                <div style={{
-                  backgroundColor: '#141419', borderRadius: '16px', padding: '24px',
-                  border: '1px solid rgba(201, 162, 39, 0.2)'
-                }}>
-                  <div style={{
-                    fontSize: '18px', fontWeight: '600', color: '#C9A227',
-                    marginBottom: '20px', display: 'flex', alignItems: 'center'
-                  }}>
-                    <span style={{
-                      backgroundColor: '#C9A227', color: '#0D0D0F', fontSize: '12px',
-                      padding: '4px 8px', borderRadius: '6px', marginRight: '12px',
-                      fontWeight: '700'
-                    }}>📈</span>
-                    Semantic Evolution
-                  </div>
-                  <div style={{ display: 'grid', gap: '16px' }}>
-                    {data.semanticDrift.map((drift, i) => (
-                      <div key={i} style={{
-                        padding: '16px', backgroundColor: 'rgba(201, 162, 39, 0.03)',
-                        borderRadius: '8px', border: '1px solid rgba(201, 162, 39, 0.1)'
-                      }}>
-                        <div style={{
-                          display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-                          marginBottom: '8px'
-                        }}>
-                          <span style={{
-                            color: eraColors[drift.period] || '#C9A227',
-                            fontWeight: '600', fontSize: '14px'
-                          }}>
-                            {drift.period}
-                          </span>
-                          <span style={{
-                            color: '#9CA3AF', fontSize: '12px',
-                            backgroundColor: 'rgba(156, 163, 175, 0.1)',
-                            padding: '2px 8px', borderRadius: '10px'
-                          }}>
-                            {Math.round(drift.frequency * 100)}%
-                          </span>
-                        </div>
-                        <div style={{ color: '#F5F4F2', fontSize: '14px' }}>
-                          {drift.meaning}
-                        </div>
-                        <div style={{
-                          width: '100%', height: '4px', backgroundColor: 'rgba(201, 162, 39, 0.1)',
-                          borderRadius: '2px', marginTop: '8px', overflow: 'hidden'
-                        }}>
-                          <div style={{
-                            width: `${drift.frequency * 100}%`, height: '100%',
-                            backgroundColor: eraColors[drift.period] || '#C9A227',
-                            borderRadius: '2px', transition: 'width 0.5s ease'
-                          }} />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
+      {wordData.paradigm && (
+        <div style={{ marginBottom: '12px' }}>
+          <h4 style={{ color: '#C9A227', marginBottom: '4px' }}>Paradigm</h4>
+          <ul style={{ listStyleType: 'none', padding: 0 }}>
+            {Object.entries(wordData.paradigm).map(([form, value]) => (
+              <li key={form} style={{ color: '#9CA3AF' }}>
+                <span style={{ fontWeight: 'bold', color: '#F5F4F2' }}>{form}:</span> {value}
+              </li>
+            ))}
+          </ul>
         </div>
-      </div>
+      )}
 
-      <style jsx>{`
-        @keyframes overlayFadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-        @keyframes modalSlideIn {
-          from { opacity: 0; transform: scale(0.9) translateY(-20px); }
-          to { opacity: 1; transform: scale(1) translateY(0); }
-        }
-      `}</style>
+      {wordData.semanticDrift && (
+        <div style={{ marginBottom: '12px' }}>
+          <h4 style={{ color: '#C9A227', marginBottom: '8px' }}>Semantic Drift</h4>
+          <SemanticDriftChart data={wordData.semanticDrift} />
+        </div>
+      )}
     </div>
   );
 }
 
-function TextReader() {
-  const [selectedText, setSelectedText] = useState(sampleTexts[0]);
+function TextDisplay({ text, onWordClick }) {
+  const parts = text.split(/(\s+|[.,\/#!$%\^&\*;:{}=\-_`~()])/); // Split by spaces and punctuation
+  return (
+    <>
+      {parts.map((part, index) => {
+        if (wordData[part]) {
+          const language = wordData[part].language;
+          return (
+            <button
+              key={index}
+              onClick={() => onWordClick(wordData[part])}
+              style={{
+                backgroundColor: 'transparent',
+                border: 'none',
+                color: (language === 'greek') ? '#3B82F6' : ((language === 'latin') ? '#DC2626' : '#F5F4F2'),
+                cursor: 'pointer',
+                fontFamily: (language === 'greek') ? 'Arial Unicode MS, sans-serif' : 'serif', //Ensure Greek chars render properly
+                transition: 'color 0.2s',
+                padding: 0,
+                margin: 0,
+                fontSize: 'inherit',
+                lineHeight: 'inherit',
+                textDecoration: 'underline dotted'
+              }}
+            >
+              {part}
+            </button>
+          );
+        } else {
+          return <span key={index}>{part}</span>;
+        }
+      })}
+    </>
+  );
+}
+
+
+export default function Home() {
   const [selectedWord, setSelectedWord] = useState(null);
-  const [viewMode, setViewMode] = useState('reading');
-  const [showApparatus,
+  const [selectedText, setSelectedText] = useState(sampleTexts[0]); // Default to the first text
+  const searchParams = useSearchParams();
+  const textId = searchParams.get('textId');
+
+  useEffect(() => {
+    if (textId) {
+      const foundText = sampleTexts.find((text, index) => index.toString() === textId);
+      if (foundText) {
+        setSelectedText(foundText);
+      }
+    }
+  }, [textId]);
+
+
+  const handleWordClick = (word) => {
+    setSelectedWord(word);
+  };
+
+  return (
+    <div style={{
+      backgroundColor: '#0D0D0F',
+      minHeight: '100vh',
+      padding: '20px',
+      color: '#F5F4F2',
+      fontFamily: 'sans-serif'
+    }}>
+
+      <header style={{
+        marginBottom: '20px',
+        paddingBottom: '10px',
+        borderBottom: '1px solid #1E1E24',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center'
+      }}>
+        <h1 style={{ color: '#C9A227', fontWeight: 'bold', fontSize: '2em' }}>
+          <Link href="/" style={{ color: 'inherit', textDecoration: 'none' }}>
+            Logos Professional
+          </Link>
+        </h1>
+        <nav>
+          <ul style={{ listStyleType: 'none', padding: 0, margin: 0, display: 'flex', gap: '20px' }}>
+            <li>
+              <Link href="/" style={{ color: '#9CA3AF', textDecoration: 'none', transition: 'color 0.2s' }}
+                onMouseEnter={(e) => e.target.style.color = '#F5F4F2'}
+                onMouseLeave={(e) => e.target.style.color = '#9CA3AF'}>
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/about" style={{ color: '#9CA3AF', textDecoration: 'none', transition: 'color 0.2s' }}
+                onMouseEnter={(e) => e.target.style.color = '#F5F4F2'}
+                onMouseLeave={(e) => e.target.style.color = '#9CA3AF'}>
+                About
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" style={{ color: '#9CA3AF', textDecoration: 'none', transition: 'color 0.2s' }}
+                onMouseEnter={(e) => e.target.style.color = '#F5F4F2'}
+                onMouseLeave={(e) => e.target.style.color = '#9CA3AF'}>
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <main style={{ display: 'flex', gap: '30px' }}>
+        <section style={{ flex: '2', width: '70%' }}>
+          <div style={{
+            backgroundColor: '#1E1E24',
+            borderRadius: '12px',
+            padding: '20px',
+            border: '1px solid rgba(201, 162, 39, 0.1)',
+            boxShadow: 'inset 0 4px 8px rgba(0, 0, 0, 0.3)',
+            transition: 'background-color 0.3s, border-color 0.3s, box-shadow 0.3s',
+          }}>
+            <h2 style={{ color: '#C9A227', fontWeight: 'bold', marginBottom: '10px' }}>{selectedText.title}</h2>
+            <h3 style={{ color: '#9CA3AF', marginBottom: '10px' }}>{selectedText.author} ({selectedText.era})</h3>
+            <div style={{
+              fontFamily: (selectedText.language === 'greek') ? 'Arial Unicode MS, sans-serif' : 'serif',
+              fontSize: '1.2em',
+              lineHeight: '1.6',
+              marginBottom: '20px'
+            }}>
+              <TextDisplay text={selectedText.content} onWordClick={handleWordClick} />
+            </div>
+            <p style={{ color: '#9CA3AF', fontStyle: 'italic', marginBottom: '20px' }}>{selectedText.translation}</p>
+
+            {selectedText.commentary && (
+              <div>
+                <h4 style={{ color: '#C9A227', marginBottom: '10px' }}>Commentary</h4>
+                {selectedText.commentary.map((comment, index) => (
+                  <div key={index} style={{ marginBottom: '15px' }}>
+                    <h5 style={{ color: '#F5F4F2', fontWeight: 'bold' }}>{comment.section}</h5>
+                    <p style={{ color: '#9CA3AF' }}>{comment.content}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {selectedText.apparatus && (
+              <div>
+                <h4 style={{ color: '#C9A227', marginBottom: '10px' }}>Apparatus Criticus</h4>
+                <ul style={{ listStyleType: 'none', padding: 0 }}>
+                  {selectedText.apparatus.map((entry, index) => (
+                    <li key={index} style={{ color: '#9CA3AF', marginBottom: '5px' }}>
+                      <span style={{ fontWeight: 'bold', color: '#F5F4F2' }}>{entry.lemma}:</span> {entry.note}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        </section>
+
+        <aside style={{ flex: '1', width: '30%' }}>
+          <WordDetails wordData={selectedWord} />
+        </aside>
+      </main>
+
+
+      <footer style={{
+        marginTop: '40px',
+        paddingTop: '20px',
+        borderTop: '1px solid #1E1E24',
+        textAlign: 'center',
+        color: '#6B7280'
+      }}>
+        <p>&copy; 2024 Logos Professional. All rights reserved.</p>
+      </footer>
+    </div>
+  );
+}

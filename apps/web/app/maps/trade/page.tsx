@@ -6,11 +6,12 @@ import { useState, useEffect, useRef } from 'react';
 export default function TradeRoutes() {
   const [selectedRoute, setSelectedRoute] = useState(null);
   const [selectedGood, setSelectedGood] = useState(null);
-  const [selectedEra, setSelectedEra] = useState('classical');
-  const [viewMode, setViewMode] = useState('routes');
+  const [selectedEra, setSelectedEra] = useState<'archaic' | 'classical' | 'hellenistic' | 'imperial' | 'late-antique' | 'byzantine'>('classical');
+  const [viewMode, setViewMode] = useState<'routes' | 'goods' | 'cities'>('routes');
   const [hoveredCity, setHoveredCity] = useState(null);
   const [animatedRoutes, setAnimatedRoutes] = useState(new Set());
   const [pulsingCities, setPulsingCities] = useState(new Set());
+  const [flowAnimation, setFlowAnimation] = useState(true);
   const svgRef = useRef(null);
 
   const eraColors = {
@@ -44,6 +45,14 @@ export default function TradeRoutes() {
       { id: 12, name: 'Via Maris', start: { x: 400, y: 280 }, end: { x: 500, y: 240 }, type: 'overland', goods: ['spices', 'incense', 'textiles'], description: 'Roman control of Eastern trade routes', flow: 'high' },
       { id: 13, name: 'Roman Egyptian Route', start: { x: 380, y: 300 }, end: { x: 200, y: 180 }, type: 'maritime', goods: ['grain', 'papyrus', 'glass'], description: 'Vital supply lines from Egypt to Rome', flow: 'very-high' },
       { id: 14, name: 'Via Appia', start: { x: 240, y: 260 }, end: { x: 280, y: 200 }, type: 'overland', goods: ['wine', 'oil', 'metals'], description: 'Roman road connecting Rome to southern Italy', flow: 'high' }
+    ],
+    'late-antique': [
+      { id: 15, name: 'Rhine Trade', start: { x: 200, y: 160 }, end: { x: 250, y: 200 }, type: 'river', goods: ['grain', 'wine', 'amber'], description: 'Trade along the Rhine River', flow: 'medium' },
+      { id: 16, name: 'Danube Route', start: { x: 300, y: 150 }, end: { x: 400, y: 160 }, type: 'river', goods: ['furs', 'slaves', 'amber'], description: 'Danube river trade network', flow: 'medium' }
+    ],
+    byzantine: [
+      { id: 17, name: 'Silk Road Reaches', start: { x: 500, y: 200 }, end: { x: 350, y: 180 }, type: 'overland', goods: ['silk', 'spices', 'gold'], description: 'Byzantine involvement in Silk Road trade', flow: 'high' },
+      { id: 18, name: 'Mediterranean Circuit', start: { x: 350, y: 180 }, end: { x: 220, y: 220 }, type: 'maritime', goods: ['silk', 'spices', 'wine'], description: 'Byzantine maritime dominance', flow: 'high' }
     ]
   };
 
@@ -51,174 +60,532 @@ export default function TradeRoutes() {
     { name: 'Athens', greekName: 'Ἀθῆναι', x: 340, y: 220, type: 'polis', era: ['archaic', 'classical'], goods: ['pottery', 'oil', 'wine'], importance: 'major' },
     { name: 'Alexandria', greekName: 'Ἀλεξάνδρεια', x: 380, y: 300, type: 'metropolis', era: ['hellenistic', 'imperial'], goods: ['papyrus', 'grain', 'glass'], importance: 'major' },
     { name: 'Rhodes', greekName: 'Ῥόδος', x: 360, y: 220, type: 'emporium', era: ['classical', 'hellenistic'], goods: ['wine', 'pottery'], importance: 'major' },
-    { name: 'Byzantion', greekName: 'Βυζάντιον', x: 350, y: 180, type: 'polis', era: ['archaic', 'classical', 'hellenistic'], goods: ['grain', 'fish'], importance: 'medium' },
+    { name: 'Byzantion', greekName: 'Βυζάντιον', x: 350, y: 180, type: 'polis', era: ['archaic', 'classical', 'hellenistic', 'byzantine'], goods: ['grain', 'fish'], importance: 'medium' },
     { name: 'Ephesus', greekName: 'Ἔφεσος', x: 330, y: 200, type: 'polis', era: ['archaic', 'classical', 'hellenistic'], goods: ['textiles', 'marble'], importance: 'medium' },
     { name: 'Antioch', greekName: 'Ἀντιόχεια', x: 400, y: 240, type: 'metropolis', era: ['hellenistic', 'imperial'], goods: ['spices', 'silk'], importance: 'major' },
     { name: 'Tanais', greekName: 'Τάναϊς', x: 420, y: 140, type: 'emporium', era: ['classical', 'hellenistic'], goods: ['grain', 'furs'], importance: 'medium' },
     { name: 'Cyrene', greekName: 'Κυρήνη', x: 320, y: 320, type: 'polis', era: ['archaic', 'classical', 'hellenistic'], goods: ['silphium', 'horses'], importance: 'medium' },
-    { name: 'Marseilles', greekName: 'Μασσαλία', x: 220, y: 220, type: 'apoikia', era: ['archaic', 'classical'], goods: ['wine', 'metals'], importance: 'medium' },
-    { name: 'Chersonesos', greekName: 'Χερσόνησος', x: 380, y: 140, type: 'apoikia', era: ['classical', 'hellenistic'], goods: ['grain', 'wine'], importance: 'minor' },
-    { name: 'Bactria', greekName: 'Βακτρία', x: 550, y: 150, type: 'metropolis', era: ['hellenistic'], goods: ['silk', 'gems'], importance: 'major' },
-    { name: 'Seleucia', greekName: 'Σελεύκεια', x: 480, y: 210, type: 'metropolis', era: ['hellenistic'], goods: ['spices', 'textiles'], importance: 'major' },
-    { name: 'Rome', latinName: 'Roma', x: 240, y: 260, type: 'metropolis', era: ['imperial'], goods: ['wine', 'oil', 'metals'], importance: 'major' }
+    { name: 'Marseilles', greekName: 'Μασσαλία', x: 220, y: 220, type: 'emporium', era: ['archaic', 'classical'], goods: ['wine', 'metals'], importance: 'medium' },
+    { name: 'Chersonesos', greekName: 'Χερσόνησος', x: 380, y: 140, type: 'polis', era: ['classical', 'hellenistic'], goods: ['grain', 'wine'], importance: 'medium' }
   ];
 
-  const handleRouteClick = (route) => {
-    setSelectedRoute(route);
-    setAnimatedRoutes(new Set([route.id]));
-    setTimeout(() => setAnimatedRoutes(new Set()), 500);
+  const tradeGoods = {
+    grain: { color: '#F59E0B', symbol: '🌾', routes: [1, 4, 8, 13, 15] },
+    wine: { color: '#7C2D12', symbol: '🍷', routes: [1, 4, 7, 14] },
+    pottery: { color: '#EA580C', symbol: '🏺', routes: [1, 4, 7] },
+    silk: { color: '#C084FC', symbol: '🧵', routes: [9, 11, 17] },
+    spices: { color: '#DC2626', symbol: '🌶️', routes: [10, 11, 12, 17] },
+    amber: { color: '#F59E0B', symbol: '💎', routes: [3, 5, 15] },
+    metals: { color: '#6B7280', symbol: '⚒️', routes: [5, 6, 14] },
+    incense: { color: '#7C3AED', symbol: '🔥', routes: [10, 12] }
   };
 
-  const handleCityHover = (city) => {
-    setHoveredCity(city);
-    setPulsingCities(new Set([city.name]));
+  const getFlowWidth = (flow: string) => {
+    switch (flow) {
+      case 'very-high': return 6;
+      case 'high': return 4;
+      case 'medium': return 3;
+      case 'low': return 2;
+      default: return 2;
+    }
   };
 
-  const handleCityLeave = () => {
-    setHoveredCity(null);
-    setPulsingCities(new Set());
+  const getRoutePattern = (type: string) => {
+    switch (type) {
+      case 'maritime': return '8,4';
+      case 'overland': return '0';
+      case 'river': return '12,8';
+      default: return '0';
+    }
   };
 
-  const filteredRoutes = routes[selectedEra] || [];
-  const eraColor = eraColors[selectedEra] || '#FFFFFF';
+  const getCitySize = (importance: string) => {
+    switch (importance) {
+      case 'major': return 12;
+      case 'medium': return 8;
+      default: return 6;
+    }
+  };
+
+  const currentRoutes = routes[selectedEra] || [];
+  const visibleCities = cities.filter(city => city.era.includes(selectedEra));
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (flowAnimation) {
+        const routeElements = document.querySelectorAll('.trade-route');
+        routeElements.forEach((element, index) => {
+          const animationDelay = index * 0.5;
+          element.style.animationDelay = `${animationDelay}s`;
+        });
+      }
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [flowAnimation, selectedEra]);
 
   return (
-    <div style={{ backgroundColor: '#0D0D0F', color: '#F5F4F2', fontFamily: 'sans-serif', minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px', transition: 'background-color 0.3s, color 0.3s' }}>
-      <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '20px', color: '#C9A227', textShadow: '1px 1px 2px #000' }}>Ancient Trade Routes</h1>
+    <div style={{ 
+      backgroundColor: '#0D0D0F', 
+      minHeight: '100vh', 
+      color: '#F5F4F2',
+      fontFamily: 'system-ui, -apple-system, sans-serif'
+    }}>
+      {/* Header */}
+      <div style={{
+        background: 'linear-gradient(135deg, #1E1E24 0%, #141419 100%)',
+        borderBottom: '1px solid #2A2A32',
+        padding: '2rem'
+      }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
+            <div>
+              <h1 style={{ 
+                fontSize: '2.5rem', 
+                fontWeight: '700', 
+                margin: '0 0 0.5rem 0',
+                background: `linear-gradient(135deg, ${eraColors[selectedEra]} 0%, #C9A227 100%)`,
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent'
+              }}>
+                Ancient Trade Routes
+              </h1>
+              <p style={{ 
+                fontSize: '1.1rem', 
+                color: '#9CA3AF', 
+                margin: 0,
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.5rem'
+              }}>
+                <span style={{ 
+                  color: '#3B82F6',
+                  fontWeight: '600',
+                  backgroundColor: '#1E3A8A20',
+                  padding: '0.25rem 0.5rem',
+                  borderRadius: '0.25rem',
+                  fontSize: '0.8rem'
+                }}>Α</span>
+                Interactive map of commercial networks across Mediterranean and beyond
+              </p>
+            </div>
+            <Link href="/" style={{ 
+              color: '#C9A227', 
+              textDecoration: 'none',
+              fontSize: '1rem',
+              fontWeight: '500',
+              padding: '0.5rem 1rem',
+              border: '1px solid #C9A227',
+              borderRadius: '0.5rem',
+              transition: 'all 0.2s ease',
+              backgroundColor: '#C9A22710'
+            }}>
+              ← Back to Logos
+            </Link>
+          </div>
 
-      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
-        <button onClick={() => setSelectedEra('archaic')} style={{ backgroundColor: selectedEra === 'archaic' ? eraColors.archaic : '#1E1E24', color: '#F5F4F2', padding: '10px 20px', margin: '0 5px', border: 'none', borderRadius: '5px', cursor: 'pointer', transition: 'background-color 0.3s, color 0.3s' }}>Archaic (800-500 BCE)</button>
-        <button onClick={() => setSelectedEra('classical')} style={{ backgroundColor: selectedEra === 'classical' ? eraColors.classical : '#1E1E24', color: '#F5F4F2', padding: '10px 20px', margin: '0 5px', border: 'none', borderRadius: '5px', cursor: 'pointer', transition: 'background-color 0.3s, color 0.3s' }}>Classical (500-323 BCE)</button>
-        <button onClick={() => setSelectedEra('hellenistic')} style={{ backgroundColor: selectedEra === 'hellenistic' ? eraColors.hellenistic : '#1E1E24', color: '#F5F4F2', padding: '10px 20px', margin: '0 5px', border: 'none', borderRadius: '5px', cursor: 'pointer', transition: 'background-color 0.3s, color 0.3s' }}>Hellenistic (323-31 BCE)</button>
-        <button onClick={() => setSelectedEra('imperial')} style={{ backgroundColor: selectedEra === 'imperial' ? eraColors.imperial : '#1E1E24', color: '#F5F4F2', padding: '10px 20px', margin: '0 5px', border: 'none', borderRadius: '5px', cursor: 'pointer', transition: 'background-color 0.3s, color 0.3s' }}>Imperial (31 BCE-284 CE)</button>
+          {/* Era Navigation */}
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
+            {Object.entries(eraColors).map(([era, color]) => (
+              <button
+                key={era}
+                onClick={() => setSelectedEra(era as any)}
+                style={{
+                  padding: '0.75rem 1.5rem',
+                  backgroundColor: selectedEra === era ? color : '#1E1E24',
+                  color: selectedEra === era ? '#000' : color,
+                  border: `2px solid ${color}`,
+                  borderRadius: '0.75rem',
+                  fontSize: '0.9rem',
+                  fontWeight: '600',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  textTransform: 'capitalize',
+                  boxShadow: selectedEra === era ? `0 0 20px ${color}40` : 'none',
+                  transform: selectedEra === era ? 'scale(1.05)' : 'scale(1)'
+                }}
+                onMouseOver={(e) => {
+                  if (selectedEra !== era) {
+                    e.currentTarget.style.backgroundColor = `${color}20`;
+                  }
+                }}
+                onMouseOut={(e) => {
+                  if (selectedEra !== era) {
+                    e.currentTarget.style.backgroundColor = '#1E1E24';
+                  }
+                }}
+              >
+                {era.replace('-', ' ')}
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
 
-      <div style={{ display: 'flex', flexDirection: 'row', width: '90%', maxWidth: '1200px' }}>
+      <div style={{ 
+        display: 'flex', 
+        maxWidth: '1200px', 
+        margin: '0 auto',
+        gap: '2rem',
+        padding: '2rem'
+      }}>
+        {/* Controls Panel */}
+        <div style={{ 
+          width: '300px',
+          backgroundColor: '#1E1E24',
+          borderRadius: '1rem',
+          padding: '1.5rem',
+          border: '1px solid #2A2A32',
+          height: 'fit-content'
+        }}>
+          <h3 style={{ 
+            margin: '0 0 1rem 0', 
+            color: '#F5F4F2',
+            fontSize: '1.2rem',
+            fontWeight: '600'
+          }}>
+            View Controls
+          </h3>
 
-        {/* SVG Map */}
-        <div style={{ flex: '2', backgroundColor: '#1E1E24', borderRadius: '10px', padding: '10px', boxShadow: '0 4px 8px rgba(0,0,0,0.3)', position: 'relative', overflow: 'hidden' }}>
-          <svg ref={svgRef} width="100%" height="600" style={{ display: 'block' }}>
-            <defs>
-                <linearGradient id="routeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style={{stopColor: eraColor, stopOpacity:1}} />
-                    <stop offset="100%" style={{stopColor: eraColor, stopOpacity:0.2}} />
-                </linearGradient>
-            </defs>
-
-            {/* Map Background (Simple Rectangle) */}
-            <rect width="100%" height="100%" fill="#141419" />
-
-            {filteredRoutes.map(route => (
-              <line
-                key={route.id}
-                x1={route.start.x}
-                y1={route.start.y}
-                x2={route.end.x}
-                y2={route.end.y}
-                stroke={animatedRoutes.has(route.id) ? 'url(#routeGradient)' : eraColor}
-                strokeWidth="3"
-                style={{ transition: 'stroke 0.3s', cursor: 'pointer' }}
-                onClick={() => handleRouteClick(route)}
-              />
-            ))}
-
-            {cities.filter(city => city.era.includes(selectedEra)).map(city => (
-              <g key={city.name} style={{ cursor: 'pointer', transition: 'transform 0.2s' }} onMouseEnter={() => handleCityHover(city)} onMouseLeave={handleCityLeave}>
-                <circle
-                  cx={city.x}
-                  cy={city.y}
-                  r={city.importance === 'major' ? 8 : 6}
-                  fill={eraColor}
-                  style={{ opacity: pulsingCities.has(city.name) ? 0.8 : 0.6, transition: 'opacity 0.3s, transform 0.3s', transformOrigin: 'center', animation: pulsingCities.has(city.name) ? 'pulse 1.5s infinite' : 'none' }}
-                />
-                <text
-                  x={city.x}
-                  y={city.y - 10}
-                  textAnchor="middle"
-                  fontSize="0.8rem"
-                  fill="#9CA3AF"
-                >
-                  {city.greekName ? city.greekName + ' Α' : (city.latinName ? city.latinName + ' L' : city.name)}
-                </text>
-              </g>
-            ))}
-
-             {/* Animated Ship (Example - can be improved with more complex pathing) */}
-             {selectedRoute && animatedRoutes.has(selectedRoute.id) && (
-                <image
-                  href="/ship.svg"  // Replace with your ship SVG path
-                  x={selectedRoute.start.x}
-                  y={selectedRoute.start.y}
-                  height="20"
-                  width="20"
+          {/* View Mode Toggle */}
+          <div style={{ marginBottom: '1.5rem' }}>
+            <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1rem' }}>
+              {['routes', 'goods', 'cities'].map((mode) => (
+                <button
+                  key={mode}
+                  onClick={() => setViewMode(mode as any)}
                   style={{
-                    animation: `moveShip ${2}s linear forwards`,
-                    transformOrigin: 'center',
-                    rotate: '45deg',
+                    flex: 1,
+                    padding: '0.5rem',
+                    backgroundColor: viewMode === mode ? '#C9A227' : '#141419',
+                    color: viewMode === mode ? '#000' : '#F5F4F2',
+                    border: 'none',
+                    borderRadius: '0.5rem',
+                    fontSize: '0.8rem',
+                    fontWeight: '600',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                    textTransform: 'capitalize'
                   }}
-                />
-              )}
-          </svg>
+                >
+                  {mode}
+                </button>
+              ))}
+            </div>
+          </div>
 
-            {/* Keyframes for Ship Animation */}
-            <style jsx>{`
-                @keyframes moveShip {
-                    0% {
-                        transform: translate(${selectedRoute?.start.x}px, ${selectedRoute?.start.y}px) rotate(45deg);
-                        opacity: 1;
-                    }
-                    100% {
-                        transform: translate(${selectedRoute?.end.x}px, ${selectedRoute?.end.y}px) rotate(45deg);
-                        opacity: 1;
-                    }
-                }
-                @keyframes pulse {
-                    0% {
-                        transform: scale(1);
-                    }
-                    50% {
-                        transform: scale(1.2);
-                    }
-                    100% {
-                        transform: scale(1);
-                    }
-                }
-            `}</style>
+          {/* Animation Toggle */}
+          <div style={{ marginBottom: '1.5rem' }}>
+            <label style={{ 
+              display: 'flex', 
+              alignItems: 'center', 
+              gap: '0.5rem',
+              cursor: 'pointer',
+              fontSize: '0.9rem'
+            }}>
+              <input
+                type="checkbox"
+                checked={flowAnimation}
+                onChange={(e) => setFlowAnimation(e.target.checked)}
+                style={{ 
+                  accentColor: '#C9A227',
+                  transform: 'scale(1.2)'
+                }}
+              />
+              Flow Animation
+            </label>
+          </div>
 
-        </div>
+          {/* Trade Goods Legend */}
+          {viewMode === 'goods' && (
+            <div>
+              <h4 style={{ 
+                margin: '0 0 1rem 0', 
+                color: '#F5F4F2',
+                fontSize: '1rem'
+              }}>
+                Trade Goods
+              </h4>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                {Object.entries(tradeGoods).map(([good, data]) => (
+                  <button
+                    key={good}
+                    onClick={() => setSelectedGood(selectedGood === good ? null : good)}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.75rem',
+                      padding: '0.75rem',
+                      backgroundColor: selectedGood === good ? data.color + '20' : '#141419',
+                      border: selectedGood === good ? `2px solid ${data.color}` : '1px solid #2A2A32',
+                      borderRadius: '0.5rem',
+                      color: '#F5F4F2',
+                      cursor: 'pointer',
+                      transition: 'all 0.2s ease',
+                      fontSize: '0.9rem',
+                      textAlign: 'left'
+                    }}
+                  >
+                    <span style={{ fontSize: '1.2rem' }}>{data.symbol}</span>
+                    <span style={{ textTransform: 'capitalize', fontWeight: '500' }}>{good}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
 
-        {/* Route/City Details */}
-        <div style={{ flex: '1', backgroundColor: '#1E1E24', borderRadius: '10px', padding: '20px', marginLeft: '20px', boxShadow: '0 4px 8px rgba(0,0,0,0.3)' }}>
-          <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '10px', color: '#F5F4F2' }}>
-            {selectedRoute ? 'Route Details' : (hoveredCity ? 'City Details' : 'Select a Route or Hover over a City')}
-          </h2>
-
+          {/* Selected Route Info */}
           {selectedRoute && (
-            <>
-              <h3 style={{ fontSize: '1.2rem', color: '#C9A227', marginBottom: '5px' }}>{selectedRoute.name}</h3>
-              <p style={{ color: '#9CA3AF', marginBottom: '10px' }}>{selectedRoute.description}</p>
-              <p style={{ color: '#9CA3AF' }}><strong>Goods Traded:</strong> {selectedRoute.goods.join(', ')}</p>
-              <p style={{ color: '#9CA3AF' }}><strong>Type:</strong> {selectedRoute.type}</p>
-              <p style={{ color: '#9CA3AF' }}><strong>Flow:</strong> {selectedRoute.flow}</p>
-            </>
-          )}
-
-          {hoveredCity && (
-            <>
-              <h3 style={{ fontSize: '1.2rem', color: '#C9A227', marginBottom: '5px' }}>{hoveredCity.name}</h3>
-              {hoveredCity.greekName && <p style={{ color: '#9CA3AF' }}>Greek: {hoveredCity.greekName}</p>}
-              {hoveredCity.latinName && <p style={{ color: '#9CA3AF' }}>Latin: {hoveredCity.latinName}</p>}
-              <p style={{ color: '#9CA3AF', marginBottom: '10px' }}><strong>Type:</strong> {hoveredCity.type}</p>
-              <p style={{ color: '#9CA3AF' }}><strong>Goods:</strong> {hoveredCity.goods.join(', ')}</p>
-              <p style={{ color: '#9CA3AF' }}><strong>Importance:</strong> {hoveredCity.importance}</p>
-            </>
+            <div style={{ 
+              marginTop: '1.5rem',
+              padding: '1rem',
+              backgroundColor: '#141419',
+              borderRadius: '0.5rem',
+              border: '1px solid #2A2A32'
+            }}>
+              <h4 style={{ 
+                margin: '0 0 0.5rem 0',
+                color: eraColors[selectedEra],
+                fontSize: '1rem'
+              }}>
+                {selectedRoute.name}
+              </h4>
+              <p style={{ 
+                color: '#9CA3AF',
+                fontSize: '0.8rem',
+                margin: '0 0 0.75rem 0'
+              }}>
+                {selectedRoute.description}
+              </p>
+              <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                {selectedRoute.goods.map(good => (
+                  <span
+                    key={good}
+                    style={{
+                      padding: '0.25rem 0.5rem',
+                      backgroundColor: tradeGoods[good]?.color || '#6B7280',
+                      color: '#000',
+                      borderRadius: '0.25rem',
+                      fontSize: '0.7rem',
+                      fontWeight: '600',
+                      textTransform: 'capitalize'
+                    }}
+                  >
+                    {tradeGoods[good]?.symbol} {good}
+                  </span>
+                ))}
+              </div>
+            </div>
           )}
         </div>
-      </div>
 
-      <footer style={{ marginTop: '30px', color: '#6B7280', textAlign: 'center' }}>
-        <p>Logos Professional Design System</p>
-      </footer>
-    </div>
-  );
-}
+        {/* Map Container */}
+        <div style={{ 
+          flex: 1,
+          backgroundColor: '#1E1E24',
+          borderRadius: '1rem',
+          border: '1px solid #2A2A32',
+          overflow: 'hidden',
+          position: 'relative'
+        }}>
+          {/* Map Header */}
+          <div style={{ 
+            padding: '1rem 1.5rem',
+            borderBottom: '1px solid #2A2A32',
+            backgroundColor: '#141419'
+          }}>
+            <h3 style={{ 
+              margin: 0,
+              color: '#F5F4F2',
+              fontSize: '1.1rem',
+              fontWeight: '600'
+            }}>
+              {selectedEra.charAt(0).toUpperCase() + selectedEra.slice(1).replace('-', ' ')} Period
+              <span style={{ 
+                marginLeft: '1rem',
+                fontSize: '0.9rem',
+                color: '#9CA3AF',
+                fontWeight: '400'
+              }}>
+                ({currentRoutes.length} active routes)
+              </span>
+            </h3>
+          </div>
+
+          {/* SVG Map */}
+          <div style={{ padding: '2rem', backgroundColor: '#0D0D0F' }}>
+            <svg
+              ref={svgRef}
+              viewBox="0 0 640 400"
+              style={{ 
+                width: '100%', 
+                height: '500px',
+                backgroundColor: '#0A1B2E',
+                borderRadius: '0.5rem',
+                border: '1px solid #1E3A5F'
+              }}
+            >
+              {/* Background Map Elements */}
+              <defs>
+                <radialGradient id="seaGradient" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" style={{ stopColor: '#1E3A8A', stopOpacity: 0.3 }} />
+                  <stop offset="100%" style={{ stopColor: '#0F172A', stopOpacity: 0.8 }} />
+                </radialGradient>
+                
+                {/* Flow Animation */}
+                <style>
+                  {`
+                    @keyframes flowPulse {
+                      0%, 100% { opacity: 0.6; stroke-width: 2px; }
+                      50% { opacity: 1; stroke-width: 4px; }
+                    }
+                    .trade-route {
+                      animation: flowPulse 3s ease-in-out infinite;
+                    }
+                    .city-pulse {
+                      animation: flowPulse 2s ease-in-out infinite;
+                    }
+                  `}
+                </style>
+
+                {/* Arrow markers for route direction */}
+                <marker
+                  id="arrowhead"
+                  markerWidth="10"
+                  markerHeight="7"
+                  refX="10"
+                  refY="3.5"
+                  orient="auto"
+                >
+                  <polygon
+                    points="0 0, 10 3.5, 0 7"
+                    fill={eraColors[selectedEra]}
+                    opacity="0.8"
+                  />
+                </marker>
+              </defs>
+
+              {/* Sea Background */}
+              <rect
+                width="640"
+                height="400"
+                fill="url(#seaGradient)"
+              />
+
+              {/* Land Masses (Simplified) */}
+              <path
+                d="M 0,250 Q 100,200 200,220 Q 300,240 400,200 Q 500,180 640,160 L 640,400 L 0,400 Z"
+                fill="#1A2332"
+                stroke="#2A3441"
+                strokeWidth="1"
+                opacity="0.7"
+              />
+              
+              <ellipse
+                cx="350"
+                cy="280"
+                rx="80"
+                ry="40"
+                fill="#1A2332"
+                opacity="0.6"
+              />
+
+              {/* Trade Routes */}
+              {currentRoutes.map(route => {
+                const isSelected = selectedRoute?.id === route.id;
+                const isHighlighted = selectedGood && route.goods.includes(selectedGood);
+                const shouldShow = !selectedGood || isHighlighted;
+                
+                return shouldShow && (
+                  <g key={route.id}>
+                    {/* Route Line */}
+                    <line
+                      x1={route.start.x}
+                      y1={route.start.y}
+                      x2={route.end.x}
+                      y2={route.end.y}
+                      stroke={isSelected ? '#C9A227' : eraColors[selectedEra]}
+                      strokeWidth={isSelected ? getFlowWidth(route.flow) + 2 : getFlowWidth(route.flow)}
+                      strokeDasharray={getRoutePattern(route.type)}
+                      opacity={isSelected ? 1 : (isHighlighted ? 0.9 : 0.6)}
+                      className={flowAnimation ? "trade-route" : ""}
+                      markerEnd="url(#arrowhead)"
+                      style={{
+                        cursor: 'pointer',
+                        filter: isSelected ? `drop-shadow(0 0 8px ${eraColors[selectedEra]})` : 'none',
+                        transition: 'all 0.3s ease'
+                      }}
+                      onClick={() => setSelectedRoute(selectedRoute?.id === route.id ? null : route)}
+                      onMouseEnter={(e) => {
+                        if (!isSelected) {
+                          e.target.style.strokeWidth = getFlowWidth(route.flow) + 1;
+                          e.target.style.opacity = '0.9';
+                        }
+                      }}
+                      onMouseLeave={(e) => {
+                        if (!isSelected) {
+                          e.target.style.strokeWidth = getFlowWidth(route.flow);
+                          e.target.style.opacity = isHighlighted ? '0.9' : '0.6';
+                        }
+                      }}
+                    />
+                    
+                    {/* Route Label */}
+                    {(isSelected || isHighlighted) && (
+                      <text
+                        x={(route.start.x + route.end.x) / 2}
+                        y={(route.start.y + route.end.y) / 2 - 8}
+                        fill="#F5F4F2"
+                        fontSize="11"
+                        fontWeight="600"
+                        textAnchor="middle"
+                        style={{
+                          filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.8))',
+                          pointerEvents: 'none'
+                        }}
+                      >
+                        {route.name}
+                      </text>
+                    )}
+
+                    {/* Flow Indicators */}
+                    {isSelected && flowAnimation && (
+                      <>
+                        {[0.25, 0.5, 0.75].map((offset, i) => {
+                          const x = route.start.x + (route.end.x - route.start.x) * offset;
+                          const y = route.start.y + (route.end.y - route.start.y) * offset;
+                          return (
+                            <circle
+                              key={i}
+                              cx={x}
+                              cy={y}
+                              r="3"
+                              fill="#C9A227"
+                              className="city-pulse"
+                              style={{
+                                animationDelay: `${i * 0.5}s`
+                              }}
+                            />
+                          );
+                        })}
+                      </>
+                    )}
+                  </g>
+                );
+              })}
+
+              {/* Cities */}
+              {viewMode !== 'routes' && visibleCities.map(city => {
+                const isHovered = hoveredCity === city.name;
+                const cityRoutes = currentRoutes.filter(route => 
+                  Math.abs(route.start.x - city.x) < 20 && Math.abs(route.start.y - city.y) < 20 ||
+                  Math.abs(route.end.x - city.x) < 20 && Math.abs(route.end.y - city.y) < 20
+                );
+                
+                return (
+                  <g key={city.name}>
+                    {/* City Circle */}
+                    <circle
+                      cx={city.x}
+                      cy={city.y}
+                      r={isHovered ? getC

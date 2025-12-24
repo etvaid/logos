@@ -106,228 +106,577 @@ const WORDS: Record<string, WordData> = {
     manuscripts: [
       { sigla: "P.Oxy. 3525", reading: "σῶμα", date: "2nd c. CE", confidence: 94 },
       { sigla: "Vat. gr. 2061", reading: "σώματος", date: "11th c. CE", confidence: 88 },
-      { sigla: "Laur. plut. 32.16", reading: "σῶμα", date: "12th c. CE", confidence: 90 }
+      { sigla: "Laur. plut. 32.16", reading: "σώματι", date: "14th c. CE", confidence: 90 }
     ],
     embedding: [
-      { x: 10, y: 90, era: "Archaic", color: "#D97706" },
-      { x: 35, y: 55, era: "Classical", color: "#F59E0B" },
-      { x: 60, y: 35, era: "Hellenistic", color: "#3B82F6" },
+      { x: 25, y: 85, era: "Archaic", color: "#D97706" },
+      { x: 50, y: 55, era: "Classical", color: "#F59E0B" },
+      { x: 75, y: 35, era: "Hellenistic", color: "#3B82F6" },
       { x: 80, y: 20, era: "Late Antique", color: "#7C3AED" }
     ],
     lsj: {
-      definition: "the body whether of men or animals, living or dead",
-      etymology: "Uncertain",
-      cognates: []
+      definition: "body (as opp. to soul), dead body, corpse; the body of a tree; any solid body; a person, individual",
+      etymology: "from σῴζω (to save, preserve) - what is preserved",
+      cognates: ["σωματικός", "σωματοποιέω", "ἀσώματος"]
     }
   }
 };
 
-const EraColors: Record<string, string> = {
-  "Archaic": "#D97706",
-  "Classical": "#F59E0B",
-  "Hellenistic": "#3B82F6",
-  "Imperial": "#DC2626",
-  "Late Antique": "#7C3AED",
-  "Byzantine": "#059669",
-};
+export default function SemanticDriftPage() {
+  const [selectedWord, setSelectedWord] = useState<string>("ἀρετή");
+  const [animationProgress, setAnimationProgress] = useState(0);
+  const [hoveredEra, setHoveredEra] = useState<string | null>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const animationRef = useRef<number>();
 
-export default function Home() {
-  const [selectedWord, setSelectedWord] = useState<string | null>(null);
-  const wordData = selectedWord ? WORDS[selectedWord] : null;
+  const wordData = WORDS[selectedWord];
+
+  useEffect(() => {
+    if (isPlaying) {
+      const animate = () => {
+        setAnimationProgress(prev => {
+          const next = prev + 0.5;
+          if (next >= 100) {
+            setIsPlaying(false);
+            return 0;
+          }
+          return next;
+        });
+        animationRef.current = requestAnimationFrame(animate);
+      };
+      animationRef.current = requestAnimationFrame(animate);
+    }
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, [isPlaying]);
+
+  const renderTimelineVisualization = () => {
+    return (
+      <div style={{
+        backgroundColor: '#1E1E24',
+        borderRadius: '16px',
+        padding: '32px',
+        border: '1px solid #2D2D35',
+        position: 'relative',
+        overflow: 'hidden'
+      }}>
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: '4px',
+          background: `linear-gradient(90deg, #C9A227 0%, #C9A227 ${animationProgress}%, rgba(201, 162, 39, 0.1) ${animationProgress}%)`
+        }} />
+        
+        <h3 style={{
+          color: '#F5F4F2',
+          fontSize: '24px',
+          fontWeight: '700',
+          marginBottom: '24px',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '12px'
+        }}>
+          <div style={{
+            width: '8px',
+            height: '8px',
+            backgroundColor: '#3B82F6',
+            borderRadius: '50%'
+          }} />
+          Semantic Evolution Timeline
+        </h3>
+
+        <svg width="100%" height="400" style={{ marginBottom: '24px' }}>
+          {/* Timeline axis */}
+          <line x1="80" y1="350" x2="920" y2="350" stroke="#6B7280" strokeWidth="2"/>
+          
+          {/* Year markers */}
+          {[-800, -500, -300, 0, 300, 600].map((year, i) => (
+            <g key={year}>
+              <line x1={80 + i * 168} y1="340" x2={80 + i * 168} y2="360" stroke="#6B7280" strokeWidth="1"/>
+              <text x={80 + i * 168} y="380" fill="#9CA3AF" fontSize="12" textAnchor="middle">
+                {year > 0 ? `${year} CE` : `${Math.abs(year)} BCE`}
+              </text>
+            </g>
+          ))}
+
+          {/* Semantic drift path */}
+          <defs>
+            <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              {wordData.drift.map((point, i) => (
+                <stop key={i} offset={`${(i / (wordData.drift.length - 1)) * 100}%`} stopColor={point.color} stopOpacity="0.8"/>
+              ))}
+            </linearGradient>
+          </defs>
+
+          {/* Connect the dots with flowing path */}
+          {wordData.drift.map((point, i) => {
+            if (i === wordData.drift.length - 1) return null;
+            const nextPoint = wordData.drift[i + 1];
+            const x1 = 80 + ((point.year + 800) / 1400) * 840;
+            const y1 = 50 + (point.confidence / 100) * 250;
+            const x2 = 80 + ((nextPoint.year + 800) / 1400) * 840;
+            const y2 = 50 + (nextPoint.confidence / 100) * 250;
+            
+            return (
+              <g key={i}>
+                <path
+                  d={`M ${x1} ${y1} Q ${x1 + (x2 - x1) / 2} ${Math.min(y1, y2) - 30} ${x2} ${y2}`}
+                  stroke="url(#pathGradient)"
+                  strokeWidth="3"
+                  fill="none"
+                  strokeDasharray={isPlaying ? "5,5" : "none"}
+                  style={{
+                    animation: isPlaying ? 'dash 2s linear infinite' : 'none'
+                  }}
+                />
+              </g>
+            );
+          })}
+
+          {/* Era points */}
+          {wordData.drift.map((point, i) => {
+            const x = 80 + ((point.year + 800) / 1400) * 840;
+            const y = 50 + (point.confidence / 100) * 250;
+            const isHovered = hoveredEra === point.era;
+            
+            return (
+              <g key={point.era}>
+                <circle
+                  cx={x}
+                  cy={y}
+                  r={isHovered ? 12 : 8}
+                  fill={point.color}
+                  stroke="#F5F4F2"
+                  strokeWidth="2"
+                  style={{
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                    filter: isHovered ? 'drop-shadow(0 0 12px rgba(255,255,255,0.3))' : 'none'
+                  }}
+                  onMouseEnter={() => setHoveredEra(point.era)}
+                  onMouseLeave={() => setHoveredEra(null)}
+                />
+                
+                {/* Era label */}
+                <text
+                  x={x}
+                  y={y - 20}
+                  fill="#F5F4F2"
+                  fontSize="11"
+                  fontWeight="600"
+                  textAnchor="middle"
+                  style={{ pointerEvents: 'none' }}
+                >
+                  {point.era}
+                </text>
+
+                {/* Hover tooltip */}
+                {isHovered && (
+                  <g>
+                    <rect
+                      x={x - 120}
+                      y={y + 20}
+                      width="240"
+                      height="60"
+                      fill="#0D0D0F"
+                      stroke={point.color}
+                      strokeWidth="1"
+                      rx="8"
+                      style={{ filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.4))' }}
+                    />
+                    <text x={x} y={y + 40} fill="#F5F4F2" fontSize="12" fontWeight="600" textAnchor="middle">
+                      {point.meaning}
+                    </text>
+                    <text x={x} y={y + 55} fill="#9CA3AF" fontSize="10" textAnchor="middle">
+                      Confidence: {point.confidence}%
+                    </text>
+                  </g>
+                )}
+              </g>
+            );
+          })}
+        </svg>
+
+        <div style={{
+          display: 'flex',
+          justifyContent: 'center',
+          marginTop: '24px'
+        }}>
+          <button
+            onClick={() => setIsPlaying(!isPlaying)}
+            style={{
+              backgroundColor: isPlaying ? '#DC2626' : '#C9A227',
+              color: '#0D0D0F',
+              border: 'none',
+              padding: '12px 24px',
+              borderRadius: '8px',
+              fontWeight: '600',
+              fontSize: '14px',
+              cursor: 'pointer',
+              transition: 'all 0.2s ease',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px'
+            }}
+          >
+            {isPlaying ? '⏹ Stop Animation' : '▶ Animate Evolution'}
+          </button>
+        </div>
+
+        <style jsx>{`
+          @keyframes dash {
+            to {
+              stroke-dashoffset: -10;
+            }
+          }
+        `}</style>
+      </div>
+    );
+  };
+
+  const renderSemanticSpace = () => {
+    return (
+      <div style={{
+        backgroundColor: '#1E1E24',
+        borderRadius: '16px',
+        padding: '32px',
+        border: '1px solid #2D2D35'
+      }}>
+        <h3 style={{
+          color: '#F5F4F2',
+          fontSize: '24px',
+          fontWeight: '700',
+          marginBottom: '24px',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '12px'
+        }}>
+          <div style={{
+            width: '8px',
+            height: '8px',
+            backgroundColor: '#DC2626',
+            borderRadius: '50%'
+          }} />
+          Semantic Space Embedding
+        </h3>
+
+        <svg width="100%" height="400">
+          <defs>
+            <radialGradient id="spaceGradient" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stopColor="rgba(201, 162, 39, 0.1)" />
+              <stop offset="100%" stopColor="rgba(13, 13, 15, 0.8)" />
+            </radialGradient>
+          </defs>
+
+          <rect width="100%" height="100%" fill="url(#spaceGradient)" />
+
+          {/* Grid lines */}
+          {[0, 1, 2, 3, 4].map(i => (
+            <g key={i} opacity="0.1">
+              <line x1={i * 200} y1="0" x2={i * 200} y2="400" stroke="#F5F4F2" strokeWidth="1"/>
+              <line x1="0" y1={i * 100} x2="800" y2={i * 100} stroke="#F5F4F2" strokeWidth="1"/>
+            </g>
+          ))}
+
+          {/* Embedding trajectory */}
+          {wordData.embedding.map((point, i) => {
+            if (i === wordData.embedding.length - 1) return null;
+            const nextPoint = wordData.embedding[i + 1];
+            return (
+              <line
+                key={i}
+                x1={point.x * 8}
+                y1={400 - point.y * 4}
+                x2={nextPoint.x * 8}
+                y2={400 - nextPoint.y * 4}
+                stroke={point.color}
+                strokeWidth="2"
+                strokeDasharray="3,3"
+                opacity="0.6"
+              />
+            );
+          })}
+
+          {/* Embedding points */}
+          {wordData.embedding.map((point, i) => (
+            <g key={point.era}>
+              <circle
+                cx={point.x * 8}
+                cy={400 - point.y * 4}
+                r="10"
+                fill={point.color}
+                stroke="#F5F4F2"
+                strokeWidth="2"
+                style={{
+                  filter: 'drop-shadow(0 0 8px rgba(255,255,255,0.2))',
+                  animation: `pulse-${i} 3s ease-in-out infinite`
+                }}
+              />
+              <text
+                x={point.x * 8}
+                y={400 - point.y * 4 - 15}
+                fill="#F5F4F2"
+                fontSize="11"
+                fontWeight="600"
+                textAnchor="middle"
+              >
+                {point.era}
+              </text>
+            </g>
+          ))}
+        </svg>
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: '16px',
+          marginTop: '24px',
+          fontSize: '14px',
+          color: '#9CA3AF'
+        }}>
+          <div>
+            <strong style={{ color: '#F5F4F2' }}>X-Axis:</strong> Semantic Concreteness
+          </div>
+          <div>
+            <strong style={{ color: '#F5F4F2' }}>Y-Axis:</strong> Cultural Abstraction
+          </div>
+        </div>
+
+        <style jsx>{`
+          @keyframes pulse-0 { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.7; transform: scale(1.1); } }
+          @keyframes pulse-1 { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.7; transform: scale(1.1); } }
+          @keyframes pulse-2 { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.7; transform: scale(1.1); } }
+          @keyframes pulse-3 { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.7; transform: scale(1.1); } }
+        `}</style>
+      </div>
+    );
+  };
 
   return (
-    <div style={{ backgroundColor: '#0D0D0F', color: '#F5F4F2', minHeight: '100vh', padding: '20px', transition: 'background-color 0.3s ease, color 0.3s ease' }}>
-      <header style={{ marginBottom: '20px', textAlign: 'center' }}>
-        <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#C9A227', transition: 'color 0.3s ease' }}>
-          Logos Lexicon
-        </h1>
-        <p style={{ color: '#9CA3AF', fontSize: '1.2rem', transition: 'color 0.3s ease' }}>
-          Exploring the Evolution of Ancient Greek Words
-        </p>
-      </header>
+    <div style={{
+      minHeight: '100vh',
+      backgroundColor: '#0D0D0F',
+      color: '#F5F4F2'
+    }}>
+      {/* Navigation */}
+      <nav style={{
+        borderBottom: '1px solid #2D2D35',
+        padding: '16px 0',
+        position: 'sticky',
+        top: 0,
+        backgroundColor: 'rgba(13, 13, 15, 0.95)',
+        backdropFilter: 'blur(8px)',
+        zIndex: 100
+      }}>
+        <div style={{
+          maxWidth: '1400px',
+          margin: '0 auto',
+          padding: '0 24px',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '32px'
+        }}>
+          <Link href="/" style={{
+            fontSize: '24px',
+            fontWeight: '800',
+            color: '#C9A227',
+            textDecoration: 'none',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px'
+          }}>
+            <div style={{
+              width: '32px',
+              height: '32px',
+              backgroundColor: '#C9A227',
+              borderRadius: '8px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              color: '#0D0D0F',
+              fontWeight: '900'
+            }}>Λ</div>
+            LOGOS
+          </Link>
 
-      <main style={{ display: 'flex', gap: '20px' }}>
-        <aside style={{ width: '250px' }}>
-          <h2 style={{ fontSize: '1.5rem', marginBottom: '10px', color: '#F5F4F2', transition: 'color 0.3s ease' }}>
-            Words
+          <div style={{
+            display: 'flex',
+            gap: '24px',
+            alignItems: 'center'
+          }}>
+            <Link href="/search" style={{ color: '#9CA3AF', textDecoration: 'none', fontSize: '16px', fontWeight: '500' }}>
+              Search
+            </Link>
+            <Link href="/browse" style={{ color: '#9CA3AF', textDecoration: 'none', fontSize: '16px', fontWeight: '500' }}>
+              Browse
+            </Link>
+            <Link href="/analysis" style={{ color: '#9CA3AF', textDecoration: 'none', fontSize: '16px', fontWeight: '500' }}>
+              Analysis
+            </Link>
+            <span style={{ color: '#C9A227', fontSize: '16px', fontWeight: '600' }}>
+              Semantic Drift
+            </span>
+          </div>
+        </div>
+      </nav>
+
+      <div style={{
+        maxWidth: '1400px',
+        margin: '0 auto',
+        padding: '48px 24px'
+      }}>
+        {/* Header */}
+        <div style={{ marginBottom: '48px' }}>
+          <h1 style={{
+            fontSize: '48px',
+            fontWeight: '800',
+            marginBottom: '16px',
+            background: 'linear-gradient(135deg, #C9A227 0%, #F5F4F2 50%, #3B82F6 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text'
+          }}>
+            Semantic Drift Analysis
+          </h1>
+          <p style={{
+            fontSize: '20px',
+            color: '#9CA3AF',
+            lineHeight: '1.6',
+            maxWidth: '800px'
+          }}>
+            Witness how Greek words evolved across millennia. Track semantic transformations that traditional dictionaries miss, 
+            powered by our complete corpus analysis spanning 1,500 years of textual evidence.
+          </p>
+        </div>
+
+        {/* Word Selector */}
+        <div style={{
+          backgroundColor: '#1E1E24',
+          border: '1px solid #2D2D35',
+          borderRadius: '16px',
+          padding: '32px',
+          marginBottom: '32px'
+        }}>
+          <h2 style={{
+            fontSize: '24px',
+            fontWeight: '700',
+            marginBottom: '24px',
+            color: '#F5F4F2'
+          }}>
+            Select Word for Analysis
           </h2>
-          <ul style={{ listStyleType: 'none', padding: 0 }}>
-            {Object.keys(WORDS).map(word => (
-              <li key={word} style={{ marginBottom: '8px' }}>
-                <button
-                  onClick={() => setSelectedWord(word)}
-                  style={{
-                    backgroundColor: '#1E1E24',
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gap: '16px'
+          }}>
+            {Object.entries(WORDS).map(([word, data]) => (
+              <div
+                key={word}
+                onClick={() => setSelectedWord(word)}
+                style={{
+                  padding: '24px',
+                  backgroundColor: selectedWord === word ? 'rgba(201, 162, 39, 0.1)' : '#141419',
+                  border: selectedWord === word ? '2px solid #C9A227' : '1px solid #2D2D35',
+                  borderRadius: '12px',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  transform: selectedWord === word ? 'translateY(-2px)' : 'none'
+                }}
+              >
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '12px',
+                  marginBottom: '12px'
+                }}>
+                  <span style={{
+                    padding: '4px 8px',
+                    backgroundColor: '#3B82F6',
                     color: '#F5F4F2',
-                    border: 'none',
-                    padding: '10px 15px',
-                    borderRadius: '5px',
-                    cursor: 'pointer',
-                    width: '100%',
-                    textAlign: 'left',
-                    transition: 'background-color 0.3s ease, color 0.3s ease',
-                    ...(selectedWord === word ? { backgroundColor: '#C9A227', color: '#0D0D0F' } : {})
-                  }}
-                >
-                  {word} <span style={{color:'#9CA3AF'}}>Α</span>
-                </button>
-              </li>
+                    borderRadius: '4px',
+                    fontSize: '12px',
+                    fontWeight: '600'
+                  }}>
+                    Α
+                  </span>
+                  <span style={{
+                    fontSize: '24px',
+                    fontWeight: '700',
+                    color: '#F5F4F2'
+                  }}>
+                    {word}
+                  </span>
+                  <span style={{
+                    color: '#9CA3AF',
+                    fontSize: '16px'
+                  }}>
+                    {data.translit}
+                  </span>
+                </div>
+                <div style={{
+                  color: '#9CA3AF',
+                  fontSize: '14px',
+                  marginBottom: '8px'
+                }}>
+                  {data.corpus}
+                </div>
+                <div style={{
+                  color: '#6B7280',
+                  fontSize: '12px'
+                }}>
+                  {data.count.toLocaleString()} occurrences
+                </div>
+              </div>
             ))}
-          </ul>
-        </aside>
+          </div>
+        </div>
 
-        <article style={{ flex: 1 }}>
-          {wordData ? (
-            <div style={{ backgroundColor: '#1E1E24', padding: '20px', borderRadius: '10px', transition: 'background-color 0.3s ease' }}>
-              <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '10px', color: '#F5F4F2', transition: 'color 0.3s ease' }}>
-                {wordData.word} <span style={{color:'#9CA3AF'}}>Α</span> ({wordData.translit})
-              </h2>
-              <p style={{ color: '#9CA3AF', marginBottom: '15px', transition: 'color 0.3s ease' }}>
-                Traditional Meaning: {wordData.traditional}
-              </p>
+        {/* Main Content Grid */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr',
+          gap: '32px',
+          marginBottom: '32px'
+        }}>
+          {renderTimelineVisualization()}
+          {renderSemanticSpace()}
+        </div>
 
-              <section style={{ marginBottom: '20px' }}>
-                <h3 style={{ fontSize: '1.4rem', color: '#F5F4F2', marginBottom: '8px', transition: 'color 0.3s ease' }}>
-                  Corpus Evolution
-                </h3>
-                <p style={{ color: '#9CA3AF', transition: 'color 0.3s ease' }}>
-                  {wordData.corpus}
-                </p>
-              </section>
-
-              <section style={{ marginBottom: '20px' }}>
-                <h3 style={{ fontSize: '1.4rem', color: '#F5F4F2', marginBottom: '8px', transition: 'color 0.3s ease' }}>
-                  Semantic Drift
-                </h3>
-                <div style={{overflowX: 'auto'}}>
-                <table style={{width: '100%', borderCollapse: 'collapse', minWidth:'600px'}}>
-                  <thead>
-                    <tr style={{backgroundColor: '#141419', color: '#F5F4F2'}}>
-                      <th style={{padding: '8px', textAlign: 'left', borderBottom: '1px solid #6B7280'}}>Era</th>
-                      <th style={{padding: '8px', textAlign: 'left', borderBottom: '1px solid #6B7280'}}>Meaning</th>
-                      <th style={{padding: '8px', textAlign: 'left', borderBottom: '1px solid #6B7280'}}>Confidence</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {wordData.drift.map((d, index) => (
-                      <tr key={index} style={{transition: 'background-color 0.2s ease'}}>
-                        <td style={{padding: '8px', borderBottom: '1px solid #6B7280', color:d.color}}>{d.era}</td>
-                        <td style={{padding: '8px', borderBottom: '1px solid #6B7280', color: '#9CA3AF'}}>{d.meaning}</td>
-                        <td style={{padding: '8px', borderBottom: '1px solid #6B7280', color: '#9CA3AF'}}>{d.confidence}%</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-                </div>
-              </section>
-
-              <section style={{ marginBottom: '20px' }}>
-                <h3 style={{ fontSize: '1.4rem', color: '#F5F4F2', marginBottom: '8px', transition: 'color 0.3s ease' }}>
-                  Key Insight
-                </h3>
-                <p style={{ color: '#9CA3AF', transition: 'color 0.3s ease' }}>
-                  {wordData.insight}
-                </p>
-              </section>
-
-              <section style={{ marginBottom: '20px' }}>
-                <h3 style={{ fontSize: '1.4rem', color: '#F5F4F2', marginBottom: '8px', transition: 'color 0.3s ease' }}>
-                  Paradigm
-                </h3>
-                <div style={{overflowX: 'auto'}}>
-                 <table style={{width: '100%', borderCollapse: 'collapse', minWidth:'400px'}}>
-                    <thead>
-                      <tr style={{backgroundColor: '#141419', color: '#F5F4F2'}}>
-                        <th style={{padding: '8px', textAlign: 'left', borderBottom: '1px solid #6B7280'}}>Form</th>
-                        <th style={{padding: '8px', textAlign: 'left', borderBottom: '1px solid #6B7280'}}>Greek</th>
-                        <th style={{padding: '8px', textAlign: 'left', borderBottom: '1px solid #6B7280'}}>Function</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {wordData.paradigm.map((p, index) => (
-                        <tr key={index} style={{transition: 'background-color 0.2s ease'}}>
-                          <td style={{padding: '8px', borderBottom: '1px solid #6B7280', color: '#9CA3AF'}}>{p.form}</td>
-                          <td style={{padding: '8px', borderBottom: '1px solid #6B7280', color: '#F5F4F2'}}>{p.greek} <span style={{color:'#9CA3AF'}}>Α</span></td>
-                          <td style={{padding: '8px', borderBottom: '1px solid #6B7280', color: '#9CA3AF'}}>{p.function}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </section>
-
-              <section style={{ marginBottom: '20px' }}>
-                <h3 style={{ fontSize: '1.4rem', color: '#F5F4F2', marginBottom: '8px', transition: 'color 0.3s ease' }}>
-                  Manuscript Evidence
-                </h3>
-                 <div style={{overflowX: 'auto'}}>
-                 <table style={{width: '100%', borderCollapse: 'collapse', minWidth:'500px'}}>
-                    <thead>
-                      <tr style={{backgroundColor: '#141419', color: '#F5F4F2'}}>
-                        <th style={{padding: '8px', textAlign: 'left', borderBottom: '1px solid #6B7280'}}>Sigla</th>
-                        <th style={{padding: '8px', textAlign: 'left', borderBottom: '1px solid #6B7280'}}>Reading</th>
-                        <th style={{padding: '8px', textAlign: 'left', borderBottom: '1px solid #6B7280'}}>Date</th>
-                        <th style={{padding: '8px', textAlign: 'left', borderBottom: '1px solid #6B7280'}}>Confidence</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {wordData.manuscripts.map((m, index) => (
-                        <tr key={index} style={{transition: 'background-color 0.2s ease'}}>
-                          <td style={{padding: '8px', borderBottom: '1px solid #6B7280', color: '#9CA3AF'}}>{m.sigla}</td>
-                          <td style={{padding: '8px', borderBottom: '1px solid #6B7280', color: '#F5F4F2'}}>{m.reading} <span style={{color:'#9CA3AF'}}>Α</span></td>
-                          <td style={{padding: '8px', borderBottom: '1px solid #6B7280', color: '#9CA3AF'}}>{m.date}</td>
-                          <td style={{padding: '8px', borderBottom: '1px solid #6B7280', color: '#9CA3AF'}}>{m.confidence}%</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </section>
-
-              <section style={{ marginBottom: '20px' }}>
-                <h3 style={{ fontSize: '1.4rem', color: '#F5F4F2', marginBottom: '8px', transition: 'color 0.3s ease' }}>
-                  Semantic Embedding
-                </h3>
-                <svg width="300" height="200" style={{border: '1px solid #6B7280'}}>
-                  {wordData.embedding.map((point, index) => (
-                    <circle
-                      key={index}
-                      cx={point.x}
-                      cy={point.y}
-                      r="5"
-                      fill={point.color}
-                      style={{ transition: 'fill 0.3s ease' }}
-                    />
-                  ))}
-                </svg>
-              </section>
-
-              <section>
-                <h3 style={{ fontSize: '1.4rem', color: '#F5F4F2', marginBottom: '8px', transition: 'color 0.3s ease' }}>
-                  LSJ Definition
-                </h3>
-                <p style={{ color: '#9CA3AF', transition: 'color 0.3s ease' }}>
-                  Definition: {wordData.lsj.definition}
-                  <br />
-                  Etymology: {wordData.lsj.etymology}
-                  <br />
-                  Cognates: {wordData.lsj.cognates.join(', ')}
-                </p>
-              </section>
-            </div>
-          ) : (
-            <p style={{ color: '#9CA3AF', transition: 'color 0.3s ease' }}>
-              Select a word to see its details.
-            </p>
-          )}
-        </article>
-      </main>
-
-      <footer style={{ marginTop: '30px', textAlign: 'center', color: '#6B7280', transition: 'color 0.3s ease' }}>
-        <p>
-          &copy; 2024 Logos Lexicon. All rights reserved.
-        </p>
-      </footer>
-    </div>
-  );
-}
+        {/* Word Details Grid */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
+          gap: '32px'
+        }}>
+          {/* LOGOS Insight */}
+          <div style={{
+            backgroundColor: '#1E1E24',
+            border: '1px solid #2D2D35',
+            borderRadius: '16px',
+            padding: '32px'
+          }}>
+            <h3 style={{
+              fontSize: '20px',
+              fontWeight: '700',
+              marginBottom: '16px',
+              color: '#C9A227',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px'
+            }}>
+              <div style={{
+                width: '20px',
+                height: '20px',
+                backgroundColor: '#C9A227',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '12px',
+                color: '#0D0D0F
