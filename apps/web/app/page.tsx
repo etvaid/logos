@@ -1,47 +1,99 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 
 const stats = [
-  { label: 'Passages', value: '1.7M+', icon: '📜' },
-  { label: 'Words Analyzed', value: '892K', icon: '📖' },
-  { label: 'Connections', value: '500K+', icon: '🔗' },
-  { label: 'Years Covered', value: '2,300', icon: '⏱️' },
+  { label: 'Passages', value: '1.7M+', icon: '📜', detail: 'Texts from Homer to Byzantine era' },
+  { label: 'Morphological Forms', value: '892K', icon: '📖', detail: 'Lemmatized and analyzed' },
+  { label: 'Semantic Links', value: '500K+', icon: '🔗', detail: 'AI-discovered connections' },
+  { label: 'Historical Span', value: '2,300 yrs', icon: '⏱️', detail: '800 BCE - 1500 CE' },
 ];
 
 const features = [
-  { href: '/search', title: 'Semantic Search', desc: 'Find passages by meaning across the classical corpus', icon: '🔍', color: '#3B82F6' },
-  { href: '/translate', title: 'AI Translation', desc: 'Context-aware Greek & Latin translation', icon: '📝', color: '#10B981' },
-  { href: '/discover', title: 'Discovery Engine', desc: 'AI-discovered patterns and connections', icon: '💡', color: '#F59E0B' },
-  { href: '/semantia', title: 'SEMANTIA', desc: 'Track word meaning evolution over time', icon: '📊', color: '#8B5CF6' },
-  { href: '/connectome', title: 'Connectome', desc: 'Visualize author influence networks', icon: '🕸️', color: '#EC4899' },
-  { href: '/maps', title: 'Maps & Timeline', desc: 'Interactive historical visualization', icon: '🗺️', color: '#06B6D4' },
+  { 
+    href: '/search', 
+    title: 'Critical Text Search', 
+    desc: 'Semantic search with apparatus criticus and manuscript variants',
+    icon: '🔍', 
+    color: '#3B82F6',
+    badge: 'NEW LSJ Integration'
+  },
+  { 
+    href: '/translate', 
+    title: 'Scholarly Translation', 
+    desc: 'Context-aware AI with polytonic Greek display and paradigm tables',
+    icon: '📝', 
+    color: '#10B981',
+    badge: 'Morphological Parser'
+  },
+  { 
+    href: '/discover', 
+    title: 'Philological Discovery', 
+    desc: 'AI patterns in textual criticism and intertextuality',
+    icon: '💡', 
+    color: '#F59E0B',
+    badge: 'ML Insights'
+  },
+  { 
+    href: '/semantia', 
+    title: 'SEMANTIA Engine', 
+    desc: 'Diachronic semantic analysis with word embedding visualization',
+    icon: '📊', 
+    color: '#8B5CF6',
+    badge: 'Semantic Drift'
+  },
+  { 
+    href: '/connectome', 
+    title: 'Textual Connectome', 
+    desc: 'Author Influence Networks',
+    icon: '🕸️', 
+    color: '#EC4899',
+    badge: 'Network Analysis'
+  },
+  { 
+    href: '/maps', 
+    title: 'Chronotope Maps', 
+    desc: 'Spatio-temporal visualization of classical world',
+    icon: '🗺️', 
+    color: '#06B6D4',
+    badge: 'Interactive Timeline'
+  },
 ];
 
 const navItems = [
-  { name: 'Search', href: '/search' },
-  { name: 'Translate', href: '/translate' },
-  { name: 'Discover', href: '/discover' },
-  { name: 'SEMANTIA', href: '/semantia' },
-  { name: 'Connectome', href: '/connectome' },
-  { name: 'Maps', href: '/maps' },
+  { name: 'Critical Search', href: '/search', icon: '🔍' },
+  { name: 'Translation', href: '/translate', icon: '📝' },
+  { name: 'Discovery', href: '/discover', icon: '💡' },
+  { name: 'SEMANTIA', href: '/semantia', icon: '📊' },
+  { name: 'Connectome', href: '/connectome', icon: '🕸️' },
+  { name: 'Apparatus', href: '/apparatus', icon: '📋' },
 ];
 
 const searchSuggestions = [
-  'virtue in Aristotle',
-  'death in Seneca',
-  'justice in Plato',
-  'glory in Virgil',
-  'wisdom in Marcus Aurelius',
-  'honor in Homer',
-  'friendship in Cicero',
-  'courage in Caesar',
-  'love in Ovid',
-  'fate in Sophocles',
-  'war in Thucydides',
-  'philosophy in Epictetus',
+  'ἀρετή in Aristotelian corpus',
+  'virtus evolution Cicero→Seneca',
+  'θάνατος semantic field Homer-Sophocles',
+  'iustitia legal→philosophical Plato',
+  'gloria vs κλέος comparative analysis',
+  'φιλία Aristotle EN vs EE variants',
+  'honos manuscript variants Livy',
+  'φρόνησις practical wisdom contexts',
+];
+
+const recentSearches = [
+  { query: 'κόσμος in Presocratic fragments', results: 147, timestamp: '2 hours ago' },
+  { query: 'pietas Aeneid book VI apparatus', results: 23, timestamp: '1 day ago' },
+  { query: 'ψυχή immortality arguments Phaedo', results: 89, timestamp: '3 days ago' },
+];
+
+const featuredAuthors = [
+  { name: 'Homer', works: 'Iliad, Odyssey', era: 'Archaic', color: '#D97706', texts: 47 },
+  { name: 'Plato', works: 'Republic, Phaedo, Symposium', era: 'Classical', color: '#F59E0B', texts: 36 },
+  { name: 'Aristotle', works: 'EN, Metaphysics, Poetics', era: 'Classical', color: '#F59E0B', texts: 52 },
+  { name: 'Cicero', works: 'De Officiis, Pro Archia', era: 'Late Republic', color: '#DC2626', texts: 89 },
+  { name: 'Virgil', works: 'Aeneid, Georgics', era: 'Augustan', color: '#DC2626', texts: 12 },
+  { name: 'Seneca', works: 'Epistulae, Dialogi', era: 'Imperial', color: '#DC2626', texts: 34 },
 ];
 
 export default function Home() {
@@ -51,42 +103,8 @@ export default function Home() {
   const [searchFocused, setSearchFocused] = useState(false);
   const [hoveredButton, setHoveredButton] = useState(false);
   const [animationOffset, setAnimationOffset] = useState(0);
-  const [hoveredNavItem, setHoveredNavItem] = useState<number | null>(null);
-  const [isAuthenticated, setIsAuthenticated] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('logos_authenticated') === 'true';
-    }
-    return false;
-  });
-  const [showAuthModal, setShowAuthModal] = useState(false);
-  const [authMode, setAuthMode] = useState<'login' | 'signup'>('login');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [username, setUsername] = useState('');
-  const [showProfile, setShowProfile] = useState(false);
-  const [filteredSuggestions, setFilteredSuggestions] = useState<string[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
-  const [selectedSuggestion, setSelectedSuggestion] = useState(-1);
-  const [userProfile, setUserProfile] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('logos_profile');
-      if (saved) {
-        return JSON.parse(saved);
-      }
-    }
-    return {
-      name: 'Scholar',
-      email: '',
-      preferences: {
-        theme: 'dark',
-        language: 'en',
-        notifications: true,
-      }
-    };
-  });
-  const [authError, setAuthError] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const router = useRouter();
+  const searchInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -95,700 +113,339 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    const updateSuggestions = () => {
-      if (query.trim() && query.length > 0) {
-        const filtered = searchSuggestions.filter(suggestion =>
-          suggestion.toLowerCase().includes(query.toLowerCase())
-        );
-        setFilteredSuggestions(filtered);
-        setShowSuggestions(filtered.length > 0);
-        setSelectedSuggestion(-1);
-      } else {
-        setShowSuggestions(false);
-        setFilteredSuggestions([]);
-        setSelectedSuggestion(-1);
-      }
-    };
-
-    // Use setTimeout to ensure immediate updates
-    const timeoutId = setTimeout(updateSuggestions, 0);
-    return () => clearTimeout(timeoutId);
-  }, [query]);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('logos_authenticated', isAuthenticated.toString());
-      if (isAuthenticated) {
-        localStorage.setItem('logos_profile', JSON.stringify(userProfile));
-      } else {
-        localStorage.removeItem('logos_profile');
-      }
-    }
-  }, [isAuthenticated, userProfile]);
-
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSearch = () => {
     if (query.trim()) {
-      setShowSuggestions(false);
-      router.push(`/search?q=${encodeURIComponent(query)}`);
+      window.location.href = `/search?q=${encodeURIComponent(query)}`;
     }
-  };
-
-  const handleSuggestionSelect = (suggestion: string) => {
-    setQuery(suggestion);
-    setShowSuggestions(false);
-    setSelectedSuggestion(-1);
-    router.push(`/search?q=${encodeURIComponent(suggestion)}`);
-  };
-
-  const handleAuth = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setAuthError('');
-    setIsLoading(true);
-
-    // Simulate API delay
-    await new Promise(resolve => setTimeout(resolve, 1000));
-
-    // Mock authentication logic
-    if (authMode === 'login') {
-      if (email === 'demo@logos.com' && password === 'password') {
-        setIsAuthenticated(true);
-        setUserProfile(prev => ({ 
-          ...prev, 
-          name: 'Demo Scholar',
-          email: email
-        }));
-        setShowAuthModal(false);
-        setEmail('');
-        setPassword('');
-      } else if (email && password) {
-        // Allow any email/password for demo
-        setIsAuthenticated(true);
-        setUserProfile(prev => ({ 
-          ...prev, 
-          name: email.split('@')[0],
-          email: email
-        }));
-        setShowAuthModal(false);
-        setEmail('');
-        setPassword('');
-      } else {
-        setAuthError('Please enter valid credentials');
-      }
-    } else if (authMode === 'signup') {
-      if (email && password && username) {
-        setIsAuthenticated(true);
-        setUserProfile(prev => ({ 
-          ...prev, 
-          name: username,
-          email: email
-        }));
-        setShowAuthModal(false);
-        setEmail('');
-        setPassword('');
-        setUsername('');
-      } else {
-        setAuthError('Please fill in all fields');
-      }
-    }
-    setIsLoading(false);
-  };
-
-  const handleLogout = () => {
-    setIsAuthenticated(false);
-    setShowProfile(false);
-    setUserProfile({
-      name: 'Scholar',
-      email: '',
-      preferences: {
-        theme: 'dark',
-        language: 'en',
-        notifications: true,
-      }
-    });
-    if (typeof window !== 'undefined') {
-      localStorage.removeItem('logos_authenticated');
-      localStorage.removeItem('logos_profile');
-    }
-  };
-
-  const updatePreferences = (key: string, value: any) => {
-    setUserProfile(prev => ({
-      ...prev,
-      preferences: {
-        ...prev.preferences,
-        [key]: value
-      }
-    }));
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (showSuggestions && filteredSuggestions.length > 0) {
-      if (e.key === 'ArrowDown') {
-        e.preventDefault();
-        setSelectedSuggestion(prev => 
-          prev < filteredSuggestions.length - 1 ? prev + 1 : prev
-        );
-      } else if (e.key === 'ArrowUp') {
-        e.preventDefault();
-        setSelectedSuggestion(prev => prev > 0 ? prev - 1 : -1);
-      } else if (e.key === 'Enter') {
-        e.preventDefault();
-        if (selectedSuggestion >= 0) {
-          handleSuggestionSelect(filteredSuggestions[selectedSuggestion]);
-        } else {
-          handleSearch(e as any);
-        }
-      } else if (e.key === 'Escape') {
-        setShowSuggestions(false);
-        setSelectedSuggestion(-1);
-      }
-    } else if (e.key === 'Enter') {
-      handleSearch(e as any);
+    if (e.key === 'Enter') {
+      handleSearch();
     }
   };
 
-  const AnimatedBackground = () => (
-    <div style={{
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      width: '100%',
-      height: '100%',
-      zIndex: -1,
-      overflow: 'hidden',
-      backgroundColor: '#0D0D0F'
-    }}>
-      {[...Array(50)].map((_, i) => (
-        <div
-          key={i}
-          style={{
-            position: 'absolute',
-            width: '2px',
-            height: '2px',
-            backgroundColor: '#C9A227',
-            borderRadius: '50%',
-            left: `${(i * 137.5) % 100}%`,
-            top: `${(i * 73.2) % 100}%`,
-            opacity: 0.05 + (Math.sin((animationOffset + i * 10) * 0.02) * 0.05),
-            transform: `scale(${1 + Math.sin((animationOffset + i * 15) * 0.03) * 0.5})`,
-            transition: 'all 0.1s ease-out'
-          }}
-        />
-      ))}
-      <div style={{
-        position: 'absolute',
-        top: '20%',
-        right: '10%',
-        width: '300px',
-        height: '300px',
-        background: 'radial-gradient(circle, rgba(201, 162, 39, 0.03) 0%, transparent 70%)',
-        borderRadius: '50%',
-        animation: `pulse 4s ease-in-out infinite`
-      }} />
-      <style jsx>{`
-        @keyframes pulse {
-          0%, 100% { transform: scale(1); opacity: 0.03; }
-          50% { transform: scale(1.2); opacity: 0.06; }
+  const handleSearchFocus = () => {
+    setSearchFocused(true);
+    setShowSuggestions(true);
+  };
+
+  const handleSearchBlur = () => {
+    setTimeout(() => {
+        setSearchFocused(false);
+        setShowSuggestions(false);
+    }, 100); // Delay to allow click on suggestion
+  };
+    
+  const handleSuggestionClick = (suggestion: string) => {
+        setQuery(suggestion);
+        if (searchInputRef.current) {
+            searchInputRef.current.focus(); // Keep focus on the input
         }
-      `}</style>
-    </div>
-  );
+    };
 
   return (
-    <div style={{ backgroundColor: '#0D0D0F', color: '#F5F4F2', minHeight: '100vh' }}>
-      <AnimatedBackground />
-      
+    <div style={{ backgroundColor: '#0D0D0F', minHeight: '100vh', color: '#F5F4F2', fontFamily: 'system-ui, -apple-system, sans-serif', overflowX: 'hidden' }}>
       {/* Navigation */}
-      <nav style={{
-        backgroundColor: 'rgba(30, 30, 36, 0.95)',
-        backdropFilter: 'blur(10px)',
-        borderBottom: '1px solid rgba(201, 162, 39, 0.1)',
-        padding: '16px 32px',
+      <nav style={{ 
+        backgroundColor: '#1E1E24', 
+        borderBottom: '1px solid #2D3748', 
+        padding: '1rem 0',
         position: 'sticky',
         top: 0,
-        zIndex: 1000
+        zIndex: 100,
+        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)'
       }}>
-        <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          maxWidth: '1200px',
-          margin: '0 auto'
-        }}>
-          <Link href="/" style={{
-            fontSize: '24px',
-            fontWeight: 'bold',
-            color: '#C9A227',
-            textDecoration: 'none',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '8px'
-          }}>
-            📚 LOGOS
+        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <Link href="/" style={{ textDecoration: 'none' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', transform: 'scale(1.05)', transition: 'transform 0.3s ease-in-out' }}>
+              <div style={{ 
+                fontSize: '1.75rem',
+                fontWeight: 'bold', 
+                background: `linear-gradient(45deg, #C9A227, #F59E0B)`,
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                textShadow: '1px 1px 2px rgba(0,0,0,0.5)'
+              }}>
+                ΛΟΓΟΣ
+              </div>
+              <div style={{ color: '#9CA3AF', fontSize: '0.9rem', fontStyle: 'italic' }}>SCHOLARIS</div>
+            </div>
           </Link>
           
-          <div style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
-            {navItems.map((item, index) => (
-              <Link
-                key={index}
-                href={item.href}
-                style={{
-                  color: hoveredNavItem === index ? '#C9A227' : '#9CA3AF',
-                  textDecoration: 'none',
-                  fontWeight: '500',
-                  transition: 'all 0.2s ease',
-                  transform: hoveredNavItem === index ? 'translateY(-1px)' : 'translateY(0)'
-                }}
-                onMouseEnter={() => setHoveredNavItem(index)}
-                onMouseLeave={() => setHoveredNavItem(null)}
-              >
-                {item.name}
+          <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
+            {navItems.map((item, i) => (
+              <Link key={i} href={item.href} style={{ 
+                textDecoration: 'none', 
+                color: '#9CA3AF', 
+                transition: 'color 0.3s ease-in-out, transform 0.3s ease-in-out',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.25rem',
+                fontSize: '0.9rem',
+                padding: '0.5rem 0.75rem',
+                borderRadius: '0.375rem',
+                ':hover': {
+                  color: '#F5F4F2',
+                  transform: 'scale(1.1)'
+                }
+              }}>
+                <span>{item.icon}</span>
+                <span>{item.name}</span>
               </Link>
             ))}
-          </div>
-
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-            {isAuthenticated ? (
-              <div style={{ position: 'relative' }}>
-                <button
-                  onClick={() => setShowProfile(!showProfile)}
-                  style={{
-                    backgroundColor: 'rgba(201, 162, 39, 0.1)',
-                    border: '1px solid #C9A227',
-                    borderRadius: '8px',
-                    padding: '8px 16px',
-                    color: '#C9A227',
-                    cursor: 'pointer',
-                    fontSize: '14px',
-                    fontWeight: '500',
-                    transition: 'all 0.2s ease'
-                  }}
-                >
-                  {userProfile.name} ▼
-                </button>
-                
-                {showProfile && (
-                  <div style={{
-                    position: 'absolute',
-                    top: '100%',
-                    right: 0,
-                    marginTop: '8px',
-                    backgroundColor: '#1E1E24',
-                    border: '1px solid rgba(201, 162, 39, 0.3)',
-                    borderRadius: '12px',
-                    padding: '16px',
-                    minWidth: '280px',
-                    zIndex: 1001,
-                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)'
-                  }}>
-                    <div style={{ marginBottom: '16px', paddingBottom: '16px', borderBottom: '1px solid rgba(201, 162, 39, 0.2)' }}>
-                      <div style={{ fontWeight: 'bold', marginBottom: '4px' }}>{userProfile.name}</div>
-                      <div style={{ color: '#9CA3AF', fontSize: '14px' }}>{userProfile.email}</div>
-                    </div>
-                    
-                    <div style={{ marginBottom: '16px' }}>
-                      <div style={{ fontWeight: '500', marginBottom: '12px' }}>Preferences</div>
-                      
-                      <div style={{ marginBottom: '12px' }}>
-                        <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
-                          <input
-                            type="checkbox"
-                            checked={userProfile.preferences.notifications}
-                            onChange={(e) => updatePreferences('notifications', e.target.checked)}
-                            style={{ accentColor: '#C9A227' }}
-                          />
-                          Email Notifications
-                        </label>
-                      </div>
-                      
-                      <div style={{ marginBottom: '12px' }}>
-                        <label style={{ display: 'block', fontSize: '14px', marginBottom: '4px' }}>
-                          Language
-                        </label>
-                        <select
-                          value={userProfile.preferences.language}
-                          onChange={(e) => updatePreferences('language', e.target.value)}
-                          style={{
-                            width: '100%',
-                            padding: '6px 8px',
-                            backgroundColor: '#0D0D0F',
-                            border: '1px solid rgba(201, 162, 39, 0.3)',
-                            borderRadius: '4px',
-                            color: '#F5F4F2',
-                            fontSize: '14px'
-                          }}
-                        >
-                          <option value="en">English</option>
-                          <option value="la">Latin</option>
-                          <option value="grc">Ancient Greek</option>
-                        </select>
-                      </div>
-                    </div>
-                    
-                    <button
-                      onClick={handleLogout}
-                      style={{
-                        width: '100%',
-                        padding: '8px 16px',
-                        backgroundColor: '#DC2626',
-                        border: 'none',
-                        borderRadius: '8px',
-                        color: '#F5F4F2',
-                        cursor: 'pointer',
-                        fontSize: '14px',
-                        fontWeight: '500',
-                        transition: 'all 0.2s ease'
-                      }}
-                    >
-                      Logout
-                    </button>
-                  </div>
-                )}
-              </div>
-            ) : (
-              <button
-                onClick={() => setShowAuthModal(true)}
-                style={{
-                  backgroundColor: '#C9A227',
-                  border: 'none',
-                  borderRadius: '8px',
-                  padding: '8px 16px',
-                  color: '#0D0D0F',
-                  cursor: 'pointer',
-                  fontSize: '14px',
-                  fontWeight: '600',
-                  transition: 'all 0.2s ease'
-                }}
-              >
-                Sign In
-              </button>
-            )}
           </div>
         </div>
       </nav>
 
-      {/* Auth Modal */}
-      {showAuthModal && (
+      {/* Hero Section */}
+      <section style={{ 
+        padding: '6rem 0', 
+        textAlign: 'center',
+        position: 'relative',
+        overflow: 'hidden'
+      }}>
+        {/* Animated Background */}
         <div style={{
-          position: 'fixed',
+          position: 'absolute',
           top: 0,
           left: 0,
           width: '100%',
           height: '100%',
-          backgroundColor: 'rgba(0, 0, 0, 0.8)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          zIndex: 2000
-        }}>
-          <div style={{
-            backgroundColor: '#1E1E24',
-            borderRadius: '16px',
-            padding: '32px',
-            width: '400px',
-            maxWidth: '90vw',
-            border: '1px solid rgba(201, 162, 39, 0.3)'
-          }}>
-            <div style={{ textAlign: 'center', marginBottom: '24px' }}>
-              <h2 style={{ margin: 0, marginBottom: '8px', color: '#C9A227' }}>
-                {authMode === 'login' ? 'Welcome Back' : 'Join LOGOS'}
-              </h2>
-              <p style={{ margin: 0, color: '#9CA3AF', fontSize: '14px' }}>
-                {authMode === 'login' ? 'Sign in to your account' : 'Create your account'}
-              </p>
-            </div>
+          background: `linear-gradient(${animationOffset}deg, #1E1E24 20%, #0D0D0F 80%)`,
+          zIndex: -1,
+          opacity: 0.7
+        }} />
 
-            <form onSubmit={handleAuth}>
-              {authMode === 'signup' && (
-                <div style={{ marginBottom: '16px' }}>
-                  <input
-                    type="text"
-                    placeholder="Username"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    style={{
-                      width: '100%',
-                      padding: '12px 16px',
-                      backgroundColor: '#0D0D0F',
-                      border: '1px solid rgba(201, 162, 39, 0.3)',
-                      borderRadius: '8px',
-                      color: '#F5F4F2',
-                      fontSize: '14px',
-                      boxSizing: 'border-box'
-                    }}
-                    required
-                  />
-                </div>
-              )}
-              
-              <div style={{ marginBottom: '16px' }}>
-                <input
-                  type="email"
-                  placeholder="Email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  style={{
-                    width: '100%',
-                    padding: '12px 16px',
-                    backgroundColor: '#0D0D0F',
-                    border: '1px solid rgba(201, 162, 39, 0.3)',
-                    borderRadius: '8px',
-                    color: '#F5F4F2',
-                    fontSize: '14px',
-                    boxSizing: 'border-box'
-                  }}
-                  required
-                />
-              </div>
-              
-              <div style={{ marginBottom: '24px' }}>
-                <input
-                  type="password"
-                  placeholder="Password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  style={{
-                    width: '100%',
-                    padding: '12px 16px',
-                    backgroundColor: '#0D0D0F',
-                    border: '1px solid rgba(201, 162, 39, 0.3)',
-                    borderRadius: '8px',
-                    color: '#F5F4F2',
-                    fontSize: '14px',
-                    boxSizing: 'border-box'
-                  }}
-                  required
-                />
-              </div>
+        <h1 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '1rem', textShadow: '2px 2px 4px rgba(0,0,0,0.6)' }}>
+          Unlock the Wisdom of the Ages
+        </h1>
+        <p style={{ fontSize: '1.25rem', color: '#9CA3AF', marginBottom: '2rem', maxWidth: '800px', margin: '0 auto' }}>
+          Explore classical texts with cutting-edge AI-powered tools. Logos Scholaris provides semantic search, translation, and discovery for philologists, historians, and language enthusiasts.
+        </p>
 
-              {authError && (
-                <div style={{
-                  marginBottom: '16px',
-                  padding: '12px',
-                  backgroundColor: 'rgba(220, 38, 38, 0.1)',
-                  border: '1px solid rgba(220, 38, 38, 0.3)',
-                  borderRadius: '8px',
-                  color: '#DC2626',
-                  fontSize: '14px',
-                  textAlign: 'center'
-                }}>
-                  {authError}
-                </div>
-              )}
-
-              <button
-                type="submit"
-                disabled={isLoading}
-                style={{
-                  width: '100%',
-                  padding: '12px',
-                  backgroundColor: isLoading ? '#6B7280' : '#C9A227',
-                  border: 'none',
-                  borderRadius: '8px',
-                  color: '#0D0D0F',
-                  fontSize: '16px',
-                  fontWeight: '600',
-                  cursor: isLoading ? 'not-allowed' : 'pointer',
-                  marginBottom: '16px',
-                  transition: 'all 0.2s ease'
-                }}
-              >
-                {isLoading ? 'Processing...' : (authMode === 'login' ? 'Sign In' : 'Create Account')}
-              </button>
-            </form>
-
-            <div style={{ textAlign: 'center' }}>
-              <button
-                onClick={() => {
-                  setAuthMode(authMode === 'login' ? 'signup' : 'login');
-                  setAuthError('');
-                }}
-                style={{
-                  background: 'none',
-                  border: 'none',
-                  color: '#C9A227',
-                  cursor: 'pointer',
-                  fontSize: '14px',
-                  textDecoration: 'underline',
-                  marginRight: '16px'
-                }}
-              >
-                {authMode === 'login' ? 'Create Account' : 'Sign In Instead'}
-              </button>
-              
-              <button
-                onClick={() => {
-                  setShowAuthModal(false);
-                  setAuthError('');
-                  setEmail('');
-                  setPassword('');
-                  setUsername('');
-                }}
-                style={{
-                  background: 'none',
-                  border: 'none',
-                  color: '#9CA3AF',
-                  cursor: 'pointer',
-                  fontSize: '14px'
-                }}
-              >
-                Cancel
-              </button>
-            </div>
-
-            {authMode === 'login' && (
-              <div style={{
-                marginTop: '16px',
-                padding: '12px',
-                backgroundColor: 'rgba(201, 162, 39, 0.1)',
-                border: '1px solid rgba(201, 162, 39, 0.2)',
-                borderRadius: '8px',
-                fontSize: '12px',
-                color: '#9CA3AF',
-                textAlign: 'center'
-              }}>
-                Demo credentials: demo@logos.com / password
-              </div>
-            )}
-          </div>
+        {/* Search Bar */}
+        <div style={{ position: 'relative', display: 'inline-block', width: '80%', maxWidth: '600px' }}>
+          <input
+            type="text"
+            placeholder="Search classical texts..."
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            onKeyPress={handleKeyPress}
+            onFocus={handleSearchFocus}
+            onBlur={handleSearchBlur}
+            ref={searchInputRef}
+            style={{
+              padding: '1rem',
+              fontSize: '1rem',
+              width: '100%',
+              borderRadius: '0.5rem',
+              border: '1px solid #4B5563',
+              backgroundColor: '#1E1E24',
+              color: '#F5F4F2',
+              transition: 'all 0.3s ease-in-out',
+              boxShadow: searchFocused ? '0 0 8px rgba(59, 130, 246, 0.5)' : 'none',
+              outline: 'none',
+              ':focus': {
+                borderColor: '#3B82F6',
+                boxShadow: '0 0 8px rgba(59, 130, 246, 0.5)'
+              }
+            }}
+          />
+          <button
+            onClick={handleSearch}
+            style={{
+              position: 'absolute',
+              top: '0.5rem',
+              right: '0.5rem',
+              padding: '0.75rem 1.25rem',
+              backgroundColor: '#C9A227',
+              color: '#0D0D0F',
+              border: 'none',
+              borderRadius: '0.375rem',
+              cursor: 'pointer',
+              transition: 'background-color 0.3s ease-in-out, transform 0.3s ease-in-out',
+              ':hover': {
+                backgroundColor: '#F59E0B',
+                transform: 'scale(1.05)'
+              }
+            }}
+          >
+            Search
+          </button>
+          {showSuggestions && (
+                        <div style={{
+                            position: 'absolute',
+                            top: '100%',
+                            left: 0,
+                            width: '100%',
+                            backgroundColor: '#1E1E24',
+                            border: '1px solid #4B5563',
+                            borderRadius: '0.5rem',
+                            marginTop: '0.25rem',
+                            padding: '0.5rem',
+                            zIndex: 1,
+                            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
+                        }}>
+                            <ul>
+                                {searchSuggestions.map((suggestion, index) => (
+                                    <li key={index} style={{
+                                        padding: '0.5rem',
+                                        cursor: 'pointer',
+                                        transition: 'background-color 0.3s ease-in-out',
+                                        ':hover': {
+                                            backgroundColor: '#2D3748'
+                                        }
+                                    }} onClick={() => handleSuggestionClick(suggestion)}>
+                                        {suggestion}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
         </div>
-      )}
+      </section>
 
-      {/* Main Content */}
-      <main style={{ padding: '64px 32px', maxWidth: '1200px', margin: '0 auto' }}>
-        {/* Hero Section */}
-        <div style={{ textAlign: 'center', marginBottom: '64px' }}>
-          <h1 style={{
-            fontSize: '4rem',
-            fontWeight: 'bold',
-            margin: '0 0 24px 0',
-            background: 'linear-gradient(135deg, #C9A227 0%, #E8D5A3 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text'
-          }}>
-            LOGOS
-          </h1>
-          
-          <p style={{
-            fontSize: '1.5rem',
-            color: '#9CA3AF',
-            margin: '0 0 48px 0',
-            maxWidth: '600px',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            lineHeight: '1.6'
-          }}>
-            AI-powered exploration of classical literature. Search by meaning, discover connections, trace the evolution of ideas.
-          </p>
-
-          {/* Search Bar */}
-          <div style={{ position: 'relative', maxWidth: '600px', margin: '0 auto 32px auto' }}>
-            <form onSubmit={handleSearch}>
-              <input
-                type="text"
-                placeholder="Search by meaning: 'virtue in Stoicism', 'death in tragedy'..."
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                onKeyDown={handleKeyPress}
-                onFocus={() => setSearchFocused(true)}
-                onBlur={() => {
-                  setTimeout(() => {
-                    setSearchFocused(false);
-                    setShowSuggestions(false);
-                  }, 200);
-                }}
-                style={{
-                  width: '100%',
-                  padding: '20px 60px 20px 24px',
-                  fontSize: '18px',
-                  backgroundColor: searchFocused ? '#1E1E24' : 'rgba(30, 30, 36, 0.8)',
-                  border: searchFocused ? '2px solid #C9A227' : '1px solid rgba(156, 163, 175, 0.3)',
-                  borderRadius: '16px',
-                  color: '#F5F4F2',
-                  outline: 'none',
-                  transition: 'all 0.3s ease',
-                  backdropFilter: 'blur(10px)',
-                  boxSizing: 'border-box'
-                }}
-              />
-              
-              <button
-                type="submit"
-                onMouseEnter={() => setHoveredButton(true)}
-                onMouseLeave={() => setHoveredButton(false)}
-                style={{
-                  position: 'absolute',
-                  right: '8px',
-                  top: '50%',
-                  transform: 'translateY(-50%)',
-                  backgroundColor: hoveredButton ? '#E8D5A3' : '#C9A227',
-                  border: 'none',
-                  borderRadius: '12px',
-                  padding: '12px 16px',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s ease',
-                  fontSize: '16px'
-                }}
-              >
-                🔍
-              </button>
-            </form>
-
-            {/* Search Suggestions */}
-            {showSuggestions && filteredSuggestions.length > 0 && (
-              <div style={{
-                position: 'absolute',
-                top: '100%',
-                left: 0,
-                right: 0,
-                marginTop: '8px',
-                backgroundColor: '#1E1E24',
-                border: '1px solid rgba(201, 162, 39, 0.3)',
-                borderRadius: '12px',
-                maxHeight: '300px',
-                overflowY: 'auto',
-                zIndex: 100,
-                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)'
-              }}>
-                {filteredSuggestions.map((suggestion, index) => (
-                  <div
-                    key={index}
-                    onClick={() => handleSuggestionSelect(suggestion)}
-                    style={{
-                      padding: '12px 16px',
-                      cursor: 'pointer',
-                      backgroundColor: selectedSuggestion === index ? 'rgba(201, 162, 39, 0.1)' : 'transparent',
-                      color: selectedSuggestion === index ? '#C9A227' : '#F5F4F2',
-                      borderBottom: index < filteredSuggestions.length - 1 ? '1px solid rgba(156, 163, 175, 0.1)' : 'none',
-                      transition: 'all 0.2s ease'
-                    }}
-                  >
-                    🔍 {suggestion}
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-
-          <p style={{ color: '#6B7280', fontSize: '14px', marginBottom: '48px' }}>
-            Try: "{searchSuggestions[Math.floor(animationOffset / 60) % searchSuggestions.length]}"
-          </p>
-        </div>
-
-        {/* Stats Section */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-          gap: '24px',
-          marginBottom: '64px'
-        }}>
+      {/* Stats Section */}
+      <section style={{ padding: '4rem 0', backgroundColor: '#141419' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
           {stats.map((stat, index) => (
             <div
               key={index}
+              style={{
+                backgroundColor: '#1E1E24',
+                padding: '2rem',
+                borderRadius: '0.75rem',
+                textAlign: 'center',
+                transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
+                transform: hoveredStat === index ? 'scale(1.05)' : 'scale(1)',
+                boxShadow: hoveredStat === index ? '0 4px 6px rgba(0, 0, 0, 0.3)' : '0 2px 4px rgba(0, 0, 0, 0.1)',
+                cursor: 'pointer',
+                ':hover': {
+                  transform: 'scale(1.05)',
+                  boxShadow: '0 4px 6px rgba(0, 0, 0, 0.3)'
+                }
+              }}
               onMouseEnter={() => setHoveredStat(index)}
               onMouseLeave={() => setHoveredStat(null)}
-              style={{
-                backgroundColor: hoveredStat === index ? 'rgba(201, 162, 39, 0
+            >
+              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>{stat.icon}</div>
+              <div style={{ fontSize: '1.75rem', fontWeight: 'bold' }}>{stat.value}</div>
+              <div style={{ color: '#9CA3AF' }}>{stat.label}</div>
+              <div style={{ color: '#6B7280', marginTop: '0.5rem', fontSize: '0.875rem' }}>{stat.detail}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section style={{ padding: '4rem 0' }}>
+        <h2 style={{ fontSize: '2.5rem', fontWeight: 'bold', textAlign: 'center', marginBottom: '3rem' }}>
+          Explore the Features
+        </h2>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+          {features.map((feature, index) => (
+            <Link key={index} href={feature.href} style={{ textDecoration: 'none' }}>
+              <div
+                style={{
+                  backgroundColor: '#1E1E24',
+                  padding: '2rem',
+                  borderRadius: '0.75rem',
+                  transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
+                  transform: hoveredFeature === index ? 'translateY(-5px)' : 'translateY(0)',
+                  boxShadow: hoveredFeature === index ? '0 6px 8px rgba(0, 0, 0, 0.4)' : '0 2px 4px rgba(0, 0, 0, 0.2)',
+                  cursor: 'pointer',
+                  ':hover': {
+                    transform: 'translateY(-5px)',
+                    boxShadow: '0 6px 8px rgba(0, 0, 0, 0.4)'
+                  }
+                }}
+                onMouseEnter={() => setHoveredFeature(index)}
+                onMouseLeave={() => setHoveredFeature(null)}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem' }}>
+                  <div style={{ fontSize: '1.5rem', color: feature.color }}>{feature.icon}</div>
+                  <div style={{ 
+                    backgroundColor: feature.color, 
+                    color: '#0D0D0F', 
+                    padding: '0.25rem 0.5rem', 
+                    borderRadius: '0.375rem', 
+                    fontSize: '0.75rem',
+                    fontWeight: 'bold'
+                  }}>{feature.badge}</div>
+                </div>
+                <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.5rem', color: '#F5F4F2' }}>{feature.title}</h3>
+                <p style={{ color: '#9CA3AF', lineHeight: '1.4' }}>{feature.desc}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Recent Searches Section */}
+      <section style={{ padding: '4rem 0', backgroundColor: '#141419' }}>
+        <div style={{ maxWidth: '800px', margin: '0 auto', padding: '0 2rem' }}>
+          <h2 style={{ fontSize: '2rem', fontWeight: 'bold', textAlign: 'center', marginBottom: '2rem' }}>
+            Recent Searches
+          </h2>
+          <ul style={{ listStyle: 'none', padding: 0 }}>
+            {recentSearches.map((search, index) => (
+              <li key={index} style={{ 
+                backgroundColor: '#1E1E24', 
+                padding: '1rem', 
+                borderRadius: '0.5rem', 
+                marginBottom: '0.75rem',
+                transition: 'background-color 0.3s ease-in-out',
+                ':hover': {
+                  backgroundColor: '#2D3748'
+                }
+              }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <div style={{ color: '#F5F4F2' }}>{search.query}</div>
+                  <div style={{ color: '#9CA3AF', fontSize: '0.875rem' }}>{search.results} results, {search.timestamp}</div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Featured Authors Section */}
+      <section style={{ padding: '4rem 0' }}>
+        <h2 style={{ fontSize: '2rem', fontWeight: 'bold', textAlign: 'center', marginBottom: '3rem' }}>
+          Featured Authors
+        </h2>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
+          {featuredAuthors.map((author, index) => (
+            <div key={index} style={{
+              backgroundColor: '#1E1E24',
+              padding: '2rem',
+              borderRadius: '0.75rem',
+              textAlign: 'center',
+              border: `2px solid ${author.color}`,
+              transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
+              ':hover': {
+                transform: 'scale(1.05)',
+                boxShadow: `0 4px 6px rgba(0, 0, 0, 0.3)`
+              }
+            }}>
+              <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>{author.name}</h3>
+              <p style={{ color: '#9CA3AF', marginBottom: '0.75rem' }}>{author.works}</p>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
+                <span style={{ color: author.color, fontWeight: 'bold' }}>{author.era}</span>
+                {/* <span style={{ fontSize: '0.75rem', color: '#6B7280' }}>({author.eraStart} - {author.eraEnd})</span> */}
+              </div>
+              <div style={{ color: '#6B7280', fontSize: '0.875rem' }}>Texts: {author.texts}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer style={{ backgroundColor: '#141419', padding: '2rem 0', textAlign: 'center', color: '#9CA3AF' }}>
+        <p>© {new Date().getFullYear()} Logos Scholaris. All rights reserved.</p>
+      </footer>
+    </div>
+  );
+}

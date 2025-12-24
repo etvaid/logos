@@ -16,13 +16,15 @@ interface Node {
   birth?: string;
   death?: string;
   works?: string[];
+  concepts?: string[];
+  connections?: string[];
 }
 
 interface Edge {
   source: string;
   target: string;
   strength: number;
-  type: 'influence' | 'reference' | 'response' | 'translation';
+  type: 'influence' | 'reference' | 'response' | 'translation' | 'conceptual';
   description: string;
 }
 
@@ -35,214 +37,327 @@ interface Transform {
 const AUTHORS: Node[] = [
   { 
     id: 'homer', 
-    name: 'Homer', 
+    name: 'Ὅμηρος (Homer)', 
     type: 'author', 
     era: 'archaic', 
     language: 'greek', 
     x: 200, 
     y: 150, 
     radius: 40,
-    description: 'Epic poet, author of the Iliad and Odyssey. Foundation of Western literature.',
-    birth: '8th century BCE',
-    death: '8th century BCE',
-    works: ['Iliad', 'Odyssey']
+    description: 'Epic poet, author of the Iliad and Odyssey. Foundation of Western literature with formulaic composition and oral tradition.',
+    birth: 'c. 8th century BCE',
+    death: 'c. 8th century BCE',
+    works: ['Ἰλιάς (Iliad)', 'Ὀδύσσεια (Odyssey)'],
+    connections: ['virgil', 'heroic-code', 'epic-tradition']
   },
   { 
     id: 'hesiod', 
-    name: 'Hesiod', 
+    name: 'Ἡσίοδος (Hesiod)', 
     type: 'author', 
     era: 'archaic', 
     language: 'greek', 
     x: 350, 
     y: 100, 
     radius: 30,
-    description: 'Didactic poet, author of Theogony and Works and Days.',
-    birth: '750 BCE',
-    death: '650 BCE',
-    works: ['Theogony', 'Works and Days']
+    description: 'Didactic poet introducing systematic theology and moral instruction. Pioneer of the Works and Days tradition.',
+    birth: 'c. 750 BCE',
+    death: 'c. 650 BCE',
+    works: ['Θεογονία (Theogony)', 'Ἔργα καὶ Ἡμέραι (Works and Days)'],
+    connections: ['virgil', 'divine-order']
   },
   { 
     id: 'plato', 
-    name: 'Plato', 
+    name: 'Πλάτων (Plato)', 
     type: 'author', 
     era: 'classical', 
     language: 'greek', 
     x: 300, 
     y: 250, 
     radius: 45,
-    description: 'Philosopher, student of Socrates, teacher of Aristotle. Founded the Academy.',
-    birth: '428 BCE',
-    death: '348 BCE',
-    works: ['Republic', 'Phaedrus', 'Symposium', 'Timaeus']
+    description: 'Philosopher establishing the Academy. Developer of the Theory of Forms and dialectical method through dramatic dialogues.',
+    birth: '428/427 BCE',
+    death: '348/347 BCE',
+    works: ['Πολιτεία (Republic)', 'Φαῖδρος (Phaedrus)', 'Συμπόσιον (Symposium)', 'Τίμαιος (Timaeus)'],
+    connections: ['aristotle', 'cicero', 'idealism', 'philosophy']
   },
   { 
     id: 'aristotle', 
-    name: 'Aristotle', 
+    name: 'Ἀριστοτέλης (Aristotle)', 
     type: 'author', 
     era: 'classical', 
     language: 'greek', 
     x: 450, 
     y: 220, 
     radius: 42,
-    description: 'Philosopher and scientist. Student of Plato, tutor of Alexander the Great.',
+    description: 'Peripatetic philosopher founding the Lyceum. Systematizer of logic, ethics, politics, and natural philosophy.',
     birth: '384 BCE',
     death: '322 BCE',
-    works: ['Nicomachean Ethics', 'Politics', 'Poetics', 'Physics']
+    works: ['Ἠθικὰ Νικομάχεια (Nicomachean Ethics)', 'Πολιτικά (Politics)', 'Ποιητική (Poetics)', 'Φυσική (Physics)'],
+    connections: ['plato', 'cicero', 'seneca', 'philosophy', 'ethics']
   },
   { 
     id: 'sophocles', 
-    name: 'Sophocles', 
+    name: 'Σοφοκλῆς (Sophocles)', 
     type: 'author', 
     era: 'classical', 
     language: 'greek', 
     x: 150, 
     y: 280, 
     radius: 32,
-    description: 'Tragic playwright, author of Oedipus Rex and Antigone.',
-    birth: '496 BCE',
+    description: 'Tragic playwright perfecting the dramatic trilogy. Master of tragic irony and character development in Attic drama.',
+    birth: 'c. 496 BCE',
     death: '406 BCE',
-    works: ['Oedipus Rex', 'Antigone', 'Electra']
+    works: ['Οἰδίπους Τύραννος (Oedipus Rex)', 'Ἀντιγόνη (Antigone)', 'Ἠλέκτρα (Electra)'],
+    connections: ['seneca', 'tragic-form', 'fate-fortune']
   },
   { 
     id: 'virgil', 
-    name: 'Virgil', 
+    name: 'P. Vergilius Maro', 
     type: 'author', 
     era: 'imperial', 
     language: 'latin', 
     x: 250, 
     y: 400, 
     radius: 38,
-    description: 'Roman poet, author of the Aeneid. Dante\'s guide in the Divine Comedy.',
+    description: 'Augustan poet creating the Roman national epic. Master of literary allusion and Golden Age Latin hexameter.',
     birth: '70 BCE',
     death: '19 BCE',
-    works: ['Aeneid', 'Georgics', 'Eclogues']
+    works: ['Aeneis', 'Georgica', 'Bucolica'],
+    connections: ['homer', 'hesiod', 'epic-tradition']
   },
   { 
     id: 'cicero', 
-    name: 'Cicero', 
+    name: 'M. Tullius Cicero', 
     type: 'author', 
     era: 'imperial', 
     language: 'latin', 
     x: 420, 
     y: 350, 
     radius: 35,
-    description: 'Roman orator, philosopher, and statesman. Master of Latin prose.',
+    description: 'Consul and orator establishing the periodic sentence. Transmitter of Greek philosophy to Roman intellectual culture.',
     birth: '106 BCE',
     death: '43 BCE',
-    works: ['De Oratore', 'De Re Publica', 'Philippics']
+    works: ['De Oratore', 'De Re Publica', 'Philippicae', 'De Officiis'],
+    connections: ['plato', 'aristotle', 'philosophy', 'rhetoric']
   },
   { 
     id: 'seneca', 
-    name: 'Seneca', 
+    name: 'L. Annaeus Seneca', 
     type: 'author', 
     era: 'imperial', 
     language: 'latin', 
     x: 550, 
     y: 320, 
     radius: 30,
-    description: 'Stoic philosopher and dramatist. Advisor to Emperor Nero.',
-    birth: '4 BCE',
+    description: 'Stoic philosopher and tragedian. Developer of the sententious style and Roman Stoic ethics.',
+    birth: 'c. 4 BCE',
     death: '65 CE',
-    works: ['Letters to Lucilius', 'Medea', 'Moral Essays']
-  },
-  { 
-    id: 'augustine', 
-    name: 'Augustine', 
-    type: 'author', 
-    era: 'lateAntique', 
-    language: 'latin', 
-    x: 480, 
-    y: 450, 
-    radius: 36,
-    description: 'Christian theologian and philosopher. Author of Confessions and City of God.',
-    birth: '354 CE',
-    death: '430 CE',
-    works: ['Confessions', 'City of God', 'On Christian Doctrine']
-  },
-  { 
-    id: 'plotinus', 
-    name: 'Plotinus', 
-    type: 'author', 
-    era: 'lateAntique', 
-    language: 'greek', 
-    x: 350, 
-    y: 480, 
-    radius: 28,
-    description: 'Neoplatonist philosopher. Founded the school of Neoplatonism.',
-    birth: '204 CE',
-    death: '270 CE',
-    works: ['Enneads']
-  },
+    works: ['Epistulae Morales', 'De Ira', 'Medea', 'Phaedra'],
+    connections: ['aristotle', 'sophocles', 'stoicism', 'ethics']
+  }
 ];
 
-const CONNECTIONS: Edge[] = [
-  { source: 'homer', target: 'plato', strength: 0.9, type: 'influence', description: 'Plato frequently quotes and references Homer, while also criticizing poets in the Republic.' },
-  { source: 'homer', target: 'virgil', strength: 0.95, type: 'influence', description: 'The Aeneid is heavily modeled on the Homeric epics, particularly the Odyssey and Iliad.' },
-  { source: 'homer', target: 'sophocles', strength: 0.8, type: 'influence', description: 'Sophocles draws on Homeric themes and characters in his tragic works.' },
-  { source: 'hesiod', target: 'plato', strength: 0.6, type: 'influence', description: 'Plato references Hesiod\'s cosmogony and moral teachings.' },
-  { source: 'plato', target: 'aristotle', strength: 0.95, type: 'response', description: 'Aristotle was Plato\'s student but developed his own philosophical system in response.' },
-  { source: 'plato', target: 'cicero', strength: 0.85, type: 'translation', description: 'Cicero translated and adapted Platonic ideas for Roman audiences.' },
-  { source: 'plato', target: 'plotinus', strength: 0.9, type: 'influence', description: 'Plotinus founded Neoplatonism based on Platonic metaphysics.' },
-  { source: 'plato', target: 'augustine', strength: 0.8, type: 'influence', description: 'Augustine synthesized Platonic philosophy with Christian theology.' },
-  { source: 'aristotle', target: 'cicero', strength: 0.7, type: 'translation', description: 'Cicero adapted Aristotelian rhetorical and ethical theories.' },
-  { source: 'aristotle', target: 'seneca', strength: 0.5, type: 'influence', description: 'Seneca\'s Stoicism shows Aristotelian influence, particularly in ethics.' },
-  { source: 'cicero', target: 'seneca', strength: 0.6, type: 'influence', description: 'Seneca admired Cicero\'s prose style and philosophical approach.' },
-  { source: 'cicero', target: 'augustine', strength: 0.75, type: 'influence', description: 'Augustine incorporated Ciceronian rhetorical techniques and some philosophical ideas.' },
-  { source: 'plotinus', target: 'augustine', strength: 0.85, type: 'influence', description: 'Augustine was heavily influenced by Plotinian Neoplatonism in his theological development.' },
+const CONCEPTS: Node[] = [
+  {
+    id: 'epic-tradition',
+    name: 'Epic Tradition',
+    type: 'concept',
+    era: 'archaic',
+    language: 'greek',
+    x: 100,
+    y: 200,
+    radius: 25,
+    description: 'Oral formulaic composition tradition establishing heroic narrative patterns and epithetic language.',
+    connections: ['homer', 'virgil']
+  },
+  {
+    id: 'heroic-code',
+    name: 'Heroic Code',
+    type: 'concept',
+    era: 'archaic', 
+    language: 'greek',
+    x: 180,
+    y: 80,
+    radius: 22,
+    description: 'Aristocratic value system emphasizing τιμή (honor), κλέος (glory), and ἀρετή (excellence).',
+    connections: ['homer', 'sophocles']
+  },
+  {
+    id: 'philosophy',
+    name: 'Philosophy',
+    type: 'concept',
+    era: 'classical',
+    language: 'greek', 
+    x: 380,
+    y: 180,
+    radius: 35,
+    description: 'Systematic inquiry into reality, knowledge, and ethics through dialectical reasoning.',
+    connections: ['plato', 'aristotle', 'cicero']
+  },
+  {
+    id: 'stoicism',
+    name: 'Stoicism',
+    type: 'concept',
+    era: 'hellenistic',
+    language: 'greek',
+    x: 500,
+    y: 400,
+    radius: 28,
+    description: 'Philosophical school emphasizing virtue, cosmic sympathy, and emotional self-control.',
+    connections: ['seneca', 'cicero']
+  },
+  {
+    id: 'rhetoric',
+    name: 'Rhetoric',
+    type: 'concept',
+    era: 'classical',
+    language: 'greek',
+    x: 350,
+    y: 420,
+    radius: 26,
+    description: 'Art of persuasive speaking through logos, pathos, and ethos in judicial, deliberative, and epideictic contexts.',
+    connections: ['cicero', 'aristotle']
+  },
+  {
+    id: 'tragic-form',
+    name: 'Tragic Form',
+    type: 'concept',
+    era: 'classical',
+    language: 'greek',
+    x: 50,
+    y: 350,
+    radius: 24,
+    description: 'Dramatic structure achieving κάθαρσις through μίμησις of serious action with περιπέτεια and ἀναγνώρισις.',
+    connections: ['sophocles', 'aristotle', 'seneca']
+  },
+  {
+    id: 'divine-order',
+    name: 'Divine Order',
+    type: 'concept',
+    era: 'archaic',
+    language: 'greek',
+    x: 450,
+    y: 50,
+    radius: 23,
+    description: 'Cosmic hierarchy from primordial Χάος through Titanomachy to Olympian sovereignty.',
+    connections: ['hesiod', 'plato']
+  },
+  {
+    id: 'fate-fortune',
+    name: 'Fate & Fortune',
+    type: 'concept',
+    era: 'classical',
+    language: 'greek',
+    x: 80,
+    y: 450,
+    radius: 27,
+    description: 'Tension between μοῖρα (fate), τύχη (fortune), and human agency in determining outcomes.',
+    connections: ['sophocles', 'seneca']
+  }
 ];
+
+const WORKS: Node[] = [
+  {
+    id: 'iliad',
+    name: 'Ἰλιάς (Iliad)',
+    type: 'work',
+    era: 'archaic',
+    language: 'greek',
+    x: 150,
+    y: 120,
+    radius: 20,
+    description: 'Epic of Achilles\' wrath during the Trojan War. Foundational text for heroic poetry and tragic themes.',
+    connections: ['homer', 'epic-tradition', 'heroic-code']
+  },
+  {
+    id: 'republic',
+    name: 'Πολιτεία (Republic)',
+    type: 'work',
+    era: 'classical', 
+    language: 'greek',
+    x: 320,
+    y: 180,
+    radius: 18,
+    description: 'Philosophical dialogue on justice, ideal state, and the philosopher-king through the Cave allegory.',
+    connections: ['plato', 'philosophy']
+  },
+  {
+    id: 'aeneid',
+    name: 'Aeneis',
+    type: 'work',
+    era: 'imperial',
+    language: 'latin',
+    x: 200,
+    y: 350,
+    radius: 19,
+    description: 'National epic tracing Trojan origins of Rome through pietas and imperial destiny.',
+    connections: ['virgil', 'homer', 'epic-tradition']
+  }
+];
+
+const ALL_NODES = [...AUTHORS, ...CONCEPTS, ...WORKS];
+
+const EDGES: Edge[] = [
+  { source: 'homer', target: 'virgil', strength: 0.9, type: 'influence', description: 'Virgil models the Aeneid on Homeric epic structure and themes' },
+  { source: 'plato', target: 'aristotle', strength: 0.8, type: 'influence', description: 'Aristotle develops and critiques Platonic philosophy' },
+  { source: 'aristotle', target: 'cicero', strength: 0.7, type: 'reference', description: 'Cicero adapts Aristotelian ethics and politics for Roman context' },
+  { source: 'sophocles', target: 'seneca', strength: 0.6, type: 'influence', description: 'Seneca adapts Sophoclean tragic themes for Roman stage' },
+  { source: 'homer', target: 'epic-tradition', strength: 0.9, type: 'conceptual', description: 'Homer establishes the epic formulaic tradition' },
+  { source: 'plato', target: 'philosophy', strength: 0.8, type: 'conceptual', description: 'Plato systematizes philosophical inquiry through dialectic' },
+  { source: 'aristotle', target: 'philosophy', strength: 0.8, type: 'conceptual', description: 'Aristotle creates comprehensive philosophical system' },
+  { source: 'seneca', target: 'stoicism', strength: 0.7, type: 'conceptual', description: 'Seneca develops Roman Stoic practical ethics' },
+  { source: 'cicero', target: 'rhetoric', strength: 0.8, type: 'conceptual', description: 'Cicero perfects the art of Roman oratory' },
+  { source: 'sophocles', target: 'tragic-form', strength: 0.7, type: 'conceptual', description: 'Sophocles masters Attic tragic dramatic structure' },
+  { source: 'hesiod', target: 'divine-order', strength: 0.8, type: 'conceptual', description: 'Hesiod systematizes Greek theogonic mythology' }
+];
+
+const ERA_COLORS = {
+  'archaic': '#D97706',
+  'classical': '#F59E0B',
+  'hellenistic': '#3B82F6', 
+  'imperial': '#DC2626',
+  'late-antique': '#7C3AED',
+  'byzantine': '#059669'
+};
 
 export default function ConnectomePage() {
   const [selectedNode, setSelectedNode] = useState<Node | null>(null);
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
-  const [filterType, setFilterType] = useState<'all' | 'author' | 'work' | 'concept'>('all');
-  const [filterLanguage, setFilterLanguage] = useState<'all' | 'greek' | 'latin'>('all');
+  const [filterEra, setFilterEra] = useState<string>('all');
+  const [filterType, setFilterType] = useState<string>('all');
+  const [filterLanguage, setFilterLanguage] = useState<string>('all');
+  const [showEdges, setShowEdges] = useState(true);
   const [transform, setTransform] = useState<Transform>({ x: 0, y: 0, scale: 1 });
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+
   const svgRef = useRef<SVGSVGElement>(null);
 
-  const getNodeColor = (node: Node, isHovered: boolean, isSelected: boolean) => {
-    if (isSelected) return '#E8D5A3';
-    if (isHovered) return '#C9A227';
-    
-    if (node.language === 'greek') return '#3B82F6';
-    if (node.language === 'latin') return '#DC2626';
-    return '#9CA3AF';
-  };
-
-  const getConnectionStrengthColor = (strength: number) => {
-    if (strength >= 0.8) return '#C9A227';
-    if (strength >= 0.6) return '#F59E0B';
-    return '#9CA3AF';
-  };
-
-  const getConnectionTypeColor = (type: string) => {
-    switch (type) {
-      case 'influence': return '#3B82F6';
-      case 'reference': return '#059669';
-      case 'response': return '#DC2626';
-      case 'translation': return '#7C3AED';
-      default: return '#9CA3AF';
-    }
-  };
-
-  const filteredNodes = AUTHORS.filter(node => {
+  const filteredNodes = ALL_NODES.filter(node => {
+    if (filterEra !== 'all' && node.era !== filterEra) return false;
     if (filterType !== 'all' && node.type !== filterType) return false;
     if (filterLanguage !== 'all' && node.language !== filterLanguage) return false;
     return true;
   });
 
-  const getConnectedNodes = (nodeId: string) => {
-    return CONNECTIONS.filter(conn => 
-      conn.source === nodeId || conn.target === nodeId
-    ).map(conn => conn.source === nodeId ? conn.target : conn.source);
+  const filteredEdges = EDGES.filter(edge => {
+    const sourceNode = filteredNodes.find(n => n.id === edge.source);
+    const targetNode = filteredNodes.find(n => n.id === edge.target);
+    return sourceNode && targetNode;
+  });
+
+  const getConnectedNodes = (nodeId: string): string[] => {
+    const connections = new Set<string>();
+    filteredEdges.forEach(edge => {
+      if (edge.source === nodeId) connections.add(edge.target);
+      if (edge.target === nodeId) connections.add(edge.source);
+    });
+    return Array.from(connections);
   };
 
-  const filteredConnections = CONNECTIONS.filter(conn => {
-    const sourceNode = AUTHORS.find(n => n.id === conn.source);
-    const targetNode = AUTHORS.find(n => n.id === conn.target);
-    return filteredNodes.includes(sourceNode!) && filteredNodes.includes(targetNode!);
-  });
+  const handleNodeClick = (node: Node) => {
+    setSelectedNode(selectedNode?.id === node.id ? null : node);
+  };
 
   const handleMouseDown = (e: React.MouseEvent) => {
     if (e.target === svgRef.current) {
@@ -267,10 +382,10 @@ export default function ConnectomePage() {
 
   const handleWheel = (e: React.WheelEvent) => {
     e.preventDefault();
-    const delta = e.deltaY > 0 ? 0.9 : 1.1;
+    const scaleFactor = e.deltaY > 0 ? 0.9 : 1.1;
     setTransform(prev => ({
       ...prev,
-      scale: Math.max(0.5, Math.min(3, prev.scale * delta))
+      scale: Math.max(0.3, Math.min(3, prev.scale * scaleFactor))
     }));
   };
 
@@ -283,170 +398,168 @@ export default function ConnectomePage() {
       minHeight: '100vh', 
       backgroundColor: '#0D0D0F', 
       color: '#F5F4F2',
-      fontFamily: 'system-ui, -apple-system, sans-serif'
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
     }}>
-      {/* Navigation */}
-      <nav style={{ 
-        backgroundColor: '#1E1E24', 
-        borderBottom: '1px solid #141419',
-        padding: '16px 0'
+      {/* Header */}
+      <header style={{ 
+        backgroundColor: '#141419', 
+        borderBottom: '1px solid #1E1E24',
+        padding: '1rem 2rem'
       }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <div>
+            <Link href="/" style={{ color: '#C9A227', textDecoration: 'none', fontSize: '1.5rem', fontWeight: 'bold' }}>
+              📚 Logos
+            </Link>
+            <h1 style={{ margin: '0.5rem 0 0 0', fontSize: '1.8rem', fontWeight: '700' }}>
+              Textual Connectome
+            </h1>
+            <p style={{ margin: '0.25rem 0 0 0', color: '#9CA3AF', fontSize: '0.95rem' }}>
+              Interactive network of authors, works, and concepts in classical antiquity
+            </p>
+          </div>
+          <button
+            onClick={resetView}
+            style={{
+              backgroundColor: '#C9A227',
+              color: '#0D0D0F',
+              border: 'none',
+              borderRadius: '6px',
+              padding: '0.5rem 1rem',
+              fontSize: '0.875rem',
+              fontWeight: '500',
+              cursor: 'pointer',
+              transition: 'all 0.2s ease'
+            }}
+            onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#E5B429'}
+            onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#C9A227'}
+          >
+            Reset View
+          </button>
+        </div>
+      </header>
+
+      <div style={{ display: 'flex', height: 'calc(100vh - 120px)' }}>
+        {/* Controls Panel */}
         <div style={{ 
-          maxWidth: '1200px', 
-          margin: '0 auto', 
-          display: 'flex', 
-          justifyContent: 'space-between', 
-          alignItems: 'center',
-          padding: '0 24px'
+          width: '300px', 
+          backgroundColor: '#1E1E24', 
+          padding: '1.5rem',
+          borderRight: '1px solid #141419',
+          overflowY: 'auto'
         }}>
-          <Link href="/" style={{ 
-            fontSize: '24px', 
-            fontWeight: 'bold', 
-            color: '#C9A227', 
-            textDecoration: 'none'
-          }}>
-            ΛΟΓΟΣ
-          </Link>
-          <div style={{ display: 'flex', gap: '32px', alignItems: 'center' }}>
-            <Link href="/reader" style={{ color: '#F5F4F2', textDecoration: 'none', transition: 'color 0.2s' }}>Reader</Link>
-            <Link href="/library" style={{ color: '#F5F4F2', textDecoration: 'none', transition: 'color 0.2s' }}>Library</Link>
-            <Link href="/connectome" style={{ color: '#C9A227', textDecoration: 'none' }}>Connectome</Link>
-            <Link href="/timeline" style={{ color: '#F5F4F2', textDecoration: 'none', transition: 'color 0.2s' }}>Timeline</Link>
+          <h3 style={{ margin: '0 0 1rem 0', color: '#C9A227', fontSize: '1.1rem' }}>Filters</h3>
+          
+          <div style={{ marginBottom: '1rem' }}>
+            <label style={{ display: 'block', fontSize: '0.875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>
+              Era
+            </label>
+            <select 
+              value={filterEra}
+              onChange={(e) => setFilterEra(e.target.value)}
+              style={{
+                width: '100%',
+                backgroundColor: '#141419',
+                color: '#F5F4F2',
+                border: '1px solid #6B7280',
+                borderRadius: '4px',
+                padding: '0.5rem',
+                fontSize: '0.875rem'
+              }}
+            >
+              <option value="all">All Eras</option>
+              <option value="archaic">Archaic (800-500 BCE)</option>
+              <option value="classical">Classical (500-323 BCE)</option>
+              <option value="hellenistic">Hellenistic (323-31 BCE)</option>
+              <option value="imperial">Imperial (31 BCE-284 CE)</option>
+            </select>
+          </div>
+
+          <div style={{ marginBottom: '1rem' }}>
+            <label style={{ display: 'block', fontSize: '0.875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>
+              Type
+            </label>
+            <select 
+              value={filterType}
+              onChange={(e) => setFilterType(e.target.value)}
+              style={{
+                width: '100%',
+                backgroundColor: '#141419',
+                color: '#F5F4F2',
+                border: '1px solid #6B7280',
+                borderRadius: '4px',
+                padding: '0.5rem',
+                fontSize: '0.875rem'
+              }}
+            >
+              <option value="all">All Types</option>
+              <option value="author">Authors</option>
+              <option value="work">Works</option>
+              <option value="concept">Concepts</option>
+            </select>
+          </div>
+
+          <div style={{ marginBottom: '1rem' }}>
+            <label style={{ display: 'block', fontSize: '0.875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>
+              Language
+            </label>
+            <select 
+              value={filterLanguage}
+              onChange={(e) => setFilterLanguage(e.target.value)}
+              style={{
+                width: '100%',
+                backgroundColor: '#141419',
+                color: '#F5F4F2',
+                border: '1px solid #6B7280',
+                borderRadius: '4px',
+                padding: '0.5rem',
+                fontSize: '0.875rem'
+              }}
+            >
+              <option value="all">All Languages</option>
+              <option value="greek">Greek</option>
+              <option value="latin">Latin</option>
+            </select>
+          </div>
+
+          <div style={{ marginBottom: '1.5rem' }}>
+            <label style={{ display: 'flex', alignItems: 'center', fontSize: '0.875rem', color: '#9CA3AF' }}>
+              <input
+                type="checkbox"
+                checked={showEdges}
+                onChange={(e) => setShowEdges(e.target.checked)}
+                style={{ marginRight: '0.5rem' }}
+              />
+              Show Connections
+            </label>
+          </div>
+
+          <div>
+            <h4 style={{ margin: '0 0 0.5rem 0', color: '#C9A227', fontSize: '0.95rem' }}>Legend</h4>
+            <div style={{ fontSize: '0.8rem', lineHeight: '1.4' }}>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <span style={{ color: '#3B82F6' }}>●</span> Authors (Greek)
+              </div>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <span style={{ color: '#DC2626' }}>●</span> Authors (Latin)
+              </div>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <span style={{ color: '#9CA3AF' }}>◆</span> Works
+              </div>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <span style={{ color: '#C9A227' }}>▲</span> Concepts
+              </div>
+            </div>
           </div>
         </div>
-      </nav>
 
-      {/* Header */}
-      <div style={{ padding: '48px 24px 24px', textAlign: 'center' }}>
-        <h1 style={{ 
-          fontSize: '48px', 
-          fontWeight: 'bold', 
-          marginBottom: '16px',
-          background: 'linear-gradient(45deg, #C9A227, #E8D5A3)',
-          backgroundClip: 'text',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent'
-        }}>
-          Literary Connectome
-        </h1>
-        <p style={{ 
-          fontSize: '18px', 
-          color: '#9CA3AF',
-          maxWidth: '600px',
-          margin: '0 auto'
-        }}>
-          Explore the intricate web of influences, references, and connections between ancient authors and their works.
-        </p>
-      </div>
-
-      {/* Controls */}
-      <div style={{ 
-        display: 'flex',
-        justifyContent: 'center',
-        gap: '24px',
-        padding: '0 24px 24px',
-        flexWrap: 'wrap'
-      }}>
-        <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-          <span style={{ color: '#9CA3AF', fontSize: '14px' }}>Type:</span>
-          <select 
-            value={filterType} 
-            onChange={(e) => setFilterType(e.target.value as any)}
-            style={{
-              backgroundColor: '#1E1E24',
-              color: '#F5F4F2',
-              border: '1px solid #141419',
-              borderRadius: '8px',
-              padding: '8px 12px',
-              fontSize: '14px'
-            }}
-          >
-            <option value="all">All</option>
-            <option value="author">Authors</option>
-            <option value="work">Works</option>
-            <option value="concept">Concepts</option>
-          </select>
-        </div>
-
-        <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-          <span style={{ color: '#9CA3AF', fontSize: '14px' }}>Language:</span>
-          <select 
-            value={filterLanguage} 
-            onChange={(e) => setFilterLanguage(e.target.value as any)}
-            style={{
-              backgroundColor: '#1E1E24',
-              color: '#F5F4F2',
-              border: '1px solid #141419',
-              borderRadius: '8px',
-              padding: '8px 12px',
-              fontSize: '14px'
-            }}
-          >
-            <option value="all">All</option>
-            <option value="greek">Greek</option>
-            <option value="latin">Latin</option>
-          </select>
-        </div>
-
-        <button
-          onClick={resetView}
-          style={{
-            backgroundColor: '#1E1E24',
-            color: '#F5F4F2',
-            border: '1px solid #141419',
-            borderRadius: '8px',
-            padding: '8px 16px',
-            fontSize: '14px',
-            cursor: 'pointer',
-            transition: 'all 0.2s'
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = '#C9A227';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = '#1E1E24';
-          }}
-        >
-          Reset View
-        </button>
-      </div>
-
-      {/* Main Content */}
-      <div style={{ 
-        display: 'flex',
-        maxWidth: '1400px',
-        margin: '0 auto',
-        gap: '24px',
-        padding: '0 24px',
-        minHeight: '600px'
-      }}>
-        {/* Network Graph */}
-        <div style={{ 
-          flex: 1,
-          backgroundColor: '#1E1E24',
-          borderRadius: '16px',
-          padding: '24px',
-          position: 'relative',
-          overflow: 'hidden'
-        }}>
-          <h2 style={{ 
-            fontSize: '24px', 
-            fontWeight: 'bold', 
-            marginBottom: '24px',
-            color: '#F5F4F2'
-          }}>
-            Network Graph
-          </h2>
-
+        {/* Network Visualization */}
+        <div style={{ flex: 1, position: 'relative', backgroundColor: '#0D0D0F' }}>
           <svg
             ref={svgRef}
             width="100%"
-            height="500"
-            style={{ 
-              cursor: isDragging ? 'grabbing' : 'grab',
-              backgroundColor: '#141419',
-              borderRadius: '12px'
-            }}
+            height="100%"
+            style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
@@ -454,303 +567,124 @@ export default function ConnectomePage() {
             onWheel={handleWheel}
           >
             <defs>
-              <marker
-                id="arrowhead"
-                markerWidth="10"
-                markerHeight="7"
-                refX="9"
-                refY="3.5"
-                orient="auto"
-              >
-                <polygon
-                  points="0 0, 10 3.5, 0 7"
-                  fill="#9CA3AF"
-                />
-              </marker>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                <feMerge>
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
             </defs>
 
             <g transform={`translate(${transform.x}, ${transform.y}) scale(${transform.scale})`}>
-              {/* Connection Lines */}
-              {filteredConnections.map((connection, index) => {
-                const sourceNode = AUTHORS.find(n => n.id === connection.source);
-                const targetNode = AUTHORS.find(n => n.id === connection.target);
+              {/* Edges */}
+              {showEdges && filteredEdges.map((edge, index) => {
+                const sourceNode = filteredNodes.find(n => n.id === edge.source);
+                const targetNode = filteredNodes.find(n => n.id === edge.target);
                 if (!sourceNode || !targetNode) return null;
 
                 const isHighlighted = selectedNode && (
-                  selectedNode.id === connection.source || 
-                  selectedNode.id === connection.target
+                  selectedNode.id === edge.source || selectedNode.id === edge.target
                 );
 
                 return (
-                  <g key={`${connection.source}-${connection.target}-${index}`}>
-                    <line
-                      x1={sourceNode.x}
-                      y1={sourceNode.y}
-                      x2={targetNode.x}
-                      y2={targetNode.y}
-                      stroke={isHighlighted ? getConnectionTypeColor(connection.type) : '#6B7280'}
-                      strokeWidth={isHighlighted ? connection.strength * 4 : connection.strength * 2}
-                      opacity={isHighlighted ? 0.9 : 0.4}
-                      markerEnd="url(#arrowhead)"
-                      style={{
-                        transition: 'all 0.3s ease'
-                      }}
-                    />
-                    {isHighlighted && (
-                      <text
-                        x={(sourceNode.x + targetNode.x) / 2}
-                        y={(sourceNode.y + targetNode.y) / 2 - 8}
-                        fill="#C9A227"
-                        fontSize="12"
-                        textAnchor="middle"
-                        style={{ pointerEvents: 'none' }}
-                      >
-                        {connection.type}
-                      </text>
-                    )}
-                  </g>
+                  <line
+                    key={index}
+                    x1={sourceNode.x}
+                    y1={sourceNode.y}
+                    x2={targetNode.x}
+                    y2={targetNode.y}
+                    stroke={isHighlighted ? '#C9A227' : '#6B7280'}
+                    strokeWidth={isHighlighted ? 2 : 1}
+                    strokeOpacity={isHighlighted ? 0.8 : 0.3}
+                    style={{ transition: 'all 0.3s ease' }}
+                  />
                 );
               })}
 
               {/* Nodes */}
               {filteredNodes.map((node) => {
                 const isSelected = selectedNode?.id === node.id;
-                const isHovered = hoveredNode === node.id;
                 const isConnected = selectedNode && getConnectedNodes(selectedNode.id).includes(node.id);
+                const isHovered = hoveredNode === node.id;
                 
+                let nodeColor = ERA_COLORS[node.era as keyof typeof ERA_COLORS];
+                if (node.type === 'author') {
+                  nodeColor = node.language === 'greek' ? '#3B82F6' : '#DC2626';
+                } else if (node.type === 'work') {
+                  nodeColor = '#9CA3AF';
+                } else if (node.type === 'concept') {
+                  nodeColor = '#C9A227';
+                }
+
+                const opacity = selectedNode ? (isSelected || isConnected ? 1 : 0.3) : 1;
+
                 return (
                   <g key={node.id}>
-                    {/* Node glow effect for selected/hovered */}
-                    {(isSelected || isHovered) && (
+                    {/* Node shape */}
+                    {node.type === 'author' && (
                       <circle
                         cx={node.x}
                         cy={node.y}
-                        r={node.radius + 8}
-                        fill={getNodeColor(node, isHovered, isSelected)}
-                        opacity={0.2}
-                        style={{
-                          transition: 'all 0.3s ease'
+                        r={node.radius}
+                        fill={nodeColor}
+                        fillOpacity={opacity}
+                        stroke={isSelected ? '#C9A227' : 'transparent'}
+                        strokeWidth={isSelected ? 3 : 0}
+                        style={{ 
+                          cursor: 'pointer',
+                          transition: 'all 0.3s ease',
+                          filter: isHovered ? 'url(#glow)' : 'none'
                         }}
+                        onClick={() => handleNodeClick(node)}
+                        onMouseEnter={() => setHoveredNode(node.id)}
+                        onMouseLeave={() => setHoveredNode(null)}
                       />
                     )}
-
-                    {/* Main node circle */}
-                    <circle
-                      cx={node.x}
-                      cy={node.y}
-                      r={node.radius}
-                      fill={getNodeColor(node, isHovered, isSelected)}
-                      stroke={isSelected ? '#E8D5A3' : isConnected ? '#C9A227' : 'transparent'}
-                      strokeWidth={isSelected ? 3 : isConnected ? 2 : 0}
-                      opacity={selectedNode && !isSelected && !isConnected ? 0.3 : 1}
-                      style={{
-                        cursor: 'pointer',
-                        transition: 'all 0.3s ease'
-                      }}
-                      onClick={() => setSelectedNode(isSelected ? null : node)}
-                      onMouseEnter={() => setHoveredNode(node.id)}
-                      onMouseLeave={() => setHoveredNode(null)}
-                    />
+                    
+                    {node.type === 'work' && (
+                      <rect
+                        x={node.x - node.radius}
+                        y={node.y - node.radius}
+                        width={node.radius * 2}
+                        height={node.radius * 2}
+                        fill={nodeColor}
+                        fillOpacity={opacity}
+                        stroke={isSelected ? '#C9A227' : 'transparent'}
+                        strokeWidth={isSelected ? 3 : 0}
+                        style={{ 
+                          cursor: 'pointer',
+                          transition: 'all 0.3s ease',
+                          filter: isHovered ? 'url(#glow)' : 'none'
+                        }}
+                        onClick={() => handleNodeClick(node)}
+                        onMouseEnter={() => setHoveredNode(node.id)}
+                        onMouseLeave={() => setHoveredNode(null)}
+                      />
+                    )}
+                    
+                    {node.type === 'concept' && (
+                      <polygon
+                        points={`${node.x},${node.y - node.radius} ${node.x + node.radius},${node.y + node.radius} ${node.x - node.radius},${node.y + node.radius}`}
+                        fill={nodeColor}
+                        fillOpacity={opacity}
+                        stroke={isSelected ? '#C9A227' : 'transparent'}
+                        strokeWidth={isSelected ? 3 : 0}
+                        style={{ 
+                          cursor: 'pointer',
+                          transition: 'all 0.3s ease',
+                          filter: isHovered ? 'url(#glow)' : 'none'
+                        }}
+                        onClick={() => handleNodeClick(node)}
+                        onMouseEnter={() => setHoveredNode(node.id)}
+                        onMouseLeave={() => setHoveredNode(null)}
+                      />
+                    )}
 
                     {/* Node label */}
                     <text
                       x={node.x}
-                      y={node.y + node.radius + 16}
-                      fill={isSelected ? '#E8D5A3' : isConnected ? '#C9A227' : '#F5F4F2'}
-                      fontSize={isSelected ? '14' : '12'}
-                      fontWeight={isSelected ? 'bold' : 'normal'}
+                      y={node.y + node.radius + 15}
                       textAnchor="middle"
-                      style={{ 
-                        pointerEvents: 'none',
-                        transition: 'all 0.3s ease'
-                      }}
-                    >
-                      {node.name}
-                    </text>
-
-                    {/* Era indicator */}
-                    <text
-                      x={node.x}
-                      y={node.y + node.radius + 32}
-                      fill="#6B7280"
-                      fontSize="10"
-                      textAnchor="middle"
-                      style={{ pointerEvents: 'none' }}
-                    >
-                      {node.era}
-                    </text>
-                  </g>
-                );
-              })}
-            </g>
-          </svg>
-
-          {/* Zoom indicator */}
-          <div style={{
-            position: 'absolute',
-            top: '70px',
-            right: '32px',
-            backgroundColor: '#141419',
-            padding: '8px 12px',
-            borderRadius: '8px',
-            fontSize: '12px',
-            color: '#9CA3AF'
-          }}>
-            Zoom: {Math.round(transform.scale * 100)}%
-          </div>
-        </div>
-
-        {/* Info Panel */}
-        <div style={{ 
-          width: '350px',
-          backgroundColor: '#1E1E24',
-          borderRadius: '16px',
-          padding: '24px',
-          height: 'fit-content'
-        }}>
-          <h2 style={{ 
-            fontSize: '24px', 
-            fontWeight: 'bold', 
-            marginBottom: '24px',
-            color: '#F5F4F2'
-          }}>
-            {selectedNode ? 'Author Details' : 'Instructions'}
-          </h2>
-
-          {selectedNode ? (
-            <div>
-              <h3 style={{ 
-                fontSize: '20px', 
-                fontWeight: 'bold',
-                color: selectedNode.language === 'greek' ? '#3B82F6' : '#DC2626',
-                marginBottom: '16px'
-              }}>
-                {selectedNode.name}
-              </h3>
-
-              <div style={{ marginBottom: '16px' }}>
-                <div style={{ 
-                  display: 'flex', 
-                  gap: '8px', 
-                  marginBottom: '12px',
-                  flexWrap: 'wrap'
-                }}>
-                  <span style={{ 
-                    backgroundColor: '#141419',
-                    color: '#C9A227',
-                    padding: '4px 8px',
-                    borderRadius: '6px',
-                    fontSize: '12px'
-                  }}>
-                    {selectedNode.type}
-                  </span>
-                  <span style={{ 
-                    backgroundColor: '#141419',
-                    color: selectedNode.language === 'greek' ? '#3B82F6' : '#DC2626',
-                    padding: '4px 8px',
-                    borderRadius: '6px',
-                    fontSize: '12px'
-                  }}>
-                    {selectedNode.language}
-                  </span>
-                  <span style={{ 
-                    backgroundColor: '#141419',
-                    color: '#F59E0B',
-                    padding: '4px 8px',
-                    borderRadius: '6px',
-                    fontSize: '12px'
-                  }}>
-                    {selectedNode.era}
-                  </span>
-                </div>
-
-                {selectedNode.birth && (
-                  <p style={{ fontSize: '14px', color: '#9CA3AF', marginBottom: '8px' }}>
-                    <strong>Life:</strong> {selectedNode.birth} - {selectedNode.death}
-                  </p>
-                )}
-
-                <p style={{ fontSize: '14px', color: '#F5F4F2', lineHeight: 1.5, marginBottom: '16px' }}>
-                  {selectedNode.description}
-                </p>
-
-                {selectedNode.works && selectedNode.works.length > 0 && (
-                  <div>
-                    <h4 style={{ fontSize: '16px', fontWeight: 'bold', marginBottom: '8px', color: '#C9A227' }}>
-                      Major Works:
-                    </h4>
-                    <ul style={{ 
-                      listStyle: 'none', 
-                      padding: 0,
-                      margin: 0
-                    }}>
-                      {selectedNode.works.map((work, index) => (
-                        <li key={index} style={{ 
-                          fontSize: '14px',
-                          color: '#9CA3AF',
-                          marginBottom: '4px',
-                          paddingLeft: '16px',
-                          position: 'relative'
-                        }}>
-                          <span style={{
-                            position: 'absolute',
-                            left: '0',
-                            color: '#C9A227'
-                          }}>•</span>
-                          {work}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-
-              {/* Connections */}
-              <div>
-                <h4 style={{ fontSize: '16px', fontWeight: 'bold', marginBottom: '12px', color: '#C9A227' }}>
-                  Connections:
-                </h4>
-                <div style={{ maxHeight: '200px', overflowY: 'auto' }}>
-                  {CONNECTIONS
-                    .filter(conn => conn.source === selectedNode.id || conn.target === selectedNode.id)
-                    .map((conn, index) => {
-                      const otherNodeId = conn.source === selectedNode.id ? conn.target : conn.source;
-                      const otherNode = AUTHORS.find(n => n.id === otherNodeId);
-                      if (!otherNode) return null;
-
-                      return (
-                        <div key={index} style={{ 
-                          marginBottom: '12px',
-                          padding: '12px',
-                          backgroundColor: '#141419',
-                          borderRadius: '8px',
-                          border: `2px solid ${getConnectionTypeColor(conn.type)}`
-                        }}>
-                          <div style={{ 
-                            display: 'flex', 
-                            justifyContent: 'space-between',
-                            alignItems: 'center',
-                            marginBottom: '8px'
-                          }}>
-                            <span style={{ 
-                              fontSize: '14px',
-                              fontWeight: 'bold',
-                              color: '#F5F4F2'
-                            }}>
-                              {otherNode.name}
-                            </span>
-                            <div style={{ display: 'flex', gap: '4px' }}>
-                              {Array.from({ length: Math.round(conn.strength * 5) }).map((_, i) => (
-                                <div key={i} style={{
-                                  width: '4px',
-                                  height: '4px',
-                                  backgroundColor: '#C9A227',
-                                  borderRadius: '50%'
-                                }} />
-                              ))}
-                            </div>
-                          </div>
-                          <div style={{ 
-                            fontSize: '12px',
-                            color: getConnectionTypeColor(conn.type),
-                            fontWeight: 'bold',
+                      fill="#F5F4F2"
+                      fillOpacity

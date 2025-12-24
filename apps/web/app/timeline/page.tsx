@@ -10,7 +10,13 @@ const EVENTS = [
     category: "intellectual", 
     era: "archaic",
     description: "Homer composes the Iliad and Odyssey, foundational works of Western literature that establish epic poetry traditions and preserve Bronze Age cultural memory.",
-    significance: "These epics become the cornerstone of Greek education and cultural identity, influencing literature for millennia."
+    significance: "These epics become the cornerstone of Greek education and cultural identity, influencing literature for millennia.",
+    sources: ["Herodotus 2.53", "Plato, Republic 10.606e"],
+    manuscripts: ["P.Oxy. 3831 (3rd cent. BCE)", "Venetus A (10th cent. CE)"],
+    criticalNotes: "Homeric Question: unitary vs. multiple authorship debate",
+    textVariants: ["μῆνιν ἄειδε θεά vs. μῆνιν ἄειδε θεὰ", "Πηληϊάδεω vs. Πηληιάδεω"],
+    greekText: "μῆνιν ἄειδε θεὰ Πηληϊάδεω Ἀχιλῆος",
+    translation: "Sing, goddess, the wrath of Achilles, son of Peleus"
   },
   { 
     year: -776, 
@@ -18,7 +24,13 @@ const EVENTS = [
     category: "cultural", 
     era: "archaic",
     description: "The first recorded Olympic Games held in Olympia, establishing a quadrennial athletic festival that unites the Greek world.",
-    significance: "Creates a common cultural institution across Greek city-states and introduces the concept of organized international competition."
+    significance: "Creates a common cultural institution across Greek city-states and introduces the concept of organized international competition.",
+    sources: ["Hippias of Elis", "Pausanias 5.8.6"],
+    manuscripts: ["P.Oxy. 222 (2nd cent. CE)"],
+    criticalNotes: "Archaeological evidence confirms cultic activity from 8th century",
+    textVariants: ["Ὀλυμπιακὰ vs. Ὀλύμπια"],
+    greekText: "τὰ Ὀλύμπια τέθη ἐν Ὀλυμπίᾳ",
+    translation: "The Olympics were established at Olympia"
   },
   { 
     year: -508, 
@@ -26,7 +38,13 @@ const EVENTS = [
     category: "political", 
     era: "archaic",
     description: "Cleisthenes implements democratic reforms in Athens, creating the foundations of direct democracy with citizen participation in governance.",
-    significance: "Establishes the world's first democratic system, influencing political thought for over 2,000 years."
+    significance: "Establishes the world's first democratic system, influencing political thought for over 2,000 years.",
+    sources: ["Herodotus 6.131", "Aristotle, Ath.Pol. 20-22"],
+    manuscripts: ["P.Lond.Lit. 108", "Codex Parisinus 1741"],
+    criticalNotes: "δημοκρατία first attested in Herodotus 6.43",
+    textVariants: ["δημοκρατίη vs. δημοκρατία", "ἰσονομίη vs. ἰσονομία"],
+    greekText: "δημοκρατίη ἐγένετο ἐν Ἀθήνῃσι",
+    translation: "Democracy came into being in Athens"
   },
   { 
     year: -490, 
@@ -34,7 +52,13 @@ const EVENTS = [
     category: "political", 
     era: "classical",
     description: "Athenian forces defeat the Persian invasion at Marathon, preserving Greek independence and democratic ideals.",
-    significance: "Demonstrates that disciplined citizen-soldiers can defeat imperial armies, inspiring later republican movements."
+    significance: "Demonstrates that disciplined citizen-soldiers can defeat imperial armies, inspiring later republican movements.",
+    sources: ["Herodotus 6.102-117", "Plutarch, Vita Aristidis"],
+    manuscripts: ["Codex Laurentianus 70.3", "P.Oxy. 1610"],
+    criticalNotes: "Casualty figures vary significantly between sources",
+    textVariants: ["Μαραθὼν vs. Μαραθῶνι", "ἐνίκησαν vs. ἐκράτησαν"],
+    greekText: "ἐν Μαραθῶνι οἱ Ἀθηναῖοι τοὺς Πέρσας ἐνίκησαν",
+    translation: "At Marathon the Athenians defeated the Persians"
   },
   { 
     year: -447, 
@@ -42,7 +66,13 @@ const EVENTS = [
     category: "cultural", 
     era: "classical",
     description: "Construction begins on the Parthenon in Athens under Pericles, representing the height of Classical Greek architecture and sculpture.",
-    significance: "Sets architectural standards that influence Western building design through the present day."
+    significance: "Sets architectural standards that influence Western building design through the present day.",
+    sources: ["Plutarch, Vita Periclis 13", "IG I³ 436-451"],
+    manuscripts: ["Codex Parisinus 1672"],
+    criticalNotes: "Building accounts preserved on marble inscriptions (IG I³ 436-451)",
+    textVariants: ["Παρθενὼν vs. Παρθενῶν"],
+    greekText: "ὁ Παρθενὼν ἐπὶ Περικλέους ἠρχιτεκτήθη",
+    translation: "The Parthenon was constructed under Pericles"
   },
   { 
     year: -431, 
@@ -50,7 +80,13 @@ const EVENTS = [
     category: "political", 
     era: "classical",
     description: "The devastating war between Athens and Sparta begins, lasting 27 years and ultimately weakening all Greek city-states.",
-    significance: "Marks the beginning of the end of the Classical Greek golden age and Athenian hegemony."
+    significance: "Marks the beginning of the end of the Classical Greek golden age and Athenian hegemony.",
+    sources: ["Thucydides 1.1", "Xenophon, Hellenica"],
+    manuscripts: ["Codex Laurentianus 69.2", "P.Oxy. 16.1876"],
+    criticalNotes: "Thucydides vs. Diodorus chronology discrepancies",
+    textVariants: ["Πελοποννησίων vs. Πελοποννησιακὸς πόλεμος"],
+    greekText: "ὁ πόλεμος ἤρξατο Ἀθηναίων καὶ Πελοποννησίων",
+    translation: "The war began between the Athenians and Peloponnesians"
   },
   { 
     year: -399, 
@@ -58,552 +94,531 @@ const EVENTS = [
     category: "intellectual", 
     era: "classical",
     description: "Socrates is executed by hemlock poisoning after being convicted of corrupting the youth and impiety against the gods.",
-    significance: "His death and philosophical method, preserved by Plato, fundamentally shapes Western philosophical inquiry."
+    significance: "His death and philosophical method, preserved by Plato, fundamentally shapes Western philosophical inquiry.",
+    sources: ["Plato, Phaedo", "Xenophon, Memorabilia"],
+    manuscripts: ["Codex Parisinus 1807", "P.Oxy. 1016"],
+    criticalNotes: "Plato vs. Xenophon accounts of Socrates' final words",
+    textVariants: ["κώνειον vs. κώνιον", "ἀσεβείᾳ vs. ἀσεβίᾳ"],
+    greekText: "ὦ Κρίτων, τῷ Ἀσκληπιῷ ὀφείλομεν ἀλεκτρυόνα",
+    translation: "Crito, we owe a rooster to Asclepius"
   },
   { 
     year: -336, 
     name: "Alexander becomes King", 
     category: "political", 
-    era: "hellenistic",
-    description: "Alexander III of Macedon ascends to the throne at age 20 and begins his campaign to conquer the known world.",
-    significance: "Initiates the Hellenistic period and spreads Greek culture from Egypt to India."
+    era: "classical",
+    description: "Alexander III ascends to the Macedonian throne after Philip II's assassination, beginning his legendary conquests.",
+    significance: "Initiates the Hellenistic period through unprecedented military campaigns that spread Greek culture across three continents.",
+    sources: ["Arrian, Anabasis", "Plutarch, Vita Alexandri"],
+    manuscripts: ["Codex Vindobonensis hist. gr. 4", "P.Oxy. 1798"],
+    criticalNotes: "Vulgate tradition vs. Ptolemy/Aristobulus accounts",
+    textVariants: ["Ἀλέξανδρος vs. Ἀλέξανδρος ὁ Μέγας"],
+    greekText: "Ἀλέξανδρος βασιλεὺς Μακεδόνων ἐγένετο",
+    translation: "Alexander became king of the Macedonians"
   },
   { 
     year: -323, 
-    name: "Death of Alexander", 
+    name: "Alexander's Death", 
     category: "political", 
     era: "hellenistic",
-    description: "Alexander the Great dies in Babylon at age 32, leaving behind a vast empire stretching from Greece to India.",
-    significance: "His death fragments his empire but spreads Hellenistic culture throughout the ancient world."
+    description: "Alexander the Great dies in Babylon at age 32, leaving a vast empire without clear succession plans.",
+    significance: "Marks the transition from Classical to Hellenistic period as his empire fragments among the Diadochi.",
+    sources: ["Arrian 7.25-30", "Diodorus 17.117"],
+    manuscripts: ["Codex Parisinus 1685", "P.Oxy. 4808"],
+    criticalNotes: "Poison vs. fever debate; various accounts of final words",
+    textVariants: ["ἐτελεύτησε vs. ἀπέθανε", "Βαβυλῶνι vs. ἐν Βαβυλῶνι"],
+    greekText: "Ἀλέξανδρος ἐν Βαβυλῶνι ἐτελεύτησε",
+    translation: "Alexander died in Babylon"
   },
   { 
-    year: -146, 
-    name: "Roman Conquest of Greece", 
+    year: -31, 
+    name: "Battle of Actium", 
     category: "political", 
     era: "hellenistic",
-    description: "Romans sack Corinth and establish complete control over mainland Greece, ending Greek political independence.",
-    significance: "Marks the end of Greek political autonomy but begins the transmission of Greek culture to Rome."
-  },
-  { 
-    year: -44, 
-    name: "Caesar assassinated", 
-    category: "political", 
-    era: "imperial",
-    description: "Julius Caesar is assassinated in the Roman Senate on the Ides of March, ending the Roman Republic's last hope for restoration.",
-    significance: "Leads to the rise of Augustus and the Roman Empire, ending republican government for centuries."
-  },
-  { 
-    year: 33, 
-    name: "Crucifixion of Christ", 
-    category: "religious", 
-    era: "imperial",
-    description: "Jesus of Nazareth is crucified in Jerusalem under Pontius Pilate, marking the foundational event of Christianity.",
-    significance: "Initiates the spread of Christianity throughout the Roman Empire and eventually the world."
-  },
-  { 
-    year: 79, 
-    name: "Vesuvius erupts", 
-    category: "cultural", 
-    era: "imperial",
-    description: "Mount Vesuvius erupts, destroying Pompeii and Herculaneum but preserving them for future archaeological study.",
-    significance: "Provides an unparalleled snapshot of daily life in the Roman Empire, discovered centuries later."
-  },
-  { 
-    year: 313, 
-    name: "Edict of Milan", 
-    category: "religious", 
-    era: "lateAntique",
-    description: "Emperor Constantine issues the Edict of Milan, granting religious tolerance throughout the empire and effectively legalizing Christianity.",
-    significance: "Transforms Christianity from a persecuted sect to the empire's dominant religion."
-  },
-  { 
-    year: 410, 
-    name: "Sack of Rome", 
-    category: "political", 
-    era: "lateAntique",
-    description: "Visigothic king Alaric I sacks Rome for three days, shocking the Mediterranean world and demonstrating Roman weakness.",
-    significance: "Symbolizes the decline of Roman power and the beginning of barbarian dominance in Western Europe."
-  },
-  { 
-    year: 476, 
-    name: "Fall of Western Empire", 
-    category: "political", 
-    era: "lateAntique",
-    description: "Germanic chieftain Odoacer deposes Romulus Augustulus, the last Western Roman Emperor, ending the Western Roman Empire.",
-    significance: "Marks the end of ancient Rome and the beginning of medieval Europe."
-  },
-  { 
-    year: 527, 
-    name: "Justinian becomes Emperor", 
-    category: "political", 
-    era: "byzantine",
-    description: "Justinian I becomes Byzantine Emperor and begins his ambitious campaign to reconquer the Western Roman Empire.",
-    significance: "His legal code and architectural achievements, including Hagia Sophia, shape Byzantine civilization."
-  },
-  { 
-    year: 1453, 
-    name: "Fall of Constantinople", 
-    category: "political", 
-    era: "byzantine",
-    description: "Ottoman forces capture Constantinople, ending the Byzantine Empire after over 1,000 years of continuous Roman rule.",
-    significance: "Marks the definitive end of the Roman Empire and the rise of Ottoman dominance in the Eastern Mediterranean."
+    description: "Octavian defeats Mark Antony and Cleopatra, ending the last Hellenistic kingdom and establishing Roman dominance.",
+    significance: "Concludes the Hellenistic period and integrates the Greek world definitively into the Roman Empire.",
+    sources: ["Plutarch, Vita Antonii", "Cassius Dio 50.31-35"],
+    manuscripts: ["Codex Parisinus 1678", "P.Oxy. 2435"],
+    criticalNotes: "Augustan propaganda affects historical accounts",
+    textVariants: ["Ἄκτιον vs. Ἀκτιακὴ ναυμαχία"],
+    greekText: "ἐν Ἀκτίῳ Ὀκταουιανὸς Ἀντώνιον ἐνίκησε",
+    translation: "At Actium Octavian defeated Antony"
   }
 ];
 
-const ERA_COLORS = {
-  archaic: '#D97706',
-  classical: '#F59E0B',
-  hellenistic: '#3B82F6',
-  imperial: '#DC2626',
-  lateAntique: '#7C3AED',
-  byzantine: '#059669'
+const ERA_CONFIG = {
+  archaic: { color: '#D97706', name: 'Archaic (800-500 BCE)' },
+  classical: { color: '#F59E0B', name: 'Classical (500-323 BCE)' },
+  hellenistic: { color: '#3B82F6', name: 'Hellenistic (323-31 BCE)' },
+  imperial: { color: '#DC2626', name: 'Imperial (31 BCE-284 CE)' },
+  lateAntique: { color: '#7C3AED', name: 'Late Antique (284-600 CE)' },
+  byzantine: { color: '#059669', name: 'Byzantine (600-1453 CE)' }
 };
 
-const CATEGORY_COLORS = {
-  political: '#DC2626',
-  intellectual: '#3B82F6',
-  cultural: '#C9A227',
-  religious: '#7C3AED'
+const CATEGORY_CONFIG = {
+  political: { color: '#DC2626', name: 'Political', icon: '⚔️' },
+  cultural: { color: '#7C3AED', name: 'Cultural', icon: '🏛️' },
+  intellectual: { color: '#3B82F6', name: 'Intellectual', icon: '📚' }
 };
 
-export default function TimelinePage() {
-  const [selectedCategory, setSelectedCategory] = useState('all');
-  const [expandedEvent, setExpandedEvent] = useState<number | null>(null);
-  const [hoveredEvent, setHoveredEvent] = useState<number | null>(null);
-  const timelineRef = useRef<HTMLDivElement>(null);
+export default function Timeline() {
+  const [selectedEvent, setSelectedEvent] = useState(null);
+  const [filterCategory, setFilterCategory] = useState('all');
+  const [filterEra, setFilterEra] = useState('all');
+  const [hoveredEvent, setHoveredEvent] = useState(null);
+  const [showCriticalApparatus, setShowCriticalApparatus] = useState(false);
+  const [selectedVariant, setSelectedVariant] = useState(null);
+  const timelineRef = useRef(null);
 
-  const categories = ['all', 'political', 'intellectual', 'cultural', 'religious'];
+  const filteredEvents = EVENTS.filter(event => {
+    return (filterCategory === 'all' || event.category === filterCategory) &&
+           (filterEra === 'all' || event.era === filterEra);
+  });
 
-  const filteredEvents = selectedCategory === 'all' 
-    ? EVENTS 
-    : EVENTS.filter(event => event.category === selectedCategory);
+  const getTimelinePosition = (year) => {
+    const minYear = Math.min(...EVENTS.map(e => e.year));
+    const maxYear = Math.max(...EVENTS.map(e => e.year));
+    return ((year - minYear) / (maxYear - minYear)) * 100;
+  };
 
-  // Calculate position for each event on timeline
-  const minYear = Math.min(...EVENTS.map(e => e.year));
-  const maxYear = Math.max(...EVENTS.map(e => e.year));
-  const yearRange = maxYear - minYear;
-
-  const scrollToYear = (targetYear: number) => {
-    if (timelineRef.current) {
-      const position = ((targetYear - minYear) / yearRange) * timelineRef.current.scrollWidth;
-      timelineRef.current.scrollLeft = position - timelineRef.current.clientWidth / 2;
-    }
+  const parseGreekText = (text) => {
+    return text.split(' ').map((word, index) => ({
+      greek: word,
+      position: index,
+      lemma: word.replace(/[ῆῇὴή]/g, 'η').replace(/[ώὼὦ]/g, 'ω'),
+      morphology: 'nom.sg.masc',
+      lsj: `${word}-entry`
+    }));
   };
 
   return (
-    <div style={{ backgroundColor: '#0D0D0F', minHeight: '100vh', color: '#F5F4F2' }}>
-      {/* Navigation */}
-      <nav style={{ 
-        backgroundColor: '#141419', 
-        borderBottom: '1px solid #1E1E24',
-        padding: '16px 24px',
-        position: 'sticky',
-        top: 0,
-        zIndex: 100
+    <div style={{ 
+      minHeight: '100vh', 
+      backgroundColor: '#0D0D0F', 
+      color: '#F5F4F2',
+      fontFamily: 'system-ui, -apple-system, sans-serif'
+    }}>
+      {/* Header */}
+      <header style={{
+        backgroundColor: '#1E1E24',
+        borderBottom: '1px solid #2D2D35',
+        padding: '1rem 2rem'
       }}>
-        <div style={{ 
-          maxWidth: '1200px', 
-          margin: '0 auto', 
-          display: 'flex', 
-          justifyContent: 'space-between', 
-          alignItems: 'center' 
-        }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', alignItems: 'center', gap: '2rem' }}>
           <Link href="/" style={{ 
-            fontSize: '24px', 
+            fontSize: '1.5rem', 
             fontWeight: 'bold', 
             color: '#C9A227', 
-            textDecoration: 'none',
-            transition: 'all 0.2s'
+            textDecoration: 'none' 
           }}>
             LOGOS
           </Link>
-          
-          <div style={{ display: 'flex', gap: '24px', alignItems: 'center' }}>
-            <Link href="/library" style={{ 
-              color: '#9CA3AF', 
-              textDecoration: 'none',
-              transition: 'all 0.2s',
-              padding: '8px 16px',
-              borderRadius: '8px'
-            }}
-            onMouseEnter={(e) => e.target.style.color = '#F5F4F2'}
-            onMouseLeave={(e) => e.target.style.color = '#9CA3AF'}>
-              Library
-            </Link>
-            <Link href="/timeline" style={{ 
-              color: '#C9A227', 
-              textDecoration: 'none',
-              padding: '8px 16px',
-              borderRadius: '8px',
-              backgroundColor: '#1E1E24'
-            }}>
-              Timeline
-            </Link>
-            <Link href="/search" style={{ 
-              color: '#9CA3AF', 
-              textDecoration: 'none',
-              transition: 'all 0.2s',
-              padding: '8px 16px',
-              borderRadius: '8px'
-            }}
-            onMouseEnter={(e) => e.target.style.color = '#F5F4F2'}
-            onMouseLeave={(e) => e.target.style.color = '#9CA3AF'}>
-              Search
-            </Link>
-          </div>
-        </div>
-      </nav>
-
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '32px 24px' }}>
-        {/* Header */}
-        <div style={{ marginBottom: '48px', textAlign: 'center' }}>
-          <h1 style={{ 
-            fontSize: '48px', 
-            fontWeight: 'bold', 
-            marginBottom: '16px',
-            background: 'linear-gradient(135deg, #C9A227, #E8D5A3)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text'
-          }}>
+          <h1 style={{ fontSize: '2rem', fontWeight: 'bold', margin: 0 }}>
             Historical Timeline
           </h1>
-          <p style={{ 
-            fontSize: '18px', 
-            color: '#9CA3AF', 
-            maxWidth: '600px', 
-            margin: '0 auto' 
-          }}>
-            Explore the major events that shaped Western civilization, from archaic Greece through the Byzantine Empire.
-          </p>
-        </div>
-
-        {/* Category Filters */}
-        <div style={{ 
-          marginBottom: '32px',
-          display: 'flex',
-          gap: '16px',
-          justifyContent: 'center',
-          flexWrap: 'wrap'
-        }}>
-          {categories.map(category => (
+          <div style={{ marginLeft: 'auto', display: 'flex', gap: '1rem', alignItems: 'center' }}>
+            <span style={{ 
+              backgroundColor: '#3B82F6', 
+              color: 'white', 
+              padding: '0.25rem 0.5rem', 
+              borderRadius: '0.25rem',
+              fontSize: '0.75rem',
+              fontWeight: 'bold'
+            }}>
+              Α GREEK
+            </span>
             <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
+              onClick={() => setShowCriticalApparatus(!showCriticalApparatus)}
               style={{
-                padding: '12px 24px',
-                borderRadius: '8px',
+                backgroundColor: showCriticalApparatus ? '#C9A227' : '#2D2D35',
+                color: showCriticalApparatus ? '#0D0D0F' : '#F5F4F2',
                 border: 'none',
-                backgroundColor: selectedCategory === category ? '#C9A227' : '#1E1E24',
-                color: selectedCategory === category ? '#0D0D0F' : '#F5F4F2',
+                padding: '0.5rem 1rem',
+                borderRadius: '0.5rem',
                 cursor: 'pointer',
-                transition: 'all 0.2s',
-                fontSize: '14px',
-                fontWeight: '500',
-                textTransform: 'capitalize'
-              }}
-              onMouseEnter={(e) => {
-                if (selectedCategory !== category) {
-                  e.target.style.backgroundColor = '#2A2A32';
-                }
-              }}
-              onMouseLeave={(e) => {
-                if (selectedCategory !== category) {
-                  e.target.style.backgroundColor = '#1E1E24';
-                }
+                fontSize: '0.875rem',
+                transition: 'all 0.2s ease'
               }}
             >
-              {category}
+              Critical Apparatus
             </button>
-          ))}
-        </div>
-
-        {/* Era Legend */}
-        <div style={{ 
-          marginBottom: '32px',
-          backgroundColor: '#1E1E24',
-          padding: '24px',
-          borderRadius: '12px',
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-          gap: '16px'
-        }}>
-          <div style={{ gridColumn: '1 / -1', marginBottom: '8px' }}>
-            <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#F5F4F2' }}>Historical Eras</h3>
           </div>
-          {Object.entries(ERA_COLORS).map(([era, color]) => (
-            <div key={era} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <div style={{ 
-                width: '16px', 
-                height: '16px', 
-                backgroundColor: color, 
-                borderRadius: '50%' 
-              }} />
-              <span style={{ fontSize: '14px', color: '#9CA3AF', textTransform: 'capitalize' }}>
-                {era === 'lateAntique' ? 'Late Antique' : era}
-              </span>
+        </div>
+      </header>
+
+      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '2rem' }}>
+        {/* Filters */}
+        <div style={{ 
+          display: 'flex', 
+          gap: '2rem', 
+          marginBottom: '2rem',
+          backgroundColor: '#1E1E24',
+          padding: '1.5rem',
+          borderRadius: '1rem'
+        }}>
+          <div>
+            <label style={{ 
+              display: 'block', 
+              fontSize: '0.875rem', 
+              fontWeight: 'bold', 
+              color: '#C9A227',
+              marginBottom: '0.5rem' 
+            }}>
+              Era
+            </label>
+            <select
+              value={filterEra}
+              onChange={(e) => setFilterEra(e.target.value)}
+              style={{
+                backgroundColor: '#2D2D35',
+                color: '#F5F4F2',
+                border: '1px solid #404040',
+                padding: '0.5rem 1rem',
+                borderRadius: '0.5rem',
+                fontSize: '0.875rem'
+              }}
+            >
+              <option value="all">All Eras</option>
+              {Object.entries(ERA_CONFIG).map(([key, config]) => (
+                <option key={key} value={key}>{config.name}</option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <label style={{ 
+              display: 'block', 
+              fontSize: '0.875rem', 
+              fontWeight: 'bold', 
+              color: '#C9A227',
+              marginBottom: '0.5rem' 
+            }}>
+              Category
+            </label>
+            <select
+              value={filterCategory}
+              onChange={(e) => setFilterCategory(e.target.value)}
+              style={{
+                backgroundColor: '#2D2D35',
+                color: '#F5F4F2',
+                border: '1px solid #404040',
+                padding: '0.5rem 1rem',
+                borderRadius: '0.5rem',
+                fontSize: '0.875rem'
+              }}
+            >
+              <option value="all">All Categories</option>
+              {Object.entries(CATEGORY_CONFIG).map(([key, config]) => (
+                <option key={key} value={key}>{config.icon} {config.name}</option>
+              ))}
+            </select>
+          </div>
+
+          <div style={{ marginLeft: 'auto' }}>
+            <div style={{ fontSize: '0.875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>
+              Legend
             </div>
-          ))}
+            <div style={{ display: 'flex', gap: '1rem' }}>
+              {Object.entries(CATEGORY_CONFIG).map(([key, config]) => (
+                <div key={key} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <div style={{
+                    width: '12px',
+                    height: '12px',
+                    borderRadius: '50%',
+                    backgroundColor: config.color
+                  }} />
+                  <span style={{ fontSize: '0.75rem', color: '#9CA3AF' }}>
+                    {config.name}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
-        {/* Timeline Container */}
+        {/* Timeline Visualization */}
         <div style={{ 
-          backgroundColor: '#1E1E24',
-          borderRadius: '12px',
-          padding: '32px',
-          marginBottom: '32px'
+          backgroundColor: '#1E1E24', 
+          borderRadius: '1rem', 
+          padding: '2rem',
+          marginBottom: '2rem'
         }}>
-          <div 
-            ref={timelineRef}
-            style={{ 
-              position: 'relative',
-              height: '400px',
-              overflowX: 'auto',
-              overflowY: 'hidden',
-              scrollBehavior: 'smooth'
-            }}
-          >
-            {/* Timeline Line */}
+          <div style={{ position: 'relative', height: '120px' }} ref={timelineRef}>
+            {/* Timeline line */}
             <div style={{
               position: 'absolute',
-              top: '200px',
-              left: '0',
-              right: '0',
+              top: '60px',
+              left: '50px',
+              right: '50px',
               height: '2px',
-              backgroundColor: '#6B7280',
-              width: `${Math.max(1200, filteredEvents.length * 150)}px`
+              backgroundColor: '#404040'
             }} />
 
-            {/* Era Backgrounds */}
-            {Object.entries(ERA_COLORS).map(([era, color]) => {
-              const eraEvents = filteredEvents.filter(e => e.era === era);
-              if (eraEvents.length === 0) return null;
-              
-              const minEraYear = Math.min(...eraEvents.map(e => e.year));
-              const maxEraYear = Math.max(...eraEvents.map(e => e.year));
-              const startPos = ((minEraYear - minYear) / yearRange) * Math.max(1200, filteredEvents.length * 150);
-              const width = ((maxEraYear - minEraYear) / yearRange) * Math.max(1200, filteredEvents.length * 150);
-              
-              return (
+            {/* Era segments */}
+            <svg width="100%" height="120" style={{ position: 'absolute', top: 0, left: 0 }}>
+              <defs>
+                <linearGradient id="eraGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" style={{ stopColor: '#D97706', stopOpacity: 0.6 }} />
+                  <stop offset="35%" style={{ stopColor: '#F59E0B', stopOpacity: 0.6 }} />
+                  <stop offset="80%" style={{ stopColor: '#3B82F6', stopOpacity: 0.6 }} />
+                  <stop offset="100%" style={{ stopColor: '#DC2626', stopOpacity: 0.6 }} />
+                </linearGradient>
+              </defs>
+              <rect x="50" y="55" width="calc(100% - 100px)" height="10" fill="url(#eraGradient)" rx="5" />
+            </svg>
+
+            {/* Events */}
+            {filteredEvents.map((event, index) => (
+              <div
+                key={index}
+                style={{
+                  position: 'absolute',
+                  left: `${50 + getTimelinePosition(event.year) * 0.8}px`,
+                  top: index % 2 === 0 ? '25px' : '85px',
+                  transform: 'translateX(-50%)',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease'
+                }}
+                onMouseEnter={() => setHoveredEvent(event)}
+                onMouseLeave={() => setHoveredEvent(null)}
+                onClick={() => setSelectedEvent(event)}
+              >
+                <div style={{
+                  width: '16px',
+                  height: '16px',
+                  borderRadius: '50%',
+                  backgroundColor: CATEGORY_CONFIG[event.category].color,
+                  border: `3px solid ${hoveredEvent === event ? '#C9A227' : '#1E1E24'}`,
+                  transform: hoveredEvent === event ? 'scale(1.3)' : 'scale(1)',
+                  transition: 'all 0.2s ease'
+                }} />
+                
+                <div style={{
+                  position: 'absolute',
+                  top: index % 2 === 0 ? '25px' : '-45px',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  backgroundColor: '#2D2D35',
+                  padding: '0.5rem',
+                  borderRadius: '0.5rem',
+                  whiteSpace: 'nowrap',
+                  fontSize: '0.75rem',
+                  opacity: hoveredEvent === event ? 1 : 0,
+                  transition: 'opacity 0.2s ease',
+                  pointerEvents: 'none',
+                  zIndex: 10
+                }}>
+                  <div style={{ fontWeight: 'bold', color: '#F5F4F2' }}>{event.name}</div>
+                  <div style={{ color: '#9CA3AF' }}>{event.year > 0 ? event.year : Math.abs(event.year) + ' BCE'}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Event Details */}
+        <div style={{ display: 'grid', gridTemplateColumns: selectedEvent ? '1fr 1fr' : '1fr', gap: '2rem' }}>
+          {/* Events List */}
+          <div style={{
+            backgroundColor: '#1E1E24',
+            borderRadius: '1rem',
+            padding: '1.5rem'
+          }}>
+            <h2 style={{ 
+              fontSize: '1.5rem', 
+              fontWeight: 'bold', 
+              marginBottom: '1.5rem',
+              color: '#C9A227'
+            }}>
+              Historical Events
+            </h2>
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              {filteredEvents.map((event, index) => (
                 <div
-                  key={era}
+                  key={index}
                   style={{
-                    position: 'absolute',
-                    top: '150px',
-                    left: `${startPos}px`,
-                    width: `${Math.max(width, 100)}px`,
-                    height: '100px',
-                    backgroundColor: `${color}10`,
-                    borderRadius: '8px',
-                    border: `1px solid ${color}30`
+                    backgroundColor: selectedEvent === event ? '#2D2D35' : '#141419',
+                    padding: '1rem',
+                    borderRadius: '0.75rem',
+                    cursor: 'pointer',
+                    border: `1px solid ${selectedEvent === event ? '#C9A227' : 'transparent'}`,
+                    transition: 'all 0.2s ease'
                   }}
-                />
-              );
-            })}
-
-            {/* Event Markers */}
-            {filteredEvents.map((event, index) => {
-              const position = ((event.year - minYear) / yearRange) * Math.max(1200, filteredEvents.length * 150);
-              const isExpanded = expandedEvent === index;
-              const isHovered = hoveredEvent === index;
-              
-              return (
-                <div key={index} style={{ position: 'absolute', left: `${position}px` }}>
-                  {/* Year Labels */}
-                  <div style={{
-                    position: 'absolute',
-                    top: '230px',
-                    left: '-30px',
-                    width: '60px',
-                    textAlign: 'center',
-                    fontSize: '12px',
-                    color: '#9CA3AF'
+                  onClick={() => setSelectedEvent(event)}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
+                    <span style={{ 
+                      color: ERA_CONFIG[event.era].color,
+                      fontWeight: 'bold',
+                      fontSize: '0.875rem'
+                    }}>
+                      {event.year > 0 ? `${event.year} CE` : `${Math.abs(event.year)} BCE`}
+                    </span>
+                    <div style={{
+                      backgroundColor: CATEGORY_CONFIG[event.category].color,
+                      color: 'white',
+                      padding: '0.25rem 0.5rem',
+                      borderRadius: '0.25rem',
+                      fontSize: '0.75rem'
+                    }}>
+                      {CATEGORY_CONFIG[event.category].icon} {CATEGORY_CONFIG[event.category].name}
+                    </div>
+                  </div>
+                  
+                  <h3 style={{ 
+                    fontSize: '1.125rem', 
+                    fontWeight: 'bold', 
+                    color: '#F5F4F2',
+                    margin: '0.5rem 0'
                   }}>
-                    {event.year < 0 ? `${Math.abs(event.year)} BCE` : `${event.year} CE`}
-                  </div>
-
-                  {/* Event Marker */}
-                  <div
-                    style={{
-                      position: 'absolute',
-                      top: '190px',
-                      left: '-8px',
-                      width: '16px',
-                      height: '16px',
-                      borderRadius: '50%',
-                      backgroundColor: ERA_COLORS[event.era],
-                      border: `3px solid ${CATEGORY_COLORS[event.category]}`,
-                      cursor: 'pointer',
-                      transform: isHovered ? 'scale(1.2)' : 'scale(1)',
-                      transition: 'all 0.2s',
-                      zIndex: isExpanded ? 10 : 1
-                    }}
-                    onClick={() => setExpandedEvent(isExpanded ? null : index)}
-                    onMouseEnter={() => setHoveredEvent(index)}
-                    onMouseLeave={() => setHoveredEvent(null)}
-                  />
-
-                  {/* Event Name */}
-                  <div
-                    style={{
-                      position: 'absolute',
-                      top: isExpanded ? '50px' : '160px',
-                      left: '-60px',
-                      width: '120px',
-                      textAlign: 'center',
-                      fontSize: '12px',
-                      color: isExpanded ? '#C9A227' : '#F5F4F2',
-                      fontWeight: isExpanded ? '600' : '400',
-                      cursor: 'pointer',
-                      transition: 'all 0.2s'
-                    }}
-                    onClick={() => setExpandedEvent(isExpanded ? null : index)}
-                  >
                     {event.name}
-                  </div>
+                  </h3>
+                  
+                  <p style={{ 
+                    color: '#9CA3AF', 
+                    fontSize: '0.875rem',
+                    lineHeight: '1.5',
+                    margin: 0
+                  }}>
+                    {event.description.substring(0, 120)}...
+                  </p>
 
-                  {/* Expanded Event Details */}
-                  {isExpanded && (
-                    <div
-                      style={{
-                        position: 'absolute',
-                        top: '70px',
-                        left: '-150px',
-                        width: '300px',
-                        backgroundColor: '#141419',
-                        border: `2px solid ${ERA_COLORS[event.era]}`,
-                        borderRadius: '12px',
-                        padding: '16px',
-                        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.5)',
-                        zIndex: 20
-                      }}
-                    >
-                      <div style={{ marginBottom: '12px' }}>
-                        <h4 style={{ 
-                          color: '#C9A227', 
-                          fontSize: '16px', 
-                          fontWeight: '600',
-                          marginBottom: '4px' 
-                        }}>
-                          {event.name}
-                        </h4>
-                        <div style={{ display: 'flex', gap: '8px', marginBottom: '8px' }}>
-                          <span style={{ 
-                            fontSize: '11px',
-                            padding: '4px 8px',
-                            backgroundColor: CATEGORY_COLORS[event.category],
-                            color: '#F5F4F2',
-                            borderRadius: '4px',
-                            textTransform: 'capitalize'
-                          }}>
-                            {event.category}
-                          </span>
-                          <span style={{ 
-                            fontSize: '11px',
-                            padding: '4px 8px',
-                            backgroundColor: ERA_COLORS[event.era],
-                            color: '#F5F4F2',
-                            borderRadius: '4px',
-                            textTransform: 'capitalize'
-                          }}>
-                            {event.era === 'lateAntique' ? 'Late Antique' : event.era}
-                          </span>
-                        </div>
-                      </div>
-                      
-                      <p style={{ 
-                        fontSize: '13px', 
-                        color: '#9CA3AF',
-                        lineHeight: '1.4',
-                        marginBottom: '12px'
+                  {event.greekText && (
+                    <div style={{
+                      marginTop: '0.75rem',
+                      padding: '0.5rem',
+                      backgroundColor: '#0D0D0F',
+                      borderRadius: '0.5rem',
+                      borderLeft: '3px solid #3B82F6'
+                    }}>
+                      <div style={{ 
+                        fontFamily: 'serif',
+                        fontSize: '0.875rem',
+                        color: '#3B82F6',
+                        marginBottom: '0.25rem'
                       }}>
-                        {event.description}
-                      </p>
-                      
-                      <div>
-                        <strong style={{ fontSize: '12px', color: '#C9A227' }}>Significance:</strong>
-                        <p style={{ 
-                          fontSize: '12px', 
-                          color: '#9CA3AF',
-                          lineHeight: '1.4',
-                          marginTop: '4px'
-                        }}>
-                          {event.significance}
-                        </p>
+                        {event.greekText}
                       </div>
-                      
-                      <button
-                        onClick={() => setExpandedEvent(null)}
-                        style={{
-                          position: 'absolute',
-                          top: '8px',
-                          right: '8px',
-                          background: 'none',
-                          border: 'none',
-                          color: '#9CA3AF',
-                          cursor: 'pointer',
-                          fontSize: '16px',
-                          transition: 'all 0.2s'
-                        }}
-                        onMouseEnter={(e) => e.target.style.color = '#F5F4F2'}
-                        onMouseLeave={(e) => e.target.style.color = '#9CA3AF'}
-                      >
-                        ✕
-                      </button>
+                      <div style={{ 
+                        fontSize: '0.75rem',
+                        color: '#9CA3AF',
+                        fontStyle: 'italic'
+                      }}>
+                        {event.translation}
+                      </div>
                     </div>
                   )}
                 </div>
-              );
-            })}
+              ))}
+            </div>
           </div>
-        </div>
 
-        {/* Quick Navigation */}
-        <div style={{ 
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
-          gap: '16px'
-        }}>
-          {Object.entries(ERA_COLORS).map(([era, color]) => {
-            const eraEvents = filteredEvents.filter(e => e.era === era);
-            if (eraEvents.length === 0) return null;
-            
-            const midYear = eraEvents.reduce((sum, e) => sum + e.year, 0) / eraEvents.length;
-            
-            return (
-              <button
-                key={era}
-                onClick={() => scrollToYear(midYear)}
-                style={{
-                  padding: '16px',
-                  backgroundColor: '#1E1E24',
-                  border: `2px solid ${color}`,
-                  borderRadius: '8px',
+          {/* Selected Event Detail */}
+          {selectedEvent && (
+            <div style={{
+              backgroundColor: '#1E1E24',
+              borderRadius: '1rem',
+              padding: '1.5rem'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+                <h2 style={{ 
+                  fontSize: '1.5rem', 
+                  fontWeight: 'bold', 
                   color: '#F5F4F2',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s',
-                  textAlign: 'center'
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.backgroundColor = `${color}20`;
-                  e.target.style.transform = 'translateY(-2px)';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.backgroundColor = '#1E1E24';
-                  e.target.style.transform = 'translateY(0)';
-                }}
-              >
-                <div style={{ fontSize: '14px', fontWeight: '600', marginBottom: '4px', textTransform: 'capitalize' }}>
-                  {era === 'lateAntique' ? 'Late Antique' : era}
+                  margin: 0
+                }}>
+                  {selectedEvent.name}
+                </h2>
+                <button
+                  onClick={() => setSelectedEvent(null)}
+                  style={{
+                    backgroundColor: '#2D2D35',
+                    color: '#9CA3AF',
+                    border: 'none',
+                    borderRadius: '0.5rem',
+                    padding: '0.5rem',
+                    cursor: 'pointer',
+                    fontSize: '1rem'
+                  }}
+                >
+                  ✕
+                </button>
+              </div>
+
+              <div style={{ display: 'flex', gap: '1rem', marginBottom: '1.5rem' }}>
+                <div style={{
+                  backgroundColor: ERA_CONFIG[selectedEvent.era].color,
+                  color: 'white',
+                  padding: '0.5rem 1rem',
+                  borderRadius: '0.5rem',
+                  fontSize: '0.875rem',
+                  fontWeight: 'bold'
+                }}>
+                  {selectedEvent.year > 0 ? `${selectedEvent.year} CE` : `${Math.abs(selectedEvent.year)} BCE`}
                 </div>
-                <div style={{ fontSize: '12px', color: '#9CA3AF' }}>
-                  {eraEvents.length} events
+                <div style={{
+                  backgroundColor: CATEGORY_CONFIG[selectedEvent.category].color,
+                  color: 'white',
+                  padding: '0.5rem 1rem',
+                  borderRadius: '0.5rem',
+                  fontSize: '0.875rem'
+                }}>
+                  {CATEGORY_CONFIG[selectedEvent.category].icon} {CATEGORY_CONFIG[selectedEvent.category].name}
                 </div>
-              </button>
-            );
-          })}
-        </div>
-      </div>
-    </div>
-  );
-}
+              </div>
+
+              <div style={{ marginBottom: '1.5rem' }}>
+                <h3 style={{ 
+                  fontSize: '1rem', 
+                  fontWeight: 'bold', 
+                  color: '#C9A227',
+                  marginBottom: '0.5rem'
+                }}>
+                  Description
+                </h3>
+                <p style={{ 
+                  color: '#F5F4F2', 
+                  lineHeight: '1.6',
+                  marginBottom: '1rem'
+                }}>
+                  {selectedEvent.description}
+                </p>
+                <p style={{ 
+                  color: '#9CA3AF', 
+                  lineHeight: '1.6',
+                  fontStyle: 'italic'
+                }}>
+                  {selectedEvent.significance}
+                </p>
+              </div>
+
+              {/* Greek Text Analysis */}
+              {selectedEvent.greekText && (
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <h3 style={{ 
+                    fontSize: '1rem', 
+                    fontWeight: 'bold', 
+                    color: '#C9A227',
+                    marginBottom: '0.5rem'
+                  }}>
+                    Primary Text
+                  </h3>
+                  <div style={{
+                    backgroundColor: '#0D0D0F',
+                    padding: '1rem',
+                    borderRadius: '0.75rem',
+                    borderLeft: '4px solid #3B82F6'
+                  }}>
+                    <div style={{ marginBottom: '0.75rem' }}>
+                      {parseGreekText(selectedEvent.greekText).map((word, index) => (
+                        <span
+                          key={index}
+                          style={{
+                            fontFamily: 'serif',
+                            fontSize: '1.125rem',
+                            color: '#3B82F6',
+                            marginRight: '0.5rem',
+                            cursor: 'pointer',
+                            padding: '0.25rem',
+                            borderRadius: '0.25rem

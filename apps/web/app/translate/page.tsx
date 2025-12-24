@@ -4,644 +4,619 @@ import { useState } from 'react';
 import Link from 'next/link';
 
 // Word forms dictionary
-const WORD_FORMS: Record<string, { translation: string; type: string; forms: string; etymology?: string }> = {
+const WORD_FORMS: Record<string, { translation: string; type: string; forms: string; etymology?: string; lsj?: string; embedding?: number[]; semanticHistory?: Array<{period: string; meaning: string; evidence: string; color: string}> }> = {
   // Greek words
-  "μῆνιν": { translation: "wrath, rage", type: "noun (accusative)", forms: "μῆνις, μῆνιδος", etymology: "From Proto-Indo-European *mēnis-" },
-  "ἄειδε": { translation: "sing!", type: "verb (imperative)", forms: "ἀείδω, ἀείσω, ἤεισα", etymology: "From *aweyd- 'to sing'" },
-  "θεὰ": { translation: "goddess", type: "noun (vocative)", forms: "θεός, θεοῦ", etymology: "From *dheh₁s- 'divine'" },
-  "ἓν": { translation: "one", type: "numeral", forms: "εἷς, μία, ἕν" },
-  "οἶδα": { translation: "I know", type: "verb (perfect)", forms: "οἶδα, εἰδέναι", etymology: "From *weyd- 'to see, know'" },
-  "ὅτι": { translation: "that", type: "conjunction", forms: "invariable" },
-  "οὐδὲν": { translation: "nothing", type: "pronoun", forms: "οὐδείς, οὐδεμία, οὐδέν" },
-  "γνῶθι": { translation: "know!", type: "verb (imperative)", forms: "γινώσκω, γνώσομαι", etymology: "From *ǵneh₃-" },
-  "σεαυτόν": { translation: "yourself", type: "pronoun (accusative)", forms: "σεαυτοῦ, σεαυτῷ, σεαυτόν" },
-  "πάντα": { translation: "all things", type: "pronoun (nominative pl.)", forms: "πᾶς, πᾶσα, πᾶν" },
-  "ῥεῖ": { translation: "flows", type: "verb (3rd sg.)", forms: "ῥέω, ῥεύσομαι" },
+  "μῆνιν": { 
+    translation: "wrath, rage", 
+    type: "noun (accusative)", 
+    forms: "μῆνις, μῆνιδος (f.)", 
+    etymology: "From Proto-Indo-European *mēnis-",
+    lsj: "μῆνις, ιδος, ἡ, wrath, anger, esp. of the gods",
+    embedding: [0.2, 0.8, 0.1, 0.9, 0.3],
+    semanticHistory: [
+      { period: "Archaic", meaning: "divine wrath", evidence: "Homer Il. 1.1", color: "#D97706" },
+      { period: "Classical", meaning: "human anger", evidence: "Aeschylus Ag. 155", color: "#F59E0B" },
+      { period: "Hellenistic", meaning: "resentment", evidence: "Polybius 1.35.6", color: "#3B82F6" }
+    ]
+  },
+  "ἄειδε": { 
+    translation: "sing!", 
+    type: "verb (imperative 2sg)", 
+    forms: "ἀείδω, ἀείσω, ἤεισα", 
+    etymology: "From *aweyd- 'to sing'",
+    lsj: "ἀείδω, sing, chant, esp. epic poetry",
+    embedding: [0.7, 0.3, 0.8, 0.2, 0.6]
+  },
+  "θεὰ": { 
+    translation: "goddess", 
+    type: "noun (vocative)", 
+    forms: "θεός, θεοῦ (m./f.)", 
+    etymology: "From *dheh₁s- 'divine'",
+    lsj: "θεός, οῦ, ὁ, ἡ, god, goddess, divine being",
+    embedding: [0.9, 0.1, 0.7, 0.8, 0.4]
+  },
+  "λόγος": { 
+    translation: "word, reason", 
+    type: "noun (nominative)", 
+    forms: "λόγος, λόγου (m.)", 
+    etymology: "From *leg- 'to gather, speak'",
+    lsj: "λόγος, ου, ὁ, word, speech, reason, account",
+    embedding: [0.5, 0.9, 0.3, 0.7, 0.8],
+    semanticHistory: [
+      { period: "Archaic", meaning: "speech, tale", evidence: "Homer Od. 1.56", color: "#D97706" },
+      { period: "Classical", meaning: "reason, argument", evidence: "Heraclitus DK 22 B1", color: "#F59E0B" },
+      { period: "Hellenistic", meaning: "divine principle", evidence: "Stoic sources", color: "#3B82F6" },
+      { period: "Imperial", meaning: "Christian Logos", evidence: "John 1:1", color: "#DC2626" }
+    ]
+  },
   // Latin words
-  "arma": { translation: "arms, weapons", type: "noun (accusative pl.)", forms: "arma, armōrum (n.)", etymology: "From *h₂er- 'to fit together'" },
-  "virumque": { translation: "and the man", type: "noun (accusative) + enclitic", forms: "vir, virī (m.) + -que", etymology: "From *wiHrós 'man'" },
-  "cano": { translation: "I sing", type: "verb (1st sg.)", forms: "canō, canere, cecinī, cantus", etymology: "From *kan- 'to sing'" },
-  "carpe": { translation: "seize!", type: "verb (imperative)", forms: "carpō, carpere, carpsī, carptus", etymology: "From *kerp- 'to pluck'" },
-  "diem": { translation: "day", type: "noun (accusative)", forms: "diēs, diēī (m./f.)", etymology: "From *dyēws 'sky, day'" },
-  "veni": { translation: "I came", type: "verb (perfect)", forms: "veniō, venīre, vēnī, ventus", etymology: "From *gʷem- 'to come'" },
-  "vidi": { translation: "I saw", type: "verb (perfect)", forms: "videō, vidēre, vīdī, vīsus", etymology: "From *weyd- 'to see'" },
-  "vici": { translation: "I conquered", type: "verb (perfect)", forms: "vincō, vincere, vīcī, victus", etymology: "From *weyk- 'to conquer'" },
-  "cogito": { translation: "I think", type: "verb (1st sg.)", forms: "cōgitō, cōgitāre, cōgitāvī, cōgitātus", etymology: "From co- + agitāre 'to drive together'" },
-  "ergo": { translation: "therefore", type: "adverb", forms: "invariable", etymology: "From *h₁regʷ- 'to direct'" },
-  "sum": { translation: "I am", type: "verb (1st sg.)", forms: "sum, esse, fuī, futūrus", etymology: "From *h₁es- 'to be'" },
-  "memento": { translation: "remember!", type: "verb (imperative)", forms: "meminī, meminisse" },
-  "mori": { translation: "to die", type: "verb (infinitive)", forms: "morior, morī, mortuus" },
-  "per": { translation: "through", type: "preposition", forms: "invariable" },
-  "aspera": { translation: "hardships", type: "adjective (neuter pl.)", forms: "asper, aspera, asperum" },
-  "ad": { translation: "to", type: "preposition", forms: "invariable" },
-  "astra": { translation: "stars", type: "noun (accusative pl.)", forms: "astrum, astrī (n.)" },
-  "tempus": { translation: "time", type: "noun (nominative)", forms: "tempus, temporis (n.)" },
-  "fugit": { translation: "flees", type: "verb (3rd sg.)", forms: "fugiō, fugere, fūgī, fugitūrus" },
-  "alea": { translation: "die", type: "noun (nominative)", forms: "alea, aleae (f.)" },
-  "iacta": { translation: "cast", type: "participle (feminine)", forms: "iaciō, iacere, iēcī, iactus" },
-  "est": { translation: "is", type: "verb (3rd sg.)", forms: "sum, esse, fuī, futūrus" }
-};
-
-// Enhanced translation dictionary
-const TRANSLATIONS: Record<string, { translation: string; notes: string; language: 'greek' | 'latin'; era: string; author?: string; work?: string }> = {
-  "μῆνιν ἄειδε θεὰ": { 
-    translation: "Sing, O goddess, of the wrath", 
-    notes: "Opening line of Homer's Iliad. The 'wrath' refers to Achilles' rage.", 
-    language: 'greek',
-    era: 'Archaic',
-    author: 'Homer',
-    work: 'Iliad'
+  "arma": { 
+    translation: "arms, weapons", 
+    type: "noun (accusative pl.)", 
+    forms: "arma, armōrum (n.)", 
+    etymology: "From *h₂er- 'to fit together'",
+    embedding: [0.8, 0.2, 0.9, 0.1, 0.5]
   },
-  "ἓν οἶδα ὅτι οὐδὲν οἶδα": { 
-    translation: "One thing I know: that I know nothing", 
-    notes: "Socratic paradox expressing intellectual humility",
-    language: 'greek',
-    era: 'Classical',
-    author: 'Socrates'
+  "virumque": { 
+    translation: "and the man", 
+    type: "noun (acc.) + enclitic", 
+    forms: "vir, virī (m.) + -que", 
+    etymology: "From *wiHrós 'man'",
+    embedding: [0.6, 0.4, 0.7, 0.3, 0.8]
   },
-  "γνῶθι σεαυτόν": { 
-    translation: "Know thyself", 
-    notes: "Delphic maxim inscribed at the Temple of Apollo",
-    language: 'greek',
-    era: 'Archaic'
-  },
-  "πάντα ῥεῖ": { 
-    translation: "Everything flows", 
-    notes: "Heraclitean doctrine of universal flux",
-    language: 'greek',
-    era: 'Archaic',
-    author: 'Heraclitus'
-  },
-  "arma virumque cano": { 
-    translation: "I sing of arms and the man", 
-    notes: "Opening of Virgil's Aeneid, introducing Aeneas",
-    language: 'latin',
-    era: 'Imperial',
-    author: 'Virgil',
-    work: 'Aeneid'
-  },
-  "carpe diem": { 
-    translation: "Seize the day", 
-    notes: "Horatian philosophy of living in the present moment",
-    language: 'latin',
-    era: 'Imperial',
-    author: 'Horace',
-    work: 'Odes'
-  },
-  "veni vidi vici": { 
-    translation: "I came, I saw, I conquered", 
-    notes: "Caesar's laconic report of his victory at Zela (47 BCE)",
-    language: 'latin',
-    era: 'Imperial',
-    author: 'Julius Caesar'
-  },
-  "cogito ergo sum": { 
-    translation: "I think, therefore I am", 
-    notes: "Cartesian foundational principle of philosophy",
-    language: 'latin',
-    era: 'Imperial',
-    author: 'René Descartes'
-  },
-  "memento mori": { 
-    translation: "Remember you must die", 
-    notes: "Stoic reminder of human mortality",
-    language: 'latin',
-    era: 'Imperial'
-  },
-  "per aspera ad astra": { 
-    translation: "Through hardships to the stars", 
-    notes: "Encouraging motto about perseverance through difficulties",
-    language: 'latin',
-    era: 'Imperial'
-  },
-  "tempus fugit": { 
-    translation: "Time flies", 
-    notes: "Reminder of the swift passage of time",
-    language: 'latin',
-    era: 'Imperial'
-  },
-  "alea iacta est": { 
-    translation: "The die is cast", 
-    notes: "Caesar's words when crossing the Rubicon",
-    language: 'latin',
-    era: 'Imperial',
-    author: 'Julius Caesar'
+  "virtus": {
+    translation: "virtue, courage",
+    type: "noun (nominative)",
+    forms: "virtūs, virtūtis (f.)",
+    etymology: "From vir 'man' + -tūs",
+    embedding: [0.4, 0.8, 0.2, 0.9, 0.6],
+    semanticHistory: [
+      { period: "Archaic", meaning: "manliness, physical strength", evidence: "Ennius Ann. 363", color: "#D97706" },
+      { period: "Classical", meaning: "moral excellence", evidence: "Cicero Rep. 1.2", color: "#F59E0B" },
+      { period: "Imperial", meaning: "Christian virtue", evidence: "Augustine Conf. 8.1", color: "#DC2626" },
+      { period: "Late Antique", meaning: "ascetic virtue", evidence: "Jerome Ep. 22.7", color: "#7C3AED" }
+    ]
   }
 };
 
-const EXAMPLE_PHRASES = [
-  { text: "μῆνιν ἄειδε θεὰ", type: "greek" },
-  { text: "γνῶθι σεαυτόν", type: "greek" },
-  { text: "πάντα ῥεῖ", type: "greek" },
-  { text: "arma virumque cano", type: "latin" },
-  { text: "carpe diem", type: "latin" },
-  { text: "veni vidi vici", type: "latin" },
-  { text: "cogito ergo sum", type: "latin" },
-  { text: "memento mori", type: "latin" },
-  { text: "per aspera ad astra", type: "latin" }
+// Manuscript variants
+const MANUSCRIPT_VARIANTS: Record<string, Array<{ms: string; reading: string; date: string; location: string}>> = {
+  "μῆνιν": [
+    { ms: "A (Venetus A)", reading: "μῆνιν", date: "10th c.", location: "Venice" },
+    { ms: "B (Venetus B)", reading: "μῆνιν", date: "11th c.", location: "Venice" },
+    { ms: "T (Townleyanus)", reading: "μῆνιν", date: "11th c.", location: "London" }
+  ],
+  "ἄειδε": [
+    { ms: "A", reading: "ἄειδε", date: "10th c.", location: "Venice" },
+    { ms: "B", reading: "ἄειδε", date: "11th c.", location: "Venice" },
+    { ms: "Π¹", reading: "εἰδε", date: "12th c.", location: "Paris" }
+  ],
+  "arma": [
+    { ms: "M (Mediceus)", reading: "arma", date: "5th c.", location: "Florence" },
+    { ms: "P (Palatinus)", reading: "arma", date: "4th-5th c.", location: "Vatican" },
+    { ms: "R (Romanus)", reading: "arma", date: "5th c.", location: "Vatican" }
+  ],
+  "λόγος": [
+    { ms: "P.Oxy. 2069", reading: "λόγος", date: "3rd c. CE", location: "Oxyrhynchus" },
+    { ms: "Laurentianus", reading: "λόγος", date: "9th c.", location: "Florence" }
+  ]
+};
+
+// Example sentences
+const EXAMPLE_SENTENCES = [
+  {
+    id: 1,
+    language: "Greek",
+    indicator: "Α",
+    color: "#3B82F6",
+    text: "μῆνιν ἄειδε θεὰ Πηληϊάδεω Ἀχιλῆος",
+    translation: "Sing, goddess, of the wrath of Achilles, son of Peleus",
+    source: "Homer, Iliad 1.1",
+    period: "Archaic"
+  },
+  {
+    id: 2,
+    language: "Greek",
+    indicator: "Α",
+    color: "#3B82F6",
+    text: "ἐν ἀρχῇ ἦν ὁ λόγος",
+    translation: "In the beginning was the Word",
+    source: "John 1:1",
+    period: "Imperial"
+  },
+  {
+    id: 3,
+    language: "Latin",
+    indicator: "L",
+    color: "#DC2626",
+    text: "Arma virumque cano, Troiae qui primus ab oris",
+    translation: "I sing of arms and the man, who first from the shores of Troy",
+    source: "Virgil, Aeneid 1.1",
+    period: "Imperial"
+  }
 ];
 
+// Declension tables
+const PARADIGM_TABLES: Record<string, {type: string; forms: Array<{case: string; singular: string; plural: string}>}> = {
+  "μῆνις": {
+    type: "Third Declension (Feminine)",
+    forms: [
+      { case: "Nominative", singular: "μῆνις", plural: "μήνιδες" },
+      { case: "Genitive", singular: "μήνιδος", plural: "μηνίδων" },
+      { case: "Dative", singular: "μήνιδι", plural: "μήνισι(ν)" },
+      { case: "Accusative", singular: "μῆνιν", plural: "μήνιδας" },
+      { case: "Vocative", singular: "μῆνι", plural: "μήνιδες" }
+    ]
+  },
+  "λόγος": {
+    type: "Second Declension (Masculine)",
+    forms: [
+      { case: "Nominative", singular: "λόγος", plural: "λόγοι" },
+      { case: "Genitive", singular: "λόγου", plural: "λόγων" },
+      { case: "Dative", singular: "λόγῳ", plural: "λόγοις" },
+      { case: "Accusative", singular: "λόγον", plural: "λόγους" },
+      { case: "Vocative", singular: "λόγε", plural: "λόγοι" }
+    ]
+  },
+  "virtus": {
+    type: "Third Declension (Feminine)",
+    forms: [
+      { case: "Nominative", singular: "virtūs", plural: "virtūtēs" },
+      { case: "Genitive", singular: "virtūtis", plural: "virtūtum" },
+      { case: "Dative", singular: "virtūtī", plural: "virtūtibus" },
+      { case: "Accusative", singular: "virtūtem", plural: "virtūtēs" },
+      { case: "Ablative", singular: "virtūte", plural: "virtūtibus" }
+    ]
+  }
+};
+
 export default function TranslatePage() {
-  const [inputText, setInputText] = useState('');
-  const [translation, setTranslation] = useState<string>('');
-  const [breakdown, setBreakdown] = useState<Array<{ word: string; translation: string; type: string; forms: string; etymology?: string }>>([]);
-  const [detectedLanguage, setDetectedLanguage] = useState<'greek' | 'latin' | null>(null);
-  const [phraseData, setPhraseData] = useState<any>(null);
-  const [isTranslating, setIsTranslating] = useState(false);
+  const [inputText, setInputText] = useState("μῆνιν ἄειδε θεὰ Πηληϊάδεω Ἀχιλῆος");
+  const [hoveredWord, setHoveredWord] = useState<string | null>(null);
+  const [selectedWord, setSelectedWord] = useState<string | null>(null);
+  const [activeTab, setActiveTab] = useState<'morphology' | 'variants' | 'examples' | 'paradigm'>('morphology');
+  const [showEmbeddings, setShowEmbeddings] = useState(false);
 
-  const detectLanguage = (text: string): 'greek' | 'latin' | null => {
-    // Greek characters detection
-    if (/[\u0370-\u03FF]/.test(text)) return 'greek';
-    // Latin characters with common Latin patterns
-    if (/[āēīōūăĕĭŏŭ]/.test(text) || /que$|us$|um$|is$|a$/.test(text)) return 'latin';
-    // Check if words are in our dictionary
-    const words = text.toLowerCase().split(/\s+/);
-    for (const word of words) {
-      if (WORD_FORMS[word]) {
-        const phrase = Object.keys(TRANSLATIONS).find(key => key.includes(word));
-        if (phrase && TRANSLATIONS[phrase]) {
-          return TRANSLATIONS[phrase].language;
-        }
-      }
-    }
-    return null;
+  const getWordsFromText = (text: string) => {
+    return text.split(/\s+/).filter(word => word.length > 0);
   };
 
-  const translateText = async () => {
-    if (!inputText.trim()) return;
-    
-    setIsTranslating(true);
-    
-    // Simulate processing delay
-    await new Promise(resolve => setTimeout(resolve, 500));
+  const renderWordEmbedding = (word: string) => {
+    const wordData = WORD_FORMS[word];
+    if (!wordData?.embedding) return null;
 
-    const cleanText = inputText.trim().toLowerCase();
-    const language = detectLanguage(cleanText);
-    setDetectedLanguage(language);
-
-    // Check for exact phrase matches first
-    const exactMatch = Object.keys(TRANSLATIONS).find(key => 
-      key.toLowerCase() === cleanText
+    return (
+      <div style={{ backgroundColor: '#1E1E24', padding: '16px', borderRadius: '8px', marginTop: '12px' }}>
+        <h4 style={{ color: '#F5F4F2', fontSize: '14px', marginBottom: '12px', fontWeight: '600' }}>
+          Word Embedding Visualization
+        </h4>
+        <svg width="200" height="100" style={{ backgroundColor: '#141419', borderRadius: '4px' }}>
+          {wordData.embedding.map((value, i) => (
+            <rect
+              key={i}
+              x={i * 35 + 10}
+              y={90 - (value * 70)}
+              width="25"
+              height={value * 70}
+              fill="#C9A227"
+              opacity={0.8}
+            />
+          ))}
+          {wordData.embedding.map((value, i) => (
+            <text
+              key={i}
+              x={i * 35 + 22}
+              y="105"
+              fill="#9CA3AF"
+              fontSize="10"
+              textAnchor="middle"
+            >
+              {i + 1}
+            </text>
+          ))}
+        </svg>
+        <p style={{ color: '#6B7280', fontSize: '12px', marginTop: '8px' }}>
+          Semantic dimensions in 5D vector space
+        </p>
+      </div>
     );
-
-    if (exactMatch) {
-      const phraseInfo = TRANSLATIONS[exactMatch];
-      setTranslation(phraseInfo.translation);
-      setPhraseData(phraseInfo);
-    } else {
-      // Fallback translation for unknown phrases
-      setTranslation("Translation not found in database");
-      setPhraseData(null);
-    }
-
-    // Word-by-word breakdown
-    const words = cleanText.split(/\s+/);
-    const wordBreakdown = words.map(word => {
-      const cleanWord = word.replace(/[.,;:!?]/g, '');
-      const wordData = WORD_FORMS[cleanWord];
-      
-      if (wordData) {
-        return {
-          word: cleanWord,
-          translation: wordData.translation,
-          type: wordData.type,
-          forms: wordData.forms,
-          etymology: wordData.etymology
-        };
-      } else {
-        return {
-          word: cleanWord,
-          translation: "unknown",
-          type: "unknown",
-          forms: "—",
-          etymology: undefined
-        };
-      }
-    });
-
-    setBreakdown(wordBreakdown);
-    setIsTranslating(false);
   };
 
-  const loadExamplePhrase = (phrase: string) => {
-    setInputText(phrase);
-    setTranslation('');
-    setBreakdown([]);
-    setDetectedLanguage(null);
-    setPhraseData(null);
+  const renderSemanticHistory = (word: string) => {
+    const wordData = WORD_FORMS[word];
+    if (!wordData?.semanticHistory) return null;
+
+    return (
+      <div style={{ backgroundColor: '#1E1E24', padding: '16px', borderRadius: '8px', marginTop: '12px' }}>
+        <h4 style={{ color: '#F5F4F2', fontSize: '14px', marginBottom: '12px', fontWeight: '600' }}>
+          Semantic Drift Analysis
+        </h4>
+        <div style={{ position: 'relative' }}>
+          {wordData.semanticHistory.map((item, index) => (
+            <div key={index} style={{ 
+              display: 'flex', 
+              alignItems: 'center', 
+              marginBottom: '8px',
+              padding: '8px',
+              backgroundColor: '#141419',
+              borderRadius: '4px',
+              borderLeft: `3px solid ${item.color}`
+            }}>
+              <div style={{ 
+                backgroundColor: item.color, 
+                color: '#000', 
+                padding: '2px 6px', 
+                borderRadius: '4px', 
+                fontSize: '10px', 
+                fontWeight: 'bold',
+                minWidth: '80px',
+                textAlign: 'center'
+              }}>
+                {item.period}
+              </div>
+              <div style={{ marginLeft: '12px', flex: 1 }}>
+                <div style={{ color: '#F5F4F2', fontSize: '12px' }}>{item.meaning}</div>
+                <div style={{ color: '#6B7280', fontSize: '10px' }}>{item.evidence}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
   };
 
   return (
-    <div style={{ 
-      minHeight: '100vh', 
-      backgroundColor: '#0D0D0F', 
-      color: '#F5F4F2',
-      fontFamily: 'system-ui, -apple-system, sans-serif'
-    }}>
-      {/* Navigation */}
-      <nav style={{ 
-        padding: '16px 24px', 
-        backgroundColor: '#1E1E24', 
-        borderBottom: '1px solid #333',
-        position: 'sticky',
-        top: 0,
-        zIndex: 100
-      }}>
-        <div style={{ 
-          maxWidth: '1200px', 
-          margin: '0 auto', 
-          display: 'flex', 
-          alignItems: 'center', 
-          justifyContent: 'space-between' 
-        }}>
-          <Link href="/" style={{ 
-            fontSize: '24px', 
-            fontWeight: 'bold', 
-            color: '#C9A227', 
-            textDecoration: 'none',
-            transition: 'all 0.2s'
-          }}>
-            ΛΟΓΟΣ
-          </Link>
-          <div style={{ display: 'flex', gap: '24px' }}>
-            <Link href="/learn" style={{ 
-              color: '#9CA3AF', 
-              textDecoration: 'none',
-              transition: 'all 0.2s',
-              padding: '8px 16px',
-              borderRadius: '8px'
-            }} 
-            onMouseEnter={(e) => {
-              e.currentTarget.style.color = '#C9A227';
-              e.currentTarget.style.backgroundColor = '#1E1E24';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.color = '#9CA3AF';
-              e.currentTarget.style.backgroundColor = 'transparent';
-            }}>
-              Learn
-            </Link>
-            <Link href="/texts" style={{ 
-              color: '#9CA3AF', 
-              textDecoration: 'none',
-              transition: 'all 0.2s',
-              padding: '8px 16px',
-              borderRadius: '8px'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.color = '#C9A227';
-              e.currentTarget.style.backgroundColor = '#1E1E24';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.color = '#9CA3AF';
-              e.currentTarget.style.backgroundColor = 'transparent';
-            }}>
-              Texts
-            </Link>
-            <Link href="/translate" style={{ 
-              color: '#C9A227', 
-              textDecoration: 'none',
-              padding: '8px 16px',
-              borderRadius: '8px',
-              backgroundColor: '#1E1E24'
-            }}>
-              Translate
-            </Link>
-            <Link href="/culture" style={{ 
-              color: '#9CA3AF', 
-              textDecoration: 'none',
-              transition: 'all 0.2s',
-              padding: '8px 16px',
-              borderRadius: '8px'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.color = '#C9A227';
-              e.currentTarget.style.backgroundColor = '#1E1E24';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.color = '#9CA3AF';
-              e.currentTarget.style.backgroundColor = 'transparent';
-            }}>
-              Culture
-            </Link>
-          </div>
-        </div>
-      </nav>
-
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '48px 24px' }}>
-        <h1 style={{ 
-          fontSize: '48px', 
-          fontWeight: 'bold', 
-          marginBottom: '16px',
-          background: 'linear-gradient(135deg, #C9A227, #E8D5A3)',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-          textAlign: 'center'
-        }}>
-          Ancient Text Translator
-        </h1>
-        
-        <p style={{ 
-          color: '#9CA3AF', 
-          fontSize: '18px', 
-          textAlign: 'center', 
-          marginBottom: '48px',
-          maxWidth: '600px',
-          margin: '0 auto 48px auto'
-        }}>
-          Translate Ancient Greek and Latin texts with detailed word-by-word analysis
-        </p>
-
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px', marginBottom: '32px' }}>
-          {/* Input Section */}
-          <div style={{ 
-            backgroundColor: '#1E1E24', 
-            padding: '24px', 
-            borderRadius: '12px',
-            border: '1px solid #333'
-          }}>
-            <h2 style={{ 
-              fontSize: '20px', 
-              fontWeight: 'bold', 
-              marginBottom: '16px',
-              color: '#C9A227'
-            }}>
-              Input Text
-            </h2>
-            
-            <textarea
-              value={inputText}
-              onChange={(e) => setInputText(e.target.value)}
-              placeholder="Enter Ancient Greek or Latin text..."
-              style={{
-                width: '100%',
-                height: '120px',
-                backgroundColor: '#141419',
-                border: '2px solid #333',
-                borderRadius: '8px',
-                padding: '16px',
-                color: '#F5F4F2',
-                fontSize: '16px',
-                fontFamily: 'Georgia, serif',
-                resize: 'vertical',
-                transition: 'all 0.2s',
-                outline: 'none'
-              }}
-              onFocus={(e) => e.target.style.borderColor = '#C9A227'}
-              onBlur={(e) => e.target.style.borderColor = '#333'}
-            />
-
-            {detectedLanguage && (
+    <div style={{ backgroundColor: '#0D0D0F', minHeight: '100vh', color: '#F5F4F2' }}>
+      {/* Header */}
+      <header style={{ backgroundColor: '#1E1E24', borderBottom: '1px solid #374151', padding: '16px 0' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
               <div style={{ 
-                marginTop: '16px',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px'
+                backgroundColor: '#C9A227', 
+                width: '32px', 
+                height: '32px', 
+                borderRadius: '50%', 
+                display: 'flex', 
+                alignItems: 'center', 
+                justifyContent: 'center',
+                marginRight: '12px'
               }}>
-                <div style={{
-                  width: '12px',
-                  height: '12px',
-                  borderRadius: '50%',
-                  backgroundColor: detectedLanguage === 'greek' ? '#3B82F6' : '#DC2626'
-                }}></div>
-                <span style={{ color: '#9CA3AF', fontSize: '14px' }}>
-                  Detected: {detectedLanguage === 'greek' ? 'Ancient Greek' : 'Latin'}
-                </span>
+                <span style={{ color: '#0D0D0F', fontWeight: 'bold', fontSize: '18px' }}>Λ</span>
               </div>
-            )}
-
-            <button
-              onClick={translateText}
-              disabled={!inputText.trim() || isTranslating}
-              style={{
-                marginTop: '16px',
-                width: '100%',
-                padding: '12px 24px',
-                backgroundColor: inputText.trim() && !isTranslating ? '#C9A227' : '#333',
-                color: inputText.trim() && !isTranslating ? '#0D0D0F' : '#6B7280',
-                border: 'none',
-                borderRadius: '8px',
-                fontSize: '16px',
-                fontWeight: 'bold',
-                cursor: inputText.trim() && !isTranslating ? 'pointer' : 'not-allowed',
-                transition: 'all 0.2s'
-              }}
-              onMouseEnter={(e) => {
-                if (inputText.trim() && !isTranslating) {
-                  e.currentTarget.style.backgroundColor = '#E8D5A3';
-                }
-              }}
-              onMouseLeave={(e) => {
-                if (inputText.trim() && !isTranslating) {
-                  e.currentTarget.style.backgroundColor = '#C9A227';
-                }
-              }}
-            >
-              {isTranslating ? 'Translating...' : 'Translate'}
-            </button>
-          </div>
-
-          {/* Output Section */}
-          <div style={{ 
-            backgroundColor: '#1E1E24', 
-            padding: '24px', 
-            borderRadius: '12px',
-            border: '1px solid #333'
-          }}>
-            <h2 style={{ 
-              fontSize: '20px', 
-              fontWeight: 'bold', 
-              marginBottom: '16px',
-              color: '#C9A227'
-            }}>
-              Translation
-            </h2>
+              <h1 style={{ color: '#F5F4F2', fontSize: '24px', fontWeight: 'bold' }}>LOGOS</h1>
+            </Link>
             
-            {translation ? (
-              <div>
-                <div style={{
-                  backgroundColor: '#141419',
-                  padding: '16px',
-                  borderRadius: '8px',
-                  marginBottom: '16px',
-                  border: '1px solid #333'
-                }}>
-                  <p style={{ 
-                    fontSize: '18px', 
-                    fontStyle: 'italic',
-                    marginBottom: phraseData ? '12px' : '0'
-                  }}>
-                    "{translation}"
-                  </p>
-                  
-                  {phraseData && (
-                    <div style={{ borderTop: '1px solid #333', paddingTop: '12px' }}>
-                      <p style={{ 
-                        color: '#9CA3AF', 
-                        fontSize: '14px',
-                        marginBottom: '8px'
-                      }}>
-                        {phraseData.notes}
-                      </p>
-                      
-                      <div style={{ display: 'flex', gap: '16px', fontSize: '12px' }}>
-                        <span style={{ 
-                          color: phraseData.language === 'greek' ? '#3B82F6' : '#DC2626',
-                          fontWeight: 'bold'
-                        }}>
-                          {phraseData.language === 'greek' ? 'Ancient Greek' : 'Latin'}
-                        </span>
-                        <span style={{ color: '#6B7280' }}>
-                          {phraseData.era}
-                        </span>
-                        {phraseData.author && (
-                          <span style={{ color: '#9CA3AF' }}>
-                            {phraseData.author}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </div>
-            ) : (
-              <div style={{
-                backgroundColor: '#141419',
-                padding: '16px',
-                borderRadius: '8px',
-                border: '1px solid #333',
-                textAlign: 'center',
-                color: '#6B7280'
-              }}>
-                Translation will appear here...
-              </div>
-            )}
+            <nav style={{ display: 'flex', gap: '24px' }}>
+              <Link href="/search" style={{ color: '#9CA3AF', textDecoration: 'none', transition: 'color 0.2s' }}>Search</Link>
+              <Link href="/analyze" style={{ color: '#9CA3AF', textDecoration: 'none', transition: 'color 0.2s' }}>Analyze</Link>
+              <Link href="/translate" style={{ color: '#C9A227', textDecoration: 'none' }}>Translate</Link>
+            </nav>
           </div>
         </div>
+      </header>
 
-        {/* Word-by-word breakdown */}
-        {breakdown.length > 0 && (
-          <div style={{ 
-            backgroundColor: '#1E1E24', 
-            padding: '24px', 
-            borderRadius: '12px',
-            border: '1px solid #333',
-            marginBottom: '32px'
-          }}>
-            <h2 style={{ 
-              fontSize: '20px', 
-              fontWeight: 'bold', 
-              marginBottom: '16px',
-              color: '#C9A227'
-            }}>
-              Word-by-Word Analysis
-            </h2>
-            
-            <div style={{ display: 'grid', gap: '16px' }}>
-              {breakdown.map((word, index) => (
-                <div key={index} style={{
-                  backgroundColor: '#141419',
-                  padding: '16px',
-                  borderRadius: '8px',
-                  border: '1px solid #333'
-                }}>
-                  <div style={{ display: 'flex', alignItems: 'baseline', gap: '16px', marginBottom: '8px' }}>
-                    <span style={{ 
-                      fontSize: '18px', 
-                      fontWeight: 'bold',
-                      fontFamily: 'Georgia, serif'
-                    }}>
-                      {word.word}
-                    </span>
-                    <span style={{ 
-                      fontSize: '16px',
-                      color: '#C9A227'
-                    }}>
-                      {word.translation}
-                    </span>
-                    <span style={{ 
-                      fontSize: '14px',
-                      color: '#6B7280',
-                      fontStyle: 'italic'
-                    }}>
-                      {word.type}
-                    </span>
-                  </div>
-                  
-                  <div style={{ fontSize: '14px', color: '#9CA3AF' }}>
-                    <strong>Forms:</strong> {word.forms}
-                  </div>
-                  
-                  {word.etymology && (
-                    <div style={{ fontSize: '12px', color: '#6B7280', marginTop: '4px' }}>
-                      <strong>Etymology:</strong> {word.etymology}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+      {/* Main Content */}
+      <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '32px 24px' }}>
+        <div style={{ marginBottom: '32px' }}>
+          <h1 style={{ fontSize: '36px', fontWeight: 'bold', marginBottom: '8px' }}>
+            Critical Translation Engine
+          </h1>
+          <p style={{ color: '#9CA3AF', fontSize: '18px' }}>
+            Advanced morphological analysis with manuscript apparatus and semantic history
+          </p>
+        </div>
 
-        {/* Example Phrases */}
+        {/* Input Section */}
         <div style={{ 
           backgroundColor: '#1E1E24', 
           padding: '24px', 
-          borderRadius: '12px',
-          border: '1px solid #333'
+          borderRadius: '12px', 
+          marginBottom: '32px',
+          border: '1px solid #374151'
         }}>
-          <h2 style={{ 
-            fontSize: '20px', 
-            fontWeight: 'bold', 
-            marginBottom: '16px',
-            color: '#C9A227'
+          <label style={{ 
+            display: 'block', 
+            color: '#F5F4F2', 
+            fontSize: '14px', 
+            fontWeight: '600', 
+            marginBottom: '8px' 
           }}>
-            Example Phrases
-          </h2>
+            Text to Translate
+          </label>
+          <textarea
+            value={inputText}
+            onChange={(e) => setInputText(e.target.value)}
+            placeholder="Enter Greek or Latin text..."
+            style={{ 
+              width: '100%', 
+              height: '120px', 
+              backgroundColor: '#141419', 
+              border: '1px solid #374151', 
+              borderRadius: '8px', 
+              padding: '12px', 
+              color: '#F5F4F2', 
+              fontSize: '16px',
+              fontFamily: 'serif',
+              resize: 'vertical',
+              transition: 'border-color 0.2s'
+            }}
+          />
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '16px' }}>
-            {EXAMPLE_PHRASES.map((phrase, index) => (
-              <button
-                key={index}
-                onClick={() => loadExamplePhrase(phrase.text)}
-                style={{
-                  backgroundColor: '#141419',
-                  border: `2px solid ${phrase.type === 'greek' ? '#3B82F6' : '#DC2626'}`,
-                  borderRadius: '8px',
-                  padding: '16px',
-                  textAlign: 'left',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s',
-                  color: '#F5F4F2'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#1E1E24';
-                  e.currentTarget.style.transform = 'translateY(-2px)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '#141419';
-                  e.currentTarget.style.transform = 'translateY(0)';
-                }}
-              >
-                <div style={{ 
-                  fontSize: '16px', 
-                  fontFamily: 'Georgia, serif',
-                  marginBottom: '4px'
-                }}>
-                  {phrase.text}
-                </div>
-                <div style={{ 
-                  fontSize: '12px', 
-                  color: phrase.type === 'greek' ? '#3B82F6' : '#DC2626',
-                  fontWeight: 'bold'
-                }}>
-                  {phrase.type === 'greek' ? 'Ancient Greek' : 'Latin'}
-                </div>
-              </button>
-            ))}
+          <div style={{ marginTop: '16px', display: 'flex', gap: '12px', alignItems: 'center' }}>
+            <button
+              onClick={() => setShowEmbeddings(!showEmbeddings)}
+              style={{
+                backgroundColor: showEmbeddings ? '#C9A227' : '#374151',
+                color: showEmbeddings ? '#0D0D0F' : '#F5F4F2',
+                padding: '8px 16px',
+                borderRadius: '6px',
+                border: 'none',
+                fontSize: '14px',
+                cursor: 'pointer',
+                transition: 'all 0.2s'
+              }}
+            >
+              {showEmbeddings ? 'Hide' : 'Show'} Word Embeddings
+            </button>
+            
+            <div style={{ color: '#6B7280', fontSize: '12px' }}>
+              Click words for detailed analysis • Hover for quick translation
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  );
-}
+
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 400px', gap: '32px' }}>
+          {/* Word-by-word translation */}
+          <div style={{ backgroundColor: '#1E1E24', padding: '24px', borderRadius: '12px', border: '1px solid #374151' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '16px' }}>
+              Word-by-Word Analysis
+            </h2>
+            
+            <div style={{ 
+              fontSize: '20px', 
+              lineHeight: '1.8', 
+              fontFamily: 'serif',
+              marginBottom: '24px'
+            }}>
+              {getWordsFromText(inputText).map((word, index) => {
+                const cleanWord = word.replace(/[.,;:!?]/g, '');
+                const wordData = WORD_FORMS[cleanWord];
+                const isHovered = hoveredWord === cleanWord;
+                const isSelected = selectedWord === cleanWord;
+                
+                return (
+                  <span key={index} style={{ position: 'relative', display: 'inline-block' }}>
+                    <span
+                      onMouseEnter={() => setHoveredWord(cleanWord)}
+                      onMouseLeave={() => setHoveredWord(null)}
+                      onClick={() => setSelectedWord(isSelected ? null : cleanWord)}
+                      style={{
+                        cursor: wordData ? 'pointer' : 'default',
+                        backgroundColor: isSelected ? '#C9A227' : isHovered ? '#374151' : 'transparent',
+                        color: isSelected ? '#0D0D0F' : '#F5F4F2',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        transition: 'all 0.2s',
+                        marginRight: '8px',
+                        position: 'relative'
+                      }}
+                    >
+                      {word}
+                    </span>
+                    
+                    {/* Hover tooltip */}
+                    {isHovered && wordData && !isSelected && (
+                      <div style={{
+                        position: 'absolute',
+                        top: '100%',
+                        left: '0',
+                        backgroundColor: '#141419',
+                        border: '1px solid #C9A227',
+                        borderRadius: '8px',
+                        padding: '8px',
+                        zIndex: 10,
+                        minWidth: '200px',
+                        boxShadow: '0 4px 12px rgba(0,0,0,0.3)'
+                      }}>
+                        <div style={{ color: '#C9A227', fontSize: '14px', fontWeight: 'bold' }}>
+                          {wordData.translation}
+                        </div>
+                        <div style={{ color: '#9CA3AF', fontSize: '12px' }}>
+                          {wordData.type}
+                        </div>
+                      </div>
+                    )}
+                  </span>
+                );
+              })}
+            </div>
+
+            {/* Translation */}
+            <div style={{ 
+              backgroundColor: '#141419', 
+              padding: '16px', 
+              borderRadius: '8px',
+              borderLeft: '4px solid #C9A227'
+            }}>
+              <h3 style={{ fontSize: '14px', color: '#C9A227', marginBottom: '8px', fontWeight: '600' }}>
+                TRANSLATION
+              </h3>
+              <p style={{ fontSize: '16px', lineHeight: '1.6' }}>
+                {inputText.includes("μῆνιν") ? "Sing, goddess, of the wrath of Achilles, son of Peleus" : 
+                 inputText.includes("arma") ? "I sing of arms and the man, who first from the shores of Troy" :
+                 "Enter text above for translation"}
+              </p>
+            </div>
+          </div>
+
+          {/* Analysis Panel */}
+          <div style={{ backgroundColor: '#1E1E24', padding: '24px', borderRadius: '12px', border: '1px solid #374151' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '16px' }}>
+              {selectedWord ? `Analysis: ${selectedWord}` : 'Select a word for analysis'}
+            </h2>
+
+            {selectedWord && WORD_FORMS[selectedWord] && (
+              <>
+                {/* Tab Navigation */}
+                <div style={{ 
+                  display: 'flex', 
+                  borderBottom: '1px solid #374151', 
+                  marginBottom: '16px',
+                  gap: '4px'
+                }}>
+                  {[
+                    { key: 'morphology' as const, label: 'Morphology' },
+                    { key: 'variants' as const, label: 'Variants' },
+                    { key: 'examples' as const, label: 'Examples' },
+                    { key: 'paradigm' as const, label: 'Paradigm' }
+                  ].map(tab => (
+                    <button
+                      key={tab.key}
+                      onClick={() => setActiveTab(tab.key)}
+                      style={{
+                        backgroundColor: activeTab === tab.key ? '#C9A227' : 'transparent',
+                        color: activeTab === tab.key ? '#0D0D0F' : '#9CA3AF',
+                        border: 'none',
+                        padding: '8px 12px',
+                        borderRadius: '6px 6px 0 0',
+                        fontSize: '12px',
+                        cursor: 'pointer',
+                        transition: 'all 0.2s',
+                        fontWeight: activeTab === tab.key ? '600' : '400'
+                      }}
+                    >
+                      {tab.label}
+                    </button>
+                  ))}
+                </div>
+
+                {/* Tab Content */}
+                {activeTab === 'morphology' && (
+                  <div>
+                    <div style={{ marginBottom: '16px' }}>
+                      <h4 style={{ color: '#C9A227', fontSize: '14px', marginBottom: '8px', fontWeight: '600' }}>
+                        LEXICAL FORM
+                      </h4>
+                      <p style={{ color: '#F5F4F2', fontFamily: 'serif', fontSize: '16px' }}>
+                        {WORD_FORMS[selectedWord].forms}
+                      </p>
+                    </div>
+
+                    <div style={{ marginBottom: '16px' }}>
+                      <h4 style={{ color: '#C9A227', fontSize: '14px', marginBottom: '8px', fontWeight: '600' }}>
+                        MORPHOLOGICAL ANALYSIS
+                      </h4>
+                      <p style={{ color: '#F5F4F2', fontSize: '14px' }}>
+                        {WORD_FORMS[selectedWord].type}
+                      </p>
+                    </div>
+
+                    {WORD_FORMS[selectedWord].etymology && (
+                      <div style={{ marginBottom: '16px' }}>
+                        <h4 style={{ color: '#C9A227', fontSize: '14px', marginBottom: '8px', fontWeight: '600' }}>
+                          ETYMOLOGY
+                        </h4>
+                        <p style={{ color: '#9CA3AF', fontSize: '13px' }}>
+                          {WORD_FORMS[selectedWord].etymology}
+                        </p>
+                      </div>
+                    )}
+
+                    {WORD_FORMS[selectedWord].lsj && (
+                      <div style={{ 
+                        backgroundColor: '#141419', 
+                        padding: '12px', 
+                        borderRadius: '6px',
+                        marginBottom: '16px'
+                      }}>
+                        <h4 style={{ color: '#3B82F6', fontSize: '12px', marginBottom: '6px', fontWeight: '600' }}>
+                          LSJ DICTIONARY ENTRY
+                        </h4>
+                        <p style={{ color: '#F5F4F2', fontSize: '13px', fontFamily: 'serif' }}>
+                          {WORD_FORMS[selectedWord].lsj}
+                        </p>
+                      </div>
+                    )}
+
+                    {showEmbeddings && renderWordEmbedding(selectedWord)}
+                    {renderSemanticHistory(selectedWord)}
+                  </div>
+                )}
+
+                {activeTab === 'variants' && MANUSCRIPT_VARIANTS[selectedWord] && (
+                  <div>
+                    <h4 style={{ color: '#C9A227', fontSize: '14px', marginBottom: '12px', fontWeight: '600' }}>
+                      MANUSCRIPT APPARATUS
+                    </h4>
+                    {MANUSCRIPT_VARIANTS[selectedWord].map((variant, index) => (
+                      <div key={index} style={{ 
+                        backgroundColor: '#141419', 
+                        padding: '12px', 
+                        borderRadius: '6px', 
+                        marginBottom: '8px' 
+                      }}>
+                        <div style={{ 
+                          display: 'flex', 
+                          justifyContent: 'space-between', 
+                          alignItems: 'center',
+                          marginBottom: '4px'
+                        }}>
+                          <span style={{ color: '#F5F4F2', fontFamily: 'serif', fontWeight: '600' }}>
+                            {variant.reading}
+                          </span>
+                          <span style={{ color: '#6B7280', fontSize: '12px' }}>
+                            {variant.date}
+                          </span>
+                        </div>
+                        <div style={{ color: '#9CA3AF', fontSize: '12px' }}>
+                          {variant.ms} • {variant.location}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {activeTab === 'examples' && (
+                  <div>
+                    <h4 style={{ color: '#C9A227', fontSize: '14px', marginBottom: '12px', fontWeight: '600' }}>
+                      CONTEXTUAL EXAMPLES
+                    </h4>
+                    {EXAMPLE_SENTENCES
+                      .filter(ex => ex.text.includes(selectedWord))
+                      .map(example => (
+                        <div key={example.id} style={{ 
+                          backgroundColor: '#141419', 
+                          padding: '12px', 
+                          borderRadius: '6px', 
+                          marginBottom: '12px',
+                          borderLeft: `3px solid ${example.color}`
+                        }}>
+                          <div style={{ 
+                            display: 'flex', 
+                            alignItems: 'center', 
+                            marginBottom: '8px' 
+                          }}>
+                            <span style={{ 
+                              backgroundColor: example.color, 
+                              color: '#FFF', 
+                              width: '20px', 
+                              height: '20px', 
+                              borderRadius: '50%', 
+                              display: 'flex', 
+                              alignItems: 'center', 
+                              justifyContent: 'center', 
+                              fontSize: '12px', 
+                              fontWeight: 'bold',
+                              marginRight: '8px'
+                            }}>
+                              {example.indicator}
+                            </span>
+                            <div>
+                              <div style={{ color: '#9CA3AF', fontSize: '12px' }}>
+                                {example.source} • {example.period}
+                              </div>
+                            </div>
+                          </div>
+                          <p style={{ 
+                            color: '#F5F4F2',
