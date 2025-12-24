@@ -136,258 +136,426 @@ export default function AnalyticsPage() {
   const renderWordEmbeddings = (word: any) => {
     const maxRadius = 30;
     return (
-      <svg width="200" height="80" style={{ marginTop: '8px' }}>
-        {word.embeddings.map((value: number, index: number) => (
-          <circle
-            key={index}
-            cx={20 + index * 35}
-            cy={40}
-            r={value * maxRadius}
-            fill="#3B82F6"
-            fillOpacity={0.3}
-            stroke="#3B82F6"
-            strokeWidth="2"
-          />
-        ))}
-        <text x="10" y="70" fill="#9CA3AF" fontSize="10">Semantic Dimensions</text>
-      </svg>
-    );
-  };
-
-  const renderSemanticDrift = () => {
-    return (
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
-        {analyticsData.semanticDrift.map((item, index) => (
-          <div key={index} style={{
-            backgroundColor: '#1E1E24',
-            borderRadius: '8px',
-            padding: '24px',
-            border: '1px solid #C9A227',
-            transition: 'transform 0.3s ease, box-shadow 0.3s ease'
-          }}
-          onMouseOver={(e) => {
-            e.currentTarget.style.transform = 'translateY(-4px)';
-            e.currentTarget.style.boxShadow = '0 8px 32px rgba(201, 162, 39, 0.2)';
-          }}
-          onMouseOut={(e) => {
-            e.currentTarget.style.transform = 'translateY(0)';
-            e.currentTarget.style.boxShadow = 'none';
-          }}>
-            <div style={{ display: 'flex', alignItems: 'center', marginBottom: '16px' }}>
-              <span style={{ 
-                fontSize: '20px', 
-                fontWeight: '600', 
-                color: '#F5F4F2',
-                fontFamily: 'Georgia, serif'
-              }}>
-                {item.word}
-              </span>
-              <span style={{ 
-                marginLeft: 'auto',
-                fontSize: '12px',
-                color: '#9CA3AF',
-                backgroundColor: '#141419',
-                padding: '2px 8px',
-                borderRadius: '4px'
-              }}>
-                LSJ {item.lsj}
-              </span>
-            </div>
-            
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              {Object.entries(item).filter(([key]) => key !== 'word' && key !== 'lsj').map(([era, data]: [string, any]) => (
-                <div key={era} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <div style={{
-                    width: '12px',
-                    height: '12px',
-                    borderRadius: '50%',
-                    backgroundColor: data.color
-                  }} />
-                  <span style={{ 
-                    fontSize: '14px', 
-                    fontWeight: '500', 
-                    color: '#F5F4F2',
-                    minWidth: '80px',
-                    textTransform: 'capitalize'
-                  }}>
-                    {era}:
-                  </span>
-                  <span style={{ color: '#9CA3AF', fontSize: '14px' }}>
-                    {data.meaning}
-                  </span>
-                  <div style={{
-                    marginLeft: 'auto',
-                    width: `${(data.freq / 300) * 60}px`,
-                    height: '4px',
-                    backgroundColor: data.color,
-                    borderRadius: '2px'
-                  }} />
-                  <span style={{ color: '#6B7280', fontSize: '12px', minWidth: '30px' }}>
-                    {data.freq}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-    );
-  };
-
-  const renderManuscriptVariants = () => {
-    return (
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-        {analyticsData.manuscriptVariants.map((item, index) => (
-          <div key={index} style={{
-            backgroundColor: '#1E1E24',
-            borderRadius: '8px',
-            padding: '24px',
-            border: '1px solid #DC2626'
-          }}>
-            <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
-              <div>
-                <h3 style={{ 
-                  fontSize: '18px', 
-                  fontWeight: '600', 
-                  color: '#F5F4F2',
-                  margin: '0 0 4px 0',
-                  fontFamily: 'Georgia, serif'
-                }}>
-                  {item.text}
-                </h3>
-                <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
-                  <span style={{ color: '#9CA3AF', fontSize: '14px' }}>
-                    {item.variants} variants
-                  </span>
-                  <span style={{ color: '#6B7280', fontSize: '12px' }}>
-                    {item.manuscripts.length} manuscripts
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <div style={{ marginBottom: '20px' }}>
-              <h4 style={{ color: '#F5F4F2', fontSize: '14px', fontWeight: '600', marginBottom: '12px' }}>
-                Manuscript Witnesses:
-              </h4>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                {item.manuscripts.map((ms, msIndex) => (
-                  <span key={msIndex} style={{
-                    backgroundColor: '#141419',
-                    color: '#9CA3AF',
-                    padding: '4px 8px',
-                    borderRadius: '4px',
-                    fontSize: '12px',
-                    fontFamily: 'monospace'
-                  }}>
-                    {ms}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h4 style={{ color: '#F5F4F2', fontSize: '14px', fontWeight: '600', marginBottom: '12px' }}>
-                Critical Apparatus:
-              </h4>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                {item.apparatus.map((app, appIndex) => (
-                  <div key={appIndex} style={{
-                    backgroundColor: '#141419',
-                    padding: '12px',
-                    borderRadius: '6px',
-                    fontSize: '13px'
-                  }}>
-                    <span style={{ 
-                      color: '#C9A227', 
-                      fontWeight: '600',
-                      fontFamily: 'Georgia, serif'
-                    }}>
-                      {app.lemma}
-                    </span>
-                    <span style={{ color: '#9CA3AF', margin: '0 8px' }}>]</span>
-                    {app.variants.map((variant, vIndex) => (
-                      <span key={vIndex}>
-                        <span style={{ 
-                          color: vIndex === 0 ? '#F5F4F2' : '#9CA3AF',
-                          fontFamily: 'Georgia, serif'
-                        }}>
-                          {variant}
-                        </span>
-                        {vIndex < app.variants.length - 1 && 
-                          <span style={{ color: '#6B7280', margin: '0 4px' }}> | </span>
-                        }
-                      </span>
-                    ))}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    );
-  };
-
-  const renderParadigmTable = (word: string) => {
-    const paradigm = analyticsData.paradigms[word];
-    if (!paradigm) return null;
-
-    return (
-      <div style={{
-        backgroundColor: '#1E1E24',
-        borderRadius: '8px',
-        padding: '20px',
-        border: '1px solid #3B82F6',
-        marginTop: '16px'
+      <div style={{ 
+        display: 'flex', 
+        alignItems: 'center', 
+        gap: '12px',
+        padding: '16px',
+        backgroundColor: '#141419',
+        borderRadius: '12px',
+        border: '2px solid #C9A227',
+        transform: 'scale(1.05)',
+        boxShadow: '0 20px 40px rgba(201, 162, 39, 0.3)',
+        transition: 'all 0.3s ease'
       }}>
-        <h4 style={{ 
-          color: '#F5F4F2', 
-          fontSize: '16px', 
-          fontWeight: '600', 
-          marginBottom: '16px',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '8px'
-        }}>
-          <span style={{ fontFamily: 'Georgia, serif' }}>{word}</span>
-          <span style={{ 
-            fontSize: '12px', 
-            color: '#9CA3AF',
-            backgroundColor: '#141419',
-            padding: '2px 8px',
-            borderRadius: '4px'
-          }}>
-            {paradigm.type}
-          </span>
-        </h4>
-        
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', 
-          gap: '12px' 
-        }}>
-          {Object.entries(paradigm.forms).map(([case_form, form]) => (
-            <div key={case_form} style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              padding: '8px 12px',
-              backgroundColor: '#141419',
-              borderRadius: '4px',
-              border: '1px solid #2D2D35'
-            }}>
-              <span style={{ color: '#9CA3AF', fontSize: '13px' }}>{case_form}</span>
-              <span style={{ 
-                color: '#F5F4F2', 
-                fontSize: '14px',
-                fontFamily: 'Georgia, serif',
-                fontWeight: '500'
-              }}>
-                {form}
-              </span>
-            </div>
+        <div style={{ fontSize: '24px', color: '#C9A227', fontWeight: '700' }}>
+          {word.word}
+        </div>
+        <div style={{ display: 'flex', gap: '8px' }}>
+          {word.embeddings.map((value: number, idx: number) => (
+            <div
+              key={idx}
+              style={{
+                width: `${8 + value * 20}px`,
+                height: `${8 + value * 20}px`,
+                backgroundColor: `hsl(${210 + idx * 30}, 70%, ${50 + value * 30}%)`,
+                borderRadius: '50%',
+                animation: `pulse-${idx} 2s infinite`,
+                boxShadow: '0 0 20px rgba(59, 130, 246, 0.4)'
+              }}
+            />
           ))}
         </div>
+        <div style={{ fontSize: '14px', color: '#9CA3AF' }}>
+          LSJ: {word.lsj}
+        </div>
+      </div>
+    );
+  };
+
+  const renderSemanticFlow = () => {
+    return (
+      <div style={{ width: '100%', height: '500px', position: 'relative' }}>
+        <svg width="100%" height="100%" style={{ backgroundColor: '#0D0D0F', borderRadius: '12px' }}>
+          <defs>
+            <linearGradient id="flowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style={{ stopColor: '#D97706', stopOpacity: 1 }} />
+              <stop offset="33%" style={{ stopColor: '#F59E0B', stopOpacity: 1 }} />
+              <stop offset="66%" style={{ stopColor: '#3B82F6', stopOpacity: 1 }} />
+              <stop offset="100%" style={{ stopColor: '#DC2626', stopOpacity: 1 }} />
+            </linearGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+
+          {/* Era Labels */}
+          <text x="100" y="30" fill="#D97706" fontSize="14" fontWeight="700" textAnchor="middle">ARCHAIC</text>
+          <text x="300" y="30" fill="#F59E0B" fontSize="14" fontWeight="700" textAnchor="middle">CLASSICAL</text>
+          <text x="500" y="30" fill="#3B82F6" fontSize="14" fontWeight="700" textAnchor="middle">HELLENISTIC</text>
+          <text x="700" y="30" fill="#DC2626" fontSize="14" fontWeight="700" textAnchor="middle">IMPERIAL</text>
+
+          {analyticsData.semanticDrift.map((wordData, wordIdx) => (
+            <g key={wordData.word}>
+              {/* Word label */}
+              <text 
+                x="50" 
+                y={80 + wordIdx * 100} 
+                fill="#C9A227" 
+                fontSize="20" 
+                fontWeight="700"
+                style={{ cursor: 'pointer' }}
+                onClick={() => setSelectedWord(wordData)}
+              >
+                {wordData.word}
+              </text>
+              
+              {/* Semantic evolution line */}
+              <path
+                d={`M 100 ${80 + wordIdx * 100} 
+                   Q 200 ${60 + wordIdx * 100} 300 ${80 + wordIdx * 100}
+                   Q 400 ${60 + wordIdx * 100} 500 ${80 + wordIdx * 100}
+                   Q 600 ${100 + wordIdx * 100} 700 ${80 + wordIdx * 100}`}
+                stroke="url(#flowGradient)"
+                strokeWidth="4"
+                fill="none"
+                filter="url(#glow)"
+                style={{ 
+                  animation: `flow-${wordIdx} 3s infinite`,
+                  opacity: selectedWord?.word === wordData.word ? 1 : 0.7
+                }}
+              />
+
+              {/* Era points */}
+              {['archaic', 'classical', 'hellenistic', 'imperial'].map((era, eraIdx) => {
+                const x = 100 + eraIdx * 200;
+                const y = 80 + wordIdx * 100;
+                const eraData = wordData[era];
+                const radius = Math.sqrt(eraData.freq / 10) + 8;
+                
+                return (
+                  <g key={era}>
+                    <circle
+                      cx={x}
+                      cy={y}
+                      r={radius}
+                      fill={eraData.color}
+                      opacity={hoveredVariant === `${wordData.word}-${era}` ? 1 : 0.8}
+                      style={{ 
+                        cursor: 'pointer',
+                        filter: 'url(#glow)',
+                        transform: hoveredVariant === `${wordData.word}-${era}` ? 'scale(1.2)' : 'scale(1)',
+                        transition: 'all 0.3s ease'
+                      }}
+                      onMouseEnter={() => setHoveredVariant(`${wordData.word}-${era}`)}
+                      onMouseLeave={() => setHoveredVariant(null)}
+                    />
+                    
+                    {hoveredVariant === `${wordData.word}-${era}` && (
+                      <g>
+                        <rect
+                          x={x - 60}
+                          y={y - 50}
+                          width="120"
+                          height="35"
+                          fill="#1E1E24"
+                          stroke="#C9A227"
+                          strokeWidth="1"
+                          rx="6"
+                        />
+                        <text
+                          x={x}
+                          y={y - 35}
+                          fill="#F5F4F2"
+                          fontSize="12"
+                          textAnchor="middle"
+                          fontWeight="600"
+                        >
+                          {eraData.meaning}
+                        </text>
+                        <text
+                          x={x}
+                          y={y - 20}
+                          fill="#9CA3AF"
+                          fontSize="10"
+                          textAnchor="middle"
+                        >
+                          freq: {eraData.freq}
+                        </text>
+                      </g>
+                    )}
+                  </g>
+                );
+              })}
+            </g>
+          ))}
+        </svg>
+
+        <style jsx>{`
+          @keyframes flow-0 {
+            0% { stroke-dasharray: 0 1000; }
+            100% { stroke-dasharray: 1000 0; }
+          }
+          @keyframes flow-1 {
+            0% { stroke-dasharray: 0 1000; }
+            100% { stroke-dasharray: 1000 0; }
+          }
+          @keyframes flow-2 {
+            0% { stroke-dasharray: 0 1000; }
+            100% { stroke-dasharray: 1000 0; }
+          }
+          @keyframes flow-3 {
+            0% { stroke-dasharray: 0 1000; }
+            100% { stroke-dasharray: 1000 0; }
+          }
+        `}</style>
+      </div>
+    );
+  };
+
+  const renderFrequencyChart = () => {
+    const maxFreq = Math.max(...analyticsData.wordFrequency.map(w => w.frequency));
+    
+    return (
+      <div style={{ width: '100%', height: '400px', backgroundColor: '#1E1E24', borderRadius: '16px', padding: '24px' }}>
+        <div style={{ marginBottom: '24px' }}>
+          <h3 style={{ color: '#F5F4F2', fontSize: '20px', fontWeight: '700', marginBottom: '8px' }}>
+            Word Frequency Distribution
+          </h3>
+          <div style={{ display: 'flex', gap: '16px' }}>
+            <span style={{ color: '#D97706', fontSize: '12px', fontWeight: '600' }}>● Archaic</span>
+            <span style={{ color: '#F59E0B', fontSize: '12px', fontWeight: '600' }}>● Classical</span>
+          </div>
+        </div>
+        
+        <div style={{ display: 'flex', alignItems: 'end', gap: '12px', height: '300px' }}>
+          {analyticsData.wordFrequency.map((word, idx) => {
+            const height = (word.frequency / maxFreq) * 250;
+            const color = word.era === 'Archaic' ? '#D97706' : '#F59E0B';
+            
+            return (
+              <div
+                key={word.word}
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease',
+                  transform: selectedWord?.word === word.word ? 'scale(1.1)' : 'scale(1)'
+                }}
+                onClick={() => setSelectedWord(selectedWord?.word === word.word ? null : word)}
+              >
+                <div
+                  style={{
+                    width: '32px',
+                    height: `${height}px`,
+                    backgroundColor: color,
+                    borderRadius: '8px 8px 0 0',
+                    position: 'relative',
+                    boxShadow: `0 0 20px ${color}50`,
+                    animation: `grow-${idx} 1.5s ease-out`,
+                    marginBottom: '8px'
+                  }}
+                >
+                  <div
+                    style={{
+                      position: 'absolute',
+                      top: '-30px',
+                      left: '50%',
+                      transform: 'translateX(-50%)',
+                      color: '#F5F4F2',
+                      fontSize: '12px',
+                      fontWeight: '600',
+                      opacity: selectedWord?.word === word.word ? 1 : 0,
+                      transition: 'opacity 0.3s ease'
+                    }}
+                  >
+                    {word.frequency}
+                  </div>
+                </div>
+                <div style={{ 
+                  color: '#C9A227', 
+                  fontSize: '14px', 
+                  fontWeight: '600',
+                  writingMode: 'vertical-lr',
+                  textOrientation: 'mixed',
+                  height: '80px',
+                  display: 'flex',
+                  alignItems: 'center'
+                }}>
+                  {word.word}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <style jsx>{`
+          ${analyticsData.wordFrequency.map((_, idx) => `
+            @keyframes grow-${idx} {
+              0% { height: 0; opacity: 0; }
+              100% { height: ${(analyticsData.wordFrequency[idx].frequency / maxFreq) * 250}px; opacity: 1; }
+            }
+          `).join('')}
+        `}</style>
+      </div>
+    );
+  };
+
+  const renderManuscriptNetwork = () => {
+    return (
+      <div style={{ width: '100%', height: '500px', backgroundColor: '#0D0D0F', borderRadius: '16px', position: 'relative', overflow: 'hidden' }}>
+        <svg width="100%" height="100%">
+          <defs>
+            <radialGradient id="nodeGradient" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" style={{ stopColor: '#C9A227', stopOpacity: 1 }} />
+              <stop offset="100%" style={{ stopColor: '#F59E0B', stopOpacity: 0.8 }} />
+            </radialGradient>
+            <filter id="nodeGlow">
+              <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+
+          {/* Manuscript connections */}
+          {analyticsData.manuscriptVariants.map((text, textIdx) => {
+            const centerX = 200 + textIdx * 250;
+            const centerY = 250;
+            
+            return (
+              <g key={text.text}>
+                {/* Central text node */}
+                <circle
+                  cx={centerX}
+                  cy={centerY}
+                  r="40"
+                  fill="url(#nodeGradient)"
+                  filter="url(#nodeGlow)"
+                  style={{ 
+                    cursor: 'pointer',
+                    animation: `pulse-text-${textIdx} 3s infinite`
+                  }}
+                />
+                <text
+                  x={centerX}
+                  y={centerY - 5}
+                  fill="#0D0D0F"
+                  fontSize="12"
+                  fontWeight="700"
+                  textAnchor="middle"
+                >
+                  {text.text.split('.')[0]}
+                </text>
+                <text
+                  x={centerX}
+                  y={centerY + 8}
+                  fill="#0D0D0F"
+                  fontSize="10"
+                  fontWeight="600"
+                  textAnchor="middle"
+                >
+                  {text.text.split('.').slice(1).join('.')}
+                </text>
+
+                {/* Manuscript nodes */}
+                {text.manuscripts.map((ms, msIdx) => {
+                  const angle = (msIdx / text.manuscripts.length) * 2 * Math.PI;
+                  const msX = centerX + Math.cos(angle) * 120;
+                  const msY = centerY + Math.sin(angle) * 120;
+                  
+                  return (
+                    <g key={ms}>
+                      {/* Connection line */}
+                      <line
+                        x1={centerX}
+                        y1={centerY}
+                        x2={msX}
+                        y2={msY}
+                        stroke="#3B82F6"
+                        strokeWidth="2"
+                        opacity="0.6"
+                        style={{ 
+                          animation: `connect-${textIdx}-${msIdx} 2s infinite alternate`
+                        }}
+                      />
+                      
+                      {/* Manuscript node */}
+                      <circle
+                        cx={msX}
+                        cy={msY}
+                        r="20"
+                        fill="#3B82F6"
+                        opacity="0.8"
+                        style={{ 
+                          cursor: 'pointer',
+                          filter: 'url(#nodeGlow)',
+                          animation: `orbit-${textIdx}-${msIdx} 8s infinite linear`
+                        }}
+                      />
+                      <text
+                        x={msX}
+                        y={msY + 35}
+                        fill="#9CA3AF"
+                        fontSize="10"
+                        textAnchor="middle"
+                        fontWeight="600"
+                      >
+                        {ms.split(' ')[0]}
+                      </text>
+                    </g>
+                  );
+                })}
+
+                {/* Variants indicator */}
+                <rect
+                  x={centerX - 15}
+                  y={centerY + 60}
+                  width="30"
+                  height="20"
+                  fill="#DC2626"
+                  rx="4"
+                />
+                <text
+                  x={centerX}
+                  y={centerY + 75}
+                  fill="#F5F4F2"
+                  fontSize="12"
+                  fontWeight="700"
+                  textAnchor="middle"
+                >
+                  {text.variants}
+                </text>
+              </g>
+            );
+          })}
+        </svg>
+
+        <style jsx>{`
+          ${analyticsData.manuscriptVariants.map((text, textIdx) => `
+            @keyframes pulse-text-${textIdx} {
+              0%, 100% { transform: scale(1); opacity: 0.8; }
+              50% { transform: scale(1.1); opacity: 1; }
+            }
+            ${text.manuscripts.map((_, msIdx) => `
+              @keyframes connect-${textIdx}-${msIdx} {
+                0% { stroke-dasharray: 0 200; }
+                100% { stroke-dasharray: 200 0; }
+              }
+              @keyframes orbit-${textIdx}-${msIdx} {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+              }
+            `).join('')}
+          `).join('')}
+        `}</style>
       </div>
     );
   };
@@ -395,262 +563,77 @@ export default function AnalyticsPage() {
   return (
     <div style={{ 
       minHeight: '100vh', 
-      backgroundColor: '#0D0D0F', 
-      color: '#F5F4F2',
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+      backgroundColor: '#0D0D0F',
+      backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(201, 162, 39, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%)',
+      color: '#F5F4F2'
     }}>
-      {/* Header */}
-      <div style={{ 
-        borderBottom: '1px solid #1E1E24',
-        padding: '24px',
-        backgroundColor: '#141419'
+      {/* Navigation */}
+      <nav style={{ 
+        backgroundColor: '#1E1E24', 
+        borderBottom: '2px solid #C9A227',
+        position: 'sticky',
+        top: 0,
+        zIndex: 100,
+        backdropFilter: 'blur(10px)'
       }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
-            <div>
-              <h1 style={{ 
-                fontSize: '32px', 
-                fontWeight: '700', 
-                color: '#F5F4F2',
-                margin: '0 0 8px 0',
+        <div style={{ 
+          maxWidth: '1200px', 
+          margin: '0 auto', 
+          padding: '16px 24px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between'
+        }}>
+          <Link href="/" style={{ textDecoration: 'none' }}>
+            <div style={{ 
+              fontSize: '28px', 
+              fontWeight: '700', 
+              color: '#C9A227',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px'
+            }}>
+              <div style={{
+                width: '40px',
+                height: '40px',
+                background: 'linear-gradient(135deg, #C9A227 0%, #F59E0B 100%)',
+                borderRadius: '12px',
                 display: 'flex',
                 alignItems: 'center',
-                gap: '12px'
+                justifyContent: 'center',
+                fontSize: '20px',
+                fontWeight: '900',
+                color: '#0D0D0F',
+                boxShadow: '0 8px 32px rgba(201, 162, 39, 0.3)'
               }}>
-                <span style={{ color: '#C9A227' }}>📊</span>
-                Corpus Analytics
-              </h1>
-              <p style={{ color: '#9CA3AF', margin: '0', fontSize: '16px' }}>
-                Advanced philological analysis • Computational linguistics • Manuscript variants
-              </p>
+                Λ
+              </div>
+              ΛΟΓΟΣ Analytics
             </div>
-            <div style={{ display: 'flex', gap: '12px' }}>
-              {['CSV', 'JSON', 'TEI'].map(format => (
-                <button
-                  key={format}
-                  onClick={() => exportData(format)}
-                  style={{
-                    padding: '10px 18px',
-                    backgroundColor: '#1E1E24',
-                    color: '#F5F4F2',
-                    border: '1px solid #C9A227',
-                    borderRadius: '6px',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s ease',
-                    fontSize: '14px',
-                    fontWeight: '500'
-                  }}
-                  onMouseOver={(e) => {
-                    e.currentTarget.style.backgroundColor = '#C9A227';
-                    e.currentTarget.style.color = '#0D0D0F';
-                  }}
-                  onMouseOut={(e) => {
-                    e.currentTarget.style.backgroundColor = '#1E1E24';
-                    e.currentTarget.style.color = '#F5F4F2';
-                  }}
-                >
-                  Export {format}
-                </button>
-              ))}
-            </div>
-          </div>
+          </Link>
 
-          {/* Navigation Tabs */}
-          <div style={{ display: 'flex', gap: '4px' }}>
-            {[
-              { id: 'frequency', label: 'Word Frequency', icon: '📈' },
-              { id: 'semantic', label: 'Semantic Drift', icon: '🔄' },
-              { id: 'manuscripts', label: 'Manuscript Variants', icon: '📜' },
-              { id: 'paradigms', label: 'Morphological Paradigms', icon: '📋' }
-            ].map(tab => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveVisualization(tab.id)}
-                style={{
-                  padding: '12px 20px',
-                  backgroundColor: activeVisualization === tab.id ? '#C9A227' : '#1E1E24',
-                  color: activeVisualization === tab.id ? '#0D0D0F' : '#F5F4F2',
-                  border: activeVisualization === tab.id ? '1px solid #C9A227' : '1px solid #2D2D35',
-                  borderRadius: '6px',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s ease',
-                  fontSize: '14px',
-                  fontWeight: '500',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '8px'
-                }}
-                onMouseOver={(e) => {
-                  if (activeVisualization !== tab.id) {
-                    e.currentTarget.style.backgroundColor = '#2D2D35';
-                  }
-                }}
-                onMouseOut={(e) => {
-                  if (activeVisualization !== tab.id) {
-                    e.currentTarget.style.backgroundColor = '#1E1E24';
-                  }
-                }}
-              >
-                <span>{tab.icon}</span>
-                {tab.label}
-              </button>
-            ))}
+          <div style={{ display: 'flex', gap: '24px', alignItems: 'center' }}>
+            <Link href="/search" style={{ color: '#9CA3AF', textDecoration: 'none', transition: 'all 0.2s ease' }}>
+              Search
+            </Link>
+            <Link href="/reader" style={{ color: '#9CA3AF', textDecoration: 'none', transition: 'all 0.2s ease' }}>
+              Reader
+            </Link>
+            <Link href="/analytics" style={{ color: '#C9A227', textDecoration: 'none', fontWeight: '600' }}>
+              Analytics
+            </Link>
           </div>
         </div>
-      </div>
+      </nav>
 
-      {/* Main Content */}
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '32px 24px' }}>
-        
-        {/* Word Frequency Analysis */}
-        {activeVisualization === 'frequency' && (
-          <div>
-            <div style={{ marginBottom: '32px' }}>
-              <h2 style={{ 
-                fontSize: '24px', 
-                fontWeight: '600', 
-                color: '#F5F4F2',
-                marginBottom: '8px',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px'
-              }}>
-                <span style={{ 
-                  width: '4px',
-                  height: '24px',
-                  backgroundColor: '#C9A227',
-                  borderRadius: '2px'
-                }} />
-                Lexical Frequency Distribution
-              </h2>
-              <p style={{ color: '#9CA3AF', fontSize: '16px', margin: '0' }}>
-                Statistical analysis with semantic embeddings and LSJ references
-              </p>
-            </div>
-
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '24px' }}>
-              {analyticsData.wordFrequency.map((word, index) => (
-                <div 
-                  key={index} 
-                  style={{
-                    backgroundColor: '#1E1E24',
-                    borderRadius: '8px',
-                    padding: '24px',
-                    border: selectedWord === word.word ? '2px solid #C9A227' : '1px solid #2D2D35',
-                    cursor: 'pointer',
-                    transition: 'all 0.3s ease'
-                  }}
-                  onClick={() => setSelectedWord(selectedWord === word.word ? null : word.word)}
-                  onMouseOver={(e) => {
-                    if (selectedWord !== word.word) {
-                      e.currentTarget.style.borderColor = '#C9A227';
-                      e.currentTarget.style.transform = 'translateY(-2px)';
-                    }
-                  }}
-                  onMouseOut={(e) => {
-                    if (selectedWord !== word.word) {
-                      e.currentTarget.style.borderColor = '#2D2D35';
-                      e.currentTarget.style.transform = 'translateY(0)';
-                    }
-                  }}
-                >
-                  <div style={{ display: 'flex', alignItems: 'center', marginBottom: '16px' }}>
-                    <div style={{
-                      width: '8px',
-                      height: '8px',
-                      borderRadius: '50%',
-                      backgroundColor: '#3B82F6',
-                      marginRight: '8px'
-                    }} />
-                    <span style={{ 
-                      fontSize: '20px', 
-                      fontWeight: '600', 
-                      color: '#F5F4F2',
-                      fontFamily: 'Georgia, serif'
-                    }}>
-                      {word.word}
-                    </span>
-                    <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                      <span style={{ 
-                        fontSize: '14px',
-                        color: '#C9A227',
-                        backgroundColor: '#141419',
-                        padding: '2px 8px',
-                        borderRadius: '4px',
-                        fontWeight: '500'
-                      }}>
-                        {word.frequency}
-                      </span>
-                      <span style={{ 
-                        fontSize: '12px',
-                        color: '#9CA3AF',
-                        backgroundColor: '#141419',
-                        padding: '2px 8px',
-                        borderRadius: '4px'
-                      }}>
-                        LSJ {word.lsj}
-                      </span>
-                    </div>
-                  </div>
-
-                  <div style={{ marginBottom: '16px' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                      <span style={{ color: '#9CA3AF', fontSize: '14px' }}>{word.meaning}</span>
-                      <span style={{ color: '#6B7280', fontSize: '12px' }}>{word.era} Period</span>
-                    </div>
-                    
-                    <div style={{
-                      width: '100%',
-                      height: '6px',
-                      backgroundColor: '#141419',
-                      borderRadius: '3px',
-                      overflow: 'hidden'
-                    }}>
-                      <div style={{
-                        width: `${(word.frequency / 847) * 100}%`,
-                        height: '100%',
-                        backgroundColor: '#3B82F6',
-                        transition: 'width 0.5s ease'
-                      }} />
-                    </div>
-                  </div>
-
-                  {renderWordEmbeddings(word)}
-
-                  {selectedWord === word.word && renderParadigmTable(word.word)}
-                </div>
-              ))}
-            </div>
-
-            {/* Frequency Chart */}
-            <div style={{ 
-              backgroundColor: '#1E1E24', 
-              borderRadius: '8px', 
-              padding: '32px',
-              marginTop: '32px',
-              border: '1px solid #2D2D35'
-            }}>
-              <h3 style={{ 
-                fontSize: '18px', 
-                fontWeight: '600', 
-                color: '#F5F4F2',
-                marginBottom: '24px'
-              }}>
-                Frequency Distribution Chart
-              </h3>
-              <svg width="100%" height="300" style={{ overflow: 'visible' }}>
-                {analyticsData.wordFrequency.map((word, index) => {
-                  const barHeight = (word.frequency / 847) * 200;
-                  const x = index * 120 + 50;
-                  return (
-                    <g key={index}>
-                      <rect
-                        x={x}
-                        y={250 - barHeight}
-                        width="80"
-                        height={barHeight}
-                        fill="#3B82F6"
-                        fillOpacity="0.8"
-                        rx="4"
-                      />
-                      
+      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '40px 24px' }}>
+        {/* Header */}
+        <div style={{ marginBottom: '48px', textAlign: 'center' }}>
+          <h1 style={{ 
+            fontSize: '48px', 
+            fontWeight: '900', 
+            background: 'linear-gradient(135deg, #C9A227 0%, #F59E0B 50%, #DC2626 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            marginBottom: '16px',
+            textShadow: '0 0 60px rgba(201, 162, 39, 0

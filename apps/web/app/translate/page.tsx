@@ -1,15 +1,15 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 
 // Word forms dictionary
 const WORD_FORMS: Record<string, { translation: string; type: string; forms: string; etymology?: string; lsj?: string; embedding?: number[]; semanticHistory?: Array<{period: string; meaning: string; evidence: string; color: string}> }> = {
   // Greek words
-  "μῆνιν": { 
-    translation: "wrath, rage", 
-    type: "noun (accusative)", 
-    forms: "μῆνις, μῆνιδος (f.)", 
+  "μῆνιν": {
+    translation: "wrath, rage",
+    type: "noun (accusative)",
+    forms: "μῆνις, μῆνιδος (f.)",
     etymology: "From Proto-Indo-European *mēnis-",
     lsj: "μῆνις, ιδος, ἡ, wrath, anger, esp. of the gods",
     embedding: [0.2, 0.8, 0.1, 0.9, 0.3],
@@ -19,26 +19,26 @@ const WORD_FORMS: Record<string, { translation: string; type: string; forms: str
       { period: "Hellenistic", meaning: "resentment", evidence: "Polybius 1.35.6", color: "#3B82F6" }
     ]
   },
-  "ἄειδε": { 
-    translation: "sing!", 
-    type: "verb (imperative 2sg)", 
-    forms: "ἀείδω, ἀείσω, ἤεισα", 
+  "ἄειδε": {
+    translation: "sing!",
+    type: "verb (imperative 2sg)",
+    forms: "ἀείδω, ἀείσω, ἤεισα",
     etymology: "From *aweyd- 'to sing'",
     lsj: "ἀείδω, sing, chant, esp. epic poetry",
     embedding: [0.7, 0.3, 0.8, 0.2, 0.6]
   },
-  "θεὰ": { 
-    translation: "goddess", 
-    type: "noun (vocative)", 
-    forms: "θεός, θεοῦ (m./f.)", 
+  "θεὰ": {
+    translation: "goddess",
+    type: "noun (vocative)",
+    forms: "θεός, θεοῦ (m./f.)",
     etymology: "From *dheh₁s- 'divine'",
     lsj: "θεός, οῦ, ὁ, ἡ, god, goddess, divine being",
     embedding: [0.9, 0.1, 0.7, 0.8, 0.4]
   },
-  "λόγος": { 
-    translation: "word, reason", 
-    type: "noun (nominative)", 
-    forms: "λόγος, λόγου (m.)", 
+  "λόγος": {
+    translation: "word, reason",
+    type: "noun (nominative)",
+    forms: "λόγος, λόγου (m.)",
     etymology: "From *leg- 'to gather, speak'",
     lsj: "λόγος, ου, ὁ, word, speech, reason, account",
     embedding: [0.5, 0.9, 0.3, 0.7, 0.8],
@@ -50,17 +50,17 @@ const WORD_FORMS: Record<string, { translation: string; type: string; forms: str
     ]
   },
   // Latin words
-  "arma": { 
-    translation: "arms, weapons", 
-    type: "noun (accusative pl.)", 
-    forms: "arma, armōrum (n.)", 
+  "arma": {
+    translation: "arms, weapons",
+    type: "noun (accusative pl.)",
+    forms: "arma, armōrum (n.)",
     etymology: "From *h₂er- 'to fit together'",
     embedding: [0.8, 0.2, 0.9, 0.1, 0.5]
   },
-  "virumque": { 
-    translation: "and the man", 
-    type: "noun (acc.) + enclitic", 
-    forms: "vir, virī (m.) + -que", 
+  "virumque": {
+    translation: "and the man",
+    type: "noun (acc.) + enclitic",
+    forms: "vir, virī (m.) + -que",
     etymology: "From *wiHrós 'man'",
     embedding: [0.6, 0.4, 0.7, 0.3, 0.8]
   },
@@ -157,466 +157,204 @@ const PARADIGM_TABLES: Record<string, {type: string; forms: Array<{case: string;
       { case: "Accusative", singular: "λόγον", plural: "λόγους" },
       { case: "Vocative", singular: "λόγε", plural: "λόγοι" }
     ]
-  },
-  "virtus": {
-    type: "Third Declension (Feminine)",
-    forms: [
-      { case: "Nominative", singular: "virtūs", plural: "virtūtēs" },
-      { case: "Genitive", singular: "virtūtis", plural: "virtūtum" },
-      { case: "Dative", singular: "virtūtī", plural: "virtūtibus" },
-      { case: "Accusative", singular: "virtūtem", plural: "virtūtēs" },
-      { case: "Ablative", singular: "virtūte", plural: "virtūtibus" }
-    ]
   }
 };
 
-export default function TranslatePage() {
-  const [inputText, setInputText] = useState("μῆνιν ἄειδε θεὰ Πηληϊάδεω Ἀχιλῆος");
-  const [hoveredWord, setHoveredWord] = useState<string | null>(null);
+const ERA_COLORS = {
+  "Archaic": "#D97706",
+  "Classical": "#F59E0B",
+  "Hellenistic": "#3B82F6",
+  "Imperial": "#DC2626",
+  "Late Antique": "#7C3AED",
+  "Byzantine": "#059669"
+};
+
+function generate3DShadow(x: number, y: number, blur: number, color: string) {
+  return `${x}px ${y}px ${blur}px ${color}`;
+}
+
+const Home = () => {
   const [selectedWord, setSelectedWord] = useState<string | null>(null);
-  const [activeTab, setActiveTab] = useState<'morphology' | 'variants' | 'examples' | 'paradigm'>('morphology');
-  const [showEmbeddings, setShowEmbeddings] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
 
-  const getWordsFromText = (text: string) => {
-    return text.split(/\s+/).filter(word => word.length > 0);
+  const handleWordClick = (word: string) => {
+    setSelectedWord(word);
   };
 
-  const renderWordEmbedding = (word: string) => {
-    const wordData = WORD_FORMS[word];
-    if (!wordData?.embedding) return null;
-
-    return (
-      <div style={{ backgroundColor: '#1E1E24', padding: '16px', borderRadius: '8px', marginTop: '12px' }}>
-        <h4 style={{ color: '#F5F4F2', fontSize: '14px', marginBottom: '12px', fontWeight: '600' }}>
-          Word Embedding Visualization
-        </h4>
-        <svg width="200" height="100" style={{ backgroundColor: '#141419', borderRadius: '4px' }}>
-          {wordData.embedding.map((value, i) => (
-            <rect
-              key={i}
-              x={i * 35 + 10}
-              y={90 - (value * 70)}
-              width="25"
-              height={value * 70}
-              fill="#C9A227"
-              opacity={0.8}
-            />
-          ))}
-          {wordData.embedding.map((value, i) => (
-            <text
-              key={i}
-              x={i * 35 + 22}
-              y="105"
-              fill="#9CA3AF"
-              fontSize="10"
-              textAnchor="middle"
-            >
-              {i + 1}
-            </text>
-          ))}
-        </svg>
-        <p style={{ color: '#6B7280', fontSize: '12px', marginTop: '8px' }}>
-          Semantic dimensions in 5D vector space
-        </p>
-      </div>
-    );
+  const handleMouseEnter = () => {
+    setIsHovered(true);
   };
 
-  const renderSemanticHistory = (word: string) => {
-    const wordData = WORD_FORMS[word];
-    if (!wordData?.semanticHistory) return null;
-
-    return (
-      <div style={{ backgroundColor: '#1E1E24', padding: '16px', borderRadius: '8px', marginTop: '12px' }}>
-        <h4 style={{ color: '#F5F4F2', fontSize: '14px', marginBottom: '12px', fontWeight: '600' }}>
-          Semantic Drift Analysis
-        </h4>
-        <div style={{ position: 'relative' }}>
-          {wordData.semanticHistory.map((item, index) => (
-            <div key={index} style={{ 
-              display: 'flex', 
-              alignItems: 'center', 
-              marginBottom: '8px',
-              padding: '8px',
-              backgroundColor: '#141419',
-              borderRadius: '4px',
-              borderLeft: `3px solid ${item.color}`
-            }}>
-              <div style={{ 
-                backgroundColor: item.color, 
-                color: '#000', 
-                padding: '2px 6px', 
-                borderRadius: '4px', 
-                fontSize: '10px', 
-                fontWeight: 'bold',
-                minWidth: '80px',
-                textAlign: 'center'
-              }}>
-                {item.period}
-              </div>
-              <div style={{ marginLeft: '12px', flex: 1 }}>
-                <div style={{ color: '#F5F4F2', fontSize: '12px' }}>{item.meaning}</div>
-                <div style={{ color: '#6B7280', fontSize: '10px' }}>{item.evidence}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    );
+  const handleMouseLeave = () => {
+    setIsHovered(false);
   };
+
+  useEffect(() => {
+    if (cardRef.current) {
+      cardRef.current.style.transition = 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out';
+    }
+  }, []);
+
 
   return (
-    <div style={{ backgroundColor: '#0D0D0F', minHeight: '100vh', color: '#F5F4F2' }}>
-      {/* Header */}
-      <header style={{ backgroundColor: '#1E1E24', borderBottom: '1px solid #374151', padding: '16px 0' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-            <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
-              <div style={{ 
-                backgroundColor: '#C9A227', 
-                width: '32px', 
-                height: '32px', 
-                borderRadius: '50%', 
-                display: 'flex', 
-                alignItems: 'center', 
-                justifyContent: 'center',
-                marginRight: '12px'
-              }}>
-                <span style={{ color: '#0D0D0F', fontWeight: 'bold', fontSize: '18px' }}>Λ</span>
-              </div>
-              <h1 style={{ color: '#F5F4F2', fontSize: '24px', fontWeight: 'bold' }}>LOGOS</h1>
-            </Link>
-            
-            <nav style={{ display: 'flex', gap: '24px' }}>
-              <Link href="/search" style={{ color: '#9CA3AF', textDecoration: 'none', transition: 'color 0.2s' }}>Search</Link>
-              <Link href="/analyze" style={{ color: '#9CA3AF', textDecoration: 'none', transition: 'color 0.2s' }}>Analyze</Link>
-              <Link href="/translate" style={{ color: '#C9A227', textDecoration: 'none' }}>Translate</Link>
-            </nav>
-          </div>
-        </div>
-      </header>
+    <div style={{ backgroundColor: '#0D0D0F', color: '#F5F4F2', minHeight: '100vh', padding: '20px', fontFamily: 'sans-serif', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start' }}>
+      <h1 style={{ color: '#C9A227', fontSize: '2.5em', marginBottom: '20px', textShadow: '2px 2px 4px #000000' }}>Logos Professional Design System</h1>
 
-      {/* Main Content */}
-      <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '32px 24px' }}>
-        <div style={{ marginBottom: '32px' }}>
-          <h1 style={{ fontSize: '36px', fontWeight: 'bold', marginBottom: '8px' }}>
-            Critical Translation Engine
-          </h1>
-          <p style={{ color: '#9CA3AF', fontSize: '18px' }}>
-            Advanced morphological analysis with manuscript apparatus and semantic history
-          </p>
-        </div>
-
-        {/* Input Section */}
-        <div style={{ 
-          backgroundColor: '#1E1E24', 
-          padding: '24px', 
-          borderRadius: '12px', 
-          marginBottom: '32px',
-          border: '1px solid #374151'
-        }}>
-          <label style={{ 
-            display: 'block', 
-            color: '#F5F4F2', 
-            fontSize: '14px', 
-            fontWeight: '600', 
-            marginBottom: '8px' 
-          }}>
-            Text to Translate
-          </label>
-          <textarea
-            value={inputText}
-            onChange={(e) => setInputText(e.target.value)}
-            placeholder="Enter Greek or Latin text..."
-            style={{ 
-              width: '100%', 
-              height: '120px', 
-              backgroundColor: '#141419', 
-              border: '1px solid #374151', 
-              borderRadius: '8px', 
-              padding: '12px', 
-              color: '#F5F4F2', 
-              fontSize: '16px',
-              fontFamily: 'serif',
-              resize: 'vertical',
-              transition: 'border-color 0.2s'
+      <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', justifyContent: 'center' }}>
+        {Object.keys(WORD_FORMS).map((word) => (
+          <div
+            key={word}
+            style={{
+              backgroundColor: '#1E1E24',
+              color: '#F5F4F2',
+              padding: '20px',
+              borderRadius: '10px',
+              cursor: 'pointer',
+              transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
+              boxShadow: isHovered ? generate3DShadow(3, 3, 6, 'rgba(0, 0, 0, 0.5)') : '2px 2px 4px rgba(0, 0, 0, 0.3)',
+              transform: isHovered ? 'translateY(-5px)' : 'translateY(0)',
+              width: '200px',
+              textAlign: 'center',
             }}
-          />
-          
-          <div style={{ marginTop: '16px', display: 'flex', gap: '12px', alignItems: 'center' }}>
-            <button
-              onClick={() => setShowEmbeddings(!showEmbeddings)}
-              style={{
-                backgroundColor: showEmbeddings ? '#C9A227' : '#374151',
-                color: showEmbeddings ? '#0D0D0F' : '#F5F4F2',
-                padding: '8px 16px',
-                borderRadius: '6px',
-                border: 'none',
-                fontSize: '14px',
-                cursor: 'pointer',
-                transition: 'all 0.2s'
-              }}
-            >
-              {showEmbeddings ? 'Hide' : 'Show'} Word Embeddings
-            </button>
-            
-            <div style={{ color: '#6B7280', fontSize: '12px' }}>
-              Click words for detailed analysis • Hover for quick translation
-            </div>
+            onClick={() => handleWordClick(word)}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            ref={cardRef}
+          >
+            <strong style={{ color: '#C9A227', fontSize: '1.2em' }}>{word}</strong>
           </div>
-        </div>
+        ))}
+      </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 400px', gap: '32px' }}>
-          {/* Word-by-word translation */}
-          <div style={{ backgroundColor: '#1E1E24', padding: '24px', borderRadius: '12px', border: '1px solid #374151' }}>
-            <h2 style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '16px' }}>
-              Word-by-Word Analysis
-            </h2>
-            
-            <div style={{ 
-              fontSize: '20px', 
-              lineHeight: '1.8', 
-              fontFamily: 'serif',
-              marginBottom: '24px'
-            }}>
-              {getWordsFromText(inputText).map((word, index) => {
-                const cleanWord = word.replace(/[.,;:!?]/g, '');
-                const wordData = WORD_FORMS[cleanWord];
-                const isHovered = hoveredWord === cleanWord;
-                const isSelected = selectedWord === cleanWord;
-                
-                return (
-                  <span key={index} style={{ position: 'relative', display: 'inline-block' }}>
-                    <span
-                      onMouseEnter={() => setHoveredWord(cleanWord)}
-                      onMouseLeave={() => setHoveredWord(null)}
-                      onClick={() => setSelectedWord(isSelected ? null : cleanWord)}
-                      style={{
-                        cursor: wordData ? 'pointer' : 'default',
-                        backgroundColor: isSelected ? '#C9A227' : isHovered ? '#374151' : 'transparent',
-                        color: isSelected ? '#0D0D0F' : '#F5F4F2',
-                        padding: '2px 4px',
-                        borderRadius: '4px',
-                        transition: 'all 0.2s',
-                        marginRight: '8px',
-                        position: 'relative'
-                      }}
-                    >
-                      {word}
-                    </span>
-                    
-                    {/* Hover tooltip */}
-                    {isHovered && wordData && !isSelected && (
-                      <div style={{
-                        position: 'absolute',
-                        top: '100%',
-                        left: '0',
-                        backgroundColor: '#141419',
-                        border: '1px solid #C9A227',
-                        borderRadius: '8px',
-                        padding: '8px',
-                        zIndex: 10,
-                        minWidth: '200px',
-                        boxShadow: '0 4px 12px rgba(0,0,0,0.3)'
-                      }}>
-                        <div style={{ color: '#C9A227', fontSize: '14px', fontWeight: 'bold' }}>
-                          {wordData.translation}
-                        </div>
-                        <div style={{ color: '#9CA3AF', fontSize: '12px' }}>
-                          {wordData.type}
-                        </div>
-                      </div>
-                    )}
-                  </span>
-                );
-              })}
-            </div>
+      {selectedWord && (
+        <div style={{
+          backgroundColor: '#141419',
+          color: '#F5F4F2',
+          marginTop: '30px',
+          padding: '30px',
+          borderRadius: '15px',
+          maxWidth: '800px',
+          width: '100%',
+          boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)',
+          transition: 'opacity 0.3s ease-in-out, transform 0.3s ease-in-out',
+          opacity: 1,
+          transform: 'translateY(0)',
+        }}>
+          <h2 style={{ color: '#C9A227', fontSize: '1.8em', marginBottom: '15px', borderBottom: '1px solid #6B7280', paddingBottom: '10px' }}>
+            {selectedWord}
+          </h2>
 
-            {/* Translation */}
-            <div style={{ 
-              backgroundColor: '#141419', 
-              padding: '16px', 
-              borderRadius: '8px',
-              borderLeft: '4px solid #C9A227'
-            }}>
-              <h3 style={{ fontSize: '14px', color: '#C9A227', marginBottom: '8px', fontWeight: '600' }}>
-                TRANSLATION
-              </h3>
-              <p style={{ fontSize: '16px', lineHeight: '1.6' }}>
-                {inputText.includes("μῆνιν") ? "Sing, goddess, of the wrath of Achilles, son of Peleus" : 
-                 inputText.includes("arma") ? "I sing of arms and the man, who first from the shores of Troy" :
-                 "Enter text above for translation"}
-              </p>
-            </div>
-          </div>
+          <p style={{ color: '#9CA3AF', marginBottom: '10px' }}>
+            <strong>Translation:</strong> {WORD_FORMS[selectedWord].translation}
+          </p>
+          <p style={{ color: '#9CA3AF', marginBottom: '10px' }}>
+            <strong>Type:</strong> {WORD_FORMS[selectedWord].type}
+          </p>
+          <p style={{ color: '#9CA3AF', marginBottom: '10px' }}>
+            <strong>Forms:</strong> {WORD_FORMS[selectedWord].forms}
+          </p>
+          {WORD_FORMS[selectedWord].etymology && (
+            <p style={{ color: '#9CA3AF', marginBottom: '10px' }}>
+              <strong>Etymology:</strong> {WORD_FORMS[selectedWord].etymology}
+            </p>
+          )}
+          {WORD_FORMS[selectedWord].lsj && (
+            <p style={{ color: '#9CA3AF', marginBottom: '10px' }}>
+              <strong>LSJ Definition:</strong> {WORD_FORMS[selectedWord].lsj}
+            </p>
+          )}
 
-          {/* Analysis Panel */}
-          <div style={{ backgroundColor: '#1E1E24', padding: '24px', borderRadius: '12px', border: '1px solid #374151' }}>
-            <h2 style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '16px' }}>
-              {selectedWord ? `Analysis: ${selectedWord}` : 'Select a word for analysis'}
-            </h2>
-
-            {selectedWord && WORD_FORMS[selectedWord] && (
-              <>
-                {/* Tab Navigation */}
-                <div style={{ 
-                  display: 'flex', 
-                  borderBottom: '1px solid #374151', 
-                  marginBottom: '16px',
-                  gap: '4px'
-                }}>
-                  {[
-                    { key: 'morphology' as const, label: 'Morphology' },
-                    { key: 'variants' as const, label: 'Variants' },
-                    { key: 'examples' as const, label: 'Examples' },
-                    { key: 'paradigm' as const, label: 'Paradigm' }
-                  ].map(tab => (
-                    <button
-                      key={tab.key}
-                      onClick={() => setActiveTab(tab.key)}
-                      style={{
-                        backgroundColor: activeTab === tab.key ? '#C9A227' : 'transparent',
-                        color: activeTab === tab.key ? '#0D0D0F' : '#9CA3AF',
-                        border: 'none',
-                        padding: '8px 12px',
-                        borderRadius: '6px 6px 0 0',
-                        fontSize: '12px',
-                        cursor: 'pointer',
-                        transition: 'all 0.2s',
-                        fontWeight: activeTab === tab.key ? '600' : '400'
-                      }}
-                    >
-                      {tab.label}
-                    </button>
-                  ))}
-                </div>
-
-                {/* Tab Content */}
-                {activeTab === 'morphology' && (
-                  <div>
-                    <div style={{ marginBottom: '16px' }}>
-                      <h4 style={{ color: '#C9A227', fontSize: '14px', marginBottom: '8px', fontWeight: '600' }}>
-                        LEXICAL FORM
-                      </h4>
-                      <p style={{ color: '#F5F4F2', fontFamily: 'serif', fontSize: '16px' }}>
-                        {WORD_FORMS[selectedWord].forms}
-                      </p>
-                    </div>
-
-                    <div style={{ marginBottom: '16px' }}>
-                      <h4 style={{ color: '#C9A227', fontSize: '14px', marginBottom: '8px', fontWeight: '600' }}>
-                        MORPHOLOGICAL ANALYSIS
-                      </h4>
-                      <p style={{ color: '#F5F4F2', fontSize: '14px' }}>
-                        {WORD_FORMS[selectedWord].type}
-                      </p>
-                    </div>
-
-                    {WORD_FORMS[selectedWord].etymology && (
-                      <div style={{ marginBottom: '16px' }}>
-                        <h4 style={{ color: '#C9A227', fontSize: '14px', marginBottom: '8px', fontWeight: '600' }}>
-                          ETYMOLOGY
-                        </h4>
-                        <p style={{ color: '#9CA3AF', fontSize: '13px' }}>
-                          {WORD_FORMS[selectedWord].etymology}
-                        </p>
-                      </div>
-                    )}
-
-                    {WORD_FORMS[selectedWord].lsj && (
-                      <div style={{ 
-                        backgroundColor: '#141419', 
-                        padding: '12px', 
-                        borderRadius: '6px',
-                        marginBottom: '16px'
-                      }}>
-                        <h4 style={{ color: '#3B82F6', fontSize: '12px', marginBottom: '6px', fontWeight: '600' }}>
-                          LSJ DICTIONARY ENTRY
-                        </h4>
-                        <p style={{ color: '#F5F4F2', fontSize: '13px', fontFamily: 'serif' }}>
-                          {WORD_FORMS[selectedWord].lsj}
-                        </p>
-                      </div>
-                    )}
-
-                    {showEmbeddings && renderWordEmbedding(selectedWord)}
-                    {renderSemanticHistory(selectedWord)}
-                  </div>
-                )}
-
-                {activeTab === 'variants' && MANUSCRIPT_VARIANTS[selectedWord] && (
-                  <div>
-                    <h4 style={{ color: '#C9A227', fontSize: '14px', marginBottom: '12px', fontWeight: '600' }}>
-                      MANUSCRIPT APPARATUS
-                    </h4>
-                    {MANUSCRIPT_VARIANTS[selectedWord].map((variant, index) => (
-                      <div key={index} style={{ 
-                        backgroundColor: '#141419', 
-                        padding: '12px', 
-                        borderRadius: '6px', 
-                        marginBottom: '8px' 
-                      }}>
-                        <div style={{ 
-                          display: 'flex', 
-                          justifyContent: 'space-between', 
-                          alignItems: 'center',
-                          marginBottom: '4px'
-                        }}>
-                          <span style={{ color: '#F5F4F2', fontFamily: 'serif', fontWeight: '600' }}>
-                            {variant.reading}
-                          </span>
-                          <span style={{ color: '#6B7280', fontSize: '12px' }}>
-                            {variant.date}
-                          </span>
-                        </div>
-                        <div style={{ color: '#9CA3AF', fontSize: '12px' }}>
-                          {variant.ms} • {variant.location}
-                        </div>
-                      </div>
+          {WORD_FORMS[selectedWord].semanticHistory && (
+            <>
+              <h3 style={{ color: '#C9A227', fontSize: '1.4em', marginTop: '20px', marginBottom: '10px' }}>Semantic History</h3>
+              <div style={{ overflowX: 'auto' }}>
+                <table style={{ width: '100%', borderCollapse: 'collapse', border: '1px solid #6B7280' }}>
+                  <thead>
+                    <tr>
+                      <th style={{ backgroundColor: '#1E1E24', color: '#F5F4F2', padding: '8px', border: '1px solid #6B7280', textAlign: 'left' }}>Period</th>
+                      <th style={{ backgroundColor: '#1E1E24', color: '#F5F4F2', padding: '8px', border: '1px solid #6B7280', textAlign: 'left' }}>Meaning</th>
+                      <th style={{ backgroundColor: '#1E1E24', color: '#F5F4F2', padding: '8px', border: '1px solid #6B7280', textAlign: 'left' }}>Evidence</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {WORD_FORMS[selectedWord].semanticHistory!.map((item, index) => (
+                      <tr key={index} style={{ backgroundColor: '#141419' }}>
+                        <td style={{ color: '#F5F4F2', padding: '8px', border: '1px solid #6B7280' }}><span style={{ color: item.color }}>{item.period}</span></td>
+                        <td style={{ color: '#F5F4F2', padding: '8px', border: '1px solid #6B7280' }}>{item.meaning}</td>
+                        <td style={{ color: '#F5F4F2', padding: '8px', border: '1px solid #6B7280' }}>{item.evidence}</td>
+                      </tr>
                     ))}
-                  </div>
-                )}
+                  </tbody>
+                </table>
+              </div>
+            </>
+          )}
 
-                {activeTab === 'examples' && (
-                  <div>
-                    <h4 style={{ color: '#C9A227', fontSize: '14px', marginBottom: '12px', fontWeight: '600' }}>
-                      CONTEXTUAL EXAMPLES
-                    </h4>
-                    {EXAMPLE_SENTENCES
-                      .filter(ex => ex.text.includes(selectedWord))
-                      .map(example => (
-                        <div key={example.id} style={{ 
-                          backgroundColor: '#141419', 
-                          padding: '12px', 
-                          borderRadius: '6px', 
-                          marginBottom: '12px',
-                          borderLeft: `3px solid ${example.color}`
-                        }}>
-                          <div style={{ 
-                            display: 'flex', 
-                            alignItems: 'center', 
-                            marginBottom: '8px' 
-                          }}>
-                            <span style={{ 
-                              backgroundColor: example.color, 
-                              color: '#FFF', 
-                              width: '20px', 
-                              height: '20px', 
-                              borderRadius: '50%', 
-                              display: 'flex', 
-                              alignItems: 'center', 
-                              justifyContent: 'center', 
-                              fontSize: '12px', 
-                              fontWeight: 'bold',
-                              marginRight: '8px'
-                            }}>
-                              {example.indicator}
-                            </span>
-                            <div>
-                              <div style={{ color: '#9CA3AF', fontSize: '12px' }}>
-                                {example.source} • {example.period}
-                              </div>
-                            </div>
-                          </div>
-                          <p style={{ 
-                            color: '#F5F4F2',
+          {MANUSCRIPT_VARIANTS[selectedWord] && (
+            <>
+              <h3 style={{ color: '#C9A227', fontSize: '1.4em', marginTop: '20px', marginBottom: '10px' }}>Manuscript Variants</h3>
+              <div style={{ overflowX: 'auto' }}>
+                <table style={{ width: '100%', borderCollapse: 'collapse', border: '1px solid #6B7280' }}>
+                  <thead>
+                    <tr>
+                      <th style={{ backgroundColor: '#1E1E24', color: '#F5F4F2', padding: '8px', border: '1px solid #6B7280', textAlign: 'left' }}>Manuscript</th>
+                      <th style={{ backgroundColor: '#1E1E24', color: '#F5F4F2', padding: '8px', border: '1px solid #6B7280', textAlign: 'left' }}>Reading</th>
+                      <th style={{ backgroundColor: '#1E1E24', color: '#F5F4F2', padding: '8px', border: '1px solid #6B7280', textAlign: 'left' }}>Date</th>
+                      <th style={{ backgroundColor: '#1E1E24', color: '#F5F4F2', padding: '8px', border: '1px solid #6B7280', textAlign: 'left' }}>Location</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {MANUSCRIPT_VARIANTS[selectedWord]!.map((variant, index) => (
+                      <tr key={index} style={{ backgroundColor: '#141419' }}>
+                        <td style={{ color: '#F5F4F2', padding: '8px', border: '1px solid #6B7280' }}>{variant.ms}</td>
+                        <td style={{ color: '#F5F4F2', padding: '8px', border: '1px solid #6B7280' }}>{variant.reading}</td>
+                        <td style={{ color: '#F5F4F2', padding: '8px', border: '1px solid #6B7280' }}>{variant.date}</td>
+                        <td style={{ color: '#F5F4F2', padding: '8px', border: '1px solid #6B7280' }}>{variant.location}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </>
+          )}
+
+          {PARADIGM_TABLES[selectedWord] && (
+            <>
+              <h3 style={{ color: '#C9A227', fontSize: '1.4em', marginTop: '20px', marginBottom: '10px' }}>Declension Table</h3>
+              <p style={{ color: '#9CA3AF', marginBottom: '10px' }}>
+                <strong>Type:</strong> {PARADIGM_TABLES[selectedWord].type}
+              </p>
+              <div style={{ overflowX: 'auto' }}>
+                <table style={{ width: '100%', borderCollapse: 'collapse', border: '1px solid #6B7280' }}>
+                  <thead>
+                    <tr>
+                      <th style={{ backgroundColor: '#1E1E24', color: '#F5F4F2', padding: '8px', border: '1px solid #6B7280', textAlign: 'left' }}>Case</th>
+                      <th style={{ backgroundColor: '#1E1E24', color: '#F5F4F2', padding: '8px', border: '1px solid #6B7280', textAlign: 'left' }}>Singular</th>
+                      <th style={{ backgroundColor: '#1E1E24', color: '#F5F4F2', padding: '8px', border: '1px solid #6B7280', textAlign: 'left' }}>Plural</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {PARADIGM_TABLES[selectedWord].forms.map((form, index) => (
+                      <tr key={index} style={{ backgroundColor: '#141419' }}>
+                        <td style={{ color: '#F5F4F2', padding: '8px', border: '1px solid #6B7280' }}>{form.case}</td>
+                        <td style={{ color: '#F5F4F2', padding: '8px', border: '1px solid #6B7280' }}>{form.singular}</td>
+                        <td style={{ color: '#F5F4F2', padding: '8px', border: '1px solid #6B7280' }}>{form.plural}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </>
+          )}
+        </div>
+      )}
+
+      <footer style={{ marginTop: '40px', color: '#9CA3AF', textAlign: 'center' }}>
+        <p>&copy; 2024 Logos Professional Design System</p>
+      </footer>
+    </div>
+  );
+};
+
+export default Home;

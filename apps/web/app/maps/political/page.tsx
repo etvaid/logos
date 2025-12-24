@@ -12,6 +12,7 @@ export default function PoliticalMap() {
   const [playSpeed, setPlaySpeed] = useState(1);
   const [showInfluence, setShowInfluence] = useState(false);
   const [showTrade, setShowTrade] = useState(false);
+  const [selectedView, setSelectedView] = useState<'political' | 'military' | 'economic' | 'cultural'>('political');
 
   const empires = {
     'Roman Empire': {
@@ -79,446 +80,503 @@ export default function PoliticalMap() {
         600: { size: 15, power: 25, territories: ['Scythia_Minor'], capital: 'Mobile', population: 200000, horsemen: 15000 },
       }
     },
-    'Eastern Roman Empire': {
-      color: '#3B82F6',
-      era: 'Byzantine',
-      type: 'Orthodox Empire',
-      periods: {
-        100: { size: 0, power: 0, territories: [], capital: '', population: 0, themes: 0 },
-        200: { size: 0, power: 0, territories: [], capital: '', population: 0, themes: 0 },
-        300: { size: 45, power: 60, territories: ['Thracia', 'Asia_Minor', 'Syria'], capital: 'Constantinopolis', population: 25000000, themes: 8 },
-        400: { size: 55, power: 70, territories: ['Thracia', 'Asia_Minor', 'Syria', 'Aegyptus', 'Illyria'], capital: 'Constantinopolis', population: 30000000, themes: 12 },
-        500: { size: 65, power: 75, territories: ['Thracia', 'Asia_Minor', 'Syria', 'Aegyptus', 'Italia_Orientalis'], capital: 'Constantinopolis', population: 35000000, themes: 15 },
-        600: { size: 70, power: 80, territories: ['Thracia', 'Asia_Minor', 'Syria', 'Aegyptus', 'Illyria', 'Italia_Orientalis'], capital: 'Constantinopolis', population: 40000000, themes: 18 },
-      }
-    }
   };
 
   const territories = {
-    'Italia': { x: 320, y: 260, size: 25 },
-    'Gallia': { x: 280, y: 200, size: 30 },
-    'Hispania': { x: 220, y: 240, size: 28 },
-    'Britannia': { x: 260, y: 160, size: 20 },
-    'Germania': { x: 320, y: 180, size: 25 },
-    'Germania_Inferior': { x: 300, y: 180, size: 18 },
-    'Dacia': { x: 380, y: 210, size: 22 },
-    'Thracia': { x: 370, y: 240, size: 20 },
-    'Asia_Minor': { x: 420, y: 250, size: 28 },
-    'Syria': { x: 460, y: 280, size: 24 },
-    'Judaea': { x: 450, y: 300, size: 15 },
-    'Aegyptus': { x: 440, y: 340, size: 26 },
-    'Arabia': { x: 480, y: 320, size: 22 },
-    'Mesopotamia': { x: 500, y: 290, size: 24 },
-    'Persis': { x: 580, y: 310, size: 30 },
-    'Armenia': { x: 480, y: 250, size: 20 },
-    'Atropatene': { x: 520, y: 270, size: 18 },
-    'Bactria': { x: 620, y: 280, size: 25 },
-    'Sogdiana': { x: 650, y: 250, size: 22 },
-    'Chorasmia': { x: 600, y: 220, size: 20 },
-    'Herat': { x: 640, y: 300, size: 18 },
-    'Francia': { x: 280, y: 180, size: 22 },
-    'Francia_Minor': { x: 270, y: 170, size: 15 },
-    'Austrasia': { x: 300, y: 170, size: 20 },
-    'Neustria': { x: 260, y: 180, size: 18 },
-    'Burgundia': { x: 290, y: 200, size: 20 },
-    'Aquitania': { x: 250, y: 220, size: 22 },
-    'Alemannia': { x: 310, y: 190, size: 18 },
-    'Pannonia': { x: 350, y: 220, size: 24 },
-    'Hispania_Gothica': { x: 220, y: 250, size: 26 },
-    'Gallia_Narbonensis': { x: 270, y: 230, size: 18 },
-    'Gothia': { x: 400, y: 200, size: 22 },
-    'Gothia_Minor': { x: 420, y: 210, size: 16 },
-    'Scythia': { x: 450, y: 180, size: 28 },
-    'Scythia_Minor': { x: 430, y: 190, size: 18 },
-    'Sarmatia': { x: 480, y: 160, size: 26 },
-    'Alania': { x: 520, y: 180, size: 22 },
-    'Ripuaria': { x: 290, y: 160, size: 16 },
-    'Illyria': { x: 340, y: 250, size: 24 },
-    'Italia_Orientalis': { x: 340, y: 280, size: 20 },
-    'Italia_Gothica': { x: 330, y: 270, size: 22 },
+    'Italia': { x: 450, y: 320, width: 80, height: 120 },
+    'Gallia': { x: 380, y: 250, width: 100, height: 100 },
+    'Hispania': { x: 280, y: 300, width: 120, height: 80 },
+    'Britannia': { x: 350, y: 180, width: 90, height: 60 },
+    'Germania': { x: 480, y: 200, width: 100, height: 80 },
+    'Germania_Inferior': { x: 460, y: 220, width: 60, height: 50 },
+    'Dacia': { x: 550, y: 280, width: 70, height: 60 },
+    'Thracia': { x: 520, y: 340, width: 80, height: 50 },
+    'Aegyptus': { x: 580, y: 420, width: 70, height: 80 },
+    'Syria': { x: 650, y: 380, width: 80, height: 60 },
+    'Judaea': { x: 630, y: 400, width: 40, height: 40 },
+    'Arabia': { x: 680, y: 450, width: 90, height: 80 },
+    'Mesopotamia': { x: 720, y: 360, width: 80, height: 70 },
+    'Persis': { x: 800, y: 380, width: 100, height: 80 },
+    'Armenia': { x: 700, y: 320, width: 60, height: 50 },
+    'Atropatene': { x: 740, y: 300, width: 50, height: 40 },
+    'Bactria': { x: 900, y: 340, width: 80, height: 60 },
+    'Sogdiana': { x: 920, y: 300, width: 70, height: 50 },
+    'Chorasmia': { x: 860, y: 280, width: 60, height: 50 },
+    'Herat': { x: 880, y: 380, width: 50, height: 40 },
+    'Gothia': { x: 520, y: 260, width: 80, height: 60 },
+    'Gothia_Minor': { x: 540, y: 240, width: 40, height: 30 },
+    'Pannonia': { x: 510, y: 300, width: 60, height: 50 },
+    'Hispania_Gothica': { x: 300, y: 320, width: 100, height: 60 },
+    'Gallia_Narbonensis': { x: 400, y: 320, width: 50, height: 40 },
+    'Francia': { x: 420, y: 240, width: 60, height: 50 },
+    'Francia_Minor': { x: 430, y: 250, width: 30, height: 25 },
+    'Austrasia': { x: 460, y: 240, width: 50, height: 40 },
+    'Neustria': { x: 380, y: 260, width: 60, height: 50 },
+    'Burgundia': { x: 440, y: 290, width: 50, height: 40 },
+    'Aquitania': { x: 360, y: 300, width: 70, height: 50 },
+    'Alemannia': { x: 480, y: 270, width: 40, height: 30 },
+    'Ripuaria': { x: 450, y: 250, width: 30, height: 25 },
+    'Scythia': { x: 600, y: 200, width: 120, height: 80 },
+    'Scythia_Minor': { x: 580, y: 320, width: 60, height: 40 },
+    'Sarmatia': { x: 580, y: 240, width: 80, height: 60 },
+    'Alania': { x: 720, y: 260, width: 70, height: 50 },
   };
 
   const tradeRoutes = [
-    { from: 'Constantinopolis', to: 'Alexandria', type: 'Sea Route', value: 850 },
-    { from: 'Roma', to: 'Carthago', type: 'Sea Route', value: 720 },
-    { from: 'Ctesiphon', to: 'Samarkand', type: 'Silk Road', value: 650 },
-    { from: 'Constantinopolis', to: 'Trebizond', type: 'Black Sea', value: 580 },
-    { from: 'Massilia', to: 'Narbo', type: 'Coastal', value: 450 },
-    { from: 'Aquileia', to: 'Sirmium', type: 'Amber Road', value: 520 },
+    { from: { x: 450, y: 350 }, to: { x: 720, y: 380 }, name: 'Silk Road West' },
+    { from: { x: 720, y: 380 }, to: { x: 900, y: 350 }, name: 'Silk Road East' },
+    { from: { x: 500, y: 360 }, to: { x: 600, y: 450 }, name: 'Mediterranean Route' },
+    { from: { x: 380, y: 280 }, to: { x: 320, y: 340 }, name: 'Atlantic Trade' },
+    { from: { x: 650, y: 410 }, to: { x: 700, y: 480 }, name: 'Arabian Route' },
   ];
 
-  // Auto-play functionality
+  const influenceSpheres = [
+    { empire: 'Roman Empire', x: 450, y: 350, radius: 180 },
+    { empire: 'Sasanian Empire', x: 800, y: 350, radius: 160 },
+    { empire: 'Hunnic Empire', x: 650, y: 250, radius: 140 },
+    { empire: 'Frankish Kingdom', x: 420, y: 280, radius: 100 },
+    { empire: 'Visigothic Kingdom', x: 350, y: 340, radius: 80 },
+  ];
+
   useEffect(() => {
     let interval: NodeJS.Timeout;
-    if (isPlaying) {
+    if (isPlaying && !isDragging) {
       interval = setInterval(() => {
         setCurrentYear(prev => {
-          const nextYear = prev + (50 * playSpeed);
-          return nextYear > 600 ? 100 : nextYear;
+          const next = prev + (10 * playSpeed);
+          return next > 600 ? 100 : next;
         });
-      }, 2000 / playSpeed);
+      }, 1000 / playSpeed);
     }
     return () => clearInterval(interval);
-  }, [isPlaying, playSpeed]);
+  }, [isPlaying, isDragging, playSpeed]);
 
-  const getEmpireAtYear = (empireName: string, year: number) => {
-    const empire = empires[empireName as keyof typeof empires];
-    const availableYears = Object.keys(empire.periods).map(Number).sort((a, b) => a - b);
-    
-    let closestYear = availableYears[0];
-    for (const availableYear of availableYears) {
-      if (availableYear <= year) {
-        closestYear = availableYear;
-      } else {
-        break;
+  const getClosestYear = (year: number) => {
+    const years = [100, 200, 300, 400, 500, 600];
+    return years.reduce((prev, curr) => 
+      Math.abs(curr - year) < Math.abs(prev - year) ? curr : prev
+    );
+  };
+
+  const getCurrentEmpireData = (empireName: string) => {
+    const year = getClosestYear(currentYear);
+    return empires[empireName as keyof typeof empires].periods[year as keyof typeof empires[keyof typeof empires]['periods']];
+  };
+
+  const getTerritoryOwner = (territoryName: string) => {
+    for (const [empireName, empire] of Object.entries(empires)) {
+      const data = getCurrentEmpireData(empireName);
+      if (data.territories.includes(territoryName)) {
+        return { name: empireName, color: empire.color };
       }
     }
-    
-    return empire.periods[closestYear as keyof typeof empire.periods];
+    return null;
   };
 
-  const getEraColor = (year: number) => {
-    if (year <= 323) return '#F59E0B'; // Classical
-    if (year <= 284) return '#3B82F6'; // Hellenistic
-    if (year <= 600) return '#7C3AED'; // Late Antique
-    return '#059669'; // Byzantine
+  const formatNumber = (num: number) => {
+    if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
+    if (num >= 1000) return (num / 1000).toFixed(0) + 'K';
+    return num.toString();
   };
 
-  const formatPopulation = (pop: number) => {
-    return (pop / 1000000).toFixed(1) + 'M';
+  const getEraColor = (era: string) => {
+    switch (era) {
+      case 'Imperial': return '#DC2626';
+      case 'Late Antique': return '#7C3AED';
+      default: return '#C9A227';
+    }
   };
 
   return (
-    <div style={{ 
-      minHeight: '100vh', 
-      backgroundColor: '#0D0D0F', 
+    <div style={{
+      minHeight: '100vh',
+      backgroundColor: '#0D0D0F',
       color: '#F5F4F2',
-      fontFamily: 'ui-sans-serif, system-ui, -apple-system, sans-serif'
+      fontFamily: 'system-ui, -apple-system, sans-serif'
     }}>
-      {/* Navigation */}
-      <nav style={{ 
-        backgroundColor: '#1E1E24', 
-        padding: '1rem 2rem',
-        borderBottom: '1px solid #2D2D35'
+      {/* Header */}
+      <div style={{
+        padding: '24px',
+        borderBottom: '1px solid #1E1E24',
+        background: 'linear-gradient(135deg, #141419 0%, #1E1E24 100%)'
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
-            <Link href="/" style={{ 
-              fontSize: '1.5rem', 
-              fontWeight: 'bold', 
-              color: '#C9A227',
-              textDecoration: 'none'
+        <div style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          maxWidth: '1400px',
+          margin: '0 auto'
+        }}>
+          <div>
+            <h1 style={{
+              fontSize: '32px',
+              fontWeight: '800',
+              margin: '0 0 8px 0',
+              background: 'linear-gradient(135deg, #C9A227 0%, #F59E0B 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
             }}>
-              ΛΟΓΟΣ
+              Political Empires Map
+            </h1>
+            <p style={{
+              fontSize: '18px',
+              color: '#9CA3AF',
+              margin: 0
+            }}>
+              Interactive visualization of ancient empires • {currentYear} CE
+            </p>
+          </div>
+          
+          <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+            <Link href="/" style={{
+              padding: '12px 24px',
+              backgroundColor: '#1E1E24',
+              color: '#C9A227',
+              textDecoration: 'none',
+              borderRadius: '8px',
+              fontWeight: '600',
+              transition: 'all 0.2s ease',
+              border: '1px solid #C9A227'
+            }}>
+              ← Back to LOGOS
             </Link>
-            <div style={{ display: 'flex', gap: '1rem' }}>
-              <Link href="/maps" style={{ color: '#9CA3AF', textDecoration: 'none', transition: 'color 0.2s' }}>Maps</Link>
-              <span style={{ color: '#C9A227' }}>Political</span>
+          </div>
+        </div>
+      </div>
+
+      <div style={{
+        display: 'flex',
+        maxWidth: '1400px',
+        margin: '0 auto',
+        gap: '24px',
+        padding: '24px'
+      }}>
+        {/* Control Panel */}
+        <div style={{
+          width: '320px',
+          backgroundColor: '#1E1E24',
+          borderRadius: '16px',
+          padding: '24px',
+          height: 'fit-content',
+          border: '1px solid #141419'
+        }}>
+          {/* Time Controls */}
+          <div style={{ marginBottom: '32px' }}>
+            <h3 style={{
+              fontSize: '18px',
+              fontWeight: '700',
+              color: '#C9A227',
+              margin: '0 0 16px 0'
+            }}>
+              Timeline Control
+            </h3>
+            
+            <div style={{
+              backgroundColor: '#141419',
+              borderRadius: '12px',
+              padding: '20px',
+              marginBottom: '16px'
+            }}>
+              <div style={{
+                fontSize: '28px',
+                fontWeight: '800',
+                color: '#F5F4F2',
+                textAlign: 'center',
+                marginBottom: '16px'
+              }}>
+                {currentYear} CE
+              </div>
+              
+              <input
+                type="range"
+                min="100"
+                max="600"
+                step="10"
+                value={currentYear}
+                onChange={(e) => setCurrentYear(Number(e.target.value))}
+                onMouseDown={() => setIsDragging(true)}
+                onMouseUp={() => setIsDragging(false)}
+                style={{
+                  width: '100%',
+                  height: '8px',
+                  borderRadius: '4px',
+                  backgroundColor: '#6B7280',
+                  outline: 'none',
+                  cursor: 'pointer'
+                }}
+              />
+              
+              <div style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                fontSize: '12px',
+                color: '#9CA3AF',
+                marginTop: '8px'
+              }}>
+                <span>100 CE</span>
+                <span>600 CE</span>
+              </div>
+            </div>
+
+            <div style={{
+              display: 'flex',
+              gap: '8px',
+              marginBottom: '16px'
+            }}>
+              <button
+                onClick={() => setIsPlaying(!isPlaying)}
+                style={{
+                  flex: 1,
+                  padding: '12px',
+                  backgroundColor: isPlaying ? '#DC2626' : '#059669',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '8px',
+                  fontWeight: '600',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease'
+                }}
+              >
+                {isPlaying ? '⏸ Pause' : '▶ Play'}
+              </button>
+              
+              <select
+                value={playSpeed}
+                onChange={(e) => setPlaySpeed(Number(e.target.value))}
+                style={{
+                  padding: '12px',
+                  backgroundColor: '#141419',
+                  color: '#F5F4F2',
+                  border: '1px solid #6B7280',
+                  borderRadius: '8px',
+                  cursor: 'pointer'
+                }}
+              >
+                <option value={0.5}>0.5x</option>
+                <option value={1}>1x</option>
+                <option value={2}>2x</option>
+                <option value={3}>3x</option>
+              </select>
             </div>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-            <span style={{ color: '#6B7280', fontSize: '0.875rem' }}>Year {currentYear} CE</span>
-            <div style={{ 
-              padding: '0.25rem 0.75rem', 
-              backgroundColor: getEraColor(currentYear) + '20',
-              color: getEraColor(currentYear),
-              borderRadius: '9999px',
-              fontSize: '0.75rem',
-              fontWeight: '500'
+
+          {/* View Options */}
+          <div style={{ marginBottom: '32px' }}>
+            <h3 style={{
+              fontSize: '18px',
+              fontWeight: '700',
+              color: '#C9A227',
+              margin: '0 0 16px 0'
             }}>
-              {currentYear <= 323 ? 'Classical' : currentYear <= 284 ? 'Hellenistic' : currentYear <= 600 ? 'Late Antique' : 'Byzantine'}
+              Map Views
+            </h3>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', marginBottom: '16px' }}>
+              {['political', 'military', 'economic', 'cultural'].map(view => (
+                <button
+                  key={view}
+                  onClick={() => setSelectedView(view as any)}
+                  style={{
+                    padding: '10px 12px',
+                    backgroundColor: selectedView === view ? '#C9A227' : '#141419',
+                    color: selectedView === view ? '#0D0D0F' : '#F5F4F2',
+                    border: '1px solid #6B7280',
+                    borderRadius: '6px',
+                    fontSize: '12px',
+                    fontWeight: '600',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                    textTransform: 'capitalize'
+                  }}
+                >
+                  {view}
+                </button>
+              ))}
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
+                <input
+                  type="checkbox"
+                  checked={showInfluence}
+                  onChange={(e) => setShowInfluence(e.target.checked)}
+                  style={{ accentColor: '#C9A227' }}
+                />
+                Show Influence Spheres
+              </label>
+              
+              <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
+                <input
+                  type="checkbox"
+                  checked={showTrade}
+                  onChange={(e) => setShowTrade(e.target.checked)}
+                  style={{ accentColor: '#C9A227' }}
+                />
+                Show Trade Routes
+              </label>
+            </div>
+          </div>
+
+          {/* Empire List */}
+          <div>
+            <h3 style={{
+              fontSize: '18px',
+              fontWeight: '700',
+              color: '#C9A227',
+              margin: '0 0 16px 0'
+            }}>
+              Active Empires
+            </h3>
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              {Object.entries(empires).map(([name, empire]) => {
+                const data = getCurrentEmpireData(name);
+                if (data.size === 0) return null;
+                
+                return (
+                  <div
+                    key={name}
+                    onClick={() => setSelectedEmpire(selectedEmpire === name ? null : name)}
+                    style={{
+                      padding: '12px',
+                      backgroundColor: selectedEmpire === name ? '#141419' : 'transparent',
+                      border: `2px solid ${selectedEmpire === name ? empire.color : 'transparent'}`,
+                      borderRadius: '8px',
+                      cursor: 'pointer',
+                      transition: 'all 0.2s ease'
+                    }}
+                  >
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      marginBottom: '4px'
+                    }}>
+                      <div style={{
+                        width: '12px',
+                        height: '12px',
+                        backgroundColor: empire.color,
+                        borderRadius: '50%'
+                      }} />
+                      <span style={{ fontWeight: '600', fontSize: '14px' }}>{name}</span>
+                    </div>
+                    
+                    <div style={{ fontSize: '12px', color: '#9CA3AF' }}>
+                      <div>Power: {data.power}% • Pop: {formatNumber(data.population)}</div>
+                      <div style={{ color: getEraColor(empire.era) }}>{empire.type}</div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
-      </nav>
 
-      <div style={{ display: 'flex', height: 'calc(100vh - 80px)' }}>
         {/* Main Map */}
-        <div style={{ flex: 1, position: 'relative', backgroundColor: '#141419' }}>
-          {/* Controls */}
-          <div style={{ 
-            position: 'absolute', 
-            top: '1rem', 
-            left: '1rem', 
-            zIndex: 10,
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '1rem'
+        <div style={{ flex: 1 }}>
+          <div style={{
+            backgroundColor: '#1E1E24',
+            borderRadius: '16px',
+            padding: '24px',
+            border: '1px solid #141419',
+            position: 'relative',
+            overflow: 'hidden'
           }}>
-            {/* Time Control */}
-            <div style={{ 
-              backgroundColor: '#1E1E24', 
-              padding: '1rem', 
-              borderRadius: '8px',
-              border: '1px solid #2D2D35',
-              minWidth: '300px'
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
-                <span style={{ fontWeight: '600', color: '#C9A227' }}>Temporal Navigation</span>
-                <div style={{ display: 'flex', gap: '0.5rem' }}>
-                  <button
-                    onClick={() => setIsPlaying(!isPlaying)}
-                    style={{
-                      backgroundColor: isPlaying ? '#DC2626' : '#059669',
-                      color: 'white',
-                      border: 'none',
-                      padding: '0.5rem 1rem',
-                      borderRadius: '4px',
-                      cursor: 'pointer',
-                      fontSize: '0.875rem',
-                      transition: 'all 0.2s'
-                    }}
-                  >
-                    {isPlaying ? 'Pause' : 'Play'}
-                  </button>
-                </div>
-              </div>
+            <svg
+              width="100%"
+              height="600"
+              viewBox="0 0 1200 600"
+              style={{ backgroundColor: '#141419', borderRadius: '12px' }}
+            >
+              {/* Background Grid */}
+              <defs>
+                <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#6B7280" strokeWidth="0.5" opacity="0.3"/>
+                </pattern>
+                
+                {/* Glowing Effects */}
+                <filter id="glow">
+                  <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                  <feMerge> 
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+                
+                <filter id="influence-glow">
+                  <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+                  <feMerge> 
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
               
-              <div style={{ marginBottom: '0.75rem' }}>
-                <input
-                  type="range"
-                  min="100"
-                  max="600"
-                  step="50"
-                  value={currentYear}
-                  onChange={(e) => setCurrentYear(Number(e.target.value))}
-                  style={{
-                    width: '100%',
-                    height: '6px',
-                    backgroundColor: '#2D2D35',
-                    outline: 'none',
-                    borderRadius: '3px'
-                  }}
-                />
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', color: '#6B7280', marginTop: '0.25rem' }}>
-                  <span>100 CE</span>
-                  <span>350 CE</span>
-                  <span>600 CE</span>
-                </div>
-              </div>
+              <rect width="100%" height="100%" fill="url(#grid)" />
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                <label style={{ fontSize: '0.875rem', color: '#9CA3AF' }}>Speed:</label>
-                <select 
-                  value={playSpeed}
-                  onChange={(e) => setPlaySpeed(Number(e.target.value))}
-                  style={{
-                    backgroundColor: '#141419',
-                    color: '#F5F4F2',
-                    border: '1px solid #2D2D35',
-                    padding: '0.25rem 0.5rem',
-                    borderRadius: '4px'
-                  }}
-                >
-                  <option value={0.5}>0.5x</option>
-                  <option value={1}>1x</option>
-                  <option value={2}>2x</option>
-                  <option value={4}>4x</option>
-                </select>
-              </div>
-            </div>
-
-            {/* Display Options */}
-            <div style={{ 
-              backgroundColor: '#1E1E24', 
-              padding: '1rem', 
-              borderRadius: '8px',
-              border: '1px solid #2D2D35'
-            }}>
-              <div style={{ fontWeight: '600', color: '#C9A227', marginBottom: '0.75rem' }}>
-                Display Options
-              </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem' }}>
-                  <input 
-                    type="checkbox"
-                    checked={showInfluence}
-                    onChange={(e) => setShowInfluence(e.target.checked)}
-                    style={{ accentColor: '#C9A227' }}
-                  />
-                  <span>Spheres of Influence</span>
-                </label>
-                <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem' }}>
-                  <input 
-                    type="checkbox"
-                    checked={showTrade}
-                    onChange={(e) => setShowTrade(e.target.checked)}
-                    style={{ accentColor: '#C9A227' }}
-                  />
-                  <span>Trade Routes</span>
-                </label>
-              </div>
-            </div>
-          </div>
-
-          {/* SVG Map */}
-          <svg 
-            width="100%" 
-            height="100%" 
-            viewBox="0 0 800 500"
-            style={{ backgroundColor: '#0D0D0F' }}
-          >
-            <defs>
-              <filter id="glow">
-                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                <feMerge> 
-                  <feMergeNode in="coloredBlur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-              </filter>
-              <pattern id="water" patternUnits="userSpaceOnUse" width="4" height="4">
-                <rect width="4" height="4" fill="#1E293B"/>
-                <circle cx="2" cy="2" r="0.5" fill="#334155"/>
-              </pattern>
-            </defs>
-
-            {/* Background Ocean */}
-            <rect width="800" height="500" fill="url(#water)" opacity="0.3"/>
-
-            {/* Mediterranean Sea */}
-            <ellipse cx="350" cy="320" rx="120" ry="40" fill="#1E293B" opacity="0.6"/>
-            <ellipse cx="280" cy="280" rx="60" ry="25" fill="#1E293B" opacity="0.4"/>
-            
-            {/* Black Sea */}
-            <ellipse cx="450" cy="200" rx="50" ry="25" fill="#1E293B" opacity="0.6"/>
-
-            {/* Trade Routes */}
-            {showTrade && tradeRoutes.map((route, index) => (
-              <g key={index}>
-                <line
-                  x1={300 + index * 40}
-                  y1={200 + index * 20}
-                  x2={500 + index * 30}
-                  y2={300 + index * 15}
-                  stroke="#C9A227"
-                  strokeWidth="2"
-                  strokeDasharray="5,5"
-                  opacity="0.6"
-                >
-                  <animate attributeName="stroke-dashoffset" values="0;10" dur="2s" repeatCount="indefinite"/>
-                </line>
-              </g>
-            ))}
-
-            {/* Territories */}
-            {Object.entries(empires).map(([empireName, empire]) => {
-              const empireData = getEmpireAtYear(empireName, currentYear);
-              if (!empireData || empireData.territories.length === 0) return null;
-
-              return empireData.territories.map((territoryName, index) => {
-                const territory = territories[territoryName as keyof typeof territories];
-                if (!territory) return null;
-
-                const isHovered = hoveredTerritory === territoryName;
-                const isSelected = selectedEmpire === empireName;
-
+              {/* Influence Spheres */}
+              {showInfluence && influenceSpheres.map((sphere, i) => {
+                const data = getCurrentEmpireData(sphere.empire);
+                if (data.size === 0) return null;
+                
+                const empire = empires[sphere.empire as keyof typeof empires];
+                const radius = (sphere.radius * data.power) / 100;
+                
                 return (
-                  <g key={`${empireName}-${territoryName}`}>
-                    {/* Influence Sphere */}
-                    {showInfluence && (
-                      <circle
-                        cx={territory.x}
-                        cy={territory.y}
-                        r={territory.size + 15}
-                        fill={empire.color}
-                        opacity="0.1"
-                        style={{ transition: 'all 0.3s ease' }}
-                      />
-                    )}
-                    
-                    {/* Territory */}
-                    <circle
-                      cx={territory.x}
-                      cy={territory.y}
-                      r={territory.size * (empireData.size / 100)}
-                      fill={empire.color}
-                      opacity={isHovered || isSelected ? 0.8 : 0.6}
-                      stroke={isSelected ? '#C9A227' : empire.color}
-                      strokeWidth={isSelected ? 3 : 1}
-                      style={{ 
-                        cursor: 'pointer',
-                        transition: 'all 0.2s ease',
-                        filter: isHovered ? 'url(#glow)' : 'none'
-                      }}
-                      onMouseEnter={() => setHoveredTerritory(territoryName)}
-                      onMouseLeave={() => setHoveredTerritory(null)}
-                      onClick={() => setSelectedEmpire(selectedEmpire === empireName ? null : empireName)}
-                    />
-
-                    {/* Territory Labels */}
-                    {(isHovered || isSelected) && (
-                      <text
-                        x={territory.x}
-                        y={territory.y - territory.size - 10}
-                        textAnchor="middle"
-                        fill="#F5F4F2"
-                        fontSize="12"
-                        fontWeight="600"
-                        style={{ pointerEvents: 'none' }}
-                      >
-                        {territoryName.replace(/_/g, ' ')}
-                      </text>
-                    )}
-                  </g>
-                );
-              });
-            })}
-
-            {/* Empire Power Indicators */}
-            {Object.entries(empires).map(([empireName, empire]) => {
-              const empireData = getEmpireAtYear(empireName, currentYear);
-              if (!empireData || empireData.territories.length === 0) return null;
-
-              // Calculate center of empire
-              const territories_coords = empireData.territories
-                .map(name => territories[name as keyof typeof territories])
-                .filter(Boolean);
-              
-              const centerX = territories_coords.reduce((sum, t) => sum + t.x, 0) / territories_coords.length;
-              const centerY = territories_coords.reduce((sum, t) => sum + t.y, 0) / territories_coords.length;
-
-              return (
-                <g key={`power-${empireName}`}>
                   <circle
-                    cx={centerX}
-                    cy={centerY}
-                    r={empireData.power / 10}
-                    fill="none"
+                    key={`influence-${i}`}
+                    cx={sphere.x}
+                    cy={sphere.y}
+                    r={radius}
+                    fill={empire.color}
+                    opacity="0.08"
                     stroke={empire.color}
+                    strokeWidth="2"
+                    strokeOpacity="0.3"
+                    filter="url(#influence-glow)"
+                    style={{
+                      transition: 'all 0.3s ease'
+                    }}
+                  />
+                );
+              })}
+
+              {/* Trade Routes */}
+              {showTrade && tradeRoutes.map((route, i) => (
+                <g key={`trade-${i}`}>
+                  <line
+                    x1={route.from.x}
+                    y1={route.from.y}
+                    x2={route.to.x}
+                    y2={route.to.y}
+                    stroke="#C9A227"
                     strokeWidth="3"
-                    opacity="0.4"
                     strokeDasharray="8,4"
+                    opacity="0.7"
+                    filter="url(#glow)"
                   >
-                    <animateTransform
-                      attributeName="transform"
-                      type="rotate"
-                      values={`0 ${centerX} ${centerY};360 ${centerX} ${centerY}`}
-                      dur="20s"
+                    <animate
+                      attributeName="stroke-dashoffset"
+                      values="0;24"
+                      dur="2s"
                       repeatCount="indefinite"
                     />
-                  </circle>
+                  </line>
+                  
+                  <circle cx={route.from.x} cy={route.from.y} r="4" fill="#C9A227" opacity="0.8" />
+                  <circle cx={route.to.x} cy={route.to.y} r="4" fill="#C9A227" opacity="0.8" />
                 </g>
-              );
-            })}
+              ))}
 
-            {/* Year Indicator */}
-            <text x="50" y="450" fill="#C9A227" fontSize="24" fontWeight="bold">
-              {currentYear} CE
-            </text>
-          </svg>
-
-          {/* Hover Tooltip */}
-          {hoveredTerritory && (
-            <div style={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              backgroundColor: '#1E1E24',
-              padding: '1rem',
-              borderRadius: '8px',
-              border: '1px solid #2D2D35',
-              pointerEvents: 'none',
-              zIndex: 20
-            }}>
-              <div style={{ fontWeight: '600', color: '#
+              {/* Territories */}
+              {Object.entries(territories).map(([name, territory]) => {
+                const owner = getTerritoryOwner(name);
+                const isHovered = hoveredTerritory === name;
+                
+                return (
+                  <g key={name}>
+                    <rect
+                      x={territory.x}
+                      y={territory.y}
+                

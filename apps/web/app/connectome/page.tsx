@@ -212,11 +212,23 @@ const CONCEPTS: Node[] = [
     type: 'concept',
     era: 'classical',
     language: 'greek',
-    x: 350,
-    y: 420,
+    x: 320,
+    y: 350,
+    radius: 24,
+    description: 'Art of persuasion through structured argumentation and stylistic devices.',
+    connections: ['cicero', 'philosophy']
+  },
+  {
+    id: 'ethics',
+    name: 'Ethics',
+    type: 'concept',
+    era: 'classical',
+    language: 'greek',
+    x: 480,
+    y: 280,
     radius: 26,
-    description: 'Art of persuasive speaking through logos, pathos, and ethos in judicial, deliberative, and epideictic contexts.',
-    connections: ['cicero', 'aristotle']
+    description: 'Systematic study of moral principles and virtuous action.',
+    connections: ['aristotle', 'seneca', 'stoicism']
   },
   {
     id: 'tragic-form',
@@ -224,11 +236,11 @@ const CONCEPTS: Node[] = [
     type: 'concept',
     era: 'classical',
     language: 'greek',
-    x: 50,
-    y: 350,
-    radius: 24,
-    description: 'Dramatic structure achieving κάθαρσις through μίμησις of serious action with περιπέτεια and ἀναγνώρισις.',
-    connections: ['sophocles', 'aristotle', 'seneca']
+    x: 80,
+    y: 320,
+    radius: 23,
+    description: 'Dramatic structure exploring hubris, hamartia, and cathartic resolution.',
+    connections: ['sophocles', 'seneca']
   },
   {
     id: 'divine-order',
@@ -236,137 +248,76 @@ const CONCEPTS: Node[] = [
     type: 'concept',
     era: 'archaic',
     language: 'greek',
-    x: 450,
-    y: 50,
-    radius: 23,
-    description: 'Cosmic hierarchy from primordial Χάος through Titanomachy to Olympian sovereignty.',
-    connections: ['hesiod', 'plato']
-  },
-  {
-    id: 'fate-fortune',
-    name: 'Fate & Fortune',
-    type: 'concept',
-    era: 'classical',
-    language: 'greek',
-    x: 80,
-    y: 450,
-    radius: 27,
-    description: 'Tension between μοῖρα (fate), τύχη (fortune), and human agency in determining outcomes.',
-    connections: ['sophocles', 'seneca']
-  }
-];
-
-const WORKS: Node[] = [
-  {
-    id: 'iliad',
-    name: 'Ἰλιάς (Iliad)',
-    type: 'work',
-    era: 'archaic',
-    language: 'greek',
-    x: 150,
+    x: 420,
     y: 120,
     radius: 20,
-    description: 'Epic of Achilles\' wrath during the Trojan War. Foundational text for heroic poetry and tragic themes.',
-    connections: ['homer', 'epic-tradition', 'heroic-code']
-  },
-  {
-    id: 'republic',
-    name: 'Πολιτεία (Republic)',
-    type: 'work',
-    era: 'classical', 
-    language: 'greek',
-    x: 320,
-    y: 180,
-    radius: 18,
-    description: 'Philosophical dialogue on justice, ideal state, and the philosopher-king through the Cave allegory.',
-    connections: ['plato', 'philosophy']
-  },
-  {
-    id: 'aeneid',
-    name: 'Aeneis',
-    type: 'work',
-    era: 'imperial',
-    language: 'latin',
-    x: 200,
-    y: 350,
-    radius: 19,
-    description: 'National epic tracing Trojan origins of Rome through pietas and imperial destiny.',
-    connections: ['virgil', 'homer', 'epic-tradition']
+    description: 'Cosmic hierarchy and theological systematization of divine powers.',
+    connections: ['hesiod', 'plato']
   }
 ];
 
-const ALL_NODES = [...AUTHORS, ...CONCEPTS, ...WORKS];
-
 const EDGES: Edge[] = [
-  { source: 'homer', target: 'virgil', strength: 0.9, type: 'influence', description: 'Virgil models the Aeneid on Homeric epic structure and themes' },
-  { source: 'plato', target: 'aristotle', strength: 0.8, type: 'influence', description: 'Aristotle develops and critiques Platonic philosophy' },
-  { source: 'aristotle', target: 'cicero', strength: 0.7, type: 'reference', description: 'Cicero adapts Aristotelian ethics and politics for Roman context' },
-  { source: 'sophocles', target: 'seneca', strength: 0.6, type: 'influence', description: 'Seneca adapts Sophoclean tragic themes for Roman stage' },
-  { source: 'homer', target: 'epic-tradition', strength: 0.9, type: 'conceptual', description: 'Homer establishes the epic formulaic tradition' },
-  { source: 'plato', target: 'philosophy', strength: 0.8, type: 'conceptual', description: 'Plato systematizes philosophical inquiry through dialectic' },
-  { source: 'aristotle', target: 'philosophy', strength: 0.8, type: 'conceptual', description: 'Aristotle creates comprehensive philosophical system' },
-  { source: 'seneca', target: 'stoicism', strength: 0.7, type: 'conceptual', description: 'Seneca develops Roman Stoic practical ethics' },
-  { source: 'cicero', target: 'rhetoric', strength: 0.8, type: 'conceptual', description: 'Cicero perfects the art of Roman oratory' },
-  { source: 'sophocles', target: 'tragic-form', strength: 0.7, type: 'conceptual', description: 'Sophocles masters Attic tragic dramatic structure' },
-  { source: 'hesiod', target: 'divine-order', strength: 0.8, type: 'conceptual', description: 'Hesiod systematizes Greek theogonic mythology' }
+  { source: 'homer', target: 'virgil', strength: 0.9, type: 'influence', description: 'Virgil models the Aeneid on Homeric epic structure' },
+  { source: 'homer', target: 'epic-tradition', strength: 0.95, type: 'conceptual', description: 'Homer establishes the epic tradition' },
+  { source: 'plato', target: 'aristotle', strength: 0.85, type: 'influence', description: 'Aristotle studies under Plato but develops opposing theories' },
+  { source: 'plato', target: 'cicero', strength: 0.7, type: 'influence', description: 'Cicero transmits Platonic philosophy to Rome' },
+  { source: 'aristotle', target: 'seneca', strength: 0.6, type: 'influence', description: 'Seneca adapts Aristotelian ethics to Stoicism' },
+  { source: 'sophocles', target: 'seneca', strength: 0.8, type: 'influence', description: 'Seneca adapts Sophoclean tragedies for Roman stage' },
+  { source: 'philosophy', target: 'plato', strength: 0.9, type: 'conceptual', description: 'Plato systematizes philosophical method' },
+  { source: 'philosophy', target: 'aristotle', strength: 0.9, type: 'conceptual', description: 'Aristotle creates systematic philosophy' },
+  { source: 'stoicism', target: 'seneca', strength: 0.85, type: 'conceptual', description: 'Seneca develops Roman Stoic practice' },
+  { source: 'heroic-code', target: 'homer', strength: 0.8, type: 'conceptual', description: 'Homeric epics embody heroic values' },
+  { source: 'rhetoric', target: 'cicero', strength: 0.9, type: 'conceptual', description: 'Cicero masters and theorizes rhetoric' }
 ];
 
 const ERA_COLORS = {
-  'archaic': '#D97706',
-  'classical': '#F59E0B',
-  'hellenistic': '#3B82F6', 
-  'imperial': '#DC2626',
+  archaic: '#D97706',
+  classical: '#F59E0B',
+  hellenistic: '#3B82F6',
+  imperial: '#DC2626',
   'late-antique': '#7C3AED',
-  'byzantine': '#059669'
+  byzantine: '#059669'
 };
 
-export default function ConnectomePage() {
+const ALL_NODES = [...AUTHORS, ...CONCEPTS];
+
+export default function ClassicalNetwork() {
+  const svgRef = useRef<SVGSVGElement>(null);
   const [selectedNode, setSelectedNode] = useState<Node | null>(null);
-  const [hoveredNode, setHoveredNode] = useState<string | null>(null);
-  const [filterEra, setFilterEra] = useState<string>('all');
-  const [filterType, setFilterType] = useState<string>('all');
-  const [filterLanguage, setFilterLanguage] = useState<string>('all');
-  const [showEdges, setShowEdges] = useState(true);
+  const [hoveredNode, setHoveredNode] = useState<Node | null>(null);
   const [transform, setTransform] = useState<Transform>({ x: 0, y: 0, scale: 1 });
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+  const [animatedConnections, setAnimatedConnections] = useState<Set<string>>(new Set());
 
-  const svgRef = useRef<SVGSVGElement>(null);
+  const getNodeConnections = useCallback((nodeId: string) => {
+    return EDGES.filter(edge => edge.source === nodeId || edge.target === nodeId);
+  }, []);
 
-  const filteredNodes = ALL_NODES.filter(node => {
-    if (filterEra !== 'all' && node.era !== filterEra) return false;
-    if (filterType !== 'all' && node.type !== filterType) return false;
-    if (filterLanguage !== 'all' && node.language !== filterLanguage) return false;
-    return true;
-  });
+  const getConnectedNodeIds = useCallback((nodeId: string) => {
+    const connections = getNodeConnections(nodeId);
+    return connections.map(edge => edge.source === nodeId ? edge.target : edge.source);
+  }, [getNodeConnections]);
 
-  const filteredEdges = EDGES.filter(edge => {
-    const sourceNode = filteredNodes.find(n => n.id === edge.source);
-    const targetNode = filteredNodes.find(n => n.id === edge.target);
-    return sourceNode && targetNode;
-  });
+  const handleNodeClick = useCallback((node: Node) => {
+    setSelectedNode(node);
+    const connectedIds = getConnectedNodeIds(node.id);
+    const connectionSet = new Set([node.id, ...connectedIds]);
+    setAnimatedConnections(connectionSet);
+  }, [getConnectedNodeIds]);
 
-  const getConnectedNodes = (nodeId: string): string[] => {
-    const connections = new Set<string>();
-    filteredEdges.forEach(edge => {
-      if (edge.source === nodeId) connections.add(edge.target);
-      if (edge.target === nodeId) connections.add(edge.source);
-    });
-    return Array.from(connections);
-  };
+  const handleNodeHover = useCallback((node: Node | null) => {
+    setHoveredNode(node);
+  }, []);
 
-  const handleNodeClick = (node: Node) => {
-    setSelectedNode(selectedNode?.id === node.id ? null : node);
-  };
-
-  const handleMouseDown = (e: React.MouseEvent) => {
+  const handleMouseDown = useCallback((e: React.MouseEvent) => {
     if (e.target === svgRef.current) {
       setIsDragging(true);
       setDragStart({ x: e.clientX - transform.x, y: e.clientY - transform.y });
     }
-  };
+  }, [transform]);
 
-  const handleMouseMove = (e: React.MouseEvent) => {
+  const handleMouseMove = useCallback((e: React.MouseEvent) => {
     if (isDragging) {
       setTransform(prev => ({
         ...prev,
@@ -374,187 +325,227 @@ export default function ConnectomePage() {
         y: e.clientY - dragStart.y
       }));
     }
-  };
+  }, [isDragging, dragStart]);
 
-  const handleMouseUp = () => {
+  const handleMouseUp = useCallback(() => {
     setIsDragging(false);
-  };
+  }, []);
 
-  const handleWheel = (e: React.WheelEvent) => {
+  const handleWheel = useCallback((e: React.WheelEvent) => {
     e.preventDefault();
-    const scaleFactor = e.deltaY > 0 ? 0.9 : 1.1;
+    const delta = e.deltaY > 0 ? 0.9 : 1.1;
     setTransform(prev => ({
       ...prev,
-      scale: Math.max(0.3, Math.min(3, prev.scale * scaleFactor))
+      scale: Math.max(0.3, Math.min(3, prev.scale * delta))
     }));
-  };
+  }, []);
 
-  const resetView = () => {
-    setTransform({ x: 0, y: 0, scale: 1 });
-  };
+  const isNodeHighlighted = useCallback((nodeId: string) => {
+    if (!selectedNode && !hoveredNode) return true;
+    const targetNode = selectedNode || hoveredNode;
+    if (!targetNode) return true;
+    
+    return nodeId === targetNode.id || getConnectedNodeIds(targetNode.id).includes(nodeId);
+  }, [selectedNode, hoveredNode, getConnectedNodeIds]);
+
+  const isEdgeHighlighted = useCallback((edge: Edge) => {
+    if (!selectedNode && !hoveredNode) return false;
+    const targetNode = selectedNode || hoveredNode;
+    if (!targetNode) return false;
+    
+    return edge.source === targetNode.id || edge.target === targetNode.id;
+  }, [selectedNode, hoveredNode]);
+
+  const renderNode = useCallback((node: Node) => {
+    const highlighted = isNodeHighlighted(node.id);
+    const isSelected = selectedNode?.id === node.id;
+    const isHovered = hoveredNode?.id === node.id;
+    const isAnimated = animatedConnections.has(node.id);
+    
+    const baseColor = ERA_COLORS[node.era as keyof typeof ERA_COLORS];
+    const opacity = highlighted ? 1 : 0.3;
+    const scale = isSelected ? 1.3 : isHovered ? 1.15 : 1;
+    const strokeWidth = isSelected ? 4 : isHovered ? 3 : 2;
+
+    return (
+      <g key={node.id}>
+        {/* Pulsing animation for connected nodes */}
+        {isAnimated && !isSelected && (
+          <circle
+            cx={node.x}
+            cy={node.y}
+            r={node.radius + 10}
+            fill="none"
+            stroke={baseColor}
+            strokeWidth="2"
+            opacity="0.6"
+            style={{
+              animation: 'pulse 2s infinite',
+              transformOrigin: `${node.x}px ${node.y}px`
+            }}
+          />
+        )}
+        
+        {/* Main node circle */}
+        <circle
+          cx={node.x}
+          cy={node.y}
+          r={node.radius}
+          fill={`${baseColor}${highlighted ? 'CC' : '66'}`}
+          stroke={baseColor}
+          strokeWidth={strokeWidth}
+          opacity={opacity}
+          style={{
+            cursor: 'pointer',
+            transform: `scale(${scale})`,
+            transformOrigin: `${node.x}px ${node.y}px`,
+            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+            filter: isSelected ? 'drop-shadow(0 0 20px rgba(201, 162, 39, 0.6))' : 'none'
+          }}
+          onClick={() => handleNodeClick(node)}
+          onMouseEnter={() => handleNodeHover(node)}
+          onMouseLeave={() => handleNodeHover(null)}
+        />
+
+        {/* Language indicator */}
+        <circle
+          cx={node.x + node.radius * 0.6}
+          cy={node.y - node.radius * 0.6}
+          r={8}
+          fill={node.language === 'greek' ? '#3B82F6' : '#DC2626'}
+          stroke="#F5F4F2"
+          strokeWidth="2"
+          opacity={opacity}
+          style={{
+            transform: `scale(${scale})`,
+            transformOrigin: `${node.x}px ${node.y}px`,
+            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+          }}
+        />
+        <text
+          x={node.x + node.radius * 0.6}
+          y={node.y - node.radius * 0.6}
+          textAnchor="middle"
+          dominantBaseline="middle"
+          style={{
+            fontSize: '10px',
+            fontWeight: 'bold',
+            fill: '#F5F4F2',
+            opacity: opacity,
+            transform: `scale(${scale})`,
+            transformOrigin: `${node.x}px ${node.y}px`,
+            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+            pointerEvents: 'none'
+          }}
+        >
+          {node.language === 'greek' ? 'Α' : 'L'}
+        </text>
+
+        {/* Node label */}
+        <text
+          x={node.x}
+          y={node.y + node.radius + 20}
+          textAnchor="middle"
+          style={{
+            fontSize: node.type === 'author' ? '14px' : '12px',
+            fontWeight: node.type === 'author' ? 'bold' : 'normal',
+            fill: highlighted ? '#F5F4F2' : '#9CA3AF',
+            opacity: opacity,
+            transform: `scale(${scale})`,
+            transformOrigin: `${node.x}px ${node.y}px`,
+            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+            pointerEvents: 'none'
+          }}
+        >
+          {node.name.length > 20 ? node.name.substring(0, 17) + '...' : node.name}
+        </text>
+      </g>
+    );
+  }, [selectedNode, hoveredNode, animatedConnections, isNodeHighlighted, handleNodeClick, handleNodeHover]);
+
+  const renderEdge = useCallback((edge: Edge) => {
+    const sourceNode = ALL_NODES.find(n => n.id === edge.source);
+    const targetNode = ALL_NODES.find(n => n.id === edge.target);
+    
+    if (!sourceNode || !targetNode) return null;
+
+    const highlighted = isEdgeHighlighted(edge);
+    const opacity = highlighted ? 0.8 : 0.1;
+    const strokeWidth = highlighted ? 3 : 1;
+
+    return (
+      <g key={`${edge.source}-${edge.target}`}>
+        {/* Connection line */}
+        <line
+          x1={sourceNode.x}
+          y1={sourceNode.y}
+          x2={targetNode.x}
+          y2={targetNode.y}
+          stroke="#C9A227"
+          strokeWidth={strokeWidth}
+          opacity={opacity}
+          strokeDasharray={edge.type === 'influence' ? 'none' : '5,5'}
+          style={{
+            transition: 'all 0.3s ease'
+          }}
+        />
+        
+        {/* Animated flow particles for highlighted connections */}
+        {highlighted && (
+          <circle
+            r="3"
+            fill="#C9A227"
+            opacity="0.8"
+          >
+            <animateMotion
+              dur="3s"
+              repeatCount="indefinite"
+              path={`M${sourceNode.x},${sourceNode.y} L${targetNode.x},${targetNode.y}`}
+            />
+          </circle>
+        )}
+      </g>
+    );
+  }, [isEdgeHighlighted]);
 
   return (
     <div style={{ 
-      minHeight: '100vh', 
       backgroundColor: '#0D0D0F', 
+      minHeight: '100vh', 
       color: '#F5F4F2',
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+      fontFamily: 'system-ui, -apple-system, sans-serif'
     }}>
       {/* Header */}
-      <header style={{ 
-        backgroundColor: '#141419', 
+      <div style={{
+        padding: '2rem',
         borderBottom: '1px solid #1E1E24',
-        padding: '1rem 2rem'
+        backgroundColor: '#141419'
       }}>
-        <div style={{ maxWidth: '1400px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <div>
-            <Link href="/" style={{ color: '#C9A227', textDecoration: 'none', fontSize: '1.5rem', fontWeight: 'bold' }}>
-              📚 Logos
-            </Link>
-            <h1 style={{ margin: '0.5rem 0 0 0', fontSize: '1.8rem', fontWeight: '700' }}>
-              Textual Connectome
-            </h1>
-            <p style={{ margin: '0.25rem 0 0 0', color: '#9CA3AF', fontSize: '0.95rem' }}>
-              Interactive network of authors, works, and concepts in classical antiquity
-            </p>
-          </div>
-          <button
-            onClick={resetView}
-            style={{
-              backgroundColor: '#C9A227',
-              color: '#0D0D0F',
-              border: 'none',
-              borderRadius: '6px',
-              padding: '0.5rem 1rem',
-              fontSize: '0.875rem',
-              fontWeight: '500',
-              cursor: 'pointer',
-              transition: 'all 0.2s ease'
-            }}
-            onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#E5B429'}
-            onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#C9A227'}
-          >
-            Reset View
-          </button>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <h1 style={{
+            fontSize: '2.5rem',
+            fontWeight: 'bold',
+            marginBottom: '0.5rem',
+            background: 'linear-gradient(135deg, #C9A227, #F59E0B)',
+            backgroundClip: 'text',
+            WebkitBackgroundClip: 'text',
+            color: 'transparent'
+          }}>
+            Classical Network
+          </h1>
+          <p style={{ color: '#9CA3AF', fontSize: '1.1rem', lineHeight: '1.6' }}>
+            Interactive visualization of intellectual connections in Classical Antiquity
+          </p>
         </div>
-      </header>
+      </div>
 
       <div style={{ display: 'flex', height: 'calc(100vh - 120px)' }}>
-        {/* Controls Panel */}
-        <div style={{ 
-          width: '300px', 
-          backgroundColor: '#1E1E24', 
-          padding: '1.5rem',
-          borderRight: '1px solid #141419',
-          overflowY: 'auto'
-        }}>
-          <h3 style={{ margin: '0 0 1rem 0', color: '#C9A227', fontSize: '1.1rem' }}>Filters</h3>
-          
-          <div style={{ marginBottom: '1rem' }}>
-            <label style={{ display: 'block', fontSize: '0.875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>
-              Era
-            </label>
-            <select 
-              value={filterEra}
-              onChange={(e) => setFilterEra(e.target.value)}
-              style={{
-                width: '100%',
-                backgroundColor: '#141419',
-                color: '#F5F4F2',
-                border: '1px solid #6B7280',
-                borderRadius: '4px',
-                padding: '0.5rem',
-                fontSize: '0.875rem'
-              }}
-            >
-              <option value="all">All Eras</option>
-              <option value="archaic">Archaic (800-500 BCE)</option>
-              <option value="classical">Classical (500-323 BCE)</option>
-              <option value="hellenistic">Hellenistic (323-31 BCE)</option>
-              <option value="imperial">Imperial (31 BCE-284 CE)</option>
-            </select>
-          </div>
-
-          <div style={{ marginBottom: '1rem' }}>
-            <label style={{ display: 'block', fontSize: '0.875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>
-              Type
-            </label>
-            <select 
-              value={filterType}
-              onChange={(e) => setFilterType(e.target.value)}
-              style={{
-                width: '100%',
-                backgroundColor: '#141419',
-                color: '#F5F4F2',
-                border: '1px solid #6B7280',
-                borderRadius: '4px',
-                padding: '0.5rem',
-                fontSize: '0.875rem'
-              }}
-            >
-              <option value="all">All Types</option>
-              <option value="author">Authors</option>
-              <option value="work">Works</option>
-              <option value="concept">Concepts</option>
-            </select>
-          </div>
-
-          <div style={{ marginBottom: '1rem' }}>
-            <label style={{ display: 'block', fontSize: '0.875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>
-              Language
-            </label>
-            <select 
-              value={filterLanguage}
-              onChange={(e) => setFilterLanguage(e.target.value)}
-              style={{
-                width: '100%',
-                backgroundColor: '#141419',
-                color: '#F5F4F2',
-                border: '1px solid #6B7280',
-                borderRadius: '4px',
-                padding: '0.5rem',
-                fontSize: '0.875rem'
-              }}
-            >
-              <option value="all">All Languages</option>
-              <option value="greek">Greek</option>
-              <option value="latin">Latin</option>
-            </select>
-          </div>
-
-          <div style={{ marginBottom: '1.5rem' }}>
-            <label style={{ display: 'flex', alignItems: 'center', fontSize: '0.875rem', color: '#9CA3AF' }}>
-              <input
-                type="checkbox"
-                checked={showEdges}
-                onChange={(e) => setShowEdges(e.target.checked)}
-                style={{ marginRight: '0.5rem' }}
-              />
-              Show Connections
-            </label>
-          </div>
-
-          <div>
-            <h4 style={{ margin: '0 0 0.5rem 0', color: '#C9A227', fontSize: '0.95rem' }}>Legend</h4>
-            <div style={{ fontSize: '0.8rem', lineHeight: '1.4' }}>
-              <div style={{ marginBottom: '0.5rem' }}>
-                <span style={{ color: '#3B82F6' }}>●</span> Authors (Greek)
-              </div>
-              <div style={{ marginBottom: '0.5rem' }}>
-                <span style={{ color: '#DC2626' }}>●</span> Authors (Latin)
-              </div>
-              <div style={{ marginBottom: '0.5rem' }}>
-                <span style={{ color: '#9CA3AF' }}>◆</span> Works
-              </div>
-              <div style={{ marginBottom: '0.5rem' }}>
-                <span style={{ color: '#C9A227' }}>▲</span> Concepts
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Network Visualization */}
-        <div style={{ flex: 1, position: 'relative', backgroundColor: '#0D0D0F' }}>
+        <div style={{ 
+          flex: 1, 
+          position: 'relative',
+          overflow: 'hidden'
+        }}>
           <svg
             ref={svgRef}
             width="100%"
@@ -567,124 +558,156 @@ export default function ConnectomePage() {
             onWheel={handleWheel}
           >
             <defs>
+              <style>
+                {`
+                  @keyframes pulse {
+                    0%, 100% { opacity: 0.6; transform: scale(1); }
+                    50% { opacity: 1; transform: scale(1.1); }
+                  }
+                  @keyframes flow {
+                    0% { stroke-dashoffset: 20; }
+                    100% { stroke-dashoffset: 0; }
+                  }
+                `}
+              </style>
               <filter id="glow">
                 <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                <feMerge>
+                <feMerge> 
                   <feMergeNode in="coloredBlur"/>
                   <feMergeNode in="SourceGraphic"/>
                 </feMerge>
               </filter>
             </defs>
-
+            
             <g transform={`translate(${transform.x}, ${transform.y}) scale(${transform.scale})`}>
-              {/* Edges */}
-              {showEdges && filteredEdges.map((edge, index) => {
-                const sourceNode = filteredNodes.find(n => n.id === edge.source);
-                const targetNode = filteredNodes.find(n => n.id === edge.target);
-                if (!sourceNode || !targetNode) return null;
+              {/* Render edges first */}
+              {EDGES.map(renderEdge)}
+              
+              {/* Render nodes */}
+              {ALL_NODES.map(renderNode)}
+            </g>
+          </svg>
 
-                const isHighlighted = selectedNode && (
-                  selectedNode.id === edge.source || selectedNode.id === edge.target
-                );
+          {/* Legend */}
+          <div style={{
+            position: 'absolute',
+            top: '1rem',
+            right: '1rem',
+            backgroundColor: '#1E1E24',
+            padding: '1rem',
+            borderRadius: '8px',
+            border: '1px solid #C9A227',
+            fontSize: '0.875rem'
+          }}>
+            <h3 style={{ marginBottom: '0.75rem', color: '#C9A227', fontWeight: 'bold' }}>Legend</h3>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <div style={{ width: '12px', height: '12px', backgroundColor: '#3B82F6', borderRadius: '50%' }}></div>
+                <span style={{ color: '#9CA3AF' }}>Greek (Α)</span>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <div style={{ width: '12px', height: '12px', backgroundColor: '#DC2626', borderRadius: '50%' }}></div>
+                <span style={{ color: '#9CA3AF' }}>Latin (L)</span>
+              </div>
+            </div>
+          </div>
 
-                return (
-                  <line
-                    key={index}
-                    x1={sourceNode.x}
-                    y1={sourceNode.y}
-                    x2={targetNode.x}
-                    y2={targetNode.y}
-                    stroke={isHighlighted ? '#C9A227' : '#6B7280'}
-                    strokeWidth={isHighlighted ? 2 : 1}
-                    strokeOpacity={isHighlighted ? 0.8 : 0.3}
-                    style={{ transition: 'all 0.3s ease' }}
-                  />
-                );
-              })}
+          {/* Era Legend */}
+          <div style={{
+            position: 'absolute',
+            top: '1rem',
+            left: '1rem',
+            backgroundColor: '#1E1E24',
+            padding: '1rem',
+            borderRadius: '8px',
+            border: '1px solid #C9A227',
+            fontSize: '0.875rem'
+          }}>
+            <h3 style={{ marginBottom: '0.75rem', color: '#C9A227', fontWeight: 'bold' }}>Eras</h3>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+              {Object.entries(ERA_COLORS).map(([era, color]) => (
+                <div key={era} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <div style={{ width: '12px', height: '12px', backgroundColor: color, borderRadius: '2px' }}></div>
+                  <span style={{ color: '#9CA3AF', textTransform: 'capitalize' }}>{era.replace('-', ' ')}</span>
+                </div>
+              ))}
+            </div>
+          </div>
 
-              {/* Nodes */}
-              {filteredNodes.map((node) => {
-                const isSelected = selectedNode?.id === node.id;
-                const isConnected = selectedNode && getConnectedNodes(selectedNode.id).includes(node.id);
-                const isHovered = hoveredNode === node.id;
-                
-                let nodeColor = ERA_COLORS[node.era as keyof typeof ERA_COLORS];
-                if (node.type === 'author') {
-                  nodeColor = node.language === 'greek' ? '#3B82F6' : '#DC2626';
-                } else if (node.type === 'work') {
-                  nodeColor = '#9CA3AF';
-                } else if (node.type === 'concept') {
-                  nodeColor = '#C9A227';
-                }
+          {/* Controls */}
+          <div style={{
+            position: 'absolute',
+            bottom: '1rem',
+            right: '1rem',
+            display: 'flex',
+            gap: '0.5rem'
+          }}>
+            <button
+              onClick={() => setTransform({ x: 0, y: 0, scale: 1 })}
+              style={{
+                padding: '0.5rem 1rem',
+                backgroundColor: '#1E1E24',
+                border: '1px solid #C9A227',
+                borderRadius: '6px',
+                color: '#F5F4F2',
+                cursor: 'pointer',
+                fontSize: '0.875rem',
+                transition: 'all 0.2s'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#C9A227';
+                e.currentTarget.style.color = '#0D0D0F';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#1E1E24';
+                e.currentTarget.style.color = '#F5F4F2';
+              }}
+            >
+              Reset View
+            </button>
+            <button
+              onClick={() => setSelectedNode(null)}
+              style={{
+                padding: '0.5rem 1rem',
+                backgroundColor: '#1E1E24',
+                border: '1px solid #C9A227',
+                borderRadius: '6px',
+                color: '#F5F4F2',
+                cursor: 'pointer',
+                fontSize: '0.875rem',
+                transition: 'all 0.2s'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#C9A227';
+                e.currentTarget.style.color = '#0D0D0F';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#1E1E24';
+                e.currentTarget.style.color = '#F5F4F2';
+              }}
+            >
+              Clear Selection
+            </button>
+          </div>
+        </div>
 
-                const opacity = selectedNode ? (isSelected || isConnected ? 1 : 0.3) : 1;
-
-                return (
-                  <g key={node.id}>
-                    {/* Node shape */}
-                    {node.type === 'author' && (
-                      <circle
-                        cx={node.x}
-                        cy={node.y}
-                        r={node.radius}
-                        fill={nodeColor}
-                        fillOpacity={opacity}
-                        stroke={isSelected ? '#C9A227' : 'transparent'}
-                        strokeWidth={isSelected ? 3 : 0}
-                        style={{ 
-                          cursor: 'pointer',
-                          transition: 'all 0.3s ease',
-                          filter: isHovered ? 'url(#glow)' : 'none'
-                        }}
-                        onClick={() => handleNodeClick(node)}
-                        onMouseEnter={() => setHoveredNode(node.id)}
-                        onMouseLeave={() => setHoveredNode(null)}
-                      />
-                    )}
-                    
-                    {node.type === 'work' && (
-                      <rect
-                        x={node.x - node.radius}
-                        y={node.y - node.radius}
-                        width={node.radius * 2}
-                        height={node.radius * 2}
-                        fill={nodeColor}
-                        fillOpacity={opacity}
-                        stroke={isSelected ? '#C9A227' : 'transparent'}
-                        strokeWidth={isSelected ? 3 : 0}
-                        style={{ 
-                          cursor: 'pointer',
-                          transition: 'all 0.3s ease',
-                          filter: isHovered ? 'url(#glow)' : 'none'
-                        }}
-                        onClick={() => handleNodeClick(node)}
-                        onMouseEnter={() => setHoveredNode(node.id)}
-                        onMouseLeave={() => setHoveredNode(null)}
-                      />
-                    )}
-                    
-                    {node.type === 'concept' && (
-                      <polygon
-                        points={`${node.x},${node.y - node.radius} ${node.x + node.radius},${node.y + node.radius} ${node.x - node.radius},${node.y + node.radius}`}
-                        fill={nodeColor}
-                        fillOpacity={opacity}
-                        stroke={isSelected ? '#C9A227' : 'transparent'}
-                        strokeWidth={isSelected ? 3 : 0}
-                        style={{ 
-                          cursor: 'pointer',
-                          transition: 'all 0.3s ease',
-                          filter: isHovered ? 'url(#glow)' : 'none'
-                        }}
-                        onClick={() => handleNodeClick(node)}
-                        onMouseEnter={() => setHoveredNode(node.id)}
-                        onMouseLeave={() => setHoveredNode(null)}
-                      />
-                    )}
-
-                    {/* Node label */}
-                    <text
-                      x={node.x}
-                      y={node.y + node.radius + 15}
-                      textAnchor="middle"
-                      fill="#F5F4F2"
-                      fillOpacity
+        {/* Detail Panel */}
+        {selectedNode && (
+          <div style={{
+            width: '400px',
+            backgroundColor: '#1E1E24',
+            borderLeft: '1px solid #C9A227',
+            padding: '2rem',
+            overflowY: 'auto'
+          }}>
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              marginBottom: '1.5rem'
+            }}>
+              <h2 style={{ 
+                fontSize: '1.5rem', 
+                fontWeight: 'bold',
+                color: '#C9A227'
+              }

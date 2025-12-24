@@ -14,6 +14,7 @@ export default function ChronosPage() {
   const [embeddingView, setEmbeddingView] = useState<boolean>(false);
   const [showParadigm, setShowParadigm] = useState<boolean>(false);
   const [hoveredEmbedding, setHoveredEmbedding] = useState<string | null>(null);
+  const [selectedEra, setSelectedEra] = useState<number | null>(null);
   const timelineRef = useRef<HTMLDivElement>(null);
 
   const concepts = {
@@ -135,101 +136,56 @@ export default function ChronosPage() {
           example: 'βασιλικὴ ἀρετὴ καὶ εὐσέβεια',
           translation: 'imperial virtue and piety',
           apparatus: 'βασιλικὴ A B : βασιλεία V',
-          context: 'Byzantine court, imperial ideology'
+          context: 'Byzantine court, imperial theology'
         }
       ]
     },
-    'λόγος': {
-      transliteration: 'logos',
-      modern: 'word, reason',
-      lsj: 'LSJ s.v. λόγος: I. word, speech. II. reason, account. III. proportion, ratio',
+    'σοφία': {
+      transliteration: 'sophia',
+      modern: 'wisdom',
+      lsj: 'LSJ s.v. σοφία: I. cleverness or skill in handicraft and art. II. wisdom in matters of conduct',
       paradigm: {
-        nom_sg: 'λόγος',
-        gen_sg: 'λόγου',
-        dat_sg: 'λόγῳ',
-        acc_sg: 'λόγον',
-        nom_pl: 'λόγοι',
-        gen_pl: 'λόγων',
-        dat_pl: 'λόγοις',
-        acc_pl: 'λόγους'
+        nom_sg: 'σοφία',
+        gen_sg: 'σοφίας',
+        dat_sg: 'σοφίᾳ',
+        acc_sg: 'σοφίαν',
+        nom_pl: 'σοφίαι',
+        gen_pl: 'σοφιῶν',
+        dat_pl: 'σοφίαις',
+        acc_pl: 'σοφίας'
       },
       manuscripts: [
-        { siglum: 'A', reading: 'λόγος', confidence: 98 },
-        { siglum: 'B', reading: 'λόγος', confidence: 94 },
-        { siglum: 'V', reading: 'λόγον', confidence: 23 }
+        { siglum: 'A', reading: 'σοφία', confidence: 92 },
+        { siglum: 'B', reading: 'σοφίη', confidence: 25 },
+        { siglum: 'V', reading: 'σοφία', confidence: 90 }
       ],
       embeddings: [
-        { word: 'νοῦς', similarity: 0.85, x: 130, y: 90 },
-        { word: 'διάνοια', similarity: 0.79, x: 190, y: 130 },
-        { word: 'φρόνησις', similarity: 0.76, x: 230, y: 170 },
-        { word: 'ῥῆμα', similarity: 0.74, x: 110, y: 210 },
-        { word: 'μῦθος', similarity: 0.71, x: 270, y: 150 }
+        { word: 'ἐπιστήμη', similarity: 0.91, x: 140, y: 90 },
+        { word: 'φρόνησις', similarity: 0.85, x: 190, y: 130 },
+        { word: 'γνῶσις', similarity: 0.82, x: 120, y: 180 }
       ],
       data: [
         {
           era: 'Archaic',
           period: '800-500 BCE',
-          meaning: 'Speech, tale, word',
-          evolution: 'Basic meaning of spoken word or tale, often contrasted with μῦθος (myth).',
+          meaning: 'Skill, craftmanship',
+          evolution: 'Originally denoted technical skill and expertise in crafts, arts, or practical knowledge.',
           authors: ['Homer', 'Hesiod'],
-          confidence: 89,
+          confidence: 88,
           color: '#D97706',
           year: -800,
           position: 0,
-          example: 'τίπτε με ταῦτα ἕκαστα διείρεαι ἠδὲ μεταλλᾷς;',
-          translation: 'why do you question me about each of these things?',
-          apparatus: 'λόγον A B : λόγος V',
-          context: 'Epic poetry, oral tradition'
+          example: 'τέκτονος σοφίη',
+          translation: 'carpenter\'s skill',
+          apparatus: 'σοφίη A B : σοφία V',
+          context: 'Craft guilds, technical expertise'
         }
       ]
     }
   };
 
-  const availableConcepts = Object.keys(concepts);
-  const currentData = concepts[selectedConcept as keyof typeof concepts];
-
-  const getNodeX = (index: number, total: number) => {
-    const timelineWidth = 1000;
-    const margin = 100;
-    const availableWidth = timelineWidth - (2 * margin);
-    return margin + (index * (availableWidth / (total - 1)));
-  };
-
-  const getWordAnalysis = (word: string) => {
-    const analyses: Record<string, any> = {
-      'ἀνδρὸς': {
-        lemma: 'ἀνήρ',
-        form: 'gen. sg.',
-        meaning: 'of a man',
-        morphology: 'masculine noun, genitive singular'
-      },
-      'ἀρετήν': {
-        lemma: 'ἀρετή',
-        form: 'acc. sg.',
-        meaning: 'excellence, virtue',
-        morphology: 'feminine noun, accusative singular'
-      },
-      'τε': {
-        lemma: 'τε',
-        form: 'particle',
-        meaning: 'and, both',
-        morphology: 'enclitic particle'
-      },
-      'καὶ': {
-        lemma: 'καί',
-        form: 'conjunction',
-        meaning: 'and, also',
-        morphology: 'coordinating conjunction'
-      },
-      'εὐκλείην': {
-        lemma: 'εὐκλεία',
-        form: 'acc. sg.',
-        meaning: 'good fame, glory',
-        morphology: 'feminine noun, accusative singular'
-      }
-    };
-    return analyses[word] || { lemma: word, form: 'unknown', meaning: 'unknown', morphology: 'unknown' };
-  };
+  const conceptKeys = Object.keys(concepts);
+  const currentConcept = concepts[selectedConcept as keyof typeof concepts];
 
   return (
     <div style={{ 
@@ -239,370 +195,417 @@ export default function ChronosPage() {
       fontFamily: 'system-ui, -apple-system, sans-serif'
     }}>
       {/* Header */}
-      <div style={{ 
-        borderBottom: '1px solid #1E1E24',
-        padding: '1rem 2rem',
-        backgroundColor: '#141419'
+      <div style={{
+        background: 'linear-gradient(135deg, #1E1E24 0%, #141419 100%)',
+        borderBottom: '1px solid #C9A227',
+        padding: '20px 0'
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-            <Link href="/" style={{ 
-              color: '#C9A227', 
-              textDecoration: 'none', 
-              fontSize: '1.5rem',
-              fontWeight: 'bold'
-            }}>
-              LOGOS
-            </Link>
-            <div style={{ color: '#6B7280', fontSize: '1.25rem' }}>|</div>
-            <h1 style={{ 
-              margin: 0, 
-              fontSize: '1.5rem', 
+        <div style={{
+          maxWidth: '1400px',
+          margin: '0 auto',
+          padding: '0 24px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between'
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+            <Link href="/" style={{
+              fontSize: '28px',
               fontWeight: 'bold',
-              color: '#F5F4F2'
+              color: '#C9A227',
+              textDecoration: 'none',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px'
             }}>
-              ΧΡΟΝΟΣ • Diachronic Analysis
-            </h1>
+              <svg width="32" height="32" viewBox="0 0 32 32" style={{ fill: '#C9A227' }}>
+                <circle cx="16" cy="16" r="14" stroke="#C9A227" strokeWidth="2" fill="none"/>
+                <path d="M16 6 L16 16 L24 16" stroke="#C9A227" strokeWidth="2" fill="none"/>
+                <circle cx="16" cy="16" r="2" fill="#C9A227"/>
+              </svg>
+              CHRONOS
+            </Link>
+            <div style={{ color: '#9CA3AF', fontSize: '16px' }}>
+              Semantic Evolution Through Time
+            </div>
           </div>
-          <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-            <button
-              onClick={() => setShowApparatus(!showApparatus)}
-              style={{
-                padding: '0.5rem 1rem',
-                backgroundColor: showApparatus ? '#C9A227' : 'transparent',
-                border: `1px solid ${showApparatus ? '#C9A227' : '#6B7280'}`,
-                borderRadius: '0.5rem',
-                color: showApparatus ? '#0D0D0F' : '#F5F4F2',
-                cursor: 'pointer',
-                transition: 'all 0.2s ease'
-              }}
-            >
-              Critical Apparatus
-            </button>
-            <button
-              onClick={() => setEmbeddingView(!embeddingView)}
-              style={{
-                padding: '0.5rem 1rem',
-                backgroundColor: embeddingView ? '#C9A227' : 'transparent',
-                border: `1px solid ${embeddingView ? '#C9A227' : '#6B7280'}`,
-                borderRadius: '0.5rem',
-                color: embeddingView ? '#0D0D0F' : '#F5F4F2',
-                cursor: 'pointer',
-                transition: 'all 0.2s ease'
-              }}
-            >
-              Word Embeddings
-            </button>
-            <button
-              onClick={() => setShowParadigm(!showParadigm)}
-              style={{
-                padding: '0.5rem 1rem',
-                backgroundColor: showParadigm ? '#C9A227' : 'transparent',
-                border: `1px solid ${showParadigm ? '#C9A227' : '#6B7280'}`,
-                borderRadius: '0.5rem',
-                color: showParadigm ? '#0D0D0F' : '#F5F4F2',
-                cursor: 'pointer',
-                transition: 'all 0.2s ease'
-              }}
-            >
-              Paradigm
-            </button>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+            <div style={{ position: 'relative' }}>
+              <button
+                onClick={() => setShowDropdown(!showDropdown)}
+                style={{
+                  backgroundColor: '#1E1E24',
+                  border: '1px solid #C9A227',
+                  borderRadius: '8px',
+                  padding: '12px 20px',
+                  color: '#F5F4F2',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  fontSize: '16px',
+                  transition: 'all 0.2s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#2A2A34';
+                  e.currentTarget.style.boxShadow = '0 0 20px rgba(201, 162, 39, 0.3)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '#1E1E24';
+                  e.currentTarget.style.boxShadow = 'none';
+                }}
+              >
+                <span style={{ 
+                  color: '#3B82F6', 
+                  fontSize: '18px', 
+                  marginRight: '4px' 
+                }}>Α</span>
+                {selectedConcept}
+                <svg width="16" height="16" viewBox="0 0 16 16" style={{ fill: '#9CA3AF', transition: 'transform 0.2s', transform: showDropdown ? 'rotate(180deg)' : 'rotate(0deg)' }}>
+                  <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="2" fill="none"/>
+                </svg>
+              </button>
+
+              {showDropdown && (
+                <div style={{
+                  position: 'absolute',
+                  top: '100%',
+                  left: '0',
+                  right: '0',
+                  backgroundColor: '#1E1E24',
+                  border: '1px solid #C9A227',
+                  borderRadius: '8px',
+                  marginTop: '8px',
+                  zIndex: 1000,
+                  boxShadow: '0 10px 40px rgba(0,0,0,0.3)',
+                  maxHeight: '300px',
+                  overflowY: 'auto'
+                }}>
+                  {conceptKeys.map((concept) => (
+                    <button
+                      key={concept}
+                      onClick={() => {
+                        setSelectedConcept(concept);
+                        setShowDropdown(false);
+                      }}
+                      style={{
+                        width: '100%',
+                        padding: '12px 16px',
+                        backgroundColor: concept === selectedConcept ? 'rgba(201, 162, 39, 0.1)' : 'transparent',
+                        border: 'none',
+                        color: '#F5F4F2',
+                        cursor: 'pointer',
+                        textAlign: 'left',
+                        borderBottom: '1px solid #333',
+                        transition: 'background-color 0.2s'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = 'rgba(201, 162, 39, 0.15)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = concept === selectedConcept ? 'rgba(201, 162, 39, 0.1)' : 'transparent';
+                      }}
+                    >
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <span style={{ color: '#3B82F6', fontSize: '16px' }}>Α</span>
+                        {concept}
+                        <span style={{ color: '#9CA3AF', fontSize: '14px', marginLeft: 'auto' }}>
+                          {concepts[concept as keyof typeof concepts].transliteration}
+                        </span>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <div style={{ display: 'flex', gap: '8px' }}>
+              <button
+                onClick={() => setEmbeddingView(!embeddingView)}
+                style={{
+                  backgroundColor: embeddingView ? '#C9A227' : '#1E1E24',
+                  border: '1px solid #C9A227',
+                  borderRadius: '6px',
+                  padding: '8px 12px',
+                  color: embeddingView ? '#0D0D0F' : '#C9A227',
+                  cursor: 'pointer',
+                  fontSize: '14px',
+                  transition: 'all 0.2s'
+                }}
+              >
+                Embeddings
+              </button>
+              <button
+                onClick={() => setShowParadigm(!showParadigm)}
+                style={{
+                  backgroundColor: showParadigm ? '#C9A227' : '#1E1E24',
+                  border: '1px solid #C9A227',
+                  borderRadius: '6px',
+                  padding: '8px 12px',
+                  color: showParadigm ? '#0D0D0F' : '#C9A227',
+                  cursor: 'pointer',
+                  fontSize: '14px',
+                  transition: 'all 0.2s'
+                }}
+              >
+                Paradigm
+              </button>
+              <button
+                onClick={() => setShowApparatus(!showApparatus)}
+                style={{
+                  backgroundColor: showApparatus ? '#C9A227' : '#1E1E24',
+                  border: '1px solid #C9A227',
+                  borderRadius: '6px',
+                  padding: '8px 12px',
+                  color: showApparatus ? '#0D0D0F' : '#C9A227',
+                  cursor: 'pointer',
+                  fontSize: '14px',
+                  transition: 'all 0.2s'
+                }}
+              >
+                Apparatus
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
-      <div style={{ padding: '2rem' }}>
-        {/* Concept Selector */}
-        <div style={{ marginBottom: '2rem', position: 'relative' }}>
-          <div style={{ marginBottom: '1rem' }}>
-            <h2 style={{ 
-              fontSize: '1.25rem', 
-              fontWeight: 'bold', 
-              color: '#C9A227',
-              margin: '0 0 0.5rem 0'
-            }}>
-              Select Concept for Diachronic Analysis
-            </h2>
-            <p style={{ color: '#9CA3AF', fontSize: '0.9rem', margin: 0 }}>
-              Explore semantic evolution across historical periods with manuscript evidence
-            </p>
-          </div>
-          
-          <div style={{ position: 'relative', display: 'inline-block' }}>
-            <button
-              onClick={() => setShowDropdown(!showDropdown)}
-              style={{
-                padding: '1rem 1.5rem',
-                backgroundColor: '#1E1E24',
-                border: '1px solid #6B7280',
-                borderRadius: '0.75rem',
-                color: '#F5F4F2',
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '1rem',
-                minWidth: '300px',
-                transition: 'all 0.2s ease'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#C9A227';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = '#6B7280';
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flex: 1 }}>
-                <span style={{ 
-                  display: 'inline-block',
-                  width: '8px',
-                  height: '8px',
-                  backgroundColor: '#3B82F6',
-                  borderRadius: '50%'
-                }}>
-                </span>
-                <span style={{ color: '#3B82F6', fontWeight: 'bold' }}>Α</span>
-                <div style={{ textAlign: 'left' }}>
-                  <div style={{ fontWeight: 'bold', fontSize: '1.1rem' }}>{selectedConcept}</div>
-                  <div style={{ color: '#9CA3AF', fontSize: '0.9rem' }}>
-                    {currentData.transliteration} • {currentData.modern}
-                  </div>
-                </div>
-              </div>
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"/>
-              </svg>
-            </button>
-
-            {showDropdown && (
-              <div style={{
-                position: 'absolute',
-                top: '100%',
-                left: 0,
-                right: 0,
-                backgroundColor: '#1E1E24',
-                border: '1px solid #6B7280',
-                borderRadius: '0.75rem',
-                marginTop: '0.5rem',
-                zIndex: 1000,
-                boxShadow: '0 10px 25px rgba(0,0,0,0.5)'
-              }}>
-                {availableConcepts.map((concept) => (
-                  <button
-                    key={concept}
-                    onClick={() => {
-                      setSelectedConcept(concept);
-                      setShowDropdown(false);
-                      setExpandedNode(null);
-                    }}
-                    style={{
-                      width: '100%',
-                      padding: '1rem 1.5rem',
-                      backgroundColor: 'transparent',
-                      border: 'none',
-                      color: concept === selectedConcept ? '#C9A227' : '#F5F4F2',
-                      cursor: 'pointer',
-                      textAlign: 'left',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '0.75rem',
-                      transition: 'all 0.2s ease',
-                      borderBottom: availableConcepts.indexOf(concept) < availableConcepts.length - 1 ? '1px solid #141419' : 'none'
-                    }}
-                    onMouseEnter={(e) => {
-                      if (concept !== selectedConcept) {
-                        e.currentTarget.style.backgroundColor = '#141419';
-                      }
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = 'transparent';
-                    }}
-                  >
-                    <span style={{ 
-                      display: 'inline-block',
-                      width: '6px',
-                      height: '6px',
-                      backgroundColor: '#3B82F6',
-                      borderRadius: '50%'
-                    }}>
-                    </span>
-                    <span style={{ color: '#3B82F6', fontWeight: 'bold', fontSize: '0.8rem' }}>Α</span>
-                    <div>
-                      <div style={{ fontWeight: 'bold' }}>{concept}</div>
-                      <div style={{ color: '#9CA3AF', fontSize: '0.9rem' }}>
-                        {concepts[concept as keyof typeof concepts].transliteration} • {concepts[concept as keyof typeof concepts].modern}
-                      </div>
-                    </div>
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
-
-        {/* LSJ Integration */}
+      {/* Main Content */}
+      <div style={{
+        maxWidth: '1400px',
+        margin: '0 auto',
+        padding: '32px 24px'
+      }}>
+        {/* Concept Header */}
         <div style={{
           backgroundColor: '#1E1E24',
-          borderRadius: '1rem',
-          padding: '1.5rem',
-          marginBottom: '2rem',
-          border: '1px solid #C9A227'
+          borderRadius: '16px',
+          padding: '32px',
+          marginBottom: '32px',
+          border: '1px solid rgba(201, 162, 39, 0.2)',
+          background: 'linear-gradient(135deg, #1E1E24 0%, #1A1A20 100%)'
         }}>
-          <h3 style={{ 
-            margin: '0 0 1rem 0', 
-            color: '#C9A227',
-            fontSize: '1.1rem',
-            fontWeight: 'bold'
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
+            <div style={{
+              backgroundColor: '#3B82F6',
+              color: '#F5F4F2',
+              width: '48px',
+              height: '48px',
+              borderRadius: '12px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '20px',
+              fontWeight: 'bold'
+            }}>
+              Α
+            </div>
+            <div>
+              <h1 style={{
+                fontSize: '48px',
+                fontWeight: 'bold',
+                color: '#F5F4F2',
+                margin: '0 0 8px 0',
+                letterSpacing: '-0.02em'
+              }}>
+                {selectedConcept}
+              </h1>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                <span style={{
+                  fontSize: '20px',
+                  color: '#C9A227',
+                  fontStyle: 'italic'
+                }}>
+                  {currentConcept.transliteration}
+                </span>
+                <span style={{
+                  fontSize: '18px',
+                  color: '#9CA3AF'
+                }}>
+                  "{currentConcept.modern}"
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div style={{
+            backgroundColor: '#141419',
+            borderRadius: '12px',
+            padding: '20px',
+            border: '1px solid rgba(201, 162, 39, 0.1)'
           }}>
-            LSJ Lexicon Entry
-          </h3>
-          <p style={{ 
-            color: '#F5F4F2', 
-            margin: 0, 
-            lineHeight: '1.6',
-            fontStyle: 'italic'
-          }}>
-            {currentData.lsj}
-          </p>
+            <div style={{ color: '#6B7280', fontSize: '14px', marginBottom: '8px' }}>
+              Liddell-Scott-Jones Dictionary
+            </div>
+            <div style={{ color: '#F5F4F2', fontSize: '16px', lineHeight: '1.5' }}>
+              {currentConcept.lsj}
+            </div>
+          </div>
         </div>
 
-        {/* Paradigm Table */}
+        {/* Paradigm Modal */}
         {showParadigm && (
           <div style={{
             backgroundColor: '#1E1E24',
-            borderRadius: '1rem',
-            padding: '1.5rem',
-            marginBottom: '2rem',
-            border: '1px solid #3B82F6'
+            borderRadius: '16px',
+            padding: '32px',
+            marginBottom: '32px',
+            border: '1px solid rgba(201, 162, 39, 0.2)'
           }}>
-            <h3 style={{ 
-              margin: '0 0 1rem 0', 
-              color: '#3B82F6',
-              fontSize: '1.1rem',
-              fontWeight: 'bold'
+            <h3 style={{
+              fontSize: '24px',
+              fontWeight: 'bold',
+              color: '#C9A227',
+              marginBottom: '24px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px'
             }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="#C9A227">
+                <path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" stroke="#C9A227" strokeWidth="2" fill="none"/>
+              </svg>
               Morphological Paradigm
             </h3>
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(2, 1fr)',
-              gap: '1rem'
+              gridTemplateColumns: 'repeat(4, 1fr)',
+              gap: '16px'
             }}>
-              <div>
-                <h4 style={{ color: '#C9A227', margin: '0 0 0.5rem 0' }}>Singular</h4>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '0.5rem', fontSize: '0.9rem' }}>
-                  <span style={{ color: '#9CA3AF' }}>Nom.</span>
-                  <span style={{ color: '#3B82F6', fontWeight: 'bold' }}>{currentData.paradigm.nom_sg}</span>
-                  <span style={{ color: '#9CA3AF' }}>Gen.</span>
-                  <span style={{ color: '#3B82F6', fontWeight: 'bold' }}>{currentData.paradigm.gen_sg}</span>
-                  <span style={{ color: '#9CA3AF' }}>Dat.</span>
-                  <span style={{ color: '#3B82F6', fontWeight: 'bold' }}>{currentData.paradigm.dat_sg}</span>
-                  <span style={{ color: '#9CA3AF' }}>Acc.</span>
-                  <span style={{ color: '#3B82F6', fontWeight: 'bold' }}>{currentData.paradigm.acc_sg}</span>
+              {Object.entries(currentConcept.paradigm).map(([form, word]) => (
+                <div
+                  key={form}
+                  style={{
+                    backgroundColor: '#141419',
+                    borderRadius: '8px',
+                    padding: '16px',
+                    border: '1px solid rgba(201, 162, 39, 0.1)',
+                    transition: 'all 0.2s'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = '#C9A227';
+                    e.currentTarget.style.backgroundColor = 'rgba(201, 162, 39, 0.05)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = 'rgba(201, 162, 39, 0.1)';
+                    e.currentTarget.style.backgroundColor = '#141419';
+                  }}
+                >
+                  <div style={{ 
+                    color: '#9CA3AF', 
+                    fontSize: '12px', 
+                    marginBottom: '8px',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.5px'
+                  }}>
+                    {form.replace('_', ' ')}
+                  </div>
+                  <div style={{ 
+                    color: '#F5F4F2', 
+                    fontSize: '18px',
+                    fontWeight: '500'
+                  }}>
+                    {word}
+                  </div>
                 </div>
-              </div>
-              <div>
-                <h4 style={{ color: '#C9A227', margin: '0 0 0.5rem 0' }}>Plural</h4>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '0.5rem', fontSize: '0.9rem' }}>
-                  <span style={{ color: '#9CA3AF' }}>Nom.</span>
-                  <span style={{ color: '#3B82F6', fontWeight: 'bold' }}>{currentData.paradigm.nom_pl}</span>
-                  <span style={{ color: '#9CA3AF' }}>Gen.</span>
-                  <span style={{ color: '#3B82F6', fontWeight: 'bold' }}>{currentData.paradigm.gen_pl}</span>
-                  <span style={{ color: '#9CA3AF' }}>Dat.</span>
-                  <span style={{ color: '#3B82F6', fontWeight: 'bold' }}>{currentData.paradigm.dat_pl}</span>
-                  <span style={{ color: '#9CA3AF' }}>Acc.</span>
-                  <span style={{ color: '#3B82F6', fontWeight: 'bold' }}>{currentData.paradigm.acc_pl}</span>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         )}
 
-        {/* Word Embeddings Visualization */}
+        {/* Embeddings Visualization */}
         {embeddingView && (
           <div style={{
             backgroundColor: '#1E1E24',
-            borderRadius: '1rem',
-            padding: '1.5rem',
-            marginBottom: '2rem',
-            border: '1px solid #7C3AED'
+            borderRadius: '16px',
+            padding: '32px',
+            marginBottom: '32px',
+            border: '1px solid rgba(201, 162, 39, 0.2)'
           }}>
-            <h3 style={{ 
-              margin: '0 0 1rem 0', 
-              color: '#7C3AED',
-              fontSize: '1.1rem',
-              fontWeight: 'bold'
+            <h3 style={{
+              fontSize: '24px',
+              fontWeight: 'bold',
+              color: '#C9A227',
+              marginBottom: '24px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px'
             }}>
-              Semantic Word Embeddings
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="#C9A227">
+                <circle cx="12" cy="12" r="3" fill="#C9A227"/>
+                <path d="M12 1v6m0 8v6M4.22 4.22l4.24 4.24m8.48 8.48L4.22 4.22M1 12h6m8 0h6" stroke="#C9A227" strokeWidth="2"/>
+              </svg>
+              Semantic Embeddings
             </h3>
-            <div style={{ position: 'relative', width: '100%', height: '300px', backgroundColor: '#141419', borderRadius: '0.5rem' }}>
-              <svg width="100%" height="300" style={{ overflow: 'visible' }}>
-                {/* Central concept */}
+            <div style={{ position: 'relative', height: '400px', backgroundColor: '#141419', borderRadius: '12px' }}>
+              <svg width="100%" height="100%" style={{ position: 'absolute', top: 0, left: 0 }}>
+                {/* Central node */}
                 <circle
                   cx="200"
-                  cy="150"
-                  r="20"
+                  cy="200"
+                  r="16"
                   fill="#C9A227"
                   stroke="#F5F4F2"
-                  strokeWidth="2"
+                  strokeWidth="3"
                 />
                 <text
                   x="200"
-                  y="155"
+                  y="240"
                   textAnchor="middle"
-                  fill="#0D0D0F"
-                  fontSize="12"
+                  fill="#F5F4F2"
+                  fontSize="16"
                   fontWeight="bold"
                 >
                   {selectedConcept}
                 </text>
 
-                {/* Related words */}
-                {currentData.embeddings.map((embedding, index) => (
-                  <g key={index}>
+                {/* Connected nodes */}
+                {currentConcept.embeddings.map((embedding, index) => (
+                  <g key={embedding.word}>
+                    {/* Connection line */}
                     <line
                       x1="200"
-                      y1="150"
+                      y1="200"
                       x2={embedding.x}
                       y2={embedding.y}
-                      stroke="#6B7280"
-                      strokeWidth="1"
-                      opacity="0.5"
+                      stroke="rgba(201, 162, 39, 0.3)"
+                      strokeWidth="2"
+                      opacity={hoveredEmbedding === embedding.word ? 1 : 0.5}
                     />
+                    {/* Node */}
                     <circle
                       cx={embedding.x}
                       cy={embedding.y}
-                      r={8 + (embedding.similarity * 8)}
-                      fill="#7C3AED"
-                      stroke={hoveredEmbedding === embedding.word ? "#C9A227" : "#F5F4F2"}
-                      strokeWidth={hoveredEmbedding === embedding.word ? "2" : "1"}
+                      r={8 + embedding.similarity * 6}
+                      fill="#3B82F6"
+                      stroke={hoveredEmbedding === embedding.word ? "#F5F4F2" : "none"}
+                      strokeWidth="2"
                       style={{ cursor: 'pointer' }}
                       onMouseEnter={() => setHoveredEmbedding(embedding.word)}
                       onMouseLeave={() => setHoveredEmbedding(null)}
                     />
+                    {/* Label */}
                     <text
                       x={embedding.x}
                       y={embedding.y - 20}
                       textAnchor="middle"
-                      fill="#3B82F6"
-                      fontSize="11"
-                      fontWeight="bold"
-                      style={{ cursor: 'pointer' }}
-                      onMouseEnter={() => setHoveredEmbedding(embedding.word)}
-                      onMouseLeave={() => setHoveredEmbedding(null)}
+                      fill="#F5F4F2"
+                      fontSize="12"
+                      opacity={hoveredEmbedding === embedding.word ? 1 : 0.8}
                     >
                       {embedding.word}
                     </text>
-                    {hoveredEmbedding === embedding.word && (
-                      <text
-                        x={embedding.x}
-                        y={embedding.y + 25}
-                        textAnchor="middle"
-                        fill="#9CA3AF"
-                        fontSize="10"
-                      >
-                        {(embedding.similarity * 100).toFixed(1)}% similarity
-                      </text>
-                    )}
+                    {/* Similarity score */}
+                    <text
+                      x={embedding.x}
+                      y={embedding.y + 25}
+                      textAnchor="middle"
+                      fill="#9CA3AF"
+                      fontSize="10"
+                      opacity={hoveredEmbedding === embedding.word ? 1 : 0.6}
+                    >
+                      {(embedding.similarity * 100).toFixed(0)}%
+                    </text>
                   </g>
                 ))}
               </svg>
@@ -611,33 +614,58 @@ export default function ChronosPage() {
         )}
 
         {/* Timeline */}
-        <div ref={timelineRef} style={{
+        <div style={{
           backgroundColor: '#1E1E24',
-          borderRadius: '1rem',
-          padding: '2rem',
-          marginBottom: '2rem'
+          borderRadius: '16px',
+          padding: '32px',
+          border: '1px solid rgba(201, 162, 39, 0.2)',
+          background: 'linear-gradient(135deg, #1E1E24 0%, #1A1A20 100%)'
         }}>
-          <h3 style={{ 
-            margin: '0 0 2rem 0', 
+          <h2 style={{
+            fontSize: '32px',
+            fontWeight: 'bold',
             color: '#C9A227',
-            fontSize: '1.25rem',
-            fontWeight: 'bold'
+            marginBottom: '32px',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '16px'
           }}>
-            Diachronic Evolution Timeline
-          </h3>
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="#C9A227">
+              <path d="M16 2L30 16L16 30L2 16L16 2Z" stroke="#C9A227" strokeWidth="2" fill="none"/>
+              <circle cx="16" cy="16" r="4" fill="#C9A227"/>
+            </svg>
+            Diachronic Evolution
+          </h2>
 
-          <div style={{ position: 'relative', width: '100%', height: '200px', marginBottom: '2rem' }}>
-            <svg width="100%" height="200" style={{ overflow: 'visible' }}>
-              {/* Timeline line */}
-              <line x1="100" y1="100" x2="1000" y2="100" stroke="#6B7280" strokeWidth="2"/>
-              
-              {/* Era nodes */}
-              {currentData.data.map((era, index) => {
-                const x = getNodeX(index, currentData.data.length);
-                const isHovered = hoveredNode === index;
-                const isExpanded = expandedNode === index;
-                
-                return (
-                  <g key={index}>
-                    {/* Connection line to timeline */}
-                
+          <div ref={timelineRef} style={{ position: 'relative' }}>
+            {/* Timeline line */}
+            <div style={{
+              position: 'absolute',
+              top: '120px',
+              left: '60px',
+              right: '60px',
+              height: '4px',
+              background: 'linear-gradient(90deg, #D97706 0%, #F59E0B 16%, #3B82F6 33%, #DC2626 50%, #7C3AED 66%, #059669 100%)',
+              borderRadius: '2px'
+            }} />
+
+            {/* Era nodes */}
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              padding: '0 60px',
+              position: 'relative',
+              zIndex: 10
+            }}>
+              {currentConcept.data.map((era, index) => (
+                <div
+                  key={era.era}
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    cursor: 'pointer',
+                    transition: 'transform 0.3s ease'
+                  }}
+                  onClick={() => setSelectedEra(selectedEra === index ? null : index)}
+                  onMouseEnter={()
