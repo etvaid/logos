@@ -169,96 +169,358 @@ export default function MapsHub() {
       href: "/maps/numismatics",
       title: "Monetary Geography",
       subtitle: "νομίσματα καὶ monetae",
-      desc: "Coin circulation patterns providing insights into economic integration and monetary policies",
-      icon: "💰",
-      color: "#EAB308",
+      desc: "Coin circulation patterns and monetary systems from archaic electrum to Byzantine solidus",
+      icon: "🪙",
+      color: "#C9A227",
       category: "Economic",
       lang: "Α",
-      features: ["Mint locations", "Coin distribution", "Hoard analysis"],
-      scholars: "Crawford • Burnett • Howgego"
+      features: ["Mint distribution", "Currency flows", "Iconographic analysis"],
+      scholars: "Kraay • Howgego • Foldvary"
     }
   ];
 
-  const filteredMaps = selectedCategory === 'All' ? maps : maps.filter(map => map.category === selectedCategory);
+  const filteredMaps = selectedCategory === 'All' 
+    ? maps 
+    : maps.filter(map => map.category === selectedCategory);
 
   return (
-    <div style={{ backgroundColor: '#0D0D0F', color: '#F5F4F2', minHeight: '100vh', padding: '20px', fontFamily: 'sans-serif', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '20px', color: '#C9A227', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
-        Logos Maps Hub
-      </h1>
+    <div style={{
+      minHeight: '100vh',
+      background: 'linear-gradient(135deg, #0D0D0F 0%, #141419 50%, #0D0D0F 100%)',
+      position: 'relative',
+      overflow: 'hidden'
+    }}>
+      {/* Animated Background Pattern */}
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        opacity: 0.03,
+        backgroundImage: `
+          radial-gradient(circle at 25% 25%, #C9A227 0%, transparent 50%),
+          radial-gradient(circle at 75% 75%, #3B82F6 0%, transparent 50%),
+          radial-gradient(circle at 75% 25%, #DC2626 0%, transparent 50%),
+          radial-gradient(circle at 25% 75%, #10B981 0%, transparent 50%)
+        `,
+        animation: 'float 20s ease-in-out infinite'
+      }} />
 
-      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', marginBottom: '20px' }}>
-        {categories.map((category) => (
-          <button
-            key={category.name}
-            style={{
-              backgroundColor: selectedCategory === category.name ? category.color : '#1E1E24',
-              color: '#F5F4F2',
-              border: 'none',
-              padding: '10px 15px',
-              margin: '5px',
-              borderRadius: '5px',
-              cursor: 'pointer',
-              fontSize: '1rem',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '5px',
-              transition: 'background-color 0.3s, color 0.3s, transform 0.2s',
-              transform: hoveredFilter === category.name ? 'scale(1.05)' : 'scale(1)',
-              boxShadow: selectedCategory === category.name ? '0 0 5px rgba(201, 162, 39, 0.7)' : 'none'
-            }}
-            onMouseEnter={() => setHoveredFilter(category.name)}
-            onMouseLeave={() => setHoveredFilter(null)}
-            onClick={() => setSelectedCategory(category.name)}
-          >
-            {category.icon} {category.name}
-          </button>
-        ))}
-      </div>
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          25% { transform: translateY(-10px) rotate(1deg); }
+          50% { transform: translateY(0px) rotate(0deg); }
+          75% { transform: translateY(10px) rotate(-1deg); }
+        }
+        @keyframes pulse {
+          0%, 100% { transform: scale(1); opacity: 1; }
+          50% { transform: scale(1.05); opacity: 0.9; }
+        }
+        @keyframes shimmer {
+          0% { background-position: -200% 0; }
+          100% { background-position: 200% 0; }
+        }
+      `}</style>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px', width: '100%', maxWidth: '1200px' }}>
-        {filteredMaps.map((map) => (
-          <Link key={map.id} href={map.href} style={{ textDecoration: 'none' }}>
-            <div
-              style={{
-                backgroundColor: '#1E1E24',
-                color: '#F5F4F2',
-                padding: '20px',
-                borderRadius: '10px',
-                transition: 'transform 0.2s, box-shadow 0.2s',
-                transform: hoveredCard === map.id ? 'scale(1.05)' : 'scale(1)',
-                boxShadow: hoveredCard === map.id ? '0 0 15px rgba(201, 162, 39, 0.5)' : '0 0 5px rgba(0, 0, 0, 0.3)',
-                cursor: 'pointer',
-                display: 'flex',
-                flexDirection: 'column',
-                height: '100%',
-              }}
-              onMouseEnter={() => setHoveredCard(map.id)}
-              onMouseLeave={() => setHoveredCard(null)}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-                <span style={{ fontSize: '1.5rem', marginRight: '10px', color: map.color }}>{map.icon}</span>
-                <div>
-                  <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '5px' }}>{map.title}</h2>
-                  <h3 style={{ fontSize: '1rem', color: '#9CA3AF' }}>{map.subtitle}</h3>
+      <div style={{ position: 'relative', zIndex: 10 }}>
+        {/* Hero Header */}
+        <div style={{
+          textAlign: 'center',
+          padding: '4rem 2rem 2rem',
+          background: 'linear-gradient(180deg, rgba(201, 162, 39, 0.1) 0%, transparent 100%)'
+        }}>
+          <div style={{
+            display: 'inline-block',
+            background: 'linear-gradient(135deg, #C9A227, #F59E0B)',
+            backgroundClip: 'text',
+            WebkitBackgroundClip: 'text',
+            color: 'transparent',
+            fontSize: '4rem',
+            fontWeight: 'bold',
+            marginBottom: '1rem',
+            textShadow: '0 0 30px rgba(201, 162, 39, 0.3)',
+            animation: 'shimmer 3s ease-in-out infinite'
+          }}>
+            CARTOGRAPHIA CLASSICA
+          </div>
+          <div style={{
+            fontSize: '1.5rem',
+            color: '#9CA3AF',
+            fontStyle: 'italic',
+            marginBottom: '2rem'
+          }}>
+            χωρογραφικὴ σοφία • geographica sapientia
+          </div>
+          
+          {/* 3D Statistics Bar */}
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            gap: '2rem',
+            flexWrap: 'wrap',
+            marginTop: '2rem'
+          }}>
+            {[
+              { label: 'Interactive Maps', value: '12', icon: '🗺️' },
+              { label: 'Data Points', value: '2.4k', icon: '📍' },
+              { label: 'Time Periods', value: '6', icon: '⏳' },
+              { label: 'Languages', value: '2', icon: '📚' }
+            ].map((stat, idx) => (
+              <div key={idx} style={{
+                background: 'linear-gradient(145deg, #1E1E24, #141419)',
+                padding: '1rem 1.5rem',
+                borderRadius: '12px',
+                border: '1px solid rgba(201, 162, 39, 0.2)',
+                textAlign: 'center',
+                minWidth: '120px',
+                transform: 'perspective(1000px) rotateX(5deg)',
+                boxShadow: '0 8px 16px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1)'
+              }}>
+                <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>{stat.icon}</div>
+                <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#C9A227' }}>
+                  {stat.value}
                 </div>
-                <span style={{ fontSize: '0.8rem', marginLeft: 'auto', color: map.color, fontWeight: 'bold' }}>{map.lang}</span>
+                <div style={{ fontSize: '0.8rem', color: '#9CA3AF' }}>
+                  {stat.label}
+                </div>
               </div>
-              <p style={{ fontSize: '1rem', color: '#9CA3AF', lineHeight: '1.4', marginBottom: '10px', flexGrow: 1 }}>{map.desc}</p>
-              <div style={{ fontSize: '0.9rem', color: '#6B7280' }}>
-                <strong style={{ color: '#F5F4F2' }}>Features:</strong>
-                <ul style={{ listStyleType: 'none', padding: 0, margin: '5px 0' }}>
-                  {map.features.map((feature, index) => (
-                    <li key={index} style={{ marginBottom: '3px' }}>
-                      • {feature}
-                    </li>
-                  ))}
-                </ul>
-                <strong style={{ color: '#F5F4F2' }}>Scholars:</strong> {map.scholars}
+            ))}
+          </div>
+        </div>
+
+        {/* Enhanced Filter Bar */}
+        <div style={{
+          padding: '0 2rem 2rem',
+          display: 'flex',
+          justifyContent: 'center'
+        }}>
+          <div style={{
+            display: 'flex',
+            gap: '0.5rem',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            background: 'rgba(30, 30, 36, 0.8)',
+            padding: '1rem',
+            borderRadius: '20px',
+            backdropFilter: 'blur(10px)',
+            border: '1px solid rgba(201, 162, 39, 0.2)',
+            boxShadow: '0 8px 32px rgba(0,0,0,0.3)'
+          }}>
+            {categories.map((cat) => (
+              <button
+                key={cat.name}
+                onClick={() => setSelectedCategory(cat.name)}
+                onMouseEnter={() => setHoveredFilter(cat.name)}
+                onMouseLeave={() => setHoveredFilter(null)}
+                style={{
+                  padding: '0.75rem 1.25rem',
+                  borderRadius: '12px',
+                  border: 'none',
+                  background: selectedCategory === cat.name 
+                    ? `linear-gradient(135deg, ${cat.color}, ${cat.color}dd)`
+                    : hoveredFilter === cat.name
+                    ? 'linear-gradient(135deg, #1E1E24, #2A2A32)'
+                    : 'transparent',
+                  color: selectedCategory === cat.name ? '#000' : '#F5F4F2',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease',
+                  fontSize: '0.9rem',
+                  fontWeight: selectedCategory === cat.name ? 'bold' : 'normal',
+                  transform: hoveredFilter === cat.name ? 'translateY(-2px) scale(1.05)' : 'translateY(0)',
+                  boxShadow: hoveredFilter === cat.name 
+                    ? `0 6px 20px ${cat.color}40` 
+                    : selectedCategory === cat.name
+                    ? `0 4px 16px ${cat.color}60`
+                    : 'none',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem'
+                }}
+              >
+                <span style={{ fontSize: '1.1rem' }}>{cat.icon}</span>
+                {cat.name}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Enhanced Cards Grid */}
+        <div style={{
+          padding: '0 2rem 4rem',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
+          gap: '2rem',
+          maxWidth: '1400px',
+          margin: '0 auto'
+        }}>
+          {filteredMaps.map((map) => (
+            <Link key={map.id} href={map.href} style={{ textDecoration: 'none' }}>
+              <div
+                onMouseEnter={() => setHoveredCard(map.id)}
+                onMouseLeave={() => setHoveredCard(null)}
+                style={{
+                  background: hoveredCard === map.id 
+                    ? 'linear-gradient(145deg, #1E1E24, #141419)'
+                    : 'linear-gradient(145deg, #1A1A20, #141419)',
+                  borderRadius: '20px',
+                  padding: '1.5rem',
+                  border: `1px solid ${hoveredCard === map.id ? map.color : 'rgba(107, 114, 128, 0.2)'}`,
+                  cursor: 'pointer',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  transform: hoveredCard === map.id 
+                    ? 'translateY(-8px) perspective(1000px) rotateX(5deg) scale(1.02)' 
+                    : 'translateY(0) perspective(1000px) rotateX(0deg) scale(1)',
+                  boxShadow: hoveredCard === map.id 
+                    ? `0 20px 40px rgba(0,0,0,0.4), 0 0 0 1px ${map.color}40, inset 0 1px 0 rgba(255,255,255,0.1)`
+                    : '0 4px 16px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.05)',
+                  position: 'relative',
+                  overflow: 'hidden'
+                }}
+              >
+                {/* Animated Background Glow */}
+                <div style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  background: `radial-gradient(circle at top right, ${map.color}15, transparent 70%)`,
+                  opacity: hoveredCard === map.id ? 1 : 0,
+                  transition: 'opacity 0.3s ease'
+                }} />
+
+                {/* Card Content */}
+                <div style={{ position: 'relative', zIndex: 5 }}>
+                  {/* Header */}
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                      <div style={{
+                        fontSize: '2rem',
+                        filter: `drop-shadow(0 0 10px ${map.color}80)`,
+                        transform: hoveredCard === map.id ? 'scale(1.2) rotate(5deg)' : 'scale(1)',
+                        transition: 'transform 0.3s ease'
+                      }}>
+                        {map.icon}
+                      </div>
+                      <div>
+                        <h3 style={{
+                          color: '#F5F4F2',
+                          fontSize: '1.4rem',
+                          fontWeight: 'bold',
+                          margin: '0 0 0.25rem 0',
+                          background: hoveredCard === map.id ? `linear-gradient(135deg, ${map.color}, #F5F4F2)` : undefined,
+                          backgroundClip: hoveredCard === map.id ? 'text' : undefined,
+                          WebkitBackgroundClip: hoveredCard === map.id ? 'text' : undefined,
+                          color: hoveredCard === map.id ? 'transparent' : '#F5F4F2',
+                          transition: 'all 0.3s ease'
+                        }}>
+                          {map.title}
+                        </h3>
+                        <p style={{
+                          color: '#9CA3AF',
+                          fontSize: '0.9rem',
+                          fontStyle: 'italic',
+                          margin: 0
+                        }}>
+                          {map.subtitle}
+                        </p>
+                      </div>
+                    </div>
+                    
+                    {/* Language Indicator */}
+                    <div style={{
+                      background: map.lang === 'Α' ? '#3B82F6' : '#DC2626',
+                      color: 'white',
+                      width: '32px',
+                      height: '32px',
+                      borderRadius: '50%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: '1rem',
+                      fontWeight: 'bold',
+                      boxShadow: `0 4px 12px ${map.lang === 'Α' ? '#3B82F6' : '#DC2626'}40`,
+                      transform: hoveredCard === map.id ? 'scale(1.1)' : 'scale(1)',
+                      transition: 'transform 0.3s ease'
+                    }}>
+                      {map.lang}
+                    </div>
+                  </div>
+
+                  {/* Description */}
+                  <p style={{
+                    color: '#9CA3AF',
+                    fontSize: '0.95rem',
+                    lineHeight: '1.6',
+                    marginBottom: '1.5rem',
+                    opacity: hoveredCard === map.id ? 1 : 0.8,
+                    transition: 'opacity 0.3s ease'
+                  }}>
+                    {map.desc}
+                  </p>
+
+                  {/* Features Pills */}
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1rem' }}>
+                    {map.features.map((feature, idx) => (
+                      <span key={idx} style={{
+                        background: `${map.color}20`,
+                        color: map.color,
+                        padding: '0.25rem 0.75rem',
+                        borderRadius: '20px',
+                        fontSize: '0.8rem',
+                        border: `1px solid ${map.color}40`,
+                        transform: hoveredCard === map.id ? 'translateY(-1px)' : 'translateY(0)',
+                        transition: 'transform 0.3s ease'
+                      }}>
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Scholars Footer */}
+                  <div style={{
+                    borderTop: '1px solid rgba(107, 114, 128, 0.2)',
+                    paddingTop: '1rem',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center'
+                  }}>
+                    <span style={{
+                      color: '#6B7280',
+                      fontSize: '0.85rem',
+                      fontStyle: 'italic'
+                    }}>
+                      {map.scholars}
+                    </span>
+                    <div style={{
+                      color: map.color,
+                      fontSize: '1.2rem',
+                      transform: hoveredCard === map.id ? 'translateX(4px)' : 'translateX(0)',
+                      transition: 'transform 0.3s ease'
+                    }}>
+                      →
+                    </div>
+                  </div>
+                </div>
+
+                {/* Hover Shimmer Effect */}
+                <div style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: '-100%',
+                  width: '100%',
+                  height: '100%',
+                  background: `linear-gradient(90deg, transparent, ${map.color}20, transparent)`,
+                  transform: hoveredCard === map.id ? 'translateX(200%)' : 'translateX(-100%)',
+                  transition: 'transform 0.6s ease',
+                  pointerEvents: 'none'
+                }} />
               </div>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );

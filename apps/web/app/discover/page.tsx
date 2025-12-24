@@ -7,7 +7,7 @@ export default function DiscoveryEngine() {
   const [selectedType, setSelectedType] = useState('All');
   const [expandedDiscovery, setExpandedDiscovery] = useState(null);
   const [selectedEvidence, setSelectedEvidence] = useState({});
-  const [hoveredWord, setHoveredWord] = useState(null);
+  const [hoveredWord, setHoveredWord, ] = useState(null);
   const [activeManuscript, setActiveManuscript] = useState(null);
   const [showParadigm, setShowParadigm] = useState({});
   const [activeWordAnalysis, setActiveWordAnalysis] = useState(null);
@@ -107,248 +107,105 @@ export default function DiscoveryEngine() {
       era: "Imperial",
       impact: "Revolutionary",
       description: "οἶνοψ πόντος (wine-dark sea) appears 17 times in Homer, but LOGOS found 3 instances in 4th century Christian hymns describing baptismal waters.",
-      criticalApparatus: "Manuscript evidence shows consistent transmission of Homeric formula across Christian adaptations with minimal alterations.",
-      evidence: [
-        { id: 'ev1', text: 'ὕδατι οἴνοπι ... πόντου', manuscriptVariantsKey: 1 },
-        { id: 'ev2', text: 'βαπτίζοντος εἰς θάλασσαν οἰνωπήν', manuscriptVariantsKey: 1 },
-        { id: 'ev3', text: 'ἄβυσσος οἶνοψ, μυστηρίων πλήρης', manuscriptVariantsKey: 1 }
-      ]
+      criticalApparatus: "Manuscript evidence shows consistent transmission of Homeric formula across Christian adaptations with minimal semantic shift.",
+      keyWords: ['οἶνοψ', 'πόντος', 'Homer', 'baptism', 'Christian hymns'],
     },
     {
       id: 2,
-      title: "Alienation Motif from Law to Theology",
+      title: "The Estrangement of the Soul: From Legal Term to Spiritual Metaphor",
       type: "Semantic",
       language: "Greek",
       confidence: 91,
       novelty: 85,
       era: "Late Antique",
       impact: "Significant",
-      description: "The term ἀλλοτριόω undergoes a semantic shift, from legal contexts to describe spiritual alienation in late antiquity.",
-      criticalApparatus: "Analysis of legal documents compared with patristic texts reveals evolving connotations of 'otherness'.",
-      evidence: [
-        { id: 'ev4', text: 'ἀλλοτριωθῆναι τῆς οἰκονομίας', manuscriptVariantsKey: 2 },
-        { id: 'ev5', text: 'ἑαυτοὺς ἀλλοτριοῦσθαι τοῦ θεοῦ', manuscriptVariantsKey: 2 },
-        { id: 'ev6', text: 'ψυχὴ ἀλλοτριωθεῖσα τῶν θείων', manuscriptVariantsKey: 2 }
-      ]
+      description: "ἀλλοτριόω transitions from a legal term meaning 'to alienate property' in classical texts to describing the soul's estrangement from God in late antique theological works.",
+      criticalApparatus: "Analysis reveals semantic broadening, influenced by Neoplatonic thought and ascetic ideals, reflected in writings of early Church Fathers.",
+      keyWords: ['ἀλλοτριόω', 'alienation', 'soul', 'Neoplatonism', 'Church Fathers'],
     },
-    {
-      id: 3,
-      title: "Reincarnation Discourse: From Philosophy to Gnosticism",
-      type: "Influence",
-      language: "Greek",
-      confidence: 85,
-      novelty: 78,
-      era: "Imperial",
-      impact: "Moderate",
-      description: "The concept of metempsychosis transitions from philosophical discourse in the Imperial era to esoteric Gnostic interpretations.",
-      criticalApparatus: "Comparison of Platonic dialogues with Gnostic treatises highlights reinterpretation of soul migration.",
-      evidence: [
-        { id: 'ev7', text: 'περὶ μετεμψυχώσεως ... δόγματα', manuscriptVariantsKey: 3 },
-        { id: 'ev8', text: 'ψυχῆς μετενσωμάτωσις εἰς ἕτερον σῶμα', manuscriptVariantsKey: 3 },
-        { id: 'ev9', text: 'ἡ κάθαρσις τῆς ψυχῆς διὰ μετεμψυχώσεως', manuscriptVariantsKey: 3 }
-      ]
-    }
   ];
 
-
   const filteredDiscoveries = DISCOVERIES.filter(discovery => {
-    if (selectedType === 'All' && selectedEra === 'All') return true;
+    if (selectedType === 'All' && selectedEra === 'All') return discovery;
     if (selectedType !== 'All' && selectedEra === 'All') return discovery.type === selectedType;
     if (selectedType === 'All' && selectedEra !== 'All') return discovery.era === selectedEra;
     return discovery.type === selectedType && discovery.era === selectedEra;
   });
 
   return (
-    <div style={{ backgroundColor: '#0D0D0F', color: '#F5F4F2', fontFamily: 'sans-serif', minHeight: '100vh', padding: '20px', transition: 'background-color 0.3s' }}>
-      <header style={{ marginBottom: '20px', textAlign: 'center' }}>
-        <h1 style={{ color: '#C9A227', fontSize: '2.5em', fontWeight: 'bold', transition: 'color 0.3s' }}>Logos Discovery Engine</h1>
-        <p style={{ color: '#9CA3AF', fontSize: '1.1em', transition: 'color 0.3s' }}>Uncovering Connections in Ancient Texts</p>
+    <div style={{ backgroundColor: '#0D0D0F', color: '#F5F4F2', fontFamily: 'sans-serif', minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px', transition: 'background-color 0.3s, color 0.3s' }}>
+      <header style={{ width: '100%', maxWidth: '1200px', marginBottom: '20px', textAlign: 'center' }}>
+        <h1 style={{ fontSize: '2.5em', fontWeight: 'bold', color: '#C9A227', textShadow: '1px 1px 2px #000' }}>Logos Discovery Engine</h1>
+        <p style={{ color: '#9CA3AF', fontSize: '1.1em' }}>Uncovering Hidden Connections in Ancient Texts</p>
       </header>
 
-      <section style={{ display: 'flex', gap: '20px', marginBottom: '20px' }}>
+      <main style={{ width: '100%', maxWidth: '1200px', display: 'flex', flexDirection: 'column', gap: '20px' }}>
         {/* Filters */}
-        <div style={{ width: '250px', backgroundColor: '#1E1E24', padding: '15px', borderRadius: '8px', transition: 'background-color 0.3s' }}>
-          <h3 style={{ color: '#F5F4F2', marginBottom: '10px', fontWeight: 'bold', transition: 'color 0.3s' }}>Filters</h3>
-          <div style={{ marginBottom: '10px' }}>
-            <label style={{ color: '#9CA3AF', display: 'block', marginBottom: '5px', transition: 'color 0.3s' }}>Type:</label>
-            <select
-              value={selectedType}
-              onChange={(e) => setSelectedType(e.target.value)}
-              style={{ width: '100%', padding: '8px', backgroundColor: '#141419', color: '#F5F4F2', border: 'none', borderRadius: '4px', transition: 'all 0.3s' }}
-            >
+        <section style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center', padding: '15px', backgroundColor: '#1E1E24', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)', transition: 'background-color 0.3s' }}>
+          <div>
+            <label htmlFor="type-filter" style={{ color: '#F5F4F2', marginRight: '10px' }}>Type:</label>
+            <select id="type-filter" value={selectedType} onChange={(e) => setSelectedType(e.target.value)} style={{ padding: '8px', borderRadius: '4px', backgroundColor: '#141419', color: '#F5F4F2', border: 'none', cursor: 'pointer', transition: 'background-color 0.3s, color 0.3s' }}>
               {DISCOVERY_TYPES.map(type => (
                 <option key={type} value={type} style={{ backgroundColor: '#141419', color: '#F5F4F2' }}>{type}</option>
               ))}
             </select>
           </div>
-
           <div>
-            <label style={{ color: '#9CA3AF', display: 'block', marginBottom: '5px', transition: 'color 0.3s' }}>Era:</label>
-            <select
-              value={selectedEra}
-              onChange={(e) => setSelectedEra(e.target.value)}
-              style={{ width: '100%', padding: '8px', backgroundColor: '#141419', color: '#F5F4F2', border: 'none', borderRadius: '4px', transition: 'all 0.3s' }}
-            >
-              <option key="All" value="All" style={{ backgroundColor: '#141419', color: '#F5F4F2' }}>All</option>
+            <label htmlFor="era-filter" style={{ color: '#F5F4F2', marginRight: '10px' }}>Era:</label>
+            <select id="era-filter" value={selectedEra} onChange={(e) => setSelectedEra(e.target.value)} style={{ padding: '8px', borderRadius: '4px', backgroundColor: '#141419', color: '#F5F4F2', border: 'none', cursor: 'pointer', transition: 'background-color 0.3s, color 0.3s' }}>
+              <option value="All" style={{ backgroundColor: '#141419', color: '#F5F4F2' }}>All Eras</option>
               {Object.keys(ERA_COLORS).map(era => (
                 <option key={era} value={era} style={{ backgroundColor: '#141419', color: '#F5F4F2' }}>{era}</option>
               ))}
             </select>
           </div>
-        </div>
+          <div>
+            <label htmlFor="confidence-filter" style={{ color: '#F5F4F2', marginRight: '10px' }}>Confidence (%):</label>
+            <input
+              type="number"
+              id="confidence-filter"
+              value={confidenceFilter}
+              onChange={(e) => setConfidenceFilter(parseInt(e.target.value))}
+              min="0"
+              max="100"
+              style={{ padding: '8px', borderRadius: '4px', backgroundColor: '#141419', color: '#F5F4F2', border: 'none', width: '60px', transition: 'background-color 0.3s, color 0.3s' }}
+            />
+          </div>
+        </section>
 
         {/* Discoveries List */}
-        <div style={{ flex: '1', width: '75%', }}>
-          <h2 style={{ color: '#F5F4F2', marginBottom: '15px', transition: 'color 0.3s' }}>Discoveries</h2>
-          {filteredDiscoveries.length > 0 ? (
-            filteredDiscoveries.map(discovery => (
-              <div
-                key={discovery.id}
-                style={{
-                  backgroundColor: '#1E1E24',
-                  padding: '15px',
-                  borderRadius: '8px',
-                  marginBottom: '15px',
-                  transition: 'background-color 0.3s, transform 0.3s',
-                  cursor: 'pointer',
-                  borderLeft: `5px solid ${ERA_COLORS[discovery.era as keyof typeof ERA_COLORS] || '#6B7280'}`,
-                }}
-                onClick={() => setExpandedDiscovery(expandedDiscovery === discovery.id ? null : discovery.id)}
-              >
-                <h3 style={{ color: '#F5F4F2', fontWeight: 'bold', marginBottom: '5px', transition: 'color 0.3s' }}>{discovery.title}</h3>
-                <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px' }}>
-                  <span style={{
-                    fontSize: '0.8em', color: '#9CA3AF', backgroundColor: ERA_COLORS[discovery.era as keyof typeof ERA_COLORS], padding: '3px 6px', borderRadius: '4px', marginRight: '5px', transition: 'all 0.3s',
-                  }}>{discovery.era}</span>
-                  <span style={{ fontSize: '0.8em', color: '#9CA3AF', transition: 'color 0.3s' }}>Type: {discovery.type}</span>
+        <section style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+          {filteredDiscoveries.map(discovery => (
+            <div key={discovery.id} style={{ backgroundColor: '#1E1E24', borderRadius: '8px', padding: '20px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)', transition: 'background-color 0.3s', cursor: 'pointer' }} onClick={() => setExpandedDiscovery(expandedDiscovery === discovery.id ? null : discovery.id)}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
+                <h2 style={{ fontSize: '1.4em', fontWeight: 'bold', color: '#F5F4F2', transition: 'color 0.3s' }}>{discovery.title}</h2>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <span style={{ color: ERA_COLORS[discovery.era], fontWeight: 'bold', fontSize: '0.9em', padding: '5px 10px', borderRadius: '5px' }}>{discovery.era}</span>
+                  <span style={{ color: discovery.language === 'Greek' ? '#3B82F6' : '#DC2626', fontWeight: 'bold', fontSize: '0.9em' }}>{discovery.language === 'Greek' ? 'Α' : 'L'}</span>
                 </div>
-                <p style={{ color: '#9CA3AF', transition: 'color 0.3s' }}>{discovery.description}</p>
+              </div>
+              <p style={{ color: '#9CA3AF', lineHeight: '1.6', transition: 'color 0.3s' }}>{discovery.description}</p>
 
-                {expandedDiscovery === discovery.id && (
-                  <div style={{ marginTop: '15px', padding: '10px', borderTop: '1px solid #6B7280', transition: 'border-color 0.3s' }}>
-                    <h4 style={{ color: '#F5F4F2', fontWeight: 'bold', marginBottom: '10px', transition: 'color 0.3s' }}>Evidence:</h4>
-                    <ul style={{ listStyleType: 'none', padding: '0' }}>
-                      {discovery.evidence.map(evidenceItem => (
-                        <li key={evidenceItem.id} style={{ marginBottom: '8px', padding: '8px', backgroundColor: '#141419', borderRadius: '4px', transition: 'background-color 0.3s' }}>
-                          <span
-                            onMouseEnter={() => setHoveredWord(evidenceItem.text)}
-                            onMouseLeave={() => setHoveredWord(null)}
-                            onClick={() => {
-                              setSelectedEvidence(evidenceItem);
-                              setActiveManuscript(evidenceItem.manuscriptVariantsKey);
-                            }}
-                            style={{ cursor: 'pointer', color: '#F5F4F2', transition: 'color 0.3s' }}>
-                            {evidenceItem.text}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                    <p style={{ color: '#9CA3AF', transition: 'color 0.3s' }}>{discovery.criticalApparatus}</p>
+              {expandedDiscovery === discovery.id && (
+                <div style={{ marginTop: '15px', borderTop: '1px solid #6B7280', paddingTop: '15px' }}>
+                  <h3 style={{ color: '#F5F4F2', fontSize: '1.2em', marginBottom: '10px' }}>Critical Apparatus</h3>
+                  <p style={{ color: '#9CA3AF', lineHeight: '1.6' }}>{discovery.criticalApparatus}</p>
+                  <h4 style={{ color: '#F5F4F2', fontSize: '1.1em', marginTop: '10px' }}>Keywords</h4>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px' }}>
+                    {discovery.keyWords.map(word => (
+                      <span key={word} style={{ backgroundColor: '#141419', color: '#F5F4F2', padding: '5px 8px', borderRadius: '5px', fontSize: '0.85em' }}>{word}</span>
+                    ))}
                   </div>
-                )}
-              </div>
-            ))
-          ) : (
-            <p style={{ color: '#9CA3AF', transition: 'color 0.3s' }}>No discoveries found for the selected filters.</p>
-          )}
-        </div>
-      </section>
-
-      {/* Manuscript Variants Display */}
-      {activeManuscript && (
-        <section style={{ backgroundColor: '#1E1E24', padding: '20px', borderRadius: '8px', marginBottom: '20px', transition: 'background-color 0.3s' }}>
-          <h2 style={{ color: '#F5F4F2', fontWeight: 'bold', marginBottom: '15px', transition: 'color 0.3s' }}>Manuscript Variants</h2>
-          <table style={{ width: '100%', borderCollapse: 'collapse', transition: 'all 0.3s' }}>
-            <thead>
-              <tr style={{ backgroundColor: '#141419', color: '#9CA3AF', transition: 'background-color 0.3s, color 0.3s' }}>
-                <th style={{ padding: '10px', textAlign: 'left' }}>Manuscript</th>
-                <th style={{ padding: '10px', textAlign: 'left' }}>Reading</th>
-                <th style={{ padding: '10px', textAlign: 'left' }}>Confidence</th>
-                <th style={{ padding: '10px', textAlign: 'left' }}>Date</th>
-                <th style={{ padding: '10px', textAlign: 'left' }}>Hand</th>
-                <th style={{ padding: '10px', textAlign: 'left' }}>Location</th>
-              </tr>
-            </thead>
-            <tbody>
-              {MANUSCRIPT_VARIANTS[activeManuscript].map((variant, index) => (
-                <tr key={index} style={{ borderBottom: '1px solid #6B7280', transition: 'border-color 0.3s' }}>
-                  <td style={{ padding: '10px', color: '#F5F4F2', transition: 'color 0.3s' }}>{variant.ms}</td>
-                  <td style={{ padding: '10px', color: '#F5F4F2', transition: 'color 0.3s' }}>{variant.reading}</td>
-                  <td style={{ padding: '10px', color: '#F5F4F2', transition: 'color 0.3s' }}>{variant.confidence}%</td>
-                  <td style={{ padding: '10px', color: '#F5F4F2', transition: 'color 0.3s' }}>{variant.date}</td>
-                  <td style={{ padding: '10px', color: '#F5F4F2', transition: 'color 0.3s' }}>{variant.hand}</td>
-                  <td style={{ padding: '10px', color: '#F5F4F2', transition: 'color 0.3s' }}>{variant.location}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </section>
-      )}
-
-      {/* Word Analysis */}
-      {hoveredWord && WORD_ANALYSIS[hoveredWord] && (
-        <section style={{ backgroundColor: '#1E1E24', padding: '20px', borderRadius: '8px', transition: 'background-color 0.3s' }}>
-          <h2 style={{ color: '#F5F4F2', fontWeight: 'bold', marginBottom: '15px', transition: 'color 0.3s' }}>Word Analysis: {hoveredWord}</h2>
-          <p style={{ color: '#9CA3AF', marginBottom: '10px', transition: 'color 0.3s' }}>Etymology: {WORD_ANALYSIS[hoveredWord].etymology}</p>
-          <p style={{ color: '#9CA3AF', marginBottom: '10px', transition: 'color 0.3s' }}>LSJ Definition: {WORD_ANALYSIS[hoveredWord].lsj}</p>
-
-          {/* Semantic Drift Visualization */}
-          <div style={{ marginBottom: '20px' }}>
-            <h3 style={{ color: '#F5F4F2', fontWeight: 'bold', marginBottom: '10px', transition: 'color 0.3s' }}>Semantic Drift</h3>
-            <div style={{ position: 'relative', width: '100%', height: '200px' }}>
-              <svg width="100%" height="100%">
-                {WORD_ANALYSIS[hoveredWord].semanticDrift.map((drift, index) => (
-                  <React.Fragment key={index}>
-                    <line
-                      x1={`${(index / (WORD_ANALYSIS[hoveredWord].semanticDrift.length - 1)) * 100}%`}
-                      y1={`${100 - drift.confidence}%`}
-                      x2={`${((index + 1) / (WORD_ANALYSIS[hoveredWord].semanticDrift.length - 1)) * 100}%`}
-                      y2={`${100 - WORD_ANALYSIS[hoveredWord].semanticDrift[Math.min(index + 1, WORD_ANALYSIS[hoveredWord].semanticDrift.length - 1)].confidence}%`}
-                      style={{ stroke: drift.color, strokeWidth: 2, transition: 'stroke 0.3s' }}
-                    />
-                    <circle
-                      cx={`${(index / (WORD_ANALYSIS[hoveredWord].semanticDrift.length - 1)) * 100}%`}
-                      cy={`${100 - drift.confidence}%`}
-                      r="5"
-                      fill={drift.color}
-                      style={{ transition: 'fill 0.3s' }}
-                    />
-                    <title>{`${drift.period}: ${drift.meaning} (${drift.confidence}%)`}</title>
-                  </React.Fragment>
-                ))}
-              </svg>
-              <div style={{ display: 'flex', justifyContent: 'space-around', position: 'absolute', bottom: '0', width: '100%' }}>
-                {WORD_ANALYSIS[hoveredWord].semanticDrift.map((drift, index) => (
-                  <span key={index} style={{ color: drift.color, fontSize: '0.8em', fontWeight: 'bold', transition: 'color 0.3s' }}>{drift.period}</span>
-                ))}
-              </div>
-            </div>
-          </div>
-
-
-          {/* Frequency Bar Chart */}
-          <div style={{ marginBottom: '20px' }}>
-            <h3 style={{ color: '#F5F4F2', fontWeight: 'bold', marginBottom: '10px', transition: 'color 0.3s' }}>Frequency by Period</h3>
-            <div style={{ display: 'flex', height: '100px', alignItems: 'flex-end', justifyContent: 'space-around' }}>
-              {Object.entries(WORD_ANALYSIS[hoveredWord].frequency).map(([period, frequency]) => (
-                <div key={period} style={{ textAlign: 'center' }}>
-                  <div
-                    style={{
-                      backgroundColor: ERA_COLORS[period as keyof typeof ERA_COLORS],
-                      width: '30px',
-                      height: `${(frequency / Math.max(...Object.values(WORD_ANALYSIS[hoveredWord].frequency as any))) * 100}px`,
-                      marginBottom: '5px',
-                      transition: 'all 0.3s',
-                    }}
-                  />
-                  <span style={{ color: '#9CA3AF', fontSize: '0.8em', transition: 'color 0.3s' }}>{period}</span>
                 </div>
-              ))}
+              )}
             </div>
-          </div>
-
+          ))}
         </section>
-      )}
+      </main>
+
+      <footer style={{ width: '100%', maxWidth: '1200px', marginTop: '30px', padding: '20px', textAlign: 'center', color: '#6B7280' }}>
+        <p>&copy; 2024 Logos Project. All rights reserved.</p>
+      </footer>
     </div>
   );
 }

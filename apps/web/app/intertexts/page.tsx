@@ -170,240 +170,179 @@ const INTERTEXTS = [
         paradigm: {
           lemma: 'ἄρχω',
           forms: [
-            { case: 'Nom.', form: 'ἄρχων' },
-            { case: 'Gen.', form: 'ἄρχοντος' },
-            { case: 'Dat.', form: 'ἄρχοντι' },
-            { case: 'Acc.', form: 'ἄρχοντα' }
+            { case: 'Nom.', form: 'ἄρχω' },
+            { case: 'Gen.', form: 'ἄρχου' },
+            { case: 'Dat.', form: 'ἄρχῳ' },
+            { case: 'Acc.', form: 'ἄρχω' }
           ]
         }
       }
     ],
     semanticDrift: [
       { word: 'formas', period: 'Early Latin', meaning: 'shape, figure', frequency: 67 },
-      { word: 'formas', period: 'Classical', meaning: 'beauty, appearance', frequency: 82 },
-      { word: 'formas', period: 'Imperial', meaning: 'form, type', frequency: 75 }
+      { word: 'formas', period: 'Classical', meaning: 'form, appearance', frequency: 89 },
+      { word: 'formas', period: 'Imperial', meaning: 'beauty, outward show', frequency: 72 }
     ]
   }
 ];
 
-const eraColors = {
+const EraColorMap = {
   'Archaic': '#D97706',
   'Classical': '#F59E0B',
   'Hellenistic': '#3B82F6',
   'Imperial': '#DC2626',
   'Late Antique': '#7C3AED',
-  'Byzantine': '#059669'
+  'Byzantine': '#059669',
 };
 
 const LanguageIndicator = ({ language }) => {
-  let color = '';
-  let label = '';
-
-  if (language === 'greek') {
-    color = '#3B82F6';
-    label = 'Α';
-  } else if (language === 'latin') {
-    color = '#DC2626';
-    label = 'L';
-  } else {
-    return null;
-  }
+  const color = language === 'greek' ? '#3B82F6' : '#DC2626';
+  const label = language === 'greek' ? 'Α' : 'L';
 
   return (
-    <span
-      style={{
-        display: 'inline-block',
-        width: '16px',
-        height: '16px',
-        borderRadius: '50%',
-        backgroundColor: color,
-        color: '#F5F4F2',
-        fontSize: '10px',
-        textAlign: 'center',
-        lineHeight: '16px',
-        marginLeft: '5px',
-        verticalAlign: 'middle',
-      }}
-    >
+    <span style={{ 
+      color: color, 
+      fontSize: '0.8rem', 
+      fontWeight: 'bold', 
+      marginLeft: '0.5rem',
+      transition: 'color 0.3s'
+    }}>
       {label}
     </span>
   );
 };
 
-
 const IntertextCard = ({ intertext }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [expanded, setExpanded] = useState(false);
 
-  const sourceEraColor = eraColors[intertext.source.era];
-  const targetEraColor = eraColors[intertext.target.era];
+  const toggleExpanded = () => {
+    setExpanded(!expanded);
+  };
 
   return (
-    <div
-      style={{
-        backgroundColor: '#1E1E24',
-        color: '#F5F4F2',
-        borderRadius: '8px',
-        padding: '16px',
-        marginBottom: '16px',
-        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
-        transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
-        transform: isExpanded ? 'scale(1.03)' : 'scale(1)',
+    <div 
+      style={{ 
+        backgroundColor: '#1E1E24', 
+        color: '#F5F4F2', 
+        padding: '1.5rem', 
+        borderRadius: '0.5rem', 
+        marginBottom: '1rem',
         cursor: 'pointer',
+        transition: 'background-color 0.3s, box-shadow 0.3s',
+        boxShadow: expanded ? '0 0.5rem 1rem rgba(0,0,0,0.3)' : '0 0.25rem 0.5rem rgba(0,0,0,0.1)',
       }}
-      onClick={() => setIsExpanded(!isExpanded)}
+      onClick={toggleExpanded}
     >
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-        <h3 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 'bold' }}>Intertext {intertext.id}</h3>
-        <span style={{ 
-            fontSize: '0.875rem', 
-            color: '#9CA3AF',
-            backgroundColor: '#334155',
-            padding: '4px 8px',
-            borderRadius: '4px',
-            transition: 'background-color 0.3s ease',
-            ':hover': { backgroundColor: '#4B5563' }
-         }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+        <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#F5F4F2', margin: 0, transition: 'color 0.3s' }}>
+          Intertext {intertext.id}
+        </h3>
+        <span style={{
+          color: '#9CA3AF',
+          fontSize: '0.875rem',
+          transition: 'color 0.3s',
+          display: 'flex',
+          alignItems: 'center',
+        }}>
           Strength: {intertext.strength}%
         </span>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
-        <div>
-          <h4 style={{ color: '#C9A227', marginBottom: '4px', fontSize: '1rem' }}>Source Text <LanguageIndicator language={intertext.source.language} /></h4>
-          <p style={{ margin: 0, color: '#9CA3AF', fontSize: '0.875rem' }}>
-            <span style={{ fontWeight: 'bold', color: '#F5F4F2' }}>Ref:</span> {intertext.source.ref}
-            <br />
-            <span style={{ fontWeight: 'bold', color: '#F5F4F2' }}>Author:</span> {intertext.source.author}
-            <br />
-            <span style={{ fontWeight: 'bold', color: '#F5F4F2' }}>Work:</span> {intertext.source.work}
-            <br />
-            <span style={{ fontWeight: 'bold', color: '#F5F4F2' }}>Era:</span> {intertext.source.era}
-              <span style={{
-                display: 'inline-block',
-                width: '12px',
-                height: '12px',
-                borderRadius: '50%',
-                backgroundColor: sourceEraColor,
-                marginLeft: '4px',
-                verticalAlign: 'middle',
-              }}></span>
-            <br />
-            <span style={{ fontWeight: 'bold', color: '#F5F4F2' }}>Date:</span> {intertext.source.date}
-          </p>
-          <p style={{ marginTop: '8px', fontStyle: 'italic' }}>{intertext.source.text}</p>
+      <div style={{ marginBottom: '1rem', transition: 'opacity 0.3s', opacity: expanded ? 1 : 1 }}>
+        <div style={{ marginBottom: '0.75rem' }}>
+          <strong style={{ color: '#C9A227', transition: 'color 0.3s' }}>Source:</strong> {intertext.source.ref} ({intertext.source.author}, <em>{intertext.source.work}</em>)
+          <LanguageIndicator language={intertext.source.language} />
+          <span style={{ color: '#6B7280', marginLeft: '0.5rem', fontSize: '0.75rem', transition: 'color 0.3s' }}>({intertext.source.era}, {intertext.source.date})</span>
+          <p style={{ margin: '0.25rem 0', fontSize: '0.9rem', lineHeight: '1.4', fontFamily: 'serif' }}>{intertext.source.text}</p>
         </div>
-
         <div>
-          <h4 style={{ color: '#C9A227', marginBottom: '4px', fontSize: '1rem' }}>Target Text <LanguageIndicator language={intertext.target.language} /></h4>
-          <p style={{ margin: 0, color: '#9CA3AF', fontSize: '0.875rem' }}>
-            <span style={{ fontWeight: 'bold', color: '#F5F4F2' }}>Ref:</span> {intertext.target.ref}
-            <br />
-            <span style={{ fontWeight: 'bold', color: '#F5F4F2' }}>Author:</span> {intertext.target.author}
-            <br />
-            <span style={{ fontWeight: 'bold', color: '#F5F4F2' }}>Work:</span> {intertext.target.work}
-            <br />
-            <span style={{ fontWeight: 'bold', color: '#F5F4F2' }}>Era:</span> {intertext.target.era}
-               <span style={{
-                display: 'inline-block',
-                width: '12px',
-                height: '12px',
-                borderRadius: '50%',
-                backgroundColor: targetEraColor,
-                marginLeft: '4px',
-                verticalAlign: 'middle',
-              }}></span>
-            <br />
-            <span style={{ fontWeight: 'bold', color: '#F5F4F2' }}>Date:</span> {intertext.target.date}
-          </p>
-          <p style={{ marginTop: '8px', fontStyle: 'italic' }}>{intertext.target.text}</p>
+          <strong style={{ color: '#C9A227', transition: 'color 0.3s' }}>Target:</strong> {intertext.target.ref} ({intertext.target.author}, <em>{intertext.target.work}</em>)
+          <LanguageIndicator language={intertext.target.language} />
+          <span style={{ color: '#6B7280', marginLeft: '0.5rem', fontSize: '0.75rem', transition: 'color 0.3s' }}>({intertext.target.era}, {intertext.target.date})</span>
+          <p style={{ margin: '0.25rem 0', fontSize: '0.9rem', lineHeight: '1.4', fontFamily: 'serif' }}>{intertext.target.text}</p>
         </div>
       </div>
 
-      <div style={{ marginTop: '16px' }}>
-        <p style={{ margin: 0, color: '#F5F4F2' }}>
-          <span style={{ fontWeight: 'bold' }}>Type:</span> {intertext.type}
-          <br />
-          <span style={{ fontWeight: 'bold' }}>Subtype:</span> {intertext.subtype}
-        </p>
-        <p style={{ marginTop: '8px', color: '#9CA3AF' }}>{intertext.description}</p>
-      </div>
+      {expanded && (
+        <div style={{ marginTop: '1rem', borderTop: '1px solid #6B7280', paddingTop: '1rem', transition: 'opacity 0.3s' }}>
+          <p style={{ color: '#9CA3AF', fontSize: '0.875rem', marginBottom: '0.5rem', transition: 'color 0.3s' }}>
+            <strong style={{ color: '#C9A227', transition: 'color 0.3s' }}>Type:</strong> {intertext.type} ({intertext.subtype})
+          </p>
+          <p style={{ color: '#F5F4F2', fontSize: '0.9rem', lineHeight: '1.5', transition: 'color 0.3s' }}>
+            <strong style={{ color: '#C9A227', transition: 'color 0.3s' }}>Description:</strong> {intertext.description}
+          </p>
 
-      {isExpanded && (
-        <div style={{ marginTop: '16px', borderTop: '1px solid #6B7280', paddingTop: '16px' }}>
-          <h5 style={{ color: '#C9A227', marginBottom: '8px' }}>Connections:</h5>
-          {intertext.connections.map((connection, index) => (
-            <div key={index} style={{ marginBottom: '12px' }}>
-              <p style={{ margin: 0, color: '#F5F4F2' }}>
-                <span style={{ fontWeight: 'bold' }}>Source:</span> {connection.source}
-                <br />
-                <span style={{ fontWeight: 'bold' }}>Target:</span> {connection.target}
+          {intertext.connections && intertext.connections.map((connection, index) => (
+            <div key={index} style={{ marginTop: '1rem', padding: '1rem', backgroundColor: '#141419', borderRadius: '0.375rem', transition: 'background-color 0.3s' }}>
+              <h4 style={{ fontSize: '1rem', fontWeight: 'bold', color: '#F5F4F2', marginBottom: '0.5rem', transition: 'color 0.3s' }}>Connection {index + 1}</h4>
+              <p style={{ color: '#9CA3AF', fontSize: '0.875rem', marginBottom: '0.25rem', transition: 'color 0.3s' }}>
+                <strong style={{ color: '#C9A227', transition: 'color 0.3s' }}>Source:</strong> {connection.source}
               </p>
-              <p style={{ margin: '4px 0', color: '#9CA3AF' }}>
-                <span style={{ fontWeight: 'bold' }}>Type:</span> {connection.type}
-                <br />
-                <span style={{ fontWeight: 'bold' }}>Reason:</span> {connection.reason}
+              <p style={{ color: '#9CA3AF', fontSize: '0.875rem', marginBottom: '0.25rem', transition: 'color 0.3s' }}>
+                <strong style={{ color: '#C9A227', transition: 'color 0.3s' }}>Target:</strong> {connection.target}
+              </p>
+              <p style={{ color: '#F5F4F2', fontSize: '0.9rem', transition: 'color 0.3s' }}>
+                <strong style={{ color: '#C9A227', transition: 'color 0.3s' }}>Type:</strong> {connection.type} - {connection.reason}
               </p>
               {connection.lsj && (
-                <p style={{ margin: '4px 0', color: '#9CA3AF', fontStyle: 'italic' }}>LSJ: {connection.lsj}</p>
+                <p style={{ color: '#F5F4F2', fontSize: '0.9rem', transition: 'color 0.3s' }}>
+                  <strong style={{ color: '#C9A227', transition: 'color 0.3s' }}>LSJ Entry:</strong> {connection.lsj}
+                </p>
               )}
               {connection.paradigm && (
-                <div style={{ marginTop: '8px' }}>
-                  <h6 style={{ color: '#C9A227', marginBottom: '4px' }}>Paradigm (Lemma: {connection.paradigm.lemma}):</h6>
-                  <ul style={{ listStyleType: 'none', padding: 0, margin: 0 }}>
-                    {connection.paradigm.forms.map((form, i) => (
-                      <li key={i} style={{ color: '#9CA3AF' }}>
-                        {form.case && <span style={{ fontWeight: 'bold' }}>{form.case}:</span>} {form.tense && <span style={{ fontWeight: 'bold' }}>{form.tense}:</span>} {form.form}
-                      </li>
-                    ))}
-                  </ul>
+                <div>
+                  <strong style={{ color: '#C9A227', transition: 'color 0.3s' }}>Paradigm:</strong>
+                  <table style={{ width: '100%', borderCollapse: 'collapse', marginTop: '0.5rem' }}>
+                    <thead>
+                      <tr>
+                        {Object.keys(connection.paradigm.forms[0]).map(header => (
+                          <th key={header} style={{ color: '#9CA3AF', padding: '0.5rem', borderBottom: '1px solid #6B7280', textAlign: 'left', transition: 'color 0.3s' }}>
+                            {header.toUpperCase()}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {connection.paradigm.forms.map((form, index) => (
+                        <tr key={index}>
+                          {Object.values(form).map((value, i) => (
+                            <td key={i} style={{ color: '#F5F4F2', padding: '0.5rem', borderBottom: '1px solid #6B7280', transition: 'color 0.3s' }}>
+                              {value}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
               )}
             </div>
           ))}
 
-          <h5 style={{ color: '#C9A227', marginBottom: '8px' }}>Semantic Drift:</h5>
-          {intertext.semanticDrift.map((drift, index) => (
-            <div key={index} style={{ marginBottom: '8px' }}>
-              <p style={{ margin: 0, color: '#F5F4F2' }}>
-                <span style={{ fontWeight: 'bold' }}>Word:</span> {drift.word}
-                <br />
-                <span style={{ fontWeight: 'bold' }}>Period:</span> {drift.period}
-                <br />
-                <span style={{ fontWeight: 'bold' }}>Meaning:</span> {drift.meaning}
-                <br />
-                <span style={{ fontWeight: 'bold' }}>Frequency:</span> {drift.frequency}
-              </p>
+          {intertext.semanticDrift && (
+            <div style={{ marginTop: '1rem' }}>
+              <h4 style={{ fontSize: '1rem', fontWeight: 'bold', color: '#F5F4F2', marginBottom: '0.5rem', transition: 'color 0.3s' }}>Semantic Drift</h4>
+              <ul style={{ listStyleType: 'none', padding: 0 }}>
+                {intertext.semanticDrift.map((drift, index) => (
+                  <li key={index} style={{ marginBottom: '0.5rem', color: '#9CA3AF', transition: 'color 0.3s' }}>
+                    <strong style={{ color: '#C9A227', transition: 'color 0.3s' }}>{drift.word}:</strong> {drift.period} - {drift.meaning} (Frequency: {drift.frequency})
+                  </li>
+                ))}
+              </ul>
             </div>
-          ))}
-
-          <h5 style={{ color: '#C9A227', marginBottom: '8px' }}>Apparatus Criticus:</h5>
-          <div>
-            <p style={{ margin: 0, color: '#F5F4F2' }}>
-              <span style={{ fontWeight: 'bold' }}>Manuscripts:</span> {intertext.apparatus.mss.join(', ')}
-            </p>
-            {intertext.apparatus.variants.map((variant, index) => (
-              <div key={index} style={{ marginBottom: '8px' }}>
-                <p style={{ margin: 0, color: '#F5F4F2' }}>
-                  <span style={{ fontWeight: 'bold' }}>Lemma:</span> {variant.lemma}
-                  <br />
-                  <span style={{ fontWeight: 'bold' }}>Variants:</span> {variant.variants.join(', ')}
-                </p>
-              </div>
-            ))}
-          </div>
+          )}
         </div>
       )}
     </div>
   );
 };
 
-
-export default function IntertextList() {
+export default function Home() {
   return (
-    <div style={{ backgroundColor: '#0D0D0F', color: '#F5F4F2', padding: '24px', minHeight: '100vh' }}>
-      <header style={{ marginBottom: '32px', textAlign: 'center' }}>
-        <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '8px', color: '#C9A227' }}>Intertextual Echoes</h1>
-        <p style={{ fontSize: '1.125rem', color: '#9CA3AF' }}>Exploring the connections between ancient texts.</p>
+    <div style={{ backgroundColor: '#0D0D0F', color: '#F5F4F2', minHeight: '100vh', padding: '2rem', fontFamily: 'sans-serif', transition: 'background-color 0.3s, color 0.3s' }}>
+      <header style={{ marginBottom: '2rem', textAlign: 'center' }}>
+        <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#F5F4F2', margin: 0, transition: 'color 0.3s' }}>Logos Professional Design System</h1>
+        <p style={{ fontSize: '1.1rem', color: '#9CA3AF', margin: '0.5rem 0', transition: 'color 0.3s' }}>Intertextual Analysis Tool</p>
       </header>
 
       <main>
@@ -412,8 +351,10 @@ export default function IntertextList() {
         ))}
       </main>
 
-      <footer style={{ marginTop: '48px', borderTop: '1px solid #1E1E24', paddingTop: '24px', textAlign: 'center', color: '#6B7280' }}>
-        <p>&copy; 2024 Logos Professional Design System</p>
+      <footer style={{ marginTop: '3rem', textAlign: 'center', color: '#6B7280', fontSize: '0.875rem', transition: 'color 0.3s' }}>
+        <p>
+          &copy; 2024 Logos. All rights reserved.  
+        </p>
       </footer>
     </div>
   );
