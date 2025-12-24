@@ -5,7 +5,23 @@ import { useState, useCallback } from 'react';
 
 export default function Lexicon() {
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedWord, setSelectedWord] = useState(null);
+  const [selectedWord, setSelectedWord,
+  ] = useState < null | {
+    id: number;
+    headword: string;
+    polytonic: string;
+    pronunciation: string;
+    pos: string;
+    lsj: string;
+    definitions: { sense: string; definition: string; citations: string[] }[];
+    etymology: { root: string; cognates: string[]; development: string; semanticShift: string };
+    paradigm: { case: string; singular: string; plural: string }[];
+    manuscripts: { ms: string; variant: string; note: string; date: string }[];
+    frequency: number;
+    era: string;
+    semanticDrift: { period: string; meaning: string; strength: number }[];
+    wordEmbeddings: { word: string; similarity: number; meaning: string }[];
+  } > (null);
   const [showEtymology, setShowEtymology] = useState(true);
   const [showParadigm, setShowParadigm] = useState(false);
   const [activeTab, setActiveTab] = useState('definition');
@@ -132,202 +148,233 @@ export default function Lexicon() {
       frequency: 0.72,
       era: 'Classical',
       semanticDrift: [
-        { period: 'Archaic', meaning: 'physical excellence', strength: 0.85 },
-        { period: 'Classical', meaning: 'moral virtue', strength: 0.9 },
+        { period: 'Archaic', meaning: 'physical prowess', strength: 0.8 },
+        { period: 'Classical', meaning: 'moral excellence', strength: 0.9 },
         { period: 'Hellenistic', meaning: 'philosophical virtue', strength: 0.7 }
       ],
       wordEmbeddings: [
-        { word: 'καλός', similarity: 0.75, meaning: 'beautiful' },
-        { word: 'ἀγαθός', similarity: 0.80, meaning: 'good' },
-        { word: 'δίκη', similarity: 0.68, meaning: 'justice' }
+        { word: 'ἀνδρεία', similarity: 0.88, meaning: 'courage' },
+        { word: 'σωφροσύνη', similarity: 0.81, meaning: 'temperance' },
+        { word: 'δικαιοσύνη', similarity: 0.75, meaning: 'justice' }
       ]
-    },
+    }
   ];
+
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+  };
 
   const filteredEntries = lexiconEntries.filter(entry =>
     entry.headword.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const handleWordClick = useCallback((id) => {
-    setSelectedWord(lexiconEntries.find(entry => entry.id === id));
-  }, [lexiconEntries]);
-
-
-  const EraColorMap = {
-    'Archaic': '#D97706',
-    'Classical': '#F59E0B',
-    'Hellenistic': '#3B82F6',
-    'Imperial': '#DC2626',
-    'Late Antique': '#7C3AED',
-    'Byzantine': '#059669'
+  const handleWordClick = (id: number) => {
+    const word = lexiconEntries.find(entry => entry.id === id);
+    setSelectedWord(word || null);
   };
+
+  const renderSemanticDriftChart = useCallback((semanticDrift: { period: string; meaning: string; strength: number }[]) => {
+    const periods = semanticDrift.map(item => item.period);
+    const strengths = semanticDrift.map(item => item.strength);
+
+    const svgWidth = 300;
+    const svgHeight = 150;
+    const margin = 20;
+    const barWidth = (svgWidth - 2 * margin) / periods.length;
+    const maxStrength = Math.max(...strengths);
+
+    return (
+      <svg width={svgWidth} height={svgHeight} style={{ overflow: 'visible' }}>
+        {semanticDrift.map((item, index) => {
+          const barHeight = (item.strength / maxStrength) * (svgHeight - 2 * margin);
+          const x = margin + index * barWidth;
+          const y = svgHeight - margin - barHeight;
+          const eraColor =
+            item.period === 'Archaic' ? '#D97706' :
+              item.period === 'Classical' ? '#F59E0B' :
+                item.period === 'Hellenistic' ? '#3B82F6' :
+                  item.period === 'Imperial' ? '#DC2626' :
+                    item.period === 'Late Antique' ? '#7C3AED' :
+                      '#059669'; // Byzantine
+          return (
+            <g key={index}>
+              <rect
+                x={x}
+                y={y}
+                width={barWidth - 2}
+                height={barHeight}
+                fill={eraColor}
+                style={{ transition: 'height 0.3s ease' }}
+              />
+              <text
+                x={x + barWidth / 2}
+                y={svgHeight - 5}
+                textAnchor="middle"
+                fontSize="8"
+                fill="#9CA3AF"
+              >
+                {item.period}
+              </text>
+            </g>
+          );
+        })}
+      </svg>
+    );
+  }, []);
 
 
   return (
-    <div style={{ backgroundColor: '#0D0D0F', color: '#F5F4F2', minHeight: '100vh', padding: '20px', transition: 'background-color 0.3s ease' }}>
-      <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '20px', color: '#C9A227', textAlign: 'center' }}>
+    <div style={{ backgroundColor: '#0D0D0F', color: '#F5F4F2', minHeight: '100vh', padding: '20px', fontFamily: 'sans-serif' }}>
+      <h1 style={{ textAlign: 'center', fontSize: '2em', marginBottom: '20px', color: '#C9A227' }}>
         Logos Lexicon
       </h1>
 
-      <div style={{ marginBottom: '20px', display: 'flex', justifyContent: 'center' }}>
+      <div style={{ marginBottom: '20px' }}>
         <input
           type="text"
-          placeholder="Search for a word..."
+          placeholder="Search words..."
           value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
+          onChange={handleSearch}
           style={{
             padding: '10px',
-            fontSize: '1rem',
-            border: 'none',
+            fontSize: '16px',
             borderRadius: '5px',
+            border: '1px solid #6B7280',
             backgroundColor: '#1E1E24',
             color: '#F5F4F2',
-            width: '300px',
-            transition: 'background-color 0.3s ease, color 0.3s ease',
+            width: 'calc(100% - 22px)',
+            transition: 'all 0.3s ease'
           }}
         />
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '20px' }}>
-        {/* Word List */}
-        <div style={{ backgroundColor: '#1E1E24', padding: '15px', borderRadius: '10px', transition: 'background-color 0.3s ease' }}>
-          <h2 style={{ fontSize: '1.5rem', marginBottom: '10px', color: '#C9A227' }}>Word List</h2>
-          <ul style={{ listStyleType: 'none', padding: 0, margin: 0 }}>
-            {filteredEntries.map((entry) => (
+      <div style={{ display: 'flex', gap: '20px' }}>
+        <div style={{ flex: '1', overflow: 'auto' }}>
+          <ul style={{ listStyleType: 'none', padding: 0 }}>
+            {filteredEntries.map(entry => (
               <li
                 key={entry.id}
-                onClick={() => handleWordClick(entry.id)}
                 style={{
                   padding: '10px',
-                  borderBottom: '1px solid #141419',
+                  marginBottom: '5px',
+                  backgroundColor: '#1E1E24',
+                  borderRadius: '5px',
                   cursor: 'pointer',
-                  transition: 'background-color 0.3s ease, color 0.3s ease',
-                  backgroundColor: selectedWord?.id === entry.id ? '#141419' : 'transparent',
-                  color: selectedWord?.id === entry.id ? '#C9A227' : '#F5F4F2'
+                  transition: 'background-color 0.3s ease',
+                  ':hover': { backgroundColor: '#334155' },
                 }}
+                onClick={() => handleWordClick(entry.id)}
               >
-                {entry.headword} ({entry.polytonic})
+                <span style={{ fontWeight: 'bold', color: '#F5F4F2' }}>{entry.headword}</span>
+                <span style={{ color: '#9CA3AF', marginLeft: '10px' }}>({entry.pronunciation})</span>
               </li>
             ))}
           </ul>
         </div>
 
-        {/* Word Details */}
-        <div style={{ backgroundColor: '#1E1E24', padding: '15px', borderRadius: '10px', transition: 'background-color 0.3s ease' }}>
+        <div style={{ flex: '2', backgroundColor: '#1E1E24', padding: '20px', borderRadius: '5px', position: 'relative' }}>
           {selectedWord ? (
             <>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
-                <div>
-                  <h2 style={{ fontSize: '2rem', color: '#C9A227', marginBottom: '5px' }}>{selectedWord.headword}</h2>
-                  <p style={{ color: '#9CA3AF' }}>{selectedWord.polytonic} ({selectedWord.pronunciation})</p>
-                  <p style={{ color: '#9CA3AF' }}>Part of Speech: {selectedWord.pos}</p>
-                </div>
-                <div style={{
-                  width: '50px',
-                  height: '50px',
-                  borderRadius: '50%',
-                  backgroundColor: EraColorMap[selectedWord.era] || '#FFFFFF',
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  color: '#0D0D0F',
-                  fontWeight: 'bold',
-                  fontSize: '1.2rem'
-                }}>
-                  {selectedWord.era[0]}
-                </div>
-              </div>
+              <h2 style={{ fontSize: '1.5em', color: '#C9A227', marginBottom: '10px' }}>
+                {selectedWord.polytonic}
+                <span style={{ fontSize: '0.8em', color: '#9CA3AF', marginLeft: '10px' }}>({selectedWord.pronunciation})</span>
+              </h2>
+              <p style={{ color: '#9CA3AF', marginBottom: '10px' }}>
+                <span style={{ fontWeight: 'bold', color: '#F5F4F2' }}>Part of Speech:</span> {selectedWord.pos}
+              </p>
 
-
-              <div style={{ display: 'flex', marginBottom: '15px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-around', marginBottom: '20px' }}>
                 <button
-                  onClick={() => setActiveTab('definition')}
                   style={{
-                    padding: '8px 16px',
+                    backgroundColor: activeTab === 'definition' ? '#3B82F6' : '#141419',
+                    color: '#F5F4F2',
+                    padding: '10px 20px',
                     border: 'none',
-                    borderRadius: '5px 0 0 5px',
-                    backgroundColor: activeTab === 'definition' ? '#C9A227' : '#141419',
-                    color: activeTab === 'definition' ? '#0D0D0F' : '#F5F4F2',
+                    borderRadius: '5px',
                     cursor: 'pointer',
-                    transition: 'background-color 0.3s ease, color 0.3s ease',
-                    fontSize: '0.9rem',
-                    fontWeight: 'bold'
+                    transition: 'background-color 0.3s ease',
                   }}
+                  onClick={() => setActiveTab('definition')}
                 >
                   Definition
                 </button>
                 <button
-                  onClick={() => setActiveTab('etymology')}
                   style={{
-                    padding: '8px 16px',
+                    backgroundColor: activeTab === 'etymology' ? '#3B82F6' : '#141419',
+                    color: '#F5F4F2',
+                    padding: '10px 20px',
                     border: 'none',
-                    backgroundColor: activeTab === 'etymology' ? '#C9A227' : '#141419',
-                    color: activeTab === 'etymology' ? '#0D0D0F' : '#F5F4F2',
+                    borderRadius: '5px',
                     cursor: 'pointer',
-                    transition: 'background-color 0.3s ease, color 0.3s ease',
-                    fontSize: '0.9rem',
-                    fontWeight: 'bold'
+                    transition: 'background-color 0.3s ease',
                   }}
+                  onClick={() => setActiveTab('etymology')}
                 >
                   Etymology
                 </button>
                 <button
-                  onClick={() => setActiveTab('paradigm')}
                   style={{
-                    padding: '8px 16px',
+                    backgroundColor: activeTab === 'paradigm' ? '#3B82F6' : '#141419',
+                    color: '#F5F4F2',
+                    padding: '10px 20px',
                     border: 'none',
-                    borderRadius: '0 5px 5px 0',
-                    backgroundColor: activeTab === 'paradigm' ? '#C9A227' : '#141419',
-                    color: activeTab === 'paradigm' ? '#0D0D0F' : '#F5F4F2',
+                    borderRadius: '5px',
                     cursor: 'pointer',
-                    transition: 'background-color 0.3s ease, color 0.3s ease',
-                    fontSize: '0.9rem',
-                    fontWeight: 'bold'
+                    transition: 'background-color 0.3s ease',
                   }}
+                  onClick={() => setActiveTab('paradigm')}
                 >
                   Paradigm
+                </button>
+                <button
+                  style={{
+                    backgroundColor: activeTab === 'semanticDrift' ? '#3B82F6' : '#141419',
+                    color: '#F5F4F2',
+                    padding: '10px 20px',
+                    border: 'none',
+                    borderRadius: '5px',
+                    cursor: 'pointer',
+                    transition: 'background-color 0.3s ease',
+                  }}
+                  onClick={() => setActiveTab('semanticDrift')}
+                >
+                  Semantic Drift
                 </button>
               </div>
 
               {activeTab === 'definition' && (
                 <div>
-                  <h3 style={{ fontSize: '1.3rem', color: '#C9A227', marginBottom: '10px' }}>Definitions</h3>
-                  <ul style={{ listStyleType: 'none', padding: 0 }}>
-                    {selectedWord.definitions.map((def, index) => (
-                      <li key={index} style={{ marginBottom: '10px' }}>
-                        <strong style={{ color: '#F5F4F2' }}>{def.sense}:</strong> {def.definition}
-                        <ul style={{ listStyleType: 'none', padding: 0, marginTop: '5px' }}>
-                          {def.citations.map((citation, i) => (
-                            <li key={i} style={{ color: '#9CA3AF' }}>Citation: {citation}</li>
-                          ))}
-                        </ul>
-                      </li>
-                    ))}
-                  </ul>
+                  {selectedWord.definitions.map((def, index) => (
+                    <div key={index} style={{ marginBottom: '15px' }}>
+                      <span style={{ fontWeight: 'bold', color: '#C9A227' }}>Sense {def.sense}:</span>
+                      <p style={{ color: '#F5F4F2' }}>{def.definition}</p>
+                      <p style={{ color: '#9CA3AF' }}>
+                        <span style={{ fontStyle: 'italic' }}>Citations:</span> {def.citations.join(', ')}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               )}
 
               {activeTab === 'etymology' && (
                 <div>
-                  <h3 style={{ fontSize: '1.3rem', color: '#C9A227', marginBottom: '10px' }}>Etymology</h3>
-                  <p style={{ color: '#F5F4F2' }}>
-                    <strong style={{ color: '#9CA3AF' }}>Root:</strong> {selectedWord.etymology.root}
+                  <p style={{ color: '#F5F4F2', marginBottom: '10px' }}>
+                    <span style={{ fontWeight: 'bold', color: '#C9A227' }}>Root:</span> {selectedWord.etymology.root}
                   </p>
-                  <p style={{ color: '#F5F4F2' }}>
-                    <strong style={{ color: '#9CA3AF' }}>Cognates:</strong> {selectedWord.etymology.cognates.join(', ')}
+                  <p style={{ color: '#F5F4F2', marginBottom: '10px' }}>
+                    <span style={{ fontWeight: 'bold', color: '#C9A227' }}>Cognates:</span> {selectedWord.etymology.cognates.join(', ')}
                   </p>
-                  <p style={{ color: '#F5F4F2' }}>
-                    <strong style={{ color: '#9CA3AF' }}>Development:</strong> {selectedWord.etymology.development}
+                  <p style={{ color: '#F5F4F2', marginBottom: '10px' }}>
+                    <span style={{ fontWeight: 'bold', color: '#C9A227' }}>Development:</span> {selectedWord.etymology.development}
                   </p>
-                  <p style={{ color: '#F5F4F2' }}>
-                    <strong style={{ color: '#9CA3AF' }}>Semantic Shift:</strong> {selectedWord.etymology.semanticShift}
+                  <p style={{ color: '#F5F4F2', marginBottom: '10px' }}>
+                    <span style={{ fontWeight: 'bold', color: '#C9A227' }}>Semantic Shift:</span> {selectedWord.etymology.semanticShift}
                   </p>
                 </div>
               )}
 
               {activeTab === 'paradigm' && (
                 <div>
-                  <h3 style={{ fontSize: '1.3rem', color: '#C9A227', marginBottom: '10px' }}>Paradigm</h3>
                   <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                     <thead>
                       <tr style={{ backgroundColor: '#141419', color: '#9CA3AF' }}>
@@ -338,7 +385,7 @@ export default function Lexicon() {
                     </thead>
                     <tbody>
                       {selectedWord.paradigm.map((row, index) => (
-                        <tr key={index} style={{ backgroundColor: index % 2 === 0 ? 'transparent' : '#141419' }}>
+                        <tr key={index} style={{ backgroundColor: index % 2 === 0 ? '#1E1E24' : '#141419' }}>
                           <td style={{ padding: '8px', border: '1px solid #6B7280', color: '#F5F4F2' }}>{row.case}</td>
                           <td style={{ padding: '8px', border: '1px solid #6B7280', color: '#F5F4F2' }}>{row.singular}</td>
                           <td style={{ padding: '8px', border: '1px solid #6B7280', color: '#F5F4F2' }}>{row.plural}</td>
@@ -349,9 +396,19 @@ export default function Lexicon() {
                 </div>
               )}
 
+              {activeTab === 'semanticDrift' && (
+                <div>
+                  <h3 style={{ color: '#C9A227', marginBottom: '10px' }}>Semantic Drift Over Time</h3>
+                  {renderSemanticDriftChart(selectedWord.semanticDrift)}
+                </div>
+              )}
+
+              <p style={{ color: '#6B7280', position: 'absolute', bottom: '10px', right: '10px', fontSize: '0.8em' }}>
+                LSJ: {selectedWord.lsj}
+              </p>
             </>
           ) : (
-            <p style={{ color: '#9CA3AF', textAlign: 'center' }}>Select a word to see details.</p>
+            <p style={{ color: '#9CA3AF' }}>Select a word to see its details.</p>
           )}
         </div>
       </div>

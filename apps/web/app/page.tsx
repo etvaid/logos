@@ -177,210 +177,253 @@ export default function Home() {
         top: `${Math.random() * 100}%`,
         filter: 'blur(1px)',
         boxShadow: `0 0 10px ${Math.random() > 0.5 ? '#C9A227' : '#3B82F6'}`,
-        pointerEvents: 'none', // Prevent blocking interactions
+        pointerEvents: 'none',
       }}
     />
   );
 
 
   return (
-    <div style={{ backgroundColor: '#0D0D0F', minHeight: '100vh', color: '#F5F4F2', fontFamily: 'sans-serif', overflow: 'hidden' }}>
-      {/* Floating Particles */}
-      <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none' }}>
-        {Array.from({ length: 20 }).map((_, i) => (
-          <FloatingParticle key={i} delay={Math.random() * 5} duration={10 + Math.random() * 10} />
-        ))}
-      </div>
-
-      {/* Navigation */}
-      <nav style={{ backgroundColor: '#1E1E24', padding: '1rem', display: 'flex', justifyContent: 'space-around', alignItems: 'center', boxShadow: '0 2px 4px rgba(0,0,0,0.2)', position: 'sticky', top: 0, zIndex: 10, transition: 'background-color 0.3s ease' }}>
-        {navItems.map((item, index) => (
-          <Link href={item.href} key={index} style={{ color: '#F5F4F2', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.5rem', transition: 'color 0.3s ease', padding: '0.5rem 1rem', borderRadius: '0.375rem', '&:hover': { color: '#C9A227' } }}>
-            <span style={{ fontSize: '1.25rem' }}>{item.icon}</span>
-            <span>{item.name}</span>
-          </Link>
-        ))}
-      </nav>
+    <div style={{ backgroundColor: '#0D0D0F', color: '#F5F4F2', fontFamily: 'sans-serif', overflow: 'hidden' }}>
+      {[...Array(20)].map((_, i) => (
+        <FloatingParticle key={i} delay={Math.random() * 5} duration={5 + Math.random() * 5} />
+      ))}
 
       {/* Hero Section */}
-      <header style={{ padding: '4rem 2rem', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
-        <h1 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '1rem', textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>Logos: Ancient Texts, Modern Discovery</h1>
-        <p style={{ fontSize: '1.25rem', color: '#9CA3AF', maxWidth: '600px', margin: '0 auto', lineHeight: '1.6' }}>Explore the depths of classical literature with our AI-powered research platform.</p>
+      <header style={{ padding: '2rem', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+        <h1 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '1rem', textShadow: '2px 2px 4px rgba(0,0,0,0.6)' }}>
+          Logos: The Digital Library of the Ancient World
+        </h1>
+        <p style={{ fontSize: '1.2rem', color: '#9CA3AF', marginBottom: '2rem' }}>
+          Explore and analyze classical texts with cutting-edge philological tools.
+        </p>
 
         {/* Search Bar */}
-        <div style={{ maxWidth: '600px', margin: '2rem auto', position: 'relative' }}>
+        <div style={{ position: 'relative', display: 'inline-block', width: '70%', maxWidth: '600px' }}>
           <input
             type="text"
             ref={searchInputRef}
-            placeholder="Search texts, authors, concepts..."
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            onKeyDown={handleKeyPress}
-            onFocus={handleSearchFocus}
-            onBlur={handleSearchBlur}
             style={{
               width: '100%',
-              padding: '1rem',
+              padding: '0.75rem 1.5rem',
               fontSize: '1rem',
+              borderRadius: '9999px',
+              border: 'none',
               backgroundColor: '#1E1E24',
               color: '#F5F4F2',
-              border: 'none',
-              borderRadius: '0.5rem',
-              boxShadow: '0 2px 4px rgba(0,0,0,0.3)',
-              transition: 'all 0.3s ease',
               outline: 'none',
-              '&:focus': {
-                boxShadow: '0 4px 8px rgba(0,0,0,0.5)',
-              },
+              transition: 'background-color 0.2s, box-shadow 0.2s',
+              boxShadow: searchFocused ? '0 0 5px #C9A227' : 'none',
             }}
+            placeholder="Search for texts, authors, concepts..."
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            onFocus={handleSearchFocus}
+            onBlur={handleSearchBlur}
+            onKeyDown={handleKeyPress}
           />
           <button
-            onClick={handleSearch}
-            onMouseEnter={() => setHoveredButton(true)}
-            onMouseLeave={() => setHoveredButton(false)}
             style={{
               position: 'absolute',
               top: '50%',
-              right: '0.75rem',
+              right: '1rem',
               transform: 'translateY(-50%)',
-              backgroundColor: '#C9A227',
-              color: '#0D0D0F',
+              background: 'none',
               border: 'none',
-              padding: '0.75rem 1.25rem',
-              borderRadius: '0.375rem',
+              color: '#9CA3AF',
               cursor: 'pointer',
-              transition: 'background-color 0.3s ease, color 0.3s ease',
-              fontWeight: 'bold',
-              boxShadow: '0 2px 4px rgba(0,0,0,0.3)',
-              '&:hover': {
-                backgroundColor: hoveredButton ? '#F5F4F2' : '#C9A227',
-                color: hoveredButton ? '#0D0D0F' : '#0D0D0F',
-              },
+              fontSize: '1.2rem',
+              transition: 'color 0.2s',
             }}
+            onClick={handleSearch}
           >
-            Search
+            🔍
           </button>
-        </div>
 
-        {/* Search Suggestions (Conditionally Rendered) */}
-        {searchFocused && showSuggestions && (
-          <div style={{ maxWidth: '600px', margin: '0 auto', backgroundColor: '#141419', borderRadius: '0.5rem', boxShadow: '0 4px 8px rgba(0,0,0,0.5)', padding: '1rem' }}>
-            <h3 style={{ color: '#9CA3AF', marginBottom: '0.5rem' }}>Suggestions:</h3>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-              {searchSuggestions.map((suggestion, index) => (
-                <li key={index} style={{ padding: '0.5rem', cursor: 'pointer', transition: 'background-color 0.3s ease', '&:hover': { backgroundColor: '#1E1E24' } }} onClick={() => handleSuggestionClick(suggestion)}>
-                  {suggestion}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+          {showSuggestions && (
+            <div
+              style={{
+                position: 'absolute',
+                top: '100%',
+                left: 0,
+                width: '100%',
+                backgroundColor: '#141419',
+                borderRadius: '0.5rem',
+                marginTop: '0.25rem',
+                padding: '0.5rem',
+                zIndex: 10,
+                boxShadow: '0 2px 4px rgba(0,0,0,0.4)',
+              }}
+            >
+              <h4 style={{ margin: '0.25rem 0', color: '#6B7280', fontSize: '0.9rem' }}>Suggestions:</h4>
+              <ul style={{ listStyleType: 'none', padding: 0, margin: 0 }}>
+                {searchSuggestions.map((suggestion, index) => (
+                  <li
+                    key={index}
+                    style={{
+                      padding: '0.5rem',
+                      cursor: 'pointer',
+                      borderRadius: '0.25rem',
+                      transition: 'background-color 0.2s',
+                    }}
+                    onClick={() => handleSuggestionClick(suggestion)}
+                  >
+                    {suggestion}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
       </header>
 
       {/* Stats Section */}
-      <section style={{ padding: '2rem', textAlign: 'center' }}>
-        <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1.5rem', color: '#F5F4F2', textShadow: '1px 1px 2px rgba(0,0,0,0.5)' }}>Unlock Ancient Wisdom</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem', justifyContent: 'center', padding: '0 2rem' }}>
+      <section style={{ padding: '2rem', textAlign: 'center', marginTop: '2rem' }}>
+        <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1.5rem', color: '#F5F4F2' }}>
+          Unlocking the Treasures of Antiquity
+        </h2>
+        <div style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap' }}>
           {stats.map((stat, index) => (
             <div
               key={index}
-              onMouseEnter={() => setHoveredStat(index)}
-              onMouseLeave={() => setHoveredStat(null)}
               style={{
                 backgroundColor: '#1E1E24',
                 padding: '1.5rem',
                 borderRadius: '0.75rem',
-                boxShadow: '0 2px 4px rgba(0,0,0,0.3)',
-                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                width: 'calc(50% - 2rem)',
+                maxWidth: '250px',
+                marginBottom: '1.5rem',
+                textAlign: 'left',
+                transition: 'transform 0.3s, box-shadow 0.3s',
                 transform: hoveredStat === index ? 'scale(1.05)' : 'scale(1)',
+                boxShadow: hoveredStat === index ? '0 4px 8px rgba(0,0,0,0.5)' : '0 2px 4px rgba(0,0,0,0.3)',
                 cursor: 'pointer',
+                position: 'relative', // Add relative positioning
               }}
+              onMouseEnter={() => setHoveredStat(index)}
+              onMouseLeave={() => setHoveredStat(null)}
             >
-              <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem', color: '#C9A227' }}>{stat.icon}</div>
-              <div style={{ fontSize: '1.75rem', fontWeight: 'bold', marginBottom: '0.25rem' }}>{stat.value}</div>
-              <div style={{ fontSize: '1rem', color: '#9CA3AF' }}>{stat.label}</div>
-              {hoveredStat === index && <div style={{ fontSize: '0.875rem', color: '#6B7280', marginTop: '0.5rem' }}>{stat.detail}</div>}
+              <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>{stat.icon}</div>
+              <div style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '0.25rem' }}>{stat.value}</div>
+              <div style={{ color: '#9CA3AF', fontSize: '0.9rem' }}>{stat.label}</div>
+              {hoveredStat === index && (
+                <div
+                  style={{
+                    position: 'absolute',
+                    bottom: '-1.25rem',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    fontSize: '0.75rem',
+                    color: '#6B7280',
+                    whiteSpace: 'nowrap',
+                    backgroundColor: '#0D0D0F',
+                    padding: '0.25rem 0.5rem',
+                    borderRadius: '0.25rem',
+                    zIndex: 1,
+                    opacity: 0.9,
+                  }}
+                >
+                  {stat.detail}
+                </div>
+              )}
             </div>
           ))}
         </div>
       </section>
 
       {/* Features Section */}
-      <section style={{ padding: '3rem 2rem', backgroundColor: '#141419', borderRadius: '1rem', margin: '2rem', boxShadow: '0 4px 8px rgba(0,0,0,0.5)' }}>
-        <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '2rem', textAlign: 'center', color: '#F5F4F2', textShadow: '1px 1px 2px rgba(0,0,0,0.5)' }}>Explore Our Features</h2>
+      <section style={{ padding: '2rem', marginTop: '2rem', position: 'relative', overflow: 'hidden' }}>
+        <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1.5rem', textAlign: 'center' }}>
+          Explore Logos' Powerful Features
+        </h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
           {features.map((feature, index) => (
             <Link href={feature.href} key={index} style={{ textDecoration: 'none' }}>
               <div
-                onMouseEnter={() => setHoveredFeature(index)}
-                onMouseLeave={() => setHoveredFeature(null)}
                 style={{
                   backgroundColor: '#1E1E24',
                   padding: '1.5rem',
                   borderRadius: '0.75rem',
-                  boxShadow: '0 2px 4px rgba(0,0,0,0.3)',
-                  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                  transition: 'transform 0.3s, box-shadow 0.3s',
                   transform: hoveredFeature === index ? 'scale(1.05)' : 'scale(1)',
-                  height: '100%',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
+                  boxShadow: hoveredFeature === index ? '0 4px 8px rgba(0,0,0,0.5)' : '0 2px 4px rgba(0,0,0,0.3)',
                   cursor: 'pointer',
+                  position: 'relative',
+                  overflow: 'hidden'
                 }}
+                onMouseEnter={() => setHoveredFeature(index)}
+                onMouseLeave={() => setHoveredFeature(null)}
               >
-                <div>
-                  <div style={{ fontSize: '2rem', marginBottom: '0.75rem', color: feature.color }}>{feature.icon}</div>
-                  <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.5rem', color: '#F5F4F2' }}>{feature.title}</h3>
-                  <p style={{ fontSize: '1rem', color: '#9CA3AF', lineHeight: '1.5' }}>{feature.desc}</p>
-                </div>
-                <div style={{ marginTop: '1rem', display: 'flex', justifyContent: 'flex-start' }}>
-                  <span style={{ backgroundColor: feature.color, color: '#0D0D0F', padding: '0.25rem 0.5rem', borderRadius: '0.375rem', fontSize: '0.75rem', fontWeight: 'bold' }}>{feature.badge}</span>
-                </div>
+                <div style={{ fontSize: '1.5rem', marginBottom: '0.75rem', color: feature.color }}>{feature.icon}</div>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '0.5rem', color: '#F5F4F2' }}>
+                  {feature.title}
+                </h3>
+                <p style={{ color: '#9CA3AF', fontSize: '0.9rem', lineHeight: '1.4' }}>{feature.desc}</p>
+                {feature.badge && (
+                  <div
+                    style={{
+                      position: 'absolute',
+                      top: '0.75rem',
+                      right: '0.75rem',
+                      backgroundColor: feature.color,
+                      color: '#0D0D0F',
+                      padding: '0.25rem 0.5rem',
+                      borderRadius: '9999px',
+                      fontSize: '0.75rem',
+                      fontWeight: 'bold',
+                      transition: 'opacity 0.2s',
+                      opacity: hoveredFeature === index ? 1 : 0.7,
+                    }}
+                  >
+                    {feature.badge}
+                  </div>
+                )}
               </div>
             </Link>
           ))}
         </div>
       </section>
 
-      {/* Recent Searches Section */}
-      <section style={{ padding: '2rem', textAlign: 'left', maxWidth: '800px', margin: '0 auto' }}>
-        <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem', color: '#F5F4F2' }}>Recent Searches</h2>
-        <ul style={{ listStyle: 'none', padding: 0 }}>
-          {recentSearches.map((search, index) => (
-            <li key={index} style={{ backgroundColor: '#1E1E24', padding: '1rem', borderRadius: '0.5rem', marginBottom: '0.5rem', boxShadow: '0 1px 3px rgba(0,0,0,0.2)' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div>
-                  <span style={{ fontWeight: 'bold', color: '#F5F4F2' }}>{search.query}</span>
-                  <span style={{ color: '#9CA3AF', marginLeft: '0.5rem' }}>({search.results} results)</span>
-                </div>
-                <span style={{ fontSize: '0.75rem', color: '#6B7280' }}>{search.timestamp}</span>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </section>
-
       {/* Featured Authors Section */}
-      <section style={{ padding: '3rem 2rem', textAlign: 'center', backgroundColor: '#1E1E24', borderRadius: '1rem', margin: '2rem', boxShadow: '0 4px 8px rgba(0,0,0,0.5)' }}>
-        <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '2rem', color: '#F5F4F2', textShadow: '1px 1px 2px rgba(0,0,0,0.5)' }}>Featured Authors</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem', justifyContent: 'center', padding: '0 2rem' }}>
+      <section style={{ padding: '2rem', marginTop: '2rem', backgroundColor: '#141419' }}>
+        <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1.5rem', textAlign: 'center' }}>
+          Discover Classical Authors
+        </h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
           {featuredAuthors.map((author, index) => (
-            <div key={index} style={{ backgroundColor: '#141419', padding: '1.5rem', borderRadius: '0.75rem', boxShadow: '0 2px 4px rgba(0,0,0,0.3)', transition: 'transform 0.3s ease' , transform: hoveredStat === index ? 'scale(1.05)' : 'scale(1)'}}>
-              <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.5rem', color: '#F5F4F2' }}>{author.name}</h3>
-              <p style={{ fontSize: '1rem', color: '#9CA3AF' }}>Works: {author.works}</p>
-              <p style={{ fontSize: '0.875rem', color: '#6B7280' }}>Era: {author.era}</p>
-              <div style={{ marginTop: '0.75rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <span style={{ display: 'inline-block', width: '0.75rem', height: '0.75rem', borderRadius: '50%', backgroundColor: author.color, marginRight: '0.5rem' }}></span>
-                <span style={{ fontSize: '0.875rem', color: '#6B7280' }}>Texts: {author.texts}</span>
+            <div
+              key={index}
+              style={{
+                backgroundColor: '#1E1E24',
+                padding: '1.25rem',
+                borderRadius: '0.5rem',
+                textAlign: 'left',
+                transition: 'transform 0.3s, box-shadow 0.3s',
+                transform: hoveredStat === index ? 'scale(1.05)' : 'scale(1)',
+                boxShadow: hoveredStat === index ? '0 4px 8px rgba(0,0,0,0.5)' : '0 2px 4px rgba(0,0,0,0.3)',
+                cursor: 'pointer',
+              }}
+              onMouseEnter={() => setHoveredStat(index)}
+              onMouseLeave={() => setHoveredStat(null)}
+            >
+              <h3 style={{ fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '0.25rem' }}>{author.name}</h3>
+              <div style={{ color: '#9CA3AF', fontSize: '0.85rem', marginBottom: '0.5rem' }}>
+                Era: <span style={{ color: author.color, fontWeight: 'bold' }}>{author.era}</span>
+              </div>
+              <div style={{ color: '#9CA3AF', fontSize: '0.85rem' }}>Works: {author.works}</div>
+              <div style={{ color: '#6B7280', fontSize: '0.75rem', marginTop: '0.5rem' }}>
+                {author.texts} texts in the Logos library
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Footer */}
-      <footer style={{ backgroundColor: '#1E1E24', padding: '1rem', textAlign: 'center', color: '#9CA3AF', fontSize: '0.875rem', borderTop: '1px solid #141419' }}>
-        &copy; {new Date().getFullYear()} Logos. All rights reserved.
+      {/* Footer Section */}
+      <footer style={{ backgroundColor: '#141419', padding: '2rem', textAlign: 'center', marginTop: '2rem' }}>
+        <p style={{ fontSize: '0.9rem', color: '#6B7280' }}>
+          &copy; {new Date().getFullYear()} Logos. All rights reserved.
+        </p>
       </footer>
     </div>
   );

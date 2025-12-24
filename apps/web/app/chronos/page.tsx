@@ -135,7 +135,7 @@ export default function ChronosPage() {
           position: 5,
           example: 'βασιλικὴ ἀρετὴ καὶ εὐσέβεια',
           translation: 'imperial virtue and piety',
-          apparatus: 'εὐσέβεια A B : θεοσέβεια V',
+          apparatus: 'βασιλικὴ A B : βασιλική V',
           context: 'Byzantine imperial ideology'
         }
       ]
@@ -145,8 +145,7 @@ export default function ChronosPage() {
   const conceptData = concepts[selectedConcept as keyof typeof concepts];
 
   const handleEraClick = (index: number) => {
-    setSelectedEra(index);
-    setExpandedNode(index); // Automatically expand on click
+    setSelectedEra(index === selectedEra ? null : index);
   };
 
   const eraColors = {
@@ -158,229 +157,141 @@ export default function ChronosPage() {
     'Byzantine': '#059669'
   };
 
+  useEffect(() => {
+    if (timelineRef.current && selectedEra !== null) {
+      const eraElement = timelineRef.current.children[selectedEra] as HTMLElement;
+      if (eraElement) {
+        eraElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+          inline: 'center',
+        });
+      }
+    }
+  }, [selectedEra]);
+
   return (
-    <div style={{ backgroundColor: '#0D0D0F', color: '#F5F4F2', minHeight: '100vh', fontFamily: 'sans-serif', padding: '20px', transition: 'background-color 0.3s ease' }}>
-      <header style={{ marginBottom: '20px', borderBottom: '1px solid #1E1E24', paddingBottom: '10px' }}>
-        <h1 style={{ fontSize: '2.5em', fontWeight: 'bold', color: '#C9A227', textShadow: '1px 1px 2px #000' }}>
-          Chronos: A Visual Exploration of Concepts
+    <div style={{ backgroundColor: '#0D0D0F', color: '#F5F4F2', fontFamily: 'sans-serif', minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px', transition: 'background-color 0.3s, color 0.3s' }}>
+
+      {/* Header Section */}
+      <header style={{ width: '100%', maxWidth: '1200px', marginBottom: '20px', textAlign: 'center' }}>
+        <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#F5F4F2', letterSpacing: '1px', textShadow: '1px 1px 2px rgba(0,0,0,0.5)' }}>
+          Chronos: A Journey Through Meaning
         </h1>
-        <p style={{ color: '#9CA3AF', fontStyle: 'italic' }}>
-          Tracing the evolution of key concepts through ancient texts.
+        <p style={{ fontSize: '1.1rem', color: '#9CA3AF', marginTop: '10px' }}>
+          Explore the evolving definitions of key concepts in ancient thought.
         </p>
       </header>
 
-      <main style={{ display: 'flex', flexDirection: 'column' }}>
-        <section style={{ marginBottom: '30px', backgroundColor: '#1E1E24', padding: '20px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)', transition: 'background-color 0.3s ease' }}>
-          <h2 style={{ fontSize: '1.8em', color: '#F5F4F2', marginBottom: '15px' }}>
-            Concept: <span style={{ color: '#C9A227' }}>{selectedConcept}</span> ({conceptData.transliteration})
-          </h2>
-          <p style={{ color: '#9CA3AF' }}>
-            Modern Translation: {conceptData.modern}
+      {/* Main Content Area */}
+      <main style={{ width: '100%', maxWidth: '1200px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+
+        {/* Concept Information Card */}
+        <div style={{ backgroundColor: '#1E1E24', borderRadius: '12px', padding: '25px', marginBottom: '25px', width: '100%', boxShadow: '0 4px 8px rgba(0,0,0,0.3)', transition: 'background-color 0.3s, box-shadow 0.3s' }}>
+          <h2 style={{ fontSize: '1.75rem', fontWeight: 'bold', color: '#F5F4F2', marginBottom: '10px' }}>{selectedConcept} ({conceptData.transliteration})</h2>
+          <p style={{ color: '#9CA3AF', fontSize: '1rem', lineHeight: '1.6' }}>
+            <strong>Modern Translation:</strong> {conceptData.modern}<br />
+            <strong>LSJ Definition:</strong> {conceptData.lsj}
           </p>
-          <p style={{ color: '#9CA3AF' }}>
-            {conceptData.lsj}
-          </p>
+        </div>
 
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '20px' }}>
-            <button
-              style={{
-                backgroundColor: showApparatus ? '#6B7280' : '#3B82F6',
-                color: '#F5F4F2',
-                padding: '10px 15px',
-                border: 'none',
-                borderRadius: '5px',
-                cursor: 'pointer',
-                transition: 'background-color 0.3s ease',
-                boxShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
-              }}
-              onClick={() => setShowApparatus(!showApparatus)}
-            >
-              {showApparatus ? 'Hide Apparatus' : 'Show Apparatus'}
-            </button>
-
-            <button
-              style={{
-                backgroundColor: showParadigm ? '#6B7280' : '#DC2626',
-                color: '#F5F4F2',
-                padding: '10px 15px',
-                border: 'none',
-                borderRadius: '5px',
-                cursor: 'pointer',
-                transition: 'background-color 0.3s ease',
-                boxShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
-              }}
-              onClick={() => setShowParadigm(!showParadigm)}
-            >
-              {showParadigm ? 'Hide Paradigm' : 'Show Paradigm'}
-            </button>
-
-             <button
-              style={{
-                backgroundColor: embeddingView ? '#6B7280' : '#C9A227',
-                color: '#0D0D0F',
-                padding: '10px 15px',
-                border: 'none',
-                borderRadius: '5px',
-                cursor: 'pointer',
-                transition: 'background-color 0.3s ease',
-                boxShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
-              }}
-              onClick={() => setEmbeddingView(!embeddingView)}
-            >
-              {embeddingView ? 'Hide Embeddings' : 'Show Embeddings'}
-            </button>
-          </div>
-
-
-          {showParadigm && (
-            <div style={{ marginTop: '20px', backgroundColor: '#141419', padding: '15px', borderRadius: '5px', color: '#F5F4F2' }}>
-              <h3 style={{ fontSize: '1.2em', color: '#C9A227', marginBottom: '10px' }}>Paradigm</h3>
-              <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-                <thead>
-                  <tr>
-                    <th style={{ padding: '8px', borderBottom: '1px solid #6B7280', textAlign: 'left', color: '#9CA3AF' }}>Case</th>
-                    <th style={{ padding: '8px', borderBottom: '1px solid #6B7280', textAlign: 'left', color: '#9CA3AF' }}>Singular</th>
-                    <th style={{ padding: '8px', borderBottom: '1px solid #6B7280', textAlign: 'left', color: '#9CA3AF' }}>Plural</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td style={{ padding: '8px', borderBottom: '1px solid #6B7280', color: '#F5F4F2' }}>Nominative</td>
-                    <td style={{ padding: '8px', borderBottom: '1px solid #6B7280', color: '#F5F4F2' }}>{conceptData.paradigm.nom_sg}</td>
-                    <td style={{ padding: '8px', borderBottom: '1px solid #6B7280', color: '#F5F4F2' }}>{conceptData.paradigm.nom_pl}</td>
-                  </tr>
-                  <tr>
-                    <td style={{ padding: '8px', borderBottom: '1px solid #6B7280', color: '#F5F4F2' }}>Genitive</td>
-                    <td style={{ padding: '8px', borderBottom: '1px solid #6B7280', color: '#F5F4F2' }}>{conceptData.paradigm.gen_sg}</td>
-                    <td style={{ padding: '8px', borderBottom: '1px solid #6B7280', color: '#F5F4F2' }}>{conceptData.paradigm.gen_pl}</td>
-                  </tr>
-                  <tr>
-                    <td style={{ padding: '8px', borderBottom: '1px solid #6B7280', color: '#F5F4F2' }}>Dative</td>
-                    <td style={{ padding: '8px', borderBottom: '1px solid #6B7280', color: '#F5F4F2' }}>{conceptData.paradigm.dat_sg}</td>
-                    <td style={{ padding: '8px', borderBottom: '1px solid #6B7280', color: '#F5F4F2' }}>{conceptData.paradigm.dat_pl}</td>
-                  </tr>
-                  <tr>
-                    <td style={{ padding: '8px', color: '#F5F4F2' }}>Accusative</td>
-                    <td style={{ padding: '8px', color: '#F5F4F2' }}>{conceptData.paradigm.acc_sg}</td>
-                    <td style={{ padding: '8px', color: '#F5F4F2' }}>{conceptData.paradigm.acc_pl}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          )}
-
-           {embeddingView && (
-            <div style={{ marginTop: '20px', backgroundColor: '#141419', padding: '15px', borderRadius: '5px', color: '#F5F4F2', overflow: 'hidden' }}>
-              <h3 style={{ fontSize: '1.2em', color: '#C9A227', marginBottom: '10px' }}>Semantic Embeddings</h3>
-              <svg width="350" height="300">
-                {conceptData.embeddings.map((embedding, index) => (
-                  <g key={index}
-                    onMouseEnter={() => setHoveredEmbedding(embedding.word)}
-                    onMouseLeave={() => setHoveredEmbedding(null)}
-                  >
-                    <circle
-                      cx={embedding.x}
-                      cy={embedding.y}
-                      r={7}
-                      fill={hoveredEmbedding === embedding.word ? '#C9A227' : '#3B82F6'}
-                      style={{ transition: 'fill 0.2s ease' }}
-                    />
-                    {hoveredEmbedding === embedding.word && (
-                      <text x={embedding.x + 10} y={embedding.y + 5} fill="#F5F4F2" fontSize="0.8em">
-                        {embedding.word} ({embedding.similarity.toFixed(2)})
-                      </text>
-                    )}
-                  </g>
-                ))}
-              </svg>
-            </div>
-          )}
-        </section>
-
-        <section style={{ position: 'relative' }}>
-          <div
-            ref={timelineRef}
-            style={{
-              display: 'flex',
-              overflowX: 'auto',
-              paddingBottom: '15px',
-              marginBottom: '20px',
-            }}
-          >
+        {/* Timeline Visualization */}
+        <div style={{ width: '100%', overflowX: 'auto', marginBottom: '30px', paddingBottom: '15px' }}>
+          <div ref={timelineRef} style={{ display: 'flex', width: `${conceptData.data.length * 300}px`, alignItems: 'center', transition: 'width 0.3s' }}>
             {conceptData.data.map((eraData, index) => (
               <div
                 key={index}
                 style={{
-                  flexShrink: 0,
-                  width: '200px',
-                  marginLeft: index > 0 ? '20px' : '0',
-                  backgroundColor: selectedEra === index ? eraData.color : '#1E1E24',
-                  color: '#F5F4F2',
-                  borderRadius: '8px',
-                  padding: '15px',
+                  width: '280px',
+                  minWidth: '280px',
+                  backgroundColor: '#1E1E24',
+                  borderRadius: '12px',
+                  padding: '20px',
+                  marginRight: '20px',
                   cursor: 'pointer',
-                  transition: 'background-color 0.3s ease, transform 0.3s ease',
+                  transition: 'transform 0.2s, box-shadow 0.2s, background-color 0.3s',
                   transform: selectedEra === index ? 'scale(1.05)' : 'scale(1)',
-                  boxShadow: '0 2px 4px rgba(0, 0, 0, 0.3)',
+                  boxShadow: selectedEra === index ? '0 6px 12px rgba(0,0,0,0.4)' : '0 3px 6px rgba(0,0,0,0.3)',
+                  border: selectedEra === index ? `2px solid ${eraData.color}` : 'none',
                 }}
                 onClick={() => handleEraClick(index)}
                 onMouseEnter={() => setHoveredNode(index)}
                 onMouseLeave={() => setHoveredNode(null)}
               >
-                <h3 style={{ fontSize: '1.2em', marginBottom: '5px', color: hoveredNode === index || selectedEra === index ? '#0D0D0F' : '#C9A227' }}>
-                  {eraData.era}
+                <h3 style={{ fontSize: '1.3rem', fontWeight: 'semibold', color: eraData.color, marginBottom: '8px', textShadow: '1px 1px 1px rgba(0,0,0,0.4)' }}>
+                  {eraData.era} Era
                 </h3>
-                <p style={{ fontSize: '0.9em', color: '#9CA3AF' }}>{eraData.period}</p>
+                <p style={{ color: '#9CA3AF', fontSize: '0.9rem', lineHeight: '1.5' }}>
+                  <strong>Period:</strong> {eraData.period}<br />
+                  <strong>Meaning:</strong> {eraData.meaning}
+                </p>
               </div>
             ))}
           </div>
+        </div>
 
-          {selectedEra !== null && (
-            <div style={{
-              backgroundColor: '#141419',
-              padding: '20px',
-              borderRadius: '8px',
-              boxShadow: '0 2px 4px rgba(0, 0, 0, 0.3)',
-              transition: 'max-height 0.5s ease, opacity 0.3s ease',
-              maxHeight: expandedNode === selectedEra ? '1000px' : '0',
-              opacity: expandedNode === selectedEra ? 1 : 0,
-              overflow: 'hidden'
-            }}>
-              <h3 style={{ fontSize: '1.5em', color: conceptData.data[selectedEra].color, marginBottom: '10px' }}>
-                {conceptData.data[selectedEra].era} Era
-              </h3>
-              <p style={{ color: '#F5F4F2', marginBottom: '10px' }}>
-                <span style={{ fontWeight: 'bold', color: '#C9A227' }}>Meaning:</span> {conceptData.data[selectedEra].meaning}
-              </p>
-              <p style={{ color: '#F5F4F2', marginBottom: '10px' }}>
-                <span style={{ fontWeight: 'bold', color: '#C9A227' }}>Evolution:</span> {conceptData.data[selectedEra].evolution}
-              </p>
-              <p style={{ color: '#F5F4F2', marginBottom: '10px' }}>
-                <span style={{ fontWeight: 'bold', color: '#C9A227' }}>Authors:</span> {conceptData.data[selectedEra].authors.join(', ')}
-              </p>
-              <p style={{ color: '#F5F4F2', marginBottom: '10px' }}>
-                <span style={{ fontWeight: 'bold', color: '#C9A227' }}>Example:</span> {conceptData.data[selectedEra].example}
-              </p>
-              <p style={{ color: '#F5F4F2', marginBottom: '10px' }}>
-                <span style={{ fontWeight: 'bold', color: '#C9A227' }}>Translation:</span> {conceptData.data[selectedEra].translation}
-              </p>
-              {showApparatus && (
-                <p style={{ color: '#9CA3AF', fontStyle: 'italic', marginTop: '10px' }}>
-                  <span style={{ fontWeight: 'bold', color: '#6B7280' }}>Apparatus:</span> {conceptData.data[selectedEra].apparatus}
-                </p>
-              )}
-              <p style={{ color: '#9CA3AF' }}>
-                <span style={{ fontWeight: 'bold', color: '#6B7280' }}>Context:</span> {conceptData.data[selectedEra].context}
-              </p>
-            </div>
-          )}
-        </section>
+        {/* Era Details (Conditional Rendering) */}
+        {selectedEra !== null && (
+          <div style={{ backgroundColor: '#141419', borderRadius: '12px', padding: '25px', width: '100%', maxWidth: '800px', boxShadow: '0 4px 8px rgba(0,0,0,0.4)', transition: 'background-color 0.3s, box-shadow 0.3s' }}>
+            <h2 style={{ fontSize: '1.6rem', fontWeight: 'bold', color: concepts[selectedConcept as keyof typeof concepts].data[selectedEra].color, marginBottom: '15px', textShadow: '1px 1px 1px rgba(0,0,0,0.5)' }}>
+              {concepts[selectedConcept as keyof typeof concepts].data[selectedEra].era} Era Details
+            </h2>
+            <p style={{ color: '#F5F4F2', fontSize: '1rem', lineHeight: '1.7' }}>
+              <strong>Evolution:</strong> {concepts[selectedConcept as keyof typeof concepts].data[selectedEra].evolution}<br /><br />
+              <strong>Example:</strong> <span style={{ fontStyle: 'italic', color: '#C9A227' }}>{concepts[selectedConcept as keyof typeof concepts].data[selectedEra].example}</span><br />
+              <strong>Translation:</strong> {concepts[selectedConcept as keyof typeof concepts].data[selectedEra].translation}<br /><br />
+              <strong>Context:</strong> {concepts[selectedConcept as keyof typeof concepts].data[selectedEra].context}
+            </p>
+          </div>
+        )}
+
+
+        {/*Manuscript Apparatues*/}
+        {showApparatus && (
+          <div style={{ backgroundColor: '#141419', borderRadius: '12px', padding: '25px', width: '100%', maxWidth: '800px', boxShadow: '0 4px 8px rgba(0,0,0,0.4)', transition: 'background-color 0.3s, box-shadow 0.3s' }}>
+            <h2 style={{ fontSize: '1.6rem', fontWeight: 'bold', color: "#C9A227", marginBottom: '15px', textShadow: '1px 1px 1px rgba(0,0,0,0.5)' }}>
+              Manuscript Apparatus
+            </h2>
+            {conceptData.manuscripts.map((manuscript, index) => (
+              <div key={index} style={{ marginBottom: '10px', padding: '10px', borderRadius: '8px', backgroundColor: '#1E1E24' }}>
+                <strong style={{ color: '#F5F4F2' }}>Siglum:</strong> {manuscript.siglum}<br />
+                <strong style={{ color: '#F5F4F2' }}>Reading:</strong> {manuscript.reading}<br />
+                <strong style={{ color: '#F5F4F2' }}>Confidence:</strong> {manuscript.confidence}%
+              </div>
+            ))}
+          </div>
+        )}
+
+
+        {/*Toggle Apparatues*/}
+        <button
+          onClick={() => setShowApparatus(!showApparatus)}
+          style={{
+            backgroundColor: '#C9A227',
+            color: '#0D0D0F',
+            padding: '10px 20px',
+            borderRadius: '8px',
+            border: 'none',
+            cursor: 'pointer',
+            fontSize: '1rem',
+            fontWeight: 'bold',
+            marginTop: '20px',
+            transition: 'background-color 0.3s',
+            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
+            ':hover': {
+              backgroundColor: '#F5F4F2',
+              color: '#C9A227',
+            },
+          }}
+        >
+          {showApparatus ? 'Hide Apparatus' : 'Show Apparatus'}
+        </button>
+
       </main>
 
-      <footer style={{ marginTop: '30px', textAlign: 'center', color: '#6B7280', borderTop: '1px solid #1E1E24', paddingTop: '10px' }}>
-        <p>
-          &copy; 2024 Logos Professional Design System
-        </p>
+      {/* Footer Section */}
+      <footer style={{ width: '100%', maxWidth: '1200px', marginTop: '40px', padding: '20px', borderTop: '1px solid #1E1E24', textAlign: 'center', color: '#6B7280', fontSize: '0.9rem' }}>
+        <p>&copy; 2024 Logos Project. All rights reserved.</p>
       </footer>
     </div>
   );

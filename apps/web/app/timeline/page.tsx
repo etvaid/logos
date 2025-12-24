@@ -111,38 +111,10 @@ const EVENTS = [
     significance: "Initiates the Hellenistic period through unprecedented military campaigns that spread Greek culture across three continents.",
     sources: ["Arrian, Anabasis", "Plutarch, Vita Alexandri"],
     manuscripts: ["Codex Vindobonensis hist. gr. 4", "P.Oxy. 1798"],
-    criticalNotes: "Vulgate vs. Ptolemaic source traditions",
-    textVariants: ["Ἀλέξανδρος vs. Ἀλεξάνδρος"],
-    greekText: "Ἀλέξανδρος βασιλεὺς τῶν Μακεδόνων ἐγένετο",
+    criticalNotes: "Succession controversy resolved through military backing",
+    textVariants: ["Ἀλέξανδρος vs. Ἀλεξάνδρος", "βασιλεύς vs. ἄναξ"],
+    greekText: "Ἀλέξανδρος βασιλεὺς Μακεδόνων ἐγένετο",
     translation: "Alexander became king of the Macedonians"
-  },
-  { 
-    year: -323, 
-    name: "Death of Alexander", 
-    category: "political", 
-    era: "hellenistic",
-    description: "Alexander the Great dies in Babylon at age 32, leaving a vast empire stretching from Greece to India without a clear succession plan.",
-    significance: "His death triggers the Wars of the Successors and creates the Hellenistic kingdoms that dominate the ancient world for centuries.",
-    sources: ["Plutarch, Vita Alexandri 75-77", "Diodorus 17.117"],
-    manuscripts: ["Codex Parisinus 1671", "P.Oxy. 1367"],
-    criticalNotes: "Cause of death disputed: poison vs. fever vs. disease",
-    textVariants: ["ἐτελεύτησε vs. ἀπέθανε"],
-    greekText: "Ἀλέξανδρος ἐν Βαβυλῶνι ἐτελεύτησε",
-    translation: "Alexander died in Babylon"
-  },
-  { 
-    year: -146, 
-    name: "Roman Conquest of Greece", 
-    category: "political", 
-    era: "hellenistic",
-    description: "Roman forces destroy Corinth and establish Macedonia as a Roman province, effectively ending Greek political independence.",
-    significance: "Marks the transition from Hellenistic to Roman hegemony, though Greek cultural influence continues to grow.",
-    sources: ["Polybius 39.2", "Pausanias 7.16"],
-    manuscripts: ["Codex Vaticanus 124", "P.Tebt. 1.8"],
-    criticalNotes: "Archaeological evidence confirms widespread destruction at Corinth",
-    textVariants: ["Κόρινθος vs. Κορίνθος"],
-    greekText: "Κόρινθος ὑπὸ Ῥωμαίων κατεσκάφη",
-    translation: "Corinth was razed by the Romans"
   }
 ];
 
@@ -151,501 +123,508 @@ const ERA_COLORS = {
   classical: '#F59E0B',
   hellenistic: '#3B82F6',
   imperial: '#DC2626',
-  late: '#7C3AED',
+  lateantique: '#7C3AED',
   byzantine: '#059669'
 };
 
-const CATEGORY_COLORS = {
-  political: '#DC2626',
-  intellectual: '#3B82F6',
-  cultural: '#059669'
+const CATEGORY_ICONS = {
+  political: '⚔️',
+  intellectual: '📜',
+  cultural: '🏛️'
 };
 
-export default function Timeline() {
+export default function InteractiveTimeline() {
   const [selectedEvent, setSelectedEvent] = useState(null);
-  const [filter, setFilter] = useState('all');
-  const [viewMode, setViewMode] = useState('timeline');
   const [hoveredEvent, setHoveredEvent] = useState(null);
+  const [timelinePosition, setTimelinePosition] = useState(0);
   const timelineRef = useRef(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  const filteredEvents = filter === 'all' ? EVENTS : EVENTS.filter(event => event.category === filter);
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
 
-  const formatYear = (year) => {
-    return year < 0 ? `${Math.abs(year)} BCE` : `${year} CE`;
+  const timelineStart = -850;
+  const timelineEnd = -300;
+  const timelineRange = timelineEnd - timelineStart;
+
+  const getEventPosition = (year) => {
+    return ((year - timelineStart) / timelineRange) * 100;
   };
 
-  const TimelineVisualization = () => {
-    const svgWidth = 1200;
-    const svgHeight = 120;
-    const minYear = -800;
-    const maxYear = -146;
-    const yearRange = maxYear - minYear;
-
-    return (
-      <div style={{
-        background: 'linear-gradient(135deg, #1E1E24 0%, #141419 100%)',
-        borderRadius: '16px',
-        padding: '32px',
-        marginBottom: '32px',
-        border: '1px solid rgba(201, 162, 39, 0.2)',
-        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)'
-      }}>
-        <div style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          marginBottom: '24px'
-        }}>
-          <h2 style={{ 
-            color: '#F5F4F2', 
-            fontSize: '24px', 
-            fontWeight: '700',
-            margin: 0,
-            background: 'linear-gradient(135deg, #C9A227, #F59E0B)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent'
-          }}>
-            Ancient Greek Historical Timeline
-          </h2>
-          <div style={{ display: 'flex', gap: '12px' }}>
-            {['all', 'political', 'intellectual', 'cultural'].map(f => (
-              <button
-                key={f}
-                onClick={() => setFilter(f)}
-                style={{
-                  padding: '8px 16px',
-                  borderRadius: '8px',
-                  border: filter === f ? '2px solid #C9A227' : '1px solid #6B7280',
-                  backgroundColor: filter === f ? 'rgba(201, 162, 39, 0.1)' : '#1E1E24',
-                  color: filter === f ? '#C9A227' : '#9CA3AF',
-                  cursor: 'pointer',
-                  fontSize: '14px',
-                  fontWeight: '500',
-                  transition: 'all 0.2s ease',
-                  textTransform: 'capitalize'
-                }}
-                onMouseEnter={(e) => {
-                  if (filter !== f) {
-                    e.target.style.borderColor = '#C9A227';
-                    e.target.style.color = '#C9A227';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (filter !== f) {
-                    e.target.style.borderColor = '#6B7280';
-                    e.target.style.color = '#9CA3AF';
-                  }
-                }}
-              >
-                {f === 'all' ? 'All Events' : f}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <div style={{ overflowX: 'auto', marginBottom: '16px' }}>
-          <svg width={svgWidth} height={svgHeight} style={{ minWidth: '1200px' }}>
-            {/* Timeline base */}
-            <line
-              x1={50}
-              y1={60}
-              x2={svgWidth - 50}
-              y2={60}
-              stroke="url(#timelineGradient)"
-              strokeWidth="4"
-            />
-            
-            {/* Gradient definition */}
-            <defs>
-              <linearGradient id="timelineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#D97706" />
-                <stop offset="40%" stopColor="#F59E0B" />
-                <stop offset="80%" stopColor="#3B82F6" />
-                <stop offset="100%" stopColor="#DC2626" />
-              </linearGradient>
-              <filter id="glow">
-                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                <feMerge>
-                  <feMergeNode in="coloredBlur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-              </filter>
-            </defs>
-
-            {/* Era markers */}
-            <text x={100} y={20} fill="#D97706" fontSize="12" fontWeight="600">Archaic</text>
-            <text x={400} y={20} fill="#F59E0B" fontSize="12" fontWeight="600">Classical</text>
-            <text x={800} y={20} fill="#3B82F6" fontSize="12" fontWeight="600">Hellenistic</text>
-
-            {/* Events */}
-            {filteredEvents.map((event, index) => {
-              const x = 50 + ((event.year - minYear) / yearRange) * (svgWidth - 100);
-              const isHovered = hoveredEvent === event.year;
-              const isSelected = selectedEvent?.year === event.year;
-              
-              return (
-                <g key={event.year}>
-                  {/* Event line */}
-                  <line
-                    x1={x}
-                    y1={35}
-                    x2={x}
-                    y2={85}
-                    stroke={ERA_COLORS[event.era]}
-                    strokeWidth={isHovered || isSelected ? "3" : "2"}
-                    opacity={0.8}
-                  />
-                  
-                  {/* Event dot */}
-                  <circle
-                    cx={x}
-                    cy={60}
-                    r={isHovered || isSelected ? "8" : "6"}
-                    fill={CATEGORY_COLORS[event.category]}
-                    stroke={ERA_COLORS[event.era]}
-                    strokeWidth="2"
-                    style={{
-                      cursor: 'pointer',
-                      transition: 'all 0.2s ease',
-                      filter: isHovered || isSelected ? 'url(#glow)' : 'none'
-                    }}
-                    onMouseEnter={() => setHoveredEvent(event.year)}
-                    onMouseLeave={() => setHoveredEvent(null)}
-                    onClick={() => setSelectedEvent(event)}
-                  />
-                  
-                  {/* Year label */}
-                  <text
-                    x={x}
-                    y={100}
-                    fill="#9CA3AF"
-                    fontSize="11"
-                    textAnchor="middle"
-                    fontWeight="500"
-                  >
-                    {formatYear(event.year)}
-                  </text>
-                  
-                  {/* Hover tooltip */}
-                  {isHovered && (
-                    <g>
-                      <rect
-                        x={x - 60}
-                        y={-10}
-                        width="120"
-                        height="30"
-                        fill="#0D0D0F"
-                        stroke={ERA_COLORS[event.era]}
-                        strokeWidth="1"
-                        rx="4"
-                        opacity="0.95"
-                      />
-                      <text
-                        x={x}
-                        y={8}
-                        fill="#F5F4F2"
-                        fontSize="10"
-                        textAnchor="middle"
-                        fontWeight="600"
-                      >
-                        {event.name.length > 20 ? event.name.substring(0, 20) + '...' : event.name}
-                      </text>
-                    </g>
-                  )}
-                </g>
-              );
-            })}
-          </svg>
-        </div>
-
-        {/* Legend */}
-        <div style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          fontSize: '12px',
-          color: '#9CA3AF'
-        }}>
-          <div style={{ display: 'flex', gap: '16px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#DC2626' }}></div>
-              <span>Political</span>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#3B82F6' }}></div>
-              <span>Intellectual</span>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#059669' }}></div>
-              <span>Cultural</span>
-            </div>
-          </div>
-          <div>Click events for detailed analysis</div>
-        </div>
-      </div>
-    );
+  const getEraSegments = () => {
+    const segments = [
+      { era: 'archaic', start: -800, end: -500, name: 'Archaic Period' },
+      { era: 'classical', start: -500, end: -323, name: 'Classical Period' }
+    ];
+    
+    return segments.map(segment => ({
+      ...segment,
+      left: getEventPosition(segment.start),
+      width: getEventPosition(segment.end) - getEventPosition(segment.start)
+    }));
   };
 
-  const EventCard = ({ event }) => (
-    <div
-      style={{
-        background: 'linear-gradient(135deg, #1E1E24 0%, #141419 100%)',
-        borderRadius: '16px',
-        padding: '24px',
-        marginBottom: '16px',
-        border: `1px solid ${ERA_COLORS[event.era]}40`,
-        cursor: 'pointer',
-        transition: 'all 0.3s ease',
-        position: 'relative',
-        overflow: 'hidden'
-      }}
-      onClick={() => setSelectedEvent(event)}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.transform = 'translateY(-2px)';
-        e.currentTarget.style.boxShadow = `0 12px 48px rgba(0, 0, 0, 0.5), 0 0 24px ${ERA_COLORS[event.era]}20`;
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.transform = 'translateY(0px)';
-        e.currentTarget.style.boxShadow = 'none';
-      }}
-    >
-      {/* Era accent bar */}
-      <div style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        height: '4px',
-        background: `linear-gradient(90deg, ${ERA_COLORS[event.era]}, ${CATEGORY_COLORS[event.category]})`
-      }} />
-
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px' }}>
-        <div>
-          <h3 style={{
-            color: '#F5F4F2',
-            fontSize: '20px',
-            fontWeight: '700',
-            margin: '0 0 8px 0',
-            background: `linear-gradient(135deg, ${ERA_COLORS[event.era]}, ${CATEGORY_COLORS[event.category]})`,
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent'
-          }}>
-            {event.name}
-          </h3>
-          <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
-            <span style={{
-              backgroundColor: `${ERA_COLORS[event.era]}20`,
-              color: ERA_COLORS[event.era],
-              padding: '4px 12px',
-              borderRadius: '20px',
-              fontSize: '12px',
-              fontWeight: '600',
-              textTransform: 'capitalize',
-              border: `1px solid ${ERA_COLORS[event.era]}40`
-            }}>
-              {event.era}
-            </span>
-            <span style={{
-              backgroundColor: `${CATEGORY_COLORS[event.category]}20`,
-              color: CATEGORY_COLORS[event.category],
-              padding: '4px 12px',
-              borderRadius: '20px',
-              fontSize: '12px',
-              fontWeight: '600',
-              textTransform: 'capitalize',
-              border: `1px solid ${CATEGORY_COLORS[event.category]}40`
-            }}>
-              {event.category}
-            </span>
-          </div>
-        </div>
-        <div style={{
-          backgroundColor: `${ERA_COLORS[event.era]}15`,
-          color: ERA_COLORS[event.era],
-          padding: '8px 16px',
-          borderRadius: '12px',
-          fontSize: '14px',
-          fontWeight: '700',
-          border: `1px solid ${ERA_COLORS[event.era]}30`
-        }}>
-          {formatYear(event.year)}
-        </div>
-      </div>
-
-      <p style={{
-        color: '#9CA3AF',
-        lineHeight: '1.6',
-        margin: '0',
-        fontSize: '14px'
-      }}>
-        {event.description}
-      </p>
-
-      {event.greekText && (
-        <div style={{
-          marginTop: '16px',
-          padding: '16px',
-          backgroundColor: 'rgba(59, 130, 246, 0.1)',
-          borderRadius: '8px',
-          border: '1px solid rgba(59, 130, 246, 0.2)'
-        }}>
-          <div style={{
-            color: '#3B82F6',
-            fontSize: '16px',
-            fontFamily: 'Georgia, serif',
-            marginBottom: '8px',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '8px'
-          }}>
-            <span style={{
-              backgroundColor: '#3B82F6',
-              color: 'white',
-              fontSize: '10px',
-              padding: '2px 6px',
-              borderRadius: '4px',
-              fontWeight: '600'
-            }}>Α</span>
-            {event.greekText}
-          </div>
-          <div style={{ color: '#9CA3AF', fontSize: '14px', fontStyle: 'italic' }}>
-            "{event.translation}"
-          </div>
-        </div>
-      )}
-    </div>
-  );
-
-  const DetailModal = () => {
-    if (!selectedEvent) return null;
-
-    return (
+  return (
+    <div style={{ 
+      minHeight: '100vh',
+      backgroundColor: '#0D0D0F',
+      color: '#F5F4F2',
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+      position: 'relative',
+      overflow: 'hidden'
+    }}>
+      {/* Animated Background */}
       <div style={{
         position: 'fixed',
         top: 0,
         left: 0,
-        right: 0,
-        bottom: 0,
-        backgroundColor: 'rgba(0, 0, 0, 0.8)',
-        backdropFilter: 'blur(8px)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        zIndex: 1000,
-        padding: '20px'
-      }} onClick={() => setSelectedEvent(null)}>
+        width: '100%',
+        height: '100%',
+        background: `
+          radial-gradient(circle at ${mousePosition.x * 0.1}px ${mousePosition.y * 0.1}px, rgba(201, 162, 39, 0.1) 0%, transparent 50%),
+          radial-gradient(circle at ${100 - mousePosition.x * 0.05}px ${100 - mousePosition.y * 0.05}px, rgba(59, 130, 246, 0.05) 0%, transparent 70%),
+          linear-gradient(135deg, #0D0D0F 0%, #141419 50%, #1E1E24 100%)
+        `,
+        transition: 'background 0.5s ease'
+      }} />
+
+      {/* 3D Header */}
+      <div style={{
+        position: 'relative',
+        zIndex: 10,
+        padding: '2rem',
+        textAlign: 'center',
+        background: 'linear-gradient(135deg, rgba(201, 162, 39, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%)',
+        backdropFilter: 'blur(10px)',
+        borderBottom: '1px solid rgba(201, 162, 39, 0.3)',
+        boxShadow: '0 10px 30px rgba(0, 0, 0, 0.5)',
+        transform: 'translateZ(0)'
+      }}>
         <div style={{
-          backgroundColor: '#1E1E24',
-          borderRadius: '20px',
-          padding: '32px',
-          maxWidth: '800px',
-          width: '100%',
-          maxHeight: '90vh',
-          overflowY: 'auto',
-          border: `2px solid ${ERA_COLORS[selectedEvent.era]}`,
-          boxShadow: `0 24px 64px rgba(0, 0, 0, 0.6), 0 0 48px ${ERA_COLORS[selectedEvent.era]}40`,
-          position: 'relative'
-        }} onClick={(e) => e.stopPropagation()}>
-          {/* Close button */}
-          <button
-            onClick={() => setSelectedEvent(null)}
+          display: 'inline-block',
+          background: 'linear-gradient(45deg, #C9A227, #F59E0B, #C9A227)',
+          backgroundClip: 'text',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          fontSize: '3.5rem',
+          fontWeight: 'bold',
+          textShadow: '0 0 30px rgba(201, 162, 39, 0.5)',
+          transform: 'perspective(1000px) rotateX(10deg)',
+          marginBottom: '1rem'
+        }}>
+          ANCIENT GREEK TIMELINE
+        </div>
+        <div style={{
+          fontSize: '1.2rem',
+          color: '#9CA3AF',
+          fontStyle: 'italic',
+          transform: 'translateY(-10px)'
+        }}>
+          Interactive Journey Through Classical Antiquity
+        </div>
+      </div>
+
+      {/* Main Timeline Container */}
+      <div style={{ 
+        position: 'relative',
+        zIndex: 5,
+        padding: '4rem 2rem',
+        maxWidth: '1400px',
+        margin: '0 auto'
+      }}>
+        {/* Era Background Segments */}
+        <div style={{
+          position: 'absolute',
+          top: '8rem',
+          left: '2rem',
+          right: '2rem',
+          height: '6px',
+          borderRadius: '10px',
+          overflow: 'hidden',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)'
+        }}>
+          {getEraSegments().map((segment, index) => (
+            <div
+              key={index}
+              style={{
+                position: 'absolute',
+                left: `${segment.left}%`,
+                width: `${segment.width}%`,
+                height: '100%',
+                backgroundColor: ERA_COLORS[segment.era],
+                background: `linear-gradient(90deg, ${ERA_COLORS[segment.era]}88, ${ERA_COLORS[segment.era]}, ${ERA_COLORS[segment.era]}88)`,
+                boxShadow: `inset 0 2px 4px rgba(255, 255, 255, 0.2), 0 0 20px ${ERA_COLORS[segment.era]}44`
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Era Labels */}
+        {getEraSegments().map((segment, index) => (
+          <div
+            key={`label-${index}`}
             style={{
               position: 'absolute',
-              top: '20px',
-              right: '20px',
-              background: 'none',
-              border: 'none',
-              color: '#9CA3AF',
-              fontSize: '24px',
-              cursor: 'pointer',
-              padding: '8px',
-              borderRadius: '8px',
-              transition: 'all 0.2s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.target.style.backgroundColor = 'rgba(220, 38, 38, 0.1)';
-              e.target.style.color = '#DC2626';
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.backgroundColor = 'transparent';
-              e.target.style.color = '#9CA3AF';
+              left: `calc(2rem + ${segment.left + segment.width/2}%)`,
+              top: '6rem',
+              transform: 'translateX(-50%)',
+              fontSize: '0.9rem',
+              fontWeight: 'bold',
+              color: ERA_COLORS[segment.era],
+              textShadow: `0 0 10px ${ERA_COLORS[segment.era]}66`,
+              background: 'rgba(13, 13, 15, 0.9)',
+              padding: '0.5rem 1rem',
+              borderRadius: '20px',
+              border: `1px solid ${ERA_COLORS[segment.era]}44`,
+              backdropFilter: 'blur(5px)'
             }}
           >
-            ×
-          </button>
-
-          {/* Header */}
-          <div style={{ marginBottom: '32px' }}>
-            <div style={{ display: 'flex', gap: '12px', marginBottom: '12px' }}>
-              <span style={{
-                backgroundColor: `${ERA_COLORS[selectedEvent.era]}20`,
-                color: ERA_COLORS[selectedEvent.era],
-                padding: '6px 16px',
-                borderRadius: '20px',
-                fontSize: '14px',
-                fontWeight: '600',
-                textTransform: 'capitalize',
-                border: `1px solid ${ERA_COLORS[selectedEvent.era]}40`
-              }}>
-                {selectedEvent.era}
-              </span>
-              <span style={{
-                backgroundColor: `${CATEGORY_COLORS[selectedEvent.category]}20`,
-                color: CATEGORY_COLORS[selectedEvent.category],
-                padding: '6px 16px',
-                borderRadius: '20px',
-                fontSize: '14px',
-                fontWeight: '600',
-                textTransform: 'capitalize',
-                border: `1px solid ${CATEGORY_COLORS[selectedEvent.category]}40`
-              }}>
-                {selectedEvent.category}
-              </span>
-              <span style={{
-                backgroundColor: `${ERA_COLORS[selectedEvent.era]}15`,
-                color: ERA_COLORS[selectedEvent.era],
-                padding: '6px 16px',
-                borderRadius: '20px',
-                fontSize: '14px',
-                fontWeight: '700',
-                border: `1px solid ${ERA_COLORS[selectedEvent.era]}30`
-              }}>
-                {formatYear(selectedEvent.year)}
-              </span>
-            </div>
-
-            <h1 style={{
-              color: '#F5F4F2',
-              fontSize: '32px',
-              fontWeight: '700',
-              margin: '0 0 16px 0',
-              background: `linear-gradient(135deg, ${ERA_COLORS[selectedEvent.era]}, ${CATEGORY_COLORS[selectedEvent.category]})`,
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent'
-            }}>
-              {selectedEvent.name}
-            </h1>
-
-            <p style={{
-              color: '#9CA3AF',
-              fontSize: '16px',
-              lineHeight: '1.7',
-              margin: 0
-            }}>
-              {selectedEvent.description}
-            </p>
+            {segment.name}
           </div>
+        ))}
 
-          {/* Greek Text */}
-          {selectedEvent.greekText && (
+        {/* Timeline Events */}
+        <div ref={timelineRef} style={{ 
+          position: 'relative',
+          marginTop: '6rem',
+          height: '300px'
+        }}>
+          {EVENTS.map((event, index) => {
+            const position = getEventPosition(event.year);
+            const isSelected = selectedEvent?.year === event.year;
+            const isHovered = hoveredEvent?.year === event.year;
+            
+            return (
+              <div
+                key={event.year}
+                style={{
+                  position: 'absolute',
+                  left: `${position}%`,
+                  top: index % 2 === 0 ? '50px' : '150px',
+                  transform: 'translateX(-50%)',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  zIndex: isSelected || isHovered ? 20 : 10
+                }}
+                onMouseEnter={() => setHoveredEvent(event)}
+                onMouseLeave={() => setHoveredEvent(null)}
+                onClick={() => setSelectedEvent(isSelected ? null : event)}
+              >
+                {/* Connection Line */}
+                <div style={{
+                  position: 'absolute',
+                  top: index % 2 === 0 ? '60px' : '-10px',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  width: '2px',
+                  height: '40px',
+                  background: `linear-gradient(${index % 2 === 0 ? '180deg' : '0deg'}, ${ERA_COLORS[event.era]}, transparent)`,
+                  boxShadow: `0 0 10px ${ERA_COLORS[event.era]}66`
+                }} />
+
+                {/* Event Marker */}
+                <div style={{
+                  width: isSelected || isHovered ? '24px' : '16px',
+                  height: isSelected || isHovered ? '24px' : '16px',
+                  borderRadius: '50%',
+                  backgroundColor: ERA_COLORS[event.era],
+                  border: `3px solid ${isSelected ? '#C9A227' : 'rgba(255, 255, 255, 0.3)'}`,
+                  boxShadow: `
+                    0 0 20px ${ERA_COLORS[event.era]}aa,
+                    ${isSelected ? '0 0 40px #C9A227aa' : '0 4px 15px rgba(0, 0, 0, 0.3)'},
+                    inset 0 2px 4px rgba(255, 255, 255, 0.3)
+                  `,
+                  transform: `scale(${isSelected || isHovered ? 1.2 : 1}) translateZ(0)`,
+                  transition: 'all 0.3s ease',
+                  position: 'relative',
+                  margin: '0 auto',
+                  background: `radial-gradient(circle at 30% 30%, ${ERA_COLORS[event.era]}, ${ERA_COLORS[event.era]}dd)`
+                }} />
+
+                {/* Year Label */}
+                <div style={{
+                  position: 'absolute',
+                  top: index % 2 === 0 ? '-40px' : '30px',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  fontSize: '0.8rem',
+                  fontWeight: 'bold',
+                  color: '#F5F4F2',
+                  textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)',
+                  background: 'rgba(13, 13, 15, 0.9)',
+                  padding: '0.25rem 0.5rem',
+                  borderRadius: '12px',
+                  border: '1px solid rgba(201, 162, 39, 0.3)',
+                  backdropFilter: 'blur(5px)',
+                  whiteSpace: 'nowrap'
+                }}>
+                  {Math.abs(event.year)} BCE
+                </div>
+
+                {/* Event Card */}
+                <div style={{
+                  position: 'absolute',
+                  top: index % 2 === 0 ? '80px' : '-140px',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  width: isSelected || isHovered ? '280px' : '240px',
+                  backgroundColor: '#1E1E24',
+                  border: `2px solid ${isSelected ? '#C9A227' : ERA_COLORS[event.era]}66`,
+                  borderRadius: '16px',
+                  padding: '1.5rem',
+                  boxShadow: `
+                    0 10px 30px rgba(0, 0, 0, 0.5),
+                    0 0 20px ${ERA_COLORS[event.era]}33,
+                    ${isSelected ? '0 0 40px #C9A22744' : ''}
+                  `,
+                  transition: 'all 0.3s ease',
+                  backdropFilter: 'blur(10px)',
+                  background: `
+                    linear-gradient(135deg, #1E1E24 0%, #141419 100%),
+                    radial-gradient(circle at top right, ${ERA_COLORS[event.era]}15, transparent)
+                  `,
+                  opacity: isSelected || isHovered ? 1 : 0.95,
+                  transform: `translateX(-50%) scale(${isSelected || isHovered ? 1.05 : 1}) perspective(1000px) rotateX(${isSelected ? '0deg' : '5deg'})`,
+                  transformOrigin: 'center bottom'
+                }}>
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    marginBottom: '0.5rem'
+                  }}>
+                    <span style={{ fontSize: '1.5rem', marginRight: '0.5rem' }}>
+                      {CATEGORY_ICONS[event.category]}
+                    </span>
+                    <h3 style={{
+                      margin: 0,
+                      fontSize: '1.1rem',
+                      fontWeight: 'bold',
+                      background: `linear-gradient(45deg, ${ERA_COLORS[event.era]}, #F5F4F2)`,
+                      backgroundClip: 'text',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent'
+                    }}>
+                      {event.name}
+                    </h3>
+                  </div>
+
+                  <p style={{
+                    margin: '0 0 1rem 0',
+                    fontSize: '0.85rem',
+                    color: '#9CA3AF',
+                    lineHeight: '1.4'
+                  }}>
+                    {event.description}
+                  </p>
+
+                  {event.greekText && (
+                    <div style={{
+                      backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                      border: '1px solid rgba(59, 130, 246, 0.3)',
+                      borderRadius: '8px',
+                      padding: '0.75rem',
+                      marginBottom: '0.5rem'
+                    }}>
+                      <div style={{
+                        fontFamily: 'serif',
+                        fontSize: '0.9rem',
+                        color: '#3B82F6',
+                        marginBottom: '0.25rem',
+                        direction: 'ltr'
+                      }}>
+                        <span style={{
+                          background: '#3B82F6',
+                          color: 'white',
+                          padding: '0.1rem 0.3rem',
+                          borderRadius: '4px',
+                          fontSize: '0.6rem',
+                          marginRight: '0.5rem'
+                        }}>Α</span>
+                        {event.greekText}
+                      </div>
+                      <div style={{
+                        fontSize: '0.8rem',
+                        color: '#6B7280',
+                        fontStyle: 'italic'
+                      }}>
+                        "{event.translation}"
+                      </div>
+                    </div>
+                  )}
+
+                  <div style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    marginTop: '1rem'
+                  }}>
+                    <span style={{
+                      fontSize: '0.7rem',
+                      color: ERA_COLORS[event.era],
+                      fontWeight: 'bold',
+                      textTransform: 'uppercase',
+                      padding: '0.25rem 0.5rem',
+                      backgroundColor: `${ERA_COLORS[event.era]}22`,
+                      borderRadius: '12px',
+                      border: `1px solid ${ERA_COLORS[event.era]}44`
+                    }}>
+                      {event.category}
+                    </span>
+                    
+                    <div style={{
+                      fontSize: '0.7rem',
+                      color: '#6B7280'
+                    }}>
+                      Sources: {event.sources.slice(0, 2).join(', ')}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Detailed Event Panel */}
+        {selectedEvent && (
+          <div style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+            backdropFilter: 'blur(10px)',
+            zIndex: 50,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '2rem'
+          }}
+          onClick={() => setSelectedEvent(null)}
+          >
             <div style={{
-              marginBottom: '24px',
-              padding: '20px',
-              backgroundColor: 'rgba(59, 130, 246, 0.1)',
-              borderRadius: '12px',
-              border: '1px solid rgba(59, 130, 246, 0.3)'
-            }}>
-              <h3 style={{ color: '#3B82F6', fontSize: '18px', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <span style={{
-                  backgroundColor: '#3B82F6',
-                  color: 'white',
+              backgroundColor: '#1E1E24',
+              borderRadius: '20px',
+              padding: '3rem',
+              maxWidth: '800px',
+              maxHeight: '90vh',
+              overflow: 'auto',
+              border: `3px solid ${ERA_COLORS[selectedEvent.era]}`,
+              boxShadow: `
+                0 25px 50px rgba(0, 0, 0, 0.7),
+                0 0 60px ${ERA_COLORS[selectedEvent.era]}44,
+                inset 0 1px 0 rgba(255, 255, 255, 0.1)
+              `,
+              background: `
+                linear-gradient(135deg, #1E1E24 0%, #141419 100%),
+                radial-gradient(circle at top right, ${ERA_COLORS[selectedEvent.era]}20, transparent)
+              `,
+              transform: 'perspective(1000px) rotateX(0deg) scale(1)',
+              animation: 'modalSlideIn 0.3s ease-out'
+            }}
+            onClick={(e) => e.stopPropagation()}
+            >
+              <div style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                marginBottom: '2rem'
+              }}>
+                <div>
+                  <h2 style={{
+                    margin: 0,
+                    fontSize: '2.5rem',
+                    fontWeight: 'bold',
+                    background: `linear-gradient(45deg, ${ERA_COLORS[selectedEvent.era]}, #F5F4F2)`,
+                    backgroundClip: 'text',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    textShadow: `0 0 30px ${ERA_COLORS[selectedEvent.era]}66`
+                  }}>
+                    {selectedEvent.name}
+                  </h2>
+                  <div style={{
+                    fontSize: '1.2rem',
+                    color: '#9CA3AF',
+                    marginTop: '0.5rem'
+                  }}>
+                    {Math.abs(selectedEvent.year)} BCE • {selectedEvent.era} period
+                  </div>
+                </div>
+                
+                <button
+                  onClick={() => setSelectedEvent(null)}
+                  style={{
+                    background: 'rgba(220, 38, 38, 0.2)',
+                    border: '2px solid #DC2626',
+                    borderRadius: '50%',
+                    width: '50px',
+                    height: '50px',
+                    color: '#DC2626',
+                    fontSize: '1.5rem',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    transition: 'all 0.2s ease',
+                    transform: 'scale(1)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.transform = 'scale(1.1)';
+                    e.target.style.boxShadow = '0 0 20px #DC2626aa';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.transform = 'scale(1)';
+                    e.target.style.boxShadow = 'none';
+                  }}
+                >
+                  ×
+                </button>
+              </div>
+
+              <div style={{ display: 'grid', gap: '2rem' }}>
+                <section>
+                  <h3 style={{ 
+                    color: ERA_COLORS[selectedEvent.era], 
+                    marginBottom: '1rem',
+                    fontSize: '1.2rem',
+                    fontWeight: 'bold'
+                  }}>
+                    📜 Description
+                  </h3>
+                  <p style={{ 
+                    color: '#F5F4F2', 
+                    lineHeight: '1.6',
+                    fontSize: '1rem'
+                  }}>
+                    {selectedEvent.description}
+                  </p>
+                </section>
+
+                <section>
+                  <h3 style={{ 
+                    color: ERA_COLORS[selectedEvent.era], 
+                    marginBottom: '1rem',
+                    fontSize: '1.2rem',
+                    fontWeight: 'bold'
+                  }}>
+                    ⚡ Historical Significance
+                  </h3>
+                  <p style={{ 
+                    color: '#F5F4F2', 
+                    lineHeight: '1.6',
+                    fontSize: '1rem'
+                  }}>
+                    {selectedEvent.significance}
+                  </p>
+                </section>
+
+                {selectedEvent.greekText && (
+                  <section style={{
+                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                    border: '2px solid rgba

@@ -14,539 +14,235 @@ const PASSAGES = [
   { id: 8, author: "Seneca", work: "Epistulae", book: "1.1", text: "Ita fac, mi Lucili: vindica te tibi, et tempus quod adhuc aut auferebatur aut subripiebatur aut excidebat collige et serva", translation: "Do this, my dear Lucilius: claim yourself for yourself, and time that has until now been taken away, stolen, or lost, gather and preserve", era: "imperial", language: "latin", topics: ["philosophy", "stoicism", "ethics"], manuscript: "Quirinianus", variants: ["adhuc: ad huc Q", "serva: conserva C"], lemma: ["vindico", "tempus", "colligo"], embeddings: [0.8, 0.9, 0.7], semanticDrift: ["claim→assert", "time→moment"] },
   { id: 9, author: "Augustine", work: "Confessiones", book: "1.1", text: "Magnus es, Domine, et laudabilis valde: magna virtus tua, et sapientiae tuae non est numerus", translation: "Great are you, O Lord, and greatly to be praised; great is your power, and of your wisdom there is no measure", era: "lateAntique", language: "latin", topics: ["theology", "confession", "Christianity"], manuscript: "Sessorianus", variants: ["laudabilis: laudandus S", "numerus: terminus T"], lemma: ["magnus", "virtus", "sapientia"], embeddings: [0.9, 0.8, 0.9], semanticDrift: ["great→magnificent", "wisdom→knowledge"] },
   { id: 10, author: "Sophocles", work: "Antigone", book: "332", text: "Πολλὰ τὰ δεινὰ κοὐδὲν ἀνθρώπου δεινότερον πέλει. τοῦτο καὶ πολιοῦ πέραν πόντου", translation: "Many wonders there are, but none more wondrous than man. This being crosses even the gray sea", era: "classical", language: "greek", topics: ["tragedy", "human nature", "wonder"], manuscript: "Laurentianus", variants: ["δεινὰ: δεινότερα L", "πέλει: ἔφυ Brunck"], lemma: ["πολύς", "δεινός", "ἄνθρωπος"], embeddings: [0.6, 0.9, 0.8], semanticDrift: ["wonder→terrible", "man→mortal"] },
-  { id: 11, author: "Euripides", work: "Medea", book: "214", text: "ἀλλ᾽ οὐ ταὐτὸν ἀνδράσιν τε καὶ γυναιξὶ κεῖται νόμος", translation: "But the same law does not apply to men and women", era: "classical", language: "greek", topics: ["tragedy", "gender", "justice"], manuscript: "Palatinus", variants: ["ταὐτὸν: τὸ αὐτὸ P", "κεῖται: τίθεται T"], lemma: ["αὐτός", "ἀνήρ", "νόμος"], embeddings: [0.7, 0.8, 0.6], semanticDrift: ["law→custom", "apply→lie"] }
+  { id: 11, author: "Euripides", work: "Medea", book: "214", text: "ἀλλ᾽ οὐ ταὐτὸν ἀνδράσιν τε καὶ γυναιξὶ κεῖται νόμος", translation: "But the same law does not apply to men and women", era: "classical", language: "greek", topics: ["tragedy", "justice", "gender"], manuscript: "Parisinus 2884", variants: ["ταὐτὸν: ταὐτὰ codd.", "νόμος: θεσμός V"], lemma: ["οὐ", "αὐτός", "ἀνήρ"], embeddings: [0.7, 0.5, 0.6], semanticDrift: ["law→custom", "men→humans"] }
 ];
 
-const ERA_COLORS = {
-  archaic: '#D97706',
-  classical: '#F59E0B',
-  hellenistic: '#3B82F6',
-  imperial: '#DC2626',
-  lateAntique: '#7C3AED',
-  byzantine: '#059669'
+const EraColors = {
+  archaic: "#D97706",
+  classical: "#F59E0B",
+  hellenistic: "#3B82F6",
+  imperial: "#DC2626",
+  lateAntique: "#7C3AED",
+  byzantine: "#059669",
 };
 
-const ERA_LABELS = {
-  archaic: 'Archaic (800-500 BCE)',
-  classical: 'Classical (500-323 BCE)',
-  hellenistic: 'Hellenistic (323-31 BCE)',
-  imperial: 'Imperial (31 BCE-284 CE)',
-  lateAntique: 'Late Antique (284-600 CE)',
-  byzantine: 'Byzantine (600-1453 CE)'
+const LanguageColors = {
+  greek: "#3B82F6",
+  latin: "#DC2626",
 };
 
-export default function PassageAnalysis() {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedLanguage, setSelectedLanguage] = useState('all');
-  const [selectedEra, setSelectedEra] = useState('all');
-  const [selectedTopic, setSelectedTopic] = useState('all');
-  const [expandedPassage, setExpandedPassage] = useState(null);
-  const [animatingPassages, setAnimatingPassages] = useState(new Set());
-  const [viewMode, setViewMode] = useState('grid');
-  const [sortBy, setSortBy] = useState('author');
-  const [showAnalytics, setShowAnalytics] = useState(false);
+const LanguageIndicators = {
+  greek: "Α",
+  latin: "L",
+};
 
-  const allTopics = useMemo(() => {
-    const topics = new Set();
-    PASSAGES.forEach(passage => {
-      passage.topics.forEach(topic => topics.add(topic));
-    });
-    return Array.from(topics).sort();
-  }, []);
+function getEraColor(era: string): string {
+  return EraColors[era.toLowerCase()] || "#FFFFFF";
+}
 
-  const filteredPassages = useMemo(() => {
-    let filtered = PASSAGES.filter(passage => {
-      const matchesSearch = !searchQuery || 
-        passage.text.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        passage.translation.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        passage.author.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        passage.work.toLowerCase().includes(searchQuery.toLowerCase());
-      
-      const matchesLanguage = selectedLanguage === 'all' || passage.language === selectedLanguage;
-      const matchesEra = selectedEra === 'all' || passage.era === selectedEra;
-      const matchesTopic = selectedTopic === 'all' || passage.topics.includes(selectedTopic);
-      
-      return matchesSearch && matchesLanguage && matchesEra && matchesTopic;
-    });
+const PassageCard = ({ passage, isHighlighted }: { passage: any, isHighlighted: boolean }) => {
+  const eraColor = getEraColor(passage.era);
+  const languageColor = LanguageColors[passage.language];
+  const languageIndicator = LanguageIndicators[passage.language];
+  const [isHovered, setIsHovered] = useState(false);
 
-    // Sort passages
-    filtered.sort((a, b) => {
-      switch (sortBy) {
-        case 'author':
-          return a.author.localeCompare(b.author);
-        case 'era':
-          const eraOrder = ['archaic', 'classical', 'hellenistic', 'imperial', 'lateAntique', 'byzantine'];
-          return eraOrder.indexOf(a.era) - eraOrder.indexOf(b.era);
-        case 'language':
-          return a.language.localeCompare(b.language);
-        default:
-          return 0;
-      }
-    });
-
-    return filtered;
-  }, [searchQuery, selectedLanguage, selectedEra, selectedTopic, sortBy]);
-
-  const handlePassageClick = useCallback((passageId) => {
-    setAnimatingPassages(prev => new Set([...prev, passageId]));
-    setTimeout(() => {
-      setExpandedPassage(expandedPassage === passageId ? null : passageId);
-      setAnimatingPassages(prev => {
-        const next = new Set(prev);
-        next.delete(passageId);
-        return next;
-      });
-    }, 150);
-  }, [expandedPassage]);
-
-  const getEraData = useMemo(() => {
-    const eraCount = {};
-    PASSAGES.forEach(passage => {
-      eraCount[passage.era] = (eraCount[passage.era] || 0) + 1;
-    });
-    return Object.entries(eraCount).map(([era, count]) => ({
-      era,
-      count,
-      color: ERA_COLORS[era],
-      label: ERA_LABELS[era]
-    }));
-  }, []);
-
-  const getLanguageData = useMemo(() => {
-    const langCount = { greek: 0, latin: 0 };
-    PASSAGES.forEach(passage => {
-      langCount[passage.language]++;
-    });
-    return [
-      { language: 'Greek', count: langCount.greek, color: '#3B82F6' },
-      { language: 'Latin', count: langCount.latin, color: '#DC2626' }
-    ];
-  }, []);
 
   return (
-    <div style={{
-      minHeight: '100vh',
-      backgroundColor: '#0D0D0F',
-      color: '#F5F4F2',
-      fontFamily: 'system-ui, -apple-system, sans-serif'
-    }}>
-      {/* Header */}
-      <div style={{
-        background: 'linear-gradient(135deg, #1E1E24 0%, #141419 100%)',
-        borderBottom: '1px solid #2A2A32',
-        padding: '2rem 0',
-        position: 'sticky',
-        top: 0,
-        zIndex: 100,
-        backdropFilter: 'blur(10px)'
-      }}>
+    <div
+      style={{
+        backgroundColor: '#1E1E24',
+        color: '#F5F4F2',
+        padding: '1.5rem',
+        borderRadius: '0.75rem',
+        marginBottom: '1rem',
+        transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border 0.3s ease-in-out',
+        transform: isHovered ? 'scale(1.03)' : 'scale(1)',
+        boxShadow: isHovered ? `0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1)` : `0 2px 4px rgba(0, 0, 0, 0.1)`,
+        border: isHighlighted ? `2px solid ${languageColor}` : '2px solid transparent',
+        cursor: 'pointer',
+      }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
+        <div style={{ fontSize: '1.25rem', fontWeight: 'bold' }}>
+          {passage.author} - {passage.work}
+        </div>
         <div style={{
-          maxWidth: '1400px',
-          margin: '0 auto',
-          padding: '0 2rem'
+          backgroundColor: eraColor,
+          color: '#0D0D0F',
+          padding: '0.25rem 0.5rem',
+          borderRadius: '0.375rem',
+          fontSize: '0.75rem',
+          fontWeight: 'bold',
+          transition: 'background-color 0.3s ease-in-out',
         }}>
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            marginBottom: '1.5rem'
-          }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-              <div style={{
-                width: '48px',
-                height: '48px',
-                background: 'linear-gradient(135deg, #C9A227 0%, #F4D03F 100%)',
-                borderRadius: '12px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '24px',
-                fontWeight: 'bold',
-                color: '#0D0D0F',
-                boxShadow: '0 8px 32px rgba(201, 162, 39, 0.3)'
-              }}>
-                📜
-              </div>
-              <div>
-                <h1 style={{
-                  fontSize: '2rem',
-                  fontWeight: '700',
-                  margin: 0,
-                  background: 'linear-gradient(135deg, #C9A227 0%, #F4D03F 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text'
-                }}>
-                  Passage Analysis
-                </h1>
-                <p style={{
-                  margin: 0,
-                  color: '#9CA3AF',
-                  fontSize: '0.875rem'
-                }}>
-                  Explore {PASSAGES.length} classical passages with advanced analytics
-                </p>
-              </div>
-            </div>
-
-            <div style={{ display: 'flex', gap: '0.5rem' }}>
-              <button
-                onClick={() => setShowAnalytics(!showAnalytics)}
-                style={{
-                  padding: '0.75rem 1rem',
-                  backgroundColor: showAnalytics ? '#C9A227' : '#1E1E24',
-                  color: showAnalytics ? '#0D0D0F' : '#F5F4F2',
-                  border: 'none',
-                  borderRadius: '8px',
-                  fontSize: '0.875rem',
-                  fontWeight: '500',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s ease',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem'
-                }}
-              >
-                📊 Analytics
-              </button>
-              <div style={{
-                display: 'flex',
-                backgroundColor: '#1E1E24',
-                borderRadius: '8px',
-                padding: '2px'
-              }}>
-                <button
-                  onClick={() => setViewMode('grid')}
-                  style={{
-                    padding: '0.5rem 1rem',
-                    backgroundColor: viewMode === 'grid' ? '#C9A227' : 'transparent',
-                    color: viewMode === 'grid' ? '#0D0D0F' : '#9CA3AF',
-                    border: 'none',
-                    borderRadius: '6px',
-                    fontSize: '0.875rem',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s ease'
-                  }}
-                >
-                  Grid
-                </button>
-                <button
-                  onClick={() => setViewMode('list')}
-                  style={{
-                    padding: '0.5rem 1rem',
-                    backgroundColor: viewMode === 'list' ? '#C9A227' : 'transparent',
-                    color: viewMode === 'list' ? '#0D0D0F' : '#9CA3AF',
-                    border: 'none',
-                    borderRadius: '6px',
-                    fontSize: '0.875rem',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s ease'
-                  }}
-                >
-                  List
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Filters */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '1rem'
-          }}>
-            <div style={{ position: 'relative' }}>
-              <input
-                type="text"
-                placeholder="Search passages, authors, works..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                style={{
-                  width: '100%',
-                  padding: '0.75rem 1rem 0.75rem 2.5rem',
-                  backgroundColor: '#141419',
-                  border: '1px solid #2A2A32',
-                  borderRadius: '8px',
-                  color: '#F5F4F2',
-                  fontSize: '0.875rem',
-                  outline: 'none',
-                  transition: 'all 0.2s ease',
-                  boxSizing: 'border-box'
-                }}
-                onFocus={(e) => e.target.style.borderColor = '#C9A227'}
-                onBlur={(e) => e.target.style.borderColor = '#2A2A32'}
-              />
-              <div style={{
-                position: 'absolute',
-                left: '0.75rem',
-                top: '50%',
-                transform: 'translateY(-50%)',
-                color: '#6B7280',
-                fontSize: '1rem'
-              }}>
-                🔍
-              </div>
-            </div>
-
-            <select
-              value={selectedLanguage}
-              onChange={(e) => setSelectedLanguage(e.target.value)}
-              style={{
-                padding: '0.75rem 1rem',
-                backgroundColor: '#141419',
-                border: '1px solid #2A2A32',
-                borderRadius: '8px',
-                color: '#F5F4F2',
-                fontSize: '0.875rem',
-                cursor: 'pointer',
-                outline: 'none'
-              }}
-            >
-              <option value="all">All Languages</option>
-              <option value="greek">Greek</option>
-              <option value="latin">Latin</option>
-            </select>
-
-            <select
-              value={selectedEra}
-              onChange={(e) => setSelectedEra(e.target.value)}
-              style={{
-                padding: '0.75rem 1rem',
-                backgroundColor: '#141419',
-                border: '1px solid #2A2A32',
-                borderRadius: '8px',
-                color: '#F5F4F2',
-                fontSize: '0.875rem',
-                cursor: 'pointer',
-                outline: 'none'
-              }}
-            >
-              <option value="all">All Eras</option>
-              {Object.entries(ERA_LABELS).map(([key, label]) => (
-                <option key={key} value={key}>{label}</option>
-              ))}
-            </select>
-
-            <select
-              value={selectedTopic}
-              onChange={(e) => setSelectedTopic(e.target.value)}
-              style={{
-                padding: '0.75rem 1rem',
-                backgroundColor: '#141419',
-                border: '1px solid #2A2A32',
-                borderRadius: '8px',
-                color: '#F5F4F2',
-                fontSize: '0.875rem',
-                cursor: 'pointer',
-                outline: 'none'
-              }}
-            >
-              <option value="all">All Topics</option>
-              {allTopics.map(topic => (
-                <option key={topic} value={topic}>{topic}</option>
-              ))}
-            </select>
-
-            <select
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value)}
-              style={{
-                padding: '0.75rem 1rem',
-                backgroundColor: '#141419',
-                border: '1px solid #2A2A32',
-                borderRadius: '8px',
-                color: '#F5F4F2',
-                fontSize: '0.875rem',
-                cursor: 'pointer',
-                outline: 'none'
-              }}
-            >
-              <option value="author">Sort by Author</option>
-              <option value="era">Sort by Era</option>
-              <option value="language">Sort by Language</option>
-            </select>
-          </div>
+          {passage.era}
         </div>
       </div>
 
-      <div style={{
-        maxWidth: '1400px',
-        margin: '0 auto',
-        padding: '2rem'
-      }}>
-        {/* Analytics Panel */}
-        {showAnalytics && (
-          <div style={{
-            marginBottom: '2rem',
-            padding: '2rem',
-            backgroundColor: '#1E1E24',
-            borderRadius: '16px',
-            border: '1px solid #2A2A32',
-            transform: showAnalytics ? 'translateY(0)' : 'translateY(-20px)',
-            opacity: showAnalytics ? 1 : 0,
-            transition: 'all 0.3s ease'
+      <div style={{ marginBottom: '0.5rem', fontFamily: 'serif', fontSize: '1.1rem' }}>
+        <span style={{ color: languageColor, fontWeight: 'bold', marginRight: '0.25rem' }}>{languageIndicator}:</span>
+        {passage.text}
+      </div>
+      <div style={{ color: '#9CA3AF', marginBottom: '0.75rem' }}>
+        {passage.translation}
+      </div>
+
+      <div style={{ display: 'flex', gap: '0.5rem', fontSize: '0.875rem', color: '#6B7280' }}>
+        {passage.topics.map((topic: string) => (
+          <span key={topic} style={{
+            backgroundColor: '#141419',
+            padding: '0.25rem 0.5rem',
+            borderRadius: '0.375rem',
+            transition: 'background-color 0.3s ease-in-out',
           }}>
-            <h2 style={{
-              fontSize: '1.5rem',
-              fontWeight: '600',
-              marginBottom: '1.5rem',
-              color: '#F5F4F2'
-            }}>
-              Collection Analytics
-            </h2>
+            {topic}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+};
 
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-              gap: '2rem'
-            }}>
-              {/* Era Distribution */}
-              <div style={{
-                backgroundColor: '#141419',
-                padding: '1.5rem',
-                borderRadius: '12px',
-                border: '1px solid #2A2A32'
-              }}>
-                <h3 style={{
-                  fontSize: '1.125rem',
-                  fontWeight: '600',
-                  marginBottom: '1rem',
-                  color: '#F5F4F2'
-                }}>
-                  Era Distribution
-                </h3>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                  {getEraData.map(({ era, count, color, label }) => (
-                    <div key={era} style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                      <div style={{
-                        width: '16px',
-                        height: '16px',
-                        backgroundColor: color,
-                        borderRadius: '4px'
-                      }}></div>
-                      <div style={{ flex: 1 }}>
-                        <div style={{
-                          display: 'flex',
-                          justifyContent: 'space-between',
-                          alignItems: 'center',
-                          marginBottom: '0.25rem'
-                        }}>
-                          <span style={{ fontSize: '0.875rem', color: '#F5F4F2' }}>{label}</span>
-                          <span style={{ fontSize: '0.75rem', color: '#9CA3AF' }}>{count}</span>
-                        </div>
-                        <div style={{
-                          height: '4px',
-                          backgroundColor: '#2A2A32',
-                          borderRadius: '2px',
-                          overflow: 'hidden'
-                        }}>
-                          <div style={{
-                            height: '100%',
-                            backgroundColor: color,
-                            width: `${(count / PASSAGES.length) * 100}%`,
-                            transition: 'width 0.3s ease'
-                          }}></div>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+export default function Home() {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedEra, setSelectedEra] = useState('');
+  const [selectedLanguage, setSelectedLanguage] = useState('');
 
-              {/* Language Distribution */}
-              <div style={{
-                backgroundColor: '#141419',
-                padding: '1.5rem',
-                borderRadius: '12px',
-                border: '1px solid #2A2A32'
-              }}>
-                <h3 style={{
-                  fontSize: '1.125rem',
-                  fontWeight: '600',
-                  marginBottom: '1rem',
-                  color: '#F5F4F2'
-                }}>
-                  Language Distribution
-                </h3>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                  {getLanguageData.map(({ language, count, color }) => (
-                    <div key={language} style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                      <div style={{
-                        width: '16px',
-                        height: '16px',
-                        backgroundColor: color,
-                        borderRadius: '4px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        fontSize: '10px',
-                        fontWeight: 'bold',
-                        color: '#F5F4F2'
-                      }}>
-                        {language === 'Greek' ? 'Α' : 'L'}
-                      </div>
-                      <div style={{ flex: 1 }}>
-                        <div style={{
-                          display: 'flex',
-                          justifyContent: 'space-between',
-                          alignItems: 'center',
-                          marginBottom: '0.25rem'
-                        }}>
-                          <span style={{ fontSize: '0.875rem', color: '#F5F4F2' }}>{language}</span>
-                          <span style={{ fontSize: '0.75rem', color: '#9CA3AF' }}>{count}</span>
-                        </div>
-                        <div style={{
-                          height: '4px',
-                          backgroundColor: '#2A2A32',
-                          borderRadius: '2px',
-                          overflow: 'hidden'
-                        }}>
-                          <div style={{
-                            height: '100%',
-                            backgroundColor: color,
-                            width: `${(count / PASSAGES.length) * 100}%`,
-                            transition: 'width 0.3s ease'
-                          }}></div>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
 
-        {/* Results Header */}
-        <div style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          marginBottom: '2rem'
-        }}>
-          <div>
-            <h2 style={{
-              fontSize: '1.5rem',
-              fontWeight: '600',
-              margin: 0,
-              color: '#F5F4F2'
-            }}>
-              Passages
-            </h2>
-            <p style={{
-              margin: '0.25rem 0 0 0',
-              color: '#9CA3AF',
-              fontSize: '0.875rem'
-            }}>
-              {filteredPassages.length} of {PASSAGES.length} passages
-            </p>
-          </div>
+  const filteredPassages = useMemo(() => {
+    return PASSAGES.filter((passage) => {
+      const searchMatch = searchTerm
+        ? passage.author.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        passage.work.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        passage.text.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        passage.translation.toLowerCase().includes(searchTerm.toLowerCase())
+        : true;
+
+      const eraMatch = selectedEra ? passage.era.toLowerCase() === selectedEra.toLowerCase() : true;
+      const languageMatch = selectedLanguage ? passage.language.toLowerCase() === selectedLanguage.toLowerCase() : true;
+
+      return searchMatch && eraMatch && languageMatch;
+    });
+  }, [searchTerm, selectedEra, selectedLanguage]);
+
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const handleEraChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedEra(e.target.value);
+  };
+
+  const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedLanguage(e.target.value);
+  };
+
+  const clearFilters = () => {
+    setSearchTerm('');
+    setSelectedEra('');
+    setSelectedLanguage('');
+  };
+
+
+  return (
+    <div style={{ backgroundColor: '#0D0D0F', color: '#F5F4F2', minHeight: '100vh', padding: '2rem', fontFamily: 'sans-serif' }}>
+      <header style={{ marginBottom: '2rem', textAlign: 'center' }}>
+        <h1 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '0.5rem', color: '#C9A227' }}>Logos Professional</h1>
+        <p style={{ color: '#9CA3AF', fontSize: '1.25rem' }}>A design system applied to classical text passages.</p>
+      </header>
+
+      <section style={{ marginBottom: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+        <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+          <input
+            type="text"
+            placeholder="Search passages..."
+            value={searchTerm}
+            onChange={handleSearchChange}
+            style={{
+              padding: '0.75rem',
+              borderRadius: '0.5rem',
+              border: '1px solid #6B7280',
+              backgroundColor: '#1E1E24',
+              color: '#F5F4F2',
+              width: '100%',
+              maxWidth: '400px',
+              transition: 'border-color 0.3s ease-in-out',
+              outline: 'none'
+            }}
+          />
+
+          <select
+            value={selectedEra}
+            onChange={handleEraChange}
+            style={{
+              padding: '0.75rem',
+              borderRadius: '0.5rem',
+              border: '1px solid #6B7280',
+              backgroundColor: '#1E1E24',
+              color: '#F5F4F2',
+              transition: 'border-color 0.3s ease-in-out',
+              outline: 'none'
+            }}
+          >
+            <option value="">All Eras</option>
+            {[...new Set(PASSAGES.map((p) => p.era))].sort().map((era) => (
+              <option key={era} value={era}>{era}</option>
+            ))}
+          </select>
+
+          <select
+            value={selectedLanguage}
+            onChange={handleLanguageChange}
+            style={{
+              padding: '0.75rem',
+              borderRadius: '0.5rem',
+              border: '1px solid #6B7280',
+              backgroundColor: '#1E1E24',
+              color: '#F5F4F2',
+              transition: 'border-color 0.3s ease-in-out',
+              outline: 'none'
+            }}
+          >
+            <option value="">All Languages</option>
+            {[...new Set(PASSAGES.map((p) => p.language))].sort().map((language) => (
+              <option key={language} value={language}>{language}</option>
+            ))}
+          </select>
+
+          <button
+            onClick={clearFilters}
+            style={{
+              backgroundColor: '#6B7280',
+              color: '#F5F4F2',
+              padding: '0.75rem 1.25rem',
+              borderRadius: '0.5rem',
+              border: 'none',
+              cursor: 'pointer',
+              transition: 'background-color 0.3s ease-in-out',
+              outline: 'none',
+            }}
+          >
+            Clear Filters
+          </button>
         </div>
+      </section>
 
-        {/* Passages Grid/List */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: viewMode === 'grid' ? 'repeat(auto-fit, minmax(400px, 1fr))' : '1fr',
-          gap: '1.5rem'
-        }}>
-          {filt
+      <main>
+        {filteredPassages.length > 0 ? (
+          filteredPassages.map((passage) => (
+            <PassageCard key={passage.id} passage={passage} isHighlighted={searchTerm !== '' && (passage.author.toLowerCase().includes(searchTerm.toLowerCase()) || passage.work.toLowerCase().includes(searchTerm.toLowerCase()) || passage.text.toLowerCase().includes(searchTerm.toLowerCase()) || passage.translation.toLowerCase().includes(searchTerm.toLowerCase()))} />
+          ))
+        ) : (
+          <p style={{ color: '#9CA3AF', textAlign: 'center' }}>No passages found.</p>
+        )}
+      </main>
+
+      <footer style={{ marginTop: '2rem', textAlign: 'center', color: '#6B7280', fontSize: '0.875rem' }}>
+        &copy; 2024 Logos Professional. All rights reserved.
+      </footer>
+    </div>
+  );
+}

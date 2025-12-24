@@ -128,234 +128,365 @@ const INTERTEXTS = [
       { word: 'γενεή', period: 'Classical', meaning: 'generation, race', frequency: 56 },
       { word: 'γενεή', period: 'Hellenistic', meaning: 'class, type', frequency: 23 }
     ]
-  },
-  {
-    id: 3,
-    source: { 
-      ref: 'Metamorphoses 1.1-4', 
-      text: 'In nova fert animus mutatas dicere formas / corpora; di, coeptis (nam vos mutastis et illas) / adspirate meis primaque ab origine mundi / ad mea perpetuum deducite tempora carmen', 
-      author: 'Ovid', 
-      work: 'Metamorphoses', 
-      language: 'latin',
-      era: 'Imperial',
-      date: '8 CE'
-    },
-    target: { 
-      ref: 'Theogony 1-8', 
-      text: 'Μουσάων Ἑλικωνιάδων ἀρχώμεθ᾽ ἀείδειν, / αἳ θ᾽ Ἑλικῶνος ἔχουσιν ὄρος μέγα τε ζάθεόν τε / καί τε περὶ κρήνην ἰοειδέα πόσσιν ἁβροῖσιν / ὀρχεῦνται καὶ βωμὸν ἐρισφαράγου Διὸς υἱοῦ', 
-      author: 'Hesiod', 
-      work: 'Theogony', 
-      language: 'greek',
-      era: 'Archaic',
-      date: '7th century BCE'
-    },
-    type: 'Generic Innovation',
-    subtype: 'Metamorphic Poetics',
-    strength: 92,
-    description: 'Transformation of cosmogonic tradition through metamorphosis',
-    apparatus: {
-      mss: ['Mediceus', 'Parisinus', 'Marcianus'],
-      variants: [
-        { lemma: 'formas', variants: ['formam (M)', 'forma (late)'] },
-        { lemma: 'ἀρχώμεθ᾽', variants: ['ἀρχόμεθα (Proc.)', 'ἄρχεσθε (schol.)'] }
-      ]
-    },
-    connections: [
-      { 
-        source: 'mutatas formas', 
-        target: 'ἀρχώμεθ᾽ ἀείδειν', 
-        type: 'innovative', 
-        reason: 'Metamorphic principle applied to traditional invocation',
-        lsj: 'ἄρχω: begin, rule (mid. begin for oneself)',
-        paradigm: {
-          lemma: 'ἄρχω',
-          forms: [
-            { case: 'Nom.', form: 'ἄρχω' },
-            { case: 'Gen.', form: 'ἄρχου' },
-            { case: 'Dat.', form: 'ἄρχῳ' },
-            { case: 'Acc.', form: 'ἄρχω' }
-          ]
-        }
-      }
-    ],
-    semanticDrift: [
-      { word: 'formas', period: 'Early Latin', meaning: 'shape, figure', frequency: 67 },
-      { word: 'formas', period: 'Classical', meaning: 'form, appearance', frequency: 89 },
-      { word: 'formas', period: 'Imperial', meaning: 'beauty, outward show', frequency: 72 }
-    ]
   }
 ];
 
-const EraColorMap = {
+const ERA_COLORS = {
   'Archaic': '#D97706',
   'Classical': '#F59E0B',
   'Hellenistic': '#3B82F6',
   'Imperial': '#DC2626',
   'Late Antique': '#7C3AED',
-  'Byzantine': '#059669',
+  'Byzantine': '#059669'
 };
 
-const LanguageIndicator = ({ language }) => {
-  const color = language === 'greek' ? '#3B82F6' : '#DC2626';
-  const label = language === 'greek' ? 'Α' : 'L';
+const IntertextualityExplorer = () => {
+  const [selectedIntertext, setSelectedIntertext] = useState(null);
+  const [activeTab, setActiveTab] = useState('connections');
+  const [hoveredConnection, setHoveredConnection] = useState(null);
 
-  return (
-    <span style={{ 
-      color: color, 
-      fontSize: '0.8rem', 
-      fontWeight: 'bold', 
-      marginLeft: '0.5rem',
-      transition: 'color 0.3s'
-    }}>
-      {label}
-    </span>
+  const InteractionCard = ({ intertext }) => (
+    <div 
+      style={{
+        background: 'linear-gradient(135deg, #1E1E24 0%, #141419 100%)',
+        border: '2px solid',
+        borderImage: 'linear-gradient(45deg, #C9A227, #9CA3AF) 1',
+        borderRadius: '16px',
+        padding: '24px',
+        cursor: 'pointer',
+        transform: selectedIntertext?.id === intertext.id ? 'translateY(-8px)' : 'translateY(0)',
+        boxShadow: selectedIntertext?.id === intertext.id 
+          ? '0 20px 40px rgba(201, 162, 39, 0.3), 0 0 80px rgba(201, 162, 39, 0.1)' 
+          : '0 8px 32px rgba(0, 0, 0, 0.3)',
+        transition: 'all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1)',
+        position: 'relative',
+        overflow: 'hidden'
+      }}
+      onClick={() => setSelectedIntertext(intertext)}
+    >
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        height: '4px',
+        background: `linear-gradient(90deg, ${ERA_COLORS[intertext.source.era]}, ${ERA_COLORS[intertext.target.era]})`,
+        transition: 'width 0.3s ease-in-out',
+      }} />
+      
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <h3 style={{ color: '#F5F4F2', margin: '0', fontSize: '1.2em' }}>
+            {intertext.type}
+          </h3>
+          <span style={{ color: '#9CA3AF', fontSize: '0.8em' }}>Strength: {intertext.strength}%</span>
+        </div>
+
+        <p style={{ color: '#9CA3AF', margin: '0', fontSize: '0.9em' }}>
+          {intertext.description}
+        </p>
+
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '8px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+            <span style={{ color: '#6B7280', fontSize: '0.75em' }}>Source: {intertext.source.work}</span>
+            <span style={{ color: '#6B7280', fontSize: '0.75em' }}>Target: {intertext.target.work}</span>
+          </div>
+          <div style={{
+              width: '40px',
+              height: '40px',
+              borderRadius: '50%',
+              background: `linear-gradient(45deg, ${ERA_COLORS[intertext.source.era]}, ${ERA_COLORS[intertext.target.era]})`,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              color: '#F5F4F2',
+              fontWeight: 'bold'
+          }}>
+              {intertext.source.language[0].toUpperCase()}{intertext.target.language[0].toUpperCase()}
+          </div>
+        </div>
+      </div>
+    </div>
   );
-};
 
-const IntertextCard = ({ intertext }) => {
-  const [expanded, setExpanded] = useState(false);
+  const ConnectionVisualization = ({ intertext }) => {
+    if (!intertext) return null;
 
-  const toggleExpanded = () => {
-    setExpanded(!expanded);
+    const { connections } = intertext;
+
+    return (
+      <div style={{ position: 'relative', width: '100%', height: '300px', overflow: 'hidden' }}>
+        <svg width="100%" height="100%" style={{ position: 'absolute', top: 0, left: 0 }}>
+          {connections.map((connection, index) => {
+            const isHovered = hoveredConnection === connection;
+            const strokeWidth = isHovered ? 4 : 2;
+            const strokeColor = isHovered ? '#C9A227' : '#9CA3AF';
+
+            return (
+              <line
+                key={index}
+                x1={`${(index + 1) * (100 / (connections.length + 1))}%`}
+                y1="20%"
+                x2={`${(index + 1) * (100 / (connections.length + 1))}%`}
+                y2="80%"
+                stroke={strokeColor}
+                strokeWidth={strokeWidth}
+                style={{ transition: 'all 0.2s ease-in-out' }}
+                onMouseEnter={() => setHoveredConnection(connection)}
+                onMouseLeave={() => setHoveredConnection(null)}
+              />
+            );
+          })}
+
+          {connections.map((connection, index) => (
+            <React.Fragment key={`source-${index}`}>
+              <circle
+                cx={`${(index + 1) * (100 / (connections.length + 1))}%`}
+                cy="20%"
+                r="8"
+                fill={ERA_COLORS[selectedIntertext.source.era]}
+                stroke="#0D0D0F"
+                strokeWidth="2"
+                style={{ transition: 'all 0.2s ease-in-out' }}
+              />
+              <text
+                x={`${(index + 1) * (100 / (connections.length + 1))}%`}
+                y="15%"
+                textAnchor="middle"
+                fontSize="0.7em"
+                fill="#F5F4F2"
+                style={{ pointerEvents: 'none' }}
+              >
+                Source
+              </text>
+            </React.Fragment>
+          ))}
+
+          {connections.map((connection, index) => (
+            <React.Fragment key={`target-${index}`}>
+              <circle
+                cx={`${(index + 1) * (100 / (connections.length + 1))}%`}
+                cy="80%"
+                r="8"
+                fill={ERA_COLORS[selectedIntertext.target.era]}
+                stroke="#0D0D0F"
+                strokeWidth="2"
+                style={{ transition: 'all 0.2s ease-in-out' }}
+              />
+              <text
+                x={`${(index + 1) * (100 / (connections.length + 1))}%`}
+                y="85%"
+                textAnchor="middle"
+                fontSize="0.7em"
+                fill="#F5F4F2"
+                style={{ pointerEvents: 'none' }}
+              >
+                Target
+              </text>
+            </React.Fragment>
+          ))}
+        </svg>
+      </div>
+    );
+  };
+  
+  const SemanticDriftChart = ({ semanticDrift }) => {
+    if (!semanticDrift) return null;
+
+    const maxFrequency = Math.max(...semanticDrift.map(item => item.frequency));
+
+    return (
+      <div style={{ position: 'relative', width: '100%', height: '200px', overflow: 'hidden' }}>
+        <svg width="100%" height="100%" style={{ position: 'absolute', top: 0, left: 0 }}>
+          {semanticDrift.map((item, index) => {
+            const barHeight = (item.frequency / maxFrequency) * 80; // Scale to 80% of the chart height
+            const x = `${(index + 0.5) * (100 / semanticDrift.length)}%`; // Center the bar
+            const y = `${100 - barHeight}%`;
+            const width = `${(0.8 * (100 / semanticDrift.length))}%`; // Make bars thinner for spacing
+            const eraColor = ERA_COLORS[item.period.split(' ')[0]]; // Get era color
+
+            return (
+              <React.Fragment key={index}>
+                <rect
+                  x={x}
+                  y={y}
+                  width={width}
+                  height={`${barHeight}%`}
+                  fill={eraColor}
+                  transform={`translate(-${parseFloat(width) / 2}, 0)`} // Center the bar
+                />
+                <text
+                  x={x}
+                  y="95%"
+                  textAnchor="middle"
+                  fontSize="0.7em"
+                  fill="#F5F4F2"
+                >
+                  {item.period}
+                </text>
+              </React.Fragment>
+            );
+          })}
+        </svg>
+      </div>
+    );
+  };
+
+
+  const IntertextDetails = ({ intertext }) => {
+    if (!intertext) return null;
+
+    return (
+      <div style={{
+        background: '#1E1E24',
+        borderRadius: '16px',
+        padding: '24px',
+        boxShadow: '0 4px 16px rgba(0, 0, 0, 0.2)',
+        transition: 'all 0.3s ease-in-out',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '16px'
+      }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #333' }}>
+          <h2 style={{ color: '#F5F4F2', margin: '0', fontSize: '1.5em' }}>{intertext.type}</h2>
+          <div style={{ display: 'flex', gap: '8px' }}>
+            <button
+              style={{
+                background: activeTab === 'connections' ? '#C9A227' : '#333',
+                color: '#F5F4F2',
+                border: 'none',
+                padding: '8px 16px',
+                borderRadius: '8px',
+                cursor: 'pointer',
+                transition: 'background-color 0.2s ease'
+              }}
+              onClick={() => setActiveTab('connections')}
+            >
+              Connections
+            </button>
+            <button
+              style={{
+                background: activeTab === 'apparatus' ? '#C9A227' : '#333',
+                color: '#F5F4F2',
+                border: 'none',
+                padding: '8px 16px',
+                borderRadius: '8px',
+                cursor: 'pointer',
+                transition: 'background-color 0.2s ease'
+              }}
+              onClick={() => setActiveTab('apparatus')}
+            >
+              Apparatus
+            </button>
+            <button
+              style={{
+                background: activeTab === 'semanticDrift' ? '#C9A227' : '#333',
+                color: '#F5F4F2',
+                border: 'none',
+                padding: '8px 16px',
+                borderRadius: '8px',
+                cursor: 'pointer',
+                transition: 'background-color 0.2s ease'
+              }}
+              onClick={() => setActiveTab('semanticDrift')}
+            >
+              Semantic Drift
+            </button>
+          </div>
+        </div>
+
+        {activeTab === 'connections' && (
+          <>
+          <ConnectionVisualization intertext={intertext} />
+            {intertext.connections.map((connection, index) => (
+              <div key={index} style={{ padding: '16px', border: '1px solid #333', borderRadius: '8px', transition: 'background-color 0.2s ease', backgroundColor: hoveredConnection === connection ? '#333' : 'transparent' }}
+              onMouseEnter={() => setHoveredConnection(connection)}
+              onMouseLeave={() => setHoveredConnection(null)}>
+                <h4 style={{ color: '#F5F4F2' }}>{connection.type}</h4>
+                <p style={{ color: '#9CA3AF' }}>Reason: {connection.reason}</p>
+                <p style={{ color: '#9CA3AF' }}>LSJ: {connection.lsj}</p>
+                <h5 style={{ color: '#F5F4F2' }}>Paradigm: {connection.paradigm.lemma}</h5>
+                <ul style={{ color: '#9CA3AF', paddingLeft: '20px' }}>
+                  {connection.paradigm.forms.map((form, i) => (
+                    <li key={i}>{form.case ? `${form.case}: ` : `${form.tense}: `}{form.form}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </>
+        )}
+
+        {activeTab === 'apparatus' && (
+          <div>
+            <h3 style={{ color: '#F5F4F2' }}>Manuscripts</h3>
+            <p style={{ color: '#9CA3AF' }}>{intertext.apparatus.mss.join(', ')}</p>
+            <h3 style={{ color: '#F5F4F2' }}>Variants</h3>
+            {intertext.apparatus.variants.map((variant, index) => (
+              <div key={index} style={{ marginBottom: '8px' }}>
+                <span style={{ color: '#F5F4F2' }}>Lemma: {variant.lemma}</span>
+                <ul style={{ color: '#9CA3AF', paddingLeft: '20px' }}>
+                  {variant.variants.map((v, i) => (
+                    <li key={i}>{v}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {activeTab === 'semanticDrift' && (
+          <>
+            <SemanticDriftChart semanticDrift={intertext.semanticDrift} />
+            <div>
+              <h3 style={{ color: '#F5F4F2' }}>Semantic Drift</h3>
+              {intertext.semanticDrift.map((drift, index) => (
+                <div key={index} style={{ marginBottom: '8px' }}>
+                  <span style={{ color: '#F5F4F2' }}>Word: {drift.word}</span>
+                  <p style={{ color: '#9CA3AF' }}>Period: {drift.period}</p>
+                  <p style={{ color: '#9CA3AF' }}>Meaning: {drift.meaning}</p>
+                  <p style={{ color: '#9CA3AF' }}>Frequency: {drift.frequency}</p>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+    );
   };
 
   return (
-    <div 
-      style={{ 
-        backgroundColor: '#1E1E24', 
-        color: '#F5F4F2', 
-        padding: '1.5rem', 
-        borderRadius: '0.5rem', 
-        marginBottom: '1rem',
-        cursor: 'pointer',
-        transition: 'background-color 0.3s, box-shadow 0.3s',
-        boxShadow: expanded ? '0 0.5rem 1rem rgba(0,0,0,0.3)' : '0 0.25rem 0.5rem rgba(0,0,0,0.1)',
-      }}
-      onClick={toggleExpanded}
-    >
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-        <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#F5F4F2', margin: 0, transition: 'color 0.3s' }}>
-          Intertext {intertext.id}
-        </h3>
-        <span style={{
-          color: '#9CA3AF',
-          fontSize: '0.875rem',
-          transition: 'color 0.3s',
-          display: 'flex',
-          alignItems: 'center',
-        }}>
-          Strength: {intertext.strength}%
-        </span>
-      </div>
+    <div style={{ 
+      backgroundColor: '#0D0D0F', 
+      color: '#F5F4F2', 
+      fontFamily: 'sans-serif', 
+      minHeight: '100vh', 
+      padding: '20px',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      gap: '20px'
+    }}>
+      <header style={{ textAlign: 'center', marginBottom: '20px' }}>
+        <h1 style={{ color: '#C9A227', fontSize: '2.5em', fontWeight: 'bold', textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>Logos Intertextuality Explorer</h1>
+        <p style={{ color: '#9CA3AF', fontSize: '1.2em' }}>Discover connections between ancient texts</p>
+      </header>
 
-      <div style={{ marginBottom: '1rem', transition: 'opacity 0.3s', opacity: expanded ? 1 : 1 }}>
-        <div style={{ marginBottom: '0.75rem' }}>
-          <strong style={{ color: '#C9A227', transition: 'color 0.3s' }}>Source:</strong> {intertext.source.ref} ({intertext.source.author}, <em>{intertext.source.work}</em>)
-          <LanguageIndicator language={intertext.source.language} />
-          <span style={{ color: '#6B7280', marginLeft: '0.5rem', fontSize: '0.75rem', transition: 'color 0.3s' }}>({intertext.source.era}, {intertext.source.date})</span>
-          <p style={{ margin: '0.25rem 0', fontSize: '0.9rem', lineHeight: '1.4', fontFamily: 'serif' }}>{intertext.source.text}</p>
-        </div>
-        <div>
-          <strong style={{ color: '#C9A227', transition: 'color 0.3s' }}>Target:</strong> {intertext.target.ref} ({intertext.target.author}, <em>{intertext.target.work}</em>)
-          <LanguageIndicator language={intertext.target.language} />
-          <span style={{ color: '#6B7280', marginLeft: '0.5rem', fontSize: '0.75rem', transition: 'color 0.3s' }}>({intertext.target.era}, {intertext.target.date})</span>
-          <p style={{ margin: '0.25rem 0', fontSize: '0.9rem', lineHeight: '1.4', fontFamily: 'serif' }}>{intertext.target.text}</p>
-        </div>
-      </div>
-
-      {expanded && (
-        <div style={{ marginTop: '1rem', borderTop: '1px solid #6B7280', paddingTop: '1rem', transition: 'opacity 0.3s' }}>
-          <p style={{ color: '#9CA3AF', fontSize: '0.875rem', marginBottom: '0.5rem', transition: 'color 0.3s' }}>
-            <strong style={{ color: '#C9A227', transition: 'color 0.3s' }}>Type:</strong> {intertext.type} ({intertext.subtype})
-          </p>
-          <p style={{ color: '#F5F4F2', fontSize: '0.9rem', lineHeight: '1.5', transition: 'color 0.3s' }}>
-            <strong style={{ color: '#C9A227', transition: 'color 0.3s' }}>Description:</strong> {intertext.description}
-          </p>
-
-          {intertext.connections && intertext.connections.map((connection, index) => (
-            <div key={index} style={{ marginTop: '1rem', padding: '1rem', backgroundColor: '#141419', borderRadius: '0.375rem', transition: 'background-color 0.3s' }}>
-              <h4 style={{ fontSize: '1rem', fontWeight: 'bold', color: '#F5F4F2', marginBottom: '0.5rem', transition: 'color 0.3s' }}>Connection {index + 1}</h4>
-              <p style={{ color: '#9CA3AF', fontSize: '0.875rem', marginBottom: '0.25rem', transition: 'color 0.3s' }}>
-                <strong style={{ color: '#C9A227', transition: 'color 0.3s' }}>Source:</strong> {connection.source}
-              </p>
-              <p style={{ color: '#9CA3AF', fontSize: '0.875rem', marginBottom: '0.25rem', transition: 'color 0.3s' }}>
-                <strong style={{ color: '#C9A227', transition: 'color 0.3s' }}>Target:</strong> {connection.target}
-              </p>
-              <p style={{ color: '#F5F4F2', fontSize: '0.9rem', transition: 'color 0.3s' }}>
-                <strong style={{ color: '#C9A227', transition: 'color 0.3s' }}>Type:</strong> {connection.type} - {connection.reason}
-              </p>
-              {connection.lsj && (
-                <p style={{ color: '#F5F4F2', fontSize: '0.9rem', transition: 'color 0.3s' }}>
-                  <strong style={{ color: '#C9A227', transition: 'color 0.3s' }}>LSJ Entry:</strong> {connection.lsj}
-                </p>
-              )}
-              {connection.paradigm && (
-                <div>
-                  <strong style={{ color: '#C9A227', transition: 'color 0.3s' }}>Paradigm:</strong>
-                  <table style={{ width: '100%', borderCollapse: 'collapse', marginTop: '0.5rem' }}>
-                    <thead>
-                      <tr>
-                        {Object.keys(connection.paradigm.forms[0]).map(header => (
-                          <th key={header} style={{ color: '#9CA3AF', padding: '0.5rem', borderBottom: '1px solid #6B7280', textAlign: 'left', transition: 'color 0.3s' }}>
-                            {header.toUpperCase()}
-                          </th>
-                        ))}
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {connection.paradigm.forms.map((form, index) => (
-                        <tr key={index}>
-                          {Object.values(form).map((value, i) => (
-                            <td key={i} style={{ color: '#F5F4F2', padding: '0.5rem', borderBottom: '1px solid #6B7280', transition: 'color 0.3s' }}>
-                              {value}
-                            </td>
-                          ))}
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              )}
-            </div>
+      <main style={{ display: 'flex', width: '90%', maxWidth: '1200px' }}>
+        <div style={{ flex: '1', marginRight: '20px', display: 'flex', flexDirection: 'column', gap: '20px' }}>
+          {INTERTEXTS.map(intertext => (
+            <InteractionCard key={intertext.id} intertext={intertext} />
           ))}
-
-          {intertext.semanticDrift && (
-            <div style={{ marginTop: '1rem' }}>
-              <h4 style={{ fontSize: '1rem', fontWeight: 'bold', color: '#F5F4F2', marginBottom: '0.5rem', transition: 'color 0.3s' }}>Semantic Drift</h4>
-              <ul style={{ listStyleType: 'none', padding: 0 }}>
-                {intertext.semanticDrift.map((drift, index) => (
-                  <li key={index} style={{ marginBottom: '0.5rem', color: '#9CA3AF', transition: 'color 0.3s' }}>
-                    <strong style={{ color: '#C9A227', transition: 'color 0.3s' }}>{drift.word}:</strong> {drift.period} - {drift.meaning} (Frequency: {drift.frequency})
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
         </div>
-      )}
+        <div style={{ flex: '2' }}>
+          <IntertextDetails intertext={selectedIntertext} />
+        </div>
+      </main>
+
+      <footer style={{ marginTop: '20px', textAlign: 'center', color: '#6B7280' }}>
+        <p>&copy; 2024 Logos Project</p>
+      </footer>
     </div>
   );
 };
 
-export default function Home() {
-  return (
-    <div style={{ backgroundColor: '#0D0D0F', color: '#F5F4F2', minHeight: '100vh', padding: '2rem', fontFamily: 'sans-serif', transition: 'background-color 0.3s, color 0.3s' }}>
-      <header style={{ marginBottom: '2rem', textAlign: 'center' }}>
-        <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#F5F4F2', margin: 0, transition: 'color 0.3s' }}>Logos Professional Design System</h1>
-        <p style={{ fontSize: '1.1rem', color: '#9CA3AF', margin: '0.5rem 0', transition: 'color 0.3s' }}>Intertextual Analysis Tool</p>
-      </header>
-
-      <main>
-        {INTERTEXTS.map(intertext => (
-          <IntertextCard key={intertext.id} intertext={intertext} />
-        ))}
-      </main>
-
-      <footer style={{ marginTop: '3rem', textAlign: 'center', color: '#6B7280', fontSize: '0.875rem', transition: 'color 0.3s' }}>
-        <p>
-          &copy; 2024 Logos. All rights reserved.  
-        </p>
-      </footer>
-    </div>
-  );
-}
+export default IntertextualityExplorer;

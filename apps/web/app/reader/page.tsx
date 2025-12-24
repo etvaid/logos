@@ -136,352 +136,623 @@ const eraColors = {
 }
 
 function SemanticDriftChart({ data }) {
-  const chartRef = useRef(null);
-
-  useEffect(() => {
-    const canvas = chartRef.current;
-    if (!canvas) return;
-
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    const width = canvas.width;
-    const height = canvas.height;
-    const padding = 30;
-
-    ctx.clearRect(0, 0, width, height);
-
-    const eras = data.map(item => item.period);
-    const values = data.map(item => item.frequency);
-    const numEras = eras.length;
-
-    // Find max frequency for scaling
-    const maxFrequency = Math.max(...values);
-
-    // Draw background grid
-    ctx.strokeStyle = '#6B7280';
-    ctx.lineWidth = 0.5;
-
-    for (let i = 0; i <= 5; i++) {
-      const y = height - padding - (i / 5) * (height - 2 * padding);
-      ctx.beginPath();
-      ctx.moveTo(padding, y);
-      ctx.lineTo(width - padding, y);
-      ctx.stroke();
-
-      ctx.fillStyle = '#6B7280';
-      ctx.font = '10px sans-serif';
-      ctx.textAlign = 'right';
-      ctx.fillText((maxFrequency * (i / 5)).toFixed(1), padding - 5, y + 4); // Y-axis labels
-    }
-
-
-    // Draw the data points
-    ctx.strokeStyle = '#C9A227'; // Brand Gold Color
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-
-    for (let i = 0; i < numEras; i++) {
-      const x = padding + (i / (numEras - 1)) * (width - 2 * padding);
-      const y = height - padding - (values[i] / maxFrequency) * (height - 2 * padding);
-
-      if (i === 0) {
-        ctx.moveTo(x, y);
-      } else {
-        ctx.lineTo(x, y);
-      }
-    }
-
-    ctx.stroke();
-
-
-    // Draw era labels on the x-axis
-    ctx.fillStyle = '#9CA3AF';
-    ctx.font = '12px sans-serif';
-    ctx.textAlign = 'center';
-    for (let i = 0; i < numEras; i++) {
-      const x = padding + (i / (numEras - 1)) * (width - 2 * padding);
-      const y = height - 5; // Position label slightly above the bottom
-      ctx.fillText(eras[i], x, y);
-    }
-
-
-    // Draw data point circles
-    ctx.fillStyle = '#C9A227'; // Brand Gold Color
-    for (let i = 0; i < numEras; i++) {
-      const x = padding + (i / (numEras - 1)) * (width - 2 * padding);
-      const y = height - padding - (values[i] / maxFrequency) * (height - 2 * padding);
-      ctx.beginPath();
-      ctx.arc(x, y, 4, 0, 2 * Math.PI);
-      ctx.fill();
-    }
-
-  }, [data]);
-
-
   return (
-    <canvas
-      ref={chartRef}
-      width={600}
-      height={300}
-      style={{
-        width: '100%',
-        maxWidth: '600px',
-        height: 'auto',
-        backgroundColor: '#1E1E24',
-        borderRadius: '12px',
-        marginTop: '16px',
-        border: '1px solid rgba(201, 162, 39, 0.1)',
-        boxShadow: 'inset 0 4px 8px rgba(0, 0, 0, 0.3)',
-        transition: 'background-color 0.3s, border-color 0.3s, box-shadow 0.3s',
-        display: 'block',
-      }}
-    />
-  );
+    <div style={{
+      width: '100%',
+      height: '300px',
+      backgroundColor: '#141419',
+      borderRadius: '12px',
+      padding: '20px',
+      border: '1px solid #1E1E24'
+    }}>
+      <h4 style={{
+        color: '#F5F4F2',
+        fontSize: '16px',
+        fontWeight: '600',
+        marginBottom: '20px',
+        display: 'flex',
+        alignItems: 'center',
+        gap: '8px'
+      }}>
+        <div style={{
+          width: '8px',
+          height: '8px',
+          backgroundColor: '#C9A227',
+          borderRadius: '50%'
+        }}></div>
+        Semantic Evolution
+      </h4>
+      
+      <svg width="100%" height="200" style={{ overflow: 'visible' }}>
+        <defs>
+          <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style={{ stopColor: '#C9A227', stopOpacity: 0.3 }} />
+            <stop offset="100%" style={{ stopColor: '#C9A227', stopOpacity: 0.05 }} />
+          </linearGradient>
+        </defs>
+        
+        {/* Grid lines */}
+        {[0, 0.25, 0.5, 0.75, 1].map((y, i) => (
+          <line
+            key={i}
+            x1="40"
+            y1={40 + (160 * y)}
+            x2="100%"
+            y2={40 + (160 * y)}
+            stroke="#1E1E24"
+            strokeWidth="1"
+          />
+        ))}
+        
+        {/* Data line */}
+        <path
+          d={`M 80,${200 - (data[0]?.frequency || 0) * 160} ${data.map((d, i) => 
+            `L ${80 + (i * 120)},${200 - d.frequency * 160}`
+          ).join(' ')}`}
+          stroke="#C9A227"
+          strokeWidth="3"
+          fill="none"
+          style={{ filter: 'drop-shadow(0 0 8px rgba(201, 162, 39, 0.3))' }}
+        />
+        
+        {/* Area fill */}
+        <path
+          d={`M 80,200 L 80,${200 - (data[0]?.frequency || 0) * 160} ${data.map((d, i) => 
+            `L ${80 + (i * 120)},${200 - d.frequency * 160}`
+          ).join(' ')} L ${80 + ((data.length - 1) * 120)},200 Z`}
+          fill="url(#chartGradient)"
+        />
+        
+        {/* Data points */}
+        {data.map((d, i) => (
+          <g key={i}>
+            <circle
+              cx={80 + (i * 120)}
+              cy={200 - d.frequency * 160}
+              r="6"
+              fill="#C9A227"
+              style={{ filter: 'drop-shadow(0 0 6px rgba(201, 162, 39, 0.4))' }}
+            />
+            <text
+              x={80 + (i * 120)}
+              y={220}
+              textAnchor="middle"
+              style={{
+                fontSize: '12px',
+                fill: '#9CA3AF',
+                fontWeight: '500'
+              }}
+            >
+              {d.period}
+            </text>
+            <text
+              x={80 + (i * 120)}
+              y={200 - d.frequency * 160 - 15}
+              textAnchor="middle"
+              style={{
+                fontSize: '11px',
+                fill: '#F5F4F2',
+                fontWeight: '600'
+              }}
+            >
+              {d.meaning}
+            </text>
+          </g>
+        ))}
+        
+        {/* Y-axis labels */}
+        {[0, 0.25, 0.5, 0.75, 1].map((val, i) => (
+          <text
+            key={i}
+            x="30"
+            y={205 - (val * 160)}
+            textAnchor="end"
+            style={{
+              fontSize: '11px',
+              fill: '#6B7280'
+            }}
+          >
+            {(val * 100).toFixed(0)}%
+          </text>
+        ))}
+      </svg>
+    </div>
+  )
 }
 
-
-function WordDetails({ wordData }) {
-  if (!wordData) {
-    return (
-      <div style={{
-        backgroundColor: '#1E1E24',
-        borderRadius: '12px',
-        padding: '20px',
-        marginTop: '16px',
-        border: '1px solid rgba(201, 162, 39, 0.1)',
-        boxShadow: 'inset 0 4px 8px rgba(0, 0, 0, 0.3)',
-        color: '#9CA3AF',
-        transition: 'background-color 0.3s, border-color 0.3s, box-shadow 0.3s',
-        textAlign: 'center'
-      }}>
-        Select a word to view details.
-      </div>
-    );
+function WordCloudVisualization({ words }) {
+  const clusters = {
+    emotion: { color: '#DC2626', x: 150, y: 100 },
+    performance: { color: '#3B82F6', x: 350, y: 150 },
+    warfare: { color: '#059669', x: 250, y: 250 }
   }
 
   return (
     <div style={{
-      backgroundColor: '#1E1E24',
+      width: '100%',
+      height: '350px',
+      backgroundColor: '#141419',
       borderRadius: '12px',
       padding: '20px',
-      marginTop: '16px',
-      border: '1px solid rgba(201, 162, 39, 0.1)',
-      boxShadow: 'inset 0 4px 8px rgba(0, 0, 0, 0.3)',
-      color: '#F5F4F2',
-      transition: 'background-color 0.3s, border-color 0.3s, box-shadow 0.3s'
+      border: '1px solid #1E1E24',
+      position: 'relative',
+      overflow: 'hidden'
     }}>
-      <h3 style={{ color: '#C9A227', marginBottom: '8px', fontWeight: 'bold' }}>{wordData.word}</h3>
-      <p style={{ color: '#9CA3AF', marginBottom: '4px' }}>
-        <span style={{ fontWeight: 'bold', color: '#F5F4F2' }}>Lemma:</span> {wordData.lemma}
-      </p>
-      <p style={{ color: '#9CA3AF', marginBottom: '4px' }}>
-        <span style={{ fontWeight: 'bold', color: '#F5F4F2' }}>Part of Speech:</span> {wordData.partOfSpeech}
-      </p>
-      <p style={{ color: '#9CA3AF', marginBottom: '12px' }}>
-        <span style={{ fontWeight: 'bold', color: '#F5F4F2' }}>Definition:</span> {wordData.definition}
-      </p>
-
-      {wordData.etymology && (
-        <div style={{ marginBottom: '12px' }}>
-          <h4 style={{ color: '#C9A227', marginBottom: '4px' }}>Etymology</h4>
-          <p style={{ color: '#9CA3AF' }}>{wordData.etymology}</p>
-        </div>
-      )}
-
-      {wordData.paradigm && (
-        <div style={{ marginBottom: '12px' }}>
-          <h4 style={{ color: '#C9A227', marginBottom: '4px' }}>Paradigm</h4>
-          <ul style={{ listStyleType: 'none', padding: 0 }}>
-            {Object.entries(wordData.paradigm).map(([form, value]) => (
-              <li key={form} style={{ color: '#9CA3AF' }}>
-                <span style={{ fontWeight: 'bold', color: '#F5F4F2' }}>{form}:</span> {value}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-
-      {wordData.semanticDrift && (
-        <div style={{ marginBottom: '12px' }}>
-          <h4 style={{ color: '#C9A227', marginBottom: '8px' }}>Semantic Drift</h4>
-          <SemanticDriftChart data={wordData.semanticDrift} />
-        </div>
-      )}
-    </div>
-  );
-}
-
-function TextDisplay({ text, onWordClick }) {
-  const parts = text.split(/(\s+|[.,\/#!$%\^&\*;:{}=\-_`~()])/); // Split by spaces and punctuation
-  return (
-    <>
-      {parts.map((part, index) => {
-        if (wordData[part]) {
-          const language = wordData[part].language;
+      <h4 style={{
+        color: '#F5F4F2',
+        fontSize: '16px',
+        fontWeight: '600',
+        marginBottom: '20px',
+        display: 'flex',
+        alignItems: 'center',
+        gap: '8px'
+      }}>
+        <div style={{
+          width: '8px',
+          height: '8px',
+          backgroundColor: '#3B82F6',
+          borderRadius: '50%'
+        }}></div>
+        Semantic Clusters
+      </h4>
+      
+      <svg width="100%" height="280" style={{ overflow: 'visible' }}>
+        <defs>
+          {Object.entries(clusters).map(([cluster, data]) => (
+            <radialGradient key={cluster} id={`cluster-${cluster}`}>
+              <stop offset="0%" style={{ stopColor: data.color, stopOpacity: 0.2 }} />
+              <stop offset="100%" style={{ stopColor: data.color, stopOpacity: 0.05 }} />
+            </radialGradient>
+          ))}
+        </defs>
+        
+        {/* Cluster backgrounds */}
+        {Object.entries(clusters).map(([cluster, data]) => (
+          <circle
+            key={cluster}
+            cx={data.x}
+            cy={data.y}
+            r="80"
+            fill={`url(#cluster-${cluster})`}
+            stroke={data.color}
+            strokeWidth="1"
+            strokeOpacity="0.3"
+          />
+        ))}
+        
+        {/* Words */}
+        {Object.values(words).map((word, i) => {
+          const cluster = clusters[word.cluster] || clusters.emotion
+          const angle = (i / Object.keys(words).length) * 2 * Math.PI
+          const radius = 40 + (word.frequency / 200) * 30
+          const x = cluster.x + Math.cos(angle) * radius
+          const y = cluster.y + Math.sin(angle) * radius
+          
           return (
-            <button
-              key={index}
-              onClick={() => onWordClick(wordData[part])}
-              style={{
-                backgroundColor: 'transparent',
-                border: 'none',
-                color: (language === 'greek') ? '#3B82F6' : ((language === 'latin') ? '#DC2626' : '#F5F4F2'),
-                cursor: 'pointer',
-                fontFamily: (language === 'greek') ? 'Arial Unicode MS, sans-serif' : 'serif', //Ensure Greek chars render properly
-                transition: 'color 0.2s',
-                padding: 0,
-                margin: 0,
-                fontSize: 'inherit',
-                lineHeight: 'inherit',
-                textDecoration: 'underline dotted'
-              }}
-            >
-              {part}
-            </button>
-          );
-        } else {
-          return <span key={index}>{part}</span>;
-        }
-      })}
-    </>
-  );
+            <g key={word.word}>
+              <circle
+                cx={x}
+                cy={y}
+                r={4 + (word.frequency / 200) * 8}
+                fill={cluster.color}
+                opacity="0.8"
+                style={{ 
+                  filter: `drop-shadow(0 0 4px ${cluster.color})`,
+                  cursor: 'pointer'
+                }}
+              />
+              <text
+                x={x}
+                y={y - 15}
+                textAnchor="middle"
+                style={{
+                  fontSize: `${10 + (word.frequency / 200) * 4}px`,
+                  fill: '#F5F4F2',
+                  fontWeight: '600',
+                  cursor: 'pointer'
+                }}
+              >
+                {word.word}
+              </text>
+            </g>
+          )
+        })}
+        
+        {/* Cluster labels */}
+        {Object.entries(clusters).map(([cluster, data]) => (
+          <text
+            key={cluster}
+            x={data.x}
+            y={data.y + 100}
+            textAnchor="middle"
+            style={{
+              fontSize: '14px',
+              fill: data.color,
+              fontWeight: '700',
+              textTransform: 'uppercase',
+              letterSpacing: '1px'
+            }}
+          >
+            {cluster}
+          </text>
+        ))}
+      </svg>
+    </div>
+  )
 }
 
-
-export default function Home() {
-  const [selectedWord, setSelectedWord] = useState(null);
-  const [selectedText, setSelectedText] = useState(sampleTexts[0]); // Default to the first text
-  const searchParams = useSearchParams();
-  const textId = searchParams.get('textId');
-
-  useEffect(() => {
-    if (textId) {
-      const foundText = sampleTexts.find((text, index) => index.toString() === textId);
-      if (foundText) {
-        setSelectedText(foundText);
-      }
-    }
-  }, [textId]);
-
-
-  const handleWordClick = (word) => {
-    setSelectedWord(word);
-  };
+function FrequencyDistribution({ words }) {
+  const sortedWords = Object.values(words).sort((a, b) => b.frequency - a.frequency)
+  const maxFreq = Math.max(...sortedWords.map(w => w.frequency))
 
   return (
     <div style={{
-      backgroundColor: '#0D0D0F',
-      minHeight: '100vh',
+      width: '100%',
+      height: '300px',
+      backgroundColor: '#141419',
+      borderRadius: '12px',
       padding: '20px',
-      color: '#F5F4F2',
-      fontFamily: 'sans-serif'
+      border: '1px solid #1E1E24'
     }}>
-
-      <header style={{
+      <h4 style={{
+        color: '#F5F4F2',
+        fontSize: '16px',
+        fontWeight: '600',
         marginBottom: '20px',
-        paddingBottom: '10px',
-        borderBottom: '1px solid #1E1E24',
         display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center'
+        alignItems: 'center',
+        gap: '8px'
       }}>
-        <h1 style={{ color: '#C9A227', fontWeight: 'bold', fontSize: '2em' }}>
-          <Link href="/" style={{ color: 'inherit', textDecoration: 'none' }}>
-            Logos Professional
-          </Link>
-        </h1>
-        <nav>
-          <ul style={{ listStyleType: 'none', padding: 0, margin: 0, display: 'flex', gap: '20px' }}>
-            <li>
-              <Link href="/" style={{ color: '#9CA3AF', textDecoration: 'none', transition: 'color 0.2s' }}
-                onMouseEnter={(e) => e.target.style.color = '#F5F4F2'}
-                onMouseLeave={(e) => e.target.style.color = '#9CA3AF'}>
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="/about" style={{ color: '#9CA3AF', textDecoration: 'none', transition: 'color 0.2s' }}
-                onMouseEnter={(e) => e.target.style.color = '#F5F4F2'}
-                onMouseLeave={(e) => e.target.style.color = '#9CA3AF'}>
-                About
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" style={{ color: '#9CA3AF', textDecoration: 'none', transition: 'color 0.2s' }}
-                onMouseEnter={(e) => e.target.style.color = '#F5F4F2'}
-                onMouseLeave={(e) => e.target.style.color = '#9CA3AF'}>
-                Contact
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
+        <div style={{
+          width: '8px',
+          height: '8px',
+          backgroundColor: '#7C3AED',
+          borderRadius: '50%'
+        }}></div>
+        Word Frequency Distribution
+      </h4>
+      
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+        {sortedWords.map((word, i) => (
+          <div key={word.word} style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '12px'
+          }}>
+            <div style={{
+              width: '60px',
+              fontSize: '14px',
+              color: '#F5F4F2',
+              fontWeight: '600',
+              fontFamily: 'monospace'
+            }}>
+              {word.word}
+            </div>
+            
+            <div style={{
+              flex: 1,
+              height: '20px',
+              backgroundColor: '#1E1E24',
+              borderRadius: '10px',
+              position: 'relative',
+              overflow: 'hidden'
+            }}>
+              <div style={{
+                width: `${(word.frequency / maxFreq) * 100}%`,
+                height: '100%',
+                background: `linear-gradient(90deg, ${word.semanticField === 'emotion' ? '#DC2626' : word.semanticField === 'performance' ? '#3B82F6' : '#059669'}, ${word.semanticField === 'emotion' ? '#DC262650' : word.semanticField === 'performance' ? '#3B82F650' : '#05966950'})`,
+                borderRadius: '10px',
+                transition: 'width 0.3s ease'
+              }}></div>
+            </div>
+            
+            <div style={{
+              width: '40px',
+              fontSize: '12px',
+              color: '#9CA3AF',
+              textAlign: 'right'
+            }}>
+              {word.frequency}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
 
-      <main style={{ display: 'flex', gap: '30px' }}>
-        <section style={{ flex: '2', width: '70%' }}>
+function DataVizContent() {
+  const searchParams = useSearchParams()
+  const [activeVisualization, setActiveVisualization] = useState('semantic-drift')
+  const [selectedWord, setSelectedWord] = useState('μῆνιν')
+  const [hoveredElement, setHoveredElement] = useState(null)
+
+  const visualizations = [
+    { id: 'semantic-drift', name: 'Semantic Drift', icon: '📈' },
+    { id: 'word-cloud', name: 'Semantic Clusters', icon: '🌐' },
+    { id: 'frequency', name: 'Frequency Analysis', icon: '📊' }
+  ]
+
+  return (
+    <div style={{
+      minHeight: '100vh',
+      backgroundColor: '#0D0D0F',
+      color: '#F5F4F2'
+    }}>
+      {/* Header */}
+      <div style={{
+        background: 'linear-gradient(135deg, #1E1E24 0%, #141419 100%)',
+        borderBottom: '1px solid #1E1E24',
+        padding: '20px 0',
+        position: 'sticky',
+        top: 0,
+        zIndex: 100,
+        backdropFilter: 'blur(10px)'
+      }}>
+        <div style={{
+          maxWidth: '1400px',
+          margin: '0 auto',
+          padding: '0 24px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between'
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+            <Link href="/" style={{
+              color: '#C9A227',
+              textDecoration: 'none',
+              fontSize: '24px',
+              fontWeight: '700',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px'
+            }}>
+              <span style={{
+                background: 'linear-gradient(45deg, #C9A227, #F59E0B)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent'
+              }}>
+                LOGOS
+              </span>
+            </Link>
+            
+            <div style={{
+              width: '1px',
+              height: '24px',
+              backgroundColor: '#1E1E24'
+            }}></div>
+            
+            <h1 style={{
+              fontSize: '20px',
+              fontWeight: '600',
+              margin: 0,
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px'
+            }}>
+              <span style={{ fontSize: '24px' }}>📊</span>
+              Data Visualization Studio
+            </h1>
+          </div>
+        </div>
+      </div>
+
+      <div style={{
+        maxWidth: '1400px',
+        margin: '0 auto',
+        padding: '40px 24px'
+      }}>
+        {/* Visualization Controls */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '300px 1fr',
+          gap: '40px',
+          marginBottom: '40px'
+        }}>
+          {/* Control Panel */}
           <div style={{
             backgroundColor: '#1E1E24',
-            borderRadius: '12px',
-            padding: '20px',
-            border: '1px solid rgba(201, 162, 39, 0.1)',
-            boxShadow: 'inset 0 4px 8px rgba(0, 0, 0, 0.3)',
-            transition: 'background-color 0.3s, border-color 0.3s, box-shadow 0.3s',
+            borderRadius: '16px',
+            padding: '24px',
+            border: '1px solid #141419',
+            height: 'fit-content',
+            position: 'sticky',
+            top: '120px'
           }}>
-            <h2 style={{ color: '#C9A227', fontWeight: 'bold', marginBottom: '10px' }}>{selectedText.title}</h2>
-            <h3 style={{ color: '#9CA3AF', marginBottom: '10px' }}>{selectedText.author} ({selectedText.era})</h3>
-            <div style={{
-              fontFamily: (selectedText.language === 'greek') ? 'Arial Unicode MS, sans-serif' : 'serif',
-              fontSize: '1.2em',
-              lineHeight: '1.6',
-              marginBottom: '20px'
+            <h3 style={{
+              fontSize: '18px',
+              fontWeight: '600',
+              marginBottom: '20px',
+              color: '#F5F4F2',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px'
             }}>
-              <TextDisplay text={selectedText.content} onWordClick={handleWordClick} />
-            </div>
-            <p style={{ color: '#9CA3AF', fontStyle: 'italic', marginBottom: '20px' }}>{selectedText.translation}</p>
-
-            {selectedText.commentary && (
-              <div>
-                <h4 style={{ color: '#C9A227', marginBottom: '10px' }}>Commentary</h4>
-                {selectedText.commentary.map((comment, index) => (
-                  <div key={index} style={{ marginBottom: '15px' }}>
-                    <h5 style={{ color: '#F5F4F2', fontWeight: 'bold' }}>{comment.section}</h5>
-                    <p style={{ color: '#9CA3AF' }}>{comment.content}</p>
-                  </div>
+              <span style={{ color: '#C9A227' }}>⚡</span>
+              Visualization Controls
+            </h3>
+            
+            {/* Visualization Selector */}
+            <div style={{ marginBottom: '24px' }}>
+              <label style={{
+                fontSize: '14px',
+                color: '#9CA3AF',
+                fontWeight: '600',
+                marginBottom: '8px',
+                display: 'block'
+              }}>
+                Visualization Type
+              </label>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                {visualizations.map(viz => (
+                  <button
+                    key={viz.id}
+                    onClick={() => setActiveVisualization(viz.id)}
+                    style={{
+                      padding: '12px 16px',
+                      backgroundColor: activeVisualization === viz.id ? '#C9A227' : '#141419',
+                      color: activeVisualization === viz.id ? '#0D0D0F' : '#F5F4F2',
+                      border: '1px solid',
+                      borderColor: activeVisualization === viz.id ? '#C9A227' : '#1E1E24',
+                      borderRadius: '8px',
+                      fontSize: '14px',
+                      fontWeight: '600',
+                      cursor: 'pointer',
+                      transition: 'all 0.2s ease',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px'
+                    }}
+                    onMouseEnter={(e) => {
+                      if (activeVisualization !== viz.id) {
+                        e.target.style.backgroundColor = '#1E1E24'
+                        e.target.style.borderColor = '#C9A227'
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (activeVisualization !== viz.id) {
+                        e.target.style.backgroundColor = '#141419'
+                        e.target.style.borderColor = '#1E1E24'
+                      }
+                    }}
+                  >
+                    <span>{viz.icon}</span>
+                    {viz.name}
+                  </button>
                 ))}
               </div>
-            )}
-
-            {selectedText.apparatus && (
-              <div>
-                <h4 style={{ color: '#C9A227', marginBottom: '10px' }}>Apparatus Criticus</h4>
-                <ul style={{ listStyleType: 'none', padding: 0 }}>
-                  {selectedText.apparatus.map((entry, index) => (
-                    <li key={index} style={{ color: '#9CA3AF', marginBottom: '5px' }}>
-                      <span style={{ fontWeight: 'bold', color: '#F5F4F2' }}>{entry.lemma}:</span> {entry.note}
-                    </li>
-                  ))}
-                </ul>
+            </div>
+            
+            {/* Word Selector */}
+            <div style={{ marginBottom: '24px' }}>
+              <label style={{
+                fontSize: '14px',
+                color: '#9CA3AF',
+                fontWeight: '600',
+                marginBottom: '8px',
+                display: 'block'
+              }}>
+                Selected Word
+              </label>
+              
+              <select
+                value={selectedWord}
+                onChange={(e) => setSelectedWord(e.target.value)}
+                style={{
+                  width: '100%',
+                  padding: '12px 16px',
+                  backgroundColor: '#141419',
+                  color: '#F5F4F2',
+                  border: '1px solid #1E1E24',
+                  borderRadius: '8px',
+                  fontSize: '14px',
+                  fontWeight: '600',
+                  cursor: 'pointer'
+                }}
+              >
+                {Object.keys(wordData).map(word => (
+                  <option key={word} value={word}>{word}</option>
+                ))}
+              </select>
+            </div>
+            
+            {/* Word Info Panel */}
+            {wordData[selectedWord] && (
+              <div style={{
+                padding: '16px',
+                backgroundColor: '#141419',
+                borderRadius: '12px',
+                border: '1px solid #1E1E24'
+              }}>
+                <h4 style={{
+                  fontSize: '16px',
+                  fontWeight: '700',
+                  marginBottom: '12px',
+                  color: '#C9A227'
+                }}>
+                  {wordData[selectedWord].word}
+                </h4>
+                
+                <div style={{
+                  fontSize: '13px',
+                  color: '#9CA3AF',
+                  marginBottom: '8px'
+                }}>
+                  {wordData[selectedWord].partOfSpeech}
+                </div>
+                
+                <div style={{
+                  fontSize: '14px',
+                  color: '#F5F4F2',
+                  lineHeight: '1.5',
+                  marginBottom: '12px'
+                }}>
+                  {wordData[selectedWord].definition}
+                </div>
+                
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  fontSize: '12px',
+                  color: '#6B7280'
+                }}>
+                  <span>Frequency:</span>
+                  <span style={{
+                    color: '#C9A227',
+                    fontWeight: '600'
+                  }}>
+                    {wordData[selectedWord].frequency}
+                  </span>
+                </div>
               </div>
             )}
           </div>
-        </section>
-
-        <aside style={{ flex: '1', width: '30%' }}>
-          <WordDetails wordData={selectedWord} />
-        </aside>
-      </main>
-
-
-      <footer style={{
-        marginTop: '40px',
-        paddingTop: '20px',
-        borderTop: '1px solid #1E1E24',
-        textAlign: 'center',
-        color: '#6B7280'
-      }}>
-        <p>&copy; 2024 Logos Professional. All rights reserved.</p>
-      </footer>
-    </div>
-  );
-}
+          
+          {/* Main Visualization Area */}
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '24px'
+          }}>
+            {activeVisualization === 'semantic-drift' && wordData[selectedWord]?.semanticDrift && (
+              <SemanticDriftChart data={wordData[selectedWord].semanticDrift} />
+            )}
+            
+            {activeVisualization === 'word-cloud' && (
+              <WordCloudVisualization words={wordData} />
+            )}
+            
+            {activeVisualization === 'frequency' && (
+              <FrequencyDistribution words={wordData} />
+            )}
+            
+            {/* Additional Analysis Panels */}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '24px'
+            }}>
+              {/* Manuscript Evidence */}
+              <div style={{
+                backgroundColor: '#1E1E24',
+                borderRadius: '12px',
+                padding: '20px',
+                border: '1px solid #141419'
+              }}>
+                <h4 style={{
+                  fontSize: '16px',
+                  fontWeight: '600',
+                  marginBottom: '16px',
+                  color: '#F5F4F2',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px'
+                }}>
+                  <span style={{ color: '#059669' }}>📜</span>
+                  Manuscript Evidence
+                </h4>
+                
+                {wordData[selectedWord]?.manuscripts?.map((
