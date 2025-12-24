@@ -134,12 +134,12 @@ export default function Lexicon() {
       semanticDrift: [
         { period: 'Archaic', meaning: 'physical excellence', strength: 0.9 },
         { period: 'Classical', meaning: 'moral virtue', strength: 0.85 },
-        { period: 'Hellenistic', meaning: 'philosophical virtue', strength: 0.75 }
+        { period: 'Hellenistic', meaning: 'philosophical virtue', strength: 0.8 }
       ],
       wordEmbeddings: [
-        { word: 'κακία', similarity: 0.88, meaning: 'vice (antonym)' },
-        { word: 'σωφροσύνη', similarity: 0.75, meaning: 'temperance' },
-        { word: 'δικαιοσύνη', similarity: 0.72, meaning: 'justice' }
+        { word: 'κακία', similarity: 0.75, meaning: 'vice (antonym)' },
+        { word: 'ἀγαθός', similarity: 0.73, meaning: 'good' },
+        { word: 'ἐπιεικής', similarity: 0.69, meaning: 'virtuous' }
       ]
     }
   ];
@@ -150,476 +150,566 @@ export default function Lexicon() {
     entry.definitions.some(def => def.definition.toLowerCase().includes(searchQuery.toLowerCase()))
   );
 
-  const eraColors = {
-    'Archaic': '#D97706',
-    'Classical': '#F59E0B',
-    'Hellenistic': '#3B82F6',
-    'Imperial': '#DC2626',
-    'Late Antique': '#7C3AED',
-    'Byzantine': '#059669'
+  const getEraColor = (era) => {
+    const colors = {
+      'Archaic': '#D97706',
+      'Classical': '#F59E0B',
+      'Hellenistic': '#3B82F6',
+      'Imperial': '#DC2626',
+      'Late Antique': '#7C3AED',
+      'Byzantine': '#059669'
+    };
+    return colors[era] || '#9CA3AF';
+  };
+
+  const renderSemanticDriftChart = (driftData) => {
+    const maxStrength = Math.max(...driftData.map(d => d.strength));
+    
+    return (
+      <div style={{ 
+        backgroundColor: '#141419', 
+        borderRadius: '12px', 
+        padding: '24px',
+        border: `1px solid ${getEraColor('Classical')}20`
+      }}>
+        <h4 style={{ 
+          color: '#F5F4F2', 
+          fontSize: '16px', 
+          fontWeight: '600',
+          marginBottom: '20px',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '8px'
+        }}>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M3 3v18h18" stroke="#C9A227" strokeWidth="2"/>
+            <path d="M7 12l4-4 4 4 4-4" stroke="#3B82F6" strokeWidth="2"/>
+          </svg>
+          Semantic Drift Timeline
+        </h4>
+        <svg width="100%" height="120" style={{ overflow: 'visible' }}>
+          {driftData.map((drift, index) => (
+            <g key={drift.period}>
+              <rect
+                x={index * 120 + 20}
+                y={80 - (drift.strength * 60)}
+                width={20}
+                height={drift.strength * 60}
+                fill={getEraColor(drift.period)}
+                opacity="0.8"
+                rx="2"
+              />
+              <text
+                x={index * 120 + 30}
+                y="100"
+                fill="#9CA3AF"
+                fontSize="10"
+                textAnchor="middle"
+                transform={`rotate(-45, ${index * 120 + 30}, 100)`}
+              >
+                {drift.period}
+              </text>
+              <text
+                x={index * 120 + 30}
+                y={75 - (drift.strength * 60)}
+                fill="#F5F4F2"
+                fontSize="9"
+                textAnchor="middle"
+              >
+                {(drift.strength * 100).toFixed(0)}%
+              </text>
+            </g>
+          ))}
+        </svg>
+        <div style={{ marginTop: '16px' }}>
+          {driftData.map((drift, index) => (
+            <div key={drift.period} style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px',
+              marginBottom: '8px'
+            }}>
+              <div style={{
+                width: '12px',
+                height: '12px',
+                borderRadius: '2px',
+                backgroundColor: getEraColor(drift.period)
+              }} />
+              <span style={{ color: '#9CA3AF', fontSize: '14px' }}>
+                {drift.period}: {drift.meaning}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  };
+
+  const renderWordEmbeddings = (embeddings) => {
+    return (
+      <div style={{
+        backgroundColor: '#141419',
+        borderRadius: '12px',
+        padding: '24px',
+        border: `1px solid ${getEraColor('Classical')}20`
+      }}>
+        <h4 style={{
+          color: '#F5F4F2',
+          fontSize: '16px',
+          fontWeight: '600',
+          marginBottom: '20px',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '8px'
+        }}>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="3" stroke="#C9A227" strokeWidth="2"/>
+            <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24" stroke="#C9A227" strokeWidth="1"/>
+          </svg>
+          Semantic Relations
+        </h4>
+        <div style={{
+          display: 'grid',
+          gap: '12px'
+        }}>
+          {embeddings.map((embedding, index) => (
+            <div key={embedding.word} style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              padding: '12px 16px',
+              backgroundColor: '#1E1E24',
+              borderRadius: '8px',
+              border: `1px solid rgba(59, 130, 246, ${embedding.similarity * 0.3})`
+            }}>
+              <div>
+                <span style={{
+                  color: '#3B82F6',
+                  fontSize: '16px',
+                  fontWeight: '500'
+                }}>
+                  {embedding.word}
+                </span>
+                <span style={{
+                  color: '#9CA3AF',
+                  fontSize: '14px',
+                  marginLeft: '12px'
+                }}>
+                  "{embedding.meaning}"
+                </span>
+              </div>
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px'
+              }}>
+                <div style={{
+                  width: '60px',
+                  height: '4px',
+                  backgroundColor: '#1E1E24',
+                  borderRadius: '2px',
+                  overflow: 'hidden'
+                }}>
+                  <div style={{
+                    width: `${embedding.similarity * 100}%`,
+                    height: '100%',
+                    backgroundColor: '#3B82F6'
+                  }} />
+                </div>
+                <span style={{
+                  color: '#F5F4F2',
+                  fontSize: '12px',
+                  fontWeight: '600',
+                  minWidth: '40px'
+                }}>
+                  {(embedding.similarity * 100).toFixed(0)}%
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
   };
 
   return (
-    <div style={{
-      minHeight: '100vh',
+    <div style={{ 
+      minHeight: '100vh', 
       backgroundColor: '#0D0D0F',
-      color: '#F5F4F2',
-      fontFamily: 'system-ui, -apple-system, sans-serif'
+      color: '#F5F4F2'
     }}>
       {/* Header */}
       <div style={{
         background: 'linear-gradient(135deg, #1E1E24 0%, #141419 100%)',
-        borderBottom: '1px solid rgba(201, 162, 39, 0.2)',
-        padding: '2rem 0',
+        borderBottom: '1px solid #C9A22720',
         position: 'sticky',
         top: 0,
         zIndex: 50,
-        backdropFilter: 'blur(10px)'
+        backdropFilter: 'blur(12px)'
       }}>
         <div style={{
           maxWidth: '1400px',
           margin: '0 auto',
-          padding: '0 2rem',
+          padding: '20px 24px',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'space-between'
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          gap: '16px'
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
             <Link href="/" style={{
-              fontSize: '2rem',
-              fontWeight: 'bold',
-              background: 'linear-gradient(135deg, #C9A227 0%, #F59E0B 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              textDecoration: 'none'
-            }}>
-              ΛΟΓΟΣ
-            </Link>
-            <div style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '0.5rem'
+              gap: '12px',
+              textDecoration: 'none',
+              color: '#F5F4F2'
             }}>
               <div style={{
-                backgroundColor: '#3B82F6',
-                color: 'white',
-                padding: '0.25rem 0.5rem',
-                borderRadius: '0.375rem',
-                fontSize: '0.75rem',
-                fontWeight: 'bold'
+                width: '40px',
+                height: '40px',
+                background: 'linear-gradient(135deg, #C9A227 0%, #F59E0B 100%)',
+                borderRadius: '10px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontWeight: 'bold',
+                fontSize: '18px',
+                color: '#0D0D0F'
               }}>
-                Α
+                Λ
               </div>
-              <span style={{ color: '#9CA3AF', fontSize: '1.1rem' }}>Advanced Greek Lexicon</span>
-            </div>
+              <div>
+                <h1 style={{ 
+                  fontSize: '24px', 
+                  fontWeight: '700',
+                  margin: 0,
+                  background: 'linear-gradient(135deg, #C9A227 0%, #F59E0B 100%)',
+                  backgroundClip: 'text',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent'
+                }}>
+                  LOGOS Lexicon
+                </h1>
+                <p style={{ 
+                  fontSize: '14px', 
+                  color: '#9CA3AF',
+                  margin: 0
+                }}>
+                  Advanced Greek Dictionary
+                </p>
+              </div>
+            </Link>
           </div>
 
-          <nav style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-            <Link href="/texts" style={{
-              color: '#9CA3AF',
-              textDecoration: 'none',
-              transition: 'color 0.3s',
-              fontSize: '0.95rem',
-              fontWeight: '500'
-            }}>
-              Texts
-            </Link>
-            <Link href="/grammar" style={{
-              color: '#9CA3AF',
-              textDecoration: 'none',
-              transition: 'color 0.3s',
-              fontSize: '0.95rem',
-              fontWeight: '500'
-            }}>
-              Grammar
-            </Link>
-            <Link href="/lexicon" style={{
-              color: '#C9A227',
-              textDecoration: 'none',
-              fontSize: '0.95rem',
-              fontWeight: '600'
-            }}>
-              Lexicon
-            </Link>
-          </nav>
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '12px',
+            backgroundColor: '#141419',
+            borderRadius: '12px',
+            padding: '8px 16px',
+            border: '1px solid #C9A22720',
+            minWidth: '300px'
+          }}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <circle cx="11" cy="11" r="8" stroke="#9CA3AF" strokeWidth="2"/>
+              <path d="m21 21-4.35-4.35" stroke="#9CA3AF" strokeWidth="2"/>
+            </svg>
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search Greek words..."
+              style={{
+                backgroundColor: 'transparent',
+                border: 'none',
+                outline: 'none',
+                color: '#F5F4F2',
+                fontSize: '16px',
+                width: '100%'
+              }}
+            />
+          </div>
         </div>
       </div>
 
-      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '2rem' }}>
-        {/* Search & Controls */}
-        <div style={{
-          backgroundColor: '#1E1E24',
-          padding: '2rem',
-          borderRadius: '1rem',
-          border: '1px solid rgba(201, 162, 39, 0.2)',
-          marginBottom: '2rem',
-          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)'
+      <div style={{ 
+        maxWidth: '1400px', 
+        margin: '0 auto', 
+        padding: '32px 24px',
+        display: 'grid',
+        gridTemplateColumns: selectedWord ? '400px 1fr' : '1fr',
+        gap: '32px'
+      }}>
+        {/* Lexicon Entries */}
+        <div style={{ 
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '16px'
         }}>
-          <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', marginBottom: '1.5rem' }}>
-            <div style={{ position: 'relative', flex: 1 }}>
-              <input
-                type="text"
-                placeholder="Search lexicon entries... (try λόγος, σοφία, or ἀρετή)"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                style={{
-                  width: '100%',
-                  padding: '1rem 3rem 1rem 1rem',
-                  backgroundColor: '#141419',
-                  border: '2px solid rgba(201, 162, 39, 0.3)',
-                  borderRadius: '0.75rem',
-                  color: '#F5F4F2',
-                  fontSize: '1.1rem',
-                  outline: 'none',
-                  transition: 'border-color 0.3s'
-                }}
-                onFocus={(e) => e.target.style.borderColor = '#C9A227'}
-                onBlur={(e) => e.target.style.borderColor = 'rgba(201, 162, 39, 0.3)'}
-              />
-              <svg style={{
-                position: 'absolute',
-                right: '1rem',
-                top: '50%',
-                transform: 'translateY(-50%)',
-                width: '1.25rem',
-                height: '1.25rem',
-                color: '#9CA3AF'
-              }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </div>
-            
-            <button
-              onClick={() => setShowSemanticDrift(!showSemanticDrift)}
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            marginBottom: '8px'
+          }}>
+            <h2 style={{
+              fontSize: '20px',
+              fontWeight: '600',
+              color: '#F5F4F2',
+              margin: 0
+            }}>
+              Dictionary Entries
+            </h2>
+            <span style={{
+              color: '#9CA3AF',
+              fontSize: '14px'
+            }}>
+              {filteredEntries.length} results
+            </span>
+          </div>
+
+          {filteredEntries.map((entry, index) => (
+            <div
+              key={entry.id}
+              onClick={() => setSelectedWord(entry)}
               style={{
-                padding: '1rem 1.5rem',
-                backgroundColor: showSemanticDrift ? '#C9A227' : '#141419',
-                border: '2px solid #C9A227',
-                borderRadius: '0.75rem',
-                color: showSemanticDrift ? '#0D0D0F' : '#C9A227',
-                fontWeight: '600',
+                backgroundColor: selectedWord?.id === entry.id ? '#1E1E2480' : '#1E1E24',
+                borderRadius: '16px',
+                padding: '24px',
                 cursor: 'pointer',
-                transition: 'all 0.3s',
-                whiteSpace: 'nowrap'
+                transition: 'all 0.3s ease',
+                border: selectedWord?.id === entry.id 
+                  ? `2px solid ${getEraColor(entry.era)}` 
+                  : '1px solid #C9A22720',
+                transform: selectedWord?.id === entry.id ? 'translateY(-2px)' : 'none',
+                boxShadow: selectedWord?.id === entry.id 
+                  ? `0 8px 32px ${getEraColor(entry.era)}20` 
+                  : 'none'
+              }}
+              onMouseEnter={(e) => {
+                if (selectedWord?.id !== entry.id) {
+                  e.currentTarget.style.backgroundColor = '#1E1E2460';
+                  e.currentTarget.style.transform = 'translateY(-1px)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (selectedWord?.id !== entry.id) {
+                  e.currentTarget.style.backgroundColor = '#1E1E24';
+                  e.currentTarget.style.transform = 'none';
+                }
               }}
             >
-              Semantic Analysis
-            </button>
-          </div>
-
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <input
-                type="checkbox"
-                id="etymology"
-                checked={showEtymology}
-                onChange={(e) => setShowEtymology(e.target.checked)}
-                style={{ width: '1.2rem', height: '1.2rem' }}
-              />
-              <label htmlFor="etymology" style={{ color: '#9CA3AF', cursor: 'pointer' }}>
-                Show Etymology
-              </label>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <input
-                type="checkbox"
-                id="paradigm"
-                checked={showParadigm}
-                onChange={(e) => setShowParadigm(e.target.checked)}
-                style={{ width: '1.2rem', height: '1.2rem' }}
-              />
-              <label htmlFor="paradigm" style={{ color: '#9CA3AF', cursor: 'pointer' }}>
-                Show Paradigms
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <div style={{ display: 'grid', gridTemplateColumns: selectedWord ? '1fr 1fr' : '1fr', gap: '2rem' }}>
-          {/* Entries List */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-            {filteredEntries.map((entry) => (
-              <div
-                key={entry.id}
-                onClick={() => setSelectedWord(entry)}
-                style={{
-                  backgroundColor: '#1E1E24',
-                  border: `2px solid ${selectedWord?.id === entry.id ? '#C9A227' : 'rgba(59, 130, 246, 0.3)'}`,
-                  borderRadius: '1rem',
-                  padding: '1.5rem',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s',
-                  boxShadow: '0 4px 24px rgba(0, 0, 0, 0.2)',
-                  transform: selectedWord?.id === entry.id ? 'scale(1.02)' : 'scale(1)',
-                  position: 'relative',
-                  overflow: 'hidden'
-                }}
-                onMouseEnter={(e) => {
-                  if (selectedWord?.id !== entry.id) {
-                    e.currentTarget.style.borderColor = '#3B82F6';
-                    e.currentTarget.style.transform = 'scale(1.01)';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (selectedWord?.id !== entry.id) {
-                    e.currentTarget.style.borderColor = 'rgba(59, 130, 246, 0.3)';
-                    e.currentTarget.style.transform = 'scale(1)';
-                  }
-                }}
-              >
-                {/* Era indicator */}
-                <div style={{
-                  position: 'absolute',
-                  top: '1rem',
-                  right: '1rem',
-                  backgroundColor: eraColors[entry.era],
-                  color: 'white',
-                  padding: '0.25rem 0.75rem',
-                  borderRadius: '1rem',
-                  fontSize: '0.75rem',
-                  fontWeight: 'bold'
-                }}>
-                  {entry.era}
-                </div>
-
-                <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem', marginBottom: '1rem' }}>
-                  <h3 style={{
-                    fontSize: '2rem',
-                    fontWeight: 'bold',
+              <div style={{ 
+                display: 'flex', 
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                marginBottom: '16px'
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                  <h3 style={{ 
+                    fontSize: '28px', 
+                    fontWeight: '700',
                     color: '#3B82F6',
                     margin: 0,
                     fontFamily: 'serif'
                   }}>
                     {entry.headword}
                   </h3>
-                  <span style={{ color: '#9CA3AF', fontSize: '1rem' }}>
-                    [{entry.pronunciation}]
-                  </span>
-                </div>
-
-                <div style={{ marginBottom: '1rem' }}>
-                  <span style={{
-                    backgroundColor: 'rgba(201, 162, 39, 0.2)',
-                    color: '#C9A227',
-                    padding: '0.25rem 0.75rem',
-                    borderRadius: '0.5rem',
-                    fontSize: '0.85rem',
-                    fontWeight: '500'
-                  }}>
-                    {entry.pos}
-                  </span>
-                  <span style={{
-                    marginLeft: '0.75rem',
-                    color: '#6B7280',
-                    fontSize: '0.85rem'
-                  }}>
-                    LSJ {entry.lsj}
-                  </span>
-                </div>
-
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  {entry.definitions.slice(0, 2).map((def, idx) => (
-                    <div key={idx}>
-                      <span style={{ color: '#C9A227', fontWeight: 'bold', marginRight: '0.5rem' }}>
-                        {def.sense}.
-                      </span>
-                      <span style={{ color: '#F5F4F2' }}>{def.definition}</span>
-                      {def.citations.length > 0 && (
-                        <div style={{ marginTop: '0.25rem', paddingLeft: '1rem' }}>
-                          <span style={{ color: '#6B7280', fontSize: '0.85rem' }}>
-                            {def.citations.join(', ')}
-                          </span>
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                  {entry.definitions.length > 2 && (
-                    <span style={{ color: '#9CA3AF', fontSize: '0.9rem', fontStyle: 'italic' }}>
-                      +{entry.definitions.length - 2} more definitions
-                    </span>
-                  )}
-                </div>
-
-                {/* Frequency bar */}
-                <div style={{ marginTop: '1rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                  <span style={{ color: '#6B7280', fontSize: '0.85rem' }}>Frequency:</span>
                   <div style={{
-                    flex: 1,
-                    height: '0.5rem',
+                    backgroundColor: `${getEraColor(entry.era)}20`,
+                    color: getEraColor(entry.era),
+                    padding: '4px 12px',
+                    borderRadius: '20px',
+                    fontSize: '12px',
+                    fontWeight: '600'
+                  }}>
+                    {entry.era}
+                  </div>
+                </div>
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px'
+                }}>
+                  <div style={{
+                    width: '40px',
+                    height: '6px',
                     backgroundColor: '#141419',
-                    borderRadius: '0.25rem',
+                    borderRadius: '3px',
                     overflow: 'hidden'
                   }}>
                     <div style={{
                       width: `${entry.frequency * 100}%`,
                       height: '100%',
-                      background: `linear-gradient(90deg, ${eraColors[entry.era]}, #C9A227)`,
-                      transition: 'width 0.3s'
+                      backgroundColor: '#C9A227'
                     }} />
                   </div>
-                  <span style={{ color: '#9CA3AF', fontSize: '0.85rem' }}>
-                    {Math.round(entry.frequency * 100)}%
+                  <span style={{
+                    color: '#9CA3AF',
+                    fontSize: '12px'
+                  }}>
+                    {(entry.frequency * 100).toFixed(0)}%
                   </span>
                 </div>
               </div>
-            ))}
-          </div>
 
-          {/* Detailed View */}
-          {selectedWord && (
+              <div style={{ marginBottom: '12px' }}>
+                <span style={{ 
+                  color: '#9CA3AF',
+                  fontSize: '16px',
+                  fontStyle: 'italic'
+                }}>
+                  /{entry.pronunciation}/
+                </span>
+                <span style={{ 
+                  color: '#6B7280',
+                  fontSize: '14px',
+                  marginLeft: '16px'
+                }}>
+                  {entry.pos}
+                </span>
+                <span style={{ 
+                  color: '#6B7280',
+                  fontSize: '12px',
+                  marginLeft: '16px'
+                }}>
+                  LSJ {entry.lsj}
+                </span>
+              </div>
+
+              <div style={{ marginBottom: '16px' }}>
+                {entry.definitions.slice(0, 2).map((def, idx) => (
+                  <div key={idx} style={{ 
+                    marginBottom: '8px',
+                    display: 'flex',
+                    gap: '12px'
+                  }}>
+                    <span style={{ 
+                      color: '#C9A227',
+                      fontWeight: '600',
+                      fontSize: '14px',
+                      minWidth: '20px'
+                    }}>
+                      {def.sense}.
+                    </span>
+                    <div>
+                      <span style={{ 
+                        color: '#F5F4F2',
+                        fontSize: '15px',
+                        lineHeight: '1.5'
+                      }}>
+                        {def.definition}
+                      </span>
+                      <div style={{ 
+                        marginTop: '4px',
+                        display: 'flex',
+                        flexWrap: 'wrap',
+                        gap: '8px'
+                      }}>
+                        {def.citations.slice(0, 2).map((citation, citIdx) => (
+                          <span key={citIdx} style={{
+                            color: '#6B7280',
+                            fontSize: '12px',
+                            backgroundColor: '#14141920',
+                            padding: '2px 8px',
+                            borderRadius: '4px'
+                          }}>
+                            {citation}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+                {entry.definitions.length > 2 && (
+                  <span style={{ 
+                    color: '#9CA3AF',
+                    fontSize: '14px',
+                    fontStyle: 'italic'
+                  }}>
+                    +{entry.definitions.length - 2} more definitions...
+                  </span>
+                )}
+              </div>
+
+              {selectedWord?.id !== entry.id && (
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  color: '#9CA3AF',
+                  fontSize: '14px'
+                }}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2"/>
+                  </svg>
+                  Click to explore etymology, paradigms, and semantic analysis
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Detailed View */}
+        {selectedWord && (
+          <div style={{
+            position: 'sticky',
+            top: '120px',
+            height: 'fit-content'
+          }}>
             <div style={{
               backgroundColor: '#1E1E24',
-              border: '2px solid #C9A227',
-              borderRadius: '1rem',
-              padding: '2rem',
-              height: 'fit-content',
-              position: 'sticky',
-              top: '2rem',
-              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)'
+              borderRadius: '20px',
+              border: `2px solid ${getEraColor(selectedWord.era)}`,
+              overflow: 'hidden'
             }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '2rem' }}>
-                <div>
+              {/* Header */}
+              <div style={{
+                background: `linear-gradient(135deg, ${getEraColor(selectedWord.era)}20 0%, ${getEraColor(selectedWord.era)}10 100%)`,
+                padding: '24px',
+                borderBottom: `1px solid ${getEraColor(selectedWord.era)}30`
+              }}>
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  marginBottom: '12px'
+                }}>
                   <h2 style={{
-                    fontSize: '2.5rem',
-                    fontWeight: 'bold',
+                    fontSize: '32px',
+                    fontWeight: '700',
                     color: '#3B82F6',
                     margin: 0,
                     fontFamily: 'serif'
                   }}>
                     {selectedWord.headword}
                   </h2>
-                  <p style={{ color: '#9CA3AF', fontSize: '1.1rem', margin: '0.5rem 0' }}>
-                    [{selectedWord.pronunciation}] • {selectedWord.pos}
-                  </p>
-                </div>
-                <button
-                  onClick={() => setSelectedWord(null)}
-                  style={{
-                    padding: '0.5rem',
-                    backgroundColor: '#141419',
-                    border: '1px solid #6B7280',
-                    borderRadius: '0.5rem',
-                    color: '#9CA3AF',
-                    cursor: 'pointer',
-                    transition: 'all 0.3s'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.target.style.backgroundColor = '#6B7280';
-                    e.target.style.color = '#F5F4F2';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.target.style.backgroundColor = '#141419';
-                    e.target.style.color = '#9CA3AF';
-                  }}
-                >
-                  ✕
-                </button>
-              </div>
-
-              {/* Tabs */}
-              <div style={{ 
-                display: 'flex',
-                borderBottom: '2px solid #141419',
-                marginBottom: '1.5rem',
-                gap: '0.5rem'
-              }}>
-                {['definition', 'etymology', 'paradigm', 'manuscripts'].map((tab) => (
                   <button
-                    key={tab}
-                    onClick={() => setActiveTab(tab)}
+                    onClick={() => setSelectedWord(null)}
                     style={{
-                      padding: '0.75rem 1.5rem',
-                      backgroundColor: activeTab === tab ? '#C9A227' : 'transparent',
-                      color: activeTab === tab ? '#0D0D0F' : '#9CA3AF',
+                      background: 'none',
                       border: 'none',
-                      borderRadius: '0.5rem 0.5rem 0 0',
+                      color: '#9CA3AF',
                       cursor: 'pointer',
-                      fontWeight: '600',
-                      textTransform: 'capitalize',
-                      transition: 'all 0.3s'
+                      padding: '8px',
+                      borderRadius: '8px',
+                      transition: 'all 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = '#14141940';
+                      e.currentTarget.style.color = '#F5F4F2';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = 'transparent';
+                      e.currentTarget.style.color = '#9CA3AF';
                     }}
                   >
-                    {tab}
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="2"/>
+                    </svg>
                   </button>
-                ))}
-              </div>
-
-              {/* Tab Content */}
-              {activeTab === 'definition' && (
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                  {selectedWord.definitions.map((def, idx) => (
-                    <div key={idx} style={{
-                      backgroundColor: '#141419',
-                      padding: '1.5rem',
-                      borderRadius: '0.75rem',
-                      border: '1px solid rgba(201, 162, 39, 0.2)'
-                    }}>
-                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
-                        <span style={{
-                          color: '#C9A227',
-                          fontWeight: 'bold',
-                          fontSize: '1.1rem',
-                          minWidth: '1.5rem'
-                        }}>
-                          {def.sense}.
-                        </span>
-                        <div>
-                          <p style={{ color: '#F5F4F2', margin: '0 0 1rem 0', fontSize: '1rem', lineHeight: '1.6' }}>
-                            {def.definition}
-                          </p>
-                          {def.citations.length > 0 && (
-                            <div style={{
-                              backgroundColor: 'rgba(59, 130, 246, 0.1)',
-                              padding: '0.75rem',
-                              borderRadius: '0.5rem',
-                              borderLeft: '3px solid #3B82F6'
-                            }}>
-                              <div style={{ fontSize: '0.85rem', color: '#6B7280', marginBottom: '0.5rem' }}>
-                                Citations:
-                              </div>
-                              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                                {def.citations.map((citation, citIdx) => (
-                                  <span key={citIdx} style={{
-                                    backgroundColor: '#3B82F6',
-                                    color: 'white',
-                                    padding: '0.25rem 0.75rem',
-                                    borderRadius: '1rem',
-                                    fontSize: '0.8rem',
-                                    fontWeight: '500'
-                                  }}>
-                                    {citation}
-                                  </span>
-                                ))}
-                              </div>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  ))}
                 </div>
-              )}
-
-              {activeTab === 'etymology' && (
                 <div style={{
-                  backgroundColor: '#141419',
-                  padding: '1.5rem',
-                  borderRadius: '0.75rem',
-                  border: '1px solid rgba(201, 162, 39, 0.2)'
-                }}>
-                  <div style={{ marginBottom: '1.5rem' }}>
-                    <h4 style={{ color: '#C9A227', fontSize: '1.1rem', margin: '0 0 0.75rem 0' }}>Root</h4>
-                    <span style={{
-                      backgroundColor: 'rgba(201, 162, 39, 0.2)',
-                      color: '#C9A227',
-                      padding: '0.5rem 1rem',
-                      borderRadius: '0.5rem',
-                      fontFamily: 'monospace',
-                      fontSize: '1.1rem'
-                    }}>
-                      {selectedWord.etymology.root}
-                    </span>
-                  </div>
-
-                  <div style={{ marginBottom: '1.5rem' }}>
-                    <h4 style={{ color: '#C
+                  display: 'flex

@@ -135,50 +135,130 @@ export default function ChronosPage() {
           position: 5,
           example: 'βασιλικὴ ἀρετὴ καὶ εὐσέβεια',
           translation: 'imperial virtue and piety',
-          apparatus: 'βασιλικὴ A B : βασιλεία V',
-          context: 'Byzantine court, imperial theology'
+          apparatus: 'βασιλικὴ A B : βασιλεία V : om. P',
+          context: 'Byzantine court literature'
         }
       ]
     },
-    'σοφία': {
-      transliteration: 'sophia',
-      modern: 'wisdom',
-      lsj: 'LSJ s.v. σοφία: I. cleverness or skill in handicraft and art. II. wisdom in matters of conduct',
+    'φιλοσοφία': {
+      transliteration: 'philosophia',
+      modern: 'philosophy',
+      lsj: 'LSJ s.v. φιλοσοφία: love of wisdom, pursuit of knowledge',
       paradigm: {
-        nom_sg: 'σοφία',
-        gen_sg: 'σοφίας',
-        dat_sg: 'σοφίᾳ',
-        acc_sg: 'σοφίαν',
-        nom_pl: 'σοφίαι',
-        gen_pl: 'σοφιῶν',
-        dat_pl: 'σοφίαις',
-        acc_pl: 'σοφίας'
+        nom_sg: 'φιλοσοφία',
+        gen_sg: 'φιλοσοφίας',
+        dat_sg: 'φιλοσοφίᾳ',
+        acc_sg: 'φιλοσοφίαν',
+        nom_pl: 'φιλοσοφίαι',
+        gen_pl: 'φιλοσοφιῶν',
+        dat_pl: 'φιλοσοφίαις',
+        acc_pl: 'φιλοσοφίας'
       },
       manuscripts: [
-        { siglum: 'A', reading: 'σοφία', confidence: 92 },
-        { siglum: 'B', reading: 'σοφίη', confidence: 25 },
-        { siglum: 'V', reading: 'σοφία', confidence: 90 }
+        { siglum: 'A', reading: 'φιλοσοφία', confidence: 98 },
+        { siglum: 'B', reading: 'φιλοσοφίη', confidence: 15 },
+        { siglum: 'V', reading: 'φιλοσοφία', confidence: 92 },
+        { siglum: 'P', reading: 'φιλοσοφίαν', confidence: 38 }
       ],
       embeddings: [
-        { word: 'ἐπιστήμη', similarity: 0.91, x: 140, y: 90 },
-        { word: 'φρόνησις', similarity: 0.85, x: 190, y: 130 },
-        { word: 'γνῶσις', similarity: 0.82, x: 120, y: 180 }
+        { word: 'σοφία', similarity: 0.91, x: 140, y: 90 },
+        { word: 'ἐπιστήμη', similarity: 0.84, x: 200, y: 130 },
+        { word: 'διαλεκτική', similarity: 0.79, x: 110, y: 180 },
+        { word: 'μάθησις', similarity: 0.77, x: 260, y: 160 },
+        { word: 'θεωρία', similarity: 0.75, x: 180, y: 240 },
+        { word: 'νοῦς', similarity: 0.73, x: 250, y: 110 },
+        { word: 'λόγος', similarity: 0.70, x: 120, y: 220 }
       ],
       data: [
         {
           era: 'Archaic',
           period: '800-500 BCE',
-          meaning: 'Skill, craftmanship',
-          evolution: 'Originally denoted technical skill and expertise in crafts, arts, or practical knowledge.',
-          authors: ['Homer', 'Hesiod'],
-          confidence: 88,
+          meaning: 'Love of wisdom, inquiry',
+          evolution: 'Emerging concept of systematic inquiry into nature and human affairs, distinct from mythological explanations.',
+          authors: ['Pythagoras', 'Heraclitus', 'Xenophanes'],
+          confidence: 85,
           color: '#D97706',
-          year: -800,
+          year: -600,
           position: 0,
-          example: 'τέκτονος σοφίη',
-          translation: 'carpenter\'s skill',
-          apparatus: 'σοφίη A B : σοφία V',
-          context: 'Craft guilds, technical expertise'
+          example: 'φιλοσοφίης ἀρχηγός',
+          translation: 'founder of philosophy',
+          apparatus: 'φιλοσοφίης A : φιλοσοφίας B V',
+          context: 'Pre-Socratic tradition'
+        },
+        {
+          era: 'Classical',
+          period: '500-323 BCE',
+          meaning: 'Systematic knowledge, dialectic',
+          evolution: 'Developed into rigorous methodology for understanding reality, ethics, and politics through rational argument.',
+          authors: ['Socrates', 'Plato', 'Aristotle'],
+          confidence: 98,
+          color: '#F59E0B',
+          year: -400,
+          position: 1,
+          example: 'ἡ φιλοσοφία βίος ἐστί',
+          translation: 'philosophy is a way of life',
+          apparatus: 'βίος A B V : βιότος P',
+          context: 'Socratic-Platonic tradition'
+        },
+        {
+          era: 'Hellenistic',
+          period: '323-31 BCE',
+          meaning: 'Therapeutic wisdom, eudaimonia',
+          evolution: 'Focused on practical ethics and achieving happiness through rational understanding of nature and human psychology.',
+          authors: ['Epicurus', 'Zeno', 'Pyrrho'],
+          confidence: 90,
+          color: '#3B82F6',
+          year: -300,
+          position: 2,
+          example: 'φιλοσοφία θεραπεία ψυχῆς',
+          translation: 'philosophy is therapy for the soul',
+          apparatus: 'θεραπεία A V : θεραπεία B : cura animae Latin',
+          context: 'Hellenistic schools'
+        },
+        {
+          era: 'Imperial',
+          period: '31 BCE-284 CE',
+          meaning: 'Spiritual exercise, contemplation',
+          evolution: 'Emphasized as spiritual practice and moral transformation through contemplation and self-examination.',
+          authors: ['Seneca', 'Marcus Aurelius', 'Plotinus'],
+          confidence: 87,
+          color: '#DC2626',
+          year: 100,
+          position: 3,
+          example: 'φιλοσοφία ἄσκησις θανάτου',
+          translation: 'philosophy is practice for death',
+          apparatus: 'ἄσκησις A B : μελέτη V',
+          context: 'Imperial Stoicism, Neoplatonism'
+        },
+        {
+          era: 'Late Antique',
+          period: '284-600 CE',
+          meaning: 'Christian wisdom, theology',
+          evolution: 'Integrated with Christian theology as handmaiden to faith, preserving classical learning within Christian framework.',
+          authors: ['Augustine', 'Pseudo-Dionysius', 'Boethius'],
+          confidence: 84,
+          color: '#7C3AED',
+          year: 400,
+          position: 4,
+          example: 'φιλοσοφία ἀνάβασις πρὸς θεόν',
+          translation: 'philosophy is ascent to God',
+          apparatus: 'ἀνάβασις A : ἄνοδος B V',
+          context: 'Patristic synthesis'
+        },
+        {
+          era: 'Byzantine',
+          period: '600-1453 CE',
+          meaning: 'Scholastic synthesis, commentary',
+          evolution: 'Preserved and transmitted through scholarly commentary tradition, integrated with theological education.',
+          authors: ['John of Damascus', 'Photius', 'Gemistos Plethon'],
+          confidence: 80,
+          color: '#059669',
+          year: 800,
+          position: 5,
+          example: 'φιλοσοφία παιδεία ψυχῆς',
+          translation: 'philosophy is education of the soul',
+          apparatus: 'παιδεία A B : παίδευσις V',
+          context: 'Byzantine scholasticism'
         }
       ]
     }
@@ -187,485 +267,419 @@ export default function ChronosPage() {
   const conceptKeys = Object.keys(concepts);
   const currentConcept = concepts[selectedConcept as keyof typeof concepts];
 
-  return (
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (showDropdown && !(event.target as Element).closest('.concept-dropdown')) {
+        setShowDropdown(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [showDropdown]);
+
+  const getTimelinePosition = (year: number) => {
+    const minYear = -800;
+    const maxYear = 1453;
+    return ((year - minYear) / (maxYear - minYear)) * 100;
+  };
+
+  const renderTimeline = () => (
     <div style={{ 
-      minHeight: '100vh', 
-      backgroundColor: '#0D0D0F', 
-      color: '#F5F4F2',
-      fontFamily: 'system-ui, -apple-system, sans-serif'
+      position: 'relative', 
+      height: '120px', 
+      margin: '20px 0',
+      background: 'linear-gradient(90deg, #141419 0%, #1E1E24 50%, #141419 100%)',
+      borderRadius: '12px',
+      padding: '20px',
+      overflow: 'hidden'
     }}>
-      {/* Header */}
+      {/* Timeline base */}
       <div style={{
-        background: 'linear-gradient(135deg, #1E1E24 0%, #141419 100%)',
-        borderBottom: '1px solid #C9A227',
-        padding: '20px 0'
-      }}>
-        <div style={{
-          maxWidth: '1400px',
-          margin: '0 auto',
-          padding: '0 24px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between'
-        }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-            <Link href="/" style={{
-              fontSize: '28px',
-              fontWeight: 'bold',
-              color: '#C9A227',
-              textDecoration: 'none',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '12px'
+        position: 'absolute',
+        top: '50%',
+        left: '10%',
+        right: '10%',
+        height: '4px',
+        background: 'linear-gradient(90deg, #D97706, #F59E0B, #3B82F6, #DC2626, #7C3AED, #059669)',
+        borderRadius: '2px',
+        transform: 'translateY(-50%)'
+      }} />
+      
+      {/* Era nodes */}
+      {currentConcept.data.map((era, index) => {
+        const position = getTimelinePosition(era.year);
+        const isSelected = selectedEra === index;
+        const isHovered = hoveredNode === index;
+        
+        return (
+          <div
+            key={index}
+            style={{
+              position: 'absolute',
+              left: `${10 + position * 0.8}%`,
+              top: '50%',
+              transform: 'translate(-50%, -50%)',
+              cursor: 'pointer',
+              zIndex: isSelected || isHovered ? 10 : 5
+            }}
+            onMouseEnter={() => setHoveredNode(index)}
+            onMouseLeave={() => setHoveredNode(null)}
+            onClick={() => setSelectedEra(selectedEra === index ? null : index)}
+          >
+            {/* Node circle */}
+            <div style={{
+              width: isSelected || isHovered ? '20px' : '16px',
+              height: isSelected || isHovered ? '20px' : '16px',
+              backgroundColor: era.color,
+              borderRadius: '50%',
+              border: '3px solid #0D0D0F',
+              boxShadow: isSelected || isHovered ? 
+                `0 0 20px ${era.color}50, 0 0 40px ${era.color}30` : 
+                `0 0 10px ${era.color}40`,
+              transition: 'all 0.3s ease',
+              position: 'relative'
             }}>
-              <svg width="32" height="32" viewBox="0 0 32 32" style={{ fill: '#C9A227' }}>
-                <circle cx="16" cy="16" r="14" stroke="#C9A227" strokeWidth="2" fill="none"/>
-                <path d="M16 6 L16 16 L24 16" stroke="#C9A227" strokeWidth="2" fill="none"/>
-                <circle cx="16" cy="16" r="2" fill="#C9A227"/>
-              </svg>
-              CHRONOS
-            </Link>
-            <div style={{ color: '#9CA3AF', fontSize: '16px' }}>
-              Semantic Evolution Through Time
-            </div>
-          </div>
-
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-            <div style={{ position: 'relative' }}>
-              <button
-                onClick={() => setShowDropdown(!showDropdown)}
-                style={{
-                  backgroundColor: '#1E1E24',
-                  border: '1px solid #C9A227',
-                  borderRadius: '8px',
-                  padding: '12px 20px',
-                  color: '#F5F4F2',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  fontSize: '16px',
-                  transition: 'all 0.2s ease'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#2A2A34';
-                  e.currentTarget.style.boxShadow = '0 0 20px rgba(201, 162, 39, 0.3)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '#1E1E24';
-                  e.currentTarget.style.boxShadow = 'none';
-                }}
-              >
-                <span style={{ 
-                  color: '#3B82F6', 
-                  fontSize: '18px', 
-                  marginRight: '4px' 
-                }}>Α</span>
-                {selectedConcept}
-                <svg width="16" height="16" viewBox="0 0 16 16" style={{ fill: '#9CA3AF', transition: 'transform 0.2s', transform: showDropdown ? 'rotate(180deg)' : 'rotate(0deg)' }}>
-                  <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="2" fill="none"/>
-                </svg>
-              </button>
-
-              {showDropdown && (
+              {/* Pulse animation for selected */}
+              {isSelected && (
                 <div style={{
                   position: 'absolute',
-                  top: '100%',
-                  left: '0',
-                  right: '0',
-                  backgroundColor: '#1E1E24',
-                  border: '1px solid #C9A227',
-                  borderRadius: '8px',
-                  marginTop: '8px',
-                  zIndex: 1000,
-                  boxShadow: '0 10px 40px rgba(0,0,0,0.3)',
-                  maxHeight: '300px',
-                  overflowY: 'auto'
-                }}>
-                  {conceptKeys.map((concept) => (
-                    <button
-                      key={concept}
-                      onClick={() => {
-                        setSelectedConcept(concept);
-                        setShowDropdown(false);
-                      }}
-                      style={{
-                        width: '100%',
-                        padding: '12px 16px',
-                        backgroundColor: concept === selectedConcept ? 'rgba(201, 162, 39, 0.1)' : 'transparent',
-                        border: 'none',
-                        color: '#F5F4F2',
-                        cursor: 'pointer',
-                        textAlign: 'left',
-                        borderBottom: '1px solid #333',
-                        transition: 'background-color 0.2s'
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = 'rgba(201, 162, 39, 0.15)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = concept === selectedConcept ? 'rgba(201, 162, 39, 0.1)' : 'transparent';
-                      }}
-                    >
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <span style={{ color: '#3B82F6', fontSize: '16px' }}>Α</span>
-                        {concept}
-                        <span style={{ color: '#9CA3AF', fontSize: '14px', marginLeft: 'auto' }}>
-                          {concepts[concept as keyof typeof concepts].transliteration}
-                        </span>
-                      </div>
-                    </button>
-                  ))}
-                </div>
+                  top: '-3px',
+                  left: '-3px',
+                  right: '-3px',
+                  bottom: '-3px',
+                  borderRadius: '50%',
+                  border: `2px solid ${era.color}`,
+                  animation: 'pulse 2s infinite'
+                }} />
               )}
             </div>
-
-            <div style={{ display: 'flex', gap: '8px' }}>
-              <button
-                onClick={() => setEmbeddingView(!embeddingView)}
-                style={{
-                  backgroundColor: embeddingView ? '#C9A227' : '#1E1E24',
-                  border: '1px solid #C9A227',
-                  borderRadius: '6px',
-                  padding: '8px 12px',
-                  color: embeddingView ? '#0D0D0F' : '#C9A227',
-                  cursor: 'pointer',
-                  fontSize: '14px',
-                  transition: 'all 0.2s'
-                }}
-              >
-                Embeddings
-              </button>
-              <button
-                onClick={() => setShowParadigm(!showParadigm)}
-                style={{
-                  backgroundColor: showParadigm ? '#C9A227' : '#1E1E24',
-                  border: '1px solid #C9A227',
-                  borderRadius: '6px',
-                  padding: '8px 12px',
-                  color: showParadigm ? '#0D0D0F' : '#C9A227',
-                  cursor: 'pointer',
-                  fontSize: '14px',
-                  transition: 'all 0.2s'
-                }}
-              >
-                Paradigm
-              </button>
-              <button
-                onClick={() => setShowApparatus(!showApparatus)}
-                style={{
-                  backgroundColor: showApparatus ? '#C9A227' : '#1E1E24',
-                  border: '1px solid #C9A227',
-                  borderRadius: '6px',
-                  padding: '8px 12px',
-                  color: showApparatus ? '#0D0D0F' : '#C9A227',
-                  cursor: 'pointer',
-                  fontSize: '14px',
-                  transition: 'all 0.2s'
-                }}
-              >
-                Apparatus
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Content */}
-      <div style={{
-        maxWidth: '1400px',
-        margin: '0 auto',
-        padding: '32px 24px'
-      }}>
-        {/* Concept Header */}
-        <div style={{
-          backgroundColor: '#1E1E24',
-          borderRadius: '16px',
-          padding: '32px',
-          marginBottom: '32px',
-          border: '1px solid rgba(201, 162, 39, 0.2)',
-          background: 'linear-gradient(135deg, #1E1E24 0%, #1A1A20 100%)'
-        }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
-            <div style={{
-              backgroundColor: '#3B82F6',
-              color: '#F5F4F2',
-              width: '48px',
-              height: '48px',
-              borderRadius: '12px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '20px',
-              fontWeight: 'bold'
-            }}>
-              Α
-            </div>
-            <div>
-              <h1 style={{
-                fontSize: '48px',
-                fontWeight: 'bold',
-                color: '#F5F4F2',
-                margin: '0 0 8px 0',
-                letterSpacing: '-0.02em'
-              }}>
-                {selectedConcept}
-              </h1>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-                <span style={{
-                  fontSize: '20px',
-                  color: '#C9A227',
-                  fontStyle: 'italic'
-                }}>
-                  {currentConcept.transliteration}
-                </span>
-                <span style={{
-                  fontSize: '18px',
-                  color: '#9CA3AF'
-                }}>
-                  "{currentConcept.modern}"
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div style={{
-            backgroundColor: '#141419',
-            borderRadius: '12px',
-            padding: '20px',
-            border: '1px solid rgba(201, 162, 39, 0.1)'
-          }}>
-            <div style={{ color: '#6B7280', fontSize: '14px', marginBottom: '8px' }}>
-              Liddell-Scott-Jones Dictionary
-            </div>
-            <div style={{ color: '#F5F4F2', fontSize: '16px', lineHeight: '1.5' }}>
-              {currentConcept.lsj}
-            </div>
-          </div>
-        </div>
-
-        {/* Paradigm Modal */}
-        {showParadigm && (
-          <div style={{
-            backgroundColor: '#1E1E24',
-            borderRadius: '16px',
-            padding: '32px',
-            marginBottom: '32px',
-            border: '1px solid rgba(201, 162, 39, 0.2)'
-          }}>
-            <h3 style={{
-              fontSize: '24px',
-              fontWeight: 'bold',
-              color: '#C9A227',
-              marginBottom: '24px',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '12px'
-            }}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="#C9A227">
-                <path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" stroke="#C9A227" strokeWidth="2" fill="none"/>
-              </svg>
-              Morphological Paradigm
-            </h3>
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(4, 1fr)',
-              gap: '16px'
-            }}>
-              {Object.entries(currentConcept.paradigm).map(([form, word]) => (
-                <div
-                  key={form}
-                  style={{
-                    backgroundColor: '#141419',
-                    borderRadius: '8px',
-                    padding: '16px',
-                    border: '1px solid rgba(201, 162, 39, 0.1)',
-                    transition: 'all 0.2s'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = '#C9A227';
-                    e.currentTarget.style.backgroundColor = 'rgba(201, 162, 39, 0.05)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(201, 162, 39, 0.1)';
-                    e.currentTarget.style.backgroundColor = '#141419';
-                  }}
-                >
-                  <div style={{ 
-                    color: '#9CA3AF', 
-                    fontSize: '12px', 
-                    marginBottom: '8px',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.5px'
-                  }}>
-                    {form.replace('_', ' ')}
-                  </div>
-                  <div style={{ 
-                    color: '#F5F4F2', 
-                    fontSize: '18px',
-                    fontWeight: '500'
-                  }}>
-                    {word}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Embeddings Visualization */}
-        {embeddingView && (
-          <div style={{
-            backgroundColor: '#1E1E24',
-            borderRadius: '16px',
-            padding: '32px',
-            marginBottom: '32px',
-            border: '1px solid rgba(201, 162, 39, 0.2)'
-          }}>
-            <h3 style={{
-              fontSize: '24px',
-              fontWeight: 'bold',
-              color: '#C9A227',
-              marginBottom: '24px',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '12px'
-            }}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="#C9A227">
-                <circle cx="12" cy="12" r="3" fill="#C9A227"/>
-                <path d="M12 1v6m0 8v6M4.22 4.22l4.24 4.24m8.48 8.48L4.22 4.22M1 12h6m8 0h6" stroke="#C9A227" strokeWidth="2"/>
-              </svg>
-              Semantic Embeddings
-            </h3>
-            <div style={{ position: 'relative', height: '400px', backgroundColor: '#141419', borderRadius: '12px' }}>
-              <svg width="100%" height="100%" style={{ position: 'absolute', top: 0, left: 0 }}>
-                {/* Central node */}
-                <circle
-                  cx="200"
-                  cy="200"
-                  r="16"
-                  fill="#C9A227"
-                  stroke="#F5F4F2"
-                  strokeWidth="3"
-                />
-                <text
-                  x="200"
-                  y="240"
-                  textAnchor="middle"
-                  fill="#F5F4F2"
-                  fontSize="16"
-                  fontWeight="bold"
-                >
-                  {selectedConcept}
-                </text>
-
-                {/* Connected nodes */}
-                {currentConcept.embeddings.map((embedding, index) => (
-                  <g key={embedding.word}>
-                    {/* Connection line */}
-                    <line
-                      x1="200"
-                      y1="200"
-                      x2={embedding.x}
-                      y2={embedding.y}
-                      stroke="rgba(201, 162, 39, 0.3)"
-                      strokeWidth="2"
-                      opacity={hoveredEmbedding === embedding.word ? 1 : 0.5}
-                    />
-                    {/* Node */}
-                    <circle
-                      cx={embedding.x}
-                      cy={embedding.y}
-                      r={8 + embedding.similarity * 6}
-                      fill="#3B82F6"
-                      stroke={hoveredEmbedding === embedding.word ? "#F5F4F2" : "none"}
-                      strokeWidth="2"
-                      style={{ cursor: 'pointer' }}
-                      onMouseEnter={() => setHoveredEmbedding(embedding.word)}
-                      onMouseLeave={() => setHoveredEmbedding(null)}
-                    />
-                    {/* Label */}
-                    <text
-                      x={embedding.x}
-                      y={embedding.y - 20}
-                      textAnchor="middle"
-                      fill="#F5F4F2"
-                      fontSize="12"
-                      opacity={hoveredEmbedding === embedding.word ? 1 : 0.8}
-                    >
-                      {embedding.word}
-                    </text>
-                    {/* Similarity score */}
-                    <text
-                      x={embedding.x}
-                      y={embedding.y + 25}
-                      textAnchor="middle"
-                      fill="#9CA3AF"
-                      fontSize="10"
-                      opacity={hoveredEmbedding === embedding.word ? 1 : 0.6}
-                    >
-                      {(embedding.similarity * 100).toFixed(0)}%
-                    </text>
-                  </g>
-                ))}
-              </svg>
-            </div>
-          </div>
-        )}
-
-        {/* Timeline */}
-        <div style={{
-          backgroundColor: '#1E1E24',
-          borderRadius: '16px',
-          padding: '32px',
-          border: '1px solid rgba(201, 162, 39, 0.2)',
-          background: 'linear-gradient(135deg, #1E1E24 0%, #1A1A20 100%)'
-        }}>
-          <h2 style={{
-            fontSize: '32px',
-            fontWeight: 'bold',
-            color: '#C9A227',
-            marginBottom: '32px',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '16px'
-          }}>
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="#C9A227">
-              <path d="M16 2L30 16L16 30L2 16L16 2Z" stroke="#C9A227" strokeWidth="2" fill="none"/>
-              <circle cx="16" cy="16" r="4" fill="#C9A227"/>
-            </svg>
-            Diachronic Evolution
-          </h2>
-
-          <div ref={timelineRef} style={{ position: 'relative' }}>
-            {/* Timeline line */}
+            
+            {/* Era label */}
             <div style={{
               position: 'absolute',
-              top: '120px',
-              left: '60px',
-              right: '60px',
-              height: '4px',
-              background: 'linear-gradient(90deg, #D97706 0%, #F59E0B 16%, #3B82F6 33%, #DC2626 50%, #7C3AED 66%, #059669 100%)',
-              borderRadius: '2px'
-            }} />
+              top: isSelected || isHovered ? '-45px' : '-35px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              fontSize: '11px',
+              color: isSelected || isHovered ? era.color : '#9CA3AF',
+              fontWeight: isSelected || isHovered ? '600' : '500',
+              whiteSpace: 'nowrap',
+              transition: 'all 0.3s ease',
+              textShadow: isSelected || isHovered ? `0 0 10px ${era.color}50` : 'none'
+            }}>
+              {era.era}
+            </div>
+            
+            {/* Period label */}
+            <div style={{
+              position: 'absolute',
+              top: '25px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              fontSize: '9px',
+              color: '#6B7280',
+              whiteSpace: 'nowrap',
+              opacity: isSelected || isHovered ? 1 : 0.7,
+              transition: 'opacity 0.3s ease'
+            }}>
+              {era.period}
+            </div>
+          </div>
+        );
+      })}
+      
+      <style jsx>{`
+        @keyframes pulse {
+          0%, 100% { opacity: 1; transform: scale(1); }
+          50% { opacity: 0.5; transform: scale(1.1); }
+        }
+      `}</style>
+    </div>
+  );
 
-            {/* Era nodes */}
+  const renderEmbeddingCloud = () => (
+    <div style={{
+      position: 'relative',
+      height: '300px',
+      background: 'radial-gradient(circle at center, #1E1E24 0%, #141419 100%)',
+      borderRadius: '12px',
+      margin: '20px 0',
+      overflow: 'hidden'
+    }}>
+      <svg width="100%" height="100%" style={{ position: 'absolute' }}>
+        {/* Connection lines */}
+        {currentConcept.embeddings.map((embedding, index) => (
+          <line
+            key={`line-${index}`}
+            x1="50%"
+            y1="50%"
+            x2={embedding.x}
+            y2={embedding.y}
+            stroke={hoveredEmbedding === embedding.word ? '#C9A227' : '#6B7280'}
+            strokeWidth={hoveredEmbedding === embedding.word ? '2' : '1'}
+            strokeOpacity={embedding.similarity * 0.8}
+            style={{ transition: 'all 0.3s ease' }}
+          />
+        ))}
+        
+        {/* Central concept */}
+        <circle
+          cx="50%"
+          cy="50%"
+          r="25"
+          fill="#C9A227"
+          stroke="#0D0D0F"
+          strokeWidth="3"
+          style={{
+            filter: 'drop-shadow(0 0 20px #C9A22750)',
+            animation: 'gentle-pulse 3s infinite'
+          }}
+        />
+        
+        {/* Embedding nodes */}
+        {currentConcept.embeddings.map((embedding, index) => (
+          <g key={index}>
+            <circle
+              cx={embedding.x}
+              cy={embedding.y}
+              r={8 + embedding.similarity * 8}
+              fill="#3B82F6"
+              stroke="#0D0D0F"
+              strokeWidth="2"
+              style={{
+                cursor: 'pointer',
+                filter: hoveredEmbedding === embedding.word ? 
+                  'drop-shadow(0 0 15px #3B82F650)' : 
+                  'drop-shadow(0 0 5px #3B82F630)',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={() => setHoveredEmbedding(embedding.word)}
+              onMouseLeave={() => setHoveredEmbedding(null)}
+            />
+            
+            {/* Similarity indicator */}
+            <text
+              x={embedding.x}
+              y={embedding.y - 20}
+              textAnchor="middle"
+              fontSize="10"
+              fill="#F5F4F2"
+              style={{
+                opacity: hoveredEmbedding === embedding.word ? 1 : 0,
+                transition: 'opacity 0.3s ease'
+              }}
+            >
+              {(embedding.similarity * 100).toFixed(0)}%
+            </text>
+          </g>
+        ))}
+      </svg>
+      
+      {/* Central concept label */}
+      <div style={{
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        color: '#0D0D0F',
+        fontWeight: '700',
+        fontSize: '14px',
+        pointerEvents: 'none',
+        textAlign: 'center'
+      }}>
+        {selectedConcept}
+      </div>
+      
+      {/* Embedding labels */}
+      {currentConcept.embeddings.map((embedding, index) => (
+        <div
+          key={index}
+          style={{
+            position: 'absolute',
+            left: embedding.x,
+            top: embedding.y + 25,
+            transform: 'translateX(-50%)',
+            fontSize: '11px',
+            color: hoveredEmbedding === embedding.word ? '#C9A227' : '#9CA3AF',
+            fontWeight: hoveredEmbedding === embedding.word ? '600' : '500',
+            cursor: 'pointer',
+            transition: 'all 0.3s ease',
+            whiteSpace: 'nowrap',
+            textShadow: hoveredEmbedding === embedding.word ? 
+              '0 0 10px #C9A22750' : 'none'
+          }}
+          onMouseEnter={() => setHoveredEmbedding(embedding.word)}
+          onMouseLeave={() => setHoveredEmbedding(null)}
+        >
+          {embedding.word}
+        </div>
+      ))}
+      
+      <style jsx>{`
+        @keyframes gentle-pulse {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.05); }
+        }
+      `}</style>
+    </div>
+  );
+
+  const renderParadigm = () => (
+    <div style={{
+      background: 'linear-gradient(135deg, #1E1E24 0%, #141419 100%)',
+      borderRadius: '12px',
+      padding: '20px',
+      margin: '20px 0',
+      border: '1px solid #C9A22730'
+    }}>
+      <h3 style={{
+        color: '#C9A227',
+        fontSize: '16px',
+        fontWeight: '600',
+        marginBottom: '15px',
+        display: 'flex',
+        alignItems: 'center',
+        gap: '8px'
+      }}>
+        <span style={{
+          display: 'inline-block',
+          width: '20px',
+          height: '20px',
+          backgroundColor: '#3B82F6',
+          borderRadius: '4px',
+          color: '#F5F4F2',
+          fontSize: '12px',
+          fontWeight: '700',
+          textAlign: 'center',
+          lineHeight: '20px'
+        }}>
+          Α
+        </span>
+        Declension Paradigm
+      </h3>
+      
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(4, 1fr)',
+        gap: '15px'
+      }}>
+        {Object.entries(currentConcept.paradigm).map(([form, word]) => (
+          <div
+            key={form}
+            style={{
+              background: 'linear-gradient(135deg, #0D0D0F 0%, #1E1E24 100%)',
+              borderRadius: '8px',
+              padding: '12px',
+              textAlign: 'center',
+              border: '1px solid #3B82F620',
+              transition: 'all 0.3s ease',
+              cursor: 'pointer'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderColor = '#3B82F6';
+              e.currentTarget.style.boxShadow = '0 0 15px #3B82F630';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderColor = '#3B82F620';
+              e.currentTarget.style.boxShadow = 'none';
+            }}
+          >
+            <div style={{
+              fontSize: '10px',
+              color: '#9CA3AF',
+              textTransform: 'uppercase',
+              letterSpacing: '0.5px',
+              marginBottom: '5px'
+            }}>
+              {form.replace('_', ' ')}
+            </div>
+            <div style={{
+              fontSize: '16px',
+              color: '#3B82F6',
+              fontWeight: '500',
+              fontFamily: 'serif'
+            }}>
+              {word}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+
+  const renderManuscriptApparatus = () => (
+    <div style={{
+      background: 'linear-gradient(135deg, #141419 0%, #1E1E24 100%)',
+      borderRadius: '12px',
+      padding: '20px',
+      margin: '20px 0',
+      border: '1px solid #DC262630'
+    }}>
+      <h3 style={{
+        color: '#DC2626',
+        fontSize: '16px',
+        fontWeight: '600',
+        marginBottom: '15px',
+        display: 'flex',
+        alignItems: 'center',
+        gap: '8px'
+      }}>
+        <span style={{
+          display: 'inline-block',
+          width: '20px',
+          height: '20px',
+          backgroundColor: '#DC2626',
+          borderRadius: '4px',
+          color: '#F5F4F2',
+          fontSize: '12px',
+          fontWeight: '700',
+          textAlign: 'center',
+          lineHeight: '20px'
+        }}>
+          L
+        </span>
+        Manuscript Variants
+      </h3>
+      
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+        gap: '12px'
+      }}>
+        {currentConcept.manuscripts.map((ms, index) => (
+          <div
+            key={index}
+            style={{
+              background: `linear-gradient(135deg, #0D0D0F 0%, #1E1E24 100%)`,
+              borderRadius: '8px',
+              padding: '12px',
+              border: `1px solid ${ms.confidence > 80 ? '#10B981' : ms.confidence > 50 ? '#F59E0B' : '#DC2626'}30`,
+              position: 'relative',
+              overflow: 'hidden'
+            }}
+          >
+            {/* Confidence bar */}
+            <div style={{
+              position: 'absolute',
+              bottom: '0',
+              left: '0',
+              width: `${ms.confidence}%`,
+              height: '3px',
+              background: ms.confidence > 80 ? '#10B981' : ms.confidence > 50 ? '#F59E0B' : '#DC2626',
+              borderRadius: '0 3px 0 0'
+            }} />
+            
             <div style={{
               display: 'flex',
               justifyContent: 'space-between',
-              padding: '0 60px',
-              position: 'relative',
-              zIndex: 10
+              alignItems: 'center',
+              marginBottom: '8px'
             }}>
-              {currentConcept.data.map((era, index) => (
-                <div
-                  key={era.era}
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    cursor: 'pointer',
-                    transition: 'transform 0.3s ease'
-                  }}
-                  onClick={() => setSelectedEra(selectedEra === index ? null : index)}
-                  onMouseEnter={()
+              <span style={{
+                fontSize: '14px',
+                fontWeight: '700',
+                color: '#F5F4F2',
+                backgroundColor: '#6B7280',
+                padding: '2px 6px',
+                border

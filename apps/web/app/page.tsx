@@ -154,29 +154,30 @@ export default function Home() {
         position: 'sticky',
         top: 0,
         zIndex: 100,
-        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)'
+        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)',
       }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <Link href="/" style={{ textDecoration: 'none' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', transform: 'scale(1.05)', transition: 'transform 0.3s ease-in-out' }}>
-              <div style={{ 
-                fontSize: '1.75rem',
-                fontWeight: 'bold', 
-                background: `linear-gradient(45deg, #C9A227, #F59E0B)`,
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                textShadow: '1px 1px 3px rgba(0, 0, 0, 0.3)'
-              }}>
-                Logos
-              </div>
+              {/* Animated Logo */}
+              <svg width="32" height="32" viewBox="0 0 100 100" style={{ display: 'block' }}>
+                <defs>
+                  <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style={{ stopColor: '#C9A227' }} />
+                    <stop offset="100%" style={{ stopColor: '#F5F4F2' }} />
+                  </linearGradient>
+                </defs>
+                <circle cx="50" cy="50" r="45" fill="url(#logoGradient)" stroke="#C9A227" strokeWidth="3" strokeDasharray="200" strokeDashoffset={animationOffset} style={{ transition: 'stroke-dashoffset 0.3s ease' }} />
+              </svg>
+              <span style={{ fontWeight: 'bold', fontSize: '1.25rem', color: '#F5F4F2', letterSpacing: '0.05em' }}>Logos</span>
             </div>
           </Link>
           <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-            {navItems.map((item) => (
-              <Link key={item.name} href={item.href} style={{ color: '#9CA3AF', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.3rem', transition: 'color 0.2s ease-in-out', '&:hover': { color: '#F5F4F2' } }}>
-                <span style={{fontSize: '1rem'}}>{item.icon}</span>
-                <span style={{fontSize: '0.9rem'}}>{item.name}</span>
+            {navItems.map((item, index) => (
+              <Link href={item.href} key={index} style={{ color: '#9CA3AF', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.3rem', padding: '0.5rem 1rem', borderRadius: '0.375rem', transition: 'background-color 0.2s ease, color 0.2s ease', ':hover': { backgroundColor: '#2D3748', color: '#F5F4F2' } }}
+               onMouseEnter={() => setHoveredButton(true)}
+               onMouseLeave={() => setHoveredButton(false)}>
+                {item.icon} {item.name}
               </Link>
             ))}
           </div>
@@ -184,174 +185,132 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section style={{ position: 'relative', overflow: 'hidden', paddingTop: '6rem', paddingBottom: '6rem' }}>
-        {/* Animated Background */}
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '200%',
-          height: '100%',
-          background: `linear-gradient(45deg, rgba(201, 162, 39, 0.1), rgba(245, 158, 11, 0.1))`,
-          transform: `translateX(-25%) rotate(${animationOffset}deg)`,
-          transformOrigin: 'center',
-          pointerEvents: 'none',
-          animation: 'none',
-          transition: 'opacity 0.3s ease',
-          opacity: 1,
-          zIndex: 0
-        }} />
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '2rem', textAlign: 'center', position: 'relative', zIndex: 1 }}>
-          <h1 style={{ fontSize: '3.5rem', fontWeight: 'bold', marginBottom: '1rem', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
-            Explore the World of Classical Texts
+      <section style={{ padding: '4rem 0', textAlign: 'center', backgroundImage: 'linear-gradient(to bottom, #0D0D0F, #141419)', borderBottom: '1px solid #2D3748' }}>
+        <div style={{ maxWidth: '800px', margin: '0 auto', padding: '0 2rem' }}>
+          <h1 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '1rem', letterSpacing: '-0.05em', color: '#F5F4F2' }}>
+            Unlock the Wisdom of the Ancient World
           </h1>
-          <p style={{ fontSize: '1.25rem', color: '#9CA3AF', marginBottom: '2rem' }}>
-            Uncover the wisdom of the ancients with our advanced search and analysis tools.
+          <p style={{ fontSize: '1.25rem', color: '#9CA3AF', lineHeight: '1.75', marginBottom: '2rem' }}>
+            Explore a vast digital library of classical texts, powered by AI-driven search, translation, and analysis.
           </p>
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <div style={{ position: 'relative', width: '70%', maxWidth: '600px' }}>
-              <input
-                type="text"
-                ref={searchInputRef}
-                placeholder="Search classical texts..."
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                onFocus={handleSearchFocus}
-                onBlur={handleSearchBlur}
-                onKeyDown={handleKeyPress}
-                style={{
-                  padding: '1rem',
-                  paddingRight: '3.5rem',
-                  fontSize: '1.1rem',
-                  borderRadius: '0.5rem',
-                  border: '1px solid #2D3748',
-                  backgroundColor: '#1E1E24',
-                  color: '#F5F4F2',
-                  width: '100%',
-                  transition: 'border-color 0.2s ease',
-                  outline: 'none',
-                  boxShadow: '0 2px 4px rgba(0, 0, 0, 0.3)',
-                  '&:focus': {
-                    borderColor: '#C9A227',
-                  },
-                }}
-              />
-              <button
-                onClick={handleSearch}
-                style={{
-                  position: 'absolute',
-                  top: '50%',
-                  right: '0.5rem',
-                  transform: 'translateY(-50%)',
-                  backgroundColor: '#C9A227',
-                  color: '#0D0D0F',
-                  border: 'none',
-                  padding: '0.75rem 1.25rem',
-                  borderRadius: '0.375rem',
-                  cursor: 'pointer',
-                  transition: 'background-color 0.2s ease',
-                  fontWeight: 'bold',
-                  boxShadow: '0 2px 4px rgba(0, 0, 0, 0.4)',
-                  '&:hover': {
-                    backgroundColor: '#F59E0B',
-                  },
-                }}
-              >
-                Search
-              </button>
-              {showSuggestions && (
-                <div style={{
+          <div style={{ position: 'relative', display: 'inline-block', width: '100%', maxWidth: '500px' }}>
+            <input
+              type="text"
+              ref={searchInputRef}
+              placeholder="Search for texts, authors, concepts..."
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              onKeyDown={handleKeyPress}
+              onFocus={handleSearchFocus}
+              onBlur={handleSearchBlur}
+              style={{
+                width: '100%',
+                padding: '1rem 1.5rem',
+                fontSize: '1rem',
+                backgroundColor: '#1E1E24',
+                color: '#F5F4F2',
+                border: '1px solid #2D3748',
+                borderRadius: '0.5rem',
+                transition: 'border-color 0.2s ease, box-shadow 0.2s ease',
+                ':focus': { borderColor: '#C9A227', boxShadow: '0 0 0 3px rgba(201, 162, 39, 0.3)' },
+                outline: 'none',
+              }}
+            />
+            <button onClick={handleSearch} style={{ position: 'absolute', right: '0.5rem', top: '50%', transform: 'translateY(-50%)', backgroundColor: '#C9A227', color: '#0D0D0F', padding: '0.75rem 1.25rem', borderRadius: '0.375rem', border: 'none', cursor: 'pointer', transition: 'background-color 0.2s ease', ':hover': { backgroundColor: '#B89222' } }}>
+              Search
+            </button>
+          </div>
+
+          {showSuggestions && (
+              <div style={{
                   position: 'absolute',
                   top: '100%',
                   left: 0,
                   width: '100%',
                   backgroundColor: '#1E1E24',
                   border: '1px solid #2D3748',
-                  borderRadius: '0.375rem',
+                  borderRadius: '0.5rem',
                   marginTop: '0.25rem',
-                  padding: '0.5rem',
-                  zIndex: 2,
                   boxShadow: '0 4px 6px rgba(0, 0, 0, 0.3)',
-                  overflow: 'hidden'
-                }}>
+                  zIndex: 2,
+                  maxWidth: '500px',
+                  marginLeft: 'auto',
+                  marginRight: 'auto',
+              }}>
                   <ul style={{ listStyleType: 'none', padding: 0, margin: 0 }}>
-                    {searchSuggestions.map((suggestion, index) => (
-                      <li key={index} style={{ padding: '0.5rem', cursor: 'pointer', transition: 'background-color 0.2s ease', '&:hover': { backgroundColor: '#2D3748' } }}
-                          onClick={() => handleSuggestionClick(suggestion)}>
-                        {suggestion}
-                      </li>
-                    ))}
+                      {searchSuggestions.map((suggestion, index) => (
+                          <li key={index} style={{ padding: '0.75rem 1.25rem', borderBottom: '1px solid #2D3748', cursor: 'pointer', transition: 'background-color 0.2s ease', ':hover': { backgroundColor: '#2D3748' } }} onClick={() => handleSuggestionClick(suggestion)}>
+                              {suggestion}
+                          </li>
+                      ))}
                   </ul>
-                </div>
-              )}
-            </div>
-          </div>
+              </div>
+          )}
         </div>
       </section>
 
       {/* Stats Section */}
-      <section style={{ backgroundColor: '#141419', padding: '4rem 0', borderBottom: '1px solid #2D3748' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
+      <section style={{ padding: '3rem 0', backgroundColor: '#141419' }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem', textAlign: 'center' }}>
           {stats.map((stat, index) => (
             <div
-              key={stat.label}
-              onMouseEnter={() => setHoveredStat(index)}
-              onMouseLeave={() => setHoveredStat(null)}
+              key={index}
               style={{
                 backgroundColor: '#1E1E24',
                 padding: '2rem',
-                borderRadius: '0.5rem',
-                textAlign: 'center',
-                transition: 'transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out',
+                borderRadius: '0.75rem',
+                boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                 transform: hoveredStat === index ? 'scale(1.05)' : 'scale(1)',
-                boxShadow: hoveredStat === index ? '0 6px 12px rgba(0, 0, 0, 0.4)' : '0 4px 6px rgba(0, 0, 0, 0.2)',
-                position: 'relative',
-                overflow: 'hidden'
+                cursor: 'pointer',
+                ':hover': { boxShadow: '0 6px 12px rgba(0, 0, 0, 0.3)' },
               }}
+              onMouseEnter={() => setHoveredStat(index)}
+              onMouseLeave={() => setHoveredStat(null)}
             >
-              <div style={{ position: 'absolute', top: '0.5rem', right: '0.5rem', fontSize: '1.2rem', color: '#6B7280' }}>{stat.icon}</div>
-              <div style={{ fontSize: '2rem', fontWeight: 'bold', color: '#F5F4F2', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.3)' }}>{stat.value}</div>
-              <div style={{ fontSize: '1.1rem', color: '#9CA3AF' }}>{stat.label}</div>
-              <div style={{ fontSize: '0.85rem', color: '#6B7280', marginTop: '0.5rem', transition: 'opacity 0.2s ease', opacity: hoveredStat === index ? 1 : 0 }}>{stat.detail}</div>
+              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>{stat.icon}</div>
+              <div style={{ fontSize: '1.75rem', fontWeight: 'bold', color: '#F5F4F2' }}>{stat.value}</div>
+              <div style={{ fontSize: '1rem', color: '#9CA3AF', marginTop: '0.5rem' }}>{stat.label}</div>
+              <div style={{ fontSize: '0.875rem', color: '#6B7280', marginTop: '1rem' }}>{stat.detail}</div>
             </div>
           ))}
         </div>
       </section>
 
       {/* Features Section */}
-      <section style={{ padding: '4rem 0' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '2rem', textAlign: 'center', textShadow: '1px 1px 3px rgba(0, 0, 0, 0.4)' }}>
-            Key Features
+      <section style={{ padding: '4rem 0', backgroundColor: '#0D0D0F' }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
+          <h2 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '3rem', textAlign: 'center', color: '#F5F4F2' }}>
+            Explore Our Powerful Features
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
             {features.map((feature, index) => (
-              <Link key={feature.title} href={feature.href} style={{ textDecoration: 'none' }}>
+              <Link href={feature.href} key={index} style={{ textDecoration: 'none' }}>
                 <div
-                  onMouseEnter={() => setHoveredFeature(index)}
-                  onMouseLeave={() => setHoveredFeature(null)}
                   style={{
                     backgroundColor: '#1E1E24',
                     padding: '2rem',
-                    borderRadius: '0.5rem',
-                    transition: 'transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out',
-                    transform: hoveredFeature === index ? 'scale(1.03)' : 'scale(1)',
-                    boxShadow: hoveredFeature === index ? '0 6px 12px rgba(0, 0, 0, 0.4)' : '0 4px 6px rgba(0, 0, 0, 0.2)',
+                    borderRadius: '0.75rem',
+                    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
+                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                    transform: hoveredFeature === index ? 'scale(1.05)' : 'scale(1)',
+                    ':hover': { boxShadow: '0 6px 12px rgba(0, 0, 0, 0.3)' },
+                    height: '100%',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'space-between',
-                    height: '100%',
-                    position: 'relative',
-                    overflow: 'hidden'
+                    cursor: 'pointer'
                   }}
+                  onMouseEnter={() => setHoveredFeature(index)}
+                  onMouseLeave={() => setHoveredFeature(null)}
                 >
-                   <div style={{ position: 'absolute', top: '0.5rem', right: '0.5rem', backgroundColor: feature.color, color: '#0D0D0F', padding: '0.25rem 0.5rem', borderRadius: '0.25rem', fontSize: '0.75rem', fontWeight: 'bold' }}>
-                      {feature.badge}
-                    </div>
                   <div>
-                    <div style={{ fontSize: '1.5rem', color: feature.color, marginBottom: '0.5rem', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.3)' }}>{feature.icon}</div>
-                    <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#F5F4F2', marginBottom: '0.5rem' }}>{feature.title}</h3>
-                    <p style={{ fontSize: '1rem', color: '#9CA3AF' }}>{feature.desc}</p>
+                    <div style={{ fontSize: '2rem', color: feature.color, marginBottom: '0.5rem' }}>{feature.icon}</div>
+                    <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#F5F4F2', marginBottom: '0.75rem' }}>{feature.title}</h3>
+                    <p style={{ fontSize: '1rem', color: '#9CA3AF', lineHeight: '1.6' }}>{feature.desc}</p>
+                  </div>
+                  <div style={{ marginTop: '1.5rem' }}>
+                    <span style={{ backgroundColor: feature.color, color: '#0D0D0F', padding: '0.3rem 0.6rem', borderRadius: '9999px', fontSize: '0.875rem', fontWeight: 'medium' }}>{feature.badge}</span>
                   </div>
                 </div>
               </Link>
@@ -360,19 +319,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Recent Searches */}
-      <section style={{ backgroundColor: '#141419', padding: '3rem 0', borderTop: '1px solid #2D3748', borderBottom: '1px solid #2D3748'}}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
-          <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1.5rem', color: '#F5F4F2', textShadow: '1px 1px 3px rgba(0, 0, 0, 0.4)' }}>Recent Searches</h2>
-          <ul style={{ listStyleType: 'none', padding: 0 }}>
+      {/* Recent Searches Section */}
+      <section style={{ padding: '3rem 0', backgroundColor: '#141419' }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
+          <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '2rem', color: '#F5F4F2' }}>Recent Searches</h2>
+          <ul style={{ listStyleType: 'none', padding: 0, margin: 0 }}>
             {recentSearches.map((search, index) => (
-              <li key={index} style={{ marginBottom: '0.75rem', padding: '1rem', backgroundColor: '#1E1E24', borderRadius: '0.375rem', borderBottom: '1px solid #2D3748', transition: 'transform 0.2s ease-in-out', '&:hover': { transform: 'scale(1.02)' } }}>
+              <li key={index} style={{ backgroundColor: '#1E1E24', padding: '1.25rem', borderRadius: '0.5rem', marginBottom: '0.75rem', boxShadow: '0 1px 3px rgba(0, 0, 0, 0.2)', transition: 'background-color 0.2s ease', ':hover': { backgroundColor: '#2D3748' } }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <div style={{ fontSize: '1.1rem', color: '#F5F4F2' }}>{search.query}</div>
-                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
-                    <div style={{ fontSize: '0.9rem', color: '#9CA3AF' }}>Results: {search.results}</div>
-                    <div style={{ fontSize: '0.8rem', color: '#6B7280' }}>{search.timestamp}</div>
+                  <div>
+                    <div style={{ fontWeight: 'medium', color: '#F5F4F2' }}>{search.query}</div>
+                    <div style={{ fontSize: '0.875rem', color: '#6B7280' }}>{search.results} results</div>
                   </div>
+                  <div style={{ fontSize: '0.75rem', color: '#6B7280' }}>{search.timestamp}</div>
                 </div>
               </li>
             ))}
@@ -380,17 +339,24 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Authors */}
-      <section style={{ padding: '3rem 0' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
-          <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1.5rem', color: '#F5F4F2', textAlign: 'center', textShadow: '1px 1px 3px rgba(0, 0, 0, 0.4)' }}>Featured Authors</h2>
+      {/* Featured Authors Section */}
+      <section style={{ padding: '4rem 0', backgroundColor: '#0D0D0F' }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
+          <h2 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '3rem', textAlign: 'center', color: '#F5F4F2' }}>
+            Featured Authors
+          </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
             {featuredAuthors.map((author, index) => (
-              <div key={author.name} style={{ backgroundColor: '#1E1E24', padding: '1.5rem', borderRadius: '0.375rem', textAlign: 'center', borderBottom: `4px solid ${author.color}`, transition: 'transform 0.2s ease-in-out', '&:hover': { transform: 'scale(1.03)' } }}>
-                <div style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#F5F4F2', marginBottom: '0.5rem', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.3)' }}>{author.name}</div>
-                <div style={{ fontSize: '1rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>Works: {author.works}</div>
-                 <div style={{ fontSize: '0.9rem', color: '#6B7280', marginBottom: '0.5rem' }}>Texts: {author.texts}</div>
-                <div style={{ fontSize: '0.85rem', color: '#6B7280' }}>Era: {author.era}</div>
+              <div key={index} style={{ backgroundColor: '#1E1E24', padding: '2rem', borderRadius: '0.75rem', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)', transition: 'transform 0.3s ease, box-shadow 0.3s ease', ':hover': { boxShadow: '0 6px 12px rgba(0, 0, 0, 0.3)' }, transform: 'scale(1)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#F5F4F2', marginBottom: '0.5rem' }}>{author.name}</h3>
+                  <p style={{ fontSize: '1rem', color: '#9CA3AF', marginBottom: '0.75rem' }}>Works: {author.works}</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
+                    <span style={{ fontSize: '0.875rem', color: '#6B7280' }}>Era:</span>
+                    <span style={{ backgroundColor: author.color, color: '#0D0D0F', padding: '0.2rem 0.5rem', borderRadius: '9999px', fontSize: '0.75rem' }}>{author.era}</span>
+                  </div>
+                </div>
+                <div style={{ fontSize: '0.875rem', color: '#6B7280', textAlign: 'right' }}>{author.texts} texts available</div>
               </div>
             ))}
           </div>
@@ -398,8 +364,10 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer style={{ backgroundColor: '#141419', padding: '2rem 0', textAlign: 'center', color: '#9CA3AF', fontSize: '0.85rem', borderTop: '1px solid #2D3748' }}>
-        <p>&copy; {new Date().getFullYear()} Logos. All rights reserved.</p>
+      <footer style={{ backgroundColor: '#1E1E24', borderTop: '1px solid #2D3748', padding: '2rem 0', textAlign: 'center', color: '#9CA3AF' }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
+          <p>&copy; {new Date().getFullYear()} Logos. All rights reserved.</p>
+        </div>
       </footer>
     </div>
   );

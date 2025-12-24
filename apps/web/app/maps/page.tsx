@@ -169,420 +169,96 @@ export default function MapsHub() {
       href: "/maps/numismatics",
       title: "Monetary Geography",
       subtitle: "νομίσματα καὶ monetae",
-      desc: "Coin circulation patterns and monetary systems across Greek poleis and Roman provinces",
-      icon: "🪙",
-      color: "#84CC16",
+      desc: "Coin circulation patterns providing insights into economic integration and monetary policies",
+      icon: "💰",
+      color: "#EAB308",
       category: "Economic",
       lang: "Α",
-      features: ["Mint distribution", "Currency zones", "Economic integration"],
-      scholars: "Crawford • Howgego • Foldvary"
+      features: ["Mint locations", "Coin distribution", "Hoard analysis"],
+      scholars: "Crawford • Burnett • Howgego"
     }
   ];
 
-  const filteredMaps = selectedCategory === 'All' 
-    ? maps 
-    : maps.filter(map => map.category === selectedCategory);
+  const filteredMaps = selectedCategory === 'All' ? maps : maps.filter(map => map.category === selectedCategory);
 
   return (
-    <div style={{ 
-      minHeight: '100vh', 
-      backgroundColor: '#0D0D0F',
-      color: '#F5F4F2'
-    }}>
-      {/* Header */}
-      <div style={{ 
-        backgroundColor: '#141419', 
-        borderBottom: '1px solid #1E1E24',
-        padding: '2rem 0'
-      }}>
-        <div style={{ 
-          maxWidth: '1200px', 
-          margin: '0 auto', 
-          padding: '0 1.5rem'
-        }}>
-          <div style={{ 
-            display: 'flex', 
-            alignItems: 'center', 
-            gap: '1rem',
-            marginBottom: '1rem'
-          }}>
-            <div style={{
-              width: '48px',
-              height: '48px',
-              backgroundColor: '#C9A227',
-              borderRadius: '12px',
+    <div style={{ backgroundColor: '#0D0D0F', color: '#F5F4F2', minHeight: '100vh', padding: '20px', fontFamily: 'sans-serif', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '20px', color: '#C9A227', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
+        Logos Maps Hub
+      </h1>
+
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', marginBottom: '20px' }}>
+        {categories.map((category) => (
+          <button
+            key={category.name}
+            style={{
+              backgroundColor: selectedCategory === category.name ? category.color : '#1E1E24',
+              color: '#F5F4F2',
+              border: 'none',
+              padding: '10px 15px',
+              margin: '5px',
+              borderRadius: '5px',
+              cursor: 'pointer',
+              fontSize: '1rem',
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '24px'
-            }}>
-              🗺️
-            </div>
-            <div>
-              <h1 style={{ 
-                fontSize: '2.5rem', 
-                fontWeight: 'bold', 
-                margin: 0,
-                background: 'linear-gradient(135deg, #C9A227, #F59E0B)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent'
-              }}>
-                Cartographic Atlas
-              </h1>
-              <p style={{ 
-                color: '#9CA3AF', 
-                margin: 0, 
-                fontSize: '1.1rem'
-              }}>
-                χωρογραφία τῆς ἀρχαιότητος • spatium antiquitatis
-              </p>
-            </div>
-          </div>
-          <p style={{ 
-            color: '#9CA3AF', 
-            lineHeight: '1.6',
-            fontSize: '1.1rem',
-            maxWidth: '800px'
-          }}>
-            Digital cartography for classical antiquity, integrating spatial analysis with philological precision. 
-            Navigate through dialectological landscapes, political chronotopes, and cultural networks of the ancient Mediterranean.
-          </p>
-        </div>
+              gap: '5px',
+              transition: 'background-color 0.3s, color 0.3s, transform 0.2s',
+              transform: hoveredFilter === category.name ? 'scale(1.05)' : 'scale(1)',
+              boxShadow: selectedCategory === category.name ? '0 0 5px rgba(201, 162, 39, 0.7)' : 'none'
+            }}
+            onMouseEnter={() => setHoveredFilter(category.name)}
+            onMouseLeave={() => setHoveredFilter(null)}
+            onClick={() => setSelectedCategory(category.name)}
+          >
+            {category.icon} {category.name}
+          </button>
+        ))}
       </div>
 
-      {/* Filters */}
-      <div style={{ 
-        backgroundColor: '#1E1E24',
-        borderBottom: '1px solid #141419',
-        padding: '1.5rem 0',
-        position: 'sticky',
-        top: 0,
-        zIndex: 10
-      }}>
-        <div style={{ 
-          maxWidth: '1200px', 
-          margin: '0 auto', 
-          padding: '0 1.5rem'
-        }}>
-          <div style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '0.75rem',
-            alignItems: 'center'
-          }}>
-            <span style={{
-              color: '#9CA3AF',
-              fontSize: '0.9rem',
-              fontWeight: '500',
-              marginRight: '0.5rem'
-            }}>
-              Filter by domain:
-            </span>
-            {categories.map(category => (
-              <button
-                key={category.name}
-                onClick={() => setSelectedCategory(category.name)}
-                onMouseEnter={() => setHoveredFilter(category.name)}
-                onMouseLeave={() => setHoveredFilter(null)}
-                style={{
-                  padding: '0.5rem 1rem',
-                  borderRadius: '20px',
-                  border: 'none',
-                  backgroundColor: selectedCategory === category.name 
-                    ? category.color 
-                    : hoveredFilter === category.name 
-                      ? '#141419' 
-                      : 'transparent',
-                  color: selectedCategory === category.name 
-                    ? '#0D0D0F' 
-                    : '#F5F4F2',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s ease',
-                  fontSize: '0.9rem',
-                  fontWeight: '500',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  border: `1px solid ${selectedCategory === category.name ? category.color : '#1E1E24'}`,
-                  transform: hoveredFilter === category.name ? 'translateY(-1px)' : 'none'
-                }}
-              >
-                <span>{category.icon}</span>
-                {category.name}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Maps Grid */}
-      <div style={{ 
-        maxWidth: '1200px', 
-        margin: '0 auto', 
-        padding: '3rem 1.5rem'
-      }}>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))',
-          gap: '2rem'
-        }}>
-          {filteredMaps.map(map => (
-            <Link
-              key={map.id}
-              href={map.href}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px', width: '100%', maxWidth: '1200px' }}>
+        {filteredMaps.map((map) => (
+          <Link key={map.id} href={map.href} style={{ textDecoration: 'none' }}>
+            <div
+              style={{
+                backgroundColor: '#1E1E24',
+                color: '#F5F4F2',
+                padding: '20px',
+                borderRadius: '10px',
+                transition: 'transform 0.2s, box-shadow 0.2s',
+                transform: hoveredCard === map.id ? 'scale(1.05)' : 'scale(1)',
+                boxShadow: hoveredCard === map.id ? '0 0 15px rgba(201, 162, 39, 0.5)' : '0 0 5px rgba(0, 0, 0, 0.3)',
+                cursor: 'pointer',
+                display: 'flex',
+                flexDirection: 'column',
+                height: '100%',
+              }}
               onMouseEnter={() => setHoveredCard(map.id)}
               onMouseLeave={() => setHoveredCard(null)}
-              style={{
-                textDecoration: 'none',
-                color: 'inherit'
-              }}
             >
-              <div style={{
-                backgroundColor: '#1E1E24',
-                borderRadius: '16px',
-                padding: '1.5rem',
-                border: `1px solid ${hoveredCard === map.id ? map.color : '#141419'}`,
-                transition: 'all 0.3s ease',
-                transform: hoveredCard === map.id ? 'translateY(-4px)' : 'translateY(0)',
-                boxShadow: hoveredCard === map.id 
-                  ? `0 8px 32px ${map.color}20` 
-                  : '0 2px 8px rgba(0,0,0,0.3)',
-                cursor: 'pointer',
-                height: '100%',
-                display: 'flex',
-                flexDirection: 'column'
-              }}>
-                {/* Header */}
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'flex-start',
-                  justifyContent: 'space-between',
-                  marginBottom: '1rem'
-                }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                    <div style={{
-                      width: '40px',
-                      height: '40px',
-                      backgroundColor: `${map.color}20`,
-                      borderRadius: '10px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontSize: '20px',
-                      border: `1px solid ${map.color}30`
-                    }}>
-                      {map.icon}
-                    </div>
-                    <div>
-                      <h3 style={{
-                        margin: 0,
-                        fontSize: '1.25rem',
-                        fontWeight: 'bold',
-                        color: '#F5F4F2'
-                      }}>
-                        {map.title}
-                      </h3>
-                      <p style={{
-                        margin: 0,
-                        fontSize: '0.9rem',
-                        color: '#9CA3AF',
-                        fontStyle: 'italic'
-                      }}>
-                        {map.subtitle}
-                      </p>
-                    </div>
-                  </div>
-                  <div style={{
-                    display: 'flex',
-                    gap: '0.5rem',
-                    alignItems: 'center'
-                  }}>
-                    <div style={{
-                      width: '24px',
-                      height: '24px',
-                      borderRadius: '50%',
-                      backgroundColor: map.lang === 'Α' ? '#3B82F6' : '#DC2626',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontSize: '12px',
-                      fontWeight: 'bold',
-                      color: '#F5F4F2'
-                    }}>
-                      {map.lang}
-                    </div>
-                  </div>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+                <span style={{ fontSize: '1.5rem', marginRight: '10px', color: map.color }}>{map.icon}</span>
+                <div>
+                  <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '5px' }}>{map.title}</h2>
+                  <h3 style={{ fontSize: '1rem', color: '#9CA3AF' }}>{map.subtitle}</h3>
                 </div>
-
-                {/* Description */}
-                <p style={{
-                  color: '#9CA3AF',
-                  lineHeight: '1.6',
-                  marginBottom: '1.5rem',
-                  fontSize: '0.95rem',
-                  flex: '1'
-                }}>
-                  {map.desc}
-                </p>
-
-                {/* Features */}
-                <div style={{ marginBottom: '1.5rem' }}>
-                  <h4 style={{
-                    color: '#F5F4F2',
-                    fontSize: '0.8rem',
-                    fontWeight: '600',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.05em',
-                    margin: '0 0 0.75rem 0'
-                  }}>
-                    Analytical Features
-                  </h4>
-                  <div style={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    gap: '0.5rem'
-                  }}>
-                    {map.features.map(feature => (
-                      <span
-                        key={feature}
-                        style={{
-                          padding: '0.25rem 0.75rem',
-                          backgroundColor: `${map.color}15`,
-                          border: `1px solid ${map.color}30`,
-                          borderRadius: '12px',
-                          fontSize: '0.8rem',
-                          color: map.color,
-                          fontWeight: '500'
-                        }}
-                      >
-                        {feature}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Scholars */}
-                <div style={{
-                  borderTop: '1px solid #141419',
-                  paddingTop: '1rem',
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center'
-                }}>
-                  <div>
-                    <p style={{
-                      margin: 0,
-                      fontSize: '0.8rem',
-                      color: '#6B7280',
-                      fontWeight: '500'
-                    }}>
-                      Key scholars: {map.scholars}
-                    </p>
-                  </div>
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.5rem',
-                    color: map.color,
-                    fontSize: '0.9rem',
-                    fontWeight: '500',
-                    opacity: hoveredCard === map.id ? 1 : 0.7,
-                    transition: 'opacity 0.2s ease'
-                  }}>
-                    <span>Explore</span>
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      style={{
-                        transform: hoveredCard === map.id ? 'translateX(4px)' : 'translateX(0)',
-                        transition: 'transform 0.2s ease'
-                      }}
-                    >
-                      <path
-                        d="M6 3l5 5-5 5"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                </div>
+                <span style={{ fontSize: '0.8rem', marginLeft: 'auto', color: map.color, fontWeight: 'bold' }}>{map.lang}</span>
               </div>
-            </Link>
-          ))}
-        </div>
-
-        {/* Stats Footer */}
-        <div style={{
-          marginTop: '4rem',
-          padding: '2rem',
-          backgroundColor: '#141419',
-          borderRadius: '16px',
-          border: '1px solid #1E1E24'
-        }}>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '2rem',
-            textAlign: 'center'
-          }}>
-            <div>
-              <div style={{
-                fontSize: '2.5rem',
-                fontWeight: 'bold',
-                color: '#C9A227',
-                marginBottom: '0.5rem'
-              }}>
-                {filteredMaps.length}
-              </div>
-              <div style={{ color: '#9CA3AF', fontSize: '0.9rem' }}>
-                Cartographic Modules
+              <p style={{ fontSize: '1rem', color: '#9CA3AF', lineHeight: '1.4', marginBottom: '10px', flexGrow: 1 }}>{map.desc}</p>
+              <div style={{ fontSize: '0.9rem', color: '#6B7280' }}>
+                <strong style={{ color: '#F5F4F2' }}>Features:</strong>
+                <ul style={{ listStyleType: 'none', padding: 0, margin: '5px 0' }}>
+                  {map.features.map((feature, index) => (
+                    <li key={index} style={{ marginBottom: '3px' }}>
+                      • {feature}
+                    </li>
+                  ))}
+                </ul>
+                <strong style={{ color: '#F5F4F2' }}>Scholars:</strong> {map.scholars}
               </div>
             </div>
-            <div>
-              <div style={{
-                fontSize: '2.5rem',
-                fontWeight: 'bold',
-                color: '#3B82F6',
-                marginBottom: '0.5rem'
-              }}>
-                2.1K
-              </div>
-              <div style={{ color: '#9CA3AF', fontSize: '0.9rem' }}>
-                Geotagged Locations
-              </div>
-            </div>
-            <div>
-              <div style={{
-                fontSize: '2.5rem',
-                fontWeight: 'bold',
-                color: '#10B981',
-                marginBottom: '0.5rem'
-              }}>
-                847
-              </div>
-              <div style={{ color: '#9CA3AF', fontSize: '0.9rem' }}>
-                Scholarly Citations
-              </div>
-            </div>
-            <div>
-              <div style={{
-                fontSize: '2.5rem',
-                fontWeight: 'bold',
-                color: '#F59E0B',
-                marginBottom: '0.5rem'
-              }}>
-                1.2M
-              </div>
-              <div style={{ color: '#9CA3AF', fontSize: '0.9rem' }}>
-                Data Points Analyzed
-              </div>
-            </div>
-          </div>
-        </div>
+          </Link>
+        ))}
       </div>
     </div>
   );

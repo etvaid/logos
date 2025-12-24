@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 
 interface WordData {
@@ -106,22 +106,21 @@ const WORDS: Record<string, WordData> = {
     manuscripts: [
       { sigla: "P.Oxy. 3525", reading: "σῶμα", date: "2nd c. CE", confidence: 94 },
       { sigla: "Vat. gr. 2061", reading: "σώματος", date: "11th c. CE", confidence: 88 },
-      { sigla: "Laur. plut. 32.16", reading: "σῶμα", date: "10th c. CE", confidence: 90 }
+      { sigla: "Laur. plut. 32.16", reading: "σῶμα", date: "15th c. CE", confidence: 90 }
     ],
     embedding: [
-      { x: 25, y: 90, era: "Archaic", color: "#D97706" },
-      { x: 50, y: 55, era: "Classical", color: "#F59E0B" },
+      { x: 25, y: 65, era: "Archaic", color: "#D97706" },
+      { x: 50, y: 50, era: "Classical", color: "#F59E0B" },
       { x: 75, y: 35, era: "Hellenistic", color: "#3B82F6" },
       { x: 95, y: 20, era: "Late Antique", color: "#7C3AED" }
     ],
     lsj: {
-      definition: "the body, whether of men or animals, living or dead; a living body, opposed to the soul; a dead body, corpse",
-      etymology: "perhaps connected with σαόω (to save, keep safe)",
-      cognates: ["σῶστρος", "σωτήρ"]
+      definition: "dead body, corpse; living body, person; a body of men, troop; substance, matter",
+      etymology: "origin obscure",
+      cognates: []
     }
   }
 };
-
 
 const ERA_COLORS = {
   "Archaic": "#D97706",
@@ -129,241 +128,288 @@ const ERA_COLORS = {
   "Hellenistic": "#3B82F6",
   "Imperial": "#DC2626",
   "Late Antique": "#7C3AED",
-  "Byzantine": "#059669"
+  "Byzantine": "#059669",
+};
+
+const TEXT_PRIMARY = "#F5F4F2";
+const TEXT_SECONDARY = "#9CA3AF";
+const TEXT_MUTED = "#6B7280";
+const ACCENT_GOLD = "#C9A227";
+const BACKGROUND_MAIN = "#0D0D0F";
+const BACKGROUND_CARDS = "#1E1E24";
+const BACKGROUND_DARKER = "#141419";
+
+interface DotProps {
+    x: number;
+    y: number;
+    color: string;
+    era: string;
+    index: number;
+    total: number;
+}
+
+const Dot: React.FC<DotProps> = ({ x, y, color, era, index, total }) => {
+    const angle = (index / total) * Math.PI * 2; // Distribute around a circle
+    const radius = 30;
+    const adjustedX = 50 + radius * Math.cos(angle); // Adjusted X to center
+    const adjustedY = 50 + radius * Math.sin(angle); // Adjusted Y to center
+
+    const [hovered, setHovered] = useState(false);
+
+    return (
+      <g transform={`translate(${x}, ${y})`}>
+        <circle
+            cx="0"
+            cy="0"
+            r={hovered ? 8 : 5}
+            fill={color}
+            style={{ transition: 'r 0.3s ease-in-out', cursor: 'pointer' }}
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+        >
+        <title>{`${era}: X=${x}, Y=${y}`}</title>
+        </circle>
+        {hovered && (
+          <text
+            x={10}
+            y={5}
+            style={{
+              fontSize: '0.7em',
+              fill: TEXT_PRIMARY,
+              pointerEvents: 'none',
+            }}
+          >
+            {era}
+          </text>
+        )}
+    </g>
+    );
 };
 
 
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
-}
 
-const WordDetailPage = () => {
-  const [selectedWord, setSelectedWord] = useState<string>('λόγος');
-  const wordData = WORDS[selectedWord];
-  const [hoveredEra, setHoveredEra] = useState<string | null>(null);
+const WordDetails: React.FC<{ word: string }> = ({ word }) => {
+  const data = WORDS[word];
+  const [isInsightExpanded, setIsInsightExpanded] = useState(false);
+  const [rotationX, setRotationX] = useState(0);
+  const [rotationY, setRotationY] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isMounted, setIsMounted] = useState(false);
 
-  const handleWordClick = (word: string) => {
-    setSelectedWord(word);
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!containerRef.current) return;
+
+    const rect = containerRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = (y - centerY) / 20;
+    const rotateY = (x - centerX) / 20;
+
+    setRotationX(rotateX);
+    setRotationY(rotateY);
+  };
+
+  const handleMouseLeave = () => {
+    setRotationX(0);
+    setRotationY(0);
+  };
+
+  if (!data) return <div style={{ color: TEXT_PRIMARY, padding: '20px' }}>Word not found.</div>;
+
+  const toggleInsight = () => {
+    setIsInsightExpanded(!isInsightExpanded);
   };
 
 
-  const handleEraHover = (era: string | null) => {
-    setHoveredEra(era);
-  };
+    const svgWidth = 200;
+    const svgHeight = 150;
+    const margin = 20;
+
+    const maxX = Math.max(...data.embedding.map(point => point.x));
+    const minX = Math.min(...data.embedding.map(point => point.x));
+    const maxY = Math.max(...data.embedding.map(point => point.y));
+    const minY = Math.min(...data.embedding.map(point => point.y));
+
+    const xScale = (x: number) => margin + ((x - minX) / (maxX - minX)) * (svgWidth - 2 * margin);
+    const yScale = (y: number) => svgHeight - margin - ((y - minY) / (maxY - minY)) * (svgHeight - 2 * margin);
+
+
 
 
   return (
-    <div style={{ backgroundColor: '#0D0D0F', color: '#F5F4F2', minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px' }}>
-      <header style={{ marginBottom: '20px', textAlign: 'center' }}>
-        <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#C9A227', transition: 'color 0.3s' }}>
-          <span style={{ color: '#F5F4F2' }}>LOGOS</span> Professional Design System
-        </h1>
-        <p style={{ color: '#9CA3AF', fontSize: '1.1rem', transition: 'color 0.3s' }}>
-          A semantic journey through ancient Greek words
+    <div
+        ref={containerRef}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        style={{
+          backgroundColor: BACKGROUND_CARDS,
+          color: TEXT_PRIMARY,
+          padding: '20px',
+          borderRadius: '8px',
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+          transition: 'transform 0.3s ease-in-out',
+          transform: `rotateX(${rotationX}deg) rotateY(${rotationY}deg)`,
+          perspective: '1000px',
+        }}
+    >
+      <h2 style={{ color: ACCENT_GOLD, marginBottom: '10px', fontSize: '1.5em' }}>
+        {data.word} <span style={{ color: TEXT_SECONDARY, fontSize: '0.8em' }}>({data.translit})</span>
+      </h2>
+      <p style={{ color: TEXT_SECONDARY, marginBottom: '15px' }}>
+        Traditional meaning: {data.traditional}
+      </p>
+      <p style={{ color: TEXT_MUTED, marginBottom: '10px' }}>
+        Corpus evolution: {data.corpus}
+      </p>
+
+      <div style={{ marginBottom: '20px' }}>
+        <h3 style={{ color: ACCENT_GOLD, fontSize: '1.2em', marginBottom: '5px' }}>Semantic Drift</h3>
+        <ul style={{ listStyle: 'none', padding: 0 }}>
+          {data.drift.map((d, index) => (
+            <li key={index} style={{ marginBottom: '5px', color: TEXT_PRIMARY }}>
+              <span style={{ fontWeight: 'bold', color: d.color }}>{d.era}:</span> {d.meaning} ({d.year})
+            </li>
+          ))}
+        </ul>
+      </div>
+
+        <div style={{ marginBottom: '20px' }}>
+            <h3 style={{ color: ACCENT_GOLD, fontSize: '1.2em', marginBottom: '5px' }}>Semantic Embedding</h3>
+            <svg width={svgWidth} height={svgHeight}>
+                {data.embedding.map((point, index) => (
+                     <Dot
+                         key={index}
+                         x={xScale(point.x)}
+                         y={yScale(point.y)}
+                         color={point.color}
+                         era={point.era}
+                         index={index}
+                         total={data.embedding.length}
+                     />
+                ))}
+            </svg>
+        </div>
+
+
+      <div style={{ marginBottom: '20px' }}>
+        <h3 style={{ color: ACCENT_GOLD, fontSize: '1.2em', marginBottom: '5px' }}>Insight</h3>
+        <p style={{ color: TEXT_PRIMARY, cursor: 'pointer' }} onClick={toggleInsight}>
+          {isInsightExpanded ? data.insight : data.insight.substring(0, 100) + '... '}
+          <span style={{ color: ACCENT_GOLD, fontWeight: 'bold' }}>
+            {data.insight.length > 100 ? (isInsightExpanded ? 'Less' : 'More') : ''}
+          </span>
         </p>
+      </div>
+
+      <div style={{ marginBottom: '20px' }}>
+        <h3 style={{ color: ACCENT_GOLD, fontSize: '1.2em', marginBottom: '5px' }}>Paradigm</h3>
+        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+          <thead>
+            <tr style={{ backgroundColor: BACKGROUND_DARKER }}>
+              <th style={{ padding: '8px', border: `1px solid ${TEXT_MUTED}`, color: TEXT_SECONDARY, textAlign: 'left' }}>Form</th>
+              <th style={{ padding: '8px', border: `1px solid ${TEXT_MUTED}`, color: TEXT_SECONDARY, textAlign: 'left' }}>Greek</th>
+              <th style={{ padding: '8px', border: `1px solid ${TEXT_MUTED}`, color: TEXT_SECONDARY, textAlign: 'left' }}>Function</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.paradigm.map((p, index) => (
+              <tr key={index} style={{ backgroundColor: index % 2 === 0 ? BACKGROUND_CARDS : BACKGROUND_MAIN }}>
+                <td style={{ padding: '8px', border: `1px solid ${TEXT_MUTED}`, color: TEXT_PRIMARY }}>{p.form}</td>
+                <td style={{ padding: '8px', border: `1px solid ${TEXT_MUTED}`, color: TEXT_PRIMARY }}>{p.greek} <span style={{ color: '#3B82F6' }}>Α</span></td>
+                <td style={{ padding: '8px', border: `1px solid ${TEXT_MUTED}`, color: TEXT_PRIMARY }}>{p.function}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div style={{ marginBottom: '20px' }}>
+        <h3 style={{ color: ACCENT_GOLD, fontSize: '1.2em', marginBottom: '5px' }}>Manuscripts</h3>
+        <ul style={{ listStyle: 'none', padding: 0 }}>
+          {data.manuscripts.map((m, index) => (
+            <li key={index} style={{ marginBottom: '5px', color: TEXT_PRIMARY }}>
+              <span style={{ fontWeight: 'bold', color: ACCENT_GOLD }}>{m.sigla}:</span> {m.reading} ({m.date}, Confidence: {m.confidence})
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h3 style={{ color: ACCENT_GOLD, fontSize: '1.2em', marginBottom: '5px' }}>LSJ Definition</h3>
+        <p style={{ color: TEXT_PRIMARY }}>{data.lsj.definition}</p>
+        <p style={{ color: TEXT_MUTED }}>Etymology: {data.lsj.etymology}</p>
+        {data.lsj.cognates.length > 0 && (
+          <p style={{ color: TEXT_MUTED }}>
+            Cognates: {data.lsj.cognates.join(', ')}
+          </p>
+        )}
+      </div>
+    </div>
+  );
+};
+
+
+
+export default function Home() {
+  const [selectedWord, setSelectedWord] = useState<string | null>(null);
+
+  return (
+    <div style={{ backgroundColor: BACKGROUND_MAIN, minHeight: '100vh', padding: '20px', fontFamily: 'sans-serif' }}>
+      <header style={{ marginBottom: '30px', textAlign: 'center' }}>
+        <h1 style={{ color: ACCENT_GOLD, fontSize: '2.5em', fontWeight: 'bold' }}>
+          <span style={{ color: TEXT_PRIMARY }}>LOGOS</span> Professional Design System
+        </h1>
+        <p style={{ color: TEXT_SECONDARY }}>Ancient Greek Lexical Explorer</p>
       </header>
 
-      <main style={{ width: '90%', maxWidth: '1200px', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', gap: '20px' }}>
-        {/* Word List (Left Sidebar) */}
-        <aside style={{ width: '25%', backgroundColor: '#1E1E24', borderRadius: '8px', padding: '15px', transition: 'background-color 0.3s', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)' }}>
-          <h2 style={{ fontSize: '1.4rem', fontWeight: 'semibold', color: '#F5F4F2', marginBottom: '10px', borderBottom: '1px solid #6B7280', paddingBottom: '5px' }}>
-            Words <span style={{color: '#C9A227'}}>Catalog</span>
-          </h2>
-          <ul style={{ listStyleType: 'none', padding: 0, margin: 0 }}>
-            {Object.keys(WORDS).map((word) => (
-              <li key={word} style={{ marginBottom: '8px', cursor: 'pointer', transition: 'color 0.3s, transform 0.2s', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
-                onClick={() => handleWordClick(word)}
-                onMouseEnter={() => handleEraHover(word)}
-                onMouseLeave={() => handleEraHover(null)}
-              >
-                <span style={{ color: selectedWord === word ? '#C9A227' : '#9CA3AF', fontWeight: selectedWord === word ? 'bold' : 'normal' }}>
-                  {word}
-                </span>
-                <span style={{ color: '#6B7280', fontSize: '0.8rem' }}>{WORDS[word].translit}</span>
+      <main style={{ display: 'flex', flexDirection: 'row', gap: '20px' }}>
+        <aside style={{ width: '25%', backgroundColor: BACKGROUND_CARDS, padding: '15px', borderRadius: '8px' }}>
+          <h2 style={{ color: ACCENT_GOLD, marginBottom: '15px', fontSize: '1.3em' }}>Words</h2>
+          <ul style={{ listStyle: 'none', padding: 0 }}>
+            {Object.keys(WORDS).map(word => (
+              <li key={word} style={{ marginBottom: '8px' }}>
+                <button
+                  onClick={() => setSelectedWord(word)}
+                  style={{
+                    backgroundColor: selectedWord === word ? ACCENT_GOLD : BACKGROUND_DARKER,
+                    color: TEXT_PRIMARY,
+                    padding: '8px 12px',
+                    border: 'none',
+                    borderRadius: '4px',
+                    cursor: 'pointer',
+                    width: '100%',
+                    textAlign: 'left',
+                    transition: 'background-color 0.3s ease-in-out',
+                  }}
+                >
+                  {word} <span style={{ color: '#3B82F6' }}>Α</span>
+                </button>
               </li>
             ))}
           </ul>
         </aside>
 
-        {/* Word Details (Main Content) */}
-        <section style={{ width: '70%', backgroundColor: '#1E1E24', borderRadius: '8px', padding: '20px', transition: 'background-color 0.3s', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)' }}>
-          {wordData && (
-            <>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-                <div>
-                  <h2 style={{ fontSize: '2rem', fontWeight: 'bold', color: '#F5F4F2', marginBottom: '5px' }}>
-                    {wordData.word} <span style={{ fontSize: '1.2rem', color: '#9CA3AF' }}>({wordData.translit})</span>
-                  </h2>
-                  <p style={{ color: '#9CA3AF', fontSize: '1.1rem' }}>
-                    Traditional meaning: <span style={{ color: '#C9A227' }}>{wordData.traditional}</span>
-                  </p>
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
-                  <span style={{ color: '#6B7280', fontSize: '0.9rem' }}>Corpus Count:</span>
-                  <span style={{ color: '#F5F4F2', fontWeight: 'bold' }}>{wordData.count}</span>
-                </div>
-              </div>
-
-              {/* Semantic Drift Visualization */}
-              <div style={{ marginBottom: '25px' }}>
-                <h3 style={{ fontSize: '1.4rem', color: '#F5F4F2', marginBottom: '10px', borderBottom: '1px solid #6B7280', paddingBottom: '5px' }}>
-                  Semantic Drift
-                </h3>
-                <div style={{ position: 'relative', width: '100%', height: '200px' }}>
-                  <svg width="100%" height="100%">
-                    {wordData.embedding.map((point, index) => (
-                      <circle
-                        key={index}
-                        cx={`${point.x}%`}
-                        cy={`${point.y}%`}
-                        r="8"
-                        fill={point.color}
-                        opacity={hoveredEra === null || hoveredEra === point.era ? 1 : 0.3}
-                        style={{ transition: 'opacity 0.3s, transform 0.2s' }}
-                        onMouseEnter={() => handleEraHover(point.era)}
-                        onMouseLeave={() => handleEraHover(null)}
-                      />
-                    ))}
-                    {wordData.embedding.map((point, index) => (
-                      <text
-                        key={`text-${index}`}
-                        x={`${point.x}%`}
-                        y={`${point.y}%`}
-                        dx="12"
-                        dy="4"
-                        fontSize="0.8rem"
-                        fill="#9CA3AF"
-                        opacity={hoveredEra === null || hoveredEra === point.era ? 1 : 0.3}
-                        style={{ transition: 'opacity 0.3s' }}
-                        onMouseEnter={() => handleEraHover(point.era)}
-                        onMouseLeave={() => handleEraHover(null)}
-                      >
-                        {point.era}
-                      </text>
-                    ))}
-                  </svg>
-                </div>
-                <p style={{ color: '#9CA3AF', fontSize: '1rem', marginTop: '10px' }}>
-                  {wordData.corpus}
-                </p>
-              </div>
-
-              {/* Semantic Drift Table */}
-              <div style={{ marginBottom: '25px' }}>
-                <h3 style={{ fontSize: '1.4rem', color: '#F5F4F2', marginBottom: '10px', borderBottom: '1px solid #6B7280', paddingBottom: '5px' }}>
-                  Semantic Drift Details
-                </h3>
-                <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-                  <thead>
-                    <tr style={{ backgroundColor: '#141419' }}>
-                      <th style={{ padding: '8px', textAlign: 'left', color: '#9CA3AF' }}>Era</th>
-                      <th style={{ padding: '8px', textAlign: 'left', color: '#9CA3AF' }}>Meaning</th>
-                      <th style={{ padding: '8px', textAlign: 'left', color: '#9CA3AF' }}>Year</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {wordData.drift.map((d, index) => (
-                      <tr key={index} style={{ backgroundColor: hoveredEra === null || hoveredEra === d.era ? 'transparent' : '#141419', transition: 'background-color 0.3s' }}
-                        onMouseEnter={() => handleEraHover(d.era)}
-                        onMouseLeave={() => handleEraHover(null)}
-                      >
-                        <td style={{ padding: '8px', borderBottom: '1px solid #6B7280', color: '#F5F4F2' }}>
-                          <span style={{ color: d.color, fontWeight: 'bold' }}>{d.era}</span>
-                        </td>
-                        <td style={{ padding: '8px', borderBottom: '1px solid #6B7280', color: '#9CA3AF' }}>{d.meaning}</td>
-                        <td style={{ padding: '8px', borderBottom: '1px solid #6B7280', color: '#9CA3AF' }}>{d.year} BCE</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-
-              {/* Insight */}
-              <div style={{ marginBottom: '25px' }}>
-                <h3 style={{ fontSize: '1.4rem', color: '#F5F4F2', marginBottom: '10px', borderBottom: '1px solid #6B7280', paddingBottom: '5px' }}>
-                  Key Insight
-                </h3>
-                <p style={{ color: '#9CA3AF', fontSize: '1.1rem', fontStyle: 'italic' }}>
-                  {wordData.insight}
-                </p>
-              </div>
-
-              {/* Paradigm */}
-              <div style={{ marginBottom: '25px' }}>
-                <h3 style={{ fontSize: '1.4rem', color: '#F5F4F2', marginBottom: '10px', borderBottom: '1px solid #6B7280', paddingBottom: '5px' }}>
-                  Paradigm
-                </h3>
-                <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-                  <thead>
-                    <tr style={{ backgroundColor: '#141419' }}>
-                      <th style={{ padding: '8px', textAlign: 'left', color: '#9CA3AF' }}>Form</th>
-                      <th style={{ padding: '8px', textAlign: 'left', color: '#9CA3AF' }}>Greek</th>
-                      <th style={{ padding: '8px', textAlign: 'left', color: '#9CA3AF' }}>Function</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {wordData.paradigm.map((p, index) => (
-                      <tr key={index}>
-                        <td style={{ padding: '8px', borderBottom: '1px solid #6B7280', color: '#9CA3AF' }}>{p.form}</td>
-                        <td style={{ padding: '8px', borderBottom: '1px solid #6B7280', color: '#F5F4F2' }}>{p.greek}</td>
-                        <td style={{ padding: '8px', borderBottom: '1px solid #6B7280', color: '#9CA3AF' }}>{p.function}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-
-              {/* Manuscripts */}
-              <div style={{ marginBottom: '25px' }}>
-                <h3 style={{ fontSize: '1.4rem', color: '#F5F4F2', marginBottom: '10px', borderBottom: '1px solid #6B7280', paddingBottom: '5px' }}>
-                  Manuscript Attestations
-                </h3>
-                <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-                  <thead>
-                    <tr style={{ backgroundColor: '#141419' }}>
-                      <th style={{ padding: '8px', textAlign: 'left', color: '#9CA3AF' }}>Sigla</th>
-                      <th style={{ padding: '8px', textAlign: 'left', color: '#9CA3AF' }}>Reading</th>
-                      <th style={{ padding: '8px', textAlign: 'left', color: '#9CA3AF' }}>Date</th>
-                      {/* <th style={{ padding: '8px', textAlign: 'left', color: '#9CA3AF' }}>Confidence</th> */}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {wordData.manuscripts.map((m, index) => (
-                      <tr key={index}>
-                        <td style={{ padding: '8px', borderBottom: '1px solid #6B7280', color: '#9CA3AF' }}>{m.sigla}</td>
-                        <td style={{ padding: '8px', borderBottom: '1px solid #6B7280', color: '#F5F4F2' }}>{m.reading}</td>
-                        <td style={{ padding: '8px', borderBottom: '1px solid #6B7280', color: '#9CA3AF' }}>{m.date}</td>
-                        {/* <td style={{ padding: '8px', borderBottom: '1px solid #6B7280', color: '#9CA3AF' }}>{m.confidence}</td> */}
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-
-              {/* LSJ Definition */}
-              <div>
-                <h3 style={{ fontSize: '1.4rem', color: '#F5F4F2', marginBottom: '10px', borderBottom: '1px solid #6B7280', paddingBottom: '5px' }}>
-                  LSJ Definition
-                </h3>
-                <p style={{ color: '#9CA3AF', fontSize: '1.1rem' }}>
-                  {wordData.lsj.definition}
-                </p>
-                <p style={{ color: '#6B7280', fontSize: '0.9rem', marginTop: '10px' }}>
-                  Etymology: {wordData.lsj.etymology}
-                </p>
-                <p style={{ color: '#6B7280', fontSize: '0.9rem' }}>
-                  Cognates: {wordData.lsj.cognates.join(', ')}
-                </p>
-              </div>
-            </>
+        <section style={{ width: '75%' }}>
+          {selectedWord ? (
+            <WordDetails word={selectedWord} />
+          ) : (
+            <div style={{ color: TEXT_PRIMARY, padding: '20px', backgroundColor: BACKGROUND_CARDS, borderRadius: '8px' }}>
+              Select a word to see its details.
+            </div>
           )}
         </section>
       </main>
-      <footer style={{ marginTop: '30px', textAlign: 'center', color: '#6B7280', fontSize: '0.9rem' }}>
-        © 2024 LOGOS Project. All rights reserved.
+
+      <footer style={{ marginTop: '30px', textAlign: 'center', color: TEXT_MUTED }}>
+        <p>&copy; 2024 Logos Project. All rights reserved.</p>
       </footer>
     </div>
   );
-};
-
-export default WordDetailPage;
+}
