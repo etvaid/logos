@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, Suspense } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 
 const PASSAGES = [
@@ -29,6 +29,7 @@ function SearchPageContent() {
   const [query, setQuery] = useState(searchParams.get('q') || '')
   const [languageFilter, setLanguageFilter] = useState('')
   const [results, setResults] = useState(PASSAGES)
+  const [hoveredButton, setHoveredButton] = useState<string | null>(null)
 
   const performSearch = () => {
     let filtered = PASSAGES
@@ -52,7 +53,12 @@ function SearchPageContent() {
     setResults(filtered)
   }
 
-  const handleKeyPress = (e: React.KeyboardEvent) => {
+  // Auto-search when language filter changes
+  useEffect(() => {
+    performSearch()
+  }, [languageFilter])
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
       performSearch()
     }
@@ -96,7 +102,7 @@ function SearchPageContent() {
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                onKeyPress={handleKeyPress}
+                onKeyDown={handleKeyDown}
                 placeholder="Search authors, works, text, or translations..."
                 className="w-full px-4 py-3 rounded-lg border border-opacity-20"
                 style={{ 
@@ -123,11 +129,7 @@ function SearchPageContent() {
             <label className="text-sm font-medium">Filter by Language:</label>
             <select
               value={languageFilter}
-              onChange={(e) => {
-                setLanguageFilter(e.target.value)
-                // Auto-search when filter changes
-                setTimeout(performSearch, 0)
-              }}
+              onChange={(e) => setLanguageFilter(e.target.value)}
               className="px-3 py-2 rounded border border-opacity-20"
               style={{ 
                 backgroundColor: '#1E1E24', 
@@ -148,18 +150,13 @@ function SearchPageContent() {
               <button
                 key={term}
                 onClick={() => handleQuickSearch(term)}
+                onMouseEnter={() => setHoveredButton(term)}
+                onMouseLeave={() => setHoveredButton(null)}
                 className="px-3 py-1 rounded text-sm transition-colors border"
                 style={{ 
                   borderColor: '#C9A227',
-                  color: '#C9A227'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#C9A227'
-                  e.currentTarget.style.color = '#0D0D0F'
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = 'transparent'
-                  e.currentTarget.style.color = '#C9A227'
+                  backgroundColor: hoveredButton === term ? '#C9A227' : 'transparent',
+                  color: hoveredButton === term ? '#0D0D0F' : '#C9A227'
                 }}
               >
                 {term}
