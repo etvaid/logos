@@ -150,9 +150,9 @@ export default function ChronosPage() {
         {
           era: 'Hellenistic',
           period: '323-31 BCE',
-          meaning: 'Philosophical justice',
-          evolution: 'Stoics developed sophisticated theories of natural law and cosmic justice. Justice became harmony with the rational order of the universe, influencing Roman jurisprudence.',
-          authors: ['Stoics', 'Cicero'],
+          meaning: 'Divine justice, cosmic order',
+          evolution: 'Elevated to cosmic principle of universal justice. Stoics viewed dike as part of the divine logos governing the universe. Legal dike developed into more systematic jurisprudence.',
+          authors: ['Chrysippus', 'Polybius'],
           confidence: 87,
           color: '#3B82F6',
           year: -323,
@@ -162,565 +162,392 @@ export default function ChronosPage() {
           era: 'Imperial',
           period: '31 BCE-284 CE',
           meaning: 'Roman law, imperial justice',
-          evolution: 'Systematized in Roman law and imperial administration. Justice became procedural and institutional, balancing Greek philosophical concepts with Roman practical governance.',
-          authors: ['Ulpian', 'Gaius'],
-          confidence: 89,
+          evolution: 'Incorporated into Roman legal system as iustitia. Greek dike influenced Roman jurisprudence, particularly in concepts of natural law and universal justice principles.',
+          authors: ['Cicero', 'Ulpian'],
+          confidence: 91,
           color: '#DC2626',
           year: -31,
-          position: 3
-        }
-      ]
-    },
-    'φιλοσοφία': {
-      transliteration: 'philosophia',
-      modern: 'philosophy',
-      data: [
-        {
-          era: 'Archaic',
-          period: '800-500 BCE',
-          meaning: 'Love of wisdom',
-          evolution: 'Pythagoras coined the term, meaning "love of wisdom" as opposed to claiming to be wise. Early philosophers sought natural explanations for phenomena previously explained by mythology.',
-          authors: ['Pythagoras', 'Thales'],
-          confidence: 88,
-          color: '#D97706',
-          year: -600,
-          position: 0
-        },
-        {
-          era: 'Classical',
-          period: '500-323 BCE',
-          meaning: 'Systematic inquiry into reality',
-          evolution: 'Became systematic investigation of reality, knowledge, and values. Socratic method, Platonic forms, and Aristotelian categories established philosophical methodology and core problems.',
-          authors: ['Socrates', 'Plato', 'Aristotle'],
-          confidence: 98,
-          color: '#F59E0B',
-          year: -500,
-          position: 1
-        },
-        {
-          era: 'Hellenistic',
-          period: '323-31 BCE',
-          meaning: 'Way of life, practical wisdom',
-          evolution: 'Transformed into competing schools offering comprehensive ways of life. Philosophy became therapeutic, addressing how to live well and achieve happiness through reason.',
-          authors: ['Epicurus', 'Zeno', 'Sextus Empiricus'],
-          confidence: 92,
-          color: '#3B82F6',
-          year: -323,
-          position: 2
-        },
-        {
-          era: 'Late Antique',
-          period: '284-600 CE',
-          meaning: 'Synthesis with theology',
-          evolution: 'Integrated with Christian theology. Philosophy became handmaiden to theology, with Neoplatonism providing metaphysical framework for Christian doctrine.',
-          authors: ['Plotinus', 'Augustine', 'Pseudo-Dionysius'],
-          confidence: 90,
-          color: '#7C3AED',
-          year: 284,
           position: 3
         }
       ]
     }
   };
 
-  const currentConcept = concepts[selectedConcept];
+  const currentConcept = concepts[selectedConcept as keyof typeof concepts];
 
   return (
-    <div style={{ 
-      minHeight: '100vh', 
-      backgroundColor: '#0D0D0F', 
-      color: '#F5F4F2' 
-    }}>
+    <div style={{ backgroundColor: '#0D0D0F', minHeight: '100vh', color: '#F5F4F2', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
       {/* Navigation */}
-      <nav style={{ 
-        backgroundColor: '#1E1E24',
-        borderBottom: '1px solid #2D2D35',
-        padding: '16px 0'
-      }}>
-        <div style={{ 
-          maxWidth: '1200px', 
-          margin: '0 auto', 
-          padding: '0 24px',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center'
-        }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
-            <Link href="/" style={{
-              fontSize: '24px',
-              fontWeight: 'bold',
-              color: '#C9A227',
-              textDecoration: 'none'
-            }}>
+      <nav style={{ borderBottom: '1px solid #1E1E24', padding: '16px 0' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
+            <Link href="/" style={{ fontSize: '24px', fontWeight: 'bold', color: '#C9A227', textDecoration: 'none' }}>
               LOGOS
             </Link>
             <div style={{ display: 'flex', gap: '24px' }}>
-              <Link href="/lexicon" style={{
-                color: '#9CA3AF',
-                textDecoration: 'none',
-                transition: 'color 0.2s'
-              }}>Lexicon</Link>
-              <Link href="/chronos" style={{
-                color: '#C9A227',
-                textDecoration: 'none'
-              }}>Chronos</Link>
-              <Link href="/contextus" style={{
-                color: '#9CA3AF',
-                textDecoration: 'none',
-                transition: 'color 0.2s'
-              }}>Contextus</Link>
-              <Link href="/apparatus" style={{
-                color: '#9CA3AF',
-                textDecoration: 'none',
-                transition: 'color 0.2s'
-              }}>Apparatus</Link>
+              <Link href="/morpheus" style={{ color: '#9CA3AF', textDecoration: 'none', fontSize: '14px', fontWeight: '500', transition: 'color 0.2s' }}>
+                MORPHEUS
+              </Link>
+              <Link href="/chronos" style={{ color: '#C9A227', textDecoration: 'none', fontSize: '14px', fontWeight: '500' }}>
+                CHRONOS
+              </Link>
+              <Link href="/atlas" style={{ color: '#9CA3AF', textDecoration: 'none', fontSize: '14px', fontWeight: '500', transition: 'color 0.2s' }}>
+                ATLAS
+              </Link>
+              <Link href="/synthesis" style={{ color: '#9CA3AF', textDecoration: 'none', fontSize: '14px', fontWeight: '500', transition: 'color 0.2s' }}>
+                SYNTHESIS
+              </Link>
             </div>
           </div>
         </div>
       </nav>
 
       {/* Header */}
-      <div style={{ 
-        maxWidth: '1200px', 
-        margin: '0 auto', 
-        padding: '48px 24px 0'
-      }}>
-        <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-          <h1 style={{
-            fontSize: '48px',
-            fontWeight: 'bold',
-            color: '#C9A227',
-            marginBottom: '16px',
-            background: 'linear-gradient(135deg, #C9A227, #E8D5A3)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent'
-          }}>
-            CHRONOS
-          </h1>
-          <p style={{
-            fontSize: '20px',
-            color: '#9CA3AF',
-            maxWidth: '600px',
-            margin: '0 auto',
-            lineHeight: '1.6'
-          }}>
-            Trace the evolution of philosophical concepts through time
-          </p>
-        </div>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '48px 24px 32px' }}>
+        <h1 style={{ fontSize: '48px', fontWeight: 'bold', margin: '0 0 16px 0', background: 'linear-gradient(135deg, #C9A227, #E8D5A3)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+          CHRONOS
+        </h1>
+        <p style={{ fontSize: '18px', color: '#9CA3AF', margin: '0 0 32px 0', maxWidth: '600px' }}>
+          Trace the evolution of philosophical concepts through time, witnessing how ideas transform across cultures and centuries.
+        </p>
 
         {/* Concept Selector */}
-        <div style={{ 
-          display: 'flex', 
-          justifyContent: 'center',
-          marginBottom: '48px',
-          position: 'relative'
-        }}>
-          <div style={{ position: 'relative', display: 'inline-block' }}>
-            <button
-              onClick={() => setShowDropdown(!showDropdown)}
-              style={{
-                backgroundColor: '#1E1E24',
-                border: '2px solid #C9A227',
-                borderRadius: '12px',
-                padding: '16px 24px',
-                color: '#F5F4F2',
-                fontSize: '18px',
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '12px',
-                minWidth: '280px',
-                justifyContent: 'space-between',
-                transition: 'all 0.2s'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#2D2D35';
-                e.currentTarget.style.borderColor = '#E8D5A3';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#1E1E24';
-                e.currentTarget.style.borderColor = '#C9A227';
-              }}
-            >
+        <div style={{ position: 'relative', marginBottom: '48px' }}>
+          <label style={{ display: 'block', fontSize: '14px', fontWeight: '600', color: '#F5F4F2', marginBottom: '8px' }}>
+            Select Concept
+          </label>
+          <div 
+            style={{ 
+              position: 'relative',
+              backgroundColor: '#1E1E24',
+              border: '1px solid #141419',
+              borderRadius: '8px',
+              cursor: 'pointer',
+              transition: 'all 0.2s'
+            }}
+            onClick={() => setShowDropdown(!showDropdown)}
+          >
+            <div style={{ padding: '12px 16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
               <div>
-                <span style={{ color: '#C9A227', fontWeight: 'bold' }}>
-                  {selectedConcept}
-                </span>
-                <span style={{ color: '#9CA3AF', marginLeft: '8px' }}>
-                  ({currentConcept.transliteration})
+                <span style={{ fontSize: '18px', color: '#3B82F6', marginRight: '12px' }}>{selectedConcept}</span>
+                <span style={{ fontSize: '14px', color: '#9CA3AF' }}>
+                  ({currentConcept.transliteration}) - {currentConcept.modern}
                 </span>
               </div>
-              <svg 
-                width="20" 
-                height="20" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                style={{
-                  transform: showDropdown ? 'rotate(180deg)' : 'rotate(0deg)',
-                  transition: 'transform 0.2s'
-                }}
-              >
-                <path 
-                  d="M7 10L12 15L17 10" 
-                  stroke="#C9A227" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round"
-                />
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ transform: showDropdown ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }}>
+                <path d="M7 10l5 5 5-5" stroke="#9CA3AF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-            </button>
-
+            </div>
+            
             {showDropdown && (
-              <div style={{
-                position: 'absolute',
-                top: '100%',
-                left: '0',
-                right: '0',
-                backgroundColor: '#1E1E24',
-                border: '2px solid #C9A227',
-                borderRadius: '12px',
-                marginTop: '8px',
-                zIndex: 1000,
-                overflow: 'hidden'
+              <div style={{ 
+                position: 'absolute', 
+                top: '100%', 
+                left: '0', 
+                right: '0', 
+                backgroundColor: '#1E1E24', 
+                border: '1px solid #141419', 
+                borderRadius: '8px', 
+                marginTop: '4px', 
+                zIndex: 10,
+                boxShadow: '0 10px 25px rgba(0, 0, 0, 0.3)'
               }}>
                 {Object.entries(concepts).map(([concept, data]) => (
-                  <button
+                  <div
                     key={concept}
+                    style={{ 
+                      padding: '12px 16px', 
+                      cursor: 'pointer', 
+                      borderBottom: concept === Object.keys(concepts)[Object.keys(concepts).length - 1] ? 'none' : '1px solid #141419',
+                      transition: 'background-color 0.2s'
+                    }}
+                    onMouseEnter={(e) => (e.target as HTMLElement).style.backgroundColor = '#141419'}
+                    onMouseLeave={(e) => (e.target as HTMLElement).style.backgroundColor = 'transparent'}
                     onClick={() => {
                       setSelectedConcept(concept);
                       setShowDropdown(false);
                       setExpandedNode(null);
                     }}
-                    style={{
-                      width: '100%',
-                      padding: '16px 24px',
-                      backgroundColor: concept === selectedConcept ? '#2D2D35' : 'transparent',
-                      border: 'none',
-                      color: '#F5F4F2',
-                      textAlign: 'left',
-                      cursor: 'pointer',
-                      transition: 'all 0.2s'
-                    }}
-                    onMouseEnter={(e) => {
-                      if (concept !== selectedConcept) {
-                        e.currentTarget.style.backgroundColor = '#2D2D35';
-                      }
-                    }}
-                    onMouseLeave={(e) => {
-                      if (concept !== selectedConcept) {
-                        e.currentTarget.style.backgroundColor = 'transparent';
-                      }
-                    }}
                   >
                     <div>
-                      <span style={{ color: '#C9A227', fontWeight: 'bold' }}>
-                        {concept}
-                      </span>
-                      <span style={{ color: '#9CA3AF', marginLeft: '8px' }}>
-                        ({data.transliteration})
+                      <span style={{ fontSize: '16px', color: '#3B82F6', marginRight: '12px' }}>{concept}</span>
+                      <span style={{ fontSize: '14px', color: '#9CA3AF' }}>
+                        ({data.transliteration}) - {data.modern}
                       </span>
                     </div>
-                    <div style={{ color: '#6B7280', fontSize: '14px', marginTop: '4px' }}>
-                      {data.modern}
-                    </div>
-                  </button>
+                  </div>
                 ))}
               </div>
             )}
           </div>
         </div>
+      </div>
 
-        {/* Timeline Container */}
-        <div style={{
-          backgroundColor: '#1E1E24',
-          borderRadius: '16px',
-          padding: '48px',
-          position: 'relative',
-          maxWidth: '800px',
-          margin: '0 auto'
-        }}>
-          {/* Timeline Line */}
-          <div style={{
-            position: 'absolute',
-            left: '80px',
-            top: '80px',
-            bottom: '80px',
-            width: '4px',
-            backgroundColor: '#C9A227',
-            borderRadius: '2px'
-          }}>
-            {/* Gradient overlay */}
-            <div style={{
-              position: 'absolute',
-              top: '0',
-              left: '0',
-              right: '0',
-              bottom: '0',
-              background: 'linear-gradient(180deg, #C9A227, #E8D5A3)',
-              borderRadius: '2px'
+      {/* Main Content */}
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px 48px', display: 'flex', gap: '48px' }}>
+        {/* Timeline Column */}
+        <div style={{ flex: '0 0 400px' }}>
+          <h2 style={{ fontSize: '24px', fontWeight: 'bold', color: '#F5F4F2', marginBottom: '24px' }}>
+            Timeline Evolution
+          </h2>
+          
+          {/* Vertical Timeline */}
+          <div style={{ position: 'relative' }}>
+            {/* Timeline Line */}
+            <div style={{ 
+              position: 'absolute', 
+              left: '24px', 
+              top: '0', 
+              bottom: '0', 
+              width: '2px', 
+              background: 'linear-gradient(to bottom, #D97706, #F59E0B, #3B82F6, #DC2626, #7C3AED)'
             }} />
-          </div>
-
-          {/* Era Nodes */}
-          {currentConcept.data.map((node, index) => (
-            <div
-              key={index}
-              style={{
-                position: 'relative',
-                marginBottom: index === currentConcept.data.length - 1 ? '0' : '80px',
-                paddingLeft: '120px'
-              }}
-            >
-              {/* Node Circle */}
-              <div
-                style={{
-                  position: 'absolute',
-                  left: '62px',
-                  top: '24px',
-                  width: '36px',
-                  height: '36px',
-                  backgroundColor: node.color,
-                  borderRadius: '50%',
-                  border: '4px solid #1E1E24',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s',
-                  transform: hoveredNode === index ? 'scale(1.2)' : 'scale(1)',
-                  boxShadow: expandedNode === index ? `0 0 20px ${node.color}` : 'none',
-                  zIndex: 10
+            
+            {/* Era Nodes */}
+            {currentConcept.data.map((node, index) => (
+              <div 
+                key={index}
+                style={{ 
+                  position: 'relative', 
+                  marginBottom: index === currentConcept.data.length - 1 ? '0' : '32px',
+                  paddingLeft: '64px',
+                  cursor: 'pointer'
                 }}
                 onClick={() => setExpandedNode(expandedNode === index ? null : index)}
                 onMouseEnter={() => setHoveredNode(index)}
                 onMouseLeave={() => setHoveredNode(null)}
               >
-                <div style={{
-                  position: 'absolute',
-                  inset: '4px',
-                  backgroundColor: node.color,
+                {/* Era Node Circle */}
+                <div style={{ 
+                  position: 'absolute', 
+                  left: '16px', 
+                  top: '8px',
+                  width: '16px', 
+                  height: '16px', 
+                  backgroundColor: node.color, 
                   borderRadius: '50%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: '#0D0D0F',
-                  fontSize: '12px',
-                  fontWeight: 'bold'
+                  border: '3px solid #0D0D0F',
+                  transform: hoveredNode === index ? 'scale(1.3)' : 'scale(1)',
+                  transition: 'transform 0.2s',
+                  zIndex: 2
+                }} />
+                
+                {/* Era Card */}
+                <div style={{ 
+                  backgroundColor: '#1E1E24', 
+                  borderRadius: '12px', 
+                  padding: '16px',
+                  border: expandedNode === index ? `2px solid ${node.color}` : '1px solid #141419',
+                  transition: 'all 0.3s',
+                  transform: hoveredNode === index ? 'translateX(4px)' : 'translateX(0)'
                 }}>
-                  {index + 1}
-                </div>
-              </div>
-
-              {/* Era Label */}
-              <div style={{
-                position: 'absolute',
-                left: '-60px',
-                top: '0',
-                width: '120px',
-                textAlign: 'center'
-              }}>
-                <div style={{
-                  fontSize: '14px',
-                  fontWeight: 'bold',
-                  color: node.color,
-                  marginBottom: '4px'
-                }}>
-                  {node.era}
-                </div>
-                <div style={{
-                  fontSize: '12px',
-                  color: '#6B7280'
-                }}>
-                  {node.period}
-                </div>
-              </div>
-
-              {/* Content Card */}
-              <div style={{
-                backgroundColor: '#141419',
-                borderRadius: '12px',
-                padding: '24px',
-                border: `2px solid ${expandedNode === index ? node.color : 'transparent'}`,
-                transition: 'all 0.3s',
-                cursor: 'pointer',
-                transform: hoveredNode === index ? 'translateY(-4px)' : 'translateY(0)'
-              }}
-              onClick={() => setExpandedNode(expandedNode === index ? null : index)}
-              onMouseEnter={() => setHoveredNode(index)}
-              onMouseLeave={() => setHoveredNode(null)}
-              >
-                <div style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'flex-start',
-                  marginBottom: '16px'
-                }}>
-                  <h3 style={{
-                    color: '#F5F4F2',
-                    fontSize: '18px',
-                    fontWeight: 'bold',
-                    margin: '0'
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+                    <h3 style={{ 
+                      fontSize: '16px', 
+                      fontWeight: 'bold', 
+                      color: node.color, 
+                      margin: '0' 
+                    }}>
+                      {node.era}
+                    </h3>
+                    <span style={{ fontSize: '12px', color: '#6B7280' }}>
+                      {node.period}
+                    </span>
+                  </div>
+                  
+                  <p style={{ 
+                    fontSize: '14px', 
+                    color: '#F5F4F2', 
+                    margin: '0 0 8px 0', 
+                    fontWeight: '500' 
                   }}>
                     {node.meaning}
-                  </h3>
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '8px'
-                  }}>
-                    <div style={{
-                      fontSize: '12px',
-                      color: '#9CA3AF'
-                    }}>
-                      Confidence
+                  </p>
+                  
+                  {/* Authors */}
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '8px' }}>
+                    {node.authors.map((author, authorIndex) => (
+                      <span 
+                        key={authorIndex}
+                        style={{ 
+                          fontSize: '12px', 
+                          backgroundColor: '#141419', 
+                          color: '#9CA3AF', 
+                          padding: '2px 8px', 
+                          borderRadius: '12px' 
+                        }}
+                      >
+                        {author}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  {/* Confidence Bar */}
+                  <div style={{ marginBottom: '8px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '4px' }}>
+                      <span style={{ fontSize: '11px', color: '#6B7280' }}>Confidence</span>
+                      <span style={{ fontSize: '11px', color: '#9CA3AF' }}>{node.confidence}%</span>
                     </div>
-                    <div style={{
-                      width: '80px',
-                      height: '6px',
-                      backgroundColor: '#2D2D35',
-                      borderRadius: '3px',
-                      overflow: 'hidden'
+                    <div style={{ 
+                      width: '100%', 
+                      height: '4px', 
+                      backgroundColor: '#141419', 
+                      borderRadius: '2px', 
+                      overflow: 'hidden' 
                     }}>
-                      <div style={{
-                        width: `${node.confidence}%`,
-                        height: '100%',
+                      <div style={{ 
+                        width: `${node.confidence}%`, 
+                        height: '100%', 
                         backgroundColor: node.color,
-                        borderRadius: '3px',
-                        transition: 'width 0.3s'
+                        transition: 'width 0.5s ease-out'
                       }} />
                     </div>
-                    <span style={{
-                      fontSize: '12px',
-                      color: node.color,
-                      fontWeight: 'bold'
-                    }}>
-                      {node.confidence}%
-                    </span>
                   </div>
-                </div>
-
-                {/* Authors */}
-                <div style={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  gap: '8px',
-                  marginBottom: expandedNode === index ? '16px' : '0'
-                }}>
-                  {node.authors.map((author, authorIndex) => (
-                    <span
-                      key={authorIndex}
-                      style={{
-                        backgroundColor: '#2D2D35',
-                        color: '#C9A227',
-                        padding: '4px 8px',
-                        borderRadius: '6px',
-                        fontSize: '12px',
-                        fontWeight: '500'
+                  
+                  {/* Expand indicator */}
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '8px' }}>
+                    <svg 
+                      width="16" 
+                      height="16" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      style={{ 
+                        transform: expandedNode === index ? 'rotate(180deg)' : 'rotate(0deg)', 
+                        transition: 'transform 0.2s' 
                       }}
                     >
-                      {author}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Expanded Content */}
-                {expandedNode === index && (
-                  <div style={{
-                    borderTop: '1px solid #2D2D35',
-                    paddingTop: '16px',
-                    animation: 'fadeIn 0.3s ease-in'
-                  }}>
-                    <h4 style={{
-                      color: '#C9A227',
-                      fontSize: '14px',
-                      fontWeight: 'bold',
-                      marginBottom: '12px',
-                      margin: '0 0 12px 0'
-                    }}>
-                      Evolution of Meaning
-                    </h4>
-                    <p style={{
-                      color: '#9CA3AF',
-                      lineHeight: '1.6',
-                      fontSize: '14px',
-                      margin: '0'
-                    }}>
-                      {node.evolution}
-                    </p>
-                  </div>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Legend */}
-        <div style={{
-          marginTop: '48px',
-          backgroundColor: '#1E1E24',
-          borderRadius: '16px',
-          padding: '32px',
-          maxWidth: '800px',
-          margin: '48px auto 0'
-        }}>
-          <h3 style={{
-            color: '#C9A227',
-            fontSize: '18px',
-            fontWeight: 'bold',
-            marginBottom: '24px',
-            margin: '0 0 24px 0'
-          }}>
-            Historical Periods
-          </h3>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '16px'
-          }}>
-            {[
-              { name: 'Archaic', period: '800-500 BCE', color: '#D97706' },
-              { name: 'Classical', period: '500-323 BCE', color: '#F59E0B' },
-              { name: 'Hellenistic', period: '323-31 BCE', color: '#3B82F6' },
-              { name: 'Imperial', period: '31 BCE-284 CE', color: '#DC2626' },
-              { name: 'Late Antique', period: '284-600 CE', color: '#7C3AED' },
-              { name: 'Byzantine', period: '600-1453 CE', color: '#059669' }
-            ].map((era, index) => (
-              <div
-                key={index}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '12px',
-                  padding: '12px',
-                  backgroundColor: '#141419',
-                  borderRadius: '8px',
-                  transition: 'all 0.2s'
-                }}
-              >
-                <div style={{
-                  width: '16px',
-                  height: '16px',
-                  backgroundColor: era.color,
-                  borderRadius: '50%'
-                }} />
-                <div>
-                  <div style={{
-                    color: '#F5F4F2',
-                    fontSize: '14px',
-                    fontWeight: 'bold'
-                  }}>
-                    {era.name}
-                  </div>
-                  <div style={{
-                    color: '#6B7280',
-                    fontSize: '12px'
-                  }}>
-                    {era.period}
+                      <path d="M7 10l5 5 5-5" stroke="#6B7280" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
                   </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
+        
+        {/* Details Column */}
+        <div style={{ flex: '1' }}>
+          <h2 style={{ fontSize: '24px', fontWeight: 'bold', color: '#F5F4F2', marginBottom: '24px' }}>
+            Meaning Evolution
+          </h2>
+          
+          {expandedNode !== null ? (
+            <div style={{ 
+              backgroundColor: '#1E1E24', 
+              borderRadius: '16px', 
+              padding: '32px',
+              border: `2px solid ${currentConcept.data[expandedNode].color}`,
+              animation: 'fadeIn 0.3s ease-out'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+                <div style={{ 
+                  width: '24px', 
+                  height: '24px', 
+                  backgroundColor: currentConcept.data[expandedNode].color, 
+                  borderRadius: '50%' 
+                }} />
+                <div>
+                  <h3 style={{ 
+                    fontSize: '28px', 
+                    fontWeight: 'bold', 
+                    color: currentConcept.data[expandedNode].color, 
+                    margin: '0 0 4px 0' 
+                  }}>
+                    {currentConcept.data[expandedNode].era} Era
+                  </h3>
+                  <p style={{ fontSize: '16px', color: '#9CA3AF', margin: '0' }}>
+                    {currentConcept.data[expandedNode].period}
+                  </p>
+                </div>
+              </div>
+              
+              <div style={{ marginBottom: '24px' }}>
+                <h4 style={{ fontSize: '18px', fontWeight: '600', color: '#F5F4F2', marginBottom: '12px' }}>
+                  Core Meaning
+                </h4>
+                <p style={{ fontSize: '16px', color: '#E5E5E5', lineHeight: '1.6', margin: '0' }}>
+                  {currentConcept.data[expandedNode].meaning}
+                </p>
+              </div>
+              
+              <div style={{ marginBottom: '24px' }}>
+                <h4 style={{ fontSize: '18px', fontWeight: '600', color: '#F5F4F2', marginBottom: '12px' }}>
+                  Historical Evolution
+                </h4>
+                <p style={{ fontSize: '14px', color: '#D1D5DB', lineHeight: '1.7', margin: '0' }}>
+                  {currentConcept.data[expandedNode].evolution}
+                </p>
+              </div>
+              
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <div>
+                  <h4 style={{ fontSize: '16px', fontWeight: '600', color: '#F5F4F2', marginBottom: '8px' }}>
+                    Key Authors
+                  </h4>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                    {currentConcept.data[expandedNode].authors.map((author, index) => (
+                      <span 
+                        key={index}
+                        style={{ 
+                          fontSize: '14px', 
+                          backgroundColor: currentConcept.data[expandedNode].color + '20', 
+                          color: currentConcept.data[expandedNode].color, 
+                          padding: '4px 12px', 
+                          borderRadius: '16px',
+                          border: `1px solid ${currentConcept.data[expandedNode].color}30`
+                        }}
+                      >
+                        {author}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                
+                <div style={{ textAlign: 'right' }}>
+                  <h4 style={{ fontSize: '16px', fontWeight: '600', color: '#F5F4F2', marginBottom: '8px' }}>
+                    Confidence
+                  </h4>
+                  <div style={{ fontSize: '24px', fontWeight: 'bold', color: currentConcept.data[expandedNode].color }}>
+                    {currentConcept.data[expandedNode].confidence}%
+                  </div>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div style={{ 
+              backgroundColor: '#1E1E24', 
+              borderRadius: '16px', 
+              padding: '48px 32px',
+              textAlign: 'center',
+              border: '1px solid #141419'
+            }}>
+              <div style={{ 
+                width: '64px', 
+                height: '64px', 
+                backgroundColor: '#141419', 
+                borderRadius: '50%', 
+                margin: '0 auto 24px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="#6B7280" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M2 17l10 5 10-5" stroke="#6B7280" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M2 12l10 5 10-5" stroke="#6B7280" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <h3 style={{ fontSize: '20px', fontWeight: '600', color: '#F5F4F2', marginBottom: '12px' }}>
+                Select an Era
+              </h3>
+              <p style={{ fontSize: '14px', color: '#9CA3AF', margin: '0' }}>
+                Click on any era node in the timeline to explore the detailed evolution of <span style={{ color: '#3B82F6' }}>{selectedConcept}</span> during that historical period.
+              </p>
+            </div>
+          )}
+        </div>
       </div>
-
+      
       <style jsx>{`
         @keyframes fadeIn {
           from { opacity: 0; transform: translateY(10px); }

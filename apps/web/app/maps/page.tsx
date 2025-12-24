@@ -85,31 +85,31 @@ export default function MapsHub() {
       id: 7,
       href: "/maps/mythology", 
       title: "Mythological Sites", 
-      desc: "Sacred places and legendary locations from ancient myths",
+      desc: "Sacred places and legendary locations from ancient stories",
       icon: "⚡", 
       color: "#A855F7",
       category: "Cultural",
-      preview: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23141419'/%3E%3Cpolygon points='150,40 160,70 190,70 170,90 180,120 150,100 120,120 130,90 110,70 140,70' fill='%23A855F7' opacity='0.8'/%3E%3Ccircle cx='80' cy='80' r='8' fill='%23C9A227' opacity='0.6'/%3E%3Ccircle cx='220' cy='110' r='6' fill='%23C9A227' opacity='0.6'/%3E%3Ctext x='150' y='160' fill='%23F5F4F2' text-anchor='middle' font-size='12'%3EMythic Locations%3C/text%3E%3C/svg%3E"
+      preview: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23141419'/%3E%3Cpolygon points='150,40 160,70 190,70 170,90 180,120 150,100 120,120 130,90 110,70 140,70' fill='%23A855F7' opacity='0.8'/%3E%3Ccircle cx='80' cy='120' r='8' fill='%23C9A227' opacity='0.6'/%3E%3Ccircle cx='220' cy='110' r='6' fill='%23C9A227' opacity='0.6'/%3E%3Ctext x='150' y='160' fill='%23F5F4F2' text-anchor='middle' font-size='12'%3EMythical Places%3C/text%3E%3C/svg%3E"
     },
     { 
       id: 8,
-      href: "/maps/battles", 
-      title: "Famous Battles", 
-      desc: "Decisive military encounters that shaped ancient history",
+      href: "/maps/military", 
+      title: "Military Campaigns", 
+      desc: "Famous battles and conquests that shaped the ancient world",
       icon: "⚔️", 
       color: "#EF4444",
       category: "Military",
-      preview: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23141419'/%3E%3Cpath d='M50 80 L100 60 L90 100 Z' fill='%23EF4444' opacity='0.7'/%3E%3Cpath d='M150 70 L200 50 L190 90 Z' fill='%233B82F6' opacity='0.7'/%3E%3Cpath d='M220 100 L270 80 L260 120 Z' fill='%23EF4444' opacity='0.7'/%3E%3Ctext x='150' y='150' fill='%23F5F4F2' text-anchor='middle' font-size='12'%3EBattle Sites%3C/text%3E%3C/svg%3E"
+      preview: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23141419'/%3E%3Cpath d='M50 150 L100 100 L150 120 L200 80 L250 90' stroke='%23EF4444' stroke-width='4' fill='none' opacity='0.8' marker-end='url(%23arrowhead)'/%3E%3Ccircle cx='100' cy='100' r='6' fill='%23EF4444'/%3E%3Ccircle cx='200' cy='80' r='6' fill='%23EF4444'/%3E%3Ctext x='150' y='170' fill='%23F5F4F2' text-anchor='middle' font-size='12'%3EBattle Routes%3C/text%3E%3C/svg%3E"
     },
     { 
       id: 9,
-      href: "/maps/cities", 
-      title: "Major Cities", 
-      desc: "Greatest urban centers of the classical world",
+      href: "/maps/religions", 
+      title: "Religious Centers", 
+      desc: "Temples, oracles, and sacred sites of ancient faiths",
       icon: "🏛️", 
-      color: "#F59E0B",
+      color: "#10B981",
       category: "Cultural",
-      preview: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23141419'/%3E%3Crect x='60' y='100' width='8' height='40' fill='%23F59E0B'/%3E%3Crect x='70' y='90' width='10' height='50' fill='%23F59E0B'/%3E%3Crect x='82' y='95' width='8' height='45' fill='%23F59E0B'/%3E%3Crect x='150' y='85' width='12' height='55' fill='%23C9A227'/%3E%3Crect x='164' y='95' width='8' height='45' fill='%23C9A227'/%3E%3Crect x='220' y='105' width='6' height='35' fill='%23F59E0B'/%3E%3Ctext x='150' y='165' fill='%23F5F4F2' text-anchor='middle' font-size='12'%3EUrban Centers%3C/text%3E%3C/svg%3E"
+      preview: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23141419'/%3E%3Crect x='120' y='80' width='60' height='40' fill='%2310B981' opacity='0.7'/%3E%3Crect x='130' y='70' width='8' height='50' fill='%2310B981'/%3E%3Crect x='142' y='70' width='8' height='50' fill='%2310B981'/%3E%3Crect x='154' y='70' width='8' height='50' fill='%2310B981'/%3E%3Crect x='166' y='70' width='8' height='50' fill='%2310B981'/%3E%3Ctriangle points='120,70 180,70 150,50' fill='%2310B981' opacity='0.8'/%3E%3Ctext x='150' y='140' fill='%23F5F4F2' text-anchor='middle' font-size='12'%3ESacred Sites%3C/text%3E%3C/svg%3E"
     }
   ];
 
@@ -117,51 +117,76 @@ export default function MapsHub() {
     ? maps 
     : maps.filter(map => map.category === selectedCategory);
 
+  const navItems = [
+    { label: 'Library', href: '/library' },
+    { label: 'Timeline', href: '/timeline' },
+    { label: 'Maps', href: '/maps' },
+    { label: 'Search', href: '/search' },
+    { label: 'Compare', href: '/compare' }
+  ];
+
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#0D0D0F', color: '#F5F4F2' }}>
+    <div style={{ 
+      minHeight: '100vh', 
+      backgroundColor: '#0D0D0F', 
+      color: '#F5F4F2',
+      fontFamily: 'system-ui, -apple-system, sans-serif'
+    }}>
       {/* Navigation */}
-      <nav style={{ backgroundColor: '#1E1E24', borderBottom: '1px solid #141419' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '16px 24px' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <Link href="/" style={{ 
-              fontSize: '28px', 
-              fontWeight: 'bold', 
-              color: '#C9A227', 
-              textDecoration: 'none',
-              transition: 'all 0.2s'
-            }}>
-              ΛΟΓΟΣ
-            </Link>
-            
-            <div style={{ display: 'flex', gap: '32px', alignItems: 'center' }}>
-              {['Texts', 'Authors', 'Maps', 'Timeline', 'Library'].map((item) => (
-                <Link
-                  key={item}
-                  href={`/${item.toLowerCase()}`}
-                  style={{
-                    color: hoveredNav === item ? '#C9A227' : '#F5F4F2',
-                    textDecoration: 'none',
-                    fontSize: '16px',
-                    fontWeight: item === 'Maps' ? 'bold' : '500',
-                    transition: 'all 0.2s',
-                    borderBottom: item === 'Maps' ? '2px solid #C9A227' : 'none',
-                    paddingBottom: '4px'
-                  }}
-                  onMouseEnter={() => setHoveredNav(item)}
-                  onMouseLeave={() => setHoveredNav(null)}
-                >
-                  {item}
-                </Link>
-              ))}
-            </div>
+      <nav style={{ 
+        backgroundColor: '#1E1E24', 
+        padding: '16px 32px',
+        borderBottom: '1px solid #141419'
+      }}>
+        <div style={{ 
+          maxWidth: '1400px', 
+          margin: '0 auto', 
+          display: 'flex', 
+          alignItems: 'center', 
+          justifyContent: 'space-between' 
+        }}>
+          <Link href="/" style={{ 
+            fontSize: '24px', 
+            fontWeight: 'bold', 
+            color: '#C9A227', 
+            textDecoration: 'none',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '12px'
+          }}>
+            <span style={{ fontSize: '28px' }}>📚</span>
+            LOGOS
+          </Link>
+          
+          <div style={{ display: 'flex', gap: '32px' }}>
+            {navItems.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                onMouseEnter={() => setHoveredNav(item.label)}
+                onMouseLeave={() => setHoveredNav(null)}
+                style={{
+                  color: hoveredNav === item.label ? '#C9A227' : '#F5F4F2',
+                  textDecoration: 'none',
+                  fontSize: '16px',
+                  fontWeight: '500',
+                  transition: 'all 0.2s',
+                  padding: '8px 16px',
+                  borderRadius: '8px',
+                  backgroundColor: hoveredNav === item.label ? '#141419' : 'transparent'
+                }}
+              >
+                {item.label}
+              </Link>
+            ))}
           </div>
         </div>
       </nav>
 
       {/* Main Content */}
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '32px 24px' }}>
+      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '48px 32px' }}>
         {/* Header */}
-        <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+        <div style={{ marginBottom: '48px', textAlign: 'center' }}>
           <h1 style={{ 
             fontSize: '48px', 
             fontWeight: 'bold', 
@@ -171,20 +196,27 @@ export default function MapsHub() {
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text'
           }}>
-            Interactive Maps
+            🗺️ Interactive Maps
           </h1>
-          <p style={{ fontSize: '20px', color: '#9CA3AF', maxWidth: '600px', margin: '0 auto' }}>
-            Explore the classical world through geography, language, politics, and culture
+          <p style={{ 
+            fontSize: '20px', 
+            color: '#9CA3AF', 
+            maxWidth: '800px', 
+            margin: '0 auto',
+            lineHeight: '1.6'
+          }}>
+            Explore the ancient world through interactive visualizations of languages, 
+            politics, culture, and more across 2000+ years of classical history.
           </p>
         </div>
 
         {/* Category Filters */}
         <div style={{ 
-          display: 'flex', 
-          flexWrap: 'wrap', 
-          gap: '12px', 
-          justifyContent: 'center', 
-          marginBottom: '48px' 
+          marginBottom: '48px',
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: '12px',
+          justifyContent: 'center'
         }}>
           {categories.map((category) => (
             <button
@@ -193,16 +225,29 @@ export default function MapsHub() {
               style={{
                 backgroundColor: selectedCategory === category.name ? category.color : '#1E1E24',
                 color: selectedCategory === category.name ? '#0D0D0F' : '#F5F4F2',
-                border: `1px solid ${selectedCategory === category.name ? category.color : '#141419'}`,
+                border: `2px solid ${selectedCategory === category.name ? category.color : '#141419'}`,
+                padding: '12px 20px',
                 borderRadius: '12px',
-                padding: '12px 24px',
                 fontSize: '16px',
-                fontWeight: '500',
+                fontWeight: '600',
                 cursor: 'pointer',
-                transition: 'all 0.2s',
+                transition: 'all 0.3s',
                 display: 'flex',
                 alignItems: 'center',
-                gap: '8px'
+                gap: '8px',
+                transform: selectedCategory === category.name ? 'scale(1.05)' : 'scale(1)'
+              }}
+              onMouseEnter={(e) => {
+                if (selectedCategory !== category.name) {
+                  e.currentTarget.style.borderColor = category.color;
+                  e.currentTarget.style.backgroundColor = '#141419';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (selectedCategory !== category.name) {
+                  e.currentTarget.style.borderColor = '#141419';
+                  e.currentTarget.style.backgroundColor = '#1E1E24';
+                }
               }}
             >
               <span style={{ fontSize: '18px' }}>{category.icon}</span>
@@ -212,105 +257,141 @@ export default function MapsHub() {
         </div>
 
         {/* Maps Grid */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-          gap: '24px',
-          marginBottom: '48px'
+        <div style={{ 
+          display: 'grid', 
+          gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', 
+          gap: '24px' 
         }}>
           {filteredMaps.map((map) => (
-            <Link
-              key={map.id}
+            <Link 
+              key={map.id} 
               href={map.href}
-              style={{ textDecoration: 'none', color: 'inherit' }}
-              onMouseEnter={() => setHoveredCard(map.id)}
-              onMouseLeave={() => setHoveredCard(null)}
+              style={{ textDecoration: 'none' }}
             >
-              <div style={{
-                backgroundColor: hoveredCard === map.id ? '#1E1E24' : '#141419',
-                border: `1px solid ${hoveredCard === map.id ? map.color : '#1E1E24'}`,
-                borderRadius: '16px',
-                padding: '24px',
-                transition: 'all 0.3s',
-                transform: hoveredCard === map.id ? 'translateY(-4px)' : 'translateY(0)',
-                boxShadow: hoveredCard === map.id 
-                  ? `0 8px 32px rgba(201, 162, 39, 0.1)` 
-                  : '0 4px 16px rgba(0, 0, 0, 0.2)',
-                cursor: 'pointer'
-              }}>
-                {/* Preview Image */}
-                <div style={{
-                  width: '100%',
-                  height: '200px',
-                  borderRadius: '12px',
+              <div
+                onMouseEnter={() => setHoveredCard(map.id)}
+                onMouseLeave={() => setHoveredCard(null)}
+                style={{
+                  backgroundColor: '#1E1E24',
+                  border: `2px solid ${hoveredCard === map.id ? map.color : '#141419'}`,
+                  borderRadius: '16px',
                   overflow: 'hidden',
-                  marginBottom: '16px',
-                  backgroundColor: '#0D0D0F',
-                  border: '1px solid #1E1E24'
+                  transition: 'all 0.3s',
+                  transform: hoveredCard === map.id ? 'translateY(-8px)' : 'translateY(0)',
+                  boxShadow: hoveredCard === map.id 
+                    ? `0 20px 40px rgba(0,0,0,0.4), 0 0 0 1px ${map.color}40` 
+                    : '0 4px 20px rgba(0,0,0,0.2)',
+                  cursor: 'pointer',
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column'
+                }}
+              >
+                {/* Preview Image */}
+                <div style={{ 
+                  height: '200px', 
+                  backgroundColor: '#141419',
+                  position: 'relative',
+                  overflow: 'hidden'
                 }}>
-                  <img
+                  <img 
                     src={map.preview}
-                    alt={map.title}
-                    style={{
-                      width: '100%',
-                      height: '100%',
+                    alt={`${map.title} preview`}
+                    style={{ 
+                      width: '100%', 
+                      height: '100%', 
                       objectFit: 'cover',
-                      transition: 'all 0.3s',
+                      transition: 'transform 0.3s',
                       transform: hoveredCard === map.id ? 'scale(1.05)' : 'scale(1)'
                     }}
                   />
+                  {/* Overlay gradient */}
+                  <div style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    background: `linear-gradient(135deg, ${map.color}20, transparent)`,
+                    opacity: hoveredCard === map.id ? 1 : 0,
+                    transition: 'opacity 0.3s'
+                  }} />
                 </div>
 
                 {/* Content */}
-                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
-                  {/* Category Icon */}
-                  <div style={{
-                    width: '48px',
-                    height: '48px',
-                    borderRadius: '12px',
-                    backgroundColor: map.color,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '24px',
-                    flexShrink: 0,
-                    transition: 'all 0.2s',
-                    transform: hoveredCard === map.id ? 'scale(1.1)' : 'scale(1)'
+                <div style={{ 
+                  padding: '24px',
+                  flex: 1,
+                  display: 'flex',
+                  flexDirection: 'column'
+                }}>
+                  {/* Header */}
+                  <div style={{ 
+                    display: 'flex', 
+                    alignItems: 'center', 
+                    gap: '12px', 
+                    marginBottom: '16px' 
                   }}>
-                    {map.icon}
+                    <span style={{ 
+                      fontSize: '24px',
+                      padding: '8px',
+                      backgroundColor: `${map.color}20`,
+                      borderRadius: '8px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
+                    }}>
+                      {map.icon}
+                    </span>
+                    <div style={{ flex: 1 }}>
+                      <h3 style={{ 
+                        fontSize: '20px', 
+                        fontWeight: 'bold', 
+                        margin: 0,
+                        color: hoveredCard === map.id ? map.color : '#F5F4F2',
+                        transition: 'color 0.3s'
+                      }}>
+                        {map.title}
+                      </h3>
+                      <div style={{
+                        fontSize: '14px',
+                        color: map.color,
+                        fontWeight: '600',
+                        marginTop: '4px'
+                      }}>
+                        {map.category}
+                      </div>
+                    </div>
                   </div>
 
-                  <div style={{ flex: 1 }}>
-                    <h3 style={{
-                      fontSize: '20px',
-                      fontWeight: 'bold',
-                      marginBottom: '8px',
-                      color: hoveredCard === map.id ? '#C9A227' : '#F5F4F2',
-                      transition: 'all 0.2s'
+                  {/* Description */}
+                  <p style={{ 
+                    fontSize: '16px', 
+                    color: '#9CA3AF', 
+                    margin: 0,
+                    lineHeight: '1.5',
+                    flex: 1
+                  }}>
+                    {map.desc}
+                  </p>
+
+                  {/* Action */}
+                  <div style={{
+                    marginTop: '20px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    color: map.color,
+                    fontSize: '14px',
+                    fontWeight: '600'
+                  }}>
+                    Explore Map
+                    <span style={{
+                      transition: 'transform 0.3s',
+                      transform: hoveredCard === map.id ? 'translateX(4px)' : 'translateX(0)'
                     }}>
-                      {map.title}
-                    </h3>
-                    <p style={{
-                      fontSize: '14px',
-                      color: '#9CA3AF',
-                      lineHeight: '1.5',
-                      marginBottom: '12px'
-                    }}>
-                      {map.desc}
-                    </p>
-                    <div style={{
-                      display: 'inline-block',
-                      backgroundColor: map.color,
-                      color: '#0D0D0F',
-                      fontSize: '12px',
-                      fontWeight: '600',
-                      padding: '4px 12px',
-                      borderRadius: '8px',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.5px'
-                    }}>
-                      {map.category}
-                    </div>
+                      →
+                    </span>
                   </div>
                 </div>
               </div>
@@ -318,33 +399,79 @@ export default function MapsHub() {
           ))}
         </div>
 
-        {/* Footer Info */}
-        <div style={{
+        {/* Stats Section */}
+        <div style={{ 
+          marginTop: '80px',
           backgroundColor: '#1E1E24',
           borderRadius: '16px',
-          padding: '32px',
-          textAlign: 'center',
+          padding: '48px',
           border: '1px solid #141419'
         }}>
-          <h3 style={{
-            fontSize: '24px',
-            fontWeight: 'bold',
-            marginBottom: '16px',
+          <h2 style={{ 
+            fontSize: '32px', 
+            fontWeight: 'bold', 
+            textAlign: 'center', 
+            marginBottom: '32px',
             color: '#C9A227'
           }}>
-            Discover the Classical World
-          </h3>
-          <p style={{
-            fontSize: '16px',
-            color: '#9CA3AF',
-            lineHeight: '1.6',
-            maxWidth: '800px',
-            margin: '0 auto'
+            Map Collection Overview
+          </h2>
+          
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', 
+            gap: '24px' 
           }}>
-            Our interactive maps bring ancient history to life, showing how Greek and Latin literature, 
-            politics, trade, and culture spread across the Mediterranean and beyond. Each map tells 
-            the story of human civilization through geographical visualization.
-          </p>
+            <div style={{ textAlign: 'center' }}>
+              <div style={{ 
+                fontSize: '36px', 
+                fontWeight: 'bold', 
+                color: '#3B82F6',
+                marginBottom: '8px'
+              }}>
+                2300+
+              </div>
+              <div style={{ color: '#9CA3AF', fontSize: '16px' }}>Years Covered</div>
+            </div>
+            
+            <div style={{ textAlign: 'center' }}>
+              <div style={{ 
+                fontSize: '36px', 
+                fontWeight: 'bold', 
+                color: '#DC2626',
+                marginBottom: '8px'
+              }}>
+                50+
+              </div>
+              <div style={{ color: '#9CA3AF', fontSize: '16px' }}>Ancient Cities</div>
+            </div>
+            
+            <div style={{ textAlign: 'center' }}>
+              <div style={{ 
+                fontSize: '36px', 
+                fontWeight: 'bold', 
+                color: '#10B981',
+                marginBottom: '8px'
+              }}>
+                12
+              </div>
+              <div style={{ color: '#9CA3AF', fontSize: '16px' }}>Empires Tracked</div>
+            </div>
+            
+            <div style={{ textAlign: 'center' }}>
+              <div style={{ 
+                fontSize: '36px', 
+                fontWeight: 'bold', 
+                color: '#C9A227',
+                marginBottom: '8px'
+              }}>
+                {filteredMaps.length}
+              </div>
+              <div style={{ color: '#9CA3AF', fontSize: '16px' }}>
+                {selectedCategory === 'All' ? 'Total Maps' : `${selectedCategory} Maps`}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

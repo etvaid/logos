@@ -20,6 +20,30 @@ const features = [
   { href: '/maps', title: 'Maps & Timeline', desc: 'Interactive historical visualization', icon: '🗺️', color: '#06B6D4' },
 ];
 
+const navItems = [
+  { name: 'Search', href: '/search' },
+  { name: 'Translate', href: '/translate' },
+  { name: 'Discover', href: '/discover' },
+  { name: 'SEMANTIA', href: '/semantia' },
+  { name: 'Connectome', href: '/connectome' },
+  { name: 'Maps', href: '/maps' },
+];
+
+const searchSuggestions = [
+  'virtue in Aristotle',
+  'death in Seneca',
+  'justice in Plato',
+  'glory in Virgil',
+  'wisdom in Marcus Aurelius',
+  'honor in Homer',
+  'friendship in Cicero',
+  'courage in Caesar',
+  'love in Ovid',
+  'fate in Sophocles',
+  'war in Thucydides',
+  'philosophy in Epictetus',
+];
+
 export default function Home() {
   const [query, setQuery] = useState('');
   const [hoveredStat, setHoveredStat] = useState<number | null>(null);
@@ -27,6 +51,41 @@ export default function Home() {
   const [searchFocused, setSearchFocused] = useState(false);
   const [hoveredButton, setHoveredButton] = useState(false);
   const [animationOffset, setAnimationOffset] = useState(0);
+  const [hoveredNavItem, setHoveredNavItem] = useState<number | null>(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('logos_authenticated') === 'true';
+    }
+    return false;
+  });
+  const [showAuthModal, setShowAuthModal] = useState(false);
+  const [authMode, setAuthMode] = useState<'login' | 'signup'>('login');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('');
+  const [showProfile, setShowProfile] = useState(false);
+  const [filteredSuggestions, setFilteredSuggestions] = useState<string[]>([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [selectedSuggestion, setSelectedSuggestion] = useState(-1);
+  const [userProfile, setUserProfile] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('logos_profile');
+      if (saved) {
+        return JSON.parse(saved);
+      }
+    }
+    return {
+      name: 'Scholar',
+      email: '',
+      preferences: {
+        theme: 'dark',
+        language: 'en',
+        notifications: true,
+      }
+    };
+  });
+  const [authError, setAuthError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -36,10 +95,157 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const updateSuggestions = () => {
+      if (query.trim() && query.length > 0) {
+        const filtered = searchSuggestions.filter(suggestion =>
+          suggestion.toLowerCase().includes(query.toLowerCase())
+        );
+        setFilteredSuggestions(filtered);
+        setShowSuggestions(filtered.length > 0);
+        setSelectedSuggestion(-1);
+      } else {
+        setShowSuggestions(false);
+        setFilteredSuggestions([]);
+        setSelectedSuggestion(-1);
+      }
+    };
+
+    // Use setTimeout to ensure immediate updates
+    const timeoutId = setTimeout(updateSuggestions, 0);
+    return () => clearTimeout(timeoutId);
+  }, [query]);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('logos_authenticated', isAuthenticated.toString());
+      if (isAuthenticated) {
+        localStorage.setItem('logos_profile', JSON.stringify(userProfile));
+      } else {
+        localStorage.removeItem('logos_profile');
+      }
+    }
+  }, [isAuthenticated, userProfile]);
+
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (query.trim()) {
+      setShowSuggestions(false);
       router.push(`/search?q=${encodeURIComponent(query)}`);
+    }
+  };
+
+  const handleSuggestionSelect = (suggestion: string) => {
+    setQuery(suggestion);
+    setShowSuggestions(false);
+    setSelectedSuggestion(-1);
+    router.push(`/search?q=${encodeURIComponent(suggestion)}`);
+  };
+
+  const handleAuth = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setAuthError('');
+    setIsLoading(true);
+
+    // Simulate API delay
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    // Mock authentication logic
+    if (authMode === 'login') {
+      if (email === 'demo@logos.com' && password === 'password') {
+        setIsAuthenticated(true);
+        setUserProfile(prev => ({ 
+          ...prev, 
+          name: 'Demo Scholar',
+          email: email
+        }));
+        setShowAuthModal(false);
+        setEmail('');
+        setPassword('');
+      } else if (email && password) {
+        // Allow any email/password for demo
+        setIsAuthenticated(true);
+        setUserProfile(prev => ({ 
+          ...prev, 
+          name: email.split('@')[0],
+          email: email
+        }));
+        setShowAuthModal(false);
+        setEmail('');
+        setPassword('');
+      } else {
+        setAuthError('Please enter valid credentials');
+      }
+    } else if (authMode === 'signup') {
+      if (email && password && username) {
+        setIsAuthenticated(true);
+        setUserProfile(prev => ({ 
+          ...prev, 
+          name: username,
+          email: email
+        }));
+        setShowAuthModal(false);
+        setEmail('');
+        setPassword('');
+        setUsername('');
+      } else {
+        setAuthError('Please fill in all fields');
+      }
+    }
+    setIsLoading(false);
+  };
+
+  const handleLogout = () => {
+    setIsAuthenticated(false);
+    setShowProfile(false);
+    setUserProfile({
+      name: 'Scholar',
+      email: '',
+      preferences: {
+        theme: 'dark',
+        language: 'en',
+        notifications: true,
+      }
+    });
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('logos_authenticated');
+      localStorage.removeItem('logos_profile');
+    }
+  };
+
+  const updatePreferences = (key: string, value: any) => {
+    setUserProfile(prev => ({
+      ...prev,
+      preferences: {
+        ...prev.preferences,
+        [key]: value
+      }
+    }));
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (showSuggestions && filteredSuggestions.length > 0) {
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        setSelectedSuggestion(prev => 
+          prev < filteredSuggestions.length - 1 ? prev + 1 : prev
+        );
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        setSelectedSuggestion(prev => prev > 0 ? prev - 1 : -1);
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        if (selectedSuggestion >= 0) {
+          handleSuggestionSelect(filteredSuggestions[selectedSuggestion]);
+        } else {
+          handleSearch(e as any);
+        }
+      } else if (e.key === 'Escape') {
+        setShowSuggestions(false);
+        setSelectedSuggestion(-1);
+      }
+    } else if (e.key === 'Enter') {
+      handleSearch(e as any);
     }
   };
 
@@ -54,393 +260,535 @@ export default function Home() {
       overflow: 'hidden',
       backgroundColor: '#0D0D0F'
     }}>
-      {[...Array(30)].map((_, i) => (
+      {[...Array(50)].map((_, i) => (
         <div
           key={i}
           style={{
             position: 'absolute',
-            width: '3px',
-            height: '3px',
+            width: '2px',
+            height: '2px',
             backgroundColor: '#C9A227',
             borderRadius: '50%',
             left: `${(i * 137.5) % 100}%`,
             top: `${(i * 73.2) % 100}%`,
-            opacity: 0.1 + (Math.sin((animationOffset + i * 20) * Math.PI / 180) * 0.15),
-            transform: `scale(${0.3 + Math.sin((animationOffset + i * 30) * Math.PI / 180) * 0.7})`,
-            transition: 'all 0.3s ease',
-            boxShadow: `0 0 10px rgba(201, 162, 39, ${0.1 + Math.sin((animationOffset + i * 20) * Math.PI / 180) * 0.1})`
+            opacity: 0.05 + (Math.sin((animationOffset + i * 10) * 0.02) * 0.05),
+            transform: `scale(${1 + Math.sin((animationOffset + i * 15) * 0.03) * 0.5})`,
+            transition: 'all 0.1s ease-out'
           }}
         />
       ))}
-      
       <div style={{
         position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        background: 'radial-gradient(circle at 50% 50%, rgba(201, 162, 39, 0.03) 0%, rgba(13, 13, 15, 0.1) 100%)',
-        pointerEvents: 'none'
+        top: '20%',
+        right: '10%',
+        width: '300px',
+        height: '300px',
+        background: 'radial-gradient(circle, rgba(201, 162, 39, 0.03) 0%, transparent 70%)',
+        borderRadius: '50%',
+        animation: `pulse 4s ease-in-out infinite`
       }} />
+      <style jsx>{`
+        @keyframes pulse {
+          0%, 100% { transform: scale(1); opacity: 0.03; }
+          50% { transform: scale(1.2); opacity: 0.06; }
+        }
+      `}</style>
     </div>
   );
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#0D0D0F', color: '#F5F4F2', position: 'relative' }}>
+    <div style={{ backgroundColor: '#0D0D0F', color: '#F5F4F2', minHeight: '100vh' }}>
       <AnimatedBackground />
       
       {/* Navigation */}
-      <nav style={{ 
-        borderBottom: '1px solid #2D2D35', 
-        padding: '16px 0',
+      <nav style={{
+        backgroundColor: 'rgba(30, 30, 36, 0.95)',
         backdropFilter: 'blur(10px)',
-        backgroundColor: 'rgba(13, 13, 15, 0.9)',
+        borderBottom: '1px solid rgba(201, 162, 39, 0.1)',
+        padding: '16px 32px',
         position: 'sticky',
         top: 0,
-        zIndex: 100
+        zIndex: 1000
       }}>
-        <div style={{ 
-          maxWidth: '1200px', 
-          margin: '0 auto', 
-          padding: '0 24px', 
-          display: 'flex', 
-          justifyContent: 'space-between', 
-          alignItems: 'center' 
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          maxWidth: '1200px',
+          margin: '0 auto'
         }}>
           <Link href="/" style={{
-            fontSize: '28px', 
-            fontWeight: 'bold', 
-            color: '#C9A227', 
-            letterSpacing: '2px',
+            fontSize: '24px',
+            fontWeight: 'bold',
+            color: '#C9A227',
             textDecoration: 'none',
-            transition: 'all 0.3s ease'
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px'
           }}>
-            LOGOS
+            📚 LOGOS
           </Link>
-          <div style={{ display: 'flex', gap: '32px' }}>
-            {['Search', 'Translate', 'Discover', 'SEMANTIA', 'Connectome', 'Maps'].map((item) => (
-              <Link 
-                key={item} 
-                href={`/${item.toLowerCase()}`} 
-                style={{ 
-                  color: '#9CA3AF', 
-                  textDecoration: 'none', 
-                  fontSize: '14px',
+          
+          <div style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
+            {navItems.map((item, index) => (
+              <Link
+                key={index}
+                href={item.href}
+                style={{
+                  color: hoveredNavItem === index ? '#C9A227' : '#9CA3AF',
+                  textDecoration: 'none',
                   fontWeight: '500',
                   transition: 'all 0.2s ease',
-                  padding: '8px 0',
-                  borderBottom: '2px solid transparent'
+                  transform: hoveredNavItem === index ? 'translateY(-1px)' : 'translateY(0)'
                 }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.color = '#C9A227';
-                  e.currentTarget.style.borderBottomColor = '#C9A227';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.color = '#9CA3AF';
-                  e.currentTarget.style.borderBottomColor = 'transparent';
-                }}
+                onMouseEnter={() => setHoveredNavItem(index)}
+                onMouseLeave={() => setHoveredNavItem(null)}
               >
-                {item}
+                {item.name}
               </Link>
             ))}
+          </div>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+            {isAuthenticated ? (
+              <div style={{ position: 'relative' }}>
+                <button
+                  onClick={() => setShowProfile(!showProfile)}
+                  style={{
+                    backgroundColor: 'rgba(201, 162, 39, 0.1)',
+                    border: '1px solid #C9A227',
+                    borderRadius: '8px',
+                    padding: '8px 16px',
+                    color: '#C9A227',
+                    cursor: 'pointer',
+                    fontSize: '14px',
+                    fontWeight: '500',
+                    transition: 'all 0.2s ease'
+                  }}
+                >
+                  {userProfile.name} ▼
+                </button>
+                
+                {showProfile && (
+                  <div style={{
+                    position: 'absolute',
+                    top: '100%',
+                    right: 0,
+                    marginTop: '8px',
+                    backgroundColor: '#1E1E24',
+                    border: '1px solid rgba(201, 162, 39, 0.3)',
+                    borderRadius: '12px',
+                    padding: '16px',
+                    minWidth: '280px',
+                    zIndex: 1001,
+                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)'
+                  }}>
+                    <div style={{ marginBottom: '16px', paddingBottom: '16px', borderBottom: '1px solid rgba(201, 162, 39, 0.2)' }}>
+                      <div style={{ fontWeight: 'bold', marginBottom: '4px' }}>{userProfile.name}</div>
+                      <div style={{ color: '#9CA3AF', fontSize: '14px' }}>{userProfile.email}</div>
+                    </div>
+                    
+                    <div style={{ marginBottom: '16px' }}>
+                      <div style={{ fontWeight: '500', marginBottom: '12px' }}>Preferences</div>
+                      
+                      <div style={{ marginBottom: '12px' }}>
+                        <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
+                          <input
+                            type="checkbox"
+                            checked={userProfile.preferences.notifications}
+                            onChange={(e) => updatePreferences('notifications', e.target.checked)}
+                            style={{ accentColor: '#C9A227' }}
+                          />
+                          Email Notifications
+                        </label>
+                      </div>
+                      
+                      <div style={{ marginBottom: '12px' }}>
+                        <label style={{ display: 'block', fontSize: '14px', marginBottom: '4px' }}>
+                          Language
+                        </label>
+                        <select
+                          value={userProfile.preferences.language}
+                          onChange={(e) => updatePreferences('language', e.target.value)}
+                          style={{
+                            width: '100%',
+                            padding: '6px 8px',
+                            backgroundColor: '#0D0D0F',
+                            border: '1px solid rgba(201, 162, 39, 0.3)',
+                            borderRadius: '4px',
+                            color: '#F5F4F2',
+                            fontSize: '14px'
+                          }}
+                        >
+                          <option value="en">English</option>
+                          <option value="la">Latin</option>
+                          <option value="grc">Ancient Greek</option>
+                        </select>
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleLogout}
+                      style={{
+                        width: '100%',
+                        padding: '8px 16px',
+                        backgroundColor: '#DC2626',
+                        border: 'none',
+                        borderRadius: '8px',
+                        color: '#F5F4F2',
+                        cursor: 'pointer',
+                        fontSize: '14px',
+                        fontWeight: '500',
+                        transition: 'all 0.2s ease'
+                      }}
+                    >
+                      Logout
+                    </button>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <button
+                onClick={() => setShowAuthModal(true)}
+                style={{
+                  backgroundColor: '#C9A227',
+                  border: 'none',
+                  borderRadius: '8px',
+                  padding: '8px 16px',
+                  color: '#0D0D0F',
+                  cursor: 'pointer',
+                  fontSize: '14px',
+                  fontWeight: '600',
+                  transition: 'all 0.2s ease'
+                }}
+              >
+                Sign In
+              </button>
+            )}
           </div>
         </div>
       </nav>
 
+      {/* Auth Modal */}
+      {showAuthModal && (
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          backgroundColor: 'rgba(0, 0, 0, 0.8)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          zIndex: 2000
+        }}>
+          <div style={{
+            backgroundColor: '#1E1E24',
+            borderRadius: '16px',
+            padding: '32px',
+            width: '400px',
+            maxWidth: '90vw',
+            border: '1px solid rgba(201, 162, 39, 0.3)'
+          }}>
+            <div style={{ textAlign: 'center', marginBottom: '24px' }}>
+              <h2 style={{ margin: 0, marginBottom: '8px', color: '#C9A227' }}>
+                {authMode === 'login' ? 'Welcome Back' : 'Join LOGOS'}
+              </h2>
+              <p style={{ margin: 0, color: '#9CA3AF', fontSize: '14px' }}>
+                {authMode === 'login' ? 'Sign in to your account' : 'Create your account'}
+              </p>
+            </div>
+
+            <form onSubmit={handleAuth}>
+              {authMode === 'signup' && (
+                <div style={{ marginBottom: '16px' }}>
+                  <input
+                    type="text"
+                    placeholder="Username"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    style={{
+                      width: '100%',
+                      padding: '12px 16px',
+                      backgroundColor: '#0D0D0F',
+                      border: '1px solid rgba(201, 162, 39, 0.3)',
+                      borderRadius: '8px',
+                      color: '#F5F4F2',
+                      fontSize: '14px',
+                      boxSizing: 'border-box'
+                    }}
+                    required
+                  />
+                </div>
+              )}
+              
+              <div style={{ marginBottom: '16px' }}>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  style={{
+                    width: '100%',
+                    padding: '12px 16px',
+                    backgroundColor: '#0D0D0F',
+                    border: '1px solid rgba(201, 162, 39, 0.3)',
+                    borderRadius: '8px',
+                    color: '#F5F4F2',
+                    fontSize: '14px',
+                    boxSizing: 'border-box'
+                  }}
+                  required
+                />
+              </div>
+              
+              <div style={{ marginBottom: '24px' }}>
+                <input
+                  type="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  style={{
+                    width: '100%',
+                    padding: '12px 16px',
+                    backgroundColor: '#0D0D0F',
+                    border: '1px solid rgba(201, 162, 39, 0.3)',
+                    borderRadius: '8px',
+                    color: '#F5F4F2',
+                    fontSize: '14px',
+                    boxSizing: 'border-box'
+                  }}
+                  required
+                />
+              </div>
+
+              {authError && (
+                <div style={{
+                  marginBottom: '16px',
+                  padding: '12px',
+                  backgroundColor: 'rgba(220, 38, 38, 0.1)',
+                  border: '1px solid rgba(220, 38, 38, 0.3)',
+                  borderRadius: '8px',
+                  color: '#DC2626',
+                  fontSize: '14px',
+                  textAlign: 'center'
+                }}>
+                  {authError}
+                </div>
+              )}
+
+              <button
+                type="submit"
+                disabled={isLoading}
+                style={{
+                  width: '100%',
+                  padding: '12px',
+                  backgroundColor: isLoading ? '#6B7280' : '#C9A227',
+                  border: 'none',
+                  borderRadius: '8px',
+                  color: '#0D0D0F',
+                  fontSize: '16px',
+                  fontWeight: '600',
+                  cursor: isLoading ? 'not-allowed' : 'pointer',
+                  marginBottom: '16px',
+                  transition: 'all 0.2s ease'
+                }}
+              >
+                {isLoading ? 'Processing...' : (authMode === 'login' ? 'Sign In' : 'Create Account')}
+              </button>
+            </form>
+
+            <div style={{ textAlign: 'center' }}>
+              <button
+                onClick={() => {
+                  setAuthMode(authMode === 'login' ? 'signup' : 'login');
+                  setAuthError('');
+                }}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  color: '#C9A227',
+                  cursor: 'pointer',
+                  fontSize: '14px',
+                  textDecoration: 'underline',
+                  marginRight: '16px'
+                }}
+              >
+                {authMode === 'login' ? 'Create Account' : 'Sign In Instead'}
+              </button>
+              
+              <button
+                onClick={() => {
+                  setShowAuthModal(false);
+                  setAuthError('');
+                  setEmail('');
+                  setPassword('');
+                  setUsername('');
+                }}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  color: '#9CA3AF',
+                  cursor: 'pointer',
+                  fontSize: '14px'
+                }}
+              >
+                Cancel
+              </button>
+            </div>
+
+            {authMode === 'login' && (
+              <div style={{
+                marginTop: '16px',
+                padding: '12px',
+                backgroundColor: 'rgba(201, 162, 39, 0.1)',
+                border: '1px solid rgba(201, 162, 39, 0.2)',
+                borderRadius: '8px',
+                fontSize: '12px',
+                color: '#9CA3AF',
+                textAlign: 'center'
+              }}>
+                Demo credentials: demo@logos.com / password
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
       {/* Main Content */}
-      <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '80px 24px', textAlign: 'center' }}>
+      <main style={{ padding: '64px 32px', maxWidth: '1200px', margin: '0 auto' }}>
         {/* Hero Section */}
-        <div style={{ marginBottom: '80px' }}>
-          <h1 style={{ 
-            fontSize: '72px', 
-            fontWeight: 'bold', 
-            marginBottom: '16px', 
-            color: '#C9A227',
+        <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+          <h1 style={{
+            fontSize: '4rem',
+            fontWeight: 'bold',
+            margin: '0 0 24px 0',
             background: 'linear-gradient(135deg, #C9A227 0%, #E8D5A3 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-            textShadow: '0 0 30px rgba(201, 162, 39, 0.3)'
+            backgroundClip: 'text'
           }}>
             LOGOS
           </h1>
-          <p style={{ 
-            fontSize: '24px', 
-            color: '#9CA3AF', 
-            marginBottom: '48px',
+          
+          <p style={{
+            fontSize: '1.5rem',
+            color: '#9CA3AF',
+            margin: '0 0 48px 0',
             maxWidth: '600px',
-            margin: '0 auto 48px auto',
+            marginLeft: 'auto',
+            marginRight: 'auto',
             lineHeight: '1.6'
           }}>
-            Unlock the wisdom of ancient texts with AI-powered search, translation, and discovery
+            AI-powered exploration of classical literature. Search by meaning, discover connections, trace the evolution of ideas.
           </p>
 
           {/* Search Bar */}
-          <form onSubmit={handleSearch} style={{ marginBottom: '80px' }}>
-            <div style={{
-              display: 'flex',
-              maxWidth: '600px',
-              margin: '0 auto',
-              position: 'relative',
-              backgroundColor: '#1E1E24',
-              borderRadius: '12px',
-              border: searchFocused ? '2px solid #C9A227' : '2px solid transparent',
-              transition: 'all 0.3s ease',
-              boxShadow: searchFocused ? '0 0 20px rgba(201, 162, 39, 0.2)' : '0 4px 12px rgba(0, 0, 0, 0.3)'
-            }}>
+          <div style={{ position: 'relative', maxWidth: '600px', margin: '0 auto 32px auto' }}>
+            <form onSubmit={handleSearch}>
               <input
                 type="text"
+                placeholder="Search by meaning: 'virtue in Stoicism', 'death in tragedy'..."
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
+                onKeyDown={handleKeyPress}
                 onFocus={() => setSearchFocused(true)}
-                onBlur={() => setSearchFocused(false)}
-                placeholder="Search ancient texts... Try 'virtue', 'love', or 'war'"
+                onBlur={() => {
+                  setTimeout(() => {
+                    setSearchFocused(false);
+                    setShowSuggestions(false);
+                  }, 200);
+                }}
                 style={{
-                  flex: 1,
-                  padding: '20px 24px',
-                  fontSize: '16px',
-                  backgroundColor: 'transparent',
-                  border: 'none',
+                  width: '100%',
+                  padding: '20px 60px 20px 24px',
+                  fontSize: '18px',
+                  backgroundColor: searchFocused ? '#1E1E24' : 'rgba(30, 30, 36, 0.8)',
+                  border: searchFocused ? '2px solid #C9A227' : '1px solid rgba(156, 163, 175, 0.3)',
+                  borderRadius: '16px',
                   color: '#F5F4F2',
                   outline: 'none',
-                  borderRadius: '12px'
+                  transition: 'all 0.3s ease',
+                  backdropFilter: 'blur(10px)',
+                  boxSizing: 'border-box'
                 }}
               />
+              
               <button
                 type="submit"
                 onMouseEnter={() => setHoveredButton(true)}
                 onMouseLeave={() => setHoveredButton(false)}
                 style={{
-                  padding: '20px 32px',
+                  position: 'absolute',
+                  right: '8px',
+                  top: '50%',
+                  transform: 'translateY(-50%)',
                   backgroundColor: hoveredButton ? '#E8D5A3' : '#C9A227',
-                  color: '#0D0D0F',
                   border: 'none',
-                  borderRadius: '0 12px 12px 0',
-                  fontSize: '16px',
-                  fontWeight: 'bold',
+                  borderRadius: '12px',
+                  padding: '12px 16px',
                   cursor: 'pointer',
                   transition: 'all 0.2s ease',
-                  transform: hoveredButton ? 'scale(1.05)' : 'scale(1)'
+                  fontSize: '16px'
                 }}
               >
-                🔍 Search
+                🔍
               </button>
-            </div>
-          </form>
-        </div>
+            </form>
 
-        {/* Stats Display Section */}
-        <div style={{ marginBottom: '80px' }}>
-          <h2 style={{
-            fontSize: '36px',
-            fontWeight: 'bold',
-            color: '#F5F4F2',
-            marginBottom: '48px',
-            textAlign: 'center'
-          }}>
-            Explore the Ancient World
-          </h2>
-          
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-            gap: '24px',
-            marginBottom: '80px'
-          }}>
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                onMouseEnter={() => setHoveredStat(index)}
-                onMouseLeave={() => setHoveredStat(null)}
-                style={{
-                  backgroundColor: hoveredStat === index ? '#2A2A32' : '#1E1E24',
-                  padding: '32px',
-                  borderRadius: '16px',
-                  border: hoveredStat === index ? '2px solid #C9A227' : '2px solid transparent',
-                  transition: 'all 0.3s ease',
-                  cursor: 'pointer',
-                  transform: hoveredStat === index ? 'translateY(-8px) scale(1.02)' : 'translateY(0) scale(1)',
-                  boxShadow: hoveredStat === index 
-                    ? '0 12px 24px rgba(201, 162, 39, 0.2)' 
-                    : '0 4px 12px rgba(0, 0, 0, 0.3)'
-                }}
-              >
-                <div style={{
-                  fontSize: '48px',
-                  marginBottom: '16px',
-                  filter: hoveredStat === index ? 'brightness(1.2)' : 'brightness(1)',
-                  transition: 'all 0.3s ease'
-                }}>
-                  {stat.icon}
-                </div>
-                <div style={{
-                  fontSize: '32px',
-                  fontWeight: 'bold',
-                  color: '#C9A227',
-                  marginBottom: '8px'
-                }}>
-                  {stat.value}
-                </div>
-                <div style={{
-                  fontSize: '16px',
-                  color: '#9CA3AF',
-                  fontWeight: '500'
-                }}>
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Feature Cards Section */}
-        <div style={{ marginBottom: '80px' }}>
-          <h2 style={{
-            fontSize: '36px',
-            fontWeight: 'bold',
-            color: '#F5F4F2',
-            marginBottom: '48px',
-            textAlign: 'center'
-          }}>
-            Powerful Tools for Classical Studies
-          </h2>
-          
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-            gap: '32px'
-          }}>
-            {features.map((feature, index) => (
-              <Link
-                key={index}
-                href={feature.href}
-                onMouseEnter={() => setHoveredFeature(index)}
-                onMouseLeave={() => setHoveredFeature(null)}
-                style={{
-                  textDecoration: 'none',
-                  backgroundColor: hoveredFeature === index ? '#2A2A32' : '#1E1E24',
-                  padding: '32px',
-                  borderRadius: '16px',
-                  border: hoveredFeature === index ? `2px solid ${feature.color}` : '2px solid transparent',
-                  transition: 'all 0.3s ease',
-                  cursor: 'pointer',
-                  transform: hoveredFeature === index ? 'translateY(-8px) scale(1.02)' : 'translateY(0) scale(1)',
-                  boxShadow: hoveredFeature === index 
-                    ? `0 12px 24px ${feature.color}20` 
-                    : '0 4px 12px rgba(0, 0, 0, 0.3)',
-                  display: 'block'
-                }}
-              >
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  marginBottom: '16px'
-                }}>
-                  <div style={{
-                    fontSize: '32px',
-                    marginRight: '16px',
-                    filter: hoveredFeature === index ? 'brightness(1.2)' : 'brightness(1)',
-                    transition: 'all 0.3s ease'
-                  }}>
-                    {feature.icon}
+            {/* Search Suggestions */}
+            {showSuggestions && filteredSuggestions.length > 0 && (
+              <div style={{
+                position: 'absolute',
+                top: '100%',
+                left: 0,
+                right: 0,
+                marginTop: '8px',
+                backgroundColor: '#1E1E24',
+                border: '1px solid rgba(201, 162, 39, 0.3)',
+                borderRadius: '12px',
+                maxHeight: '300px',
+                overflowY: 'auto',
+                zIndex: 100,
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)'
+              }}>
+                {filteredSuggestions.map((suggestion, index) => (
+                  <div
+                    key={index}
+                    onClick={() => handleSuggestionSelect(suggestion)}
+                    style={{
+                      padding: '12px 16px',
+                      cursor: 'pointer',
+                      backgroundColor: selectedSuggestion === index ? 'rgba(201, 162, 39, 0.1)' : 'transparent',
+                      color: selectedSuggestion === index ? '#C9A227' : '#F5F4F2',
+                      borderBottom: index < filteredSuggestions.length - 1 ? '1px solid rgba(156, 163, 175, 0.1)' : 'none',
+                      transition: 'all 0.2s ease'
+                    }}
+                  >
+                    🔍 {suggestion}
                   </div>
-                  <h3 style={{
-                    fontSize: '24px',
-                    fontWeight: 'bold',
-                    color: hoveredFeature === index ? feature.color : '#F5F4F2',
-                    margin: 0,
-                    transition: 'all 0.3s ease'
-                  }}>
-                    {feature.title}
-                  </h3>
-                </div>
-                <p style={{
-                  fontSize: '16px',
-                  color: '#9CA3AF',
-                  lineHeight: '1.6',
-                  margin: 0
-                }}>
-                  {feature.desc}
-                </p>
-              </Link>
-            ))}
+                ))}
+              </div>
+            )}
           </div>
-        </div>
 
-        {/* Call to Action */}
-        <div style={{
-          backgroundColor: '#1E1E24',
-          padding: '64px 32px',
-          borderRadius: '16px',
-          border: '2px solid #C9A227',
-          boxShadow: '0 8px 24px rgba(201, 162, 39, 0.1)'
-        }}>
-          <h2 style={{
-            fontSize: '32px',
-            fontWeight: 'bold',
-            color: '#C9A227',
-            marginBottom: '16px'
-          }}>
-            Ready to Begin Your Journey?
-          </h2>
-          <p style={{
-            fontSize: '18px',
-            color: '#9CA3AF',
-            marginBottom: '32px',
-            maxWidth: '600px',
-            margin: '0 auto 32px auto',
-            lineHeight: '1.6'
-          }}>
-            Join thousands of scholars, students, and enthusiasts exploring the ancient world with cutting-edge AI tools.
-          </p>
-          <Link
-            href="/search"
-            style={{
-              display: 'inline-block',
-              padding: '16px 32px',
-              backgroundColor: '#C9A227',
-              color: '#0D0D0F',
-              fontSize: '18px',
-              fontWeight: 'bold',
-              textDecoration: 'none',
-              borderRadius: '12px',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#E8D5A3';
-              e.currentTarget.style.transform = 'scale(1.05)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '#C9A227';
-              e.currentTarget.style.transform = 'scale(1)';
-            }}
-          >
-            Start Exploring →
-          </Link>
-        </div>
-      </main>
-
-      {/* Footer */}
-      <footer style={{
-        borderTop: '1px solid #2D2D35',
-        padding: '32px 0',
-        backgroundColor: 'rgba(13, 13, 15, 0.9)',
-        textAlign: 'center'
-      }}>
-        <div style={{
-          maxWidth: '1200px',
-          margin: '0 auto',
-          padding: '0 24px'
-        }}>
-          <p style={{
-            color: '#6B7280',
-            fontSize: '14px',
-            margin: 0
-          }}>
-            © 2024 LOGOS. Illuminating the ancient world through AI.
+          <p style={{ color: '#6B7280', fontSize: '14px', marginBottom: '48px' }}>
+            Try: "{searchSuggestions[Math.floor(animationOffset / 60) % searchSuggestions.length]}"
           </p>
         </div>
-      </footer>
-    </div>
-  );
-}
+
+        {/* Stats Section */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+          gap: '24px',
+          marginBottom: '64px'
+        }}>
+          {stats.map((stat, index) => (
+            <div
+              key={index}
+              onMouseEnter={() => setHoveredStat(index)}
+              onMouseLeave={() => setHoveredStat(null)}
+              style={{
+                backgroundColor: hoveredStat === index ? 'rgba(201, 162, 39, 0

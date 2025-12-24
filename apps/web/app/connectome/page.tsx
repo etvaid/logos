@@ -26,6 +26,12 @@ interface Edge {
   description: string;
 }
 
+interface Transform {
+  x: number;
+  y: number;
+  scale: number;
+}
+
 const AUTHORS: Node[] = [
   { 
     id: 'homer', 
@@ -181,78 +187,62 @@ const CONNECTIONS: Edge[] = [
   { source: 'aristotle', target: 'cicero', strength: 0.7, type: 'translation', description: 'Cicero adapted Aristotelian rhetorical and ethical theories.' },
   { source: 'aristotle', target: 'seneca', strength: 0.5, type: 'influence', description: 'Seneca\'s Stoicism shows Aristotelian influence, particularly in ethics.' },
   { source: 'cicero', target: 'seneca', strength: 0.6, type: 'influence', description: 'Seneca admired Cicero\'s prose style and philosophical approach.' },
-  { source: 'cicero', target: 'augustine', strength: 0.75, type: 'influence', description: 'Augustine was deeply influenced by Cicero\'s Hortensius.' },
+  { source: 'cicero', target: 'augustine', strength: 0.75, type: 'influence', description: 'Augustine incorporated Ciceronian rhetorical techniques and some philosophical ideas.' },
+  { source: 'plotinus', target: 'augustine', strength: 0.85, type: 'influence', description: 'Augustine was heavily influenced by Plotinian Neoplatonism in his theological development.' },
 ];
 
-const Connectome = () => {
+export default function ConnectomePage() {
   const [selectedNode, setSelectedNode] = useState<Node | null>(null);
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
-  const [selectedEdge, setSelectedEdge] = useState<Edge | null>(null);
-  const [filters, setFilters] = useState({
-    language: 'all' as 'all' | 'greek' | 'latin',
-    era: 'all' as string,
-    connectionType: 'all' as 'all' | 'influence' | 'reference' | 'response' | 'translation'
-  });
-  const [transform, setTransform] = useState({ x: 0, y: 0, scale: 1 });
+  const [filterType, setFilterType] = useState<'all' | 'author' | 'work' | 'concept'>('all');
+  const [filterLanguage, setFilterLanguage] = useState<'all' | 'greek' | 'latin'>('all');
+  const [transform, setTransform] = useState<Transform>({ x: 0, y: 0, scale: 1 });
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
-
   const svgRef = useRef<SVGSVGElement>(null);
 
-  const getEraColor = (era: string) => {
-    switch (era) {
-      case 'archaic': return '#D97706';
-      case 'classical': return '#F59E0B';
-      case 'hellenistic': return '#3B82F6';
-      case 'imperial': return '#DC2626';
-      case 'lateAntique': return '#7C3AED';
-      case 'byzantine': return '#059669';
-      default: return '#C9A227';
-    }
+  const getNodeColor = (node: Node, isHovered: boolean, isSelected: boolean) => {
+    if (isSelected) return '#E8D5A3';
+    if (isHovered) return '#C9A227';
+    
+    if (node.language === 'greek') return '#3B82F6';
+    if (node.language === 'latin') return '#DC2626';
+    return '#9CA3AF';
   };
 
-  const getLanguageColor = (language: 'greek' | 'latin') => {
-    return language === 'greek' ? '#3B82F6' : '#DC2626';
+  const getConnectionStrengthColor = (strength: number) => {
+    if (strength >= 0.8) return '#C9A227';
+    if (strength >= 0.6) return '#F59E0B';
+    return '#9CA3AF';
   };
 
   const getConnectionTypeColor = (type: string) => {
     switch (type) {
-      case 'influence': return '#C9A227';
-      case 'reference': return '#3B82F6';
+      case 'influence': return '#3B82F6';
+      case 'reference': return '#059669';
       case 'response': return '#DC2626';
       case 'translation': return '#7C3AED';
       default: return '#9CA3AF';
     }
   };
 
-  const filteredAuthors = AUTHORS.filter(author => {
-    if (filters.language !== 'all' && author.language !== filters.language) return false;
-    if (filters.era !== 'all' && author.era !== filters.era) return false;
+  const filteredNodes = AUTHORS.filter(node => {
+    if (filterType !== 'all' && node.type !== filterType) return false;
+    if (filterLanguage !== 'all' && node.language !== filterLanguage) return false;
     return true;
   });
 
-  const filteredConnections = CONNECTIONS.filter(connection => {
-    if (filters.connectionType !== 'all' && connection.type !== filters.connectionType) return false;
-    const sourceExists = filteredAuthors.some(a => a.id === connection.source);
-    const targetExists = filteredAuthors.some(a => a.id === connection.target);
-    return sourceExists && targetExists;
-  });
-
-  const getRelatedConnections = (nodeId: string) => {
-    return filteredConnections.filter(conn => 
+  const getConnectedNodes = (nodeId: string) => {
+    return CONNECTIONS.filter(conn => 
       conn.source === nodeId || conn.target === nodeId
-    );
+    ).map(conn => conn.source === nodeId ? conn.target : conn.source);
   };
 
-  const handleNodeClick = (node: Node) => {
-    setSelectedNode(selectedNode?.id === node.id ? null : node);
-    setSelectedEdge(null);
-  };
-
-  const handleEdgeClick = (edge: Edge) => {
-    setSelectedEdge(selectedEdge === edge ? null : edge);
-    setSelectedNode(null);
-  };
+  const filteredConnections = CONNECTIONS.filter(conn => {
+    const sourceNode = AUTHORS.find(n => n.id === conn.source);
+    const targetNode = AUTHORS.find(n => n.id === conn.target);
+    return filteredNodes.includes(sourceNode!) && filteredNodes.includes(targetNode!);
+  });
 
   const handleMouseDown = (e: React.MouseEvent) => {
     if (e.target === svgRef.current) {
@@ -261,7 +251,7 @@ const Connectome = () => {
     }
   };
 
-  const handleMouseMove = useCallback((e: MouseEvent) => {
+  const handleMouseMove = (e: React.MouseEvent) => {
     if (isDragging) {
       setTransform(prev => ({
         ...prev,
@@ -269,499 +259,498 @@ const Connectome = () => {
         y: e.clientY - dragStart.y
       }));
     }
-  }, [isDragging, dragStart]);
+  };
 
-  const handleMouseUp = useCallback(() => {
+  const handleMouseUp = () => {
     setIsDragging(false);
-  }, []);
+  };
 
   const handleWheel = (e: React.WheelEvent) => {
     e.preventDefault();
-    const delta = e.deltaY * -0.001;
-    const newScale = Math.min(Math.max(0.1, transform.scale + delta), 3);
-    setTransform(prev => ({ ...prev, scale: newScale }));
+    const delta = e.deltaY > 0 ? 0.9 : 1.1;
+    setTransform(prev => ({
+      ...prev,
+      scale: Math.max(0.5, Math.min(3, prev.scale * delta))
+    }));
   };
 
-  useEffect(() => {
-    if (isDragging) {
-      document.addEventListener('mousemove', handleMouseMove);
-      document.addEventListener('mouseup', handleMouseUp);
-      return () => {
-        document.removeEventListener('mousemove', handleMouseMove);
-        document.removeEventListener('mouseup', handleMouseUp);
-      };
-    }
-  }, [isDragging, handleMouseMove, handleMouseUp]);
+  const resetView = () => {
+    setTransform({ x: 0, y: 0, scale: 1 });
+  };
 
   return (
-    <div style={{ backgroundColor: '#0D0D0F', minHeight: '100vh', color: '#F5F4F2' }}>
+    <div style={{ 
+      minHeight: '100vh', 
+      backgroundColor: '#0D0D0F', 
+      color: '#F5F4F2',
+      fontFamily: 'system-ui, -apple-system, sans-serif'
+    }}>
       {/* Navigation */}
       <nav style={{ 
         backgroundColor: '#1E1E24', 
-        padding: '16px 24px', 
-        borderBottom: '1px solid #141419' 
+        borderBottom: '1px solid #141419',
+        padding: '16px 0'
       }}>
         <div style={{ 
+          maxWidth: '1200px', 
+          margin: '0 auto', 
           display: 'flex', 
-          alignItems: 'center', 
-          justifyContent: 'space-between',
-          maxWidth: '1200px',
-          margin: '0 auto'
+          justifyContent: 'space-between', 
+          alignItems: 'center',
+          padding: '0 24px'
         }}>
           <Link href="/" style={{ 
             fontSize: '24px', 
             fontWeight: 'bold', 
             color: '#C9A227', 
-            textDecoration: 'none' 
+            textDecoration: 'none'
           }}>
-            LOGOS
+            ΛΟΓΟΣ
           </Link>
-          <div style={{ display: 'flex', gap: '32px' }}>
-            <Link href="/reader" style={{ color: '#9CA3AF', textDecoration: 'none' }}>Reader</Link>
-            <Link href="/lexicon" style={{ color: '#9CA3AF', textDecoration: 'none' }}>Lexicon</Link>
-            <Link href="/timeline" style={{ color: '#9CA3AF', textDecoration: 'none' }}>Timeline</Link>
+          <div style={{ display: 'flex', gap: '32px', alignItems: 'center' }}>
+            <Link href="/reader" style={{ color: '#F5F4F2', textDecoration: 'none', transition: 'color 0.2s' }}>Reader</Link>
+            <Link href="/library" style={{ color: '#F5F4F2', textDecoration: 'none', transition: 'color 0.2s' }}>Library</Link>
             <Link href="/connectome" style={{ color: '#C9A227', textDecoration: 'none' }}>Connectome</Link>
+            <Link href="/timeline" style={{ color: '#F5F4F2', textDecoration: 'none', transition: 'color 0.2s' }}>Timeline</Link>
           </div>
         </div>
       </nav>
 
       {/* Header */}
-      <div style={{ padding: '48px 24px 32px', maxWidth: '1200px', margin: '0 auto' }}>
+      <div style={{ padding: '48px 24px 24px', textAlign: 'center' }}>
         <h1 style={{ 
-          fontSize: '36px', 
+          fontSize: '48px', 
           fontWeight: 'bold', 
-          color: '#F5F4F2', 
-          marginBottom: '16px' 
+          marginBottom: '16px',
+          background: 'linear-gradient(45deg, #C9A227, #E8D5A3)',
+          backgroundClip: 'text',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent'
         }}>
           Literary Connectome
         </h1>
         <p style={{ 
           fontSize: '18px', 
-          color: '#9CA3AF', 
-          lineHeight: '1.6' 
+          color: '#9CA3AF',
+          maxWidth: '600px',
+          margin: '0 auto'
         }}>
-          Explore the intricate web of influences, references, and relationships between classical authors and their works.
+          Explore the intricate web of influences, references, and connections between ancient authors and their works.
         </p>
+      </div>
+
+      {/* Controls */}
+      <div style={{ 
+        display: 'flex',
+        justifyContent: 'center',
+        gap: '24px',
+        padding: '0 24px 24px',
+        flexWrap: 'wrap'
+      }}>
+        <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+          <span style={{ color: '#9CA3AF', fontSize: '14px' }}>Type:</span>
+          <select 
+            value={filterType} 
+            onChange={(e) => setFilterType(e.target.value as any)}
+            style={{
+              backgroundColor: '#1E1E24',
+              color: '#F5F4F2',
+              border: '1px solid #141419',
+              borderRadius: '8px',
+              padding: '8px 12px',
+              fontSize: '14px'
+            }}
+          >
+            <option value="all">All</option>
+            <option value="author">Authors</option>
+            <option value="work">Works</option>
+            <option value="concept">Concepts</option>
+          </select>
+        </div>
+
+        <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+          <span style={{ color: '#9CA3AF', fontSize: '14px' }}>Language:</span>
+          <select 
+            value={filterLanguage} 
+            onChange={(e) => setFilterLanguage(e.target.value as any)}
+            style={{
+              backgroundColor: '#1E1E24',
+              color: '#F5F4F2',
+              border: '1px solid #141419',
+              borderRadius: '8px',
+              padding: '8px 12px',
+              fontSize: '14px'
+            }}
+          >
+            <option value="all">All</option>
+            <option value="greek">Greek</option>
+            <option value="latin">Latin</option>
+          </select>
+        </div>
+
+        <button
+          onClick={resetView}
+          style={{
+            backgroundColor: '#1E1E24',
+            color: '#F5F4F2',
+            border: '1px solid #141419',
+            borderRadius: '8px',
+            padding: '8px 16px',
+            fontSize: '14px',
+            cursor: 'pointer',
+            transition: 'all 0.2s'
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = '#C9A227';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = '#1E1E24';
+          }}
+        >
+          Reset View
+        </button>
       </div>
 
       {/* Main Content */}
       <div style={{ 
-        display: 'flex', 
-        gap: '24px', 
-        padding: '0 24px 48px',
+        display: 'flex',
         maxWidth: '1400px',
-        margin: '0 auto'
+        margin: '0 auto',
+        gap: '24px',
+        padding: '0 24px',
+        minHeight: '600px'
       }}>
-        {/* Filters Panel */}
-        <div style={{ 
-          width: '280px',
-          backgroundColor: '#1E1E24',
-          padding: '24px',
-          borderRadius: '12px',
-          height: 'fit-content'
-        }}>
-          <h3 style={{ 
-            fontSize: '18px', 
-            fontWeight: 'bold', 
-            color: '#F5F4F2', 
-            marginBottom: '24px' 
-          }}>
-            Filters
-          </h3>
-          
-          {/* Language Filter */}
-          <div style={{ marginBottom: '24px' }}>
-            <label style={{ 
-              display: 'block', 
-              fontSize: '14px', 
-              fontWeight: '500', 
-              color: '#9CA3AF', 
-              marginBottom: '8px' 
-            }}>
-              Language
-            </label>
-            <select
-              value={filters.language}
-              onChange={(e) => setFilters(prev => ({ ...prev, language: e.target.value as any }))}
-              style={{
-                width: '100%',
-                padding: '8px 12px',
-                backgroundColor: '#141419',
-                border: '1px solid #6B7280',
-                borderRadius: '8px',
-                color: '#F5F4F2',
-                fontSize: '14px'
-              }}
-            >
-              <option value="all">All Languages</option>
-              <option value="greek">Greek</option>
-              <option value="latin">Latin</option>
-            </select>
-          </div>
-
-          {/* Era Filter */}
-          <div style={{ marginBottom: '24px' }}>
-            <label style={{ 
-              display: 'block', 
-              fontSize: '14px', 
-              fontWeight: '500', 
-              color: '#9CA3AF', 
-              marginBottom: '8px' 
-            }}>
-              Era
-            </label>
-            <select
-              value={filters.era}
-              onChange={(e) => setFilters(prev => ({ ...prev, era: e.target.value }))}
-              style={{
-                width: '100%',
-                padding: '8px 12px',
-                backgroundColor: '#141419',
-                border: '1px solid #6B7280',
-                borderRadius: '8px',
-                color: '#F5F4F2',
-                fontSize: '14px'
-              }}
-            >
-              <option value="all">All Eras</option>
-              <option value="archaic">Archaic (800-500 BCE)</option>
-              <option value="classical">Classical (500-323 BCE)</option>
-              <option value="imperial">Imperial (31 BCE-284 CE)</option>
-              <option value="lateAntique">Late Antique (284-600 CE)</option>
-            </select>
-          </div>
-
-          {/* Connection Type Filter */}
-          <div style={{ marginBottom: '24px' }}>
-            <label style={{ 
-              display: 'block', 
-              fontSize: '14px', 
-              fontWeight: '500', 
-              color: '#9CA3AF', 
-              marginBottom: '8px' 
-            }}>
-              Connection Type
-            </label>
-            <select
-              value={filters.connectionType}
-              onChange={(e) => setFilters(prev => ({ ...prev, connectionType: e.target.value as any }))}
-              style={{
-                width: '100%',
-                padding: '8px 12px',
-                backgroundColor: '#141419',
-                border: '1px solid #6B7280',
-                borderRadius: '8px',
-                color: '#F5F4F2',
-                fontSize: '14px'
-              }}
-            >
-              <option value="all">All Connections</option>
-              <option value="influence">Influence</option>
-              <option value="reference">Reference</option>
-              <option value="response">Response</option>
-              <option value="translation">Translation</option>
-            </select>
-          </div>
-
-          {/* Legend */}
-          <div>
-            <h4 style={{ 
-              fontSize: '16px', 
-              fontWeight: 'bold', 
-              color: '#F5F4F2', 
-              marginBottom: '16px' 
-            }}>
-              Legend
-            </h4>
-            
-            <div style={{ marginBottom: '16px' }}>
-              <div style={{ 
-                fontSize: '14px', 
-                fontWeight: '500', 
-                color: '#9CA3AF', 
-                marginBottom: '8px' 
-              }}>
-                Languages
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
-                <div style={{ 
-                  width: '16px', 
-                  height: '16px', 
-                  borderRadius: '50%', 
-                  backgroundColor: '#3B82F6' 
-                }}></div>
-                <span style={{ fontSize: '12px', color: '#9CA3AF' }}>Greek</span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <div style={{ 
-                  width: '16px', 
-                  height: '16px', 
-                  borderRadius: '50%', 
-                  backgroundColor: '#DC2626' 
-                }}></div>
-                <span style={{ fontSize: '12px', color: '#9CA3AF' }}>Latin</span>
-              </div>
-            </div>
-
-            <div>
-              <div style={{ 
-                fontSize: '14px', 
-                fontWeight: '500', 
-                color: '#9CA3AF', 
-                marginBottom: '8px' 
-              }}>
-                Connection Types
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
-                <div style={{ 
-                  width: '20px', 
-                  height: '2px', 
-                  backgroundColor: '#C9A227' 
-                }}></div>
-                <span style={{ fontSize: '12px', color: '#9CA3AF' }}>Influence</span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
-                <div style={{ 
-                  width: '20px', 
-                  height: '2px', 
-                  backgroundColor: '#3B82F6' 
-                }}></div>
-                <span style={{ fontSize: '12px', color: '#9CA3AF' }}>Reference</span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
-                <div style={{ 
-                  width: '20px', 
-                  height: '2px', 
-                  backgroundColor: '#DC2626' 
-                }}></div>
-                <span style={{ fontSize: '12px', color: '#9CA3AF' }}>Response</span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <div style={{ 
-                  width: '20px', 
-                  height: '2px', 
-                  backgroundColor: '#7C3AED' 
-                }}></div>
-                <span style={{ fontSize: '12px', color: '#9CA3AF' }}>Translation</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Graph Container */}
+        {/* Network Graph */}
         <div style={{ 
           flex: 1,
           backgroundColor: '#1E1E24',
-          borderRadius: '12px',
-          overflow: 'hidden',
-          position: 'relative'
+          borderRadius: '16px',
+          padding: '24px',
+          position: 'relative',
+          overflow: 'hidden'
         }}>
-          <div style={{ 
-            padding: '16px 20px', 
-            borderBottom: '1px solid #141419',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between'
+          <h2 style={{ 
+            fontSize: '24px', 
+            fontWeight: 'bold', 
+            marginBottom: '24px',
+            color: '#F5F4F2'
           }}>
-            <h3 style={{ 
-              fontSize: '18px', 
-              fontWeight: 'bold', 
-              color: '#F5F4F2' 
-            }}>
-              Network Graph
-            </h3>
-            <div style={{ fontSize: '12px', color: '#6B7280' }}>
-              Click and drag to pan • Scroll to zoom
-            </div>
-          </div>
+            Network Graph
+          </h2>
 
           <svg
             ref={svgRef}
             width="100%"
-            height="600"
-            style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
+            height="500"
+            style={{ 
+              cursor: isDragging ? 'grabbing' : 'grab',
+              backgroundColor: '#141419',
+              borderRadius: '12px'
+            }}
             onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseUp}
             onWheel={handleWheel}
           >
+            <defs>
+              <marker
+                id="arrowhead"
+                markerWidth="10"
+                markerHeight="7"
+                refX="9"
+                refY="3.5"
+                orient="auto"
+              >
+                <polygon
+                  points="0 0, 10 3.5, 0 7"
+                  fill="#9CA3AF"
+                />
+              </marker>
+            </defs>
+
             <g transform={`translate(${transform.x}, ${transform.y}) scale(${transform.scale})`}>
-              {/* Render connections first (behind nodes) */}
+              {/* Connection Lines */}
               {filteredConnections.map((connection, index) => {
-                const sourceNode = filteredAuthors.find(a => a.id === connection.source);
-                const targetNode = filteredAuthors.find(a => a.id === connection.target);
-                
+                const sourceNode = AUTHORS.find(n => n.id === connection.source);
+                const targetNode = AUTHORS.find(n => n.id === connection.target);
                 if (!sourceNode || !targetNode) return null;
 
-                const isHighlighted = selectedNode && 
-                  (selectedNode.id === connection.source || selectedNode.id === connection.target);
-                const isSelected = selectedEdge === connection;
-                const strokeWidth = connection.strength * 4 + 1;
-                const opacity = selectedNode ? (isHighlighted ? 0.9 : 0.2) : 0.6;
+                const isHighlighted = selectedNode && (
+                  selectedNode.id === connection.source || 
+                  selectedNode.id === connection.target
+                );
 
                 return (
-                  <line
-                    key={`${connection.source}-${connection.target}-${index}`}
-                    x1={sourceNode.x}
-                    y1={sourceNode.y}
-                    x2={targetNode.x}
-                    y2={targetNode.y}
-                    stroke={getConnectionTypeColor(connection.type)}
-                    strokeWidth={isSelected ? strokeWidth + 2 : strokeWidth}
-                    opacity={opacity}
-                    style={{ 
-                      cursor: 'pointer',
-                      transition: 'all 0.3s ease'
-                    }}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleEdgeClick(connection);
-                    }}
-                  />
+                  <g key={`${connection.source}-${connection.target}-${index}`}>
+                    <line
+                      x1={sourceNode.x}
+                      y1={sourceNode.y}
+                      x2={targetNode.x}
+                      y2={targetNode.y}
+                      stroke={isHighlighted ? getConnectionTypeColor(connection.type) : '#6B7280'}
+                      strokeWidth={isHighlighted ? connection.strength * 4 : connection.strength * 2}
+                      opacity={isHighlighted ? 0.9 : 0.4}
+                      markerEnd="url(#arrowhead)"
+                      style={{
+                        transition: 'all 0.3s ease'
+                      }}
+                    />
+                    {isHighlighted && (
+                      <text
+                        x={(sourceNode.x + targetNode.x) / 2}
+                        y={(sourceNode.y + targetNode.y) / 2 - 8}
+                        fill="#C9A227"
+                        fontSize="12"
+                        textAnchor="middle"
+                        style={{ pointerEvents: 'none' }}
+                      >
+                        {connection.type}
+                      </text>
+                    )}
+                  </g>
                 );
               })}
 
-              {/* Render nodes */}
-              {filteredAuthors.map((node) => {
-                const relatedConnections = getRelatedConnections(node.id);
+              {/* Nodes */}
+              {filteredNodes.map((node) => {
                 const isSelected = selectedNode?.id === node.id;
                 const isHovered = hoveredNode === node.id;
-                const isConnectedToSelected = selectedNode && 
-                  relatedConnections.some(conn => 
-                    conn.source === selectedNode.id || conn.target === selectedNode.id
-                  );
+                const isConnected = selectedNode && getConnectedNodes(selectedNode.id).includes(node.id);
                 
-                const opacity = selectedNode ? 
-                  (isSelected || isConnectedToSelected ? 1 : 0.3) : 1;
-                const scale = isSelected || isHovered ? 1.2 : 1;
-
                 return (
                   <g key={node.id}>
-                    {/* Node circle */}
+                    {/* Node glow effect for selected/hovered */}
+                    {(isSelected || isHovered) && (
+                      <circle
+                        cx={node.x}
+                        cy={node.y}
+                        r={node.radius + 8}
+                        fill={getNodeColor(node, isHovered, isSelected)}
+                        opacity={0.2}
+                        style={{
+                          transition: 'all 0.3s ease'
+                        }}
+                      />
+                    )}
+
+                    {/* Main node circle */}
                     <circle
                       cx={node.x}
                       cy={node.y}
                       r={node.radius}
-                      fill={getLanguageColor(node.language)}
-                      stroke={isSelected ? '#C9A227' : getEraColor(node.era)}
-                      strokeWidth={isSelected ? 4 : 2}
-                      opacity={opacity}
+                      fill={getNodeColor(node, isHovered, isSelected)}
+                      stroke={isSelected ? '#E8D5A3' : isConnected ? '#C9A227' : 'transparent'}
+                      strokeWidth={isSelected ? 3 : isConnected ? 2 : 0}
+                      opacity={selectedNode && !isSelected && !isConnected ? 0.3 : 1}
                       style={{
                         cursor: 'pointer',
-                        transition: 'all 0.3s ease',
-                        transform: `scale(${scale})`,
-                        transformOrigin: `${node.x}px ${node.y}px`
+                        transition: 'all 0.3s ease'
                       }}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleNodeClick(node);
-                      }}
+                      onClick={() => setSelectedNode(isSelected ? null : node)}
                       onMouseEnter={() => setHoveredNode(node.id)}
                       onMouseLeave={() => setHoveredNode(null)}
                     />
-                    
+
                     {/* Node label */}
                     <text
                       x={node.x}
                       y={node.y + node.radius + 16}
+                      fill={isSelected ? '#E8D5A3' : isConnected ? '#C9A227' : '#F5F4F2'}
+                      fontSize={isSelected ? '14' : '12'}
+                      fontWeight={isSelected ? 'bold' : 'normal'}
                       textAnchor="middle"
-                      fill="#F5F4F2"
-                      fontSize="12"
-                      fontWeight="500"
-                      opacity={opacity}
-                      style={{
+                      style={{ 
                         pointerEvents: 'none',
                         transition: 'all 0.3s ease'
                       }}
                     >
                       {node.name}
                     </text>
+
+                    {/* Era indicator */}
+                    <text
+                      x={node.x}
+                      y={node.y + node.radius + 32}
+                      fill="#6B7280"
+                      fontSize="10"
+                      textAnchor="middle"
+                      style={{ pointerEvents: 'none' }}
+                    >
+                      {node.era}
+                    </text>
                   </g>
                 );
               })}
             </g>
           </svg>
+
+          {/* Zoom indicator */}
+          <div style={{
+            position: 'absolute',
+            top: '70px',
+            right: '32px',
+            backgroundColor: '#141419',
+            padding: '8px 12px',
+            borderRadius: '8px',
+            fontSize: '12px',
+            color: '#9CA3AF'
+          }}>
+            Zoom: {Math.round(transform.scale * 100)}%
+          </div>
         </div>
 
         {/* Info Panel */}
         <div style={{ 
-          width: '320px',
+          width: '350px',
           backgroundColor: '#1E1E24',
+          borderRadius: '16px',
           padding: '24px',
-          borderRadius: '12px',
-          height: 'fit-content',
-          maxHeight: '600px',
-          overflowY: 'auto'
+          height: 'fit-content'
         }}>
-          <h3 style={{ 
-            fontSize: '18px', 
+          <h2 style={{ 
+            fontSize: '24px', 
             fontWeight: 'bold', 
-            color: '#F5F4F2', 
-            marginBottom: '24px' 
+            marginBottom: '24px',
+            color: '#F5F4F2'
           }}>
-            Details
-          </h3>
-          
+            {selectedNode ? 'Author Details' : 'Instructions'}
+          </h2>
+
           {selectedNode ? (
             <div>
-              <div style={{ 
-                display: 'flex', 
-                alignItems: 'center', 
-                gap: '12px', 
-                marginBottom: '16px' 
+              <h3 style={{ 
+                fontSize: '20px', 
+                fontWeight: 'bold',
+                color: selectedNode.language === 'greek' ? '#3B82F6' : '#DC2626',
+                marginBottom: '16px'
               }}>
-                <div style={{
-                  width: '16px',
-                  height: '16px',
-                  borderRadius: '50%',
-                  backgroundColor: getLanguageColor(selectedNode.language)
-                }}></div>
-                <h4 style={{ 
-                  fontSize: '20px', 
-                  fontWeight: 'bold', 
-                  color: '#F5F4F2' 
+                {selectedNode.name}
+              </h3>
+
+              <div style={{ marginBottom: '16px' }}>
+                <div style={{ 
+                  display: 'flex', 
+                  gap: '8px', 
+                  marginBottom: '12px',
+                  flexWrap: 'wrap'
                 }}>
-                  {selectedNode.name}
+                  <span style={{ 
+                    backgroundColor: '#141419',
+                    color: '#C9A227',
+                    padding: '4px 8px',
+                    borderRadius: '6px',
+                    fontSize: '12px'
+                  }}>
+                    {selectedNode.type}
+                  </span>
+                  <span style={{ 
+                    backgroundColor: '#141419',
+                    color: selectedNode.language === 'greek' ? '#3B82F6' : '#DC2626',
+                    padding: '4px 8px',
+                    borderRadius: '6px',
+                    fontSize: '12px'
+                  }}>
+                    {selectedNode.language}
+                  </span>
+                  <span style={{ 
+                    backgroundColor: '#141419',
+                    color: '#F59E0B',
+                    padding: '4px 8px',
+                    borderRadius: '6px',
+                    fontSize: '12px'
+                  }}>
+                    {selectedNode.era}
+                  </span>
+                </div>
+
+                {selectedNode.birth && (
+                  <p style={{ fontSize: '14px', color: '#9CA3AF', marginBottom: '8px' }}>
+                    <strong>Life:</strong> {selectedNode.birth} - {selectedNode.death}
+                  </p>
+                )}
+
+                <p style={{ fontSize: '14px', color: '#F5F4F2', lineHeight: 1.5, marginBottom: '16px' }}>
+                  {selectedNode.description}
+                </p>
+
+                {selectedNode.works && selectedNode.works.length > 0 && (
+                  <div>
+                    <h4 style={{ fontSize: '16px', fontWeight: 'bold', marginBottom: '8px', color: '#C9A227' }}>
+                      Major Works:
+                    </h4>
+                    <ul style={{ 
+                      listStyle: 'none', 
+                      padding: 0,
+                      margin: 0
+                    }}>
+                      {selectedNode.works.map((work, index) => (
+                        <li key={index} style={{ 
+                          fontSize: '14px',
+                          color: '#9CA3AF',
+                          marginBottom: '4px',
+                          paddingLeft: '16px',
+                          position: 'relative'
+                        }}>
+                          <span style={{
+                            position: 'absolute',
+                            left: '0',
+                            color: '#C9A227'
+                          }}>•</span>
+                          {work}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+
+              {/* Connections */}
+              <div>
+                <h4 style={{ fontSize: '16px', fontWeight: 'bold', marginBottom: '12px', color: '#C9A227' }}>
+                  Connections:
                 </h4>
-              </div>
-              
-              <div style={{ marginBottom: '16px' }}>
-                <div style={{ 
-                  fontSize: '12px', 
-                  color: '#6B7280', 
-                  marginBottom: '4px' 
-                }}>
-                  ERA
-                </div>
-                <div style={{ 
-                  display: 'inline-block',
-                  padding: '4px 8px',
-                  backgroundColor: getEraColor(selectedNode.era),
-                  borderRadius: '4px',
-                  fontSize: '12px',
-                  fontWeight: '500',
-                  color: '#F5F4F2',
-                  textTransform: 'capitalize'
-                }}>
-                  {selectedNode.era}
-                </div>
-              </div>
+                <div style={{ maxHeight: '200px', overflowY: 'auto' }}>
+                  {CONNECTIONS
+                    .filter(conn => conn.source === selectedNode.id || conn.target === selectedNode.id)
+                    .map((conn, index) => {
+                      const otherNodeId = conn.source === selectedNode.id ? conn.target : conn.source;
+                      const otherNode = AUTHORS.find(n => n.id === otherNodeId);
+                      if (!otherNode) return null;
 
-              {selectedNode.birth && (
-                <div style={{ marginBottom: '16px' }}>
-                  <div style={{ 
-                    fontSize: '12px', 
-                    color: '#6B7280', 
-                    marginBottom: '4px' 
-                  }}>
-                    DATES
-                  </div>
-                  <div style={{ 
-                    fontSize: '14px', 
-                    color: '#9CA3AF' 
-                  }}>
-                    {selectedNode.birth} - {selectedNode.death}
-                  </div>
-                </div>
-              )}
-
-              <div style={{ marginBottom: '16px' }}>
-                <div style={{ 
+                      return (
+                        <div key={index} style={{ 
+                          marginBottom: '12px',
+                          padding: '12px',
+                          backgroundColor: '#141419',
+                          borderRadius: '8px',
+                          border: `2px solid ${getConnectionTypeColor(conn.type)}`
+                        }}>
+                          <div style={{ 
+                            display: 'flex', 
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            marginBottom: '8px'
+                          }}>
+                            <span style={{ 
+                              fontSize: '14px',
+                              fontWeight: 'bold',
+                              color: '#F5F4F2'
+                            }}>
+                              {otherNode.name}
+                            </span>
+                            <div style={{ display: 'flex', gap: '4px' }}>
+                              {Array.from({ length: Math.round(conn.strength * 5) }).map((_, i) => (
+                                <div key={i} style={{
+                                  width: '4px',
+                                  height: '4px',
+                                  backgroundColor: '#C9A227',
+                                  borderRadius: '50%'
+                                }} />
+                              ))}
+                            </div>
+                          </div>
+                          <div style={{ 
+                            fontSize: '12px',
+                            color: getConnectionTypeColor(conn.type),
+                            fontWeight: 'bold',

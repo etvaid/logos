@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 
 // Word forms dictionary
@@ -110,13 +110,13 @@ const TRANSLATIONS: Record<string, { translation: string; notes: string; languag
   },
   "per aspera ad astra": { 
     translation: "Through hardships to the stars", 
-    notes: "Inspirational motto about perseverance",
+    notes: "Encouraging motto about perseverance through difficulties",
     language: 'latin',
     era: 'Imperial'
   },
   "tempus fugit": { 
     translation: "Time flies", 
-    notes: "Reminder of time's swift passage",
+    notes: "Reminder of the swift passage of time",
     language: 'latin',
     era: 'Imperial'
   },
@@ -130,90 +130,105 @@ const TRANSLATIONS: Record<string, { translation: string; notes: string; languag
 };
 
 const EXAMPLE_PHRASES = [
-  "μῆνιν ἄειδε θεὰ",
-  "γνῶθι σεαυτόν",
-  "πάντα ῥεῖ",
-  "arma virumque cano",
-  "carpe diem",
-  "veni vidi vici",
-  "cogito ergo sum",
-  "memento mori"
+  { text: "μῆνιν ἄειδε θεὰ", type: "greek" },
+  { text: "γνῶθι σεαυτόν", type: "greek" },
+  { text: "πάντα ῥεῖ", type: "greek" },
+  { text: "arma virumque cano", type: "latin" },
+  { text: "carpe diem", type: "latin" },
+  { text: "veni vidi vici", type: "latin" },
+  { text: "cogito ergo sum", type: "latin" },
+  { text: "memento mori", type: "latin" },
+  { text: "per aspera ad astra", type: "latin" }
 ];
 
 export default function TranslatePage() {
   const [inputText, setInputText] = useState('');
-  const [translatedText, setTranslatedText] = useState('');
-  const [wordBreakdown, setWordBreakdown] = useState<any[]>([]);
+  const [translation, setTranslation] = useState<string>('');
+  const [breakdown, setBreakdown] = useState<Array<{ word: string; translation: string; type: string; forms: string; etymology?: string }>>([]);
   const [detectedLanguage, setDetectedLanguage] = useState<'greek' | 'latin' | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
-  const [translationNotes, setTranslationNotes] = useState<any>(null);
+  const [phraseData, setPhraseData] = useState<any>(null);
+  const [isTranslating, setIsTranslating] = useState(false);
 
   const detectLanguage = (text: string): 'greek' | 'latin' | null => {
-    // Greek unicode range
-    if (/[\u0370-\u03FF\u1F00-\u1FFF]/.test(text)) {
-      return 'greek';
-    }
-    // Latin characters (could be Latin text)
-    if (/[a-zA-Z]/.test(text) && !/[\u0370-\u03FF\u1F00-\u1FFF]/.test(text)) {
-      return 'latin';
+    // Greek characters detection
+    if (/[\u0370-\u03FF]/.test(text)) return 'greek';
+    // Latin characters with common Latin patterns
+    if (/[āēīōūăĕĭŏŭ]/.test(text) || /que$|us$|um$|is$|a$/.test(text)) return 'latin';
+    // Check if words are in our dictionary
+    const words = text.toLowerCase().split(/\s+/);
+    for (const word of words) {
+      if (WORD_FORMS[word]) {
+        const phrase = Object.keys(TRANSLATIONS).find(key => key.includes(word));
+        if (phrase && TRANSLATIONS[phrase]) {
+          return TRANSLATIONS[phrase].language;
+        }
+      }
     }
     return null;
   };
 
-  const translateText = async (text: string) => {
-    setIsLoading(true);
+  const translateText = async () => {
+    if (!inputText.trim()) return;
     
-    // Simulate API delay
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    setIsTranslating(true);
     
-    const normalizedText = text.trim().toLowerCase();
-    const language = detectLanguage(text);
+    // Simulate processing delay
+    await new Promise(resolve => setTimeout(resolve, 500));
+
+    const cleanText = inputText.trim().toLowerCase();
+    const language = detectLanguage(cleanText);
     setDetectedLanguage(language);
-    
-    // Check if we have a direct translation
-    const directTranslation = TRANSLATIONS[normalizedText];
-    if (directTranslation) {
-      setTranslatedText(directTranslation.translation);
-      setTranslationNotes(directTranslation);
+
+    // Check for exact phrase matches first
+    const exactMatch = Object.keys(TRANSLATIONS).find(key => 
+      key.toLowerCase() === cleanText
+    );
+
+    if (exactMatch) {
+      const phraseInfo = TRANSLATIONS[exactMatch];
+      setTranslation(phraseInfo.translation);
+      setPhraseData(phraseInfo);
     } else {
-      // Try word-by-word translation
-      const words = text.split(/\s+/);
-      const translations = words.map(word => {
-        const cleanWord = word.toLowerCase().replace(/[.,;:!?]/g, '');
-        const wordData = WORD_FORMS[cleanWord];
-        return wordData ? wordData.translation : `[${word}]`;
-      });
-      setTranslatedText(translations.join(' '));
-      setTranslationNotes(null);
+      // Fallback translation for unknown phrases
+      setTranslation("Translation not found in database");
+      setPhraseData(null);
     }
-    
-    // Generate word breakdown
-    const words = text.split(/\s+/);
-    const breakdown = words.map(word => {
-      const cleanWord = word.toLowerCase().replace(/[.,;:!?]/g, '');
+
+    // Word-by-word breakdown
+    const words = cleanText.split(/\s+/);
+    const wordBreakdown = words.map(word => {
+      const cleanWord = word.replace(/[.,;:!?]/g, '');
       const wordData = WORD_FORMS[cleanWord];
-      return {
-        original: word,
-        translation: wordData?.translation || `[unknown: ${word}]`,
-        type: wordData?.type || 'unknown',
-        forms: wordData?.forms || 'N/A',
-        etymology: wordData?.etymology || 'Unknown etymology'
-      };
+      
+      if (wordData) {
+        return {
+          word: cleanWord,
+          translation: wordData.translation,
+          type: wordData.type,
+          forms: wordData.forms,
+          etymology: wordData.etymology
+        };
+      } else {
+        return {
+          word: cleanWord,
+          translation: "unknown",
+          type: "unknown",
+          forms: "—",
+          etymology: undefined
+        };
+      }
     });
-    setWordBreakdown(breakdown);
-    
-    setIsLoading(false);
+
+    setBreakdown(wordBreakdown);
+    setIsTranslating(false);
   };
 
-  const handleTranslate = () => {
-    if (inputText.trim()) {
-      translateText(inputText);
-    }
-  };
-
-  const handleExampleClick = (phrase: string) => {
+  const loadExamplePhrase = (phrase: string) => {
     setInputText(phrase);
-    translateText(phrase);
+    setTranslation('');
+    setBreakdown([]);
+    setDetectedLanguage(null);
+    setPhraseData(null);
   };
 
   return (
@@ -224,270 +239,279 @@ export default function TranslatePage() {
       fontFamily: 'system-ui, -apple-system, sans-serif'
     }}>
       {/* Navigation */}
-      <nav style={{
-        backgroundColor: '#1E1E24',
-        padding: '16px 24px',
-        borderBottom: '1px solid #333'
+      <nav style={{ 
+        padding: '16px 24px', 
+        backgroundColor: '#1E1E24', 
+        borderBottom: '1px solid #333',
+        position: 'sticky',
+        top: 0,
+        zIndex: 100
       }}>
-        <div style={{
-          maxWidth: '1200px',
-          margin: '0 auto',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '32px'
+        <div style={{ 
+          maxWidth: '1200px', 
+          margin: '0 auto', 
+          display: 'flex', 
+          alignItems: 'center', 
+          justifyContent: 'space-between' 
         }}>
-          <Link href="/" style={{
-            fontSize: '24px',
-            fontWeight: 'bold',
-            color: '#C9A227',
-            textDecoration: 'none'
+          <Link href="/" style={{ 
+            fontSize: '24px', 
+            fontWeight: 'bold', 
+            color: '#C9A227', 
+            textDecoration: 'none',
+            transition: 'all 0.2s'
           }}>
-            LOGOS
+            ΛΟΓΟΣ
           </Link>
           <div style={{ display: 'flex', gap: '24px' }}>
-            <Link href="/library" style={{
-              color: '#9CA3AF',
+            <Link href="/learn" style={{ 
+              color: '#9CA3AF', 
               textDecoration: 'none',
-              transition: 'color 0.2s'
-            }}>Library</Link>
-            <Link href="/translate" style={{
-              color: '#C9A227',
-              textDecoration: 'none'
-            }}>Translate</Link>
-            <Link href="/learn" style={{
-              color: '#9CA3AF',
+              transition: 'all 0.2s',
+              padding: '8px 16px',
+              borderRadius: '8px'
+            }} 
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = '#C9A227';
+              e.currentTarget.style.backgroundColor = '#1E1E24';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = '#9CA3AF';
+              e.currentTarget.style.backgroundColor = 'transparent';
+            }}>
+              Learn
+            </Link>
+            <Link href="/texts" style={{ 
+              color: '#9CA3AF', 
               textDecoration: 'none',
-              transition: 'color 0.2s'
-            }}>Learn</Link>
+              transition: 'all 0.2s',
+              padding: '8px 16px',
+              borderRadius: '8px'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = '#C9A227';
+              e.currentTarget.style.backgroundColor = '#1E1E24';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = '#9CA3AF';
+              e.currentTarget.style.backgroundColor = 'transparent';
+            }}>
+              Texts
+            </Link>
+            <Link href="/translate" style={{ 
+              color: '#C9A227', 
+              textDecoration: 'none',
+              padding: '8px 16px',
+              borderRadius: '8px',
+              backgroundColor: '#1E1E24'
+            }}>
+              Translate
+            </Link>
+            <Link href="/culture" style={{ 
+              color: '#9CA3AF', 
+              textDecoration: 'none',
+              transition: 'all 0.2s',
+              padding: '8px 16px',
+              borderRadius: '8px'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = '#C9A227';
+              e.currentTarget.style.backgroundColor = '#1E1E24';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = '#9CA3AF';
+              e.currentTarget.style.backgroundColor = 'transparent';
+            }}>
+              Culture
+            </Link>
           </div>
         </div>
       </nav>
 
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '32px 24px' }}>
-        {/* Header */}
-        <div style={{ marginBottom: '48px' }}>
-          <h1 style={{ 
-            fontSize: '48px', 
-            fontWeight: 'bold', 
-            marginBottom: '16px',
-            background: 'linear-gradient(45deg, #C9A227, #E8D5A3)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text'
-          }}>
-            Classical Translator
-          </h1>
-          <p style={{ 
-            fontSize: '20px', 
-            color: '#9CA3AF',
-            lineHeight: '1.6'
-          }}>
-            Translate Ancient Greek and Latin texts with detailed linguistic analysis
-          </p>
-        </div>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '48px 24px' }}>
+        <h1 style={{ 
+          fontSize: '48px', 
+          fontWeight: 'bold', 
+          marginBottom: '16px',
+          background: 'linear-gradient(135deg, #C9A227, #E8D5A3)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          textAlign: 'center'
+        }}>
+          Ancient Text Translator
+        </h1>
+        
+        <p style={{ 
+          color: '#9CA3AF', 
+          fontSize: '18px', 
+          textAlign: 'center', 
+          marginBottom: '48px',
+          maxWidth: '600px',
+          margin: '0 auto 48px auto'
+        }}>
+          Translate Ancient Greek and Latin texts with detailed word-by-word analysis
+        </p>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px', marginBottom: '32px' }}>
           {/* Input Section */}
-          <div style={{
-            backgroundColor: '#1E1E24',
-            borderRadius: '16px',
-            padding: '32px',
+          <div style={{ 
+            backgroundColor: '#1E1E24', 
+            padding: '24px', 
+            borderRadius: '12px',
             border: '1px solid #333'
           }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
-              <h2 style={{ fontSize: '24px', fontWeight: 'bold', margin: 0 }}>Input</h2>
-              {detectedLanguage && (
-                <div style={{
-                  padding: '4px 12px',
-                  borderRadius: '8px',
-                  backgroundColor: detectedLanguage === 'greek' ? '#3B82F6' : '#DC2626',
-                  color: '#F5F4F2',
-                  fontSize: '14px',
-                  fontWeight: '500'
-                }}>
-                  {detectedLanguage === 'greek' ? 'Ancient Greek' : 'Latin'}
-                </div>
-              )}
-            </div>
-
+            <h2 style={{ 
+              fontSize: '20px', 
+              fontWeight: 'bold', 
+              marginBottom: '16px',
+              color: '#C9A227'
+            }}>
+              Input Text
+            </h2>
+            
             <textarea
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
               placeholder="Enter Ancient Greek or Latin text..."
               style={{
                 width: '100%',
-                height: '200px',
+                height: '120px',
                 backgroundColor: '#141419',
-                border: '1px solid #333',
-                borderRadius: '12px',
+                border: '2px solid #333',
+                borderRadius: '8px',
                 padding: '16px',
                 color: '#F5F4F2',
                 fontSize: '16px',
                 fontFamily: 'Georgia, serif',
                 resize: 'vertical',
-                outline: 'none',
-                transition: 'border-color 0.2s'
+                transition: 'all 0.2s',
+                outline: 'none'
               }}
-              onFocus={(e) => {
-                e.target.style.borderColor = '#C9A227';
-              }}
-              onBlur={(e) => {
-                e.target.style.borderColor = '#333';
-              }}
+              onFocus={(e) => e.target.style.borderColor = '#C9A227'}
+              onBlur={(e) => e.target.style.borderColor = '#333'}
             />
 
+            {detectedLanguage && (
+              <div style={{ 
+                marginTop: '16px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px'
+              }}>
+                <div style={{
+                  width: '12px',
+                  height: '12px',
+                  borderRadius: '50%',
+                  backgroundColor: detectedLanguage === 'greek' ? '#3B82F6' : '#DC2626'
+                }}></div>
+                <span style={{ color: '#9CA3AF', fontSize: '14px' }}>
+                  Detected: {detectedLanguage === 'greek' ? 'Ancient Greek' : 'Latin'}
+                </span>
+              </div>
+            )}
+
             <button
-              onClick={handleTranslate}
-              disabled={!inputText.trim() || isLoading}
+              onClick={translateText}
+              disabled={!inputText.trim() || isTranslating}
               style={{
                 marginTop: '16px',
                 width: '100%',
-                padding: '16px',
-                backgroundColor: inputText.trim() && !isLoading ? '#C9A227' : '#333',
-                color: inputText.trim() && !isLoading ? '#0D0D0F' : '#6B7280',
+                padding: '12px 24px',
+                backgroundColor: inputText.trim() && !isTranslating ? '#C9A227' : '#333',
+                color: inputText.trim() && !isTranslating ? '#0D0D0F' : '#6B7280',
                 border: 'none',
-                borderRadius: '12px',
+                borderRadius: '8px',
                 fontSize: '16px',
                 fontWeight: 'bold',
-                cursor: inputText.trim() && !isLoading ? 'pointer' : 'not-allowed',
+                cursor: inputText.trim() && !isTranslating ? 'pointer' : 'not-allowed',
                 transition: 'all 0.2s'
               }}
-              onMouseOver={(e) => {
-                if (inputText.trim() && !isLoading) {
+              onMouseEnter={(e) => {
+                if (inputText.trim() && !isTranslating) {
                   e.currentTarget.style.backgroundColor = '#E8D5A3';
                 }
               }}
-              onMouseOut={(e) => {
-                if (inputText.trim() && !isLoading) {
+              onMouseLeave={(e) => {
+                if (inputText.trim() && !isTranslating) {
                   e.currentTarget.style.backgroundColor = '#C9A227';
                 }
               }}
             >
-              {isLoading ? 'Translating...' : 'Translate'}
+              {isTranslating ? 'Translating...' : 'Translate'}
             </button>
-
-            {/* Example Phrases */}
-            <div style={{ marginTop: '32px' }}>
-              <h3 style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '16px', color: '#C9A227' }}>
-                Try These Examples
-              </h3>
-              <div style={{ display: 'grid', gap: '8px' }}>
-                {EXAMPLE_PHRASES.map((phrase, index) => (
-                  <button
-                    key={index}
-                    onClick={() => handleExampleClick(phrase)}
-                    style={{
-                      padding: '12px',
-                      backgroundColor: '#141419',
-                      border: '1px solid #333',
-                      borderRadius: '8px',
-                      color: '#F5F4F2',
-                      fontSize: '14px',
-                      fontFamily: 'Georgia, serif',
-                      cursor: 'pointer',
-                      transition: 'all 0.2s',
-                      textAlign: 'left'
-                    }}
-                    onMouseOver={(e) => {
-                      e.currentTarget.style.backgroundColor = '#1E1E24';
-                      e.currentTarget.style.borderColor = '#C9A227';
-                    }}
-                    onMouseOut={(e) => {
-                      e.currentTarget.style.backgroundColor = '#141419';
-                      e.currentTarget.style.borderColor = '#333';
-                    }}
-                  >
-                    {phrase}
-                  </button>
-                ))}
-              </div>
-            </div>
           </div>
 
           {/* Output Section */}
-          <div style={{
-            backgroundColor: '#1E1E24',
-            borderRadius: '16px',
-            padding: '32px',
+          <div style={{ 
+            backgroundColor: '#1E1E24', 
+            padding: '24px', 
+            borderRadius: '12px',
             border: '1px solid #333'
           }}>
-            <h2 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '24px' }}>Translation</h2>
+            <h2 style={{ 
+              fontSize: '20px', 
+              fontWeight: 'bold', 
+              marginBottom: '16px',
+              color: '#C9A227'
+            }}>
+              Translation
+            </h2>
             
-            {isLoading ? (
-              <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                height: '200px',
-                color: '#9CA3AF'
-              }}>
-                <div style={{
-                  width: '40px',
-                  height: '40px',
-                  border: '4px solid #333',
-                  borderTop: '4px solid #C9A227',
-                  borderRadius: '50%',
-                  animation: 'spin 1s linear infinite'
-                }}>
-                  <style>{`
-                    @keyframes spin {
-                      0% { transform: rotate(0deg); }
-                      100% { transform: rotate(360deg); }
-                    }
-                  `}</style>
-                </div>
-              </div>
-            ) : translatedText ? (
+            {translation ? (
               <div>
                 <div style={{
                   backgroundColor: '#141419',
-                  border: '1px solid #333',
-                  borderRadius: '12px',
-                  padding: '24px',
-                  marginBottom: '24px'
+                  padding: '16px',
+                  borderRadius: '8px',
+                  marginBottom: '16px',
+                  border: '1px solid #333'
                 }}>
-                  <p style={{
-                    fontSize: '18px',
-                    lineHeight: '1.6',
-                    margin: 0,
-                    fontFamily: 'Georgia, serif'
+                  <p style={{ 
+                    fontSize: '18px', 
+                    fontStyle: 'italic',
+                    marginBottom: phraseData ? '12px' : '0'
                   }}>
-                    {translatedText}
+                    "{translation}"
                   </p>
-                </div>
-
-                {translationNotes && (
-                  <div style={{
-                    backgroundColor: '#141419',
-                    border: '1px solid #C9A227',
-                    borderRadius: '12px',
-                    padding: '24px',
-                    marginBottom: '24px'
-                  }}>
-                    <h4 style={{ color: '#C9A227', marginBottom: '12px', fontSize: '16px', fontWeight: 'bold' }}>
-                      Context & Notes
-                    </h4>
-                    <p style={{ color: '#9CA3AF', lineHeight: '1.6', marginBottom: '16px' }}>
-                      {translationNotes.notes}
-                    </p>
-                    {translationNotes.author && (
-                      <div style={{ display: 'flex', gap: '16px', fontSize: '14px', color: '#6B7280' }}>
-                        <span><strong>Author:</strong> {translationNotes.author}</span>
-                        {translationNotes.work && <span><strong>Work:</strong> {translationNotes.work}</span>}
-                        <span><strong>Era:</strong> {translationNotes.era}</span>
+                  
+                  {phraseData && (
+                    <div style={{ borderTop: '1px solid #333', paddingTop: '12px' }}>
+                      <p style={{ 
+                        color: '#9CA3AF', 
+                        fontSize: '14px',
+                        marginBottom: '8px'
+                      }}>
+                        {phraseData.notes}
+                      </p>
+                      
+                      <div style={{ display: 'flex', gap: '16px', fontSize: '12px' }}>
+                        <span style={{ 
+                          color: phraseData.language === 'greek' ? '#3B82F6' : '#DC2626',
+                          fontWeight: 'bold'
+                        }}>
+                          {phraseData.language === 'greek' ? 'Ancient Greek' : 'Latin'}
+                        </span>
+                        <span style={{ color: '#6B7280' }}>
+                          {phraseData.era}
+                        </span>
+                        {phraseData.author && (
+                          <span style={{ color: '#9CA3AF' }}>
+                            {phraseData.author}
+                          </span>
+                        )}
                       </div>
-                    )}
-                  </div>
-                )}
+                    </div>
+                  )}
+                </div>
               </div>
             ) : (
               <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                height: '200px',
-                color: '#6B7280',
-                fontStyle: 'italic'
+                backgroundColor: '#141419',
+                padding: '16px',
+                borderRadius: '8px',
+                border: '1px solid #333',
+                textAlign: 'center',
+                color: '#6B7280'
               }}>
                 Translation will appear here...
               </div>
@@ -495,73 +519,128 @@ export default function TranslatePage() {
           </div>
         </div>
 
-        {/* Word-by-Word Breakdown */}
-        {wordBreakdown.length > 0 && (
-          <div style={{
-            backgroundColor: '#1E1E24',
-            borderRadius: '16px',
-            padding: '32px',
+        {/* Word-by-word breakdown */}
+        {breakdown.length > 0 && (
+          <div style={{ 
+            backgroundColor: '#1E1E24', 
+            padding: '24px', 
+            borderRadius: '12px',
             border: '1px solid #333',
-            marginTop: '32px'
+            marginBottom: '32px'
           }}>
-            <h2 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '24px', color: '#C9A227' }}>
+            <h2 style={{ 
+              fontSize: '20px', 
+              fontWeight: 'bold', 
+              marginBottom: '16px',
+              color: '#C9A227'
+            }}>
               Word-by-Word Analysis
             </h2>
+            
             <div style={{ display: 'grid', gap: '16px' }}>
-              {wordBreakdown.map((word, index) => (
-                <div
-                  key={index}
-                  style={{
-                    backgroundColor: '#141419',
-                    border: '1px solid #333',
-                    borderRadius: '12px',
-                    padding: '20px',
-                    transition: 'all 0.2s'
-                  }}
-                  onMouseOver={(e) => {
-                    e.currentTarget.style.borderColor = '#C9A227';
-                    e.currentTarget.style.transform = 'translateY(-2px)';
-                  }}
-                  onMouseOut={(e) => {
-                    e.currentTarget.style.borderColor = '#333';
-                    e.currentTarget.style.transform = 'translateY(0)';
-                  }}
-                >
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
-                    <div>
-                      <div style={{ marginBottom: '12px' }}>
-                        <span style={{ 
-                          fontSize: '20px', 
-                          fontFamily: 'Georgia, serif',
-                          color: '#F5F4F2',
-                          marginRight: '12px'
-                        }}>
-                          {word.original}
-                        </span>
-                        <span style={{ 
-                          fontSize: '16px',
-                          color: '#C9A227',
-                          fontWeight: 'bold'
-                        }}>
-                          {word.translation}
-                        </span>
-                      </div>
-                      <div style={{ color: '#9CA3AF', fontSize: '14px' }}>
-                        <div><strong>Type:</strong> {word.type}</div>
-                        <div><strong>Forms:</strong> {word.forms}</div>
-                      </div>
-                    </div>
-                    {word.etymology !== 'Unknown etymology' && (
-                      <div style={{ color: '#6B7280', fontSize: '14px' }}>
-                        <strong>Etymology:</strong> {word.etymology}
-                      </div>
-                    )}
+              {breakdown.map((word, index) => (
+                <div key={index} style={{
+                  backgroundColor: '#141419',
+                  padding: '16px',
+                  borderRadius: '8px',
+                  border: '1px solid #333'
+                }}>
+                  <div style={{ display: 'flex', alignItems: 'baseline', gap: '16px', marginBottom: '8px' }}>
+                    <span style={{ 
+                      fontSize: '18px', 
+                      fontWeight: 'bold',
+                      fontFamily: 'Georgia, serif'
+                    }}>
+                      {word.word}
+                    </span>
+                    <span style={{ 
+                      fontSize: '16px',
+                      color: '#C9A227'
+                    }}>
+                      {word.translation}
+                    </span>
+                    <span style={{ 
+                      fontSize: '14px',
+                      color: '#6B7280',
+                      fontStyle: 'italic'
+                    }}>
+                      {word.type}
+                    </span>
                   </div>
+                  
+                  <div style={{ fontSize: '14px', color: '#9CA3AF' }}>
+                    <strong>Forms:</strong> {word.forms}
+                  </div>
+                  
+                  {word.etymology && (
+                    <div style={{ fontSize: '12px', color: '#6B7280', marginTop: '4px' }}>
+                      <strong>Etymology:</strong> {word.etymology}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
           </div>
         )}
+
+        {/* Example Phrases */}
+        <div style={{ 
+          backgroundColor: '#1E1E24', 
+          padding: '24px', 
+          borderRadius: '12px',
+          border: '1px solid #333'
+        }}>
+          <h2 style={{ 
+            fontSize: '20px', 
+            fontWeight: 'bold', 
+            marginBottom: '16px',
+            color: '#C9A227'
+          }}>
+            Example Phrases
+          </h2>
+          
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '16px' }}>
+            {EXAMPLE_PHRASES.map((phrase, index) => (
+              <button
+                key={index}
+                onClick={() => loadExamplePhrase(phrase.text)}
+                style={{
+                  backgroundColor: '#141419',
+                  border: `2px solid ${phrase.type === 'greek' ? '#3B82F6' : '#DC2626'}`,
+                  borderRadius: '8px',
+                  padding: '16px',
+                  textAlign: 'left',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s',
+                  color: '#F5F4F2'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#1E1E24';
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '#141419';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}
+              >
+                <div style={{ 
+                  fontSize: '16px', 
+                  fontFamily: 'Georgia, serif',
+                  marginBottom: '4px'
+                }}>
+                  {phrase.text}
+                </div>
+                <div style={{ 
+                  fontSize: '12px', 
+                  color: phrase.type === 'greek' ? '#3B82F6' : '#DC2626',
+                  fontWeight: 'bold'
+                }}>
+                  {phrase.type === 'greek' ? 'Ancient Greek' : 'Latin'}
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

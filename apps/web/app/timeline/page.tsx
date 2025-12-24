@@ -130,45 +130,29 @@ const EVENTS = [
     category: "political", 
     era: "lateAntique",
     description: "Germanic chieftain Odoacer deposes Romulus Augustulus, the last Western Roman Emperor, ending the Western Roman Empire.",
-    significance: "Marks the end of ancient Rome and the beginning of the Medieval period in Western Europe."
+    significance: "Marks the end of ancient Rome and the beginning of medieval Europe."
   },
   { 
-    year: 529, 
-    name: "Closure of Academy", 
-    category: "intellectual", 
-    era: "lateAntique",
-    description: "Emperor Justinian closes Plato's Academy in Athens, ending nearly a millennium of continuous philosophical education.",
-    significance: "Symbolizes the end of ancient philosophical traditions and the triumph of Christian orthodoxy."
-  },
-  { 
-    year: 726, 
-    name: "Iconoclastic Controversy", 
-    category: "religious", 
+    year: 527, 
+    name: "Justinian becomes Emperor", 
+    category: "political", 
     era: "byzantine",
-    description: "Emperor Leo III begins the Iconoclastic Controversy, banning religious images and dividing the Byzantine Empire.",
-    significance: "Creates lasting theological and political divisions between Eastern and Western Christianity."
-  },
-  { 
-    year: 1054, 
-    name: "Great Schism", 
-    category: "religious", 
-    era: "byzantine",
-    description: "The final split between Eastern Orthodox and Roman Catholic churches occurs, creating permanent religious division.",
-    significance: "Divides Christianity into Eastern and Western branches that remain separate to this day."
+    description: "Justinian I becomes Byzantine Emperor and begins his ambitious campaign to reconquer the Western Roman Empire.",
+    significance: "His legal code and architectural achievements, including Hagia Sophia, shape Byzantine civilization."
   },
   { 
     year: 1453, 
     name: "Fall of Constantinople", 
     category: "political", 
     era: "byzantine",
-    description: "Ottoman forces capture Constantinople, ending the Byzantine Empire and the last remnant of the Roman Empire.",
-    significance: "Marks the end of the Middle Ages and drives Greek scholars westward, contributing to the Renaissance."
+    description: "Ottoman forces capture Constantinople, ending the Byzantine Empire after over 1,000 years of continuous Roman rule.",
+    significance: "Marks the definitive end of the Roman Empire and the rise of Ottoman dominance in the Eastern Mediterranean."
   }
 ];
 
 const ERA_COLORS = {
   archaic: '#D97706',
-  classical: '#F59E0B', 
+  classical: '#F59E0B',
   hellenistic: '#3B82F6',
   imperial: '#DC2626',
   lateAntique: '#7C3AED',
@@ -177,187 +161,185 @@ const ERA_COLORS = {
 
 const CATEGORY_COLORS = {
   political: '#DC2626',
-  cultural: '#3B82F6', 
-  intellectual: '#7C3AED',
-  religious: '#059669'
+  intellectual: '#3B82F6',
+  cultural: '#C9A227',
+  religious: '#7C3AED'
 };
 
-export default function Timeline() {
-  const [activeCategory, setActiveCategory] = useState('all');
-  const [expandedEvent, setExpandedEvent] = useState(null);
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const timelineRef = useRef(null);
+export default function TimelinePage() {
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [expandedEvent, setExpandedEvent] = useState<number | null>(null);
+  const [hoveredEvent, setHoveredEvent] = useState<number | null>(null);
+  const timelineRef = useRef<HTMLDivElement>(null);
 
-  const filteredEvents = activeCategory === 'all' 
+  const categories = ['all', 'political', 'intellectual', 'cultural', 'religious'];
+
+  const filteredEvents = selectedCategory === 'all' 
     ? EVENTS 
-    : EVENTS.filter(event => event.category === activeCategory);
+    : EVENTS.filter(event => event.category === selectedCategory);
 
-  const sortedEvents = [...filteredEvents].sort((a, b) => a.year - b.year);
-
-  const minYear = Math.min(...sortedEvents.map(e => e.year));
-  const maxYear = Math.max(...sortedEvents.map(e => e.year));
+  // Calculate position for each event on timeline
+  const minYear = Math.min(...EVENTS.map(e => e.year));
+  const maxYear = Math.max(...EVENTS.map(e => e.year));
   const yearRange = maxYear - minYear;
 
-  const getEventPosition = (year) => {
-    return ((year - minYear) / yearRange) * 90 + 5; // 5% margin on each side
-  };
-
-  const formatYear = (year) => {
-    return year < 0 ? `${Math.abs(year)} BCE` : `${year} CE`;
-  };
-
-  const scrollToEvent = (eventIndex) => {
-    const event = sortedEvents[eventIndex];
-    const position = getEventPosition(event.year);
+  const scrollToYear = (targetYear: number) => {
     if (timelineRef.current) {
-      const scrollAmount = (position / 100) * timelineRef.current.scrollWidth;
-      timelineRef.current.scrollTo({
-        left: scrollAmount - timelineRef.current.clientWidth / 2,
-        behavior: 'smooth'
-      });
+      const position = ((targetYear - minYear) / yearRange) * timelineRef.current.scrollWidth;
+      timelineRef.current.scrollLeft = position - timelineRef.current.clientWidth / 2;
     }
   };
 
-  const handleScroll = (e) => {
-    const scrollLeft = e.target.scrollLeft;
-    const scrollWidth = e.target.scrollWidth - e.target.clientWidth;
-    setScrollPosition(scrollLeft / scrollWidth);
-  };
-
   return (
-    <div style={{ 
-      minHeight: '100vh', 
-      backgroundColor: '#0D0D0F', 
-      color: '#F5F4F2',
-      fontFamily: 'system-ui, -apple-system, sans-serif'
-    }}>
+    <div style={{ backgroundColor: '#0D0D0F', minHeight: '100vh', color: '#F5F4F2' }}>
       {/* Navigation */}
-      <nav style={{
-        padding: '16px 24px',
+      <nav style={{ 
+        backgroundColor: '#141419', 
         borderBottom: '1px solid #1E1E24',
-        backgroundColor: '#0D0D0F'
+        padding: '16px 24px',
+        position: 'sticky',
+        top: 0,
+        zIndex: 100
       }}>
         <div style={{ 
+          maxWidth: '1200px', 
+          margin: '0 auto', 
           display: 'flex', 
           justifyContent: 'space-between', 
-          alignItems: 'center',
-          maxWidth: '1200px',
-          margin: '0 auto'
+          alignItems: 'center' 
         }}>
           <Link href="/" style={{ 
             fontSize: '24px', 
             fontWeight: 'bold', 
-            color: '#C9A227',
-            textDecoration: 'none'
+            color: '#C9A227', 
+            textDecoration: 'none',
+            transition: 'all 0.2s'
           }}>
             LOGOS
           </Link>
           
-          <div style={{ display: 'flex', gap: '32px' }}>
-            {['Lexicon', 'Texts', 'Grammar', 'Timeline', 'Maps'].map((item) => (
-              <Link 
-                key={item}
-                href={`/${item.toLowerCase()}`}
-                style={{
-                  color: item === 'Timeline' ? '#C9A227' : '#9CA3AF',
-                  textDecoration: 'none',
-                  fontSize: '16px',
-                  fontWeight: '500',
-                  transition: 'color 0.2s',
-                  cursor: 'pointer'
-                }}
-                onMouseEnter={(e) => e.target.style.color = '#C9A227'}
-                onMouseLeave={(e) => e.target.style.color = item === 'Timeline' ? '#C9A227' : '#9CA3AF'}
-              >
-                {item}
-              </Link>
-            ))}
+          <div style={{ display: 'flex', gap: '24px', alignItems: 'center' }}>
+            <Link href="/library" style={{ 
+              color: '#9CA3AF', 
+              textDecoration: 'none',
+              transition: 'all 0.2s',
+              padding: '8px 16px',
+              borderRadius: '8px'
+            }}
+            onMouseEnter={(e) => e.target.style.color = '#F5F4F2'}
+            onMouseLeave={(e) => e.target.style.color = '#9CA3AF'}>
+              Library
+            </Link>
+            <Link href="/timeline" style={{ 
+              color: '#C9A227', 
+              textDecoration: 'none',
+              padding: '8px 16px',
+              borderRadius: '8px',
+              backgroundColor: '#1E1E24'
+            }}>
+              Timeline
+            </Link>
+            <Link href="/search" style={{ 
+              color: '#9CA3AF', 
+              textDecoration: 'none',
+              transition: 'all 0.2s',
+              padding: '8px 16px',
+              borderRadius: '8px'
+            }}
+            onMouseEnter={(e) => e.target.style.color = '#F5F4F2'}
+            onMouseLeave={(e) => e.target.style.color = '#9CA3AF'}>
+              Search
+            </Link>
           </div>
         </div>
       </nav>
 
-      <div style={{ 
-        maxWidth: '1200px', 
-        margin: '0 auto', 
-        padding: '32px 24px' 
-      }}>
-        <h1 style={{ 
-          fontSize: '48px', 
-          fontWeight: 'bold', 
-          marginBottom: '16px',
-          color: '#F5F4F2'
-        }}>
-          Classical Timeline
-        </h1>
-        
-        <p style={{ 
-          fontSize: '18px', 
-          color: '#9CA3AF', 
-          marginBottom: '32px',
-          lineHeight: '1.6'
-        }}>
-          Explore the major events and developments from the Archaic period through the Byzantine Empire
-        </p>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '32px 24px' }}>
+        {/* Header */}
+        <div style={{ marginBottom: '48px', textAlign: 'center' }}>
+          <h1 style={{ 
+            fontSize: '48px', 
+            fontWeight: 'bold', 
+            marginBottom: '16px',
+            background: 'linear-gradient(135deg, #C9A227, #E8D5A3)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text'
+          }}>
+            Historical Timeline
+          </h1>
+          <p style={{ 
+            fontSize: '18px', 
+            color: '#9CA3AF', 
+            maxWidth: '600px', 
+            margin: '0 auto' 
+          }}>
+            Explore the major events that shaped Western civilization, from archaic Greece through the Byzantine Empire.
+          </p>
+        </div>
 
         {/* Category Filters */}
         <div style={{ 
-          display: 'flex', 
-          gap: '16px', 
           marginBottom: '32px',
+          display: 'flex',
+          gap: '16px',
+          justifyContent: 'center',
           flexWrap: 'wrap'
         }}>
-          {['all', 'political', 'cultural', 'intellectual', 'religious'].map((category) => (
+          {categories.map(category => (
             <button
               key={category}
-              onClick={() => setActiveCategory(category)}
+              onClick={() => setSelectedCategory(category)}
               style={{
                 padding: '12px 24px',
-                backgroundColor: activeCategory === category ? '#C9A227' : '#1E1E24',
-                color: activeCategory === category ? '#0D0D0F' : '#F5F4F2',
-                border: 'none',
                 borderRadius: '8px',
-                fontSize: '14px',
-                fontWeight: '500',
+                border: 'none',
+                backgroundColor: selectedCategory === category ? '#C9A227' : '#1E1E24',
+                color: selectedCategory === category ? '#0D0D0F' : '#F5F4F2',
                 cursor: 'pointer',
                 transition: 'all 0.2s',
+                fontSize: '14px',
+                fontWeight: '500',
                 textTransform: 'capitalize'
               }}
               onMouseEnter={(e) => {
-                if (activeCategory !== category) {
+                if (selectedCategory !== category) {
                   e.target.style.backgroundColor = '#2A2A32';
                 }
               }}
               onMouseLeave={(e) => {
-                if (activeCategory !== category) {
+                if (selectedCategory !== category) {
                   e.target.style.backgroundColor = '#1E1E24';
                 }
               }}
             >
-              {category === 'all' ? 'All Events' : category}
+              {category}
             </button>
           ))}
         </div>
 
         {/* Era Legend */}
         <div style={{ 
-          display: 'flex', 
-          gap: '24px', 
           marginBottom: '32px',
-          flexWrap: 'wrap'
+          backgroundColor: '#1E1E24',
+          padding: '24px',
+          borderRadius: '12px',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+          gap: '16px'
         }}>
+          <div style={{ gridColumn: '1 / -1', marginBottom: '8px' }}>
+            <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#F5F4F2' }}>Historical Eras</h3>
+          </div>
           {Object.entries(ERA_COLORS).map(([era, color]) => (
             <div key={era} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <div style={{ 
                 width: '16px', 
                 height: '16px', 
-                backgroundColor: color,
+                backgroundColor: color, 
                 borderRadius: '50%' 
               }} />
-              <span style={{ 
-                fontSize: '14px', 
-                color: '#9CA3AF',
-                textTransform: 'capitalize'
-              }}>
+              <span style={{ fontSize: '14px', color: '#9CA3AF', textTransform: 'capitalize' }}>
                 {era === 'lateAntique' ? 'Late Antique' : era}
               </span>
             </div>
@@ -366,409 +348,260 @@ export default function Timeline() {
 
         {/* Timeline Container */}
         <div style={{ 
-          backgroundColor: '#1E1E24', 
-          borderRadius: '16px', 
+          backgroundColor: '#1E1E24',
+          borderRadius: '12px',
           padding: '32px',
           marginBottom: '32px'
         }}>
-          {/* Scroll Navigation */}
-          <div style={{ 
-            display: 'flex', 
-            gap: '16px', 
-            marginBottom: '24px',
-            alignItems: 'center'
-          }}>
-            <span style={{ color: '#9CA3AF', fontSize: '14px' }}>Navigate:</span>
-            <div style={{ 
-              display: 'flex', 
-              gap: '8px',
-              flexWrap: 'wrap'
-            }}>
-              {sortedEvents.slice(0, 5).map((event, index) => (
-                <button
-                  key={event.year}
-                  onClick={() => scrollToEvent(index)}
-                  style={{
-                    padding: '6px 12px',
-                    backgroundColor: '#141419',
-                    color: '#9CA3AF',
-                    border: 'none',
-                    borderRadius: '6px',
-                    fontSize: '12px',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.target.style.backgroundColor = '#C9A227';
-                    e.target.style.color = '#0D0D0F';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.target.style.backgroundColor = '#141419';
-                    e.target.style.color = '#9CA3AF';
-                  }}
-                >
-                  {formatYear(event.year)}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Timeline SVG */}
           <div 
             ref={timelineRef}
-            onScroll={handleScroll}
             style={{ 
-              overflowX: 'auto', 
+              position: 'relative',
+              height: '400px',
+              overflowX: 'auto',
               overflowY: 'hidden',
-              paddingBottom: '16px'
+              scrollBehavior: 'smooth'
             }}
           >
-            <svg 
-              width="2400" 
-              height="400" 
-              style={{ minWidth: '2400px' }}
-            >
-              {/* Timeline line */}
-              <line 
-                x1="120" 
-                y1="200" 
-                x2="2280" 
-                y2="200" 
-                stroke="#6B7280" 
-                strokeWidth="2"
-              />
-              
-              {/* Era backgrounds */}
-              {Object.entries(ERA_COLORS).map(([era, color]) => {
-                const eraEvents = sortedEvents.filter(e => e.era === era);
-                if (eraEvents.length === 0) return null;
-                
-                const minEraYear = Math.min(...eraEvents.map(e => e.year));
-                const maxEraYear = Math.max(...eraEvents.map(e => e.year));
-                const startPos = getEventPosition(minEraYear);
-                const endPos = getEventPosition(maxEraYear);
-                
-                return (
-                  <rect
-                    key={era}
-                    x={startPos * 24}
-                    y="190"
-                    width={(endPos - startPos) * 24}
-                    height="20"
-                    fill={color}
-                    fillOpacity="0.2"
-                    rx="4"
-                  />
-                );
-              })}
-
-              {/* Event markers */}
-              {sortedEvents.map((event, index) => {
-                const x = getEventPosition(event.year) * 24;
-                const isEven = index % 2 === 0;
-                const y = isEven ? 140 : 240;
-                const markerY = 200;
-                
-                return (
-                  <g key={event.year}>
-                    {/* Connection line */}
-                    <line
-                      x1={x}
-                      y1={markerY}
-                      x2={x}
-                      y2={isEven ? y + 60 : y - 20}
-                      stroke="#6B7280"
-                      strokeWidth="1"
-                      strokeDasharray="2,2"
-                    />
-                    
-                    {/* Event marker */}
-                    <circle
-                      cx={x}
-                      cy={markerY}
-                      r="8"
-                      fill={ERA_COLORS[event.era]}
-                      stroke="#0D0D0F"
-                      strokeWidth="2"
-                      style={{
-                        cursor: 'pointer',
-                        transition: 'all 0.2s'
-                      }}
-                      onClick={() => setExpandedEvent(expandedEvent === event.year ? null : event.year)}
-                    />
-                    
-                    {/* Event card */}
-                    <g
-                      style={{ cursor: 'pointer' }}
-                      onClick={() => setExpandedEvent(expandedEvent === event.year ? null : event.year)}
-                    >
-                      <rect
-                        x={x - 80}
-                        y={y}
-                        width="160"
-                        height="60"
-                        fill="#141419"
-                        rx="8"
-                        stroke={expandedEvent === event.year ? '#C9A227' : 'transparent'}
-                        strokeWidth="2"
-                      />
-                      
-                      <text
-                        x={x}
-                        y={y + 20}
-                        textAnchor="middle"
-                        fill="#F5F4F2"
-                        fontSize="12"
-                        fontWeight="bold"
-                      >
-                        {formatYear(event.year)}
-                      </text>
-                      
-                      <text
-                        x={x}
-                        y={y + 36}
-                        textAnchor="middle"
-                        fill="#9CA3AF"
-                        fontSize="10"
-                      >
-                        {event.name.length > 18 ? event.name.substring(0, 18) + '...' : event.name}
-                      </text>
-                      
-                      <circle
-                        cx={x + 65}
-                        cy={y + 15}
-                        r="6"
-                        fill={CATEGORY_COLORS[event.category]}
-                      />
-                    </g>
-                  </g>
-                );
-              })}
-            </svg>
-          </div>
-
-          {/* Scroll indicator */}
-          <div style={{ 
-            height: '4px', 
-            backgroundColor: '#141419', 
-            borderRadius: '2px',
-            position: 'relative',
-            marginTop: '16px'
-          }}>
+            {/* Timeline Line */}
             <div style={{
-              height: '4px',
-              backgroundColor: '#C9A227',
-              borderRadius: '2px',
-              width: '20%',
-              transform: `translateX(${scrollPosition * 400}%)`
+              position: 'absolute',
+              top: '200px',
+              left: '0',
+              right: '0',
+              height: '2px',
+              backgroundColor: '#6B7280',
+              width: `${Math.max(1200, filteredEvents.length * 150)}px`
             }} />
+
+            {/* Era Backgrounds */}
+            {Object.entries(ERA_COLORS).map(([era, color]) => {
+              const eraEvents = filteredEvents.filter(e => e.era === era);
+              if (eraEvents.length === 0) return null;
+              
+              const minEraYear = Math.min(...eraEvents.map(e => e.year));
+              const maxEraYear = Math.max(...eraEvents.map(e => e.year));
+              const startPos = ((minEraYear - minYear) / yearRange) * Math.max(1200, filteredEvents.length * 150);
+              const width = ((maxEraYear - minEraYear) / yearRange) * Math.max(1200, filteredEvents.length * 150);
+              
+              return (
+                <div
+                  key={era}
+                  style={{
+                    position: 'absolute',
+                    top: '150px',
+                    left: `${startPos}px`,
+                    width: `${Math.max(width, 100)}px`,
+                    height: '100px',
+                    backgroundColor: `${color}10`,
+                    borderRadius: '8px',
+                    border: `1px solid ${color}30`
+                  }}
+                />
+              );
+            })}
+
+            {/* Event Markers */}
+            {filteredEvents.map((event, index) => {
+              const position = ((event.year - minYear) / yearRange) * Math.max(1200, filteredEvents.length * 150);
+              const isExpanded = expandedEvent === index;
+              const isHovered = hoveredEvent === index;
+              
+              return (
+                <div key={index} style={{ position: 'absolute', left: `${position}px` }}>
+                  {/* Year Labels */}
+                  <div style={{
+                    position: 'absolute',
+                    top: '230px',
+                    left: '-30px',
+                    width: '60px',
+                    textAlign: 'center',
+                    fontSize: '12px',
+                    color: '#9CA3AF'
+                  }}>
+                    {event.year < 0 ? `${Math.abs(event.year)} BCE` : `${event.year} CE`}
+                  </div>
+
+                  {/* Event Marker */}
+                  <div
+                    style={{
+                      position: 'absolute',
+                      top: '190px',
+                      left: '-8px',
+                      width: '16px',
+                      height: '16px',
+                      borderRadius: '50%',
+                      backgroundColor: ERA_COLORS[event.era],
+                      border: `3px solid ${CATEGORY_COLORS[event.category]}`,
+                      cursor: 'pointer',
+                      transform: isHovered ? 'scale(1.2)' : 'scale(1)',
+                      transition: 'all 0.2s',
+                      zIndex: isExpanded ? 10 : 1
+                    }}
+                    onClick={() => setExpandedEvent(isExpanded ? null : index)}
+                    onMouseEnter={() => setHoveredEvent(index)}
+                    onMouseLeave={() => setHoveredEvent(null)}
+                  />
+
+                  {/* Event Name */}
+                  <div
+                    style={{
+                      position: 'absolute',
+                      top: isExpanded ? '50px' : '160px',
+                      left: '-60px',
+                      width: '120px',
+                      textAlign: 'center',
+                      fontSize: '12px',
+                      color: isExpanded ? '#C9A227' : '#F5F4F2',
+                      fontWeight: isExpanded ? '600' : '400',
+                      cursor: 'pointer',
+                      transition: 'all 0.2s'
+                    }}
+                    onClick={() => setExpandedEvent(isExpanded ? null : index)}
+                  >
+                    {event.name}
+                  </div>
+
+                  {/* Expanded Event Details */}
+                  {isExpanded && (
+                    <div
+                      style={{
+                        position: 'absolute',
+                        top: '70px',
+                        left: '-150px',
+                        width: '300px',
+                        backgroundColor: '#141419',
+                        border: `2px solid ${ERA_COLORS[event.era]}`,
+                        borderRadius: '12px',
+                        padding: '16px',
+                        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.5)',
+                        zIndex: 20
+                      }}
+                    >
+                      <div style={{ marginBottom: '12px' }}>
+                        <h4 style={{ 
+                          color: '#C9A227', 
+                          fontSize: '16px', 
+                          fontWeight: '600',
+                          marginBottom: '4px' 
+                        }}>
+                          {event.name}
+                        </h4>
+                        <div style={{ display: 'flex', gap: '8px', marginBottom: '8px' }}>
+                          <span style={{ 
+                            fontSize: '11px',
+                            padding: '4px 8px',
+                            backgroundColor: CATEGORY_COLORS[event.category],
+                            color: '#F5F4F2',
+                            borderRadius: '4px',
+                            textTransform: 'capitalize'
+                          }}>
+                            {event.category}
+                          </span>
+                          <span style={{ 
+                            fontSize: '11px',
+                            padding: '4px 8px',
+                            backgroundColor: ERA_COLORS[event.era],
+                            color: '#F5F4F2',
+                            borderRadius: '4px',
+                            textTransform: 'capitalize'
+                          }}>
+                            {event.era === 'lateAntique' ? 'Late Antique' : event.era}
+                          </span>
+                        </div>
+                      </div>
+                      
+                      <p style={{ 
+                        fontSize: '13px', 
+                        color: '#9CA3AF',
+                        lineHeight: '1.4',
+                        marginBottom: '12px'
+                      }}>
+                        {event.description}
+                      </p>
+                      
+                      <div>
+                        <strong style={{ fontSize: '12px', color: '#C9A227' }}>Significance:</strong>
+                        <p style={{ 
+                          fontSize: '12px', 
+                          color: '#9CA3AF',
+                          lineHeight: '1.4',
+                          marginTop: '4px'
+                        }}>
+                          {event.significance}
+                        </p>
+                      </div>
+                      
+                      <button
+                        onClick={() => setExpandedEvent(null)}
+                        style={{
+                          position: 'absolute',
+                          top: '8px',
+                          right: '8px',
+                          background: 'none',
+                          border: 'none',
+                          color: '#9CA3AF',
+                          cursor: 'pointer',
+                          fontSize: '16px',
+                          transition: 'all 0.2s'
+                        }}
+                        onMouseEnter={(e) => e.target.style.color = '#F5F4F2'}
+                        onMouseLeave={(e) => e.target.style.color = '#9CA3AF'}
+                      >
+                        ✕
+                      </button>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
 
-        {/* Event Details */}
-        {expandedEvent && (
-          <div style={{
-            backgroundColor: '#1E1E24',
-            borderRadius: '16px',
-            padding: '32px',
-            marginBottom: '32px',
-            border: '2px solid #C9A227'
-          }}>
-            {(() => {
-              const event = sortedEvents.find(e => e.year === expandedEvent);
-              return (
-                <div>
-                  <div style={{ 
-                    display: 'flex', 
-                    justifyContent: 'space-between', 
-                    alignItems: 'flex-start',
-                    marginBottom: '24px'
-                  }}>
-                    <div>
-                      <h3 style={{ 
-                        fontSize: '32px', 
-                        fontWeight: 'bold',
-                        color: '#F5F4F2',
-                        marginBottom: '8px'
-                      }}>
-                        {event.name}
-                      </h3>
-                      <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
-                        <span style={{ 
-                          fontSize: '18px', 
-                          color: '#C9A227',
-                          fontWeight: 'bold'
-                        }}>
-                          {formatYear(event.year)}
-                        </span>
-                        <span style={{
-                          padding: '4px 12px',
-                          backgroundColor: ERA_COLORS[event.era],
-                          color: '#F5F4F2',
-                          borderRadius: '6px',
-                          fontSize: '12px',
-                          textTransform: 'capitalize'
-                        }}>
-                          {event.era === 'lateAntique' ? 'Late Antique' : event.era}
-                        </span>
-                        <span style={{
-                          padding: '4px 12px',
-                          backgroundColor: CATEGORY_COLORS[event.category],
-                          color: '#F5F4F2',
-                          borderRadius: '6px',
-                          fontSize: '12px',
-                          textTransform: 'capitalize'
-                        }}>
-                          {event.category}
-                        </span>
-                      </div>
-                    </div>
-                    
-                    <button
-                      onClick={() => setExpandedEvent(null)}
-                      style={{
-                        padding: '8px',
-                        backgroundColor: 'transparent',
-                        border: 'none',
-                        color: '#9CA3AF',
-                        cursor: 'pointer',
-                        fontSize: '24px'
-                      }}
-                    >
-                      ×
-                    </button>
-                  </div>
-                  
-                  <div style={{ marginBottom: '24px' }}>
-                    <h4 style={{ 
-                      fontSize: '18px', 
-                      fontWeight: 'bold',
-                      color: '#F5F4F2',
-                      marginBottom: '12px'
-                    }}>
-                      Description
-                    </h4>
-                    <p style={{ 
-                      fontSize: '16px', 
-                      color: '#9CA3AF',
-                      lineHeight: '1.6'
-                    }}>
-                      {event.description}
-                    </p>
-                  </div>
-                  
-                  <div>
-                    <h4 style={{ 
-                      fontSize: '18px', 
-                      fontWeight: 'bold',
-                      color: '#F5F4F2',
-                      marginBottom: '12px'
-                    }}>
-                      Historical Significance
-                    </h4>
-                    <p style={{ 
-                      fontSize: '16px', 
-                      color: '#9CA3AF',
-                      lineHeight: '1.6'
-                    }}>
-                      {event.significance}
-                    </p>
-                  </div>
-                </div>
-              );
-            })()}
-          </div>
-        )}
-
-        {/* Event List */}
-        <div style={{
+        {/* Quick Navigation */}
+        <div style={{ 
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-          gap: '24px'
+          gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
+          gap: '16px'
         }}>
-          {sortedEvents.map((event) => (
-            <div
-              key={event.year}
-              style={{
-                backgroundColor: '#1E1E24',
-                padding: '24px',
-                borderRadius: '12px',
-                border: expandedEvent === event.year ? '2px solid #C9A227' : '2px solid transparent',
-                cursor: 'pointer',
-                transition: 'all 0.2s'
-              }}
-              onClick={() => setExpandedEvent(expandedEvent === event.year ? null : event.year)}
-              onMouseEnter={(e) => {
-                if (expandedEvent !== event.year) {
-                  e.currentTarget.style.backgroundColor = '#2A2A32';
-                }
-              }}
-              onMouseLeave={(e) => {
-                if (expandedEvent !== event.year) {
-                  e.currentTarget.style.backgroundColor = '#1E1E24';
-                }
-              }}
-            >
-              <div style={{ 
-                display: 'flex', 
-                justifyContent: 'space-between', 
-                alignItems: 'flex-start',
-                marginBottom: '16px'
-              }}>
-                <h3 style={{ 
-                  fontSize: '20px', 
-                  fontWeight: 'bold',
+          {Object.entries(ERA_COLORS).map(([era, color]) => {
+            const eraEvents = filteredEvents.filter(e => e.era === era);
+            if (eraEvents.length === 0) return null;
+            
+            const midYear = eraEvents.reduce((sum, e) => sum + e.year, 0) / eraEvents.length;
+            
+            return (
+              <button
+                key={era}
+                onClick={() => scrollToYear(midYear)}
+                style={{
+                  padding: '16px',
+                  backgroundColor: '#1E1E24',
+                  border: `2px solid ${color}`,
+                  borderRadius: '8px',
                   color: '#F5F4F2',
-                  marginBottom: '8px'
-                }}>
-                  {event.name}
-                </h3>
-                <span style={{ 
-                  fontSize: '16px', 
-                  color: '#C9A227',
-                  fontWeight: 'bold',
-                  minWidth: 'fit-content',
-                  marginLeft: '16px'
-                }}>
-                  {formatYear(event.year)}
-                </span>
-              </div>
-              
-              <div style={{ display: 'flex', gap: '8px', marginBottom: '16px' }}>
-                <span style={{
-                  padding: '4px 8px',
-                  backgroundColor: ERA_COLORS[event.era],
-                  color: '#F5F4F2',
-                  borderRadius: '6px',
-                  fontSize: '12px',
-                  textTransform: 'capitalize'
-                }}>
-                  {event.era === 'lateAntique' ? 'Late Antique' : event.era}
-                </span>
-                <span style={{
-                  padding: '4px 8px',
-                  backgroundColor: CATEGORY_COLORS[event.category],
-                  color: '#F5F4F2',
-                  borderRadius: '6px',
-                  fontSize: '12px',
-                  textTransform: 'capitalize'
-                }}>
-                  {event.category}
-                </span>
-              </div>
-              
-              <p style={{ 
-                fontSize: '14px', 
-                color: '#9CA3AF',
-                lineHeight: '1.5'
-              }}>
-                {event.description.length > 120 
-                  ? event.description.substring(0, 120) + '...'
-                  : event.description
-                }
-              </p>
-            </div>
-          ))}
+                  cursor: 'pointer',
+                  transition: 'all 0.2s',
+                  textAlign: 'center'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = `${color}20`;
+                  e.target.style.transform = 'translateY(-2px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = '#1E1E24';
+                  e.target.style.transform = 'translateY(0)';
+                }}
+              >
+                <div style={{ fontSize: '14px', fontWeight: '600', marginBottom: '4px', textTransform: 'capitalize' }}>
+                  {era === 'lateAntique' ? 'Late Antique' : era}
+                </div>
+                <div style={{ fontSize: '12px', color: '#9CA3AF' }}>
+                  {eraEvents.length} events
+                </div>
+              </button>
+            );
+          })}
         </div>
       </div>
     </div>

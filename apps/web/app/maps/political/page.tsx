@@ -8,6 +8,7 @@ export default function PoliticalMap() {
   const [selectedEmpire, setSelectedEmpire] = useState<string | null>(null);
   const [hoveredTerritory, setHoveredTerritory] = useState<string | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
 
   const empires = {
     'Roman Empire': {
@@ -99,30 +100,42 @@ export default function PoliticalMap() {
     return empire.periods[closestYear];
   };
 
-  const getTerritoryOwner = (territory: string) => {
-    for (const [empireName, empireData] of Object.entries(empires)) {
+  const getTerritoryOwner = (territoryId: string) => {
+    for (const [empireName, empire] of Object.entries(empires)) {
       const data = getEmpireData(empireName);
-      if (data.territories.includes(territory)) {
-        return { name: empireName, color: empireData.color };
+      if (data.territories.includes(territoryId)) {
+        return { name: empireName, color: empire.color };
       }
     }
-    return { name: 'Independent', color: '#6B7280' };
+    return null;
   };
 
+  const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCurrentYear(parseInt(e.target.value));
+  };
+
+  const handleMouseDown = () => {
+    setIsDragging(true);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  // Auto-play functionality
   useEffect(() => {
-    let interval: NodeJS.Timeout;
     if (isPlaying) {
-      interval = setInterval(() => {
+      const interval = setInterval(() => {
         setCurrentYear(prev => {
           if (prev >= 500) {
             setIsPlaying(false);
             return 500;
           }
-          return prev + 10;
+          return prev + 5;
         });
       }, 300);
+      return () => clearInterval(interval);
     }
-    return () => clearInterval(interval);
   }, [isPlaying]);
 
   return (
@@ -130,141 +143,120 @@ export default function PoliticalMap() {
       {/* Navigation */}
       <nav style={{ 
         backgroundColor: '#1E1E24', 
-        padding: '16px 32px',
-        borderBottom: '1px solid #141419'
+        padding: '16px 24px', 
+        borderBottom: '1px solid #333',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center'
       }}>
-        <div style={{ 
-          display: 'flex', 
-          alignItems: 'center', 
-          justifyContent: 'space-between', 
-          maxWidth: '1200px', 
-          margin: '0 auto' 
+        <Link href="/" style={{ 
+          fontSize: '24px', 
+          fontWeight: 'bold', 
+          color: '#C9A227', 
+          textDecoration: 'none' 
         }}>
-          <Link href="/" style={{ 
-            fontSize: '24px', 
-            fontWeight: 'bold', 
-            color: '#C9A227', 
-            textDecoration: 'none',
-            transition: 'all 0.2s'
-          }}>
-            ΛΟΓΟΣ
+          LOGOS
+        </Link>
+        <div style={{ display: 'flex', gap: '24px' }}>
+          <Link href="/maps" style={{ color: '#F5F4F2', textDecoration: 'none', transition: 'color 0.2s' }}>
+            Maps
           </Link>
-          
-          <div style={{ display: 'flex', gap: '32px', alignItems: 'center' }}>
-            <Link href="/maps" style={{ 
-              color: '#F5F4F2', 
-              textDecoration: 'none',
-              transition: 'all 0.2s'
-            }}>
-              Maps
-            </Link>
-          </div>
+          <Link href="/timeline" style={{ color: '#9CA3AF', textDecoration: 'none', transition: 'color 0.2s' }}>
+            Timeline
+          </Link>
+          <Link href="/texts" style={{ color: '#9CA3AF', textDecoration: 'none', transition: 'color 0.2s' }}>
+            Texts
+          </Link>
         </div>
       </nav>
 
-      {/* Header */}
-      <div style={{ padding: '32px', borderBottom: '1px solid #1E1E24' }}>
-        <h1 style={{ 
-          fontSize: '36px', 
-          fontWeight: 'bold', 
-          margin: '0 0 16px 0',
-          background: 'linear-gradient(135deg, #C9A227, #E8D5A3)',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent'
-        }}>
-          Political Map
-        </h1>
-        <p style={{ 
-          fontSize: '18px', 
-          color: '#9CA3AF', 
-          margin: 0,
-          maxWidth: '800px'
-        }}>
-          Explore the rise and fall of ancient empires through interactive territorial control visualization
-        </p>
-      </div>
-
-      <div style={{ padding: '32px', display: 'flex', gap: '32px' }}>
-        {/* Map Container */}
-        <div style={{ flex: '1', minWidth: '800px' }}>
-          {/* Time Controls */}
-          <div style={{ 
-            backgroundColor: '#1E1E24', 
-            padding: '24px', 
-            borderRadius: '12px',
-            marginBottom: '24px'
+      <div style={{ padding: '32px' }}>
+        {/* Header */}
+        <div style={{ marginBottom: '32px' }}>
+          <h1 style={{ 
+            fontSize: '48px', 
+            fontWeight: 'bold', 
+            color: '#C9A227', 
+            marginBottom: '16px' 
           }}>
-            <div style={{ 
-              display: 'flex', 
-              alignItems: 'center', 
-              justifyContent: 'space-between',
-              marginBottom: '16px'
+            Political Map
+          </h1>
+          <p style={{ 
+            fontSize: '18px', 
+            color: '#9CA3AF', 
+            maxWidth: '800px' 
+          }}>
+            Explore the changing political landscape of the ancient world. Watch empires rise and fall through time.
+          </p>
+        </div>
+
+        {/* Time Controls */}
+        <div style={{ 
+          backgroundColor: '#1E1E24',
+          padding: '24px',
+          borderRadius: '12px',
+          marginBottom: '32px',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '24px'
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+            <button
+              onClick={() => setIsPlaying(!isPlaying)}
+              style={{
+                backgroundColor: isPlaying ? '#DC2626' : '#C9A227',
+                color: '#0D0D0F',
+                border: 'none',
+                padding: '12px 24px',
+                borderRadius: '8px',
+                fontWeight: 'bold',
+                cursor: 'pointer',
+                transition: 'all 0.2s',
+                fontSize: '16px'
+              }}
+            >
+              {isPlaying ? 'Pause' : 'Play'}
+            </button>
+            <span style={{ 
+              fontSize: '24px', 
+              fontWeight: 'bold', 
+              color: '#C9A227',
+              minWidth: '100px'
             }}>
-              <h3 style={{ 
-                fontSize: '18px', 
-                fontWeight: 'bold', 
-                margin: 0,
-                color: '#F5F4F2'
-              }}>
-                Year: {currentYear} CE
-              </h3>
-              
-              <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
-                <button
-                  onClick={() => setIsPlaying(!isPlaying)}
-                  style={{
-                    backgroundColor: isPlaying ? '#DC2626' : '#C9A227',
-                    color: '#F5F4F2',
-                    border: 'none',
-                    padding: '8px 16px',
-                    borderRadius: '8px',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s'
-                  }}
-                >
-                  {isPlaying ? 'Pause' : 'Play'}
-                </button>
-                
-                <button
-                  onClick={() => { setCurrentYear(100); setIsPlaying(false); }}
-                  style={{
-                    backgroundColor: '#6B7280',
-                    color: '#F5F4F2',
-                    border: 'none',
-                    padding: '8px 16px',
-                    borderRadius: '8px',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s'
-                  }}
-                >
-                  Reset
-                </button>
-              </div>
-            </div>
-            
+              {currentYear} CE
+            </span>
+          </div>
+          
+          <div style={{ flex: 1, position: 'relative' }}>
             <input
               type="range"
               min="100"
               max="500"
-              step="50"
+              step="5"
               value={currentYear}
-              onChange={(e) => setCurrentYear(Number(e.target.value))}
+              onChange={handleSliderChange}
+              onMouseDown={handleMouseDown}
+              onMouseUp={handleMouseUp}
               style={{
                 width: '100%',
                 height: '8px',
-                backgroundColor: '#141419',
+                backgroundColor: '#333',
                 borderRadius: '4px',
                 outline: 'none',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                appearance: 'none',
+                WebkitAppearance: 'none'
               }}
             />
-            
-            <div style={{ 
-              display: 'flex', 
-              justifyContent: 'space-between', 
-              marginTop: '8px',
-              fontSize: '14px',
-              color: '#9CA3AF'
+            <div style={{
+              position: 'absolute',
+              top: '16px',
+              left: '0',
+              right: '0',
+              display: 'flex',
+              justifyContent: 'space-between',
+              fontSize: '12px',
+              color: '#6B7280'
             }}>
               <span>100 CE</span>
               <span>200 CE</span>
@@ -273,237 +265,283 @@ export default function PoliticalMap() {
               <span>500 CE</span>
             </div>
           </div>
-
-          {/* Map Visualization */}
-          <div style={{ 
-            backgroundColor: '#1E1E24', 
-            borderRadius: '12px', 
-            padding: '24px',
-            position: 'relative',
-            overflow: 'auto'
-          }}>
-            <svg 
-              width="1100" 
-              height="500" 
-              style={{ 
-                backgroundColor: '#141419',
-                borderRadius: '8px'
-              }}
-            >
-              {/* Background territories */}
-              {Object.entries(territoryPositions).map(([territoryId, territory]) => {
-                const owner = getTerritoryOwner(territoryId);
-                const isHovered = hoveredTerritory === territoryId;
-                const isSelected = selectedEmpire && selectedEmpire === owner.name;
-                
-                return (
-                  <rect
-                    key={territoryId}
-                    x={territory.x}
-                    y={territory.y}
-                    width={territory.width}
-                    height={territory.height}
-                    fill={owner.color}
-                    fillOpacity={isSelected ? 1 : (selectedEmpire ? 0.3 : 0.8)}
-                    stroke={isHovered ? '#C9A227' : owner.color}
-                    strokeWidth={isHovered ? 3 : 1}
-                    style={{
-                      cursor: 'pointer',
-                      transition: 'all 0.2s'
-                    }}
-                    onMouseEnter={() => setHoveredTerritory(territoryId)}
-                    onMouseLeave={() => setHoveredTerritory(null)}
-                    onClick={() => setSelectedEmpire(selectedEmpire === owner.name ? null : owner.name)}
-                  />
-                );
-              })}
-              
-              {/* Territory labels */}
-              {Object.entries(territoryPositions).map(([territoryId, territory]) => (
-                <text
-                  key={`label-${territoryId}`}
-                  x={territory.x + territory.width / 2}
-                  y={territory.y + territory.height / 2}
-                  fill="#F5F4F2"
-                  fontSize="10"
-                  textAnchor="middle"
-                  dominantBaseline="middle"
-                  style={{
-                    pointerEvents: 'none',
-                    fontWeight: 'bold',
-                    textShadow: '1px 1px 2px rgba(0,0,0,0.8)'
-                  }}
-                >
-                  {territory.name.split(' ')[0]}
-                </text>
-              ))}
-            </svg>
-          </div>
         </div>
 
-        {/* Empire Controls & Info */}
-        <div style={{ width: '300px' }}>
-          {/* Empire Selection */}
+        <div style={{ display: 'flex', gap: '32px' }}>
+          {/* Main Map */}
           <div style={{ 
-            backgroundColor: '#1E1E24', 
-            padding: '24px', 
-            borderRadius: '12px',
-            marginBottom: '24px'
+            backgroundColor: '#1E1E24',
+            borderRadius: '16px',
+            padding: '24px',
+            flex: 1
           }}>
-            <h3 style={{ 
-              fontSize: '18px', 
+            <h2 style={{ 
+              fontSize: '24px', 
               fontWeight: 'bold', 
-              margin: '0 0 16px 0',
+              marginBottom: '24px',
               color: '#F5F4F2'
             }}>
-              Empires
-            </h3>
+              Political Map - {currentYear} CE
+            </h2>
             
-            {Object.entries(empires).map(([empireName, empireData]) => {
-              const data = getEmpireData(empireName);
-              const isSelected = selectedEmpire === empireName;
-              
-              return (
-                <button
-                  key={empireName}
-                  onClick={() => setSelectedEmpire(isSelected ? null : empireName)}
-                  style={{
-                    width: '100%',
-                    backgroundColor: isSelected ? empireData.color : '#141419',
-                    color: '#F5F4F2',
-                    border: `2px solid ${empireData.color}`,
-                    padding: '12px',
-                    borderRadius: '8px',
-                    marginBottom: '8px',
-                    cursor: 'pointer',
-                    textAlign: 'left',
-                    transition: 'all 0.2s'
-                  }}
-                >
-                  <div style={{ 
-                    display: 'flex', 
-                    alignItems: 'center', 
-                    justifyContent: 'space-between' 
-                  }}>
-                    <span style={{ fontWeight: 'bold' }}>{empireName}</span>
-                    <div style={{ 
-                      width: '12px', 
-                      height: '12px', 
-                      backgroundColor: empireData.color,
-                      borderRadius: '50%'
-                    }} />
-                  </div>
-                  
-                  <div style={{ 
-                    fontSize: '12px', 
-                    color: '#9CA3AF',
-                    marginTop: '4px'
-                  }}>
-                    Territories: {data.territories.length}
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Power Indicators */}
-          <div style={{ 
-            backgroundColor: '#1E1E24', 
-            padding: '24px', 
-            borderRadius: '12px'
-          }}>
-            <h3 style={{ 
-              fontSize: '18px', 
-              fontWeight: 'bold', 
-              margin: '0 0 16px 0',
-              color: '#F5F4F2'
+            <div style={{ 
+              position: 'relative',
+              width: '100%',
+              height: '600px',
+              backgroundColor: '#141419',
+              borderRadius: '12px',
+              overflow: 'hidden'
             }}>
-              Power Index ({currentYear} CE)
-            </h3>
-            
-            {Object.entries(empires).map(([empireName, empireData]) => {
-              const data = getEmpireData(empireName);
-              
-              return (
-                <div 
-                  key={empireName}
-                  style={{ marginBottom: '16px' }}
-                >
-                  <div style={{ 
-                    display: 'flex', 
-                    justifyContent: 'space-between',
-                    marginBottom: '4px'
-                  }}>
-                    <span style={{ 
-                      fontSize: '14px',
-                      color: selectedEmpire === empireName ? empireData.color : '#F5F4F2'
-                    }}>
-                      {empireName}
-                    </span>
-                    <span style={{ 
-                      fontSize: '14px', 
-                      color: '#C9A227',
-                      fontWeight: 'bold'
-                    }}>
-                      {data.power}
-                    </span>
-                  </div>
+              <svg 
+                width="100%" 
+                height="100%" 
+                viewBox="0 0 1200 600"
+                style={{ display: 'block' }}
+              >
+                {/* Base map outline */}
+                <rect 
+                  width="1200" 
+                  height="600" 
+                  fill="#0D0D0F"
+                  stroke="#333"
+                  strokeWidth="2"
+                />
+                
+                {/* Mediterranean Sea */}
+                <ellipse
+                  cx="450"
+                  cy="350"
+                  rx="200"
+                  ry="80"
+                  fill="#1E3A8A"
+                  opacity="0.3"
+                />
+                
+                {/* Territories */}
+                {Object.entries(territoryPositions).map(([territoryId, pos]) => {
+                  const owner = getTerritoryOwner(territoryId);
+                  const isHovered = hoveredTerritory === territoryId;
+                  const isSelected = selectedEmpire === owner?.name;
                   
-                  <div style={{
-                    width: '100%',
-                    height: '8px',
-                    backgroundColor: '#141419',
-                    borderRadius: '4px',
-                    overflow: 'hidden'
-                  }}>
-                    <div
+                  return (
+                    <rect
+                      key={territoryId}
+                      x={pos.x}
+                      y={pos.y}
+                      width={pos.width}
+                      height={pos.height}
+                      fill={owner ? owner.color : '#333333'}
+                      opacity={isSelected || !selectedEmpire ? (isHovered ? 0.9 : 0.7) : 0.3}
+                      stroke={isHovered ? '#C9A227' : (owner ? owner.color : '#555')}
+                      strokeWidth={isHovered ? 3 : 1}
+                      rx="4"
                       style={{
-                        width: `${data.power}%`,
-                        height: '100%',
-                        backgroundColor: empireData.color,
-                        borderRadius: '4px',
-                        transition: 'all 0.3s ease'
+                        cursor: 'pointer',
+                        transition: 'all 0.2s ease'
+                      }}
+                      onMouseEnter={() => setHoveredTerritory(territoryId)}
+                      onMouseLeave={() => setHoveredTerritory(null)}
+                    />
+                  );
+                })}
+                
+                {/* Territory Labels */}
+                {Object.entries(territoryPositions).map(([territoryId, pos]) => {
+                  const owner = getTerritoryOwner(territoryId);
+                  const isHovered = hoveredTerritory === territoryId;
+                  
+                  if (!isHovered && !selectedEmpire) return null;
+                  if (selectedEmpire && owner?.name !== selectedEmpire) return null;
+                  
+                  return (
+                    <text
+                      key={`label-${territoryId}`}
+                      x={pos.x + pos.width / 2}
+                      y={pos.y + pos.height / 2}
+                      textAnchor="middle"
+                      dominantBaseline="middle"
+                      fill="#F5F4F2"
+                      fontSize="12"
+                      fontWeight="bold"
+                      style={{ pointerEvents: 'none' }}
+                    >
+                      {pos.name}
+                    </text>
+                  );
+                })}
+                
+                {/* Power indicators for capitals */}
+                {Object.entries(empires).map(([empireName, empire]) => {
+                  const data = getEmpireData(empireName);
+                  if (data.territories.length === 0) return null;
+                  
+                  // Find the "capital" territory (first in the list)
+                  const capitalId = data.territories[0];
+                  const capital = territoryPositions[capitalId];
+                  if (!capital) return null;
+                  
+                  const isSelected = selectedEmpire === empireName;
+                  
+                  return (
+                    <circle
+                      key={`capital-${empireName}`}
+                      cx={capital.x + capital.width / 2}
+                      cy={capital.y + capital.height / 2}
+                      r={Math.max(4, data.power / 10)}
+                      fill={empire.color}
+                      stroke="#C9A227"
+                      strokeWidth={isSelected ? 3 : 1}
+                      opacity={isSelected || !selectedEmpire ? 1 : 0.5}
+                      style={{
+                        transition: 'all 0.2s ease'
                       }}
                     />
+                  );
+                })}
+              </svg>
+              
+              {/* Tooltip */}
+              {hoveredTerritory && (
+                <div style={{
+                  position: 'absolute',
+                  top: '16px',
+                  right: '16px',
+                  backgroundColor: '#0D0D0F',
+                  border: '1px solid #C9A227',
+                  borderRadius: '8px',
+                  padding: '12px',
+                  fontSize: '14px',
+                  zIndex: 10
+                }}>
+                  <div style={{ fontWeight: 'bold', color: '#C9A227', marginBottom: '4px' }}>
+                    {territoryPositions[hoveredTerritory]?.name}
+                  </div>
+                  <div style={{ color: '#9CA3AF' }}>
+                    {getTerritoryOwner(hoveredTerritory)?.name || 'Independent'}
                   </div>
                 </div>
-              );
-            })}
+              )}
+            </div>
+          </div>
+
+          {/* Empire Panel */}
+          <div style={{ width: '300px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            {/* Empire List */}
+            <div style={{
+              backgroundColor: '#1E1E24',
+              borderRadius: '12px',
+              padding: '24px'
+            }}>
+              <h3 style={{ 
+                fontSize: '18px', 
+                fontWeight: 'bold', 
+                marginBottom: '16px',
+                color: '#F5F4F2'
+              }}>
+                Empires
+              </h3>
+              
+              {Object.entries(empires).map(([empireName, empire]) => {
+                const data = getEmpireData(empireName);
+                const isSelected = selectedEmpire === empireName;
+                
+                return (
+                  <div
+                    key={empireName}
+                    onClick={() => setSelectedEmpire(isSelected ? null : empireName)}
+                    style={{
+                      padding: '12px',
+                      marginBottom: '8px',
+                      backgroundColor: isSelected ? '#141419' : 'transparent',
+                      border: `2px solid ${isSelected ? empire.color : 'transparent'}`,
+                      borderRadius: '8px',
+                      cursor: 'pointer',
+                      transition: 'all 0.2s',
+                      transform: isSelected ? 'scale(1.02)' : 'scale(1)'
+                    }}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                      <div style={{
+                        width: '16px',
+                        height: '16px',
+                        backgroundColor: empire.color,
+                        borderRadius: '50%'
+                      }} />
+                      <span style={{ fontWeight: 'bold', color: '#F5F4F2', fontSize: '14px' }}>
+                        {empireName}
+                      </span>
+                    </div>
+                    
+                    <div style={{ fontSize: '12px', color: '#9CA3AF' }}>
+                      <div style={{ marginBottom: '4px' }}>
+                        Territories: {data.territories.length}
+                      </div>
+                      <div style={{ marginBottom: '4px' }}>
+                        Size: {data.size}%
+                      </div>
+                      <div>
+                        Power: {data.power}%
+                      </div>
+                    </div>
+                    
+                    {/* Power bar */}
+                    <div style={{
+                      width: '100%',
+                      height: '4px',
+                      backgroundColor: '#333',
+                      borderRadius: '2px',
+                      marginTop: '8px',
+                      overflow: 'hidden'
+                    }}>
+                      <div style={{
+                        width: `${data.power}%`,
+                        height: '100%',
+                        backgroundColor: empire.color,
+                        borderRadius: '2px',
+                        transition: 'width 0.5s ease'
+                      }} />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Legend */}
+            <div style={{
+              backgroundColor: '#1E1E24',
+              borderRadius: '12px',
+              padding: '24px'
+            }}>
+              <h3 style={{ 
+                fontSize: '18px', 
+                fontWeight: 'bold', 
+                marginBottom: '16px',
+                color: '#F5F4F2'
+              }}>
+                Legend
+              </h3>
+              
+              <div style={{ fontSize: '12px', color: '#9CA3AF', lineHeight: '1.5' }}>
+                <div style={{ marginBottom: '8px' }}>
+                  <span style={{ color: '#C9A227' }}>● </span>
+                  Capital Cities
+                </div>
+                <div style={{ marginBottom: '8px' }}>
+                  <span style={{ color: '#1E3A8A' }}>～ </span>
+                  Mediterranean Sea
+                </div>
+                <div style={{ marginBottom: '8px' }}>
+                  <span style={{ color: '#6B7280' }}>▢ </span>
+                  Independent Territories
+                </div>
+                <div>
+                  Click empires to highlight their territories
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-      {/* Territory Info Tooltip */}
-      {hoveredTerritory && (
-        <div style={{
-          position: 'fixed',
-          bottom: '32px',
-          left: '32px',
-          backgroundColor: '#1E1E24',
-          border: '2px solid #C9A227',
-          borderRadius: '8px',
-          padding: '16px',
-          maxWidth: '300px',
-          zIndex: 1000
-        }}>
-          <h4 style={{ 
-            margin: '0 0 8px 0', 
-            color: '#F5F4F2',
-            fontSize: '16px'
-          }}>
-            {territoryPositions[hoveredTerritory].name}
-          </h4>
-          
-          <div style={{ fontSize: '14px', color: '#9CA3AF' }}>
-            <div style={{ marginBottom: '4px' }}>
-              <strong>Controlled by:</strong> {getTerritoryOwner(hoveredTerritory).name}
-            </div>
-            <div>
-              <strong>Year:</strong> {currentYear} CE
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
