@@ -1,0 +1,2678 @@
+﻿The Project Gutenberg eBook of Das lebende Lichtbild: Entwicklung, Wesen und Bedeutung des Kinematographen
+    
+This ebook is for the use of anyone anywhere in the United States and
+most other parts of the world at no cost and with almost no restrictions
+whatsoever. You may copy it, give it away or re-use it under the terms
+of the Project Gutenberg License included with this ebook or online
+at www.gutenberg.org. If you are not located in the United States,
+you will have to check the laws of the country where you are located
+before using this eBook.
+
+Title: Das lebende Lichtbild: Entwicklung, Wesen und Bedeutung des Kinematographen
+
+Author: Franz Paul Liesegang
+
+Release date: December 11, 2017 [eBook #56164]
+                Most recently updated: October 23, 2024
+
+Language: German
+
+Credits: Produced by Jana Srna, Matthias Grammel, Norbert H. Langkau
+        and the Online Distributed Proofreading Team at
+        http://www.pgdp.net
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK DAS LEBENDE LICHTBILD: ENTWICKLUNG, WESEN UND BEDEUTUNG DES KINEMATOGRAPHEN ***
+
+                           _Das
+                     lebende Lichtbild_
+
+
+                        _Entwicklung
+                    Wesen und Bedeutung
+                            des
+                      Kinematographen_
+
+
+                  _Von F. Paul Liesegang_
+
+
+      _Mit 53 Abbildungen, Modellen für Wunderscheibe,
+             Lebensrad und Malteserkreuz sowie
+                 mit Taschen-Kinematograph_
+
+
+                _Ed. Liesegang, Düsseldorf_
+                           _1910_
+
+
+
+
+Dieses Heft stellt mit den Figuren oben rechts einen
+Taschenkinematograph dar.
+
+Um ihn in Betrieb zu setzen, biege man die Blätter mit dem Daumen der
+rechten Hand zurück und lasse sie durchgleiten, sodaß sie rasch
+nacheinander umschlagen. Das Abblättern geht besser vonstatten, wenn man
+die Seiten (ohne Umschlag) mit der linken Hand oben, kurz hinter den
+Bildern, zusammenkneift.
+
+
+
+
+  [Illustration: Fig. 30. Fig. 31.
+
+                 Fig. 32. Fig. 33.
+
+      Malteserkreuz-Modell zum Ausschneiden. Anweisung Seite 28.]
+
+  [Illustration: Fig. 2. Wunderscheibe zum Ausschneiden. Anweisung
+                 Seite 6.]
+
+  [Illustration: Fig. 5. Lebensrad zum Ausschneiden. Anweisung Seite 8.]
+
+
+
+
+  [Illustration: Rückseite Fig. 2.]
+
+
+
+
+                    Das lebende Lichtbild
+
+
+              Entwicklung, Wesen und Bedeutung
+                     des Kinematographen
+
+
+                  =Von =F. Paul Liesegang=
+
+
+  [Illustration: Dekoration]
+
+
+         ED. LIESEGANG'S VERLAG M. EGER, LEIPZIG
+
+                           1910
+
+
+
+
+Inhaltsübersicht.
+
+(Die beigefügten Zahlen bezeichnen die Seiten.)
+
+
+  =Vorwort=                                                             3
+
+  =Die Entwicklung des Kinematographen=                                 5
+
+    Einleitung (5). -- Die Wunderscheibe und die Geschichte
+    ihrer Erfindung (6). -- Das Lebensrad (Stroboskop, Phenakistiskop)
+    (7). -- Die Wundertrommel (9). -- Taschenkinematograph und
+    Mutoskop (9). -- Verbindung von Lebensrad und Lichtbilderapparat
+    (10). -- Die Anfänge der Bewegungsphotographie (11). --
+    Herstellung der ersten Reihenaufnahmen durch Muybridge (12). --
+    Förderung der Reihenphotographie durch Anschütz (13). -- Marey,
+    der Begründer der modernen Kinematographie (14). -- Ausbau
+    der modernen Kinematographie (16). --
+
+  =Wesen und Wirkungsweise des Kinematographen=                        17
+
+    Wirkungsweise des Aufnahme-Apparates (17). -- Das Filmband
+    und seine Fertigstellung (18). -- Wirkungsweise des
+    kinematographischen Wiedergabe-Apparates (19). -- Das Flimmern
+    und die Mittel zur Behebung (23). -- Konstruktion des
+    Transport-Mechanismus (26). -- Die Malteserkreuz-Einrichtung
+    (27). -- Andere Bewegungsmechanismen (29). -- Kinematographen
+    mit gleichmäßig laufendem Filmband (30). -- Ausstattung des
+    Kinematograph-Mechanismus (31). -- Der Aufnahme-Apparat (32). --
+
+  =Das kinematographische Aufnahme-Verfahren=                          33
+
+    Wie man mit der Aufnahme-Kamera arbeitet (33). --
+    Aufnahme-Ateliers (34). -- Lebensgeschichte des
+    Kinematographenfilm (34). -- Wie die Trickfilms hergestellt
+    werden (39). --
+
+  =Die Bedeutung des Kinematographen=                                  43
+
+    Der Kinematograph als Forscher und Lehrer (43). -- Macht
+    der kinematographischen Darstellung (43). -- Das
+    Kinematographen-Theater (44). -- Das Tonbild (44). --
+    Fehlerhafte Erscheinungen (46). -- Das lebende Lichtbild
+    in Schule und Vortragssaal (47). -- Was es an lehrhaften
+    Films gibt (48). -- Kinematographische Aufnahmen für
+    Kunstschulen (49). -- Der Kinematographenfilm als
+    geschichtliche Urkunde (49). -- Das lebende Lichtbild
+    im Dienste der Reklame (50). -- Der Kinematograph in der
+    Wissenschaft (50). -- Wirtschaftliche Bedeutung des
+    Kinematographen (54). --
+
+
+
+
+Vorwort.
+
+
+Gelegentlich verschiedener kleinerer und größerer Vorträge, die ich über
+die Kinematographie hielt -- auf der 80. Naturforscher-Versammlung in
+Cöln, in den Naturwissenschaftlichen Vereinen zu Düsseldorf und Krefeld,
+im Gewerbe-Verein zu Essen, auf dem 41. Verbandstag der
+Rheinisch-Westfälischen Bildungsvereine zu Wesel, im Künstlerverein
+Malkasten und in der Aula der Luisenschule zu Düsseldorf -- machte ich
+die Beobachtung, daß in weiten Kreisen ein reges Interesse für dieses
+Gebiet herrscht. Und wer auch nur einmal die lebenden Lichtbilder
+gesehen hat und etwas Sinn für die »Natur der Dinge« besitzt, wird
+fragen: wie kommt die wunderbare Wirkung zustande, wer ist der Erfinder?
+
+Der Gedanke, es möchten ihrer viele sein, die eine kurze Beantwortung
+dieser Frage wünschen, veranlaßte mich, den Inhalt meiner Vorträge,
+teilweise ergänzt, in vorliegender Schrift niederzulegen. Ich war mir
+dabei bewußt, daß hier die Aufgabe, den Gegenstand verständlich zu
+machen, ungleich schwieriger war: beim Vortrage konnte ich alles
+demonstrieren -- ich konnte Wunderscheibe, Lebensrad, Projektionsmodell
+des Malteserkreuzes und Kinematograph selbst vorführen, während ich hier
+auf den toten Buchstaben und die flache Buchillustration angewiesen bin.
+Meinem Wunsche, wenigstens einiges Anschauungsmaterial beizugeben, kam
+nun der glückliche Umstand zu Hilfe, daß sich verschiedenes aus den
+Abbildungen selbst leicht herstellen läßt: der Leser braucht nur die
+Figuren der Tafel auszuschneiden und mit Schnur zu versehen bezw.
+anzuheften, dann hat er Wunderscheibe, Lebensrad und
+Malteserkreuz-Modell. Einen Taschenkinematograph stellt das Heft, so wie
+es ist, selbst dar. Außerdem ist ein kleines Stückchen Film beigefügt.
+
+Bei dem kleinen Umfange der Schrift konnte nur ein gedrängter Überblick
+über das Gesamtgebiet der Kinematographie gegeben werden. Näheres über
+die Konstruktions-Anordnungen und über die technische Seite überhaupt
+findet man in meinem »Handbuch der praktischen Kinematographie«, während
+ich die Geschichte der Kinematographie in einer besonderen Arbeit
+eingehend behandele.
+
+Um ein gutes Illustrationsmaterial zu bieten, ließ ich die Klischees mit
+einigen Ausnahmen als Holzschnitte neu anfertigen, und zwar zum Teil
+nach den Originalabbildungen oder nach besonders entworfenen
+Zeichnungen. Verschiedenen Verlegern und Autoren habe ich für die
+bereitwillig erteilte Reproduktions-Genehmigung zu danken: Herr Hofrat
+Professor Dr. Eder in Wien und der Verlag von Wilh. Knapp in Halle a. S.
+gestatteten die Wiedergabe zweier Porträts aus Eder's »Geschichte der
+Photographie«, die Firma Léon Gaumont in Paris und die dortige
+Zeitschrift L'Illustration die Reproduktion mehrerer Filmbilder, die
+Urban-Trading Co. in London die Einfügung eines Bildes aus ihrem
+Betriebe, Professor Demeny überließ mir eine Aufnahme, womit ich seine
+»Photographie der Sprache« illustrieren konnte.
+
+     =Düsseldorf=, Dezember 1909.
+
+                                                   =Der Verfasser.=
+
+  [Sidenote: Illustration
+
+  Dies Bild stellt in Verbindung mit den folgenden einen
+  »Taschenkinematograph« dar.]
+
+
+
+
+Die Entwicklung des Kinematographen.
+
+
+_Einleitung._
+
+Die wunderbare Wirkung der kinematographischen Lichtbilder beruht auf
+einer Täuschung unseres Auges. Was uns da auf der weißen Wand gezeigt
+wird, ist in Wirklichkeit eine große Reihe einzelner Bilder, die den
+Gegenstand oder die Szene in immer neuen Momenten einer Bewegung
+wiedergeben und die mit sehr großer Geschwindigkeit aufeinander folgen.
+Wenn sich nun in unserem Auge die vielen Einzelbilder zu einem einzigen
+lebenden Bilde zusammensetzen, so wird das bewirkt durch die »Dauer des
+Lichteindruckes«. Unser Auge läßt nämlich einen Eindruck, den es
+empfangen hat, nicht sofort wieder fahren, hält ihn vielmehr eine
+gewisse Zeit fest, allerdings nur den Bruchteil einer Sekunde.
+Infolgedessen werden sehr rasch aufeinander folgende Eindrücke
+ineinander verschwimmen.
+
+Diese Eigenschaft des Auges können wir im täglichen Leben beobachten.
+Ihnen wird das folgende Experiment bekannt sein; sonst ist es leicht
+anzustellen. Wenn man im Dunkeln ein glimmendes Streichholz (also eines
+von der schlechten Sorte!) hinreichend rasch umherschwingt, so sieht man
+nicht -- wie man annehmen sollte -- einen sich weiter bewegenden
+leuchtenden Punkt, sondern einen feurigen Kreis.
+
+  [Illustration: Fig. 1. Versuch zur Bestimmung der Dauer des
+  Lichteindruckes.]
+
+Genauere Untersuchungen hierüber wurden zuerst angestellt von Ritter
+d'Arcy im Jahre 1765. Er schwang ein Stück glühender Kohle im Kreise
+herum mit zunehmender Geschwindigkeit. Nun kommt ein Moment, wo der
+leuchtende Kreis grade geschlossen ist. Dann wissen wir: der
+Lichteindruck an einer Stelle, z. B. A in Figur 1, wirkt genau so lange
+Zeit nach, als die Kohle für eine Umdrehung braucht. Arcy fand auf diese
+Weise, daß die Dauer des Lichteindrucks im Auge ungefähr 1/8 Sekunde
+beträgt.
+
+
+_Die Wunderscheibe und die Geschichte ihrer Erfindung._
+
+Das erste Bildinstrument, das auf dieser Eigenschaft des Auges beruhte
+und das sich rühmen kann, der Urahn des Kinematographen zu sein, war die
+im Jahre 1825 erfundene Wunderscheibe, auch Thaumatrop genannt. Es ist
+eine Pappscheibe, die beiderseits eine Zeichnung hat, vorn z. B. einen
+Vogel und hinten einen Käfig, und die man mittels zweier daran
+geknüpfter Fäden in Umdrehung versetzt. Bei rascher Umdrehung sieht man
+dann den Vogel im Käfig sitzen. Wenn Sie die Figur 2 der vorgehefteten
+Tafel ausschneiden, dann haben Sie eine richtige Wunderscheibe. Sie
+müssen nur rechts und links, wo die Punkte sind, ein Loch stechen, zwei
+Fäden, je etwa 10 bis 15 cm lang, schneiden und durch jedes Loch einen
+solchen Faden ziehen. Die beiden Enden eines jeden Fadens werden am
+besten verknotet. Nun nimmt man die Fäden in die Hände und läßt sie
+zwischen Daumen und Zeigefinger rollen, wobei dann die Scheibe in rasche
+Umdrehung gerät.
+
+  [Illustration: Fig. 3. Wie man beide Seiten einer Münze gleichzeitig
+  sehen kann.]
+
+[Sidenote: Illustration »Taschenkinematograph«]
+
+Wie es zur Erfindung der Wunderscheibe gekommen ist, davon erzählt der
+englische Mathematiker Babbage ein interessantes Stück. Eines Tages
+fragte ihn der berühmte Gelehrte John Herschel, mit dem er zu Tisch saß,
+wie man es wohl fertig bringen könne, beide Seiten eines Geldstücks
+gleichzeitig zu sehen. Und drauf zeigte er ihm die Lösung der scherzhaft
+gestellten Aufgabe, indem er das Geldstück auf dem Tisch kreisen ließ:
+ein Experiment, das Sie leicht nachmachen können. Der Versuch läßt sich
+auch in der Weise anstellen, wie es Figur 3 veranschaulicht, indem man
+nämlich das Geldstück mittels zweier Nadeln hebt und durch Dagegenblasen
+in Rotation versetzt. -- Babbage nun erzählte davon seinem Freunde Dr.
+Fitton, und dieser zeigte ihm ein paar Tage darauf ein kleines
+Spielzeug, das er ausgedacht und womit sich der Herschelsche Versuch
+vorzüglich demonstrieren ließ: es war die Wunderscheibe.
+
+
+_Das Lebensrad (Stroboskop, Phenakistiskop)._
+
+Die Wunderscheibe wurde bald ein flotter Handelsartikel und fand weite
+Verbreitung. So einfach und unscheinbar dies Spielzeug auch war: es war
+doch ein wichtiges Prinzip darin festgelegt und es gab zweifellos
+mancherlei Anregung. Nun lag das Problem in der Luft, eine größere
+Anzahl von Bildern in ähnlicher Weise zu kombinieren, und tatsächlich
+wurde die Lösung bald darauf, im Jahre 1832, fast gleichzeitig an zwei
+Stellen gefunden. Sowohl Plateau in Gent, wie Professor Stampfer in
+Wien, konstruierten unabhängig voneinander das Lebensrad. Der eine
+nannte sein Instrument »Phenakistiskop«, der andere »Stroboskop«.
+
+  [Illustration: Fig. 4. Das Lebensrad.]
+
+Das Lebensrad besteht aus einer runden Pappscheibe, die nach dem Rande
+zu in gleichmäßigen Abständen Öffnungen besitzt; darunter sind Bilder
+eines und desselben Gegenstandes gezeichnet, die ihn in verschiedenen,
+aufeinander folgenden Momenten einer Bewegung darstellen. Die Scheibe
+ist, wie Fig. 4 zeigt, um eine horizontale Achse drehbar und wird derart
+vor einen Spiegel gehalten, daß man durch die Öffnungen hindurch im
+Spiegel die Bilder sieht. Bei rascher Umdrehung verschmelzen die Bilder
+ineinander und man gewinnt den Eindruck einer sich bewegenden Figur.
+
+Wenn Sie das Lebensrad nicht aus der Anschauung kennen, so schneiden Sie
+doch die Figur 5 der Tafel längs der äußeren Kreislinie aus; dann
+schneiden Sie noch ringsum auf der Scheibe mit einem scharfen Messer die
+neun schraffierten Schlitze aus: das gibt die Schauöffnungen. (Ist Ihnen
+diese Arbeit zu mühselig, so wissen Sie sicher einen Jungen, der's gerne
+tut, um auch die hübsche Wirkung zu sehen.) Die Scheibe wird in der
+Mitte durchbohrt und dann, am besten mit einem Heftzwecken, die
+Bildseite nach außen, auf eine Holzleiste (Lineal oder dergl.)
+aufgesteckt, derart, daß sie durch Gegenschlagen mit dem Finger leicht
+drehbar ist. Nun hält man die Scheibe (möglichst senkrecht, damit sie
+gut läuft) vor einen Spiegel und sorgt dafür, daß die dem Spiegel
+zugekehrten Bilder gut beleuchtet sind. Wenn man nun die Scheibe in
+Umdrehung versetzt und zunächst nebenher direkt in den Spiegel blickt,
+so sieht man nichts von den Figuren; denn sie erscheinen bei der raschen
+Bewegung völlig verschwommen. Hält man aber das Auge vor die Scheibe und
+schaut durch die Schlitze, so gewinnt man den Eindruck einer sich
+bewegenden Figur. Das Auge bekommt dann nämlich durch die Schlitze rasch
+nacheinander immer auf einen Moment Bild um Bild zu sehen. Infolge der
+Trägheit der Netzhaut verschmelzen nun die Bilder ineinander, und das
+Resultat ist ein Bild mit Bewegung.
+
+  [Illustration: Fig. 6. Andere Form des Lebensrades.]
+
+In der Folge wurden mancherlei Abänderungen von dem Instrument gemacht.
+Figur 6 zeigt zunächst eine Ausführung, die Stampfer schon angab. Dabei
+werden zwei zusammen rotierende Scheiben benutzt, eine für die
+Oeffnungen und die andere für die Bilder. Ein Spiegel ist hier nicht
+erforderlich; denn man sieht direkt durch die Schlitze gegen die
+Bilder.
+
+
+_Die Wundertrommel._
+
+  [Illustration: Fig. 7. Die Wundertrommel.]
+
+[Sidenote: Illustration »Taschenkinematograph«]
+
+Die größte Verbreitung fand die Form, welche als Wundertrommel bekannt
+ist. Es ist ein Hohlzylinder mit einem Kranz von Schlitzen; darein wird
+ein Papierstreifen gebracht, worauf sich die Bilder befinden (Fig. 7).
+Die Trommel wird in rasche Umdrehung versetzt, und wenn man nun durch
+die Schlitze sieht, empfängt man den Eindruck eines lebenden Bildes.
+Dreimal -- das ist eigenartig -- mußte die Wundertrommel erfunden
+werden, bis sie Ende der sechziger Jahre von Amerika aus zur Einführung
+gelangte. 1833 wurde sie von Horner unter der Bezeichnung »Daedaleum«
+genau beschrieben, 1860 von Desvigne und schließlich 1867 nochmals von
+Lincoln patentiert.
+
+
+_Taschenkinematograph und Mutoskop._
+
+  [Illustration: Fig. 8. Das Mutoskop.]
+
+Ein ähnliches Schicksal erlebte eine andere Anordnung, der sogenannte
+»Taschenkinematograph«, der Ende der neunziger Jahre als Neuheit in den
+Handel kam, nachdem er bereits zweimal zuvor, 1868 und 1886, erfunden
+worden war. Dieses Heft stellt mit den Bildern in den Ecken oben rechts
+-- so wie es ist -- einen Taschen-Kinematograph dar. Um ihn in Betrieb
+zu setzen, biege man die Blätter mit dem Daumen der rechten Hand zurück
+und lasse sie durchgleiten, so daß sie rasch nacheinander umschlagen.
+Auf demselben Prinzip beruht das in Figur 8 wiedergegebene Mutoskop,
+ein Apparat, den man vielfach in Bahnhöfen findet. Man muß bei diesem
+Instrument nach Einwurf eines Groschens eine Kurbel drehen, worauf
+dann die Bilder abblättern; sie werden durch eine Vergrößerungslinse
+betrachtet.
+
+
+_Verbindung von Lebensrad und Lichtbilderapparat._
+
+  [Illustration: Fig. 9. Erster Apparat zur Projektion stroboskopischer
+  Bilder.]
+
+  [Illustration: Fig. 10. Uchatius' zweiter, verbesserter Apparat zur
+  stroboskopischen Projektion.]
+
+Der erste, der das Lebensrad mit dem Projektionsapparat in Verbindung
+brachte, um »lebende« Bilder auf die Wand zu werfen und einem größeren
+Publikum als Lichtbilder zu zeigen, war der österreichische Offizier
+Franz von Uchatius. Es ist derselbe Uchatius, der den nach ihm benannten
+Bronzestahl erfand. Bei seinem ersten Apparat, der in Figur 9
+schematisch dargestellt ist und der aus dem Jahre 1845 stammt, wurde ein
+aus zwei zusammen rotierenden Scheiben bestehendes Lebensrad angewandt,
+wovon die eine der Scheiben b mit Schlitzen versehen war, während die
+andere a die transparenten Bildchen trug. Ein zweiter leistungsfähigerer
+Apparat, den Uchatius anfangs der fünfziger Jahre konstruierte und der
+1853 in Wien vorgeführt wurde, besaß eine feststehende Bildscheibe und
+davor einen Kranz von Objektiven: für jedes Bild a war ein Objektiv b
+vorgesehen (siehe Fig. 10). Lampe und Beleuchtungslinse c konnten
+mittels einer Kurbel hinter der Bildscheibe im Kreise umherbewegt
+werden, derart, daß die transparenten Bildchen der Reihe nach beleuchtet
+und auf die Wand projiziert wurden. Bei raschem Drehen erschienen die
+Lichtbilder in so schneller Folge, daß die Zuschauer den Eindruck eines
+einzigen lebenden Lichtbildes gewannen.
+
+[Sidenote: Illustration »Taschenkinematograph«]
+
+Das Projektions-Stroboskop, das eine langsam rotierende Bildscheibe und
+eine rasch laufende Blendscheibe mit einem Schlitz besitzt -- wie es
+heute noch zu Demonstrationen gebraucht wird -- wurde 1871 von dem
+Engländer Ross angegeben, nachdem kurz zuvor die Amerikaner Brown und
+Heyl sinnreiche Instrumente dieser Art mit ruckweise bewegter
+Bildscheibe ausgeführt hatten. In den achtziger Jahren beschäftigte sich
+der Franzose Reynaud eifrig mit dem Problem, die Bilder des Lebensrades
+in vergrößertem Maßstabe auf der Projektionswand erscheinen zu lassen;
+bei seiner eigenartigen, mit einer Spiegeltrommel ausgerüsteten
+Einrichtung, die er Praxinoskop-Theater nannte, saßen die transparenten
+Bilder auf einer Trommel, später auf einem langen Bande.
+
+
+_Die Anfänge der Bewegungsphotographie._
+
+  [Illustration: Fig. 11. Aufnahmen »gestellter« Bewegungsmomente für das
+  Lebensrad.]
+
+Die Bilder, die man mit dem Lebensrade vorführte, waren zuerst
+naturgemäß gezeichnet. Erst in den fünfziger Jahren kam man dazu, die
+Photographie zur Herstellung der Bilder heranzuziehen. Die Aufgabe war
+für den damaligen Photographen ja auch nicht so leicht: hieß es doch,
+von der sich bewegenden Figur sehr rasch nacheinander eine Anzahl
+Momentaufnahmen zu machen. Und dazu reichten die Hilfsmittel jener Zeit
+keineswegs aus. Auch die Schnellfeuer-Kameras, die im folgenden
+Jahrzehnt von verschiedenen Seiten ausgedacht und zum Teil ausgeführt
+wurden -- Coleman Sellers, Dumont, Ducos du Hauron und Mollard machten
+sich besonders verdient darum -- waren noch nichts nutze: die
+photographischen Verfahren hatten eine zu geringe Empfindlichkeit, als
+daß man so schnell damit hätte arbeiten können. Man mußte sich
+einstweilen in primitiver Weise behelfen. Wie man verfuhr,
+veranschaulicht Figur 11; es ist die Wiedergabe einer mir vorliegenden
+Bilderreihe, die aus jener Zeit stammt. Davon ist jedes einzelne Bild
+durch eine Zeitbelichtung gewonnen. Die Kaffee trinkende Dame mußte also
+neunmal eine sorgfältig vorbereitete Stellung einnehmen und jedesmal für
+die Belichtung stille halten. Dies Verfahren war gewiss recht
+umständlich und konnte unmöglich eine natürliche Wirkung abgeben.
+
+
+_Herstellung der ersten Reihenaufnahmen durch Muybridge._
+
+  [Illustration: Fig. 12. Eadweard Muybridge.[A]]
+
+Erst dem amerikanischen Photographen Muybridge (Fig. 12) gelang es Ende
+der siebziger Jahre unter Aufbietung gewaltiger Hilfsmittel, richtige
+Reihenaufnahmen laufender Tiere zu machen. Er benutzte eine Batterie von
+24 photographischen Apparaten, die in einer Reihe nebeneinander standen;
+parallel dazu lief die Rennbahn für das Tier. Quer über die Bahn waren,
+wie Figur 13 andeutet, 24 dünne Fäden gespannt, die das Tier
+nacheinander zerreißen mußte; zu jeder Kamera einer, und zwar war die
+Anordnung derart getroffen, daß stets beim Reißen eines Fadens der
+Momentverschluß der betreffenden Kamera losging. Auf diese Weise wurden
+rasch nacheinander 24 Aufnahmen von dem laufenden Tier gemacht. Eine
+Reihe der von Muybridge hergestellten Bilder ist auf dem Lebensrade
+(Fig. 5) wiedergegeben; dieselben Bilder sind zu dem
+Taschenkinematograph dieses Heftes benutzt. Muybridge soll zu seinen
+Arbeiten insgesamt über eine halbe Million photographischer Platten
+verarbeitet haben.
+
+[Sidenote: Illustration »Taschenkinematograph«]
+
+  [Illustration: Fig. 13. Einrichtung von Muybridge zur
+  Reihenphotographie.]
+
+
+_Förderung der Reihenphotographie durch Anschütz._
+
+  [Illustration: Fig. 14. Ottomar Anschütz.]
+
+  [Illustration: Fig. 15. Teil einer Reihenaufnahme von Anschütz.]
+
+Die Aufnahmen erregten seinerzeit großes und berechtigtes Aufsehen; doch
+wurden die Resultate bald überboten durch Anschütz, den Altmeister der
+Momentphotographie (Fig. 14). Anschütz begann 1885 nach ähnlicher
+Methode seine Arbeiten und nahm sich ihrer mit großer Energie an.
+Während Muybridge bei seinen meisten Aufnahmen nicht viel mehr als
+Schattenrisse erhielt, zeigten die Bilder seines deutschen Nachfolgers
+alle Abstufungen und Einzelheiten. Ja, die Aufnahmen, von denen Figur 15
+eine Probe zeigt, waren so scharf, daß sie zur Benutzung in dem von
+Anschütz erfundenen Schnellseher vergrößert werden konnten.
+
+  [Illustration: Fig. 16. Anschütz' elektr. Schnellseher.]
+
+Anschütz konstruierte zur Demonstration seiner Bilder noch ein
+sinnreiches Instrument, den elektrischen Schnellseher (Fig. 16). Die
+einzelnen Bilder, auf Glasplatten oder Zelluloid kopiert, sitzen darin
+auf dem Umfange einer schnell rotierenden Scheibe von großem
+Durchmesser. Jedesmal wenn sich ein Bild genau gegenüber dem Fensterchen
+befindet, durch das die Beschauer blicken, wird es momentan durch eine
+Geisler'sche Röhre beleuchtet.
+
+
+_Marey, der Begründer der modernen Kinematographie._
+
+  [Illustration: Fig. 17. Etienne Jules Marey.[B]]
+
+Inzwischen fand die Chronophotographie -- so nannte man das Verfahren
+zur Herstellung von Reihenbildern -- in Frankreich bedeutende Förderung
+durch Professor Marey (Fig. 17). Dieser interessierte sich zunächst für
+den Vogelflug, und da die Anordnung von Muybridge hierzu nicht geeignet
+erschien, ging er selbst an die Konstruktion zweckmäßiger Apparate. Zu
+seinem ersten Modell, der photographischen Flinte aus dem Jahre 1882,
+hatte er die Anregung erhalten durch Jansen's photographischen Revolver,
+womit dieser berühmte Astronom 1874 den Vorübergang der Venus in einer
+Reihe aufeinanderfolgender Momente festgelegt hatte.
+
+  [Illustration: Fig. 18. Marey's photogr. Flinte.]
+
+[Sidenote: Illustration »Taschenkinematograph«]
+
+Die photographische Flinte und die Art ihrer Handhabung ist in Figur 18
+dargestellt. Vorne im Lauf sitzt das Objektiv, hinten im Bodenstück die
+lichtempfindliche Platte. Wenn man auf den Hahn drückt, so bringt ein
+Uhrwerk die Platte in Umdrehung, doch geht die Bewegung sprungweise vor
+sich, derart, daß ein Stück der Platte nach dem anderen an die
+Belichtungsstelle kommt und dort einen Moment anhält. Die Belichtung
+wird durch eine gleichzeitig in Gang versetzte Verschlußscheibe
+geregelt. Mit diesem Apparat konnten 12 Aufnahmen in der Sekunde gemacht
+werden. Die Bilder waren aber nur ein Zentimeter groß und ohne Detail.
+Figur 19 zeigt eine Aufnahmeplatte; sie gibt den Flug einer Möve in 12
+Momenten wieder.
+
+  [Illustration: Fig. 19. Aufnahme mit der photogr. Flinte: fliegende
+  Möve in 12 Momenten (etwa auf die Hälfte verkleinert).]
+
+Ermutigt, aber nicht befriedigt durch die Erfolge, arbeitete Marey mit
+wissenschaftlicher Gründlichkeit weitere neue Methoden aus, die ihm für
+seine Untersuchungen über die Bewegungserscheinungen bei Tieren und
+Menschen wertvolle Resultate lieferten. 1888 ging er zur Verwendung von
+Negativpapierbändern über, die ruckweise durch die Kamera geführt und
+auf die in rascher Folge eine große Zahl von Aufnahmen gemacht wurde.
+Damit schuf Marey als erster eine Einrichtung, die unserem heutigen
+kinematographischen Aufnahme-Apparat entspricht. Sein damaliges Modell
+ist in Figur 20 dargestellt, während Figur 21 ein Stück einer damit
+gemachten Aufnahme zeigt.
+
+  [Illustration: Fig. 20. Marey's Negativband-Kamera für
+  Reihenaufnahmen.]
+
+  [Illustration: Fig. 21. Teil einer Reihenaufnahme auf Negativpapier,
+  hergestellt mit Marey's Kamera.]
+
+Der Fortschritt war ein enormer! Während Muybridge und Anschütz, um eine
+Reihe von 24 Aufnahmen zu gewinnen, 24 photographische Apparate
+brauchten, machte Marey dasselbe mit einer einzigen Kamera. Ja, die Zahl
+der Bilder war hier nur begrenzt durch die Länge des Negativbandes.
+
+
+_Ausbau der modernen Kinematographie._
+
+Von größter Bedeutung für die Entwicklung der Kinematographie wurde die
+Einführung des Zelluloid-Filmbandes, die grade in jene Zeit fiel; zwar
+war das Material noch weit davon entfernt, so gut zu sein wie heute.
+Nunmehr schossen bald an allen Ecken und Enden die Konstruktionen
+heraus. Aber den Gebrüdern Lumière blieb es vorbehalten, die lebenden
+Lichtbilder populär zu machen. Das war Mitte der neunziger Jahre. An der
+Ausarbeitung des modernen Kinematographen sind viele Männer beteiligt;
+besonders verdient machten sich darum Skladanowsky und Messter in
+Deutschland; Demeny (Marey's Mitarbeiter, vgl. auch Fig. 53) und die
+Gebrüder Lumière in Frankreich; Friese Greene (der schon 1889 ins Feld
+trat), Birt Acres und Robert Paul in England; Edison, Jenkins, Casler
+und Urban in Amerika. Dem einen haben wir dies Teil zu verdanken, dem
+anderen jenes. Wir wollen darüber hinweggehen, sonst geraten wir zu sehr
+in Einzelheiten.
+
+[Sidenote: Illustration »Taschenkinematograph«]
+
+Die Bezeichnung »Kinematograph«, die aus griechischen Worten hergeleitet
+ist: Kinema = die Bewegung (Kinemata = die Bewegungen) und grapho = ich
+schreibe, zeichne auf, wurde durch die Gebrüder Lumière eingeführt,
+nachdem sie als erster Bouly in einem französischen Patente vom Jahre
+1892 angewandt hatte. Von den zahlreichen anderen Namen hat sich
+hauptsächlich »Bioskop« (ebenfalls aus dem Griechischen: Bios = das
+Leben, und skopeo = ich sehe) erhalten.
+
+Fußnoten:
+
+[A] Nach einer Abbildung aus Eder's »Geschichte der
+Photographie«, Verlag von Wilh. Knapp, Halle a. S.
+
+[B] Nach einer in Eder's »Geschichte der Photographie« (Verlag
+von Wilhelm Knapp, Halle a. S.) abgebildeten Plaquette.
+
+
+
+
+Wesen und Wirkungsweise des Kinematographen.
+
+
+_Wirkungsweise des Aufnahmeapparates._
+
+  [Illustration: Fig. 22. Schema einer Filmkamera.]
+
+Wie der kinematographische Aufnahmeapparat arbeitet, das können wir uns
+am besten klar machen, indem wir einen einfachen Kodak in die Hand
+nehmen. Die Anordnung ist in Figur 22 schematisch dargestellt. Auf der
+Rolle M sitzt ein lichtempfindliches Filmband; es ist zur Rolle N
+geführt, worauf es sich, wenn man die Rolle dreht, aufwickelt. O ist das
+Objektiv und S die Verschlußscheibe. Um eine Aufnahme zu machen, gibt
+man der Verschlußscheibe eine Umdrehung. Es bewegt sich dann die Öffnung
+T am Objektiv vorbei, läßt Licht zu und verursacht damit eine
+Belichtung. Nun soll ein zweites Bild gemacht werden. Dazu muß zunächst
+der Film durch Drehen der Rolle N um ein Stück, so groß wie das Bildchen
+a, weitergezogen werden. Wenn das geschehen ist, wird der
+Verschlußscheibe wieder eine Umdrehung gegeben. Ein drittes, viertes,
+fünftes Bild usw. erfordert immer wieder dieselben Handgriffe: stets
+wird zuerst der Film weitergezogen und dann die Verschlußscheibe
+gedreht.
+
+Denken wir uns nun in die Kamera einen Mechanismus eingebaut, der diese
+Handgriffe selbsttätig ausführt, so haben wir den kinematographischen
+Aufnahmeapparat, wie er in Figur 23 dargestellt ist. Man braucht nur
+eine Kurbel zu drehen, dann schießt der Apparat wie ein
+Schnellfeuergeschütz los und macht auf das Filmband in rascher Folge
+eine große Anzahl von Aufnahmen. Den Mechanismus wollen wir uns nachher
+ansehen.
+
+  [Illustration: Fig. 23. Kinematographische Aufnahme-Kamera.]
+
+
+_Das Filmband und seine Fertigstellung._
+
+Der belichtete Film wird in der Dunkelkammer auf einen Rahmen oder eine
+Trommel gespannt und wie der Kodakfilm entwickelt, fixiert, ausgewaschen
+und getrocknet. Man bekommt dann ein Band mit vielen kleinen
+Negativbildern. Von diesem Negativ, von dem Figur 24 ein kleines Stück
+in Originalgröße zeigt, gewinnt man durch Kopieren den Positivfilm, wie
+er in Figur 25 wiedergegeben ist. Ein Stück Positivfilm ist ferner hier
+angeklebt. Die Filmbänder sind an beiden Rändern in regelmäßiger Folge
+mit Löchern versehen, und zwar derart, daß auf jedes Bild beiderseits 4
+Löcher kommen. Diese Perforation, die von Edison eingeführt wurde, muß
+man anwenden, damit der Mechanismus den Film genau transportieren kann.
+
+[Sidenote: Illustration »Taschenkinematograph«]
+
+Das Filmband ist 3-1/2 cm breit, jedes Bildchen darauf 2-1/2 cm breit
+und ungefähr 2 cm hoch. _=Ein=_ Bild sieht fast genau so aus wie das
+nächste, erst wenn man mehrere Bilder überfliegt, merkt man einen
+Unterschied in der Abbildung. Und das ist kein Wunder, kommen doch
+normaler Weise auf die Sekunde 15 bis 20 Aufnahmen. Eine so rasche Folge
+der Bilder ist nämlich erforderlich, wenn eine ununterbrochene, schöne
+Wiedergabe erzielt werden soll. In der Minute haben wir mithin rund 1000
+Bilder und das macht, da jedes Bildchen etwa 2 Zentimeter hoch ist, ein
+Band von ungefähr 20 Meter Länge. Für eine Szene, die 5 Minuten dauert,
+braucht man also 100 Meter Film. Das mag auf den ersten Blick viel
+erscheinen, aber selbst Aufnahmen von vielen hundert Metern Länge sind
+heute nichts Besonderes mehr.
+
+  [Illustration: Fig. 24. Stück eines Film-Negativs in Originalgrösse.]
+
+  [Illustration: Fig. 25. Film-Positiv nach dem Negativ Fig. 24.]
+
+
+_Wirkungsweise des kinematographischen Wiedergabeapparates._
+
+Nun wollen wir verfolgen, wie mit Hilfe des Positivfilm die Szene,
+welche bei der Aufnahme sich vor der Kamera abspielte, als lebendes
+Lichtbild zur Darstellung gebracht wird. Die Anordnung ist im
+allgemeinen dieselbe wie bei jedem Projektionsapparat. Links haben wir
+in Figur 26 die Laterne mit der Lichtquelle L, am besten einer
+Bogenlampe; in der Vorderwand zwei Beleuchtungslinsen K, welche die
+Lichtstrahlen sammeln und in einem Kegel nach vorne in das Objektiv O
+leiten. Das Objektiv dirigiert die Strahlen derart weiter, daß von dem
+transparenten Bildchen B auf der Projektionswand ein scharfes Lichtbild
+erzeugt wird.
+
+  [Illustration: Fig. 26. Schema des Lichtbilder-Apparates.]
+
+  [Illustration: Fig. 27. Das Filmband im Lichtbilder-Apparat.]
+
+Die Vergrößerung ist dabei eine beträchtliche. Wenn das Bildchen, wie
+beim Kinematographenfilm, eine Breite von 2-1/2 cm besitzt und der
+Projektionsschirm beispielsweise 2-1/2 m breit ist, so haben wir der
+Linie nach eine 100 fache, der Fläche nach eine 10000 fache
+Vergrößerung; bei 5 m breitem Schirm ist die Flächenvergrößerung gar
+eine 40000 fache. Da wird es erklärlich, daß man eine sehr kräftige
+Lichtquelle braucht.
+
+[Sidenote: Illustration »Taschenkinematograph«]
+
+An Stelle des einzelnen Bildchens B bringen wir nun, wie es Figur 27
+veranschaulicht, den Film derart in den Strahlenkegel, daß zunächst das
+erste Bildchen a projiziert wird, und jetzt müssen wir, um auf dem
+Projektionsschirm die richtige Wiedergabe zu erhalten, das Band in der
+gleichen Weise weiter bewegen, wie vorher in unserem Kodak, den wir uns
+mechanisch betrieben dachten: der Film bleibt jedesmal einen Augenblick
+an der Belichtungsstelle ruhig stehen, dann springt er um ein Bild
+weiter, steht wieder ruhig, springt weiter und so fort. Die
+Verschlußscheibe brauchen wir auch hier; sie soll nämlich das Objektiv
+immer in dem Moment verschließen, wo der Film sich weiterbewegt, damit
+wir das Rutschen der Bilder nicht wahrnehmen.
+
+Wir müssen also in unseren Lichtbilderapparat einen Mechanismus
+einbauen, der das Filmband ruckweise weiterbewegt und der bei jedem
+Bildwechsel das Objektiv verschließt. Nehmen wir an, ein solcher
+Kinematographmechanismus wäre beschafft, und nehmen wir ferner an, der
+Mechanismus, gleichgültig wie er sonst konstruiert ist und aussieht,
+arbeite in gleichmäßigem »Tempo«: jeder Bildstillstand dauere die
+gleiche Zeit wie der Bildwechsel. Schematisch ließe sich dann die
+Arbeitsweise des Mechanismus folgendermaßen darstellen, wobei die
+ausgezogenen Linien jedesmal den Stillstand und die punktierten Linien
+den Wechsel andeuten:
+
+  [Illustration: BILD 1  BILD 2  BILD 3]
+
+Wenn wir nun zusammen bei dem Apparat säßen, würde ich, um Ihnen die
+Wirkung zu zeigen, den Mechanismus zunächst einmal ganz langsam drehen.
+Im Apparat würden Sie dann folgenden Vorgang wahrnehmen: Der Film steht
+augenblicklich still, trotzdem ich gleichmäßig drehe; nun wandert er um
+ein Stückchen weiter; jetzt steht er wieder ruhig, und so geht's immer
+ruck, ruck, ruck vorwärts. Dabei bringt jede Bewegung des Filmbandes ein
+neues Bild an die Belichtungsstelle, das dann eine gewisse Zeit stehen
+bleibt. Blicken wir nun, während ich langsam weiter drehe, auf den
+Projektionsschirm, so sehen wir dort in gleichmäßigem Wechsel: Bild --
+dunkel -- nächstes Bild -- dunkel -- nächstes Bild -- dunkel usw. Wir
+beobachten, wie jedes Lichtbild einen Augenblick stehen bleibt; von der
+Weiterbewegung des Filmbandes können wir hier aber nichts merken, denn
+während dieser Zeit blendet immer die Verschlußscheibe die Lichtstrahlen
+ab: daher das »dunkel«.
+
+Alsdann würde ich, damit Sie auch das Weiterrutschen des Filmbandes
+sehen, die Verschlußscheibe abnehmen und wiederum ganz langsam drehen.
+Nun gibt's auf der Projektionswand: Bild -- Rutschen des Bildes --
+nächstes Bild -- Rutschen -- nächstes Bild -- Rutschen -- usw. So, jetzt
+setzen wir die Verschlußscheibe wieder auf und drehen erst langsam, dann
+allmählich immer rascher. Da beobachten wir zuerst noch: Bild -- dunkel
+-- Bild -- dunkel. -- Bald aber, bei rascherem Drehen, kann unser Auge
+die einzelnen Bilder und die dunkeln Zwischenpausen nicht mehr
+unterscheiden. Ohne daß wir merken, wie es geschieht, gehen die Bilder
+ineinander über; das Lichtbild gewinnt Leben, die Figuren bewegen sich.
+
+Ein kleines Experiment mag Ihnen eine bessere Vorstellung geben von dem,
+was ich Ihnen eben gerne praktisch gezeigt hätte. Halten Sie einmal das
+linke Auge zu und bewegen Sie die rechte Hand dicht vor dem anderen Auge
+hin und her -- zuerst ganz langsam. Da bekommen Sie, genau wie ich es
+vom Kinematograph erzählte, Bild -- dunkel -- Bild -- dunkel -- usw.
+Fahren Sie nun aber mit der Hand rasch hin und her und blicken dabei
+durchs Fenster auf die belebte Straße, so nehmen Sie alles wahr wie
+sonst: Sie merken nicht, daß das Auge die Eindrücke nur stoßweise
+empfängt, Sie sehen keine Unterbrechungen in den Bewegungen der Menschen
+und Wagen, wie Sie doch tatsächlich durch das »Abblenden« mit der Hand
+hervorgerufen werden. Genau so ist es beim Kinematograph. Ja, es ist
+dieselbe alte Geschichte, wie bei der Wunderscheibe und beim Lebensrad:
+unser Auge hält eben jedes einzelne Bild eine kurze Zeit fest, und wenn
+die Bilder hinreichend rasch aufeinander folgen, wenn die Lücken
+zwischen Bild und Bild hinreichend kurz sind, so füllt das Nachbild
+jedesmal die Lücke aus. Die »Dauer des Lichteindruckes«, so nennt man ja
+diese Eigenschaft des Auges, schlägt dann gewissermaßen eine Brücke von
+Bild zu Bild über die dunkeln Zwischenpausen hinweg.
+
+[Sidenote: Illustration »Taschenkinematograph«]
+
+
+_Das Flimmern und die Mittel zur Behebung._
+
+Aber unser Auge, wenn es sich auch täuschen läßt und statt der
+sprungweise sich folgenden Einzelbilder ein einziges Bild mit
+ununterbrochener Bewegung sieht: es merkt doch, daß da etwas nicht in
+Ordnung ist, daß dabei etwas anders ist, als beim Sehen in der Natur; es
+nimmt den ewigen Wechsel zwischen Hell und Dunkel wahr und sagt uns:
+»das Bild flimmert«.
+
+Dieses Flimmern wird offenbar verursacht durch den steten Wechsel: Hell
+-- Dunkel. Wenn auch die »Dauer des Lichteindrucks« über die dunklen
+Pausen hinweghilft und gewissermaßen eine Brücke darüber schlägt, so
+nimmt doch die Nachwirkung während der Pause an Kraft erheblich ab: die
+Brücke geht von der großen Helligkeit des Bildes bergab. Nun kommt
+plötzlich ein neues Bild mit großer Helligkeit: da geht es wieder steil
+bergauf. Die Verbindung zwischen Bild und Bild ist da; aber es gibt ein
+ewiges auf und ab -- und dieses Auf- und Abwogen äußert sich durch das
+Flimmern. Schon beim Lebensrade werden Sie das Flimmern bemerkt haben;
+aber ist es Ihnen nicht auch bei dem Experiment mit der Hand
+aufgefallen? Vielleicht werden Sie dabei schon eine Beobachtung über die
+Stärke des Flimmerns gemacht haben. Wenn nicht, dann stellen Sie das
+Experiment noch einmal an: linkes Auge zu und rechte Hand vor dem andern
+Auge hin und her, zuerst ganz langsam, dann immer rascher; dabei auf
+dieses Blatt blicken! Wird nicht das Flimmern um so schwächer, je
+rascher Sie die Hand bewegen? -- Nun, man sollte sagen, dies Mittel
+müßte auch beim Kinematographen helfen -- könnten Sie es jetzt
+probieren, das Experiment würde die Vermutung bestätigen: bei rascherem
+Drehen nimmt das störende Flimmern ab. Das wäre also ein einfaches
+Aushilfsmittel, diese üble Erscheinung abzuschwächen. Aber man wird bald
+erkennen, daß dies Verfahren einen bösen Nachteil hat: die Bewegungen im
+lebenden Lichtbilde werden unnatürlich rasch, wirken überstürzt, und
+außerdem ist die Vorführung viel schneller zu Ende. Wenn man da abhelfen
+wollte, so müßten auch die kinematographischen Aufnahmen entsprechend
+schneller gemacht werden, statt 15 bis 20 Bilder müßten wir
+beispielsweise 30 bis 40 in der Sekunde aufnehmen. Das geht wohl, doch
+dann wird das Filmband doppelt so lang und die Aufnahmen doppelt so
+teuer; außerdem werden bei der großen Geschwindigkeit Mechanismus und
+Film viel rascher verschleißen.
+
+Weshalb wird nun aber das Flimmern schwächer, wenn wir den Kinematograph
+rascher drehen? Offenbar weil dann die dunkle Pause zwischen Bild und
+Bild kürzer wird. Wenn uns die normale Geschwindigkeit (z. B. 15 Bilder
+in der Sekunde) folgendes Schema[C] gab:
+
+  [Illustration: A]
+
+so bekommen wir bei der überstürzten Geschwindigkeit (30 Bilder in der
+Sekunde) schematisch folgende Anordnung:
+
+  [Illustration: B]
+
+Die (punktiert dargestellte) Pause zwischen den Bildern ist hier nur
+halb so groß wie vorher; sie ist leichter zu überbrücken, das Auf- und
+Abwogen und damit das Flimmern wird schwächer.
+
+[Sidenote: Illustration »Taschenkinematograph«]
+
+Nun ist die Frage: läßt sich dies Resultat nicht auch auf andere Weise
+erreichen? Die Zahl der Bilder, die in der Sekunde gezeigt wird, soll
+die gleiche bleiben wie in A, nämlich 15; dagegen soll die Pause so
+kurz oder besser wohl noch kürzer werden wie in B. Das heißt in anderen
+Worten: der Kinematograph-Mechanismus soll den Film innerhalb einer
+Sekunde 15 mal still stehen lassen und zwischendurch 15 mal weiterziehen
+(wechseln), dabei aber den Bildwechsel, der verdunkelt wird, möglichst
+rasch ausführen. Die Lösung ist sehr naheliegend; sie wird schon zum
+Ausdruck gebracht durch die Aufgabestellung selbst, und zwar lautet sie
+schematisch:
+
+  [Illustration: C]
+
+Mit anderen Worten: der Kinematograph-Mechanismus muß so arbeiten, daß
+er den Film ganz rasch von Bild zu Bild weiterzieht; dafür muß er jedes
+einzelne Bild entsprechend länger stehen lassen. Denn wenn 15 Bilder in
+der Sekunde gezeigt werden sollen, so kommt immer nach 1/15 Sekunde ein
+neues Bild; also müssen ein Bildstillstand und ein Bildwechsel zusammen
+1/15 Sekunde einnehmen. Je kürzer mithin der Bildwechsel ist, desto
+länger wird der Bildstillstand. Bei der Anordnung, die das Schema C
+wiedergibt, nimmt der (punktiert dargestellte) Bildwechsel 1/3 der Zeit
+ein, die auf jeden Bildstillstand kommt. Man sagt: wir haben ein Tempo
+1: 3, während vorher bei A das Tempo 1: 1 war. Wer Spaß hat am
+Bruchrechnen, kann leicht feststellen, wieviel Teilchen einer Sekunde in
+beiden Fällen Bildwechsel und Bildstillstand dauern.
+
+Aber weshalb sollen wir nicht weiter gehen und den Bildwechsel noch
+kürzer machen als im Schema C? Je kürzer der Bildwechsel, desto kürzer
+ist die Pause zwischen Bild und Bild -- desto geringer muß unserer
+Überlegung nach das Flimmern werden. Weshalb sollen wir z. B. nicht ein
+Tempo 1: 8 nehmen, wie es das folgende Schema D andeutet, wobei die
+Lücken den Bildwechsel und die ausgezogenen Linien die Zeit
+veranschaulichen, während welcher das einzelne Bild stillsteht.
+
+  [Illustration: D]
+
+Wenn wir das Tempo hinreichend stark nehmen -- sollte man sagen -- müßte
+das Flimmern schließlich so gut wie ganz verschwinden. Aber einstweilen
+haben wir die Rechnung ohne den Wirt gemacht: wir arbeiten ganz in
+Gedanken und vergessen die Hauptsache, ob sich auch ein
+Kinematograph-Mechanismus, der in so starkem Tempo arbeitet, praktisch
+ausführen läßt. Da müssen wir schon den Konstrukteur fragen, und der
+antwortet: »Gewiß, wir bauen schon seit Jahren unsere Apparate nach
+diesem Prinzip und suchen den Wechselvorgang möglichst kurz zu machen.
+Indessen können wir dabei nicht beliebig weit gehen. Es gibt praktisch
+bald eine Grenze; denn je stärker das Tempo, desto stärker wird die
+Beanspruchung des Mechanismus und des Filmbandes, und desto schlimmer
+deren Verschleiß. Bedenken Sie doch, daß bei einem Tempo 1: 10 der Film
+bei jedem Bildwechsel innerhalb 1/150 Sekunde weitergezogen werden muß,
+und das ist ein gehöriger Ruck! Bedenken Sie ferner, daß bei einer
+Vorführung, die eine Stunde dauert, der Apparat 60000 mal einen solchen
+Ruck auf den Film auszuüben hat. Immerhin können wir mit dem, was heute
+praktisch erreicht ist, recht zufrieden sein: bei einem guten
+Kinematograph ist das Flimmern doch verhältnismäßig gering.«
+
+[Sidenote: Illustration »Taschenkinematograph«]
+
+
+_Konstruktion des Transport-Mechanismus._
+
+Nachdem wir nun die wesentlichen Anforderungen, die an den
+Kinematographen gestellt werden, kennen gelernt haben, wollen wir den
+Transport-Mechanismus selbst einmal näher betrachten. Zunächst mag uns
+Figur 28 die allgemeine Anordnung vor Augen führen. Der Film sitzt oben
+auf einer Spule R und läuft von dort zur Belichtungsstelle T, wo die
+Bildchen eines nach dem andern »eingerahmt« und von den Lichtstrahlen
+kräftig beleuchtet werden. Darunter kommt der Bewegungsmechanismus, der
+dem Film die ruckweise Weiterbewegung gibt; er ist in der Abbildung
+durch die Zahntrommel W angedeutet. Unten wickelt sich das Filmband auf
+die Spule S wieder auf. Vor dem Objektiv O dreht sich die Blendscheibe
+B, die, wie wir wissen, dazu dient, das Weiterrutschen des Filmbandes zu
+verdecken. Der Vollständigkeit halber ist die Projektionslaterne nebst
+Beleuchtungslinsen C und Lichtquelle L mit eingezeichnet; der
+Strahlengang ist durch die punktierten Linien angedeutet.
+
+  [Illustration: Fig. 28. Schematische Anordnung des kinematograph.
+  Projektions-Apparates.]
+
+
+_Die Malteserkreuz-Einrichtung._
+
+  [Illustration: Fig. 29. Ruckweise Weiterbewegung d. Filmbandes durch das
+  Malteserkreuz.]
+
+Nun der Bewegungsmechanismus! Eine der am meisten benutzten Anordnungen
+zur ruckweisen Weiterbewegung des Filmbandes ist das sog. Malteserkreuz,
+von dem Figur 29 eine perspektivische Ansicht gibt. Der Film läuft um
+die Zahntrommel W, die mit ihren Zähnen in die Löcher des Bandes
+eingreift und die es zwingt, alle Bewegungen der Trommel mitzumachen.
+Auf der Achse der Zahntrommel sitzt eine Sternscheibe S und dieser wird
+durch eine rotierende Stiftscheibe AB periodisch 1/4 Umdrehung erteilt.
+Dabei schlägt die Zahntrommel gleichfalls um ein Viertel herum und zieht
+den Film immer genau um ein Bild weiter.
+
+Wie diese Anordnung arbeitet, können Sie sich besser klar machen, indem
+Sie sich aus den Figuren 30 bis 33 auf der vorgehefteten Tafel ein
+kleines Modell herrichten. Dazu werden die Figuren mit einem scharfen
+Messer ausgeschnitten, und zwar recht sorgsam (namentlich das Kreuz).
+Die kleine Scheibe (Figur 31) klebt man auf das Kreuz; ferner klebt man
+die beiden Scheiben, Figuren 32 und 33, aufeinander, wobei zu beachten
+ist, daß der Ausschnitt von Figur 33 auf die punktierte Stelle von Figur
+32 kommt. Durch die Mitte eines jeden fertig verklebten Teiles wird ein
+Loch gebohrt. Nun legt man zunächst das Kreuz auf ein Brettchen oder
+einen starken Karton derart, daß die aufgeklebte kleine Scheibe nach
+unten kommt, und steckt durch das Loch eine Nadel hindurch. Dicht
+dagegen legt man, wie es Figur 34 andeutet, das andere Teil, die
+ausgeschnittene Scheibe nach oben, und steckt dieses ebenfalls fest. Der
+Ansatz daran wird hochgebogen. Wenn man nun die Scheibe dreht, so greift
+sie mit dem Ansatz in das Kreuz ein (vgl. Fig. 35) und gibt diesem eine
+Vierteldrehung.
+
+  [Illustration: Fig. 34. Fig. 35. Wirkungsweise des aus der Tafel (Fig.
+  30 bis 33) herzustellenden Malteserkreuz-Modells.]
+
+  [Illustration: Fig. 36. Malteserkreuz für starkes »Tempo«.]
+
+Wie man beim Malteserkreuz ein stärkeres Tempo erzielen kann, um dadurch
+das Flimmern geringer zu machen, deutet Figur 36 an. Man braucht nur die
+Eingriffscheibe recht groß zu nehmen. So lange die Sternscheibe mit dem
+schraffierten Teil der Scheibe A in Berührung ist, steht sie still; die
+Wechslung wickelt sich in der kurzen Zeit ab, wo der Eingriff bei dem
+nicht schraffierten Teile in Tätigkeit tritt. Allerdings kann man
+praktisch nicht beliebig weit gehen, da sonst die Beanspruchung von
+Mechanismus und Film zu groß wird.
+
+[Sidenote: Illustration »Taschenkinematograph«]
+
+
+_Andere Bewegungsmechanismen._
+
+  [Illustration: Fig. 37. Greifer. Fig. 38. Schläger. Fig. 39. Klemmzug.
+  Typische Anordnungen zur ruckweisen Weiterbewegung des Filmbandes.]
+
+Es sind nun noch verschiedene andere Vorrichtungen zur ruckweisen
+Weiterbewegung des Filmbandes in Gebrauch; man kann sie kurz als
+»Greifer«, »Schläger« und »Klemmzug« oder »Nockenapparat« bezeichnen.
+Der »Greifer« besteht aus einer auf- und niedergehenden Gabel, wie sie
+in Figur 37 schematisch angedeutet ist. Sie greift in ihrer obersten
+Stellung in die Löcher des Filmbandes ein und zieht dieses mit herunter;
+unten angekommen, läßt die Gabel den Film los und geht dann »leer« hoch,
+um oben wieder einzugreifen und so das Spiel in gleichmäßigem Gange zu
+wiederholen. Beim »Schläger«, dessen Anordnung in Figur 38 skizziert
+ist, schlägt ein auf der rotierenden Scheibe S sitzender Exzenterstift
+in regelmäßigen Zwischenräumen auf den Film und zieht ihn dabei immer um
+ein Bild aus der Belichtungsstelle B weiter. Der Nockenapparat besteht
+im wesentlichen aus 2 Trommeln Ww (Fig. 39), die so dicht beieinander
+stehen, daß der Film eben frei dazwischen hängen kann. Die große
+Trommel, welche rotiert, hat an ihrem Umfange einen Nocken E, und
+jedesmal wenn dieser gegen die zweite Trommel kommt, wird der Film
+eingeklemmt und mitgezogen. Die Zahntrommel R oberhalb der
+Belichtungsstelle B schiebt nur genau soviel Film vorwärts, als unten
+weiter gezogen werden darf.
+
+
+_Kinematographen mit gleichmässig laufendem Filmband._
+
+  [Illustration: Fig. 40. Schematische Anordnung. Fig. 41. Apparat von
+  Jenkins. Kinematograph mit gleichmässig bewegtem Filmband und einer
+  Reihe rotierender Objektive.]
+
+Das sind die Hauptkonstruktionstypen, wie wir sie heute im Handel
+praktisch angewandt finden. Es gibt nun noch eine große Anzahl anderer
+Anordnungen; interessant ist namentlich eine Gruppe von Apparaten, wobei
+der Film nicht ruckweise bewegt wird, sondern mit gleichmäßiger
+Geschwindigkeit läuft. Ich will davon ein Beispiel geben. Sie sehen in
+Figur 40 links den Film, der über zwei Rollen läuft. Davor befindet sich
+eine Reihe von Objektiven, die wie ein Kranz auf der Drehscheibe sitzen
+und einen Rundlauf machen, um eines nach dem anderen in Tätigkeit zu
+treten. Jedes Objektiv läuft eine kleine Strecke in gleicher
+Geschwindigkeit mit dem Film zusammen und führt während dieser Zeit die
+Belichtung aus. Infolge der gleichmäßigen Mitbewegung hält das Objektiv
+das Bild sozusagen auf dem Film fest, und daher bekommen wir eine
+vollkommene Schärfe. Bei dieser Anordnung sind ruckweise Bewegungen
+vermieden. Sowohl der Film als auch sämtliche Teile des Mechanismus
+bewegen sich mit gleichmäßiger Geschwindigkeit. Daher bietet sich hier
+die Möglichkeit, den Apparat außerordentlich schnell laufen zu lassen
+und eine sehr große Anzahl von Aufnahmen in der Sekunde zu machen, wie
+es für bestimmte Zwecke erforderlich ist.
+
+[Sidenote: Illustration »Taschenkinematograph«]
+
+Der Amerikaner Jenkins, dem wir die Ausarbeitung dieses Systems
+verdanken, das übrigens Ducos du Hauron 1864 schon angab, machte mit der
+in Figur 41 dargestellten Kamera, die 15 Objektive besitzt, über 250 gut
+exponierte Aufnahmen in der Sekunde. Der Engländer Maskelyne löste die
+Aufgabe in der Weise, daß er in das Objektiv des Apparates ein
+rotierendes optisches Organ einbaute, das jedes Bildchen immer eine
+kleine Strecke mit dem bewegten Filmband mitführt. Auch hier ist die
+Zahl der Bilder, die man in der Sekunde aufnehmen kann, nur begrenzt
+durch die Lichtempfindlichkeit des Negativfilm. Aber ebenso wie bei
+Jenkins ist die Ausführung sehr kostspielig: ein Apparat dieser Art, den
+die britische Artillerie-Prüfungskommission zur Photographie fliegender
+Geschosse benutzt, stellte sich auf Mk. 10000. Eine noch höhere
+Leistungsfähigkeit erzielte Cranz; ihm gelang es, eine Einrichtung zu
+konstruieren, womit in der Sekunde auf den mit 90 Meter Geschwindigkeit
+laufenden Film 5000 Bilder gemacht wurden. Dieser Apparat dient
+erfolgreich dazu, fliegende Geschosse und ihre Wirkung kinematographisch
+aufzunehmen.
+
+
+_Ausstattung des Kinematograph-Mechanismus._
+
+Für die gewöhnlichen Zwecke der Kinematographie werden, abgesehen von
+unwesentlichen Abänderungen, nur die zuerst besprochenen Konstruktionen
+benutzt, die den Film ruckweise weiterbewegen. Wenn man nun einen
+vollständigen Kinematograph-Mechanismus ansieht, so findet man noch
+allerlei Räderwerk und verschiedenerlei Vorrichtungen daran; namentlich
+die für Kinematographentheater bestimmten Apparate werden sozusagen mit
+allen Schikanen ausgerüstet. Da ist z. B. für den Schutz des Films
+gegen die heißen Lichtstrahlen gesorgt. Das Zelluloid, woraus das
+Filmband besteht, ist ein leicht entflammbares Material, und es tritt
+daher bei Stillstand des Mechanismus, wo die Strahlen Zeit haben, auf
+den Film zu wirken, die Gefahr auf, daß es entzündet wird. Dies wird nun
+verhindert durch eine Sperrklappe, die beim Betriebe durch einen
+Regulator geöffnet wird und sich selbsttätig schließt, sobald der
+Apparat aufhört zu laufen. In Figur 42 ist ein derartiges Modell
+wiedergegeben. Figur 43 zeigt einen einfacheren
+Kinematograph-Mechanismus in Verbindung mit einer Projektionslaterne,
+wie er in Vereinen und Schulen gebraucht wird. Der Antrieb wird bei den
+Theaterapparaten in der Regel durch einen kleinen Elektromotor bewirkt,
+während man das Werk sonst mit der Hand dreht.
+
+  [Illustration: Fig. 42. Mechanismus eines Theater-Kinematographen.]
+
+  [Illustration: Fig. 43. Einfacherer Kinematograph in Verbindung mit
+  der Projektionslaterne.]
+
+
+_Der Aufnahmeapparat._
+
+[Sidenote: Illustration »Taschenkinematograph«]
+
+Wir wollen uns nun auch den Aufnahmeapparat einmal näher ansehen. Der
+lichtempfindliche Film sitzt, wie Figur 44 zeigt, in der oben
+angebrachten Kassette, läuft dann um die obere Zahntrommel und wird von
+dieser der Belichtungsstelle zugeführt. Vorne im Apparat, hier nicht
+sichtbar, befindet sich der Mechanismus, in diesem Falle ein Greifer,
+der den Film ruckweise vorwärts bewegt. Der unten stoßweise austretende
+Film läuft dann über die zweite Zahntrommel und wird dadurch der unteren
+Kassette in gleichmäßiger Bewegung zugeführt. Zu einem vollkommenen
+Apparat gehört nun u. U. noch eine Einstellvorrichtung, ein Zähler, der
+angibt, wieviel Film belichtet ist, und ein Geschwindigkeits-Anzeiger,
+woran der Photograph kontrollieren kann, ob er die Kurbel mit der
+richtigen Schnelligkeit dreht.
+
+  [Illustration: Fig. 44. Kinematographischer Aufnahme-Apparat mit
+  eingespanntem Film (geöffnet).]
+
+Fußnoten:
+
+[C] Dieses Schema deutet ebenso wie die folgenden einen Vorgang
+an, der sich in 1/5 Sekunde abspielt.
+
+
+
+
+Das kinematographische Aufnahme-Verfahren.
+
+
+_Wie man mit der Aufnahmekamera arbeitet._
+
+Figur 45 zeigt uns den Photographen bei der Arbeit. Das Photographieren
+an sich ist einfach, wenn man einmal mit einer Kamera umzugehen weiß.
+Der Apparat sitzt auf einem recht kräftigen Stativ, man richtet ihn auf
+den Gegenstand und dreht die Kurbel. Wenn sich aber der Gegenstand, wie
+hier der Dampfer, fortbewegt, so muß man mit der Kamera nachfolgen, und
+dazu gehört Geschick und Übung. Überhaupt werden kinematographische
+Aufnahmen dadurch komplizierter, daß während des Belichtens leicht etwas
+Unvorhergesehenes eintreten kann.
+
+
+_Aufnahmeateliers._
+
+Einstudierte Szenen bieten, wenn sie sich programmäßig abwickeln, bei
+der Aufnahme selbst am wenigsten Schwierigkeiten, dagegen schaffen sie
+vorher viel Mühe und Arbeit. Die bedeutenderen Filmfabriken haben dazu
+riesige Ateliers und beschäftigen ein gut eingeschultes Personal von
+Schauspielern, die einem tüchtigen Regisseur unterstellt sind. Viele
+tausend Meter Films werden da tagtäglich geschaffen und in alle Welt
+hinausgeschickt.
+
+  [Illustration: Fig. 45. Herstellung einer kinematographischen
+  Aufnahme.]
+
+
+_Lebensgeschichte des Kinematographenfilm._
+
+Wenn man nun die Lebensgeschichte des Kinematographenfilm, wie er
+nachher durch den Projektions-Apparat läuft, verfolgen will, so muß man
+zunächst in eine der großen Zelluloidfabriken gehen. Da wird das
+Zelluloid in breiten Bändern und in Längen bis zu 50 Metern gegossen: es
+ist eine schwierige Fabrikation, deren Ausarbeitung sehr große Erfahrung
+und jahrelange Versuche erforderte. Nur einige wenige Werke vermögen den
+Rohfilm in der richtigen Beschaffenheit: fest und geschmeidig, glasklar
+und fehlerlos, herzustellen. Noch schwieriger gestaltet sich die
+Bereitung eines tauglichen, unverbrennbaren oder doch schwer brennbaren
+Filmmaterials, wie es im Zellit vorliegt, das gegenüber dem leicht
+entzündlichen Zelluloid große Vorzüge bietet.
+
+[Sidenote: Illustration »Taschenkinematograph«]
+
+In einem anderen Werke oder in einer anderen Abteilung des ersteren wird
+beim Lichte roter Lampen auf das breite Zelluloidband die
+lichtempfindliche Emulsion aufgetragen, eine Emulsion derart, wie man
+sie für photographische Platten anwendet. Dann läuft das Band durch eine
+Schneidemaschine, die es mit Tellermessern in schmale Streifen zerteilt,
+wie der kinematographische Apparat sie braucht. Diese Streifen wandern
+nun, zu Rollen gewickelt, in die Filmfabrik. Deren erste Arbeit besteht
+darin, die Streifen mit der Perforation zu versehen. Das geschieht,
+ebenfalls in rot beleuchteten Räumen, durch Perforiermaschinen, die
+stündlich viele tausend Löcher einstanzen. In größeren Werken sind deren
+mehrere Dutzend in rastloser Tätigkeit. Von diesen Maschinen wird größte
+Präzisionsarbeit verlangt: die Abstände der Löcher müssen genau
+innegehalten werden; denn die geringste Abweichung würde nachher bei der
+Projektion ein Tanzen des Lichtbildes verursachen. Nun sind die Films
+gebrauchsfertig und werden dem Photographen übergeben, der sie den
+Kassetten seiner Kamera einverleibt.
+
+Inzwischen herrscht im Aufnahme-Atelier des Werkes eine fieberhafte
+Tätigkeit: viele Köpfe und Hände bereiten die Szene vor. Nachdem die
+Idee zu dem Stück, sei es Drama, Tragödie oder Komödie, glücklich heraus
+ist, nachdem die literarische Abteilung Band um Band der Bibliothek
+gewälzt und die Einzelheiten bearbeitet hat, heißt es, das zur
+Aufführung erforderliche Material herbeischaffen. Ein Heer von
+Tischlern, Malern, Tapezierern und Dekorateuren stellt fertig, was sich
+in der Requisitenkammer nicht vorfindet. Die Szenerien werden möglichst
+naturgetreu u. realistisch zusammengesetzt. Der Regisseur wählt die
+Schauspieler und verteilt die Rollen; der kundige Garderobenverwalter
+gibt die Kostüme aus. Nun wird geprobt und instruiert, bis alles klappt.
+Hier wird noch ein Versatzstück zurecht gerückt, dort legt in einem der
+Ankleideräume der Friseur die letzte Hand an -- endlich kann die
+Vorführung stattfinden.
+
+Kurz, es geht zu wie in einem Theater. Und auch die Ausstattung der
+Ateliers ist die wie einer Bühne, aber raffiniert und vollkommen, wie
+bei der modernsten Bühne. Ob nun die Szene auf dem Lande oder Wasser
+sich abspielt, auf dem Mond oder im Mittelpunkt der Erde; ob es eine
+männermordende Schlacht gilt, eine Jagd, ein Schauspiel, Lustspiel oder
+ein phantastisches Märchen: für alles ist gesorgt. Aber anders als im
+Theater flutet hier durch ein mächtiges Glasdach das Tageslicht hinein,
+ergänzt oder, wenn nötig, gar ersetzt durch eine Reihe elektrischer
+Lampen von ungeheurer Kraft, deren violettdurchsetzte Strahlen wie
+Sonnenbrand in die Haut stechen. Diese Lichtfülle verlangt der
+kinematographische Aufnahmeapparat, der als einziger Zuschauer und dabei
+als unerbittlich strenger Kritiker der Aufführung beiwohnt: jeder
+Fehler, jede falsche Bewegung wird unweigerlich von ihm festgehalten.
+
+Zu gleicher Zeit arbeitet eine andere Gruppe von Schauspielern draußen
+in freier Natur, manchmal weit, weit fort, an der Stätte selbst, wo das
+dargestellte geschichtliche Drama sich vor soundsoviel Jahren oder
+Jahrhunderten abspielte. Keine Kosten werden gescheut, die historische
+Treue zu wahren. In noch größerer Ferne, vielleicht schlimmen
+Entbehrungen und bösen Abenteuern ausgesetzt, ist der Reisephotograph
+tätig, dem es obliegt, wertvolle Aufnahmen von Land und Volk mit nach
+Hause zu bringen. Galt es fremde Erdteile und unbekannte Gegenden
+aufzusuchen, so mußte, wie zu wissenschaftlichen Forschungsreisen, eine
+regelrechte Expedition ausgerüstet werden, die schon viele Tausende
+kostet, ehe es losgeht.
+
+[Sidenote: Illustration »Taschenkinematograph«]
+
+Die Aufnahmen sind gemacht, die Films belichtet. Nun gilt es, die Bänder
+zu entwickeln und die Bilder zum Vorschein zu bringen. Diese Arbeit muß
+mit großer, großer Sorgfalt geschehen. Denn ein einziger Fehler, eine
+einzige Unachtsamkeit könnte die ganze Vorarbeit mit ihren oft
+unsäglichen Kosten zunichte machen. Drum herrscht peinlichste
+Sauberkeit; alle Einzelheiten des Betriebes sind geregelt und werden
+streng überwacht. Anders sieht es da aus, als in der üblichen
+photographischen Dunkelkammer; heißt es doch, die Riesenschlangen von
+Films zu bändigen und ständig unter Kontrolle zu halten. Während einige
+Fabriken sie auf Rahmen spannen, bedienen sich andere Werke großer
+Wickel-Trommeln. Die Bäder sind in Porzellanbecken untergebracht --
+Becken so groß wie Badewannen. Zuerst hängt die Trommel über dem
+Entwicklerbecken. Sie taucht unten ein und wird durch einen Elektromotor
+gedreht, so daß alle Teile gleichmäßig benetzt werden. Sobald die
+Entwicklung beendet ist, wandert die Trommel zum nächsten Becken, wo der
+Film eine kräftige Wasserspülung erfährt. Das dritte Becken enthält
+Fixierbad, dann kommt wieder Wasserspülung, zum Schluß ein Wasserbad mit
+Glyzerinzusatz, der dem Film Geschmeidigkeit verleiht. Inzwischen
+wandern andere filmbewickelte Trommeln den gleichen Weg von Becken zu
+Becken hinterher.
+
+  [Illustration: Fig. 46. Trockenraum einer Filmfabrik.[D]]
+
+Nun kommen wir wieder ins Helle, in einen großen Raum, wo die Films auf
+riesigen Trommeln getrocknet werden. (Fig. 46). Die durchströmende Luft
+ist filtriert, damit nur ja kein Stäubchen darauf kommt. Auf das
+Trocknen folgt eine sorgsame Prüfung und Reinigung.
+
+Was wir jetzt haben, ist der fertige Negativfilm, wie ihn Figur 24
+zeigte. Diesen Negativfilm begleiten wir weiter zur Kopierabteilung. Da
+schafft man als Arbeitsmaterial für die Maschinen viele Rollen
+lichtempfindlicher Films hin, die soeben perforiert worden sind; sie
+tragen die Bezeichnung »Positivfilm« und haben eine weniger empfindliche
+Emulsion als die zur Aufnahme bestimmten Films. Alle Maschinen -- man
+hört's am klappern -- scheinen in emsiger Tätigkeit. Doch an einer
+Stelle können wir, so gut es bei dem roten Lichte geht, gerade zusehen,
+wie ein Arbeiter frisch ladet, wie er Negativ- und Positivfilm
+einspannt, wie der Motor anzieht, und wie nun die beiden Films, Schicht
+auf Schicht, Schritt um Schritt am Fensterchen vorbei gezogen werden, wo
+eine Glühlampe die Belichtung besorgt. Wie im gesamten Betrieb, geht
+auch hier die Arbeit glatt und flott vonstatten. Und auf ein rasches
+Arbeiten muß man gerichtet sein; kommt es doch manchmal vor, -- bei
+aktuellen Aufnahmen ist dieser Fall nicht selten -- daß der Film noch an
+demselben Tage fertig herausgebracht werden soll, um abends im Theater
+zur Vorführung zu gelangen.
+
+[Sidenote: Illustration »Taschenkinematograph«]
+
+Die belichteten Positivrollen kommen in den uns bekannten
+Entwicklungsraum, und dort winden sich nun wieder die Filmschlangen
+durch die sauren Bäder und Wasserbrausen, bis sie ein prächtiges, klares
+Bildergewand zeigen, das in die nächste Stube zum Trocknen gehängt wird.
+Es folgt dann noch ein großes Reinemachen, wobei Maschinen helfen, und
+eine genaue Besichtigung. Manche der Aufnahmen erfahren noch eine
+weitere Bearbeitung: mit Hilfe chemischer Tonbäder werden die dunkeln
+Partien gefärbt. -- Sie haben solch einfarbige Darstellungen, z. B.
+blaue Seestücke mit schneeweißem Gischt, wohl schon gesehen. Oder die
+Bänder werden durch einfache Farblösungen gezogen, wobei die ganze
+Schicht einen gleichmäßigen Ton annimmt. Andere Films sollen hinwieder
+naturfarbig herausgebracht werden. Da heißt es, künstlich Farbe
+auftragen. Während dies sonst mit der Hand geschieht, ersetzen die
+großen Fabriken das Heer hunderter Koloristinnen durch sinnreiche
+Maschinen. Bei diesem maschinellen Verfahren muß man mehrere der Films,
+welche die betreffenden Aufnahmen darstellen, opfern. Aus diesen werden
+nämlich Schablonen hergestellt, für jede Farbe eine. Der Arbeiter
+schneidet dazu mit großem Geschick zunächst aus einem Film, Bild um
+Bild, alle die Stücke aus, die rot werden sollen. Dieser Schablonenfilm
+läuft nun mit dem zu kolorierenden Film, wobei sich die Bildteile beider
+genau decken, durch die Maschine und diese trägt mechanisch durch die
+ausgeschnittenen Stücke rote Farbe auf. Dann erhalten ein zweiter,
+dritter und wer weiß wie viele Films mit Hilfe derselben Schablone den
+gleichen »Aufdruck« in rot. Inzwischen ist der zweite Schablonen-Film
+fertig geworden, bei dem alle blauen Stücke ausgeschnitten sind. Nun
+wird die ganze Reihe mit diesem »gedruckt«, worauf in gleicher Weise die
+übrigen Farben daran kommen. Diese Methode lohnt sich natürlich nur für
+einen Betrieb, der eine große Anzahl Films in kolorierter Ausführung
+absetzen kann.
+
+Die fertigen Films, kolorierte, getönte und schwarze, laufen im
+Versandraum zusammen. Unterdessen hat die kaufmännische Abteilung die
+Reklametrommel gerührt, Filialen in allen Weltteilen haben die ersten
+Kopien bekommen und den Interessenten vorgeführt unter der Ankündigung,
+daß der Film am soundsovielten verausgabt wird. Die Bestellungen sind
+notiert und nun wird geschafft, damit alles zum Termin da ist. Und
+gehörig muß geschafft werden, wenn der Film sich als »Schlager« oder
+»Kassenmagnet« erwiesen hat.
+
+
+_Wie die Trickfilms hergestellt werden._
+
+Was in diesen Filmfabriken alles aufgeführt und photographiert wird, ist
+staunenswert. Phantasie und Unternehmungsgeist überbieten sich, immer
+Neues und Originelles zu schaffen, seien es nun dramatische
+Darstellungen oder Tragödien, Märchen oder Geschichten zum Totlachen.
+Sie haben vielleicht mancherlei Derartiges in Kinematographen-Theatern
+gesehen. Aber vielleicht haben Sie auch einmal Vorführungen gesehen, die
+mit ihren zauberhaften Vorgängen verblüffend wirkten und wobei Sie sich
+fragten: wie wird das gemacht? -- Da gibt es z. B. ein Stück, worin ein
+Mann an den Wänden heraufkriecht und an der Decke hinläuft. Die Lösung
+ist ganz einfach. Bei der Aufnahme werden auf den Boden des Ateliers
+abwechselnd Dekorationen gelegt, welche die Seitenwände und die Decke
+eines Zimmers darstellen; der Mann kriecht oder läuft darüber und wird
+von oben her photographiert.
+
+Ein beliebter Trick ist die Verwandlung von Personen; sie läßt sich bei
+kinematographischen Aufnahmen leicht ausführen. In der Szene, woraus in
+Figur 47 ein paar Bilder wiedergegeben sind, verwandelt sich z. B. die
+alte Bettlerin in eine Fee. Dazu wurde einfach zwischen dem zweiten und
+dritten Bild die Aufnahme unterbrochen; die Bettlerin wirft ein anderes
+Gewand über oder wird durch eine andere Person ersetzt, der Photograph
+öffnet wieder das Objektiv und dreht weiter.
+
+  [Illustration: Fig. 47. Verwandlungsszene.[E]]
+
+Noch ein Beispiel! Der Kinematograph führt folgende Szene vor, die in
+den Figuren 48 bis 51 angedeutet ist. Ein Betrunkener liegt auf der
+Straße. Ein Automobil saust heran und fährt ihm beide Beine ab (Fig.
+48). Der Mann schreit nach und schwenkt die Beine in der Luft (Fig. 49).
+Das Auto hält, der Insasse läuft heran, er flickt ihm die Beine wieder
+an (Fig. 50) und beide ziehen zufrieden von dannen (Fig. 51). -- Nun die
+Lösung! Auch hier wird die Aufnahme unterbrochen, und zwar zuerst in dem
+Moment, wo das Automobil herangekommen ist.
+
+Das Auto hält an. Der Betrunkene wird ersetzt durch einen Krüppel, dem
+beide Beine fehlen, und ein Paar künstlicher Beine wird davor gelegt.
+Die Auswechslung der Personen ist in Figur 52 wiedergegeben. Dann tritt
+der kinematographische Apparat wieder in Tätigkeit; das Auto, dessen Weg
+genau vorgezeichnet ist, fährt nochmals heran und saust darüber hinweg.
+Nachher wird die Aufnahme abermals unterbrochen und der Krüppel wieder
+durch den Betrunkenen ersetzt.
+
+[Sidenote: Illustration »Taschenkinematograph«]
+
+  [Illustration: Fig. 48. Szenen aus einem Trickfilm. Fig. 49.]
+
+  [Illustration: Fig. 50. Szenen aus einem Trickfilm. Fig. 51.]
+
+  [Illustration: Fig. 52. Erklärung des Trick: Die Auswechslung der
+  Personen.]
+
+Von diesem einfachen Hilfsmittel der Aufnahme-Unterbrechung wird häufig
+Gebrauch gemacht. Der Film, geduldig wie er ist, reiht Bild an Bild
+auf, wie und wann es dem Photographen gefällt. Und das Publikum bekommt
+nachher die Bilder in sausender Folge vorgeführt; es merkt nicht, daß
+der Kinematograph lügt, daß da zwischen einzelnen Bildern ganze Stücke
+fehlen -- kein Wunder, daß ihm die Vorgänge zauberhaft erscheinen. Da
+gibt es die unglaublichsten Sachen zu sehen. Leblose Gegenstände führen
+einen Tanz auf; Streichhölzer spazieren aus der Dose, die sich selbst
+öffnet, und bauen sich zu Figuren auf; Werkzeuge leisten Arbeit, eine
+Säge zerschneidet ein Brett ohne Zutun. -- Wie leicht ist das alles zu
+machen, wenn man einmal den Kunstgriff kennt, wie einfach ist die
+Erklärung, wenn man einmal weiß, daß die Hilfsvorgänge, die dem
+Zuschauer verborgen bleiben sollen, nicht mit photographiert werden!
+
+Drollige Wirkungen erzielt man durch Rückwärtsdrehen des Filmbandes.
+Alle Bewegungsvorgänge kehren sich um. Pferde rennen rückwärts, Steine
+rollen bergauf. Der Schwimmer saust mit den Beinen voran aus dem Wasser
+und landet auf dem Sprungbrett, dann fliegen ihm die Kleider an den
+Leib. Der Raucher saugt den Rauch aus der Luft auf und seine Zigarre
+brennt immer länger -- denken Sie es selbst weiter aus!
+
+Die Hilfsmittel des Photographen sind damit nicht erschöpft. Er schafft
+die wunderbarsten Effekte, indem er Aufnahmen kombiniert und
+übereinanderdruckt. Dem Träumer erscheinen winzig kleine Feen, die aus
+Blumen entsteigen und einen Reigen aufführen; oder es taucht eine
+Miniatur-Tänzerin in einem gefüllten Wasserglas auf, um sich dazu zu
+bewegen und dann wieder allmählich wie im Nebel zu verschwinden. Kurz,
+kein Märchen ist so seltsam, keine Phantasie so erfindungsreich, als daß
+nicht der Kinematograph ihr beikäme und die Gedanken in seine
+Lichtbilder-Wirklichkeit umzusetzen vermöchte.
+
+Fußnoten:
+
+[D] Mit Genehmigung der Charles Urban Trading Co., London.
+
+[E] Die Figuren 47 bis 52 sind hergestellt nach Aufnahmen der
+Firma Léon Gaumont, Paris, und zwar mit Genehmigung der Pariser
+Zeitschrift >L'Illustration<, in der sie erschienen.
+
+
+
+
+Die Bedeutung des Kinematographen.
+
+
+_Der Kinematograph als Forscher und Lehrer._
+
+[Sidenote: Illustration »Taschenkinematograph«]
+
+So bewundernswert nun auch die technischen Leistungen bei solchen
+Aufnahmen sein mögen: in diesen Kunststücken darf man nicht den
+Hauptwert des Kinematographen suchen. Seine eigentliche Bedeutung liegt
+auf anderem Gebiete: In der Hand des Naturfreundes ist der Kinematograph
+ein großer Forscher geworden. Er schaut durchs Vergrößerungsglas und
+verfolgt das Treiben der kleinen Lebewesen; er belauscht die Vögel in
+ihren Nestern; er beobachtet die Pflanzen und Blumen, wie sie wachsen,
+verblühen und vergehen; dann wieder sucht er fremde Länder und Völker
+auf und studiert ihre Sitten und ihren Sinn, oder er geht mit dem
+Techniker in große industrielle Werke. Er sieht alles, schreibt alles
+auf seinem Film auf, nichts entgeht ihm. Und so oft man will, erzählt er
+alles getreu bis in die kleinsten Einzelheiten wieder.
+
+Dem Gelehrten vermag der Kinematograph unschätzbare Dienste zu leisten,
+indem er festhält, was des Menschen Auge nicht mehr verfolgen, nicht
+mehr unterscheiden kann. Und uns steht durch den Kinematographen die
+ganze Welt mit ihrem Getriebe offen. Was die Natur im Großen und im
+Kleinen nur darbietet, was der Mensch nur erschafft, alles bringt dieser
+Wunderapparat vor unser Auge. In spielender Unterhaltung zeigt und lehrt
+er innerhalb einer Stunde mehr, als mancher nach langem, schwierigem
+Studium beobachtet oder auf kostspieliger, weiter Reise gesehen hat.
+
+
+_Macht der kinematographischen Darstellung._
+
+Wie lebendig und überzeugend ist seine »Sprache«! Wer noch nie am Meere
+gewesen ist, erhält wohl von einer Photographie oder einem Gemälde einen
+Eindruck der unendlichen Wasserfläche; aber erst der Kinematograph zeigt
+ihm, wie die mächtigen Wogen dahingehen, wie sie brandend auf den Sand
+rollen oder hoch aufschäumend gegen die Felsküste schlagen, zeigt ihm,
+wie ein Ozeandampfer hinausfährt oder ein Kriegsschiff manövriert.
+
+Diese lebendige Sprache verleiht auch dem kinematographischen Drama eine
+so mächtige Wirkung. Statt des Phantasiebildes, das wir beim Lesen
+gewinnen, drängt sich hier gewissermaßen leibhaftige Wirklichkeit auf.
+Ja, da dem »taubstummen« Stücke die Worte fehlen, wird die Handlung
+zusammengedrängt: was uns der Roman im Laufe von Stunden erzählt,
+wickelt sich hier in Minuten ab -- daher atemlose Spannung von Anfang
+bis zu Ende. Kraftvollen Schriftstellern ist das kinematographische
+Drama ein vorzügliches Ausdrucksmittel.
+
+
+_Das Kinematographen-Theater._
+
+Praktische Anwendung hat der Kinematograph in umfangreichem Maße in den
+Kinematographen-Theatern gefunden, besitzt doch bei uns jede Stadt von
+soundsoviel tausend Einwohnern mindestens ein solches Theater (wenn
+nicht, wie heißt der verwaiste Ort? Interessenten bezahlen den
+Nachweis). In den Programms herrschen die dramatischen Darstellungen
+vor. Man sucht vielfach volle Häuser zu gewinnen, indem man dem
+Sensationsgelüste der Menge entgegenkommt und im Übermaße aufregende,
+nervenreizende Stücke bringt. Diese Tendenz zahlreicher Unternehmungen:
+»Sensationell um jeden Preis« hat dem Kinematograph einen bösen Ruf
+eingebracht und Gegenbewegungen ins Leben gerufen. Gewiß ist auch viel
+Erfreuliches zu verzeichnen, vielerlei schöne Aufnahmen werden gezeigt,
+die hohen Bildungswert besitzen. Diesen möchte ein größerer Platz
+eingeräumt werden. Solange indessen das Volk gerade an den garstigen
+Stücken seinen Gefallen bekundet, solange Filmfabriken und Theater
+sehen, daß sie damit ihre besten Einnahmen machen, ist eine gehörige
+Besserung schwerlich zu erwarten.
+
+
+_Das Tonbild._
+
+[Sidenote: Illustration »Taschenkinematograph«]
+
+Im Kinematographen-Theater findet man auch das Tonbild, die Verbindung
+von Kinematograph und Sprechmaschine. Der eine Apparat stellt die
+bildliche Szene dar, während der andere die Figuren sprechen, singen und
+musizieren läßt. Die Aufnahmen dazu mit kinematographischer Kamera und
+Grammophon werden getrennt vorgenommen, und zwar erfolgt die eine an
+Hand der anderen. Damit sich nun bei der Wiedergabe Bild und Ton genau
+decken, damit also nicht die Bewegungen den Worten vorauseilen oder
+dahinter zurückbleiben, müssen beide Apparate Hand in Hand -- man sagt
+»synchron« -- laufen. Diese Forderung zu erfüllen, werden Sie denken,
+ist eine einfache Aufgabe -- gewiß: man braucht nur die Räderwerke von
+Kinematograph und Sprechmaschine durch eine geeignete Übersetzung
+»zwangläufig« miteinander zu verbinden; dann muß der eine genau mit dem
+anderen gehen, er kann nicht vorstreben oder zurückbleiben. Indessen
+bietet die praktische Ausführung insofern eine Schwierigkeit, als man
+das Grammophon, um die richtige Wirkung zu erzielen, beim
+Projektionsschirm, also weit vom Kinematograph entfernt, aufstellt. Aber
+auch eine andere Forderung ist schwer mit dieser Lösung in Einklang zu
+bringen: die Sprechmaschine muß nämlich mit einer bestimmten
+Geschwindigkeit laufen, damit der Ton die richtige Höhe erhält, und sie
+ist darin sehr empfindlich -- jede Abweichung bringt einen Mißton. Nun
+ist der Kinematograph ein unruhiger Bruder; er läuft nicht so
+gleichmäßig: da kommt z. B. einmal eine Klebstelle im Filmband, die
+momentan eine geringe Verzögerung der Geschwindigkeit herbeiführt -- in
+diesem Augenblick schreit die Sprechmaschine, der Ton geht herunter, um
+sofort wieder in die Höhe zu schnellen. Um diesen Übelstand zu
+vermeiden, läßt man das Grammophon, so wie es soll, ruhig für sich
+laufen und reguliert nun nach seinem Gang mittels einer
+Anzeigevorrichtung die Geschwindigkeit des Kinematographen. Derartige
+Vorrichtungen -- man nennt sie »Synchronismen« -- gibt es verschiedene.
+Hier sind es optische Signale, wonach der Operateur den Gleichlauf
+kontrolliert, dort auf elektrischem Wege übertragene Zeichen; bei
+anderen hinwieder geschieht die Regelung automatisch: der Motor des
+Kinematographen wird selbsttätig in seiner Geschwindigkeit korrigiert,
+wenn die Übereinstimmung aussetzt.
+
+
+_Fehlerhafte Erscheinungen._
+
+Da wir grade im Kinematographen-Theater sind, höre ich Sie die Frage
+stellen: woher kommt es, daß man zuweilen auf dem lebenden Lichtbilde
+vorwärts fahrende Wagen mit schleifenden oder gar rückwärts laufenden
+Rädern sieht? Nun, suchen wir einmal die Erklärung! Bei der Aufnahme der
+Szene machte die kinematographische Kamera etwa 15 Belichtungen in der
+Sekunde, also wurde auch das Rad 15 mal in der Sekunde photographiert.
+Nun hat sich das Rad zwischen den einzelnen Aufnahmen stets um ein Stück
+gedreht, und wenn es der Zufall will, so ist in dieser Zeit immer eine
+Speiche genau an die Stelle der nächsten getreten. Da eine Speiche
+aussieht wie die andere, bietet dann das Rad auf allen Bildern das
+gleiche Aussehen; unser Auge nimmt also keine Bewegung in den Speichen
+wahr und wir meinen, das Rad stände still. Nehmen wir nun an, das Rad
+laufe etwas langsamer wie vorher. Dann bleibt die Speiche, welche bisher
+-- in der Zeit von Aufnahme zu Aufnahme -- immer genau an Stelle der
+Nachbarspeiche getreten war, etwas gegen diese zurück. Unser Auge
+verwechselt nun diese Speichen, die in den aufeinanderfolgenden Bildern
+so nahe beieinander sind, und wir nehmen eine langsame Rückwärtsdrehung
+wahr. Es brauchte nur eine einzige der Speichen eine abweichende Form zu
+besitzen, so fiele die Ursache zu dieser optischen Täuschung fort und
+wir würden sehen, wie diese Speichen sich richtig drehen und wie das Rad
+vorwärts rollt.
+
+[Sidenote: Illustration »Taschenkinematograph«]
+
+Ferner fragen Sie: manchmal sieht man in den kinematographischen
+Darstellungen überhastete Bewegungen! -- Diese Erscheinung tritt ein,
+wenn der Vorführer den Apparat zu rasch laufen läßt. Es ist leicht
+verständlich: je rascher man den Film durchlaufen läßt, desto schneller
+spielt sich die Szene ab. Die Bewegungen können nur dann natürlich
+wirken, wenn die Wiedergabe mit der gleichen Geschwindigkeit, also mit
+der gleichen Bilderzahl in der Sekunde, erfolgt wie die Aufnahme.
+Endlich: woher kommt es, daß man zuweilen im lebenden Lichtbilde ein
+unangenehmes Flickern wahrnimmt? -- In solchem Falle wird zur Vorführung
+ein alter oder schlecht behandelter Film benutzt, der, wie man sagt,
+»verregnet« ist. Mit jedem neuen Bilde, also 15 mal in der Sekunde,
+erscheinen immer wieder andere Flecken und Kratzen, die bald hier, bald
+dort sitzen und daher auf unser Auge wie ein Gewirre tanzender Mücken
+wirken.
+
+
+_Das lebende Lichtbild in Schule und Vortragssaal._
+
+Ein großes Anwendungsgebiet steht dem Kinematographen noch offen: die
+Schule; sie hat sich des lebenden Lichtbildes bisher noch wenig
+angenommen. Und doch stellt der kinematographische Apparat ein
+ausgezeichnetes Anschauungsmittel dar, das dem Lehrer große Hilfe bietet
+und gleichzeitig eine Erweiterung des Lehrplanes ermöglicht. Praktische
+Vorschläge, die auf die Einführung des Kinematographen in die Schule
+hinzielen, sind schon ausgearbeitet worden. Das Gleiche gilt vom Hörsaal
+der Hochschulen und Universitäten, sowie vom Unterricht in Kunstschulen,
+der auch durch geeignete Aufnahmen gewinnen wird.
+
+In Vereinen und bei öffentlichen Vorträgen, wo die Benutzung des
+Lichtbilderapparates fast zur Regel geworden ist, findet man den
+Kinematographen schon häufiger. Mag der Vortragsredner auch sprechen
+über Länder und Völker, über Tiere und Pflanzen, über technische
+Betriebe oder über Luftschiffe und Flugmaschinen -- wenn er nicht das
+Objekt selbst demonstrieren kann: gibt es für ihn ein besseres
+Anschauungsmittel als das lebende Lichtbild?
+
+Einer ausgedehnteren Verwendung des Kinematographen in Schule und Verein
+steht heute weniger im Wege wie ehedem, wo ein solcher Apparat sehr
+kostspielig war. Für einige hundert Mark kann man jetzt schon eine
+leistungsfähige praktische Einrichtung erhalten; ist bereits ein
+Lichtbilderapparat vorhanden, so kommt man wesentlich billiger weg,
+weil dann nur der Mechanismus zu beschaffen ist. Ferner liegt ein
+umfangreiches Material an guten, lehrhaften kinematographischen
+Aufnahmen vor, deren Zahl ständig vermehrt wird, und es gibt viele
+Anstalten, die Films verleihen.
+
+
+_Was es an lehrhaften Films gibt._
+
+Alle Weltteile, aller Herren Länder sind in kinematographischen
+Darstellungen vertreten. Da gibt es Films von Rom, Pompeji, Venedig, von
+Konstantinopel, Moskau und Tiflis; nicht minder solche, die uns Berlin,
+London, Paris zeigen. Die berühmten Stätten Palästinas und Egyptens sind
+ebenso im lebenden Bilde festgehalten, wie die interessantesten Plätze
+aus Indien, China und Japan. Der Rheinfall bei Schaffhausen, die Strudel
+des Zambesi und der Niagara haben dem Photographen und seiner
+Kurbelkamera »Modell gestanden«; selbst der Südpol ist kinematographisch
+erobert, nachdem Shackleton in seiner Nähe erfolgreich Aufnahmen gemacht
+hat. Ein gleichfalls großes Kapitel der Filmaufnahmen betrifft die
+verschiedenen Völker in ihren Sitten, Gebräuchen und in ihrer
+Gewerbetätigkeit, sowie anschließend daran die moderne Technik.
+Arabische Töpferei, indische Seilerei, Kriegstänze der Südseeinsulaner,
+chinesische Hochzeit, Walfischfang, Krokodiljagd, Straußenzucht,
+Gewinnung und Verarbeitung des Tees und der Baumwolle -- vom Felde bis
+zum Versand des fertigen Produktes, Betrieb in den Diamantminen
+Südafrikas und den Goldgruben Australiens; dann bei uns: Eisengießerei,
+Herstellung von Eisenbahnschienen und von Lokomotiven, Wagenbau,
+Werkzeugmaschinen in Tätigkeit, Stapellauf eines Dampfers, Herstellung
+von Luftballons, die verschiedenen Systeme der Flugmaschinen, -- das
+sind lauter Titel von Films, die für Lehranstalten und Vorträge von
+großem Wert sind. Für den naturkundlichen Unterricht gibt es Aufnahmen,
+wie: die Ameise, die Biene, von der Raupe zum Schmetterling, das Leben
+im Sumpfwasser, das Leben im Ei, wilde Vögel in ihren Nestern. Die
+medizinische Fakultät findet Anschauungsmaterial in kinematographischen
+Aufnahmen von Operationen, wie solche verschiedentlich hergestellt
+worden sind.
+
+
+_Kinematographische Aufnahmen für Kunstschulen._
+
+[Sidenote: Illustration »Taschenkinematograph«]
+
+Für Kunstschulen werden Bewegungsstudien der Art von Wert sein, wie sie
+Muybridge und Anschütz schon vor 20 bis 30 Jahren schufen (vergl. die
+Darstellungen auf dem Lebensrad und in Fig. 15). Aufnahmen von
+schreitenden und laufenden Menschen und Tieren, von bewegten Gewändern,
+von der wogenden und brandenden See mögen die Beobachtung in der Natur
+trefflich ergänzen. Ja, während die wiederholte Beobachtung einer
+Bewegung in der Natur dadurch erschwert wird, daß beim zweiten und
+dritten Mal die Bewegung nicht die gleiche ist wie zuerst, indem
+Zufälligkeiten andere Formen hineinbringen, zeigt der Kinematograph, so
+oft man will, immer wieder genau denselben Vorgang ohne die geringste
+Abweichung. Ungestört kann der Künstler -- Bildhauer oder Maler -- sein
+Augenmerk auf einen bestimmten Moment konzentrieren, der ihn besonders
+interessiert: er weiß, daß dieser jedesmal gleichmäßig wiederkehrt.
+Schließlich steht es ihm frei, die Einzelbilder zu studieren und zu
+vergleichen.
+
+Auch die Schauspielkunst sollte sich der Kinematographie bemächtigen,
+sollte sie zur Belehrung, namentlich angehender Bühnenkünstler,
+heranziehen und durch geeignete Aufnahmen -- bedeutende Schauspieler in
+wichtigen Rollen sowie vorbildliche Aufführungen -- Studienmaterial
+schaffen.
+
+
+_Der Kinematographenfilm als geschichtliche Urkunde._
+
+Wiederholt hat man angeregt, kinematographische Archive anzulegen, und
+Anfänge dazu sind auch wohl schon gemacht worden. Denn manche der
+Aufnahmen, die wir heute als aktuell bezeichnen, werden als urkundliches
+Material von großem Werte für unsere Nachkommen sein: sie werden
+geschichtliche Begebenheiten in der richtigen Anschauung überliefern.
+Was würden wir darum geben, wenn wir berühmte Männer der Vergangenheit,
+wichtige historische Ereignisse im Lichtbilde aufleben lassen könnten!
+Vielleicht wird gar einmal das Wort des Witzblattes wahr, wonach der
+General vor der Schlacht ausruft: »Soldaten, seid tapfer, die
+Kinematographen der ganzen Welt blicken auf euch!«
+
+
+_Das lebende Lichtbild im Dienste der Reklame._
+
+Erfolgreich hat man den Kinematograph -- wenn auch einstweilen noch in
+geringem Maßstabe -- in den Dienst der Reklame gestellt: der
+Geschäftsreisende zeigt den Interessenten im lebenden Lichtbild, wie
+eine neue Maschine arbeitet; Verkehrsgesellschaften lassen Ansichten der
+von ihnen befahrenen Gegenden vorführen. So konnte man einen schönen
+Film sehen, der die Reise eines Lloyddampfers von Bremen nach New York
+wiedergibt und der einem gar sehr den Mund wässerig macht, einmal
+mitzufahren. Die Southern Pacific Railway Company drüben benutzt
+kinematographische Bilder, die dort allenthalben gezeigt werden, um ihr
+Unternehmen bekannt zu machen. In Australien läßt man zahlreiche
+Aufnahmen herstellen, durch deren Vorführung Ansiedler aus Europa
+»geworben« werden sollen. -- Es ist das ein Gebiet, das sich noch weit
+ausbauen läßt.
+
+
+_Der Kinematograph in der Wissenschaft._
+
+Als Hilfsmittel bei wissenschaftlichen Forschungen wurde der
+Kinematograph bisher nur vereinzelt angewandt. Aber was der Apparat auf
+diesem Felde bereits geleistet hat, ist so beachtenswert, daß die
+Gelehrten ihn im Laufe der Zeit ohne Zweifel immer mehr heranziehen
+werden. So hat der französische Physiologe Marey, dessen grundlegender
+Arbeiten wir eingangs gedachten, schon vor mehr denn 20 Jahren die
+Kinematographie zum Studium der Bewegungsvorgänge bei Menschen und
+Tieren benutzt. Auch Professor Fischer gründete seine eingehenden
+Untersuchungen des Ganges und der dabei wirksamen Kräfte auf die
+Ergebnisse, welche die photographische Registrierung ihm geliefert
+hatte.
+
+[Sidenote: Illustration »Taschenkinematograph«]
+
+  [Illustration: Fig. 53. »Photographie der Sprache«, Reihenaufnahme
+  von Demeny.]
+
+Demeny, der verdienstvolle Mitarbeiter Marey's, machte Aufnahmen der
+Mundbewegungen sprechender Personen und wies darauf hin, daß derartige
+Bilderreihen für die Physiologie der Sprache von Wert seien und daß sie
+ferner brauchbares Lehrmaterial für Sänger und Taubstumme darböten.
+Figur 53 zeigt die Reihenaufnahme eines Mannes, der die Worte
+ausspricht: »Je vous aime«. Tatsächlich konnten Schüler einer
+Taubstummenanstalt, die gelernt hatten, von den Lippen zu lesen, diese
+Worte aus der Aufnahme verstehen, wenn sie als lebendes Bild mit dem
+Lebensrade oder auf dem Projektionsschirm gezeigt wurde. Die Abbildung
+ist auch historisch interessant, insofern als sie aus dem Anfangsstadium
+der Kinematographie stammt: sie wurde von Demeny im Jahre 1891 mit
+seiner gegen heute verhältnismäßig noch primitiven Apparateinrichtung
+unter großen Mühen hergestellt.
+
+Ein anderes Anwendungsgebiet der Kinematographie beschritt Londe
+(ebenfalls zur Zeit Marey's), indem er krankhafte Bewegungen nervöser
+Personen in einer Anzahl von Bildern festhielt; es konnte dadurch eine
+sichere Unterlage für genaue Studien gewonnen werden.
+
+Mit Hilfe kinematographischer Aufnahmen gelang es ferner, den
+Flügelschlag der Insekten zu erforschen. Die Fliege bewegt ihre Flügel
+so rasch, daß man nichts als ein Flimmern wahrnimmt; auch der beste
+Beobachter ist machtlos dagegen. Der Kinematograph indessen, mit großer
+Geschwindigkeit laufend, so daß er bis zu 1500 Bilder in der Sekunde
+aufnimmt, hält alle Phasen der Bewegung fest. Und wenn dann die
+gewonnenen Bilder mit normaler Geschwindigkeit -- 15 in der Sekunde --
+auf den Projektionsschirm geworfen werden, so spielt sich dort der
+Vorgang hundertmal langsamer ab: mit Ruhe kann man nun das Auf- und
+Abgehen der Flügel und das Arbeiten des Flugmechanismus verfolgen.
+Umgekehrt hat man mit Hilfe des Apparates Bewegungen, die zu langsam vor
+sich gehen, als daß man sie zu übersehen vermöchte, künstlich
+beschleunigt. Auf diese Weise kann man das Wachstum der Pflanze mit dem
+Auge verfolgen. So wurde z. B. eine aufblühende Victoria Regia mit
+überaus geringer Geschwindigkeit -- etwa alle 2 Minuten ein Bild --
+aufgenommen. In der Projektion der Aufnahme, die mit normaler
+Geschwindigkeit: 15 Bilder in der Sekunde -- also 1800 mal rascher,
+erfolgt, sieht man dann den Vorgang, der in der Natur Stunden in
+Anspruch nimmt, innerhalb weniger Minuten sich abwickeln. Man verfolgt
+deutlich, wie die Knospenhüllen sinken, wie sich ein Blütenblatt vom
+anderen hebt, bis die herrliche Blume voll entfaltet ist, und wie sie
+alsbald wieder vergeht.
+
+[Sidenote: Illustration »Taschenkinematograph«]
+
+In gleicher Weise hat der französische Astronom Flammarion die Vorgänge
+am Sternhimmel, die sich während einer fast 16 stündigen Nacht
+abspielten, in 2 bis 3 Minuten zur Darstellung gebracht: es wurden, wie
+bei den Pflanzen, mit dem Kinematograph in gewissen Zeitabständen
+Aufnahmen gemacht, insgesamt 2000 bis 3000, und diese dann mit der
+normalen Geschwindigkeit projiziert. Da sieht man vom Sonnenuntergang an
+alle Bewegungen der Gestirne in etwa 400 facher Beschleunigung; man
+verfolgt, wie die Milchstraße erscheint, wie der Mond aufgeht und vor
+den übrigen Himmelskörpern vorbei zieht, wie der ganze Sternhimmel sich
+von Ost nach West dreht und wie endlich das Tagesgestirn aufsteigt.
+
+Erfolgreich hat man den Kinematograph in Verbindung mit dem Mikroskop,
+ja sogar mit dem Ultramikroskop gebracht, das uns die feinsten
+Partikelchen zeigt. So wurden auf dem Film die Bewegungen der
+Blutkörperchen und ihr Kampf mit den ins Blut eingebrachten Bazillen in
+außerordentlich starker Vergrößerung festgehalten. Man sieht, wie die
+Krankheitserreger über die roten Blutkörperchen herstürzen, um sie zu
+verzehren. Der Forscher kann hier mit Ruhe die Vorgänge verfolgen; aus
+den einzelnen Bildern solcher Aufnahmen vermag er die Zahl gewisser
+Blutteilchen, die sich mit der Art der Ernährung ändert, festzustellen.
+
+Wellenbewegungen im Wasser, die ein Schiffskiel oder ein Propeller
+erzeugt, werden mit dem Kinematograph studiert. Daß man Spezialapparate
+zur kinematographischen Aufnahme fliegender Geschosse hergestellt hat,
+wurde schon erwähnt. Geheimrat Cranz konnte mit seinem Apparat, der 5000
+Belichtungen in der Sekunde macht, die Vorgänge beim Abschießen einer
+Kugel aus einer Selbstladepistole untersuchen; er konnte damit ferner
+die Wirkung von Schüssen auf Knochen, Metallplatten, wassergefüllte
+Gummiblasen und Kugeln aus feuchtem Ton in einer Reihe von Bildern
+festlegen. Diese Bilder, von denen die Dresdener photographische
+Ausstellung 1909 interessante Proben zeigte, brachten wichtige
+Ereignisse: man sieht, daß eine beschossene, dünne Messingplatte schon
+durch den Druck der mitgerissenen Luft zerstört wird, ehe die Kugel
+selbst auftrifft; daß die Zersplitterung eines durchschossenen Knochen
+nach dem Durchschlagen des Geschosses weiter vor sich geht.
+
+In neuerer Zeit ist es auch gelungen, kinematographische
+Röntgenaufnahmen zu machen; darunter hat namentlich eine Reihenaufnahme
+des Magens dem Mediziner neue wichtige Aufschlüsse über die Arbeitsweise
+dieses Organs gegeben. Mit Hilfe einer solchen Aufnahme hat man auch bei
+einem Magenkranken den Ort der Störung feststellen können.
+
+Die Kinematographie in natürlichen Farben, dies schwierige Problem, ist
+neuerdings ebenfalls, wenn nicht vollkommen, so doch in praktisch recht
+zufriedenstellender Weise gelöst worden. Es harrt noch die
+stereoskopische Kinematographie der Lösung; sie wird uns dereinst,
+hoffentlich in nicht zu ferner Zeit, das lebende Lichtbild in greifbarer
+Plastik vor Augen führen.
+
+
+_Wirtschaftliche Bedeutung des Kinematographen._
+
+Was die Kinematographie heute vorstellt, davon bekommt man einen
+Begriff, wenn man die Unternehmungen überschaut, die in ihrem Dienste
+stehen. Da sind zunächst -- soviel man schätzen kann -- 20000
+Kinematographentheater, deren Besucherzahl täglich mehrere Millionen
+beträgt. Um diese Theater mit Bildmaterial zu versorgen, schaffen in die
+hundert Fabriken Tag für Tag gegen 500000 Meter Film mit einem
+Verkaufswert von einer Million Mark. Dazu kommen noch zahlreiche Werke,
+welche die mechanischen und optischen Bestandteile der Apparate
+herstellen. Kapitalien von vielen hundert Millionen sind in all den
+verschiedenen Unternehmungen festgelegt, viel' Hunderttausende finden
+darin ihr Auskommen. Wenn man bedenkt, daß die Kinematographie vor 15
+Jahren als bescheidenes Kind an die Öffentlichkeit trat, so haben wir
+hier eine Entwicklung vor uns, wie sie wohl selten eine Industrie
+erlebt.
+
+
+
+
+ANZEIGEN
+
+
+[Sidenote: Illustration »Taschenkinematograph«]
+
+
+                          Der Kinematograph
+
+                            nebst Beiblatt
+
+                       Aus dem Reiche der Töne
+
+  Fachzeitung für Kinematographie, Phonographie und Musik-Automaten.
+
+  Bezugspreis: vierteljährlich Inland Mk. 2,10
+               Ausland                 "  2,75
+
+  Anzeigenpreis: Nonpareille-Zeile 20 Pfg
+  Stellen-Anzeigen die Zeile       10  "
+
+  Schluss der Redaktion und Anzeigen-Annahme: _=Montag Abend=_.
+
+  Zuschriften sind an den »Verlag des Kinematograph«, Düsseldorf,
+  Postfach 71, zu richten
+
+  Alleinige Inseraten-Annahme für Frankreich, England und Belgien durch
+  die Compagnie générale de Publicite, John F. Jones & Cie. in Paris, 31
+  bis, rue du Faubourg-Montmartre.
+
+                            in Düsseldorf
+
+          ist das älteste und meist verbreitete Fachblatt.
+
+                 Abonnement für das Inland Mk. 2.10
+               Ausland Mk. 2.75 _=pro Vierteljahr=_.
+               _=Anzeigen=_ die kleine Zeile 20 Pfg.
+
+  1. Hauptbuch für Kinematographen
+     und Film-Verleiher. Preis Mk. 9.--
+
+  2. Kassenbuch f. Kinematographen
+     und Film-Verleiher. Preis Mk. 8.--
+
+  Beide Bücher reichen Jahre lang aus und bieten die
+  einzige brauchbare Grundlage bei Steuerreklamationen,
+  Kauf und Verkauf eines Kinotheaters, Auseinandersetzungen
+  und dergleichen.
+
+            Vorrätig in der Druckerei des »Kinematograph«
+
+        Postfach       Ed. Lintz, Düsseldorf        Postfach
+        Nr. 71                                        Nr. 71
+
+
+
+
+[Sidenote: Illustration »Taschenkinematograph«]
+
+                              LPW.
+
+                 Umformer für Kinematografen
+
+           Normale                         Sekundäre
+          Leistungen                      Leistungen,
+                                           45-60 Volt
+           Primäre                        30-40 Ampère
+          Spannungen
+         110, 220 Volt                  Spezial-Offerten
+         oder 440 Volt                    zu Diensten
+          Gleichstrom
+
+  [Illustration]
+
+                Komplette Schalttafeln mit allen
+             Mess- und Regulier-Apparaten etc. etc.
+
+       Aggregate für Drehstrom und Einphasen-Wechselstrom
+                          auf Anfrage
+
+             Spezial-Fabrik für galvanische Anlagen
+
+                              zur
+
+          Vernickelung                      Vergoldung
+          Vermessingung                   Versilberung
+          Verkupferung                      Verzinnung
+          Verzinkung                        Verbleiung
+
+
+               Langbein-Pfanhauser Werke, A.-G.
+
+                     Leipzig-Sellerhausen
+
+  Filialen: Berlin, Wien, Birmingham, Brüssel, Frankfurt a. M., Mailand,
+             Nürnberg, Solingen, Utrecht, Zürich.
+
+
+
+
+                     Steinheil-Objektive
+                     für Kinematographie.
+
+  [Illustration: Triplar 1:3,5 halbverkittet.]
+
+  [Illustration: Unofocal 1:4,5 unverkittet.]
+
+                    Man verlange Katalog.
+
+                    C. A. Steinheil Söhne
+
+   optisch-astronom.        München.          Gegründet
+     Werkstätte                                 1855
+
+
+  [Illustration]
+
+                          Bogenlampen
+                              und
+                          Scheinwerfer
+                              für
+                       Projektionszwecke
+
+                      KÖRTING & MATHIESEN
+
+                      AKTIENGESELLSCHAFT
+
+                       Leutzsch-Leipzig.
+
+
+
+
+[Sidenote: Illustration »Taschenkinematograph«]
+
+                          _Symphonion-_
+
+                     _Elektrische Klaviere_
+
+         6 verschiedene Modelle in Nussbaum und Eiche
+            mit Mandolinen- und Xylophonbegleitung.
+
+
+                 _Elektr. Kunstspiel-Klaviere_
+
+          in hochmodernen Gehäusen mit vorzüglicher,
+       selbsttätiger Modulation vom feinsten Piano bis
+                      zum stärksten Forte.
+
+
+                    _Symphonion-Parlopiano_
+
+          Verbindung von Klavier mit Sprechapparat,
+      sodass also der Vortrag einer Platte zu gleicher
+             Zeit vom Klavier begleitet wird.
+
+  Hochwichtige interessante Neuheit, für Kinematographentheater
+                  etc. besonders zu empfehlen.
+
+       Man verlange ausführliche Beschreibungen, sowie
+       Kataloge und die sonstigen Drucksachen von der
+
+              _Symphonionfabrik Aktiengesellschaft
+                         Leipzig-Gohlis_.
+
+
+
+
+                         TROCKENPLATTEN
+
+                          GUILLEMINOT
+
+              R. GUILLEMINOT, B[OE]SPFLUG ET C^{ie}
+
+                    22 RUE DE CHATEAUDUN, 22
+
+                             PARIS
+
+                            PAPIERE
+
+  [Illustration: Packg. Trockenplatten]
+
+
+                         Metol-Hauff
+
+               In Substanz, Patronen u. konzentr.
+                           Lösungen.
+
+         =Metol-Hauff= ist der =beste Rapidentwickler=!
+
+                 Arbeitet mit =grosser Kraft= und
+                    bringt alle Details in den
+                        Schatten heraus.
+
+                  Besitzt =grosse Haltbarkeit=.
+
+                 Ist besonders für Atelier- und
+                    Momentaufnahmen geeignet.
+
+              Wird in Kombination mit Hydrochinon
+                     oder Adurol in seiner
+                  Wirkung von =keinem anderen
+                Entwickler erreicht= und ist in
+                dieser Zusammensetzung besonders
+                   auch für die Entwicklung
+             von Bromsilberpapier und Diapositiven
+                         zu empfehlen.
+
+                         Adurol-Hauff
+
+               In Substanz, Patronen u. konzentr.
+                           Lösungen.
+
+           =Adurol-Hauff= ist der =haltbarste= aller
+              Entwickler! Arbeitet mässig rasch,
+                ist leicht abstimmbar und wird
+                von niederen Temperaturen fast
+                    gar nicht beeinflusst.
+
+              Gibt =höchste Kraft= in Licht und
+              Schatten und ist =sehr ausgiebig=.
+
+             Ist =hervorragend geeignet= für alle
+             Platten und Filmsorten, Diapositive
+                    und Bromsilberpapiere.
+
+                              Wer
+
+             =Adurol-Hauff= einmal probiert hat,
+            gibt diesen =vorzüglichen= Entwickler
+                  =nicht mehr aus der Hand=.
+
+                Bezug durch die Photo-Händler.
+
+   J. Hauff & Co., G. m. b. H., Feuerbach, Württemberg.
+
+
+
+
+[Sidenote: Illustration »Taschenkinematograph«]
+
+  [Illustration: Messters Projection]
+
+                          G. m. b. H.,
+
+             Berlin SW 48, Friedrichstrasse 16.
+
+                     Spezial-Fabrik für:
+
+                 Kinematographische Apparate
+
+                         Messterscher
+                         Konstruktion
+
+                            und für
+
+                   Kinematographische Films.
+
+
+
+
+                     C. Conradty, Nürnberg
+
+         Fabrik elektrischer und galvanischer Kohlen.
+
+                          Spezialität:
+
+             Kohlenstifte für Projektions-Lampen
+                        und Scheinwerfer.
+
+                Marke »=Noris-Scheinwerfer=«,
+      Marke »=Noris-Excello=«, Marke »=Noris-Chromo=«
+
+  gelb, perlweiss, brillantweiss, rot für =Effektbeleuchtung=.
+
+
+                            Lumière
+
+                         Kinemato-Film
+
+                      Negativ und Positiv
+
+                          BLOCK-FILM
+
+                           ROLL-FILM
+
+                     Verfahren V. PLANCHON
+
+           A. LUMIÈRE & SES FILS, LYON, Frankreich
+
+               GENERAL-DEPOT: MÜLHAUSEN i. Els.
+
+
+
+
+[Sidenote: Illustration »Taschenkinematograph«]
+
+                          Schippang-
+                     Diapositiv-Platten
+
+                  hervorragend durch ihre
+
+                vorzügl. Plastik u. Brillanz
+
+        tiefe Schatten, durchsichtige Halbschatten,
+                     glasklare Lichter.
+
+               Auch lichthoffreie Präparation.
+
+                    Trockenplattenfabrik
+
+                   J. F. Schippang & Co.,
+        G. m. b. H. ·· BERLIN S. ·· Prinzenstr. 24.
+
+
+               Maschinenfabrik Wilh. Frenzel
+
+                      Radebeul-Dresden.
+
+            30 jähr. eig. praktische Erfahrung.
+
+                         Baut alle
+
+                     Spezial-Maschinen
+
+         für Bromsilberpapiere, Celloidinpapiere,
+               Barytpapiere, Trockenplatten,
+                Films, Lichtpauspapiere u.
+             chem. präp. od. gestrich. Papiere.
+
+
+
+
+    Kohlenstäbe                             Kohlenstäbe
+    für Effektbeleuchtung          für Reinbeleuchtung.
+
+    gelb, rot, edelweiss.
+                                    =Spezialkohlen= für
+    =Spezialkohlen= für                Scheinwerfer und
+    indirektes Licht.              Projektionsapparate.
+
+    Schleif- u. Druck-Kontakte von jeder Leitfähigkeit.
+        Kohlen für Elektrolyse. :: Mikrophonkohlen.
+
+                  Gebrüder Siemens & Co.,
+                  Lichtenberg bei Berlin.
+
+    Stadtlager: Berlin SW., Schönebergerstrasse 3.
+
+
+                       KINO FILM CO.
+                          m. b. H.
+
+                      Düren (Rhld.).
+
+                      Spezialfabrik
+                           für
+              Positiv- u. Negativ-Roh-Films
+                   für Kinematographie.
+
+
+
+
+[Sidenote: Illustration »Taschenkinematograph«]
+
+                   Mentor-Kinematograph
+
+                   ein leistungsfähiger,
+                    preiswerter Apparat
+                    für Lehranstalten,
+                       Vereine etc.
+
+                   Preis des Mechanismus
+         einschließlich Kinematographen-Objektiv
+
+                        =Mk. 150.--=
+
+                    Dieser Mechanismus
+             läßt sich an jedem vorhandenen
+                    Lichtbilder-Apparat
+                         anbringen.
+
+  [Illustration: Mentor-Kinematograph]
+
+  In Verbindung mit dem Projektions-Apparat »Zela« kostet
+        der Mentor-Kinematograph      =Mk. 200.--=
+
+                   Aus einer Zuschrift:
+
+  »Ihre Sendung Kinematograph etc. gelangte vergangene
+  Woche in meinen Besitz. Alles tadellos und wohlbehalten.
+  Die angestellten Versuche besonders mit »Mentor-Kino«
+  ergaben eine staunenswerte Präzision und Leistungsfähigkeit
+  des Werks, die Kenner bewundern.«
+
+                           gez. =Heinr. Söhnge (Kapkolonie).=
+
+    Kataloge über Projektions-Apparate, Kinematographen
+    und Lichtbilder werden auf Verlangen _=kostenfrei=_
+                         übersandt.
+
+  Gegr.          Ed. Liesegang, Düsseldorf          Gegr.
+  1854                                               1854
+
+
+
+
+                   _Elektr. Bogenlampen-
+                   und Apparate-Fabrik_
+
+    _G. m. b. H. -- NÜRNBERG liefert als Spezialität:_
+
+               _Alle Arten von Bogenlampen
+                    Projektionslampen
+                   Belichtungsapparate
+                      Scheinwerfer
+              Transformatoren, Widerstände_
+
+
+  Im gleichen Verlag erschien:
+                        Preis Mk. 8.--, geb. Mk. 9.--, Porto Mk. 0.30.
+
+       Handbuch der praktischen Kinematographie.
+
+  Die verschiedenen Konstruktionsformen des Kinematographen, die
+  Darstellung der lebenden Lichtbilder sowie das kinematographische
+  Aufnahmeverfahren.
+
+  Mit ca. 300 Seiten Text und ca. 125 Abbildungen von _=F. Paul
+  Liesegang=_.
+
+  Einige Beurteilungen:
+
+  »..... Es muß deshalb als eine Bedürfnisfrage bezeichnet werden, wenn
+  versucht wird, das Gesamtgebiet der Kinematographie in seinem ganzen
+  Umfange literarisch zu bearbeiten und den heutigen Standpunkt
+  festzulegen. Dies hat im vorliegenden Falle einer der Berufensten
+  übernommen. Der Verfasser widmet sich bekanntlich seit Jahren fast
+  ausschließlich der Projektionskunst und dieses bietet die sichere
+  Gewähr, sach- und fachkundige Behandlung des Stoffes erwarten zu
+  dürfen.«
+
+  »Er versteht es, nicht eine trockene Schilderung zu bringen, sondern in
+  der ihm eigenen Lehrform eine höchst ansprechende und überzeugende
+  Darstellung zu geben. Nicht nur, wer die Kinematographie auszuüben
+  gedenkt, sondern jeder, der sich für sie nur interessiert, sollte dieses
+  Handbuch gelesen haben.«                  =»Die Photographische Kunst.«=
+
+  »Ich habe mir das mir von Ihnen empfohlene Buch: »Handbuch der
+  praktischen Kinematographie« von F. Paul Liesegang bestellt und kann ich
+  nicht umhin, Ihnen meine vollste Zufriedenheit auszusprechen. Ich habe
+  noch nie ein Buch ähnlichen Inhalts gefunden, welches so klar, deutlich
+  und interessant geschrieben wäre; mit vollster Befriedigung habe ich das
+  Buch zu Ende gelesen.«                            =Alexander Ohnheiser.=
+
+  »..... Nachdem die Kinematographie nun eine so weite Verbreitung
+  gefunden hat, war die Veröffentlichung eines Handbuches hierüber eine
+  Notwendigkeit und es ist dem Verfasser zu danken, daß gerade er sich der
+  mühevollen Aufgabe unterzog, ein solches Handbuch zu schaffen; seine
+  Beziehungen zu dieser Industrie befähigen ihn besonders, wirklich nur
+  das zu bringen, was in der Praxis gebraucht und verlangt wird. Das
+  Liesegang'sche Handbuch behandelt die sämtlichen einschlägigen Fragen in
+  klarer und jedermann leichtverständlicher Weise und dürfte daher allen
+  denjenigen vortreffliche Dienste leisten, die sich mit der
+  Kinematographie eingehender beschäftigen oder beschäftigen wollen.«
+                                              =»Photograph. Wochenblatt.«=
+
+
+
+
+[Sidenote: Illustration »Taschenkinematograph«]
+
+                      Optische Anstalt
+
+                       G. Rodenstock
+
+                           München
+
+       Isartalstrasse 41          Isartalstrasse 41
+
+                       Spezial-Firma
+
+                   :: für erstklassige ::
+
+                   Kinematographen-Optik
+
+                        lichtstarke
+                   Kino-Objektive F 2,5
+                   Projektions-Apparate
+                   Projektions-Objektive
+                  Projektions-Anastigmate
+                  Projektions-Mikroskope
+
+                       Kondensatoren
+
+               aus extra weissem Kronglase.
+
+          Projektions-Katalog gratis und franko.
+
+
+
+
+    Kinemacolor (Urban Smith Patent)
+
+            ist die größte Neuigkeit und bietet die größte
+            Anziehungskraft seit Einführung der lebenden
+            Lichtbilder.
+
+    Kinemacolor (Urban Smith Patent)
+
+            ist das einzige praktische Verfahren zur photographischen
+            Wiedergabe sämtlicher Farben der Natur.
+
+    Kinemacolor Films
+
+            kosten nicht mehr als die gewöhnlichen auf
+            mechanischem Wege oder mit der Hand kolorierten
+            Bilder.
+
+    Kinemacolor (Urban Smith Patent)
+
+            bedeutet eine Revolution auf dem Gebiete der
+            Kinematographie.
+
+  Bedingungen für die ausschließliche Vorführung von Kinemacolor
+          in den verschiedenen Ländern auf Verlangen.
+
+              Natural Color Kinematograph Co. Ld.
+
+        Alleinbesitzer und Fabrikanten von Kinemacolor
+
+            Kinemacolor House, 80/82 Wardour Street
+
+                          LONDON W.
+
+            Telegramm-Adresse: Kinemacolor, London.
+
+
+
+
+Notizen des Bearbeiters:
+
+Gesperrter Test markiert durch         _= ... =_
+
+Fett gedruckter Text markiert durch    = ... =
+
+Kursiv gedruckter Text markiert durch  _ ... _
+
+Unterschiedliche Schreibweisen wurden wie im Original beibehalten.
+
+Das Caret-Zeichen beschreibt ein Hochstellung der in geschweiften
+Klammern folgenden Zeichen.
+
+
+
+
+
+End of Project Gutenberg's Das lebende Lichtbild, by Franz Paul Liesegang
+
+
+
+*** END OF THE PROJECT GUTENBERG EBOOK DAS LEBENDE LICHTBILD: ENTWICKLUNG, WESEN UND BEDEUTUNG DES KINEMATOGRAPHEN ***
+
+
+    
+
+Updated editions will replace the previous one—the old editions will
+be renamed.
+
+Creating the works from print editions not protected by U.S. copyright
+law means that no one owns a United States copyright in these works,
+so the Foundation (and you!) can copy and distribute it in the United
+States without permission and without paying copyright
+royalties. Special rules, set forth in the General Terms of Use part
+of this license, apply to copying and distributing Project
+Gutenberg™ electronic works to protect the PROJECT GUTENBERG™
+concept and trademark. Project Gutenberg is a registered trademark,
+and may not be used if you charge for an eBook, except by following
+the terms of the trademark license, including paying royalties for use
+of the Project Gutenberg trademark. If you do not charge anything for
+copies of this eBook, complying with the trademark license is very
+easy. You may use this eBook for nearly any purpose such as creation
+of derivative works, reports, performances and research. Project
+Gutenberg eBooks may be modified and printed and given away—you may
+do practically ANYTHING in the United States with eBooks not protected
+by U.S. copyright law. Redistribution is subject to the trademark
+license, especially commercial redistribution.
+
+
+START: FULL LICENSE
+
+THE FULL PROJECT GUTENBERG LICENSE
+
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+www.gutenberg.org/license.
+
+Section 1. General Terms of Use and Redistributing Project Gutenberg™
+electronic works
+
+1.A. By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound
+by the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B. “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this
+agreement and help preserve free future access to Project Gutenberg™
+electronic works. See paragraph 1.E below.
+
+1.C. The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is unprotected by copyright law in the
+United States and you are located in the United States, we do not
+claim a right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting
+free access to electronic works by freely sharing Project Gutenberg™
+works in compliance with the terms of this agreement for keeping the
+Project Gutenberg™ name associated with the work. You can easily
+comply with the terms of this agreement by keeping this work in the
+same format with its attached full Project Gutenberg™ License when
+you share it without charge with others.
+
+1.D. The copyright laws of the place where you are located also govern
+what you can do with this work. Copyright laws in most countries are
+in a constant state of change. If you are outside the United States,
+check the laws of your country in addition to the terms of this
+agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work. The Foundation makes no
+representations concerning the copyright status of any work in any
+country other than the United States.
+
+1.E. Unless you have removed all references to Project Gutenberg:
+
+1.E.1. The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:
+
+    This eBook is for the use of anyone anywhere in the United States and most
+    other parts of the world at no cost and with almost no restrictions
+    whatsoever. You may copy it, give it away or re-use it under the terms
+    of the Project Gutenberg License included with this eBook or online
+    at www.gutenberg.org. If you
+    are not located in the United States, you will have to check the laws
+    of the country where you are located before using this eBook.
+  
+1.E.2. If an individual Project Gutenberg™ electronic work is
+derived from texts not protected by U.S. copyright law (does not
+contain a notice indicating that it is posted with permission of the
+copyright holder), the work can be copied and distributed to anyone in
+the United States without paying any fees or charges. If you are
+redistributing or providing access to a work with the phrase “Project
+Gutenberg” associated with or appearing on the work, you must comply
+either with the requirements of paragraphs 1.E.1 through 1.E.7 or
+obtain permission for the use of the work and the Project Gutenberg™
+trademark as set forth in paragraphs 1.E.8 or 1.E.9.
+
+1.E.3. If an individual Project Gutenberg™ electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any
+additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works
+posted with the permission of the copyright holder found at the
+beginning of this work.
+
+1.E.4. Do not unlink or detach or remove the full Project Gutenberg™
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg™.
+
+1.E.5. Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.
+
+1.E.6. You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format
+other than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ website
+(www.gutenberg.org), you must, at no additional cost, fee or expense
+to the user, provide a copy, a means of exporting a copy, or a means
+of obtaining a copy upon request, of the work in its original “Plain
+Vanilla ASCII” or other form. Any alternate format must include the
+full Project Gutenberg™ License as specified in paragraph 1.E.1.
+
+1.E.7. Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8. You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works
+provided that:
+
+    • You pay a royalty fee of 20% of the gross profits you derive from
+        the use of Project Gutenberg™ works calculated using the method
+        you already use to calculate your applicable taxes. The fee is owed
+        to the owner of the Project Gutenberg™ trademark, but he has
+        agreed to donate royalties under this paragraph to the Project
+        Gutenberg Literary Archive Foundation. Royalty payments must be paid
+        within 60 days following each date on which you prepare (or are
+        legally required to prepare) your periodic tax returns. Royalty
+        payments should be clearly marked as such and sent to the Project
+        Gutenberg Literary Archive Foundation at the address specified in
+        Section 4, “Information about donations to the Project Gutenberg
+        Literary Archive Foundation.”
+    
+    • You provide a full refund of any money paid by a user who notifies
+        you in writing (or by e-mail) within 30 days of receipt that s/he
+        does not agree to the terms of the full Project Gutenberg™
+        License. You must require such a user to return or destroy all
+        copies of the works possessed in a physical medium and discontinue
+        all use of and all access to other copies of Project Gutenberg™
+        works.
+    
+    • You provide, in accordance with paragraph 1.F.3, a full refund of
+        any money paid for a work or a replacement copy, if a defect in the
+        electronic work is discovered and reported to you within 90 days of
+        receipt of the work.
+    
+    • You comply with all other terms of this agreement for free
+        distribution of Project Gutenberg™ works.
+    
+
+1.E.9. If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from the Project Gutenberg Literary Archive Foundation, the manager of
+the Project Gutenberg™ trademark. Contact the Foundation as set
+forth in Section 3 below.
+
+1.F.
+
+1.F.1. Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+works not protected by U.S. copyright law in creating the Project
+Gutenberg™ collection. Despite these efforts, Project Gutenberg™
+electronic works, and the medium on which they may be stored, may
+contain “Defects,” such as, but not limited to, incomplete, inaccurate
+or corrupt data, transcription errors, a copyright or other
+intellectual property infringement, a defective or damaged disk or
+other medium, a computer virus, or computer codes that damage or
+cannot be read by your equipment.
+
+1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the “Right
+of Replacement or Refund” described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg™ trademark, and any other party distributing a Project
+Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.
+
+1.F.4. Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you ‘AS-IS’, WITH NO
+OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5. Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.
+
+1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in
+accordance with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.
+
+Section 2. Information about the Mission of Project Gutenberg™
+
+Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need are critical to reaching Project Gutenberg™’s
+goals and ensuring that the Project Gutenberg™ collection will
+remain freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future
+generations. To learn more about the Project Gutenberg Literary
+Archive Foundation and how your efforts and donations can help, see
+Sections 3 and 4 and the Foundation information page at www.gutenberg.org.
+
+Section 3. Information about the Project Gutenberg Literary Archive Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non-profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation’s EIN or federal tax identification
+number is 64-6221541. Contributions to the Project Gutenberg Literary
+Archive Foundation are tax deductible to the full extent permitted by
+U.S. federal laws and your state’s laws.
+
+The Foundation’s business office is located at 809 North 1500 West,
+Salt Lake City, UT 84116, (801) 596-1887. Email contact links and up
+to date contact information can be found at the Foundation’s website
+and official page at www.gutenberg.org/contact
+
+Section 4. Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg™ depends upon and cannot survive without widespread
+public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine-readable form accessible by the widest
+array of equipment including outdated equipment. Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular state
+visit www.gutenberg.org/donate.
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: www.gutenberg.org/donate.
+
+Section 5. General Information About Project Gutenberg™ electronic works
+
+Professor Michael S. Hart was the originator of the Project
+Gutenberg™ concept of a library of electronic works that could be
+freely shared with anyone. For forty years, he produced and
+distributed Project Gutenberg™ eBooks with only a loose network of
+volunteer support.
+
+Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as not protected by copyright in
+the U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.
+
+Most people start at our website which has the main PG search
+facility: www.gutenberg.org.
+
+This website includes information about Project Gutenberg™,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+

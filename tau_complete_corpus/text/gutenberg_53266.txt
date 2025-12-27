@@ -1,0 +1,1562 @@
+﻿The Project Gutenberg eBook of Germania
+    
+This ebook is for the use of anyone anywhere in the United States and
+most other parts of the world at no cost and with almost no restrictions
+whatsoever. You may copy it, give it away or re-use it under the terms
+of the Project Gutenberg License included with this ebook or online
+at www.gutenberg.org. If you are not located in the United States,
+you will have to check the laws of the country where you are located
+before using this eBook.
+
+Title: Germania
+
+Author: Cornelius Tacitus
+
+Translator: K. J. Hidén
+
+Release date: October 12, 2016 [eBook #53266]
+                Most recently updated: October 23, 2024
+
+Language: Finnish
+
+Credits: Produced by Tapio Riikonen
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK GERMANIA ***
+
+GERMANIA
+
+Kirj.
+
+Cornelius Tacitus
+
+
+Suom. T.ri K. J. Hidén
+Roomalaisen filologian dosentti
+
+
+
+
+
+Helsingissä,
+Yrjö Weilin,
+1904.
+
+
+
+
+
+
+      Gibt es keine broschüre die dieser
+      an historischem wert und gehalt gleich
+      kommt, so gibt es auch wenige die so
+      sehr wie diese ein vollendetes Kunstwerk
+      darstellen.
+
+      _K. Müllenhoff_ Deutsche Altertumskunde. Bd. IV p. 16.
+
+
+
+SISÄLLYS:
+
+Alkulause.
+
+Cornelius Tacituksen elämä ja teokset.
+
+Germanian kansat, niitten alkuperä, asema ja tavat.
+
+  Yleinen osa: 1-27 luvut.
+  Erityinen osa: 28-46 luvut.
+
+
+
+
+Alkulause.
+
+
+    Quisque suorum verborum optimus interpres.
+
+Melkein neljäkymmentä vuotta sitten (1865) julkaisi silloinen latinan
+kielen lehtori Oulun ruotsalaisessa alkeisopistossa Oskar Blomstedt
+esikoisena Tacituksen Germanian suomennoksen edistääkseen oppilaittensa
+vaivalloista kääntämistyötä, heidän kun täytyi mainitun opiston
+ylimmillä luokilla kääntää latinalaista tekstiä suomeksi tuntematta
+tarpeeksi maamme toista kieltä.
+
+Niin ansiokas kuin tämä Germanian suomennos yleensä onkin samoin kuin
+Blomstedtin myöhemmin julkaisemat käännökset, se ei kuitenkaan täysin
+vastaa nykyajan vaatimuksia: monessa kohden kielellinen asu ei enään
+ole tyydyttävä ja paikka paikoin on latinalaista tekstiä nykyjään
+toisin selitetty ja tulkittu. Kun sitä paitsi Blomstedtin kirjanen jo
+vuosia sitten on kirjakaupoista kadonnut, olen katsonut sopivaksi
+julkaista sen käännöksen, minkä olen kuulijoilleni esittänyt
+selittäessäni yliopistollisilla luennoilla Germania-kirjaa.
+
+Teosta kääntäessäni olen niin tarkasti kuin mahdollista seurannut
+alkuperäistä tekstiä; täten on kyllä Tacituksen omituisen tyylin takia
+usea kohta tullut vähemmän sujuvaksi kuin suotavaa olisi ollut ja
+monias ehkä epäselväksikin. Melkein poikkeuksetta olen noudattanut sitä
+tekstiä, minkä Yliopettaja T:ri _Hj. Appelqvist_ on julkaissut
+koulupainoksessaan (Tacitus Germania och Agricola med förklaringar.
+Helsingfors 1899); tämän kirjan oivallisia selityksiä olen myös paitsi
+muita apuneuvoja hyväkseni käyttänyt.
+
+Kirjasen alkuun olen asettanut lyhykäisen esityksen Tacituksen elämästä
+ynnä kirjailijatoimesta sekä myös eri paikoissa tekstiin liittänyt
+tarpeelliset selitykset.
+
+Helsingissä, syyskuulla 1904.
+
+_K. J. Hidén_.
+
+
+
+
+Cornelius Tacituksen elämä ja teokset.
+
+
+Vaikka Tacituksen kirjallinen merkitys aikaisin tunnustettiin, on
+jälkimaailmalla perin vaillinaiset tiedot hänen elämänvaiheistaan. Emme
+tunne hänen syntymävuottaan (siksi on oletettu v. 55 tai 56 j.Kr.),
+emme hänen syntymäpaikkaansa emmekä hänen kuolinvuottaan, emme edes
+varmuudella täydellisesti tiedä hänen nimeään. Eräs kirjailija
+keisarivallan loppupuolella Apollinaris Sidonius mainitsee hänet
+Gaius-etunimellä ja samoin jotkut muut, mutta hänen teostensa
+vanhimpaan käsikirjoitukseen on nimi Publius merkitty ja sitä pidetään
+nykyjään oikeana. Yleensä saamme tyytyä niihin varsin niukkoihin
+tiedonantoihin, mitkä tavataan Tacituksen ja hänen läheisen ystävänsä
+Plinius nuoremman kirjoitelmissa.
+
+Kaikesta päättäen Tacitus kuului ylhäiseen ja arvossa pidettyyn sukuun.
+Hänen isänsä oli luultavasti eräs roomalainen ritari Cornelius Tacitus,
+jonka Plinius vanhempi kertoo olleen Belgica-maakunnan prokuraatorina.
+Lapsuudessaan ja nuoruudessaan sai Tacitus huolellisen kasvatuksen.
+Niinkuin sen ajan nuoret Roomalaiset tutki hän ahkerasti lakitiedettä,
+filosofiaa ja puhetaitoa voidakseen sittemmin menestyksellä astua
+valtion palvelukseen. Muiden muassa hän oman kertomuksensa mukaan
+kuunteli Marcus Aperia ja Julius Secundusta, jotka siihen aikaan olivat
+Rooman kuuluisimmat puhujat, ja nautti luultavasti myös Quintilianuksen
+opetusta retoriikassa. Siten hän itse vähitellen tuli kuuluisaksi
+asianajajaksi ja kokosi ympärilleen joukon oppilaita. Jotenkin nuorena
+hän meni v. 78 j.Kr. naimisiin Cn. Julius Agricolan tyttären kanssa.
+
+Valtiollisista toimistaan Tacitus kyllä itse puhuu, mutta niin
+epäselvästi, että emme täydellä varmuudella saata tietää mitään niistä.
+Otaksutaan että hän Vespasianuksen aikana tuli quaestoriksi ja sitten
+Tituksen hallitessa joko aediliksi tai kansantribuniksi. Domitianus
+teki hänet praetoriksi ja sen ohessa 15-mieskollegion (pappisveljistön)
+jäseneksi. Sellaisena hän otti osaa siihen vuosisataisjuhlaan, jonka
+keisari v. 88 toimeenpani. Vähää myöhemmin v. 90 jätti Tacitus Rooman
+ja palasi vasta appensa Agricolan kuoltua v. 93. Sinä aikana hän oli
+jossakin toimessa, mutta emme tiedä missä.
+
+Roomaan palattuaan Tacitus yleensä pysyttäytyi syrjässä välttääkseen
+Domitianuksen epäluuloa. Kun Domitianus oli kukistettu, tuli Tacitus
+konsuliksi v. 97 L. Verginius Rufuksen jälkeen ja piti myös
+hautajaispuheen hänen kunniakseen. Sitten mainitaan hänen nimensä
+v. 100, kun hän ystävänsä nuoremman Pliniuksen kanssa esiintyi
+Afrika-maakunnan asujanten avustajana heidän syyttäessään ent.
+prokonsulia Marius Priscusta rahainkiskomisista, jolloin Marius
+tuomittiin syylliseksi. Lisäksi muuan äskettäin löydetty
+piirtokirjoitus osoittaa, että hän Trajanuksen aikana oli Asian
+prokonsulina (maaherrana). Mitään enempää emme tiedä hänen toimistaan
+valtion palveluksessa. Arvellaan hänen kuolleen keisari Hadrianuksen
+ensi hallitusvuosina.
+
+Aikaisin Tacituksen teoksista on luultavasti _Dialogus de oratoribus_
+(Keskustelu puhujista), jossa hän esittää syyt puhetaidon
+rappeutumiseen keisarien aikana. Ainettaan on tekijä käsitellyt
+hyvinkin viehättävästi ja luontevasti, jotta kirjanen syystä on luettu
+Rooman kirjallisuuden parhaimpiin tuotteisiin. Kuitenkin on usein
+väitetty ettei Tacitus olisikaan tämän kirjan tekijä, koska se
+tyyliltään monessa suhteessa suuresti eroaa hänen muista teoksistaan.
+Sen johdosta ovat jotkut otaksuneet että Tacitus jo nuoruudessaan noin
+v. 80 olisi teoksen sepittänyt.
+
+Ennenkuin Tacitus ryhtyi suurempiin teoksiinsa julkaisi hän melkein
+samaan aikaan v. 98 kaksi kirjasta. Ensiksi julkaisi hän appensa
+Agricolan elämäkerran. Tämä on historiallinen ylistyskirja, missä
+tekijä varsin laajasti kuvailee Agricolan seitsenvuotista
+maaherranaoloa Britanniassa liittäen arvokkaita tiedonantoja tästä
+maasta ja sen kansoista.
+
+Toinen samana vuonna ilmestynyt kirjanen on _Germania_. Tällä
+kansatieteellis-maantieteellisellä tutkielmalla Tacitus tahtoi
+kiinnittää kansalaistensa huomiota Germaneihin, joitten tulevaa suurta
+merkitystä maailmanhistoriassa tarkkasilmäinen valtiomies sekä harras
+isänmaanystävä vaistomaisesti huolestuneena aavisteli.
+
+Sitten seurasi suurisuuntainen teos _Historiae_, jossa Tacitus kuvaili
+omaa aikaansa Galbasta Domitianuksen kuolemaan, siis etupäässä
+flavilaisen suvun historiaa. Tästä luultavasti 14 kirjaa käsittävästä
+teoksesta on vain osa säilynyt.
+
+Toisessa pääteoksessa, jota tavallisesti kutsutaan _Annales_
+(Vuosikirjat), kerrotaan tapaukset Augustuksen kuolemasta Neron
+kuolemaan. Sitä oli kaikesta päättäen 16 kirjaa; ainoastaan osa on
+tallella.
+
+Sen lisäksi Tacitus aikoi käsitellä Augustuksen historiaa sekä kuvata
+Neron ja Trajanuksen hallitusta, mutta kuolema esti hänet siitä.
+
+Tacitus noudattaa historiallisissa teoksissaan pragmatista
+(psykologista) katsantotapaa: hän ei tyydy yksinomaan kuvaamaan
+tapauksia, vaan koettaa myös selvitellä niitten syitä ja yhteyttä sekä
+ihmisiin että ulkonaisiin oloihin nähden. Hänen nuoruutensa ja
+miehuutensa aika kauheine ja turvattomine oloineen oli kuitenkin siinä
+määrässä painanut hänen mieleensä synkän katkeruuden, jotta hän yleensä
+kaikkialla näkee vain kehnoutta ja halpamaisuutta sekä sen takia
+tietämättäänkin värittää esitystään. Hänen kielessään on tosin henkisen
+pilaantumisen merkkejä havaittavissa, mutta, intohimoisessa,
+pingoitetussa niukkuudessaan runollisine vivahduksineen ynnä
+lennokkaine sanoineen se vaikuttaa valtavasti syvemmälti ajattelevaan
+lukijaan.
+
+
+
+
+
+
+GERMANIAN KANSAT, NIITTEN ALKUPERÄ, ASEMA JA TAVAT
+
+
+
+
+Yleinen osa.
+
+
+1. Germanian kokonaisuudessaan erottavat Rhein- ja Tonava-joet
+Galliasta, Raetiasta ynnä Pannoniasta sekä molemminpuolinen pelko tai
+vuoristot Sarmatien maasta ja Daciasta:[1] muun osan valtameri
+ympäröitsee syleillen laajoja rantamaita ja äärettömiä saaristoja,
+joilla asuu muutamia hiljattain tietoomme tulleita kansoja ja
+kuninkaita, jotka sota on ilmi saattanut. Rhein-joki, mikä alkaa
+Raetian alppein luopääsemättömältä ja äkkijyrkältä huipulta,[2] yhtyy
+Pohjanmereen tehtyään kohtalaisen polven länttä kohti. Tonava, joka
+virtailee eräältä Abnoba-vuoren loivalta ja vähitellen kohoavalta
+selänteeltä,[3] juoksee useampien maiden kautta, kunnes se kuudella
+haaralla laskee Mustaanmereen; seitsemäs suuhaara katoaa soihin.
+
+2. Itse Germaneja pitäisin alkuasukkaina ja perin vähäisen
+sekoitettuina muiden kansojen muuttojen ja liittymisen kautta, koska
+muinoin ne, jotka tahtoivat muuttaa asuinpaikkaa, eivät saapuneet
+maitse, vaan laivoilla, ja koska harvat laivat meidän maanosastamme
+kulkevat tuota Germaniasta edempänä olevaa ääretöntä ja niin sanoakseni
+toiseen maailmaan kuuluvaa valtamerta. Kukapa, ottamattakin lukuun
+hirvittävän ja tuntemattoman meren vaaroja, olisi jättänyt Aasian,
+Afrikan tai Italian ja pyrkinyt Germaniaan, joka on luonnonkauneutta
+vailla, ilmanaltaan kolkko, viljelykseltään, jopa katsannoltaankin
+synkkä jokaisen mielestä, jos, näette, tämä ei ole hänen isänmaansa?
+
+Vanhoissa runoelmissa, mitkä heillä ovat ainoana taruston ja
+aikakirjain lajina, he ylistävät maasta syntynyttä Tuisto-jumalaa ja
+hänen poikaansa Mannusta kansansa esi-isinä ja perustajina. Mannuksella
+sanovat olleen kolme poikaa, joitten nimien mukaan lähinnä valtamerta
+asuvia heimoja muka kutsutaan Ingaevoneiksi, keskimäisiä Herminoneiksi
+ja muita Istaevoneiksi. Muutamat taasen väittävät, kuten muinaisuuteen
+nähden onkin vapaa tilaisuus, jumalalla olleen useampiakin poikia, sekä
+sen mukaan olleen useampia kansannimityksiä, niinkuin Marsit,
+Gambrivit, Suebit ja Vandilit. Nämä olisivatkin oikeat ja vanhat nimet.
+Muuten on Germanian nimi muka aivan uusi ja hiljattain annettu, koska
+ne, jotka ensiksi kulkivat Rhein-joen yli ja karkoittivat Gallit sekä
+nyt nimitetään Tungreiksi,[4] silloin kutsuttiin Germaneiksi. Siten
+olisi yhden heimon nimitys, eikä koko kansan, vähitellen päässyt
+valtaan, niin että sittemmin kaikki nimittivät itseään tuolla
+tekaistulla nimellä Germaneiksi, minkä voittajat ensiksi pelkoa
+herättääkseen olivat käyttäneet.
+
+3. Herculeenkin sanotaan olleen heidän luonaan ja taisteluihin
+lähtiessään he ylistävät häntä ensimäisenä kaikista sankareista. Onpa
+heillä semmoisiakin runoelmia, joitten esittämisellä, -- jota kutsutaan
+sotalaulannaksi,[5] -- he kiihottavat mieltään, ja joitten sävelelläkin
+ilmaisevat tulevan taistelun päätöstä; he ovat muille kauhuksi tai itse
+ovat pelonalaisia sen mukaan kuin sotajoukon laulu kajahtaa, ja tämä
+onkin enemmän miehuuden kuin eri äänten yhteissointua. Etenkin
+tavoitetaan karkeaa ääntä ja räikkyvää mylvinää, kilpiä suuta
+vasten asettamalla, jotta ääni takaisin kajahtaessaan paisuisi
+täyteläisemmäksi ja kumeammaksi.
+
+Muuten arvelevat muutamat Ulixeenkin tuolla pitkällä tarunomaisella
+harharetkellään ajelehtineen tälle valtamerelle, käyneen Germanian
+mailla sekä perustaneen ja nimittäneen Asciburgiumin, mikä Rheinin
+rannalla sijaiten vielä näinäkin päivinä on asuttu; vieläpä olisi muka
+siellä Ulixeen pyhittämä alttarikin, johon hänen isänsä Laerteen nimi
+oli piirretty, muinoin tavattu samalla paikalla, niin myös
+muistorakennuksia ja muutamia hautakumpuja kreikkalaisine
+kirjoituksineen vielä säilynyt Germanian ja Raetian rajaseuduilla. Tätä
+en mieli todistuksilla vahvistaa enkä kumota, kukin mielensä mukaan
+sitä epäilköön tai pitäköön totena.
+
+4. Itse puolestani yhdyn niitten mielipiteisiin, jotka arvelevat
+Germanian kansain, sekaantumatta avioliittojen kautta muihin kansoihin,
+pysyneen ominaisena, puhtaana ja vain itsensä kaltaisena kansakuntana.
+Sentähden onkin kaikilla, vaikka väestö on niin suurilukuinen, sama
+ruumiinmuoto, tuimat, tummansiniset silmät, punertavat hiukset ja isot,
+kuitenkin vain hyökkäyksessä vahvat ruumiit. Ruumiinponnistuksessa ja
+töissä eivät ole yhtä kestäväisiä; janoa sekä kuumuutta he eivät
+ensinkään ole tottuneet kärsimään, mutta vilua ja nälkää ilmanalansa ja
+maanlaatunsa takia kestämään.
+
+5. Vaikka maa ulkonäöltään on jokseenkin erikaltainen, on se kuitenkin
+ylipäänsä joko jylhiä metsiä tai rumia rämeitä täynnä, vesiperäisempi
+Gallian, tuulekkaampi Noricumin ja Pannonian rajoille päin, viljaa
+kasvava, hedelmäpuille sopimaton, rikas karjasta, mikä kuitenkin
+enimmiten on pienikasvuista. Ei sarvieläimilläkään ole niiden omituista
+uljuutta eikä otsan kaunistusta; he iloitsevat niiden monilukuisuudesta
+ja ne ovat heidän ainoa ja mieluisin rikkautensa. En oikein tiedä,
+ovatko jumalat suosiosta vai vihasta heiltä kieltäneet hopean ja
+kullan. Enpä tahtoisi kuitenkaan vakuuttaa, ett'ei Germaniassa mikään
+suoni tuota hopeaa tai kultaa, sillä kuka on sitä tutkinut? Omistus ja
+käytäntö ei vaikuta heihin sanottavasti. Heillä saattaa nähdä
+lähettiläille ja ylimyksille lahjaksi annettuja hopea-astioita samassa
+arvottomuudessa kuin ne, jotka savesta tehdään; kuitenkin pitävät
+naapurimme kauppasuhteiden vuoksi kultaa ja hopeaa arvossa sekä
+hyväksyvät ja valitsevat muutamat rahalajimme; sisempänä asuvat
+käyttävät tavarain vaihtokauppaa yksinkertaisemmalla ja vanhemmalla
+tavalla. He hyväksyvät vanhat ja kauan tutut rahat, serratit ja
+bigatit.[6] Hopeata he myöskin tavoittelevat enemmän kuin kultaa, eivät
+mistään mielihalusta, vaan koska hopearahojen paljous on sopivampi
+käytettäessä niille, jotka ostavat kaikenmoista halpa-arvoista tavaraa.
+
+6. Ei rautaakaan ole heillä runsaasti, kuten heidän aseittensa laadusta
+voi päättää. Harvoin he käyttävät miekkoja tai isompia peitsiä; he
+kantavat keihäitä eli heidän omalla nimityksellään frameja, mitkä ovat
+varustetut kaitaisella ja lyhyellä, mutta niin terävällä ja
+asianmukaisella rautakärjellä, että he miten asianhaarat milloinki
+vaativat, samalla aseella taistelevat joko läheltä tai kaukaa. Ja
+ratsumies ainakin tyytyy kilpeen ja keihääseen, jalkaväki viskelee myös
+heittoaseita, kukin heittää useampia ja vieläpä äärettömän kauas,
+kevyesti puettuna taikka vähäisellä sotavaipalla mukavasti liikkuen.
+Sota-asussa ei ole mitään koreutta, ainoastaan kilpensä koristavat he
+mitä heleimmillä väreillä. Harvoilla on haarniskat, tuskin yhdellä tai
+toisella kypäri tai sotalakki. Hevoset eivät ole erinomaisia näöltään
+eivätkä juoksultaan. Mutta niitä ei opetetakkaan tapamme mukaan
+moninaisia käännöksiä tekemään; ne ajetaan suoraan taikka käännöksellä
+viistoon oikealle päin niin taajassa piirissä, ett'ei kukaan jää muista
+jälkeen.
+
+Yleiseen arvosteltaessa on jalkaväellä enemmän voimaa ja sen tähden
+sotivat he sekaisin, koska jalkamiesten sukkeluus, he kun valitaan koko
+nuorisosta ja asetetaan sotarintaman eteen, on sopiva ja mukava
+ratsuväen taisteluun. Myös luku on määrätty: niitä on sata kustakin
+kyläkunnasta, ja juuri tällä nimellä heikäläiset kutsuvat heitä; mikä
+alussa merkitsi lukua, on nyt kunnianimi.[7] Taistelurintama asetetaan
+kiilan muotoon. Pakenemista pidetään pikemmin älykkäisyyden kuin pelon
+osoituksena, kun vain jälleen hyökätään. Toveriensa ruumiit he
+korjaavat epätietoisissakin taisteluissa. Suurin häpeä on heittää
+kilpensä, eikä semmoisella häpeänalaisella ole oikeutta olla
+uhritiloissa läsnä eikä tulla kansankäräjiin; ja sen tähden on moni,
+joka sodista on elävänä päässyt, nuoralla lopettanut kunniattomuutensa.
+
+7. Kuninkaansa he valitsevat jalosukuisuuden, sotapäällikkönsä
+sankariuden perustuksella. Mutta kuninkailla ei ole määrätön tai
+rajaton valta, ja sotapäälliköt, jotka vaikuttavat pikemmin
+esimerkillään kuin käskyvallallaan, hallitsevat herättämällään
+ihmetyksellä, jos ovat urheat ennen muita, esiintyvät ja käyvät
+rintaman etupäässä. Muuten ei ole kellään paitsi papeilla lupa
+kuolemalla rangaista, ei kahlehtia, ei piestäkään, eikä heilläkään lupa
+tehdä sitä rangaistukseksi, eikä myös päällikön määräyksestä, vaan
+ikäänkuin sen jumalan käskystä, jonka luulevat sotivia auttavan. He
+vievät myös mukanaan taisteluun kuvia ja jonkunlaisia taikakaluja,
+jotka he ovat pyhistä lehdoista ottaneet. Ja mikä on etevin
+kiihotuskeino urhouteen, on se, ett'ei sattumus eikä satunnainen
+yhtymys muodosta ratsujoukkoa eikä kiilanmuotoista osastoa, vaan
+perheolot ja sukulaissuhteet; ja heidän omaisensa pysyvät niin lähellä,
+että sieltä kuuluu vaimojen valitus ja lasten parku. Nämä ovat
+itsekunkin pyhimmät todistajat, nämä ylimmät ylistäjät. Äideilleen ja
+vaimoilleen he osoittavat haavansa, eivätkä nämä säikähdy niiden
+lukemista ja tarkastelemista; ruokaa ja virvoituksia he myös tuovat
+taisteleville.
+
+8. Kerrotaan että vaimot ovat järjestykseen palauttaneet moniaat
+sotajoukot, jotka jo väistyivät ja olivat uupua, väsymättömillä
+rukouksillaan ja sen kautta, että panivat rintansa alttiiksi sekä
+osoittivat tuota lähellä olevaa vankeutta, jota miehet pelkäävät paljoa
+pahemmin vaimojensa takia; täten velvoitetaankin ne valtiot
+tehokkaammin, joilta panttivankien joukossa myös vaaditaan
+aatelisneitoja. Arvelevatpa vielä naisessa olevan jotain pyhää ja
+aavistavaa, eivätkä halveksi hänen neuvojaan tai ylönkatso hänen
+ennustuksiaan. Näimmehän jumaloittuneen Vespasianuksen hallitessa
+Velaedan, jota kauan useiden luona pidettiin jumalallisena olentona.
+Albrunaa ja useita muita he myös ennen kunnioittivat, eivät
+imarrellakseen eivätkä siksi, että itselleen hankkisivat jumalia.
+
+9. Jumalista he enimmän palvelevat Mercuriusta, jolle pitävät
+velvollisuutena määrättyinä päivinä uhrata ihmisiäkin. Herculeen ja
+Marsin he lepyttävät luvallisilla eläimillä uhratessaan. Osa Suebeista
+uhraa Isiksellekin. Mistä tämän vieraan uhrin alku ja syy johtuu, en
+ole tullut tietämään, paitsi että jo hänen veneenmuotoiseksi tehty
+tunnuskuvansa osoittaa meritse, ulkoapäin tullutta jumalanpalvelusta.
+Muuten he pitävät sitä jumalain ylevyyden mukaisena, ett'ei niitä
+suljeta seinien sisälle eikä kuvata millään ihmismuodolla. Metsät ja
+lehdot he pyhittävät sekä kutsuvat jumalain nimellä tuota salaista
+olentoa, minkä näkevät vain kunnioittavassa mielessään.
+
+10. Enteitä ja arvanheittoa he mitä huolellisimmin ottavat varteen.
+Tavallinen arvanheitto on yksinkertainen. Hedelmäpuusta hakatun oksan
+he leikkelevät pieniksi vesoiksi ja sirottelevat nämä jonkinmoisilla
+tunnusmerkeillä toisistaan erotettuina hujan hajan sekä miten sattuu
+valkoiselle vaatteelle. Sitten yhteiskunnan pappi, jos yhteisestä
+asiasta neuvotellaan, ja taasen perheenisä itse, jos yksityisesti,
+rukoilee jumalia sekä nostaa taivasta kohti katsellen kolme arpaa
+toisen toisensa jälkeen, jotka hän sitten selittää niihin ennen
+piirretyn merkin mukaan. Jos merkit ovat vastaisia, ei pidetä sinä
+päivänä enää mitään neuvottelua samasta asiasta; jos taasen ovat
+myötäisiä, vaaditaan vielä vahvistusta enteiden kautta. Ja lintujen
+äänten ynnä lennon tarkastaminen on täällä tuttu ennustustapa.
+Omituista on tälle kansalle, että tiedustelevat hevostenkin ennustuksia
+ja varoituksia. Ennen mainituissa lehdoissa ja metsissä elätetään
+yhteisellä kustannuksella valkoisia, maalliseen työhön kokonaan
+käyttämättömiä hevosia; kun nämä asetetaan pyhien vaunujen eteen,
+seuraa niitä pappi ja kuningas tai valtion esimies tarkaten niitten
+hirnuntaa ja korskumista. Tämän ennustuskeinon niin hyvin rahvas kuin
+ylimykset katsovat luotettavimmaksi; pappeja, näette, he pitävät
+jumalain palvelijoina, hevosia niiden salaisuuksien tietäjinä. Onpa
+toinenkin enteiden tarkastustapa, millä tiedustelevat vaikeitten sotien
+päättymistä. Siltä kansalta, jota vastaan sotaa käydään, sieppaavat he
+millä tavalla tahansa vangin sekä antavat tämän taistella jonkun
+heikäläisistä valitun miehen kanssa, siten kuitenkin, että kummallakin
+on kotimaiset aseensa; toisen tai toisen voittoa pidetään sitten
+ennakkopäätöksenä.
+
+11. Vähemmänarvoisista asioista neuvottelevat ylimykset, tärkeämmistä
+kaikki, kuitenkin niin, että nekin asiat, joiden ratkaisu on kansalla,
+sitä ennen ovat ylimysten pohdittavina. He kokoontuvat, jollei mitään
+odottamatonta tai satunnaista tapahdu, määrättyinä päivinä, silloin
+kuin kuu on uusi tai täysi, sillä he luulevat tämmöisen alun
+toimituksille suotuisimmaksi. He eivät lue aikaansa niinkuin me päivä-,
+vaan yömäärin. Sen mukaan he määräävät ja päättävät; yö näyttää
+kulkevan päivän edellä. Se on haitta heidän vapaudessaan, ett'eivät
+kokoonnu yht'aikaa eivätkä käskyn mukaan, vaan toinen ja kolmaskin
+päivä kuluu hukkaan keräytyväin viivyttelemisen takia. Niin pian kuin
+kansanjoukko kyllin isoksi katsotaan, asettuvat he aseellisina
+istumaan. Hiljaisuutta julistavat papit, joilla silloin on valta siihen
+pakoittaakin. Sitten kuunnellaan kuningasta tai ruhtinasta sen mukaan
+kuin kullakin on ikää tai korkea suku, sotakunniaa tai puhelahjaa, he
+kun vaikuttavat enemmän kehoittamisvoimallaan kuin käskyvallallaan. Jos
+ehdotus ei ole ollut mieleen, hylkäävät he sen murinalla; mutta jos se
+on ollut mieluinen, kalistavat he keihäitään, sillä kunniakkain
+mieltymyksen osoitus on kiittäminen aseiden kalskeella.
+
+12. Kansankäräjillä on oikeus myös tehdä syytös ja nostaa kanne
+hengenasiassa. Rangaistuksen erilaisuus riippuu rikoksesta. Kavaltajat
+ja karkurit hirtetään puihin, pelkurit ja epäurheat sekä häpeällisiin
+paheisiin antautuneet upotetaan likaan ja mutaan, ja heidän päälleen
+asetetaan vitsakudos. Rangaistuksen eroavaisuus tarkoittaa, että
+rikoksia pitää ikäänkuin näytellä niitä rangaistaessa, häpeätöitä sitä
+vastoin peitellä. Mutta vähemmilläkin hairahduksilla on asianhaarain
+mukaan rangaistuksensa; syylliset tuomitaan maksamaan vissi määrä
+hevosia ja pikkukarjaa. Osa sakosta suoritetaan kuninkaalle tai
+valtiolle, osa asianosaiselle tai hänen sukulaisilleen. Samoissa
+kokouksissa valitaan myös ne päälliköt, jotka lakia säätävät
+piirikunnissa ja kylissä; itsekullakin on apuna kansasta valitut
+lautamiehet, jotka samalla ovat neuvonantajina ja lisäävät hänen
+arvoaan.
+
+13. He eivät toimita mitään, olipa se yleistä tai yksityistä, muuten
+kuin aseellisina. Mutta ei kellään ole tapana kantaa aseita, ennenkuin
+valtio hänet hyväksyy siihen kelpaavaksi. Silloin itse käräjillä joku
+ylimys, isä tai sukulainen varustaa nuorukaisen kilvellä ja keihäällä.
+Tämä on heillä toga, tämä nuoruuden ensimäinen kunnia;[8] tätä ennen
+pidetään heitä perheen jäseninä, sen jälkeen myös valtion jäseninä.
+Erinomainen jalosukuisuus tai suuret isäin ansiot tuottavat
+päällikköarvon nuorukaisillekin; muut liittyvät väkevämpiin ja ennen
+hyväksyttyihin, eikä pidetä minään häpeänä esiintyä seuralaisten
+joukossa. Onpa itse seurueellakin arvoerotuksensa sen miehen määräyksen
+mukaan, jota seuraavat, ja sen vuoksi seuralaisten kesken on suuri
+kiistely siitä, kenellä on ensi arvosija päällikkönsä luona, ja
+ylimysten välillä, kenellä useimmat ja reippaimmat seuralaiset. Se on
+heidän arvoisuutensa, se heidän voimansa, että heillä aina on suuri
+parvi valittuja nuorukaisia ympärillään; se on rauhan aikana
+kunniaksi, sodassa turvaksi. Eikä ainoastaan omassa kansassa, vaan
+naapurivaltioissakin se tuottaa mainetta ynnä kunniaa jokaiselle, jos
+hänen seurueensa on erinomaisen lukuisa ja urhoollinen; sillä heidät
+haetaan lähetystöjen kautta sekä kunnioitetaan lahjoilla ja useimmiten
+he pelkällä maineellaan tekevät lopun sodista.
+
+14. Kun taisteluun joudutaan, on päällikölle häpeällistä tulla
+voitetuksi urhoollisuudessa ja seurueelle häpeällistä olla päällikölle
+vertoja vetämättä urhoollisuudessa. Mutta lisäksi on vielä koko
+elämänajaksi kunnotonta ja häpäisevää palata taistelusta, jääden eloon
+päällikkönsä jälkeen; on korkein velvollisuus häntä suojella, häntä
+turvata vaaroilta ja laskea omatkin urhotyönsä hänen kunniakseen;
+päälliköt taistelevat voiton, seuralaiset taasen päällikön puolesta.
+Jos valtio, missä ovat syntyneet, pitkällisen rauhan ja levon tähden ei
+tarjoa tilaisuutta toimintaan, niin hyvin monet jalosukuisista
+nuorukaisista vapaaehtoisesti etsivät niitä heimoja, jotka silloin
+käyvät jotain sotaa, koska toimettomuus ei ole kansalle mieluista ja he
+myös helpommin vaaroissa saavuttavat mainetta sekä suurta seuruetta
+ainoastaan väkivallalla ja sodalla voidaan ylläpitää. Sillä
+päällikkönsä anteliaisuudesta odottavat saavansa tuon mainion
+sotaratsunsa ja tuon verisen, voittoisan keihäänsä; ateriat ja runsas,
+vaikkakin yksinkertainen kestitseminen käyvät palkasta. Varoja
+anteliaisuuteen saadaan sodilla ja ryöstämisillä. Heitä ei voi niin
+helposti taivuttaa maata kyntämään tai vuodentuloa odottamaan kuin
+vaatimaan vihollista taisteluun ja haavoja hakemaan. Pidetäänpä vielä
+laiskuuden ja saamattomuuden osoituksena hiellä hakea, mitä saattaa
+hurmeella hankkia.
+
+15. Niin usein kuin eivät sotia käy, he eivät kuluta paljon aikaa
+metsästyksillä, vaan enemmän joutilaisuudessa uneen ja syömiseen
+mieltyneinä: urhoollisimmat ja sotaisimmat eivät toimita mitään,
+huolenpito kodista ja taloudesta ynnä pelloista on jätetty naisille,
+vanhuksille ja talonväen heikoimmille jäsenille; itse viruvat
+toimettomina luonteensa eriskummallisen ristiriitaisuuden johdosta, kun
+samat ihmiset siten rakastavat velttoutta ja kuitenkin kammoksuvat
+rauhaa. Valtioissa on tapana vapaaehtoisesti ja mieskohtaisesti koota
+päälliköille karjaa tai viljaa lahjaksi, mikä kunnianosoituksena
+otetaan vastaan ja myös riittää heidän tarpeisiinsa. Etenkin pitävät he
+naapurikansain lahjoista, joita lähetetään sekä yksityisten että
+valtionkin puolesta, nim. valittuja hevosia, upeita aseita,
+rintakoristuksia ynnä kaulavitjoja; olemme jo opettaneet heitä rahaakin
+vastaan ottamaan.
+
+16. Ett'eivät Germanian kansat asu missään kaupungeissa, on kylläksi
+tunnettu asia, vieläpä ett'eivät edes kärsi lähekkäin rakennettuja
+asumuksia. He asuvat erillään toisistaan ja hajalla sen mukaan kuin
+jokin lähde, kenttä tai metsikkö on ollut heille mieleen. Kyliänsä he
+eivät meidän tapamme mukaan rakenna yhdistetyillä ja yhdenjaksoisilla
+taloilla; jokainen ympäröitsee asuntonsa pihalla joko suojaksi
+tulenvaaraa vastaan taikka rakennustaidon puutteesta. Eivät edes
+hakatut kivet tai tiilet ole heillä käytännössä; kaikkeen käyttävät he
+muodotonta rakennusainetta ilman kauneutta tai suloa. Muutamat paikat
+he sivelevät huolellisemmin niin puhtaalla ja kiiltävällä savella, että
+se näyttää maalaukselta ja värikoristukselta. Heillä on myös tapana
+kaivaa maanalaisia luolia ja luoda niitten päälle paljo lokaa
+pakopaikaksi talvella ja säilytyskammioksi maahedelmille, koska
+semmoiset paikat lieventävät kylmien kovuutta, ja vihollinen, kun hän
+joskus tulee maahan, hävittää vain, mikä näkyvissä on, mutta se, mikä
+on piilotettu ja maahan kaivettu, joko on hänelle tuntematonta tai jää
+huomaamatta juuri sen kautta, että sitä on hakeminen.
+
+17. Pukuna on kaikilla vaippa, mikä on kiinnitettty soljella tai
+semmoisen puutteessa orjantappuran oalla; ollen muuten puvutta he
+viruvat koko päivät takan ja tulen ääressä. Varakkaimmat eroavat
+alusvaatteuksensa kautta, joka ei ole liehuva kuten Sarmatien ja
+Parthien, vaan ahdas ja eri jäsenten jälkeen mukautuva. He käyttävät
+myös petojen nahkoja, virran rantaa läheisimmät väliäpitämättömästi,
+etäämpänä asuvat huolekkaammin, koska he eivät kaupan-käynnillä saata
+hankkia itselleen mitään koruvaatetta. He valitsevat petoja ja
+kirjailevat niistä nyljetyt taljat semmoisten eläväin nahkojen
+palasilla, joita ulompana oleva valtameri ja tuntematon ulappa
+synnyttää. Ja naisilla on samanlainen vaateparsi kuin miehillä paitsi
+että naiset useasti käyttävät liinavaatteita ja koristavat niitä
+purpuravärillä eivätkä venytä alusvaatteen yläosaa hioiksi, paljain
+kyynärä- ja olka-varsin kun ovat; myös rinnan ylin osa on paljaana.
+
+18. Kuitenkin orat avioliitot siellä pyhät, eikä voi mitään heidän
+tavoistaan enemmän kiittää. Sillä he ovat melkein ainoat barbareista,
+jotka tyytyvät yhteen vaimoon, paitsi varsin harvoja, jotka eivät
+himokkaisuudesta, vaan jalosukuisuutensa vuoksi saavat useampia
+naimistarjouksia. Myötäjäisiä ei vaimo tuo miehelle, vaan mies
+vaimolle. Läsnä ovat vanhemmat ja sukulaiset lahjoja tarkastamassa,
+lahjoja, joita ei ole tarkoitettu naiselliseksi turhamaisuudeksi eikä
+vastanaidun koreilemiseksi, ne kun ovat härät, suitsilla varustettu
+hevonen, kilpi ynnä keihäs ja miekka. Näitä lahjoja vastaan saadaan
+vaimo, ja hän puolestaan tuopi miehelleen muutamia aseita; tätä pitävät
+he vahvimpana siteenä, tätä salaperäisenä vihkimisenä ja avion
+suojelusjumalina. Jott'ei vaimo pitäisi itseään urhoollisista
+ajatuksista ja sodan vaiheista vapautuneena, muistutetaan häntä jo
+alkavan avioliiton menoilla siitä, että hän saapuu osanottajana
+vaivoihin ja vaaroihin kärsimään ja uskaltamaan samaa rauhan aikana ja
+sodassa. Tämän osoittavat yhteen asetetut härät, tämän varustettu
+hevonen, tämän lahjoitetut aseet. Niin on hänen eläminen, niin
+kuoleminen; hän muka vastaan ottaa sellaista, jota hänen tulee
+turmelematonna ja ehytarvoisena antaa edelleen lapsilleen, että miniät
+saisivat sen ja vuorostaan jättäisivät lastenlapsille.
+
+19. Sen vuoksi he elävät täysin turvatussa siveydessä,
+turmeltumattomina näytelmäin houkutuksista ja kemujen viettelyksistä.
+Salaista kirjoitustaitoa tuntevat miehet yhtä vähän kuin vaimotkin.
+Varsin harvinaisia ovat niin lukuisassa kansassa aviorikokset ja niiden
+rankaiseminen tapahtuu heti kohta sekä on annettu aviomiesten valtaan;
+sukulaisten läsnäollessa karkoittaa mies syyllisen vaimonsa
+kodistaan kerityillä hiuksilla ja ilman vaatteita sekä ajaa hänet
+ruoskanlyönneillä pitkin koko kylää; sillä alttiiksi annettu siveys ei
+saa mitään armoa: ei kauneudellaan, ei nuoruudellaan eikä rikkaudellaan
+saa siveetön nainen miestä. Siellä, näette, ei kukaan naura paheille,
+eikä viettelemistä ja vietellyksi joutumista kutsuta ajan hengeksi.
+Vielä paremmin on niissä valtioissa, joissa ainoastaan immet menevät
+naimisiin, ja vaimon toivo sekä lupaus avioliitosta kerta kaikkiaan
+täytetään. Niin saavat he yhden ainoan miehen samalla tavoin kuin ovat
+saaneet yhden ruumiin ja yhden elämän, jott'ei heillä olisi mitään
+edemmä ulottuvaa ajatusta eikä halua, eivätkä miehessä rakastaisi
+puolisoa, vaan ikäänkuin itse avioliittoa. Lasten luvun rajoittamista
+tai jonkun jälkisyntyisen tappamista pidetään rikoksena ja hyvät tavat
+vaikuttavat siellä enemmän kuin muualla hyvät lait.
+
+20. Jokaisessa perheessä kasvavat lapset alastomina ja epäsiisteinä
+ihmisiksi, joilla on sellaiset jäsenet ja sellainen ruumiinrakennus,
+jota kummastellen katselemme. Itsekutakin lasta syöttää oma äitinsä
+rinnoillaan, eikä niitä jätetä palvelijain eikä imettäjäin hoitoon.
+Isännän ja orjan lasten välillä ei huomaa mitään erotusta
+hemmoittelevan kasvatuksen johdosta; saman karjan seurassa, samalla
+maalla viettävät he aikansa, kunnes ikä erottaa vapaasukuiset
+ja urhoollisuus saattaa heidät tunnetuiksi. Nuorukaisten
+rakkauden-nautinto on myöhäinen, ja sen tähden on heidän miehuutensa
+heikontumaton. Eikä neitojakaan kiiruhdeta naimisiin; sama nuoruuden
+aika, samanlainen vartevuus heillä on; samanikäisinä ja täysin
+kehittyneinä yhtyvät he avioliittoon, ja lapset perivät vanhempiensa
+voimat. Sisaren pojilla on sama asema enon kuin isänkin luona. Muutamat
+pitävät tätä verensidettä pyhempänä ja läheisempänä ja panttivankeja
+vastaanottaessaan panevat enemmän huomiota näihin, ikäänkuin nämä
+vahvemmin sitoisivat antajan ja laajemmassa määrässä velvoittaisivat
+perheen. Perillisinä ja jälkeläisinä ovat kuitenkin itsekullakin omat
+lapsensa ja testamenttia ei ole ensinkään. Jos lapsia ei ole, on lähin
+sija perintöoikeudessa veljillä, sedillä tahi enoilla. Kuta enemmän on
+sukulaisia, kuta suurempi luku avioliiton kautta sukulaistuneita, sitä
+suloisempi on vanhuus; lapsettomuudella sitä vastoin ei ole mitään
+nautintoa.
+
+21. Pakollista on omistaa itselleen isän tai sukulaisen sekä
+vihollisuudet että ystävyyssuhteet; eivätkä edelliset pysy
+sovittamattomina; sillä ihmissurmakin sovitetaan määrätyllä luvulla
+juhtia ja muuta karjaa, ja koko perhe saapi hyvityksen; tämä on
+yhteiseksi hyödyksi, koska vihollisuudet ovat vaarallisemmat vapauden
+ohessa. Vieraanvaraisuutta ja kestiystävyyttä ei mikään kansa harjoita
+suuremmassa määrässä. Jumalattomana tekona pidetään jonkun ihmisen
+sulkemista talosta, olipa hän ken tahansa; jokainen ravitsee vierasta
+varainsa mukaan runsaalla aterialla. Kun varat ovat loppuneet, rupeaa
+hän, joka vast'ikään oli isäntänä, oppaaksi toiseen majataloon ja
+tiekumppaniksi; kutsumatta menevät he läheisimpään taloon. Eikä siitä
+pidetä lukua; heidät otetaan vastaan yhtä suurella hyväntahtoisuudella.
+Kestiystävyyden suhteen ei kenkään tee erotusta tutun ja tuntemattoman
+välillä. Lähtevälle on tapana antaa, jos hän jotakin on anonut, ja yhtä
+helposti voidaan häneltä taasen vaatia. He pitävät lahjoista, mutta
+eivät lue annettuja miksikään eivätkä pidä itseään saatujen kautta
+mihinkään velvoitettuina. Kestiystävien keskinäinen suhde on
+herttainen.
+
+22. Heti unesta herättyään, jota enimmiten pitkälle päivään venyttävät,
+he kylpevät, useimmin lämpimässä vedessä, koska talvi heillä enimmän
+aikaa vallitsee. Kylvettyään ryhtyvät he ruokaan; jokaisella on eri
+istuimensa ja kullakin oma pöytänsä. Sitten lähtevät aseellisina
+töihinsä ja melkein yhtä usein pitoihin. Ei kenellekään ole häpeäksi
+juoda yhtä mittaa yöt päivät. Usein sattuu riitoja kuten ainakin
+juopuneitten kesken ja ne harvoin päättyvät herjaussanoilla, vaan
+useammin verenvuodatuksella ja haavoilla. Mutta myös vihollisten
+keskinäisestä sovituksesta ja avioliittojen rakentamisesta sekä
+päällikköjen valitsemisesta, vieläpä rauhasta ja sodasta neuvottelevat
+he useimmiten kemuissaan, ikäänkuin mieli ei missään tilaisuudessa
+enemmän taipuisi vilpittömiin ajatuksiin eikä innostuisi enemmän yleviä
+päätöksiä tekemään. Kansa ilman vilppiä ja viekkautta ilmaisee vielä
+sydämensä salaisuudet leikkiä laskettaessa; sen vuoksi on kaikkien
+mieli teeskentelemätön ja avoin. Seuraavana päivänä neuvottelu otetaan
+uudestaan tarkastettavaksi, ja kumpikin tilaisuus tulee nyt lukuun; he
+neuvottelevat, näet, silloin, kun eivät osaa teeskennellä, ja
+päättävät, kun eivät voi erehtyä.
+
+23. Juomana on heillä ohrasta tai vehnästä valmistettu neste, joka
+käymällä on saatu jossakin määrin viinin kaltaiseksi; lähinnä virran
+rantaa asuvat ostavat myöskin viiniä. Ruokalajit ovat yksinkertaisia:
+istuttamatta kasvavien puitten hedelmät, tuore metsänriista ja juossut
+maito; ilman huolellista valmistusta, ilman herkkuhöysteitä sammuttavat
+he nälkänsä. Janon suhteen eivät noudata samanlaista kohtuullisuutta.
+Jos heidän taipumustaan juoppouteen tyydytettäisiin hankkimalla heille,
+niin paljon kuin haluavat, niin he yhtä helposti kukistuisivat
+paheittensa johdosta kuin sotavoimain kautta.
+
+24. Näytelmähuveja on heillä vain yksi laji ja se on joka seurassa
+samanlainen. Alastomat nuorukaiset, joille se on huvituksena, liikkuvat
+tanssien uhkaavain miekkain ja keihäiden välissä. Harjoitus on
+kehittänyt taidon, taito sulouden; kuitenkaan eivät sitä tee voiton tai
+palkan vuoksi: tämän hurjan uhkaleikin palkintona on katsojain ihastus.
+Arpapeliä he harjoittavat, ihmeellisesti kyllä, selvinä ikäänkuin
+vakavana toimena, niin hurjistuneina voiton ja häviön vimmassa, että
+he, kun kaikki on menetetty, panevat viimeiselle, ratkaisevalle
+heitolle vapautensa ja oman itsensä. Voitettu joutuu vapaaehtoiseen
+orjuuteen; vaikka olisikin nuorempi ja väkevämpi, antaa hän sitoa ja
+myydä itsensä. Semmoinen on heidän itsepäisyytensä nurjassa asiassa;
+itse he nimittävät sitä luotettavaisuudeksi. Tämänlaatuiset orjat he
+myyvät päästäkseen itsekin voiton häpeällisyydestä.
+
+25. Muita orjiaan he eivät käytä meidän tapamme mukaan talonväen kesken
+tarkoin määrättyihin toimiin; kullakin on oma asumuksensa ja oma
+kotinsa. Isäntä vaatii häneltä niinkuin maanvuokraajalta vissin määrän
+jyviä tai karjaa tai kangasta, ja vain siinä määrässä on orja
+isäntänsä vallan alainen; muut talouden askareet toimittavat isännän
+vaimo ja lapset. Harvoin kukaan ruoskii orjaa tai rankaisee häntä
+kahleilla ja pakkotyöllä; monesti he tappavat orjan, eivät ankaran
+kurin johdosta, vaan vimmassa, kuten vihollisen, paitsi että se
+tapahtuu rankaisematta. Orjuudesta vapautetut eivät ole paljoa
+paremmassa asemassa kuin orjat, harvoin heillä on mitään vaikutusta
+perheessä eikä koskaan valtiossa, lukuun ottamatta kuitenkin niitä
+valtioita, joilla on kuninkaita. Niissä, näette, kohoavat he arvossa
+sekä vapaasyntyisten että aatelisten yläpuolelle; muitten kansain luona
+on vapautettujen alhainen tila todistus valtiollisesta vapaudesta.
+
+26. Koron kiskominen ja korkoa korolta ottaminen on heille
+tuntematonta: ja siksi sitä enemmän vältetään kuin jos se olisi
+kielletty. Viljelysmaat kaikki ottavat yhteisesti haltuunsa asukkaitten
+lukumäärän perusteella ja jakavat sitten nämä välillään kunkin arvon
+mukaan; maitten laajuus helpottaa jaotuksen. Vuosittain muuttavat
+he vainionsa ja maata on runsaasti. Sillä he eivät työllään
+kilpaile maan hedelmällisyyden ja laajuuden kanssa siten, että
+istuttaisivat hedelmätarhoja, aitaisivat niittyjä ja johtaisivat vettä
+puutarhoihinsa; ainoastaan viljaa vaaditaan maalta. Sen vuoksi eivät
+jaa vuottaan yhtä moneen osaan kuin me; talvella, keväällä ja kesällä
+on merkityksensä ja nimensäkin, syksyn nimeä yhtä vähän tunnetaan kuin
+sen antimia.
+
+27. Hautajaisissa ei käytetä minkäänlaista turhuutta; ainoastaan sitä
+vaariinotetaan että kuuluisain kuolleitten miesten ruumiit poltetaan
+määrätyillä puulajeilla. Polttoroviota eivät varusta korupeitteillä
+eivätkä hyvänhajuisilla aineilla; kullekin annetaan mukaan roviolle
+hänen aseensa, vieläpä muutamille sotaratsukin. Haudalle luodaan kumpu
+turpeista; korkeiden ja työlästen muistorakennusten kunniaa he
+ylönkatsovat pitäen sitä rasittavana vainajille. Kaihosta ja kyynelistä
+he pian luopuvat, surusta ja murheesta taasen hitaasti. Naisille on
+suru sovelias, miehille muisto.
+
+Tämän olen yleensä kuullut kaikkien Germanein alkuperästä ja tavoista.
+Nyt aion esittää eri kansain laitoksia ja menoja, mikäli ne toisistaan
+eroavat, ja niitä heimoja, jotka Germaniasta ovat Galliaan muuttaneet.
+
+
+
+
+Erityinen osa.
+
+
+28. Että Gallein valta ennen muinoin oli mahtavampi, kertoo meille
+etevin kaikista historioitsijoista, tuo ikuistunut Julius,[9] ja
+siksipä on luultavaa että Gallialaisiakin on siirtynyt Germaniaan;
+sillä kuinka vähän voi joki estää kutakin kansaa, niin pian kuin se
+vahvistui, valloittamasta itselleen asuinpaikkoja ja muuttamasta niitä,
+kun ne vielä olivat kaikille yhteisiä eivätkä valtakuntain mahtisanain
+erottamia? Siis Helvetit asuivat Hercynian metsän[10] ja Rhein- ynnä
+Main-jokien välillä, Bojit etäämpänä, molemmat gallialaisia kansoja.
+Jäljellä on vielä Boihaemumin nimi ja se ilmaisee paikkakunnan
+muinaishistorian,[11] vaikka sen asukkaat sitten ovat muuttuneet. Mutta
+on tietämätöntä ovatko Araviskit siirtyneet Pannoniaan Osien luota,
+jotka ovat Germanein heimokuntaa, vai Osit Araviskein luota Germaniaan,
+koska heillä vielä nykyään on sama kieli, samat laitokset ja tavat;
+sillä kun heillä muinoin vallitsi sama köyhyys ja vapaus, oli virran
+molemmilla rannoilla samat edut ja haitat. Treverit ja Nervit ovat ylen
+halukkaita tavoittelemaan germanilaista sukuperää,[12] ikäänkuin he
+tämän kunniakkaan heimolaisuuden kautta erottautuisivat velttojen
+Gallien kaltaisuudesta. Itse Rhein-joen rannalla asuu epäilemättä
+germanilaisia kansoja, niink. Vangionit, Tribokit ja Nemetit. Eivät
+Ubitkaan häpeä sukuperäänsä, vaikka ovat itselleen ansainneet
+roomalaisen siirtokunnan arvon ja mieluummin kutsuvat itseään
+perustajansa nimen mukaan Agrippinalaisiksi,[13] sittenkuin he ennen
+muinoin ovat kulkeneet virran yli ja luotettavan uskollisuutensa tähden
+saaneet asettua itse Rheinin rannalle, ollakseen etuvartioina muita
+vastaan eivätkä itse vartioittavina.
+
+29. Kaikista näistä heimokunnista urhoollisuudessa etevimmät, Batavit,
+eivät asu suurella osalla Rheinin rantaa, vaan eräällä sen
+saarella,[14] oltuaan muinoin chattilainen kansa, joka kotimaassa
+vallitsevan eripuraisuuden tähden siirtyi noille asuinpaikoille siellä
+joutuakseen Rooman vallan alaiseksi. Heillä on vielä tunnusmerkkinä
+muinaisesta liittolaisuudestaan arvokas asemansa; sillä ei heitä
+häpeällisesti rasiteta veroilla eikä verojenkantaja heitä nylje;
+verotaakoista ja ylimääräisistä maksuista vapautettuina sekä
+säästettyinä, ikäänkuin hyökkäys- ja puolustusaseet, vain taistelujen
+tarpeeksi pidetään heitä varalla sotia varten. Samanlaisessa
+alamaisuuden tilassa on myös Mattiakein heimokunta,[15] sillä Rooman
+kansan mahtavuus on levittänyt valtakunnan kunnioitusta Rheinin ja
+siten entisten rajaimme ulkopuolelle. Siten he elävät asuinsijoiltaan
+ja alaltaan omalla rannallaan, mutta ovat sydämessään ja mielessään
+puolellamme, muuten ollen Batavien kaltaisia paitsi että lisäksi itse
+maaperänsä ja ilmanalansa vuoksi ovat tulisempia. -- Germanien kansojen
+joukkoon en tahdo niitä lukea, jotka kymmenysmaita viljelevät, vaikka
+ovat asettuneet Rheinin ja Tonavan toiselle puolelle;[16] kaikki
+kevytmielisimmät ja köyhyytensä vuoksi uskaliaat Gallit ovat ottaneet
+haltuunsa tämän omistukseltaan epävarman maa-alan; sitten kuin
+rajavalli on asetettu ja suojelusjoukot on siirretty edemmäs, pidetään
+tätä seutua valtakunnan sopukkana ja provinsin osana.
+
+30. Edempänä näistä Chattit elävät;[17] heidän maansa alkaa Hercynian
+metsästä eikä käsitä niin laajoja ja suoperäisiä seutuja kuin muut
+paikkakunnat, joihin Germania ulottuu; sillä kukkuloita kestää yhä ja
+ne harvenevat vähitellen, ja Hercynian metsä seuraa Chattejaan sekä
+jättää heidät sitten. Kansalla on vahvempi ruumiinrakennus, jäntevät
+raajat, uhkaava ulkomuoto ja yleensä suurempi mielenvilkkaus.
+Germaneiksi heillä on paljon ymmärrystä ja taitavuutta: he osaavat
+asettaa tarkasti valitut miehet päälliköiksi ja osoittaa niille
+kuuliaisuutta, osaavat taistella rivistössä, hyväksensä käyttää
+tilaisuuksia, viivyttää hyökkäyksiään, ymmärtävät oikein järjestää
+päivänsä ja öisin suojella itseään linnoituksilla, lukevat onnen
+epävarmojen asiain joukkoon ja urhoollisuuden luotettavaksi ja -- mikä
+on varsin harvinaista ja vain roomalaiselle sotakurille yksinomaista --
+laskevat enemmän arvoa johtajalle kuin sotajoukolle. Kaikki voima on
+jalkaväessä, minkä kannettavaksi he antavat paitsi sotapukua myös
+rauta-aseita ja muonavaroja; voisi luulla muiden lähtevän taisteluun,
+Chattien säännölliseen sotaan. Harvoin tehdään äkillinen ryntäys ja
+suoritetaan tilapäinen taistelu. Oikeastaan on hevosväelle omituista
+nopeasti hankkia voitto ja nopeasti peräytyä; nopeus on lähellä pelkoa
+ja vitkastelu pikemmin lähestyy järkähtämättömyyttä.
+
+31. Eräs tapa, mikä on muillakin Germanian kansoilla käytännössä,
+vaikka harvoin ja jonkun yksityisen uskaliaisuudesta, on Chatteilla
+tullut yleisesti suosituksi, nim. että he, niin pian kuin ovat iältään
+varttuneet, antavat hiusten ja parran kasvaa eivätkä poista tätä
+urhoollisuudelle pyhitettyä ja omistettua kasvonpeitettä, ennenkuin
+jonkun vihollisen tapettuaan. Verenvuodatuksen ja aseiden ryöstön
+jälkeen he paljastavat kasvonsa ja kerskaavat vasta silloin
+suorittaneensa palkan syntymästään ja olevansa otolliset isänmaalleen
+ja vanhemmilleen; pelkurit ja epäurheat pitävät rumuutensa. Kaikki
+urhoollisimmat pitävät sitä paitsi rautarengasta ikäänkuin kahletta --
+tämä on heimon mielestä häpeällistä --, kunnes ovat vapauttaneet
+itsensä tappamalla vihollisen. Tällainen asu on varsin monelle heistä
+otollinen, jopa elävät vanhuuteen saakka helposti huomattuina ja niin
+vihollistensa kuin kansalaistensa ihmettelyn esineenä. Näiden tulee
+alkaa kaikki taistelut: nämä muodostavat aina ensimäisen rivin, joka on
+outo katsella, sillä he eivät rauhankaan aikana ulkomuodoltaan muutu
+lempeämmiksi. Ei kellään ole huonetta eikä peltoa eikä mistään huolta;
+tulkoot kenenkä luo tahansa, niin elävät tuhlaten muiden tavaraa ja
+halveksien omaansa, kunnes voimaton vanhuus tekee heidät
+kykenemättömiksi niin kestävään urhouteen.
+
+32. Lähinnä Chatteja asuvat Usipit ja Tenkterit Rheinin varrella, missä
+sen uoma jo on varma, jotta se riittää olla rajana. Tenkterit ovat
+kuuluisat paitsi tavallisesta sotakunniasta myös harjaantuneen
+ratsuväkensä taitavuudesta, eikä ole Chatteilla jalkaväen maine
+loistavampi kuin Tenktereillä ratsuväen. Niin ovat esi-isät säätäneet,
+jälkeläiset noudattavat esimerkkiä. Tämä on lasten leikkinä,
+nuorukaisten kilvoituksena, tässä pysyvät vanhukset kiinni.
+Palvelijaväen, kodin ja perintötavarain ohessa ratsut kulkevat
+perintönä; näitä ei peri vanhin poika niinkuin muun tavaran, vaan se
+joka on sotaisin ja urhein.
+
+33. Lähellä Tenkterejä tavattiin muinoin Brukterit;[18] nyt kerrotaan
+Chamavien ja Angrivarien muuttaneen sinne, sitten kuin naapurikansat
+yksin neuvoin ovat karkoittaneet Brukterit ja hävittäneet heidät aivan
+sukupuuttoon joko vihasta heidän kopeutensa takia tai saaliinhimosta
+tai jostakin jumalain suosiosta meitä kohtaan; sillä he eivät ole
+meiltä riistäneet edes taistelun näkemistäkään. Enemmän kuin 60,000
+kaatui, eivät Roomalaisten sota-aseiden kautta, vaan, mikä oli vielä
+suuremmoisempaa, silmiemme ihastukseksi. Kunpa vain pysyisi ja kestäisi
+näillä kansoilla, jos kohta ei rakkaus meihin, niin kuitenkin
+keskenäinen viha, koska valtakunnan lopullisen kohtalon uhatessa onni
+ei voi suoda meille mitään parempaa kuin riitaisuutta vihollistemme
+välillä.
+
+34. Angrivareihin ja Chamaveihin liittyvät takana naapureina Dulgubnit
+ja Chasuarit sekä jotkut muut heimot, mitkä eivät ole niin tunnettuja,
+etupuolella alkavat Friisein asuinpaikat.[19] Nämä kutsutaan Suur'- ja
+Vähäfriiseiksi sotavoimainsa suuruuden mukaan. Molemmat nämä heimot
+Rhein ympäröitsee aina valtamereen saakka ja sitä paitsi asuvat he
+isojen järvien ympärillä, joilla roomalaisetkin laivastot ovat
+purjehtineet. Itse valtamertakin olemme siihen suuntaan koetelleet, ja
+huhu on kertonut että siellä vielä ovat Herculeen patsaat, olipa sitten
+niin että Hercules on käynyt siellä tai että olemme suostuneet hänen
+kunniakseen kääntämään kaiken sen, mikä jossain on suurta. Drusus
+Germanicukselta ei puuttunut rohkeutta;[20] mutta valtameri esti
+tiedustelemasta itsestään ja Herculeesta. Sittemmin kukaan ei ole
+koettanutkaan, vaan on pidetty hurskaampana ja jumalain kunnioitukseen
+sopivampana uskoa kuin tuntea niiden tekoja.
+
+35. Tähän saakka tunnemme Germaniaa länteenpäin; pohjoista kohti
+kääntyy maa suureen polveen. Ja lähinnä Chaukien maa ulottuu pitkin
+kaikkien kertomieni kansain syrjää,[21] kunnes tekee mutkan aina
+Chattein maahan asti, vaikka se alkaa jo Friisein alueesta ja käsittää
+osan merenrantaa. Näin suurta maa-alaa Chaukit eivät ainoastaan pidä
+hallussaan, vaan kansoittavat sen myös, ollen Germanian kansoista
+jaloin, joka ennemmin tahtoo oikeudella suuruuttansa tukea. Ilman
+vallanhimoa ja hillittömyyttä, hiljaisuudessa ja itsekseen eläen he
+eivät nosta mitään sotia eivätkä ryöstäen tai rosvoten tee
+hävitysretkiä. Etevin todistus heidän urhoudestaan ja voimastaan on se,
+ett'eivät vääryydellä ole saavuttaneet korkeaa asemaansa; kaikilla on
+kuitenkin aseet saatavissa ja, jos asia niin vaatii, sangen paljon
+miehiä ja hevosia; myös rauhan aikana on heillä sama maine.
+
+36. Chaukien ja Chattein sivulla ovat Cheruskit kauvan häiritsemättä
+nauttineet liian runsasta ja lamauttavaa rauhaa;[22] mutta tämä on
+ollut enemmän mieluista kuin turvallista, sillä vallanhimoisten ja
+väkevien keskellä on rauha petollinen; missä väkivalta vallitsee,
+siellä ovat kohtuus ja rehellisyys voittajan kunnianimityksiä. Siten
+mainittiin Cheruskeja ennen muinoin urheina ja rehellisinä, mutta nyt
+pelkureina ja typerinä; voittajille Chatteille on menestys luettu
+viisaudeksi. Myös Cheruskein naapurikansaan Foseihin koski heidän
+häviönsä ja nämä tulivat yhtä suuressa määrässä osallisiksi heidän
+vastoinkäymisistään, vaikka onnen päivinä olivat olleet heikommat.
+
+37. Samalla Germanian kulmalla, lähinnä valtamerta, asuvat Kimbrit,
+joitten valtio nykyään on vähäpätöinen, mutta maineeltaan suuri. Heidän
+muinaisesta kuuluisuudestaan on säilynyt laajalti jälkiä, molemmin
+puolin virtaa laveat leirit, joiden piiristä vielä nytkin saattaa
+arvostella kansan työvoimia ja niin suuren muuttoretken
+todennäköisyyttä. Meidän kaupunkimme 640:s vuosi oli kulumassa, kun
+Caecilius Metelluksen ja Papirius Carbon konsuliaikana ensi kerta
+kuultiin Kimbrein aseista.[23] Ja jos siitä ajasta luetaan keisari
+Trajanuksen toiseen konsulivuoteen,[24] niin saadaan täydelleen 210
+vuotta; niin kauan on Germaniaa koetettu voittaa. Näin pitkän
+aikakauden kuluessa on monta tappiota sattunut molemmin puolin. Eivät
+Samniitit, eivät Karthagolaiset, eivät Hispaniat tai Galliat tai
+Parthitkaan ole meitä useammin varoittaneet; onhan Germanian vapaus
+Arsaceen mielivaltaa väkevämpi.[25] Sillä mitä muuta kuin Crassuksen
+surman on Itämaa meille tuottanut, minkä kuitenkin, menetettyään itse
+puolestaan Pacoruksen, on täytynyt lannistua erään Ventidiuksen vallan
+alle? Sitä vastoin ovat Germanit, lyötyään tai vangiksi otettuaan
+Carbon ja Cassiuksen sekä Aurelius Scauruksen ja Servilius Caepion ynnä
+Gnaeus Malliuksen, samalla hävittäneet Rooman kansalta viisi
+konsulaarista sotajoukkoa ja vieneet itse Caesarilta[26] Varuksen ynnä
+kolme legionaa hänen kanssaan, eikä C. Marius Italiassa, jumaloittunut
+Caesar Galliassa, Drusus ja Nero sekä Germanicus omassa maassaan heitä
+rankaisematta hätyyttänyt.[27] Kohta sen jälkeen kääntyivät Gaius
+Caesarin ankarat uhkaukset pilanteoksi. Siitä vallitsi rauha, kunnes
+meidän eripuraisuudestamme syttyneen kansalaiskapinan aikana
+valloittivat legionain talvimajat ja tavoittivat valtaa myös Gallian
+maissa; sieltä he kuitenkin työnnettiin pois ja viime aikoina on heistä
+enemmän vietetty juhlakulkueita kuin heidät itse asiassa on voitettu.
+
+38. Nyt on puhuttava Suebeista, joita ei ole vain yksi kansakunta,
+niinkuin Chattit tai Tenkterit; heillä on, näette, hallussaan suurempi
+osa Germaniasta ja he ovat vielä nytkin jaettuina erikoisiin heimoihin
+eri nimityksillä, vaikka heitä yhteisesti kutsutaan Suebeiksi.[28]
+Kansalla on omituisena tunnusmerkkinä että sukevat tukkansa taapäin ja
+kietovat sen nutturaan. Tämän kautta eroavat Suebit muista Germaneista,
+ja tämän kautta myös vapaasukuiset Suebit orjistaan. Muissakin
+kansoissa käytetään tätä tapaa joko sukulaisuudesta Suebein kanssa tai,
+niinkuin usein tapahtuu, jäljittelemishalusta, mutta harvoin ja vain
+nuoruudessa; Suebit aina vanhuuteensa saakka käärivät tuuhean tukkansa
+ylöspäin ja solmivat sen usein juuri päälaelle. Ylimyksillä on hiusten
+asento vielä somempi. Vain tämä huoli heillä on ulkomuodostaan,
+mutta sekin on viatonta laatua; sillä he eivät korista itseään
+osoittaakseen tai saadakseen rakkautta, vaan näyttääkseen isommilta ja
+pelottavammilta vihollistensa silmissä he koristavat itseään somemmin
+sotaan lähtiessä.
+
+39. Semnoneja mainitaan vanhimmiksi ja jaloimmiksi Suebeista;[29]
+varmaksi vahvistaa heidän ikäänsä eräs uskonnollinen tapa.
+Määräpäivänä kerääntyy kaikista samansukuisista kansoista lähetystöjä
+erääsen metsään, mikä on pyhä esi-isäin ennustusmenojen ja
+ikivanhan kunnioituksen johdosta, ja nämä viettävät barbarisen
+jumalanpalveluksensa kauheita salamenoja uhraamalla ihmisen kansan
+puolesta. Myös toinen pyhyys on lehdolla: ei kukaan astu siihen muuten
+kuin siteellä sidottuna osoittaakseen omaa alamaisuuttaan ja jumalan
+kaikkivaltaisuutta. Jos joku on sattunut lankeamaan, ei hänen ole lupa
+nousta muiden avulla eikä kohota ylös omin voimin; hän kierii pitkin
+maata sieltä pois. Ja koko tämä taikausko tarkoittaa sitä että kansa
+muka on täältä alkunsa saanut, että täällä on kaikkien hallitsija,
+jumala, ja että kaikki muu on hänelle alamaista ja kuuliaista. Lisää
+vaikutusta tarjoaa Semnonien onnellinen asema: he asuvat sadassa
+kyläkunnassa ja heidän suuri väkilukunsa aiheuttaa, jotta pitävät
+itseään Suebein pääheimona.
+
+40. Sitä vastoin saattaa vähälukuisuus Langcbardit kuuluisiksi.[30]
+Vaikka varsin monet, mahtavat heimot heitä ympäröivät, he eivät
+kuitenkaan etsi turvallisuutta kuuliaisuuden kautta, vaan tappeluja ja
+vaaroja koettamalla. Siitä edempänä virrat ja metsät suojelevat
+Reudignejä, Avioneja, Augleja, Varineja, Eudoseja, Suardoneja ja
+Nuitoneja. Mutta näillä ei ole erikseen mitään erinomaista paitsi että
+yhteisesti palvelevat Nerthusta s.o. Maa-emoa ja luulevat hänen ottavan
+osaa ihmisten asioihin sekä käyvän kansoja katsomassa.[31] Onpa eräässä
+valtameren saaressa pyhä metsikkö ja siinä pyhitetyt vaunut, vaatteella
+peitetyt; niitten koskettaminen on ainoastaan papille sallittu. Tämä
+tuntee jumalattaren läsnäolon itse pyhäkössä ja seuraa häntä syvällä
+kunnioituksella, kun hän vaunuissaan kulkee lehmien vetämänä. Silloin
+ovat päivät iloiset ja kaikki paikat koristetut, joita hän kunnioittaa
+tulollaan ja käynnillään. He eivät käy sotia eivätkä tartu aseisiin;
+kaikki miekat ovat suljetut salpojen taa; rauha ja lepo on silloin vain
+tunnettu ja silloin rakastettu, kunnes sama pappi vie takaisin
+pyhäkköön kuolevaisten seuraan kyllästyneen jumalattaren. Heti sen
+jälkeen pestään tuntemattomassa järvessä vaunut peitteineen ja, jos
+tahdot sen uskoa, itse jumalatarkin. Tämän orjat toimittavat, jotka
+sama järvi paikalla nielee. Tästä tulee tuo salainen kauhu ja hurskas
+tietämättömyys siitä mitä se lienee, jota vain kuolemaan määrätyt
+saavat nähdä.
+
+41. Ja tämä osa Suebeja ulottuu Germanian etäisempiin osiin. Lähempänä
+meitä, seurataksem nyt Tonavaa samalla tavoin kuin vähää ennen Rheiniä,
+on Hermundurien valtio,[32] mikä on ollut Roomalaisille uskollinen, ja
+sen tähden niillä yksin Germaneista on oikeus käydä kauppaa niin hyvin
+virran rannalla kuin myös sisämaassa ja Raetian maakunnan mahtavimmassa
+uutiskaupungissa.[33] Kaikkialla he kulkevat ilman vartioita rajan yli
+ja kun me muille kansoille näytämme vain aseitamme ja leiriämme, olemme
+näille avanneet kotimme ja kartanomme heidän haluamattaankin.
+Hermundurien maasta alkaa Elbe, muinoin kuuluisa ja tunnettu joki; nyt
+siitä kuulee vain mainittavan.
+
+42. Hermundurien vieressä asustavat Varistit ja niistä edempänä
+Markomanit ja Quadit.[34] Markomanien sotakunnia ja -voimat ovat
+erinomaisia ja asuinpaikkansakin ovat urheudellaan anastaneet sieltä
+muinoin karkoitettuaan Bojit. Eivät Varistit eivätkä Quadit ole
+suvustaan huonontuneet. Ja tämä on ikäänkuin Germanian etupuoli, mikäli
+se on Tonavan rajoittama. Markomaneilla ja Quadeilla on aina meidän
+aikaamme asti ollut kuninkaita omasta kansasta Maroboduuksen ja
+Tudruksen jaloa sukua; nyt kärsivät jo muukalaisiakin, mutta
+kuninkailla on voimansa ja valtansa Roomalaisten vaikutuksesta. Harvoin
+autamme heitä aseillamme, useammin rahalla, mutta sittenkin ovat he
+mahtavia.
+
+43. Etäämpänä Marsignit, Cotinit, Osit ja Burit rajoittuvat Markomanien
+ja Quadien takamaihin. Näistä Marsignit ja Burit kielellään ja
+elämäntavoillaan osoittautuvat Suebeiksi; ett'eivät Cotinit eivätkä
+Osit ole Germaneja todistaa edellisten gallilainen ja jälkimäisten
+pannonilainen kieli sekä sekin seikka että ovat veronalaisia. Osan
+veroista määräävät heille Sarmatit, osan Quadit, muukalaisia kun ovat.
+Cotinit kaivavat rautaakin sitä suuremmaksi häpeäksi heille itselleen.
+Ja kaikki nämä kansat ovat harvoin asettuneet tasangoille, vaan yleensä
+metsämaihin ja vuorten kukkuloille. Sillä Suebein maan erottaa ja jakaa
+yhtenäinen vuorenharjanne, jonka toisella puolella asuu varsin monta
+kansaa; näistä useampiin valtioihin jakaantunut Lugien kansa ulottuu
+laveimmalle alalle.[35] On kylläksi että näistä mainitsen mahtavimmat:
+Harit, Helvaeonit, Manimit, Helisit ja Nahanarvalit. Nahanarvaleilla on
+nähtävänä ikivanhalle jumalanpalvelukselle pyhitetty lehto. Sen
+hoitajana on pappi naisen puvussa, mutta jumalia kutsutaan roomalaisen
+selityksen mukaan Castoriksi ja Polluxiksi. Sellainen on jumalain
+olento, niiden nimi on Alkit.[36] Ei nähdä mitään kuvia eikä mitään
+jälkeä vieraasta jumalanpalveluksesta, kuitenkin palvellaan heitä
+veljeksinä sekä nuorukaisina. Muuten ovat Harit, paitsi että
+sotavoimiltaan ovat vastikään lueteltuja kansoja etevämmät,
+tuimannäköiset ja synnynnäistä julmuuttaan he lisäävät taiteen avulla
+ja aikaa varteen ottamalla: heidän kilpensä ovat mustat, heidän
+ruumiinsa maalatut; taisteluihinsa he valitsevat pimeät yöt ja
+herättävät kauhua jo aavemaisen sotajoukkonsa hirvittävän ja synkän
+ilmestymisen kautta, koska ei mikään vihollinen voi kestää tuota outoa
+ja ikäänkuin tuonentapaista näköä; sillä kaikissa taisteluissa
+voitetaan silmät ensiksi. Lugien toisella puolella ovat Gotonit, joita
+kuninkaat hallitsevat jo vähää kireämmällä tavalla kuin muita
+germanilaiskansoja, kuitenkaan polkematta vapautta. Sitten aivan
+valtameren ääressä sijaitsevat Rugit ja Lemovit,[37] ja kaikilla näillä
+kansoilla on tuntomerkkinä pyöreät kilvet, lyhyet miekat sekä
+kuuliaisuus kuninkaita kohtaan.
+
+44. Sitten seuraavat itse valtameren keskellä Suionien valtiot,[38]
+mitkä ovat mahtavat paitsi mies- ja asevoimaltaan myös laivastoiltaan.
+Laivojensa muoto eroaa siinä, että kumpainenkin pää tarjoaa
+maalle-nousuun aina soveliaan keulan. Niitä ei kuljeteta purjeilla eikä
+niillä ole riviin asetettuja airoja sivuilla: soutovehkeet ovat
+irralliset, kuten muutamilla joilla, ja siirrettävät paikasta toiseen
+sen mukaan kuin asia vaatii. Myös rikkaus on heillä arvossa ja sen
+vuoksi yksi on hallitsijana, nykyään jo ilman rajoituksia ja
+kieltämättömällä oikeudella tulla totelluksi. Eivätkä aseet ole
+niinkuin muilla Germaneilla jokaisen saatavissa, vaan salpojen takana
+vartian, vieläpä orjan hallussa, koska valtameri estää vihollisten
+äkilliset hyökkäykset ja sitä paitsi aseelliset joukot joutilaina
+ollessaan helposti harjoittavat vallattomuutta; kuninkaalle tosiaan ei
+olisi eduksi asettaa aseiden vartiaksi ketään aatelista tai
+vapaasukuista tai edes vapautettua orjaakaan. Suioneihin liittyvät
+naapureina Sitonien heimot.[39] Muuten yhdenkaltaisia, eroavat vain
+siinä suhteessa, että heillä on nainen hallitsijana; siihen määrään
+ovat he alentuneet orjuudessa, saatikka sitten vapaudessa.
+
+45. Tuolla puolen Sitoneja on toinen jäätynyt ja melkein liikkumaton
+meri, jonka siten todistetaan ympäröivän ja rajoittavan maanpiiriä,
+että jo laskevan auringon viimeinen valo kestää aina päivän koittoon
+saakka niin kirkkaana, että se himmentää tähdet; että vielä auringon
+noustessa kuuluu huminaa ja näkyy jumalan hevosten haamut sekä
+säteilevä pää, on kansanluulon lisäys. Ainoastaan tähän asti ulottuu
+tietomme mukaan luomakunta. Siis valelee jo Suebiläismeri[40] oikealla
+rannallaan Aestein maita;[41] näillä on Suebein tavat ja vaatteus,
+mutta kieli vivahtaa enemmän britannilaiseen. He palvelevat jumalain
+emoa. Taikauskonsa tunnusmerkkinä kantavat he metsäkarjujen kuvia:
+sellaista kuvaa käytetään aseiden sekä yleensä kaiken suojan asemesta
+ja saattaa jumalattaren palvelijan turvalliseksi vihollistenkin
+keskellä. Harvoin käyttävät he rauta-aseita, useimmiten vain nuijia.
+Jyviä ja muita hedelmiä he viljelevät ahkerammin kuin velttojen
+Germanein on tapana. Mutta mertakin he tutkivat ja yksin kaikista
+kokoavat matalikoista ja rannaltakin merikultaa, jota itse kutsuvat
+_glaesum_-nimellä. Mutta, ollen barbareja, eivät osanneet tutkia tai
+saada tietää minkälainen sen luonto on tai mikä voima sen synnyttää;
+vieläpä makasi se kauan muun meren romun seassa, kunnes ylellisyytemme
+antoi sille arvon. Itse eivät sitä ensinkään käytä: raakana se kootaan,
+muodostelemattomana se tuodaan meille ja maksun siitä he ihmetellen
+ottavat vastaan. Että se on puun nestettä voinee kuitenkin siitä
+päättää, että sen läpi usein näkyy muutamia matelevia eläviä ja
+siivekkäitäkin, jotka kosteaan takertuneina sitten aineen kovetessa
+siihen sulkeutuvat. Siis lienee siellä luullakseni ylen hedelmällisiä
+metsiä ja lehtoja, ja samoin kuin Itämaiden äärissä suitsutusta ja
+palsamia vuotaa, niin Lännenkin saarilla ja manterilla auringon
+polttavain säteiden vaikutuksesta puista puristuu ja liukenee neste,
+mikä lähimpään mereen valuu sekä myrskyjen voimasta ajautuu vastaisille
+rannoille. Jos tulen avulla koettelet merikullan luontoa, niin syttyy
+se pihkapuun tavoin sekä levittää öljymäisen ja hyvänhajuisen liekin;
+sitten se sitkistyy piin tai hartsin kaltaiseksi.
+
+46. Tässä on Suebien maan loppu. Olen kahden vaiheella, luenko
+Peucinien, Venedien ja Fennien (Suomalaisten) heimokunnat Germaneihin
+vai Sarmateihinko,[42] vaikka Peucinit, joita muutamat myös kutsuvat
+Bastarneiksi, kielensä, elämänlaatunsa, asuntotapansa ja rakennustensa
+puolesta ovat Germanein kaltaisia. Kaikille on siivottomuus ja velttous
+ominaista: ylhäisten seka-avioiden kautta saavat he jossakin määrin
+saman inhottavan ulkomuodon kuin Sarmateilla on. Venedit ovat näitten
+tavoista paljon omaksuneet; sillä he samoilevat rosvoretkillään kaikkia
+metsiä ja vuoria, jotka ylenevät Peucinien ja Fennien välillä. Nämä
+luetaan kuitenkin pikemmin Germanien joukkoon, koska he rakentavat
+kiinteitä asumuksia ja käyttävät kilpiä sekä kernaasti kulkevat
+jalkaisin vikkelään; mikä kaikki on peräti toisin kuin vaunuissa ja
+hevosen selässä elävillä Sarmateilla. Suomalaisten raakuus on
+erinomaisen suuri ja heidän köyhyytensä inhottava: ei aseita, ei
+hevosia eikä asuntoja ole heillä; heidän ravintonaan on metsänriista,
+heidän pukunaan taljat sekä vuoteenaan maa; heidän ainoa toivonsa on
+nuolissa, joita raudan puutteessa varustavat luukärjillä. Ja sama
+metsästys elättää yhdellä lailla miehet ja vaimot; sillä nämä seuraavat
+kaikkialla mukana ja vaativat saaliista osansa. Eikä ole lapsillakaan
+muuta suojaa petoja ja sateita vastaan kuin että heitä peitetään
+jonkinmoiseen vitsakotaan; tänne palaavat nuorukaiset, tämä on
+vanhusten turvapaikka. Mutta tätä elämää pitävät he onnellisempana kuin
+hikoilla pelloilla, vaivaantua talonpuuhissa ja toivon tai pelon
+vaiheella ajatella omaa ja muiden omaisuutta; huolettomina ihmisten
+suhteen, huolettomina jumalain suhteen he ovat saavuttaneet vaikeimman
+asian, nim. ett'ei heillä ole edes toivomisen tarvetta.
+
+Muu on jo tarunomaista: niinkuin että Helluseilla ja Etioneilla on
+ihmisten päät ja kasvot, mutta petojen ruumiit ja raajat; tämän minä
+jätän sikseen, koska se on vahvistusta vailla.
+
+
+
+
+Selitykset:
+
+
+[1] _Raetia ja Vindelioia_ Tiroli ja Baijerin eteläosa; _Pannonia_ ynnä
+_Noricum_ länsiosa Unkaria ja Steiermark; _Sarmatit_ s.o. Jazygit
+asuivat Tonavan ja Theissin välillä, _Dakit_ idempänä.
+
+[2] S:t Gotthard.
+
+[3] _Abnôba_ uyk. Schwarzwald.
+
+[4] _Tungrit_ belgiläinen kansanheimo nyk. Maasin ja Schelden välillä.
+
+[5] _Banditus_ oik. kilpilaulu.
+
+[6] _Serrati_ hammaslaitaiset ja _bigati_ kaksivaljakon kuvalla
+varustetut hopeadenarit tasavallan ajoilta.
+
+[7] _Centeni_ satakuntalaiset.
+
+[8] Täytettyään 16 vuotta julistettiin roomalainen nuorukainen
+juhlallisesti täysi-ikäiseksi, jonka jälkeen hänen pukunaan oli _toga
+virilis_.
+
+[9] C. Julius Caesar.
+
+[10] _Hercynian metsä_ Etelä-Saksan metsäiset vuoriseudut
+Schwarzwaldista Karpatheihin saakka.
+
+[11] _Boihaemum_ "Bojien kotimaa" nyk. Böömi.
+
+[12] _Trevêrit_ Mosel-virran varrella, vrt. Trier; _Nervit_ nyk.
+Scbelden ja Maasin välillä.
+
+[13] Ubien pääkaupunki _Ara Ubiorum_ sai keisari Claudiuksen puolison
+Agrippinan kunniaksi nimen _Colonia Agrippinensis_ (nyk. Köln).
+
+[14] _Batavit_ saarella Rheinin ja Waalin välillä.
+
+[15] _Mattiakit_ nyk. Wiesbadenin tienoilla.
+
+[16] _Decumates agri_ kymmenysmaat Rheinin, Mainin ja Tonavan välissä.
+
+[17] _Chattit_ vrt. nykyinen Hessen.
+
+[18] _Brukterit_ Lippen ja Emsin välillä.
+
+[19] Friisit Pohjanmeren rannikolla Rheinin ja Emsin välillä.
+
+[20] Vrt. luku 37.
+
+[21] _Chaukit_ nyk. Emsin ja Elben välillä.
+
+[22] _Cheruskit_ Elben keskiosan ja Weserin välillä.
+
+[23] V. 113 e.Kr.
+
+[24] V. 98 j.Kr.
+
+[25] _Arsaces_ Parthian kuningas.
+
+[26] Keisari Augustus.
+
+[27] _Drusus Germanicus_ keisari Augustuksen poikapuoli; _Nero_
+edellisen veli, sittemmin keisari Tiberius; _Germanicus_ Drusuksen
+poika; _Gaius Caesar_ edellisen poika, keisari Caligula.
+
+[28] _Suebit (Svebit)_ itäiset Germanit Elben, Weichselin ja Tonavan
+välillä; vrt. Schwaben.
+
+[29] _Semnonit_ Elben keskiosan ja Oderin välillä.
+
+[30] Langobardit Semnonien pohjoispuolella Elben varrella.
+
+[31] _Nerthus_ vrt. muinaisruots. Njördhr.
+
+[32] _Hermundurit_ Elben ja Mainin välillä.
+
+[33] _Augusta Vindelicorum_ Augsburg.
+
+[34] _Markomanit_ nyk. Böömissä, _Quadit_ Mährissä ja Unkarissa.
+
+[35] _Lugit_ Oderin ja Weichselin välillä.
+
+[36] _Alci_ nom. pl.
+
+[37] Rugit Pommerissa; vrt. Rügen.
+
+[38] _Suionit (Svionit)_ vrt. Svear.
+
+[39] _Sitonit_ ehkä suomensukuisia heimoja Pohjanlahden rannoilla.
+
+[40] Itämeri.
+
+[41] Näistä saivat suomensukuiset Virolaiset nimensä.
+
+[42] _Peucinit_ Tonavan suulla; _Venedit_ Vendit Weichselin
+itäpuolella; _Sarmatit_ Etelä-Venäjällä.
+
+
+
+
+
+
+
+
+
+
+*** END OF THE PROJECT GUTENBERG EBOOK GERMANIA ***
+
+
+    
+
+Updated editions will replace the previous one—the old editions will
+be renamed.
+
+Creating the works from print editions not protected by U.S. copyright
+law means that no one owns a United States copyright in these works,
+so the Foundation (and you!) can copy and distribute it in the United
+States without permission and without paying copyright
+royalties. Special rules, set forth in the General Terms of Use part
+of this license, apply to copying and distributing Project
+Gutenberg™ electronic works to protect the PROJECT GUTENBERG™
+concept and trademark. Project Gutenberg is a registered trademark,
+and may not be used if you charge for an eBook, except by following
+the terms of the trademark license, including paying royalties for use
+of the Project Gutenberg trademark. If you do not charge anything for
+copies of this eBook, complying with the trademark license is very
+easy. You may use this eBook for nearly any purpose such as creation
+of derivative works, reports, performances and research. Project
+Gutenberg eBooks may be modified and printed and given away—you may
+do practically ANYTHING in the United States with eBooks not protected
+by U.S. copyright law. Redistribution is subject to the trademark
+license, especially commercial redistribution.
+
+
+START: FULL LICENSE
+
+THE FULL PROJECT GUTENBERG LICENSE
+
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+www.gutenberg.org/license.
+
+Section 1. General Terms of Use and Redistributing Project Gutenberg™
+electronic works
+
+1.A. By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound
+by the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B. “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this
+agreement and help preserve free future access to Project Gutenberg™
+electronic works. See paragraph 1.E below.
+
+1.C. The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is unprotected by copyright law in the
+United States and you are located in the United States, we do not
+claim a right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting
+free access to electronic works by freely sharing Project Gutenberg™
+works in compliance with the terms of this agreement for keeping the
+Project Gutenberg™ name associated with the work. You can easily
+comply with the terms of this agreement by keeping this work in the
+same format with its attached full Project Gutenberg™ License when
+you share it without charge with others.
+
+1.D. The copyright laws of the place where you are located also govern
+what you can do with this work. Copyright laws in most countries are
+in a constant state of change. If you are outside the United States,
+check the laws of your country in addition to the terms of this
+agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work. The Foundation makes no
+representations concerning the copyright status of any work in any
+country other than the United States.
+
+1.E. Unless you have removed all references to Project Gutenberg:
+
+1.E.1. The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:
+
+    This eBook is for the use of anyone anywhere in the United States and most
+    other parts of the world at no cost and with almost no restrictions
+    whatsoever. You may copy it, give it away or re-use it under the terms
+    of the Project Gutenberg License included with this eBook or online
+    at www.gutenberg.org. If you
+    are not located in the United States, you will have to check the laws
+    of the country where you are located before using this eBook.
+  
+1.E.2. If an individual Project Gutenberg™ electronic work is
+derived from texts not protected by U.S. copyright law (does not
+contain a notice indicating that it is posted with permission of the
+copyright holder), the work can be copied and distributed to anyone in
+the United States without paying any fees or charges. If you are
+redistributing or providing access to a work with the phrase “Project
+Gutenberg” associated with or appearing on the work, you must comply
+either with the requirements of paragraphs 1.E.1 through 1.E.7 or
+obtain permission for the use of the work and the Project Gutenberg™
+trademark as set forth in paragraphs 1.E.8 or 1.E.9.
+
+1.E.3. If an individual Project Gutenberg™ electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any
+additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works
+posted with the permission of the copyright holder found at the
+beginning of this work.
+
+1.E.4. Do not unlink or detach or remove the full Project Gutenberg™
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg™.
+
+1.E.5. Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.
+
+1.E.6. You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format
+other than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ website
+(www.gutenberg.org), you must, at no additional cost, fee or expense
+to the user, provide a copy, a means of exporting a copy, or a means
+of obtaining a copy upon request, of the work in its original “Plain
+Vanilla ASCII” or other form. Any alternate format must include the
+full Project Gutenberg™ License as specified in paragraph 1.E.1.
+
+1.E.7. Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8. You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works
+provided that:
+
+    • You pay a royalty fee of 20% of the gross profits you derive from
+        the use of Project Gutenberg™ works calculated using the method
+        you already use to calculate your applicable taxes. The fee is owed
+        to the owner of the Project Gutenberg™ trademark, but he has
+        agreed to donate royalties under this paragraph to the Project
+        Gutenberg Literary Archive Foundation. Royalty payments must be paid
+        within 60 days following each date on which you prepare (or are
+        legally required to prepare) your periodic tax returns. Royalty
+        payments should be clearly marked as such and sent to the Project
+        Gutenberg Literary Archive Foundation at the address specified in
+        Section 4, “Information about donations to the Project Gutenberg
+        Literary Archive Foundation.”
+    
+    • You provide a full refund of any money paid by a user who notifies
+        you in writing (or by e-mail) within 30 days of receipt that s/he
+        does not agree to the terms of the full Project Gutenberg™
+        License. You must require such a user to return or destroy all
+        copies of the works possessed in a physical medium and discontinue
+        all use of and all access to other copies of Project Gutenberg™
+        works.
+    
+    • You provide, in accordance with paragraph 1.F.3, a full refund of
+        any money paid for a work or a replacement copy, if a defect in the
+        electronic work is discovered and reported to you within 90 days of
+        receipt of the work.
+    
+    • You comply with all other terms of this agreement for free
+        distribution of Project Gutenberg™ works.
+    
+
+1.E.9. If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from the Project Gutenberg Literary Archive Foundation, the manager of
+the Project Gutenberg™ trademark. Contact the Foundation as set
+forth in Section 3 below.
+
+1.F.
+
+1.F.1. Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+works not protected by U.S. copyright law in creating the Project
+Gutenberg™ collection. Despite these efforts, Project Gutenberg™
+electronic works, and the medium on which they may be stored, may
+contain “Defects,” such as, but not limited to, incomplete, inaccurate
+or corrupt data, transcription errors, a copyright or other
+intellectual property infringement, a defective or damaged disk or
+other medium, a computer virus, or computer codes that damage or
+cannot be read by your equipment.
+
+1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the “Right
+of Replacement or Refund” described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg™ trademark, and any other party distributing a Project
+Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.
+
+1.F.4. Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you ‘AS-IS’, WITH NO
+OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5. Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.
+
+1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in
+accordance with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.
+
+Section 2. Information about the Mission of Project Gutenberg™
+
+Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need are critical to reaching Project Gutenberg™’s
+goals and ensuring that the Project Gutenberg™ collection will
+remain freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future
+generations. To learn more about the Project Gutenberg Literary
+Archive Foundation and how your efforts and donations can help, see
+Sections 3 and 4 and the Foundation information page at www.gutenberg.org.
+
+Section 3. Information about the Project Gutenberg Literary Archive Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non-profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation’s EIN or federal tax identification
+number is 64-6221541. Contributions to the Project Gutenberg Literary
+Archive Foundation are tax deductible to the full extent permitted by
+U.S. federal laws and your state’s laws.
+
+The Foundation’s business office is located at 809 North 1500 West,
+Salt Lake City, UT 84116, (801) 596-1887. Email contact links and up
+to date contact information can be found at the Foundation’s website
+and official page at www.gutenberg.org/contact
+
+Section 4. Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg™ depends upon and cannot survive without widespread
+public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine-readable form accessible by the widest
+array of equipment including outdated equipment. Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular state
+visit www.gutenberg.org/donate.
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: www.gutenberg.org/donate.
+
+Section 5. General Information About Project Gutenberg™ electronic works
+
+Professor Michael S. Hart was the originator of the Project
+Gutenberg™ concept of a library of electronic works that could be
+freely shared with anyone. For forty years, he produced and
+distributed Project Gutenberg™ eBooks with only a loose network of
+volunteer support.
+
+Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as not protected by copyright in
+the U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.
+
+Most people start at our website which has the main PG search
+facility: www.gutenberg.org.
+
+This website includes information about Project Gutenberg™,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+

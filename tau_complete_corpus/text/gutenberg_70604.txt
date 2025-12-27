@@ -1,0 +1,3404 @@
+﻿The Project Gutenberg eBook of Sophokles
+    
+This ebook is for the use of anyone anywhere in the United States and
+most other parts of the world at no cost and with almost no restrictions
+whatsoever. You may copy it, give it away or re-use it under the terms
+of the Project Gutenberg License included with this ebook or online
+at www.gutenberg.org. If you are not located in the United States,
+you will have to check the laws of the country where you are located
+before using this eBook.
+
+Title: Sophokles
+
+Author: Emil Zilliacus
+
+Translator: Otto Manninen
+        Tyyni Tuulio
+
+Release date: April 20, 2023 [eBook #70604]
+
+Language: Finnish
+
+Original publication: Finland: WSOY, 1920
+
+Credits: Tapio Riikonen
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK SOPHOKLES ***
+
+
+
+
+
+SOPHOKLES
+
+Kirj.
+
+Emil Zilliacus
+
+
+Suomensi
+
+Tyyni Haapanen-Tallgren [Tyyni Tuulio]
+
+
+Runot suomentanut
+
+O. Manninen
+
+
+
+
+
+Porvoossa,
+Werner Söderström Osakeyhtiö,
+1920.
+
+
+
+
+
+
+      Opettajalleni ja ystävälleni
+          Ivar A. Heikelille
+
+
+
+SISÄLTÖ:
+
+    I. Kreikalainen tragedia.
+   II. Aiskhylos.
+  III. Sophokleen elämä ja toiminta.
+   IV. Aias.
+    V. Elektra.
+   VI. Trakhiin naiset. Philoktetes.
+  VII. Antigone.
+ VIII. Kuningas Oidipus.
+   IX. Oidipus Kolonoksessa.
+
+
+
+
+I. Kreikkalainen tragedia.
+
+
+Sophokleen murhenäytelmät ovat monessa suhteessa kreikkalaisen
+tragedian huippukohta, pitkän kehityksen korkein saavutus. Ainoastaan
+jos jonkun verran tuntee tätä kehitystä, voi niitä oikein arvostella,
+samoinkuin yleensä, jotta oikein ymmärtäisi ja osaisi arvostaa
+kreikkalaista murhenäytelmää, tulee muistaa että tragedia kehittyi
+jumalanpalvelukseen kuuluvasta koorilaulusta. Lähemmät tragedian
+syntyä koskevat asianhaarat ovat peittyneet hämärään. Antiikin omat
+tiedonannot siitä ovat sekä niukat että keskenään ristiriitaiset, ja
+huolimatta kaikesta vaivasta ja tarkkanäköisyydestä, jota nykyaikaiset
+muinaistutkijat ovat omistaneet tämän kysymyksen tutkimiseen, odottaa
+se vielä ratkaisuaan.
+
+Aristoteleen mukaan »dithyrambin esilaulajat» panivat alulle
+tragedian, ja toisessa paikassa hän sanoo, että tämä sai alkunsa
+satyyrinäytelmästä; nämä lauseet ovat aina viime vuosiin asti olleet
+kaikkien tätä kysymystä koskevien tutkimusten lähtökohtana. Dithyrambi
+oli dionysolainen koorilaulu ja Dionysos itse kasvullisuuden ja
+hedelmällisyyden jumala, jonka hurjamenoinen palvelus sisälsi siemenen
+miimillisiin lauluihin, tansseihin ja kisoihin, jotka ylistivät ja
+havainnollistuttivat hänen taisteluitaan ja kärsimyksiään, hänen
+ilmestymisiään ja tuhoutumistaan. _Tragodia_ merkitsee pukkilaulua,
+ja nimen on selitetty johtuvan koorin pukkia muistuttavasta
+satyyripuvusta. Tosin ei satyyreilla, näillä Arkadian pukinmuotoisilla
+metsän ja vuoren hengillä, ollut alkuaan mitään tekemistä Dionysoksen
+kanssa, mutta on otaksuttu että satyyrikoorit myöhemmin astuivat
+dionysolaisen dithyrambin palvelukseen. Kun sitten johtaja,
+esilaulaja, vapautui koorista ja otti esittääkseen soolo-osia,
+saattoi hänen ja koorin välillä sukeutua vuoropuhelu, ja kun edelleen
+sisällystä laajennettiin käsittämään aiheita muistakin jumalais- ja
+sankaritaruista, oli tragedia valmis ensimäisessä, alkuperäisessä
+muodossaan.
+
+Tämä on suurin piirtein se oikeaoppinen teoria tragedian synnystä,
+joka on vallinnut meidän päiviimme asti ja vallitsee vieläkin,
+joskaan ei enää kiistämättömänä. Se antaa nimittäin aihetta monelle
+vastaväitteelle, se jättää monta tärkeätä kysymystä avoimeksi.
+Tragedian kehitys satyyrinäytelmästä on ristiriidassa muiden antiikin
+tiedonantojen kanssa, ja sitäpaitsi, voisiko sen korkea ja vakava
+murhepaatos todellakin palautua rivoon ja koomilliseen satyyrikooriin?
+Ja kuinka voi, kun tuntee sen vanhoillisuuden, joka aina on ollut
+ominaista kulttimenoille, selittää, että tragedia niin nopeasti ja
+suuressa määrin loittani dionysolaisesta aihepiiristä?
+
+Nämä vastaväitteet ovat johtaneet uuteen tragedian nimen tulkintaan,
+yhtäläisyysmerkin poistamiseen pukkikoorin ja satyyrikoorin väliltä.
+Eräitten mukaan olisi »pukki» kulttinimitys, joka tarkoitti menoihin
+osaaottavia henkilöitä, ja pukintalja haltioitumisen ja metamorfoosin
+vertauskuva, joka merkitsi uskovan yhteenkuuluvaisuutta pukinnahkaan
+puetun tai alkuaan pukinmuotoisen jumalan kanssa. Toiset taas eivät
+näe traagillisten laulajain pukintaljoissa tai vuohennahoissa mitään
+muuta kuin Kreikan maalaisväestön ikivanhan puvun, joka vielä meidän
+päivinämme voidaan tavata samojen seutujen paimenilla ja talonpojilla;
+tätä alkuperäistä vaatetusta olisivat jumalanpalveluksessa esiintyvät
+koorit pieteettisyistä käyttäneet vielä kauan senjälkeen kun kaupunkien
+asukkaat jo olivat vaihtaneet sen kudotuista villakankaista tehtyihin
+pukuihin.
+
+Mutta on menty vielä pitemmälle, on laadittu kokonaan uusi teoria,
+joka kieltää tragedian dionysolaisen alkuperän ja etsii sen syntyä
+kreikkalaisten sankaripalveluksesta ja kuolonvalituksesta, niistä
+surulauluista ja tansseista, joilla vietettiin sankarien muistoa.
+Tärkein asiakirjallinen tuki tälle teorialle on eräs Herodotoksen
+tiedonanto: Sikyonin kaupungissa esitettiin noin 600 vuotta ennen
+Kristusta traagillisia koorilauluja, jotka ylistivät Adrastos-sankarin
+kärsimyksiä, mutta jotka sitten tyranni Kleistheneen käskystä
+siirrettiin tarkoittamaan Dionysosta. Toisia todistuksia ovat
+antaneet sekä vertaileva kansatiede ja uskontohistoria että säilyneet
+kreikkalaiset tragediat itse. Sankarin hauta esiintyy monessa
+kreikkalaisessa murhenäytelmässä, uhrimenot haudalla ja valituslaulut
+näyttelevät tärkeätä osaa, eikä liioin puutu esimerkkejä tragedioista,
+joissa kuolleitten sankarien henget manataan esiin ja ilmestyvät. Sekä
+traagillinen aihepiiri että se kuoleman varjo, joka lankee yli koko
+tragedian, saisi kieltämättä luonnollisen selityksensä tästä teoriasta.
+Ja se tosiseikka, että tragedia myöhemmin oli Dionysoksen palveluksessa
+ja muodosti osan siihen liittyvistä juhlamenoista, ei myöskään sodi
+uutta olettamusta vastaan: kaikkialla Kreikassa tunkeutuivat uudet
+olympolaiset jumalat vähitellen vanhojen, paikallisten jumaluuksien ja
+sankarien tilalle ja omaksuivat niiden palveluksen.
+
+Vihdoin on myöskin liitetty yhteen molemmat teoriat, vanha ja uusi,
+ja etsitty tragedian alkuperää Dionysoskultin ja sankaripalvonnan
+yhdistelmästä; eräs tämän yhteensovitusteorian kannattaja johtaa
+tragedian miimillisen aineksen Dionysospalveluksesta, sisällyksen taas
+ja kirjallisen muodon niistä valituslauluista, joilla sankarien muistoa
+vietettiin.
+
+Oli tragedian alku mikä tahansa, Dionysoskultti tai sankaripalvonta
+tai — mikä tuntuu todennäköisemmältä — molempien yhtymä, joka
+tapauksessa se on kahden erilaisen ja eri tahoilta polveutuvan
+runolajin yhdistelmä: doorilaisen koorilyriikan ja joonialaisen
+jambirunouden. Tämä yhdistyminen tapahtui Attikassa, ja tragedia
+on niinmuodoin attikalainen luomus. Mutta nuo kaksi ainesta eivät
+koskaan kokonaan sulautuneet yhteen, mikä myöskin ilmenee tragedian
+kielellisen yhtenäisyyden puutteessa: koorin laulut säilyttävät
+doorilaisen kieliluonteensa jossain määrin, kun taas vuoropuheluosat
+ovat joonialaiselta, vivahtavaa Attikan murretta.
+
+Kulttilaulusta syntyneenä ei tragedia koskaan vapautunut
+uskonnollisista menoista; attikalainen murhenäytelmä oli
+kunnianosoitus, uhri, jonka yhteiskunta Dionysosjuhlissa omisti
+jumalalle. Seuraus tästä yhteydestä jumalanpalveluksen kanssa oli se,
+että tragediojen esittäminen ei suinkaan ollut yksityisasia, vaan
+julkinen toimitus, jota valtio valvoi ja piti huolenaan. Kun runoilijat
+olivat ilmoittautuneet ja viranomaiset heidän keskuudestaan määränneet
+ne tragedian kirjoittajat, jotka saivat kilpailla — esityksillä oli
+kilpailujen muoto — oli näille hankittava tärkein apu suorituksessa,
+koori. Koorien kustantaminen ja harjoittaminen oli rikkaimmille
+kansalaisille kuuluva kunniavelvollisuus. Koorin kustantajaa sanottiin
+khoregiksi (khoregos), ja yhdessä runoilijan kanssa jakoi hän kunnian
+ja voittopalkinnon. Joka runoilija esitytti kolme tragediaa, mutta
+koska niillä yleensä ei ollut mitään tekemistä Dionysoksen kanssa,
+lisäsi hän niihin vielä neljännen kappaleen, n.s. satyyridraaman, jossa
+koorin muodostivat »pukit» tavanomaisessa mielessä, satyyrit.
+
+Niin kauan kun tragediat vielä olivat siksi yksinkertaisia ja
+alkuperäisiä että eivät vaatineet enempää kuin yhden näyttelijän,
+suoritti runoilija itse tämän osan, mutta myöhemmin aiheutti useampien
+esittäjäin tarve varsinaisen näyttelijän ammatin. Yli kolmen ei
+näyttelijäin luku noussut koskaan; tragediassa saattoi kyllä esiintyä
+useampia henkilöitä, mutta enemmän kuin kolme ei milloinkaan samalla
+kertaa ottanut osaa vuoropuheluun, ja sama näyttelijä saattoi senvuoksi
+esiintyä useissa osissa. Näyttelijöillä oli naamio kasvoilla ja
+jalassa eräänlaiset paksupohjaiset kengät, n.s. koturnit, sekä korkea
+hiuskoriste päässä, jotta he sen kautta tekisivät sankarillisen,
+yli-inhimillisen vaikutuksen ja ehkä myöskin paremmin näkyisivät sille
+suurelle ihmisjoukolle, joka täytti valtavat ulkoilmateatterit.
+
+Samoin kuin tragedia hitaasti kehittyi koorilaulusta, samoin kehittyi
+teatteri vähitellen siitä avoimesta ympyränmuotoisesta paikasta,
+jolla tämä koori lauloi ja tanssi. Jo varhain pidettiin silmällä
+maaperäsuhteita: jos tanssipaikka — _orkhestra_ oli sen nimi —
+asetettiin loivan vuoren tai kukkulan juurelle, oli suurellakin
+katsojajoukolla hyvä näköala yli koorin liikkeitten ja akustisessakin
+suhteessa edullinen paikka. Näyttelijät ja koorin jäsenet tarvitsivat
+kuitenkin paikan, missä pukeutua ja vaihtaa vaatteita. Tätä
+tarkoitusta varten pystytettiin orkhestran taakse teltta tai vaja;
+tämän rakennuksen nimi oli _skene_, teltta; siitä m.m. ruotsin sana
+_scen_. Koori ja näyttelijät esiintyivät alkuaan orkhestralla tämän
+näyttämörakennuksen edessä, joka niin ollen muodosti taustan heidän
+näyttelemiselleen; myöhemmin ruvettiin näyttelemään eräänlaisella
+korokkeella, näyttämöllä sanan nykyaikaisessa merkityksessä.
+Tragedian kukoistuskautena oli teatteri erittäin yksinkertainen,
+sekä näyttämörakennus että katsojain penkit olivat puusta, mikäli
+katsojat eivät asettuneet itse kalliopohjalle. Vasta myöhempinä
+aikoina ruvettiin rakentamaan upeita teattereita; puuaineen korvasi
+silloin kaikkialla marmori, ja teatterit koristettiin kallisarvoisilla
+taideteoksilla. Vielä meidän aikojemme teatterirakennuksissa tunnemme
+kreikkalaisen ulkoilmateatterin ikivanhan ja alkuperäisen kaavan: sali
+riveineen vastaa koveraa vuorenrinnettä, ja näyttämölaitteet ovat
+kehittyneet tanssipaikasta näyttelijävajoineen.
+
+       *       *       *       *       *
+
+Kreikkalainen murhenäytelmä on samalla kertaa taiteellisesti vapautunut
+ja perimätapoihin sidottu; kaiken ajatussyvyytensä ja muotokauneutensa
+ohella sisältää se useita sovinnaisia aineksia, jotka eivät voi
+olla loukkaamatta makuamme. Ensiksikin koori: tuntuisihan koko tämä
+ilmiö meistä selittämättömältä kasvannaiselta, jollemme tietäisi,
+että tragedia on kehittynyt koorilaulusta ja että tämä koorilaulu
+on ollut alkuperäisten tragediojen ydin. Tosin menetti koorillinen
+aines sekä laajuutta että merkitystä sitä mukaa kuin tragedia eteni
+kehityksessään ja draamallinen puoli kasvoi, mutta se jäi kuitenkin
+ominaiseksi kaikelle kreikkalaiselle tragediarunoudelle. Koko esityksen
+ajan oli näyttämöllä koori, joka suoritti lauluja ja tansseja, vaihtoi
+vuorosanoja näyttelijäin kanssa- ja väliin yritti sekaantua toimintaan.
+Ja jos lukee tragediaa, huomaa että suuren osan siitä muodostavat
+koorin laulut.
+
+Mitä merkitsevät sitten nämä koorikohdat tragedioissa, mitä osaa
+esittää koori niissä? Teknillisesti merkitsevät koorilaulut
+pysähdystä toiminnassa, jonkinlaisia levähdyskohtia, joiden aikana
+välilläolevien tapausten ajatellaan sattuvan. Koorin muodostavat
+tavallisesti henkilöt, jotka ovat alistetussa asemassa sankarin
+tai sankarittaren suhteen: kuninkaan raatiherroja, sotapäällikön
+sotureita, kuninkaantyttären leikkisisaria. Silloin koori usein
+heijastaa sitä kohtaloa, joka tulee tämän henkilön osaksi; jos hänen
+käy hyvin, iloitsee koori, ja kun onnettomuus kohtaa häntä, puhkeaa
+se valitukseen ja vaikerointiin. Se ei siis usein ole muuta kuin
+kokoontunut kansanjoukko intohimoineen ja ennakkoluuloineen, nopea
+innostumaan ja nopea masentumaan. Mutta monessa tapauksessa on se
+myös jotakin muuta ja enemmän. Se on useimmiten säilyttänyt jotakin
+alkuperäisestä uskonnollisesta luonteestaan, ja pelkän kansanjoukon
+sijasta tulee siitä silloin uskonnollisen ja siveellisen viisauden
+julistaja; se voi silloin muuttua eräänlaiseksi valistuneeksi kansan
+omaksitunnoksi, joka on toimivien ihmisten surujen ja taisteluitten
+yläpuolella, joka tuntee sääliä kärsiviä kohtaan ja nousee jumalattomia
+ja väärintekijöitä vastaan. Ja väliin koori on ennen kaikkea runoilijan
+puhetorvi: se kuvaa hänen runoilijanäkemyksiään ja antaa muodon hänen
+mietiskelyilleen elämästä ja kuolemasta, ihmisestä ja ihmiskohtalosta.
+
+Toinen sovinnainen piirre on se, että tragedia melkein poikkeuksetta
+ottaa aiheensa sankaritarustosta. Mutta sankarit, heerokset, olivat
+kreikkalaisten silmissä vain eräänlainen suurennettu ja ihannoitu
+ihmissuku. He elivät ja toimivat hämärässä muinaisuudessa, jolloin
+kaikki tunteet ja intohimot olivat väkivaltaisemmat; he kohosivat
+korkeammalle kuin tavalliset ihmiset, kun kohtalo oli heille myötäinen,
+ja heidän lankeemuksensa oli syvempi, kun tuho tuli. Heidän ja
+senaikuisten ihmisten välillä oli vain aste-ero; yleisinhimillisyytensä
+varassa tämä tragedia — huolimatta mytologisesta ja sankaritarullisesta
+sisällöstään — on säilynyt vanhenematta eikä koskaan vanhene. Vielä
+tänään voimme sen henkilöissä havaita omia tunteitamme — suruamme ja
+iloamme, toiveitamme ja pelkoamme.
+
+Nykyaikaiseen näytelmään verrattuna ilmenee kreikkalaisissa
+tragedioissa — niissäkin, jotka merkitsevät kreikkalaisen draaman
+huippukohtaa — huomattava toiminnan yksinkertaisuus ja yhtenäisyys;
+juoni oli harvoin monimutkainen, tragedia edelleen perustui
+pääasiallisesti yhteen ainoaan suureen motiiviin. Tähän toiminnan
+yhteyteen — niinkuin sitä on nimitetty — liittyy sittemmin kaksi muuta,
+sovinnaista yhteyttä, joiden merkitystä kreikkalaiselle draamalle
+uudempina aikoina kuitenkin on tuntuvasti liioiteltu: paikan ja ajan
+yhteys.
+
+Vaikka säilyneissä tragedioissa jonkun kerran tavataankin
+näyttämömuutoksia, vaati kuitenkin perimätapa yleensä, että toiminta
+tapahtui koko ajan samalla paikalla. Sensijaan että olisi niinkuin
+nykyaikaisessa draamassa vaihdettu näyttämöä, sijoitettiin toiminta
+johonkin puolueettomaan ja ihannoituun paikkaan, jossa näytelmän kaikki
+henkilöt voivat esiintyä ilman että todenmukaisuus siitä häiriintyi; se
+oli tavallisesti avoin paikka kuninkaanlinnan edustalla. Toinen keino
+välttää näyttämön muutosta oli se, että sanantuoja sai kertoa yleisölle
+tapahtumista, jotka sattuivat toisella seudulla. Tämä sanantuoja oli
+tragedian tärkein ja tyypillisin sivuhenkilö: hänen kuvaustensa kautta
+saatettiin niinikään katsojien tietoon väkivaltaiset kohtaukset —
+taistelut, murhat, itsemurhat ja muut samantapaiset tapahtumat, joita
+kreikkalainen teatterisovinnaisuus ei sallinut tragedian alkuaan
+uskonnollisen luonteen vuoksi esitettävän yleisön nähden.
+
+Ajan yhteyttä on myöskin katsottu kreikkalaisen tragedian
+perussäännöksi, ja tavallisesti voikin traagillisen toiminnan ajatella
+tapahtuvan yhden vuorokauden kuluessa. Mutta väliin on tämä yhteys
+enemmän näennäinen kuin todellinen, kun kerran koorilaulut ikäänkuin
+jakavat draaman näytöksiin ja voivat edustaa lyhyempää tai pitempää
+keskeytystä toiminnassa; tragedian ulottuvaisuus ajassa tulee siis
+riippumaan siitä väliajasta, joka sisällytetään koorilauluihin. Sama
+koori seisoo samassa paikassa ja laulaa, mutta sillävälin liittyy
+katsojan mielikuvituksessa tunti tuntiin, päivä päivään ja viikko
+viikkoon, jos niin tarvitaan; vain sillä tavoin mielikuvituksen avulla
+tulee tapahtumain kulku muutamissa tragedioissa mahdolliseksi.
+
+
+
+
+II. Aiskhylos.
+
+
+Yhtä hämärä kuin tragedian synty on myöskin sen varhaisin historia.
+Vanhimmista tragediankirjoittajista tunnemme tuskin muuta kuin nimet,
+ja tietomme kreikkalaisen murhenäytelmän alalla alkavat Aiskhyloksesta,
+joka on tragedian varsinainen luoja ja maailmankirjallisuuden kenties
+suurin luova henki. Lisäämällä näyttelijäin lukumäärän kahdeksi
+teki hän tragedian kykeneväksi kannattamaan todellista toimintaa;
+koorilaulusta oheenliitettyine puheosineen, jonka hän oli ottanut
+vastaan edeltäjiltään, loi hän todellisen draaman.
+
+Aiskhyloksen kotipaikka oli Eleusis, tuo pieni kaupunki kuuluisine
+mysteeriopyhäkköineen parin peninkulman päässä Ateenasta. Hän kuului
+persialaissotien sukupolveen; Marathonin taistelussa hän oli mukana ja
+näki veljensä kaatuvan, Salamiin ja Plataiain taisteluihin otti hän
+osaa. Paitsi tätä tiedämme hänen elämänvaiheistaan tuskin muuta kuin
+että hän teki useita matkoja Sisiliaan, Syrakusan kuninkaan Hieronin
+kutsumana, sekä sielläkin esitytti tragedioja. Ja siellä hän kuoli
+vuonna 456 Gelan kaupungissa, noin seitsenkymmenvuotiaana. Aikakirjat
+ovat säilyttäneet ne rivit, jotka piirrettiin hänen hautakiveensä.
+Ne eivät mainitse muuta kuin hänen ja hänen isänsä nimen, hänen
+attikalaisen syntyperänsä ja sankarillisen osanottonsa vapautussotaan.
+Voiko ajatella kaunopuheisempaa kuvaa aikakauden luonteesta? Miehekäs
+kansalaisvelvollisuuden täyttäminen oli niin Aiskhylokselle kuin hänen
+aikalaisilleen olennaisinta, pääasia, jonka rinnalla kaikki runoilijan
+mainetyöt kalpenevat.
+
+Niistä noin 90:stä näytelmästä, jotka Aiskhylos antiikkisten tietojen
+mukaan sepitti, on seitsemän tragediaa säilynyt meidän päiviimme.
+Kreikkalaisen tragedian tuntemuksemme kannalta on tämä valikoima
+erittäin onnellinen. Muutamat näytelmistä kuuluvat verrattain
+varhaiseen kauteen Aiskhyloksen runoilijatoiminnassa, kun taas toiset
+palautuvat hänen myöhäiseen vanhuuteensa; hänen säilyneistä teoksistaan
+voimme siis tutkia tragediaa sen tärkeimpänä kehityskautena. Ja
+sitäpaitsi muodostaa kolme murhenäytelmää yhdenjaksoisen traagillisen
+trilogian, ainoan säilyneen. Saadaksemme jonkinlaisen käsityksen siitä
+kehityksestä, jonka tragedia Aiskhyloksen käsissä suoritti, on meidän
+hetkinen viivyttävä parissa hänen aikaisemmista murhenäytelmistään sekä
+hänen vanhuutensa suuressa mestariteoksessa.
+
+Se Aiskhyloksen säilynyt murhenäytelmä, jota yleensä pidetään
+vanhimpana, on nimeltään _Hiketides_, »Turvanhakijat»; nimi
+tarkoittaa sankarittaria, Egyptin kuninkaan Danaoksen tyttäriä,
+jotka, välttääkseen pakko-avioliittoa serkkujensa, kuningas
+Aigyptoksen poikien kanssa, vainottuina pakenevat Argokseen
+Kreikanmaalle ja etsivät sieltä turvaa. Tässä näytelmässä omistamme
+siis maailmankirjallisuuden vanhimman tragedian, ja se vaikuttaakin
+erittäin vanhanaikaiselta. Koko toiminta on yksinkertaisesti siinä,
+että pelästyneet Danaidit merenrannalla Argoksen edustalla rukoilevat
+maan kuninkaalta apua ja suojaa, ja että tämä hiukan epäröityään
+suostuu heidän pyyntöönsä; kappaleen draamallisen huippukohdan
+muodostaa kohtaus, jossa egyptiläinen airut esiintyy ja turhaan vaatii
+neitseitten luovuttamista. Toinen vanhanaikainen piirre on koorin
+vallitseva osa: tragedian noin tuhannesta säerivistä on enemmän kuin
+puolet pantu koorin suuhun, ja koori — pakenevat Danaidit — ei ole
+ainoastaan toimiva henkilö, vaan suorastaan kappaleen päähenkilö.
+Tämä tragedia, joka muuten ei ole itsenäinen draama, vaan trilogian
+ensimäinen osa, on siis luonteeltaan lähinnä lyyrillinen runoteos,
+eräänlainen kantaatti, ja aivan erikoinen, vanhanaikaisen kaunis on
+se lyriikka, joka kaikuu Danaidikoorin hurskaista ja sydämellisistä
+lauluista, joissa pelko ja neitseellinen arkuus on perussävelenä. Voi
+hyvin kuvitella »Turvanhakijoita» esitettyinä itse orkhestralla, ilman
+minkäänlaisia taustakoristeita.
+
+Toinen Aiskhyloksen tragedia, joka tekee melkein yhtä vanhanaikaisen
+vaikutuksen, on nimeltään _Persai_, »Persialaiset»; se muodosti
+keskiosan erästä trilogiaa. Tämä murhenäytelmä ylistää Salamiin
+taistelua ja esitettiin vuonna 472. Mies, joka khoregina kustansi
+esityksen, ei ollut vähempi kuin Perikles; tässä siis Ateenan suurin
+runoilija ja sen aikaa myöten suurin valtiomies yhdessä pystyttivät
+runollisen muistomerkin eräälle vapaustaistelun suuria voittoja.
+
+Tragediaa ei ole suotta käännetty sanalla murhenäytelmä: tragedia
+ei voinut olla riemun ilmaisuna, ja niinpä tämä draama kuvaakin
+enemmän persialaisten tappiota kuin kreikkalaisten voittoa. Siksipä
+onkin näyttämö asetettu persialaisvaltakunnan pääkaupunkiin. Koori —
+valtakunnan iäkkäät raatiherrat, kuningasvainajan uskotut — ilmaisee
+lauluissaan synkkiä aavistuksia nuoren Xerxes kuninkaan Kreikan retken
+johdosta, ja pahaenteinen tunnelma kohoaa yhä, kun leskikuningatar
+Atossa esiintyy ja kertoo pahat unensa. Äkkiä syöksyy sanantuoja
+näyttämölle ja antaa draamallisen kuvauksen Persian laivaston
+musertavasta tappiosta Salamis-saaren edustalla. Koon puhkeaa
+valituslauluihin, ja kuningatar manaa esiin Dareioksen hengen; tämä
+ilmestyy ja puheissaan pitää tapahtumaa seurauksena pojan rikollisesta
+ylimielisyydestä sekä ennustaa uusia onnettomuuksia. Lopuksi saapuu
+Xerxes itse, ja tragedia päättyy valittavaan vuorolauluun koorin ja
+onnettoman kuninkaan välillä.
+
+Draamallisessa suhteessa merkitsee »Persialaiset» ratkaisevaa
+edistysaskelta »Turvanhakijoista». Jo alusta saakka luovat
+koorin aavistukset ja kuningattaren pahaenteiset unet raskaan
+ukkosilmatunnelman, jonka painostus yltyy joka kohtaukselta, kunnes se
+lopuksi purkautuu sanantuojan kertomukseen onnettomuudesta ja murtuneen
+kuninkaan kotiintuloon.
+
+Se valtava trilogia, jonka Aiskhylos esitytti pari vuotta ennen
+kuolemaansa, käy tavallisesti Oresteian (_Oresteia_) nimellä, koska
+Orestes on päähenkilö kahdessa tragediassa. Sarjan ensimäisen
+murhenäytelmän nimi on _Agamemnon_, toisen _Khoephoroi_, s.o.
+»Hautauhrin tuojat» tai »Hautauhri», »Uhri haudalla», niinkuin nimi
+usein käännetään; trilogian loppunäytelmän nimi on _Eumenides_,
+»Eumenidit».
+
+Atridien verinen sukuhistoria, jolle Aiskhylos rakensi Oresteiansa, oli
+sisällöltään suunnilleen seuraava. Atreus, Argoksen kuningas, karkoitti
+veljensä Thyesteen, koska tämä oli vietellyt hänen puolisonsa ja vaati
+valtaistuinta itselleen. Myöhemmin tapahtui näennäinen sovinto, ja
+Thyestes palasi Argokseen. Mutta Atreus hautoi kostoa: annettuaan salaa
+surmata kaikki veljensä pojat paitsi yhtä hän kutsui Thyesteen pitoihin
+ja antoi hänen syödä omien lastensa lihaa. Silloin kirosi Thyestes koko
+sen suvun, johon hän kuului, ja lähti sitten taas synnyinmaastaan. Jo
+seuraavassa sukupolvessa näkyivät kirouksen seuraukset. Atreuksen pojat
+Agamemnon ja Menelaos naivat kaksi sisarusta, kaunista mutta uskotonta
+naista, Helenan ja Klytaimestran. Edellinen, Menelaoksen puoliso,
+aiheuttaa Troian sodan; jälkimäinen menee naimisiin Agamemnonin kanssa,
+jonka perheessä kirouksen vaikutus niinikään alkaa pian tuntua.
+Matkalla Troiaan uhraa Agamemnon tyttärensä Iphigeneian lepyttääkseen
+Artemiin ja hankkiakseen laivastolle suotuisan tuulen. Kotona antautuu
+Klytaimestra rikolliseen suhteeseen Aigisthoksen kanssa, ainoan
+Thyesteen pojan, jonka Atreus oli säästänyt. Kun Agamemnon sitten palaa
+sotaretkeltä, murhaa Aigisthos hänet, mutta hänen poikansa Orestes
+kostaa isänsä kuoleman ja surmaa vuorostaan Aigisthoksen.
+
+Sellainen oli vanha taru pääkohdissaan. Aiskhylos on kuitenkin
+muuttanut aihetta, antanut sille syvemmän ja kauhistuttavamman
+tragiikan; hän antaa Klytaimestran omalla kädellään surmata puolisonsa,
+ja silloin suuntautuukin kosto häneen. Eepillisessä sadussa ei Orestes
+ollut traagillinen henkilö, mutta Aiskhylos vetää hänen päälleen
+pimeimmän tragiikan, mitä elämä voi sisältää: kun Orestes täyttää
+verilain käskyn ja kostaa isänsä kuoleman, tekee hän itsensä vikapääksi
+rikokseen, jota kaikkina aikoina on katsottu pelottavimmaksi kaikista —
+äidinmurhaan.
+
+»Agamemnon» alkaa vartijan yksinpuhelulla; Åtridien kuninkaanlinnan
+katolta Argoksessa tähystää hän sitä yöllistä tulimerkkiä, joka
+vuorenhuipulta vuorenhuipulle on tuova sanoman Troian kukistumisesta.
+Läheisellä kukkulalla leimahtaa äkkiä valkea, ja vartija rientää
+linnaan ilosanomaa viemään. Koori, Argoksen vanhoja miehiä, saapuu
+nyt näyttämölle, ja sen laulaessa astuu Klytaimestra linnasta ja
+sytyttää uhrivalkeita alttareille talon edustalla. Saatuaan tiedon
+uutisesta virittää koori laulun, joka alkaa voittohymninä, mutta loppuu
+ihmetykseen ja epäilyyn, mietelmiin syyllisyydestä ja vastuusta. Tämän
+tunnelman vaihtuminen ikäänkuin havainnollistuttaa ajan kulkua, ja
+suuri onkin se ajanjakso, jonka ajatellaan mahtuvan lauluun: kun se on
+vaiennut, ilmoittaa sanantuoja, että Agamemnon lähestyy.
+
+Ja sitten kuningas saapuu näyttämölle, ympärillään sotilaita,
+voittomerkkejä ja vankeja, niiden joukossa Priamoksen kaunis
+tytär Kassandra, ja Klytaimestran tervehtimänä hän astuu isiensä
+linnaan. Vangittu troiatar jää näyttämölle. Hän on tietäjänainen;
+hänen tehtävänsä on valmistaa kooria tapahtuvaan verityöhön ja
+asettaa teko oikeaan yhteyteensä sen kirouksen kanssa, joka aina
+Atreuksen rikoksesta asti on painanut Argoksen kuninkaanlinnaa.
+Kaikki linnan hirvittävät muistot saavat ilmauksensa hänen
+hämärissä tietäjän-sanoissaan; se, mitä on tulossa, paljastuu hänen
+haltioituneelle kaukonäköisyydelleen. Vihdoin hänkin menee linnaan,
+vielä kynnyksellä vavahtaen niitä verihöyryjä ja sitä ruumiinhajua,
+jota hänen tietäjävaistonsa tuntee tulvahtavan vastaan. Hetkinen
+sietämätöntä jännitystä; sitten kuuluu Agamemnonin kuolinhuuto, ovet
+aukeavat, ja näkyviin tulee kuninkaan ja Kassandran ruumiit. Ja
+Klytaimestra itse astuu kooria kohti, julistaa riemuiten tekonsa,
+kuvaa kylmäverisesti itse murhakohtausta, pelottavana rikollisessa
+suuruudessaan; tämä oli korvaus Iphigeneian uhrikuolemasta!
+
+Sarjan toinen osa,. »Hautauhri», tapahtuu samalla paikalla kuin
+edellinen, Argoksen kuninkaanlinnan edustalla, mutta siellä näkyy
+nyt hautakumpu, Agamemnonin hauta. Orestes, jonka Klytaimestra oli
+lähettänyt pois isän kotiintulon ajaksi, seisoo uskollisen ystävänsä
+Pyladeen kanssa haudalla ja toimittaa uhria, kun lähestyy kulkue
+mustapukuisia naisia; hänen sisarensa Elektra siinä koorin — talon
+palvelijatarten — kanssa tuo uhrilahjoja haudalle. Nuoret miehet
+piiloutuvat, mutta hiuskiehkura haudalla ja jäljet ilmaisevat Oresteen
+läsnäolon, ja järkyttävässä kohtauksessa ilmaisee hän itsensä
+sisarelle. Delphoin oraakkelin käskystä hän on tullut kostamaan
+isänsä kuolemaa, ja sisarukset tekevät murhasuunnitelman. Valepuvussa
+kolkuttavat nuorukaiset palatsin portille ilmoittaen tuovansa sanaa
+Oresteen kuolemasta. Sisällä linnassa surmaa Orestes ensin Aigisthoksen
+ja sitten Klytaimestran. Loppukohtaus muodostaa täydellisen vastineen
+edellisen tragedian lopulle: samoin kuin kuningatar siinä seisoo
+Agamemnonin ja hänen jalkavaimonsa ruumiitten ääressä, on tässä
+Orestes äitinsä ja hänen rakastajansa ruumiitten ääressä, kylmästi ja
+pilkallisesti herjaten vainajia. Mutta kun hän seisoo siinä, tapahtuu
+hänessä vähitellen muutos. Hän tuntee järkensä olevan pimenemässä,
+kauhunäyt ahdistavat hänen hämmentynyttä mielikuvitustaan. Hän näkee
+Erinyit, verikoston taipumattomat jumalattaret, mustine vaippoineen,
+kyykäärmeitä hiuksissa, ja kauhun vallassa hän syöksyy pois.
+
+Nykyaikaiselle lukijalle on Oresteen henkinen sortuminen tyydyttävä
+päätös Atridein perhedraamaan. Meistä näyttää ristiriita
+ratkaisemattomalta: verikoston laki pakottaa Oresteen surmaamaan
+äitinsä, ja tunnonvaivat tuosta hirvittävästä rikoksesta syöksevät
+hänet mielenvikaan. Mutta tähän ei Aiskhylos voinut tyytyä. Hänen
+täytyy sovinnon tietä ratkaista ristiriita Apollonin ja Erinyitten
+välillä, Apollonin, joka edustaa verikoston periaatetta, ajaa Oresteen
+äidinmurhaan ja ottaa hänet suojiinsa, ja Erinyitten, jotka pitävät
+murhatun äidin puolta ja vaativat kostoa. Tätä kiistaa ja sen ratkaisua
+käsittelee kolmas tragedia, »Eumenidit», jossa Orestes joutuu olemaan
+sen taistelun tahdottomana esineenä, jota nyt jumalvoimat käyvät
+keskenään, Klytaimestran haamun yllyttäminä ajavat Erinyit Orestesta
+takaa. Tämä pakenee Ateenaan, jossa hänet asetetaan Athena-jumalattaren
+vastaperustetun tuomioistuimen eteen, Erinyit syyttäjinä ja Apollon
+puolustajana; pitkien neuvottelujen jälkeen vapauttaa hänet
+jumalattaren oma ääni, joka ratkaisee asian. Erinyit raivoavat, mutta
+Athena lepyttää heidät. Hän lahjoittaa heille pyhäkön Ateenassa, ja
+verenjanoisista kostottarista muuttuvat Erinyit nyt Eumenideiksi,
+»armollisiksi», »suopeiksi» jumalattariksi. Että tuomioistuimessa
+vapauttavat ja tuomitsevat äänet lankeavat tasan, näyttää tavallaan
+tehostavan sisäisen ristiriidan ratkaisemattomuutta. Mutta Athena
+edustaa ylevämpää siveysoppia, alkuperäinen verilaki joutuu
+korkeamman oikeuden alaiseksi, yksityisen kosto väistyy yhteiskunnan
+oikeudenkäytön tieltä.
+
+Aiskhyloksen dramatiikkaa sanotaan usein kohtalotragiikaksi,
+mutta fatalisti tavallisessa merkityksessä ei Aiskhylos ole.
+Kohtalokäsite — _moira, ananke_ — ilmaisee hänen teoksissaan lähinnä
+välttämättömyyttä siinä mikä tapahtuu, tunnetta siitä että jokainen
+suuri ja kohtalokas tapaus on ehdoton seuraus aikaisemmin sattuneista
+tapauksista. Kohtalo merkitsee niinmuodoin usein sitä tilannetta, jonka
+ovat luoneet ihmiselle hänen omansa ja toisten teot ja jota vastaan
+on turha ponnistella. Tavallisimpia muotoja, joissa tämä kohtalo
+ilmenee Aiskhyloksella, on sukukirouksen perinnöllisyys, rikollisten
+taipumusten siirtyminen sukupolvesta toiseen, rikoksen kyky synnyttää
+uusia rikoksia. Vanhempain syyllisyys painaa myöskin lapsia, veri
+huutaa verta.
+
+Toinen Aiskhyloksen murhenäytelmän kantava ajatus on tuo vanha
+helleeniläinen käsitys jumalattomasta ylimielisyydestä, rikollisesta
+uhmasta — _hybris_ —: joka saa ihmisen unohtamaan asemansa ja
+pyrkimään korkeammalle kuin sallittu on, mutta joka erehtymättä,
+ennemmin tai myöhemmin, tuo mukanaan rangaistusta ja kostoa. Jokainen
+voiman ja menestyksen ylimittaisuus sisältää vaaran; se ei uhmaa
+ainoastaan ihmisiä, vaan myös jumalia. »Persialaisissa» esitetään
+mahtavan vihollisvallan perikato seurauksena Xerxeen rikollisesta
+ylimielisyydestä. »Agamemnonissa» näyttelee sukukirous suurta osaa,
+mutta sen ohella kuninkaan ylimielisyys. Kun hän kotiin palatessaan
+antaa kunnioittaa itseään tavalla, joka ei sovi kuolevaiselle
+ihmiselle, kun hän Klytaimestran viettelemänä astuu purppuralle, joka
+on varattu vain jumalille, on tässä vertauskuva, joka sallii meidän
+katsoa tämän tragedian sisimpään tarkoitukseen. Useissa Aiskhyloksen
+koorilauluissa kaikuu puhtaasti monoteistinen sävel, ja yleensä antaa
+hänen maailmankatsomukselleen leiman usko jumalalliseen oikeuteen,
+maailman ja ihmiskunnan kehitykseen kohti korkeampaa moraalia ja
+korkeampaa kulttuuria.
+
+Kaikessa on Aiskhylos runouden jättiläinen. Hän on yli-inhimillisten
+luonteinen luoja, ja hänen kielensäkin on valtavampaa ja
+väkivaltaisempaa kuin tavallinen runokieli. Hänen mestariteoksensa
+saivat aikaisemmat draamalliset kokeet häipymään unhoon, ja kaikelle
+dramatiikalle, joka myöhemmin on nähnyt päivänvalon, tuli niillä
+olemaan ohjeita-antava merkitys.
+
+
+
+
+III. Sophokleen elämä ja toiminta.
+
+
+Kun Aiskhylos jo oli seppelöity ja vanhentuva runoilija, tapahtui
+kerran että 30 vuotta nuorempi kilpailija voitti hänet. Ja antiikkinen
+perimätieto kertoo että kiihtymys teatterissa oli tällöin ollut niin
+suuri, vastakohta vanhan ja nuoren kannattajien välillä niin ankara,
+että palkintotuomareita ei voitu asettaa totutulla tavalla, vaan
+ratkaisu jätettiin Kimonille ja toisille sotapäälliköille, jotka juuri
+silloin olivat palanneet voitokkaalta sotaretkeltä. Tämä nuori mies,
+oppilas, joka oli kasvamaisillaan mestaria pitemmäksi, oli Sophokles,
+Sophilloksen poika.
+
+Tiedot Sophokleen syntymävuodesta horjuvat 497 a 495 välillä. Hän
+syntyi aivan lähellä Ateenaa, pienessä Zolonos Hippioksen kylässä,
+jota hän eräässä tragediassaan on niin kauniisti ylistänyt.
+»Valkohohteiseksi» voi Kolonos-kukkulaa vieläkin nimittää maan ja
+kallioperän valkean värin vuoksi, mutta meidän päivinämme se on autio
+ja alaston, huipullaan kahden rinnakkain lepäävän muinaistutkijan,
+saksalaisen ja ranskalaisen, valkeat hautapatsaat; satakielten
+kotipaikkaa, laakerilehtoja, oliivi- ja viinitarhoja, etsii lähimmästä
+ympäristöstä nyt turhaan. Mutta vähän etelämpänä Kolonos-alueella,
+suunnilleen siinä missä Platonin Akatemia sijaitsi, kostuttavat
+Kephisoksen vedet vielä tänään laajoja ja ikivanhoja oliivi-istutuksia,
+joitten holvien alla kevään kukat puhkeavat ja maa suviseen
+aikaan loistaa unikoista punaisenaan. Ja ryhmyisten runkojen ja
+hopeahohtoisten lehvistöjen takana kohoaa temppelivuori pyhäkköineen
+— verraton näky, vallitseva piirre maisemassa, jota ei Sophokleskaan
+unohda panna merkille.
+
+Isältään, joka oli rikas teollisuuden harjoittaja, luultavasti
+asetehtaiden omistaja, sai Sophokles parhaan kasvatuksen, mitä siihen
+aikaan oli tarjolla. Hänen kehityksensä oli tyypillinen nuorelle
+yläluokan ateenalaiselle. Hän luki ahkerasti suuria kreikkalaisia
+runoilijoita ja sai soitannossa opetusta eräältä ajan kuuluisimmalta
+musiikkimieheltä; hän kykeni myöskin säveltämään musiikin
+koorilauluihinsa, ja kerrotaan että hän mielellään itse esiintyi
+sellaisissa osissa, joitten musikaalinen puoli oli vaativa. Tämän
+henkisen kasvatuksen ohella kävi huolellinen ruumiin kehitys; samoin
+kuin soitannollisissa kilpailuissa saavutti hän voittoseppeleen myöskin
+urheiluleikeissä. Perimätiedon mukaan juuri 15—16 vuotias Sophokles
+alastomana, lyyry kädessä, johti poikakooria, joka esiintyi Salamiin
+voiton kunniaksi, ja myöhemmin hän esiintyi eräässä omassa draamassaan
+palloalyövänä Nausikaana. Hevosiin ja hevosurheiluun näyttää hän
+voimakkaasti kiintyneen; hänen kotiseutunsa, joka ei suotta kantanut
+lisänimeä Hippios, oli tunnettu hevoshoidostaan. Kuten Aiskhylos näkyy
+silmissämme hopliittina, raskasaseisena Marathon-urhona, kuvittelemme
+Sophoklesta sitävastoin kernaasti ratsumiehen haahmossa.
+
+Mutta mitä kaikkea sisältääkään se seikka, että Aiskhylos oli mukana
+taistelemassa Marathonin luona ja että Sophokles nuorena poikana
+otti osaa Salamiin voiton juhlimiseen? Edellinen oli mukana suuressa
+taistelussa, joka laski perustuksen Ateenan kukoistukselle, ja hänen
+tragedioissaan kuuleekin kaiun sodan pauhusta. Jälkimäinen oli
+nuorempaa sukupolvea, jolle persialaissodat olivat sankarillinen
+lapsuusmuisto, sukupolvea, joka säästyi vaivasta ja vaarasta, mutta
+sai olla mukana korjaamassa voiton hedelmiä. Sophokleen miehuusikä
+sattui attikalaisen kulttuurin suuruudenaikaan, jolloin Ateenasta
+tuli mahtavan merivaltaliiton pääkaupunki, Kreikan valtiollisen ja
+taloudellisen elämän keskipiste, ja samalla kreikkalaisen sivistyksen
+keskus. Se oli aika, jolloin Kimon ja Perikles ohjasivat Ateenan
+vaiheita, jolloin Iktinos rakensi Parthenonin ja Pheidias koristi sen
+veistoksillaan.
+
+Uskottavat tiedot Sophokleen elämästä ovat hyvin niukat ja tarjoavat
+vähän ainehistoa »elämäkerralle». Sen tiedämme, että hän ei
+kieltäytynyt suorittamasta kansalaisvelvollisuuksiaan. Kerran hän
+toimi liiton rahastonhoitajana, ja kaksi kertaa hän täytti strategin,
+sotapäällikön, paikan; tässä asemassaan hän otti osaa sotaan Samosta
+vastaan, ja kerrotaan että »Antigone» oli se ansio, joka silloin hankki
+hänelle sotapäällikön valtuudet! Vielä elämänsä lopulla valittiin hänet
+kriitillisenä ajankohtana jäseneksi siihen kymmenen miehen neuvostoon,
+jolle uskottiin valtion korkein johto. Hän ei kuitenkaan näytä
+erityisesti kiinnittäneen mieltään näihin julkisiin tehtäviin eikä
+kunnostautuneen niiden suorituksessa: poliitikkona — niin kuuluu eräs
+senaikuinen arvostelu — hän ei ollut erikoisen taitava eikä tarmokas,
+tavallinen hyvä Ateenan kansalainen vain.
+
+Uskonnollisiin menoihin oli Sophokleen suhde läheinen. Pappina hän
+palveli Amynosta, erästä lääketaidon jumalaa, jonka pyhäkkö oli
+Akropolis-kukkulan juurella, ja tässä asemassaan hän jollakin tavoin
+otti vastaan Asklepioksen, kun tämän kultti tuotiin Epidauroksesta
+Ateenaan; siitä hyvästä palveltiin häntä itseään kuolemansa jälkeen
+vuotuisilla juhlilla ja uhreilla Dexion »Vastaanottaja» nimisenä
+sankarina. Erääseen toiseenkin kulttiin oli hän läheisissä suhteissa,
+ja hän perusti »Muusain Thiasoksen», Runotarten seuran eli veljeskunnan.
+
+Sophokleen ystävyyssuhteista tunnemme yhden: hän oli historioitsija
+Herodotoksen ystävä. Meille on säilynyt ensimäinen rivi elegiasta,
+jonka hän on kirjoittanut tälle, ja hänen tragedioissaan on luultu
+huomattavan vaikutuksia tämän historiateoksista. Hänen perhesuhteistaan
+omistamme muutamia antiikkisia tiedonantoja — osittain aika
+räikeäsisältöisiä — jotka eivät kuitenkaan ole uskomisen arvoisia;
+kaikesta päättäen ne ovat peräisin epäkunnioittavista ja karkeista
+sepitelmistä, joilla attikalaisen komedian oli tapana koristella
+suurten runoilijain elämäkertoja. Sen, mitä varmasti tiedämme hänen
+yksityiselämästään, voi lausua parilla sanalla. Sophokles oli
+naimisissa, ja hänen vaimonsa nimi oli Nikostrate; hänen poikansa
+lophon ja pojanpoikansa Sophokles nuorempi toimivat molemmat
+traagillisina runoilijoina. Jos — niinkuin muutamat kaskut tietävät —
+vakavat perheriidat olisivat synkentäneet hänen elämänsä iltaa, olisi
+kai se jälkimaininta, jonka hän sai samanaikuisilta runoilijoilta,
+kuulunut toisin; silloin kai huvinäytelmänkirjoittaja Phrynikos ei
+muutamissa säilyneissä riveissä olisi ylistänyt hänen samentumattoman
+onnellista elämäänsä.
+
+Kaikista Attikan runoilijoista oli Sophokles attikalaisin. Ei
+ainoastaan siinä mielessä, että hänen personallisuutensa ja runoutensa
+kuvastaa attikalaista luonnetta niin kirkkaasti ja sekoittamattomasti,
+vaan myös siinä, että hän oli kiintynyt syntymäkaupunkiinsa lujemmilla
+siteillä kuin kenties kukaan muu. Kun Aiskhylos ja Euripides usein
+noudattivat vieraitten hallitsijain kutsua ja oleskelivat pitkiä
+aikoja ulkomaalaisissa ruhtinashoveissa — he kuolivatkin molemmat
+vieraalla maalla — ei Sophokles vapaaehtoisesti poistunut Ateenasta;
+vain kansalaisvelvollisuuden kutsuessa astui hän kotimaansa rajan
+yli. Ja erikoisesti hän oli mieltynyt aiheisiin attikalaisesta
+paikallistarustosta.
+
+Antiikin yksimielisen todistuksen mukaan oli Sophokles harvinaisen
+sopusointuinen ja onnellinen luonne. Hän ei ollut mikään erakko, hän
+ei kuulunut niihin runoilijoihin, jotka vetäytyvät syrjään maailmasta
+ja ankarassa eristäytymisessä rakentelevat teoksiaan. Päinvastoin hän
+oli seuraelämän ja seurailon ystävä, eikä hän ollut vieras millekään
+antiikin elämännautinnolle, ei edes niille, joita meidän aikamme
+on vaikea ymmärtää ja antaa anteeksi. Hänen olemuksessaan — niin
+kertoo nimetön antiikkinen elämäkerta — oli sellainen viehätys, että
+kaikki rakastivat häntä ja kaikkialla. Eläen onnen ja menestyksen
+päivänpaisteessa ei hän koskaan oppinut tuntemaan kateutta eikä
+katkeruutta toisia kohtaan. Runotarten lemmikki, yleisön seppelöity
+suosikki, kaunis ja voimakas, hieno ja henkevä — sellaisena on
+Sophokles meille todella terveen ja sopusointuisen ihmisyyden ihanne.
+Ja sellaisena kohtaa hän meitä myöskin ihannoidussa antiikkisessa
+veistoksessa, joka nähtävästi on sen pronssipatsaan jäljennös,
+joka lähes sata vuotta runoilijan kuoleman jälkeen pystytettiin
+Ateenan Dionysosteatteriin. Siinä näemme miehen ikänsä täydessä
+kypsyydessä. Vartalo on kookas ja jalorakenteinen, kasvonpiirteet
+kauniit ja sielukkaat, samalla kertaa vakavat ja lempeät, katse
+syvä ja levollinen, hiukset ja parta kiharat ja hyvinhoidetut. Koko
+olemuksesta henkii se ominaisuus, jota kreikkalaiset kutsuivat nimellä
+_sophrosyne_: kohtuullisuus, itsehillintä, kaikkien ruumiin ja sielun
+kykyjen kultainen tasapaino.
+
+Sophokles eli jumalten lemmikkinä, ja jumalten lemmikkinä hän kuoli.
+Loppuun saakka kestivät hänen sielunkykynsä murtumattomina, hänen
+luomisvoimansa heikentymättömänä; 90-vuotiaana hän erkani elämästä,
+vuonna 406, vähän ennen isiensä kaupungin lopullista kukistumista.
+Hänen kuolemansa oli keveä ja tuskaton, ja kotiseudun mullassa sai hän
+hautansa, jonka äärellä häntä palveltiin vuotuisin uhrein sankarina,
+puolijumalana.
+
+       *       *       *       *       *
+
+Jos Aiskhylos on luonut kreikkalaisen tragedian, on se Sophokleen
+kautta saavuttanut teknillisen täydellisyytensä. Tärkein tämän
+teknillisistä uudistuksista oli epäilemättä se, että hän ratkaisevasti
+vapautti tragediat niiden sisäisestä yhtenäisyydestä trilogiassa.
+Aikaisemminhan oli ollut tavallista että ne kolme tragediaa, joilla
+jokainen runoilija kilpaili palkinnosta, muodostivat yhtenäisen
+kokonaisuuden. Murhenäytelmää sellaista kuin Aiskhyloksen »Prometheus»
+voimme ymmärtää ainoastaan mikäli tunnemme kappaletta, joka seuraa
+sitä ja muodostaa sille jatkon, ja Oresteiassahan meillä on
+täydellinen trilogia, jossa eri murhenäytelmät tuntuvat näytöksiltä
+jättiläistragediassa. Tästä periaatteesta Sophokles luopui. Emme tiedä,
+että hän olisi kirjoittanut ainoatakaan yhtenäistä trilogiaa, ja hänen
+säilyneissä murhenäytelmissään on yksinomaan vapaan tragedian leima,
+ne muodostavat kukin erikseen päättyneen ja pyöristetyn kokonaisuuden.
+Tämä pitää paikkansa myöskin molempiin Oidipus-draamoihin nähden,
+jotka kuitenkin käsittelevät samaa tarua, saman ihmisen kohtaloita; ne
+ovat runoillut kukin erikseen, toisistaan riippumatta, ja esitetyt eri
+aikoina.
+
+Triloginen sommittelu edellytti suuren yhtenäisen aatteen, joka yhdisti
+eri tragediat kokonaisuudeksi, mutta Sophokles ei ollut aaterunoilija
+niinkuin Aiskhylos. Toinen edellytys yhtenäisille trilogioille oli
+yksityisten näytelmäin verrattain yksinkertainen rakenne — muutenhan
+olisi ollut vaikeata hallita kokonaisuutta — ja tämä sepittämistapa oli
+siis esteenä rikkaammalle ja monimutkaisemmalle toiminnalle. Luopumalla
+siitä Sophokles saattoi tiivistää ja tehdä suppeammiksi tragediansa,
+saattoi vähentää lyyrillistä ja eepillistä ainesta ja antaa puhtaasti
+draamalliselle suuremman tilan.
+
+Toinen keino tämän saman päämäärän saavuttamiseksi oli näyttelijäin
+luvun lisääminen — toimenpide, johon Sophokles ryhtyi. Aiskhylos oli
+tullut toimeen kahdella näyttelijällä, Sophokles otti käytäntöön
+kolmannen. Tämä uudistus on hänen täytynyt panna toimeen jo varhain,
+sillä mitään hänen säilyneistä tragedioistaan ei voi esittää vähemmällä
+kuin kolmella näyttelijällä, ja Aiskhylosta ei myöskään arveluttanut
+ottaa tässä suhteessa oppia nuorelta kilpailijaltaan: hänen viimeinen
+trilogiansa, Oresteia, on nimittäin kirjoitettu kolmelle näyttelijälle.
+Tämän uudistuksen kautta, joka teki mahdolliseksi monimutkaisemman
+draamallisen juonen, saavutti kreikkalainen tragedia teknillisen
+kehityksensä huippukohdan; tämän yli — kuten jo aikaisemmin on mainittu
+— ei näyttelijäin lukua lisätty. Näytelmässä voi kyllä olla useampia
+henkilöitä, mutta enemmän kuin kolme ei koskaan samalla kertaa ottanut
+osaa vuoropuheluun.
+
+Paitsi näitä kahta suurta ja merkitsevää uudistusta luetaan
+Sophokleen ansioksi vielä muutamia vähemmän tärkeitä teknillisiä
+uudistuksia. Myöskin koorin jäsenluvun lisäsi hän 12:sta 15:een,
+ja näyttämöteknillisenäkin keksijänä ja uudistajana sanotaan hänen
+toimineen.
+
+Antiikkisten lähteitten mukaan oli Sophokles sepittänyt noin
+120 draamaa; hän oli tuotteliain Kreikan kolmesta suuresta
+tragediakirjailijasta, niinkuin hän myös oli menestyksestä rikkain, hän
+kun saavutti useampia voittoja kuin kukaan hänen kilpatovereistaan.
+Hänen sanotaan 24 kertaa voittaneen, s.o. saaneen ensi palkinnon, ja
+useita kertoja toisen; kolmannelle sijalle hän ei joutunut koskaan.
+
+Sophokleelta on meille säilynyt seitsemän tragediaa, siis yhtä monta
+kuin Aiskhylokselta; lisäksi tulee joukko katkelmia, niiden joukossa
+puolet erästä satyyridraamaa, joka aivan hiljan on tullut päivänvaloon.
+Nuo seitsemän säilynyttä tragediaa muodostavat luultavasti valikoiman,
+jonka joku myöhäisantiikkinen filologi on laatinut ja joka hänen
+mielestään edustaa arvokkainta Sophokleen tuotannossa. Ikävä kyllä
+voidaan ainoastaan kolmen näytelmän syntymävuosi jokseenkin varmaan
+määrätä, kun taas toisten suhteen saa turvautua hypoteeseihin ja
+olettamuksiin, joiden perustana ovat epävarmat antiikkiset lähteet ja
+perinpohjaiset tragedian rakennetta, kielimuotoa ja runomittaa koskevat
+tutkimukset; luonnollista on että sellaisilla perusteilla ei ole päästy
+mihinkään ehdottomaan yksimielisyyteen tragediojen järjestysluvusta.
+Emme siis myöskään voi muodostaa niin selvää käsitystä Sophokleen
+draaman kehityksestä kuin Aiskhyloksen; tämä siitäkin syystä että hänen
+varhaisin runoilijakautensa ei ensinkään näytä olevan edustettuna
+valikoimassa. Itse sanotaan Sophokleen jakaneen kehityksensä kolmeen
+eri kauteen. Hän alkoi — niin kuuluu arvostelu — jäljittelemällä
+Aiskhyloksen mahtipontisuutta ja majesteettia; tässä kohden on tulkinta
+kuitenkin jonkun verran epävarma, kun teksti on vahingoittunut. Sitten
+seurasi hänen oman tyylinsä kova ja ankara, keinotekoinen kausi —
+viimeisen laatusanan voi kuitenkin vaihtaa teknillisesti täydelliseen,
+liiaksi muokkailtuun; kolmantena ja hänen omissa silmissään parhaana
+kautena hän saavutti koruttoman ja luonnollisen ilmeikkyyden. Hänen
+ensimäiseen, aiskhylolaiseen tyylikauteensa ei kuulu mikään säilynyt
+tragedia; opimme tuntemaan hänen draamallisen taiteensa molempien
+myöhäisempien kehityskausien ajalta.
+
+
+
+
+IV. Aias.
+
+
+Yleensä on tragedia _Aias_ yksimielisesti luettu Sophokleen vanhimpien
+säilyneiden murhenäytelmien joukkoon; muutamien mukaan se on vanhempi
+kuin »Antigone», toisten mukaan taas hiukan nuorempi. Tämän tragedian
+aihe on troialaisesta satupiiristä, mutta kuuluu samalla attikalaiseen
+paikallistarustoon; Salamiin saari oli liitetty Ateenaan, ja Aias,
+salamiilainen kuninkaanpoika, laskettiin Attikan heimosankareihin.
+
+Aias, Telamonin poika, esiintyy Iliaassa kreikkalaisen sotajoukon
+suurimpana sankarina lähinnä Akhilleusta. Hän on päätä ja olkapäitä
+pitempi kaikkea muuta kansaa, hän on »turva Akhaijein»; hänet määrätään
+Akhilleuksen poissaollessa kaksintaisteluun Hektorin kanssa, hän
+suojelee Patrokloksen ruumista ja pelastaa aseman, kun Hektor ryntää
+kreikkalaista laivaleiriä vastaan ja valmistuu sytyttämään laivat
+tuleen. Hän on ruumiillistunut rohkeus ja velvollisuudentunto,
+harvasanainen ja itsepäinen urho. Hänen luonteensa on siis jo Homeros
+suurin piirtein kehittänyt valmiiksi, mutta se osa Aias-tarua,
+jolle Sophokles on rakentanut tragediansa ja joka kuvaa sankarin
+onnettomuutta ja kuolemaa, ei esiinny Iliaassa. Se on peräisin
+myöhemmästä kertomarunoudesta — sitä kosketellaan ohimennen eräässä
+Odysseian nuorimpia osia — ja sen mukaan syntyy Akhilleuksen kuoleman
+jälkeen Aiaan ja Odysseuksen välillä riita kaatuneen sankarin aseista.
+Riita ratkaistaan niin että Odysseus saa aseet, mutta Aias näkee tässä
+päätöksessä solvauksen, jonka jälkeen hän ei jaksa elää, ja aiheuttaa
+itse kuolemansa.
+
+Tapahtumapaikkana Sophokleen tragediassa on Aiaan teltan edusta
+kreikkalaisten leirissä Troian lähellä. On aikainen aamu. Odysseus
+hiipii väijyen teltan ympärillä. Kun Athena-jumalatar yllättää
+hänet, sanoo hän vakoilevansa Aiasta, jonka epäillään yön aikana
+suorittaneen erään ilkityön. Kreikkalaisen sotajoukon karjalaumat on
+tavattu teurastettuina ja paimenet murhattuina; Aias on nähty yksinään
+kentällä verinen miekka kädessä, ja Odysseus on seurannut hänen
+jälkiään telttaan asti. Athena vahvistaa, että Aias on syyllinen, ja
+kertoo kuinka kaikki on tapahtunut. Suunniltaan katkeruudesta siksi
+että Akhilleuksen aseet oli tuomittu Odysseukselle, oli Aias yöllä
+hiipinyt ulos kostaakseen vastustajilleen, ennen kaikkea Odysseukselle
+ja Atreuksen pojille, mutta Athena vartioi heitä ja torjui vaaran.
+Hän lähetti Aiaaseen mielenhäiriön, niin että tämä hyökkäsikin
+karjalaumoihin uskoen vihollisten olevan siinä edessään; osan karjasta
+hän tappoi, osan laahasi mukanaan telttaan. Nyt kutsuu jumalatar
+Aiasta ulos, mutta asettaa niin että hän ei voi nähdä Odysseusta.
+Mielenvikainen sankari astuu ulos verinen ruoska kädessään ja kerskuu
+Athenalle teostaan: Atreuksen pojat hän on jo surmannut, Odysseus on
+sidottuna teltassa, ja hänet Aias aikoo piiskata kuoliaaksi. Kun Aias
+taas on kadonnut telttaansa, osoittaa jumalatar häntä Odysseukselle
+varoittavana esimerkkinä: niin käy ylimielisen, joka ei kunnioita
+jumalia. Mutta Odysseus tuntee sääliä vihollistaan kohtaan.
+
+Nyt astuu koori sisään laulaen. Sen muodostaa Aiaan seurue, merimiehiä
+ja sotureita Salamiista, jotka ovat samalla kertaa hänen palvelijoitaan
+ja uskottujaan; heidän menestyksensä riippuu hänestä, hänen onnensa tai
+onnettomuutensa on myöskin heidän. He ovat kuulleet tuon hirvittävän
+huhun, mutta tahtovat nähdä siinä valheellisia parjauksia, joita
+sankarin viholliset ovat levittäneet; jos hän todella olisi tehnyt tuon
+työn, on se tapahtunut jonkun vihastuneen jumalan yllytyksestä, ei
+koskaan vapaaehtoisesti. Että hän pysyttelee sisällä teltassa, antaa
+huhulle lisää ravintoa: astukoon hän senvuoksi ulos ja pesköön itsensä
+puhtaaksi.
+
+Ulos ei astu Aias, vaan Tekmessa, hänen sotasaalis-puolisonsa, pienen
+Eurysakeen äiti. Hän kuvailee koorille sankarin tekoa, mutta lisää
+että mielenvikaisuus on jo parantunut, että hän on herännyt järkiinsä.
+Nyt kuuluu Aiaan tuskanhuutoja teltasta, Tekmessa avaa oven, ja
+sisällä näkyy sankari keskellä teurastettua karjaa. Tekmessan ja
+koorin lohdutuksiin hän vastaa valitushuudoin ja epätoivon purkauksin.
+Hän tietää olevansa jumalten vihaama, vastustajain vahingonilon
+ja sotajoukon suuttumuksen esine; ei edes kotona voi hän saada
+turvapaikkaa, sillä koskaan ei hän astu vanhan isänsä silmäin eteen
+kunnia tahrattuna. Vain yksi tie on avoinna: parempi kuolla kuin
+elää kunniatonna. Kun Tekmessa kuulee tämän, ahdistaa hän Aiasta
+epätoivoisin rukouksin. Aias on hänen kaikkensa; kun tätä ei enää ole,
+odottaa orjuuden osa häntä ja pientä Eurysakesta. Silloin Aias kysyy
+poikaa ja ottaa hänet käsivarsilleen lausuen helliä jäähyväissanoja
+— koko tämä kohtaus muistuttaa elävästi Hektorin ja Andromakhen
+jäähyväisiä Iliaassa.
+
+Kun Aias on vetäytynyt takaisin telttaansa, virittää koori taaskin
+laulun. Salamiiseen liitävät ajatukset, mainehikkaaseen kotisaareen,
+joka onnellisena lepää kaukana aaltojen keskellä, kun Aias on
+syösty onnettomuuteen ja suru pian tulee kohtaamaan hänen iäkkäitä
+vanhempiaan. Mutta nyt näyttää siltä kuin olisi koorin valitus
+ennenaikainen: sankari tulee ulos ja selittää muuttaneensa mieltä,
+Tekmessan rukoukset ovat pehmentäneet hänen tahtonsa karaistuneen
+teräksen. Miekan, joka hänellä on kädessä, aikoo hän haudata maahan,
+ja vihansa Atreuksen poikia kohtaan hän tahtoo unohtaa; nyt hän lähtee
+meren rantaan puhdistautumaan.
+
+    Kas — vallat suuret, peljättävät ylhäiseen
+    alistuu järjestykseen. Talvi tuiskusää
+    suvea saapumast’ ei estä satoisaa,
+    yö väistyy päättäin retken pitkän, verkkaisen,
+    kun valkovarsoillaan jo ajaa aurinko;
+    ja tuulten tuimain herkee hengitys ja suo
+    ulapan uinahtaa; ei uni kaikkivaltias
+    iäksi kahlitse, vaan päästää vallastaan.
+    Kuink' emme oppis malttamaan siis me?
+
+Aias poistuu ja koori riemuitsee; se tanssii ilosta ja rukoilee Pania,
+iloisen ja vallattoman tanssin jumalaa. Mutta ilo ei ole pitkäaikainen.
+Sanantuoja saapuu ja kysyy Aiasta; tämän veli Teukros, joka hiljan on
+palannut partioretkeltä, on saanut varoituksen Kalkhas-tietäjältä.
+Jos vain sankari saadaan pysymään teltassaan tämän päivän, on hän
+pelastettu, sillä Athenan viha ei kestä kauempaa kuin tämän yhden
+päivän. Ja tietäjä on myös ilmaissut syyn sankarin onnettomuuteen —
+hänen ylimielisyytensä. Kun hän lähti sotaan ja isä kehoitti häntä
+voittamaan jumalten avulla, vastasi hän: »Jumalten avulla voi kuka
+tahansa voittaa, mutta minä aion saavuttaa voiton ilman heidän
+apuansa.» Ja kerran taistelussa hän sanoi Athenalle: »Jumalatar, auta
+toisia kreikkalaisia! Missä Aias seisoo, siinä ei rivi murru koskaan.»
+Tekmessa kutsutaan ulos, ja kaikki vaeltavat pois tähyilemään sankaria.
+
+Nyt tapahtuu näyttämön muutos; paitsi tässä tavataan sellainen vain
+yhdessä säilyneistä Kreikan tragedioista. Näyttämö esittää nyt autiota
+seutua meren rannalla, ja siellä seisoo Aias miekkansa ääressä, jonka
+hän on työntänyt maahan kärki ylöspäin. Pitkässä yksinpuhelussa hän
+kääntyy jumalten puoleen. Pelastakoon Zeus hänen ruumiinsa joutumasta
+heitetyksi koirille ja petolinnuille antamalla Teukrokselle sanan hänen
+kuolemastaan; tehköön Hermes, varjojen saattaja, kuoleman nopeaksi ja
+kevyeksi, ja vaatikoot Erinyit verisen koston Atreuksen pojilta.
+
+    Sa, jonka vaunut taivaan jyrkänteitä vierivät,
+    oi Aurinko, kun isieni maan sa näät,
+    hepojas hetki kultasuitsin hillitse
+    ja tuta kurja kohtaloni, kuoloni
+    suo taaton vanhan, äidin murhetaakkaisen.
+    Ah, koito tuo sen viestin konsa kuulla saa,
+    hän voihkehellaan täyttää kaiken kaupungin!
+    Mut turhaan tässä enää seison vaikertain,
+    nyt, suotta viipymättä, toimeen viimeiseen!
+    Oi Kuolo, Kuolo, tullos, käy mua katsomaan —
+    mut ei, sun kanssas haastaa haudassa ma voin.
+    Vaan sulle, päivän päilyväinen kirkkaus,
+    ja sulle haastan, vaunuvälkky Helios,
+    nyt kerran viimeisen, en sitten konsanaan.
+    Oi valo, oi sa pyhä pohja Salamiin,
+    perustus pettämätön lieden taattoisen,
+    Ateena kuulu, armas heimokansani,
+    te lähteet, virrat täällä, Troian tantereet,
+    mua kauan ruokkineet, ma teitä tervehdin!
+    Sanani tää on viimeinen. Täst’ edespäin
+    vain varjoin kanssa Hadeen mailla haastelen.
+
+Aias syöksyy miekkaansa. Tuntuu että tragedian nyt pitäisi olla
+päättynyt, mutta niin ei ole laita; nyt alkaa eräänlainen jatko,
+draaman toinen osa. Ensin astui koori sisään, jakautuneena kahteen
+puolikooriin, jotka kumpikin tahollaan ovat turhaan etsineet sankaria.
+Äkkiä kaikuu tuskan huuto: Tekmessa on löytänyt Aiaan ruumiin. Hän
+peittää hänet vaipalla, ja koori virittää valituslauluja. Nyt tulee
+Teukros paikalle. Hän lähettää Tekmessan hakemaan Eurysakesta,
+paljastaa Aiaan kuolleen ruumiin ja vetää miekan pois. Mutta samassa
+lähestyy Menelaos. Aiaan tarkoitus — sanoo hän — oli murhata
+sotapäälliköt; senvuoksi on hänen ruumiinsa jätettävä hautaamatta,
+ruuaksi meren linnuille. Teukros selittää tulevansa uhmaamaan kieltoa,
+ja kun uhkauksia ja herjauksia on vaihdettu, poistuu Menelaos. Nyt
+tulee Tekmessa pienen poikansa kanssa, joka asetetaan, uhrilahjoja
+käsissä, vartioimaan isän ruumista, sillä aikaa kun Teukros menee
+panemaan kuntoon hautaa. Koori valittaa kärsimyksiään ja vaivojaan
+Troian edustalla; suojaton on se nyt, kun poissa on Aias, turva yön
+kauhuja ja vihollisen nuolia vastaan; ah, jospa se Sunionin niemen ohi
+voisi ohjata purtensa kohti Ateenaa!
+
+Teukros palaakin kohta, sillä hän on nähnyt Agamemnonin vuorostaan
+lähenevän. Nyt alkaa heidän välillään sanakiista, jonka
+keskeyttää Odysseuksen tulo. Kuultuaan kiistan aiheen lausuu tämä
+avoimesti mielipiteensä, osoittaen siinä puolueettomuutta ja
+jalomielisyyttä, joka jyrkästi eroaa Atreuksen poikain kiihkeydestä
+ja matalamielisyydestä. Aias oli hänen katkerin vihamiehensä — sanoo
+hän — mutta siitä huolimatta kreikkalaisen joukon mainioin sankari
+lähinnä Akhilleusta; hänen ruumiinsa häpäiseminen olisi rikos,
+sillä kuolleen vihollisen herjaaminen sotii jumalten lakia vastaan.
+Agamemnon ei ymmärrä sellaista mielen ylevyyttä, mutta jättää ratkaisun
+Odysseukselle ja poistuu.
+
+Odysseus kääntyy Teukrokseen ja selittää nyt olevansa Aiaan ystävä
+yhtä suuressa määrin kuin ennen on ollut hänen vihollisensa sekä
+tarjoutuu olemaan apuna hautaamisessa. Teukros kiittää hänen
+oikeamielisyyttään ja jalomielisyyttään; hän on iloinen, jos Odysseus
+on läsnä hautajaisissa, mutta ei uskalla antaa hänen ottaa osaa itse
+toimitukseen, jottei vainaja vihastuisi. Odysseus mukautuu ja vetäytyy
+pois. Teukros määrää ryhdyttäväksi hautausvalmistuksiin. Aiaan ruumis
+nostetaan ylös ja kannetaan pois; omaiset ja salamiilaiset merimiehet
+kulkevat perässä.
+
+       *       *       *       *       *
+
+Tämän draaman sommittelu on saanut osakseen ankaraa arvostelua. Se
+osa tragediaa, joka seuraa sankarin kuoleman jälkeen ja käsittää
+noin kolmannen osan koko näytelmää, on monen mielestä niin aiheeton,
+että siinä on tahdottu nähdä myöhäisempi lisäys. Tämä ei kuitenkaan
+ole todenmukaista, ja jos koettaa asettua antiikin kannalle, ei tämä
+jälkinäytös mitenkään tunnu niin aiheettomalta kuin ensi näkemältä
+luulisi.
+
+Aias itse oli tietoinen siitä, että vihollisten kosto mahdollisesti
+tulisi kohtaamaan hänen kuollutta ruumistaan; hautaamiskielto on
+seuraus teosta, johtopäätös, jonka runoilija jo ennakolta on antanut
+katsojan aavistaa. Mutta toisaalta tiedetään mikä merkitys haudalla oli
+kreikkalaisille. Niin kauan kuin ruumis viipyi maanpäällä, ei vainaja
+ollut vielä kokonaan eronnut elävien piiristä, hänen sielunsa ei ollut
+vielä saanut astua varjojen valtakuntaan; vasta kun hänen tomunsa oli
+ikivanhojen hautajaismenojen mukaan laskettu maan poveen, oli vainajan
+satu päättynyt ja henki sai rauhan. Kysymys, saiko vainaja nauttia
+haudan rauhaa vai eikö, painoi yhtä raskaana, jopa raskaampana kuin
+kysymys elämästä ja kuolemasta. Ja ateenalaiselle runoilijalle ja
+ateenalaiselle yleisölle sai tämä kysymys aivan erikoisen merkityksen,
+kun puheena oli Aias. Tästä oli tullut attikalainen kansallisurho
+ja suojelussankari; yleisen kansanuskon mukaan hän oli ottanut osaa
+Salamiin taisteluun ja vaikuttanut onnelliseen päätökseen; hänestä
+johti eräs Attikan heimo nimensä ja muutamat ylhäisimmät perheet
+sukuperänsä. Tuliko hän asianmukaisesti haudatuksi vai eikö, oli
+kysymys, joka koski hänen sankariksijulistamistansa, hänelle Ateenassa
+omistetun kultin perusehtoa. Jos katsoo asiaa tältä näkökannalta, on
+Aias vielä elämästä erittyäänkin näytelmän päähenkilö, jonka kohtalo
+kuoleman jälkeen kiinnitti katsojain mieltä vähintään yhtä voimakkaasti
+kuin se hirvittävä tilanne, jossa hän sitä ennen oli ollut.
+
+Ei mikään Sophokleen säilyneistä tragedioista liity niin läheisesti
+Homerokseen eikä ole saanut niin voimakasta vaikutusta Aiskhylokselta
+kuin tämä. Aiskhylolainen piirre tulee näkyviin ennen kaikkea draaman
+moraalissa, siinä syyllisyysaiheessa, joka on pantu tragediaan.
+Sama _hybris_, sama ylimielisyys, joka vie niin monta Aiskhyloksen
+sankaria perikatoon, kohdistaa myöskin Aiaaseen jumalten vihan,
+ja harvoin on vanha käsitys uhkamielen turmiollisuudesta saanut
+räikeämmän valaistuksen kuin siinä kohtauksessa, jossa Athena osoittaa
+mielenvikaista ja raivoavaa sankaria. Ylpeys on peruspiirre Aiaan
+luonteessa. Arkatuntoinen ja järkeä kuulematon ylpeys se muuttaa
+tuon ritarillisen miehen salamurhaajaksi, joka yön pimeydessä
+hiipii nukkuvien vihamiestensä telttaan. Ja kun hän sitten herää
+tietoisuuteen, masentuneena häpeästä ja nöyryytyksestä, niin taaskin
+ylpeys — mutta ylpeys paremmassa mielessä — käskee häntä kuolemaan
+mieluummin kuin elämään kunnia tahrattuna; hänelle ei merkitse enintä
+elämän pituus, vaan sen sisällys ja arvo. Hän kuolee taipumattomana
+ja vihaa vihollisiaan viimeiseen saakka, mutta olisi kuitenkin
+väärin nähdä vain teeskentelyä hänen maltillisissa sanoissaan
+kauniine kuvineen, jotka on lainattu luonnon vaihteluista; omaisien
+hyvästijättö on saanut syvät ja kenties unohdetut kielet väräjämään
+hänen sielussaan, ja hän jättää elämän jossain määrin sovitettuna
+ja kuuliaisena niille valloille, jotka ohjaavat maailmaa ja ovat
+määränneet hänen kohtalonsa.
+
+Mutta vaikka sekä sisällyksessä että runo- ja kielimuodoissa
+tuntuukin jonkun verran Aiskhyloksen vaikutusta, on tällä tragedialla
+jo nimenomaisesti sophoklesmainen sävy. Siinä ei ole jälkeäkään
+Aiskhyloksen valtavasta paatoksesta, ja kun tämän kielellä
+vuoropuheluosissa usein on sama lyyrillinen luonne kuin koorilauluissa,
+on »Aiaassa» sitävastoin jyrkkä raja koorien lyyrillisyyden ja
+vuoropuhelun levollisemman, yksinkertaisen ja notkean sanonnan välillä.
+Niin jalo ja hillitty, niin luonnollinen on sävy Aiaan suuressa
+yksinpuhelussa, niin kokonaan vapaa kaikesta retoorisesta palautuksesta!
+
+Aito sophoklesmainen luomus on myöskin tragedian Odysseus-haahmo.
+Eroten päähenkilön uhmailevasta soturinylpeydestä ja Atreuksen poikain
+kovista ja kiihkeistä päällikköluonteista on hän kokonaan _sophrosyne_,
+täynnä itsehillintää, malttia, viisautta; hänen ylevän mielensä
+pohjana on yhtä hyvin terävä järki kuin tunne. Hän tulee kokonaan
+näkyviin seuraavissa kauniissa ja surumielisissä säkeissä, joilla hän
+vastaa Athenalle, kun tämä näyttää hänelle Aiaan keskellä kurjuutta
+ja alennusta, ja jotka kuin väläyksessä ilmaisevat kreikkalaisen
+murhenäytelmän sisimmän olemuksen, niinkuin Aristoteles sen
+määrittelee: sen voiman puhdistaa mieltä herättämällä pelkoa ja sääliä.
+
+    On vihamieheni hän, mutta koito mies,
+    iäksi polo-kohtaloonsa kahlittu.
+    Ma kärsin hänen kerallaan enk’ aattele
+    enemmän hänen osaansa kuin omaani:
+    kaikk’ olemme, sen nään, vain unihaamuja
+    tai tyhjää varjoa, muut' emme enempää.
+
+
+
+
+V. Elektra.
+
+
+Jätämme tragedian »Antigone» tarkasteltavaksi Oidipusdraamojen
+yhteydessä, joihin se sisällöltään kuuluu, ja siirrymme nyt näytelmään
+_Elektra_. Tätä näytelmää ei ole voitu varmasti ajalleen määrätä,
+mutta useista seikoista päättäen se on luettava säilyneitten draamojen
+keskimäiseen ryhmään. Sophokles on siinä käyttänyt tarkalleen samaa
+aihetta, jota Aiskhylos oli käsitellyt »Hautauhrissa»;' tulemme
+näkemään, kuinka suuresti erilainen on molempien kirjailijain ote
+aiheeseen. —
+
+Varhainen aamu Atridein kuninkaanlinnan edustalla Mykenessä. Kolme
+miestä astuu näyttämölle: Orestes, hänen uskollinen ystävänsä
+Pylades sekä se vanha palvelija, joka Agamemnonin murhan tapahtuessa
+pelasti pikku Oresteen ja vei hänet Pyladeen isän Strophioksen luo,
+jossa hän sitten kasvoi. Palvelija osoittaa Oresteelle pääpiirteet
+maisemassa, joka aukeaa heidän eteensä heidän seisoessaan Mykenen
+linnavuorella, ja kehoittaa ystävyksiä viipymättä laatimaan
+suunnitelmansa. Orestes kertoo nyt, että Delphoin oraakkeli on
+käskenyt häntä yksinään rankaisemaan syyllisiä, ja hän on päättänyt
+menetellä seuraavalla tavalla. Ensin on vanhan palvelijan mentävä
+palatsiin ilmoittamaan, että hänet on lähettänyt eräs Aigisthoksen
+ja Klytaimestran ystävä Phokis-maakunnasta; hänen tehtävänään on
+tuoda sanoma, että Orestes tapaturman kautta on saanut surmansa
+Delphoin juhlaleikeissä. Sillävälin Orestes ja Pylades toimittavat
+uhrin Agamemnonin haudalla; sitten he ilmestyvät kuninkaanlinnaan
+kantaen uurnaa, jonka he sanovat sisältävän Oresteen tomun. — Nyt
+kuuluu äkkiä naisen valitusta sisältä talosta. Orestes on tuntevinaan
+sisarensa Elektran äänen ja tahtoo jäädä paikalleen, mutta palvelijan
+kehoituksesta vetäytyvät kaikki pois.
+
+Orestes ei ole erehtynyt: se on Elektra. Tämä astuu ulos ja käy
+kuvailemaan kaikkea sitä parantumatonta surua ja voimatonta vihaa, joka
+on jäytänyt hänen sieluaan pitkinä päivinä ja unettomina öinä aina
+siitä hetkestä saakka, jolloin hänen äitinsä ja Aigisthos kirveellä
+halkaisivat Agamemnonin pään, »niinkuin puunhakkaajat kaatavat tammen».
+Ja hän huutaa manalan jumalilta apua ja kostoa, Oresteen pikaista
+paluuta, sillä hänen oma vastustusvoimansa on jo lopussa.
+
+Nyt astuu koori sisään. Sen muodostaa joukko vapaasyntyisiä Mykenen
+naisia ja se edustaa yhteiskuntaa, joka suhtautuu myötätuntoisesti
+Agamemnonin lapsiin ja vain pakosta alistuu vallananastajien vihattuun
+hallitukseen. Se kääntyy Elektraan osaaottavin sanoin, ilmaisee
+inhoavansa hänen äitinsä rikosta; se lohduttaa häntä ja varoittaa
+antautumasta surunsa valtaan. Kyynelet ja valitukset eivät voi herättää
+Agamemnonia elämään, ne vain yhä enentävät vihollisten kiihkoa.
+Puolustaakseen esiintymistään kuvailee Elektra niitä olosuhteita,
+joissa hänen on pakko elää. Hänen asemansa isänkodissa on orjattaren.
+Hänellä on tuskin vaatteita panna ylleen, tuskin ruokaa syötäväksi.
+Ja aina hän on alttiina loukkauksille ja herjauksille. Äiti elää
+julkisesti yhdessä Aigisthoksen kanssa, joka istuu Agamemnonin
+valtaistuimella ja toimittaa uhreja sen lieden ääressä, jonka eteen
+kuningas kaatui murhakirveen iskusta; sensijaan että tuntisi katumusta,
+viettää Klytaimestra puolisonsa kuolinpäivää tansseilla ja ilouhreilla.
+Koori saa edelleen tietää, että Aigisthos ei ole kotona: tämä selittää,
+että Elektra on voinut poistua talosta.
+
+Nyt tulee Elektran sisar Khrysothemis linnasta, käsissä uhrilahjoja.
+Hän moittii Elektraa tämän alituisista ja liioitelluista katkeruuden
+purkauksista; itse hän myöskin kärsii ja vihaa, mutta voimattomuus
+on opettanut hänelle varovaisuutta. Silloin Elektra alkaa kiivaasti
+herjata sisartaan. Tämä ryömiköön kernaasti murhaajaan edessä; Elektra
+ei kadehdi sitä palkkaa, jonka hän siitä niittää, elämää rikkaudessa
+ja ylellisyydessä. Khrysothemis sanoo puhuneensa vain varoittaakseen
+Elektraa: jollei tämä muuta mieltään, ovat Aigisthos ja Klytaimestra
+päättäneet lähettää hänet pois ja sulkea pimeään luolaan. »Tapahtukoon
+se pian, niin pääsen vapaaksi teistä kaikista» — huudahtaa Elektra,
+vihassaan asettaen sisaren murhaajain tasolle.
+
+Khrysothemis tahtoo jatkaa matkaansa, mutta silloin Elektra kysyy
+minne hän kantaa uhrilahjojaan. Agamemnonin haudalle — sanoo hän —
+Klytaimestran käskystä, tämä kun on säikähtänyt erästä unta: hän näki
+puolisonsa palaavan ja istuttavan kuninkaansauvansa lieden ääreen, ja
+katso, sauvasta puhkesi viheriöivä oksa, joka varjosti koko Mykenen.
+Nyt rohkaisee Elektra taaskin mielensä ja käskee sisartaan heittämään
+pois Klytaimestran uhrilahjat ja sensijaan laskemaan haudalle toisia,
+heidän omiaan, sekä huutamaan avuksi isän henkeä. Khrysothemis taipuu.
+
+Laulussa, jonka koori nyt virittää, selitetään uni onnelliseksi
+enteeksi. Oikeus valvoo; Agamemnonin henki ei ole unohtanut vääryyttä;
+verisellä kuparikirveellä on hyvä muisti; koston jumalatar lähenee ja
+ojentaa tuhannet käsivartensa kohti syyllisiä. Kun laulu on kaikunut
+loppuun, astuu Klytaimestra ulos palvelijattaren seurassa, joka
+kantaa uhrilahjoja. »Vai niin, sinä juoksentelet vapaasti ympäri, kun
+Aigisthos on poissa» — tämä on hänen tervehdyksensä, kun hän huomaa
+tyttären. Ja hän koettaa todistella syyttömyyttään: Agamemnonin
+murha oli oikeutettu kosto, rangaistus Iphigeneian uhrikuolemasta.
+Elektra puolustaa isäänsä: pakosta, vasten tahtoaan oli hän uhrannut
+tyttärensä. Klytaimestran teko oli inhottava rikos, ja jos hän itse
+olisikin pitänyt sitä oikeutettuna kostona, kuinka hän saattoi
+puolustaa sitä että hän edelleen vietti yhdyselämää murhaajan kanssa
+hyljeksien ja pidellen pahoin omia lapsiaan? Viha äitiä kohtaan
+leimahtaa ilmiliekkiin; hän tunnustaa että hän olisi valmis auttamaan
+Orestesta hänen verisessä kostossaan. Klytaimestra käskee häntä
+vaikenemaan ja kääntyy Apollonin puoleen, jonka alttari seisoo talon
+edessä; täyttäköön Apollon unen, jos se oli hyvä enne, ja kääntäköön
+sen hänen vihamiehiinsä, jos se oli huono. Ja hänellä on vielä yksi
+rukous, jota hän ei uskalla lausua, mutta jumala ymmärtää häntä kyllä...
+
+Nyt saapuu vanha palvelija valepuvussa ja tuo tiedon Oresteen
+kuolemasta kuvaillen, kuinka tämä oli joutunut onnettomuuden uhriksi
+Delphoin vaunukilpa-ajoissa. Hänen runneltu ruumiinsa poltettiin
+roviolla; kaksi Phokiin miestä on matkalla tuoden hänen tuhkaansa.
+Klytaimestran sielussa taistelevat riemu ja tuska ylivallasta, sillä
+äidintunteet eivät vielä ole kokonaan tukehtuneet hänen rinnassaan.
+Mutta ilo voittaa pian, ja hän ilmaisee sen avoimesti. Nyt hän on
+vihdoinkin vapaa siitä tuskasta, siitä tilinteon pelosta, joka öin
+ja päivin on pitänyt häntä vallassaan, nyt hän voi elää levossa ja
+turvassa! Ja pilkaten Elektran surua hän saattaa sanantuojan linnaan.
+Elektra päästää epätoivonsa vapaasti valloilleen, koorin turhaan
+koettaessa lohduttaa häntä.
+
+Mutta nyt tulee Khrysothemis sisään, hengästyneenä ja ilosta
+säteilevänä. Isän haudalta on hän löytänyt tuoreita jälkiä
+maitouhrista, ja kummulla oli kukkia ja hiuskiehkuroita. Kukaan muu
+kuin Orestes ei ole voinut panna näitä uhrilahjoja haudalle; hän
+on siis läheisyydessä! Suruissaan ja säälien särkee Elektra hänen
+harhaluulonsa: Orestes on kuollut, ja joku on kenties tahtonut
+kunnioittaa nuorukaisen muistoa koristamalla hänen isänsä hautaa. Ja
+nyt hän tekee epätoivoisen päätöksen ottaa koston omiin käsiinsä.
+Tahtooko Khrysothemis auttaa häntä? Mutta tämän mielestä suunnitelma
+on mieletön ja mahdoton ja johtaisi varmaan perikatoon ja kuolemaan;
+varoittavin jäähyväissanoin hän jättää sisaren ja menee taloon.
+Koorilaulu, joka nyt seuraa, ilmaisee surua sisarten erimielisyydestä
+ja ylpeyttä Elektran sankarillisuudesta.
+
+Nyt lähestyvät Orestes ja Pylades kahden palvelijan seuraamina, joista
+toinen kantaa uurnaa. He kysyvät Aigisthosta, ja neuvottuina Elektran
+luo he ilmoittavat tälle tuovansa mukanaan Oresteen tomun. Elektra
+pyytää tätä, ja uurna käsissään hän tulkitsee suruaan kauniissa
+yksinpuhelussa. Ajatuksissa hän palaa veljen lapsuuteen, kuvaa
+sitä hellyyttä, joka yhdisti heitä, toiveita, joita hän kiinnitti
+Oresteeseen ja jotka nyt luhistuivat; ei edes viimeistä palvelusta hän
+saanut tehdä veljelleen, vieraat kädet pystyttivät rovion ja kokosivat
+hänen tuhkansa. Niinkauan kuin hän oli elävien joukossa, jakoi Elektra
+kaiken hänen kanssaan, nyt oli hänellä vain yksi toive, saada kuolla ja
+jakaa hänen hautansa.
+
+Orestes tulee liikutetuksi ja hillitsee itseään vaivoin. Ja nyt
+seuraa verrattoman kaunis vuoropuhelu, jonka aikana hän vähitellen
+herättää Elektrassa ihmetystä ja toiveita sekä vihdoin ilmaisee itsensä
+näyttämällä isänsä sinettisormuksen. Elektra heittäytyy veljensä syliin
+ja puhkeaa riemuun, mutta Orestes kehoittaa häntä varovaisuuteen.
+Pian tulee myöskin vanha palvelija ulos ja moittii heidän
+ajattelemattomuuttaan; jollei hän olisi pitänyt vahtia ovella, olisi
+koko salaisuus tullut ilmi. Kun Elektra saa tietää, kuka tuo vanhus on,
+tervehtii hän häntä perheen pelastajana. Mutta vanhus kiirehtii: nyt
+on tullut toimimisen hetki, nyt on Klytaimestra yksinään palatsissa.
+Orestes ja Pylades menevät sisään palvelijan seuraamina, ja lausuttuaan
+lyhyen rukouksen Apollonille seuraa Elektra heitä. Koori laulaa lyhyen
+laulun. Nyt on kostaja saapunut, nyt ovat Erinyit astuneet talon
+kynnyksen yli.
+
+Elektra astuu ulos ja kertoo koorille että Orestes ja Pylades ryhtyvät
+toimimaan; Klytaimestra pitelee tuhkauurnaa ja kostajat seisovat
+vieressä. Silloin kaikuu kuolinhuuto. »Voi minua, olen lyöty!» —
+huutaa Klytaimestra sisällä palatsissa. »Lyö häntä vielä kerran, jos
+voit!» — huutaa Elektra takaisin. Nuorukaiset tulevat ulos, ja Orestes
+kuuluttaa: »Kaikki on hyvin talossa, jos Apollonin oraakkeli puhui
+totta.»
+
+Nyt lähestyy Aigisthos; nuoret miehet menevät sisään. Hän on iloinen,
+sillä hän on kuullut huhun Oresteen kuolemasta; ja hänen ilonsa yhä
+suurenee, kun hän Elektralta saa kuulla, että muukalaiset ovat tuoneet
+kuolleen ruumiin mukanaan. Avattakoon palatsin ovet — käskee hän —
+tulkoon Mykenen kansa itse saamaan varmuuden, että Orestes todella on
+kuollut, ettei heillä ole enää mitään toivoa. Ovet avataan. Huoneessa
+makaa peitetty ruumis, ja vieressä seisovat Orestes ja Pylades, miekat
+kätkettyinä vaippojen alle. Aigisthos vetää peitteen pois — ja näkee
+Klytaimestran. Hän tuntee nyt Oresteen ja ymmärtää, että koston hetki
+on tullut. Orestes tarttuu häneen ja laahaa hänet talon sisäosiin,
+jotta hän kuolisi samalla paikalla, jossa hän itse tappoi Agamemnonin.
+»Oi Atreuksen suku» — puhkeaa koori laulamaan — »kuinka monien
+kärsimysten kautta olet vihdoin saanut vapautuksen, kiitos sen teon,
+joka tänään suoritettiin!»
+
+       *       *       *       *       *
+
+Verrattaessa Aiskhyloksen ja Sophokleen tapaa haahmoitella samaa
+traagillista aihetta, sattuu ennen kaikkea silmiin se eri valaistus,
+missä äidinmurha esiintyy heidän tragedioissaan. Aiskhylokselle
+merkitsee tämä uutta ja pelottavaa rikosta, joka vuorostaan vaatii
+kostoa ja rangaistusta. Järki hämärtyneenä, kauhunäkyjen ahdistamana
+syöksyy Orestes hänen näytelmässään pois, ja koorin viimeiset sanat
+kuuluvat: »Kuinka tämä on päättyvä? Koska tyyntyy kirouksen viha?»
+
+Kuinka toisin Sophokleella! Mitään moraalista ongelmaa ei ole olemassa
+hänelle. Hänen tragediassaan murhaaja ei epäröi ennen tekoaan
+eikä kärsi, ei kadu sen tehtyään; siinä ei aukea mitään näköaloja
+rangaistukseen eikä kostoon. Lyhyt koorilaulu, johon draama päättyy,
+päinvastoin ylistää tekoa: nyt on Atreuksen suku vihdoinkin vapautunut
+kärsimyksistään! Tätä tragedian perustunnelmaa ikäänkuin heijastaa
+ja symbolisoi se seikka, että kun Aiskhylos antaa murhatyön tapahtua
+hämärässä ja pimeän langetessa maahan, Sophokleella taas draaman alku
+sattuu varhaiseen aamuun. Aurinko on jo hälventänyt yön varjot ja
+herättänyt lintujen laulun, ja toiminta tapahtuu päivän kirkkaassa
+valossa.
+
+Tämä Sophokleen ote aiheeseen on yhteydessä hänen draamallisen
+taiteensa koko laadun kanssa. Aiskhylos näki jumalallisen oikeuden
+johtavan maailmaa, eikä suonut itselleen rauhaa ennenkuin oli saanut
+kaikki käsittelemänsä aiheet sopusointuun tämän oikeuden vaatimusten
+kanssa. Mutta Sophokles ei ole aaterunoilija niinkun Aiskhylos. Hän
+on pikemmin sadunkertoja suurta mittaa, runoilija, joka kuvailee
+elämän rajatonta rikkautta — hyvää ja pahaa, onnea ja kärsimystä —
+enimmän kuitenkin - jälkimäistä, sillä hänhän kirjoitti tragedioja.
+Siksi hän saattoi ottaa aiheikseen vanhat myytit sellaisinaan,
+muodostelematta niitä omia tarkoituksiaan varten, koettamatta saada
+niitä sopusointuun oikeuden vaatimusten kanssa. Hänen asianaan oli vain
+tehdä ne todenmukaisiksi: antaa tapahtumain kehittyä johdonmukaisesti,
+antaa tekojen sukeutua toimivien henkilöitten luonteista. Ja
+hiljattain on osoitettu, että hänen silmämääränään ei niinkään paljon
+ole luonnekuvauksen perinpohjaisuus ja uskottavuus ja toiminnan
+ehdoton johdonmukaisuus kuin joka yksityisen tilanteen tekeminen
+niin jännittyneeksi ja keskitetyksi, niin draamallisen vaikuttavaksi
+kuin suinkin. Kun hän nyt sadun mukaan antaa Oresteen ja Elektran
+äidinmurhan kautta kostaa isänsä, ei hän tässä näe mitään moraalista
+ongelmaa, ei mitään ristiriitaa — tai oikeammin sanoen ei tahdo
+nähdä; hän tyytyy kuvaamaan Elektran sellaiseksi, että katsoja uskoo
+hänen kykenevän tekoon, ja äidin niin, että hän ansaitsee tuollaisen
+rangaistuksen. Tässä tragediassa on paljon arkaismia, ei ainoastaan
+muodon, vaan myös katsantotavan suhteen.
+
+Ja ikäänkuin erikoisesti harrastaen naisluonteita on Sophokles
+tehnyt Elektrasta, joka Aiskhyloksella oli sivuhenkilö, koko
+draaman päähenkilön ja keskipisteen. Mutta tämän kautta on myöskin
+eräs heikkous pujahtanut tragediaan, sillä se on Elektrasta saanut
+sankarittaren, jolla ei ole mitään osaa toiminnassa; hän tekee
+epätoivossaan päätöksen kostaa, mutta hänen ei tarvitse toteuttaa
+sitä; ilman häntä on Orestes laatinut kostosuunnitelmansa, ja ilman
+sisartaan voisi hän panna sen täytäntöön. Mutta se mikä auttaa meidät
+tämän heikkouden yli, mikä tekee että me tuskin huomaamme sitä, on se
+verraton taito, millä runoilija keskittää huomion Elektraan, niin että
+hän itse asiassa koko ajan esiintyy todellisena päähenkilönä. Hän on
+eheä vihassaan ja eheä rakkaudessaan. Viha kohdistuu äitiin, jossa hän
+näkee vain aviorikkojan ja murhaajan, viha kohdistuu tämän rakastajaan
+ja kanssarikolliseen; rakkaus taas isävainajaan ja nuoreen veljeen,
+jota hän on vaalinut ja joka hänen unelmissaan ja toiveissaan aina on
+ollut tuleva kostaja.
+
+Antaakseen oikeutuksen tyttären vihalle on Sophokles riistänyt äidiltä
+sen suuruuden, jonka tämä kaikesta huolimatta omaa Aiskhyloksen
+draamassa. Aiskhyloksen Klytaimestrassa ei ole mitään pientä;
+hirvittävässä rikollisuudessaankin hän on kuningatar kiireestä
+kantapäähän. Sophokleen näytelmässä hän on alentunut kiihkoisaksi
+ja pikkumaisen vihaavaksi naiseksi, joka ei säilytä suuruutta edes
+ulkonaisessa muodossa. Hän herjaa tytärtä, väittelee hänen kanssaan,
+ja kun hän Aiskhyloksen draamassa täydellisesti halveksii yleistä
+mielipidettä, valittaa hän tässä Elektran muka jäytävän hänen
+mainettaan kansan keskuudessa.
+
+Ja pyrkimyksessään vastakohtavaikutuksiin, joka on niin suuressa
+määrin ominaista hänen luonnekuvaukselleen, on Sophokles luonut
+Khrysothemis-haahmon. Hän on nuorempi ja hennompi sisar, joka on omiaan
+vieläkin tehostamaan Elektran vihaa ja uhmaa; hänkin jumaloi isänsä
+muistoa ja inhoo murhaajia, mutta hänellä ei ole kylliksi rohkeutta
+eikä vastustuskykyä osoittaa sitä avoimesti ja antautua alttiiksi
+kieltäymyksille ja kärsimyksille.
+
+Itse tapausten kulussa Sophokles on tehnyt erään vaihdoksen.
+Aiskhyloksen näytelmässä surmataan Aigisthos ensin, minkäjälkeen
+äidinmurha seuraa draaman huippukohtana; Sophokleella on järjestys
+päinvastainen, ja Aigisthoksen kuolemantuska on kuvattu sangen
+perusteellisesti. Ehkä hän on tehnyt tämän muutoksen ikäänkuin
+päästäkseen helpommin äidinmurhan hirmuisuuden yli ja jossain määrin
+lieventääkseen loppuvaikutelmaa antamalla murhenäytelmän huipentua
+oikeutettuun rangaistukseen, joka kohtaa kaikessa halveksittavaa
+rikollista.
+
+»Elektra» antaa hyvän käsityksen Sophokleen keskimäisestä kaudesta,
+siitä, jota hän itse on sanonut kovaksi, teknillisesti täydelliseksi
+tyylikseen. Tuntijat kiittävät hyvää ja tasaista kieliasua,
+luonnekuvaus on selvä, ja puhtaasti draamallisessa suhteessa
+— mitä juoneen, jännitykseen tulee — merkitsee tämä tragedia
+suurta edistysaskelta Aiskhyloksen murhenäytelmistä. Kun Orestes
+»Hautauhrissa» ilmaisee itsensä sisarelle jo draaman alussa, syvenee
+Sophokleen draamassa sankarittaren epätoivo syvenemistään mitä
+lähemmäksi onnellinen ratkaisu tulee, ja harkitun taiteikkaasti
+lykätään tunteminen siihen hetkeen, jona Elektra jo luulee pitävänsä
+käsissään lopullista todistusta Oresteen kuolemasta, uurnaa, jossa
+muka on hänen tuhkansa. Mutta kieltämättä yhtyy tähän teknilliseen
+virheettömyyteen kovuutta ja tunteettomuutta, eräänlaista keinotekoista
+arkaismia.
+
+
+
+
+VI. Trakhiin naiset. Philoktetes.
+
+
+Tragedia _Trakhiniai_, »Trakhiin naiset», on saanut nimensä koorista,
+jona tässä on nuoria naisia Trakhiin kaupungista Thessaliassa; kun
+koori kuitenkaan ei esitä mitään merkitsevämpää osaa draamassa, on
+sangen aiheetonta nimittää sitä koorin mukaan. Näytelmän aikamääräystä
+varten ei ole mitään varmoja kiinnekohtia, mutta eräiden piirteitten
+perustalla, jotka tietävät Euripideen vaikutusta, voitanee katsoa
+sen kuuluvan viimeiseen tai ainakin myöhäisempään osaan Sophokleen
+runoilijatoimintaa. Kirjalliselta näkökannalta on tätä draamaa
+arvosteltu hyvin eri tavalla; kokonaisuutena se on mielestäni heikoin
+Sophokleen säilyneistä murhenäytelmistä. Aihe on Herakles-sadun
+loppukohtauksesta: sankarin tuhoutuminen ja kuolema roviolla.
+Tapahtumapaikka on Trakhiin kaupungissa, sen talon edustalla, jossa
+Herakleen perhe asuu.
+
+Jo toista vuotta on sankari ollut poissa kaukoretkillään hänen
+puolisonsa Deianeiran saamatta mitään tietoa hänestä. Tämän levottomuus
+ja tuska ovat jo käyneet sietämättömiksi, kun hän äkkiä saa sanan
+että Herakles on tulossa; mutta nyt hän myöskin saa tietää, että tämä
+on ollut hänelle uskoton ja että kilpailijatar on niiden vankien
+joukossa, jotka sankari on ennakolta lähettänyt kotiin. Hädässään
+Deianeira turvautuu kohtalokkaaseen keinoon voittaakseen miehensä
+rakkauden takaisin. Kentauri Nessos, joka kerran oli yrittänyt tehdä
+hänelle väkivaltaa, sai surmansa Herakleen myrkytetystä nuolesta;
+kuolinhetkenään neuvoi kentauri Deianeiraa kokoamaan veren, joka vuoti
+myrkytetystä haavasta; siitä hän muka saisi pettämättömän keinon
+Herakleen rakkauden säilyttämiseksi. Nyt Deianeira etsii tuon nesteen,
+voitelee sillä erään vaipan ja lähettää sen miehelleen. Hetken kuluttua
+saapuu turman viesti: Herakles on pannut ylleen myrkytetyn puvun, hän
+vääntelehtii pelottavissa tuskissa ja on mennyttä miestä. Deianeira
+menee taloon ja ottaa omin käsin itsensä hengiltä; kuoleva Herakles
+kannetaan näyttämölle, jossa hän loputtomassa yksinpuhelussa kuvailee
+kärsimyksiään. Tämä viimeinen kohtaus täyttää neljännen osan koko
+murhenäytelmää ja päättyy siihen että sankari taaskin kannetaan pois,
+oman toivomuksensa mukaan poltettavaksi roviolla Oita-vuorella. —
+
+Jos katsoo ohi suurimman sommitteluvirheen — pitkän, yhtä
+yksitoikkoisen kuin tarkoituksettoman loppukohtauksen kärsivine
+ja valittavine sankareineen — ei tältä tragedialta suinkaan puutu
+ansioita. Kaikista Sophokleen naisluonteista edustaa Deianeira
+hennointa ja pehmeintä naisellisuutta. Hän on rakastava ja
+anteeksiantava nainen; huolimatta kaikesta mitä hän on saanut
+kärsiä miehensä tähden, on hän säilyttänyt rakkautensa ja ihailunsa
+vähentymättömänä. Elämä tuon väkevän rinnalla ei ole tarjonnut hänelle
+sekaantumatonta onnea. Yksinään hän on viettänyt suurimman osan
+elämäänsä; ainoat auringonpilkkeet ovat olleet Herakleen lyhyet käynnit
+kodissa. Kaikille hänen virheilleen Deianeira on ummistanut silmänsä,
+kaikelle raa'alle ja epävakaiselle hänen luonteessaan, vain sankarin ja
+vapauttajan hän on nähnyt miehessään, vain hänen kykynsä taistella ja
+kärsiä.
+
+Vasta kun Herakles lähettää kilpailijattaren hänen oman kattonsa
+alle, on mitta täysi. Mutta ei edes tämä loukkaus kykene surmaamaan
+hänen rakkauttaan, hän ajattelee vain, kuinka voisi voittaa miehensä
+rakkauden takaisin. Ei vihaa eikä suuttumusta herätä nuori ja kaunis
+kilpailijatar hänessä, jo vanhentuvassa ja hyljätyssä; myötätuntoa,
+sääliä on hänessä vain. Suurimpana hän esiintyy siinä kohtauksessa
+— koko draaman järkyttävimmässä — jossa hän saa tietää lahjansa
+seuraukset ja kun »murhaaja»-sana sinkoaa häntä vastaan hänen oman
+poikansa huulilta. Vastaamatta sanaakaan hän alkaa käydä taloa kohti.
+»Miksi vaikenet» — kysyy koori — »etkö ymmärrä, että hiljaisuutesi
+syyttää sinua?» Mutta mykkänä jatkaa hän tietään, sanatonna,
+valittamatta, kohti taloa ja kohti kuolemaa.
+
+Jos Deianeira ensi hetkestä saakka herättää myötätuntoa, on
+aivan päinvastoin Herakleen laita: hän on Sophokleen näytelmien
+epämiellyttävimpiä ja tympäisevimpiä luomuksia. Tosin edellytetään,
+että hän on tuo suuri sankari ja vapauttaja, viljelyksen esitaistelija,
+mutta turhaan etsii suuruutta hänen personallisuudestaan ja
+esiintymisestään tragediassa. Kaikki, mitä draamassa saamme kuulla
+hänestä, virittää mielemme häntä vastaan, ja sinä aikana, jolloin hän
+on näyttämöllä, vahvistuu tämä vaikutelma yhä. Hänen kärsimyksensä
+jättävät meidät jokseenkin kylmiksi, huolimatta siitä väkivaltaisesta
+ja pitkäaikaisesta paatoksesta, jolla niitä kuvataan. Herakles on
+villi ja raaka voimaihminen, jonka ainoat myönteiset ominaisuudet ovat
+rohkeus ja fyysillinen voima.
+
+»Trakhiin naiset» vaikuttaa kahdelta eri tragedialta. Toinen kaunis
+ja täysin kehittynyt, jossa Deianeira on päähenkilö, sitten toinen
+— lyhyt, vain yksinäytöksinen tragedia — jonka sankari on kuoleva
+Herakles.
+
+       *       *       *       *       *
+
+Vuonna 409, muutamia vuosia ennen kuolemaansa, ja ainakin 85 vuoden
+iässä, esitytti Sophokles tragedian _Philoktetes_, joka monessa
+suhteessa on hänen kauneimpia ja mielenkiintoisimpia murhenäytelmiään.
+Satu, jolle näytelmä on rakennettu, kuuluu troiaiaiseen tarupiiriin ja
+on sisällöltään seuraava. Thessalialainen kuninkaanpoika Philoktetes
+oli kuolevalta Herakleelta saanut tämän jousen ja nuolet, jotka eivät
+koskaan erehtyneet päämäärästään. Kun sitten kreikkalainen laivasto
+Agamemnonin johdolla purjehti Troiaa kohti, oli Philoktetes mukana
+laivoineen; matkan varrella pysähdyttiin toimittamaan uhria, ja tämän
+toimituksen aikana pisti myrkyllinen käärme häntä jalkaan. Kun tuon
+pahan haavan haju vaivasi tovereita ja haavoittuneen valitushuudot
+häiritsivät uhritoimitusta, antoivat Atreuksen pojat ja Odysseus laskea
+nuoren miehen maihin Lemnos-saaren asumattomalle ja kolkolle rannalle.
+Niin kului kymmenen vuotta. Philoktetes eleli edelleen Lemnoksessa,
+hyljättynä ja tuskien kalvamana, ja hänen entiset toverinsa piirittivät
+edelleen Troiaa; Akhilleus oli jo kaatunut ja Aias tuhoutunut oman
+kätensä kautta. Silloin eräs tietäjä ilmoitti, että Troiaa ei voida
+valloittaa ennenkuin kaksi ehtoa on täytetty. Ensiksikin on Philoktetes
+haettava Lemnoksesta, sillä vain jos hän Herakleen aseilla taistelee
+Troiaa vastaan, voidaan tämä valloittaa. Ja toiseksi oli Akhilleuksen
+pojan Neoptolemoksen tultava Troiaan ja isänsä aseilla otettava osaa
+ryntäykseen. Niin tapahtuikin. Neoptolemos ja Philoktetes tuotiin
+kreikkalaiseen joukkoon. Jälkimäisen haavan paransi sotajoukon lääkäri,
+hän löi Pariin kaksintaistelussa, ja nuoret sankarit jakoivat kunnian
+Troian lopullisesta kukistamisesta.
+
+Sophokles on tragediassaan käsitellyt vain lyhyttä kohtausta tästä
+tarusta, niinkuin aikaisemmin Aiskhylos ja Euripides hävinneissä
+Philoktetes-draamoissaan: kertomusta siitä, kuinka Philoktetes saadaan
+tulemaan inhoamiensa toverien avuksi. Jo Aiskhyloksen draamassa
+uskotaan Odysseuksen tehtäväksi suostutella ja noutaa sankari, joka
+vihasi juuri häntä kaikista enimmän; Sophokles kehittää juonta edelleen
+panemalla mielevälle Odysseukselle avustajaksi Neoptolemoksen,
+Akhilleuksen urhean ja ritarillisen pojan.
+
+Siirrymme siis Lemnoksen karulle rannikolle. Odysseus ja Neoptolemos
+ovat juuri nousseet maihin; edellinen huomauttaa, ettei hän ilman
+hengenvaaraa voi kohdata Philoktetesta, ja laatii senvuoksi seuraavan
+suunnitelman. Neoptolemoksen on ilmaistava itsensä Philokteteelle,
+mutta uskoteltava jättäneensä kreikkalaisen sotajoukon jouduttuaan
+riitaan Atreuksen poikien ja Odysseuksen kanssa, jotka vastoin
+lupaustaan olivat pidättäneet häneltä hänen isänsä aseet; sitten,
+tilaisuuden sattuessa, hänen on viekkaudella anastettava sankarilta
+hänen jousensa ja nuolensa. Nuoren miehen rehellisyys nousee tätä
+ehdotusta vastaan: hän on valmis käyttämään väkivaltaa, mutta ei tahdo
+antautua petokseen. Silloin Odysseus osoittaa, kuinka mahdotonta on
+väkivallalla voittaa miestä, jolla on hallussaan Herakleen aseet,
+ja huomauttaa, että Philokteteen läsnäolo sotajoukossa on Troian
+valtauksen ja Neoptolemoksen omien mainetöitten ehtona. Nuorukainen
+suostuu vastahakoisesti, ja Odysseus katoaa näyttämöltä.
+
+Nyt tulee Philoktetes näkyviin. Hän on iloinen kuullessaan
+äidinkieltään, ja vielä suuremmaksi tulee hänen ilonsa, kun hän saa
+tietää että Akhilleuksen poika on hänen edessään. Hän kuvailee tälle
+kymmenvuotisia kärsimyksiään, saa puolestaan kuulla Odysseuksen
+keksimän valhejutun, ja vannottaa Neoptolemosta ottamaan hänet
+mukanaan kotiin. Tämä antaa suostumuksensa, mutta silloin lähestyy
+äkkiä kaksi miestä, kaksi Odysseuksen lähettämää merimiestä, joista
+toinen on puettu kiertäväksi kaupustelijaksi. Tämä sanoo tulevansa
+varoittamaan: kreikkalaiset sotapäälliköt ovat lähettäneet ajamaan
+takaa Neoptolemosta, ja Odysseus ja eräs toinen sankareista on saanut
+tehtäväkseen ottaa vangikseen Philokteteen. Kun Philoktetes kuulee
+olevansa vainottu, innostuu hän vieläkin enemmän jättämään saaren, ja
+hänen myötätuntonsa Neoptolemosta kohtaan kasvaa, kun hän kuulee että
+samat viholliset vainoavat tätäkin.
+
+Mutta nyt sattuu eräs noita useasti uudistuvia kouristuskohtauksia,
+jotka kuuluvat hänen tautiinsa, ja ennen tainnoksiinmenoaan hän
+jättää jousen ja nuolet Neoptolemokselle, jotta ne eivät joutuisi
+hänen vihollistensa käsiin; nuori mies ottaa ne vastaan pysyen
+vilpillisessä tarkoituksessaan. Lopuksi Philoktetes vannottaa uutta
+ystäväänsä olemaan hylkäämättä häntä. Nyt alkaa Neoptolemos tuntea
+syvää ja todellista sääliä; hän lupaa ettei jätä sairasta ja vahvistaa
+lupauksensa kädenlyönnillä. Philoktetes vaipuu horroksiin.
+
+Kun hän taaskin herää tajuntaan, ei Neoptolemos enää voi jatkaa
+ilveilyään. Häpeä ja katumus polttavat häntä, hän tunnustaa arvottoman
+viekkautensa ja ilmaisee totuuden Philokteteelle. Tämä vaatii kohta
+jousta ja nuolia, mutta Neoptolemos kieltäytyy antamasta niitä
+takaisin. Philoktetes ilmaisee nyt epätoivoansa ja vihaansa; milloin
+hän rukoilee Neoptolemosta, milloin syytää tälle moitteita ja
+herjauksia. Tämä seisoo neuvottomana, säälin ja häpeän vallassa, ja
+katsojasta tuntuu, että hän jo on valmis antamaan aseet takaisin, kun
+Odysseus äkkiä hyökkää piilopaikastaan estämään häntä.
+
+Nyt tahtoo Philoktetes heittäytyä kalliolta alas, mutta Odysseuksen
+käskystä hänet sidotaan. Hän jääköön kernaasti Lemnokseen — selittää
+tämä — kunhan vain hänen aseensa tulevat sotajoukkoon; löytyneehän
+siellä miehiä, jotka osaavat käyttää niitä. Odysseus ja Neoptolemos
+etenevät laivoja kohti päästettyään Philokteteen taas vapaaksi.
+Tämä on jo hävinnyt luolaansa, kun Neoptolemos kiireissään palaa,
+kintereillään Odysseus, joka kysyy häneltä mitä tämä äkillinen temppu
+merkitsee. Nuori mies, jonka sielussa oikeamielisyys ja kunniantunto
+ovat voittaneet, selittää aikovansa jättää Philokteteelle tämän
+oikeudenmukaisen omaisuuden. Odysseus koettaa saada hänet luopumaan
+aikeestaan, mutta kun mikään ei auta, poistuu hän lausuen uhkauksia.
+
+Neoptolemos huutaa Philoktetesta, ja tämä tulee esiin, kysyen
+mitä uusia ansoja hänelle nyt on pantu. Vastaukseksi ojentaa
+Neoptolemos hänelle jousen ja nuolet. Odysseus, joka vain on jäänyt
+väijyksiin läheisyyteen, syöksyy ottamaan aseet takaisin, mutta
+vain Neoptolemoksen väliintulo estää häntä tulemasta ammutuksi. Hän
+katoaa nyt eikä enää tule näkyviin. Neoptolemos koettaa vielä kerran
+suostutella Philoktetesta tekemällä selkoa ennustuksesta, joka koskee
+hänen parantumistaan ja osuuttaan Troian valtaukseen. Philoktetes
+epäröi hetkisen, hän tekisi kernaasti ystävälleen mieliksi, mutta
+ei voi olla yhteistyössä verivihollistensa kanssa, ja hän pyytää
+Neoptolemosta nyt vain täyttämään lupauksensa ja viemään hänet kotiin.
+
+Tämä suostuu, ja nuoren ystävänsä käsivarren tukemana Philoktetes alkaa
+kävellä rannalle päin. Mutta nyt näyttäytyy ylimaailmallinen ilmestys:
+Herakles. Hän ilmoittaa jumalten tahdon olevan, että Philoktetes,
+taudistaan parantuneena, kaksintaistelussa surmaa Pariin ja yhdessä
+Neoptolemoksen kanssa valloittaa Troian. Tämä jumalainen sanoma saa
+Philokteteen taipumaan. Hän sanoo hyvästit Lemnokselle ja kulkee
+Neoptolemoksen kanssa laivoja kohti. —
+
+Kuten edellisessä tragediassa on tässäkin huomattu Euripidesta
+muistuttava piirre siinä, että sankarin kärsimysten kuvaus useammin
+kuin kerran lähentelee realistista ja patologista, ja vielä selvemmin
+ilmenee Euripideen vaikutus draaman loppukohtauksen jumalaisessa
+ilmestyksessä; tämä, tragediankirjoittaja nimittäin usein ratkaisee
+murhenäytelmäinsä monisäikeisen juonen antamalla jonkun yliluonnollisen
+olennon sekaantua asiaan. Että Herakleen esiintyminen merkitsee
+rakenteellista heikkoutta, siitä ei ole epäilystäkään, mutta voi
+hyvin ymmärtää, kuinka tällaisen keinon käyttäminen on houkutellut
+runoilijaa. Sellaisena kuin hän oli kuvannut Philokteteen, ei tämä
+voinut suostua sopimaan verivihollistensa kanssa, ja kuitenkin täytyi
+tragedian päättyä siten, että hän lähti sotajoukkoon Troian edustalle:
+niin vaati yleisesti tunnettu satu.
+
+Mutta kaikesta tästä huolimatta on tällä harvinaisella juoninäytelmän
+ja luonnedraaman yhdistelmällä aito sophoklesmainen hohde. Philoktetes
+on Sophokleen selvimpiä ja perinpohjaisimmin kuvattuja luonteita,
+sielullisesti hienommin piirretty kuin Aias, jonka kanssa hänellä on
+useitakin vertailukohtia. Hänen tahdonvoimansa, hänen ylpeytensä,
+sensijaan että olisi taipunut tai murtunut, on vain karaistunut
+kymmenen vuoden keskeytymättömissä kärsimyksissä, ja runoilija antaa
+niiden nyt joutua kovimpaan koetukseen mitä ajatella voi. Ilman
+epäluuloa hän avaa sydämensä vanhan aseveljensä pojalle ja uskoo tälle
+ainoan omaisuutensa, aseensa. Sitten hän huomaa joutuneensa häpeällisen
+petoksen uhriksi. Hänellä on valittavana joko käydä kohtaamaan
+nälkäkuolemaa tai unohtaa vääryydet, solmia rauha vihollistensa
+kanssa ja niittää katoamatonta kunniaa — ja hän ei epäröi hetkeäkään.
+Sitten tulee käytäntöön vieläkin harkitumman hieno keino. Hän saa
+kernaasti jäädä saarelle — sanotaan nyt — Odysseus on hänen jousellaan
+ja nuolillaan niittävä sen maineen, joka muuten olisi tullut hänen
+osakseen. Mutta turhaan: ei edes ajatus verivihollisen voitosta
+hänen omien aseittensa avulla saa häntä taipumaan. Vihdoin tulee
+vaarallisin kiusaus. Rehellisyys ja jalomielisyys ovat tehoisampia
+keinoja häntä vastaan kuin väkivalta ja viekkaus, ja kun Neoptolemos
+katuu vilpillisyyttään ja antaa hänelle takaisin aseet, silloin hän
+epäröi, joskin vain silmänräpäyksen. Mikään ihmismahti ei häneen pysty.
+Tarvitaan yliluonnollinen voima taivuttamaan häntä: jumalten tahtoa
+vastaan hän ei taistele, kohtalon päätökseen hän mukautuu.
+
+Neoptolemoksen asettaminen tragediaan tekee sielullisen sisällön ja
+mielenkiinnon kaksinkertaiseksi: draamaan Philokteteen ylpeydestä
+ja lujuudesta kärsimyksessä liittyy vielä toinen, draama hyvän
+ja pahan taistelusta kunnianhimoisessa, mutta turmeltumattomassa
+nuorukaissielussa. Kunnianhimonsa houkuttelemana, viehättyneenä
+ajattelemaan sitä katoamatonta kunniaa, joka on tuleva hänen osakseen
+Troian valtauksessa, antautuu Neoptolemos käytettäväksi vilppiin,
+mutta nähdessään syvästi onnettoman sankarin kärsimykset hän tajuaa
+kavaltajatehtävänsä häpeän, ja hänen luonteensa oikeudentunto ja
+jalomielisyys pääsevät oikeuksiinsa.
+
+Jyrkkänä vastakohtana näille luonteille on Odysseus, ja pitkä on
+välimatka häneen tuosta kauniin inhimillisestä Odysseus-haahmosta,
+jonka opimme tuntemaan »Aiaassa». »Philokteteessa» hän kohtaa meitä
+muodossa, joka näyttää olleen tavallinen myöhemmässä attikalaisessa
+tragediassa ja jossa viekkaus ja kavaluus ovat pääpiirteinä; hän on
+tunnoton juonienpunoja, joka ei häikäile mitään keinoja saavuttaakseen
+päämäärän, jonka on asettanut itselleen.
+
+Silmiinpistävä on se vähäinen osa ja merkitys, joka tässä tragediassa
+on varattu koorille. Siinä on vain yksi koorilaulu varsinaisessa
+merkityksessä; kooriosilla on usein vuoropuhelun luonne, ne
+ovat monasti lyhyehköjä vuorolauluja, ja syvempiä mietelmiä ja
+jälkikatsauksia ei ensinkään ole keskeyttämässä toimintaa. Koorilla
+itsellään ei ole mitään korkeampaa tehtävää; sen muodostaa joukko
+merimiehiä Neoptolemoksen laivasta, se palvelee häntä ja toimittaa
+hänen asioitaan. Niin pitkälle olemme siis nyt tulleet tragedian
+kehityksessä että, koori — vanhimpien tragediojen ydin ja pääasia — on
+vain merkityksetön surkastuma.
+
+Eräässä toisessa kohdin »Philoktetes» ei ainoastaan eroa useimmista
+säilyneistä antiikin tragedioista, vaan sotii koko sitä käsitystä
+vastaan, mikä meillä tavallisesti on murhenäytelmästä, vanhasta tai
+nykyaikaisesta. Tavallisestihan ajattelee tragedian päättyvän sankarin
+perikatoon, mutta tässä on meillä esimerkki siitä, että se ei ollut
+mikään ehdoton sääntö antiikin tragedioille; »Philoktetes» tosin on
+murhenäytelmä siinä mielessä, että se kuvailee surua ja kärsimystä,
+mutta se päätyy onnelliseen loppuun.
+
+Jos »Elektra» joka suhteessa on luonteenomainen Sophokleen kovalle,
+keskimäiselle tyylille, edustaa »Philoktetes» taas erinomaisesti hänen
+viimeistä kehityskauttaan, yksinkertaisuuden, luonnollisen ilmeikkyyden
+aikaa. Tunteitten ja tapausten aaltoilun kuvailemisessa ei ilmene
+mitään pingoitettua eikä teennäistä; kaikki kehittyy luonnollisesti,
+kaikki ikäänkuin lankee itsestään. Harvinaisen ilmavaa runoutta
+henkii tuo tuulinen maisema autiolla saarella, sen lähteet ja niityt,
+rantakalliot ja kukkulat ja tulivuoret. Ja lähteensilmän tavoin kumpuaa
+runo raikkaana, kristallikirklcaana ja laulavana.
+
+
+
+
+VII. Antigone.
+
+
+Nyt on jäljellä ne kolme Sophokleen tragediaa, joihin aiheen on antanut
+thebalainen satupiiri, Labdakidien kauhistuttava sukuhistoria — toinen
+noista kahdesta Hellaan vertatihkuvasta perhetarusta, jotka niin
+suuressa määrin ovat herättäneet antiikin murhenäytelmänkirjoittajain
+mielenkiintoa ja aina meidän päiviimme saakka kummasti viehättäneet
+runoilijain mielikuvitusta. Theban kuningas Laios oli eräällä
+rikoksellaan vihastuttanut jumalat, ja kun hänelle syntyi poika, antoi
+hän viedä tämän autiolle vuorelle puhkaistuaan hänen jalkanivelensä
+ja pistettyään puikon niiden läpi. Selvää ei ole, kuinka tätä tekoa
+perusteltiin eepillisessä sadussa — oliko se sovitusuhri vai tapahtuiko
+se Laioksen turvaamiseksi eräältä ennustukselta, jonka mukaan hän
+oli kuoleva poikansa käden kautta. Pojan pelastivat kuitenkin eräät
+paimenet, jotka veivät hänet kuningas Polyboksen luo Korinthokseen;
+täällä hän kasvoi tuntematta syntyperäänsä, ja sai alati kipeitten ja
+turvonneitten jalkojensa vuoksi nimen Oidipus, »Turpojalka».
+
+Monen vuoden kuluttua hän kohtaa eräällä vuoritiellä muutamia outoja
+miehiä, joutuu riitaan heidän kanssaan ja surmaa heidät; eräs niistä
+oli hänen isänsä Laios. Myöhemmin hän tulee — vieläkään tietämättä
+syntyperäänsä — Thebaan ja vapauttaa kaupungin Sfinksistä, hirviöstä,
+joka jo pitkät ajat on ollut maan vitsauksena. Palkaksi hän saa maan
+kuninkaankruunun ja leskikuningattaren käden, ja hän menee naimisiin
+kuningattaren, oman äitinsä kanssa. Asian oikea laita tulee ilmi.
+Kuningatar tekee itsemurhan ja Oidipus puhkaisee silmänsä. Hän on
+kuitenkin edelleen Theban hallitsijana, menee uusiin naimisiin ja saa
+tässä avioliitossa kaksi poikaa, Eteokleen ja Polyneikeen, sekä kaksi
+tytärtä, Antigonen ja Ismenen. Iäkästä Oidipusta loukkaavat pahasti
+hänen poikansa; rangaistukseksi hän kiroaa heidät ja ennustaa, että
+he eivät sovinnossa tule jakamaan isänsä perintöä, vaan kaatuvat
+kumpikin toistensa käden kautta. Isän kuoleman jälkeen Eteokles pääsee
+valtaan Thebassa, Polyneikes taas lähtee Argokseen, josta myöhemmin
+sotajoukon etupäässä marssii kotikaupunkiansa vastaan ja piirittää
+sitä; taistelussa Theban muurien ulkopuolella kaatuvat molemmat veljet
+toistensa iskusta. —
+
+Tämän sadun pohjalle oli Aiskhylos rakentanut traagillisen trilogian,
+josta viimeinen osa on säilynyt. Ensimäisen tragedian nimi oli _Laios_
+ja siinä kuvattiin kuinka onnettomuus alkuaan tuli Labdakidein taloon;
+toinen oli nimeltään _Oidipus_ ja kuvaili tämän kohtaloa; kolmannessa,
+säilyneessä, nimeltään _Seitsemän Thebaa vastaan_, on aiheena
+perhedraaman loppunäytös: veljestaistelu Oidipuksen poikain välillä.
+Aiskhylos oli jonkun verran muutellut ja tiivistänyt eepillistä
+aihetta, ja muutoksista kiinnittää huomiota varsinkin eräs, joka tekee
+tuon hirvittävän sadun vieläkin kaameammaksi ja joka lujemmin liittää
+kolmannen sukupolven, Oidipuksen lapset, sukukiroukseen: Aiskhylos on
+kaikesta päättäen ensimäinen, joka antaa Oidipuksen poikien ja tytärten
+olla hedelmiä hänen avioliitostaan oman äitinsä kanssa. Ei siis yksin
+rikos isää vastaan ja tämän kirous tuota onnettomuutta pojille; he
+ovat samalla jonkinlainen viaton sovitusuhri aikaisempien sukupolvien
+syyllisyydestä.
+
+Ne kolme tragediaa, joissa Sophokles vuorostaan on käsitellyt tätä
+satua, ovat _Antigone, Oidipus Tyrannos_ (»Kuningas Oidipus») ja
+_Oidipus epi Kolono_ (»Oidipus Kolonoksessa»). Nämä murhenäytelmät
+ovat — niinkuin runoilijan muutkin — täysin irrallisia ja itsenäisiä
+tragedioja, vaikka ne luonnollisesti meidän silmissämme tulevat
+kuulumaan yhteen siksi että ne kuvaavat saman perhedraaman eri
+vaiheita. Sisäisen aikajärjestyksen mukaan tulee »Antigone»
+viimeiseksi, mutta me aiomme kuitenkin alkaa siitä. Se on vanhin
+noista kolmesta draamasta ja yleensä Sophokleen vanhimpia säilyneitä
+tragedioja, muutamien mukaan vanhin kaikista; oletetaan hyvillä syillä,
+että se esitettiin vuonna 442 tai 441, siis yli 30 vuotta ennen kuin
+»Oidipus Kolonoksessa». Ja olen tahtonut lopettaa esitykseni tuohon
+viimeksimainittuun murhenäytelmään, johon Sophokles luultavasti
+todellisuudessa lopetti pitkän runoilijauransa.
+
+       *       *       *       *       *
+
+»Antigonella» on Sophokles liittänyt Labdakidien sukutragediaan
+vielä yhden renkaan, joka puuttui Aiskhylokselta ja luultavasti myös
+alkuperäisestä sadusta. Tämä tragedia on jatkoa Aiskhyloksen näytelmään
+»Seitsemän Thebaa vastaan». Ja jos Aiskhyloksen murhenäytelmän loppu
+on alkuperäinen — mitä kuitenkin monet epäilevät — sisältää se jo idun
+Antigone-tragediaan. Eteokles ja Polyneikes ovat kaatuneet taistelussa
+toisiansa vastaan; heidän ruumiinsa makaavat näyttämöllä. Silloin tulee
+airut tuoden käskyn kaupungin neuvostolta: Eteokles, joka on kaatunut
+taistelussa maansa puolesta, on kätkettävä synnyinmaan poveen, kun
+taas Polyneikes, joka on johtanut vihollisjoukkoa isiensä kaupunkia
+vastaan, on hautaamatta heitettävä Theban muurien ulkopuolelle.
+Mutta Antigone selittää tulevansa uhmaamaan kieltoa ja omin käsin
+hautaamaan Polyneikeen. Thebalaisten neitseitten muodostama koori
+on neuvoton ja jakautuu lopuksi kahteen puolikooriin, joista toinen
+saattaa Polyneikeen ruumista, toinen taas neuvoston käskyä noudattaen
+seuraa Eteoklesta. Ei siis edes kuolema voinut peittää sovintoon
+tätä veljesriitaa, ja tässä muodossaan tragedia epäilemättä päättyy
+epäsointuun. Tästä alkaa »Antigone», vaikkakaan tilanne Sophokleen
+tragedian alussa ei ole aivan sama kuin hänen edeltäjänsä näytelmän
+lopussa. —
+
+Aikainen aamu Theban kuninkaanlinnan edustalla, päivää jälkeen sen
+taistelun, jolloin vihollinen torjuttiin ja veljekset kaatuivat
+toistensa aseista. Antigone tulee ulos sisarensa Ismenen seurassa ja
+kertoo hänelle, mitä heidän enonsa Kreon, kaupungin uusi hallitsija,
+on tehnyt ja määrää. Eteokleen hän on jo antanut haudata, mutta
+Polyneikeen ruumiin hän on käskenyt heittää, hautaamatta ja itkemättä,
+nälkäisten petolintujen saaliiksi; se, joka uhmaa käskyä, kivitetään
+kuoliaaksi. Ja Antigone ilmoittaa aikovansa omin käsin haudata veljen
+ruumiin. Turhaan koettaa Ismene kiellellä häntä, huomauttaen kuinka
+vähän he, heikot naiset, ovat omiaan nousemaan miesten käskyjä vastaan.
+Ismene tehköön niinkuin tahtoo — vastaa Antigone. Mutta hänen oma
+päätöksensä pysyy lujana; kauniilta näyttää hänestä kuolema, kun
+tehtävä on suoritettu, kaunis on lepo veljen rinnalla. Ja hän poistuu
+yksin suorittamaan tekoansa. Ismene menee palatsiin.
+
+Nyt saapuu koori, jonka muodostaa joukko ylhäisiä Theban vanhuksia,
+ja tervehtii komealla hymnillä nousevaa aurinkoa. Koskaan ei päivän
+kultainen silmä ole niin ihanasti säteillyt yli seitsenporttisen Theban
+ja Dirken vuolteitten kuin tänä voiton suurena päivänä! Kotkan lailla
+iski vihollisjoukko kaupunkiin, aukoen peitsihampaista kitaansa,
+mutta se lyötiin takaisin, ennenkuin se oli ehtinyt täyttää kurkkunsa
+thebalaisten verellä. Nyt on aika unohtaa menneet taistelut ja jumalten
+temppelissä viettää voittojuhlaa lauluin ja tanssein.
+
+Kreon astuu ulos. Hän ilmoittaa ottaneensa kaatuneitten
+Oidipuksen-poikien sukulaisena haltuunsa Theban valtaistuimen; hän
+kehittelee eräänlaista hallitusohjelmaa ja julistaa Polyneikeen
+hautaamista koskevan kiellon, jonka jo tunnemme. Kun hän on lopettanut
+esityksensä, syöksyy eräs niistä vahdeista, jotka hän on asettanut
+vartioimaan ruumista, hengästyneenä ja järkytettynä sisään; hän tuo
+uutisen, joka hänet vain vaivoin saadaan ilmoittamaan. Joku oli jo
+suorittanut vertauskuvalliset hautausmenot peittämällä kuolleen ruumiin
+mullalla, mutta työn tekijästä he eivät ole huomanneet jälkeäkään.
+Kreon uhkaa vahteja häpeällisellä ja kauhealla kuolemalla, jos nämä
+eivät pääse syyllisen perille. Kuningas menee palatsiin ja vahti
+poistuu.
+
+Nyt ilmaisee koori hämmästyksensä ja vavistuksensa kohtalokkaan
+uutisen johdosta. Tämä laulu, joka on Sophokleen kuuluisimpia, kohoaa
+kunniatemppeliksi ihmisen kekseliäisyydelle ja voimalle. Myrskyisen
+meren yli käy ihmisen tie, maan hän kyntää aurallaan; ilman siivekkäät
+laumat, metsän pedot, syvyyksien sukukunnat hän vangitsee; hevosia
+hän kesyttää ja härkiä ja panee ikeensä niiden niskaan; kielen ja
+ajatustaidon hän on oppinut, yksi vain on hänen voittajansa: Kuolema.
+Suuri on hän totisesti niin hyvässä kuin pahassa, mutta korkeana kohoaa
+lakiatottelevan ja oikeamielisen kaupunki, kun taas rikollinen ei
+mitään kaupunkia omista.
+
+Silloin koori saa nähdä jotakin, joka saa sen epäilemään silmiensä
+todistusta: vartija palaa, laahaten mukanaan Antigonea. Hän kysyy
+Kreonia, ja kun tämä on tullut ulos, kertoo hän missä olosuhteissa
+Antigone vangittiin. Vahdit olivat taas paljastaneet ruumiin ja
+asettuneet väijyksiin. Jonkun ajan kuluttua oli Antigone lähestynyt ja
+nähdessään veljen paljastetun ruumiin puhjennut valitushuutoihin ja
+kironnut ilkityön tekijää; sitten hän oli taas koonnut multaa ruumiille
+ja vuodattanut juomauhrin vaskiuurnasta. Silloin vahdit ottivat hänet
+kiinni, mutta hän ei säikähtänyt eikä liioin kieltänyt tekoaan. Ja
+sitä hän ei tee nytkään, kun Kreon panee hänet tilille; hän vastaa
+myöntävästi tämän kysymykseen, oliko hän tietänyt kiellosta.
+
+    Niin, sill’ ei Zeus sit’ ollut säännyt; Dike ei,
+    jonk’ istuin maili’ on Manan vakain, lausunut
+    moist’ ihmisille lakia. Sun käskyjäs
+    niin katsonut en korkeiks, että polkea
+    sua kuullen tohtis kuolevainen jumalain
+    lait pyhät, lakitauluun piirtämättömät.
+    Ei tänäiset eik’ eiliset, vaan ainaiset
+    ne on, ei tiedä kukaan, konsa syntyivät.
+    Ja tulla vikapääksi niitten tuomioon
+    en, ihmismieltä pelkäämällä, tahtonut.
+    Mun ett’ on kuoltava, sit’ enkö tiennyt ois! —
+    sun säätämättäskin. Mut ennenaikaiseen
+    jos kuoloon käyn, sen voitoksi ma arvioin.
+    Vai eikö oisi voitto sille kuolema,
+    kell’ elo, niinkuin, mull’, on ani auvotont'.
+    Jos onnen sen siis saavutan, ei huolta tuo
+    se mulle. Vaan jos hautaa vaille heittänyt
+    ma oisin oman äidin lapsi-vainajan,
+    se toisi tuskan katkeran; mut tämä ei.
+
+Kreon sanoo kyllä osaavansa nujertaa Antigonen, uhmatkoon hän miten
+tahansa; rauta, jota on eniten karaistu, on haurainta ja taittuu
+helpoimmin. Hän on saava rangaistuksensa, ja Ismene samoin, joka
+varmaan on ollut hänen rikostoverinsa. Antigone pyytää Kreonia
+kiirehtimään; enempää kuin hänen henkensä ei Kreon kuitenkaan voi
+saada; sananvaihto ei hyödytä mitään. Kun Ismene on kutsuttu paikalle,
+kysyy Kreon häneltä, oliko hänellä osuutta sisaren tekoon. Ismene,
+joka on päättänyt olla jättämättä sisartaan, vastaa myöntävästi.
+Mutta Antigone kieltää hänen osuutensa. Ylpeänä siitä että yksin on
+suorittanut tekonsa, tahtoo hän myöskin yksin kantaa vastuun. Kreon
+antaa henkivartijoitten viedä Antigonen ja Ismenen kuninkaanlinnaan ja
+vartioida heitä tarkasti; itse hän jää näyttämölle.
+
+Nyt laulaa koori Labdakidien sukukirouksesta; sisarusten kuolemantuomio
+on sammuttanut suvun viimeisen toivon. Koori asettaa Zeuksen
+kaikkivallan vastakohdaksi ihmisten voimattomuudelle ja lopettaa
+lausumalla ikivanhan viisauden sanan: Se, jonka jumala on lyönyt
+sokeaksi, näkee pahan jonakin hyvänä. Kun laulu on lopussa, tulee
+paikalle Haimon, Kreonin poika ja Antigonen sulhanen. Kreon ottaa hänet
+vastaan pitkällä puheella, koettaen lohduttaa poikaa ja puolustaa omaa
+menettelytapaansa. On parempi menettää kihlattunsa kuin mennä naimisiin
+huonon naisen kanssa; kuri ja lainkuuliaisuus ovat välttämättömät
+valtiossa, kaikki kapinallinen uhma on rangaistava. Haimon puolustaa
+kihlattunsa asiaa alussa alussa levollisesti. Hän koettaa vaikuttaa
+isaänsä järkisyillä; hän kertoo että koko kaupunki paheksuu Kreonin
+tuomiota ja ylistää Antigonen tekoa, hän huomauttaa kuinka paljon
+viisaampaa olisi olla uhmaamatta kansan mieltä. Mutta Kreon vihastuu,
+sananvaihto isän ja pojan välillä käy yhä kiivaammaksi, ja kun kuningas
+uhkaa panna Antigonen kuolemantuomion täytäntöön Haimonin silmien
+edessä, syöksyy tämä pois, huutaen ettei isä koskaan enää ole näkevä
+häntä. Nyt julistaa Kreon mikä kuolema Antigonea odottaa: hänet
+muurataan elävänä erääseen luolaan, kalliohautaan, ja siellä hän saa
+hitaasti kuolla nälkään. Ismenen hän on päättänyt säästää, vakuutettuna
+hänen viattomuudestaan.
+
+Kreonin mentyä palatsiin virittää koori, ajatellen äskeistä kohtausta,
+laulun rakkauden kaikkivallasta. Lannistamaton, vastustamaton on Eros,
+joka väijyy neidon hienohipiäisillä poskilla; kukaan jumala ei voi
+häntä välttää eikä kukaan kuolevainen, ja se, jonka hän on vanginnut,
+raivoaa. Hän se nytkin on aiheuttanut riidan isän ja pojan välillä.
+
+Koorin laulaessa tätä tuodaan Antigone ulos. Nyt ei koori voi
+pidättää kyyneleitään, ja nyt, matkalla kuolemaan, on Antigonekin
+toinen kuin äsken, seisoessaan uhmaten kuninkaan edessä. Hän puhkeaa
+valituksiin ajatellessaan kaikkea sitä elämän ihanuutta, joka hänen
+nyt on jätettävä; koskaan ei häälaulua ole laulettu hänelle, Akheronin
+morsiameksi hänet vihitään. Seuraa lyyrillinen vuoropuhelu, vuorolaulu
+hänen ja koorin välillä; tämän mielestä rangaistus on oikeudenmukainen,
+mutta se koettaa lohduttaa häntä viittaamalla hänen kohtalonsa
+kunniakkuuteen, mitä Antigone taas pitää pilkkana ja mihin hän vastaa
+valituksin. Kreon tulee ulos. Hän arvelee, että valitusvirret voivat jo
+riittää, ja käskee henkivartijoita viemään Antigonen pois. Vielä kerran
+tulkitsee tämä niitä tunteita, jotka täyttävät hänen sielunsa, vielä
+kerran tarkastaa hän tekoaan ja ilmaisee rakkautensa veljeen, ja hänen
+viimeiset sanansa, kun sotilaat vievät hänet pois, kuuluvat: »Katsokaa
+kuinka minä kärsin ja kenenkä kautta, siksi että olen pitänyt pyhänä
+sitä mikä on pyhää!»
+
+Kun koori on laulanut toisista sankarittarista, joita on kohdannut
+yhtä pelottava kuolema kuin Antigonea, tulee paikalle vanha ja sokea
+tietäjä Teiresias erään pojan taluttamana. Hänellä on Kreonille
+tärkeätä asiaa. Hän on havainnut pahaa ennustavia merkkejä.
+Lintuenteet ovat epäsuotuisat, ja uhriliekki ei tahdo palaa kaupungin
+alttareilla; syynä tähän on, että linnut ovat saaneet syödä Polyneikeen
+hautaamatonta ruumista ja saastuttavat alttareita. Kaupunkia uhkaa
+turmio, ja Teiresias vannottaa kuningasta antamaan haudata Polyneikeen.
+Kreon, joka kunnioittaen on ottanut vastaan tietäjän, vihastuu ja
+syyttää tätä muka kansan lahjomaksi. Silloin Teiresias lausuu erään
+ennustuksen, jonka hän tähän asti on pitänyt salassa: kuolemantapaus
+Kreonin omassa perheessä on oleva rangaistus hänen kaksinkertaisesta
+rikoksestaan, siitä että hän on antanut sulkea elävän hautaholviin ja
+kuolleen hautaamatta virua maanpäällä. Kun tietäjä on singahduttanut
+ennustuksensa, poistuu hän.
+
+Kreoniin on sattunut. Kokemus on osoittanut hänelle, että Teiresiaan
+ennustukset ovat tosia. Neuvoteltuaan koorin kanssa hetkisen hän taipuu
+ja rientää pois miehineen, hautaamaan kuolleen ja vapauttamaan elävän.
+Nyt herää koorissa toivo jälleen; lyhyessä ja eloisassa laulussa se
+kutsuu avukseen Dionysosta, Theban suojelusjumalaa, puhdistajaa ja
+ilontuojaa.
+
+Mutta silloin saapuu airut, eräs niistä miehistä, jotka olivat
+seuranneet kuningasta hänen poistuessaan. Koorille ja Kreonin vaimolle
+Eurydikelle, joka on tullut ulos kuulemaan viestiä, kertoo hän mitä on
+tapahtunut. Kreonin ensimäinen toimenpide koski Polyneikesta: häväisty
+ruumis pestiin, poltettiin ja haudattiin. Kun he sitten lähestyivät
+sitä luolahautaa, johon Antigone oli suljettu, kuului sisästä Haimonin
+valittava ääni. He tunkeutuivat hautahuoneeseen ja löysivät Antigonen
+kuolleena, hirttäytyneenä kierrettyyn huntuunsa; voihkien syleili
+Haimon hänen ruumistaan. Kreon riensi hänen luokseen, mutta kun
+nuorukainen näki isänsä, sylki hän tätä kasvoihin ja paljasti miekkansa
+häntä vastaan. Kreon pakeni ja Haimon syöksyi miekkaan, tarrautuen
+rakastettunsa ruumiiseen saadakseen edes kuolemassa yhtyä häneen.
+
+Kun kuningatar on kuullut tämän, vetäytyy hän hiljaisena pois;
+levottomana hänen äänettömyydestään seuraa airut häntä. Nyt palaa Kreon
+miestensä seuraamana, jotka kantavat Haimonin ruumista paareilla;
+kuningas vaikeroi myöhäisessä katumuksessaan. Airut tulee ulos ja
+kääntyy Kreoniin. Yhden surun — sanoo hän — tuo kuningas mukanaan,
+toinen odottaa häntä sisällä linnassa: kuningatar on surmannut itsensä,
+kiroten puolisoaan. Ovi avataan, ja Eurydiken ruumis tulee näkyviin.
+
+Kreon toivoo kuolemaa; täysin murtuneena antaa hän henkivartijain
+taluttaa itsensä palatsiin. Ja murhenäytelmä päättyy koorin johtajan
+mietelmään: Viisaus ja jumalanpelko ovat korkein hyvä, mutta
+ylimielinen ja kopea saa rangaistuksensa.
+
+       *       *       *       *       *
+
+Sophokleen murhenäytelmistä on »Antigone» yleensä katsottu kuuluvaksi
+parhaimpien joukkoon, ja tuskin minkään kreikkalaisen tragedian
+aatesisällöstä on enemmän väitelty. Mitä on runoilija tahtonut sanoa
+tällä murhenäytelmällään? Mitä periaatteita, mitä valtoja on hän tässä
+esittänyt ristiriidassa keskenään?’
+
+Lähtien nykyaikaisista tragiikan teorioista on eräällä taholla tahdottu
+tässä murhenäytelmässä nähdä taistelu kahden pohjaltaan yhtä oikeutetun
+prinsiipin välillä: valtion ja perheen. Tragedian päähenkilöillä olisi
+siis kummallakin oikeus puolellaan, mutta samalla olisivat molemmat
+tehneet itsensä syyllisiksi edustamalla väärin keinoin ja liioitteluin
+itsessään oikeutettua periaatetta. Kreon pitää valtion puolta liian
+häikäilemättä, Antigone puolustaa perhesiteitten pyhyyttä, mutta rikkoo
+samalla yhteiskunnan lakeja vastaan ja unohtaa asemansa naisena. Tämän
+teorian kannattajien tehtävänä on siis ollut jakaa syyllisyystaakka
+tasan, mikäli mahdollista puolustaa Kreonia ja siirtää syytä myös
+Antigonelle.
+
+Tämä katsantotapa ei kuitenkaan pidä paikkaansa. Se edellyttää, että
+Sophokles olisi rakentanut tragediansa monisäikeisen yhteiskunnallisen
+ja siveellisen ongelman pohjalle — aikomus, joka varmaan oli hänestä
+kaukana. Yhtä väärin olisi kuitenkin kieltää kaikkea moraalista
+sisältöä tältä murhenäytelmältä: suhtautui Sophokles aiheeseen miten
+objektiivisesti tahansa, eräänlainen tendenssi seurasi jo itse
+aihetta, jonka hän otti käsiteltäväkseen. Hän kuvaa nuorta tyttöä,
+joka mieluummin käy kuolemaan kuin pettää pyhän velvollisuuden;
+taistelu käydään kuninkaan mielivaltaisen mahtikäskyn ja niiden
+kirjoittamattomien, pyhien lakien välillä, joiden äänen Antigone kuulee
+sisimmässään.
+
+Tämä tendenssi näkyy murhenäytelmässä päivänselvänä. Runoilija ei anna
+minkään oikeutuksen varjon langeta kuninkaan kieltoon, joka koski
+Polyneikeen hautaamista. Tämä kielto tuntuu meistä oikulta, ei viisaan
+hallitsijan määräykseltä. Olemme jo aikaisemmin nähneet, mitä hauta
+merkitsi kreikkalaisille, ja hautaamisoikeutta ei historiallisena
+aikana kielletty edes pahimmilta vihollisilta; kiihkeimmät taistelut
+keskeytettiin, jotta tämä velvollisuus vainajia kohtaan voitaisiin
+täyttää. Ei edes suurimmilta rikollisilta riistetty tätä oikeutta:
+maankavaltajia ja temppelinhäpäisijöitä ei saanut haudata maan rajojen
+sisäpuolelle, mutta vieraalla maaperällä se sai tapahtua, itse hauta
+heille myönnettiin. Että Kreonin kielto onkin katsottu rikokseksi,
+käy selvästi ilmi murhenäytelmästä. Se on rikos ihmisten silmissä,
+sillä saamme tietää, että koko kaupunki salaa paheksuu kuninkaan
+tuomiota ja ylistää Antigonen tekoa. Että se on rikos myöskin jumalten
+edessä, sen saamme kuulla Teiresiaalta: jumalat osoittavat selvästi
+tyytymättömyyttään, onnettomuudet uhkaavat kaupunkia.
+
+Ja niinkuin Kreon esiintyy rikollisena, niin esiintyy Antigone
+viattomana. Tärkeimpänä todistuksena hänen rikollisuudestaan on
+mainittu koorin suhtautuminen Kreoniin ja häneen: koori hyväksyy
+kuninkaan toimenpiteet, on sanottu, ja tuomitsee Antigonen teon.
+Kuitenkaan ei koori lausu mitään hyväksyvää sanaa Kreonin kiellon
+johdosta; se ei myöskään pane vastalausetta, mutta sen tottelemista ja
+alistuvaisuutta osoittavista sanoista ymmärtää kuitenkin, että asia
+koskee siihen epämieluisasti. Kun sitten Antigone esiintyy näyttämöllä,
+osoittaa koori myötätuntoa häntä kohtaan, mutta tosi on, että se
+alussa pitää Kreonin puolta; vaikka se ymmärtääkin että hänen tekonsa
+itsessään oli hurskas, on hän kuitenkin sen silmissä syyllinen, koska
+hän oli rikkonut esivallan määräystä vastaan. »Sielun mielettömyyttä»
+näkee koori hänen teossaan. Mutta heti Teiresiaan esiintymisen jälkeen
+muuttaa se katsantokantaa ja asennetta. Nyt se ymmärtää, mitä Kreon
+on rikkonut, ja juuri koorin nimenomaisesta kehoituksesta kuningas
+rientää korjaamaan erehdyksensä. Ja kun hän myöhemmin syyttää itseään
+koko onnettomuudesta, huudahtaa koori: »Voi sinua, kuinka myöhään ovat
+silmäsi avautuneet totuudelle!»
+
+Sen kautta että koori ensin asettuu Antigonea vastaan ja että se ja
+Kreon myöhään ja samaan aikaan tajuavat tuon kohtalokkaan erehdyksen,
+kohoaa draamallinen vaikuttavuus. Samanlaiselta näkökannalta ymmärtää
+myöskin koorin kokoonpanon tässä tragediassa — mikä on poikkeus
+yleisestä säännöstä. Antigonelta puuttuu sekin lohdutus, mikä on
+jokaisen muun tragedian sankarittaren saatavilla: naisten muodostama
+koori, joka tukee ja lohduttaa häntä. Asettamalla tuon impulsiivisen
+nuoren tytön rinnalle järkevän ja varovaisen vanhuskoorin, on runoilija
+vielä tehostanut hänen yksinäisyyttään ja eristymistään, vielä
+enentänyt lohduttomuutta ja tragiikkaa.
+
+Koskaan kalpenemattomana loistaa Antigonen ympärillä rakkauden ja
+uhrautuvaisuuden sädekehä. Mutta mikään abstraktinen ja eloton
+ihanneolento ei hän suinkaan ole. Epäilemättä hän tavallaan on —
+käyttääksemme koorin sanoja — hurjan isänsä hurja tytär; muuten hän
+kai vain olisi istunut lieden ääressä ja itkenyt. Taipumaton on hänen
+uhmansa Kreonia kohtaan, ja sisarellekin tekee hänet kirpeäksi ja
+kovaksi suuttumus kiellon johdosta ja pettymys siitä että Ismene
+kieltäytyy olemasta hänen apunaan. Mutta kun jännitys on ohi, seuraa
+vastavaikutus. Kun kamppailu on päättynyt, alkaa ajatus toimia, ja
+hän miettii tekoaan; hän ei epäile sen oikeutusta, mutta hänet valtaa
+hämmästys ja epävarmuus niiden mahtien edessä, jotka antavat kuoleman
+olla palkkana siitä että hän on seurannut pyhien lakien käskyä.
+
+Siinä lausunnossa, jossa Antigone viimeisen kerran harkitsee
+tekoansa ja kohtaloansa, on paikka, joka on herättänyt paljon
+huomiota ja väittelyä. Hän puolustaa siinä itseään yhtä uudella
+kuin yllättävällä tavalla. Vain siksi, että oli kysymys veljestä,
+hautasi hän Polyneikeen, sillä toista veljeä ei hän koskaan voinut
+saada; puolison tai lapsen vuoksi ei hän olisi uhmannut kieltoa,
+sillä hän olisi voinut mennä uusiin naimisiin tai saada uuden lapsen!
+Muiden muassa loukkaantui jo Goethe tästä ja lausui Eckermannille
+toivomuksensa, että jokin tutkija vakuuttavalla tavalla poistaisi
+koko tämän kohdan. Useat hellenistit ovatkin selittäneet nämä rivit
+Sophokleelle arvottomiksi ja epäperäisiksi; heistä on tuntunut
+mahdottomalta ajatella, että runoilija olisi antanut sankarittarensa
+alentua tuollaiseen viisasteluun puolustettuaan itseään niin kauniilla
+ja jalolla todistelulla. Asia ei ole kuitenkaan niin vähällä kuitattu:
+noin sata vuotta »Antigonen» esityksen jälkeen mainitsee Aristoteles
+juuri tätä kohtaa. Senvuoksi ovat monet sitä puolustaneet ja eri
+tavoilla selittäneet. Eräs aikamme etevimpiä hellenistejä näkee siinä
+suorastaan piirteen Sophokleen neroutta, kohdan, joka suuressa määrin
+lisää todellisuusvaikutelmaa; Antigone on vain seurannut vaistoaan eikä
+ole selvillä menettelytapansa syistä, hän ei tiedä kuinka puolustaisi
+itseään, hän ei osaa esittää järkisyitä, hän osaa vain tuntea. Tähän
+voi kuitenkin huomauttaa, että aikaisemmin olemme kuulleet hänen
+esittävän järkisyitä yhtä viisaasti kuin kaunopuheisesti. Toiset
+puolustajat katsovat asiaa toisin. Antigone antautuu kokonaan yhdelle
+tunteelle, yhdelle ajatukselle; puoliso ja äiti ei hän ole koskaan
+ollut, rakkaus veljeen täyttää hänet kokonaan; että se velvollisuus,
+jonka hän nyt on täyttänyt ja jonka puolesta hän on valmis uhraamaan
+elämänsä, myöskin tuntuu hänestä pyhimmältä kaikista, on psykologisesti
+oikein, ja siksi hän voikin vakuuttaa, hyvässä uskossa mutta kuitenkin
+vasten totuutta, että hän ei olisi tehnyt samaa lapsen tai puolison
+tähden. Useimpien korvissa lienee kuitenkin mainituilla säkeillä väärä
+sointi, mutta emme saa unhottaa, että kreikkalaiset olivat suuresti
+mieltyneet kaikenlaisiin dialektisiin viisasteluihin; eräänlaisia tämän
+kohdan vastineita tavataan niin Sophokleella kuin jo Aiskhyloksella.
+Ei voi muuta kuin yhtyä Goethen toivomukseen, niin vähän toiveita kuin
+onkin sen toteutumisesta. Olen maininnut tämän yksityiskohdan vain
+ollakseni lankeamatta ylistelyyn ja ihannoimiseen ja osoittaakseni,
+että Sophokleenkin marmorilla voi meidän näkökannaltamme katsoen olla
+pilkkunsa.
+
+Oli miten oli — se muutos, joka on tapahtunut Antigonen mielentilassa
+ja ryhdissä, kun hän viimeisen kerran esiintyy näyttämöllä, kuuluu
+enimmin elävöittäviin ja tosiin piirteisiin, joita runoilija on
+sankarittarelleen antanut. Niin kauan kuin jännitystä kestää, ei
+hän heikkene silmänräpäykseksikään. Mutta kun tuomio on langennut,
+Kreon poistunut eikä hänellä enää ole ketään vastustettavanaan,
+silloin tulee hänestä vain hyljätty ja kuolemaantuomittu nainen, joka
+ikävöi sääliä ja myötätuntoa. Janoten ymmärtämystä, jäähyväissanaa,
+jäähyväiskatsetta, kääntyy hän kooriin, mutta vanhusten viittauksessa
+hänen tulevaan maineeseensa näkee hän vain pilkkaa: sellaisia sanoja
+ei hän ollut odottanut. Hän on valinnut kuoleman mieluummin kuin
+rakkausvelvollisuutensa pettämisen, mutta hänen lämmin verensä hyytyy
+sen edessä, hänen nuoruutensa riippuu kiinni elämässä, jonka rikkautta
+hän vain aavistaa. Se valitus, joka on hänen huulillaan, kun hän
+erkanee päivän valosta, ikäänkuin kruunaa hänen kauniin ihmisyytensä.
+
+Myöskin Kreon on hienosti piirretty. Hän ei ole mikään tunnoton
+tyranni, mutta hänen ensimäinen hallitustoimenpiteensä on
+epäinhimillinen käsky, josta hän itsepintaisesti pitää kiinni, vaikka
+näkeekin mitä kauhistavia seurauksia se tuo mukanaan. Jouduttuaan
+kerran väärälle tielle ei hän osaa jättää sitä. Hän on väkivaltainen
+ja kiivas ja itsepäinen mies, mutta hän ei ole alhaisten eikä
+henkilökohtaisten vaikuttimien johtama. Valtion menestys vaatii
+hänen silmissään esivallan määräysten sokeata tottelemista, olivat
+ne sitten minkälaiset tahansa. Antigonessa, joka avoimesti uhmaa
+hänen määräystään, vieläpä ylpeilee teostaan, hän näkee anarkian ja
+kapinanhengen ruumiillistuneena; hänen vaikuttimiaan ei Kreon ymmärrä,
+sillä heidän ajatuksensa ja tunteensa liikkuvat aivan eri tasoilla.
+
+Tragediat »Elektra» ja »Antigone» ovat muutamissa suhteissa
+vastineita toisilleen. Molemmat kohoavat muistomerkiksi voimakkaalle
+ja intohimoiselle naissielulle; molemmissa pitää sankaritar rakkaan
+vainajan puolta, toisessa isän, toisessa veljen; molemmissa on
+lujatahtoinen ja tekoihin pystyvä sisar asetettu vasten heikkoa
+sisarta. Mutta kuinka suuri onkaan sen ohella eroitus — toisaalla vihan
+tragedia, toisaalla rakkauden ja uhrautuvaisuuden! »Antigone» lienee
+uudempina aikoina ollut suosituin antiikin tragedioista, ja syystäkin:
+se on niistä kaikista yleisinhimillisin ja yleispätevin.
+
+
+
+
+VIII. Kuningas Oidipus.
+
+
+Siirtyessämme tragediaan »Kuningas Oidipus», joka näytelmäin
+sisäisen aikajärjestyksen mukaan tulee ensimäisenä Sophokleen
+Oidipus-draamoista, otamme siis pitkän askelen ajassa taaksepäin;
+Oidipus on kuninkaana Thebassa ja on vallan, onnen ja kunnian
+kukkuloilla. Näyttämö on sama kuin »Antigonessa»: paikka
+kuninkaanlinnan edustalla.
+
+Vanhukset, nuoret miehet ja pojat, kaikki valkoisiin puettuina, ovat
+laskeneet oliivipuun oksia alttareille linnan edustalla sekä asettuneet
+niiden ympärille. Ovet avataan ja Oidipus itse astuu ulos; hän katselee
+vaieten ryhmiä alttarien ympärillä, ja sitten hän alkaa puhua, kääntyen
+vanhaan pappiin, joka on toisten johtajana. Savu-uhrit nousevat
+kaikkialla kaupungissa — sanoo hän — kuuluu hymnien ja valitushuutojen
+kohinaa; mitä kansa haluaa, tai mitä se pelkää? Pappi vastaa hänelle.
+Kaikki ikäkaudet ovat lähettäneet edustajansa kuninkaan luo, sillä
+maahan on iskenyt onnettomuus. Laihot näivettyvät pelloilla; laumat
+menehtyvät laitumille; vaimojen kohdun hedelmä on kuollut jo syntyessä.
+Ja kaupungissa raivoaa rutto. Kaikki ovat kiinnittäneet toiveensa
+Oidipukseen.
+
+Kuningas vastaa, että kaikki tämä ei ole hänelle mikään uutinen;
+koko kaupungin kärsimys on patoutunut hänen hallitsijasieluunsa.
+Hän on itkenyt ja miettinyt, ja ainoaa keksimäänsä pelastuskeinoa
+hän on jo käyttänyt: lankonsa Kreonin hän on lähettänyt Delphoihin
+kysymään neuvoa Apollonin oraakkelilta. Oidipus on tuskin lopettanut
+puheensa, kun Kreon jo tuo vastauksen. Syynä Theban onnettomuuksiin on
+sovittamatta jäänyt verivelka, kaupungin ainoa pelastus on syyllisen
+maanpako tai kuolema; ja tämä syyllinen on se tuntematon mies, joka
+kauan sitten surmasi kaupungin hallitsijan Laioksen. Oidipus saa nyt
+kuulla, kuinka ryövärit hyökkäsivät kuninkaan ja hänen saattueensa
+kimppuun ja kuinka vain yksi seurueesta pääsi pakoon hengissä; ettei
+heti ryhdytty etsimään murhaajaa, johtui siitä että Sfinksi silloin
+vainosi maata ja hetken kauhu sai tapahtuneen jäämään unhoon. Oidipus
+lupaa ottaa asian omiin käsiinsä, hän kehoittaa lähetystöä poistumaan
+ja kutsuttaa koolle kansankokouksen.
+
+Lähetystön ja Kreonin poistuttua astuu koori näyttämölle. Sen muodostaa
+tässä — kuten Antigonessa — joukko thebalaisia vanhuksia, se edustaa
+Theban kansaa, joka on kokoontunut neuvotteluun. Suuressa laulussa
+tulkitsee se hetken mielialaa: kauhua ja vastaheränneitä toiveita.
+Mikään uusi elämä ei orasta kentillä eikä kaupungin taloissa;
+hautaamattomia ruumiita makaa maassa levittäen ruttoa ympärilleen;
+nuoret vaimot ja valkohapsiset äidit kohottavat valitushuutoja jumalten
+alttarilla. Ja koori huutaa avukseen jumalia: Athenaa, Apollonia,
+Artemista, Dionysosta, Theban suojelusjumalaa.
+
+Kun laulu on vaiennut, kääntyy Oidipus lausumaan juhlallisen
+kuulutuksen kansalle. Joka tietää jotakin Laioksen murhaajasta,
+hänen tulee se ilmaista. Kukaan ei saa ottaa vastaan murhaajaa eikä
+puhutella häntä, pyhäköistä ja taloista on hän karkotettava kuin
+rutonsaastuttama. Kuningas huutaa taivaan kirousta murhamiehelle ja
+niille, jotka eivät tottele määräystä: älkööt heidän peltonsa kantako
+satoa älköötkä heidän vaimonsa lapsia, ja rutto heihin iskeköön!
+Ja vihdoin sanoo hän jo kahdesti lähettäneensä noutamaan tietäjä
+Teiresiasta, joka näkee syvimmälle salattuihin asioihin; häntä
+ihmetyttää, ettei tämä vielä ole saapunut.
+
+Mutta nyt lähestyy Teiresias. Vastahakoisesti on hän noudattanut
+kuninkaan kutsua; tieto, joka hänellä on, mutta joka ei voi tuoda
+mitään apua, painaa häntä raskaana. Hän vastaa hämärästi ja vältellen,
+mutta kuningas ahdistaa häntä yhä selvemmillä ja kiivaammilla
+kysymyksillä. Kun tietäjä itsepintaisesti kieltäytyy ilmaisemasta
+mitään, menettää kuningas lopulta malttinsa ja syyttää Teiresiasta
+itseään murhasta tai ainakin sen suunnittelusta.. Tämän syytöksen
+kuullessaan ei tietäjä enää voi hillitä itseään, vaan kehoittaa
+kuningasta tästälähin oman käskynsä mukaan olemaan puhumatta
+kenellekään; se rikollinen, jonka syyllisyys saastuttaa maata, on
+Oidipus itse. Mutta vielä eivät aukene kuninkaan silmät. Teiresiaan
+sanoissa hän näkee vain sekapäisen mieletöntä julkeutta; hän alkaa
+uskoa, että tietäjän takana on hänen lankonsa Kreon, että tämä punoo
+juonia päästäkseen itse Theban hallitsijaksi; hän herjaa tietäjää,
+sanoo tätä kerjäläispapiksi ja huijariprofeetaksi. Mutta nyt nousee
+Teiresias koko loukatussa korkeudessaan, lausuen hämäriä sanoja
+sukurutsauksesta ja tuntemattomasta syntyperästä ja rikoksesta omaisia
+vastaan. Laioksen murhaaja on vielä kansan keskellä, mutta pian on hän
+sokeana hoiperteleva vieraisiin maihin; hänet huomataan lastensa isäksi
+ja veljeksi, äitinsä pojaksi ja puolisoksi, isänsä murhaajaksi. Näine
+sanoineen poistuu Teiresias, ja Oidipus menee linnaan.
+
+Suuressa laulussa tulkitsee koori niitä tunteita ja ajatuksia, joita
+edellinen kohtaus on herättänyt. Kuka saattaakaan olla tuo syyllinen,
+hän, joka nyt harhailee autioissa metsissä tai pitkin äkkijyrkänteiden
+reunaa, rangaistustuomion yhäti suhistessa ympärillään? Jumalat ovat
+kaikkitietäviä, mutta ovatko kuolevaiset tietäjätkin sellaisia?'
+Sydämessään täytyy koorin julistaa syyttömäksi Oidipus, Sfinksin
+kukistaja, kaupungin vapauttaja.
+
+Nyt saapuu Kreon, joka on saanut kuulla niistä syytöksistä, joita
+kuningas julkisesti on singahduttanut häntä vastaan. Oidipus tulee
+ulos ja toistaa syytöksensä; hän on kiinnittänyt huomionsa omituiseen
+seikkaan — ettei nimittäin Teiresiaan tietäjänsilmään turvauduttu heti
+Laioksen murhan jälkeen — eikä siis voi muuta kuin epäillä salajuonia
+tässä myöhäisessä vetoamisessa tietäjän taitoon. Kreon puolustautuu.
+Hän ei ole koskaan tavoitellut kuningaskruunun vastuunalaisuutta ja
+painoa; Oidipus voi Delphoista saada takeet siitä, että Kreon ei ole
+väärentänyt oraakkelin vastausta; jos hänet huomataan vikapääksi
+petokseen, tuomitsee hän kernaasti itsensä kuolemaan. Mutta kuningas on
+kokonaan menettänyt malttinsa ja määrää, että Kreonin täytyy kuolla.
+Tuima sananvaihto on sillävälin herättänyt kuningatar Iokasten huomion;
+hän tulee ulos ja saa kuulla syyn. Hänen ja koorin pyynnöistä laskee
+Oidipus vihdoin Kreonin vapaaksi, minkä jälkeen tämä poistuu.
+
+Ja rauhoittaakseen kuningasta ja osoittaakseen hänelle, kuinka vähän
+tietäjäin sanat ja ennustukset merkitsevät, huomauttaa kuningatar,
+kuinka väärä oli se oraakkelilause, joka ennusti että Laioksen surmaisi
+hänen oma poikansa: pojan, joka heille syntyi, antoivat he viedä
+autiolle vuorelle, ja vieraat maantierosvot, niin kerrotaan, surmasivat
+Laioksen tienristeyksessä, jossa kolme tietä yhtyy. Kun Oidipus kuulee
+mainittavan tienristeystä, pimentää hirvittävä epäilys ensi kerran
+hänen sieluansa; hän seisoo hetkisen kuin huumaantuneena, mutta sitten
+hän alkaa tutkia tapauksen lähempiä asianhaaroja. Hän saa kuulla,
+että Laioksen murha tapahtui Phokis-maakunnassa, sillä paikalla,
+missä Delphoin ja Dauliin tiet yhtyvät, vähäistä ennen kuin Theban
+kruunu annettiin Oidipukselle; että Laios oli kookas, harmaahapsinen
+mies, että hänen saattueeseensa kuului viisi miestä ja että hän yksin
+matkusti vaunuissa. Kaikki pitää yhtä erään Oidipuksen aikaisemman
+elämyksen kanssa, ja hän seisoo kauhun lyömänä.
+
+Kuningatar kysyy huolestuneena, mikä häntä vaivaa, ja hän kertoo tälle
+eräistä tapahtumista, joita hän ei koskaan ennen ole maininnut. Kun hän
+vielä oleskeli vanhempainsa Polyboksen ja Meropen luona Korinthoksessa,
+tapahtui eräänä iltana ruokapöydässä, että eräs päihtynyt vieras
+huusi julki, ettei Polybos muka ollut hänen oikea isänsä. Saadakseen
+varmuutta asiasta lähti Oidipus Delphoihin. Siellä hän ei saanut
+tietoa haluamastaan asiasta, mutta kuuli ennustuksen, joka täytti
+hänen mielensä kauhulla: että hän tulisi surmaamaan isänsä ja naimaan
+äitinsä. Hän pakeni silloin päinvastaiseen suuntaan kuin missä
+Korinthos sijaitsi. Mutta matkalla — siinä tienristeyksessä, mistä
+oli ollut puhe — hän kohtasi seurueen, josta yksi matkusti vaunuissa.
+Muukalaiset tahtoivat tunkea hänet maantieltä pois, mutta hän löi
+ajomiestä; vanhus, joka istui vaunuissa, vastasi lyömällä Oidipusta
+päähän piiskallaan. Silloin tämä raivostui ja surmasi koko seurueen.
+Jos matkustaja todella oli Laios, silloin on Oidipus murhannut hänet ja
+mennyt naimisiin hänen leskensä kanssa, ja silloin hänellä ei ole muuta
+tehtävää kuin tuomita itsensä maanpakoon; hän ei voi edes palata omaan
+maahansa pelosta, että ennustus vielä täyttyisi, että hän joutuisi
+surmaamaan Polyboksen ja menemään naimisiin Meropen kanssa.
+
+Siis: Oidipus ajattelee kauhun lyömänä, että hän kaikesta päättäen on
+tappanut Laioksen, mutta vielä ei hänellä ole heikointakaan epäilystä
+siitä, että tuo hirvittävä oraakkeliennustus jo on toteutunut. Eikä hän
+edes vielä ole menettänyt kaikkia toiveita syyttömyydestään Laioksen
+kuolemaan. Hän tahtoo vielä kuulustella sitä Laioksen seuraajaa, joka
+pääsi hengissä tapahtumasta. Jos tämä sanoo, että heidän päällensä
+hyökkäsi yksi mies, silloin on Oidipus syyllinen; jos heitä sitävastoin
+oli useita, niinkuin myöskin kerrotaan, silloin on hän viaton.
+Tästä eloonjääneestä kertoo Iokaste, että hän jonkun aikaa Laioksen
+kuoleman jälkeen saapui Thebaan, mutta tavatessaan siellä hallitsijana
+Oidipuksen pyysi ja rukoili, että hänet lähetettäisiin paimeneksi
+laidunmaille, ja kaukana vuorilla on hän vieläkin. Ja missään
+tapauksessa — sanoo Iokaste — ei Laiosta ole surmannut hänen poikansa;
+varhaisen kuolemansa kautta säästyi heidän lapsensa isänmurhaajaksi
+tulemisen onnettomuudesta. Koskaan enää ei hän tule uskomaan
+oraakkelilauseisiin. Oidipus myöntää hänen olevan oikeassa, ja kun
+paimenta on lähetetty hakemaan, menevät he kuningattaren kehoituksesta
+palatsiin.
+
+Nyt ilmaisee koori sitä pelkoa ja vavistusta, jota siinä on herättänyt
+kuninkaan ylimielinen esiintyminen Kreonia kohtaan ja kuningattaren
+jumalattomat sanat oraakkelista. Osatkoon se itse aina välttää kaikkea
+ylimielisyyttä! Kaikki jumalanpelko on loppunut, kukaan ei enää voi
+kunnioittaen vaeltaa pyhiin paikkoihin, jollei vanha oraakkelilause
+Laioksesta käy toteen.
+
+Kun laulu on loppunut, astuu Iokaste linnasta ja laskee uhrilahjoja
+Apollonin alttarille, jotta jumala pelastaisi, kuninkaan siitä kauhusta
+ja epätoivosta, joka on vallannut hänen sielunsa. Mutta samassa
+saapuu pitkämatkainen sanantuoja. Hän sanoo tulevansa Korinthoksesta
+ja tuovansa tiedon, joka on tuottava kuninkaalle sekä iloa että
+surua: Polybos on kuollut, ja Oidipus on huudettu kuninkaaksi myöskin
+Korinthoksessa. Kuningas kutsutaan ulos ja saa kuulla uutisen. Siinä
+nähdään — huudahtaa hän — minkä verran tarvitsee kiinnittää huomiota
+Pythian sanoihin ja kirkuvien lintujen enteisiin! Oli ennustettu että
+hän tulisi murhaamaan isänsä — nyt lepää isä jo mullan alla, ja itse
+seisoo hän tässä tahrattomin käsin! Mutta sitten hän äkkiä tulee
+ajatelleeksi, että hänen äitinsä elää vielä ja että ennustuksen toinen
+puoli voi toteutua.
+
+Nyt sekaantuu sanantuoja puheeseen: mikä on tuo nainen, josta he
+puhuvat ja jota pelkäävät? Oidipus kertoo tuon kauhean ennustuksen.
+Silloin selittää sanantuoja voivansa vapauttaa kuninkaan kaikesta
+pelosta, sillä Polybos ja Merope eivät ole Oidipuksen vanhemmat
+enemmän kuin hänenkään. Ja sitten hän kertoo että kuningas on
+löytölapsi, jonka hän on löytänyt eräästä Kithairon-vuoren luolasta
+ja vienyt Polybokselle, joka otti lapsen omakseen. Oidipus tahtoo
+lähempiä tietoja, mutta sanantuoja vastaa että kaikesta tästä on
+paremmin selvillä se, jolta hän lapsen sai, eräs paimen, joka oli
+Laioksen palveluksessa. Kuningas miettii kuka se saattaisi olla, ja
+koorin johtaja ilmoittaa, että se varmaan oli sama paimen, jota jo
+on lähetetty hakemaan. Mutta varminta kai on kysyä kuningattarelta,
+paremmin kuin kukaan muu on hän tietävä asian.
+
+Iokastelle on totuus vihdoin valjennut kaikessa kaameudessaan. Hän
+kärsii hirvittäviä tuskia, mutta ponnistaa äärimäiset voimansa
+estääkseen Oidipusta jatkamasta tutkimuksia. Hän vannottaa tätä
+antamaan asian levätä, olemaan kysymättä enempää. Mutta Oidipus
+ymmärtää hänet väärin: jos hän itse huomataankin orjien pojaksi, on
+Iokastella toki jalo syntyperänsä tallella! Ja totuudenetsijä kun on,
+ei hän jätä löytämäänsä lankaa, vaan käskee heti tuomaan paimenen.
+Voihkaisten menee Iokaste linnaan.
+
+Nyt antautuu koori erääseen noita ilonpurkauksia, jotka Sophokleella
+niin usein käyvät välittömästi loppukatastroofin edellä. Se ei
+vielä aavista asiain yhteyttä; että sen hallitsija huomataan olevan
+löytölapsi Kithaironilta, on sille riemun lähde. Oidipus ei siis ole
+maahan muuttanut muukalainen, vaan synnynnäinen thebalainen, ehkäpä
+vielä jumalaista syntyperää, sillä Kithairon on pyhä vuori, jossa
+yliluonnollisilla olennoilla on tiensä.
+
+Paimen, jota oli lähetetty hakemaan, tuodaan paikalle. Oidipus
+kuulustelee häntä ja asettaa hänet vastakkain korinttolaisen kanssa,
+jota hän alussa kuitenkaan ei sano tuntevansa. Mutta silloin muistuttaa
+tämä hänelle, kuinka he yhdessä paimensivat laumojaan Kithaironin
+ylätasangoilla ja talviksi ajoivat ne vuorelta alas, ja nyt herää
+paimenen muisti. Silloin kysyy korinttolainen häneltä, muistaako hän
+erästä lasta, jonka oli antanut tälle. Miksi tämä kysymys? — vastaa
+paimen. Kas tässä — sanoo korinttolainen ja osoittaa Oidipusta — kas
+tässä on tuo lapsi! Suunniltaan kauhusta koettaa paimen pidättää
+häntä, mutta nyt on liian myöhäistä. Nyt aloittaa kuningas ankaran
+kuulustelun, nyt syntyy hänen ja paimenen välillä sananvaihto, joka
+ratkaisee Oidipuksen kohtalon.
+
+  Oidipus.
+
+  Jätitkö hälle lapsen, jota kysyy hän?
+
+  Paimen.
+
+  Sen tein. Josp’ oisin kuollut sinä päivänä!
+
+  Oidipus.
+
+  Nyt kuolet, ellet totta mulle haasta vain.
+
+  Paimen.
+
+  Tuhoni surmaa suurempi on, jos haastaisin.
+
+  Oidipus.
+
+  Hän verukkeita vetää, näämmä, haluaa.
+
+  Paimen.
+
+  Ei, ei! Ma tunnustinhan antaneeni sen.
+
+  Oidipus.
+
+  Sen mistä löysit? Kotoas vain muualta?
+
+  Paimen.
+
+  Omani ei se ollut. Muuan mies sen toi.
+
+  Oidipus.
+
+  Ken Theben kansasta? Ja mistä talosta?
+
+  Paimen.
+
+  Äl' enää, taivaan tähden, kysy, valtias!
+
+  Oidipus.
+
+  Sa kuolet, jos mun vielä täytyy kysyä.
+
+  Paimen.
+
+  Siis kuule: laps ol' asunnosta Laioksen.
+
+  Oidipus.
+
+  Laps orjan, vaiko omaa valtaheimoa?
+
+  Paimen.
+
+  Nyt siis se kauhea mun pakko virkkaa on!
+
+  Oidipus.
+
+  Ja mun se kuulla — sillä kuulla täytyy se.
+
+  Paimen.
+
+  Se hänen oma poikans' olleen sanottiin,
+  mut tuoll' on talossas sen tarkin tietäjä.
+
+  Oidipus.
+
+  Ja hänkö lapsen antoi?
+
+  Paimen.
+
+                         Hän, oi valtias.
+
+  Oidipus.
+
+  Ja mitä varten?
+
+  Paimen.
+
+                  Jotta sen ma surmaisin.
+
+  Oidipus.
+
+  Sen oma äiti?
+
+  Paimen.
+
+                Ennuslause pakotti.
+
+  Oidipus
+
+  Mi lause?
+
+  Paimen.
+
+  Lapsest' että taaton surma sukeais.
+
+  Oidipus.
+
+  Mut miksi tälle miehelle sa annoit sen?
+
+  Paimen.
+
+  Ah, säälistä, oi valtias, hän että veis
+  sen omaan kotihinsa, seutuun kaukaiseen.
+  Niin säästyi surkeutehen sanomattomaan
+  se lapsi. Sillä jos se liet, joks sanoo hän,
+  niin totisesti olet koitosyntyinen.
+
+  Oidipus.
+
+  Voi mua, voi, nyt kaikki salat selviää!
+  Nyt viime kertaa sinut nään, oi aurinko!
+  Ma tiedän: kirottuna synnyin, sukesin
+  isäni surmaks, avioksi äitini.
+
+Kuningas rientää palatsiin. Nyt ovat suomukset pudonneet koorinkin
+silmiltä, ja siinä laulussa, jonka se nyt virittää, yhtyvät Oidipuksen
+kohtalon herättämään kauhuun ihmetys ja pelko ihmiskohtalon edessä.
+Ihminen ei ole mitään, onni on tyhjä harha vain. Kuka oli suurempi
+kuin Oidipus? Loistoon hän pääsi, valtaan ja kunniaan; kaupungin hän
+pelasti, turva kuolemaa vastaan hän oli maalle. Mutta kenen nimellä on
+nyt hirmuisempi kaiku, kuka kärsii syvemmin kuin hän? Ah, jospa koori
+ei olisi koskaan tavannut häntä! Hänen kauttaan se virkosi elämään,
+mutta hänen kauttaan on taas pimeys peittänyt sen silmät.
+
+Nyt tulee eräs palvelija palatsista. Ei mikään maan jättiläisvirroista
+— sanoo hän — voi pestä kuninkaanlinnaa puhtaaksi siitä häpeästä ja
+onnettomuudesta, jota sinne on kasaantunut. Kun kuningatar oli tullut
+sisään, sulkeutui hän vaikeroiden makuuhuoneeseen. Sitten syöksyi
+Oidipus sisään tuskasta ärjyen; hän mursi oven huoneeseen, jossa näki
+kuningattaren kuolleena riippuvan nuorasta. Kuningas avasi silmukan,
+ja kun Iokaste makasi lattialla, tapahtui jotakin kaameata. Hänen
+vaipastaan irroitti Oidipus kultaisen soljen ja puhkaisi neulalla
+silmänsä; kerta toisensa jälkeen hän upotti neulan silmämuniinsa, ja
+pimeän sateen tavoin valuivat veripisarat hänen poskilleen.
+
+Ovet aukeavat, ja sokaistuna, kasvot veren tahraamina, hoippuu Oidipus
+ulos. Koori ei voi sietää tätä näkyä, vanhat miehet verhoavat päänsä
+vaipoillaan. Kuningas puhkeaa tuskanhuutoihin; lyhyin, katkonaisin
+lausein valittaa hän kohtaloansa; pistojen poltto kirvelee hänen
+silmiänsä, ja muiston kipu raatelee hänen sieluaan. Hän kiroaa sitä
+miestä, joka kerran Kithaironilla avasi hänen jalkainsa siteet ja
+pelasti hänet elämälle. Mutta vähitellen voittaa hänkin takaisin sen
+itsehillinnän, joka antiikin traagillisilla sankareilla tavallisesti
+levittää rauhansa ensimäisen sielunjärkytyksen yli, ja pitkässä
+puheessa kääntyy hän Theban kansaan. Mitä hän oli tehnyt, oli parasta
+mitä hän saattoikin tehdä. Olisiko lasten näkeminen, jotka olivat
+syntyneet niinkuin hänen lapsensa, ollut hänelle suloinen näky? Olisiko
+hän voinut katsoa kansaansa silmiin, olisiko hän jaksanut nähdä
+kaupunkia torneineen ja pyhäkköineen? Nyt on hänellä vain yksi pyyntö:
+että hänet vietäisiin jonnekin kaupungin rajojen ulkopuolelle tai
+surmattaisiin.
+
+Koori, joka näkee Kreonin lähestyvän, sanoo päätöksen kuuluvan hänelle.
+Kreon selittää että hän ei ole tullut pilkkaamaan eikä soimaamaan
+onnetonta, mutta hän antaa palvelijoille käskyn viedä Oidipuksen
+sisään; ainoastaan omaisen silmä voi kestää tätä näkyä, on väärin
+antaa auringon loistaa tuollaiseen verhoamattomaan kauhistukseen.
+Mutta Oidipus uudistaa pyyntönsä maanpaosta. Tästä asiasta — vastaa
+Kreon — on hän kysyvä neuvoa oraakkelilta, jonka ennustusten
+todenperäisyyteen Oidipus kai on oppinut uskomaan. Silloin tämä pyytää
+saada tavata pieniä tyttäriään, koskettaa heitä käsillään. Antigone ja
+Ismene tuodaan ulos. Oidipus sulkee heidät syliinsä ja ottaa heiltä
+jäähyväiset sanoilla, jotka värisevät isänrakkautta ja jaloa tuskaa.
+Hän näkee edessään heidän ilottoman tulevaisuutensa; kukaan ei ota
+avioksi heitä ja heidän häpeäänsä, he tulevat kuihtumaan kantamatta
+hedelmää. Lopuksi hän uskoo heidät Kreonin hoitoon.
+
+Ja kun Oidipus talutetaan linnaan, huutaa koori:
+
+Katsokaa, tämä on Oidipus, hän, joka ratkaisi Sfinksin arvoituksen,
+hän, joka oli mahtava hallitsija, kaikkien ihailema ja kadehtima!
+Älköön ketään kuolevaista ylistettäkö onnelliseksi, ennenkuin hän on
+ehtinyt elämän rajalle kohtaamatta onnettomuutta.
+
+       *       *       *       *       *
+
+Jo Aristoteles näki »Kuningas Oidipuksessa» mallikelpoisen draaman,
+traagillisen mestariteoksen; kerta toisensa jälkeen käyttää hän tätä
+tragediaa tukena esteettisille mietteilleen ja teorioilleen. Hänen
+arvostelunsa on suurin piirtein katsottuna periytynyt myöhemmille
+ajoille. Mitä tulee toiminnan johdonmukaiseen kehitykseen, draamallisen
+jännityksen alituiseen nousuun ja päähenkilön majesteetilliseen
+olemukseen, on tämä murhenäytelmä voittamaton antiikin draamallisessa
+runoudessa. Siinä on ajatuksen ja tunteen syvyyksiä, ja säkeet ovat
+kuin hiottua marmoria.
+
+Erinäisiä epätodenmukaisuuksia tosin ilmenee näytelmän esihistoriassa —
+antiikki itse ei ollut sokea tälle seikalle. Paimenen osa näytelmässä
+on aika omituinen: hän pelastaa kuolemaantuomitun lapsen, hän on mukana
+hyökkäyksen tapahtuessa ja selviää yksin hengissä, antaakseen myöhemmin
+kohtalokkaan todistuksensa. Ja kieltämättä tuntuu mahdottomalta
+selittää, ettei Oidipus koskaan ollut saanut tietää yksityiskohtia
+edeltäjänsä Laioksen kuolemasta, ja ettei hän itse koskaan ollut
+kertonut puolisolleen aikaisempia elämänvaiheitaan. Mutta tämä
+kuuluu — niinkuin Aristoteles jo on osoittanut — tragedian toiminnan
+ulkopuolelle.
+
+Noudattamalla taannehtivaa sommitteluperiaatetta, jonka myöhäisempänä
+aikana tapaamme Ibsenillä, on Sophokles tässä esittänyt vain lopullisen
+katastroofin. Emme näe, kuinka traagillinen tilanne askel askelelta
+muodostuu, jo draaman alussa se on täysin valmis; toimintana on
+hitaasti tapahtuva, mutta johdonmukainen ja armoton tosiseikkojen
+paljastus, tosiseikkojen, jotka jo kauan ovat olleet olemassa, mutta
+nyt vasta tulevat ilmi.
+
+Ensi kohtauksesta viimeiseen saakka vierii toiminta alituisesti
+eteenpäin; siinä ei ole mitään pysähdyksiä, ei mitään kuolleita
+kohtia. Tyvenesti ja juhlallisesti alkaa murhenäytelmä. Sitten saapuu
+äkkiä oraakkelin vastaus, kehoitus puhdistamaan maan rankaisemalla
+Laioksen tuntemattoman murhaajan, ja nyt lähtee toiminta viipymättä
+liikkeelle ja muodostuu katkeamattomaksi syiden sarjaksi. Oraakkelin
+määräyksen noudattamisen vaikeus aiheuttaa tietäjään turvautumisen;
+tämän hyvinymmärrettävä kielto ilmaista salaisuutta herättää vihaa
+Oidipuksessa, jonka kohtuuton kiukunpurkaus taas saa loukatun tietäjän
+kaiken uhalla paljastamaan totuuden. On luonnollista, että kuningas
+aavistaa rikollisia tarkoitusperiä Teiresiaan syytöksessä ja että
+hänen epäluulonsa kohdistuvat Kreoniin. Tämä tulee puhdistautumaan, ja
+kiihtynyt kohtaus hänen ja Oidipuksen välillä perustelee kuningattaren
+esiintymisen. Tarkoituksenaan lohduttaa ja tyynnyttää kuningasta
+herättää Iokaste ensimäisen epäluulon hänen sielussaan; Oidipus ei enää
+jätä lankaa, josta on saanut kiinni, ja se johtaa hänet askel askelelta
+kauhistuttavan totuuden paljastumiseen.
+
+Monta Sophokleen draamalliselle tekniikalle ominaista piirrettä voi
+tässä tragediassa tutkia niin sanoakseni puhtaiksi viljeltyinä. Missään
+ei hän ole niin verrattoman taitavasti lykännyt ratkaisua viimeiseen
+saakka. Aina Teiresias-kohtauksesta saakka riippuu salaisuuden
+paljastumisen vaara Oidipuksen pään yllä, mutta isku torjutaan kerta
+toisensa jälkeen. Ja vielä siinä kohtauksessa, jossa kuningas vihdoin
+viimein tajuaa syntyperänsä salaisuuden, tapahtuu se vähitellen, askel
+askelelta, pitkässä kysymysten ja vastausten vaihdossa, joka pitää
+katsojan henkeäsalpaavassa jännityksessä.
+
+Tämä murhenäytelmä tarjoaa edelleen mitä parhaita esimerkkejä n.s.
+traagillisesta ironiasta, jota antiikki niin voimakkaasti tunsi ja
+jota varsinkin Sophokles tragedioissaan niin usein käyttää. Tämä
+ironia voi ilmetä sanontatavassa, vastakohdassa jonkun lausunnon ja
+sen todellisuuden välillä, johon lausunto viittaa. Se voi silloin olla
+tietoinen, niin että puhuja tahallaan sovittaa sanoihinsa kätketyn
+tarkoituksen, jota puhuteltu ei ymmärrä. Mutta se voi myöskin olla
+itsetiedoton, ja siinä tapauksessa vielä vaikuttavampi; puhujan
+itsensä sitä ollenkaan aavistamatta saavat hänen sanansa kohtalokkaan
+sisällyksen, aivan toisen merkityksen kuin mitä hän on tarkoittanut.
+Oidipus voi tuskin avata suutaan ilmaisematta ajatuksiaan tuolla
+traagillisella kaksimielisyydellä. Kaikki ovat surusta sairaina,
+mutta kenenkään sairaus ei sentään ole niin vaikea kuin hänen omansa
+— sanoo hän esim. näytelmän alussa tarkoittaen ainoastaan, kuinka
+hän kärsii kansansa puolesta. Vähän kauempana hän selittää aikovansa
+kokonaan antautua murhaajan etsimiseen ja rankaisemiseen, aivan kuin
+olisi kysymyksessä hänen oman isänsä murha; ja jos murhaaja oleskelee
+hänen kattonsa alla, langetkoon silloin hänen lausumansa kirous hänen
+omaan päähänsä. Ja niin edelleen.
+
+Toinen laji traagillista ironiaa on siinä, että jokin teko ei johda
+siihen päämäärään, jota sillä on tarkoitettu, vaan toiseen ja aivan
+päinvastaiseen. Tragedian koko esihistoria on täynnä tuota ironiaa.
+Ennustusta peläten antavat Oidipuksen vanhemmat viedä vastasyntyneen
+poikansa kuolemaan, mutta poika pelastuu, ja juuri siksi että hän
+kasvaa vieraana vanhemmiltaan, käy isänmurha mahdolliseksi. Kun sitten
+hän vuorostaan on Delphoissa saanut kuulla tuon oraakkelilauseen,
+pakenee hän vieraaseen maahan välttääkseen ennustuksen toteutumista,
+mutta juuri tämä varovaisuustoimenpide syöksee hänet suoraan kohtalonsa
+syliin. Ja samanlainen ironia tuntuu kaikissa niissä teoissa, jotka
+vievät draamallista toimintaa eteenpäin. Omaa perikatoansa Oidipus
+valmistaa kirotessaan Laioksen murhaajan ja pyrkiessään kaikin tavoin
+saamaan hänet ilmi. Rauhoittaakseen kuningasta tekee Iokaste lähemmin
+selkoa Laioksen murhasta, mutta juuri siten hän kylvää ensimäisen
+epäilyn Oidipuksen sieluun. Ja siinä kohtauksessa, joka johtaa
+lopulliseen katastroofiin, saavuttaa ironia huippunsa. Aikoen vapauttaa
+kuninkaan kaikesta pelosta ennustuksen täyttymisen suhteen ilmoittaa
+sanantuoja hänelle, että hän ei ole Polyboksen ja Meropen poika, vaan
+löytölapsi; kuningas tuntee olevansa pelastettu, ja koori riemuitsee.
+Mutta heti sen jälkeen tulee totuus ilmi musertavan selvästi.
+
+Se yhtenäisyyden ja eheyden tunne, jonka saamme tästä tragediasta,
+johtuu ensi sijassa siitä että päähenkilön haahmo täyttää koko draaman.
+Siitä hetkestä saakka näytelmän alussa, jolloin hän, tuo suuri ja
+ihailtu kuningas, lähestyy kansaansa, aina loppukohtaukseen, jossa
+hänet sokaistuna ja vertatihkuvana, henkisesti ja ruumiillisesti
+murtuneena talutetaan palatsiin, on Oidipus se keskipiste, jonka
+ympärillä kaikki tragediassa liikkuu. Hän on epäilemättä ylevimpiä
+traagillisia henkilöitä, mitä inhimillinen mielikuvitus milloinkaan on
+luonut; kukaan ei ollut suurempi kuin hän, eikä ketään ole syösty niin
+nimettömään kurjuuteen.
+
+Hallitsija hän on viimeistä solua myöten, ja todellinen maan isä,
+huolehtiva ja hellä kansaansa kohtaan. Viisaus, terävä äly ovat
+hänen luonteensa perusominaisuudet; niitä hän ilmaisee silloinkin
+kun eniten joutuu harhaan. Vieläpä syytökset Teiresiasta vastaan
+osoittavat hänen yhdistelykykyään. Kun kaikkinäkevä tietäjä syyttää
+viatonta — omaa viattomuuttaan ei Oidipus tietenkään epäile —
+tekee hän siitä sen johtopäätöksen, että tietäjän etujen mukaista
+on olla mainitsematta syyllisen nimeä; ja onhan myöskin sangen
+läheinen ajatus tässä yhteydessä epäillä Kreonia. Mutta eräässä
+kohden hän on omituisen sokea: kun on kysymys hänestä itsestään.
+Hänen totuudenjanonsa on lahjomaton, hän on totuudenetsijä, joka ei
+anna minkään pidättää itseään. Hän seuraa järkähtämättömänä kerran
+löytämäänsä lankaa, ja juuri tämä luonteenominaisuus, yhdistyneenä
+toimintatarmoon ja tahdonvoimaan, vie hänet kohti tuhoa. Sillä kun hän
+on ottanut tehtäväkseen jotakin, ei hän suo itselleen lepoa ennenkuin
+on saavuttanut päämäärän; katsojasta, joka aavistaa mitä tulossa on,
+tuntuu, koko hänen toimintansa kuumeiselta rientämiseltä perikatoa
+kohti.
+
+Oidipus on myöskin hurskas ihminen, ja tällä seikalla on merkitystä
+näytelmän oikeaan ymmärtämiseen. Hän uskoo oraakkelin pyhyyteen, useita
+kertoja hän on kääntynyt Delphoin pyhäkön puoleen. Myöskin Teiresiaassa
+hän kunnioittaa tietäjää, vaikka kadottaakin uskonsa tämän pyhyyteen
+hänen syytöksensä vuoksi. Kuningattaren todistelun eksyttämänä hän
+tosin hetkisen epäilee oraakkelia, mutta kun sitten onnettomuus on
+häntä kohdannut ja ennustuksista julmin osoittautunut todeksi, silloin
+hän taaskin on hurskas mies, joka armotta käy tuomiolle itsensä kanssa
+ja nurkumatta alistuu kohtaloonsa, vaikka tietääkin ettei ole ansainnut
+sitä millään rikollisuudella.
+
+Sillä syyttömänä hän pitää itseään, ja syyttömäksi on runoilija
+hänet kuvannut. Lähtien nykyaikaisista tragiikan teorioista on
+tosin koetettu löytää hänessä syyllisyyttä, joka oikeuttaisi hänen
+kohtalonsa; mutta siihen ei ole aihetta. Lyömällä kuoliaaksi Laioksen
+ja tämän seurueen ei hän antiikin katsantokannan mukaan mitenkään
+ollut astunut itsepuolustus- ja hätävarjelusoikeutensa rajan yli.
+Intohimoinen ja kiivas hän on, mutta se että hän antaa Teiresiaan ja
+Kreonin kulkea vapaina, vaikka näköjään hyvillä syillä epäileekin heitä
+kavaltajiksi, on varmasti enemmän kuin mihin monikaan oikeamielinen
+antiikin kuningas olisi pystynyt. Entä peritty syyllisyys sitten —
+kysytään — sukukirous? Koko tämän ajatuksen peritystä kirouksesta,
+joka oli alkuperäisen sadun ydin ja jolle Aiskhylos oli rakentanut
+Oidipus-trilogiansa, on Sophokles tykkänään jättänyt syrjään; »Kuningas
+Oidipus» on täysin itsenäinen draama, eikä siinä mainita sanaakaan
+peritystä syyllisyydestä. Päinvastoin käy täysin selvästi ilmi, ettei
+Laios suinkaan ollut uhmannut mitään jumalallista määräystä, että
+jumalat eivät olleet kieltäneet häntä siittämästä lasta: oraakkeli oli
+vain ennustanut, että hänen poikansa surmaisi hänet. Ja että hän antoi
+jättää esikoisensa kuolemaan, oli antiikin käsityskannan mukaan vain
+hänen isänoikeutensa ja oikeutettu itsepuolustus-toimenpide. Laioksella
+ei ollut mitään syyllisyyttä jätettävänä perinnöksi pojalleen;
+viattomana eikä edes perinnöllisen syyllisyyden painamana joutuu
+Oidipus uhriksi kaameimmalle kohtalolle, mikä ihmisen osaksi voi tulla.
+
+Mitä on siis Sophokles tahtonut saada sanotuksi tällä tragediallaan,
+mikä on murhenäytelmän aate? Sillä tässä kohden ei voi olla
+kysymyksessä vanhan taru-aiheen ankaran objektiivinen ja persoonaton
+käsittely, niin on runoilija asettanut ongelmansa. »Kuningas Oidipus»
+on — niin kuuluu uskottavin vastaus — kauhistuttava murhenäytelmä
+ihmisen voimattomuudesta ja mitättömyydestä jumalten edessä, ihmisonnen
+epävarmuudesta ja epävakaisuudesta. Minkätähden jumalat tuomitsevat
+viattoman ihmisen onnettomuuteen ja perikatoon, siihen kysymykseen ei
+Sophokles kajoa. Hän osoittaa vain, kuinka ihminen — ja tässä suuri
+ja jalo ihminen — pakotetaan eteenpäin sillä tiellä, jonka jumalten
+tahto on hänelle määrännyt, kuinka kaikki hänen yrityksensä välttää
+kohtaloaan vain varmemmin vievät hänet siihen. Kuin pimeässä hän
+hapuilee, niinkuin sokea suljetussa huoneessa, ja joka kerta kun hän
+luulee löytävänsä ulospääsyn, lyökin hän päänsä seinään.
+
+Leikkipallo jumalten käsissä on ihminen. Ja mitä he lähettävätkin,
+onnea tai kärsimystä, elämää tai kuolemaa, kuinka käsittämättömiltä ja
+vääryydellisiltä heidän säädöksensä tuntuvatkin, vain yhtä voi ihminen
+tehdä: nöyrästi mukautua heidän tahtoonsa, kysymättä syitä, vaatimatta
+selitystä. Katsokaa Oidipusta — huudahtaa Sophokles — katsokaa kuinka
+korkealla hän seisoi, katsokaa kuinka syvälle hän on sortunut! Jumalten
+tahto on täyttynyt, heidän oraakkelinsa puhui totta.
+
+Muutamat ovat sitäpaitsi tässä tragediassa luulleet huomaavansa selviä
+viittauksia senaikuisiin oloihin. Kun runoilija — niin on sanottu —
+antaa koorin valittaa Delphoin oraakkelin järkkynyttä arvovaltaa ja
+epäuskon enentymistä, silloin suuntaa hän ajatuksensa todellisuuteen
+ympärillään, uusiin henkisiin virtauksiin omassa Ateenassaan,
+ratsionalismiin, »irti Delphoista»-liikkeeseen. Mahdotontahan ei tämä
+ole, mutta omasta puolestani en pidä varmana että niin on laita.
+
+Mikään lohdullinen ja kohottava ei totisesti ole se näytelmä, minkä
+»Kuningas Oidipus» meille tarjoaa. Traagillisesta syyllisyydestä ja
+sovituksesta, runollisesta oikeudenmukaisuudesta ei tässä voi olla
+puhetta. Kaikki ihmissuvun surkeus, kaikki sen syytön kärsiminen on
+ruumiillistunut thebalaiskuninkaan onnettomaan haahmoon. En tiedä
+mihin esteettisiin teorioihin tämän murhenäytelmän voi sovittaa. Mutta
+yhden tiedän: että se on suurta runoutta. Oma kokemus sanoo samaa kuin
+toisten todistukset. Tätä tragediaa on voinut miettiä miten paljon
+tahansa, sen on voinut lukea monen monta kertaa ja nähdä monen monta
+kertaa näyteltävän — joka uudella lukemalla, joka uudella katsomalla
+joutuu uudelleen saman väristyksen valtaan, sen väristyksen, jonka vain
+todella suuri runous voi aiheuttaa.
+
+
+
+
+IX. Oidipus Kolonoksessa.
+
+
+Murhenäytelmässä »Oidipus Kolonoksessa» on Sophokles pitkän väliajan
+jälkeen luonut jatkon, ja sovittavan jatkon, tragediaan Oidipuksen
+onnettomasta kohtalosta. Hän osoittaa kuinka samat jumalat, jotka
+olivat niin kovasti ja julmasti lyöneet viatonta, lopulta lahjoittavat
+hänelle armonsa.
+
+Antiikki näki tässä murhenäytelmässä vanhuudenteoksen, ja erään
+tiedon mukaan esitettiin se vasta muutamia vuosia runoilijan kuoleman
+jälkeen, hänen pojanpoikansa Sophokles nuoremman toimesta. Myöhempinä
+aikoina ovat muutamat epäilleet tätä; on ajateltu että kyseessäoleva
+esitys ei ollut ensimäinen ja että draama siis voisi olla lähtöisin
+varhaisemmalta kaudelta. Tämä olettamus ei kuitenkaan ole saanut
+vakuuttavien todistusten tukea, ja mielestäni voimme edelleen pitää
+tätä tragediaa yhtenä Sophokleen runotaiteen viimeisiä tuotteita,
+luultavasti kaikkein viimeisenä teoksena, jolla 90-vuotias runoilija
+päätti pitkän uransa.
+
+Huomattava ajanjakso — meidän on oletettava vähintään vuosikymmen,
+mutta luultavasti enempääkin — on molempien Oidipus-tragediojen
+toiminnan välillä. Oidipuksen toive päästä vapaaehtoiseen maanpakoon
+ei ollut täyttynyt, vaan hänen oli edelleenkin pakko viipyä
+Thebassa. Vaikka tämä tapahtui vasten hänen tahtoaan, oppi hän ajan
+pitkään mukautumaan kohtaloonsa ja panemaan arvoa turvapaikkaansa
+kuninkaanlinnassa. Mutta Kreon muutti vähitellen mieltä. Oidipuksen
+oleskelu maassa alkoi tuntua hänestä ja toisista thebalaisista
+kauhistukselta, ja hän päätti karkoittaa tuon onnettoman. Niin
+tapahtuikin, ja katkerampaa kuin kaikki muu oli Oidipukselle se, että
+hänen poikansa eivät vastustaneet karkoittamista. Yksi lohdutus oli
+hänellä kuitenkin: tyttäret eivät hyljänneet häntä, Antigone jakoi
+hänen kanssaan maanpaon vaivat, johti hänen horjuvia askeleitaan
+ja hoiti häntä hellällä huolella. Myöskin Ismene pysyi hänelle
+uskollisena, mutta jäi Thebaan seuratakseen tapahtumain kulkua ja
+valvoakseen isänsä etuja. Kun myöhempi tragedia alkaa, on Oidipus jo
+kauan harhaillut ympäri maita Antigonen kanssa, ja hänestä on tullut
+vanha ja raihnas ukko.
+
+Pitkinä vaellusvuosina hän on myöskin perinpohjin ajatellut
+kohtaloaan ja päässyt samaan tulokseen mihin »Kuningas Oidipuksen»
+ennakkoluuloton lukija pääsee: että hän ei ole siveellisesti
+vastuunalainen niistä rikoksista, joita tietämättään on tehnyt. Hän
+tuntee olevansa jonkinlaisessa poikkeusasemassa, hän on sekä epäpuhdas
+että viaton, suuremmassa määrin kuin muut kohtalon merkitsemät, ja
+tästä tietoisuudesta kasvaa hänessä pyhyyden tunne. Ja samassa valossa
+näkevät kanssaihmisetkin hänet. Tekemiensä tekojen tähden hän on sitä
+mitä kreikkalaiset ilmaisivat sanalla _miasma_, saastutettu mies,
+tartunnan pesä ja häpeäpilkku. Mutta se ihminen, johon jumalten viha
+oli iskenyt, oli kreikkalaisten silmissä myöskin jollain tavoin pyhä
+ja loukkaamaton ja saattoi olla siunaukseksi sille maalle, jossa hän
+oleskeli, suojana vihollisia ja tuhoisia voimia vastaan. —
+
+Kevätpäivä Sophokleen kotiseudussa Kolonoksessa; taustana
+Eumenidien lehdon pyhät laakerit, oliivipuut ja viiniköynnökset.
+Korkeimmat vuorenhuiput ovat vielä lumen peitossa, mutta maa on jo
+kukkia kirjavanaan, ja lehdosta kuuluu satakielten laulua. Tähän
+valokylläiseen kevätmaisemaan astuu Oidipus Antigonen taluttamana.
+Hän on puettu kerjäläisen kuluneeseen ja kehnoon pukuun, hänen
+valkoinen tukkansa riippuu pitkinä suortuvina, ja puhkaistut silmät
+tekevät kaamean näköisiksi kasvot, joihin kärsimys ja puutteet ovat
+piirtäneet syvät uurteensa. Hän asettuu pyhäkön sisäpuolelle, mutta
+eräs seudun asukas saapuu paikalle ja tahtoo karkoittaa hänet siitä,
+koska Eumenidien pyhälle maaperälle ei kukaan saa astua. Oidipus sanoo
+kuitenkin tuovansa viestin maan kuninkaalle Theseukselle, ja mies ei
+voi olla tuntematta vaikutusta siitä majesteettiudesta, joka kaiken
+alennuksen uhallakin puhuu sokean muukalaisen koko olemuksesta; hän
+lupaa neuvotella Kolonoksen väestön kanssa.
+
+Kun Oidipus kuuli Eumenidien lehtoa mainittavan, tiesi hän vihdoinkin
+saavuttaneensa vaellustensa päämaalin. Oraakkelilause, joka oli
+ennustanut hänen onnettomuutensa, oli myöskin luvannut hänelle lepoa ja
+rauhaa, kun hän kerran on päässyt Eumenidien pyhäkköön; siellä olisi
+hänen suotu päättää elämänsä ja tulla siunaukseksi sille maalle, joka
+on osoittanut hänelle vieraanvaraisuutta, ja onnettomuudeksi niille,
+jotka ovat ajaneet hänet maanpakoon.
+
+Nyt saapuu koori — vanhoja miehiä Kolonoksesta — tähyillen muukalaista,
+joka on loukannut paikan pyhyyttä. Kauhun huudolla tervehtii se
+Oidipuksen kaameata olemusta, mutta lupaa hänelle turvapaikan, kunhan
+hän vain jättää kielletyn alueen. Mutta kun se sitten kuulee hänen
+nimensä, ei se enää voi hillitä inhoaan, vaan vaatii häntä kohta
+jättämään maan. Oidipus huomauttaa kaunopuheisesti siveellisestä
+syyttömyydestään ja vannottaa kooria, ettei se hänen karkoittamisellaan
+tahrisi isänmaansa mainetta. Koorikaan ei voi olla tuntematta hänen
+personallisuutensa vaikutusta; se tahtoo lykätä asian kuninkaan
+ratkaistavaksi.
+
+Nyt saapuu Ismene tuoden tärkeitä uutisia Thebasta. Oidipuksen pojat
+ovat kukistaneet Kreonin ja taistelleet keskenään vallasta sillä
+tuloksella, että Eteokles, nuorempi heistä, on karkoittanut vanhemman
+veljensä Polyneikeen; tämä on lähtenyt Argokseen ja kokoo siellä
+sotajoukkoa viedäkseen sen isiensä kaupunkia vastaan. Ja oraakkeli on
+thebalaisille ilmoittanut että heidän menestyksensä on riippuvainen
+Oidipuksesta, niin hänen elinaikanaan kuin kuoltuaan. He tahtovat
+senvuoksi ottaa hänet haltuunsa ja pitää jossakin Theban lähistöllä
+antamatta hänelle pääsyä kaupunkiin; Kreon on jo etsimässä häntä.
+
+Maan hallitsija Theseus saapuu paikalle, tervehtii Oidipusta
+myötätunnolla ja osaaottavasti sekä lupaa hänelle turvapaikan ja
+haudan Attikassa. Tämän jälkeen hän taas poistuu. Kreon tulee näkyviin
+asestetun seurueen kanssa. On häpeä Theballe — sanoo hän — että sen
+entinen kuningas kerjäläisenä vaeltaa ympäri tyttärensä kanssa; on
+aika hänen jo palata isiensä linnaan. Oidipus vastaa täynnä vihaa ja
+katkeruutta ja paljastaa Kreonin kavalan suunnitelman. Silloin antaa
+tämä naamion pudota: hän on jo käskenyt vangita Ismenen, joka isänsä
+kehoituksesta on poistunut toimittamaan uhria, hän antaa panna kiinni
+ja viedä pois Antigonen ja on valmis käymään käsiksi itse Oidipukseen,
+kun Theseus äkkiä tulee näkyviin, metelin ja koorin hätähuutojen
+kutsumana. Hän antaa ajaa takaa ryöväreitä ja pelastaa nuoret naiset.
+
+Mutta vielä yksi yllätys odottaa Oidipusta: hänen poikansa Polyneikes
+tulee tapaamaan häntä. Tämä soimaa itseään katkerasti, hän itkee isänsä
+kohtaloa ja rukoilee häneltä anteeksi. Sitten hän esittää varsinaisen
+asiansa. Hän on tullut pyytämään isänsä apua, sillä on ennustettu että
+se tulee voittamaan, jonka puolelle Oidipus asettuu. Ja kun Theba on
+vallattu, on hän vievä Oidipuksen takaisin isiensä linnaan. Mutta
+vanhus on taipumaton. Jo aikaisemmin on hän useat kerrat kironnut
+poikiaan, ja nyt hän vielä kerran huutaa Polyneikeelle pelottavan
+kirouksen: tämä on surmaava veljensä ja itse kuoleva veljen käden
+kautta!
+
+Nyt puhkeaa ukonilma; toinen jyrähdys seuraa toista, salama leimahtaa
+salaman jälkeen. Koori joutuu kauhun valtaan, mutta Oidipus näkee
+tässä luvatun merkin siitä, että hänen vaelluksensa maanpäällä lähenee
+loppuaan. Hän lähettää sanan Theseukselle, joka heti saapuu paikalle.
+Oidipus selittää että hän itse on löytävä sen paikan, jossa hän tulee
+kuolemaan ja lepäämään haudattuna, mutta kukaan muu kuin Theseus
+ei saa tuntea sitä; sen tulee olla salaisuus, joka menee perintönä
+toiselta Attikan kuninkaalta toiselle. Sillä tavoin tulee haudasta
+siunaus maalle, turva vihollisia ja anastajia vastaan. Nyt tapahtuu
+Oidipuksessa äkillinen muutos. Kaikki hapuileva ja epävarma katoaa
+hänestä; hänen ilmeestään tulee itsetietoinen ja innoittunut, ja lujin
+askelin poistuu hän näyttämöltä, hän, sokea, näyttäen tietä näkeville.
+
+Pian saapuu paikalle sanantuoja, joka ilmoittaa että Oidipus on
+kuollut. Kun he olivat tulleet pyhälle ja kauhuaherättävälle paikalle,
+riisui Oidipus yltään kerjäläisryysyt, peseytyi lähdevedellä ja
+pukeutui kuolinvaatteisiin. Kun kaikki pyhät menot oli suoritettu,
+kuului äkkiä ukkosenjyrähdys. Oidipus sulki tyttäret syliinsä, kiittäen
+heitä kaikesta hellästä huolenpidosta, jonka ainoa palkka oli ollut
+hänen rakkautensa. Silloin kuului ylhäältä ääni, joka sai läsnäolijain
+hiukset nousemaan pystyyn: »Oidipus, Oidipus, miksi viivyt?» Vanhus
+uskoi silloin tyttäret Theseuksen huomaan ja jätti heille hyvästit;
+sitten hän pyysi kaikkia poistumaan, paitsi Theseusta.
+
+    Noin haastoi hän, ja kaikki muut sen kuulivat.
+    Nyt kyynelsilmin seurasimme, valittain
+    me neitoja. Mut käytyämme tuokion
+    me käännyimme ja katsahdimme taaksepäin.
+    Mut vanhust' emme enää nähneet; varjostain
+    kädellä silmiänsä siinä yksinään
+    vain kuninkaamme seisoi, niinkuin nähnyt ois
+    hän kauhunäyn silmin katsomattoman.
+    Vain tuokionpa tuota kesti. Tomuun hän
+    koht'ikään heittyi, rukouksell’ yhdellä
+    rukoili maata, taivast’ ylhäin jumalain.
+    Mitenkä vanhus kuoli, Theseus yksin vain
+    sen tietävi, ei kukaan kuolevainen muu.
+    Hänt’ elon mailt’ ei taivahisen leimaus
+    odottamattomasti ollut temmannut,
+    ei meren pyörremyrsky äkkipuuskallaan:
+    pois hänet joku jumal’ otti taikka maa,
+    sylinsä syvän lemmekkäästi aukaisten.
+    Sill’ ilman valitusta, vaivaa, tautia
+    hän lepoon pääsi; totisesti loppu tuo
+    ol’ ihmeinen, jos kuolevaisen kenenkään.
+
+       *       *       *       *       *
+
+Päätoiminta tässä tragediassa on siis hyvin yksinkertainen: Oidipus
+tulee Eumenidien lehtoon Kolonoksessa, löytää rauhan ja kuolee.
+Mutta täyttääkseen murhenäytelmän ja saadakseen siihen draamallista
+jännitystä on runoilija tähän keskeiseen toimintaan lisännyt
+kaksinkertaisen ulkonaisen juonen: Kreonin turha yritys viedä Oidipus
+väkivallalla mukanaan ja Polyneikeen tulokseton ponnistus saada hänet
+suostuttelulla palaamaan Thebaan. Puhtaasti draamalliselta näkökannalta
+katsoen on »Oidipus Kolonoksessa» Sophokleen heikoimpia tragedioja; se
+on venytetty ja hajanainen rakenteeltaan, eri osat eivät ole sulaneet
+kokonaisuudeksi. Mutta sensijaan on siinä usein viehätystä, jonka
+veroista on tuskin missään muussa hänen tragediassaan, se säteilee
+syvää ja omituista kauneutta, ollen samalla kertaa uskonnollinen,
+isänmaallinen ja personallinen runoteos. Uskonnollinen mystiikka
+painaa leimansa suureen osaan murhenäytelmää. Näyttämönä on pyhä ja
+kauhuaherättävä paikka; draama on täynnä rukouksia, uhritoimituksia
+ja muita jumalanpalvelusmenoja ja päättyy jumalalliseen ihmeeseen:
+Oidipuksen tuskattomaan ja yliluonnolliseen kuolemaan.
+
+Mutta korkeampana kuin uskonnollinen sävel kaikuu isänmaallinen.
+Tragedia on muistomerkki, jonka Sophokles on pystyttänyt kotiseudulleen
+ja isiensä kaupungille. Hän kuvailee Ateenaa sinä muukalaisten ja
+vainottujen turvapaikkana, jollaisena oleminen aina on ollut sen
+kunniaa-asia; Theseuksen jaloon olemukseen hän on ruumiillistanut
+attikalaisen vierasvaraisuuden ja ritarillisuuden, attikalaisen
+kunnioituksen lakeja ja uskontoa kohtaan. Ja murhenäytelmän
+kauneimmassa koorilaulussa — joka samalla on kreikkalaisen tragedian
+ehkä kiitetyin — laulaa hän isänmaansa ylistystä ihanammin ja
+sydämellisemmin kuin meidän tietemme kukaan muu kreikkalainen
+runoilija. Hän kuvailee ensin kotiseudun vienoa kauneutta —
+satakielenlaulua, lehtoja ja kukkia ja Kolonoksen virtaavia vesiä —
+mutta sitten laulu laajenee ja nousee korkeammalle, siitä tulee hymni
+Ateenan koko ihanuudelle ja mahdille, joka lähinnä ruumiillistuu
+kolmessa seikassa: oliivinviljelyksissä, joille vihollisetkin ovat
+osoittaneet kunnioitusta, Ateenan ratsuväessä ja Ateenan laivastossa.
+Tragedia ei ole kirjoitettu paljonkaan ennen Ateenan kukistumista, ja
+kuitenkin ylistää Sophokles kaupunkia voittamattomaksi; niin palava oli
+hänen uskonsa isänmaahan, niin luja hänen luottamuksensa jumaliin.
+
+Vain hyvin empien liittyy tähän koe tulkita tätä vaikeastikäännettävää
+laulua. Tulkinta ei pyri muuta kuin ilmaisemaan sisällyksen osapuilleen
+muuttumattomana; siinä lienee myöskin säilynyt jonkun verran
+alkuteoksen poljentoa, vaikka alkuperäistä runomittaa ei ole noudatettu.
+
+        I säkeistö,
+
+    Vieras, nyt sua armahin
+    tervehtii suloseutu maan,
+    valkoinen, jalovarsainen,
+    kuulu Kolonos; on aina
+    helke siimehiköissä sen,
+    tiukutus satakielen soi,
+    muurikiertolas suojanaan
+    tumma tai pyhät, viihtyisät
+    vehmastot tuhatmarjaiset,
+    miss' ei polttoa päivän,
+    talven tuulia tunnu ei,
+    vaalijattariensa vain
+    taivaisten kera karkeloi
+    temmeltäin Dionysos.
+
+        I vastasäkeistö.
+
+    Kasteen juottama taivaisen
+    versoo kukkea narkissos,
+    ammoin solmima seppeleeks
+    ylhäin taivahatarten;
+    krokos loistavi kultainen.
+    Lähteet tääll’ ikiläikkyvät
+    uhkuilee unetonna, maan
+    rintaa raikkahin virtoineen
+    viljavoittaen virkeät
+    Kephison vedet vierii.
+    Kuorot ei Runotarten pois
+    konsaan karkkoa, vaunujaan
+    ohjailee yhä kultaisin
+    ohjin tääll’ Aphrodite.
+
+        II säkeistö.
+
+    Myös, mitä Aasia ei voi mainita aarteekseen,
+    Pelopsin iso saar’ ei, doorilaisien maa,
+    kasvaa kylvämätönnä täällä,
+    mahtavimpana maasta nousee,
+    peljätyksenä vainopeisten:
+    öljypuu vesa-vehmas, harmaa.
+    Kuunaan ei käsi nuoren, ei
+    vanhankaan sitä turmele,
+    katsein näät ikikaitsevin
+    vaalii Zeus sitä, varjelee
+    Pallas päilyväsilmä.
+
+        II vastasäkeistö.
+
+    Korkea kiittäminen mun viel’ on kunnia muu,
+    valtias kuoloton min kotikaupungilleni soi:
+    ratsastaito ja valtius merten.
+    Meidän, suuri Poseidon, suitsin
+    suistaa soit hevon ensimäisen
+    seudun tään iki-ylpeydeksi.
+    Sorja, sormienmyötäinen
+    airo taas meren mahtavan
+    vettä velloen kiiruhtaa,
+    laumaa Nereun lapsien
+    saatellen satajalkaa.
+
+»Oidipus Kolonoksessa» tekee personallisimman vaikutuksen kaikista
+Sophokleen tragedioista. Se on hyvin vanhan miehen teos, ja siinä
+ilmenevä iltavalaistus näyttää olevan sama, joka lankesi yli runoilijan
+myöhäisen elämänehtoon. Oli hän miten onnellinen ja sopusointuinen
+tahansa, hän oli nähnyt isänmaansa onnettoman sodan kautta joutuvan yhä
+lähemmäksi perikatoa, ja hartioillaan 90 ikävuotta oli hän itsekin jo
+varmaan kypsä erkanemaan elämästä; lukijalla on varma tunne siitä että
+hän väliin puhuu omasta puolestaan koorin vanhusten ja ennen kaikkia
+elämään väsyneen ja onnettoman Oidipuksen suulla. Eräs koorilauluista,
+joka kuuluu koko kreikkalaisen tragedian pessimistisimpiin ja
+elämänkielteisimpiin, antaa järkyttävän kuvauksen vanhuuden suruista
+ja vaivoista, joille kuolema on ainoa parannus; paras osa kaikista on
+ettei koskaan synny, ja lähinnä paras varhainen kuolema. Mutta vielä
+selvemmin luulee kuulevansa runoilijan oman äänen ja saavansa tietoa
+hänen omista elämänkokemuksistaan näissä Oidipuksen surumielisen
+kauniissa, ylevän hillityissä sanoissa Theseukselle:
+
+    Oi armas Aigeun poika, jumaloilla vain
+    ei ole vaivaa, vanhuutta, ei kuolemaa,
+    mut ajan kaikkivalta murtaa kaiken muun.
+    Kas, mannun mahti, ruumiin voima raukeaa,
+    meilt’ usko uupuu, epäluulo elpyvi,
+    eik’ yhä yksi mieli kestä milloinkaan
+    välillä valtioitten eikä ystäväin.
+
+Ja sama armo, jonka jumalat murhenäytelmässä lahjoittavat Oidipukselle,
+tuli todellisuudessa runoilijan osaksi. Hän sai poistua ennenkuin oli
+ehtinyt olla todistajana isiensä kaupungin kukistumisessa, ja hänenkin
+kuolemansa sanotaan olleen helppo ja tuskaton.
+
+
+
+
+
+
+*** END OF THE PROJECT GUTENBERG EBOOK SOPHOKLES ***
+
+
+    
+
+Updated editions will replace the previous one—the old editions will
+be renamed.
+
+Creating the works from print editions not protected by U.S. copyright
+law means that no one owns a United States copyright in these works,
+so the Foundation (and you!) can copy and distribute it in the United
+States without permission and without paying copyright
+royalties. Special rules, set forth in the General Terms of Use part
+of this license, apply to copying and distributing Project
+Gutenberg™ electronic works to protect the PROJECT GUTENBERG™
+concept and trademark. Project Gutenberg is a registered trademark,
+and may not be used if you charge for an eBook, except by following
+the terms of the trademark license, including paying royalties for use
+of the Project Gutenberg trademark. If you do not charge anything for
+copies of this eBook, complying with the trademark license is very
+easy. You may use this eBook for nearly any purpose such as creation
+of derivative works, reports, performances and research. Project
+Gutenberg eBooks may be modified and printed and given away—you may
+do practically ANYTHING in the United States with eBooks not protected
+by U.S. copyright law. Redistribution is subject to the trademark
+license, especially commercial redistribution.
+
+
+START: FULL LICENSE
+
+THE FULL PROJECT GUTENBERG LICENSE
+
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+www.gutenberg.org/license.
+
+Section 1. General Terms of Use and Redistributing Project Gutenberg™
+electronic works
+
+1.A. By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound
+by the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B. “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this
+agreement and help preserve free future access to Project Gutenberg™
+electronic works. See paragraph 1.E below.
+
+1.C. The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is unprotected by copyright law in the
+United States and you are located in the United States, we do not
+claim a right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting
+free access to electronic works by freely sharing Project Gutenberg™
+works in compliance with the terms of this agreement for keeping the
+Project Gutenberg™ name associated with the work. You can easily
+comply with the terms of this agreement by keeping this work in the
+same format with its attached full Project Gutenberg™ License when
+you share it without charge with others.
+
+1.D. The copyright laws of the place where you are located also govern
+what you can do with this work. Copyright laws in most countries are
+in a constant state of change. If you are outside the United States,
+check the laws of your country in addition to the terms of this
+agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work. The Foundation makes no
+representations concerning the copyright status of any work in any
+country other than the United States.
+
+1.E. Unless you have removed all references to Project Gutenberg:
+
+1.E.1. The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:
+
+    This eBook is for the use of anyone anywhere in the United States and most
+    other parts of the world at no cost and with almost no restrictions
+    whatsoever. You may copy it, give it away or re-use it under the terms
+    of the Project Gutenberg License included with this eBook or online
+    at www.gutenberg.org. If you
+    are not located in the United States, you will have to check the laws
+    of the country where you are located before using this eBook.
+  
+1.E.2. If an individual Project Gutenberg™ electronic work is
+derived from texts not protected by U.S. copyright law (does not
+contain a notice indicating that it is posted with permission of the
+copyright holder), the work can be copied and distributed to anyone in
+the United States without paying any fees or charges. If you are
+redistributing or providing access to a work with the phrase “Project
+Gutenberg” associated with or appearing on the work, you must comply
+either with the requirements of paragraphs 1.E.1 through 1.E.7 or
+obtain permission for the use of the work and the Project Gutenberg™
+trademark as set forth in paragraphs 1.E.8 or 1.E.9.
+
+1.E.3. If an individual Project Gutenberg™ electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any
+additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works
+posted with the permission of the copyright holder found at the
+beginning of this work.
+
+1.E.4. Do not unlink or detach or remove the full Project Gutenberg™
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg™.
+
+1.E.5. Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.
+
+1.E.6. You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format
+other than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ website
+(www.gutenberg.org), you must, at no additional cost, fee or expense
+to the user, provide a copy, a means of exporting a copy, or a means
+of obtaining a copy upon request, of the work in its original “Plain
+Vanilla ASCII” or other form. Any alternate format must include the
+full Project Gutenberg™ License as specified in paragraph 1.E.1.
+
+1.E.7. Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8. You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works
+provided that:
+
+    • You pay a royalty fee of 20% of the gross profits you derive from
+        the use of Project Gutenberg™ works calculated using the method
+        you already use to calculate your applicable taxes. The fee is owed
+        to the owner of the Project Gutenberg™ trademark, but he has
+        agreed to donate royalties under this paragraph to the Project
+        Gutenberg Literary Archive Foundation. Royalty payments must be paid
+        within 60 days following each date on which you prepare (or are
+        legally required to prepare) your periodic tax returns. Royalty
+        payments should be clearly marked as such and sent to the Project
+        Gutenberg Literary Archive Foundation at the address specified in
+        Section 4, “Information about donations to the Project Gutenberg
+        Literary Archive Foundation.”
+    
+    • You provide a full refund of any money paid by a user who notifies
+        you in writing (or by e-mail) within 30 days of receipt that s/he
+        does not agree to the terms of the full Project Gutenberg™
+        License. You must require such a user to return or destroy all
+        copies of the works possessed in a physical medium and discontinue
+        all use of and all access to other copies of Project Gutenberg™
+        works.
+    
+    • You provide, in accordance with paragraph 1.F.3, a full refund of
+        any money paid for a work or a replacement copy, if a defect in the
+        electronic work is discovered and reported to you within 90 days of
+        receipt of the work.
+    
+    • You comply with all other terms of this agreement for free
+        distribution of Project Gutenberg™ works.
+    
+
+1.E.9. If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from the Project Gutenberg Literary Archive Foundation, the manager of
+the Project Gutenberg™ trademark. Contact the Foundation as set
+forth in Section 3 below.
+
+1.F.
+
+1.F.1. Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+works not protected by U.S. copyright law in creating the Project
+Gutenberg™ collection. Despite these efforts, Project Gutenberg™
+electronic works, and the medium on which they may be stored, may
+contain “Defects,” such as, but not limited to, incomplete, inaccurate
+or corrupt data, transcription errors, a copyright or other
+intellectual property infringement, a defective or damaged disk or
+other medium, a computer virus, or computer codes that damage or
+cannot be read by your equipment.
+
+1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the “Right
+of Replacement or Refund” described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg™ trademark, and any other party distributing a Project
+Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.
+
+1.F.4. Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you ‘AS-IS’, WITH NO
+OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5. Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.
+
+1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in
+accordance with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.
+
+Section 2. Information about the Mission of Project Gutenberg™
+
+Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need are critical to reaching Project Gutenberg™’s
+goals and ensuring that the Project Gutenberg™ collection will
+remain freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future
+generations. To learn more about the Project Gutenberg Literary
+Archive Foundation and how your efforts and donations can help, see
+Sections 3 and 4 and the Foundation information page at www.gutenberg.org.
+
+Section 3. Information about the Project Gutenberg Literary Archive Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non-profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation’s EIN or federal tax identification
+number is 64-6221541. Contributions to the Project Gutenberg Literary
+Archive Foundation are tax deductible to the full extent permitted by
+U.S. federal laws and your state’s laws.
+
+The Foundation’s business office is located at 809 North 1500 West,
+Salt Lake City, UT 84116, (801) 596-1887. Email contact links and up
+to date contact information can be found at the Foundation’s website
+and official page at www.gutenberg.org/contact
+
+Section 4. Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg™ depends upon and cannot survive without widespread
+public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine-readable form accessible by the widest
+array of equipment including outdated equipment. Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular state
+visit www.gutenberg.org/donate.
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: www.gutenberg.org/donate.
+
+Section 5. General Information About Project Gutenberg™ electronic works
+
+Professor Michael S. Hart was the originator of the Project
+Gutenberg™ concept of a library of electronic works that could be
+freely shared with anyone. For forty years, he produced and
+distributed Project Gutenberg™ eBooks with only a loose network of
+volunteer support.
+
+Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as not protected by copyright in
+the U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.
+
+Most people start at our website which has the main PG search
+facility: www.gutenberg.org.
+
+This website includes information about Project Gutenberg™,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+

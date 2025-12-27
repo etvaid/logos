@@ -1,0 +1,3334 @@
+﻿The Project Gutenberg eBook of Philoktetes
+    
+This ebook is for the use of anyone anywhere in the United States and
+most other parts of the world at no cost and with almost no restrictions
+whatsoever. You may copy it, give it away or re-use it under the terms
+of the Project Gutenberg License included with this ebook or online
+at www.gutenberg.org. If you are not located in the United States,
+you will have to check the laws of the country where you are located
+before using this eBook.
+
+Title: Philoktetes
+
+Author: Sophocles
+
+Translator: Gergely Csiky
+
+Release date: February 23, 2020 [eBook #61493]
+                Most recently updated: October 17, 2024
+
+Language: Hungarian
+
+Credits: Produced by Albert László from page images generously made
+        available by the Google Books Library Project
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK PHILOKTETES ***
+
+PHILOKTETES.
+
+IRTA
+
+SOPHOKLES.
+
+GÖRÖGBŐL FORDITOTTA, BEVEZETTE ÉS JEGYZETEKKEL KISÉRTE
+
+CSIKY GERGELY.
+
+BUDAPEST.
+
+FRANKLIN-TÁRSULAT
+
+MAGYAR IROD. INTÉZET ÉS KÖNYVNYOMDA.
+
+1903.
+
+FRANKLIN-TÁRSULAT NYOMDÁJA.
+
+
+
+
+BEVEZETÉS.
+
+Midőn a hellen hadsereg Trója ellen vonult, Philoktetest, a metonai s
+más hadak vezérét Chryse szigetén egy kigyó úgy megmarta lábán, hogy
+fájdalmas sebének bűze miatt s folytonos jajveszéklésével a seregnek
+nagy alkalmatlanságára vált. Azért Odysseus tanácsára a szomszéd Lemnos
+szigetén, épen midőn egy szikla aljában elaludt, magára hagyták. E
+lakatlan szigeten töltött el hosszú kilencz évet, elhagyatva
+mindenkitől, testi és lelki gyötrelmei között. A tizedik évben Helenos
+jós kijelenté a görög seregnek, hogy Tróját csak Herakles nyila által
+veheti be; mivel pedig ez Philoktetes birtokában volt, érte küldték
+Odysseust, társul adván mellé Achilles fiát, Neoptolemost, hogy
+Philoktetest szép szerével vagy erőszakkal vigyék a táborba. A két
+küldött megérkezésével Lemnos szigetére, kezdődik a tragédia
+cselekvénye.
+
+
+
+
+SZEMÉLYEK.
+
+  ODYSSEUS.
+  NEOPTOLEMOS.
+  KAR.
+  PHILOKTETES.
+  KALMÁR.
+  HERAKLES.
+
+(Kopár sziklás partvidék Lemnos szigetén. Magas szikla aljában
+Philoktetes barlangjának bejárata. Odysseus és Neoptolemos egy szolga
+kiséretében föllépnek.)
+
+ODYSSEUS.
+
+  Im a tengerlocsolta Lemnos laktalan,
+  Ember nem járta szirtpartjára érkezénk,
+  Hol egykor, oh Neoptolemos, a hellenek
+  Legjobb hősének, Achillesnek gyermeke –
+  Kitettem volt Poeas fiát, a melisit,[1]
+  Igy rendelvén ezt a sereg vezérei,
+  Mert a maró seb lábán gennyedésbe ment;
+  S a tábort úgy betölté vad, baljóslatú
+  Nyögése, ordítása, hogy nem lehetett
+  Többé nyugodtan áldoznunk a füstölő
+  Oltárokon. De mért is erről szólani?
+  Hosszú beszédre most valóban nincs idő,
+  Mert megláthatna s elronthatná tervemet.
+  Melylyel reménylem, nemsokára megfogom.
+  Most a te dolgod, hogy segítségemre légy,
+  És meglásd, hol van a kettős nyilásu szirt,
+  Mely télen át a napsugárnak kétszeres
+  Utat nyit, s melybe nyáron kétfelől viszen
+  A hűvös szellő édes enyhe álmakat.
+  Kissé lejebb balkézre hűs forrásvizet
+  Fogsz észre venni, hogyha még ki nem apadt.
+  Lépj csendesen előbbre és jelentsd nekem,
+  Mindaz, mit mondtam, itt van-e, vagy más helyen?
+  Hogy elmondjam s te meghalld majd a többit is,
+  Mit tenni kell még, és munkánk közös legyen.
+
+NEOPTOLEMOS.
+
+  Nincs messze, a mit mondál, Odysseus király;
+  A barlangot, melyről szólsz, látom, úgy hiszem.
+
+ODYSSEUS.
+
+  Ott fenn látod vagy itt lenn? Nem veszem ki, hol?
+
+NEOPTOLEMOS.
+
+  Itt fenn; de léptek hangját nem hallom sehol.
+
+ODYSSEUS.
+
+  Nézd, nem pihen-e álomban fekvő helyén?
+
+NEOPTOLEMOS.
+
+  Üres tanyát látok csak, melyben senki sincs.
+
+ODYSSEUS.
+
+  Nincs benne házi eszköz, mely lakká teszi?
+
+NEOPTOLEMOS.
+
+  Falevelek vannak megvetve ágy gyanánt.
+
+ODYSSEUS.
+
+  Nincs semmi más? A többi része mind üres?
+
+NEOPTOLEMOS.
+
+  Van még itt egy fából készült serleg, durva kéz
+  Munkája; itt egyszersmind némi tüzi szer.
+
+ODYSSEUS.
+
+  Mindez valóban az ő házi eszköze.
+
+NEOPTOLEMOS.
+
+  Oh jaj! még mást is látok; gennytől áztatott
+  Szennyes rongyok száradnak itt a levegőn.
+
+ODYSSEUS.
+
+  Itt e helyen lakik hát, tisztán látható,
+  S nem is lesz távol; hogy mehetne messzire,
+  Ki régi sebtől szenved lábán szüntelen?
+  Vagy élelmet keresni távozott csupán,
+  Vagy enyhítő füvet tud valamely helyen.
+  Állítsd e szolgát lesbe, őrködjék, nehogy
+  Reám üssön; mert szivesebben fogna meg
+  Engem magam, mint Argos összes népeit.
+
+(A szolga el.)
+
+NEOPTOLEMOS.
+
+  Eltávozott a szolga, őrzi az utat;
+  Szólj hát tovább, ha van még több kivánatod.
+
+ODYSSEUS.
+
+  Achilles gyermeke, abban, miért jövél,
+  Nem lesz elég a testi bátorság csupán;
+  Segítned kell, ha újat mondok, mit soha
+  Nem hallottál még, mert segéd gyanánt vagy itt.
+
+NEOPTOLEMOS.
+
+  Mi az, mit kivánsz?
+
+ODYSSEUS.
+
+  Hogy Philoktetes szivét
+  Csalárd szavak hálózatával tőrbe ejtsd.
+  Ha kérdi tőled, honnan jöttél és ki vagy?
+  Mondd: Achilles fia; ebben szólj igazat;
+  Aztán mondd, hogy hazádba tartasz, elhagyád
+  Haraggal telve, hellenek hajóhadát,
+  A kik hazulról kérésekkel csaltak el,
+  Mert egyedül így döntheték meg Iliont,
+  És mégsem méltatának arra, hogy neked
+  Adják Achilles fegyverét jogod szerint,
+  Hanem Odysseusnak; s ekkor mondj reám
+  Tetszés szerint rossznál rosszabb szidalmakat.
+  Épen nem bántasz engem ezzel; ám ha nem
+  Beszélsz így, gyászba döntöd Argos népeit.
+  Mert ha kezünkbe nem jut ez ember nyila,
+  El nem pusztítod Dardanos honát soha.
+  S miért nem én, hanem csak te szólhatsz vele
+  Gyanútlanúl és biztosan, im halld okát:
+  Te nem jövél a harczba esküvés szerint,[2]
+  Nem szükségből,[3] nem az első hadjáraton;[4]
+  Míg én mindebből semmit sem tagadhatok.
+  Azért ha íjával kezében észrevesz,
+  Végem van s téged is elvesztelek velem.
+  Ebben lesz épen cselre szükségünk, miként
+  Rabold el tőle győzhetetlen fegyverét.
+  Tudom, fiam, hogy a természet nem ilyen
+  Ravasz beszédre s cselfogásra alkotott;
+  De édes ám a győzelmet kiküzdeni.
+  Merj hát! Máskor majd ismét igazak leszünk.
+  Most egy kis napnyi rosszaságra adod magad
+  Kezembe, aztán mondjanak mindenkoron
+  Legjámborabbnak minden emberek között.
+
+NEOPTOLEMOS.
+
+  A mit fáj meghallgatnom, Laërtes fia,
+  Gyűlölt előttem akkor is, ha tenni kell.
+  Mert nem születtem cselfogásra sem magam,
+  Sem az, mint mondják, a ki éltemet adá.
+  E férfiút erővel elragadni kész
+  Vagyok, de nem csel által; hisz csak nem fog egy
+  Ép lábbal győztes lenni annyiunk felett.
+  Segítségedre küldtek bár és áruló
+  Nem vágyom lenni; ámde inkább akarok
+  Jót téve bukni, mintsem győzni becstelen.
+
+ODYSSEUS.
+
+  Ifjú koromban, hős atyának gyermeke,
+  Magamnak is lassú volt nyelvem, gyors kezem.
+  De most tudom tapasztalásból, hogy a nyelv
+  Vezet mindent az emberek közt s nem a tett.
+
+NEOPTOLEMOS.
+
+  Mi mást parancsolsz, mint hazugságot csupán?
+
+ODYSSEUS.
+
+  Azt, hogy Philoktetest csel által fogjad el.
+
+NEOPTOLEMOS.
+
+  De mért csel által, ha jó szóval is lehet?
+
+ODYSSEUS.
+
+  Jó szóra nem hajt; és erőszak nem segít.
+
+NEOPTOLEMOS.
+
+  S mi az, mi erejét oly biztossá teszi?
+
+ODYSSEUS.
+
+  Halálos íja, mely czélt nem téveszt soha.
+
+NEOPTOLEMOS.
+
+  Igy hozzá bátran közelítni sem lehet?
+
+ODYSSEUS.
+
+  Nem, csak mint mondám, csellel foghatod meg őt.
+
+NEOPTOLEMOS.
+
+  S azt véled, a hazugság nem szégyenletes?
+
+ODYSSEUS.
+
+  Nem, ha magunkat megmenthetjük általa.
+
+NEOPTOLEMOS.
+
+  Minő arczczal mondhatnék ily beszédeket?
+
+ODYSSEUS.
+
+  Nem illik ott habozni, hol hasznot remélsz.
+
+NEOPTOLEMOS.
+
+  Mily hasznom lesz belőle, ha Trójába jő?
+
+ODYSSEUS.
+
+  Csak e nyilak veszik be Trója falait.
+
+NEOPTOLEMOS.
+
+  Nem én hódítom hát meg, mint biztattatok?
+
+ODYSSEUS.
+
+  Te sem a nyilak nélkül, ők sem nélküled.
+
+NEOPTOLEMOS.
+
+  Ha így van, meg kell hát kerítnem azokat.
+
+ODYSSEUS.
+
+  És kétszeres jutalmat nyersz, ha megteszed.
+
+NEOPTOLEMOS.
+
+  Minőt? Ezt tudva, vonakodni nem fogok.
+
+ODYSSEUS.
+
+  Okosnak és bátornak fognak mondani.
+
+NEOPTOLEMOS.
+
+  Legyen hát; nem szégyenkezem már, megteszem.
+
+ODYSSEUS.
+
+  Emlékezel mindenre, mit tanácsolék?
+
+NEOPTOLEMOS.
+
+  Biztos lehetsz, ha szavamat adám reá.
+
+ODYSSEUS.
+
+  Maradj tehát itt s várj reá, míg megjövend,
+  Én távozom, nehogy meglássa színemet.
+  A kémet ismét a hajóhoz rendelem,
+  S ha látom később, hogy hosszú időt veszítsz,
+  E helyre küldöm újra majd e férfiút,
+  Álöltözetbe rejtve, mint kalmár hajóst,
+  Hogy ismeretlenül végezze dolgait.
+  És ennek csürt-csavart beszédéből fiam,
+  Ragadd ki majd azt, a miből hasznot merítsz.
+  Megyek most a hajóra s mindezt rád bizom.
+  Vezessen minket Hermes, a csel istene,
+  S győző Athena, ki velem van szüntelen!
+
+(El. A kar fellép.)
+
+KAR.
+
+_Első versszak._
+
+  Mi az, mi az, mit mondjak, mit ne mondjak a
+  Gyanakvónak ez idegen hazában?
+  Mondd, király!
+  Felül múl minden tudományt,
+  Minden más értelmet azé, kinek Zeus
+  A kormánybotot adta át.
+  Reád jutott örökül, fiam,
+  Őseid összes hatalma, beszélj hát,
+  Miben lehet segítnem?
+
+NEOPTOLEMOS.
+
+  Ha végig akarsz tekinteni most
+  A helyen, hol e férfi tanyázik,
+  Nézz oda bátran. De ha megjő
+  A rettenetes, közelembe siess,
+  Légy szüntelen oldalomon,
+  Hogy minden perczbe’ segíthess.
+
+KAR.
+
+_Első ellenversszak._
+
+  Király, parancsod szívem régi gondja már:
+  Szemem szüntelenül reád vigyáz csak.
+  Ámde mondd,
+  Mi rejtek ad neki lakást,
+  S most hol járnak léptei; mert bizonynyal
+  Helyén van, tudakolnom ezt,
+  Nehogy orozva rohanjon rám:
+  Merre megy útja, hol a pihenése,
+  Kivül van-e vagy ott benn?
+
+NEOPTOLEMOS.
+
+  Im lakhelye, melynek két ajtaja nyílik,
+  E szikla tövén.
+
+KAR.
+
+  S hova ment a boldogtalan ember?
+
+NEOPTOLEMOS.
+
+  Bizonynyal ez útat szántja nehéz
+  Lépteivel, s élelemért jár a közelben.
+  Mert ez az élete, mondja a hír:
+  Fáradtan fáradalom közt
+  Szárnyas nyillal a vadra vadászva;
+  És nem akadt még
+  Bajának orvosa eddig.
+
+KAR.
+
+_Második versszak._
+
+  Ah! mint szánja szivem szegényt,
+  Ki oly elhagyatottan él,
+  És nem őrzi baráti szem
+  Gondos hű szeretettel;
+  Testét gyötri a fájdalom,
+  És nem hagyja pihenni soha
+  A szükség. Hogy, ah! hogy tudja szegény türni az életet?
+  Oh emberi küzdés!
+  Oh boldogtalan emberek,
+  Kiknek sorsa kiváló!
+
+_Második ellenversszak._
+
+  Im ez, kit születésre, ős
+  Fajra senki se’ múl felül,
+  Szükség, nélkülözés között
+  Fekszik most egyedül itt,
+  Hol csak tarka s bozontos vad
+  Tanyáz; gyötrik a testi kór
+  S éhség kínjai, míg lelke nehéz gondok alatt eped
+  S bús panaszát csupán
+  A visszhang fecsegő szava
+  Viszonozza szünetlen.
+
+NEOPTOLEMOS.
+
+  Nincs semmi ezekben bámulatos;
+  Mert ha agyamban is értelem él,
+  Tudom, isteni kéz küldte reá
+  E sorsot, a bősz Chryso haragja;[5]
+  S a nyomor, mely most gyötri segítség
+  Nélkül, az ég akaratja szerint van,
+  Nehogy az isteni győzhetetlen ijat[6]
+  Előbb feszítse Trója falának, a míg
+  El nem jött az idő, melyben a jóslat
+  Rendelte bukását e nyilak által.
+
+KAR.
+
+_Harmadik versszak._
+
+  Csendesen, fiam!
+
+NEOPTOLEMOS.
+
+              Mi az?
+
+KAR.
+
+                  Zaj közelg felénk…
+  Mintha emberi kín sóhaja volna…
+  Innen jött-e vagy onnan?
+  Hozzám, hozzám hatol
+  Ez ösvény felől a nehézkes
+  Fáradt léptek dobogása,
+  Távolból hangzik a kínos
+  Sóhaj; messzire elhat a nyögés.
+
+KAR.
+
+_Harmadik ellenversszak._
+
+  Gyermekem, ügyelj!
+
+NEOPTOLEMOS.
+
+              Mire?
+
+KAR.
+
+                  A mit tenni kell;
+  Mert nincs messze e helytől, ide ért már,
+  Nem zengve dalt nádfuvolán,
+  Mint mezők pásztora;
+  Ordítása messzire hangzik,
+  Mert sebét tán megütötte,
+  Vagy mert e zordon öbölben
+  Hajót lát; iszonyú e kiáltás.
+
+(Philoktetes föllép.)
+
+PHILOKTETES.
+
+  Oh jaj, idegenek!
+  Kik vagytok, kik e földön partra szálltatok,
+  Hol nincs jó révpart, hol nem laknak emberek?
+  Minő hazából, mily nemzetségből valók
+  Vagytok ti? A ruhátok, látom, hellasi
+  Formára készült, mely nekem legkedvesebb,
+  De úgy szeretném hangotok meghallani;
+  Ne féljetek hát tőlem vad külsőm miatt,
+  Inkább szánjátok bennem a boldogtalant,
+  Az elhagyottat, a szegény örömtelent,
+  És szóljatok, ha mint barátok jöttetek.
+  Feleljetek hát; ép oly joggal várhatom
+  Ezt tőletek, mint én felelni kész vagyok.
+
+NEOPTOLEMOS.
+
+  Oh idegen, tudd meg hát mindenek előtt,
+  Mit tudni óhajtottál: hellenek vagyunk.
+
+PHILOKTETES.
+
+  Oh kedves hangok! Mily gyönyör, hosszú idő
+  Multával ismét e beszédet hallani!
+  Mi szükség hajtott e vidékre, gyermekem?
+  Minő szándék, minő kedves szél vezetett?
+  Oh mondj el mindent, hadd tudjam kiléteted!
+
+NEOPTOLEMOS.
+
+  Hazám hullám övezte Skyros szigete;[7]
+  Honom felé hajózom, s Achilles fia,
+  Neoptolemos vagyok. Elmondtam, mit tudok.
+
+PHILOKTETES.
+
+  Oh te a legkedvesb atyának gyermeke,
+  Kit kedves föld szült s agg Lykomedes nevelt!
+  Mily út hozott e földre? Honnan érkezél?
+
+NEOPTOLEMOS.
+
+  Hajóm most Ilionból visz hazám felé.
+
+PHILOKTETES.
+
+  Mit mondasz? Hisz te nem valál akkor velünk,
+  Midőn először Ilionba indulánk.
+
+NEOPTOLEMOS.
+
+  S te részt vevél ez útnak fáradalmiban?
+
+PHILOKTETES.
+
+  Oh gyermekem, hát nem tudod, kivel beszélsz?
+
+NEOPTOLEMOS.
+
+  Hogy ismerném azt, a kit nem láttam soha?
+
+PHILOKTETES.
+
+  Nevem se’ hallád s szenvedéseim hírét,
+  Melyek megtörték, tönkre tették éltemet?
+
+NEOPTOLEMOS.
+
+  Minderről, mit kérdeztél, semmit sem tudok,
+
+PHILOKTETES.
+
+  Oh én szegény, isten gyűlölte nyomorult,
+  Kinek balsorsát még a hír sem vitte el
+  Hazám földére, sem Hellasban bárhová!
+  Hanem kik e szigetre dobtak gonoszul,
+  Hallgatnak és nevetnek; s kórom azalatt
+  Szünetlenül növekszik s egyre gyarapul.
+  Oh én fiam, Achilles méltó gyermeke,
+  Azt látod bennem, a kiről hallád talán,
+  Hogy birtokul nyeré Herakles fegyverét,
+  Poeas fiát, Philoktetest, kit egykoron
+  E két vezér és a kephallen fejdelem,[8]
+  Kitettek e vadonban szégyenteljesen,
+  Mert a kegyetlen kór emészté testemet
+  A gyilkos kigyó marta kínos seb miatt,
+  E kórral tettek itt ki engem, oh fiam,
+  S magamra hagytak, a midőn a chrysai
+  Sziget felől hajóik erre tértenek.
+  Örömmel látva, hogy a hosszas hányatás
+  Után az álom elnyomott egy szirt alatt,
+  Itt hagytak, elfutottak, némi rongyokat
+  Dobván elémbe, mint koldusnak, és silány
+  Élelmet – adja vissza ezt az ég nekik!
+  Fiam, mit gondolsz, milyen volt az ébredés
+  Ez álomból, midőn mind eltávoztanak?
+  Mint könyeztem, mint nyögtem balsorsom felett?
+  Látván, hogy mind eltüntek a hajók, melyek
+  Idáig hoztak, s ember nem volt e helyen,
+  A ki segítsen, a ki szenvedésemet
+  Enyhítse, és bármerre fordítám szemem,
+  Nem láttam semmit, mint gyötrelmet és nyomort,
+  Ám ennek nagy bővében voltam, oh fiam!
+  De napra nap mult, gyorsan eltelt az idő,
+  S magamnak kellett e silány fedél alatt
+  Szolgálatomra lennem; gyomromat ugyan
+  Ellátta íjam, szárnyas vadgalambokat
+  Ejtvén el; ám ha egyet eltalált a nyíl,
+  Magamnak kellett érte másznom, sebhedett
+  Lábam vonszolva kínnal, fáradságosan.
+  S ha enyhítő italra vágytam, vagy ha fát
+  Akartam vágni télen át, midőn a föld
+  Jégtől volt megdermedve: gyötrelmek között
+  Kellett érette vánszorognom; s ha tüzem
+  Hiányzott, a kövekből fáradságosan
+  Ütöttem ki a szikrát, mely mindig megóv.
+  Mert hogyha tűz ég benne, e lakás nekem
+  Mindent megad, kivéve gyógyulásomat.
+  S most tudd meg azt is, milyen e sziget, fiam!
+  Nincs oly hajós, ki jó szántából jő felé;
+  Mert nincs révpartja, nincs helye, hol szivesen
+  Fogadják, hol haszonnal kalmárkodhatik.
+  Okos embernek útja erre nincs soha.
+  De kedve ellen köt ki tán itt valaki?
+  Mert ezt is meghozhatja a hosszú idő.
+  Igen, fiam, jöttek már, és szóval nagyon
+  Sajnálkozának rajtam, adtak is talán
+  Részvétből egy kis élelmet s ruházatot;
+  De azt, ha szólok róla, senki sem teszi,
+  Hogy elvigyen hazámba; tíz év óta kell
+  Viselnem így már gyötrő kórom kínjait,
+  És elpusztulnom éhség és nyomor miatt.
+  Im ezt tevék az Atridák s Odysseus
+  Velem, fiam, hogy az olympi istenek
+  Fizessenek hasonló kínokkal nekik!
+
+KAR.
+
+  Én is sajnállak téged, oh Poeas fia,
+  Miként azok, kik partra szálltak itt előbb.
+
+NEOPTOLEMOS.
+
+  Szavad mellett bizonyságot teszek magam;
+  Tudom, valót beszéltél; mert tapasztalám,
+  Az Atridák s Odysseus mily rossz emberek.
+
+PHILOKTETES.
+
+  Megbántottak hát téged is ez átkozott
+  Atridák, hogy haragra gyúltál ellenök?
+
+NEOPTOLEMOS.
+
+  Bár válthatná be egykor boszúmat karom,
+  S ismerné meg Mykene, Sparta egyaránt,
+  Hogy Skyros bátor férfiak szülő hona.
+
+PHILOKTETES.
+
+  Jól van, fiam! De honnan jött e nagy harag,
+  Mely ellenökben ily heves boszúra készt?
+
+NEOPTOLEMOS.
+
+  Elmondom, bárha nehezen, Poeas fia,
+  Mily bántalmakkal halmozának engem el.
+  Midőn Achillest elragadta a halál –
+
+PHILOKTETES.
+
+  Oh jaj! Ne szólj tovább egy szót se, míg előbb
+  Nem hallom: meghalt igazán Peleus fia?
+
+NEOPTOLEMOS.
+
+  Meghalt, nem emberkéztől, isten ölte meg;
+  A földre dönté, mint mondják, Phœbos nyila.
+
+PHILOKTETES.
+
+  Dicső volt hát a győztes, vesztes egyaránt.
+  De nem tudom most, oh fiam, bántalmadat
+  Kérdezzem-e vagy őt sirassam legelőbb?
+
+NEOPTOLEMOS.
+
+  Azt vélem, oh boldogtalan, elég neked
+  Saját bajod, nem kell siratnod másokat.
+
+PHILOKTETES.
+
+  Jól mondod; szólj hát újra dolgaid felől,
+  Mily megbántással hoztak rád gyalázatot?
+
+NEOPTOLEMOS.
+
+  Érettem jött atyámnak nevelője[9] és
+  Az isteni Odysseus tarkaszín hajón,
+  Mondván, akár igaz volt, vagy akár hamis,
+  Hogy senki más nem fogja meghódítani
+  Atyámnak elhunytával Tróját kivülem.
+  Ilyen beszéddel csakhamar rábirtanak,
+  Oh idegen, s hajóra is szálltam velök,
+  Óhajtván látni a halottat, mielőtt
+  Sirjába tennék; mert nem láttam őt soha;
+  Aztán e vágyhoz járult még a szép remény,
+  Hogy én fogom bevenni Trója ormait.
+  A második nap látta már útban hajóm’,
+  Midőn jó széllel a gyász Sigeionhoz ért;[10]
+  S alighogy partra szálltam, az egész sereg
+  Körülfogott, köszöntve s esküdözve, hogy
+  A holt Achillest látja újra élve most.
+  De ő holtan feküdt ott; s én, boldogtalan,
+  Könnyet hintvén rá, csakhamar fölkeresém
+  Az Atridákat, jog szerint barátimat,
+  Kérvén atyámnak fegyverét s egyéb javát.
+  De jaj! e szemtelen szóval feleltek ők:
+  Achilles sarja, minden más tied lehet
+  Atyád örökségéből, ám a fegyverek
+  Gazdája más ember lett, Laërtes fia.
+  És engem ennek hallatára nagy harag
+  Ragadt el, s fájdalommal telve felelék:
+  Arczátlanok, hogyan mertétek fegyverem
+  Megkérdezésem nélkül másnak adni át?
+  S Odysseus, ki közel volt, ekként válaszolt:
+  Igen, fiú, jogosan adták azt nekem;
+  Mert én mentém meg egykor őt és fegyverét.
+  S én feldühödve rossznál rosszabb átkokat
+  Szórtam reá s szidalmakkal halmoztam el,
+  Ha mégis elragadja tőlem fegyverem,
+  Idáig jutva, bárha nem gyors haragú,
+  Sértő szavamra ingerülten így felelt:
+  Nem voltál, hol mi voltunk, ott valál, a hol
+  Nem kelle; s mégis ily merész szájjal beszélsz;
+  Nem mégy Skyrosba hát e fegyverrel soha!
+  Ily sok gyalázat, ily nagy megbántás után
+  Hazám felé hajózom, míg a gonoszok
+  Szülötte, a gonosz Odysseus megrabolt.
+  S nem őt, inkább fölebbvalóit vádolom,
+  Mert minden ország s hadsereg vezérei
+  Szavát fogadja; és a bűnös emberek
+  Tanítóik szavára lesznek gonoszok.
+  Elmondtam. Ki az Atridákat gyűlöli,
+  Szeresse azt az ég úgy, mint én szeretem.
+
+KAR.
+
+_Versszak._
+
+  Oh bérczes föld, ki mindent táplálsz, s ki Zeust is szüléd,[11]
+  Ki az aranyhullámu Paktolost lakod,[12]
+  Ott is hozzád esengtem, dicső anyám,
+  Midőn az Atridák megsérték ez ifjat,
+  Laërtes fiának adva atyja fegyvereit,
+  A legnagyobb dicsőség gyanánt –
+  Oh istennő, ki bikát pusztító
+  Oroszlánon ülsz![13]
+
+PHILOKTETES.
+
+  A bánat biztos zálogával jöttetek,
+  Mint látom, e szigetre, oh idegenek!
+  Velem egy sorson vagytok, s tisztán látható,
+  Hogy az Atridák és Odysseus műve ez.
+  Mert jól tudom, hogy nyelve mindig készen áll
+  Minden gazságra, csalfaságra, és soha
+  Nem hozhat létre semmit, a mi jó s igaz.
+  De nem csodálom ezt úgy, mint hogy a nagyobb
+  Ajas nyugodtan nézte s elviselheté.
+
+NEOPTOLEMOS.
+
+  Nem volt már életben, oh idegen! Hiszen
+  Ha ő él, engem sem raboltak volna meg.
+
+PHILOKTETES.
+
+  Mit mondasz? Ezt is elragadta a halál?
+
+NEOPTOLEMOS.
+
+  Tudd meg, hogy többé nem süt rá a napvilág.
+
+PHILOKTETES.
+
+  Oh jaj szegény! De nem halt meg Tydeus fia,[14]
+  Sem az, kit Sisyphostól pénzen vett vala
+  Laërtes.[15] Inkább őket sujtaná a halál!
+
+NEOPTOLEMOS.
+
+  Nem ám; tudd meg bizonynyal; sőt inkább nagyon
+  Virágoznak mindketten Argos serege közt.
+
+PHILOKTETES.
+
+  S él-e derék barátom, az agg pylosi
+  Nestor, ki meggátolta bölcs tanácsai
+  Által gyakorta amazok rossz szándokát?
+
+NEOPTOLEMOS.
+
+  Nagy gyászban van most, mert fiát Antilochost
+  Kebléről elszakítá a halál keze.
+
+PHILOKTETES.
+
+  Oh jaj! két szörnyű veszteséget említél,
+  A melyet legkevésbbé vágytam hallani.
+  Jaj, jaj, hová tekintsek most, ha mindezek
+  Meghaltak, és Odysseus még mindig él,
+  Kinek inkább meg kellett volna halnia!
+
+NEOPTOLEMOS.
+
+  Ügyes küzdő ez, ám sokszor megbomlanak,
+  Philoktetes, a legügyesebb tervek is.
+
+PHILOKTETES.
+
+  Az istenekre, mondd meg, hol volt akkoron
+  Atyádnak legdrágább barátja, Patroklos?
+
+NEOPTOLEMOS.
+
+  Meghalt ez is. Rövid szóból tanuld meg azt,
+  Hogy nem a rosszakat ragadja el a harcz
+  Legszivesebben, ámde a legjobbakat.
+
+PHILOKTETES.
+
+  Valót beszélsz; s azért még egy ember felől
+  Kérdezlek, a ki bár méltatlan, de okos,
+  Ügyes nyelvű: minő sors érte életét?
+
+NEOPTOLEMOS.
+
+  Ki más, ha nem Odysseus az, kit kérdezél?
+
+PHILOKTETES.
+
+  Nem őt értettem; volt egy Thersites nevü
+  Ember, ki mindig kész volt többször szólni ott,
+  Hol senki sem akarta. Mit tudsz, él-e még?
+
+NEOPTOLEMOS.
+
+  Nem láttam őt, de úgy tudom, még mindig él.
+
+PHILOKTETES.
+
+  Ugy is kell; hisz még nem veszett el semmi rossz,
+  Jól gondoskodnak erről a nagy istenek;
+  Kik gyakran visszahozzák Hades karjai
+  Közül is mindazt, a mi csalfa és gonosz,
+  És mindig sirba döntik azt, ki jó s igaz.
+  Mit mondjak erről, mint dicsérjem ezt, holott
+  Az istenekben is gonoszságot lelek?
+
+NEOPTOLEMOS.
+
+  Mi engem illet, oh Poeas nemes fia,
+  Őrizkedem ezentul, hogy jó messziről
+  Lássam csupán az Atridákat s Iliont;
+  Mert hol derék embernél többet ér a rossz,
+  Hol minden jó elpusztul és a gyáva győz,
+  Oly emberekkel nem szövetkezem soha;
+  Legyen ezentúl a sziklás Skyros nekem
+  Elég, találjam otthon boldogságomat.
+  De most megyek hajómra; s te Poeas fia,
+  Élj boldogul, légy boldog, és az istenek
+  Gyógyítsanak meg úgy, mint óhajtod magad.
+  Mi meg siessünk; és ha kedvező szelet
+  Küld ránk az isten, tüstént útra indulunk.
+
+PHILOKTETES.
+
+  Már távoztok, fiam?
+
+NEOPTOLEMOS.
+
+                  Igen, az indulás
+  Perczét közelben kell várnunk, nem messziről.
+
+PHILOKTETES.
+
+  Úgy hát atyád s anyád nevére, oh fiam,
+  És arra, mit hazádban legjobban szeretsz,
+  Esengve kérlek, oh ne hagyj ily egyedül
+  Magamra e nyomorban, mely mint láthatod,
+  S mint hallád, szörnyű kínnal gyötri éltemet;
+  Végy mint fölösleget hajódra. Jól tudom,
+  Hogy kellemetlen lesz hajódon ily teher;
+  De tűrd el. A nagy lelkek mindig gyűlölik
+  A rosszat, s azt tartják dicsőnek, a mi jó.
+  Ha itt hagysz, nem fog szép hírt hozni rád, fiam,
+  De ha megmentesz, nagy dicsőség lesz díjad,
+  Ha Oeta földét újra élve láthatom.
+  Fel! Fáradságod nem tart egy egész napig.
+  Merd hát! Vezess magaddal, dobj, hová akarsz,
+  Az orra, farra, vagy fenékre a hajón,
+  Hol legkevésbbé háborítom társidat.
+  Hallgass meg, az irgalmas Zeusra, oh fiam,
+  Fogadj el! Im lásd, térdeidhez borulok,
+  Bár béna, gyenge lábam. Oh ne hagyj el itt,
+  Embertől távol, e vadonban egyedül!
+  Oh ments meg innen, vigy hazádba engemet,
+  Vagy Eubœába, hol Chalkodon a király,[16]
+  És innen nem lesz Oetáig hosszú az út,
+  Trachis hegyéig, gyors futású Sperchios
+  Partjáig; hadd öleljen újra ott atyám,
+  Kiért régóta gyötri aggódás szivem,
+  Hogy meghalt. Sokszor küldtem hozzá azokat,
+  Kik erre jártak esdekelve untalan,
+  Hogy mentésemre küldjön gályát önmaga,
+  De vagy meghalt már, vagy talán követjeim
+  Kevésre tartva, úgy látszik, kérésemet,
+  Saját honuk felé eveztek egyenest.
+  De most légy te vezérem, légy te hírnököm,
+  Oh szánakozzál rajtam, ments meg engemet;
+  Gondold meg, mily veszélyek várnak mindenütt
+  Az emberekre, jó s balsorsban egyaránt.
+  Tekintsen hát a vészre, a ki tőle ment,
+  S a boldog ember óvakodjék legkivált,
+  Hogy észrevétlen baj ne érje életét.
+
+KAR.
+
+_Ellenversszak._
+
+  Szánd meg, király! Elmondta sok küzdelmét, kínjait:
+  Oh bár ne sujtaná e sors barátimat!
+  Ámde ha gyűlölöd az Atridákat,
+  Gonosz tettöket most e férfi javára
+  Fordítanám, a hová szive vágya vonja,
+  Honába visszavinném futó
+  Hajómon, kerülve így istenek
+  Súlyos boszúját.
+
+NEOPTOLEMOS.
+
+  Vigyázz, nehogy most könnyen egyezzél bele,
+  S ha kórja láttán majd fölgerjed undorod,
+  Többé ne érezz akként, a mint most beszélsz.
+
+KAR.
+
+  Épen nem; módot arra nem nyujtok soha,
+  Hogy ezt a szemrehányást joggal tedd nekem.
+
+NEOPTOLEMOS.
+
+  Bizonynyal szégyen volna, ha ez idegen
+  Sorsán segítni nem vágynám úgy, mint magad.
+  Ha úgy tetszik, menjünk hát; készüljön hamar,
+  Mert a hajó nem utasítja vissza őt.
+  Csak engedjék az istenek, hogy biztosan
+  Elérjünk innen, a hová kivánkozunk.
+
+PHILOKTETES.
+
+  Oh éltem legszebb napja! kedves férfiú,
+  Derék hajósok, bár lehetne tetteim
+  Által mutatnom, mily barátotok levék!
+  Menjünk fiam, köszöntsük végbúcsú gyanánt
+  E lakhatatlan lakhelyet, hogy lásd magad,
+  Miből éltem, mily hőslelkűnek születém,
+  Mert azt hiszem, más ember, mint én, e nyomor
+  Merő látását sem tudná kiállani,
+  De engem megtanított a szükség reá.
+
+KAR.
+
+  Megálljatok! Két férfiú közelg felénk;
+  Egyik hajóslegényed, másik idegen,
+  Hallgassátok meg őket, aztán menjetek.
+
+(A szolga jő kalmárnak öltözve, egy másik hajóssal.)
+
+KALMÁR.
+
+  Ez utitárstól kérdém, Achilles fia,
+  A ki harmadmagával őrizé hajód,
+  Hogy mondaná meg, hol találhatok reád.
+  Mivel mindketten, nem szándékosan, hanem
+  Véletlen folytán egy révben találkozánk.
+  Kalmárhajómmal Ilion felől jövök,
+  S hazámba tartok, Peparethos bortadó
+  Földére,[17] s hallván, hogy mind hozzád tartozók
+  Az emberek, kik itt a partra szálltanak,
+  Nem akarám tovább folytatni útamat,
+  Míg véled szólva méltó díjat nem nyerek.
+  Mert nem tudod bizonynyal, mily új terveket
+  Forralnak Argos seregében ellened,
+  S nem is maradtak már a tervnél egyedül,
+  Hanem halasztás nélkül tetté vált a szó.
+
+NEOPTOLEMOS.
+
+  Hálás leszek hű gondodért, oh idegen,
+  A mily igaz, hogy nem vagyok gonosz szivű;
+  De fejtsd ki jobban, mit akartál mondani,
+  Hadd ismerjem meg Argos ujabb terveit.
+
+KALMÁR.
+
+  Az agg Phœnix, és véle Theseus két fia,[18]
+  Hajóra szállva téged üldözőbe vett.
+
+NEOPTOLEMOS.
+
+  S erőszakkal vinnének vagy szóval megint?
+
+KALMÁR.
+
+  Azt nem tudom; csak a hallottat mondom el.
+
+NEOPTOLEMOS.
+
+  És ily nagy hévvel indulnának ellenem,
+  Az Atridák kedvéért Phœnix s társai?
+
+KALMÁR.
+
+  Meg is tették már, tudd meg, nemcsak tervezik.
+
+NEOPTOLEMOS.
+
+  De mint van, hogy Odysseus nem vállalta el
+  E küldetést? Tán félelem tartóztatá?
+
+KALMÁR.
+
+  Más embert ment keresni ő s Tydæus fia,
+  Epen, midőn hajómat útnak indítám.
+
+NEOPTOLEMOS.
+
+  Ki az, kiért Odysseus útra kelt maga?
+
+KALMÁR.
+
+  Ez ember – – ámde mondd előbb nekem, ki ez,
+  Ki itt jelen van? Halkan mondd, a mit akarsz.
+
+NEOPTOLEMOS.
+
+  Ez a híres Philoktetes, oh idegen!
+
+KALMÁR.
+
+  Ne kérdezz tőlem többet, ám minél előbb
+  Bocsásd szélnek vitorlád s hagyd el e helyet.
+
+PHILOKTETES.
+
+  Mit mond ez ember, gyermekem? Mit alkuszik
+  Fölöttem oly titokban e kalmár veled?
+
+NEOPTOLEMOS.
+
+  Még nem tudom, mi czélja; ám világosan
+  Kell most előtted és előttünk szólnia.
+
+KALMÁR.
+
+  Achilles sarja, rám ne zúdítsd a sereg
+  Dühét, ha arról szólok, a miről tilos;
+  Szegény létemre sok hasznom van általok.
+
+NEOPTOLEMOS.
+
+  Én gyűlölöm az Atridákat, s ez nekem
+  Legjobb barátom, mert azoknak ellene;
+  Nem kell tehát, ha jó barát gyanánt jövél,
+  Semmit sem eltitkolnod, a mit megtudál.
+
+KALMÁR.
+
+  Vigyázz, mit tészsz, fiam!
+
+NEOPTOLEMOS.
+
+                  Már rég meggondolám.
+
+KALMÁR.
+
+  Reád hárítok minden bűnt.
+
+NEOPTOLEMOS.
+
+                  Jó, csak beszélj.
+
+KALMÁR.
+
+  Beszélek. Érte indult e két férfiú,
+  Tydeus fia s Odysseus, az erőszakos,
+  Esküt tevén, hogy visszahozzák biztosan,
+  Akár szép szó, akár kényszer lesz fegyverük.
+  Tisztán hallá mindenki a seregben ezt,
+  Odysseus ajkáról; mert őt biztosabb
+  Hit buzdítá e tettre, mint a másikat.
+
+NEOPTOLEMOS.
+
+  S mi fordítá most oly hosszú idő után
+  Az Atridák gondját e férfiú felé,
+  Kit oly rég eltaszítának maguk közül?
+  Mily vágy vezette? Tán az istenek keze
+  S boszúja, mely a rossz tettet megbünteti?
+
+KALMÁR.
+
+  Elmondom mindazt, mert bizonynyal nem tudod.
+  Volt egy nemes jós, Priamos király fia,
+  A kit nevére Helenosnak mondtanak;
+  Midőn egy ízben éjjel kinn járt egyedül,
+  Elfogta őt Odysseus, a gyalázatos,
+  Álnok gonosztevő, s bilincset vert reá,
+  S Argos sergébe vitte szép zsákmány gyanánt;
+  Sok mindent jósolt ekkor, s egyebek között,
+  Hogy addig nem veszik be Trója ormait,
+  Míg vissza nem vezérlik ezt a férfiút
+  Szép szóval a szigetről, melyen most lakik.
+  Mihelyt hallá Laërtes sarja ezt a jós
+  Ajkáról, tüstént megfogadta a sereg
+  Előtt, hogy visszahozza Poeas gyermekét,
+  Bizton remélvén, hogy szép szóval ráveszi;
+  S ha így nem jönne, kényszerítni fogja őt,
+  Fejével állva jót a biztos sikerért.
+  Mindent hallottál. Ám most azt tanácsolom,
+  Siess innen, te s más is, a kit érdekel.
+
+PHILOKTETES.
+
+  Oh jaj nekem! Megesküdött hát a gonosz,
+  Hogy a sereghez szép szavakkal visszavisz?
+  Ép úgy rábirna, hogy mint apja egykoron,[19]
+  Hadesből visszatérjek a halál után.
+
+KALMÁR.
+
+  Ezt nem tudom. De most hajómra távozom;
+  Rátok meg adja legjobb áldását az ég! (El.)
+
+PHILOKTETES.
+
+  Nem szörnyűség, oh gyermekem, ha azt hiszi
+  Laërtes sarja, hogy szép szóval rábeszél,
+  És elvihet hajóján a sereg közé?
+  Inkább követném gyűlölt ellenségemet,
+  A mérges kigyót, mely megrontá lábamat!
+  De ő kész minden szóra, mindent merni kész;
+  S most is tudom bizonynyal, hogy megjő ide.
+  Siessünk hát, oh gyermekem; válaszszon el
+  Odysseustól a tág tenger minél előbb.
+  El innen hát! A jókor használt gyorsaság
+  A munka multán álmat és nyugalmat ád.
+
+NEOPTOLEMOS.
+
+  Mihelyt a szemközt fúvó szél lecsillapul,
+  Tüstént hajóra szállunk; most útunkban áll.
+
+PHILOKTETES.
+
+  Ha vész elől futsz, mindig kedvező a szél.
+
+NEOPTOLEMOS.
+
+  Tudom; de elleninket is feltartja most.[20]
+
+PHILOKTETES.
+
+  Nincs a kalózra kedvezőtlen szél soha,
+  Ha lopni vagy rabolni nyilik alkalom.
+
+NEOPTOLEMOS.
+
+  Menjünk, ha tetszik; ám lakodból vedd előbb
+  Magadhoz, mit szükséged és vágyad kiván.
+
+PHILOKTETES.
+
+  Van ott, mit el kell vinnem a kevés közül.
+
+NEOPTOLEMOS.
+
+  S mi az, mit nem találhatnál fel a hajón?
+
+PHILOKTETES.
+
+  Van egy füvem, melytől mindig lecsillapul
+  Sebem fájdalma és elalszik teljesen.
+
+NEOPTOLEMOS.
+
+  Hozd hát magaddal. Mit kivánsz még egyebet?
+
+PHILOKTETES.
+
+  Megnézem, nem szóródott el véletlenül
+  Egy-két nyilam? nehogy más kézbe jussanak.
+
+NEOPTOLEMOS.
+
+  A híres íjat tartod hát kezed között?
+
+PHILOKTETES.
+
+  Az és nem más, melyet most nálam lát szemed.
+
+NEOPTOLEMOS.
+
+  Szabad közelről néznem és érintenem?
+  S imádva megcsókolnom szent isten gyanánt?
+
+PHILOKTETES.
+
+  Igen, mind ebben, mind egyébben, oh fiam,
+  Mi én tőlem függ, tetszésed szerint tehetsz.
+
+NEOPTOLEMOS.
+
+  Bizonynyal vágyom értte, ám e vágy olyan,
+  Hogy ha szabad, kivánom; ha nem, elhagyom.
+
+PHILOKTETES.
+
+  Szentül beszélsz, szabad lesz hát neked, fiam,
+  Ki egyedül adád meg, újra látnom a
+  Nap fényét, újra látnom Oeta ormait,
+  Az ősz atyát s barátimat; ki ellenim
+  Fölé emelsz a porból, melybe sülyedék.
+  Ne félj, szabad lesz kézbe fognod íjamat,
+  Elvenned, visszaadnod; s dicsekedhetel,
+  Hogy egyedül te érintéd erényedért;
+  Mint én is egykor jó tett által nyertem el.
+
+NEOPTOLEMOS.
+
+  Nem sajnálom, hogy láttalak s barátomul
+  Fogadtalak; mert a ki jót jóval fizet,
+  Akármi kincsnél többet ér az oly barát.
+  Menj hát be.
+
+PHILOKTETES.
+
+                  Jöjj te is velem; károm miatt
+  Szükségem van rád, hogy karoddal gyámolíts.
+
+(Mindketten a barlangba mennek.)
+
+KAR.
+
+_Első versszak._
+
+  Beszéd után tudom – nem látta enszemem –
+  Mint kötözé örökkön forgó kerékre
+  Kronos mindenható fia azt a vakmerőt, ki
+  Ágyához közelgett;[21]
+  Ámde mást soha sem láttam, nem hallottam soha másról,
+  Kit oly rettenetes sors ére, mint ezt,
+  Bár senkinek se’ tett rosszat, se kárt,
+  Ám igazakhoz igaz volt,
+  S mégis elvesz ily méltatlanul. Ámulat fog el,
+  Kérdve, miként, miként tudá
+  Ily egyedül, s nem hallva mást,
+  Mint zuhogó habok szavát,
+  Tűrni e gyászos éltet?
+
+_Első ellenversszak._
+
+  Magányosan, nem birva megtört lábait,
+  Senkije sem volt, kinek elpanaszolja,
+  Sóhajtva, könnyezve a vérző maró seb
+  Gyötrő szenvedését;
+  Nem volt senkie, ki az életadó föld kebeléről
+  Gyógyító füveket szakítva írul,
+  Lecsillapítsa égető sebe
+  Vérözönét, ha előtört;
+  Mint a dajka-vesztett gyermek, ődöngött egyedül
+  Erre vagy arra kínosan,
+  Merre utat talált nehéz
+  Lépteinek, ha elpihent
+  Lelke maró gyötrelme.
+
+_Második versszak._
+
+  Nem táplálta a föld magva, gyümölcse őt,
+  Sem más, mit eledellé tesz az emberkéz,
+  Csak gyors íja adott röpke nyilával
+  Táplálékot az éhség ölte gyomornak.
+  Oh nyomorult ember!
+  Tíz év óta nem enyhítik a bor cseppjei szomját,
+  Ám hol az állott víz pocsolyába gyűlt,
+  Csak arra tekintett.
+
+_Második ellenversszak._
+
+  De most, hogy nemes ősök sarja talált rá,
+  Boldog s nagy lesz a sok nyomornak utána;
+  Tengerjáró hajón visszavezérli
+  Sok hold mulva atyjának ősi lakába,
+  Melisi nymphákhoz,
+  Sperchios viruló partjaira, hol az érczpaizsú hős
+  Isteni láng közt égbe emelkedett
+  Az oetai ormon.[22] (Neoptolemos és Philoktetes jönnek a barlangból.)
+
+NEOPTOLEMOS.
+
+  Jer, ha akarsz. Miért némulsz egyszerre el
+  Ok nélkül, honnan jött e dermedt ámulat?
+
+PHILOKTETES.
+
+  Ah, ah, ah, ah!
+
+NEOPTOLEMOS.
+
+  Mi baj van?
+
+PHILOKTETES.
+
+          Semmi szörnyű; menj tovább, fiam.
+
+NEOPTOLEMOS.
+
+  Talán a kór lepett meg és kinoz megint?
+
+PHILOKTETES.
+
+  Épen nem. Azt hiszem, tüstént megenyhülök.
+  Jaj istenem!
+
+NEOPTOLEMOS.
+
+  Miért kiáltsz istenhez ily fájdalmasan?
+
+PHILOKTETES.
+
+  Irgalmat kérek tőle s enyhítő segélyt.
+  Ah, ah, ah, ah!
+
+NEOPTOLEMOS.
+
+  Mi kín gyötör? Nem mondod? Mért e némaság?
+  Bizonynyal baj lepett meg, nyilván látható.
+
+PHILOKTETES.
+
+  Fiam, elvesztem; nem titkolhatom tovább
+  Előled szenvedésemet – jaj! jaj nekem!
+  Elfog már, elfog! Én szegény, boldogtalan!
+  Fiam, elvesztem; pusztulok már; jaj nekem!
+  Oh jaj nekem, jaj, oh jaj, ah, ah, jaj nekem!
+  Az istenekre, oh fiam, ha itt közel
+  Kardod van, vágd le gyökeréig lábamat,
+  Oh vágd le gyorsan, és ne kiméld éltemet!
+  Fiam, vágj!
+
+NEOPTOLEMOS.
+
+  Mi új kínok rohantak rád oly hirtelen,
+  Hogy ennyi jajveszéklés tör ki ajkadon?
+
+PHILOKTETES.
+
+  Tudod fiam –
+
+NEOPTOLEMOS.
+
+                  Mit?
+
+PHILOKTETES.
+
+                      Oh fiam, tudod –
+
+NEOPTOLEMOS.
+
+                      Hogyan?
+  Mit sem tudok.
+
+PHILOKTETES.
+
+                  Mit? Nem tudod? Jaj, jaj nekem!
+
+NEOPTOLEMOS.
+
+  Szörnyű teherként súlyosúl a kór reád.
+
+PHILOKTETES.
+
+  Szörnyű, kimondhatatlan! Oh szánj meg, fiam!
+
+NEOPTOLEMOS.
+
+  De mit tegyek hát?
+
+PHILOKTETES.
+
+                  Meg ne rémülj s el ne hagyj;
+  Időnként vissza-visszatér a kór, s emészt,
+  Míg nem lakott jól.
+
+NEOPTOLEMOS.
+
+                  Jaj, jaj, oh boldogtalan!
+  Boldogtalan valóban ennyi kín között!
+  Kivánod-e, hogy tartsalak s felfogjalak?
+
+PHILOKTETES.
+
+  Nem ezt, nem; ámde vedd kezedbe íjamat,
+  Mint épen most kivántad, s míg lecsillapul
+  A kór emésztő lángja, mely most meglepett,
+  Tartsd és őrizd magadnál addig. Rendesen
+  Álom fog el, ha szenvedésem véget ér;
+  Előbb nem csillapul le; akkor hagyjatok
+  Nyugodtan szenderegni. És ha ezalatt
+  Megjönnek üldözőim, kérlek, íjamat
+  Nekik ne add, sem önként, sem kényszer miatt,
+  Sem csellel rászedetve, mert úgy megölöd
+  Magaddal azt, ki védelmedhez fordula.
+
+NEOPTOLEMOS.
+
+  Bízzál vigyázatomban; más hozzá nem ér,
+  Mint én s te; add hát, és szerencse lesz velünk.
+
+PHILOKTETES.
+
+  Im vedd; de engeszteld meg az irigy eget,
+  Ne hozzon ez rád annyi bajt és szenvedést,
+  Mint rám és arra, a kié előbb vala.[23]
+
+NEOPTOLEMOS.
+
+  Oh istenek, adjátok ezt meg: adjatok
+  Jó széllel kedvező utat, s vezessetek,
+  Hová az isten rendel s készül a hajó!
+
+PHILOKTETES.
+
+  Imád nem teljesül be, félek gyermekem!
+  Mert mély sebemből újra ömlik a sötét
+  Véráradat, új gyötrelmek várnak reám.
+  Ah, ah, jaj!
+  Jaj lábam, lábam, mennyi kínt adsz még nekem!
+  Megindult,
+  Megindult már, közel van! Én boldogtalan!
+  Itt van, látjátok! Oh de el ne fussatok!
+  Oh jaj, jaj!
+  Oh gaz kephallen, bár hatolnák át meg át
+  E gyötrő kínok kebledet! Jaj, jaj nekem!
+  És újra jaj! S ti a sereg vezérei,
+  Agamemnon, oh Menelaos, vajha kóromat
+  Ti hordoznátok és oly hosszú ideig!
+  Jaj kínok!
+  Miért nem jösz már végre, oh halál, halál!
+  Hiszen mindennap hivlak! oh jövel, jövel!
+  Ragadj meg engem, oh fiam, nemes barát,
+  És égess porrá Lemnos lángoló tüzén,[24]
+  A mint én egykor szintén porrá égetém
+  Zeus gyermekét e fegyverek jutalmaul,
+  A melyeket most őrizetbe vett kezed.
+  Mit szólsz, fiam?
+  Mi az? Mért hallgatsz? Hol vagy, hol vagy, oh fiam!
+
+NEOPTOLEMOS.
+
+  Régóta szenved szivem kínjaid miatt.
+
+PHILOKTETES.
+
+  Végy bátorságot, oh fiam; dühvel rohan
+  Reám a kín, de ismét gyorsan távozik.
+  Csak kérlek, oh ne hagyj itt engem egyedül!
+
+NEOPTOLEMOS.
+
+  Bízzál, itt maradunk.
+
+PHILOKTETES.
+
+                  Maradsz?
+
+NEOPTOLEMOS.
+
+                      Igen, ne félj!
+
+PHILOKTETES.
+
+  Nem kivánom, hogy eskű által kösd magad.
+
+NEOPTOLEMOS.
+
+  Ugy sem szabad távoznom innen nélküled.
+
+PHILOKTETES.
+
+  Add zálogul kezed rá.
+
+NEOPTOLEMOS.
+
+                  Itt van, maradok.
+
+PHILOKTETES.
+
+  Most arra, arra –
+
+NEOPTOLEMOS.
+
+                  Mit szólsz? Merre?
+
+PHILOKTETES.
+
+                      Oda fel –
+
+NEOPTOLEMOS.
+
+  Mit őrjöngsz újra? Mért tekintsz az égre fel?
+
+PHILOKTETES.
+
+  Bocsáss, bocsáss!
+
+NEOPTOLEMOS.
+
+                  Hová?
+
+PHILOKTETES.
+
+                      Bocsáss el végre már!
+
+NEOPTOLEMOS.
+
+  Nem hagylak el.
+
+PHILOKTETES.
+
+                  Megölsz, ha hozzám ér kezed.
+
+NEOPTOLEMOS.
+
+  Elhagylak hát, ha jobban érted, mi segít.
+
+PHILOKTETES (leroskad).
+
+  Oh föld, fogadj el haldokolva, mint vagyok;
+  Mert kínjaim közt többé fenn nem állhatok.
+
+NEOPTOLEMOS.
+
+  Úgy látszik, nemsokára álom fogja el
+  A férfiút; mert hátra hajlik már feje;
+  Izzadság üt ki teste összes tagjain,
+  És lába végén felpattant sötét ere,
+  Melyből vér ömlik. Hagyjuk őt, barátim,
+  Nyugodtan, enyhe álom hadd szálljon reá.
+
+(Philoktetes elszunnyad.)
+
+ELSŐ FÉLKAR.
+
+_Versszak._
+
+  Szállj ide bánatot és bajokat feledő
+  Enyhe lehelletű álom!
+  Szállj ide boldogító isten!
+  Fogd le szemét, tartsd ott
+  A sötét fátyolt, mely rája borul.
+  Ide, ide, gyógyító!
+  Oh fiam, vigyázz, hova állsz,
+  Merre mégysz, mi lészen ezentúl
+  Tenni valónk? Látod már!
+  Mért halogatjuk a tettet?
+  Ki az alkalmat meg tudja ragadni,
+  Pillanat alatt övé a győzelem.
+
+NEOPTOLEMOS.
+
+_Közdal._
+
+  Semmit sem hall már, az igaz; de tudom, hogy az íjat
+  Hasztalanul nyertük, ha e férfiú nem jön el innen.
+  Rá vár a koszorú, érette külde az isten;
+  Szégyen, nem sikerült tettel hazugul dicsekedni.
+
+MÁSODIK FÉLKAR.
+
+_Ellenversszak._
+
+  Oh fiam, isten itéljen ezek fölött;
+  Ámde ha újra felelsz majd,
+  Halk, susogó hangon
+  Küldd szavadat hozzám;
+  Mert álomtalan a beteg álma,
+  Szeme, füle lát és hall.
+  Ám te, a mint lehet, oly
+  Titkosan add tudtomra, miként
+  Hajtod végre a tervet.
+  Jól tudod, kiről beszélek:
+  Ha vele egy akaraton vagy,
+  Látom előre a sok bajt és zavart.
+
+KAR.
+
+_Végdal._
+
+  Jó szél fúj, fiam, jó szél!
+  Itt fekszik végtelenül, lehúnyt szemekkel,
+  Melyeket éji homály fed, –
+  Kegyes, elnyomó álom, –
+  Tagjainak nem ura, nincs keze, lába,
+  Úgy pihen itt, mint Hades ölén a halott.
+  Vigyázz, helyén legyen beszéded.
+  A mennyire érteni képes eszem:
+  Legjobb a veszélytelen munka.[25]
+
+NEOPTOLEMOS.
+
+  Hallgassatok, némuljon el e balgaság;
+  Mert mozdul már szeme s emelkedik feje.
+
+PHILOKTETES.
+
+  Oh álmat váltó napfény, oh idegenek!
+  Ti, kik reményemen túl oltalmaztatok!
+  Mert el nem hittem volna azt, fiam, soha,
+  Hogy oly részvéttel nézzed szenvedésemet,
+  S oly türelemmel itt maradj segélyemül.
+  Az Atridák bizonynyal nem viselheték
+  Oly könnyen ezt, nem a derék vezéri pár!
+  De te, fiam, nemes szívű vagy és nemes
+  Törzsnek szülötte, és azért föl sem vevéd
+  Sebem rossz bűzét, kínos ordításomat.
+  És most, fiam, hogy szenvedésem elpihent,
+  S az enyhítő felejtés árnya száll reám,
+  Emelj föl engem karjaiddal, gyermekem,
+  S mihelyt megszünik e zsibbadó bágyadás,
+  Menjünk hajódra, ne halaszd el útadat.
+
+NEOPTOLEMOS.
+
+  Oh mint örvendek, hogy reményemen felül
+  Életben látlak s nem gyötör több fájdalom;
+  Mert minden jel halálodat mutatta már,
+  Midőn e szörnyű kínok rád rohantanak.
+  Kelj fel tehát; s ha tán inkább kedvedre van,
+  Ezek vihetnek; ellenökre nem leszen
+  A fáradság, ha így tetszik nekem s neked.
+
+PHILOKTETES.
+
+  Emelj te föl s állíts lábamra, oh fiam!
+  De ezeket ne bántsuk, hogy idő előtt
+  Ne érezzék a rossz bűzt; a hajón magán
+  Elég terhökre lesz jelenlétem nekik.
+
+NEOPTOLEMOS (megragadja és fölemeli).
+
+  Legyen. Kelj fel hát és támaszkodjál reám.
+
+PHILOKTETES.
+
+  Csak bátran! Hosszú megszokás taníta rá.
+
+(Kiegyenesedik.)
+
+NEOPTOLEMOS.
+
+  Jaj, jaj! Mihez fogjak most, mit tegyek tovább?[26]
+
+PHILOKTETES.
+
+  Mi baj, fiam? Hová tévednek szavaid?
+
+NEOPTOLEMOS.
+
+  Ah nem tudom, mit mondjak, oly zavart vagyok!
+
+PHILOKTETES.
+
+  Mért vagy zavart? ne mondj ilyesmit, oh fiam!
+
+NEOPTOLEMOS.
+
+  De már idáig ért e kínos állapot.
+
+PHILOKTETES.
+
+  Csak nem rémített vissza kórom undora,
+  Hogy el ne vígy magaddal úti társadul?
+
+NEOPTOLEMOS.
+
+  Undor lesz arra minden, ki természetét
+  Meghazudtolja, azt tevém, mi nem helyes.
+
+PHILOKTETES.
+
+  De a nemest segítve, tetted és szavad
+  Atyádra nem lesz meghazudtolás soha.
+
+NEOPTOLEMOS.
+
+  Szégyen fog érni; rég gyötör e gondolat.
+
+PHILOKTETES.
+
+  Nem tettedért; de félek, szavadért az ér.
+
+NEOPTOLEMOS.
+
+  Oh mit tegyek, Zeus! Ismét oly gonosz legyek,
+  Ki a valót titkolja és gazul beszél?
+
+PHILOKTETES.
+
+  E férfiú – ha meg nem csalt itéletem –
+  Hajóra száll és engem itt hagy hitlenül.
+
+NEOPTOLEMOS.
+
+  Nem hagylak el; de az gyötör régóta már,
+  Hogy a hajón majd bánatodra viszlek el.
+
+PHILOKTETES.
+
+  Mit mondasz ezzel, oh fiam? Nem értelek.
+
+NEOPTOLEMOS.
+
+  Nem titkolom: Trójába, Argos népei
+  Közé, az Atridákhoz kell jönnöd velem.
+
+PHILOKTETES.
+
+  Oh jaj! mit mondasz?
+
+NEOPTOLEMOS.
+
+                  Ne sóhajts, míg nem tudod –
+
+PHILOKTETES.
+
+  Mit kell megtudnom? Mily szándékod van velem?
+
+NEOPTOLEMOS.
+
+  Előbb bajodtól mentelek meg; azután
+  Megyek bevenni Trója ormait veled.
+
+PHILOKTETES.
+
+  Valóban ez szándékod?
+
+NEOPTOLEMOS.
+
+                  Szükség kényszerít,
+  Ne lobbanj hát haragra, hallva ezt a szót.
+
+PHILOKTETES.
+
+  Elvesztem, eladattam! Mit tevél velem,
+  Oh idegen? Add vissza tüstént íjamat!
+
+NEOPTOLEMOS.
+
+  Nem adhatom, mert azt kivánja jog s haszon,
+  Hogy megfogadjam az uralkodók szavát.
+
+PHILOKTETES.
+
+  Te pusztító tűz, oh te rémes szörnyeteg,
+  Te álnokság mintája, mit tevél velem,
+  Mint árultál el! Nem pirulsz, ha rám tekintsz,
+  Ki térdeidnél esdekeltem, oh gonosz?
+  Ez íjjal elraboltad tőlem éltemet!
+  Add vissza, kérlek, add, esengek, oh fiam!
+  Ne vedd el – ősi istenidre! – éltemet.
+  Oh jaj nekem, szegénynek, még hozzám se szól!
+  Nem adja vissza – mondja elfordult szeme.
+  Oh révpart! oh hegyormok! oh vadállatok,
+  Hű társaságom! oh ti lejtős szirtfalak!
+  Hozzátok – mert másokhoz úgy sem szólhatok –
+  Hozzátok hangzik ajkaimról a panasz,
+  Lássátok, mit tett vélem Achilles fia!
+  Trójába hurczol, esküdvén, hogy haza visz;
+  És jobbját nyujtva, elrabolta íjamat,
+  Az isteni Herakles szentelt fegyverét,
+  Hogy felmutassa Argos népei előtt!
+  Elfog s magával hurczol hős ember gyanánt,
+  S nem tudja, hogy halottat öl meg és hiú
+  Árnyképet. Ha erőm van, el nem fog soha;
+  Hisz így is csak ravaszság által győze le.
+  S most rászedetve, mit tegyek boldogtalan?
+  Add vissza! térj magadhoz, légy a ki valál!
+  Mit mondasz? Hallgatsz? Oh jaj, semmivé levék!
+  Oh két nyilású szikla, im fegyvertelen,
+  Táplálék nélkül térek hozzád vissza most,
+  És elhagyatva sorvad benned életem;
+  Nem ejtek el nyilammal több szárnyas madárt,
+  Sem hegymászó vadat, nem, enmagam leszek
+  Halottan étke annak, a mit én evém,
+  S mire vadásztam, rám fog az vadászni most;
+  Halálom lesz haláluk díja, e miatt,
+  Kiről azt hittem, a rosszat sem ismeri,
+  Veszsz el – de nem – tán újra fordul szándokod?
+  Ha nem – úgy halj meg nyomorultan, gonoszul.
+
+KAR.
+
+  Mit cselekedjünk? Rajtad áll most, oh király,
+  Hogy elhajózzunk, vagy meghallgassuk szavát.
+
+NEOPTOLEMOS.
+
+  Kimondhatatlan részvét hatja át szivem
+  Iránta, nem csupán most, régtől fogva már.
+
+PHILOKTETES.
+
+  Az égre, szánj meg, oh fiam! Ne tedd magad
+  Az emberek csúfjává e csalás miatt.
+
+NEOPTOLEMOS.
+
+  Jaj, mit tegyek, mit! Bár ne hagytam volna el
+  Soha Skyrost! Oly iszonyúan szenvedek.
+
+PHILOKTETES.
+
+  Nem vagy te rossz, csak a rossz emberek szava.
+  Tanított bűnre; hagyd másokra ezt, kiket
+  Megillet; add át íjamat s hajózz tovább.
+
+NEOPTOLEMOS.
+
+  Most mit tegyünk, barátim?
+
+(Odysseus rejtekéből hirtelen előlép.)
+
+ODYSSEUS.
+
+  Mit tészsz, oh gonosz!
+  Lépj vissza tüstént s add át e nyilat nekem!
+
+PHILOKTETES.
+
+  Jaj, ki ez ember? Nem Odysseus hangja ez?
+
+ODYSSEUS.
+
+  Odysseust látod, tudd bizonynyal, én vagyok.
+
+PHILOKTETES.
+
+  Eladtak, elvesztem, jaj! Ő volt hát, a ki
+  Hálóba font és elrabolta fegyverem!
+
+ODYSSEUS.
+
+  Én voltam, tudd meg, senki más; nem tagadom.
+
+PHILOKTETES.
+
+  Add vissza, oh add vissza íjamat, fiam!
+
+ODYSSEUS.
+
+  Nem, ha akarná, sem teendi ezt soha;
+  De te velök jösz, vagy erővel visznek el.
+
+PHILOKTETES.
+
+  Oh rosszak rossza, oh te vakmerő gonosz!
+  Erővel visznek?
+
+ODYSSEUS.
+
+                  Ha önként nem jösz velünk.
+
+PHILOKTETES.
+
+  Oh Lemnos földe, oh Hephæstos pusztító,
+  Tűzhányó bércze, el fogjátok tűrni azt,
+  Hogy elragadjon ez az ember tőletek?
+
+ODYSSEUS.
+
+  Zeus, tudd meg, Zeus, e földnek legfelsőbb ura,
+  Zeus rendelé ezt; s én parancsait teszem.
+
+PHILOKTETES.
+
+  Gonosz te, mily beszédet fogsz még költeni?
+  Az istent is hazuggá tennéd kedvedért.
+
+ODYSSEUS.
+
+  Nem, csak igazmondóvá. Jönnöd kell velünk.
+
+PHILOKTETES.
+
+  Nem! mondom!
+
+ODYSSEUS.
+
+          S én azt mondom, hogy követni fogsz.
+
+PHILOKTETES.
+
+  Oh jaj nekem, szegénynek! Hát rabszolgaként
+  Nemzett atyám, és nem szabadnak születém?
+
+ODYSSEUS.
+
+  Nem; egyenlő vagy a legjobbakkal, s velök
+  Fogod Tróját bevenni s elpusztítani.
+
+PHILOKTETES.
+
+  Nem, szenvedjek bár százszoros bajt, nem soha,
+  Míg megmarad számomra itt e meredek.
+
+ODYSSEUS.
+
+  És mit fogsz tenni?
+
+PHILOKTETES.
+
+                  Tüstént szétzúzom fejem
+  E sziklán, a mélységbe dobva magamat.
+
+ODYSSEUS.
+
+  Ragadjátok meg, hogy ne hajtsa végre ezt!
+
+(A szolgák megragadják Philoktetest.)
+
+PHILOKTETES.
+
+  Oh kéz, mit kell szenvedned! Drága íjadat
+  Elvesztéd és ez ember most hurokra fűz!
+  Oh te, ki jóra, szépre nem gondolsz soha,
+  Mily orvul támadál meg, mint szedél reá;
+  Ez ifjat véve pajzsul, kit nem ismerék,
+  S ki hozzám méltóbb volt, mint hozzád, s nem tudott
+  Semmit, csupán azt tette, mit parancsolál;
+  És már is szemmel láthatólag gyötri az,
+  Mit vétkezett s mi által én úgy szenvedek!
+  De rossz lelked, mely lesre mindig készen áll,
+  Jól megtanítá furfangos csalásra őt,
+  Kiben nem volt rá sem hajlam, sem akarat.
+  S most megkötözve elragadnál, nyomorult,
+  E partról, melyen egykoron hazátlanul,
+  Elhagyva, mint élő halottat eldobál.
+  Hah!
+  Veszsz el! Sokszor kivántam már én ezt neked;
+  De mit sem tesznek kedvemért az istenek;
+  Örömben élsz te, engem fájdalom gyötör,
+  Hogy életben maradtam ennyi baj között,
+  Nevetségül magadnak és az Atrida
+  Vezéri párnak, melynek most szolgál karod.
+  Pedig csel által s kényszerítve indulál[27]
+  Velök az útra; és engem boldogtalant,
+  Ki önként jöttem hét hajón, eldobtanak,
+  Miként te mondod – ők rád róják ezt a bűnt. –
+  S most elvinnétek? Elhurczolnátok? Miért?
+  Ki semmi s rátok nézve rég halott vagyok?
+  Mért nem mondasz hát, oh te istentől gyűlölt,
+  Bénának, rossz szagúnak? Hát most már lehet
+  Áldoznotok, habár én köztetek vagyok?
+  Hisz ezt hozád fel ürügyül, hogy eltaszíts.
+  Veszsz el hát! El fogsz veszni, a ki ezt tevéd
+  Velem, ha van igazság, még az ég alatt!
+  S tudom, hogy van; hisz nem tettétek volna meg
+  Máskép ez útat a boldogtalan miatt,
+  Ha istenektől nem jő serkentő fulánk.
+  Oh honi földem s mindentlátó istenek,
+  Oh büntessétek, büntessétek végre már
+  Mindnyájokat, ha megnyerém szánalmatok!
+  Mert bár nyomorban élek, ám ha vesztöket
+  Látnám, azt hinném, elhagyott a szenvedés.
+
+KAR.
+
+  Haraggal telt, s haraggal szólt e férfiú
+  Hozzád, Odysseus; nem hajtá meg őt a kór.
+
+ODYSSEUS.
+
+  Sokat mondhatnék e szavakra válaszul,
+  Ha rajtam állna; most csak egy szavam lehet:
+  Hol ilyenekre van szükség, ilyen vagyok;
+  S a hol igaz és jó ember kivántatik,
+  Erényesebbet, mint én, nem találsz soha.
+  Természetem győzelmet kiván mindenütt,
+  Csak rajtad nem; neked örömmel engedek.
+
+(A szolgákhoz.)
+
+  Oldjátok fel, többé hozzá ne nyúljatok;
+  Maradjon itt! Hisz úgy sincs szükségünk reád,
+  Ha fegyvered mienk lesz; mert ott van velünk
+  Teukros, ki jól ért hozzá, mint bánjék vele;
+  S hiszem, magam sem volnék rosszabb nyillövő,
+  Miként te, s ép úgy eltalálhatnám a czélt.
+  Mi szükség van rád? Élj Lemnosban boldogul!
+  Mi távozunk, s tán meglehet, hogy én nyerem
+  Ten íjad által a neked szánt hírnevet.
+
+PHILOKTETES.
+
+  Jaj! mit tegyek, jaj! Fegyveremmel diszíted
+  Magad hát s úgy jelensz meg Argos népe közt?
+
+ODYSSEUS.
+
+  Ne szólj már többet hozzám, úgyis távozom.
+
+PHILOKTETES.
+
+  Oh Achilles szülötte! hát nem üdvözölsz
+  Többé hangoddal? Igy hagynád el e helyet!
+
+ODYSSEUS (Neoptolemoshoz).
+
+  Siess, ne nézz rá, bárminő nagylelkű vagy,
+  Nehogy megrontsad szánalomból a sikert.
+
+PHILOKTETES (a karhoz).
+
+  Ti is magamra hagytok, oh idegenek,
+  Nem szánakoztok szenvedéseim felett?
+
+KAR.
+
+  Ez ifjú itt hajónk vezére, és a mit
+  Ő mond neked, mi is azt fogjuk mondani.
+
+NEOPTOLEMOS.
+
+  Bizonynyal gyenge szivünek fog mondani
+  Odysseus; ám ha kivánná e férfiú,
+  Maradjatok, míg útra kész lesz a hajó,
+  S imánkat elvégeztük indulás előtt.
+  Addig tán jobbra fordul ennek szándoka
+  Irántunk. Most mi ketten hát eltávozunk,
+  Ti meg, ha majd szólítlak, tüstént jöjjetek.
+
+(Neoptolemos, Odysseus el.)
+
+PHILOKTETES.
+
+_Első versszak._
+
+  Oh forró s fagyos sziklaüreg!
+  Nem hagylak el hát soha sem
+  Téged, én nyomorult szegény!
+  Látni fogod halálomat is,
+  Igy rendelte a végzet,
+  Oh jaj, jaj, jaj!
+  Oh szomorú barlang,
+  Melyet betölte keservem!
+  Mi fog táplálni ezentúl?
+  Hol van számomra remény,
+  Hol van a kéz, mely az éhezőt enyhíti?
+  Fenn a magasban
+  Átsuhan a levegőn madarak raja,
+  De én nem gátolom meg.
+
+KAR.
+
+  Magad, magad, akartad ezt így,
+  Boldogtalan! És nem más keze
+  Dönte nagyobb hatalommal e sorsba;
+  Rajtad állt a meggondolás,
+  Ám te nagyobbra becsülted a rossz sorsot a jónál.
+
+PHILOKTETES.
+
+_Első ellenversszak._
+
+  Oh én nyomorult, nyomorult!
+  Megtörve a szörnyű kíntól,
+  Nem látva emberi arczot,
+  Elhagyatva kell ezután
+  Elvesznem nyomorultan!
+  Jaj, jaj, jaj, jaj!
+  Nem szerez élelmet
+  Többé az erős kéz
+  Szárnyas fegyvere által;
+  Mert elámíta az áruló,
+  Csalfa szavával eláltatá lelkemet.
+  Vajha e kínok
+  Gyötrenék a gonoszt oly hosszú időn át,
+  A mint engem gyötörnek!
+
+KAR.
+
+  Az ég, az ég hozá reád ezt,
+  S nem emberi csalfaság, kezem
+  Által. Azért e baljóslatú átkot
+  Másra szórd és nem reánk,
+  Mert remegek, nehogy elveszítsd jó indulatunkat.
+
+PHILOKTETES.
+
+_Második versszak._
+
+  Oh jaj, jaj! ott ül most valahol
+  A part fehér fövenyén,
+  S kaczagva rázza kezében
+  Életadó nyilamat,
+  Melyhez senki se nyúlt még.
+  Oh hű fegyver, a hű
+  Kézből elragadott íj!
+  Nemde, ha érzelem él idegedben,
+  Szánva tekintesz Herakles
+  Szegény frigyesére,
+  A ki lövésre nem feszít soha többé?
+  Urat váltasz, a cselszövő
+  Keze fog forgatni ezentúl,
+  Tanúja lészsz gaztetteinek,
+  S szemléled a gyűlöletest,
+  Számtalan új bajt fűzve a bűnhöz,
+  A melyet ellenem elkövetett.
+
+KAR.
+
+  A férfiú mondja a jót igaznak,
+  Ám ha kimondta, szidalmat
+  Ne tegyen hozzá a boszús nyelv.
+  Mert sokaknak akaratját
+  Teljesíté egyedül ő,
+  Segélyt hozván az egész seregnek.
+
+PHILOKTETES.
+
+_Második ellenversszak._
+
+  Oh repülő madarak, s ti
+  Csillogó szemű vadjai
+  Erdős hegyeimnek,
+  Nem fogtok futni ezentúl
+  Előlem; nincs a hatalmas
+  Nyíl többé kezeimben;
+  Oh nyomorult vagyok immár!
+  Nem védi senki e tájat,
+  Nincs több félni valótok;
+  Jertek előre hát,
+  Üssetek kedvtelve dús lakomát
+  Véres tagjaimon!
+  Hiszen úgy sincs messze halálom.
+  Mi táplálhatná életemet?
+  Ki él meg a levegőből,
+  Ha soha sem kap semmit a földtől,
+  A mi erőt és életet ád?
+
+KAR.
+
+  Az égre, közelegj hozzánk bizalommal,
+  Kik jót akarva közelgénk,
+  Tudd meg, e kíntól
+  Megmenekülsz, ha akarsz.
+  Mert iszonyú, táplálni a kórt,
+  Ezernyi kínját nem tudva viselni.
+
+PHILOKTETES.
+
+  Megint, megint eszembe juttatád a régi bajt,
+  Oh útasok legjobbja, te!
+  Miért ölsz meg, miért gyötörsz?
+
+KAR.
+
+  Mit értesz ezzel?
+
+PHILOKTETES.
+
+  Mért akarsz a gyűlöletes
+  Trója felé vinni magaddal?
+
+KAR.
+
+  Tudom, ez volna a legjobb.
+
+PHILOKTETES.
+
+  El, el innen! Hagyj magamra!
+
+KAR.
+
+  Örömest, örömest teszem ezt a parancsot azonnal.
+  El innen, el innen,
+  A hajóra, helyünkre!
+
+PHILOKTETES.
+
+  Zeusra, ki átkomat hallja, ne menj el, esengek!
+
+KAR.
+
+  Csillapulj!
+
+PHILOKTETES.
+
+  Emberek!
+  Az égre, maradjatok!
+
+KAR.
+
+  Miért kiáltasz?
+
+PHILOKTETES.
+
+  Oh jaj! oh jaj! Oh sors! oh sors!
+  Oda életem! Ah!
+  Lábam, lábam, oh mit tegyek,
+  Hová legyek veled ezentúl?
+  Jertek, oh emberek, vissza e helyre!
+
+KAR.
+
+  Mért? Hogy újra útnak ereszsz,
+  A mint előbb kijelentéd?
+
+PHILOKTETES.
+
+  Ne ródd bűnömül,
+  Ha viharos kínjaim között
+  Botor szót monda ki ajkam.
+
+KAR.
+
+  Jőjj, a miként mondám, boldogtalan ember!
+
+PHILOKTETES.
+
+  Nem, soha sem, soha sem, vedd ezt bizonyosnak,
+  Bárha tüzes villámaival
+  Hamvasztana el a boszus isten!
+  Veszszen el Ilion és a ki vívja!
+  Mind, a kik eldobtak, sebemet megutálva, magoktól!
+  Még csak ez egyet kérem, oh idegenek!
+
+KAR.
+
+  Szólj, mi e kérés?
+
+PHILOKTETES.
+
+  Ha van valahol kard,
+  Vagy bárd, avagy íj, hozzátok ide.
+
+KAR.
+
+  És mit akarsz vele tenni?
+
+PHILOKTETES.
+
+  Tagjaimat s fejemet levágni kezemmel,
+  Halált, halált akarok most!
+
+KAR.
+
+  Miért?
+
+PHILOKTETES.
+
+  Atyámat keresem.
+
+KAR.
+
+  És hol?
+
+PHILOKTETES.
+
+  Hadesben;
+  Mert nem látja már a napot,
+  Oh városom, drága hazám,
+  Oh ha viszont látnálak, én szegény!
+  Ki elhagyva szent habjaidat,[28]
+  A gyűlölt Danaok frigyese
+  Levék; s ime most megsemmisültem.
+
+(El a barlangba.)
+
+KAR.
+
+  Rég útra keltem volna már hajóm felé,
+  És ott is volnék, ha nem látná most szemem
+  Odysseust erre jönni, s Achilles nemes
+  Szülöttét, a ki gyors léptekkel közeleg.
+
+(Neoptolemos és Odysseus fellépnek.)
+
+ODYSSEUS.
+
+  Nem mondanád, mért fordultál meg útadon,
+  S miért jösz oly sietve vissza most ide?
+
+NEOPTOLEMOS.
+
+  Hogy az előbbi bünömet jóvá tegyem.
+
+ODYSSEUS.
+
+  Csodálatos szót mondasz. És mi volt e bűn?
+
+NEOPTOLEMOS.
+
+  Hogy rád és az egész seregre hallgaték –
+
+ODYSSEUS.
+
+  S mi dolgot tettél, a mi nem hozzád való?
+
+NEOPTOLEMOS.
+
+  Rút csalfasággal rászedém e férfiút.
+
+ODYSSEUS.
+
+  Kit? Oh jaj! csak nem forralsz új tervet megint?
+
+NEOPTOLEMOS.
+
+  Nem, semmi újat! Ámde Poeas gyermekét –
+
+ODYSSEUS.
+
+  Mi szándokod van? Elfogott a rettegés.
+
+NEOPTOLEMOS.
+
+  Fölkeresem, s az elrabolt nyilat megint –
+
+ODYSSEUS.
+
+  Oh Zeus, mit mondasz! Tán csak vissza nem adod?
+
+NEOPTOLEMOS.
+
+  Alávalóan, jogtalan ragadtam el.
+
+ODYSSEUS.
+
+  Az istenekre, csúfságból beszélsz-e így?
+
+NEOPTOLEMOS.
+
+  Igen, ha csúfság a valót kimondani.
+
+ODYSSEUS.
+
+  Mit hallok, oh Achilles sarja! Mit beszélsz?
+
+NEOPTOLEMOS.
+
+  Kétszer, háromszor ismételjem ugyanazt?
+
+ODYSSEUS.
+
+  Bár egyszer sem hallottam volna ezt a szót!
+
+NEOPTOLEMOS.
+
+  Értsd meg hát tisztán, mindent elmondtam neked.
+
+ODYSSEUS.
+
+  Van még, van még, ki meggátolja tettedet.
+
+NEOPTOLEMOS.
+
+  Mit szólsz? Ki az, ki ebben gátot vet nekem?
+
+ODYSSEUS.
+
+  Achaea összes népe, és köztük magam.
+
+NEOPTOLEMOS.
+
+  Okos létedre nem mondtál most okosat.
+
+ODYSSEUS.
+
+  S te nem beszélsz és nem cselekszel okosan.
+
+NEOPTOLEMOS.
+
+  Okosságnál igazságosság többet ér.
+
+ODYSSEUS.
+
+  De mily igazság, visszaadni azt, a mit
+  Tanácsom által nyertél?
+
+NEOPTOLEMOS.
+
+                  Csak jóvá teszem,
+  A mit előbb alávalóan vétkezém.
+
+ODYSSEUS.
+
+  S nem félsz Argos sergétől, ha ezt megteszed?
+
+NEOPTOLEMOS.
+
+  A jog mellettem van, hiában fenyegetsz.
+  S erőszakkal sem gátolod meg szándokom.
+
+ODYSSEUS.
+
+  Nem Trója ellen küzdünk hát, de ellened.
+
+NEOPTOLEMOS.
+
+  Hadd jőjjön, a minek kell!
+
+ODYSSEUS.
+
+                  Látod, hogy kezem
+  A kardhoz nyult már?
+
+NEOPTOLEMOS.
+
+                  Láthatsz tüstént engem is,
+  Hogy azt teszem, s habozni épen nem fogok.
+
+ODYSSEUS.
+
+  Legyen hát, távozom most és tudtul adom
+  Ezt a seregnek, tőle végy majd büntetést. (El.)
+
+NEOPTOLEMOS.
+
+  Bölcsen tevél. Ha mindig így gondolkozol,
+  Távol tartasz magadtól minden bánatot.
+  S most halld szavam, Philoktetes, Poeas fia!
+  E sziklabarlang árnyékából lépj elő!
+
+(Philoktetes előlép.)
+
+PHILOKTETES.
+
+  Mi zaj hangzik fel újra e barlang előtt?
+  Miért hivtok ki, mit akartok, emberek?
+
+(Észreveszi Neoptolemost.)
+
+  Jaj! Rossz van készülőben! Miért jövél megint?
+  Hogy régi szenvedésem újakkal tetézd?
+
+NEOPTOLEMOS.
+
+  Bizzál, és engedd elbeszélnem, mért jövék.
+
+PHILOKTETES.
+
+  Félek; mert azelőtt is szép volt a szavad,
+  S mivel szavadnak hittem, nagy bajomra lett.
+
+NEOPTOLEMOS.
+
+  Hát nem lehet, hogy változik az érzelem?
+
+PHILOKTETES.
+
+  Midőn elloptad íjam, akkor is ilyen
+  Valál: igaz beszédű és álnok szivű.
+
+NEOPTOLEMOS.
+
+  De most ne félj; csak azt kivánom hallani,
+  Miként fordult szándékod: itt maradsz-e vagy
+  Velünk hajózol?
+
+PHILOKTETES.
+
+                  Hallgass, ne beszélj tovább!
+  Akármit mondasz, hasztalan minden szavad,
+
+NEOPTOLEMOS.
+
+  Ez szándokod hát?
+
+PHILOKTETES.
+
+                  Inkább, mintsem mondhatom.
+
+NEOPTOLEMOS.
+
+  Jobban szerettem volna, hogy szavamra hajts;
+  De ha beszédem nincs kedvedre, felhagyok
+  Vele azonnal.
+
+PHILOKTETES.
+
+                  Hasztalan is szólanál.
+  Mert nem nyered meg jó szándékomat soha,
+  Te, a ki csalfán elraboltad éltemet,
+  És azután bölcs oktatással jösz elém,
+  Te, a legjobb atyának legrosszabb fia!
+  Átok reátok, Atridák! Átok reád
+  És Laërtes fiára!
+
+NEOPTOLEMOS.
+
+                  Hagyd az átkokat!
+  Ime, fogadd el kezeimből íjadat.
+
+PHILOKTETES.
+
+  Mit mondasz? Újra csalfaság játszik velem?
+
+NEOPTOLEMOS.
+
+  A felséges Zeus szent nevére esküszöm!
+
+PHILOKTETES.
+
+  Oh, drága hangok – ha való, a mit beszélsz.
+
+NEOPTOLEMOS.
+
+  Tüstént tett fogja bizonyítni; nyujtsd ki hát
+  Jobb kezedet s légy újra fegyvered ura.
+
+(Odysseus hirtelen előlép.)
+
+ODYSSEUS.
+
+  S én megtiltom – tanúim rá az istenek –
+  Az Atridák és a sereg nevében ezt!
+
+PHILOKTETES (átveszi az íjat).
+
+  Fiam, ki szól itt? Nem Odysseus hangja ez,
+  A melyet hallok?
+
+ODYSSEUS.
+
+                  Tudd meg bizton, én vagyok,
+  S erőszakkal Trójába viszlek, bár velem
+  Vagy ellenem fog tenni Achilles fia.
+
+PHILOKTETES (íját felhúzza).
+
+  De nem jó kedvvel, ha e nyil bizton talál.
+
+NEOPTOLEMOS (megragadja karját).
+
+  Hah, nem, soha! Az égre! Hagyd el íjadat!
+
+PHILOKTETES.
+
+  Az égre, hagyd el karomat, kedves fiam!
+
+NEOPTOLEMOS.
+
+  El nem bocsátom!
+
+(Odysseus elfut.)
+
+PHILOKTETES.
+
+                  Oh, jaj! mért nem engedéd,
+  Hogy meggyilkoljam gyűlölt ellenségemet?
+
+NEOPTOLEMOS.
+
+  Szégyen lett volna mindkettőnkre nézve az.
+
+PHILOKTETES.
+
+  Tudd meg hát legalább, hogy a vezérek, e
+  Hazug hírmondók, szóval hősök egyedül,
+  De gyávák ott, hol dárda ellen dárda küzd.
+
+NEOPTOLEMOS.
+
+  Legyen! Megvan már íjad, s így nincs semmi ok
+  Haragra vagy panaszra többé ellenem.
+
+PHILOKTETES.
+
+  Úgy van. Nemes törzsödhöz méltóan tevél,
+  Fiam; nem Sisyphostól nyerted éltedet,
+  Hanem Achillestől, kit életében és
+  Halálában mindig legjobbnak mondtanak.
+
+NEOPTOLEMOS.
+
+  Örömmel hallom e dicséretet atyám
+  S magam felől; de hallgass most rám, s tudd mi az,
+  Mit tőled kérek. Embernek viselni kell
+  A sorsot, melyet istenek küldtek reá;
+  De a ki önmagának készít szenvedést,
+  Miként te, az nem érdemel bocsánatot,
+  És nem lesz méltó szánalomra soha sem.
+  Te el vagy keseredve és nem hallgatod
+  A jó tanácsot, ellenségnek tartod azt,
+  Ki jó szándékkal jóra intve jő feléd.
+  S én mégis mondom – Zeus legyen reá tanúm –
+  S te hallgass rám, vésd jól szivedbe szavamat:
+  Az istenek küldötték ezt a kórt reád,
+  Mert vakmerőn közelgél a kigyó felé,
+  Mely Chryse nyilt szentélyét rejtve őrizé;[29]
+  S tudd meg, hogy kórod meg nem szűnik soha sem,
+  Míg ez a nap keletről jő fel s nyugaton
+  Pihen le, ha csak önszántodból útra nem
+  Indulsz és nem jelensz meg Trója sikjain,
+  Hol fölleled Asklepiosnak fiait,
+  Kik meggyógyítják kórodat, hogy azután
+  Velem s nyiladdal elpusztítsad Pergamost.
+  Elmondom azt is, mint tudám meg ezeket:
+  Foglyunkká tettük Ilionból Helenost,
+  A legjobb jóst, ki tisztán megjövendölé,
+  Hogy így fog jönni; s azt is hozzátette még,
+  Hogy a jelen nyár látni fogja biztosan
+  Egész Trójának elbukását; s önmagát
+  Halálra szánta, ha csalárd volt jóslata.
+  S most tudva mindezt, jer jó szántodból velünk.
+  Hisz oly szép lenne, az egész hellen sereg
+  Legelső hőseként, először gyógyulást
+  Találni, s aztán Trója sokszor siratott
+  Várát fényes dicsőséggel megdönteni.
+
+PHILOKTETES.
+
+  Oh, gyűlölt élet, mért tartasz még ide fenn,
+  Mért nem bocsátsz Hades honába engemet?
+  Jaj, mit tegyek? Hogy tudjak ellenállani
+  Ez embernek, ki oly jó indulattal int?
+  Engedjek hát? De hogy fogok majd, én szegény,
+  A napvilágra lépni? Kit köszöntsek ott?
+  Oh szem, mely láttad minden szenvedésemet!
+  Mint tudnád elviselni, hogy az Atridák
+  Között láss újra, kik megronták éltemet?
+  Hogy ott lásd mellettem Laërtes gaz fiát?
+  Nem elmult szenvedéseim emléke bánt,
+  Nem az gyötör, hanem jövendő kínjaim
+  Félelme; mert ha egyszer rosszat szült a szív,
+  Úgy mindig új meg új bűnöknek anyja lesz.
+  Csodálkozással tölt el a te dolgod is.
+  Nem kellene Trójába menned, s engemet
+  Azokhoz vinned, a kik meggyaláztanak,
+  Ellopva tőled hős atyádnak fegyverét:
+  S te értök harczolsz, s engem is rá kényszerítsz?
+  Ne tedd ezt, oh fiam, hanem mint esküvél,
+  Vezess hazámba, és te Skyrosban maradj!
+  Hadd veszszenek el gonoszul e gonoszok!
+  Kettős hálát nyersz tőlem így jutalmadul,[30]
+  Kettős hálát atyámtól; és a rosszakat
+  Nem oltalmazván, nem fogsz rossznak látszani!
+
+NEOPTOLEMOS.
+
+  Helyes beszéd, de mégis azt óhajtanám,
+  Hogy hallgatnál az istenekre és reám,
+  S távoznál innen jó barátod oldalán.
+
+PHILOKTETES.
+
+  Tán Trója mezejére, és Atreus gyűlölt
+  Fiához? Oda vinném sebhedt lábamat?
+
+NEOPTOLEMOS.
+
+  Azokhoz, a kik meggyógyítják gennyedő
+  Lábad sebét, s megenyhítik fájdalmadat.
+
+PHILOKTETES.
+
+  Oh, mily szörnyű tanácsot adsz! Mit is beszélsz!
+
+NEOPTOLEMOS.
+
+  A mit rám és rád nézve legjobbnak hiszek.
+
+PHILOKTETES.
+
+  S így szólva nem szégyenled istentől magad?
+
+NEOPTOLEMOS.
+
+  Mért szégyenkezni a miatt, mi hasznot ad?
+
+PHILOKTETES.
+
+  Az Atridáknak ád ez hasznot vagy nekem?
+
+NEOPTOLEMOS.
+
+  Mint jó barátod szólok és jót akarok.
+
+PHILOKTETES.
+
+  Te, a ki ellenimnek adnál engem át?
+
+NEOPTOLEMOS.
+
+  Oh, kedvesem, ne légy a balsorsban daczos!
+
+PHILOKTETES.
+
+  Ismerlek; el akarsz e szóval veszteni.
+
+NEOPTOLEMOS.
+
+  Bizonynyal nem; de nem akarsz megérteni.
+
+PHILOKTETES.
+
+  Az Atridák eldobtak, ennyit jól tudok.
+
+NEOPTOLEMOS.
+
+  A kik eldobtak, ime most megmentenek.
+
+PHILOKTETES.
+
+  De Tróját jó szántomból nem látom soha.
+
+NEOPTOLEMOS.
+
+  Mi van még hátra, mit tegyek, ha semmi szó,
+  És semmi kérés nem képes megdönteni?
+  Legkönnyebb lesz, ha semmit sem szólok tovább,
+  S te élsz, mint eddig éltél, menthetetlenül.
+
+PHILOKTETES.
+
+  Hadd szenvedjem hát a reám mért szenvedést!
+  De azt, mit jobb kezeddel szentül fogadál, –
+  Hogy elviszesz hazámba, – teljesítsd, fiam!
+  Ne halogasd hát és ne szólj többé nekem
+  Trójáról; mert eléggé gyötrött már e név.
+
+NEOPTOLEMOS.
+
+  Induljunk, ha tetszik.
+
+PHILOKTETES.
+
+                  Mily nemes szót mondál, oh fiam!
+
+NEOPTOLEMOS.
+
+  Lépj előre bátran, bizton.
+
+PHILOKTETES.
+
+                      Mint erőm megengedi.
+
+NEOPTOLEMOS.
+
+  Mint kerüljem Argos vádját?
+
+PHILOKTETES.
+
+                      Hagyd az aggodalmakat.
+
+NEOPTOLEMOS.
+
+  S ha országom elpusztítják?
+
+PHILOKTETES.
+
+                      Akkor én is ott leszek.
+
+NEOPTOLEMOS.
+
+  Mit fogsz tenni védelmemre?
+
+PHILOKTETES.
+
+                  Itt van Herakles nyila –
+
+NEOPTOLEMOS.
+
+  S ezzel?
+
+PHILOKTETES.
+
+          Távol tartom őket.
+
+NEOPTOLEMOS.
+
+                  Végy itt búcsút és kövess.
+
+(Herakles megjelenik egy felhőben.)
+
+HERAKLES.
+
+  Nem addig, a míg nem hallod a szót,
+  Poeas fia, ajkaimon!
+  Mert tudd meg, Herakles hangja beszél,
+  Herakles alakját látod előtted.
+  Érted vagyok itt, elhagyva miattad
+  A mennyei trónt,
+  Hogy kijelentsem Zeus akaratját,
+  S meggátoljam az útat, melybe fogál.
+  Ügyelj hát szavaimra!
+  Először ennen sorsom említem neked,
+  Mily fárasztó küzdelmek és munkák után
+  Nyerék örök dicsőséget, mint láthatod.
+  Eléd is, tudd meg, ily czélt tűzött végzeted,
+  Hogy fáradj, szenvedj és dicsőséget szerezz.
+  Menj hát e férfiúval Trója városa
+  Elé, s azonnal megszűnik gyászos bajod;
+  Aztán a hadseregnek legjobb hőseként
+  Kioltod nyilvesszőmmel Páris életét,
+  Ki mind e bajnak egykoron forrása volt;
+  Megdöntöd Tróját, és a zsákmány legjavát
+  Küldöd hazádba, palotádnak ékeül,
+  Atyádnak, ősz Poeasnak, Oeta mezején.
+  S a zsákmányt, mely a hadseregtől jut reád,
+  Vidd el máglyámra, nyilaim emlékeül.
+  Hallgass te is szavamra, Achilles fia!
+  Mert nem hódíthatod meg Trója ormait
+  E férfi nélkül, a mint ő sem nélküled.
+  Őrizzétek hát egymást, mint együtt nevelt
+  Oroszlánpár! S elküldöm majd Asklepiost
+  Trójába, a ki meggyógyítja kórodat.
+  A sors akarja, hogy másodszor döntse meg
+  E várost íjam. Ám ha majd pusztítani
+  Fogjátok földét, tiszteljétek azt, mi szent.
+  Mert minden mást csekélyebbnek tart Zeus atyám;
+  De a kegyesség síron túl is megmarad,
+  S éljünk vagy haljunk, nem enyészik el soha.
+
+PHILOKTETES.
+
+  Oh, isteni hang, rég vágytam utánad.
+  Míg megjelenél!
+  Követem parancsaidat.
+
+NEOPTOLEMOS.
+
+  Én is megfogadom szavadat.
+
+HERAKLES.
+
+  Ne késsetek hát cselekedni;
+  Int már az idő,
+  És útra készen vár a hajó.
+
+(Eltünik.)
+
+PHILOKTETES.
+
+  Fel hát! Utólszor üdvözlöm e földet.
+  Köszöntelek, óvó sziklafedél,
+  Nymphák a habokban, a réten,
+  Hullámok haragos moraja,
+  Oh déli vihar, mely fejemet
+  Gyakorta megöntéd barlangom ölén,
+  Oh Hermes ormai, melyek
+  Sokszor visszaverétek a kín
+  Bús sóhajait, panaszát!
+  Most oh phœbosi forrás, enyhe ital,
+  Elhagylak, elhagylak örökre –
+  Nem hittük ezt mi úgy-e soha?
+  Isten veled, Lemnos, habverte sziget,
+  Küldj oda vész kerülte úton,
+  Hova Mœra vezet, a hatalmas,
+  S barátaim akaratja, s az isten
+  Mindenható parancsa!
+
+KAR.
+
+  Fel hát! szálljunk mind a hajóra,
+  S kérjük a tenger nymphái kegyét,
+  Védjék útunkat a vésztől!
+
+
+
+
+Jegyzetek Philokteteshez.
+
+[Footnote  1: Poeas fia Philoktetes, ki melisinek neveztetik, mert atyja
+a thessaliai Melisben uralkodott.]
+
+[Footnote  2: Mert Neoptolemos nem volt Helena kérői közt, kik eskűvel
+kötelezték magukat a leendő férj védelmére.]
+
+[Footnote  3: Mint Odysseus.]
+
+[Footnote  4: Melyen Philoktetest kitették.]
+
+[Footnote  5: Mert Philoktetes épen Chryse oltárát akarta fölkeresni,
+midőn a kigyó megmarta.]
+
+[Footnote  6: Herakles győzhetetlen íja, melyet Apollotól, az isteni
+íjásztól kapott.]
+
+[Footnote  7: Skyros, sziget az aegaei tengeren, hol Deidamia. Lykomedes
+király leánya, Achillestől, ki a leányok közt rejtezett, Neoptolemost
+szülte.]
+
+[Footnote  8: Odysseus a kephalleni szigetek királya, melyeknek lakói
+mint kalózok váltak híresekké; azért Philoktetes ez elnevezésben keserű
+czélzást tesz Odysseus csalfaságára.]
+
+[Footnote  9: Sophokles itt azon mondát követi, hogy Odysseus és
+Phoenix, Achilles nevelője mentek Neoptolemosért.]
+
+[Footnote  10: Sigeion hegyfokot Trója mellett gyászosnak mondja, mert
+itt feküdt holtan Achilles.]
+
+[Footnote  11: A föld alatt Cybele vagy Rhea istennő értetik; bérczesnek
+mondják, mert a hegyormokon tisztelték.]
+
+[Footnote  12: Paktolos folyó Tmolosból jött alá, hol Cybele fő
+székhelye volt.]
+
+[Footnote  13: Az istennő szekerébe oroszlánok voltak fogva; sokszor
+rajzolták oroszlánon nyargalva.]
+
+[Footnote  14: Diomedes, ki Odysseussal együtt kitette volt
+Philoktetest.]
+
+[Footnote  15: Odysseus, kinek anyját Antikleiát, midőn vele Sisyphostól
+teherben volt, drága pénzen vásárolta meg s vette nőül Laërtes.]
+
+[Footnote  16: Philoktetes Chalkodont, Abas fiát említi, ki Heraklesnek
+szövetségese volt.]
+
+[Footnote  17: Peparethos (ma Skopelos) híres volt olaj-, gabna- és
+bortermeléséről. Azért e költött elbeszélésben helyesen van választva,
+mert valószínű volt, hogy a peparethosi borkalmárok összeköttetésben
+álltak a görög táborral.]
+
+[Footnote  18: Akamas és Demophon, kiket Sophokles a Homer utáni eposból
+vett.]
+
+[Footnote  19: Czélzás Sisyphosra, ki haldokolva megparancsolta nejének,
+hogy testét temetetlenül hagyja. Az alvilágban aztán engedelmet kért
+Plutótól, hogy visszatérjen a földre s nejét e hanyagságért megbüntesse.
+Az engedélyt megkapta, de aztán nem akart többé az alvilágba
+visszatérni, míg erővel nem kényszerítették rá.]
+
+[Footnote  20: A nyugati szél mindkettőjökre kedvezőtlen, mert állítólag
+üldözőik is Trója felől hajóznak Hellas felé.]
+
+[Footnote  21: Ixion, kit Zeus, mivel Junót merte szeretni, az
+alvilágban örökkön forgó kerékre kötött.]
+
+[Footnote  22: Herakles, ki Oeta ormán máglyára tétette magát s a tűzből
+az istenek közé emelkedett.]
+
+[Footnote  23: A nagy szerencse rendesen magára vonja az istenek irigy
+féltékenységét; azért ez íj minden tulajdonosára vészt hozott eddig:
+Heraklesre és Philoktetesre. Engesztelje meg tehát Neoptolemos az
+istenek irigységét, nehogy őt is bajba döntse ez isteni erejű íj
+birása.]
+
+[Footnote  24: A lemnosi tűz a Moschylos vulkán, mely Lemnos szigetén
+volt.]
+
+[Footnote  25: A kar biztatja Neoptolemost, hogy mivel az íj kezében
+van, siessen el, mielőtt Philoktetes fölébredne, mert így az íj
+megnyerése nem fog semmi veszélylyel járni.]
+
+[Footnote  26: Neoptolemos, ki régóta benső harczban van önmagával, nem
+képes tovább folytatni tettetését.]
+
+[Footnote  27: Odysseus őrültnek tette magát, de Palamedes azon cselt
+használta ellene, mintha fiát Telemachost meg akarná ölni; Odysseus erre
+elárulván, hogy őrültsége szinlelt volt, kényszerült részt venni a
+hadjáratban.]
+
+[Footnote  28: Sperchios folyó.]
+
+[Footnote  29: Chrysének, mint nymphának, nem volt temploma, hanem csak
+kerített berke szabad ég alatt.]
+
+
+
+
+
+
+
+
+*** END OF THE PROJECT GUTENBERG EBOOK PHILOKTETES ***
+
+
+    
+
+Updated editions will replace the previous one—the old editions will
+be renamed.
+
+Creating the works from print editions not protected by U.S. copyright
+law means that no one owns a United States copyright in these works,
+so the Foundation (and you!) can copy and distribute it in the United
+States without permission and without paying copyright
+royalties. Special rules, set forth in the General Terms of Use part
+of this license, apply to copying and distributing Project
+Gutenberg™ electronic works to protect the PROJECT GUTENBERG™
+concept and trademark. Project Gutenberg is a registered trademark,
+and may not be used if you charge for an eBook, except by following
+the terms of the trademark license, including paying royalties for use
+of the Project Gutenberg trademark. If you do not charge anything for
+copies of this eBook, complying with the trademark license is very
+easy. You may use this eBook for nearly any purpose such as creation
+of derivative works, reports, performances and research. Project
+Gutenberg eBooks may be modified and printed and given away—you may
+do practically ANYTHING in the United States with eBooks not protected
+by U.S. copyright law. Redistribution is subject to the trademark
+license, especially commercial redistribution.
+
+
+START: FULL LICENSE
+
+THE FULL PROJECT GUTENBERG LICENSE
+
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+www.gutenberg.org/license.
+
+Section 1. General Terms of Use and Redistributing Project Gutenberg™
+electronic works
+
+1.A. By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound
+by the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B. “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this
+agreement and help preserve free future access to Project Gutenberg™
+electronic works. See paragraph 1.E below.
+
+1.C. The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is unprotected by copyright law in the
+United States and you are located in the United States, we do not
+claim a right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting
+free access to electronic works by freely sharing Project Gutenberg™
+works in compliance with the terms of this agreement for keeping the
+Project Gutenberg™ name associated with the work. You can easily
+comply with the terms of this agreement by keeping this work in the
+same format with its attached full Project Gutenberg™ License when
+you share it without charge with others.
+
+1.D. The copyright laws of the place where you are located also govern
+what you can do with this work. Copyright laws in most countries are
+in a constant state of change. If you are outside the United States,
+check the laws of your country in addition to the terms of this
+agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work. The Foundation makes no
+representations concerning the copyright status of any work in any
+country other than the United States.
+
+1.E. Unless you have removed all references to Project Gutenberg:
+
+1.E.1. The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:
+
+    This eBook is for the use of anyone anywhere in the United States and most
+    other parts of the world at no cost and with almost no restrictions
+    whatsoever. You may copy it, give it away or re-use it under the terms
+    of the Project Gutenberg License included with this eBook or online
+    at www.gutenberg.org. If you
+    are not located in the United States, you will have to check the laws
+    of the country where you are located before using this eBook.
+  
+1.E.2. If an individual Project Gutenberg™ electronic work is
+derived from texts not protected by U.S. copyright law (does not
+contain a notice indicating that it is posted with permission of the
+copyright holder), the work can be copied and distributed to anyone in
+the United States without paying any fees or charges. If you are
+redistributing or providing access to a work with the phrase “Project
+Gutenberg” associated with or appearing on the work, you must comply
+either with the requirements of paragraphs 1.E.1 through 1.E.7 or
+obtain permission for the use of the work and the Project Gutenberg™
+trademark as set forth in paragraphs 1.E.8 or 1.E.9.
+
+1.E.3. If an individual Project Gutenberg™ electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any
+additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works
+posted with the permission of the copyright holder found at the
+beginning of this work.
+
+1.E.4. Do not unlink or detach or remove the full Project Gutenberg™
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg™.
+
+1.E.5. Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.
+
+1.E.6. You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format
+other than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ website
+(www.gutenberg.org), you must, at no additional cost, fee or expense
+to the user, provide a copy, a means of exporting a copy, or a means
+of obtaining a copy upon request, of the work in its original “Plain
+Vanilla ASCII” or other form. Any alternate format must include the
+full Project Gutenberg™ License as specified in paragraph 1.E.1.
+
+1.E.7. Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8. You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works
+provided that:
+
+    • You pay a royalty fee of 20% of the gross profits you derive from
+        the use of Project Gutenberg™ works calculated using the method
+        you already use to calculate your applicable taxes. The fee is owed
+        to the owner of the Project Gutenberg™ trademark, but he has
+        agreed to donate royalties under this paragraph to the Project
+        Gutenberg Literary Archive Foundation. Royalty payments must be paid
+        within 60 days following each date on which you prepare (or are
+        legally required to prepare) your periodic tax returns. Royalty
+        payments should be clearly marked as such and sent to the Project
+        Gutenberg Literary Archive Foundation at the address specified in
+        Section 4, “Information about donations to the Project Gutenberg
+        Literary Archive Foundation.”
+    
+    • You provide a full refund of any money paid by a user who notifies
+        you in writing (or by e-mail) within 30 days of receipt that s/he
+        does not agree to the terms of the full Project Gutenberg™
+        License. You must require such a user to return or destroy all
+        copies of the works possessed in a physical medium and discontinue
+        all use of and all access to other copies of Project Gutenberg™
+        works.
+    
+    • You provide, in accordance with paragraph 1.F.3, a full refund of
+        any money paid for a work or a replacement copy, if a defect in the
+        electronic work is discovered and reported to you within 90 days of
+        receipt of the work.
+    
+    • You comply with all other terms of this agreement for free
+        distribution of Project Gutenberg™ works.
+    
+
+1.E.9. If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from the Project Gutenberg Literary Archive Foundation, the manager of
+the Project Gutenberg™ trademark. Contact the Foundation as set
+forth in Section 3 below.
+
+1.F.
+
+1.F.1. Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+works not protected by U.S. copyright law in creating the Project
+Gutenberg™ collection. Despite these efforts, Project Gutenberg™
+electronic works, and the medium on which they may be stored, may
+contain “Defects,” such as, but not limited to, incomplete, inaccurate
+or corrupt data, transcription errors, a copyright or other
+intellectual property infringement, a defective or damaged disk or
+other medium, a computer virus, or computer codes that damage or
+cannot be read by your equipment.
+
+1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the “Right
+of Replacement or Refund” described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg™ trademark, and any other party distributing a Project
+Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.
+
+1.F.4. Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you ‘AS-IS’, WITH NO
+OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5. Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.
+
+1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in
+accordance with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.
+
+Section 2. Information about the Mission of Project Gutenberg™
+
+Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need are critical to reaching Project Gutenberg™’s
+goals and ensuring that the Project Gutenberg™ collection will
+remain freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future
+generations. To learn more about the Project Gutenberg Literary
+Archive Foundation and how your efforts and donations can help, see
+Sections 3 and 4 and the Foundation information page at www.gutenberg.org.
+
+Section 3. Information about the Project Gutenberg Literary Archive Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non-profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation’s EIN or federal tax identification
+number is 64-6221541. Contributions to the Project Gutenberg Literary
+Archive Foundation are tax deductible to the full extent permitted by
+U.S. federal laws and your state’s laws.
+
+The Foundation’s business office is located at 809 North 1500 West,
+Salt Lake City, UT 84116, (801) 596-1887. Email contact links and up
+to date contact information can be found at the Foundation’s website
+and official page at www.gutenberg.org/contact
+
+Section 4. Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg™ depends upon and cannot survive without widespread
+public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine-readable form accessible by the widest
+array of equipment including outdated equipment. Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular state
+visit www.gutenberg.org/donate.
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: www.gutenberg.org/donate.
+
+Section 5. General Information About Project Gutenberg™ electronic works
+
+Professor Michael S. Hart was the originator of the Project
+Gutenberg™ concept of a library of electronic works that could be
+freely shared with anyone. For forty years, he produced and
+distributed Project Gutenberg™ eBooks with only a loose network of
+volunteer support.
+
+Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as not protected by copyright in
+the U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.
+
+Most people start at our website which has the main PG search
+facility: www.gutenberg.org.
+
+This website includes information about Project Gutenberg™,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+

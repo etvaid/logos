@@ -1,0 +1,1818 @@
+﻿The Project Gutenberg eBook of The origin and development of the atomic theory
+    
+This ebook is for the use of anyone anywhere in the United States and
+most other parts of the world at no cost and with almost no restrictions
+whatsoever. You may copy it, give it away or re-use it under the terms
+of the Project Gutenberg License included with this ebook or online
+at www.gutenberg.org. If you are not located in the United States,
+you will have to check the laws of the country where you are located
+before using this eBook.
+
+Title: The origin and development of the atomic theory
+
+Author: Maynard Shipley
+
+Editor: E. Haldeman-Julius
+
+Release date: September 2, 2025 [eBook #76795]
+
+Language: English
+
+Original publication: Girard: Haldeman-Julius Company, 1924
+
+Credits: Tim Miller, Laura Natal and the Online Distributed Proofreading Team at https://www.pgdp.net (This file was produced from images generously made available by The Internet Archive)
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK THE ORIGIN AND DEVELOPMENT OF THE ATOMIC THEORY ***
+
+
+
+
+
+                       LITTLE BLUE BOOK NO. =608=
+                     Edited by E. Haldeman-Julius
+
+
+
+
+                            The Origin and
+                            Development of
+                           the Atomic Theory
+
+
+                            Maynard Shipley
+
+
+
+
+                        HALDEMAN-JULIUS COMPANY
+                            GIRARD, KANSAS
+
+
+
+
+                            Copyright, 1924
+                        Haldeman-Julius Company
+
+
+                PRINTED IN THE UNITED STATES OF AMERICA
+
+
+                     THE ORIGIN AND DEVELOPMENT OF
+                           THE ATOMIC THEORY
+
+
+
+
+CONTENTS
+
+                                                         PAGE
+ CHAPTER I—THE PYTHAGOREAN ATOMISTS                        5
+ CHAPTER II—THE MATERIALISTIC ATOMISTS:
+     LEUCIPPUS AND DEMOCRITUS                             22
+ CHAPTER III—THE ELEATIC VIEW                             37
+ CHAPTER IV—EPICURUS AND LUCRETIUS                        51
+ CHAPTER V—POST-CLASSICAL ATOMISM                         59
+
+
+
+
+            THE ORIGIN AND DEVELOPMENT OF THE ATOMIC THEORY
+
+
+
+
+                               CHAPTER I
+
+                       THE PYTHAGOREAN ATOMISTS
+
+
+                 THE SIGNIFICANCE OF THE ATOMIC THEORY
+
+
+It is safe to say that there is no more romantic story in the history
+of science than that of the origin and development of the atomic
+theory of matter. Dr. Robert A. Millikan has said that the physical
+principles laid down by Leucippus in the fifth century before our era
+might, with a few modifications and omissions, “almost pass muster
+today” (“The Electron,” Page 7). The importance to modern students of
+sound knowledge of the teachings of the ancient Atomists was emphasized
+by Sir William Osler (1829-1919), who even went so far as to say that
+“the student of physics may know Crookes’ tubes and their relation to
+Roentgen, but he cannot have a true conception of the atomic theory
+without a knowledge of Democritus; and the exponent of Madame Curie and
+of Sir J. J. Thomson will find his happiest illustrations from the
+writings of Lucretius”[1]--the Roman exponent of Epicurus (342-270 B.
+C.), who revived the atomic theory of Leucippus and Democritus, despite
+the adverse criticisms hurled at this doctrine by the great Aristotle.
+
+Le Sage observed that “if Epicurus had had but a part of the
+geometrical knowledge of his contemporary Euclid, and conceptions of
+cosmogony the same as many then living, he might have discovered the
+laws of universal gravity, and not only the laws, but, what was the
+despair of Newton, its mechanical cause” (“_Lucrèce Newtonien_,”
+Berlin Academy, 1782).
+
+Writing of the value to science and modern thought of the atomic theory
+of the early Greek philosophers, Professor Walter T. Marvin, of Rutgers
+College, points out that a theory can be significant in at least three
+ways, namely:--“(1) by destroying or inhibiting other beliefs; (2) by
+arousing interest in new problems and by suggesting new methods of
+investigation; (3) by what it itself enables us to explain correctly.
+This theory was most significant in destroying old beliefs or, to
+adopt a much used expression, in ‘_enlightening_’ the cultured
+Greeks. A thoughtful Greek could hardly believe that the universe is
+a cloud of atoms moving about in accordance with necessary mechanical
+laws, and at the same time continue to believe the primitive traditions
+and superstitions of his people. The worship of the gods and the old
+magical rites and ceremonies must needs seem to him utterly ineffective
+and useless, valuable customs no doubt for their purely psychological
+influence upon the ignorant and unruly masses but of course absurdities
+for the cultured and disciplined man. Hence no wonder that the spread
+of this and the preceding cosmological theories would result, in
+a society such as that of the Greek world in the sixth and fifth
+centuries B. C., in a _radical enlightenment_. No wonder that
+their spread was opposed by men of conservative tendencies. In this
+first respect early Greek science and in particular the atomic theory
+were of great historical significance.”[2]
+
+
+                 THE ATOMIC THEORY OF THE PYTHAGOREANS
+
+In the ancient Sanskrit literature of India (written prior to 500 B.
+C.), an atomic theory of matter is formulated by Kanada (literally
+“atom eater”--a term of derision), founder of the Nyaga system of
+philosophy, and said to have been a pupil of Buddha. He states that the
+atoms are eternal and that the ultimate atom is simple.
+
+Kapila, the leading exponent of the Sankhya philosophy, speaks of
+“five subtle” kinds of particles (atoms), and a substance akin to our
+luminiferous ether--the five particles being, no doubt, the “five
+elements” of the Laws of Menu; viz., earth, water, wind (air), fire and
+ether--this last the parent, so to speak, of all the other elements,
+through a process of successive transformations.
+
+In the “Angutarra Nikaja,” consciousness (mind) is mentioned as a sixth
+element, also atomic in structure.
+
+In his “History of Hindu Chemistry,” Sir P. C. Ray expresses the
+opinion that the atomic theory of the ancient Greeks was derived
+directly from the more ancient Hindu doctrine--a view upheld by the
+great German Sanskrit scholar, Dr. Max Müller, as also by some Greek
+scholars.
+
+_The_ atomic theory, the earliest known to have been worked out in
+detail, is that of the Greek philosopher Leucippus, of Miletus, Ionia;
+though the mantle of honor has fallen mostly on the shoulders of his
+far better known pupil, Democritus of Abdera, Thrace.
+
+But the Pythagoreans also were exponents of a form of atomic theory,
+and it seems probable that Pythagoras, a native of the island of Samos,
+was the first Greek to advance the doctrine of the discontinuity of
+matter. At least, none of his disciples ever claimed to have been the
+originator of this doctrine, and Pythagoras was born some time between
+580 and 570 B. C., while the Atomic School of Leucippus was not founded
+until some time after 500 B. C. Unfortunately, Pythagoras did not
+commit his doctrines to writing, though a few of the so-called “Golden
+Sentences” may have been written by him. Most of them, however, are
+probably no older than the fourth century of our era. Moreover, these
+throw no light on the subject under discussion.
+
+The first written exposition of the Pythagorean atomic theory was put
+forward by Philolaus, a native of Tarentum, South Italy. Only fragments
+of his work have survived, and of those ascribed to him some are
+undoubtedly spurious. But all of them are very old and contain valuable
+information concerning Pythagorean doctrines.
+
+Porphyry (233-304? A. D.), a Syrian Neo-Platonist, residing for some
+years in Alexandria, wrote a “Life of Pythagoras,” and a few years
+later another “Life” of this philosopher appeared, this time from
+the pen--or stylus--of another Syrian and Neo-Platonist, Iamblichus.
+But these works contain much that is wholly mythical concerning
+Pythagoras.[3]
+
+Our best sources of information are Plato (_Timaeus_), Aristotle
+(_Metaphysica and Physica_, _De Anima and De Caelo_), Diogenes Laertius
+(_De Vitis_) and Stobaeus (_Eclogarum physicarum et ethicarum_). From
+these authorities we learn that, according to the Pythagoreans, the
+cosmos was at a certain stage of its (cyclic) changes a compact, inert,
+spherical mass of lifeless matter, having no distinguishable parts.
+After a long period of quiescence the “void”--i. e., the limitless
+outer air--broke in upon the world, entering into “the heaven itself”
+as if it--the heaven--were breathing. The result of this cosmic
+inhalation was “a certain separation and definition of things that
+lie together” (Aristotle, _Physica_, iv, 6)--that is, a separation of
+the homogeneous mass into different “elements.” These fragments were
+eventually ground into an all but infinite number of infinitesimal
+particles, or “monads,” analogous to the “atoms” of Leucippus and
+Democritus.
+
+Now, Philolaus was a famous geometrician as well as an eminent
+physician and astronomer. Hence he--and presumably Pythagoras before
+him--thought of these particles (or atoms) not in terms of various
+qualities, chemically considered,--as Anaxagoras (500-428 B. C.), who
+was not a Pythagorean, had done before Philolaus wrote--but in terms
+of form (shape) and number. Each of the various substances known to
+the ancient world as “elements”--generally recognized as compounds of
+the real elements since the eighteenth century only--was regarded as
+made up of particles of a certain geometrical configuration. Philolaus
+explained that the “element” earth was composed of cubical particles,
+fire of tetrahedra (pyramidal forms), and the “ether” was identified
+with the dodecahedron (particles having twelve plane faces, or twelve
+regular pentagons). In the _Timaeus_ of Plato we find this
+conception further developed, bringing all the five regular solids into
+the theory. Thus, the octahedron was now assigned to air, and the
+icosahedron (a figure having twenty equilateral triangular faces) to
+water.
+
+Very interesting in this connection is the fact that the positions of
+the electrons in atoms (the real elements) are being referred to today
+in terms similar to those employed by the Pythagoreans. Take, for
+example, the following passage from _Science Progress_ (London),
+July, 1922 (No. 65), Pages 21-22:
+
+ “The modifications proposed in the expressions for electric and
+ magnetic forces allow of the electrons in [Sir J. J.] Thomson’s
+ model [atoms] to take up positions at rest at the corners of certain
+ well-known polyhedra, such as the tetrahedron, the cube, the rhombic
+ dodecahedron, the cubo-octahedron; and so in the sharing of electrons
+ between atoms and the consequent fitting together of such models we
+ have the explanation of certain facts of crystallography.”
+
+But we know now that “fire” is not an “element” composed of tetrahedral
+atoms; but the combustible portion of coal and wood is the real element
+_carbon_--and the carbon molecule _is_ of tetrahedral form.
+(See Bragg, Sir W. H. and W. L., “X-Rays and Crystal Spectra.”)
+
+On the Pythagorean theory--as on that of Leucippus, and on the latest
+theories of today--matter is broken up into parts (atoms) that are in
+themselves unchangeable--apart from radioactivity--but produce by their
+changes of position in relation to one another all the substances of
+earth and of living organisms.
+
+To illustrate this principle in terms of modern science: Add four
+electrons (two positive and two negative) to the hydrogen atom, and
+you have the element lithium; knock out of the lithium atom (composed
+of three positive and three negative electrons) one positive and
+one negative electron, and you have one atom of helium (composed of
+two positive and two negative electrons.) And _electrons are all
+alike_, except that some carry a charge of positive electrification
+and some a negative charge--each kind (species) of atom having an
+equal number of positive and negative charges, thus attaining stable
+equilibrium. (See Soddy, _The Interpretation of Radium_, 1922.)
+
+Until quite recently it was believed that atoms could be disrupted
+only by temperatures higher than those obtainable in our physical
+laboratories, or by bombardment by electrons and helium atoms
+spontaneously expelled (always with enormous velocities) from
+radioactive substances. But this is now known to be an erroneous
+assumption. It was lately discovered by P. M. Basset, engineer of
+the Sperry Gyroscope Company, and Dr. Louis Bell, that when carbon
+is brought to a temperature of 5,000° C., in an arc-light used in
+connection with their amazingly powerful searchlight, alpha particles
+(helium atoms) are liberated. Such discoveries may some day lead to
+the transmutation of “the baser metals into gold,” thus fulfilling the
+dream of the alchemists of old.
+
+Quite recently, Drs. Milliken and Bowen not only developed a method
+for “stripping” planetary (valence) electrons one by one from atoms,
+but these investigations also proved that Bohr’s (simple) theory
+of electron orbits--which includes the statement that the energy
+developed when an electron jumps from one orbit to another is exactly
+proportional to the frequency (or wave-length) emitted--is correct.
+Professor Sommerfeld’s theory explaining the cause of double lines
+in the spectrum of hydrogen and other elements was also verified
+experimentally. (See _The Scientific Monthly_, Pages 665-669,
+June, 1924).
+
+An atom of mercury, for example, contains 80 positive charges
+(electrons) on its nucleus, and 80 negative outlying electrons. Were
+we able to expel two of its _protons_ (positive electrons), it
+would instantly become the metal platinum. If a negative (“planetary”)
+electron were also taken from it, the mercury atom would then have
+lost two positive charges (electrons) and one negative; that is, one
+positive charge on the whole: and hence it would retain 79 positive
+charges on the nucleus and 79 outlying negative electrons--and thus
+_become gold_!
+
+Thus, one element differs from another only in the number of electrons
+composing its atom. And this is only a more precise statement of the
+essential doctrine of the ancient Greek atomists.
+
+Parmenides, the Eleatic philosopher, who was at the height of his
+fame about 475 B. C., declared that both motion and change of
+substance were illusory--that no substances ever transform from one
+to another. The Pythagoreans and the School of Leucippus admitted
+that there was, indeed, an element of elements that knew no change,
+no transformations; and they declared that this primal element was
+the stuff that _all_ atoms are made of. Today we believe his
+primal element (atom) to be hydrogen--as was suggested by the English
+physician, William Prout, in 1815. In other words, we are being forced
+by the mathematical and experimental data to conclude that all of
+the 87 known species of atoms (or elements) are but compounds of the
+original (simplest) hydrogen atom, consisting of one positively charged
+nuclear electron and one outlying negative electron. However, there
+is ground for difference of opinion on this question, as shown by Sir
+Oliver Lodge in his recent article, “Within the Atom,” _Scientific
+American_, November, 1923.
+
+“Thought,” comments Professor Alfred Weber (“History of Philosophy,”
+Pages 43-44), “discovers in the atomistic hypothesis the middle
+term that unites Parmenides, who denies the great empirical fact of
+generation and change, and Heraclitus, who sacrifices being and its
+permanence to becoming,--thereby combining the two rival systems
+into a higher synthesis,--and lays the foundation for every rational
+explanation of the process of becoming. Henceforth philosophy no
+longer regards matter as a continuous mass, the essential properties
+of which are incessantly transformed. It breaks them up into parts
+that are in themselves immutable, but which continually change their
+relative positions. As a consequence, there can be both perpetual
+change in the aspects of matter (bodies) and permanence in the essence
+and properties of matter. All change is reduced to change of place:
+_mechanism_.”
+
+
+                      THE FIERY “MONADS” (ATOMS)
+
+“Fire,” with the Pythagoreans, as with the followers of Heraclitus of
+Ephesus (535-475 B. C.), is _the_ element _par excellence_;
+and, as previously stated, was regarded by them as made up of
+excessively minute particles of tetrahedral (pyramidal) form
+(Philolaus). This “subtile element” was looked upon as the symbol
+of the divine principle in nature. They taught that this “fire” is
+concentrated in a central sun, “the hearth of the universe,” “mother
+of the gods,” “citadel of Zeus,” etc., around which revolve the earth
+and the other heavenly bodies.[4] The soul of man is a portion of the
+world-soul, a spark of the celestial fire, and in this sense material.
+
+Aristotle states (_De Anima_, i, 2) that some of the Pythagoreans
+held the solar corpuscles (atoms) to be souls, while others referred
+to that which set them in motion as the soul. Schlottman’s reading of
+this passage is: “The solar corpuscles are moved by a soul, and the
+soul is, generally speaking, the moving principle.”
+
+Professor Burnet calls attention to the singular power exhibited by
+the Pythagoreans in adapting their theories to conditions; and among
+certain radical changes in their point of view, he thinks the most
+remarkable is the way the religious side of the doctrine was gradually
+dropped. “The effort was made to clear the name of Pythagoras himself
+from the imputation of mysticism. We have the echo of this in the
+remains of Aristoxenos and Dikairchos, but it must be older; for in
+their day scientific Pythagoreans had ceased to exist. The statement
+that Hippasos of Metapontium was guilty of publishing a mystic
+discourse ‘with the view of misrepresenting Pythagoras’ (Diogenes,
+viii, 7) must go back to this generation of the school; for at a later
+date no one would have any interest in making it.”[5]
+
+According to Stobaeus (_Eclogarum physicarum et ethicarum_, i,
+308), Ecphantus--an immediate successor of Pythagoras, according to
+Röth--was the first philosopher to explain the Pythagorean monads
+(atoms) as something corporeal. But this view is regarded by most
+authorities as being contrary to the doctrine of the Pythagoreans.
+While Ecphantus is included among the disciples of the School, his
+doctrine of material atoms as the original constituents of the
+Pythagorean “numbers,” as well as of matter, cannot, according to
+Zeller, have been derived from his reputed master. Unlike the followers
+of Leucippus, Ecphantus believed, with Anaxagoras (500-428 B. C.),
+that the movement of the atoms (or monads), as well as the formation
+of the universe, was produced by mind or soul. Atoms, according to
+Ecphantus, differ among themselves in size, form and _force_. It
+is interesting to note that this philosopher had not only accepted as
+true the affirmation of Pythagoras that the earth is a sphere, but he
+knew also that it rotated upon its axis (Schiaparelli, “_I Precursori
+di Copernico nell’Antichita_,” in _Memorie del Reale Instituto
+Lombardi_, xii).
+
+Here, then, paradoxically enough, we find in the teachings of the
+idealistic Pythagoreans the roots of our modern theories of cosmogony
+and the atomic theory of matter. Their “particles” are qualitatively
+all alike, differing only in form. By changes in their number and
+position these qualitatively homogeneous atoms form all the various
+substances of earth, sea and sky.
+
+
+               THE “SEEDS” OF ANAXAGORAS (500-428 B. C.)
+
+The “seeds” (or germs) of Anaxagoras must also, in a sense, be
+considered “atoms.” But, so far from being all alike fundamentally,
+for him each substance was supposed to be composed of its own peculiar
+particles, there being as many kinds of “seeds” as there are kinds of
+substances.
+
+Whence came this more or less novel doctrine? Was it wholly original
+with the sage of Clazomeniæ? Leucippus, the founder of “the
+materialistic” atomic theory, was a contemporary of Anaxagoras, and
+both lived after the time of Pythagoras, and may have been indebted
+either to him or to suggestions from India for their fundamental
+physical conceptions, finding them, indeed, fully accordant with
+the primary postulates of the older Ionian physicists--Anaximines
+(524-508 B. C.), Anaximander (611-547 B. C.) and Thales (624?-548?
+B. C.). All of these believed that all elements are but compounds or
+transformations of one primitive element.
+
+It is natural to inquire here how such “suggestions from India” could
+have reached Greece. Professor Gompertz, while he does not discuss
+the possible Indian origin of the atomic theory, would have an answer
+to this question. He admits that the Greeks “owe to the Orient the
+elements of material civilization” and much of their science, art and
+religion to older civilizations. How were these transferred to Greece?
+This question, he recalls, brings up a striking parallel from the
+literary history of mediæval Europe. “Practically the entire fairy-lore
+of the Occident is derived from India. No one,” he goes on to say,
+“disputes this assertion today”; yet, on the other hand, “no one as yet
+can give a completely clear account of the ways and means by which its
+journey was accomplished” (“Greek Thinkers,” Page 95).
+
+
+FOOTNOTES:
+
+[Footnote 1: “Studies in the History and Method of Science,” edited by
+Dr. Charles Singer, Oxford, 1917.]
+
+[Footnote 2: “The History of European Philosophy,” Page 105, New York,
+1917.]
+
+[Footnote 3: Cf. Nauck, A., _Porphyrii Opusculati Selecta_, ed.
+2, Leipsic, 1886; and _Iamblichi De Vita Pythagorica Liber_, ed.
+Nauck, Petrograd, 1884; Chaignet, “_Pythagore et la Philosophie
+Pythagoricienne_,” Paris, 1873. See also Cantor, “_Vorlesungen
+uber die Geshichte der Mathematik_,” I, 124 ff.]
+
+[Footnote 4: Thus laying the foundation for the true heliocentric
+theory, introduced by Aristarchus of Samos about 280 B. C.--a theory
+accepted and developed by Seleucus of Seleucia in Babylonia, but
+rejected in the following century by the greatest of the Greek
+astronomers, Hipparchus of Nicæa, discoverer of the “precession of the
+equinoxes,” and author of a catalogue of 1000 fixed stars.]
+
+[Footnote 5: Burnet, Professor John, “Greek Philosophy,” Vol. I, ¶70,
+Page 87, London, 1914. See also, by the same author, “Early Greek
+Philosophy,” 2 ed., ¶¶138 sq.]
+
+
+
+
+                              CHAPTER II
+
+         THE MATERIALISTIC ATOMISTS: LEUCIPPUS AND DEMOCRITUS
+
+
+                      SOURCES OF OUR INFORMATION
+
+
+While the Atomic Theory is usually identified with the name of
+Democritus, its real founder was Leucippus, as is attested by both
+Aristotle (384-322 B. C.) and his successor, Theophrastus. Diogenes
+Laertius, who flourished about 230 of our era, refers to Leucippus (De
+Vitis, ix, 46) as the author of “The Great Diakosmos” (or “The Great
+Order of the Universe”), in which were set forth the principles upon
+which he based his atomic theory. A treatise “On the Mind” is also
+mentioned, which appears to have contained in outline the psychology of
+the materialistic Atomists.
+
+Of the works of Leucippus there remains but one extant fragment, in
+which Leucippus lays down in clear terms this universal rule: “Nothing
+happens without a cause, but everything with a cause and by necessity”
+(Aetius, Doxographers 321 B. 10).
+
+Following in the footsteps of his master, Democritus also wrote a book
+“On the Order of the Universe,” adhering, it would seem, very closely
+to the views of Leucippus. The works of his master the great Milesian,
+were incorporated eventually in the collected works of Democritus.
+
+No writer, subsequent to Theophrastus (born at Lesbos about 390 B.
+C., died in 286 B. C.), pupil of and successor to Aristotle as head
+of the famous Lyceum at Athens, attempted to distinguish the teaching
+of Leucippus from that of his more brilliant disciple. Zeller remarks
+that “the work and even the name of Leucippus seems to have been pretty
+early forgotten by most writers in comparison with the riper and more
+exhaustive achievements of his disciple. The persistence with which he
+is ignored by Epicurus, the reviver of the Atomistic philosophy, and by
+most of the Epicureans, may have contributed to this.[6]
+
+Of the once numerous writings of Democritus himself, only fragments
+remain, but these are highly important. The chief collector of the
+extant fragments was Mullach,[7] who places Democritus first on
+the list of Greek philosophers for genius and knowledge, and thinks
+it probable that the great Aristotle himself may owe much of his
+reputation for learning to diligent perusal of the words of the sage of
+Abdera. Says he: “(Democritus), although in other things dissimilar, in
+his equal study of all the arts was most like the famous Aristotle. And
+I scarcely know whether the Stagirite did not owe to his reading of the
+works of Democritus his erudition, which surpassed that of all other
+philosophers.”
+
+Aristotle and some later historians make frequent references to his
+teachings, and according to Zeller, “with respect.” Gompertz says that
+Aristotle confers “a crown of eulogy” upon Democritus “at the expense
+of Plato.”
+
+Professor Lange remarks, however, that “he cites him, for the most
+part, only when he attacks him, and this he by no means always does
+with a fitting objectivity and fairness. How often he has borrowed from
+him without naming him we do not know. Plato speaks of him nowhere,
+though it is a matter of dispute whether, in some places, he has not
+controverted his opinion without mention of his name” (“History of
+Materialism,” page 18).
+
+It seems to be quite possible that Plato knew little or nothing of
+the writing of Democritus. At any rate, they were not well known
+in Athens before Aristotle’s discussion of his theories. An extant
+Democritean fragment states that “I went to Athens and no one knew me.”
+Professor Burnet says: “It is not clear that Plato knew anything about
+Democritus, for the few passages in the Timæus and elsewhere where he
+seems to be reproducing him are easily explained by the Pythagorean
+influences that affected them both. Aristotle, on the other hand, knows
+Democritus well; for he too was an Ionian from the north.
+
+“It is certain, nevertheless, that the Democritean corpus (which
+included the works of Leucippus and others as well as those of
+Democritus) continued to exist; for the school maintained itself at
+Abdera and Teos down to Hellenistic times. It was therefore possible
+for Thrasyllos in the reign of Tiberius to produce an edition of the
+works of Democritus arranged in tetralogies just like his edition of
+Plato’s dialogues. Even that did not suffice to preserve them.”[8]
+
+Besides being the favorite pupil of Leucippus, Democritus (according
+to Glaubus of Rhegion, a contemporary) had also Pythagoreans for
+teachers, including the astronomer, geometrician and physician,
+Philolaus, who was exiled from Italy in the first half of the fifth
+century B. C. because of his membership in the Pythagorean Order.
+Burnet, thinks that this accounts not only for Democritus’ geometrical
+knowledge but also “for other features of his system.”
+
+
+                      THE PHYSICS OF DEMOCRITUS
+
+We know that both Leucippus and Democritus regarded the atoms composing
+the various substances of the world as being homogeneous--i.e., all
+alike from a chemical stand-point, but differing from one another in
+point of size and in rich variety of form. Unlike the minute particles
+(homœomeries) of Anaxagoras, which were assumed to be infinitely
+divisible as well as qualitatively different for each substance, the
+atoms of Leucippus and Democritus were considered indivisible; hence
+the name _atoma_ (atoms) (particles which cannot be cut, or
+further divided).
+
+But while the atoms are described as “indivisible,” because there is
+no vacuum in them, this does not mean that they were regarded by
+Leucippus and Democritus as mere mathematical points, like the atoms
+of Boscovich[9] or the “point charges” (electrons) of some modern
+physicists. They were bodies of a definite magnitude, some larger,
+others smaller, but never of visible size (Sextus, _Mathematica_,
+vii, 139), much less, as asserted by Stobæus (_Eclagarum physicarum
+et ethicarum_, i, 348) “as large as a world.” According to
+Simplicius (_Physica_, 18 a), Democritus taught that the atoms
+were physically indivisible, but he did not claim that they were
+_mathematically_ indivisible.
+
+The variety of substances and organisms seen on every hand is due
+entirely, according to Democritus--and also to Leucippus, whose views
+are expressed by Democritus--to the infinite variety of the atoms
+in form, size and _arrangement in space with reference to one
+another_--an anticipation of modern stereochemistry (the arrangement
+of the atoms of a molecule in space) and the work of van’t Hoff
+(1852-1911).[10] In all other respects the atoms are alike, and act on
+one another only by pressure or collision.
+
+
+                    THE ATOMIC THEORY OF KNOWLEDGE
+
+Man’s sense impressions--color, sound, bitterness, sweetness, etc.--are
+merely the effect of the impact of atoms upon a particular grouping
+or arrangement of physically varied but essentially (chemically)
+homogeneous atoms, constituting our sense organs. Hence these sense
+qualities have no existence in themselves--are mere deceptive
+“appearances.” “Only in opinion consists sweetness, bitterness, cold,
+color; in truth there is nothing but the atoms and empty space,” says
+Democritus.
+
+The great Protagoras (born about 500 B. C.), also of Abdera, a
+contemporary of Leucippus and Democritus, had taught that all
+sensations are equally true for the sentient subject--i.e., if a
+substance tastes sweet to a given person, it is sweet. For Democritus
+sweetness and bitterness did not reside as such in the substance
+tasted, but were merely subjective effects produced on the palate
+of the consumer. Taste is partly dependent upon the shape of the
+atoms composing the food (they held) and partly upon the particular
+taste-sense of the individual. Thus to the normal (or average) person
+honey has a sweet taste, whereas the same honey to a jaundiced person
+has a bitter taste.
+
+Parmenides had already declared that taste, colors, sound and the like
+were only names, standing for no objective qualities. Democritus agreed
+that sensations _represent_ nothing external to ourselves, though
+they are _caused_ by something outside us. For example, what we
+call pungency, tartness, bitterness, saltiness, etc., were impressions
+produced on the palate by atoms of a certain shape--sharp, rough,
+pointed or hooked particles of matter producing an effect of pungency
+or acidity. Atoms with smooth surfaces form substances which ordinarily
+impress the senses agreeably. From this we learn the effect upon our
+palates of certain substances, but these sensations tell us nothing of
+the true nature of the substances tasted.
+
+“By the senses,” says Democritus, “we in truth know nothing sure,
+but only something that changes according to the disposition of the
+body and of the things that enter into it or resist it” (Fragment 9).
+True reality lies beyond sense impressions; “truth is in the depths”
+(Fragment 11). Our ideas represent our impressions, and are not direct
+reproductions of the external objects themselves, “the inner essence of
+which is concealed from us.”
+
+This ancient theory of the differences of taste depending on
+differences in the shapes--or roughness or smoothness--of the particles
+composing substances prevailed even well into the eighteenth century
+of our own era; dictionaries of the period still defining acidity,
+for example, as due to sharp, pointed particles. Today we still admit
+that atoms are qualitatively homogeneous--but by “atoms” we now mean
+electrons, the constituent electrical charges which make up the “atoms”
+of the chemist. Differences in the number of electrons in atoms confer
+upon them qualitative (chemical) differences, though all atoms of any
+one element are chemically alike--are homogeneous. Differences in the
+number of spatial arrangement of these atoms (in groups or “molecules”)
+constitute both physical and chemical differences in substances, i.e.,
+in compounds. Quite different substances are produced by combinations
+of precisely the same _kinds_ of atoms, but in different
+proportions.
+
+Take from a molecule of certain substances one single atom, and they
+may be changed from a compound necessary to life and growth into a
+deadly poison. Phosphorus is an element, and thus contains but one kind
+of atoms; but some (common) phosphorus is yellow and some (amorphous)
+is red, varying with the spatial distribution of the atoms in the
+molecules composing the phosphorus.
+
+But the properties (or quality) of a compound are not merely the
+_sum_ of the qualities of the different kinds of atoms composing
+its molecules (a molecule being the smallest possible quantity of a
+given substance or compound). Water, for example, is not merely the
+addition of the qualities of one atom of oxygen to those of two atoms
+of hydrogen (H₂O). It is something quite different from either of
+these two elements. And just so the color of blue sulphate of copper
+is not a mere mixture of the colors of sulphuric acid and copper.
+Again, the experiments of Dr. P. W. Bridgman[11] showed that while
+the application of ordinary pressures to ice causes it to melt, the
+application of high pressures to water causes it to freeze, and that
+“there are at least five different kinds of ice, only one of which we
+are ordinarily familiar with” (Page 192). Paraffin, under pressures as
+high as 20,000 atmospheres, “becomes more rigid than soft steel” (Page
+188). Water, heretofore regarded as absolutely incompressible, was
+found to decrease in volume about twenty per cent with a pressure under
+12,000 atmospheres.
+
+Professor W. T. Marvin could well say, in considering the shortcomings
+of ancient atomic theories, that “even with our wealth of physical
+information we cannot yet explain by a rigorous atomistic mechanics
+water transforming into ice or a stick of wood burning, not to mention
+the phenomena of living organisms.”
+
+Modern science recognizes that not only different _results_
+may be obtained under different conditions, but that _absolutely
+new qualities_ emerge at critical moments, both in the domain of
+chemistry and in the phenomena of biology. We talk now of _emergent
+evolution_. “We live in a world in which there seems to be an
+orderly sequence of events.... But the orderly sequence, historically
+viewed, appears to present, from time to time, something genuinely
+new.... If there be only regrouping of pre-existing events and nothing
+more--then there is no emergent evolution.”[12]
+
+In the gradual transition from non-living to living matter, an entirely
+new and peculiar type of energy--“biotic energy” _emerges_, which
+is not explicable merely on the grounds of increasing complexity of
+atomic structure. “We call things _living_ because of the energy
+changes they exhibit, and not because they are complex chemically
+or physically.” A dead animal is just as _complex_ as a living
+organism. What is missing is “biotic energy”--the form of energy
+which gives rise to the distinctive energy-transformations “which we
+aggregate together under the term _life_.” The recognition of
+this fact, however, does not commit us to the outworn doctrine of
+“vitalism” or to the Aristotelian “entelechy.”[13]
+
+Leucippus and Democritus, of course, were not troubled with the
+problems raised by such phenomena as we have just been considering,
+since they knew nothing about them. For the founders of Atomism, a
+multiplicity of substances, living matter, and consciousness could
+readily be accounted for by the varied combination of variously formed
+atoms, physically considered. What would be their astonishment to learn
+that tens of thousands of different substances are actually composed
+of only four kinds of atoms--viz., hydrogen, oxygen, nitrogen and
+carbon! Yet for them _one_ element, qualitatively considered, was
+sufficient to produce all that is--including the “soul”--provided this
+primal matter existed in an infinite number of shapes and sizes of
+atomic dimensions.
+
+
+                       DEMOCRITEAN COLOR THEORY
+
+“We have no exact information,” says Professor Gompertz, “as to
+which bodies in the theory of Democritus were simple and which
+were complex,” but he adduces evidences to show that “the infinite
+multiplicity which Democritus recognized in the sizes and shapes of
+atoms did not arise from his incompetence to perceive or to conjecture
+a complex in an apparently simple body.”
+
+He remarks that the Democritean theory of color started from the
+assumption of four primary colors--white, black, red and green. “These,
+with the exception of green, which had taken the place of yellow, were
+likewise the primary colors in the scheme of Empedocles.” But all
+other colors “were designated as _mixed_, and we see that all the
+numerous bodies which were not equipped with one of the four primary
+colors must have been of a composite nature. That is to say, they must
+have included other than merely homogenously elementary particles....
+The statements about the atomic forms underlying the several tastes
+give rise at first impression (to the idea that) each of the countless
+‘juices’ or materials of taste is composed of homogeneous atoms
+possessing the size and shape required for the purpose.
+
+“But this, we plainly perceive, was not the opinion of Democritus.
+His own view of the mixed colors cries against it. The homogeneity
+of the atoms was admissible in the case of white salt, but it was not
+admissible in that of yellow-gold honey or of brownish-yellow human
+bile. It is true that he must have referred the sweetness of the one
+and the bitterness of the other to the presence of the atomic forms by
+which these impressions were produced. But yellow and brown were mixed
+colors in his theory, and he must accordingly have inferred that honey
+and bile alike contained atoms of other forms as well.”
+
+Professor Gompertz therefore concludes that “the true meaning of those
+statements should therefore be expressed as follows: ‘In all substance
+of mixed colors at least the kind of atoms which lends them their
+specific taste is merely the predominant and preponderant kind, and
+without wasting more words on this subject, Theophrastus, who is our
+best authority for Democritus’ theory of sensation, relates that this
+doctrine was expressly taught by him’.”[14]
+
+
+FOOTNOTES:
+
+[Footnote 6: Zeller, Dr. Edward, “Pre-Socratic Philosophy,” Vol I. Page
+209, London, 1883. (English translation by S. F. Alleyne and O. J.
+Reichel.)]
+
+[Footnote 7: _Democriti Abderitae operum fragmenta_, Berlin, 1843.
+Cf. Liepmann, Hugo Karl, “_Die Mechanik der leucipp-democrit’schen
+Atome_,” Berlin, 1885; and Liard, _De Democrito philosopho_,
+Paris, 1873; Lassewitz, “_Geschichte der Atomistik_,” Hamburg,
+1890.]
+
+[Footnote 8: “Greek Philosophy,” Vol. I, Pages 193-194, London, 1914.]
+
+[Footnote 9: Boscoyish, Roger Joseph. _Theoria Philosophae
+Naturalis_, etc., Vienna, 1758. A Latin-English edition of this work
+has been issued from the press of the Open Court Publishing Company,
+Chicago, 1923.]
+
+[Footnote 10: Van’t Hoff was first to explain the cause of a known
+difference in their behavior toward a beam of polarized light of
+two distinct substances--both of which are called amyl alcohol--the
+chemical formation of which is identical (i. e., composed of the same
+number and kinds of atoms)--by a difference in the order in which
+the four different groups of molecules are arranged in space about
+the central carbon atom; the arrangements in the two cases being
+such that one molecule has the same arrangement as the mirror image
+of the other--equivalent to the difference between a right-hand and
+a left-hand glove. Democritus could, possibly, on his theory, have
+arrived at such an explanation; whereas Aristotle, on his theory of
+the elements, could not possibly have done so--any more than could
+Empedocles (495-436 B. C.) have done so with his “four elements.”
+
+As for the primal substance (“air”) of Anaximines (588-54 B. C.)
+and the “fire” of Heraclitus (535-475 B. C.), Dr. Gompertz contends
+that these were implicitly recognized as being composed of “minute,
+imperceptible particles” (“Greek Thinkers”, Vol. I, Page 323).]
+
+[Footnote 11: “On the Properties of Matter under High Pressure.” Annual
+Report of the Smithsonian Institution, 1918.]
+
+[Footnote 12: Morgan, Professor C. Lloyd, “Emergent Evolution,” Pages
+1-2, London, 1923. Cf. Mill, J. S., “Logic,” Book III, Chapter VI, ¶2;
+Lewes, G. H., “Problems of Life and Mind,” Vol. II, Problem V, Chapter
+III, Page 412.]
+
+[Footnote 13: See on this point Moore, Dr. Benjamin, “Biochemistry--A
+Study of the Origin, Reactions and Equilibria of Living Matter,”
+especially Chapter IX, Pages 125-137, London, 1921.]
+
+[Footnote 14: Gompertz, Opus citum, Pages 333-334. Authorized English
+translation, from the German edition of 1896, by Laurie Magnus, M. A.
+(Oxon.), London, 1906.]
+
+
+
+
+                              CHAPTER III
+
+                           THE ELEATIC VIEW
+
+
+One of the problems that early perplexed the human mind was that of
+motion. Parmenides, of the Eleatic school, could not conceive of
+movement of bodies without vacuous space, and for him there could be no
+vacuum, since the universe is a _plenum_--the All, the One. Hence
+there could be no motion, movement of bodies and physical changes being
+mere delusive appearances.
+
+Leucippus granted that he, likewise, could not conceive of the motion
+of bodies unless there was empty space for them to move in. But motion
+he recognized as a fact of nature, as a reality. The Eleatics must,
+therefore, he said, be in error in supporting the premise that “there
+is no vacuum.” Given empty space, motion followed.
+
+Neither Parmenides nor Leucippus introduced the conception of the
+vacuum. It was a pre-existing doctrine fervently attacked by Parmenides
+and supported on logical grounds by Leucippus. “Nor,” says Professor
+Gompertz of Leucippus, “did he do more than to refine and to raise to
+the dignity of a self-sustained system the atomic theory which existed
+before him, though in a rude, rudimentary and imperfect shape.”
+
+Given atoms of various sizes and forms, their movement in vacuous
+space was taken as much for granted as their existence. Just as matter
+itself had no beginning, and can have no ending, so the natural and
+original condition of atoms was a state of motion. The state of rest
+was no more “natural” to the Atomists than was the state of motion.
+They knew nothing of the doctrine which regards matter as an “inert
+mass.” Matter for them was essentially active and non-quiescent, as it
+was centuries later for Bruno, Bacon, Leibnitz, Spinoza, and as it is
+in our own times for all physicists. For _energy_ is synonymous
+with _motion_, and matter itself is but a collection of _energy
+units_ (in constant motion).
+
+
+                          DEMOCRITUS’ THEORY
+
+According to Democritus the atoms fall with varying degrees of
+rapidity, the heavier particles faster, the lighter with less speed,
+the heavier overtaking and striking against the lighter ones. To quote
+Lange’s succinct statement:
+
+“As the atoms are of various shapes, and the collision will not
+take place in the center of the atoms, then, even according to the
+principles of modern mechanical science, revolutions of the atoms
+on their axes and lateral motions will be set up. When once set up,
+these lateral motions must ever become more and more complicated, and
+as the collision of constant new atoms with a layer of atoms already
+in lateral motion constantly imparts new forces, so we may suppose
+that the motion will continually increase. From the lateral motions
+in connection with the rotation of the atoms are then easily produced
+cases of retrogressive movement. If now, in a layer of atoms so
+involved, the heavier--i. e., the larger--atoms continually receive a
+stronger impetus downwards, they will finally be collected below, while
+the light ones will form the upper stratum.”[15]
+
+Aristotle said that if there could be such a condition as space
+devoid of substance (matter), then in such a vacuum all bodies, light
+or heavy, would fall with equal velocity, which he considered an
+absurdity. For him the differences in the speed of falling bodies are
+entirely dependent upon differences in the density of the medium--air
+or water--through which they fall toward the center of the earth.
+Epicurus agreed with the Stagirite on the point of equal velocities in
+a non-resisting medium. But Aristotle not only denied the possibility
+of the existence of a void anywhere, but asserted that in such a
+void--were a vacuum possible--no motion could take place!
+
+Epicurus believed that all atoms, of whatever weight, would fall with
+equal velocity in a vacuum, in simple parallel lines. They are in
+everlasting movement, originally a perpetual, equable falling through
+the boundless infinity of vacuous space, with an incomparably greater
+speed than that of light-rays; though he believed that these traverse
+the distance from sun to earth in an instant.[16]
+
+While it is true that in infinite space there is neither an “up” nor
+a “down,” the fact remains, as Epicurus in effect observed, that man
+considers his head “up” and his feet “down,” and a body as being
+relatively distant from, or as near or on or within, the earth. So the
+atoms do converge at the earth, falling downwards unless met by bodies
+which, by a particular movement and weight, drive them to one side or
+upwards, or in a spiral or whirling motion--“the commencement of the
+formation of worlds.” But if the movement of atoms is in straight
+parallel lines, and all move in the vacuum with equal velocity, how
+could one atom drive another “to one side or upwards”?
+
+Just here is where the weakness in the atomic theory is introduced by
+Epicurus. Democritus accounted for the collision and rebound of atoms
+under law, by a _cause_, not by chance. Epicurus threw away the
+cause and introduced “chance collisions.” But no atom was ever deviated
+from its flight in parallel lines by “chance”--in this case a wholly
+metaphysical invention. No worlds, no suns or planets could be built up
+on the theory of particles falling through infinite space in parallel
+rectilinear paths. There must be collision and recoil of atoms in order
+that the lateral and whirling movements, or vortices, should be set up,
+which were supposed to cause the atoms to combine according to their
+shape, size, and weight, the heavier forming the denser portions of the
+earth, the lighter constituting the atmosphere.
+
+This difficulty did not escape the astute mind of Lucretius. But
+in attempting to solve what is really an insoluble problem--the
+development of worlds under the conditions stated--the great Roman poet
+only made bad matters worse. For here he introduced the dogma of free
+will applied to the falling atoms. They were made to deviate from
+their parallel lines by a voluntary movement!
+
+And it appears that this was done on the authority of Epicurus himself:
+“In these errors,” says Lange, “Democritus probably had no share;
+and yet we shall judge them more leniently if we reflect that, even
+to our own day, the essence of the doctrine of the freedom of the
+will, with whatever metaphysical subtlety it is elaborated, consists
+simply of the uncertainty and perplexity of phenomenal appearances.”
+Again: “Whilst, therefore, it is one of the most important efforts of
+recent materialism to deduce the whole mass of voluntary movements
+from mechanical causes, we find Epicurus adopting a quite incalculable
+element into his system.”[17]
+
+For Democritus a “chance” occurrence would be a causeless event, and
+this he could not allow under his law of “necessity.” An efficient
+cause produces always appropriate and calculable results under
+given conditions, and these results are always uniform, predictable
+occurrences, given knowledge of the mechanical factors involved.
+
+To the earlier Atomists it seemed clear that particles which are alike
+in weight and in form would “naturally,” when whirled about in a
+vortex, be brought to the same location; and because of their peculiar
+shape, become entangled one with another. Since some atoms were
+supplied with hooks or even with balls and sockets, some with mortice
+or dovetail, others with sharp, rough or involuted edges, what more
+“natural” than that groups or combinations of atoms should be formed,
+even to the cohesion of some atoms in places not suitable to their
+nature, resulting in the formation of compound bodies?
+
+Some atoms, indeed, were “unsociable,” having no means of mutual
+attachment; hence their combination was effected by enclosing them in
+a shell formed by the “social” particles. Some atoms had means for
+attachment at two points, which accounts, in part, for the greater or
+less mobility of the various atoms. The soul consists of the finest
+and smoothest atoms, akin to those of fire; and since they penetrate
+the whole body, their motions give rise to the phenomena of life.
+All objects project into space images of themselves, composed of
+atoms, which strike against the senses, and are perceived by similar
+atoms--“like atoms are perceived by like.”
+
+These assumptions were wholly unacceptable to the critical mind
+of Aristotle,[18] as well as to his distinguished disciple, Strato
+of Lampsacus, teacher of Ptolemy Philadelphus. The Roman Stoic,
+Cicero, regarded the Democritean theory of cohesion and compounding
+of substances as wholly fantastic.[19] Yet the critics of Democritus
+had no better theory to offer in its place, since they, like the
+Atomists themselves, had no conception of the electrical, chemical or
+gravitational attraction of bodies for each other, or of the fact that
+the pressure of the atmosphere causes the ascent of fire, vapor and
+heated molecules in general.
+
+To the foregoing objections, others might be offered, but we add only
+that in modern terms, the impact of indivisible and indeformable atoms
+upon one another could not produce the required movement of elementary
+masses. For “if the atoms are rigid, transmission of motion through
+impact is impossible; if they are elastic, they are then deformable
+and composed of parts, which is contrary to the hypothesis and implies
+forces of cohesion and elasticity.”[20]
+
+Democritus, though he was the greatest physicist of his age, could
+not, of course, be expected to anticipate our modern objections to his
+doctrine--or his master’s doctrine. The immortal Newton (1642-1727)
+himself, even Dalton (1766-1844), founder of the modern chemical
+atomic theory (as distinguished from the _physical_ atomic
+theories of his predecessors), could not anticipate the advances that
+have made possible the relentless criticism of modern physics and
+chemistry. Newton, Boyle and Huygens had no idea that the “atoms” of
+their conceptions were occupied mostly by “empty space” (using this
+phrase in its popular meaning--modern science recognizing no actually
+empty space: for all space contains a gravitational “ether” if not an
+electromagnetic field of energy).
+
+Thus the “atom” of the chemist is a highly elastic body--highly
+resilient. Moreover, thanks to the genius of Professor Frederick Soddy,
+of Oxford, and of Sir F. W. Aston, we now know that what we considered
+but three years ago to be a homogeneous element--e.g., lead, chlorine,
+carbon, iron, etc.--is in many cases--if not in all cases excepting
+hydrogen and helium--a compound body containing particles of different
+weights (atomic mass). On the other hand, as previously stated, we are
+reverting to the Democritean theory that all atoms are composed of but
+one primitive element, the hydrogen atom. And the hydrogen atom in
+turn is composed of--_energy_; and energy itself is apparently of
+atomic structure. All energy is, in the last analysis, electrical in
+nature, the stuff that lightning, the stars, fire, rocks and metals,
+the bodies of plants and animals--perhaps the mind of man--are all made
+of.
+
+With these facts in mind, let us return to Democritus, whose
+errors--the errors of his age--we may now regard with due allowances.
+
+
+                             “SOUL ATOMS”
+
+With Democritus, as with Pythagoras and Heraclitus, fire had a special
+importance, though it was not, as asserted by some of the ancient
+writers, regarded by him as an element. The primitive substance, the
+source of all things, whether fire, earth, air or water, was the world
+of homogeneous atoms, eternal, unchangeable. Fire, composed of minute,
+round, smooth atoms, was, on account of its mobility, the living and
+moving principle of nature, though not the direct _cause_ of
+motion. But because of the fiery, mobile nature of its atoms, they
+become a secondary cause of additional motion, from their impact with
+and recoil from less mobile atoms. Sensation and consciousness are
+possible because of the extreme mobility of the fiery atoms. They are
+the “soul atoms,” but sensibility and consciousness arise only as the
+result of relatively large aggregations of these excessively minute
+bodies.
+
+
+                             “EFFLUENCES”
+
+In order to account for the mutual action or influence of bodies upon
+one another, when separated by space,--the void,--the Atomists had
+recourse to the Empedoclean theory of “effluences,” or emanations,
+which were supposed to be emitted by all bodies (Aristotle,
+_Generatio et Corruptio_, i, 8). Penetrating the organs of sense,
+they excite the appropriate sensation, and, in the case of the brain,
+they produce images or ideas of things. Hence sensation is the only
+possible source of knowledge, the origin of all thought being the
+passage through the sense organs of “effluences” from external objects
+or organisms, acting mechanically, by contact.
+
+But while affirming that sensation is the source of all knowledge,
+Democritus, nevertheless, agrees with the Pythagoreans and Socrates in
+rejecting sensation as such as a source of knowledge. He distinguishes
+between a “bastard” (_skotie_) knowledge obtained through the
+special senses and a true-born (_gnesie_) knowledge, obtained by
+direct-contact of external atoms with the body’s “soul atoms.” These
+are not concentrated in the brain nor are they dependent upon the
+organs of sense. They are diffused throughout the entire organism, and
+come into direct contact, without the intervention of the deceptive
+sense organs, with the reality outside our body.
+
+“Poor Mind,” he makes the senses say (Fragment 125), “it is from us
+thou hast got the proofs to throw us with. Thy throw is a fall.”[21]
+
+As Burnet points out, the “true-born knowledge is of the same nature
+as the “bastard,” and “Democritus refused, like Socrates, to make an
+absolute separation between sense and thought,” the former being,
+‘after all, not thought, but a sort of inner sense, and its objects are
+like the ‘common sensibles’ of Aristotle.’ In the “bastard” knowledge,
+Democritus included sight, hearing, smell, taste, touch. “True-born”
+knowledge was obtained directly by the diffused soul atoms from the
+external objects, and thus made them known as they really are. All
+phenomena of life and mind are due to the motion of the mobile fiery
+atoms. Even where Democritus speaks of “the Divine,” he means merely
+the fiery soul atoms; not a personal being of any kind.
+
+Where there is a large aggregation of the soul atoms, there reason
+appears, itself a physical phenomenon. Democritus recognized no
+_Nous_ (Anaxagoras) or World-Soul (Plato), or Deity (Aristotle).
+The only motive force of the world is gravity, the soul being a
+secondary cause of motion only by virtue of the fiery atoms’ being most
+easily moved by pressure and contact. “Spirit” is “only one substance
+moving side by side with others.”[22]
+
+Every act of the individual, every occurrence in nature, has its
+efficient cause from which it follows by necessity--or, as we should
+say, under natural law. All change in things must be reduced to an
+altered combination of atoms--to new forms and arrangements in space,
+under the law of “necessity.”
+
+The soul is material and disappears with the disintegration of the
+body, though there exist invisible beings all around us in the air.
+But these invisible beings are material bodies also, composed of the
+finest atoms. At times they project images of themselves which affect
+our soul atoms, rendering these aerial beings, for the time, visible
+bodies.
+
+
+FOOTNOTES:
+
+[Footnote 15: Lange, Frederick Albert. “History of Materialism,” Vol.
+I, Page 25, London, 1892.]
+
+[Footnote 16: That 498 seconds, over eight minutes, are required for
+this transmission of light is a discovery of the eighteenth century.]
+
+[Footnote 17: Lange, _Op. cit._, Page 142.]
+
+[Footnote 18: _De Caelo_, iii, 4; _Generatio et Corruptio_,
+i, 21; and elsewhere.]
+
+[Footnote 19: _Academica_, ii, 38, 121.]
+
+[Footnote 20: Rougier, Louis, “Philosophy and the New Physics,” Pages
+7-8, London, 1922.]
+
+[Footnote 21: Burnet, Dr. John, _Op. cit._, Page 153; and Note 2,
+Page 113. Dr. Burnet is Professor of Greek at St. Andrews University,
+Scotland.]
+
+[Footnote 22: Zeller, _Op. cit._, Vol. II, Page 253.]
+
+
+
+
+                              CHAPTER IV
+
+                        EPICURUS AND LUCRETIUS
+
+
+                     ATOMS NOT INFINITE IN VARIETY
+
+
+Epicurus (341-270 B. C.) agreed with Democritus in assuming that the
+atoms are infinite in number, but he denied that they were infinitely
+various in shape, though their variety of form was conceded to be
+very great, some smooth and round--like the soul atoms and those of
+fire--some rough and pointed, others again branched or hooked. While
+the number of forms is limited, there is an unlimited number of each
+form. None of these variously formed atoms was ever created, and none
+can ever be either created or destroyed. “Out of nothing, nothing
+comes.”
+
+
+                         MANY INHABITED WORLDS
+
+Since space is infinite in extent and the atoms infinite in number as
+well as varied in shape and weights, there must also be innumerable
+inhabited worlds (as asserted by Democritus), displaying the greatest
+diversity; yet some of them may nevertheless be exactly alike, since
+like causes acting upon like bodies or complexes must inevitably
+produce like effects.
+
+Metrodorus, of Chios, declared that “a single ear of corn on a
+wide-spreading champaign would not be more wonderful than a single
+cosmos in the infinitude of space.”
+
+
+                         MAN’S GREATEST ENEMY
+
+Study of Democritus convinced Epicurus that the greatest enemy of
+mankind is superstition, fear of imaginary gods and of punishment
+hereafter, making of man a mental slave. Epicurus was not a lover
+of science for science’s sake. He regarded its pursuit as having no
+greater justification than that through reasoning and observation it
+would free mankind from the fetters of supernaturalism, thus leaving
+an open road to peace and happiness. Pleasure is the highest good, and
+the highest form of pleasure is derived from cultivation of our mental
+faculties.
+
+“Protected as it was by the emperors, the (Epicurean) school destroyed
+what remained of the crumbling edifice of polytheism, and at the same
+time attacked the new religion and the supernatural Christian.”[23]
+
+
+                              ON THE GODS
+
+In supporting his atomic theory of cosmology, biology and ethics, in
+refutation of the theological hypotheses of the Platonists and the
+Stoics, based, they claimed, upon “a study of nature and the laws
+of logic,” Epicurus offered what he regarded as logical evidence
+against the doctrine that the world was ever created or that it is the
+product of beneficent design. Professor Weber summed up the doctrine
+of Epicurus, as derived from the writings of the Poet, Lucretius;
+the biographer, Diogenes Laertius; and other authors of lives of the
+philosophers of ancient Greece, in the following words (translated
+by Dr. Frank Thilly, Professor of Philosophy in the University of
+Missouri):
+
+“The absolute creation and absolute destruction of the world are
+[according to both Democritus and Epicurus] out of the question.
+Creation in the proper sense of the term is impossible. In order to
+convince ourselves that the world is not the work of the gods, we have
+simply to consider the nature of its alleged creators, on the one
+hand, and its imperfections, on the other. Why should such perfect and
+supremely happy beings, who are self-sufficient and have no need of
+anything, burden themselves with creating the world? Why should they
+undertake the difficult task of governing the universe?
+
+“Let us, however, suppose for a moment that the world is their product.
+If they have created it, they have created it either eternally or in
+time; in the former case, the world is eternal; in the latter we have
+two possibilities: either creation is a condition of divine happiness,
+and then the gods were not supremely happy for an entire eternity,
+inasmuch as they did not create the world until after the lapse of an
+eternity of inaction; or, it is not, and in that case, they have acted
+contrary to their innermost essence. Moreover, what could have been
+their purpose in making it? Did they desire a habitation? That would
+be equivalent to saying that they had no dwelling-place for a whole
+eternity, or at least, none worthy of them. Did they create it for the
+sake of man? If they made it for the few sages whom the world contains,
+their work was not worth the trouble; if they did it in order to
+create wicked men, then they are cruel beings. Hence it is absolutely
+impossible to hold that creation is the work of the gods.
+
+“Let us examine the matter from the stand-point of the world. How can
+we assume that a world full of evils is the creation of the gods? What
+have we? Barren deserts, arid mountains, deadly marshes, uninhabitable
+arctic zones, regions scorched by the southern sun, briars and thorns,
+tempests, hailstones and hurricanes, ferocious beasts, diseases,
+premature deaths; do they not all prove that the Deity has no hand
+in the government of things? Empty space, atoms and weight, in short,
+mechanical causes, suffice to explain the world; and it is not
+necessary for metaphysics to have recourse to the theory of final
+causes.”[24]
+
+Just as astrologists blame the stars for the individual’s
+short-comings--while at the same time holding on to the doctrine
+of free will, by assuring us that “the stars incline but do not
+compel”--and credit the astral bodies for his good traits and
+successes, exactly so the ancient Greeks placed responsibility
+for man’s derelictions and misfortunes--as well as for his happy
+achievements--on the gods. Minerva’s influence endowed the individual
+with intelligence; Venus infused the passion of love; Apollo
+dispersed manly beauty, health and happiness; Mars involved peoples
+in wars; while Mercury was the god of mathematics, inventions,
+business transactions, etc. Without denying the existence of the
+gods, Epicurus, as we have seen, did seek to show that the Olympian
+divinities were not in any way concerned with terrestrial affairs.[25]
+
+Though the gods are dead, we cannot yet say, with Henley,
+
+    I am the captain of my soul,
+    I am the master of my fate.
+
+For modern man has within his own physiological “world” real
+substitutes for the imaginary gods of Olympus, which really “incline”
+if they “do not compel,” “behavior.” While the gods have been all
+but forgotten, and the “fateful” stars have been reduced to vast
+incandescent masses of helium, hydrogen, calcium, iron, etc., the
+endocrine (ductless) glands still largely control or alter personality;
+though these bodies are but constellations of atomic systems, with
+electrons for sun and planets, each revolving in an all but inscrutable
+cosmos of its own.
+
+These still mysterious glands are today the real “astral
+influences”--acting under “necessity”--which confer upon us manly
+beauty and intelligence, or, perhaps, a dwarfed body and an imbecilic
+brain. The pituitary body, originating tens of millions of years ago
+in the roof of the mouth of some lowly chordate (lancelet stage),
+in Cambrian times, and now attached to the base of man’s brain, has
+taken the place of Minerva and Apollo; the gonads and the thymus
+have absorbed the functions of Venus; the adrenals, the combative
+“influence” of Mars; while the thyroid makes of us--or “inclines” us to
+become--poets, radicals, “up-lifters,”--or maybe, mere lovers of the
+lime light![26]
+
+Surely this character-building “by necessity” would have delighted the
+soul of Democritus and brought joy to the heart of his great disciple
+Epicurus, who introduced an element of chance into Atomism only to
+bridge what was to him an impassable gulf between the laws of mechanics
+and observed phenomena.
+
+This insistence of the ancient Atomists on the necessity of attempting
+to account for all natural phenomena as the result of uniform,
+immutable, universal “necessity” or law is one of the greatest
+conceptions handed down to us from antiquity--a monument to the
+human mind equalled only by the attempt to correlate all qualitative
+differences of substances (atoms) with differences of size, shape and
+position in space (with relation to one another) and with movement.
+
+Gompertz does not hesitate to declare that this grand work of the
+ancient Atomists “is destined to survive all changes of opinion and
+thought.” Furthermore, all exact knowledge of nature “rests entirely
+on this attempt to reduce qualities to quantities, or, to speak more
+precisely, to establish fixed relations between the two. Mathematical
+physics was contained there as in a germ, and modern research took
+its starting-point thence. Galileo, Descartes, Huygens,--they all
+followed the same path. ‘I do not believe,’ declared Galileo, ‘that
+anything else is required than magnitudes, shapes, quantities, and slow
+movements or swift, to produce in us tastes, smell, sounds.’”[27]
+
+
+FOOTNOTES:
+
+[Footnote 23: Weber, Alfred, “History of Philosophy,” Page 139.]
+
+[Footnote 24: Weber, _Op. Cit._, Pages 136-137. Epicurus was the
+author of about three hundred writings, according to Diogenes Laertius,
+but only his Letters, preserved by this historian, and fragments of a
+work discovered at Herculaneum remain. For the rest we are dependent
+on the _resume_ presented by Lucretius and the quotations found
+in Greek authors. As Weber remarks (Page 135), “neither polytheism nor
+Christianity had any interest in preserving his numerous writings.”]
+
+[Footnote 25: Lange expressed the opinion that Epicurus really believed
+in the existence of the gods, reverenced them for their perfection:
+“these careless and painless gods did in fact represent, as it were,
+an incarnated ideal of his philosophy” (_Op. Cit._, Vol. I, Page
+101.)]
+
+[Footnote 26: See Berman, Dr. Louis, “The Glands Regulating
+Personality,” New York, 1922; Cunningham, J. T., “Hormones and
+Heredity,” London. 1922.]
+
+[Footnote 27: Gompertz, _Op. cit._, Page 349.]
+
+
+
+
+                               CHAPTER V
+
+                        POST-CLASSICAL ATOMISM
+
+
+The two principal links in the chain which binds the world of the
+ancient Greek (and _one_ Roman) Atomists with those of our own
+times are Descartes (1596-1650) and Gassendi (1592-1655). Gassendi
+revived and ably supported the atomic theory of Epicurus; while
+Descartes resuscitated the mechanistic conceptions of the Greek
+Atomists on the basis of a corpuscular theory of matter, corresponding
+in many respects to the doctrine of Democritus.
+
+The work of Leucippus connects through Descartes and Gassendi, Huygens,
+Boyle and Newton, directly with that of Higgins and Dalton, founders of
+the modern chemical atomic theory.
+
+Dalton had already adopted a physical atomic theory, based no doubt on
+the work of his illustrious predecessors, and upon his own thorough
+study of the gases of the atmosphere, before he formulated his chemical
+atomic hypothesis. He opposed the prevailing belief that the various
+gases exist in the atmosphere in a state of chemical combination,
+asserting that the atmosphere is a physical mixture.
+
+In 1805, he extended his atomic hypothesis to the explanation of
+chemical phenomena. His first postulate was, of course, that all
+matter is made up of small particles; these he found possessed the
+power of attracting (and holding) other particles. He therefore
+concluded that these invisible particles never subdivide in taking part
+in chemical changes, and that all atoms of any one element must be
+alike. But the atoms of the different elements vary in weight, form and
+combining power. He established the rule, already assumed by William
+Higgins (1789), that different atoms tend to combine in the porportion
+of atom to atom.
+
+When a compound was composed of two elements only, it was presumed to
+be binary; that is, since water, for example, was known to be composed
+of hydrogen and oxygen, it was supposed by Dalton that it _must_
+consist of one atom of each of these elements; as was also assumed in
+the case of ammonia, which he knew to be a combination of hydrogen and
+nitrogen. Now we know that one atom of hydrogen combined with one atom
+of oxygen forms, not water, but oxide of hydrogen; while the combining
+of _two_ atoms of hydrogen with one atom of oxygen forms water.
+
+Dalton established the fact that elements combine only in _definite
+proportions_--e.g., that oxygen and hydrogen will combine only in
+the _proportion_ of 8 to 1. Had Dalton known that a molecule
+of water contains _two_ atoms of hydrogen, and _one_ of
+oxygen, he would have known that _one_ atom of oxygen must weigh
+_sixteen_ times--instead of eight times--as much as one atom of
+hydrogen. _One part_ of hydrogen _by weight_ does combine
+with _eight parts by weight_ of oxygen, but this does not prove
+that the portion of hydrogen in water contains only one atom. Since
+it contains two atoms, instead of one, then, in order to preserve the
+relative combining (or “equivalent”) weights of the two substances,
+we must assume that the _atomic_ weight of oxygen is 16, for
+the _combining_ weights of elements represent the relative (not
+actual) weights of the atoms. And each element has its own fixed
+combining weight, ascertained by experiment.
+
+Water, then, is not a mere mixture or combination of hydrogen and
+oxygen, in the sense that a pound of hydrogen and eight _and a
+half_ pounds of oxygen will, when exploded, produce 9½ pounds of
+water. Combination would indeed be effected, but there would be a
+residue in the container of just one-half pound of oxygen. The mass of
+oxygen that has combined will weigh exactly eight times as much as the
+hydrogen; and now we know that the water formed will contain exactly
+twice as many atoms of hydrogen as there are oxygen atoms present in
+the combination, uniting not only “one by one,” but, in this case, two
+to one. What the law of definite proportions proves is that chemical
+combinations always take place _between atoms_.
+
+But there is also a law of _multiple proportions_. It is
+found that when one element forms more than one compound with a
+second element, the quantities of the first element which combine
+with the combining weight of the second element are always simple
+multiples--never fractions--of the combining weight of the first
+element.
+
+We have seen that the _atomic_ weight of oxygen is 16--i.e., 16
+times heavier than the lightest element, hydrogen, which is therefore
+(on the relative scale of atomic weights) 1. But the _combining_
+weight of oxygen is 8--i.e., eight _parts_ of oxygen will combine
+with so many parts (combining weight) of some other element. Suppose
+we take for example nitrogen. Now the _combining_ weight of
+nitrogen is 14, and its _atomic_ weight is also 14. Fourteen parts
+of nitrogen will combine therefore with eight parts of oxygen. But
+fourteen parts of nitrogen will also combine with four simple multiples
+of eight parts of oxygen, forming in all five different compound
+substances. For example:
+
+ 14 parts of nitrogen combine with 16 or 2x8 parts of oxygen.
+
+ 14 parts of nitrogen combine with 24 or 3x8 parts of oxygen.
+
+ 14 parts of nitrogen combine with 32 or 4x8 parts of oxygen.
+
+ 14 parts of nitrogen combine with 40 or 5x8 parts of oxygen.
+
+John Dalton advanced a theory satisfactorily to explain why in
+successive compounds the amount of oxygen goes up in jumps, and why
+this jump in each case is equivalent to the combining weight of oxygen.
+The regular jumps in the case of the five nitrogen compounds simply
+mean that one more atom has entered, in each successive case, into
+combination. These combining weights, as we have seen, simply represent
+the relative weights of the various elements. “Atomic weight” is merely
+the name given by Dalton to the relative combining weights of the
+atoms. He had no information as to how many atoms actually combine in
+making a compound, much less of the actual weight of the single atoms
+of the elements.
+
+Nor did he know _why_ atoms combine at all, in any proportions,
+but, being a thorough-going Newtonian, both his physical theory and
+his chemical theory have a common basis in Newton’s doctrine of
+mutually repulsive atoms. If an element A unites with an element B, the
+repulsion of the atoms of B from one another must tend, he thought, to
+the formation of a binary compound. “Binary compounds must first be
+formed, then ternary, and so on, till the repulsion of the atoms of B
+refuses to admit any more.”[28]
+
+While we have traveled quite a distance in atomic and chemical theory
+since the days of John Dalton (1766-1844), it is to the everlasting
+credit of this (at the time) obscure and poverty-stricken teacher
+of mathematics and physics that he gave us, in 1808, “A new System
+of Chemical Philosophy” which unites the atomic theory of modern
+science, first advanced by his admirers and contemporaries, Baron J. J.
+Berzelius (1779-1848) and Sir Humphrey Davy (1778-1829).
+
+Little did Dalton dream that the “atomic weight” of the elements is
+equivalent to the number of _electrons_ in each atom of a given
+substance![29] Or that the atomic _number_ of an element, arranged
+(successively) in the order of their atomic _weights_, from 1
+(hydrogen) to 92 (uranium), is an index to the number of positive
+electrical charges on the atomic nucleus, around which revolve
+in “planetary orbits” an equivalent number of negatively charged
+_electrons_--the real building-stones of the Universe.
+
+
+FOOTNOTES:
+
+[Footnote 28: _Nicholson’s Journal_, 29, 147, 1811.]
+
+[Footnote 29: On this point, see Lodge, Sir Oliver, “Within the Atom,”
+_Scientific American_, November, 1923.]
+
+
+
+
+                         =TRANSCRIBER’S NOTES=
+
+
+Simple typographical errors have been silently corrected; unbalanced
+quotation marks were remedied when the change was obvious, and
+otherwise left unbalanced.
+
+Punctuation, hyphenation, spelling and ligatures were made consistent
+when a predominant preference was found in the original book; otherwise
+they were not changed.
+
+The verses of the Invictus poem have been left as they are in the
+printed version. A Table of Contents has been added.
+
+
+
+
+
+
+*** END OF THE PROJECT GUTENBERG EBOOK THE ORIGIN AND DEVELOPMENT OF THE ATOMIC THEORY ***
+
+
+    
+
+Updated editions will replace the previous one—the old editions will
+be renamed.
+
+Creating the works from print editions not protected by U.S. copyright
+law means that no one owns a United States copyright in these works,
+so the Foundation (and you!) can copy and distribute it in the United
+States without permission and without paying copyright
+royalties. Special rules, set forth in the General Terms of Use part
+of this license, apply to copying and distributing Project
+Gutenberg™ electronic works to protect the PROJECT GUTENBERG™
+concept and trademark. Project Gutenberg is a registered trademark,
+and may not be used if you charge for an eBook, except by following
+the terms of the trademark license, including paying royalties for use
+of the Project Gutenberg trademark. If you do not charge anything for
+copies of this eBook, complying with the trademark license is very
+easy. You may use this eBook for nearly any purpose such as creation
+of derivative works, reports, performances and research. Project
+Gutenberg eBooks may be modified and printed and given away—you may
+do practically ANYTHING in the United States with eBooks not protected
+by U.S. copyright law. Redistribution is subject to the trademark
+license, especially commercial redistribution.
+
+
+START: FULL LICENSE
+
+THE FULL PROJECT GUTENBERG LICENSE
+
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+www.gutenberg.org/license.
+
+Section 1. General Terms of Use and Redistributing Project Gutenberg™
+electronic works
+
+1.A. By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound
+by the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B. “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this
+agreement and help preserve free future access to Project Gutenberg™
+electronic works. See paragraph 1.E below.
+
+1.C. The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is unprotected by copyright law in the
+United States and you are located in the United States, we do not
+claim a right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting
+free access to electronic works by freely sharing Project Gutenberg™
+works in compliance with the terms of this agreement for keeping the
+Project Gutenberg™ name associated with the work. You can easily
+comply with the terms of this agreement by keeping this work in the
+same format with its attached full Project Gutenberg™ License when
+you share it without charge with others.
+
+1.D. The copyright laws of the place where you are located also govern
+what you can do with this work. Copyright laws in most countries are
+in a constant state of change. If you are outside the United States,
+check the laws of your country in addition to the terms of this
+agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work. The Foundation makes no
+representations concerning the copyright status of any work in any
+country other than the United States.
+
+1.E. Unless you have removed all references to Project Gutenberg:
+
+1.E.1. The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:
+
+    This eBook is for the use of anyone anywhere in the United States and most
+    other parts of the world at no cost and with almost no restrictions
+    whatsoever. You may copy it, give it away or re-use it under the terms
+    of the Project Gutenberg License included with this eBook or online
+    at www.gutenberg.org. If you
+    are not located in the United States, you will have to check the laws
+    of the country where you are located before using this eBook.
+  
+1.E.2. If an individual Project Gutenberg™ electronic work is
+derived from texts not protected by U.S. copyright law (does not
+contain a notice indicating that it is posted with permission of the
+copyright holder), the work can be copied and distributed to anyone in
+the United States without paying any fees or charges. If you are
+redistributing or providing access to a work with the phrase “Project
+Gutenberg” associated with or appearing on the work, you must comply
+either with the requirements of paragraphs 1.E.1 through 1.E.7 or
+obtain permission for the use of the work and the Project Gutenberg™
+trademark as set forth in paragraphs 1.E.8 or 1.E.9.
+
+1.E.3. If an individual Project Gutenberg™ electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any
+additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works
+posted with the permission of the copyright holder found at the
+beginning of this work.
+
+1.E.4. Do not unlink or detach or remove the full Project Gutenberg™
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg™.
+
+1.E.5. Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.
+
+1.E.6. You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format
+other than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ website
+(www.gutenberg.org), you must, at no additional cost, fee or expense
+to the user, provide a copy, a means of exporting a copy, or a means
+of obtaining a copy upon request, of the work in its original “Plain
+Vanilla ASCII” or other form. Any alternate format must include the
+full Project Gutenberg™ License as specified in paragraph 1.E.1.
+
+1.E.7. Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8. You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works
+provided that:
+
+    • You pay a royalty fee of 20% of the gross profits you derive from
+        the use of Project Gutenberg™ works calculated using the method
+        you already use to calculate your applicable taxes. The fee is owed
+        to the owner of the Project Gutenberg™ trademark, but he has
+        agreed to donate royalties under this paragraph to the Project
+        Gutenberg Literary Archive Foundation. Royalty payments must be paid
+        within 60 days following each date on which you prepare (or are
+        legally required to prepare) your periodic tax returns. Royalty
+        payments should be clearly marked as such and sent to the Project
+        Gutenberg Literary Archive Foundation at the address specified in
+        Section 4, “Information about donations to the Project Gutenberg
+        Literary Archive Foundation.”
+    
+    • You provide a full refund of any money paid by a user who notifies
+        you in writing (or by e-mail) within 30 days of receipt that s/he
+        does not agree to the terms of the full Project Gutenberg™
+        License. You must require such a user to return or destroy all
+        copies of the works possessed in a physical medium and discontinue
+        all use of and all access to other copies of Project Gutenberg™
+        works.
+    
+    • You provide, in accordance with paragraph 1.F.3, a full refund of
+        any money paid for a work or a replacement copy, if a defect in the
+        electronic work is discovered and reported to you within 90 days of
+        receipt of the work.
+    
+    • You comply with all other terms of this agreement for free
+        distribution of Project Gutenberg™ works.
+    
+
+1.E.9. If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from the Project Gutenberg Literary Archive Foundation, the manager of
+the Project Gutenberg™ trademark. Contact the Foundation as set
+forth in Section 3 below.
+
+1.F.
+
+1.F.1. Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+works not protected by U.S. copyright law in creating the Project
+Gutenberg™ collection. Despite these efforts, Project Gutenberg™
+electronic works, and the medium on which they may be stored, may
+contain “Defects,” such as, but not limited to, incomplete, inaccurate
+or corrupt data, transcription errors, a copyright or other
+intellectual property infringement, a defective or damaged disk or
+other medium, a computer virus, or computer codes that damage or
+cannot be read by your equipment.
+
+1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the “Right
+of Replacement or Refund” described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg™ trademark, and any other party distributing a Project
+Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.
+
+1.F.4. Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you ‘AS-IS’, WITH NO
+OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5. Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.
+
+1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in
+accordance with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.
+
+Section 2. Information about the Mission of Project Gutenberg™
+
+Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need are critical to reaching Project Gutenberg™’s
+goals and ensuring that the Project Gutenberg™ collection will
+remain freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future
+generations. To learn more about the Project Gutenberg Literary
+Archive Foundation and how your efforts and donations can help, see
+Sections 3 and 4 and the Foundation information page at www.gutenberg.org.
+
+Section 3. Information about the Project Gutenberg Literary Archive Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non-profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation’s EIN or federal tax identification
+number is 64-6221541. Contributions to the Project Gutenberg Literary
+Archive Foundation are tax deductible to the full extent permitted by
+U.S. federal laws and your state’s laws.
+
+The Foundation’s business office is located at 809 North 1500 West,
+Salt Lake City, UT 84116, (801) 596-1887. Email contact links and up
+to date contact information can be found at the Foundation’s website
+and official page at www.gutenberg.org/contact
+
+Section 4. Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg™ depends upon and cannot survive without widespread
+public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine-readable form accessible by the widest
+array of equipment including outdated equipment. Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular state
+visit www.gutenberg.org/donate.
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: www.gutenberg.org/donate.
+
+Section 5. General Information About Project Gutenberg™ electronic works
+
+Professor Michael S. Hart was the originator of the Project
+Gutenberg™ concept of a library of electronic works that could be
+freely shared with anyone. For forty years, he produced and
+distributed Project Gutenberg™ eBooks with only a loose network of
+volunteer support.
+
+Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as not protected by copyright in
+the U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.
+
+Most people start at our website which has the main PG search
+facility: www.gutenberg.org.
+
+This website includes information about Project Gutenberg™,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+

@@ -1,0 +1,2147 @@
+﻿The Project Gutenberg eBook of Amor ja Psyke
+    
+This ebook is for the use of anyone anywhere in the United States and
+most other parts of the world at no cost and with almost no restrictions
+whatsoever. You may copy it, give it away or re-use it under the terms
+of the Project Gutenberg License included with this ebook or online
+at www.gutenberg.org. If you are not located in the United States,
+you will have to check the laws of the country where you are located
+before using this eBook.
+
+Title: Amor ja Psyke
+
+Author: Apuleius
+
+Translator: Edvard Rein
+
+Release date: September 26, 2016 [eBook #53150]
+                Most recently updated: October 23, 2024
+
+Language: Finnish
+
+Credits: E-text prepared by Tapio Riikonen
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK AMOR JA PSYKE ***
+
+AMOR JA PSYKE
+
+Kirj.
+
+APULEIUS
+
+Suomentanut ja johdannolla varustanut
+
+Edv. Rein
+
+
+
+
+
+
+Helsingissä,
+Lilius & Hertzberg Osakeyhtiö,
+1907.
+
+
+
+
+Alkulause.
+
+
+Esilläoleva käännös perustuu pääasiallisesti _G.F. Hildebrandin_
+teoksessa L. Apulei opera omnia I, II. Lipsiae 1842 ja _F. Nordenin_
+teoksessa Amor und Psyche, Ein Märchen des Apuleius (Meisterwerke der
+Griechen und Römer in kommentierten Ausgaben VI. Leipzig und Berlin
+1903) julkaisemaan tekstiin. Paikoittain on myös seurattu _J. van der
+Vlietin_ teosta Lucii Apulei Metamorphoseon libri XI. Lipsiae 1897.
+
+Apuna on, paitsi Hildebrandin ja F. Nordenin mainituissa teoksissa
+tavattavia selityksiä, myös käytetty _Adlingtonin_ englantilaista ynnä
+_Ed. Nordenin_ y.m. saksalaisia käännöksiä, jonka ollessa uudempia,
+roomalaista kirjallisuutta käsitteleviä teoksia sekä Apuleiusta
+koskevia pienempiä tutkimuksia on pidetty silmällä.
+
+Käännöksessä tavattava jako eri lukuihin ei perustu alkuteokseen, vaan
+_Ed. Nordenin_ mainittuun käännökseen.
+
+_Tekijä_.
+
+
+
+
+Apuleiuksen elämä ja teokset.
+
+
+_Apuleius_ syntyi vuoden 125:n vaiheilla j.Kr. Afrikassa Numidian
+maakunnassa sijaitsevassa Madauran sotilas-siirtolassa, missä hänen
+isänsä oli arvossa pidetty henkilö ja paikkakunnan korkeimpia
+hallinnollisia virkamiehiä ("duumvir"). Itse hän poikana sai siihen
+aikaan tavallisen gramatillis-retorisen koulukasvatuksen maakunnan
+pääkaupungissa Kartagossa. Täydentääkseen tietojaan hän noin 19
+vuotisena siirtyi Kreikkaan ja Aleksandriaan, oleskellen etupäässä
+Atenassa, missä muun muassa tutki Platon filosofiaa. Seitsemän tai
+kahdeksan vuotta hän tällöin harjoitteli opintoja ja kulutti niihin
+koko perintönsä; kertoopa hän itse liian uutteriin lukuihin menettäneen
+terveytensäkin.
+
+Sen jälkeen hän noin vuonna 150 asettui Roomaan, missä nautti sirosta
+muotityylistään tunnetun numidialaisen retorin Fronton opetusta, ja
+alkoi -- nähtävästi opettajansa vaikutuksesta -- julkaista ensimäiset
+kirjalliset tuotteensa. Samalla hän toimi asianajajana, jolla alalla
+tuli hyvin suosituksi.
+
+Roomasta hän 150-luvun keskivaiheilla palasi kotimaahansa Afrikkaan,
+missä hän samalla tapaa kuin aikansa kreikkalaiset sofistit suurella
+menestyksellä esiintyi juhlapuhujana ja kauniina, miellyttävänä,
+nuorena maailmanmiehenä voitti yleistä suosiota. Talvella v. 156 j,Kr.
+hänen elämänsä sai uuden käänteen. Matkustaessaan näet Madaurasta
+Aleksandriaan hän sairastui Oean kylässä, nykyisessä Tripoliksessa,
+jonka vuoksi hän oli pakoitettu pitemmäksi aikaa sinne jäämään. Kun
+hänellä siellä sattui olemaan tuttava, muuan Pontianus niminen
+opintotoveri Atenan ajoilta, hän joutui tämän luokse asumaan. Seuraus
+oli että Apuleiuksen ja hänen toverinsa äidin, varakkaan lesken,
+Aemilia Pudentillan, välille kehittyi suhde, joka ennen pitkää päättyi
+avioliittoon. Apuleius oli silloin alun neljänäkymmentä, Pudentilla
+noin kahdeksanneljättä vuotias.
+
+Tämän avioliiton solmimista olivat Apuleiuksen sukulaiset koettaneet
+ehkäistä. Niinpä Pontianus, joka alussa itse oli asiaa lämpimästi
+puoltanut, alkoi sitä vastustella naituaan Herennius Rufinuksen
+tyttären, miehen, jonka raha-asiat olivat huonolla kannalla ja joka
+toivoi vävynsä avulla pääsevänsä Pudentillan rikkauksista osalliseksi.
+Appensa vaikutuksesta Pontianus nyt alkoi julkisesti panetella
+Apuleiusta väittäen että hän muka taioilla oli voittanut Pudentillan
+rakkauden. Myöhemmin Pontianus kuitenkin katui menettelyään, ja
+toverusten kesken saatiin aikaan sovinto.
+
+Mutta Pontianuksen kuoltua alkoi tämän nuoremman veljen, Pudensin,
+nimessä hänen setänsä, sivistymätön ja raaka Sicinius Aemilianus,
+ahdistaa Apuleiusta, joka sillä välin oli nainut Pudentillan. Hänet
+haastettiin oikeuteen ja häntä syytettiin noituudesta; hoettiinpa
+että hän muka oli raivannut tieltään Pontianuksen, vaikka tästä
+ei nimenomaista syytöstä tehty. Apuleiusta vastaan käytetyt
+todistuskappaleet olivat perin turhanpäiväistä laatua; muun muassa
+mainittiin varsin arveluttavana tosiasiana että hän ahkeraan käytti
+taskupeiliä ja että hän -- tietenkin tieteellisessä tarkoituksessa --
+oli leikellyt kaloja.
+
+Oikeusjuttu, jota käytiin Sabrata nimisessä Oean naapurikaupungissa ja
+jota johti Afrikan prokonsuli Claudius Maximus, päättyi epäilemättä
+Apuleiuksen täydelliseen puhdistukseen. Torjuakseen syytökset hän piti
+loistavan, kerrassaan murhaavan puolustuspuheen.
+
+Tämän tapauksen on otaksuttu sattuneen vuoden 158 j.Kr. paikkeilla.
+
+Sittemmin Apuleius muutti Kartagoon, missä eli kuuluisana puhujana,
+retorina ja filosofina, pitäen esitelmiä, joita vastaanotettiin
+erinomaisella ihastuksella. Apuleius oli nyt maineensa kukkuloilla:
+häntä kuulemaan tulvi koko hienosto, hänen kunniakseen pystytettiin
+sekä Kartagossa että muualla patsaita. Hänelle uskottiin myös
+kunniakkaita toimia; niinpä hänestä tehtiin "sacerdos provinciae",
+jonka tehtävä oli hoitaa keisarillista jumalanpalvelusta maakunnassa ja
+järjestää kallisarvoiset "ludi sacerdotales" nimiset näytännöt. Tässä
+mainehikkaassa asemassa Apuleius luultavasti pysyi kuolemaansa saakka;
+hänen loppuikänsä on yhtä vähän tunnettu kuin kuolinvuotensa.
+
+       *       *       *       *       *
+
+Jo nämä Apuleiuksen ulkonaiset elämänvaiheet viittaavat siihen, ettei
+hän ollut mikään jokapäiväinen henkilö. Kaikesta päättäen hän oli
+hyväpäinen mies, jolla oli ivansekainen huumori sekä vilkas
+mielikuvitus. Luonteeltaan hän oli jalomielinen ja ystäviään kohtaan
+avulias, jos kohta hänessä oli inhimillisiä heikkouksia, turhamaisuutta
+ja mahtavain suosion tavoittelua. Aikakautensa, kuolevan antiikin,
+lapsena hän oli samalla haavaa aistillinen ja uskonnollinen.
+Huomattavana piirteenä näet hänessä oli taipumus mystilliseen
+mietiskelyyn, taikauskoon ja astrologiaan, joka sai hänet yhtymään
+milloin mihinkin salaiskulttiin ja liitti jo hänen eläessään hänen
+nimeensä loitsutaidon maineen. Mutta vielä suuremmassa määrin
+kuolemansa jälkeen Apuleius kansankäsityksessä saavutti noidan nimen:
+kirkkoisä Augustinus mainitsee että kristinuskon vastustajat asettivat
+hänet ihmeiden tekijänä Kristuksen rinnalle, jopa häntä ylemmäksi.
+
+Apuleiuksen uskomattoman taipuisa äly ja suuri työkyky ilmenevät hänen
+harvinaisen monipuolisessa kirjallisessa toiminnassaan. Kirjailijana
+hän käytti sekä kreikkaa että latinaa; mitä jälkimäiseen tulee, oli
+hän, jonka äidinkieli oli puunilais-kieli ja joka maakuntalaisena oli
+tottunut huononlaiseen latinaan, vasta vähitellen ja suurella vaivalla
+oppinut aito-roomalaisen kielenkäytön. Ja hän liikkui kaikilla
+kirjallisuuden aloilla. Hän sepitti suorasanaisia kertomuksia ja
+lyyrillisiä runoelmia, kirjoitti näytelmäkappaleita ja satireja,
+filosofisia dialogeja ja historiallisia tutkielmia, käsitteli
+laskuoppia ja astrologiaa, eläintiedettä ja lääketiedettä,
+maanviljelystä ja soitantoa. Kehuipa itse yhtä hartaasti palvelevansa
+kaikkia yhdeksää runotarta.
+
+Sama kirjavuus osoittautuu hänen esitystavassaan, siinä kun on käytetty
+kaikkia aikakauden rehevän retoriikan apuneuvoja, alku- ja
+loppusointuja, sanakaikua, lausejaksojen kertoa, yhteenkasattuja
+synonymejä, vuoroin kirja-, vuoroin kansankieltä, rinnan vanhentuneita,
+harvinaisia sanoja ja uusia muodostuksia. Kaikki tämä on aiheuttanut
+että Apuleiusta on sanottu sukkelimmaksi sanataituriksi, mikä
+milloinkaan on ollut. Hänen tyylinsä tulee kyllä runsaspuheisuutensa ja
+saman sisällyksen kertaamisen vuoksi monasti raskaaksi ja
+teeskennellyksi: lukija tulee usein ajatelleeksi troopillista
+aarniometsää, missä kiemurtelevat köynnökset tavantakaa pysäyttävät
+kulkijan. Mutta toiselta puolen se vilkkaalla eloisuudellaan ja
+lumousvoimallaan tempaa lukijan mukaansa.
+
+       *       *       *       *       *
+
+Apuleiuksen lukuisista teoksista ovat meidän aikoihimme säilyneet
+seuraavat kuusi:
+
+_Metamorphoses_, yksitoista kirjaa käsittävä muunnos-romaani, myöhemmin
+yleisesti tunnettu nimellä _Kulta-aasi_.
+
+_Apologia_ eli _de magia_, Apuleiuksen oikeuden edessä pitämä
+puolustuspuhe.
+
+_Florida_, kaksikymmentäkolme retorillista harjoitelmaa.
+
+_De deo Socratis_.
+
+_De dogmate Platonis_.
+
+Ja _De mundo_, jotka kaikki kolme ovat filosofista sisällystä ja joista
+viimeinen on mukailu eräästä Aristoteleen nimellä käyvästä teoksesta.
+Tahdomme tässä kiinnittää huomiomme ensinmainittuun teokseen, joka on
+kaikista laajin ja merkillisin.
+
+_Metamorfosit_, jota pidetään Apuleiuksen säilyneistä teoksista
+aikaisimpana, on jäljennös ja laajennus eräästä kadonneesta
+kreikkalaisesta ihmeromaanista, josta on vieläkin olemassa mukailemalla
+tehty kreikankielinen ote: Lukianoksen teosten joukossa säilynyt, mutta
+toisen kirjoittama kertomus _Lukios eli Aasi_, joka monessa kohden
+pitää yhtä Apuleiuksen puheenaolevan kertomuksen kanssa. Mainittua
+esikuvaansa ei kuitenkaan Apuleius ole orjallisesti seurannut, vaan
+osaksi itse sepittänyt, osaksi poiminut käsillä olevasta satu- ja
+satirikirjallisuudesta joukon välikertomuksia ja liittänyt ne siihen.
+Onpa lausuttu arvelu että hän olisi muuttanut alkuteoksen koko sävynkin
+tekemällä sen täydessä uskossa esitetystä kertomuksesta parodisen
+romaanin.
+
+Apuleiuksen Metamorfosien sisällys on pääpiirteissään seuraava. Eräs
+nuori Lucius niminen mies joutuu matkalla Tessaliassa asumaan vanhan
+miehen luo, jonka vaimo on velho. Kun hän kerran sattuu näkemään
+mitenkä emäntänsä, sivelemällä ruumistaan tuntemattomalla aineella,
+muuntaa itsensä linnuksi, herää hänessä halu itsekin hetkeksi muuksi
+muutteleita. Mutta onnettomuudekseen hän saakin käsiinsä väärän rasian,
+josta on seurauksena että hänestä tulee aasi.
+
+Tästä alennuksen tilasta, missä Lucius eläimen haahmosta ja vieteistä
+huolimatta säilyttää inhimillisen ymmärryksensä, hän ei voi päästä,
+ellei hänen onnistu syödä ruusuja. Se se tästä puolen on kaiken hänen
+pyrkimyksensä tarkoitus ja se loppumäärä, mihin koko kertomuksen juoni
+tähtää. Mutta tässäpä nousee tie pystyyn. Monet kerrat jo Lucius parka
+on pääsemäisillään toiveittensa perille, kun väliin tulee joku sattuma,
+joka uudestaan viskaa hänet tapausten pyörteeseen.
+
+Luciuksen kärsimysten historia on erinomaisen monimutkainen. Siihen
+taloon, missä kova onni häntä ensin kohtaa ja missä hän joutuu aasina
+hevosten kanssa talliin asumaan, hyökkää rosvojoukko ja hävittää sen.
+Aasi joutuu näiden käsiin ja on pakoitettu, raskas taakka selässä,
+seuraamaan heitä heidän retkilleen.
+
+Kerran oli aasi jätetty kotiin, kun rosvot olivat lähteneet ryöstämään.
+Leiripaikkansa vartijaksi he olivat jättäneet vanhan eukon, jonka muun
+saaliin ohessa tuli valvoa nuorta tyttöä, minkä rosvot vähää ennen
+olivat suoraapäätä häistä ryöstäneet ja tuoneet luolaansa. Ajan kuluksi
+ja itkevätä morsianta lohduttaakseen eukko silloin muun muassa kertoo
+sen sadun, johon alempana tulemme tutustumaan, _tarinan Amorista ja
+Psykestä_.
+
+Tämän välikertomuksen jälestä jatkuu pääjuoni. Aasin avulla onnistuu
+tytön hetkeksi päästä karkuun, mutta molemmat joutuvat pian uudestaan
+kotiin kääntyvien rosvojen käsiin. Onneton aasi saa tietysti osakseen
+kovaa kohtelua, jopa päättävät rosvot ottaa sekä sen että tytön
+julmalla tavalla hengiltä; mutta molemmat pelastuvat varmasta
+perikadosta, ja rosvot kärsivät ansaitun rangaistuksen pahoista
+töistään. -- Aasin kohtalo käy sitten yhä kirjavammaksi. Se siirtyy
+isännältä toiselle, milloin pyörittäen myllynkiveä, milloin kantaen
+selässään puita, ajajana häijy poika, joka ei muuta tee kuin miettii
+miten voisi elukkaa rääkätä. Milloin se on joutua karhun raadeltavaksi,
+milloin se kuljettaa Syyrialais-jumalattaren kerjäläispappien pyhiä
+esineitä, milloin palvelee puutarhurilla tai sotamiehellä. Sitten sen
+saa muuan veljespari -- sokurileipuri ja keittäjä --, jotka huomaavat
+että se ei syökään tavallista aasinapetta, vaan ihmisten herkkuja.
+Siitä pitäen sen kohtalo alkaa kääntyä valoisammaksi. Sen ostaa nyt
+eräs mies, joka keksii sen tavattoman viisauden muissakin kohdin, se
+kun ylen helposti oppii mitä vaikeimmat temput, ja antaa sen maksusta
+julkisesti näytellä taitoaan. Se on nyt yleisen ihmettelyn esineenä,
+saavuttaapa muutaman ylhäisen rouvan rakkauden. Kerran sen tulee
+Korintoksessa taajan katsojakunnan edessä ottaa osaa riettaaseen
+näytelmään. Mutta tämän alkaessa aasi lähteekin karkuun ja yöpyy
+kaupungin ulkopuolella merenrannalle. Unessa sille ilmestyy Isis
+jumalatar luvaten pelastusta. Ja seuraavan aamun koittaessa valkenee
+aasillekin onnen päivä. Tiellä astuu Isiksen palvoojain saattue, jonka
+etunenässä kulkee ruusunseppeltä kantava pappi: aasi syöksyy esiin,
+syödä hotaisee ruusut suuhunsa ja -- edessämme on ilmielävänä entisessä
+ihmismuodossaan Lucius.
+
+Kiitollisena tämä vihityttää itsensä Isiksen ja sitten Osiriksen
+salaismenoihin ja matkustaa sittemmin Roomaan, missä aikaa myöten
+kohoaa yhä pyhempiin arvonasteisiin.
+
+       *       *       *       *       *
+
+Romaanin päätös on tekijän itsensä sepittämä. Siinä tavataan selviä
+viittauksia hänen omaan elämäänsä. On senvuoksi kenties syystä väitetty
+että Apuleius, kertoessaan aasin haahmossa kovia kokeneen Luciuksen
+vaiheita, samalla on ajatellut omaa itseänsä; olihan hän -- niin
+sanotaan -- tiedonhaluaan tyydyttääkseen kuluttanut varhaisimmat
+vuotensa joutaviin maallisiin tutkimuksiin ja vasta senjälkeen kuin
+kokonaan oli heittäytynyt mysterioiden helmaan, hän oli saavuttanut
+sisällisen rauhan. Lopulla kuvatut Isis-palveluksen menot vaikuttavat
+hullunkurisen vallattomien, usein siveellisesti perin arveluttavien
+kertomuksien jälestä juhlallisen virren tavoin; siinä on oltu
+huomaavinaan katuvaisen synnintunnustusta.
+
+Kokoonpanoltaan "muunnos-romaani" on jonkun verran hajanainen, sen
+lomaan kun on punottu kirjava liuta sivukertomuksia traagillista,
+koomillista ja romantista laatua, jotka enimmäkseen eivät ole missään
+elimellisessä yhteydessä sen kanssa. Mutta jännittävä juoni, joka
+alinomaa tuo mukanaan uusia, odottamattomia käänteitä ja aukoo ihme- ja
+seikkailumaailman ovet selkoselälleen, vilkas esitys, hilpeä humori ja
+viittaukset ajan oloihin tekevät sen mieltäkiinnittäväksi.
+
+       *       *       *       *       *
+
+Apuleiuksen Metamorfosien kauniin helmi, joka ikipäiviksi on pelastanut
+kirjan unohdukseen joutumasta, on maailmanmainio _satu Amorista ja
+Psykestä_, joka alkaa romaanin neljännessä ja päättyy sen kuudennessa
+kirjassa. Sitä tekijä ei ole ottanut ylempänä mainitsemastamme
+alkuteoksesta, vaan eräästä kreikkalaisesta kokoelmasta novelleja, eli
+n.s. "miletolaisia satuja". Apuleius tunsi siis tämän sadun sen
+kreikkalaisessa muodossa. Mutta sama aihe on, eri tavoin muodosteltuna
+kansansatuna, tunnettu hyvin monella kansalla; siitä on muun muassa
+olemassa intialaisia, arapialaisia, italialaisia, ranskalaisia,
+saksalaisia, islantilaisia, norjalaisia ja ruotsalaisia toisintoja.
+
+Emme tunne tarkemmin kysymyksessä olevaa Apuleiuksen kreikkalaista
+esikuvaa. Mutta aivan varmasti jo siinä alkuperäinen kansansatu
+esiintyy hellenistiseen henkeen muunneltuna. Omasta puolestaan Apuleius
+on sitä monin tavoin muuttanut, lisäellen ja poistaen yksityisiä
+piirteitä; niinpä hän on siihen liittänyt viittauksia roomalaisiin
+oloihin sekä joukon abstraktis-allegorisia käsitteitä ja antanut koko
+kertomukselleen humoristis-satirisen värityksen, mikä melkoisessa
+määrin on muuntanut vanhan kansansadun naivisen leiman. Että siitä
+huolimatta siksi paljon todellista kansantarun ainesta on jälellä,
+tekee kertomuksen kirjallisessa suhteessa tärkeäksi: siinä on näet
+ainoa laajempi meille säilynyt jäännös antiikista kansansatua. Ja
+täytyy myöntää, että Apuleius sittenkin syvemmältä kuin useimmat vanhan
+ajan kirjailijat on tajunnut tämän sisimmän olemuksen.
+
+       *       *       *       *       *
+
+Oleellisimpia alkuperäiseen satuun tehtyjä muutoksia oli se, että
+rakastaville oli annettu nimeksi Amor ja Psyke. Siitä oli lähin seuraus
+että kansantarun häijystä äidistä, joka, estääkseen lempiviä yhtymästä,
+muuntaa poikansa hirviöksi, tuli Venus, mikä puolestaan aiheutti että
+koko kreikkalaisen mytologian yleisesti tunnettu koneisto työnnettiin
+näyttämölle. Nimet Amor ja Psyke saatiin yleisestä, nähtävästi
+aleksandrialaisella ajalla syntyneestä, mutta luultavasti Platosta
+johtuvasta käsityksestä. Kirjallisuudessa tapaamme sen aikaisimmin
+ensimäisellä vuosisadalla e.Kr. eläneellä kreikkalaisella
+epigrammintekijällä Meleagroksella, joka usein esittää Erosta (Amoria)
+ja Psykeä rakastavana parina. Mutta vielä yleisempänä tämä käsitys
+ilmenee taiteessa. Lukuisissa veistoteoksissa, korkokuvissa,
+kaiverretuissa kivissä, seinämaalauksissa, sormuksissa y.m.,
+kreikkalaisen ja roomalaisen taiteen myöhemmissä tuotteissa näemme tuon
+lapsellisen parin yhdessä, milloin toisiaan armastellen, milloin taas
+tapaamme Eroksen rakastettuansa kiduttamassa ja Psyken armoa anomassa.
+Usein on silloin Psykellä perhosensiivet, joskus hän on kokonaan
+perhosenmuotoinen. Välistä taas näemme päinvastoin Psyken perhosena
+vartioimassa sidottua Erosta. Näissä esityksissä on luultavasti
+taiteilijan mielessä väikkynyt allegorinen ajatus ihmissielun ikuisesta
+kaipiosta ihanteellisuuteen -- yleinen mielikuva, joka on antanut
+suhteellisesti suuren vapauden käsittelyssä eikä ole sitonut häntä
+tarkoin määrättyyn situatsioniin.
+
+Syy siihen, minkä vuoksi käsitys Amorista ja Psykestä oli omiaan
+liittymään alkuperäiseen kansansatuun, oli ilmeisesti se, että
+kummassakin tapauksessa oli kaksi onnetonta rakastavaa.
+
+       *       *       *       *       *
+
+Ne kieltämättä allegoriset ainekset, jotka Apuleiuksen esikuvasta ovat
+tulleet hänen teokseensa, ynnä ne, joita hän itse puolestaan on siihen
+liittänyt, ovat osaltaan vaikuttaneet sen, että useimmat selittäjät,
+alkaen hänen 6:lla vuosisadalla j.Kr. eläneestä maanmiehestään
+Fulgentiuksesta aina meidän aikojemme tutkijoihin saakka, ovat
+käsittäneet sitä täydelliseksi, moraliseeraavaksi allegoriaksi, jotkut
+vieläpä kristilliseen henkeen laadituksi; on väitetty että Apuleius
+tarinallaan olisi tahtonut esittää ihmissielun suhdetta taivaalliseen
+rakkauteen, kuinka se lankeemuksensa johdosta tämän kadottaa, mutta
+kärsimysten kautta puhdistuneena jälleen saavuttaa sen; myös on
+ylimalkaan ajateltu niitä tuskia ja vaivoja, mitä rakkaus ihmiselle
+tuottaa. Toiset ovat olettaneet Apuleiuksen tahtoneen viitata
+mysterioiden puhdistavaan vaikutukseen ja huomauttavat miten Psyken
+vastukset ja harhamatkat muistuttavat niitä koettelemuksia, joita
+salamenoihin vihittävien oli kestettävä.
+
+Perinpohjaisempi kertomuksen punnitseminen ja varsinkin laajentunut
+näköala vertailevan satututkimuksen alalla ovat kuitenkin osoittaneet
+että tällä romaanilla kokonaisuudessaan ei ole voitu tarkoittaa
+nimenomaista allegoriaa.
+
+       *       *       *       *       *
+
+Senjälkeen kuin Apuleius oli istuttanut kansansadun metsäkukan
+retoriikan taimitarhaan, oli antiikin taide hyvin vähäisessä määrässä
+käsitellyt Amorin ja Psyken suhdetta. Ei ole olemassa antiikista
+taideteosta, jonka varmasti voisi asettaa yhteyteen Apuleiuksen
+muodostelun kanssa. Ja itse asiassa oli tämän ilmestyessä antiikisen
+taiteen elinneste jo siihen määrään ehtymässä, ettei se enää kyennyt
+luomaan mitään sanottavasti uutta. Mutta sitä enemmän se on vaikuttanut
+uuden ajan taiteeseen, renessansista alkaen. Maalauksista on ennen
+muita mainittava Rafaelin suunnitelman mukaan tehdyt kattomaalaukset
+Villa Farnesinassa Roomassa, missä sarja mainitusta romaanista otettuja
+viehättäviä kohtauksia on nähtävänä. Kuvanveistoksista taas ovat
+kuuluisimmat Canovan ihana ryhmä Villa Carlottassa Lago di Comon
+rannalla sekä Thorwaldsenin tunnetut mestariteokset. Ja onpa omankin
+maamme taiteilijoista yksi, Walter Runeberg, ottanut aiheita Amorin ja
+Psyken iäti nuoresta tarinasta.
+
+Lopuksi on mainittava että kertomus Amorista ja Psykestä on vaikuttanut
+hedelmöittävästi uudempien aikojen kaunokirjallisuuteenkin, se kun on
+innostuttanut useita eri kielillä esiintyviä kirjailijoita enemmän tai
+vähemmän itsenäisiin runollisiin tuotteisiin.
+
+
+
+
+
+
+AMOR JA PSYKE
+
+
+
+
+ENSIMÄINEN LUKU.
+
+
+Oli kerran eräässä valtiossa kuningas ja kuningatar, joilla oli kolme
+ylen kaunista tytärtä. Mutta kun molempia vanhempia, miten suloiset
+olivatkin, toki katsottiin voitavan inhimillisin kiitoksin täysin
+vastaavalla tavalla kehua, oli nuorimman tyttären ihanuus niin
+erikoinen ja erinomainen, ettei sitä puutteellinen ihmiskieli pystynyt
+ilmaisemaan eikä riittämään asti ylistämään. Niinpä monet oman maan
+kansalaiset ja varakkaat tulokkaat, joita harvinaisen näytelmän huhu
+taajoissa, hartaissa joukoissa keräsi kokoon, hämmästyivät ihmeissään
+moista saavuttamatonta ihanuutta, painoivat sormenpään ojennettua
+peukaloansa vasten ja veivät kätensä suulleen, osoittaen siten hänelle
+uskonnollista kunnioitusta juuri kuin itse Venus jumalattarelle.
+
+Jo oli kautta lähivaltioiden ja likiseutujen kulkeutunut huhu, että
+jumalatar, jonka synnytti sinisyvyys ulapan ja kasvatti vihma
+vaahtopäälaineiden, kaikkialle jakaen jumaluutensa armoa jo liikuskeli
+keskellä väkijoukkoja, tai ainakin että taasen, kuten kerran meri, niin
+nyt maa uudesta taivaallisten pisarain idusta oli toisen Venuksen
+täydessä impeyden kukassaan saattanut puhkeamaan.
+
+Niin etenee äärettömästi päivä päivältä se käsitys, niin vaeltaa
+leviävä maine jo kautta lähisaarten, melkoisen osan maata ja useampain
+maakuntain. Jo tulvi joukottain kuolevaisia, pitkien taivalten takaa ja
+meren aallonharjoja kulkien vuosisadan kuulua kummaa näkemään. Ei
+Pafokseen, ei Knidokseen eikä edes Kyteraankaan kukaan purjehtinut
+Venus jumalatarta katsomaan. Jumalattaren uhreja sivuutetaan, hänen
+temppelinsä ovat tyhjinä, pyhät sijansa hyljättyinä, hänen menojaan
+laiminlyödään, kuvapatsaansa ovat vailla seppeleitä ja autioita
+alttareita tahraa kylmä tuhka. Sensijaan rukoillaan tyttöä, ja ihmisen
+muodossa lepytellään mahtavan taivahisen jumaluutta; immen aamusin
+astellessa suostutellaan uhriteurain ja juhla-aterioin Venusta, joka
+kuitenkin oli kaukana, ja hänen katuja pitkin kävellessään ihmiset
+lukuisasti häntä palvoovat seppelin ja kukkasin.
+
+Tämä taivaallisten kunnianosoitusten määrätön siirtäminen kuolevaiseen
+tyttöön herätti todellisen Venuksen suuttumuksen, ja närkästyksestä
+kärsimätönnä hän päätään pudistellen sekä sydämen pohjasta nuristen
+näin puhuu itsekseen: "voi luonnon ikiemoa, voi alkuainetten
+perusjuurta, voi koko maanpiirin hallitsijatarta, voi minua, armas
+Venus, jonka täytyy kuolevaisen tytön kanssa jakaa valtiuteni ja jonka
+taivaassa pyhitettyä nimeä häpäisee maallinen tahra! Meille molemmille
+osoitetussa palveluksessa saan minä tietysti tyytyä viransijaisen
+epävarmaan osaan, ja minun kuvaani kantaa ympäri maailmaa kuolevainen
+tyttö. Turhaan Paris paimen, jonka oikeamielisyyden ja luotettavuuden
+on myöntänyt suuri Jupiter, erinomaisen ulkomuotoni vuoksi asetti minut
+niin mahtavain jumalatarten edelle. Mutta eipä tuo, ken tahansa
+lieneekään, niinkään suureksi ilokseen tule ryöstäneeksi kunniaani:
+kyllä minä pian laitan niin, että hän saa katua juuri tätä luvatonta
+ihanuuttaan".
+
+Ja kohta hän kutsuu luokseen poikansa, tuon siivekkään veitikan, joka
+huonoine tapoineen kaikkea julkista kuria halveksii ja liekin, nuolin
+asestettuna öisin liitää vieraissa kodeissa sekä kaikkien avioliittoja
+turmellen rankaisematta tekee moisia kolttosiaan eikä ollenkaan toimita
+mitään hyvää. Vaikka tämä jo luontaisesta vallattomuudesta on julkea,
+äiti vielä lisäksi sanoillaan häntä yllyttää ja saattaa hänet
+ennenmainittuun valtioon sekä osoittaa hänelle Psyken -- se näet oli
+tytön nimi. Ja kerrottuaan juurta jaksaen heidän kauneudenkilpailunsa,
+hän närkästyksestä uhkuen ja puhkuen virkkaa: "nimessä äidinrakkauteni
+siteiden, nimessä nuolesi suloisten haavojen, nimessä tuon liekkisi
+medenmakean polton, hanki äidillesi kosto, ja täydellinen! Rankaise
+ankarasti tuota uppiniskaista kaunotarta ja suorita suosiollisesti
+ennen kaikkea tämä ainokainen asia: tuo neito rakastukoon mitä
+tulisimmin kaikkein halvimpaan mieheen, jolta Onnetar on riistänyt
+arvon ja samalla perinnön, vieläpä terveydenkin, mieheen, joka on niin
+halpa, ettei koko maanpiirissä löydä vertaistaan kurjuudessa".
+
+Noin julistettuaan ja hehkuvin suukkosin poikaansa kauvan ja kiihkeästi
+suudeltuaan, hän pyrkii lähimmälle rannikolle, mistä meri vetäytyy
+taappäin, ja tuskin hän rusottavilla jalkapohjillaan on hipaissut
+väreilevän allokon päällisintä vihmaa, niin hän jo laskeutuu syvän
+meren selkeälle pinnalle. Ja, niinkuin hän juuri haluaakin, niin
+paikalla viivyttelemättä ilmestyy merellinen seurue, ikäänkuin
+jumalatar aikoja sitten olisi niin käskenyt. Saapuvat Vellamon neidot
+kuorossa laulaen, saapuvat takkuinen siniparta Portunus ja Salacia,
+syli raskaana kaloista, sekä pieni delfiininajaja Palaemon. [Portunus,
+Salacia ja Palaemon ovat tarumaisia meriolentoja.] Ja Tritonein parvien
+hyppelehtiessä sinne tänne pitkin meren pintaa, tässä yksi vienosti
+puhaltaa sointuvaa simpukkaa, tuossa toinen silkkiharsolla torjuu
+auringon ahdistavaa paahdetta, kolmas kantaa valtiattaren edessä
+kuvastinta ja vihdoin toiset uiskelevat parittain, vaunujen eteen
+valjastettuina. Sellainen joukkue se saattaa Venusta, kun hän
+valtamerelle suorii.
+
+       *       *       *       *       *
+
+Mutta Psyke, itselleenkin ilmeisestä ihanuudestaan huolimatta, ei nauti
+kauneudestaan mitään hedelmää. Kaikki häntä katselevat, kaikki
+kiittävät, mutta ei kenkään, ei kuningas, ei kuninkaanpoika eikä
+yhteisestäkään kansasta kukaan häntä aviokseen haluten kosimaan saavu.
+Ihailevat sitä jumalallista ulkomuotoa, mutta kuin mitäkin taidokkaasti
+silattua kuvapatsasta sitä ihailevat kaikki. Jo kauvan sitten ovat
+molemmat vanhemmat siskot, joiden kohtalaista kauneutta eivät ihmiset
+ollenkaan olleet huutoon saattaneet, joutuneet kuninkaallisille
+kosijoille ja päässeet onnellisiin avioliittoihin. Mutta Psyke
+pyhäisenä piikana kodissaan istuen itkee hyljättyä yksinäisyyttään,
+ruumiiltaan raihnaana, sielultaan sairaana, ja vihaa itsekseen
+ihanuuttaan, joka koko maailman on hurmannut.
+
+Silloin perin kovaonnisen tytön kurjankurja isä, epäillen taivahisten
+vihaa ja jumalten kiukkua peläten, kysyy neuvoa ikivanhalta Miletoksen
+oraakelilta ja suostuteltuaan rukouksin ja uhriteurain mahtavata
+jumaluutta hän anoo neidolle, jota ei kukaan pyydä, häitä ja
+aviomiestä. Ja Apollo antoi näin kuuluvan oraakelinvastauksen, vieläpä
+latinaksi, vaikka hän, katsoen miletolaissadun kertojaan, olikin
+kreikkalainen ja ioonialainen:
+
+    Korkean vuoren huipulle, valtias, toimita tyttö,
+    yllään hääpuku, voi, surkean morsiuden!
+    Turhaan vävyä ihmislasten joukosta toivot:
+    julma ja häijy se on, turmiokas kuni kyy,
+    hän, joka lentimin ilmoja liitäen kaikkia vaivaa,
+    liekin ja miekoin myös kutakin ahdistaa,
+    tuo, jota jumalat säikkyvi, värjyvi taivahan taatto,
+    ja jota kauheksuu Tuonelan virrat ja yö.
+
+Pyhän ennustuksen sisällyksen kuultuaan ennen niin miekkoinen kuningas
+harmissaan ja suruissaan lähtee takaisin kotiin ja selvittää
+puolisolleen pahaenteisen jumalanvastauksen käskyn. Siitä murhetta,
+itkua ja voivotusta useammaksi päiväksi. Mutta jo vaatii kauhea
+oraakelinlause julmaa toimeenpanoaan. Jo valmistellaan hautaushäiden
+näytäntöä kurjankurjalle neidolle, jo sammuu soihdun loimu mustan
+hiiloksen tuhkaan, jo vaihtuu häähuilun sointu vaikeroivaan
+lyydialaissäveleeseen, iloinen morsiuslaulu päättyy surkeaan parkuun,
+ja miehelään aikova tyttö kuivaa kyyneleensä itse morsiushunnullaan.
+Niin valitti koko väestökin yhdessä kovaa kokeneen talon surkeata
+kohtaloa, ja maansurun ajaksi julistettiin kohta oikeudenkäynti
+lakkautetuksi.
+
+Mutta pakko totella taivaallisia ohjeita vaatimalla vaati Psyke parkaa
+kohtalon määräämään rangaistukseen. Kun siis suurimmassa murheessa oli
+suoritettu hautaushäiden juhlallisuudet, niin kuljetetaan koko kansan
+saattaessa elävää ruumista, sillä itkusilmäinen Psyke ei astu
+hääsaatossaan, vaan omiin hautajaisiinsa.
+
+Mutta kun vanhemmat murheellisina ja moisen onnettomuuden järkyttäminä
+vitkastelevat jumalattoman teon toimeenpanossa, tytär itse näillä
+sanoin heitä rohkaisee: "mintähden onnetonta vanhuuttanne alituisella
+itkulla kidutatte? Miksi henkeänne, joka enemmän minulle kuin teille
+kuuluu, tavantakaisilla voivotuksillanne näännytätte? Miksi
+tehottomilla kyynelillänne rumennatte minun katseitani samalla kertaa
+kuin omia silmiänne? Miksi revitte harmaita hapsianne? Mitä rintaanne,
+mitä pyhiä parmojanne kolhitte? Tämäkö siis oli oivallinen palkkanne
+erinomaisesta ihanuudestani? Liian myöhään älyätte että teihin on
+sattunut jumalattoman kateuden kuolettava isku. Silloin kun yksityiset
+ja kansat jumalallisilla kunnianosoituksilla minua juhlivat, kun ne
+yhdestä suusta minua uudeksi Venukseksi nimittivät, silloin olisi
+teidän pitänyt surra, silloin itkeä, silloin minua menneenä kaluna
+murehtia. Jo minä huomaan, jo näen että yksin nimi 'Venus' on minut
+turmioon syössyt. Viekää ja asettakaa minut oraakelinmääräämälle
+huipulle. Minä riennän kohti noita onnellisia häitäni, riennän näkemään
+tuota ylhäissukuista ylkääni. Mitä vitkastelen? Miksi lykkään
+tuonnemmaksi hänen tuloaan, joka koko maanpiirin turmioksi syntyi?"
+
+Noin puhuttuaan neito vaikeni ja, jo vakavasti astuen, yhtyi mukana
+seuraavaan saattoon. Kuljetaan jyrkän vuoren määräkukkulalle, jonka
+ylimmälle huipulle tyttö asetetaan. Sen jälkeen kaikki heittävät hänet
+sinne, sammuttavat kyynelillään hääsoihdut, joilla olivat edeltä
+valaisseet, ja jättävät ne siihen paikkaan sekä hankkivat allapäin
+kotiinlähtöä. Ja moisen tappion masentamina tytön kurjat vanhemmat
+sulkeutuvat huoneeseensa, kätkeytyvät sen pimentoihin ja antautuvat
+alituisen yön valtaan.
+
+Mutta Psyken, joka kukkulan huipulla kohtaloaan vaikeroi, kohottaa
+verkalleen, liepeitä sinne tänne liehuttaen ja poimuja pullistaen,
+lauhasti huokuvan Lännen lempeä tuulonen, kuljettaa vähitellen häntä
+leppeällä henkäyksellään alas pitkin korkean kallion jyrkänteitä ja
+laskee hellävaroen hänet vaipumaan vuoren alla olevan laakson vihannan
+nurmen helmaan.
+
+       *       *       *       *       *
+
+Kun Psyken valtava mielenliikutus oli asettunut, niin hän nukkui
+pehmeään ruohikkoon, kasteisella heinävuoteellaan suloisesti uinuen.
+Sitten hän riittävästä unesta virkistyneenä, jälleen nousee tyynellä
+mielin. Hän näkee lehdon täynnä korkeita, mahtavia puita, näkee kuulean
+lähteen lasinheleine hetteineen aivan lehdon sydämessä. Lähellä sitä
+paikkaa, missä lähde pulpahtaa esiin, on kuninkaanlinna, jota ei ole
+rakennettu ihmiskäsin, vaan jumalten taidoin. Jo sisäänastuessasi
+tietäisit näkeväsi jonkun jumalan muhkean ja ihanan olinpaikan. Sillä
+korkeata, seeteripuusta ja norsunluusta huolekkaasti koverrettua lakea
+kannattavat kultaiset patsaat, seiniä kaikkia peittää hopeinen
+korkokuvaus, missä pedot ja kesyt elukat tulijan silmää kohtaavat.
+Ihmeellinen tosiaan se ihminen, ei, pikemmin puolijumala tai varmaan
+jumala, joka valtavan taiteensa hienoudella on niin suuren hopeamäärän
+eläimiksi muuntanut. Yksin lattiatkin muodostavat monenmoisia,
+kallisarvoisista juoviin jaetuista kivistä tehtyjä mosaikkikuvioita.
+Kahdesti ja useammastikin vallan miekkoiset ne, jotka jalokivillä ja
+helyillä kopeasti astelevat! Myös muutkin joka taholle laajalti
+suunnitellun talon osat ovat määrättömän kallisarvoiset, ja kokonaiset
+seinät pelkästä kullasta välkkyvät omalla hohdollaan, niin että talossa
+vallitsee päivä, vaikkei paistaisikaan aurinko; niin loistavat
+makuuhuoneet, niin pylväskäytävät, niin itse holvit. Ja muutkin
+laitokset vastaavat täysin talon kunnianarvoisuutta, niin että kaikki
+todentotta näyttää oikeastaan olevan taivaallinen palatsi, aiottu
+suuren Jupiterin maalliseksi olinpaikaksi.
+
+Moiset viehättävät paikallisuudet vetävät puoleensa Psyken; hän astuu
+lähemmäs ja käy jo vähän rohkeammin kynnyksen sisäpuolelle. Pian saa
+hänet into katsella kaikkea tuota kaunista houkutelluksi: hän tutkii
+itsekutakin esinettä erikseen ja katselee linnan toisella puolella sen
+erinomaisella kätevyydellä valmistettuja aittoja, täynnään suuria
+kalleuksia. Eikä ole olemassa mitään, jota siellä ei tapaisi. Mutta
+paitsi muuta, mikä näissä suurissa rikkauksissa oli ihmeellistä, oli
+varsinkin se kummallista, että moinen koko maailman aarre säilyi ilman
+mitään lukkoa, ilman salpaa, ilman vartiaa. Hänen tätä kaikkea
+suurimmalla nautinnolla katsellessaan kuuluu muuan ääni ilman
+näkyväistä ruumistansa. Ja se lausuu näin: "Miksi valtiatar hämmästyt
+näitä näin suuria varoja? sinun on tämä kaikki. Suoriu täältä
+makuuhuoneeseen, virkistä vuoteessa väsyneitä voimiasi ja kylve
+kyllältäsi. Me, joiden äänen kuulet, olemme sinun palvelijoitasi ja
+tulemme uutterasti sinua avustamaan, eikä kuninkaallinen ateria ole
+viipyvä, kunhan vain olet ruumistasi vaalinut".
+
+Psyke tajusi tässä jumalallisen kaitselmuksen autuutta, noudatti
+olennottoman äänen kehoituksia ja huuhtoi pois väsymyksensä ensin
+unella ja sitten kohta kylvyllä. Ja nähtyään heti aivan lähellä
+puolipyöreän ylennyksen, hän arveli sitä sopivaksi virkistyspaikaksi,
+siinä kun oli pöytäkalusto, ja laskeutui mielihyvällä tämän ääreen. Ja
+tuossa paikassa toimitetaan maljoja täynnä nektari-juomaa ja runsaita
+annoksia monenmoisia ruokalajeja, kenenkään tarjoamatta ja vain
+ikäänkuin jonkun tuulenhenkäyksen vaikutuksesta. Kuitenkaan ei hän
+voinut nähdä ketään, vaan kuuli ainoastaan ilmassa satelevia sanoja, ja
+vain ääniä oli hänellä palvelijoinaan. Upean aterian jälkeen astui joku
+sisään ja lauloi näkymätönnä, toinen taas, niinikään näkymätönnä,
+soitti kitaraa. Sitten hivelee hänen korviaan taajan suloaänisen joukon
+yhteissointu, niin että, vaikkei näkyvissä ollut kenkään, siellä kuoro
+varmaan oli sentään.
+
+Näiden nautintojen jälkeen Psyke illan tullen käy levolle. Mutta kun
+yötä jo oli jonkun verran kulunut, kuuluu hänen korviinsa lempeä
+sointu. Silloin hän kaamottavassa yksinäisyydessään peläten impeytensä
+puolesta vapisee ja kauhistuu; ja hän säikkyy jokaista onnettomuutta
+sitä enemmän koska ei sitä tunne. Mutta jo olikin tuntematon puoliso
+läsnä, astui vuoteeseen, teki Psyken vaimokseen ja hävisi kiireesti
+ennen päivän koittoa. Ja kohta palvelivat makuuhuoneessa odottavat
+äänet nuorikkoa.
+
+Tätä jatkui näin pitemmän ajan. Ja kuten tavallisesti käy, kääntyi se,
+mikä alussa oli outoa, alituisesta tottumuksesta viehätykseksi, ja
+epämääräisen äänen sointu oli lohdutuksena yksinäisyydessä.
+
+
+
+
+TOINEN I<UKU.
+
+
+Sillävälin Psyken vanhemmat hellittämätöntä suruaan ja murhettaan
+vanhenivat. Ja maineen levittyä laajemmalle olivat vanhemmat sisaretkin
+saaneet tietää kaiken, olivat murheissaan ja suruissaan kiireesti
+heittäneet kotilietensä sekä kilvan matkanneet vanhempiaan katsomaan ja
+lohduttamaan.
+
+Sinä yönä alkoi Psykeään näin puhutella puoliso, jota, vaikka ei
+voitukaan nähdä, kuitenkin saattoi sekä käsin tunnustella että korvin
+kuulla. "Psyke, sinä suloisin ja rakas vaimoni, liian julma kohtalo
+uhkaa sinulle turmiokasta vaaraa, jota sinun, luulen ma, täytyy visusti
+varoa. Jo lähestyvät tuota kukkulaa siskosi, levottomina oletetun
+kuolemasi vuoksi ja jälkiäsi etsien. Mutta jos joitakin heidän
+voivotuksiaan ehkä kuuletkin, niin älä vastaa mitään -- niin, älä edes
+kaukaa katso sinnepäinkään. Muuten tulet minulle tuottamaan mitä
+raskaimman surun, itsellesi taas mitä pahimman turmion".
+
+Psyke suostui ja lupasi tehdä puolisonsa mieliksi. Mutta kun tämä yön
+keralla oli häipynyt, kulutti onneton nainen koko päivän kyyneliin ja
+voihkimisiin, uudestaan ja yhä uudestaan hokien nyt vasta oikein
+olevansa mennyttä; olihan hän suljettu vankilaan, jos kohta komeaan,
+voimatta seurustella ja puhella ihmisten kanssa sekä lohduttaa hänen
+tähtensä murehtivia sisaria ja saamatta edes nähdäkään heitä. Ja
+virkistämättä itseään kylvyllä, ruualla tai millään muullakaan hän
+viljalti kyyneleitä vuodattaen vaipui uneen.
+
+Eikä aikaakaan, kun puoliso tavallista aikaisemmin laskeutuu levolle ja
+syleillen yhä vieläkin itkevätä Psykeä vannottaa häntä näin:
+
+"Tätäkö minulle lupailit, Psykeni? Mitä minä, sinun puolisosi sinusta
+enää odotan, mitä toivon? Yöt päivät itkeä vetistelet etkä herkeä
+keskellä aviosyleilyjäkään itseäsi kiduttamasta. Tee nyt jo niinkuin
+tahdot ja noudata turmiollista mielihaluasi. Muista vain minun vakavaa
+varoitustani silloin kun liian myöhään alat katua".
+
+Silloin Psyke rukoilemalla ja uhkaamalla muuten kuolla ahdistaa
+puolisoaan, jotta tämä suostuisi hänen pyyntöönsä nähdä sisarensa,
+lieventää heidän surujaan ja puhella heidän kanssaan.
+
+Hän myöntyykin nuorikkonsa rukouksiin, vieläpä sallii hänen lahjoittaa
+sisarilleen mitä kultaa ja koristeita ikänä haluaa, mutta varoittaa
+tavantakaa ja peloittelee useasti, ettei milloinkaan sisarten
+turmiollisesta neuvosta taipuisi kysymään puolisonsa muotoa, jottei
+rikollisessa uteliaisuudessaan syöksyisi moisesta onnen huipusta
+perikatoon, sillä silloin Psyke ikipäiviksi jäisi nauttimatta hänen
+halailuaan. Psyke kiitti puolisoaan ja virkkoi jo iloisempana: "tuhat
+kertaa mieluummin tahtoisin kuolla, kuin kaivata sinun suloista
+syleilyäsi! Lemminhän sinua yhtä paljon kuin omaa henkeäni ja rajusti
+sinua rakastan, ken tahansa lienetkin, enkä rinnallesi aseta itse
+Kupidoakaan. Mutta täytä vielä, ma pyydän, tämä rukoukseni ja käske
+palveliaasi Länttä tuomaan sisareni tänne, samalla tapaa kuljettaen
+heidät kuin minutkin". Ja painaen suostuttavia suuteloitaan, syytäen
+maireita sanojaan sekä syleillen häntä hänen vastustelustaan huolimatta
+nainen vielä liittää imarteluihinsa tämän: "mesimarjueni, oma miehyeni,
+Psykesi suloinen elo!" Lemmen kuiskailun voiman ja vallan edessä
+puoliso alistui ja lupasi tehdä kaikki. Ja kun päivä jo valkeni, hän
+hälveni aviovaimonsa käsistä.
+
+       *       *       *       *       *
+
+Mutta saatuaan tietää kukkulan ja paikan, mihin Psyke oli jätetty,
+sisaret joutuun saapuvat sinne, itkevät silmänsä kuiviin ja
+lyövät rintoihinsa, jotta vahat ja kalliot heidän alinomaisista
+voivotuksistaan kajahtelevat. Jo he nimeltä huutelivat siskoparkaansa
+kunnes vaikeroivan äänen kimeä kirkuna tunkee rinteitä myöten alas
+laaksoon. Silloin Psyke mieletönnä ja vavisten syöksyy esiin
+huoneestaan ja virkkaa: "miksi suotta surkeilla valituksillanne
+itseänne kiusaatte? Olenhan minä, jota murehditte, täällä. Heittäkää
+suruiset valituksenne ja kuivatkaa vihdoinkin pitkällisestä
+kyyneltulvasta kosteat poskenne, koskapa jo voitte syleillä sitä, jota
+juuri voivottelitte".
+
+Sitten hän kutsuu Lännen ja muistuttaa sitä puolisonsa määräyksestä.
+Eikä aikaakaan, kun se käskyä totellen kohta hempeimmillä
+henkäyksillään vaaratonta kulkua kantaa heidät alas. Ja he nauttivat
+molemminpuolisista syleilyistä ja kiireisistä suuteloista, ja riemusta
+pulppuavat siihen asti hillityt kyyneleet esiin. Sitten Psyke virkkaa:
+"mutta astukaapa ilomielin myös kattoni alle ja lieteni luo ja
+virvoittakaa murheellisia mieliänne yhdessä Psykenne kanssa". Noin
+puhuttuaan Psyke saattaa heidän nähtäväkseen kultaisen linnan
+suurensuuret varat ja kuultavakseen palvelevien äänien kansakasta
+joukkoa sekä kestitsee heitä muhkeasti mitä kauniimmalla kylvyllä ja
+yli-inhimillisen pöydän komeuksilla.
+
+Mutta nepä kylläisinä tuosta vallan taivaallisten rikkauksien tulvasta
+jo syvällä sydämessään hautoivat kateutta. Vihdoin toinen heistä
+herkeämättä varsin tarkasti ja uteliaasti kyselee, kuka on tuon
+taivaallisen omaisuuden isäntä, kuka tai millainen on hänen puolisonsa.
+Mutta eipä Psyke sittenkään millään lailla loukkaa puolisonsa käskyä
+tai anna kiskoa itsestään sydämensä salaisuuksia, vaan sepittää
+hätävalheen, että hänen miehensä muka on hyvännäköinen nuorukainen,
+jonka poskia vasta varjostavat parran haituvat ja joka enimmäkseen
+kuluttaa aikansa metsästämällä kedoilla ja vuorilla. Mutta jottei
+keskustelun jatkuessa jokin hairahdus häntä paljastaisi, hän paikalla
+kutsui Lännen ja jätti heidät sen kuljetettavaksi, mukanaan
+kuormallinen kultateoksia ja jalokivikoristeita.
+
+       *       *       *       *       *
+
+Heti tämän jälestä oivat sisarukset jo hehkuen kytevän kateuden sapesta
+palasivat kotiin ja puhua pauhasivat keskenään. Vihdoin alkaa toinen
+näin:
+
+"Voi sinua, epäviisas julma ja nurja Onnetar! Näinkö olet hyväksi
+nähnyt, että vaikka meillä on samat vanhemmat, olemme niin erilaisen
+kohtalon osaksemme saaneet. Olemmehan me, vaikka iältämme käymme
+edellä, joutuneet vierasten aviomiesten piioiksi ja kotiliedeltämme,
+vieläpä isänmaastamme karkoitettuina elelemme kaukana vanhemmistamme,
+kuten maanpakolaiset ainakin; sitä vastoin tämä nuorin, joka
+pahnanpohjimmaksi turhanpäiten tähän maailmaan syntyi, on moisen
+varallisuuden ja jumalan miehekseen saanut -- mokoma, joka ei edes
+pysty oikein käyttämään näin suurta tavarain määrää? Näitkö, sisko,
+kuinka paljon ja minkälaisia koristeita talossa viruu, mitkä vaatteet
+siellä välkkyvät, mitkä jalokivet siellä hohtavat, mikä kullan paljous
+sitäpaitsi joka paikassa jalkojen alle tallaantuu? Jos hänellä vielä on
+niin ihana puoliso kuin hän vakuuttaa, niin ei tätä nykyä koko
+maanpiirissä ole ketään sen onnellisempaa naista. Ja kun sitten heidän
+tuttavallisuutensa etenee ja kiintymyksensä kasvaa, niin ehkä
+jumal-puoliso hänestä vielä tekee jumalattarenkin. Niin onkin,
+jumalavita, niin hän jo liikkui ja kiikkui. Johan hän käy kenossa
+kauloin ja jumalatarta huokuu nainen, jolla on äänet palvelijoinaan ja
+joka tuuliakin käskee. Mutta minä poloinen olen saanut osakseni
+puolison, joka ensiksi on isääni iäkkäämpi, sitten kaljumpi kurkkua ja
+pikkuisempi mitä pojannalkkia hyvänsä, ja joka vihdoin vartioi koko
+taloa, salvoin ja telkimin lukittuna".
+
+Toinen alkaa näin: "minun taas täytyy sietää miestä, jota vaivaa ja
+kumaraksi tekee jäsenten kolotus, ja joka senvuoksi aniharvoin
+rakkauttani viljelee; enimmäkseen saan hieroa hänen vääntyneitä ja
+kiveksi kovettuneita sormiaan ja kärventää näitä näin hentoja
+hyppysiäni pahanhajuisiin hauteisiin, likaisiin riepuihin ja
+löyhkääviin kääreihin. Enkä minä saa osoittaa vaimon avuliaita kasvoja,
+vaan lääkärin työlästä osaa täytyy minun näytellä. Lienet kai itsekin,
+sisko, huomannut, kuinka kärsivällisesti, tai paremmin orjamaisesti --
+tahdon nimittäin suoraan sanoa mitä ajattelen -- tätä siedät. Mutta
+minäpä en jaksa tämän enempää kestää, että näin ylenpalttinen onni on
+arvottomalle kertynyt. Sillä muisteleppa, kuinka kopeasti, kuinka
+vaateliaasti hän meitä kohteli ja miten hän juuri määräämättömän
+ylpeästi kerskaamalla paljasti pöyhkeän mielenlaatunsa; viskasihan tuo
+niin suurista rikkauksistaan vastahakoisesti meille joitakuita
+vähäpätöisyyksiä ja kohta senjälkeen hän läsnäolostamme vaivattuna
+käski ajaa, puhaltaa ja viheltää meidät pellolle. En ole minä nainen
+enkä tahdo kerrassaan hengittää, ellen häntä moiselta varallisuuden
+huipulta turmioon syökse. Ja jos sinuakin, kuten kohtuullista on,
+häväistyksemme on sapettanut, niin koettakaamme molemmat yhdessä keksiä
+tepsivä tuuma. Aluksi älkäämme sentään näyttäkö vanhemmillemme tai
+kellekään muullekaan niitä esineitä, joita tuomme mukanamme,
+päinvastoin älkäämme olko tietävinämmekään mitään hänen
+pelastumisestaan. On kyllin että itse olemme nähneet semmoista, jota
+katuu nähneensä, saatikka sitten toitottaisimme vanhemmillemme ja
+ympäri koko maailman hänen onneansa. Sillä oikeastaan eivät olekkaan
+miekkoisia ne, joiden rikkauksia ei kukaan tunne. Kyllä hän saa tuntea,
+ettei ole hänellä piikoja, vaan vanhemmat sisaret. Tällä kertaa nyt
+palatkaamme puolisojemme luo ja menkäämme katsomaan köyhiä, mutta aivan
+puhtaita liesiämme. Ja kun olemme kotona tarkemmilla tuumilla itseämme
+varustaneet, niin palatkaamme vahvempina rankaisemaan sitä öyhkäriä".
+
+Hyvän turmaksi aiottu häijy tuuma miellyttää kahta häijyä; he kätkevät
+kaikki nuo niin kallisarvoiset lahjat ja, aivan kuin jos murehtisivat,
+he hiuksiaan repien sekä kasvojaan raastaen uudestaan ratkeevat
+valeitkuun. Ja niin revittyään vanhemmissakin surunhaavan jälleen auki,
+he äkkipikaa jättivät heidät sekä pyrkivät raivohulluutta uhkuen
+koteihinsa, nivoen rikollista petosta, jopa murhaa viattomalle
+sisarelleen.
+
+       *       *       *       *       *
+
+Sillävälin puoliso, jota Psyke ei tunne, jälleen noissa yöllisissä
+keskusteluissaan näin häntä muistuttaa: "näetkö, kuinka suuri vaara
+sinua uhkaa? Etäältä Onnetar sinua ahdistaa, ja ellet aivan lujasti
+pidä varaasi, niin hän kohta käy käsikähmään. Nuo kavalat nartut
+punovat suurilla hankkeilla pääsi varalle jumalattomia salajuoniaan,
+joiden tarkoitus on taivuttaa sinua utelemaan kasvojani; mutta,
+niinkuin ennen monasti olen sinulle sanonut, jos sinä kerran tulet ne
+nähneeksi, niin et toista kertaa enää niitä saa nähdä. Jos siis
+tästäpuolen nuo velhoista pahimmat turmamielin tänne saapuvat -- ja
+tulevatkin, sen tiedän, -- niin älä ollenkaan keskusteluun antau, tai
+jos luontaisen avomielisyytesi ja hennon mielenlaatusi vuoksi et jaksa
+tätä kestää, niin älä ainakaan ole kuulevinasi tai vastaa, jos
+puolisostasi tulee puhe. Sillä johan me pian tulemme perhettämme
+lisäämään, ja tämän vielä lapsellisen sydämesi alla kannat toista lasta
+-- jumalallista, jos äänettömyydellä säilytät salaisuutemme, mutta jos
+sen ilmaiset, kuolevaista".
+
+Moisesta ilmoituksesta Psyke ihastui ikihyväksi, iloitsi jumalallisen
+perillisen lohdusta, ailakoitsi tulevaisen lemmenvakuuden kunniasta ja
+riemuitsi äidinnimen arvokkuudesta. Huolissaan hän lukee vierivät
+viikot ja kuluvat kuukaudet ja kummastelee kuinka tuntematon taakka
+hänessä aikaansaa moisen muutoksen.
+
+       *       *       *       *       *
+
+Mutta jo liitelivät sinnepäin nuo ruttopaiseet ja kauheat Kostottaret,
+huokuen kyynmyrkkyään ja kiirehtien jumalattomalla nopeudella. Silloin
+lyhythetkinen puoliso toistamiseen muistuttaa Psykeänsä näin: "nyt on
+tullut viimeinen päivä ja ratkaisun hetki. Jo on turmiollinen
+sukupuolesi ja vihamielinen veresi tarttunut aseihin, pannut liikkeelle
+leirinsä, järjestänyt rintamansa ja torveensa toitottanut. Jo
+tavoittavat jumalattomat sisaresi kurkkuasi, tikari sivallettuna. Voi,
+mikä turma meitä uhkaa, armahin Psyke! Sääli itseäsi ja minua ja
+pelasta tunnollisella itsehillinnällä kotisi, puolisosi ja tuo meidän
+pienokaisemme uhkaavan perikadon onnettomuudesta. Mutta noita
+rikollisia naisia, joita sinun ei tarvitse sisariksi kutsuakaan, sen
+jälkeen kuin ovat semmoista kuolettavaa vihaa osoittaneet ja
+verisiteitä jalkojensa alle polkeneet, niitä älä katsele äläkä
+kuuntele, silloin kun ne sireenien tavoin ylhäältä kallionkielekkeeltä
+tuhoatuottavilla lauluillaan vahoja kajahuttavat".
+
+Itkeä nyyhkyttäen Psyke alkaa sopertaa: "Jo aikoja sitten
+olet tietääkseni saanut todistuksia uskollisuudestani ja
+vaiteliaisuudestani, mutta yhtäkaikki saat nyt vieläkin vakuuden
+mielenlujuudestani. Käske sinä vain taas Länttämme suorittamaan
+palveluksensa ja anna oman pyhän kuvasi sijasta, jonka minulta kiellät,
+nähdä ainakin sisareni. Nimessä noiden kanelin tuoksuisten, kaikkialta
+riippuvien suortuviesi, nimessä hentojen, sileitten ja minun omieni
+kaltaisten poskiesi, nimessä ties mistä kummasta lämmöstä hehkuvan
+rintasi, niin totta kuin ainakin tässä pienokaisessa tulen tuntemaan
+kasvosi, niin myönnä tuskastuneen rukoilijan hurskasten anomusten
+hellyttämänä minulle sisarensyleilyn onni ja virkistä riemulla sinulle
+alttiin Psykesi mieltä. En ollenkaan sen koommin kasvojasi kysele, ei
+minua enää yhtään kammota itse yön pimeyskään: olethan sinä omani, sinä
+päivänvaloni."
+
+Nämät sanat sekä hempeät halailut lumosivat puolison, ja hiuksillaan
+kuivaten Psyken kyyneleet hän lupasi tehdä kaikki sekä ehätti heti pois
+ennen nousevan päivän koittoa.
+
+       *       *       *       *       *
+
+Salaliitosta sopineet sisarukset pyrkivät, näkemättä vanhempiaankaan,
+silmittömällä nopeudella suoraapäätä laivoista kukkulaa kohti. Eivätkä
+odottaneet että heitä vievä tuuli ilmestyisi, vaan hyppäsivät
+vallattomassa uhkarohkeudessaan syvyyteen. Mutta, muistaen kuninkaansa
+käskyä, ottaa heidät Länsi, vaikka vastahakoisesti, puhaltavan
+henkäyksensä helmaan ja laskee heidät maahan. Nepä kulkevat heti
+vitkastelematta joutuisin askelin linnaan ja syleillen saalistaan, sekä
+peittäen hilpeitten kasvojen alle syvälle kätketyn petoksen kuilun he,
+sisaren nimeä vääryydellä käyttäen, näin liehakoivat:
+
+"Psyke, äsken vielä olit pienokainen ja nyt jo kohta olet itse äiti!
+Kuinka paljon hyvää, luulet, kannatkaan tuolla pikku sydämesi alla!
+Minkä riemun tuletkaan herättämään koko meidän huoneessamme! Oi meitä
+miekkoisia, jolle lapsikullan ravitseminen on iloa tuottava! Sillä jos,
+niinkuin pitäisi, hänestä sukee yhtä kaunis kuin ovat vanhemmat, niin
+syntyy kerrassaan Kupido".
+
+Noin he teeskentelemällä osanottoa vähitellen valtaavat sisaren
+sydämen. Ja kohta hän käskee heitä istumaan, virkistää heitä matkan
+väsymyksestä, vaalii heitä kylpyjen höyryävillä hetteillä ja ilahuttaa
+heitä mitä kauniimmalla ateriahuoneella sekä liharuuilla ja muilla
+ihmeellisillä, runsailla syötävillä. Hän käskee soittamaan kitaraa:
+soitetaan; puhaltamaan huilua: puhalletaan; kuorossa laulamaan:
+lauletaan. Ja kaikki tämä hiveli kuulijain mieliä mitä suloisimmin
+sävelin, kenenkään olematta läsnä.
+
+Mutta eipä siltä rikollisten naisten pahuus laulun maireesta
+makeudestakaan lientynyt eikä talttunut, vaan, suunnaten puhettaan
+petostensa loppupaulaa kohti, he alkavat teeskennellen tiedustella,
+mitä miehiä ja mitä syntyä on hänen puolisonsa, ja mistä heimosta
+peräisin. Silloin Psyke, liian ajattelematon kun on, unohtaa entisen
+keskustelun ja laatii uuden hätävalheen, jonka mukaan puolisonsa on
+suuri liikemies naapurimaakunnasta; hän on muka jo keski-ikäinen,
+päässä siellä täällä jokunen harmaa hius. Ja vähääkään viipymättä
+tuossa puheaineessa hän antoi heidän mukaansa kuormallisen lahjoja ja
+uskoi heidät tuulivaunujen varaan.
+
+Mutta sillaikaa kuin he Lännen leppeän henkäyksen kohottamina kotiinsa
+palaavat, he rupattelevat keskenään näin: "mitä, sisko, sanommekaan
+tuon höperön uskomattomasta valheesta? Ikään oli puhe nuorukaisesta,
+joka kasvattaa kukkeaa parranhaituvaa, nyt välkkyvän harmaista hapsista
+hohtavasta keski-ikäisestä. Ken on tuo, jonka niin lyhyt väliaika näin
+äkkiä on vanhentanut ja muuttanut? Muuhun johtopäätökseen et voi tulla,
+siskoni, kuin että kehno naikkonen joko valheellisesti sepittää tämän
+tai ei tunne puolisonsa ulkomuotoa. Kumpi tahansa lieneekin tosi, niin
+on hän niin pian kuin suinkin syöstävä varallisuudestaan. Jos hän ei
+tunne miehensä kasvoja, on hän totta tosiaan avioksi joutunut jumalalle
+ja kantaa kuin kantaakin kohdussaan jumalaa. Jos hänestä sukee
+jumalallisen poikasen äiti -- joka olkoon kaukana --, niin minä sidon
+itselleni nuoran ja hirttäydyn tuohon paikkaan. Toistaiseksi siis
+palatkaamme vanhempiemme luo ja punokaamme petoksia, jotka niin paljon
+kuin suinkin vastaavat tämän keskustelumme loppupäätöstä".
+
+
+
+
+KOLMAS LUKU.
+
+
+Niin kiihtyneinä nuo kirotut ynseästi puhuteltuaan vanhempiaan ja yöllä
+häirittyään vartijoita, varhain aamulla rientävät huipulle ja liitävät
+sieltä tapansa mukaan tuulen varassa rajusti maahan. Sitten he
+painamalla luomiaan pusertavat silmistään kyyneleitä ja puhuttelevat
+Psykeä seuraavalla juonella: "sinä vain istut miekkoisena ja juuri
+siksi, ettet tunne suurta onnettomuuttasi, onnellisena, välittämättä
+vaarastasi, mutta me sitä vastoin, jotka valppaalla huolenpidollamme
+parastasi valvomme, kärsimme kurjuudessamme tuskaa onnettomuuksiesi
+vuoksi. Sillä me olemme todeksi huomanneet emmekä -- surusi ja
+kohtalosi kumppaneita kun olemme -- saata sinulta peittää, että öisin
+salaa kanssasi lepää monisolmuisissa kierroksissa kiemurteleva hirveä
+kyy, jonka kaula tihkuu häijyä myrkkyä ja syvä kita aukeallaan
+ammottaa. Muisteleppa nyt pytialaisen Apollon oraakelinlausetta, joka
+julisti että sinä olit määrätty avioksi julmalle pedolle. Niinpä monet
+maamiehet, ympäristön metsästäjät ja useat naapurit ovat nähneet sen
+iltasin palaavan laitumeltaan ja uiskelevan lähimmän virran
+matalikoilla. Ja kaikki vakuuttavat ettei se kauvan tule auliisti
+makealla ravinnolla sinua syöttämään, vaan jahka tilasi on sinua
+tarpeeksi kypsyttänyt, se tulee vieläkin lihavampana makupalana
+hotaisemaan sinut suuhunsa. Tähän nähden on sinulla valittavana,
+tahdotko noudattaa rakkaasta pelastuksestasi huolehtivien sisartesi
+neuvoa, välttää kuoleman ja elää meidän kanssamme vaaratonna, vai
+hautaantua julman pedon sisuksiin. Mutta jos tämän seudun henkiäänten
+elähyttämä yksinäisyys tai salaisen rakkauden riettaat ja vaaralliset
+syleilyt ja myrkyllisen käärmeen hyväilyt sinua viehättävät, niin
+olemme ainakin me, hurskaina sisarina, täyttäneet velvollisuutemme".
+
+Nuo surkeat sanat saattavat hentomielisen, avokielisen Psyke paran
+kauhun valtaan, ja suunniltaan joutuen hän unohtaa kokonaan puolisonsa
+varoitukset ynnä omat lupauksensa sekä syöksee päistikkaa
+onnettomuutensa kuiluun. Vavisten ja verettömyydestä kalmankalpeana hän
+puoliääneen sopertaen ja änkyttäen virkkaa: "te olette, rakkaimmat
+siskot, täyttäneet hurskaan velvollisuutenne, kuten kohtuus onkin.
+Mutta eivätpä näy nekään, jotka tämmöistä teille vakuuttavat, valheita
+latelevan. En näet koskaan ole nähnyt mieheni kasvoja, enkä ylimalkaan
+tiedä, mistä hän on; vain öisin kuunnellen hänen ääntään täytyy minun
+sietää ulkomuodoltaan tuntematonta ja valonarkaa puolisoa. Ja minä
+yhdyn täydellä syyllä teihin, kun vallan oikein sanotte häntä joksikin
+pedoksi. Sillä kovasti se aina minua pelottelee itseään katsomasta ja
+uhkaa suurta onnettomuutta, jos sen kasvoja utelee. Jos nyt voitte
+antaa jotain tehokasta apua vaaranalaiselle sisarellenne, niin auttakaa
+nyt juuri; muuten tulee huolimattomuus vastaisuudessa pilaamaan kaikki,
+mitä aikaisemmin on varovaisuudella voitettu".
+
+Kun nyt nuo juonittelevat naiset ovat vallanneet sisaren sielun, joka
+selkoselällään jo on kaikelle avoinna, niin ne heittävät sikseen siihen
+saakka peitetyn salavehkeensä umpisopet ja käyvät, petosten miekat
+sivallettuina, avomielisen naisen arkojen ajatusten kimppuun.
+
+Vihdoin toinen alkaa näin: "koska veriside pakottaa meitä sinun
+turvallisuutesi puolesta halveksimaan jokaista vaaraa, niin me tahdomme
+osoittaa sinulle sen tien, joka yksin pelastukseen vie, ja jota me
+kauan, kauan olemme miettineet. Kätke salaa siihen paikkaan vuodetta,
+missä tapaat nukkua, teräväksi hiottu ja pehmeällä kämmenellä
+tahkomalla vielä tuimemmaksi tehty tikari sekä piilota näppärä öljyllä
+täytetty kirkasvaloinen lamppu visusti jonkun ruukkusen peittoon, mutta
+salaa itsepintaisesti kaikki nuo valmistukset; kun hirviö sitten
+laahaten ruumistaan, joka jättää vaontapaiset jäljet, kohoaa
+tavalliseen makuupaikkaansa ja jo pitkällään, painostavan esiunen
+uuvuttamana, alkaa syvässä horroksessa kuorsata, niin laskeu silloin
+alas vuoteelta, hiljennä vähitellen paljain jaloin hiipimällä
+liiteleviä askeleitasi ja kirvota lamppu synkän pimeyden vankilasta;
+käytä silloin lampun valoa tekosi oivaan tilaisuuteen, kohota oikea
+kätesi ja hakkaa rohkeasti tuolla kaksiteräisellä aseella niin
+voimakkaasti ponnistamalla kuin suinkin turmiollisen käärmeen kaula ja
+pää poikki. Eikä meidän apumme tule sinulta puuttumaan, vaan heti kun
+pedon kuolemalla olet itsellesi hankkinut pelastuksen, niin me tulemme
+tuskallisesti odotettuamme rientämään luoksesi; ja toimitettuamme tuota
+pikaa mukaasi kaikki nuo tavarat, niin aiomme toivotun avioliiton
+siteillä yhdistää sinut ihmisenä toiseen ihmiseen".
+
+Moinen sanojen palo sytytti jo aivan hehkuvan sisaren sydämen
+ilmiliekkiin. Itse he heti jättivät ne seudut, missä suuri onnettomuus
+oli tapahtuva, erityisesti vielä omastakin puolestaan peloissaan,
+antoivat tavanmukaisen siivekkään tuulenpuuskan itseään kuljettaa pois,
+syöksyivät suoraapäätä pikaiseen pakoon, astuivat oitis laivoihinsa ja
+lähtivät niillä pois.
+
+       *       *       *       *       *
+
+Mutta yksikseen jäänyt Psyke -- jos nimittäin vihamielisten Raivotarten
+ahdistamaa saattaa yksinäiseksi sanoa -- läikkyy kuohuksissaan kuin
+meren tyrsky, ja vaikka tuuma on päätetty ja mieli järkähtämätön, hän
+kuitenkin vielä, käydessään käsiksi tekoonsa, horjuu epävarmana
+päätöksessään ja häilyy moninaisissa onnettomuuden herättämissä
+ristitunteissa sinne tänne. Hän kiirehtii ja lykkää, uskaltaa ja
+vapisee, epäröi ja suuttuu, meneepä niin pitkälle, että samassa
+olennossa vihaa petoa, mutta rakastaa puolisoaan. Vaan kun ilta jo tuo
+mukanaan yön, hän äkillisellä kiireellä suorittaa jumalattoman rikoksen
+valmistukset.
+
+Läsnä oli yö, läsnä puoliso, joka ensin lemmenkisoissa oteltuaan oli
+sikeään uneen vaipunut. Silloin muuten sekä ruumiiltaan että sielultaan
+heikko Psyke, kohtalon julmuuden avustuksesta saa voimia; hän ottaa
+esille lampun, tempaa tikarin ja muuttuu rohkeaksi kuin mies. Mutta
+tuskin on valon vuoteeseen sattuessa sen salaisuus ilmi tullut, kun
+Psyke näkee kaikista pedoista lempeimmän ja suloisimman pikkuhirviön,
+itse Kupidon, ihanasti uinuvan ihanan jumalan, jonka näkö sai lampunkin
+valon ilosta kirkkaammin liekehtimään ja pani tikarin katumaan katalaa
+kärkeään. Moisesta näöstä säikähtyneenä ja voimatta hillitä itseään,
+Psyke lyykähtää raukeasta kalpeudesta uupuneena ja vavisten kyykkyyn
+polvilleen ja aikoo upottaa tikarin -- mutta omaan rintaansa. Ja sen
+hän todella olisikin tehnyt, ellei ase niin kauhean rikoksen pelosta
+olisi hänen huimista käsistään solahtanut ja lentänyt pois.
+
+Mutta ollessaan jo vallan voivuksissa ja ilman pelastuksen toivoa, hän
+alkaa yhä useammin tarkata jumalallisten kasvojen kauneutta ja toipuu
+siitä. Hän näkee kultaisen pään muhkeat, ambrosiaa uhkuvat kutrit,
+maidonvalkean niskan, purppuraposket ja hiusten harhailevat suortuvat
+somasti solmittuina, toiset eteenpäin, toiset taappäin valahtuneina --
+nuo suortuvat, joiden tavattoman loiston välkkeestä yksin lampunkin
+loimu alkoi läähätellä. Siivekkään jumalan harteilla hohtavat kasteiset
+sulat kuni kimaltelevat kukkaset, ja vaikka siivet lepäävät,
+ailahtelevat levottomasti hennonhempeät höyhenpäät värisevästi
+sykähdellen. Muu ruumis oli silkonen ja kiiltävä ja sellainen, ettei
+semmoista olisi tarvinnut Venuksen hävetä synnyttäneensä. Ja vuoteen
+jalkojen edessä viruivat jousi, viini ja nuolet, suuren jumalan
+armolliset aseet.
+
+Psyke ei voi uteliaisuudessaan kyllin tätä kaikkea tutkia ja kätellä
+sekä puolisonsa aseita ihailla, ottaa vihdoin viinestä nuolen ja
+koettelee peukalon päällä sen kärjenterää; sitten hän painaa
+voimakkaammin, mutta koska sormensa vielä vapisee, hän pistää liian
+syvälle, niin että pinnalle helmeilee pikkuisia rusoveren pisaroita.
+Siten Psyke tietämättään ehdoin tahdoin joutuu rakkauden jumalan
+rakkauden valtaan. Ja hehkumistaan hehkuen lemmestä Lempeä kohtaan hän
+kallistuu tämän ylitse, katsoa tuijottaa häneen tulisesti sekä suutelee
+häntä kiireesti, ahnaasti ja himokkaasti, peloissaan ettei unta
+kestäisi.
+
+Mutta sillaikaa kun hän moisesta ihanuudesta mielenliikutuksissaan ja
+sydän sairaana läikkyy sinne tänne, niin lamppu, joko katalimmasta
+kavaluudesta tai turmiollisesta kateudesta tai koska itsekin halusi
+koskettaa ja ikäänkuin suudella sellaista hipiää, valautti
+valonlähteestään pisaran hehkuvaa öljyä jumalan oikealle olkapäälle.
+Voi sinua hurjaa ja huimaa lamppua, sinä kehno rakkauden avustaja,
+poltathan itse kaiken tulen jumalan, vaikka tietenkin sinut ensinnä
+keksi joku rakastaja, voidakseen kauemmin yölläkin nauttia kaivattunsa
+näöstä. Näin kärventyneenä jumala ponnahti pystyyn ja, huomaten että
+sana oli syöty ja lupaus rikottu, hän kovaonnisen puolison suuteloista
+ja käsistä heti äänetönnä lensi pois.
+
+Hänen kohotessaan tarttui Psyke heti molemmin käsin puolisonsa oikeaan
+pohkeeseen kuin mikäkin ilmamatkan surkea lisä ja kohti pilviä liitävän
+saattueen jälkijoukko, mutta vaipui vihdoin uupuneena maahan.
+
+Mutta eipä maassa makaavaa Psykeä jumalrakastaja heti hyljännyt, vaan
+lensi lähimpään sypressiin ja puhutteli sen korkeasta latvasta
+ankarassa mielenliikutuksessa häntä näin: "muistamatta äitini Venuksen
+neuvoja, joka oli käskenyt että sinun piti rakastuman kurjaan ja
+vihoviimeiseen mieheen ja että sinut piti saatettaman mitä halvimpaan
+avioliittoon, riensin minä itse päinvastoin rakastajana luoksesi. Mutta
+siinä tein kevytmielisesti, sen tiedän, ja itse minä mainio jousimies
+haavoitin omalla nuolellani itseni ja tein sinut vaimokseni, tietysti
+jotta näyttäisin sinusta hirviöltä ja jotta hakkaisit poikki sen pään,
+jossa nämät sinua lempivät silmäni sijaitsevat. Tästä arvelin aina
+täytyvän sinua varoittaa, tästä tavantakaa hyväntahtoisesti sinua
+muistutin. Mutta kyllä nuo oivat neuvonantajasi pian saavat minun
+puoleltani kärsiä rangaistuksensa turmiollisesta opetuksestaan; sinua
+taas tahdon ainoastaan paollani rangaista". Ja päästyään puheensa
+päähän hän siivillään kohosi korkeuteen.
+
+       *       *       *       *       *
+
+Pitkältään maassa Psyke seurasi, minkä voi, katseillaan puolisonsa
+lentoa ja oli menehtyä haikeihin voivotuksiin. Vaan heti kun välimatkan
+pituus oli saattanut siipisoudoin poistuvan puolison näkymättömiin,
+Psyke viskautui lähimmän virran äyräältä suinpäin syvyyteen.
+
+Mutta -- tietenkin kunniaksi sen jumalan, joka itse vedetkin panee
+hehkumaan -- lempeä joki omasta puolestaan peläten nosti kohta hänet
+vahingoittumatonna pyörteellään kukkealle ruohorannalle. Virran
+törmällä sattui juuri istumaan maalaisjumala Pan, syleillen
+vuorijumalatarta Kaikua ja opettaen tätä kaiuttamaan kaikenmoisia
+ääniä; lähellä rantaa ailakoivat hajallaan laitumella vuohet, joen
+rantalehviä järsiskellen. Pukkijalka jumala, joka, ties mitenkä, tunsi
+Psyken kohtalon, kutsuu lempeästi lemmensairaan, uupuneen naisen
+luokseen ja viihdyttelee häntä rauhoittavin sanoin näin: "sievä
+tyttönen, minä tosin olen vain maamoukka ja lampuri, mutta pitkä ikäni
+on minulle opettanut monta kokemusta. Jos osaan oikein arvata tai --
+niinkuin ymmärtäväiset ihmiset tosiasiassa luulevat -- ennustaa, niin
+sinä, päättäen tuosta horjuvasta ja hoipertelevasta käynnistäsi,
+ruumiisi tavattomasta kelmeydestä ja alituisista huokailuistasi samoin
+kuin raukeista silmistäsi kärsit tavatonta rakkaudentuskaa. Kuule siis
+minua äläkä heittäytymällä jokeen tahi jotain muuta kuolintapaa
+käyttämällä uudestaan koeta itseäsi surmata. Herkeä suremasta, heitä
+murheesi ja palvele ennemmin rukouksillasi Kupidoa, suurinta jumalista,
+sekä koeta maireella alttiudella voittaa hänen suosiotaan, hempeä ja
+hekumallinen kun on".
+
+Paimenjumalan noin puhuttua, Psyke mitään vastaamatta vain osoittaa
+kunnioitustaan avuliaalle jumaluudelle ja jatkaa kulkuaan. Mutta
+melkoisen matkan uupuvin askelin tuntematonta polkua harhailtuaan hän
+päivän jo laskiessa saapuu siihen valtioon, missä hallitusta piti
+toisen sisaren puoliso. Saatuaan tietää tämän, Psyke haluaa että hänen
+läsnäolonsa ilmoitettaisiin sisarelle. Pian viedään hänet sisälle ja
+senjälestä kuin molemminpuoliset tervehdyssyleilyt on suoritettu, ja
+sisar tutkistellut syytä hänen tuloonsa, hän alkaa näin: "sinä muistat
+kaiketi tuumanne kehottaa minua kaksiteräisellä tikarilla surmaamaan
+hirviön, joka puolison valenimellä kanssani lepäili, ennenkuin se minut
+poloisen ahmattaan kitaansa nielisi. Mutta heti kun minä, aivan
+niinkuin oli sovittu, rikostoverini lampun valossa olin vilkaissut
+hänen kasvoihinsa, näen minä ihmeellisen ja vallan jumalallisen näön:
+itse tuon Venus jumalattaren pojan, itse Kupidon, sanon minä, leppeään
+sikiuneen vaipuneena. Ja kun minä moisen ihanuuden näöstä järkkyneenä
+ja semmoisesta autuuden määrästä hämmentyneenä kärsin siitä, etten
+voinut tästä nauttia, niin, nähtävästi katalimmasta sattumasta, lamppu
+räiskäytti hehkuvaa öljyä hänen hartialleen. Siitä tuskasta hän heti
+havahti unestaan ja huomattuaan minut asestetuksi tulella ja miekalla
+virkkoi: 'tämän näin hirmuisen rikoksesi vuoksi lähde heti pois
+aviovuoteeni luota ja pidä itse huolta asioistasi; mutta minäpä aion
+yhdistää sisaresi -- ja hän mainitsi sinun nimesi -- laillisella
+avioliitolla itseeni.' Ja kohta hän käski Lännen puhaltaa minut
+kartanonsa kuuluvilta pois".
+
+Ei ollut vielä Psyke päättänyt puhettaan, kun sisar, mielettömän himon
+ja turmiollisen kateuden tutkainten kiihottamana sepittää hätävalheen,
+että muka oli saanut jonkun tiedon vanhempiensa kuolemasta, pettää
+siten puolisonsa, astuu kohta laivaan ja jatkaa suoraapäätä kukkulalle.
+Ja vaikka puhaltaa toinen tuuli, niin hän sokeassa toivossaan
+hurjanhimokkaasti huutaa: "Ota, Kupido, vastaan minut, arvoisesi
+puolison, ja sinä, Länsi, kannata valtiatartasi!" Ja samalla hän
+korkealla hypyllä heittäytyy päistikkaa syvyyteen. Mutta ei hän edes
+kuolleenakaan voinut päästä haluamaansa paikkaan. Sillä aivan niinkuin
+ansaitsikin, viskautuivat hänen jäsenensä pitkin kallioiden kiviä ja
+silpoutuivat. Niin hän menehtyi tarjoten lihoillaan linnuille ja
+pedoille ravintoa.
+
+Eikä toisenkaan rangaistus kauvan viipynyt. Harhaillessaan näet
+edelleen Psyke saapui toiseen valtakuntaan, missä samalla tavalla eleli
+toinen sisar. Ja aivan samoin hänkin oman siskonsa pettämänä ja
+kateudesta sisaren rikollista avioliittoa kohtaan riensi kukkulalle ja
+joutui samanlaisen kuoleman uhriksi.
+
+
+
+
+NELJÄS LUKU.
+
+
+Samaan aikaan kuin Psyke jännityksellä etsien Kupidoa vaelsi maasta
+toiseen, tämä huokaili lampun haavaa sairastaen ja äidin makuuhuoneessa
+viruen. Silloin lokki, lumivalkea lintu, joka laineitten merellisten
+päällitse lentimin liitää, sukeltaa lähelle valtameren syvää syliä.
+Siellä se pysähtyy Venuksen eteen, joka paraillaan kylpee ja uiskelee,
+sekä ilmaisee että hänen poikansa on polttanut itsensä ja kovasta
+haavan tuskasta riutuen makaa epävarmana pelastuksestaan, ja että
+kaikkien kansojen suussa koko Venuksen perhettä kulkupuheilla ja
+monenmoisilla herjauksilla soimataan. "Poikasi on muka salalempensä
+vuoksi vuorilla ja sinä merikylpyjesi tähden vetäytynyt pois, josta
+syystä ei ole mitään nautintoa, ei suloa, ei hilpeyttä, vaan kaikkialla
+vallitsee epäjärjestys, raakuus ja siistittömyys; ei ole avioliittoja,
+ei ystävyyssiteitä, ei lastenrakkautta, vaan kaikkialla on suunnaton
+sekamelska ja likaisten liittojen vastenmielinen inhottavuus". Tätä
+puhelias ja perin utelias lintu luskutti Venuksen korviin, raastaen
+pojan mainetta. Mutta vihan vimmoissaan Venus huudahtaa: "Siispä tuolla
+kelpo pojallani jo on jokin mielitietty! no ilmoita pois, sinä, joka
+yksin minua hellästi palvelet, sen nimi, joka jaloa, parratonta
+poikaani on viehättänyt, oli hän sitten Luonnotarten väkeä tai
+Vuodenaikain joukkoa tai Runotarten kuoroa tai Sulotarteni
+palveluskuntaa". Ei jäänyt sanattomaksi kielikello lintu, vaan virkkoi:
+"en tiedä, armollinen rouva, mutta luulen hänen tulisesti mielivän
+tyttöä -- Psyke nimeltään, jos oikein muistan".
+
+Silloin Venus kovasti närkästyneenä ääneen huudahti: "Jos hän todella
+rakastaa Psykeä, tuota kauneuteni kilpailijaa ja nimeni riitelijää,
+niin kaiketi tuo sikiöni on pitänyt minua parittajana, jonka avulla
+tutustuisi siihen tyttöön". Noin tiuskien hän kiireesti kohoaa merestä,
+pyrkii suoraapäätä kultaiseen makuukammioonsa ja löytää sieltä,
+niinkuin oli kuullut, sairaan poikansa. Ovelta jo hän huutaa kurkkunsa
+täydeltä: "onpa tämä kunniakasta ja syntyperämme sekä hyvän tavan
+mukaista, että tallaat jalkojesi alle äitisi, vieläpä valtiattaresi
+käskyjä etkä alhaisella rakkaudella rääkännyt vastustajaani, ja sitten
+vielä mokomana nulikkana hurjiin kypsymättömiin syleilyihisi hänet
+suljit, tietysti jotta saisin vastustajastani miniän! Kaiketi otaksut
+sinä, inhottava tyhjäntoimittaja ja viettelijä, että sinä yksin olet
+jalosukuinen, ja etten minä muka iältäni enää kykene äidiksi tulemaan.
+Tiedä siis että aion synnyttää toisen, sinua paljoa paremman pojan --
+ei, jotta vielä enemmän saisit tuntea häväistystäsi, tahdon tehdä
+ottopojakseni jonkun kotiorjistani ja hänelle lahjoittaa siivet,
+liekit, jousen, jopa nuolet, ja koko kalustosi, jota en sinulle antanut
+tällä tavoin käytettäväksesi. Sillä ei isäsi Vulkanuksen aseista
+sinulle ole annettu mitään, jotta tuolla tavoin niitä käyttäisit. Mutta
+hulttiohan olet ollut hamasta varhaisimmasta lapsuudestasi, onhan
+sinulla terävät kynnet, joilla ilman vähintäkään kunnioitusta niin
+monasti olet vanhempiasi ahdistanut ja itse emoasi, juuri minua, sinä
+kuin mikäkin äidinmurhaaja joka päivä saatat vaaraan; ja useasti olet
+minua haavoittanut, aina muka minua leskenä ylenkatsonut etkä kammoa
+isäpuoltasikaan, urhoollista ja suurta soturia Marsia. Mitä vielä, hän,
+jolle lemmensuhteeni huoleksi monasti olet tyttöjä hankkiellut. Mutta
+kyllä minä vielä laitan niin, että saat katua tätä pilaasi ja tuntea
+avioliittoasi kirpeäksi ja katkeraksi. Mutta mitä minä, näin pilkkana
+pidetty kun olen, nyt teen? Minne lähden? Millä keinoin suistan sen
+hirtehisen? Pyytäisinkö apua vastustajaltani Maltilta, jota juuri tämän
+poikani himollisuuden vuoksi useasti olen loukannut? Minua kyllä
+puistattaa puhutella sitä moukkamaista, ryöttäistä naista. Mutta siitä
+huolimatta ei pidä halveksia koston lohdutusta, tuli se mistä päin
+hyvänsä. Juuri häntä eikä ketään muuta, tulee minun käyttää kurittamaan
+tuota veijaria, aukomaan hänen viinensä, ottamaan pois nuolensa,
+riistämään hänen jouseltaan jänteen, sammuttamaan soihtunsa ja
+taltuttamaan häntä itseään vieläkin katkerammilla lääkkeillä. Silloin
+vasta katson kärsimäni loukkauksen tulleen sovitetuksi, kun hän on
+ajanut pois ne kutrit, joita vähän väliä olen omin käsin silitellyt,
+niin että ovat kiiltäneet kuin kulta, ja leikannut lyhyiksi ne sulat,
+joita nektarinesteellä olen sylissäni sivellyt".
+
+Noin nimettyään Venus syöksyi ulos suutuksissaan ja sydännyksissään.
+Kohta häntä vastaan tulevat Ceres ja Juno. Ja huomattuaan hänen
+turvottuneet kasvonsa he kysyivät, miksi hän tuikeiden kulmakarvojen
+alle kätki säteilevien silmiensä sulon. Hänpä virkkoi: "tepä tulette
+parahiksi osoittaaksenne minulle palvelustanne. Hakekaa, minä pyydän,
+kaikin voimin käsiini karkulaisvelho Psyke. Eivät kai teiltä ainakaan
+ole jääneet tuntematta huoneeni kuulu tarina ja poikani tekoset, hänen,
+jota ei pitäisi pojakseni sanottaman".
+
+Silloin jumalattaret, vaikka hyvin tiesivät, mitä oli tapahtunut,
+yrittivät lieventää Venuksen riehuvaa kiukkua näillä sanoin: "minkä
+sellaisen rikoksen, valtiatar, on poikasi tehnyt, että itsepintaisesti
+vastustelet hänen huvituksiaan ja että mielit tuhotakin sen, jota hän
+rakastaa? Mikä rikos, me pyydämme, on siinä, että hän on somalle
+tyttöselle suopeasti hymyillyt? Vai etkö tiedä, että hän on miehenpuoli
+ja nuorukainen, tai varmaan olet unohtanut, kuinka vanha hän jo on. Vai
+siksikö että hän on hyvin säilynyt, hän aina tulee sinusta tuntumaan
+pikku pojalta. Aiotko sinä sitten äitinä, vieläpä mielevänä naisena,
+aina uteliaasti tutkistella poikasi lemmenleikkejä, nuhdella hänen
+nautinnonhaluaan, tukahuttaa hänen rakkausseikkailujaan ja ihanassa
+pojassasi moittia omia temppujasi ja viehätyskykyäsi? Kukahan
+jumalista, kuka ihmisistä, on salliva sinun sirottaa sinne tänne
+kansojen kesken lemmenhaluja, kun oman huoneesi Lempeä estät lempimästä
+ja suljet häneltä naisten kiemailun kaikille yhteisen asepajan."
+
+Siten he nuolten pelosta suopeasti puoltavat ja imartelevat Kupidoa,
+vaikka olikin poissa. Mutta Venus, närkästyksissä siitä että kärsimänsä
+loukkaukset saatettiin naurunalaisiksi, riensi heidän edelleen ja lähti
+kiireisin askelin jälleen merelle.
+
+
+
+
+VIIDES LUKU.
+
+
+Sillävälin Psyke harhaili sinne tänne, yöt päivät puolisoaan
+etsiskellen, levotonna mielessään, mutta sitä palavammin haluten,
+joskaan ei vaimon imarteluilla suuttunutta lauhduttaa, niin ainakin
+orjan rukouksilla häntä lepyttää. Silloin hän näki edessään jyrkän
+vuoren huipulla temppelin ja virkkoi: "kunpa vain ei tuolla minun
+herrani asustaisi?" Kohta hän sinne suuntaa joutuisat jalkansa, joita,
+vaikka alituisista vaivoista olivat vallan uuvuksissa, kiihotti toivo
+ja kaiho. Hän kiipee korkeiden harjujen yli ja lähestyy pyhiä sijoja.
+Siellä hän näkee vehnän- ja ohrantähkiä, toiset läjässä, toiset
+seppeleiksi solmittuina. Oli siellä myös sirppejä ja kaikkia muitakin
+elonleikkuuvehkeitä, mutta kaikki hajallaan maassa, huolimattomasti
+yhteen sotkettuina ja elomiesten käsistä umpimähkään viskattuina,
+niinkuin tapa on puolipäivän helteessä. Kaikkia näitä kaluja Psyke
+visusti järjesteli ja asetti kunkin erikseen oikeaan paikkaansa,
+nähtävästi arvellen, ettei pitänyt laiminlyödä minkään jumalan
+pyhättöjä ja menoja, vaan koettaa saavuttaa kaikkien hyvänsuovaa
+sääliä.
+
+Hänen tätä huolellisesti ja uutterasti puuhatessaan, yllättää hänet
+armas Ceres ja huudahtaa heti kaukaa: "mitä, eikö tuo ole säälittävä
+Psyke? Kautta koko maanpiirin Venus tuskallisesti etsien ja sielussaan
+raivoten hakee jälkiäsi, pyytää sinua mitä ankarimmin rangaistavaksi ja
+vaatii jumaluutensa kaikkien voimien takaa kostoasi. Mutta sinäkö tässä
+hoidatkin minun askareitani ja ajattelet muuta kuin omaa pelastustasi?"
+
+Silloin Psyke, heittäytyen jumalattaren jalkojen juureen ja
+kyyneltulvalla kostuttaen hänen jalkateriään sekä hiuksillaan maata
+laasten, moninkertaisin rukouksin anoi armoa: "kautta viljaatuottavan
+oikean kätesi, kautta hilpeitten leikkuumenojesi, kautta vasujesi
+vaiteliasten salaisuuksien, kautta louhikäärmepalvelijaisi
+siipivaunujen, kautta Sisilian turpeen vakojen, kautta
+ryöstäjärattaitten ja maan, joka pitää mitä sille uskottu on,
+kautta Proserpinan valottomien häiden ynnä poistumisen ja tyttäresi
+valoisan löytämisen ynnä palaamisen, kautta kaiken sen muun, minkä
+äänettömyydellään verhoo attikalaisen Eleusiin pyhättö -- auta
+säälittävää Psykeä, joka sinulta turvaa anoo. Salli minun vain muutamia
+päiviä piillä tuossa tähkäläjässä, kunnes mahtavan jumalattaren riehuva
+kiukku jonkun ajan kuluttua mahdollisesti lientyy tai ainakin minun
+pitkällisestä vaivasta uupuneet voimani levosta virkistyvät".
+
+[_Eleusiin_ mysterioissa kohdistui jumalanpalvelus etupäässä Demeteriin
+(lat. Ceres) ja hänen tyttäreensä Persefoneeseen (lat. Proserpina) sekä
+Iakkhokseen. Kulttitarun mukaan oli Tuonelan valtias Hades (lat. Pluto)
+ryöstänyt vaunuihinsa Persefoneen, kun tämä leikitteli Sisiliassa
+kukkanurmella, ja vienyt hänet valtakuntaansa; siellä täytyi hänen
+sitten muka oleskella toinen puoli vuotta Tuonelan kuningattarena,
+mutta sai viettää toisen puolen maan päällä äitinsä luona. Tähän taruun
+perustuvia kohtauksia esitettiin muun muassa yllämainituissa
+mysterioissa draamallisessa muodossa. Menoihin kuului myös erään
+salaperäisen vasun näyttäminen, jossa säilytettiin pyhiä symbolisia
+esineitä. -- Vihdoin kuului Eleusiissä palveltujen olentojen joukkoon
+myös Triptolemos, joka tarun mukaan louhikäärmevaunuissa kulkien opetti
+ihmiskunnalle maanviljelystä.]
+
+Ceres vastaa: "kyyneliset rukouksesi kyllä minua liikuttavat, ja haluan
+sinua avustaa, mutta en tahdo joutua huonoihin väleihin sukulaiseeni,
+jonka kanssa olen vanhassa ystävyyden liitossakin ja joka sitäpaitsi on
+kelpo nainen. Lähde siis heti pois tuosta temppelistä ja kiitä onneasi
+etten ole sinua pidättänyt ja vanginnut". -- Kun Psyke vastoin toivoaan
+näin oli työnnetty pois, niin hän kahdenkertaisen murheen masentamana
+jatkaa matkaansa takaisin ja näkee edessään alla olevan alhon
+puolihämärässä lehdossa taidokkaasti rakennetun pyhätön, ja koska hän
+ei tahtonut jättää käyttämättä mitään, jos kuinkakin epätietoista
+keinoa, joka veisi parempaan toivoon, ja halusi kääntyä minkä jumalan
+armon puoleen hyvänsä, hän lähestyy pyhää ovea.
+
+Hän näkee puiden oksissa ja ovenpieluksissa riippumassa kallisarvoisia
+lahjoja ja vaatekappaleita kultakirjaimineen, jotka, samalla kuin
+todistivat kiitollisuutta jonkun onnellisen tapahtuman johdosta,
+ilmaisivat sen jumalattaren nimen, jolle ne olivat vihityt. Silloin hän
+polvistuen ja käsin tarttuen lämpimään alttariin kuivi kyyneleensä ja
+rukoili näin: "oi Juno, sinä suuren Jupiterin sisar ja puoliso, joko
+sinä sitten vallitset vanhoja pyhättöjä Samoksessa, joka yksin kerskaa
+synnystäsi, ensi itkustasi ja ruokostasi, tai vierailet ylevän Kartagon
+muhkeissa asumuksissa, Kartagon, joka palvoo sinua leijonavaunuissa
+taivaalla kulkevana impenä, tai hallitset Argoksen kuulua kaupunkia
+rantamilla Inakoksen, joka sinua Jyrisijän aviovaimoksi ja jumalten
+kuningattareksi mainitsee, sinä, jota koko Itä naimisjumalattarena
+kunnioittaa ja koko Länsi lapsenpäästäjäksi kutsuu -- ollos
+äärimäisessä hädässäni 'Juno Pelastajatar' ja vapauta minut, moisten
+vaivain kestämisestä, uupunut kun olen, uhkaavan vaaran pelosta.
+Tietääksenihän auttelet pyytämättäkin vaarassa olevia äideiksi
+tulevia".
+
+Hänen tähän tapaan rukoillessaan ilmestyi heti Juno koko jumaluutensa
+ylhäisessä arvokkuudessa ja sanoi oitis: "Kuinka mielelläni tahtoisin
+antaa suostumukseni anomukseesi, jos se lupaukseltani kävisi päinsä!
+Mutta vastoin miniäni Venuksen tahtoa, jota aina olen rakastanut kuin
+omaa tytärtäni, arkaluontoisuuteni ei salli minun suoda sinulle turvaa.
+Sitäpaitsi minua myös estävät lait, jotka kieltävät vastoin isäntien
+tahtoa ottamasta vastaan vieraita karkulais-orjia".
+
+Tästäkin onnensa haaksirikosta säikkyneenä Psyke, joka ei enää voinut
+saavuttaa lentelevää puolisoaan, heitti kaiken pelastuksen toivon ja
+kysyi omilta ajatuksiltaan neuvoa näin: "mitä muita apuneuvoja
+vaivoissani saattaa enää koettaa tai käyttää, kun ei minua ole voinut
+hyödyttää jumaltenkaan apu, vaikka olisivat tahtoneetkin sitä antaa?
+Minne siis minun, moisiin pauloihin kietoutunut kun olen, tulee
+askeleeni suunnata ja mihinkä suojiin tai pimentoihinkin kätkeytyä ja
+siten paeta suuren Venuksen pääsemättömiä silmiä? Mikset siis vihdoin
+ota päälles miehen mieltä, sano urhoollisesti jäähyväisiä
+turhanpäiväiselle toivonkipinälle, vapaaehtoisesti antau valtiattaresi
+käsiin ja vaikkapa myöhäiselläkin nöyryydellä hänen riehuvia
+kiukunhyökkäyksiään laimenna? Kentiespä tulet tuolla äidinhuoneessa
+tapaamaan hänetkin, jota niin kauvan etsit?" Siten hän, valmiina
+epäilemättömään nöyryytykseen, ei paremmin, varmaan perikatoon,
+mietiskeli miten hänen tulisi alottaa rukoustaan.
+
+
+
+
+KUUDES LUKU.
+
+
+Mutta maallisia keinoja etsimisissään hylkäämällä Venus pyrki
+taivaaseen. Hän käskee valjastamaan vaunut, joita kultaseppä Vulkanus
+sirotekoisesti oli silotellut häntä varten ja ennen häitä
+morsiuslahjaksi tarjonnut, nuo ohentavalla nirhaimella koreiksi
+viilatut ja kullankäytöstä kallisarvoiset ajoneuvot. Useiden kyyhkysten
+joukosta, jotka valtiattaren makuuhuoneen ympärillä pesivät, astuu
+esiin neljä hohtavanvalkeaa ja käyvät hilpeästi tepastellen, kirjavat
+kaulat pulleina, jalokivi-ikeen alle, ottavat valtiattarensa vaunuihin
+ja lehahtavat iloisesti niiden edessä lentoon. Jumalattaren vaunuja
+seuraavat meluavasti piipittäen ailakoivat varpuset, ja muut suloisesti
+livertelevät lintuset mesisäveliä kaiuttaen julistavat jumalattaren
+tuloa. Väistyvät pilvet, avautuu Venukselle taattonsa, Taivon [Taivas =
+Uranos, josta Afrodite oli saanut alkunsa], laki, ja ylin ilmakehä
+ottaa riemulla vastaan jumalattaren. Eikä suuren Venuksen
+sulosointuinen seurue säikähdä kohtaavia kotkia eikä hahmailevia
+haukkoja.
+
+Siten hän suuntaa kulkunsa suoraapäätä Jupiterin kuninkaanlinnaa kohti
+ja kopeasti vaatimalla vaatii vahvaäänisen jumalan Merkuriuksen apua.
+Ja siihen nyökäytti suostumuksen merkiksi Jupiter tummilla
+kulmakarvoillaan. Silloin Venus voitonriemussaan Merkuriuksen
+seuraamana kulkee alas taivaasta ja virkkaa tälle kiihkeästi:
+"arkadialainen veljeni, tiedäthän ettei sisaresi Venus ilman
+Merkuriuksen apua milloinkaan ole mitään saanut aikaan, eikä sinulta
+ainakaan jää huomaamatta, kuinka kauvan olen turhaan hakenut piilevätä
+piikaani. Ei siis ole muuta keinoa jälellä kuin että kuuluttamalla
+julkisesti julistat palkinnon hänen löytämisestään. Laita siis niin,
+että joudutat käskyäni ja ilmoita selvästi ne tunnusmerkit, joiden
+avulla hänet saattaa tuntea, jottei kukaan voisi tietämättömyydellään
+puolustaida, jos on tehnyt itsensä syypääksi karkulaisen luvattomaan
+salaamiseen". Näin lausuen Venus samalla ojentaa hänelle kirjan, jossa
+oli Psyken nimi ynnä muuta asiaan kuuluvaa. Senjälkeen hän oikopäätä
+läksi kotiin.
+
+Ei Merkurius jättänyt käskyä noudattamatta, vaan juosten sinne tänne
+pitkin maita mantereita hän tällä tavoin suoritti hänelle uskotun
+julistajantoimen: "Jos ken voi paosta kiinniottaa tai ilmoittaa, missä
+piilee karannut kuninkaantytär, Venuksen piika, nimeltä Psyke, niin
+menköön Murcian rajapatsaiden taakse Merkurius kuuluttajan puheille; ja
+ilmiantonsa palkkioksi hän Venukselta itseltään on saapa seitsemän
+suloista suukkosta, joista yhden maireen kielen kosketuksesta oikein
+medenmakean".
+
+[Roomassa oli Palatinus- ja Aventinus-vuorten välisessä laaksossa
+lähellä Circus Maximuksen kaakkoisosaa _Murcia_ nimisen jumalattaren
+kappeli, jonka mukaan kilparadan mainitussa päässä olevia rajapatsaita
+kutsuttiin Murcian rajapatsaiksi (_metae Murciae_).]
+
+Merkuriuksen tällä tavoin julistaessa nostatti moisen palkinnon halu
+kilvan kaikkien innostuksen. Tämä seikka se varsinkin teki lopun
+kaikesta Psyken vitkastelusta, ja hän lähestyi valtiattaren ovea.
+Siellä juoksi häntä vastaan muuan Venuksen palveluskuntaan kuuluva,
+nimeltä Tuttavallisuus, ja kivahti niin kovasti kuin suinkin saattoi:
+"vihoviimeinkö, kelvoton piika, alat muistella että sinulla on emäntä?
+Vai kuvitteletko, muun luonteesi huimapäisyyden lisäksi, ettet muka
+tiedä kuinka paljon vaivaa me sinua etsiessämme olemme kestäneet? Mutta
+olipa onni että jouduit juuri minun käsiini ja takerruit jo itse
+kuoleman kynsiin, tietysti jotta paikalla saisit kärsiä rangaistuksen
+mokomasta uppiniskaisuudestasi". Ja rohkeasti hän tarrasi hiuksiin sekä
+laahasi kädestään Psykeä, joka ei ollenkaan tehnyt tenää.
+
+Kun nyt Venus äkkäsi että Psyke oli tuotu sisään ja viety hänen
+eteensä, jumalatar rämähti reheimpään nauruunsa, sellaiseen kuin on
+tapa vihastuneilla, ravisti hänen päätään, sivalsi häntä oikealle
+korvalle ja virkkoi: "vihdoinko olet hyväksi nähnyt tulla tervehtimään
+anoppiasi? Vai oletko pikemmin tullut katsomaan puolisoasi, joka sinun
+aikaansaamastasi haavasta häilyy hengenvaarassa? Mutta ole huoleti,
+kyllä minä otan sinua vastaan niin kuin hyvää miniää tulee". Ja hän
+lisää: "missä ovat piikani Huoli ja Suru?" Kutsuttuaan nämät sisälle
+hän jätti Psyken heidän kidutettavakseen. Nepä emännän käskyn
+mukaisesti pieksevät ja muutenkin rääkkäävät Psykeä, jonka jälkeen ne
+jälleen tuovat hänet valtiattaren eteen. Silloin Venus uudestaan ratkee
+nauruun ja virkkaa: "kas, kuinka hän koettaa herättää sääliäni
+viittaamalla tilaansa. Pian kai hän tulee onnellistuttamaan minua
+mainiolla jälkeläisellä. Voi tosiaan minua miekkoista, joka
+kukkeimmassa iässäni saan isoäidin nimen, ja halvan piian poika tulee
+käymään Venuksen pojanpojasta. Kuitenkin, houkkiohan minä olen, joka
+suotta tätä perheeni jäseneksi sanon. Suhdatonhan on tuo avioliitto, ja
+kun se sitäpaitsi on solmittu maakartanossa ilman todistajia ja isän
+suostumusta, niin sitä ei voida katsoa lailliseksi; näin ollen hänestä
+tulee äpärä, jos nimittäin ensinkään annan asian mennä niin pitkälle".
+
+Tämän julistettuaan Venus karkaa Psyken kimppuun, riuhtaisee rikki
+hänen pukunsa, tukistaa ja ravistaa häntä päästä sekä rääkkää
+ankarasti. Sitten hän kerää kokoon vehnää, ohraa, hirssiä, unikukan
+siemeniä, herneitä, virnoja ja papuja, sekoittaa ne yhteen läjään ja
+lausuu Psykelle näin: "et sinä ruma piika millään muulla tavoin näy
+voivan voittaa rakastajaasi kuin uutteralla palveluksella. Eristä tuo
+sekalainen siemenmäärä ja jahka olet järjestänyt ja asettanut kunkin
+jyvän oikeaan paikkaansa, niin näytä ennen iltaa minulle valmis työsi".
+
+Osoitettuaan Psykelle suunnattoman siemenläjän Venus lähti hääpitoihin.
+Mutta Psyke ei käykään käsiksi tuohon järjestymättömään ja
+selvittämättömään työhön, vaan tehtävän mahdottomuudesta hämmentyneenä
+tyrmistyy äänettömäksi. Silloinpa pikkuinen maalaismuurahainen, joka
+hyvin tunsi työn vaikeuden, sääli suuren jumalan aviokumppanin vaivaa
+ja sadatellen anopin julmuutta, juoksee sinne tänne, sekä kutsuu ja
+pyytää reippaasti kokoon koko naapuriston muurahaiset: "säälikää te
+maaemon ketterät kasvatit, säälikää ja auttakaa alttiisti ja nopeasti
+Amorin vaimoa, somaa tyttöä". Silloin syöksyy esiin laine
+kuusjalkaväkeä toisensa jälestä, ne eristävät suurimmalla tarkkuudella
+siemenittäin koko läjän, ja panevat eri paikkoihin joka lajin sekä
+poistuvat nopeasti näkyvistä.
+
+Mutta alkuyöstä Venus palaa hääkemuista, viinistä hehkuvana, tuoksuen
+palsamia, ja koko ruumis hohtavissa ruusukiehkuroissa. Nähtyään
+kummassa työssä osoitettua ahkeruutta hän virkkaa: "ei ole tämä sinun
+eikä sinun kättes työtä, epättö, vaan sen, joka onnettomuudeksesi,
+vieläpä omakseen, on sinuun mieltynyt". Sitten hän viskasi Psykelle
+leipäpalasen kannikan ja meni levolle.
+
+Sillävälin oleskeli Kupido kultaisen linnan sisähuoneessa, suljettuna
+yksikseen ankaraan vankeuteen, osaksi jottei vallattomalla
+hurjuudellaan pahentaisi haavaansa, osaksi ettei saisi tavata
+mielitiettyään. Siten toisistaan pidätettyinä ja saman katon alla
+erotettuina täytyi rakastavaisten viettää julma yö.
+
+       *       *       *       *       *
+
+Mutta kun Koitar paraillaan taivaalle ajoi, Venus kutsui luokseen
+Psyken ja virkkoi näin: "näetkö tuon lehdon, joka jatkuu tuonne kauas
+pitkin ohikiitävän virran äyräitä ja jonka alimmat pensaat päilyvät
+läheiseen lähteeseen? Siellä kuljeskelee, kenenkään kaitsematta,
+laitumella lampaita, väriltään väikkyen kuni paistava päivä tai
+kimalteleva kulta. Sieltä minä käsken sinua heti tavalla millä tahansa
+hakemaan ja tuomaan tukon kallisarvoisten villojen nukasta".
+
+Psyke läksi kernaasti, ei tosin suorittaakseen tehtäväänsä, vaan
+löytääkseen levon onnettomuuksilleen syöksymällä kalliolta jokeen.
+Mutta tuolta joeltapa neuvoo jumalallisessa innostuksessa armaan soiton
+vaalija, vihreä Kaisla, suloisen tuulenhenkäyksen vienolla huminalla
+näin: "sinä niin suurten vaivojen vainooma Psyke, ällös kurjalla
+kuolemallasi pyhiä vesiäni turmele äläkä lähesty hirvittäviä lampaita,
+niinkauvan kun ne auringon hehkusta lämpönsä lainattuaan tuimassa
+raivossa rehentelevät ja terävillä sarvillaan, kivenkovalla otsallaan,
+jopa joskus myrkyllisillä hampaillaan kuolevaisten tuhoksi riehuvat.
+Mutta siihen asti, kunnes puolipäivä on auringon helteen taltuttanut,
+ja virrasta tuleva henkäys on tyyneydellään karjan hurjuuden asettanut,
+voit piillä tuon korkean platanin alla, joka juo samaa jokivettä kuin
+minäkin. Ja kun kerran raivon liennyttyä lampaiden rohkeus laukee, olet
+varistamalla läheisen lehdon lehviä löytävä villakultaa, jota on
+tarttunut sinne tänne toisiinsa kietoutuneihin oksiin".
+
+Siten vaatimaton, ihmisystävällinen Kaisla opetti poloiselle Psykelle,
+miten hän pelastuisi. Tämä kuunteli tarkasti ja pani visusti mieleensä
+neuvot. Ja ottamalla huomioon kaikki asianhaarat hän helposti sai
+varastetuksi helmallisen pehmyttä kehäkultaa ja toi sen Venukselle.
+Mutta eipä sittenkään tämä toinenkaan vaarallinen ansiotyö valtiattaren
+puolelta tuottanut hyväksymistä, vaan kulmakarvojaan rypistellen hän
+katkerasti hymyillen lausui: "tunnen vallan hyvin tämänkin työn
+todellisen tekijän. Mutta nytpä vasta minä tyyskästi tahdon
+tutkistella, oletko oikein urhoollinen ja ymmärtäväinen. Näetkö tuolla
+ylenkorkealla kalliolla törröttävän vuorenhuipun, josta sysimustan
+lähteen tummat laineet syöksyvät alas ja lähilaakson helmaan
+puristettuina Tuonen rämeitä kastelevat ja Kokytoksen kohisevia kuohuja
+ravitsevat? Sieltä juuri, tuon korkealla sijaitsevan lähteen syvimmästä
+suonesta, ammenna hyistä nestettä ja kanna tänne tuossa ruukkusessa".
+
+Näin sanoen Venus jätti hänelle kristallista hiotun maljan, sitä ennen
+vielä ankarammin häntä uhattuaan.
+
+Innokkaasti kulkuansa jouduttaen Psyke pyrkii vuoren ylimmälle
+kukkulalle, ainakin sieltä löytääkseen lopun kelvottomalle elämälleen.
+Vaan heti saavuttuaan ennenmainitun harjun läheisyyteen hän huomaa,
+kuinka kuolettavan vaikea ja mahdoton tehtävänsä on. Sillä hirveän
+suuri ja jyrkkä sekä lähestymättömän rosoinen ja liukas kallio
+purkailee keskeltä kuiluaan kauheita lähdevesiä, jotka syösten
+viettävän aukon lävistä heti valuvat alas kaltevaa pintaa ja suistuvat
+kaidan kanavan uurretun uoman piilossa lähimmän umpinotkon peittoon.
+Oikealta ja vasemmalta ryömii kallioluolista esiin, pitkät kaulat
+ojoina, hirveitä louhikäärmeitä, joitten katseet eivät konsanaan
+ummistu ja joitten silmäterät iät päivät valvovat. Jopa itse viuhuvat
+vedetkin varusteleivat. Sillä kohta ne huutavat: "lähde pois! katso
+mitäs teet! Varo mitä toimit! Pakene! Hukka sinut perii!" Siten
+tehtävän mahdottomuus kivetytti Psyken ja, vaikka ruumiillisesti oli
+läsnä, oli tajuntansa poissa, ja selvittämätön vaara masensi hänet
+vallan maahan; olihan häneltä viety viimeinenkin lohdutus: kyyneleet.
+
+       *       *       *       *       *
+
+Mutta eipä hyvän Kaitselmuksen ankarilta silmiltä jäänyt huomaamatta
+viattoman sielun vaiva. Sillä äkkiä saapuu korkeimman Jupiterin
+kuninkaallinen lintu, ryösteliäs kotka, kummallekin puolelle levitetyin
+siivin. Se muistelee Amorin entistä palvelusta, kun se hänen johdollaan
+oli kohottanut fryygialaisen juomanlaskijan Ganymedeen Jupiterille, ja
+tarjoo otollista apuaan. Ja Amorin puolison vaivoissa kunnioittaen
+hänen jumaluuttaan se jättää korkean laen taivahiset tiet ja lentää
+vasten Psyken kasvoja sekä virkkaa: "voi, toivotko sinä, joka muutenkin
+olet yksinkertainen ja varsinkin tällaisissa seikoissa kokematon,
+voivasi varastaa kaikkein pyhimmästä ja kauneimmasta lähteestä yhtä
+ainoatakaan pisaraa tai ollenkaan sitä koskettaakaan. Etkö jo
+kuulopuheestakin tiedä, että jumalille, vieläpä itse Jupiterille Tuonen
+vedet ovat hirvittävät? Etkö tiedä, että ne valat mitkä te vannotte
+nimessä jumalten voiman, vannovat jumalat Tuonen majesteetin kautta?
+Mutta annappas tänne tuo ruukkunen". Ja heti se riuhtaisee ruukun
+itselleen sekä rientää sitä täyttämään. Se liiteleikse nuokkuvin,
+raskain siivin louhikäärmeitten leukojen uhkaavain hampaitten ja
+kolmijakoisten kielten keskitse, suuntaa soutuaan oikealle ja
+vasemmalle ja ammentaa vettä, joka alttiisti seuraa, ihmeissään että
+kotka vahingoittumatta saattaa lähteä tiehensä. Ja tekosyyksi lintu
+sanoo pyytävänsä vettä Venuksen käskystä ja hänelle sitä toimittavansa,
+joten tilaisuus päästä sinne oli hiukan helpompi.
+
+Riemulla Psyke otti vastaan täyden ruukkusen ja toi sen kiireesti
+takaisin Venukselle. Mutta eipä hän nytkään voinut lepyttää raivoavan
+jumalattaren vihaa. Sillä vielä suurempia ja häijympiä häväistyksiä
+harkiten tämä turmiota tuottavasti hymyillen virkkaa: "oletpa sinä
+oikea noita-akka ja varsin päävelho, joka ripeästi olet suorittanut
+mokomat käskyni. Mutta tämä vielä, silmäteräni, tulee sinun toimittaa".
+Ja antaen rasian hän sanoi: "ota tämä ja suuntaa kulkusi suoraapäätä
+Manalaan ja itse Tuonen kuolintuville. Vie sitten rasia Proserpinalle
+ja sano: 'Venus pyytää sinua lähettämään hiukkasen ihanuuttasi, niin
+paljon että sitä riittää vaikkapa vain yhdeksi päiväksi. Sillä kaiken
+sen, mikä hänellä oli, on hän kuluttanut ja hivuttanut loppuun sairasta
+poikaansa vaaliessaan'. Mutta palaja hyvissä ajoin, sillä minun täytyy
+siitä sivellä itseäni mennäkseni jumalten kokoukseen".
+
+Siiloin vasta Psyke varsin huomasi viime hetkensä tulleen; hän älysi,
+että verho oli poistettu ja että hän ilmeisesti oli syöksyvä
+suoraapäätä turmioon. Eikö mitä! Pakoitettiinhan hänet omin jaloin
+kulkemaan Tuonelaan vainajain majoille. Ja sen enempää viipymättä hän
+lähtee käymään muutaman hyvin korkean tornin luo viskautuakseen sieltä
+päistikkaa maahan; siten näet hän arveli suorinta tietä ja kauniimmin
+voivansa vaipua Manalaan.
+
+Mutta torni ratkesi äkkiä sanoiksi: "miksi koito, pyydät heittäytymällä
+maahan surmata itsesi ja miksi maltittomasti masennut viimeisessä
+vaarassa ja tuossa työssäsi? Sillä jos henkesi kerran on eronnut
+ruumiistasi, olet kyllä saapuva alimpaan Tuonelaan, mutta sieltä et
+millään keinoin pääse takaisin. Kuule minua!"
+
+"Kuuluisa Akaian valtio Lakedaimon on jotenkin lähellä täältä; ota
+selville siellä sijaitseva, syrjäisten seutujen kätkemä Tainaron. Mene
+Manan henkimalosta sisälle, missä ammottavien porttien kautta sinulle
+osoittautuu raivaamaton tie; heti kun kynnyksen yli astuttuasi olet
+sitä alkanut kulkea, sinä jo suoraa käytävää myöten jatkat itse Tuonen
+linnaan. Mutta ei sinun pidä sinne saakka tyhjänä vaeltaman noiden
+pimentojen halki, vaan kummassakin kädessä tulee sinun kantaa
+mesijuomalla tahmistettua ohrakokkaretta ja suussasi kahta ropoa. Ja
+kun jo olet suorittanut melkoisen taipaleen kuolemantietä, olet
+kohtaava ontuvan, puita kantavan aasin ynnä samanlaisen ajajan, joka
+pyytää sinua ojentamaan itselleen muutamia taakasta putoavia halkoja;
+mutta käy sinä vain sivutse vaiti, sanan puhumattomana. Eikä aikaakaan,
+kun saavut vainajain virralle, jonka päällysmies Karon heti vaatii
+kuljetusmaksua, minkä jälkeen vasta hän nivotussa ruuhessaan vie
+matkamiehet toiselle rannalle. Sillä vainajainkin parissa vallitsee
+saituus, eikä Karon, Manan laivuri ja lautturi, tai Pluto, tuo suuri
+jumala, tee mitään ilmaiseksi, vaan köyhän täytyy kuollessaan etsiä
+itselleen matkarahaa, ja jos ei satu olemaan käsillä semmoista, niin ei
+kukaan salli hänen vetää viimeistä hengenvetoaan. Sille ryöttäiselle
+ukolle annat rahtina toisen niistä rovoista, joita kannat, kuitenkin
+niin, että hän itse omin käsin ottaa sen suustasi. Sitten, kulkiessasi
+yli samean virran, muuan pinnalla kelluva kuollut vanhus, kohottaen
+mädänneitä käsiään, rukoilee sinua vetämään itseään purteen. Älä sinä
+siltä anna luvattoman säälin itseäsi siihen taivuttaa. Kuljettuasi yli
+joen ja kappaleen matkaa edennyttyäsi, rukoilevat sinua kangasta
+kutovat eukot hiukan itseään avustamaan. Sitä ei kuitenkaan sinun ole
+lupa tehdä. Sillä tämä kaikki ynnä paljon muuta vastusta sinulle koituu
+Venuksen vehkeistä, jotta edes toisen kokkareen käsistäsi kadottaisit.
+Mutta älä katso ohrakakkujen menettämistä vähäpätöiseksi. Jos näet
+toinen niistä häviää, et milloinkaan enää saa nähdä tätä päivänvaloa.
+Sillä hirveän suuri, hirmuinen ja kauhistuttava koira, jolla on kolme
+ylen suurta päätä yhdessä, haukkuu kumajavilla kidoillaan
+vastaantulevia vainajia; niille se ei kuitenkaan enää mitään mahda,
+suotta vain säikyttelee aivan Proserpinan kynnyksen ja sysimustien
+suojien edessä ja alati valvoen vartioi Tuonen tyhjiä tupia.
+Suistettuasi sen antamalla sille saaliiksi toisen kokkareen, sinä
+helposti sen sivuutat ja pääset suoraapäätä sisään itse Proserpinan
+luo, joka kohteliaasti ja suopeasti sinua vastaan ottaa; hän käskee
+sinua pehmeälle sijalle istuutumaan ja nauttimaan oivallisesta
+murkinasta. Mutta istuudu sinä maahan ja pyydä sekä syö halpaa leipää.
+Ilmoita sitten asiasi, ja, saatuasi pyytämäsi rasian, mene takaisin,
+lauhduta julma koira jälelläolevalla kokkareella, ja anna saidalle
+laivurille se ropo, jonka olet säilyttänyt; ja kuljettuasi hänen
+veneessään joen yli, sinä noudattamalla äskeisiä jälkiäsi olet palaava
+tänne tähtitarhojen tasalle. Mutta ennen kaikkea annan sinulle sen
+neuvon, ettet avaa etkä katso siihen rasiaan, jota kannat, tai
+ylimalkaan liian uteliaasti tutki sinulle uskottua aarretta".
+
+Siten neuvoi huolehtiva torni. Ja vitkastelematta Psyke jatkaa
+matkaansa Tainaroniin. Sitten hän asianmukaisesti ottaa ennenmainitut
+rovot ja kokkareet sekä rientää alas Manalan tietä. Hän kulkee ääneti
+raihnaan aasinajajan sivu, antaa kuljettajalle virtamaksun, pysyy
+välinpitämätönnä pinnalla uiskentelevan vainajan toivomukselle,
+halveksii kutojatarten salakavalia rukouksia, asettaa kokkare-ruualla
+koiran kauhistuttavan raivon ja tunkeutuu Proserpinan asuntoon. Eikä
+hän kajoa emännän tarjoomaan pehmeään istuimeen tai uhkeaan ravintoon,
+vaan nöyrästi istuutuen hänen jalkainsa juureen hän ruokaleipään
+tyytyväisenä suoritti Venukselta saamansa toimituksen. Hän saa kohta
+salaa täytetyn ja suljetun rasian, jonka jälkeen, pettämällä toisella
+kokkareellaan koiran, tukkii sen ulvovat kidat, jättää laivurille
+jälelläolevan roponsa ja palaa Manalasta paljoa reippaampana. Mutta
+vaikka Psyke, jälleen saavutettuaan loistavan päivänvalon ja sitä
+rukoiltuaan, jouduttaa ansiotyönsä päättämistä, hänet kuitenkin valtaa
+huima uteliaisuus ja hän virkkaa: "voi minua typerää, jumalallisen
+ihanuuden kantajaa, joka en hituistakaan siitä itselleni hiipaise,
+silläkin keinoin kenties ihanaa rakastajaani miellyttääkseni." Mutta
+eipä siinä ollutkaan mitään kouraantuntuvaa, kaikkein vähimmin mitään
+ihanuutta, olipahan tuossa vain oikea manalainen Tuonen uni, joka
+kannen auettua heti valtaa Psyken ja sankkana sikiusvana soluu kautta
+kaikkien hänen jäsentensä. Hän lyykähtää kulkiessaan itse polulle ja
+jää unen valtaan. Ja siinä hän virui hervotonna kuin mikäkin nukkuva
+ruumis.
+
+
+
+
+SEITSEMÄS LUKU.
+
+
+Mutta Kupido, jonka arpi jo oli mennyt umpeen ja joka oli toipumaan
+päin eikä kestänyt Psykensä pitkällistä poissaoloa, laskeutui ulos sen
+huoneen korkeasta ikkunasta, missä häntä säilytettiin, ja lentäen
+siivin, joita joltinenkin lepo oli virkistänyt, hän nopeasti riensi
+Psykensä luo, pyyhki huolellisesti pois unen ja kätki sen jälleen
+entiseen paikkaansa rasiaan. Sitten hän herätti Psyken viattomalla
+nuolenpistolla ja virkkoi: "katso, jälleen olit, poloinen, joutua
+turmioon samaisen uteliaisuutesi johdosta. Suorita sinä vain ensin
+ripeästi se tehtävä, minkä äidiltäni olet saanut; muusta tahdon minä
+sillävälin kyllä pitää huolta". Tämän sanottuaan kepeäjalkainen
+rakastaja painautui siipiensä varaan, Psyke taas kantoi heti Venukselle
+Proserpinan lahjan. Sillävälin Kupido, ylenmääräisen rakkautensa
+kalvamana ja muoto mustana, pelästyy äitinsä äkillistä malttia; hän
+turvautuu tavallisiin juoniinsa, tunkeutuu nopein siivin taivaan
+navalle, rukoilee suurta Jupiteria ja esittää asiansa. Silloin Jupiter
+nipistää Kupidoa poskeen, nostaa hänen kätensä suulleen, suutelee sitä
+ja virkkaa näin: "vaikka sinä, herra poikani, et koskaan minua kohtaan
+osoita jumalten yksimielisen päätöksen kautta minulle myönnettyä
+kunnioitusta, vaan alituisilla pistoillasi haavoitat ja tavantakaisilla
+maallisen himon puuskilla tahraat tätä rintaani, joka luonnonvoimien
+lakeja ja tähtien liikkeitä ohjaa, sekä vastoin lakeja vieläpä itse
+Juliuksen lakia [tarkoitetaan keisari Augustuksen siveellisyyslakeja],
+ynnä yleistä kuria, olet häpeällisillä aviorikoksilla arvoani ja
+mainettani loukannut, likaisesti muuntelemalla ylevää muotoani milloin
+käärmeeksi, milloin tuleksi, pedoksi, linnuksi, haraksi [Viitataan
+niihin satuihin, joiden mukaan Zeus (Jupiter), lähestyessään
+rakastettujaan, muutti itsensä milloin minkäkin eläimen tai esineen
+muotoiseksi.] -- niin kuitenkin, muistellen omaa kohtuullisuuttani ja
+että sinä olet ylennyt aivan näitten hyppysteni välissä, tahdon
+toimittaa kaikki, kunhan vain itse ymmärrät varoa kilpailijoitasi ja
+jos nyt maan päällä joku tyttö kauneutensa kautta herättää huomiota,
+tulee sinun toimittaa hänet minulle, siten vuorostasi palkiten tätä
+hyvää työtäni".
+
+Näin sanottuaan hän käskee Merkuriusta hetimmiten kutsumaan kaikki
+jumalat kokoukseen ja kuuluttamaan kymmenentuhannen sestertsiuksen
+sakon sille, joka jäisi pois taivahisten kokouksesta. Kun sakon pelko
+kohta täytti taivaallisen neuvoshuoneen, julistaa ylhäisellä istuimella
+istuen korkea Jupiter tämän: "Runotarten nimikirjaan merkityt jumalat,
+te tiedätte kaikki kyllä, että olen tätä nuorukaista omin käsin
+kasvatellut ja että olen arvellut hänen ensi nuoruutensa hehkuvaa intoa
+olevan jonkunlaisilla suitsilla hillittävä. Kyllin ovat häntä huonoon
+huutoon saattaneet jokapäiväiset juorut aviorikoksista ja kaikesta
+turmeluksesta. Poistettava on jokainen tilaisuus siihen, ja nuorekas
+himokkuus aviokahleilla kytkettävä. Hän on valinnut ja ottanut tytön
+vaimokseen: pitäköön ja omistakoon hänet, Psykeä syleillen nauttikoon
+hän alati rakkaudestaan".
+
+Ja kääntäen kasvonsa Venuksen puoleen hän lausuu: "älä sinäkään,
+tyttäreni, ollenkaan sure äläkä pelkää suuren sukusi ja kuolevaisen
+kanssa solmitun avioliiton puolesta. Kyllä minä teen naimiskaupan
+tasavertaiseksi ja lailliseksi ja kansallisoikeuden mukaiseksi". Ja
+kohta hän antaa käskyn, että Merkurius tempaisi ja toisi Psyken
+taivaaseen, jonka jälkeen hän tälle ojentaa ambrosiamaljan ja lausuu:
+"Ota tästä, Psyke, ja ollos kuolematon, älköönkä koskaan sylistäsi
+luopuko Kupido, vaan ikuinen olkoon teidän avioliittonne".
+
+Eikä aikaakaan, kun tarjotaan ylellinen hääateria. Ylimmällä lavitsalla
+lepäsi ylkä. Psyke sylissään. Niin myös Junonsa kanssa Jupiter ja
+sitten järjestänsä kaikki jumalat. Siinä tarjosi Jupiterille
+nektarimaljaa, joka jumalten viininä on, hänen oma juomanlaskijansa,
+maalaispoika Ganymedes, mutta muille Bakkus; Vulkanus keitti ruuat,
+Vuodenajat verhosivat ruusuilla ja muilla kukilla kaikki purppuraan,
+Sulottaret sirottivat palsamia, Apollo lauloi kitaran säestyksellä,
+Runottaret helkyttivät sulosointuisesti ja viehkeä Venus tanssi ihanan
+sävelen tahdin mukaan. Ja näytös oli niin järjestetty, että Runottaret
+lauloivat kuorossa sekä soittivat huilua, Satyrus taas ja pikku Pan
+poikanen pilliä puhalsivat. Siten Psyke asianmukaisesti joutui Kupidon
+omaksi, ja ajallansa heille syntyi tytär, jota Nautinnoksi nimitämme.
+
+
+
+*** END OF THE PROJECT GUTENBERG EBOOK AMOR JA PSYKE ***
+
+
+    
+
+Updated editions will replace the previous one—the old editions will
+be renamed.
+
+Creating the works from print editions not protected by U.S. copyright
+law means that no one owns a United States copyright in these works,
+so the Foundation (and you!) can copy and distribute it in the United
+States without permission and without paying copyright
+royalties. Special rules, set forth in the General Terms of Use part
+of this license, apply to copying and distributing Project
+Gutenberg™ electronic works to protect the PROJECT GUTENBERG™
+concept and trademark. Project Gutenberg is a registered trademark,
+and may not be used if you charge for an eBook, except by following
+the terms of the trademark license, including paying royalties for use
+of the Project Gutenberg trademark. If you do not charge anything for
+copies of this eBook, complying with the trademark license is very
+easy. You may use this eBook for nearly any purpose such as creation
+of derivative works, reports, performances and research. Project
+Gutenberg eBooks may be modified and printed and given away—you may
+do practically ANYTHING in the United States with eBooks not protected
+by U.S. copyright law. Redistribution is subject to the trademark
+license, especially commercial redistribution.
+
+
+START: FULL LICENSE
+
+THE FULL PROJECT GUTENBERG LICENSE
+
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+www.gutenberg.org/license.
+
+Section 1. General Terms of Use and Redistributing Project Gutenberg™
+electronic works
+
+1.A. By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound
+by the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B. “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this
+agreement and help preserve free future access to Project Gutenberg™
+electronic works. See paragraph 1.E below.
+
+1.C. The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is unprotected by copyright law in the
+United States and you are located in the United States, we do not
+claim a right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting
+free access to electronic works by freely sharing Project Gutenberg™
+works in compliance with the terms of this agreement for keeping the
+Project Gutenberg™ name associated with the work. You can easily
+comply with the terms of this agreement by keeping this work in the
+same format with its attached full Project Gutenberg™ License when
+you share it without charge with others.
+
+1.D. The copyright laws of the place where you are located also govern
+what you can do with this work. Copyright laws in most countries are
+in a constant state of change. If you are outside the United States,
+check the laws of your country in addition to the terms of this
+agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work. The Foundation makes no
+representations concerning the copyright status of any work in any
+country other than the United States.
+
+1.E. Unless you have removed all references to Project Gutenberg:
+
+1.E.1. The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:
+
+    This eBook is for the use of anyone anywhere in the United States and most
+    other parts of the world at no cost and with almost no restrictions
+    whatsoever. You may copy it, give it away or re-use it under the terms
+    of the Project Gutenberg License included with this eBook or online
+    at www.gutenberg.org. If you
+    are not located in the United States, you will have to check the laws
+    of the country where you are located before using this eBook.
+  
+1.E.2. If an individual Project Gutenberg™ electronic work is
+derived from texts not protected by U.S. copyright law (does not
+contain a notice indicating that it is posted with permission of the
+copyright holder), the work can be copied and distributed to anyone in
+the United States without paying any fees or charges. If you are
+redistributing or providing access to a work with the phrase “Project
+Gutenberg” associated with or appearing on the work, you must comply
+either with the requirements of paragraphs 1.E.1 through 1.E.7 or
+obtain permission for the use of the work and the Project Gutenberg™
+trademark as set forth in paragraphs 1.E.8 or 1.E.9.
+
+1.E.3. If an individual Project Gutenberg™ electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any
+additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works
+posted with the permission of the copyright holder found at the
+beginning of this work.
+
+1.E.4. Do not unlink or detach or remove the full Project Gutenberg™
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg™.
+
+1.E.5. Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.
+
+1.E.6. You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format
+other than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ website
+(www.gutenberg.org), you must, at no additional cost, fee or expense
+to the user, provide a copy, a means of exporting a copy, or a means
+of obtaining a copy upon request, of the work in its original “Plain
+Vanilla ASCII” or other form. Any alternate format must include the
+full Project Gutenberg™ License as specified in paragraph 1.E.1.
+
+1.E.7. Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8. You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works
+provided that:
+
+    • You pay a royalty fee of 20% of the gross profits you derive from
+        the use of Project Gutenberg™ works calculated using the method
+        you already use to calculate your applicable taxes. The fee is owed
+        to the owner of the Project Gutenberg™ trademark, but he has
+        agreed to donate royalties under this paragraph to the Project
+        Gutenberg Literary Archive Foundation. Royalty payments must be paid
+        within 60 days following each date on which you prepare (or are
+        legally required to prepare) your periodic tax returns. Royalty
+        payments should be clearly marked as such and sent to the Project
+        Gutenberg Literary Archive Foundation at the address specified in
+        Section 4, “Information about donations to the Project Gutenberg
+        Literary Archive Foundation.”
+    
+    • You provide a full refund of any money paid by a user who notifies
+        you in writing (or by e-mail) within 30 days of receipt that s/he
+        does not agree to the terms of the full Project Gutenberg™
+        License. You must require such a user to return or destroy all
+        copies of the works possessed in a physical medium and discontinue
+        all use of and all access to other copies of Project Gutenberg™
+        works.
+    
+    • You provide, in accordance with paragraph 1.F.3, a full refund of
+        any money paid for a work or a replacement copy, if a defect in the
+        electronic work is discovered and reported to you within 90 days of
+        receipt of the work.
+    
+    • You comply with all other terms of this agreement for free
+        distribution of Project Gutenberg™ works.
+    
+
+1.E.9. If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from the Project Gutenberg Literary Archive Foundation, the manager of
+the Project Gutenberg™ trademark. Contact the Foundation as set
+forth in Section 3 below.
+
+1.F.
+
+1.F.1. Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+works not protected by U.S. copyright law in creating the Project
+Gutenberg™ collection. Despite these efforts, Project Gutenberg™
+electronic works, and the medium on which they may be stored, may
+contain “Defects,” such as, but not limited to, incomplete, inaccurate
+or corrupt data, transcription errors, a copyright or other
+intellectual property infringement, a defective or damaged disk or
+other medium, a computer virus, or computer codes that damage or
+cannot be read by your equipment.
+
+1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the “Right
+of Replacement or Refund” described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg™ trademark, and any other party distributing a Project
+Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.
+
+1.F.4. Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you ‘AS-IS’, WITH NO
+OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5. Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.
+
+1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in
+accordance with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.
+
+Section 2. Information about the Mission of Project Gutenberg™
+
+Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need are critical to reaching Project Gutenberg™’s
+goals and ensuring that the Project Gutenberg™ collection will
+remain freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future
+generations. To learn more about the Project Gutenberg Literary
+Archive Foundation and how your efforts and donations can help, see
+Sections 3 and 4 and the Foundation information page at www.gutenberg.org.
+
+Section 3. Information about the Project Gutenberg Literary Archive Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non-profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation’s EIN or federal tax identification
+number is 64-6221541. Contributions to the Project Gutenberg Literary
+Archive Foundation are tax deductible to the full extent permitted by
+U.S. federal laws and your state’s laws.
+
+The Foundation’s business office is located at 809 North 1500 West,
+Salt Lake City, UT 84116, (801) 596-1887. Email contact links and up
+to date contact information can be found at the Foundation’s website
+and official page at www.gutenberg.org/contact
+
+Section 4. Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg™ depends upon and cannot survive without widespread
+public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine-readable form accessible by the widest
+array of equipment including outdated equipment. Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular state
+visit www.gutenberg.org/donate.
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: www.gutenberg.org/donate.
+
+Section 5. General Information About Project Gutenberg™ electronic works
+
+Professor Michael S. Hart was the originator of the Project
+Gutenberg™ concept of a library of electronic works that could be
+freely shared with anyone. For forty years, he produced and
+distributed Project Gutenberg™ eBooks with only a loose network of
+volunteer support.
+
+Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as not protected by copyright in
+the U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.
+
+Most people start at our website which has the main PG search
+facility: www.gutenberg.org.
+
+This website includes information about Project Gutenberg™,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+
