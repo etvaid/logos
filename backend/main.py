@@ -625,6 +625,166 @@ async def calculate_ltqi(
 # MAIN
 # =============================================================================
 
+
+
+# =============================================================================
+# AUTHORSHIP ATTRIBUTION ENDPOINTS
+# =============================================================================
+
+@app.get("/api/authors")
+async def list_authors():
+    """List all ancient author profiles for attribution."""
+    if not HAS_DB or not os.environ.get("DATABASE_URL"):
+        return {"error": "Database not configured", "authors": []}
+    
+    try:
+        conn = psycopg2.connect(os.environ["DATABASE_URL"], cursor_factory=RealDictCursor)
+        cur = conn.cursor()
+        cur.execute("""
+            SELECT author_name, period, genre, n_texts, total_words
+            FROM author_profiles 
+            ORDER BY total_words DESC
+        """)
+        rows = cur.fetchall()
+        cur.close()
+        conn.close()
+        return {
+            "count": len(rows),
+            "authors": [dict(r) for r in rows]
+        }
+    except Exception as e:
+        return {"error": str(e), "authors": []}
+
+
+@app.get("/api/author/{name}")
+async def get_author(name: str):
+    """Get specific author profile."""
+    if not HAS_DB or not os.environ.get("DATABASE_URL"):
+        raise HTTPException(status_code=503, detail="Database not configured")
+    
+    try:
+        conn = psycopg2.connect(os.environ["DATABASE_URL"], cursor_factory=RealDictCursor)
+        cur = conn.cursor()
+        cur.execute("""
+            SELECT * FROM author_profiles 
+            WHERE LOWER(author_name) = %s OR author_name ILIKE %s
+        """, (name.lower(), f"%{name}%"))
+        row = cur.fetchone()
+        cur.close()
+        conn.close()
+        
+        if not row:
+            raise HTTPException(status_code=404, detail=f"Author '{name}' not found")
+        
+        return dict(row)
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+class AttributionRequest(BaseModel):
+    text: str
+    top_k: int = 5
+
+
+@app.post("/api/attribute")
+async def attribute_text_endpoint(request: AttributionRequest):
+    """
+    Attribute unknown text to most likely ancient author.
+    
+    Returns top_k candidates with confidence scores.
+    """
+    if not HAS_DB or not os.environ.get("DATABASE_URL"):
+        raise HTTPException(status_code=503, detail="Database not configured")
+    
+    if len(request.text.split()) < 50:
+        raise HTTPException(status_code=400, detail="Text too short. Provide at least 50 words.")
+    
+    try:
+        import numpy as np
+        
+        conn = psycopg2.connect(os.environ["DATABASE_URL"], cursor_factory=RealDictCursor)
+        cur = conn.cursor()
+        cur.execute("SELECT author_name, period, genre, n_texts, style_vector FROM author_profiles")
+        rows = cur.fetchall()
+        cur.close()
+        conn.close()
+        
+        if not rows:
+            raise HTTPException(status_code=503, detail="No author profiles in database")
+        
+        # Extract style from unknown text (simplified)
+        text = request.text.lower()
+        words = text.split()
+        word_count = len(words)
+        
+        # Basic style extraction
+        unknown_dims = {
+            'lexical_complexity': sum(len(w) for w in words) / word_count / 8,
+            'sentence_length': word_count / max(1, text.count('.') + text.count('!') + text.count('?')) / 50,
+        }
+        
+        # Get dim names from first profile
+        first_dims = rows[0]['style_vector'] if rows[0]['style_vector'] else {}
+        dim_names = list(first_dims.keys()) if first_dims else ['lexical_complexity', 'sentence_length']
+        
+        unknown_vec = np.array([unknown_dims.get(d, 0.5) for d in dim_names])
+        
+        # Compare to each author
+        results = []
+        for row in rows:
+            author_dims = row['style_vector'] if row['style_vector'] else {}
+            author_vec = np.array([author_dims.get(d, 0.5) for d in dim_names])
+            
+            # Cosine similarity
+            norm_u = np.linalg.norm(unknown_vec)
+            norm_a = np.linalg.norm(author_vec)
+            if norm_u > 0 and norm_a > 0:
+                cosine = float(np.dot(unknown_vec, author_vec) / (norm_u * norm_a))
+            else:
+                cosine = 0.0
+            
+            # Burrows' Delta
+            delta = float(np.mean(np.abs(unknown_vec - author_vec)))
+            
+            # Combined score
+            combined = cosine * 0.6 + (1 - delta) * 0.4
+            
+            results.append({
+                'author': row['author_name'],
+                'confidence': combined,
+                'cosine_similarity': cosine,
+                'burrows_delta': delta,
+                'period': row['period'],
+                'genre': row['genre'],
+                'corpus_texts': row['n_texts']
+            })
+        
+        # Sort and return top_k
+        results.sort(key=lambda x: x['confidence'], reverse=True)
+        top_results = results[:request.top_k]
+        
+        # Add rank
+        for i, r in enumerate(top_results):
+            r['rank'] = i + 1
+            r['confidence'] = round(r['confidence'], 4)
+            r['cosine_similarity'] = round(r['cosine_similarity'], 4)
+            r['burrows_delta'] = round(r['burrows_delta'], 4)
+        
+        return {
+            'word_count': word_count,
+            'top_candidates': top_results,
+            'interpretation': f"Most likely: {top_results[0]['author']}" if top_results else "Unknown"
+        }
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8003)
