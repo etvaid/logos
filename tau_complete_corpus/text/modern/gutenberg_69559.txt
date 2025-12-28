@@ -1,0 +1,2792 @@
+﻿The Project Gutenberg eBook of Crito: Een dialoog van Plato
+    
+This ebook is for the use of anyone anywhere in the United States and
+most other parts of the world at no cost and with almost no restrictions
+whatsoever. You may copy it, give it away or re-use it under the terms
+of the Project Gutenberg License included with this ebook or online
+at www.gutenberg.org. If you are not located in the United States,
+you will have to check the laws of the country where you are located
+before using this eBook.
+
+Title: Crito: Een dialoog van Plato
+
+Author: Plato
+
+Translator: Michiel Jan Noordewier
+
+Release date: December 16, 2022 [eBook #69559]
+                Most recently updated: October 19, 2024
+
+Language: Dutch
+
+Original publication: Netherlands: J. B. Wolters, 1846
+
+Credits: Wouter Franssen and the Online Distributed Proofreading Team at https://www.pgdp.net (This book was produced from scanned images of public domain material from the Google Books project.)
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK CRITO: EEN DIALOOG VAN PLATO ***
+
+                                CRITO.
+
+                        EEN DIALOOG VAN PLATO.
+
+                        VERTAALD EN OPGEHELDERD
+
+                                 DOOR
+
+                        Dr. =M. J. NOORDEWIER=,
+         _Rector van ’t Plaatselijk Gymnasium te Winschoten_.
+
+                             [Illustratie]
+
+                           TE GRONINGEN, BIJ
+                            J. B. WOLTERS.
+                                 1846.
+
+
+
+
+                                         _Gedrukt bij P. S. Barghoorn._
+
+
+
+
+                               VOORREDE.
+
+                             [Illustratie]
+
+
+_Met den hartelijksten dank aan die velen, die door hunne inteekening
+ons doel wel hebben willen bevorderen, bieden wij hun en onze verdere
+landgenooten Plato’s boekje aan._
+
+_Wat wij ter inleiding of opheldering er bijvoegden, ontleenden wij zoo
+veel mogelijk aan de Ouden, en meestal woordelijk. Bovendien hebben wij
+natuurlijk gebruik gemaakt van ’t geen anderen ons aanboden._
+
+_Mogt onze bewerking de goedkeuring van bevoegde beoordeelaren
+verwerven, dan hopen wij eveneens den Phaedo, den Protagoras en nog een
+paar stukken van Plato te doen volgen._
+
+                                                            N.
+
+                             [Illustratie]
+
+
+
+
+                              INLEIDING.
+
+                             [Illustratie]
+
+
+De inval der aziatische vreemdelingen in Griekenland was teruggeslagen
+niet alleen, maar de perzische koning ook tot een’ schandelijken
+vrede genoodzaakt, en wel voornamelijk door atheensche veerkracht en
+heldenmoed. Zulke tijden van dreigend gevaar zijn het, die helden
+scheppen en alle geniën doen ontwaken: dan, vooral wanneer een bange
+strijd de zege heeft aangebragt, dan klopt de boezem van een hoog
+gevoel, en er ontstaan meesterstukken, die latere, kalmere, maar ook
+verslapte tijden bewonderen, maar niet meer evenaren. Zoo was te
+Athene door Aeschylus, Sophocles en Euripides het treurspel,--door
+Cratinus, Eupolis en Aristophanes het blijspel geschapen, ontwikkeld,
+volmaakt,--door andere meesters andere schoone kunstgewrochten
+daargesteld.
+
+Op de scheppingen der fantasie volgen de ontwikkelingen des verstands:
+Herodotus en Thucydides, Plato en Xenophon, Lysias en Isocrates
+schiepen het welligt nooit geëvenaarde attische proza, weldra,
+buiten de poëzij, de eenige heerschende taal. Door deze en andere
+omstandigheden was en bleef Athene het middelpunt van grieksche
+beschaving en grieksche wijsheid.
+
+                   *       *       *       *       *
+
+Der Grieken nadenken was eerst gerigt geweest op de natuur, en
+hunne wijsbegeerte was bloot natuurkunde. Later tot het bewustzijn
+geraakt, dat de menschelijke rede iets anders is en hooger staat dan
+natuurkracht, hadden zij nagedacht over de zedewet; die zij, bevangen,
+gelijk ze waren, door hun nadenken over de natuur, nog van deze niet
+konden scheiden. Maar nieuwe denkers traden op, en ontwikkelden de
+zedeleer in scherp contrast tegenover de leer der natuur, totdat het
+eeuwige streven van den menschelijken geest, het streven naar éénheid
+in weten en denken, eene bemiddeling tusschen beide zienswijzen
+vond, een band tusschen natuur- en zedeleer: de zamenstellingen en
+ontledingen des verstands.
+
+De man, die, het meest van allen, tijdgenoot en nakomeling dien band
+deed beseffen, die eischte, dat, wie iets wist of deed, van zijn weten
+of doen volledige rekenschap kon geven; die verstandige denker, die zoo
+vele anderen tot denkers vormde,--die man was Socrates.
+
+Socrates was geboren in 468 vóór onze jaartelling. Sophroniscus, zijn
+vader, was beeldhouwer; Phaenarete, zijne moeder, vroedvrouw. Zijne
+jeugd bragt hij door in de uitoefening van zijns vaders beroep: nog
+vijf eeuwen later zag men te Athene door hem gebeitelde gesluijerde
+gratiën.
+
+Hoewel hij geen opzettelijk onderwijs in de wijsbegeerte ontving,
+moesten evenwel mannen, als welke wij in den aanvang van ons opstel
+vermeldden, een’ magtigen invloed uitoefenen op een denkend hoofd
+gelijk Socrates, die de tijdgenoot was van de meesten hunner. Bovendien
+maakte hij zich de rijke gelegenheid te nutte, die Athene voor allerlei
+ontwikkeling aanbood.
+
+In ’t bedrijvige leven was hij een voorbeeld van standvastige
+vaderlandsliefde en een onverschrokken handhaver van waarheid en regt.
+Als burger zijner vaderstad woonde hij drie krijgstogten bij. Eerst ter
+zee tegen Potidaea: bij die gelegenheid redde hij Alcibiades met zijn
+schild, verwierf den prijs der dapperheid, maar stond dien vrijwillig
+af aan Alcibiades, die het zelf verhaalt in Plato’s Gastmaal. „Maar
+meer was het de moeite waard,” zoo gaat hij voort, „Socrates te zien,
+toen bij Delium (424, in Boeotië) ons leger vlugtende aftrok. Bij geval
+was ik er te paard tegenwoordig, en hij in zware rusting te voet.
+Toen de menigte reeds verstrooid was, trok Socrates, met den veldheer
+Laches, terug; ik tref hen aan en hen herkennende, spreek ik hun
+beiden moed in, en beloofde hen niet te zullen verlaten. Daar zag ik
+Socrates beter dan bij Potidaea; (ik was namelijk meer gerust, daar
+ik te paard zat;) vooreerst overtrof hij Laches verre in kalm beleid;
+verder trad hij trotsch daarheen, en zag rond naar vriend en vijand;
+’t was duidelijk voor ieder, ook van verre, dat, wie dezen man mogt
+aanvallen, eene geduchte tegenweer zou vinden. Daarom kwam hij zelf en
+de ander er behouden af”[1].
+
+Even eervol streed hij bij de nederlaag der Atheners bij Amphipolis.
+
+Behalve eenen feesttogt naar den Isthmus en de vermelde krijgstogten,
+verliet hij Athene niet, waaraan hij bijzonder gehecht was, vooral om
+de daar heerschende vrijheid van leven, die voor hem bijzondere waarde
+bezat. Uit zucht naar onafhankelijke vrijheid verkoos hij arm te zijn,
+en bemoeide hij zich niet met het staatsbestuur: onmogelijk kon hem ook
+de wufte onbestendigheid der atheensche volksregering behagen. Daarom
+bekleedde hij nooit eenige waardigheid, behalve dat hij eens lid van
+den raad werd. Bij toeval was toen de phyle of afdeeling Antiochis,
+waartoe Socrates behoorde, aan de beurt om ’t beleid der zaken te
+voeren. Juist had het volk besloten om acht opperbevelhebbers,
+die, door storm verhinderd, de lijken van de, in den zeeslag bij
+de arginusische eilanden, gesneuvelden de laatste eer niet hadden
+kunnen bewijzen, allen te gelijk te veroordeelen, geheel onwettig,
+gelijk ieder later inzag. Toen was Socrates onder de gezagvoerders de
+eenige, die zich tegen dien gruwel verzette; en hoewel de volksmenners
+gereed waren hem zelven aan te klagen, en ’t volk luide den dood der
+ongelukkigen eischte,--dacht het den standvastigen man beter, om,
+getrouw aan wet en regt, het gevaar te trotseren, dan te deelen in ’t
+onregt, uit vrees voor kerker of dood.--Voor ’t overige bleek bij deze
+gelegenheid zijne weinige geschiktheid voor de behandeling der openbare
+zaken; toen hij de stemmen moest opnemen werd hij uitgelagchen. Dit
+gebeurde onder de democratie.
+
+Toen deze voor de regering van weinigen had moeten wijken, ontboden de
+dertig tirannen Socrates met vier anderen, en bevalen hun, een’ zekeren
+Leon, een zeer rijk man en atheensch burger, maar om de tirannen
+uitgeweken naar Salamis, van daar te halen, om hem te Athene ter dood
+te brengen; gelijk zij dan ook vele anderen dergelijke geweldenarijen
+bevalen, om velen in hunne schuld te doen deelen. Toen bewees Socrates
+weder, dat hij niet in ’t minste den dood vreesde, maar het plegen van
+onregt boven alles. Op hem vermogt het schrikbewind, hoe gewelddadig
+ook, en buitendien op hem verbitterd, niet genoeg, om hem tot een’
+misdadigen stap te verleiden. De vier gingen naar Salamis en bragten
+Leon; en Socrates ging naar huis. Denkelijk zou ook hij vermoord zijn,
+ware het schrikbewind niet spoedig gevallen.
+
+Zoo was het geheele leven van Socrates een bewijs van liefde voor zijn
+vaderland en voor ’t regt. Dat hij nu niets deed, om invloed te krijgen
+op het bestuur, daarvan ligt de grond in zijne overtuiging, dat het
+zijne roeping was: het opkomende geslacht te vormen en op te voeden.
+„Wanneer,” zeide hij, „gelooft gij, dat ik meer deel neem aan de
+staatszaken, indien ik alleen er deel aan neem, of wanneer ik zorg zoo
+velen mogelijk geschikt te maken tot derzelver behandeling?”
+
+Waarschijnlijk had Socrates eerst op veertigjarigen ouderdom een
+meer duidelijk inzigt in deze zijne roeping gekregen: hij werd er
+allengskens meer van overtuigd, daar hij zag, dat zijn omgang de jonge
+menschen wezenlijk beter maakte. Zonder zich aan iemand op te dringen,
+veroorloofde hij ieder, ’t zij jong of oud, in zijn’ omgang te deelen.
+
+Zoo ontstond ’t geen anderen zijne school noemden, namelijk de gewoonte
+van velen om zoo veel mogelijk met hem te verkeeren en hem te hooren.
+Ook moest zijn geheele wezen wel de aandacht trekken: zijne gestalte
+was verre van schoon; Alcibiades vergelijkt hem, om zijnen ingebogen’
+wipneus, uitpuilende oogen en dikken buik, met Silenus. Zijne kleeding
+was, gelijk hij zelf, arm en gering; voeg hierbij veel ongewoons in
+zijne manieren,--dikwijls zag hij rond of bleef hij eensklaps staan.
+Maar hij deed meer dan bloot de aandacht wekken: zijn omgang boeide
+velen, die hij in moeijelijke omstandigheden met raad en daad wist bij
+te staan. En vooral lag er in ’t geen hij zeide, eene onweerstaanbare
+kracht. Zijn onderhoud liep veelal over huisselijk en openbaar leven,
+waarbij hij ieder tot nadenken bragt, maar voornamelijk iederen
+valschen waan van wijsheid, van wien dan ook, in zijne naaktheid
+onverbiddelijk ten toon stelde. Wat gemeen was en onrein, dat vervolgde
+hij met bijtenden, soms ruwen spot.--Zijne jongere vrienden bootsten
+gaarne de luimige scherts na, met welke hij zelf zich het voorkomen
+gaf van gaarne beter onderrigt te worden door hem, dien hij meende te
+moeten beschamen.
+
+In de hoogste mate bezat hij het vermogen om zich geheel naar de
+zienswijze en de begrippen van anderen te schikken, en met verzwijgen
+van eigene zienswijze, dikwijls met eene enkele aanwijzing, ieder
+slechts datgene te zeggen, wat hij begrijpen kon, en alleen zóó als hij
+het begrijpen kon[2].
+
+Daar hij zelf niets schreef, en in zijn spreken steeds scherts en
+ernst vereenigde, zonder zijne meening voluit te zeggen,--kon het bijna
+niet anders, of hij moest wel scheef en eenzijdig worden beoordeeld.
+
+Daarbij deelde hij in de meening van vroegere denkers, „dat één hoogste
+wezen het al bestuurt,” hoewel hij in leer en leven de volksgoden
+eerbiedigde. Maar vele ruwe denkbeelden over ’t wezen der godheid
+moest hij wel bestrijden: verhinderen kon hij niet, dat er onder zijne
+leerlingen waren, die de volksgodsdienst verachtten. Zoo ontstond er
+zeer natuurlijk eene verdenking tegen Socrates eerbied jegens de goden.
+
+Daarbij kwam, dat hij op eene eenigzins raadselachtige wijze sprak
+van eene soort van goddelijke ingeving, die men niet begreep of
+verkeerd uitleide. Over dezen bekenden Genius van Socrates is veel
+geschreven: wij houden het, met Ritter, voor een uitvloeisel van
+een zeer prikkelbaar gevoel in hem, eene soort van voorgevoel, een
+bijgeloof, dat hij deels van zijn volk had overgeërfd, deels uit
+eigene inwendige ervaring had opgevat. Socrates meende namelijk, dat
+de goden met hunnen bijstand de gebrekkige krachten van den brave te
+hulpe kwamen; daarbij lette hij naauwkeurig op zijne gewaarwordingen,
+van welke vele hem niet anders dan door bovennatuurlijke ingeving
+verklaarbaar waren. Aan ieder, dacht hij, die ’t wezenlijk wèl meende,
+gaven de goden dergelijke teekenen, hoewel niet aan ieder op dezelfde
+wijze.--Voorzeker zal de lezer, die zich zijner zwakheid bewust
+is, maar ook zijne kracht ten goede niet miskent „met den bijstand
+Gods,”--die zal Socrates gevoelen eerbiedigen.
+
+Zoo begrijpen wij nog beter, hoe de edele man zoo geheel en onverdeeld
+kon leven voor ’t geen hij als zijne roeping beschouwde: het _verstand_
+zijner tijdgenooten, vooral der jongeren, te vestigen op des menschen
+wezenlijke belangen, door hen tot nadenken op te wekken.
+
+Socrates tijdgenooten begrepen zijn daemonium niet.
+
+Hierbij kwam, dat er in zijn’ tijd een strijd was ontstaan tusschen
+het oude geloof aan der goden geduchte magt, dat vroeger door schrik
+en vreeze het volk in bedwang had gehouden, dat, zonder betwijfeld te
+worden, had geheerscht in de dagen der heldenkracht;--en tusschen eene
+nieuwe wijze van beschouwen, door wijsgeerig natuuronderzoek en door
+den rusteloozen voortgang van des menschen geest geboren: der vaderen
+goden waggelden op hunne troonen; de menschelijke deugd moest voortaan
+uit zedelijke overtuiging worden afgeleid, op wijsgeerige ontwikkeling
+van den geest gebouwd: zóó zou verstandige, zedelijke kracht het
+goede handhaven. Behalve den onverpoosden tred des tijds, had de
+ontzenuwing van het nationaal karakter en de zedelijke verwoestingen
+van een’ langdurigen burgeroorlog dien strijd aangewakkerd. Er waren
+vele welmeenende voorstanders van het oude, dat, verjaard, zijne kracht
+had verloren: Socrates gevoelde de onloochenbare behoefte aan de
+vergoeding van dat gemis, en de onmogelijkheid van de herlevendiging
+der denkbeelden van meer kinderlijke, vroegere dagen.
+
+Zijne overtuiging kostte hem het leven.
+
+Tot deze treurige ontknooping van het drama bragt ook deze
+omstandigheid het hare bij: twee mannen, die over Athene den meesten
+jammer hadden gebragt, Critias en Alcibiades, hadden gemeenzaam met
+Socrates geleefd. Na den terugkeer van de vorige orde der dingen,
+overdacht de geest de verledene rampen: om haren terugkeer te
+verhoeden, had men gaarne den bekrompen blik der dagen van ouds willen
+terugroepen.
+
+In het algemeen was daarenboven de openbare meening zeer ingenomen
+tegen de wijsgeeren. Behalve andere gronden, die ook wel in hunne
+personen kunnen gelegen hebben, zal er wel altijd bij de velen, die
+leven van den waan van ingebeelde waarde en verdienste, eene nu meer
+geheim gewordene verbittering blijven bestaan tegen de weinigen, die ze
+opschudden uit den dommel.
+
+Socrates _wekte_ zijne tijdgenooten: hij moest sterven.
+
+Meletos, een jong dichter, bragt (399 v. C.) tegen Socrates de
+beschuldiging in, dat hij in twee punten had misdaan: 1. door de goden
+van den staat niet aan te nemen en nieuwe daemonen in te voeren; 2.
+door de jongelingen te bederven.
+
+Anytos, een volksmenner, en Lycon, een redenaar, ondersteunden als
+medebeschuldigers de aanklagt, waarbij, volgens heerschend gebruik, de
+straf werd gevoegd, die de klager tegen ’t misdrijf meende te moeten
+eischen: hier _de dood_.
+
+Om de aangevoerde redenen scheen de aanklagt in ’t oog der volksregters
+niet van grond ontbloot.
+
+Daar treedt de aangeklaagde op.
+
+Beschuldigden plagten te Athene, door alle--ook lage en
+onkiesche--middelen, der regteren medelijden gaande te maken.
+
+Geheel anders Socrates: fier is zijne taal, diep vernederend voor
+aanklagers en regters; en toch wordt hij slechts met eene zeer geringe
+meerderheid schuldig verklaard. Daarop wordt hem, mede volgens
+atheensche gewoonte, gevraagd, welke straf hij meende verdiend te
+hebben.
+
+Zijn antwoord was zoo hooghartig, als ’t gevoel van onschuld maar immer
+kan ingeven.
+
+En tachtig van die regters, die zoo even zijne onschuld hadden
+verklaard, voegden zich vertoornd bij de meerderheid!--Welke
+regtspraak!
+
+„Het is,”--met deze woorden scheidde Socrates van zijne regters,--„het
+is tijd om heen te gaan, voor mij om te sterven, voor u om te leven; de
+God weet alleen, wat het beste is.”
+
+Socrates bleef nog dertig dagen in den kerker (Aant. 6). Dezen tijd
+bragt hij meest door in gesprekken met Crito en andere zijner vrienden.
+Crito bood aan, om hem buiten de gevangenis in veiligheid te brengen:
+hij wees dit aanbod van de hand. En toen de tijd daar was, dronk hij
+met onverschrokken gemoed den gifbeker en stierf, kalm, gelaten, helder
+van geest; en was „genezen, en gezond geworden in den hoogsten zin des
+woords, gezond voor eeuwig”[3].
+
+Crito was de oudste en een der rijkste vrienden van den veroordeelde.
+Drie dagen vóór de voltrekking van het vonnis had hij zich in de
+vroege morgenschemering naar den kerker begeven, om Socrates over te
+halen zich door de vlugt te redden. Plato heeft hun gesprek bij die
+gelegenheid vereeuwigd. Volgens zijne voorstelling ligt Socrates bij
+Crito’s binnentreden in een’ gerusten slaap. Crito is zwijgend naast
+hem gaan zitten, en bewondert de kalmte van zijnen slaap. Socrates
+ontwaakt, en vraagt zijn’ vriend, waarom hij zoo vroeg is gekomen.
+Crito zegt hem, wat hem met bewondering vervult, en berigt hem, dat
+hij hem de treurige tijding brengt van de op handen zijnde terugkomst
+van het heilige schip uit Delos; en dan zou hij moeten sterven. En
+daarom smeekt hij Socrates met de teederste liefde en den hartelijksten
+aandrang, om toch gebruik te maken van de gelegenheid om te ontvlugten:
+hij en zijne vrienden hadden daartoe alles voorbereid.
+
+Maar Socrates blijft zich zelven gelijk. Gedurende zijn gansche leven
+heeft hij alleen gevraagd naar pligt en regt--hij doet het ook nu.
+Bedaard luistert hij naar de redenen, door Crito aangevoerd; hij
+begint zijn antwoord met zijn’ vriend te herinneren, dat het in dezen
+bloot aankomt op de vraag, of zijne vlugt strookt met regt en pligt.
+Dan volgt er eene allerbelangrijkste uiteenzetting van de waarde der
+openbare meening, van de eenige gedragslijn, door den brave in het
+oog te houden; en vooral van de gehoorzaamheid, die ieder burger is
+verschuldigd aan de wetten van den staat.--Crito moet eindelijk zelf
+afkeuren, wat hij eerst heeft aangeraden.
+
+Let men op de inrigting en behandeling der zamenspraak, zegt een
+beroemd uitgever, dan blijkt ze een onberispelijk meesterstuk te
+zijn. Het _tooneel_ past uitnemend voor de zaak; de _handeling_
+loopt geregeld af; de _eenheid_ wordt nergens gestoord, zoodat ieder
+ten slotte ziet, dat des schrijvers _oogmerk_ is bereikt: 1. de
+ondergeschikte bedoeling, om door Socrates voorbeeld te bewijzen, dat
+de brave man altijd regtvaardig is en gehoorzaam aan de wet; en 2. de
+hoofdbedoeling, Socrates te verdedigen tegen de beschuldiging, dat hij
+de jeugd zou bederven. En beide heeft hij zoo innig verbonden, dat ze
+niet van elkander te scheiden zijn, en zonder dat de eenheid in ’t
+minste wordt benadeeld.--De _karakters_ zijn meesterlijk geteekend:
+Crito’s edele vriendschap roert evenzeer den lezer als de standvastige
+deugd van Socrates en zijn vrome eerbied voor ’s lands wetten. Beide
+spreken en handelen zoo, dat èn de weigering van Socrates, èn ’t
+verlangen van Crito u even edel schijnen. De _stijl_ is noch gezwollen,
+noch te alledaagsch, en zoo duidelijk, dat de dialoog voor ieder
+verstaanbaar is, en daardoor beantwoordt aan Plato’s doel, om door
+het grootere publiek begrepen te worden, en zoo zijn’ onvergetelijken
+leermeester te regtvaardigen.
+
+
+                               Voetnoten
+
+[Voetnoot 1: Volgens Diogenes van Laerte, redde hij hier ook Xenophon,
+die van het paard gevallen was. Zie voor het overige over de
+veldtogten, door Socrates bijgewoond, Casaubonus ad Athenaeum, lib. V,
+215 sq.]
+
+[Voetnoot 2: Veel beter, dan wij dat vermogen, is Socrates leerwijze
+geschilderd door Prof. P. Hofstede de Groot, in het Tijdschrift:
+„Waarheid in Liefde,” Jan. 1845, No. 1. Naar dat voortreffelijk stuk
+meenen wij den lezer ook te moeten verwijzen aangaande Socrates
+onvergetelijk sterven.]
+
+[Voetnoot 3: Woorden van Prof. de Groot in bovenaangehaalde
+Verhandeling.]
+
+                             [Illustratie]
+
+
+
+
+                                CRITO.
+
+                          DIALOOG VAN PLATO.
+
+                             [Illustratie]
+
+
+                   _Personen_: SOCRATES _en_ CRITO.
+
+                         _Tooneel: De kerker._
+
+
+                                  I.
+
+ (_Socrates ligt in een’ diepen slaap; Crito is binnengekomen, en zit
+ zwijgende hem te bewonderen; Socrates ontwaakt._)
+
+_Socrates._ Waarom zijt gij zoo vroeg gekomen, Crito? Of is ’t niet nog
+vroeg?
+
+_Crito._ Ja, wel zeker.
+
+_Socrates._ Hoe vroeg dan wel?
+
+_Crito._ ’t Is ’t eerste krieken.
+
+_Socrates._ ’t Verwondert mij, hoe ’t komt, dat de wachter der
+gevangenis u heeft willen binnenlaten[1].
+
+_Crito._ Hij is reeds aan mij gewend, Socrates! omdat ik dikwijls hier
+kom; en ik heb hem ook reeds wat goeds gedaan.
+
+_Socrates._ Komt gij zoo even eerst, of zijt gij reeds lang hier?
+
+_Crito._ Reeds vrij lang.
+
+_Socrates._ Wel, waarom hebt gij mij dan toch niet terstond gewekt,
+maar zijt gij zwijgend blijven zitten?
+
+_Crito._ Ik kon ’t niet van mij verkrijgen uwe rust te storen,
+Socrates! Ik zou zelf niet gaarne in eene zoo smartelijke slapeloosheid
+en rouwe willen verkeeren[2]. Bovendien verwonder ik mij reeds lang,
+daar ik merk, dat gij zoo heerlijk slaapt. En opzettelijk heb ik u niet
+gewekt, opdat gij zoo zoet mogelijk zoudt sluimeren. Dikwijls heb ik u
+ook reeds vroeger in uw geheele leven gelukkig geprezen[3] om uwe denk-
+en handelwijze; maar verre weg het meeste in het tegenwoordig ongeluk,
+dat gij er zoo zacht en kalm onder zijt.
+
+_Socrates._ Het zou immers ongerijmd zijn, Crito! en buiten de wijs[4],
+dat iemand op mijne jaren verdrietig ware, omdat hij reeds moest
+sterven[5].
+
+_Crito._ Ook anderen, o, Socrates! treft op deze jaren een dergelijk
+lot; maar hun leeftijd bevrijdt hen niet van mismoedigheid over de
+omstandigheid, waarin zij verkeeren.
+
+_Socrates._ Dat is zoo. Maar--om op mijne vraag terug te komen, waarom
+zijt gij toch zoo vroeg gekomen?
+
+_Crito._ Om eene tijding te brengen, Socrates; eene treurige; niet voor
+u, gelijk mij blijkt, maar voor mij en uwe vrienden alle, treurig en
+hard; en die mij, dunkt me, het zwaarste van alle moet vallen.
+
+_Socrates._ Wat is dat dan voor eene tijding? Of is het vaartuig uit
+Delos[6] aangekomen, na welks terugkeer ik moet sterven?
+
+_Crito._ Nog is ’t wel niet aangekomen; maar het zal, denk ik, heden
+komen, naar ’t zeggen van sommigen, die van Sunium[7] gekomen zijn en
+het daar gelaten hebben. Uit die berigten blijkt het derhalve, dat het
+van daag zal komen; en dan moet gij morgen reeds, o, Socrates! uw leven
+eindigen.
+
+
+                                  II.
+
+_Socrates._ Nu dan, Crito! heil ons[8]! Indien het zoo den goden
+behaagt, dan zij het zoo. En toch geloof ik niet, dat het van daag zal
+komen.
+
+_Crito._ Waaruit gist gij dat?
+
+_Socrates._ Dat zal ik u zeggen. Daags na de aankomst van het schip,
+denk ik, moet ik sterven.
+
+_Crito._ Zoo zeggen althans die er over te beslissen hebben[9].
+
+_Socrates._ Toch geloof ik niet, dat het op den nu aanbrekenden dag zal
+komen, maar op den eerstvolgenden. Ik maak dat op uit een droomgezigt,
+dat ik zoo even[10] in dezen nacht gehad heb; gij schijnt wèl gedaan te
+hebben met mij niet te wekken.
+
+_Crito._ Wat was dat voor een’ droom?
+
+_Socrates._ Mij dacht, er naderde mij eene vrouw, schoon van gelaat
+en gestalte, in een hel-wit gewaad[11]; zij riep mij, en zeide:
+„overmorgen, o Socrates[12]! kunt gij welligt in het vruchtbare Phthia
+komen.”
+
+_Crito._ Wat vreemde droom, Socrates!
+
+_Socrates._ Maar ten minste toch duidelijk, dunkt mij, Crito!
+
+
+                                 III.
+
+_Crito._ Al te zeer, zoo ’t schijnt. Maar, o waarde Socrates! luister
+nu nog[13] naar mij, en laat u redden. Voor mij zal uw dood niet
+één, niet een enkel ongeluk zijn; maar, behalve het verlies van
+een’ zoo heerlijk vriend, als ik er geen’ ooit weer zal vinden[14],
+zal ik daarenboven bij velen, die u en mij niet nader kennen, den
+schijn hebben, dat ik, hoewel in staat om u te redden, indien ik
+geld had willen besteden, het had verzuimd. En toch, welke blaam zou
+wel schandelijker wezen, dan den naam te hebben het geld hooger te
+achten[15], dan zijne vrienden? Gelooven toch zal de groote hoop het
+niet, dat gij zelf niet van hier hebt willen gaan, schoon wij het
+ernstig verlangden.
+
+_Socrates._ Maar wat gaat ons, mijn beste Crito! zoo zeer de meening
+van den grooten hoop[16] aan? De verstandigsten toch, aan welke het
+meer der moeite waard is zich te storen, zullen oordeelen, dat het zoo
+is geschied, als het geschied is.
+
+_Crito._ Evenwel ziet gij, Socrates, dat men zich ook aan de meening
+van den grooten hoop moet storen. Uit de plaats hebbende omstandigheden
+zelve blijkt het, dat het in de magt is van den grooten hoop, om niet
+het geringste, maar bijna het ergste kwaad te doen, wanneer men bij hen
+in kwaden naam is gebragt.
+
+_Socrates._ Mogt toch, o Crito! de groote hoop in staat zijn, om het
+ergste kwaad[17] aan te doen, opdat ze aan den anderen kant ook in
+staat mogten zijn het meeste goed te doen; dan zou het heerlijk staan:
+nu kunnen ze geen van beide: noch verstandig, noch onverstandig kunnen
+ze maken; zij doen zoo als ’t valt.
+
+
+                                  IV.
+
+_Crito._ Dat moge nu wel zoo zijn; maar zeg mij dit eens, o Socrates!
+Gij zijt toch voor mij niet bekommerd en voor uwe andere vrienden,
+dat, wanneer gij hieruit komt, de Sycophanten[18] ons moeite zullen
+veroorzaken, omdat wij u heimelijk van hier verwijderd hadden;--en dat
+wij onvermijdelijk óf zelfs ons geheele vermogen, óf eene groote som
+gelds zullen verliezen, óf nog iets anders bovendien zullen ondergaan?
+Vreest gij toch iets van dien aard, laat dan die bezorgdheid varen. Het
+is immers billijk, dat wij voor uwe redding dit gevaar loopen, en, is
+’t noodig, nog grooter dan dit. Geloof mij dan, en doe niet anders, dan
+ik u aanraad.
+
+_Socrates._ En hierover ben ik bezorgd, Crito! en over vele andere
+dingen.
+
+_Crito._ Vrees daarvoor dan toch niet. Want het is niet veel geld,
+waarvoor sommigen u willen redden en van hier brengen. Daarenboven,
+ziet gij niet, hoe goedkoop die Sycophanten zijn, en dat er volstrekt
+niet veel geld voor hen behoeft besteed te worden? Eensdeels staat u
+mijn geld ten dienste, en dat is, geloof ik, genoegzaam; anderdeels,
+indien gij, uit bezorgdheid voor mij, van meening zijt, het mijne niet
+te moeten besteden, dan zijn de vreemdelingen[19] hier bereid, om de
+onkosten goed te maken. Eén enkele heeft hiertoe geld genoeg verschaft,
+Simmias van Thebe; gereed is ook Cebes en zeer vele anderen; daarom,
+zoo als ik zeg, geef[20], uit vreeze hiervoor, uwe redding niet op. Ook
+moet, ’t gene gij voor ’t gerigt gezegd hebt[21], geen bezwaar voor
+u zijn, dat gij, in geval gij weggingt, niet zoudt weten, wat met u
+zelven aan te vangen. Op velerlei plaatsen toch, en waar gij ook elders
+heen gaat, zal men u gaarne ontvangen.--Wanneer gij naar Thessalië[22]
+wilt gaan, ik heb daar gastvrienden, die u hoog zullen schatten en voor
+uwe veiligheid zorgen, zoodat u niemand in Thessalië leed aandoet.
+
+
+                                  V.
+
+Nog meer, Socrates! Niet eens regtvaardig schijnt mij toe, wat gij
+onderneemt, u zelven ten verderve over te geven, terwijl gij u kunt
+redden. En gij maakt er uw werk van, dat u iets overkome, wat uwe
+vijanden willen bewerken, en reeds bewerkt hebben om u ongelukkig te
+maken.--Daarenboven schijnt gij mij althans ook uwe eigene zonen[23]
+prijs te geven, welke gij, terwijl het in uwe magt staat hen te
+onderhouden en op te voeden, u haast te verlaten; en, voor zoo ver ’t
+van u afhangt, zal, wat het toeval aanbrengt, hun lot zijn. Overkomen
+zal hun waarschijnlijk, wat gewoonlijk der weezen lot[24] wordt. Of
+men moest toch geene kinderen verwekken, óf ten einde toe het leed
+mede dragen voor hun onderhoud en opvoeding. Maar gij schijnt mij het
+gemakkelijkste te kiezen. Nu moet wat een braaf en moedig man zou
+kiezen, de keuze zijn althans van iemand, die juist beweert de deugd
+zijn gansche leven door ter harte te hebben genomen.--Zoo ben ik én
+over u, én over ons, uwe vrienden, beschaamd en bezorgd, dat het den
+schijn zal hebben, als of de geheele zaak met u door zekere lafheid
+van onze zijde is voorgevallen; en de ingang van ’t geding voor ’t
+gerigt,--hoe gij zijt opgekomen[25], terwijl ’t u vrij stond niet te
+verschijnen; en het pleit zelf, zoo als ’t heeft plaats gehad; en dan
+juist deze uitslag, gelijk eene belagchelijke ontknooping van het stuk,
+dat het uit zekere lafheid en gebrek aan mannenmoed van onzen kant,
+zonder dat wij het merkten, zoo schijnt gekomen te zijn, daar wij u
+niet hebben gered, evenmin als gij u zelven[26], terwijl het mogelijk
+was en uitvoerbaar, indien wij slechts een weinigje waarde bezaten.
+Zie derhalve toe, o Socrates, dat dit niet, tegelijk met de schade ook
+tot schande worde voor u en voor ons; overleg dan, of liever, er is
+geen tijd meer om te overleggen; het besluit moet reeds genomen zijn.
+Er is slechts één te nemen: want in den nu volgenden nacht moet alles
+geschied zijn. Aarzelen wij nog, dan is ’t onmogelijk en ondoenlijk.
+Daarom, om alles bid ik u, Socrates! luister naar mij en doe niet
+anders.
+
+
+                                  VI.
+
+_Socrates._ Beste Crito! uw goedwillig ijveren is mij veel waard,
+indien het met de pligtmatigheid is overeen te brengen; zoo niet, dan
+is het, hoe grooter, ook des te bezwaarlijker[27]. Wij moeten derhalve
+zien, of wij dit moeten doen of niet. Niet alleen nu toch, maar altijd
+heb ik het zoo over mij, dat, van al wat mij aangaat, ik aan niets
+anders gehoor geef, dan aan het inzigt[28], ’t welk mij bij redenering
+het beste voorkomt. De inzigten dan, welke ik vroeger heb uitgedrukt,
+kan ik nu niet verbannen, nadat mij dit ongeval is overgekomen; maar
+zij schijnen mij ten naastebij gelijk; dezelfde inzigten[29] acht en
+vereer ik, als vroeger. Kunnen wij niets beter voor dezelve zeggen in
+den tegenwoordigen tijd, wees dan overtuigd, dat ik u volstrekt niet
+zal toegeven, zelfs dan niet, indien ons, als kinderen, vreesselijker
+schrikbeelden[30] dan nu door de magt van den grooten hoop worden
+voorgehouden, die boei en dood en verbeurdverklaring van goederen tegen
+ons loslaat. En hoe kunnen wij dit het doelmatigste nagaan?[31]
+
+Indien wij eerst diezelfde redenering weer opvatten, die gij te
+berde brengt, over de meeningen; of de bewering altijd geldig is, of
+niet[32]: dat men op sommige meeningen acht moet geven, op andere niet;
+en of, voordat ik sterven moest, dat wel geredeneerd was; maar het nu
+duidelijk blijkt, dat het zoo maar heen, om den schijn werd gezegd,
+maar inderdaad kinderachtige beuzelpraat was.
+
+Ik wensch dan, Crito! gemeenschappelijk met u na te gaan, of dat inzigt
+mij, in mijne tegenwoordige omstandigheden, eenigzins anders zal
+voorkomen, en of ’t hetzelfde is gebleven: dan zullen wij het laten
+varen, of dien overeenkomstig handelen.
+
+Telkens kwam, geloof ik, de redenering van hen, die meenden iets te
+zeggen, neer op ’t gene ik reeds zeide: dat van de meeningen, welke de
+menschen zich vormen, men sommige hoog moet schatten en andere niet.
+Schijnt u, bij de goden! dit beweerde, o Crito! gegrond? Gij zijt toch,
+menschelijker wijze gesproken, buiten het gevaar van morgen te sterven,
+en u kan het tegenwoordige ongeval niet misleiden. Onderzoek het dan:
+dunkt u niet, dat men te regt beweert, niet alle meeningen der menschen
+te moeten ontzien; maar sommige wel, en andere niet? en ook niet van
+alle menschen, maar van sommige wel, en van andere niet? Wat zegt gij?
+Beweert men dit niet te regt?
+
+_Crito._ Ja, te regt.
+
+_Socrates._ Derhalve, de verstandige meeningen moet men ontzien, en de
+verkeerde niet?
+
+_Crito._ Wel zeker.
+
+_Socrates._ Verstandige meeningen, zijn dat niet die van verstandige
+menschen? en de verkeerde die van onverstandigen?
+
+_Crito._ Hoe kan dat anders zijn?
+
+
+                                 VII.
+
+_Socrates._ Welaan dan: in welken zin werd dit beweerd? Een man, die
+zich ernstig op ligchaamsoefeningen[33] toelegt, zal die letten op
+ieders lof of blaam of meening, of slechts van dien éénen, die den
+leefregel voorschrijft of opziener is bij die oefeningen, of wie hij
+zijn mag?
+
+_Crito._ Van den éénen slechts.
+
+_Socrates._ Derhalve: vreezen moet hij den blaam, en streven naar den
+lof van dien éénen, en niet van den grooten hoop?
+
+_Crito._ Dat is duidelijk.
+
+_Socrates._ Zoo moet hij derhalve handelen en zich oefenen, en eten en
+drinken, als het die ééne eischt, de opziener en deskundige, meer dan
+gelijk alle anderen te zamen het wenschen?
+
+_Crito._ Dat is waar.
+
+_Socrates._ Dat houden we dus voor uitgemaakt. Maar--is hij
+ongehoorzaam aan den éénen, en versmaadt hij diens inzigt en lofspraak,
+en ontziet hij die der menigte, welke er geene kennis van heeft, zal
+hem er dan geen kwaad van overkomen?
+
+_Crito._ Hoe kan dat anders?
+
+_Socrates._ Wat is dat voor een kwaad? en waarop heeft het betrekking,
+en waaraan zal het zigtbaar worden bij hem, die ongehoorzaam is?
+
+_Crito._ Natuurlijk aan zijn ligchaam; want dit verwoest hij.
+
+_Socrates._ Wel gesproken. Zoo gaat het dan eveneens met het overige,
+om niet alles te doorloopen. En met name ook ten opzigte van regt
+en onregt, van schande en eer, van goed en kwaad, waarover wij nu
+beraadslagen;--moeten wij daarin de meening van den grooten hoop volgen
+en ze vreezen, of die des Eenen[34], indien er een kenner bestaat,
+welken wij en eerbiedigen en vreezen moeten, meer dan alle anderen te
+zamen?--door welken niet te gehoorzamen wij datgene zullen verderven
+en verlagen, ’t welk door regtvaardigheid beter werd en door onregt
+verloren ging? Of bestaat er niets zoodanigs?
+
+_Crito._ Ik geloof ja, Socrates!
+
+
+                                 VIII.
+
+_Socrates._ Wel nu, indien wij ’t gene door gezondheid beter wordt en
+door ziekte vergaat, indien we dat verwoesten, door gehoor te geven
+niet aan de meening van deskundigen, maar aan die van onverstandigen;
+heeft het leven dan wel iets aanlokkelijks voor ons, wanneer dat is
+verwoest? En is dat welligt het ligchaam of niet?
+
+_Crito._ Wel zeker.
+
+_Socrates._ Heeft dan het leven met een ellendig en verwoest ligchaam
+nog iets bekoorlijks?[35]
+
+_Crito._ Geenszins.
+
+_Socrates._ Maar hebben wij wel genot van ’t leven, wanneer datgene
+bedorven is, ’t welk door onregt benadeeld, door regtvaardigheid
+bevoordeeld wordt? Of houden wij, welk deel van ons wezen ’t ook zijn
+moge, dat met regt en onregt in betrekking staat, voor geringer dan het
+ligchaam?
+
+_Crito._ Geenszins.
+
+_Socrates._ Dus voor kostelijker[36].
+
+_Crito._ Verre weg.
+
+_Socrates._ Dus hebben wij ons, mijn beste, in ’t geheel zoo niet te
+bekreunen om ’t gene de groote hoop van ons zal zeggen; maar om ’t
+gene de kenner van regt en onregt, de Eéne, en de waarheid zelve zegt:
+zoodat gij dadelijk van ’t begin af, van eene verkeerde stelling zijt
+uitgegaan, door te beginnen met de bewering, dat wij ons moesten storen
+aan de meening van den grooten hoop over regt, en eer, en deugd, en het
+tegendeel.
+
+Maar, zou men kunnen zeggen, het staat toch in de magt van den grooten
+hoop om ons te dooden?
+
+_Crito._ Ook dat voorwaar blijkt; wel zou men dat kunnen zeggen,
+Socrates!
+
+_Socrates._ Gij zegt de waarheid. Maar, mijn wonderlijke vriend! deze
+redenering, die wij hebben doorgeloopen, schijnt mij althans nog
+dezelfde als de vorige[37].--Ga nu ook deze eens weder na, of ze voor
+ons geldig blijft of niet: „dat wij niet het _leven_ het hoogste moeten
+schatten, maar _wèl_ te leven.”
+
+_Crito._ Wel, ze blijft geldig.
+
+_Socrates._ Dat _wèl_ te leven, en edel en regtvaardig te leven, dat
+dit hetzelfde is, blijft dat geldig of niet?
+
+_Crito._ Dat blijft geldig.
+
+
+                                  IX.
+
+_Socrates._ Naar ’t gene wij toegeven, moeten wij dus zien, of het
+regtvaardig is, dat ik, zonder toestemming der Atheners, tracht hier
+uit te komen, of niet regtvaardig; en indien het regtvaardig blijkt te
+zijn, dan willen wij het beproeven; en zoo niet, dan willen wij het
+laten.
+
+De bedenkingen, die gij ter bane hebt gebragt over ’t besteden van
+geld, en over goeden naam, en over kinderopvoeding, die vrees ik dat
+inderdaad bedenkingen zijn van lieden, die u ligtelijk zouden willen
+dooden, en in hun eigen belang in ’t leven terugroepen, indien zij
+konden, zonder eenigen grond; namelijk van dien grooten hoop. Voor ons
+daarentegen, daar de rede het zoo eischt, valt denkelijk niets anders
+te overwegen, dan ’t gene wij nu reeds zeiden: of wij regtvaardig
+zullen handelen, door geld te betalen aan wie mij hieruit zullen
+brengen, en dank; of we wèl zullen doen, zoo wel die zelve mij uit den
+kerker willen voeren, als ik, die mij er uit zou laten brengen;--en, of
+wij werkelijk onregtvaardig zullen handelen, door dit alles te doen. En
+zoo het blijkt, dat het onregtvaardig van ons gehandeld is, dan moeten
+wij denkelijk niet in aanmerking nemen, noch of wij moeten sterven door
+hier te blijven en ons stil te houden, noch of wij, wat dan ook, zullen
+lijden, vóór wij hebben gezien of wij ook misschien onregt doen.
+
+_Crito._ Heerlijk gesproken, dunkt mij, Socrates! Zie nu, wat wij
+zullen doen.
+
+_Socrates._ Onderzoeken wij dat gemeenschappelijk, mijn beste! en hebt
+gij ergens iets tegen in te brengen, terwijl ik spreek, spreek mij dan
+tegen, en ik zal naar u luisteren; zoo niet, houd dan op, o gelukkige!
+mij dikwerf hetzelfde te zeggen, dat ik, tegen den wil der Atheners,
+van hier moet gaan. Ik reken het toch van veel belang, dat gij mij
+overreedt dit te doen, maar niet tegen mijnen zin[38].
+
+Beoordeel dan het begin van het onderzoek, of gij er mede tevreden
+zijt, en tracht op mijne vragen te antwoorden, zoo als u het beste
+dunkt.
+
+_Crito._ Dat zal ik trachten te doen.
+
+
+                                  X.
+
+_Socrates._ Zeggen wij, dat men op geenerlei wijze willens en wetens
+onregt mag doen;--of op de eene wijze wel, en op de andere niet?--of is
+het plegen van onregt op geenerlei wijze noch goed, noch schoon, gelijk
+door ons meermalen ook vroeger is toegegeven, en ook nog onlangs gezegd
+is? Of is ons dat alles, wat wij te voren toegestemd hebben, in deze
+weinige dagen ontvloeid? en hebben wij, Crito! zoo bejaarde mannen,
+bij onze ernstige gesprekken, sedert lang, zonder het zelve te weten,
+niets hooger gestaan dan kinderen?--of is het alleszins zoo als toen
+door ons gezegd werd: is, het zij de groote hoop het zegt, of niet,
+het zij wij een nog zwaarder, of ook een zachter lot dan dit hebben te
+ondergaan, evenwel het plegen van onregt, voor wie ’t doet, én slecht
+én schandelijk in ieder opzigt? Zeggen wij dat, of niet?
+
+_Crito._ Wij zeggen het.
+
+_Socrates._ Op geenerlei wijze derhalve mag men onregt doen.
+
+_Crito._ Voorzeker niet.
+
+_Socrates._ Evenmin mag, wie onregt lijdt, het weerom doen[39], zoo als
+de groote hoop meent, dewijl men toch in geen geval onregt mag doen.
+
+_Crito._ Neen; dat is klaarblijkelijk.
+
+_Socrates._ En hoe nu? Mag men kwaad doen, Crito, of niet?
+
+_Crito._ Neen, zeker niet, Socrates.
+
+_Socrates._ Wat dan? aangedaan kwaad met kwaad vergelden, zoo als de
+groote hoop zegt, is dat regtvaardig of niet?
+
+_Crito._ Op geenerlei wijze.
+
+_Socrates._ Denkelijk verschilt het niets den menschen kwaad te doen,
+en onregt te plegen.
+
+_Crito._ Gij hebt gelijk.
+
+_Socrates._ Dus mag men inderdaad geene verongelijkingen vergelden,
+noch eenig mensch kwaad doen, zelfs niet, wanneer men, wat dan ook,
+van hen lijdt. Zie wel toe, Crito! dat gij, door dit toe te stemmen,
+het niet tegen uwe meening toegeeft. Ik weet immers, dat weinigen zoo
+denken en denken zullen; en voor hen, die zoo denken, en voor wie ’t
+anders beschouwen, bestaat er geen gemeenschappelijk beraadslagen;
+maar noodwendig moeten zij elkander verachten, wanneer zij elkanders
+inzigten leeren kennen. Overweeg derhalve ook gij toch wel, of gij
+met mij overeenstemt in inzigt, en laat ons met deze bewering ons
+beraadslagen beginnen, dat het nooit regt is onregt te doen, noch
+het te vergelden; noch mishandelingen af te weren door zelf weder
+te mishandelen;--of ziet gij van dat grondbeginsel af, en deelt gij
+er niet in?--Ik voor mij heb reeds lang zoo gedacht, en denk nog
+zoo; is uw inzigt eenigzins veranderd, zeg het mij dan, en onderrigt
+mij. Blijft gij evenwel bij uwe vorige gevoelens, hoor dan de
+gevolgtrekkingen, die er uit voortvloeijen.
+
+_Crito._ Wel, ik blijf er bij, en ben ’t met u eens. Spreek dan.
+
+_Socrates._ Ik zeg dan wat er uit voortvloeit, of liever, ik vraag u:
+moet men, wat men iemand heeft beloofd, omdat het regtvaardig was[40],
+moet men dat doen, of bedriegelijk verbreken?
+
+_Crito._ Men moet het doen.
+
+
+                                  XI.
+
+_Socrates._ Zie dan naauwkeurig toe, wat er van uit dit standpunt volgt.
+
+Wanneer wij van hier gaan, zonder den staat te overreden, doen wij dan
+niet iemand kwaad, en wel wien dat het allerminste past, of doen we ’t
+niet? En blijven wij dan getrouw aan ’t gene wij hebben beloofd, omdat
+het regtvaardig was, of niet?
+
+_Crito._ Ik heb geen antwoord op uwe vraag, Socrates, want ik begrijp
+ze niet.
+
+_Socrates._ Beschouw het dan zoo. Gesteld: wanneer wij voornemens waren
+van hier weg te loopen, of hoe men ’t dan noemen moet; en de wetten en
+de staat kwamen bij ons, en vroegen[41]: „zeg, Socrates! wat hebt gij
+in den zin te doen? Dwalen wij, of zijt gij voornemens door ’t gene
+gij onderneemt, ons, de wetten en den geheelen staat te vernietigen,
+voor zoo ver ’t in uwe magt staat? Of meent gij, dat een staat nog
+kan blijven bestaan, en niet onderstboven gekeerd ligt, in welken de
+gevelde vonnissen geenerlei kracht hebben, maar door enkele burgers
+krachteloos worden, en vernietigd?”--Wat zullen wij, o Crito! op deze
+en dergelijke redenen zeggen? Veel zou menigeen, voornamelijk een
+redenaar, kunnen zeggen over ’t vernietigen der wet, die bepaalt, dat
+gewezen vonnissen van kracht zullen zijn. Of zullen wij er misschien op
+antwoorden: „de staat behandelde ons immers onregtvaardig en besliste
+het geding verkeerd?” Zullen wij dit zeggen, of iets anders?
+
+_Crito._ Dit voorwaar, o Socrates!
+
+
+                                 XII.
+
+_Socrates._ „Wat dan?” zouden de wetten zeggen; „behoort voorwaar ook
+dit regten over den staat tot het verdrag tusschen ons en u[42], of
+brengt dat verdrag mede, dat gij u zoudt houden aan de gewijsden van
+den staat?”--Verwonderden wij ons dan over hare taal, dan zouden zij
+denkelijk zeggen: „Socrates! verwonder u niet over ’t gene wij zeggen;
+maar antwoord; gij zijt immers gewoon aan het vragen en antwoorden.
+Welaan dan! wat hebt gij tegen ons en den staat in te brengen, dat
+gij tracht ons te vernietigen? Hebben wij niet in de eerste plaats
+u het aanzijn gegeven? en heeft niet uw vader door onze bemiddeling
+uwe moeder ten huwelijk genomen, en u verwekt? Overweeg derhalve:
+berispt gij iets in die wetten onder ons, die over ’t huwelijk zijn
+vastgesteld, dat ze niet goed zijn?” „Ik berisp ze niet,”--zou ik
+zeggen.--„Dan op de bepalingen, op de opvoeding en de vorming van het
+kroost, volgens welke gij ook zijt opgevoed? Of hebben diegene onzer,
+de wetten op dit stuk gegeven, die uwen vader gebieden u in de muzijk
+en gymnastiek[43] op te voeden, dit niet goed geregeld?”--„Goed,” zou
+ik zeggen. „Dat dan daar gelaten; nadat gij geboren en groot gebragt
+en opgevoed waart, zoudt gij ten eersten kunnen beweren, dat gij niet
+onze nakomeling en lijfeigene[44] waart, gij zelf en uwe voorvaderen?
+En indien dit zoo is, gelooft gij dan, dat hetzelfde regt geldt voor u
+en voor ons? en meent gij, dat, al wat wij ondernemen u te doen, gij
+het met hetzelfde regt weêrom moogt doen? of hadt gij geen gelijk regt
+jegens uw’ vader, en jegens uwen heer, indien gij er eenen hadt, zoodat
+ge, al wat ge ondergingt, dat _niet_ ook weêrom mogt doen, noch tegen
+te spreken, wanneer gij harde woorden hooren moest, noch ontvangene
+slagen weêrom te geven, en evenmin in andere dergelijke gevallen; maar
+zou het wel vrijstaan jegens het vaderland en de wetten, zoodat, indien
+wij ondernemen, u ter dood te brengen, omdat wij ’t voor regtvaardig
+houden, ook gij ons, de wetten en het vaderland, voor zoo ver ge
+kunt, zult beproeven op uwe beurt te vernietigen;--en zult ge zeggen
+door dat te doen, goed te handelen, gij, die inderdaad werk maakt van
+de deugd? Of zijt ge wijs in dien zin, dat ge niet weet, dat, meer
+dan uwe moeder en uw vader en al uwe voorvaderen, het vaderland iets
+kostelijks is, meer eerbiedwaardig en heilig en van hoogere waarde in
+’t oog van goden en van verstandige menschen? En dat men meer vereering
+en gehoorzaamheid en onderdanigheid moet hebben voor ’t vaderland,
+wanneer het toornig is? En dat gij het óf beter moest inlichten, óf
+doen, wat het beveelt, en ondergaan, wat het u gebiedt te ondergaan, en
+kalm zelfs slagen en boeijen moet verdragen? Indien het u ten oorloge
+drijft om wonden te ontvangen of den dood te lijden, dat gij dit doen
+moet, en dat dit billijk is? en men niet mag wijken, noch terugtreden,
+noch zijn’ post verlaten; maar én in den oorlog én voor ’t gerigt, en
+overal moet doen, wat de staat gebiedt en het vaderland, of het anders
+te overtuigen van den eigenlijken aard van het regt? Dat geweld te
+gebruiken[45] noch geoorloofd is jegens uwe moeder, noch jegens uwen
+vader, en nog veel minder jegens het vaderland?” Wat zullen we hierop
+zeggen, Crito! dat de wetten waarheid spreken of niet?
+
+_Crito._ Mij dunkt, ja!
+
+
+                                 XIII.
+
+_Socrates._ „Zie nu eens, Socrates!” zouden welligt de wetten zeggen,
+„of wij ook in deze bewering gelijk hebben, dat gij onregtvaardig
+jegens ons tracht te handelen, in ’t gene gij nu onderneemt. Wij
+namelijk, na u in het leven geroepen en gehouden, en u opgevoed, en u
+aandeel gegeven te hebben aan al het goede, dat in onze magt stond,
+aan u en al de andere burgers; wij verklaren echter,--door ’t verlof,
+dat wij verleenen aan ieder’ Athener, die wil, nadat hij burger
+is geworden[46], en den staat van zaken en ons, de wetten, heeft
+gezien;--dat, wien wij niet mogten behagen, het hem vrijstaat, om met
+het zijne heen te gaan, werwaarts hij wil. En geene van ons, de wetten,
+verhindert noch verbiedt iemand uwer, indien wij en de staat hem niet
+behagen, naar eene van ’s lands volkplantingen te verhuizen, of wanneer
+hij onder vreemden zich ergens elders wil gaan neêrzetten, met zijne
+bezittingen daar heen te gaan, werwaarts hij wil. Maar wie uwer blijft,
+terwijl hij de wijze ziet, op welke wij gedingen beslissen en voor
+’t overige den staat regelen;--dan zeggen wij, dat deze inderdaad een
+verdrag met ons heeft aangegaan, te zullen doen, wat wij ook mogen
+gebieden; en wie niet gehoorzaamt, dien beweren wij, dat drievoudig
+misdoet[47]: door niet te gehoorzamen aan ons, die hem in het leven
+hebben geroepen,--aan ons, die hem hebben opgevoed;--en dat hij, bij
+verdrag beloofd hebbende zeer zeker te gehoorzamen, noch gehoorzaamt,
+noch ook tracht ons te overtuigen, indien wij iets verkeerds doen;
+terwijl wij slechts voorstellen, en niet woest gebieden, te doen, wat
+wij bevelen, maar van twee het eene laten kiezen: óf ons te overtuigen,
+óf te gehoorzamen, waarvan hij geen van beide doet.”
+
+
+                                 XIV.
+
+„Onder deze schuld dan, verklaren wij, zult gij liggen, o Socrates! en
+niet het minst, maar van alle Atheners het meest, indien gij althans
+doet, wat gij voor hebt.”
+
+Indien ik dan zeide: „hoe dat dan?” zouden zij met regt mij laken, en
+zeggen, dat ik een van die Atheners ben, die het nadrukkelijkst dit
+verdrag heb aangegaan. Zij zouden toch zeggen: „o Socrates! gewigtige
+bewijzen hebben wij er voor, dat wij u bevielen, wij en de staat.
+Nooit zoudt gij toch met meer voorkeur dan alle andere Atheners er uw
+verblijf gehouden hebben, indien hij u niet bij uitnemendheid beviel;
+en gij zijt nooit, zelfs ter bijwoning van spelen en feesten, uit de
+stad geweest[48], behalve eens naar den Isthmus; noch ergens elders
+heen, behalve wegens een’ of ander veldtogt: ook hebt gij geenerlei
+andere reis gedaan zoo als de andere menschen; ook beving u niet de
+lust naar een’ anderen staat of naar andere wetten om ze te leeren
+kennen; maar wij en onze staat waren u genoegzaam: zoo zeer gaaft
+gij ons de voorkeur, en beloofdet gij, als bij verdrag u volgens
+ons in den staat te gedragen; dat blijkt onder anderen daaruit, dat
+gij kinderen in denzelven hebt verwekt, ten bewijze, dat de staat u
+beviel.--Daarenboven stond het u onder ’t geding zelf vrij, u tot
+ballingschap te veroordeelen[49], wanneer gij wildet, en, wat gij nu
+tegen den wil des staats onderneemt, toen met zijne toestemming te
+doen. Gij hebt u toen wel is waar groot gehouden, als of gij niet
+bedroefd waart, indien gij moest sterven; maar gij verkoost, zoo als
+gij zeidet, boven de ballingschap den dood. Nu daarentegen schaamt
+gij u niet over die beweringen, evenmin als gij u bekreunt om ons,
+de wetten, die gij tracht te niet te doen, en gij handelt, gelijk
+de gemeenste slaaf zou doen; daar gij tracht weg te loopen, tegen
+overeenkomst en verdrag aan, waarnaar gij met ons zijt overeengekomen
+u in den staat te gedragen. Antwoord in de eerste plaats derhalve
+hierop, of wij de waarheid zeggen, wanneer wij beweren, dat gij,
+inderdaad en niet voor de leus, bij verdrag hebt beloofd u als burger
+aan ons te houden; of is ’t niet waar?” Wat zullen wij hierop zeggen,
+Crito! Moeten wij ’t niet volstrekt toestemmen?
+
+_Crito._ Volstrekt, o Socrates!
+
+_Socrates._ „Overtreedt gij dus niet wezenlijk,” zouden zij zeggen, „de
+overeenkomsten en de verdragen met ons zelve? hoewel gij die noch uit
+nood[50] hebt aangegaan, noch omdat gij misleid zijt, noch genoodzaakt
+binnen een’ korten termijn u te bedenken; zeventig jaren hebt gij voor
+u gehad, in welke het u vrij stond weg te gaan, indien wij u niet
+bevielen, en ’t u bleek, dat de verdragen niet billijk waren. Maar gij
+gaaft noch aan Lacedaemon de voorkeur, noch aan Creta[51], die gij toch
+telkens wèl geregeld noemt; noch aan een’ der grieksche of vreemde
+staten; in tegendeel, minder hebt gij u uit denzelven verwijderd dan
+kreupelen, en blinden en andere verminkten. Zoo uitnemend beviel u
+klaarblijkelijk, meer dan de overige Atheners, de staat, en wij, de
+wetten. Wien toch zou een staat bevallen zonder de wetten? Zult gij nu
+evenwel u niet aan de verdragen houden?--Ja, gij zult het, indien gij
+ons gehoor geeft, o Socrates! en dan zult gij niet belagchelijk zijn
+door de stad te verlaten.”
+
+
+                                  XV.
+
+„Bedenk toch eens, wanneer gij die verdragen overtreedt, en u hierin
+misgaat, wat voordeel gij zult bewerken voor u zelven, of voor uwe
+vrienden. Dat deze toch gevaar zullen loopen van zelve verbannen te
+worden, en verstoken van ’t verblijf in den staat, of hun vermogen te
+verliezen, dat is ten naastebij klaarblijkelijk. Maar gij zelf in de
+eerste plaats:--wanneer gij naar eene der naastbijgelegene steden gaat,
+of naar Thebe of naar Megara--want beide zij wèl geregeld--; dan zult
+gij, o Socrates! als een vijand van hunne staatsregeling komen, en
+allen, die ’t belang hunner steden ter harte nemen, zullen u verdenken,
+daar ze u zullen houden voor een’ vernietiger van de wetten;--en voor
+de regters zult gij de openbare meening bevestigen, dat ze regtvaardig
+hebben gevonnisd. Al wie toch de wetten om verre werpt, die moet
+ook noodwendig doorgaan voor een’ bederver van jonge en onbezonnene
+menschen.--Zult gij derhalve de wèl ingerigte staten en de zamenleving
+der braafste menschen vermijden? En zal zoo doende het leven nog
+iets bekoorlijks voor u behouden?--Of zult gij u bij hen vervoegen,
+en, onbescheiden genoeg zijn om in gesprek te treden? En waarover,
+Socrates? over de onderwerpen, die gij hier in den mond hadt, dat deugd
+en regtvaardigheid de meeste waarde hebben voor de menschen? en wat
+wettig is, en de wetten? En gelooft gij niet, dat dan de handelwijze
+van Socrates onedel zal schijnen? Men moet het althans gelooven.
+
+„Maar, uit die plaatsen zult gij u verwijderen en naar Thessalië
+gaan, naar Crito’s gastvrienden. Daar heerscht namelijk de meeste
+ordeloosheid en losbandigheid; en denkelijk zouden zij gaarne van u
+hooren, hoe belagchelijk gij uit de gevangenis waart weggeloopen in
+eene of andere vermomming; een herderskleed of iets anders, ’t welk
+wegloopers plegen in het werk te stellen, genomen en zoo uw voorkomen
+veranderd hebbende.
+
+„Maar dat gij, een oud man, nu gij waarschijnlijk nog slechts weinig
+tijds te leven hebt, het van u kondt verkrijgen, om, met overtreding
+der gewigtigste wetten, zoo verkleefd aan het leven te hangen, zal
+daarover niemand spreken? Misschien niet, wanneer gij niemand krenkt;
+anders zult gij, o Socrates! veel hooren, en dat uwer onwaardig is:
+kruipende voor alle menschen zult gij leven als hun slaaf. Wat zult
+gij in Thessalië anders doen dan smullen? even als of gij om een
+gastmaal naar Thessalië waart verhuisd.--En uwe redeneringen over
+regtvaardigheid en de overige deugden, waar zullen die blijven?
+
+„Maar, zult gij zeggen, om mijner kinderen wille wil ik leven,
+om hen groot te brengen en op te voeden?--Hoe? wilt gij hen naar
+Thessalië voeren, en hen dáár groot brengen en opvoeden, en hen tot
+vreemdelingen maken, opdat ze u ook dit te danken hebben?--Of, dit zal
+nu wel niet plaats hebben: maar zullen zij, hier opgevoed, terwijl gij
+leeft, beter gevormd en opgeleid worden, hoewel gij niet bij hen zijt?
+Uwe naaste betrekkingen zullen immers voor hen zorgen!--Of zullen zij,
+wanneer gij naar Thessalië verhuist, hen verzorgen, maar verhuist gij
+naar Hades woningen[52], zullen zij hen dan niet verzorgen? Indien zij
+althans eenige waarde bezitten, die zich uwe vrienden noemen, dan moet
+men het wel gelooven.”
+
+
+                                 XVI.
+
+„Neen, Socrates! gehoorzaam ons, uwe voedsters, en acht noch uwe
+kinderen, noch het leven, noch iets anders, hooger dan ’t geen regt
+is. Zoo kunt gij, in Hades woningen gekomen, dit alles bij hen, die
+daar ’t gebied voeren, ter uwer verdediging inbrengen. Want, wanneer
+gij dat doet, dan is uwe daad, zoo als blijkt, noch hier beter voor u,
+of regtvaardiger of vromer, evenmin als voor iemand der uwen;--noch
+zal het, wanneer gij ginder komt, beter voor u zijn. Nu daarentegen
+gaat gij, indien gij heen gaat, verongelijkt heen, niet door ons, de
+wetten, maar door de menschen. Gaat gij echter van hier, met eene zoo
+schandelijke wedervergelding van onregt en boosheid; met overtreding
+van uwe eigene overeenkomsten en verdragen, met ons aangegaan; als een
+booswicht jegens welke het allerminst betaamt, u zelven namelijk, en
+uwe vrienden en ’t vaderland, en ons: dan zullen wij op u vertoornd
+zijn, zoo lang gij leeft; en ginder zullen onze zusters, de wetten in
+den Hades, u niet goedgunstig ontvangen, wetende, dat gij hebt beproefd
+ook ons te vernietigen, voor zoo ver ’t in uwe magt was.
+
+„Laat dus Crito u niet overhalen, om te doen wat hij zegt, maar veeleer
+wij.”
+
+
+                                 XVII.
+
+Dit, o lieve vriend Crito! moet gij weten, dat ik meen te hooren, even
+als wie de ooren suizen[53], fluiten-muzijk meenen te hooren. En in
+mijn binnenste klinkt de galm dezer taal, en maakt, dat ik geene andere
+kan hooren. Weet dan, althans, zoo als ik het nu inzie, dat, indien gij
+iets hier tegen inbrengt, gij het te vergeefs zult zeggen. Spreek niet
+te min, wanneer gij meent iets meer te weeg te zullen brengen.
+
+_Crito._ Ach, Socrates! ik weet niets te zeggen.
+
+_Socrates._ Laat het dan daar, o Crito! en laat ons der goden bevel
+opvolgen[54].
+
+                             [Illustratie]
+
+
+
+
+                            AANTEEKENINGEN.
+
+
+
+
+                            AANTEEKENINGEN.
+
+                             [Illustratie]
+
+
+[Voetnoot 1: _U heeft willen binnenlaten._ ... Socrates verwondert
+zich, dat Crito door den wachter zoo vroeg is binnengelaten, omdat er
+niet vroeg opengedaan werd.]
+
+[Voetnoot 2: _Ik zou--niet--willen verkeeren_ ... namelijk, indien
+geschieden kon, wat nu niet kan; daarom kon ik het niet van mij
+verkrijgen.]
+
+[Voetnoot 3: _Gelukkig geprezen._ ... Zoo zegt ook Phaedo: „gelukkig
+scheen mij de man om zijn gemoed en om zijne taal, dat hij zoo zonder
+vrees, zoo edel stierf. De gedachte kwam bij mij op, dat hij niet
+zonder goddelijk bestel naar de onderwereld afdaalde, en dat hij daar
+zalig worden moest.”--En Socrates zelf in hetzelfde gesprek: „Koesterde
+ik niet de hoop, bij wijze en goedige goden te komen, en bij gestorvene
+menschen, die beter zijn, dan hier, dan ware ’t niet goed, dat ik niet
+treurde over den dood. Nu daarentegen heb ik de blijde verwachting, dat
+er ook nog voor gestorvenen een leven is, en wel voor goeden een beter
+dan voor slechten.”
+
+En in zijne Verdediging: „dit eene moet gij bedenken als ontwijfelbaar
+zeker, dat er voor den edelen geen kwaad bestaat, noch bij zijn leven,
+noch na den dood; en dat zijne zaak geenszins door de goden wordt uit
+het oog verloren. Ook mijn tegenwoordig lot komt niet zoo van zelf; in
+tegendeel, ’t is mij klaarblijkelijk, dat sterven mij gewin is.”]
+
+[Voetnoot 4: _Buiten de wijs._ ... Plato zegt eigenlijk: „tegen
+de melodie”--Het leven des braven is als eene muzijk, in welke
+overeenstemming en welluidendheid heerschen, en zelfs schijnbare
+dissonanten zich oplossen in harmonie. De grondstellingen, voor hem
+uit zijne inzigten van waar en goed en schoon voortgevloeid, zijn
+het thema, dat als in zuivere variatiën, zijn leven in lief en leed
+doorgalmt. Zoo zegt Socrates: „ik houd het voor beter, dat mijne lier
+ontstemd ware, en wanklank deed hooren met het koor, dat ik bestuurde,
+en dat de meeste menschen niet met mij overeenstemden, maar mij
+tegenspraken; dan dat ik alleen met mij zelven niet in harmonie ware en
+mij tegensprak.”]
+
+[Voetnoot 5: _Op mijne jaren--moest sterven._ ... Socrates was in zijn
+zeventigste jaar.]
+
+[Voetnoot 6: _Het vaartuig uit Delos._ ... In den beroemden dialoog
+over de Onsterfelijkheid betuigt Echecrates aan Phaedo zijne
+verwondering, dat Socrates zoo lang na zijne veroordeeling den
+dood heeft ondergaan. „_Phaedo._ Dat kwam door eene bijzondere
+omstandigheid. Den dag namelijk vóór het vonnis was juist de
+achtersteven bekranst van het vaartuig, dat de Atheners jaarlijks
+naar Delos zenden. _Echecr._ Wat is dat dan? _Ph._ Dat is, volgens
+de Atheners, het schip, met hetwelk Theseus eens naar Creta voer, om
+er de veertien[A] heen te brengen, die hij redde en zich zelven ook.
+Aan Apollo deden zij toen de gelofte, zegt men, om, zoo zij behouden
+bleven, t’elken jare een plegtig gezantschap ter bijwoning der feesten
+te zullen zenden ter zijner eere op Delos. Dit gezantschap dan zenden
+zij ook nu nog sedert dien tijd t’elken jare ter eere van den god.
+Nadat nu die zending begonnen is, is ’t bij hen wet, gedurende dien
+tijd de stad rein te houden, en van staatswege niemand ter dood te
+brengen, vóórdat het vaartuig in Delos is gekomen, en van daar weer
+hier. Dit houdt somwijlen een’ geruimen tijd aan, wanneer bij toeval
+de winden hen ophouden. Het begin der zending wordt gerekend van het
+oogenblik af, dat de priester van Apollo den achtersteven van het
+vaartuig heeft bekranst. Dit had juist plaats gehad daags vóór het
+vellen van het vonnis, en daarom bleef Socrates lang in de gevangenis
+tusschen zijn vonnis en zijn’ dood”[B].--(Dertig dagen.)]
+
+[Voetnoot 7: _Sunium_, een voorgebergte van Attica, thans Cabo di
+Colonna. Het had op de kruin een’ tempel van Minerva, en onder aan de
+kust eene haven. Ook stond hier een kasteel, ’t welk door opgestane
+slaven een’ tijd lang werd bezet gehouden, die Attica plunderden.
+(Athenaeus).]
+
+[Voetnoot 8: _Heil ons!_ De oorspronkelijke uitdrukking gebruikten
+de Grieken veel in den zin van een goed voorteeken. Zoo min vreest
+Socrates den dood, dat hij, bij de tijding, dat hij ze moet ondergaan,
+het sterven als een wenschelijk goed beschouwt. De volgende woorden:
+_zoo het den goden_ enz., heeft Epictetus overgenomen onder de
+spreuken, waarmede hij zijn _Handboek_ besluit.]
+
+[Voetnoot 9: _Die er over te beslissen hebben._ Crito beaamt hiermede
+het gezegde van Socrates niet, dewijl hij nog steeds de stille hope
+koestert, hem te zullen redden: _zoo zeggen althans, die_ ...
+Voor het overige worden hier bedoeld de _Elfmannen_, die te Athene het
+opzigt hadden over alle gevangenen. ’t Is misschien niet onbelangrijk
+bij dit ligchaam eenigzins langer stil te staan.
+
+Hoogelijk werd te Athene de onschendbaarheid der burgers geëerbiedigd:
+lijfsdwang werd alleen jegens slaven voor oirbaar gehouden, zoodat het
+openbaar eergevoel iemand, tegen wien het aangewend was, niet meer
+als een’ burger van gelijken stand beschouwde. De raad moest--dewijl
+_atimie_, met onze eerloosverklaring te vergelijken, het lot werd van
+den eens tot gevangenis veroordeelde--zweren, geen’ burger in boeijen
+te zullen slaan, behalve wie iets tegen den staat misdeed.
+
+Spoedig regt vereischten intusschen de zaken van koophandel; eveneens
+tegen allerlei woekeraars. Buitendien moest de gevangenisstraf wel
+toegepast worden tegen misdrijven, die ’t algemeene belang en de
+openbare veiligheid in gevaar schenen te brengen: ieder burger mogt dan
+ook als wreker van de geschonden regten des staats optreden, waarbij
+persoonlijke vijandschap dikwijls hare rekening vond, en de Elfmannen
+drukke bezigheid. Het gevangenzetten, waarbij de beschuldigde geboeid
+werd, diende òf tot straf, òf tot waarborg tegen veroordeelden, heen
+ter tijde aan het vonnis voldaan, en tegen beschuldigden, totdat hunne
+zaak zou uitgemaakt zijn. Maar bijna altijd kon de veroordeelde met
+eene geldboete vrij, die men, om de atimie te ontgaan, liever betaalde.
+Ter verzwaring echter der boete werd ook de gevangenisstraf toegepast,
+vooral tegen schuldenaren van den staat; zij bleven geboeid, totdat de
+schuld was voldaan.
+
+Het beheer eener zoodanige inrigting met hare velerhande ondergeschikte
+bedienden vereischte reeds veel werkzaamheid. Gewigtiger evenwel was de
+taak der Elfmannen, jegens de gevangenen zelve te vervullen. Deze waren
+geheel in hunne magt gegeven, in zeker opzigt hunne slaven. Zij waren
+voor hen verantwoordelijk. Waarschijnlijk hielden zij aanteekening
+van wie gevangen geweest was, dewijl anders diens atimie met der tijd
+onbewijsbaar kon worden.--Aan den ter dood veroordeelde lieten zij zoo
+spoedig mogelijk het vonnis voltrekken, behalve wanneer de wet den tijd
+bepaalde, of godsdienstige gebruiken het verhinderden. De vorm bragt
+mede, dat zij telkens in persoon den veroordeelde van de overheden
+overnamen, en hem naar de gevangenis geleidden. Nu beheerschten zij
+hem geheel en al; of hij al dan niet in bijzijn van vriend of maag zou
+sterven, hing van hen af. Was de dag bepaald, dan begaven zij zich tot
+den veroordeelde, namen hem de boeijen af, en zeiden hem den dood aan.
+
+De oprigting van het ligchaam der Elfmannen, zoo als wij het gedurende
+den bloei der democratie te Athene kennen, schijnt te vallen in den
+tijd van Aristides en Themistocles, en geduurd te hebben tot kort na
+den dood van Alexander den Groote. Zij werden bij ’t lot gekozen,
+één uit iederen stam; een elfde werd hun--als secretaris, zouden wij
+zeggen--toegevoegd. Vóór de aanvaarding van hun ambt moesten zij een
+onderzoek ondergaan, en na de aftreding rekenschap afleggen. Zeer
+waarschijnlijk ontvingen zij eene aanzienlijke jaarwedde.]
+
+[Voetnoot 10: _Een droomgezigt,--zoo even in dezen nacht_ ... Reeds
+bij Homerus wordt aan de droomen een voorspellend gewigt gehecht: „ook
+de droom toch komt van Zeus!”--Bekend is ’t, hoe een droom, van Zeus
+gezonden, Agamemnon misleidt; en hoe een ander, op last van Athene,
+Penelope moed inspreekt. Ook de treurspeldichters spreken van droomen,
+als niet zonder voorbeduidende kracht. Bedenkt men nu, hoe zeer de
+beschaafde Griek vertrouwd was met zijne helden- en treurspeldichters,
+dan bevreemdt ons de droom van Socrates en zijne gedachte daarover
+niet; om niet te spreken van den bijzonderen toestand, waarin de edele
+man zich bevindt.
+
+Een droomgezigt, _zoo even_ ... De Ouden hielden de droomen na
+middernacht voor de belangrijkste; en niet zonder psychologischen
+grond; de droomen in den voornacht betreffen meest ’t gene de ziel
+gedurende den dag heeft bezig gehouden; daarom hielden zij meer die na
+middernacht voor goddelijke ingeving en onthulling der toekomst.]
+
+[Voetnoot 11: _In een hel-wit gewaad_ ... Droomgestalten werden voor
+goddelijk gehouden: daarom dacht men ze schooner, grooter en verhevener
+dan den mensch, en in blinkend witte kleederen. Zoo ook de bijbelsche
+verschijningen.]
+
+[Voetnoot 12: _Overmorgen, o Socrates!_ ... Woorden van Achilles, die,
+door Agamemnon beleedigd, van Troje naar huis terug wil keeren. „Indien
+mij welligt,” zegt hij tot Ulysses, de doorluchtige aardschudder,
+„Poseidon eene gelukkige vaart wil verleenen, dan kan ik in drie
+dagen het vruchtbare Phthia bereiken,” d. i. zijn vaderland. Socrates
+verstaat onder Phthia de woonplaats der ziel na hare slaking uit den
+kerker des stofs, de oorden, die des menschen eigenlijk vaderland zijn.
+
+„Bevreemdend is het,” zegt Nüsslin ter dezer plaatse, „dat geen
+uitlegger er op let, hoe de jeugdige heldengestalte van Achilles,
+die uit vrije keuze een kort, maar roemvol leven verkoos boven een
+lang leven vol genietingen, Socrates hier voor oogen zweeft, en hem
+als tot gelijke gezindheid bezielt. Dit is immers het troostrijke in
+’t ontzagchelijke treurspel der geschiedenis, dat de menschen niet
+alleen bij elkander zijn, wanneer zij ’t zijn, dat ook de van ons
+verwijderde, de overledene voor ons leeft, en zijn leven en sterven
+ons ten spiegel wordt, waarin wij ons gaarne beschouwen.”--Socrates
+zelf zegt in zijne Verdediging: „men zou kunnen zeggen: „„bloost gij
+niet, Socrates! over de keuze van een bedrijf, waardoor gij nu gevaar
+loopt van te sterven?”” „Met grond zou ik antwoorden: niet schoon is
+dat gesproken, man! indien gij meent, dat een man, die nog een weinig
+waarde bezit, het gevaar van leven of sterven in aanmerking moet nemen.
+Niet daarop alleen moet men zien, wat men onderneemt, maar of men iets
+regtvaardigs doet, of het tegendeel; het werk van een’ braaf, of van
+een’ slecht mensch. Laag zouden, naar uwe redenering, de halve goden
+zijn, die bij Troja sneuvelden, ook Thetis’ zoon; en die verachtte zoo
+zeer het gevaar, in vergelijking van eene schandelijke handelwijze,
+dat,--toen hij wenschte Hector te dooden, en zijne moeder, eene godin,
+hem zoo ongeveer, geloof ik, toesprak: „„mijn zoon, wreekt gij den dood
+van uwen vriend Patroclus, en doodt gij Hector, dan zult gij sterven;
+(want terstond na Hector is uw sterflot bepaald)””--„hij dood en gevaar
+verachtte.----„„Terstond,”” zeide hij, „„zou ik willen sterven, na den
+onverlaat te hebben doen boeten, opdat ik niet hier blijf, bij de
+hooge stevens der schepen, om uitgelagchen te worden, als een nutteloos
+pak der aarde.””]
+
+[Voetnoot 13: _Luister nu nog naar mij_ ... Derhalve had Crito vroeger
+reeds vruchteloos getracht, Socrates over te halen, om zich door de
+vlugt te redden.]
+
+[Voetnoot 14: _Er geen’ ooit weer zal vinden_ ... Cicero had deze
+plaats voor oogen in zijn werkje over de Vriendschap, waar hij Laelius
+over Scipio laat zeggen: „het doet mij aan, dat ik van een’ zoo
+heerlijk vriend beroofd ben, als, naar mijn oordeel, er niemand ooit
+weer zal bestaan.”]
+
+[Voetnoot 15: _Het geld hooger te achten_ ... „Niemand zou,” zegt
+Demosthenes in zijne redevoering over den Vrede, „kunnen zeggen, dat
+mijne handelingen als staatsman eenige winst bedoelen. En daarom toont
+zich mij zuiver en gelijk het is, het belang van den staat, ’t welk
+immer uit de zaken voortvloeit. Maar, _wanneer men aan de andere zijde,
+als op eene schaal, er geld bijlegt, dan slaat het op eens door, en
+trekt de bewijsgronden mede naar beneden; en wie dit doet, kan niet
+meer, noch iets waars, noch iets gezonds meer denken, over geene enkele
+zaak_.”]
+
+[Voetnoot 16: _Den grooten hoop_ ... „Die tallooze, oneenige, oproerige
+menigte, nooit zich zelve magtig, met gelijke onberadenheid gereed tot
+eigen of tot eens anders ongeluk,”--zegt Seneca--is door vele ouden
+naar waarde gegispt.--„Wie zou zich gelukkig gevoelen,” zegt Plato
+ergens, „met te leven naar den grooten hoop, om te worden toegejuicht
+en gevierd, als een speelbal van ’t volk geslingerd, uitgefloten,
+gestraft, gedood en beklaagd?”--„Vraagt mij (Horatius) het volk,
+waarom ik niet zoek of mijd, wat het zelf bemint of haat; dan wil ik
+antwoorden, gelijk eertijds de sluwe vos den zieken leeuw: „„omdat ik
+schrik van de voetstappen, alle naar u toe gerigt, en geene terug. Gij
+zijt een veelkoppig monster: waaraan toch zal ik mij houden, of aan
+wien?””]
+
+[Voetnoot 17: _Het ergste kwaad_ ... Er is volgens Plato slechts één
+kwaad: _gebrek aan inzigt_, en slechts één goed: _verstand_. Ten
+bewijze een paar plaatsen van de door Nüsslin verzamelde: „waarin
+iemand verstandig is, daarin is hij goed; waarin iemand onverstandig
+is, daarin is hij slecht.--Alle pogen en volharden der ziel, door
+verstand bestuurd, brengt zegen; met onverstand het tegendeel.”--Met
+Plato houden voorzeker de onbekrompen-verlichte onder onze landgenooten
+_gebrek aan inzigt_ voor het hoogste kwaad; want inderdaad, de mensch
+wil wel het goede, zoodra hij slechts vastelijk overtuigd is, dat
+het wezenlijk goed is. Eene ware stelling! maar die door sommige ook
+welmeenende Christenen niet wordt toegegeven!]
+
+[Voetnoot 18: _Sycophanten_ ... eigenlijk: vijgenaangevers, verklikkers
+van wie vijgen uitvoert, ’t welk in Attica verboden was. (Athenaeus.)
+In ’t algemeen: wie valsche geruchten van anderen verbreidt, en
+anderen tegen elkander ophitst, of uit winzucht anderen aanklaagt,
+_chicaneur_. Festus geeft eene andere verklaring. Zie ook C. Sigon. de
+republ. Athen., en Suidas.]
+
+[Voetnoot 19: _De vreemdelingen_ ... Om niemand te Athene aan eenig
+gevaar bloot te stellen van beschuldigd te worden Socrates uit de
+gevangenis te hebben willen ontvoeren, vermeldt Plato hier alleen
+vreemdelingen. Crito zelf was door zijne positie en zijn’ ouderdom
+het meest tegen onaangename gevolgen beveiligd, en is denkelijk
+kort na Socrates overleden. _Cebes_, die hier genoemd wordt, heet
+doorgaans, maar zonder genoegzamen grond, de schrijver te zijn van eene
+zedekundige verhandeling: de Schilderij. Wie evenwel de schrijver moge
+zijn, men vindt er den hoogen ernst en de warmte van Socrates.
+
+_Simmias_ van Thebe, gelijk ook Cebes, waren beide leerlingen van
+Critolaus, een beroemd Pythagoreër, en beide warme vrienden van
+Socrates.
+
+Onder de hier vermelden kunnen ook behoord hebben: _Phaedondes_,
+eveneens van Thebe, en _Euclides_ van Megara, niet met den
+alexandrijner te verwarren; en _Terpsion_; en _Echecrates_ van Phlius,
+in Sicyonië; en _Phaedo_, uit Elis.]
+
+[Voetnoot 20: _Geef--uwe redding niet op_ ... Wel weet Crito, hoe
+Socrates over het sterven denkt; maar in zijne warme vriendschap denkt
+hij, al te overijld, dat de liefde tot het leven, die al wat leeft, is
+aangeboren, zich ook nog bij Socrates krachtig doet gelden.]
+
+[Voetnoot 21: _’t Gene gij voor ’t gerigt gezegd hebt_ ... „Zou
+ik”--dit was, volgens Plato, zijne taal--„mij verbanning waardig
+keuren? Daarmede zoudt gij welligt genoegen nemen. Maar veel liefde zou
+ik voor het leven moeten hebben, o Atheners! indien ik zoo onverstandig
+ware, om niet te kunnen berekenen, dat gij, mijne medeburgers, mijne
+leefwijze en mijne taal niet kondt verdragen, maar ze u bezwaarlijk en
+hatelijk zijn geworden, zoodat gij tracht er af te komen; en zullen
+voorwaar anderen ze gemakkelijk dulden? Verre van daar, o atheensche
+mannen! Een heerlijk leven zou het derhalve voor mij zijn, wanneer
+ik, zoo bejaard, uit de stad ging, om, telkens verjaagd, de eene stad
+met de andere te verwisselen. Want ik weet vast, dat, waar ik kom, de
+jongere menschen naar mijne taal zullen hooren, gelijk hier. En wijs ik
+hen van de hand, dan zullen zij mij verdrijven en de ouderen daartoe
+overreden.”]
+
+[Voetnoot 22: _Naar Thessalië_ ... Onbedachtzaam noemt Crito juist
+Thessalië. Zie hoofdstuk 15. Dat land stond in kwaad geruchte, als
+het land van sluwe list en bedrog en ongebondenheid, waarvan J. C.
+Scaliger een voorbeeld aanhaalt. Bij Athenaeus hebben zij altijd
+honger; hunne vraatzucht wordt bij wijze van spreekwoord aangehaald.
+Zij zouden de Perzen, even weelderig als zij zelve, naar Griekenland
+hebben uitgenoodigd; en later door Philippus met gastmalen zijn
+gewonnen. Xenophon schrijft de verdorvenheid van Critias, het hoofd der
+dertig tirannen, mede toe aan zijn verblijf als balling in Thessalië.
+Ten tijde van Horatius was het berucht wegens zijne giftmengers en
+toovenaars.]
+
+[Voetnoot 23: _Uwe zonen_ ... Men vindt er drie vermeld: Lamprocles,
+Sophroniscus en Menexenus, de twee laatste verwekt bij Myrto, de
+dochter van Aristides den regtvaardige.--Zoo lang men de beantwoording
+van Crito’s bedenkingen door Socrates niet heeft gehoord, weet men
+niet, wat deze zal aanvoeren tegen ’t gene hier zoo roerend en met
+zoo veel aandrang wordt bijgebragt, om Socrates’ vaderlijk gevoel te
+schokken, en om zijne eigenliefde in beweging te brengen. Crito’s al
+te dringende, bijna onbescheidene taal vindt hare verontschuldiging in
+zijne warme vriendschap en zijn vurig verlangen om Socrates te redden.]
+
+[Voetnoot 24: _Der weezen lot_ ... „De dag, die ’t kind tot een wees
+maakt, berooft hem van al zijne speelgenooten; overal slaat hij de
+oogen neder; tranen biggelen langs zijne wangen. In zijne behoefte gaat
+het kind naar zijns vaders vrienden, en trekt hen bij het kleed; van
+diegene onder hen, die medelijden met hem hebben, reikt hem iemand een’
+kleinen beker; en zoo bevochtigt hij wel zijne lippen, maar niet zijn
+gehemelte. De knaap, wiens beide ouders nog in leven zijn, jaagt hem
+van het gastmaal, en slaat hem, en graauwt hem toe: „„ga zoo heen! uw
+vader eet immers niet met ons!”” (Homerus.)]
+
+[Voetnoot 25: _Voor ’t gerigt--zijt opgekomen_ ... Forster, bij
+Buttmann aangehaald, zegt, dat hier misschien bedoeld wordt eene wet
+bij Lysias vermeld: „dat het den beklaagde, die zijne zaak wantrouwde,
+vrijstond, zich door de vlugt aan de gevolgen van derzelver behandeling
+te onttrekken.” Of men moet het op Anytos toepassen, die, volgens
+Libanius, in zijne Verdediging van Socrates, na de door hem ingestelde
+beschuldiging, met den beklaagde zich wilde verzoenen. Maar dit is zeer
+twijfelachtig; waar is het, dat, wanneer partijen, vóór de beslissing
+van het pleit, zich met elkander verzoenden, in verschillende gevallen
+de zaak werd bijgelegd. De aanklager had dan duizend drachmen boete te
+betalen. (Wachsmuth, II, 1, 285.)
+
+In het volgende wordt de loop van het regtsgeding vergeleken met de
+drie hoofddeelen van een drama: het verschijnen voor ’t gerigt met de
+inleiding en de opgave van ’t onderwerp;--het voeren van ’t geding met
+de handeling en hare verwikkelingen;--en de uitspraak van het vonnis
+met de ontknooping. Wat Crito laakt, is het verschijnen van Socrates
+voor den regter; wat hem grieft, is de uitslag van het treurspel, dien
+hij aan gebrek aan inzigt bij hem zelven en zijne vrienden toeschrijft.]
+
+[Voetnoot 26: _Even min als gij u zelven_ ... Dit bijvoegsel verwacht
+men hier niet bij Crito’s klagen over de achteloosheid en lafheid
+van de vrienden van Socrates, en niet van Socrates zelven. Maar als
+onwillekeurig ontsnapt hem daarbij eene ligte berisping tegen den
+leermeester zelven; dat komt voort uit eene edele verontwaardiging, dat
+Socrates niet is gered, en zich nu niet wil laten redden.]
+
+[Voetnoot 27: _Des te bezwaarlijker_ ... Volgens Leo is de meening van
+Socrates: „des te minder kan ik uwe zorg goedkeuren en er gebruik van
+maken,” in tegenstelling met: „uw ijveren is mij _veel waard_, dewijl
+het als lofwaardig zeer aannemelijk is.”--Ons schijnt Socrates toe te
+willen zeggen: „de aandrang, met welken gij mij tot de vlugt aanspoort,
+ontroert mij als een blijk uwer warme liefde; en uit onwillekeurigen
+afkeer van den dood, die in ieder schepsel leeft, zou ik uwe voorslagen
+gehoor geven, indien slechts mijn pligt het toelaat: maar zoo niet,
+dan kost het mij én om uwe liefde, én om dien afkeer, slechts te meer
+moeite, uwen aandrang te weerstaan en standvastig te blijven sterven.”]
+
+[Voetnoot 28: _Aan niets anders gehoor geef, dan aan het inzigt_ ...
+„Want,” zegt Socrates elders bij Plato, „de man, voor wien al wat
+tot geluk voert, alleen van hem zelven afhangt, voor wien het niet,
+verknocht aan voor- of tegenspoed, van anderen noodwendig afhankelijk
+wordt en geheel onzeker; die man heeft zich den besten levensweg
+bereid: die is de zelfstandige, de dappere, de wijze; dien zal men,
+bij ’t verwerven of verliezen van kinderen, of van geld en goed, zich
+noch te zeer zien verblijden noch bedroeven, dewijl hij al zijne hoop
+stelt op zich zelven.”--„En die zelfstandige man,” zegt Epictetus, „was
+Socrates, die van al wat hem voorkwam, op niets anders lette dan op de
+rede, d. i. op zijne heilige, innige overtuiging van pligt.”]
+
+[Voetnoot 29: _Dezelfde inzigten_ ... Namelijk over burgerpligt en
+verachting van den dood.]
+
+[Voetnoot 30: _Schrikbeelden_ ... De oorspronkelijke uitdrukking
+beteekent: „een kind met zekere gebaren en onder het uitspreken van het
+woord _Mormo_ bang maken; dan: iemand bang maken door schrikbeelden, en
+in ’t algemeen: iemand (een’ meest ongegronden) schrik aanjagen.”]
+
+[Voetnoot 31: _Hoe kunnen wij_ ... Buttmann, Leo en de meeste andere
+uitleggers leggen Crito deze vraag in den mond. Wij volgden Stallbaum:
+de rede wordt er te vuriger door.]
+
+[Voetnoot 32: _Of de bewering altijd geldig is, of niet_ ... Namelijk
+of _niet geldig_. Drievoudig is de vraag: 1º. of de bewering gegrond
+is; 2º. of ze ongegrond is; 3º. of ze vroeger gegrond was, maar nu
+niet meer. (Buttmann.)]
+
+[Voetnoot 33: _Zich ernstig op ligchaamsoefeningen toelegt_ ... Bekend
+is ’t, hoe veel werk de Grieken van deze oefeningen maakten, hoe hunne
+nationale feesten voor een gewigtig deel in dezelve bestonden, en haar
+zoo een bijzonder gewigt bijzetten in de oogen des volks. Levendig
+begrepen zij, hoe veel de gezondheid en de volledige ontwikkeling van
+de kracht des ligchaams toebrengt tot die der ziel. Verg. aant. 53.]
+
+[Voetnoot 34: _Die des Eenen_ ... „’t Is duidelijk,” zegt Nüsslin ter
+dezer plaatse, „dat Socrates hier _God_ meent.” Eenige plaatsen bij
+Plato, die hij ten bewijze aanvoert, laten wij hier volgen:
+
+„Een is wijzer dan alle; die alleen is de maatstaf.--God zij onze regel
+in alles, meer dan eenig mensch.--Niemand is wijs, dan (de) God; de
+menschelijke wijsheid is weinig waard; en onder de menschen is hij
+de wijsste, die dit met Socrates heeft ingezien.--Men moet Gode zoo
+veel mogelijk gelijkvormig worden; die gelijkvormigheid bestaat in
+verstandig, braaf en vroom te zijn.--Twee voorbeelden hebben wij: het
+goddelijke, dat van het hoogste geluk; het niet-goddelijke, dat der
+rampzaligheid.”]
+
+[Voetnoot 35: _Heeft--het leven--iets bekoorlijks?_ ... Men wane
+niet--zoo als bij eenzijdige gevolgtrekking welligt het geval zou
+kunnen zijn,--dat Socrates hier zijlings den zelfmoord verdedigt. In
+tegendeel: volgens hem staat ieder mensch hier op eenen post, hem door
+God aangewezen, en dien hij zonder het hoogst bevel niet mag verlaten.]
+
+[Voetnoot 36: _(Wij houden) dus (de ziel) voor kostelijker._ „Onder
+alles, wat wij hebben,” zegt Socrates elders, „is naast God onze ziel
+het goddelijkste.” En: „hoe veel geringer een ongeluk is het met een
+ziekelijk ligchaam te leven, dan met eene bedorvene, onheilige ziel!”
+Meer gelijkluidende plaatsen heeft Nüsslin bijeengebragt.]
+
+[Voetnoot 37: _De vorige_ ... „De redenering, welke wij hebben
+doorgeloopen,” namelijk over ’t oordeel van den grooten hoop, „schijnt
+nog dezelfde,” verschilt niets van die, welke wij vroeger hebben
+uiteengezet, toen ik nog niet was aangeklaagd. Hierop schijnen de
+woorden _de vorige_ te doelen. Anderen vatten de plaats anders op.]
+
+[Voetnoot 38: _Niet tegen mijnen zin_ ... De edele vriendschap, met
+welke gij mij herhaaldelijk aanraadt te vlugten, acht ik alleszins
+hoog; maar, daar ik mij door geen’ invloed van buiten laat leiden,
+_moet gij toch mijn inzigt behoorlijk laten gelden_.]
+
+[Voetnoot 39: _Wie onregt lijdt, het weerom doen_ ... Nüsslin trekt
+uit deze plaats, waarbij hij ettelijke anderen voegt, het gevolg, dat
+men te overijld den Ouden _alle begrip_ van liefde jegens vijanden
+heeft ontzegd; en dat in de meeste plaatsen hunner schriften, waar
+haat jegens vijanden wordt gebillijkt, de vijand in den oorlog wordt
+bedoeld.--_Alle begrip_ ... dit is te veel gezegd; maar alleen Socrates
+en de zijnen stonden met enkele edelen hooger dan de groote hoop; en
+Socrates zelf is in zijne Verdediging zoo schamper, zijne taal zoo
+vernederend voor regters en tegenpartij, dat daarbij het denken aan
+_wraak_ natuurlijk bij u opkomt. Buitendien moet men niet vergeten, hoe
+weinig algemeenen invloed bij de Ouden de wijsgeerige school had op de
+praktiek des levens. (Verg. onze inleiding.) Deze spreekt veeleer bij
+de dramatische dichters: het tooneel en het leven der Ouden stond in
+veel naauwer verband dan bij ons. En uit deze blijkt, dat wraak bij de
+Ouden niet alleen geoorloofd was, maar zelfs eene zaak van eer. „Eene
+groote zaak versta ik,” zegt Archilochus, „hem, die mij kwaad gedaan
+heeft, met vreesselijk kwaad te vergelden.” Dat bij ’t volk _wraak_ de
+leuze was, blijkt eveneens uit vele plaatsen bij de treurspeldichters;
+in ’t algemeen eischten de Grieken van den _man_ in staat te zijn om
+zijn vaderland nuttig, zijn’ vijand geducht te zijn. Zij kennen den
+_man_, den _burger_; aan het goddelijke Christendom was en blijft het
+voorbehouden den _mensch_ te leeren zegenen, wie hem vloekt.]
+
+[Voetnoot 40: _Beloofd, omdat het regtvaardig was_ ... Het niet nakomen
+van eene vrijwillige belofte berokkende--bij de Romeinen althans--in
+zekere mate _eerloosheid_.]
+
+[Voetnoot 41: _En de wetten -- -- vroegen_ ... Dit welsprekend leenen
+van ziel en spraak aan iets onbezields is meermalen nagevolgd. Bij
+Buttmann vindt men eene dergelijke plaats aangehaald uit de: „Oeuvres
+de Frédéric II, publiées du vivant de l’auteur.”]
+
+[Voetnoot 42: _Tot het verdrag tusschen ons en u_ ... Leo gelooft, dat
+Socrates hier ook bedoelt: den eed, dien de atheensche burgers moesten
+afleggen, van dezen inhoud: „aan de wetten, die vastgesteld worden, zal
+ik gehoorzamen, en aan alle andere, welke het volk met gemeen overleg
+zal vaststellen;--en indien iemand de wetten vernietigt, of ze niet
+gehoorzaamt, dat zal ik niet toelaten, maar tegengaan, zoo wel alleen,
+als met allen.”]
+
+[Voetnoot 43: _Muzijk en gymnastiek_ ... Volledige ontwikkeling naar
+ziel en ligchaam. Gelijk namelijk bij ons de gymnastiek in ruimen
+zin de beoefening bevat van al wat het ligchaam kracht, vlugheid en
+bevalligheid kan bijzetten; zoo verstonden de Grieken onder muzijk--der
+Muzen wetenschap--de schoone wetenschappen, poëzij, welsprekendheid,
+wijsbegeerte, de eigenlijke muzijk; in één woord, al wat den smaak voor
+’t schoone ontwikkelt en de ziel veredelt. Tot eene opvoeding, die wij
+fatsoenlijk zouden noemen, behoorden: letterkunde in ruimen zin, muzijk
+en gymnastiek. Wie b. v. niet in eigenlijke muzijk ervaren was, werd
+niet voor een’ beschaafd man gehouden.
+
+Protagoras schildert de opvoeding der atheensche jeugd aldus: „Van de
+teerste kindschheid af aan, zoo lang de naaste betrekkingen leven,
+onderwijzen en vermanen zij het kind. Zoodra het, wat er gezegd
+wordt, kan begrijpen, doen de minne en de moeder en de oppasser en
+de vader zelf hun best, dat het kind zoo goed mogelijk worde, en
+onderrigten hem bij ieder woord of daad, en toonen hem, dat het eene
+regtvaardig, het andere onregtvaardig is, en schoon of niet, en vroom
+of goddeloos; en dat hij het eene doe, het andere niet. En gehoorzaamt
+hij vrijwillig, dan is ’t wèl; zoo niet, dan brengen ze hem, als een
+kromgegroeid rijsje, teregt door dreigen en slaan. Daarna zenden zij
+hem naar school, en drukken het den meester veel meer op het hart, om
+te zorgen voor de zedigheid der kinderen, dan voor hun lezen en hun
+spelen op de lier. De meesters zorgen hiervoor; en wanneer zij dan
+het lezen geleerd hebben, en weldra het geschrevene zullen verstaan,
+gelijk vroeger den toon, dan geven zij hun op de banken de werken van
+voortreffelijke dichters te lezen, en laten ze hen van buiten leeren,
+welke vele teregtwijzingen bevatten, en vele verhalen van de deugden
+van de mannen van ouds, die ze roemen en verheffen; opdat de knaap
+naijverig hen navolge, en trachte even zoo voortreffelijk te worden. De
+muzijkmeesters dragen eveneens op dergelijke wijze zorg voor zedigheid,
+en dat de knapen geen kwaad doen; daarenboven, wanneer zij geleerd
+hebben de lier te bespelen, leeren zij hun weder gedichten van andere
+dichters, van lierdichters, die ze op muzijk brengen; en zij dwingen
+maat en harmonie in de ziel der knapen, opdat zij zachter worden, en,
+meer aan maat en regel gewend, geschikt voor woord en daad. Want het
+geheele leven van den mensch behoeft maat en gepasten toon.--Dan zendt
+men hen nog naar den meester in ligchaamsoefeningen, opdat zij met een
+beter ontwikkeld ligchaam, ook eene edele denkwijze kunnen opvolgen,
+en niet genoodzaakt worden lafhartig te handelen wegens gemis aan
+ligchamelijke kracht en vlugheid en in oorlog en in andere bedrijven.
+Dit doen de meest vermogenden, wier kinderen het vroegst en het langst
+de scholen bezoeken.”
+
+Dus: huisselijke opvoeding;--lezen en de beginselen der
+muzijk, dichtstukken van buiten leeren;--eigenlijke muzijk en
+lierdicht;--ligchaamsoefeningen; terwijl overal orde en zedigheid
+streng werd geëischt; dit was, naar Solons instellingen, de gang der
+voorbereidende vorming der jeugd. Wat wij nog meer hebben genoemd,
+leerde de verder gevorderde jongeling van mannen als Protagoras en
+anderen.]
+
+[Voetnoot 44: _Lijfeigene_ ... zoo als Demaratus tot koning Xerxes
+zeide: „Vrij zijn de Spartanen, maar toch niet geheel; want over hen
+heerscht de wet, aan welke zij meer dan de uwen aan u gehoorzamen.”]
+
+[Voetnoot 45: _Geweld te gebruiken_ ... Niet alleen dit was snood; maar
+de zoon, die zijne ouders den verschuldigden eerbied niet betoonde,
+werd van alle ambten uitgesloten.]
+
+[Voetnoot 46: _Burger is geworden_ ... De jonge Athener, die ’t
+volledig burgerregt verlangde, werd opgeteekend in de kieslijst; maar
+eerst moest hij een onderzoek ondergaan over afkomst, wettige geboorte,
+in één woord over ’t gene als vereischte voor het burgerregt werd
+aangemerkt. (Stallbaum, Buttmann, Schleiermacher.--Maar Leo volgt eene
+andere lezing, die volgens St. slechts in een hdsch. voorkomt, maar
+vroeger algemeen werd gevolgd.)]
+
+[Voetnoot 47: _Drievoudig misdoet_ ... Jegens de wetten: 1. als de
+oorzaken van zijn aanwezen; 2. als zijne opvoedsters; 3. als nooit
+onredelijke gebiedsters, die slechts _voorstellen_ ... Keuren en
+wetsbepalingen werden, vóór de bekrachtiging, openlijk ten toon
+gesteld; om ze door ieder te laten lezen en beoordeelen, of ook iemand
+iets beters had voor te stellen.]
+
+[Voetnoot 48: _Nooit -- -- uit de stad geweest_ ... Zie de Inleiding.]
+
+[Voetnoot 49: _U tot ballingschap te veroordeelen_ ... De aanklager
+gaf, althans in gevalle dit niet bij de wet was bepaald, de straf op,
+die naar zijn inzigt de beklaagde door zijn misdrijf had verdiend. Was
+dan de zaak geregtelijk onderzocht, dan vroeg de overheid, in gevalle
+de beklaagde werd veroordeeld, den veroordeelde, welke straf hij zelf
+meende verdiend te hebben. Het antwoord van Socrates vindt de lezer in
+meergemelde verhandeling van Prof. P. Hofstede de Groot.]
+
+[Voetnoot 50: _Noch uit nood_ ... De sprekend ingevoerde wetten
+ontzenuwen hier alle mogelijke exceptiën, die tegen de geldigheid van
+een aangegaan verdrag kunnen worden ingebragt. (Jacobs.)]
+
+[Voetnoot 51: _Lacedaemon -- -- Creta_ ... In Plato’s werk: „Over
+den Staat,” worden deze staatsregelingen door Socrates als de beste
+geprezen (VIII, 544 c.), en zoo op meer plaatsen, bij Buttmann
+verzameld. Xenophon, gelijk bekend is, zeer met Lacedaemon ingenomen,
+prijst hare staatsinrigting, onder anderen, wegens de voorbeeldige
+gehoorzaamheid der burgers, en de hooge achting jegens grijsaards.
+Plato prijst als eene der voortreffelijkste verordeningen in Creta
+en Sparta, dat het jonge menschen verboden was hunne wijsheid uit te
+kramen over eenige wet, of ze goed was of niet. Had een bejaard man er
+eenige aanmerking op te maken, dan had hij het der overheid mede te
+deelen, mits niet in tegenwoordigheid van jonge lieden.]
+
+[Voetnoot 52: _Hades woningen_ ... der dooden verblijf.]
+
+[Voetnoot 53: _Wie de ooren suizen_ ... Er staat: „die de
+Corybanten-ongesteldheid hebben.” _Corybanten_ waren priesters, die,
+zoo ze dachten, vol van de godheid, dansten. _Corybanten-ziekte_, eene
+ingebeelde ongesteldheid, waarbij men meende fluiten-muzijk te hooren,
+en die men waande van de Corybanten te komen. De zieken werden daarbij
+door geweldige onrust gejaagd, en gekweld door eene slapeloosheid, die
+door muzijk genezen werd.--Schleiermacher’s opvatting van deze plaats
+scheen ons de voorkeur te verdienen, boven ’t geen anderen hebben, b.
+v. _Corybanten in geestdrift, de Corybantiasten_, enz.]
+
+[Voetnoot 54: _Der goden bevel opvolgen_ ... Hoe geheel Socrates zich
+aan den goddelijken wil overgaf, blijkt overvloedig uit eene reeks van
+heerlijke plaatsen, door Nüsslin bijeengebragt.]
+
+
+                               Voetnoten
+
+[Voetnoot A: Veertien kinderen, die de Atheners jaarlijks aan Minos
+van Creta moesten zenden, tot boete voor den moord, aan zijnen zoon
+Androgeus gepleegd.]
+
+[Voetnoot B: Het woord _theorie_, dat wij hier hebben vertaald door
+_gezantschap_, _zending_, beteekent eigenlijk: eene verrigting _ter
+vereering van den god_.]
+
+                             [Illustratie]
+
+
+
+
+                               NAAMLIJST
+
+                                  DER
+
+                             INTEEKENAREN.
+
+                             [Illustratie]
+
+
+ Z. M. DE KONING DER NEDERLANDEN. 12 Expl.
+
+ Z. K. H. PRINS FREDERIK DER NEDERLANDEN. 10 Expl.
+
+ Adriani, N. van der Tuuk, predikant te _Brielle_.
+
+ Amshoff, M. A., predikant te _Groningen_.
+
+ Bakker, J., predikant te _Sappemeer_.
+
+ Bakker, Mr. A. C. H., arr. direct. der belast. te _Winschoten_.
+
+ Banck, J., aldaar.
+
+ Bank, M. A. van der, pred. bij de waalsche gem. te _Utrecht_.
+
+ Bazendijk, P. M., boekhandelaar te _Rotterdam_. 2 expl.
+
+ Berg, P. F. van den, aldaar.
+
+ Bisdom, Mr. D. A., griffier te _Wageningen_.
+
+ Blaauw, H., theol. cand. te _Groningen_.
+
+ Bleijenberg, H., predikant te _Zwolle_.
+
+ Boer Ez., J. de, te _Groningen_.
+
+ Boom, C., wethouder te _Tholen_.
+
+ Borgesius, J. G., theol. cand. te _Groningen_.
+
+ Bos, Wed. N. H., te _Winschoten_.
+
+ Bosch, J. van den, stads-schoolonderwijzer te _Tholen_.
+
+ Broecke, Mr. Ph. van den, rijks-advokaat te _Middelburg_.
+
+ Broek, P. W. van den, predikant te _Rotterdam_.
+
+ Broekman, G. H., notaris, voor het leesgezelschap: Tot Nut en
+ Uitspanning, te _Rotterdam_.
+
+ Broese & Comp., boekhandelaars te _Breda_.
+
+ Bronsema, R., steen- en pannefabrijkant te _Winschoten_.
+
+ Brouwer, G., boekhandelaar te _Deventer_.
+
+ Brugsma, A. L., litt. hum. cand. te _Middelstum_.
+
+ Brugsma, B., onderwijzer te _Groningen_.
+
+ Buddingh, D., leeraar aan de koninklijke academie te _Delft_.
+
+ Buning, H. C., student te _Groningen_.
+
+ Burger, D., te _Rotterdam_.
+
+ Burgerhoudt, J. J., te _Utrecht_.
+
+ Busman, C. Star, lid van de tweede kamer der staten-generaal, pres.
+ der arr.-regtb. te _Groningen_.
+
+ Busscher, H., apotheker te _Winschoten_.
+
+ Callenfels, J. W., med. doct. te _Vlissingen_.
+
+ Cannegieter J. Jz., D., predikant te _Tjum_.
+
+ Cannegieter, Mr. T., president der arr.-regtbank te _Winschoten_.
+
+ Cate, H. Iszn. ten, predikant te _Pieterzijl_.
+
+ Chateleux, P. A. de, ontv. der in- en uitgaande regten te _Bath_.
+
+ Cock, H. G. de, bew. van hypoth. en het kadaster te _Winschoten_.
+
+ Cock, R. T. de, ontvanger der registratie aldaar.
+
+ Coevorden, C. N. Diepenheim van, te _Amsterdam_.
+
+ Cohen, L. Ali, med. doct. te _Groningen_.
+
+ Cornelissen, Mr. J., te _Steenwijk_.
+
+ Costerus, Dr. P. J., rector der lat. scholen te _Sneek_.
+
+ Croese, R., boekhandelaar te _Amsterdam_.
+
+ Crull, P. Hofstede, med. doct. te _Meppel_.
+
+ Daalen, Mr. H. B. van, notaris en secret. der stad _Wageningen_. 2 ex.
+
+ Daenius, A., litt. cand. te _Assen_.
+
+ Dageus, D., predikant te _Rijsom_.
+
+ Dam, H. W. van, te _Rotterdam_. 5 expl.
+
+ Dapper, L. S. P., te _Vianen_.
+
+ Delprat, G. H. M., predikant te _Rotterdam_. 2 expl.
+
+ Diephuis, Mr. G., regter in de arr.-regtb. te _Winschoten_.
+
+ Dikema, L., instituteur te _Hoogezand_.
+
+ Dikkers, H., rijks-ontvanger te _Delden_.
+
+ Doesburgh, H. G. J. van, predikant te _Rotterdam_.
+
+ Doorn, E. C. U. van, te _Utrecht_.
+
+ Duinen, M. J. van, kostschoolhouderes te _Winschoten_.
+
+ Duinen, T. van, predikant te _Surhuisterveen_.
+
+ Dull, Mr. C. W., regter in de arr.-regtb. te _Winschoten_. 2 expl.
+
+ Dijk, Egge van, logementhouder aldaar.
+
+ Dijk, Wed., aldaar.
+
+ Ebens, B., aldaar.
+
+ Edelink, H., jur. cand. te _Groningen_.
+
+ Eekma, O. J., te _Zalt-Bommel_.
+
+ Emmen, Mr. W. R., procureur te _Winschoten_.
+
+ Engelkens, Mr. H. J., burgemeester aldaar. 4 expl.
+
+ Engers, M. S., negotiant aldaar.
+
+ Eijk, J. P. Sprenger van, predikant te _Rotterdam_.
+
+ Fabius, A. N., student te _Groningen_.
+
+ Fabius, A. N., te _Steenwijk_.
+
+ Faille, J. Baart de la, hoogleeraar te _Groningen_.
+
+ Feenstra Pz., P., predikant te _Sappemeer_.
+
+ Feenstra T. S., boekhandelaar te _Sneek_. 2 expl.
+
+ Feis, R., mr, kleermaker te _Winschoten_.
+
+ Feis, Rz., W., koopman in manufacturen aldaar.
+
+ Folkers, F., aldaar.
+
+ Folkers, R., goud- en zilversmid aldaar.
+
+ Folmer, H. T., med. doct. te _Assen_.
+
+ Fremery, Mr. J. W. F. de, advokaat te _Groningen_.
+
+ Fruitier, Mr. J. A., lid der gedeput. staten van de prov. _Groningen_.
+
+ Ganderheijden, Mr. A. A., griff. bij het prov. geregtsh. v.
+ _Groningen_.
+
+ Gerlings, Mr. J., advokaat te _Utrecht_.
+
+ Gesseler, Jhr. Mr. Th. van, rijks-ontvanger te _Winschoten_.
+
+ Gevers, A., te _Leijden_.
+
+ Gevers Deynoot, Mr. W. T., te _Rotterdam_.
+
+ Glavimans, G. J., aldaar.
+
+ Gockinga, Mr. J., presid, van het prov. geregtsh. van _Groningen_.
+
+ Görlitz, C. L., litt. cand. te _Winschoten_.
+
+ Görlitz, F. H., te _Rotterdam_.
+
+ Görlitz, P. K., fransch stads-kostschoolhouder te _Rotterdam_. 2 ex.
+
+ Groeneveld, A. E., negotiant te _Winschoten_.
+
+ Groeneveld, G. J., negotiant aldaar.
+
+ Groenier, U. J., negotiant aldaar.
+
+ Groot, P. Hofstede de, hoogleeraar enz. te _Groningen_.
+
+ Gulpen, W. van, predikant te _Barendrecht_.
+
+ Haanebeek, F. H., grossier te _’s Gravenhage_.
+
+ Hardenbergh, W. H. van, doctor in de lett., directeur eener bijzondere
+ inrigting te _Haastrecht_.
+
+ Harderwijk, Cs. A., phil. stud. te _Amersfoort_.
+
+ Haspels, E. J., postdirecteur te _Wageningen_.
+
+ Have, A. ten, te _Amsterdam_.
+
+ Hemsing, J. C., student te _Groningen_.
+
+ Hendriksz, D., theol. stud. aldaar.
+
+ Hessel Jr, F., med. stud. aldaar.
+
+ Hiddingh, Mr. C., controleur te _Assen_.
+
+ Hien en Dodewaard, het depart., der Maatsch, tot N. van ’t Alg.
+
+ Hoekzema, geb. Meuron, Mejufvr. de wed., fransche kostschoolhouderes
+ te _Groningen_.
+
+ Hoekzema, D., te _Assen_.
+
+ Hoet, C. ten, boekhandelaar te _Nijmegen_.
+
+ Hoëvell, Mr. J. D. baron van, rector te _Dordrecht_.
+
+ Hofstede, Mr. P., subst. officier van justitie te _Assen_.
+
+ Homan, J. L., jur. stud. te _Groningen_.
+
+ Hoogstraten Jz., A. van, boekhandelaar te _’s Gravenhage_.
+
+ Horneman-Folkers, Mej. J., te _Rotterdam_.
+
+ Horst, G. ter, notaris te _Delden_.
+
+ Huguenin, Mr. H. U., lid der arrond.-regtbank te _Sneek_.
+
+ Huisingh, H. V., boekhandelaar te _Winschoten_. 2 expl.
+
+ Hurgronje, J. J. Snouck, te _Tholen_.
+
+ Huijsman, Mr. A. E., schoolopziener te _Brielle_.
+
+ Imhoff, Mr. G. W. H. baron van, raadsheer in het prov. geregtshof te
+ _Groningen_.
+
+ St. Jacobi Parochi, het departement, der Maatsch. t. N. v. ’t Algem.
+
+ Jacobs en Meijers, boekhandelaars te _Amersfoort_.
+
+ Jonge, Dr. H. de, secretaris der stad _Meppel_.
+
+ Jongsma, Mr. Hiddema, president van de arrond.-regtbank te _Sneek_.
+
+ Kampen, P. N. van, boekhandelaar, te _Amsterdam_. 10 Expl.
+
+ Koch, J. R. Eilers, evang. luth. predikant te _Wildervank_.
+
+ Kerzman, directeur van het athenaeum te _Maastricht_.
+
+ Kessens, J. W., te _Winschoten_.
+
+ Klaasesz, J., te _Steenwijk_.
+
+ Klunder, J. G., onderwijzer te _Sappemeer_.
+
+ Kuottnerus, J., te _Winschoten_.
+
+ Koning, E., jur. stud. te _Groningen_.
+
+ Koning, Mr. J. S. G., procureur te _Wedde_.
+
+ Kooiman, J. A., litt. hum. stud. te _Groningen_.
+
+ Koops Lz., A., koopman te _Winschoten_.
+
+ Korteweg, Mr. A. J., advokaat te _’s Hertogenbosch_.
+
+ Kramer, J. A., evang. luth. predikant te _’s Gravenhage_.
+
+ Kremer, H. A., theol. stud. te _Groningen_.
+
+ Kroese, J. G. Stenfert, boekhandelaar te _Arnhem_.
+
+ Kymmell, J. H., te _Winschoten_.
+
+ Lagerweij, J., te _Wageningen_.
+
+ Lange, M. M. de, te _Tholen_.
+
+ Lechner, J., candidaat notaris te _Schiedam_.
+
+ Ledeboer, C., te _Haastrecht_.
+
+ Leopold, J. H., logementhouder te _Groningen_.
+
+ Leuringh, J., te _Winschoten_.
+
+ Lichtenvoort, Mr. V. Heringa Star, advokaat te _Kleinemeer_.
+
+ Liebau, C., te _Amsterdam_.
+
+ Lodewijks, J., deurwaarder te _Winschoten_.
+
+ Loeterbagh, J. P., te _Brielle_.
+
+ Lohman, Jhr. Mr. W. H. de Savornin, rijks-ontv. te _Groningen_.
+
+ Loon, J. Marissen van, theol. student aldaar.
+
+ Ludeking, W. E., te _Brielle_.
+
+ Lutteke, L., koopman in manufacturen te _Winschoten_.
+
+ Mansvelt, ..... van, te _Utrecht_.
+
+ Manuel, E. C., jur. student te _Leyden_.
+
+ Maurik, Justus van, te _Amsterdam_.
+
+ Meder, Joh., student te _Groningen_.
+
+ Meder, Mr. J. J., procureur te _Winschoten_.
+
+ Mees, B. D., aldaar.
+
+ Meesters, J. R., te _Steenwijk_.
+
+ Meesters, S. Tromp, aldaar.
+
+ Meijer, W. J., theol. cand. te _Groningen_.
+
+ Merkes, W., te _Wageningen_.
+
+ Messchaert, N., te _Rotterdam_.
+
+ Mesting, J., te _Winschoten_.
+
+ Meuleman, J., litt. hum. cand. te _Jellum_.
+
+ Meijboom, Mej. A. G. C., te _Buitenpost_.
+
+ Middelberg, G. A., te _Boskoop_.
+
+ Middendorp, H. J., te _Amsterdam_.
+
+ Milders, Mr. A. S., te _Rotterdam_.
+
+ Minervae sacrum, het leesgezelschap: te _Breda_.
+
+ Minne, A. C. van der, med. doct. te _Brielle_.
+
+ Mioulet, A. D. J., te ’s _Gravenhage_.
+
+ Modderman, Mr. H. J. H., lid van de tweede kamer der staten-generaal
+ en kantonregter te _Winschoten_.
+
+ Modderman Hz., T., phil. theor. litt. hum. cand. te _Groningen_.
+
+ Molenaar, ..... te _Ysselmonde_.
+
+ Moll, J. G., controleur te _Winschoten_.
+
+ Moreau, D., presid. van de directie der bewaarsch. te _Delfshaven_.
+
+ Moulin, Jurriaan, deurwaarder te _Kampen_.
+
+ Mulder, Hs., negotiant te _Winschoten_.
+
+ Mulder, J. A., hoogleeraar te _Utrecht_.
+
+ Nassau, Dr. H. J., rector enz. te _Assen_. 3 expl.
+
+ Nies, A. S., herbergier te _Winschoten_.
+
+ Nolet, J. D., boekhandelaar te _Utrecht_. 9 expl.
+
+ Numan, A., hoogleeraar aldaar.
+
+ Numan, Mr. C. Star, hoogleeraar te _Groningen_.
+
+ Nijsingh, Mr. A. J., raadsheer in het prov. geregtshof van Drenthe, te
+ _Assen_.
+
+ Oosting, H. J., burgemeester der stad _Assen_.
+
+ Oosting, Mr. J., procureur aldaar.
+
+ Ott, J. P., voor den ring van _Vianen_.
+
+ Ottema, Dr. J. G., te _Leeuwarden_.
+
+ Ottolander, Corn., te _Boskoop_.
+
+ Panhuijs, Jhr. Mr. J. E., lid van de tweede kamer der staten-generaal
+ en regter in de arrond.-regtb. te _Winschoten_.
+
+ Pareau, L., G., hoogleeraar te _Groningen_.
+
+ Pel, C, M. H., 2de luit. bij het 2de reg. infanterie te _Maastricht_.
+
+ Phaff, J. H., te _Winschoten_.
+
+ Piccardt, Mr. H., advokaat aldaar.
+
+ Plantinus, D., pred. bij de doopsgez. gem. te _Uithuizen_.
+
+ Poortman, Mr. K. A., advokaat en notaris te _Schiedam_.
+
+ Post Hz., E., negotiant te _Winschoten_.
+
+ Pots, J., te _Leeuwarden_.
+
+ Pott, P. M., aldaar.
+
+ Prins, J. Alingh, theol. cand. te _Groningen_.
+
+ Quintus, Jhr. Mr. J. D. Lewe, griffier bij het kantongeregt te
+ _Winschoten_.
+
+ Raadgeep, W. J., boekhandelaar te _Doetinchem_.
+
+ Rademaker, D. C., evang. luthersch predikant te _Winschoten_.
+
+ Ras, Mr. P., pres. van het hoog militair geregtshof te _Utrecht_.
+
+ Ras, Mr. W. J., pres. der arrond.-regtbank aldaar.
+
+ Reddingius, T. Folmer, te _Winschoten_.
+
+ Rengers, W. F. L. baron, gouverneur van de prov. _Groningen_. 2 ex.
+
+ Rengers, R. L. baron van Welderen, te _Winschoten_.
+
+ Reijn, G. van, te _Rotterdam_.
+
+ Ridder, C. N. de, rijks-ontvanger te _Wamel_.
+
+ Roldanus, W. J. W., predikant te _Katwijk_ aan den Rijn.
+
+ Romeny, H. J., predikant te _Zwolle_.
+
+ Rooseboom, W., adj. houtvester op het Munnikenhof bij _Vianen_.
+
+ Rose, A., te _Utrecht_.
+
+ Rovers, J., hoogleeraar te _Groningen_.
+
+ Rijkens, R. G., onderwijzer aldaar.
+
+ Schaap, Mr. J. L., advokaat aldaar.
+
+ Scheer, H. J. van der, te _Winschoten_.
+
+ Schellekens, Dr. J. A., med. doct. te _Rotterdam_.
+
+ Scheveningen, het depart. der Maatsch. t. N. v. ’t Algem. 2 expl.
+
+ Scholten, J. G., te _Haarlem_.
+
+ Schönfeld, J. F. P., med. doct. te _Winschoten_.
+
+ Schönfeld, J. C., aldaar.
+
+ Schreuder, B., inspecteur te _Maastricht_.
+
+ Schüller, Mr. C. L., advokaat te _Utrecht_.
+
+ Schultze, J. B., predikant te _Beers & Jellum_.
+
+ Selle, F. W., directeur van het postkantoor te _Utrecht_.
+
+ Servaas Jr., M., koopman te _Winschoten_.
+
+ Siegman, E. L., predikant te _Delden_.
+
+ Siertsema, H. S., onderwijzer te _Kleinemeer_.
+
+ Sitter, Mr. J. H. de, lid der arrond.-regtbank te _Sneek_.
+
+ Sitter, Mr. R. de, notaris te _Winschoten_.
+
+ Slot, J. E., burgemeester der stad _Meppel_.
+
+ Sluiter, J. W., te _Rotterdam_. 2 expl.
+
+ Smith, H. F., brood-, koek- en banketbakker te _Winschoten_.
+
+ Smith, F. H., brood-, koek- en banketbakker aldaar.
+
+ Snoek, H. J., israëlitisch onderwijzer aldaar.
+
+ Spat, C. J., aldaar.
+
+ Sperwer, C., stads fransch-kostschoolhouderes te _Groningen_.
+
+ Spijker, Dr. H. J., predikant te _Amsterdam_.
+
+ Stheeman Hz., A. E., apotheker te _Winschoten_.
+
+ Stirum, O. C. G. van Limburg, aldaar.
+
+ Stokhuijzen, W., boekhandelaar te _Gorinchem_.
+
+ Strauss, Mej. H, W., schoolhouderes te _Groningen_.
+
+ Swiers, J. J., predikant te _Havelte_. 2 expl.
+
+ Swinderen, Mr. Th. van, schoolopziener enz. te _Groningen_.
+
+ Sijpkens, Mr. H., officier van justitie te _Winschoten_.
+
+ Takens, J. L., aldaar.
+
+ Terpstra, D., conrector te _Gouda_.
+
+ Thieme, J. F., boekhandelaar te _Nijmegen_.
+
+ Tiddens, H., te _Groningen_.
+
+ Tonckens, Mr. W. J., kantonregter te _Meppel_.
+
+ Tresling, J. Bosman, med. doct. te _Winschoten_.
+
+ Tresling, M., te _Utrecht_.
+
+ Uges, U., procureur te _Winschoten_.
+
+ Uges, H. C. C. Dronrijp, phil. theol. litt. hum. cand. en pred. bij de
+ doopsgezinde gemeente van de _Noord-Zijpe_.
+
+ Uithuizen, het departement, der Maatsch. tot N. v. ’t Algemeen.
+
+ Valkenburg, het departement, der Maatsch. tot N. v. ’t Algemeen.
+
+ Venema, J. Post van, gem.-ontvanger te _Winschoten_.
+
+ Vernede, Mr. A., advokaat te _Schiedam_.
+
+ Verweij, W., predikant te _Winschoten_.
+
+ Verweij-Mejan, W., te _Assen_.
+
+ Viëtor, Mr. J. Fresemann,. lid der prov. staten van Groningen, te
+ _Winschoten_.
+
+ Viëtor, Mr. B. Haitzema, notaris aldaar.
+
+ Visscher, L. G., hoogleeraar te _Utrecht_.
+
+ Visser, C. de, predikant te _Tholen_.
+
+ Vissering, J. D., predikant bij de doopsgez. gem. te _Groningen_.
+
+ Vliegenthart, G. W., te _Brielle_.
+
+ Vollenhoven, Jb. van, te _Rotterdam_.
+
+ Vos, H. M., te _Amsterdam_.
+
+ Vries, P. Draisma de, fabrikant te _Achlum_.
+
+ Vroom, L., predikant te _Zwolle_.
+
+ Wageningen, het depart., der Maatsch. tot N. v. ’t Algem. 3 expl.
+
+ Wagtho, T. A., jur. stud. te _Groningen_.
+
+ Wal, E. van der, voor het depart. Goënga enz.
+
+ Wal, Mr. J. de, subst. advokaat fiskaal bij het hoog militair
+ geregtshof te _Utrecht_.
+
+ Warfemius, W. A., koopman te _Winschoten_.
+
+ Weurdinge, J. J. Ehl, theol. student te _Groningen_.
+
+ Weijers, F. Vermouten, te _Wageningen_.
+
+ Weijting & v. d. Haart, boekhandelaren te _Amsterdam_.
+
+ Wichers, Mr. B., vice-presid. v. het prov. geregtsh. van _Groningen_.
+
+ Wichers, J. C. S., te _Winschoten_.
+
+ Wichers, J. V. C., jur. student te _Groningen_.
+
+ Wichers, L. Eijssonius, student aldaar.
+
+ Wichers, S. H., te _Winschoten_.
+
+ Wildervanck, W. H., aldaar.
+
+ Wisseman, S. H., logementhouder aldaar.
+
+ Wind, Mr. S. de, vice-president bij het prov. geregtshof in Zeeland,
+ te _Middelburg_.
+
+ With, J. M. de, litt. hum. student te _Groningen_.
+
+ With, V. de, te _Winschoten_.
+
+ Woldringh, Mr. W., griffier der arrond.-regtbank aldaar.
+
+ Wolthers, Dr. H., med. doct. te _Groningen_.
+
+ Wijbelingh, R. M. J., theol. cand. te _Grijpskerk_.
+
+ Wijbelingh, H., theol. cand. te _Groningen_.
+
+ Wijchgel, A. P. P. van, te _Winschoten_.
+
+ Wijnne, J. A., te _Assen_.
+
+ Wijsman, B., te _Amsterdam_.
+
+ Ysselsteijn, J. L. van, opzigter van ’s rijks waterstaat te _Bath_.
+
+ Zee, P. E. van der, predikant te _Andijk_. 2 expl.
+
+
+ NAGEKOMENE INTEEKENAREN.
+
+ Alma, A., notaris te _Bergum_.
+
+ Alma, L., apotheker te _Amsterdam_.
+
+ Andriessen, A., voorzanger der evang. luth. gemeente aldaar.
+
+ Baarslag, W., med. doct. aldaar.
+
+ Born, J. Æ., med. doct. te _Bergum_.
+
+ Buma, B. H., student te _Groningen_.
+
+ Fiedeldeij, H. P. G., te _Amsterdam_.
+
+ Ferf, H. Nieubuur, schoolopz. van het 4de distrikt in Friesland, te
+ _Bergum_.
+
+ Fransen, F. H., te _Amsterdam_.
+
+ Gavere, Mr. P. L. de, te _Groningen_.
+
+ Heukelom J. P., te _Amsterdam_.
+
+ Ligny, A. D. Thuyn de, theol. stud. te _Groningen_.
+
+ Boekeren, W. van, boekhandelaar te _Groningen_.
+
+ Eekhoff Hz., H., boekhandelaar te _Groningen_.
+
+ Folkers, N., boekdrukker te _Groningen_.
+
+ Meijer, C. P., boekhandelaar te _Groningen_.
+
+ Oomkens Jz., J., boekhandelaar te _Groningen_. 2 expl.
+
+ Schierbeek, R. J., boekhandelaar te _Groningen_. 2 expl.
+
+ Scholtens, A. L., boekhandelaar te _Groningen_.
+
+ Wilkens, F., boekhandelaar te _Groningen_.
+
+ Wouters, G., boekhandelaar te _Groningen_.
+
+ Zweeden, P. van, boekhandelaar te _Groningen_.
+
+                             [Illustratie]
+
+
+
+
+                               Colofon
+
+
+ Duidelijke zetfouten in de originele tekst zijn verbeterd. De Lijst
+ met Intekenaren is achteraan gezet. Daarnaast is aangepast:
+ 
+ Pagina  Origineel      Aangepast
+ ix      manufakturen   manufacturen
+ 54      Thetis         Thetis' 
+ 59      Socrates       Socrates'
+ 59      misschie       misschien
+ 70      fluitenmuzijk  fluiten-muzijk
+
+
+
+*** END OF THE PROJECT GUTENBERG EBOOK CRITO: EEN DIALOOG VAN PLATO ***
+
+
+    
+
+Updated editions will replace the previous one—the old editions will
+be renamed.
+
+Creating the works from print editions not protected by U.S. copyright
+law means that no one owns a United States copyright in these works,
+so the Foundation (and you!) can copy and distribute it in the United
+States without permission and without paying copyright
+royalties. Special rules, set forth in the General Terms of Use part
+of this license, apply to copying and distributing Project
+Gutenberg™ electronic works to protect the PROJECT GUTENBERG™
+concept and trademark. Project Gutenberg is a registered trademark,
+and may not be used if you charge for an eBook, except by following
+the terms of the trademark license, including paying royalties for use
+of the Project Gutenberg trademark. If you do not charge anything for
+copies of this eBook, complying with the trademark license is very
+easy. You may use this eBook for nearly any purpose such as creation
+of derivative works, reports, performances and research. Project
+Gutenberg eBooks may be modified and printed and given away—you may
+do practically ANYTHING in the United States with eBooks not protected
+by U.S. copyright law. Redistribution is subject to the trademark
+license, especially commercial redistribution.
+
+
+START: FULL LICENSE
+
+THE FULL PROJECT GUTENBERG LICENSE
+
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+www.gutenberg.org/license.
+
+Section 1. General Terms of Use and Redistributing Project Gutenberg™
+electronic works
+
+1.A. By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound
+by the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B. “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this
+agreement and help preserve free future access to Project Gutenberg™
+electronic works. See paragraph 1.E below.
+
+1.C. The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is unprotected by copyright law in the
+United States and you are located in the United States, we do not
+claim a right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting
+free access to electronic works by freely sharing Project Gutenberg™
+works in compliance with the terms of this agreement for keeping the
+Project Gutenberg™ name associated with the work. You can easily
+comply with the terms of this agreement by keeping this work in the
+same format with its attached full Project Gutenberg™ License when
+you share it without charge with others.
+
+1.D. The copyright laws of the place where you are located also govern
+what you can do with this work. Copyright laws in most countries are
+in a constant state of change. If you are outside the United States,
+check the laws of your country in addition to the terms of this
+agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work. The Foundation makes no
+representations concerning the copyright status of any work in any
+country other than the United States.
+
+1.E. Unless you have removed all references to Project Gutenberg:
+
+1.E.1. The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:
+
+    This eBook is for the use of anyone anywhere in the United States and most
+    other parts of the world at no cost and with almost no restrictions
+    whatsoever. You may copy it, give it away or re-use it under the terms
+    of the Project Gutenberg License included with this eBook or online
+    at www.gutenberg.org. If you
+    are not located in the United States, you will have to check the laws
+    of the country where you are located before using this eBook.
+  
+1.E.2. If an individual Project Gutenberg™ electronic work is
+derived from texts not protected by U.S. copyright law (does not
+contain a notice indicating that it is posted with permission of the
+copyright holder), the work can be copied and distributed to anyone in
+the United States without paying any fees or charges. If you are
+redistributing or providing access to a work with the phrase “Project
+Gutenberg” associated with or appearing on the work, you must comply
+either with the requirements of paragraphs 1.E.1 through 1.E.7 or
+obtain permission for the use of the work and the Project Gutenberg™
+trademark as set forth in paragraphs 1.E.8 or 1.E.9.
+
+1.E.3. If an individual Project Gutenberg™ electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any
+additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works
+posted with the permission of the copyright holder found at the
+beginning of this work.
+
+1.E.4. Do not unlink or detach or remove the full Project Gutenberg™
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg™.
+
+1.E.5. Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.
+
+1.E.6. You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format
+other than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ website
+(www.gutenberg.org), you must, at no additional cost, fee or expense
+to the user, provide a copy, a means of exporting a copy, or a means
+of obtaining a copy upon request, of the work in its original “Plain
+Vanilla ASCII” or other form. Any alternate format must include the
+full Project Gutenberg™ License as specified in paragraph 1.E.1.
+
+1.E.7. Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8. You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works
+provided that:
+
+    • You pay a royalty fee of 20% of the gross profits you derive from
+        the use of Project Gutenberg™ works calculated using the method
+        you already use to calculate your applicable taxes. The fee is owed
+        to the owner of the Project Gutenberg™ trademark, but he has
+        agreed to donate royalties under this paragraph to the Project
+        Gutenberg Literary Archive Foundation. Royalty payments must be paid
+        within 60 days following each date on which you prepare (or are
+        legally required to prepare) your periodic tax returns. Royalty
+        payments should be clearly marked as such and sent to the Project
+        Gutenberg Literary Archive Foundation at the address specified in
+        Section 4, “Information about donations to the Project Gutenberg
+        Literary Archive Foundation.”
+    
+    • You provide a full refund of any money paid by a user who notifies
+        you in writing (or by e-mail) within 30 days of receipt that s/he
+        does not agree to the terms of the full Project Gutenberg™
+        License. You must require such a user to return or destroy all
+        copies of the works possessed in a physical medium and discontinue
+        all use of and all access to other copies of Project Gutenberg™
+        works.
+    
+    • You provide, in accordance with paragraph 1.F.3, a full refund of
+        any money paid for a work or a replacement copy, if a defect in the
+        electronic work is discovered and reported to you within 90 days of
+        receipt of the work.
+    
+    • You comply with all other terms of this agreement for free
+        distribution of Project Gutenberg™ works.
+    
+
+1.E.9. If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from the Project Gutenberg Literary Archive Foundation, the manager of
+the Project Gutenberg™ trademark. Contact the Foundation as set
+forth in Section 3 below.
+
+1.F.
+
+1.F.1. Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+works not protected by U.S. copyright law in creating the Project
+Gutenberg™ collection. Despite these efforts, Project Gutenberg™
+electronic works, and the medium on which they may be stored, may
+contain “Defects,” such as, but not limited to, incomplete, inaccurate
+or corrupt data, transcription errors, a copyright or other
+intellectual property infringement, a defective or damaged disk or
+other medium, a computer virus, or computer codes that damage or
+cannot be read by your equipment.
+
+1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the “Right
+of Replacement or Refund” described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg™ trademark, and any other party distributing a Project
+Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.
+
+1.F.4. Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you ‘AS-IS’, WITH NO
+OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5. Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.
+
+1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in
+accordance with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.
+
+Section 2. Information about the Mission of Project Gutenberg™
+
+Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need are critical to reaching Project Gutenberg™’s
+goals and ensuring that the Project Gutenberg™ collection will
+remain freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future
+generations. To learn more about the Project Gutenberg Literary
+Archive Foundation and how your efforts and donations can help, see
+Sections 3 and 4 and the Foundation information page at www.gutenberg.org.
+
+Section 3. Information about the Project Gutenberg Literary Archive Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non-profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation’s EIN or federal tax identification
+number is 64-6221541. Contributions to the Project Gutenberg Literary
+Archive Foundation are tax deductible to the full extent permitted by
+U.S. federal laws and your state’s laws.
+
+The Foundation’s business office is located at 809 North 1500 West,
+Salt Lake City, UT 84116, (801) 596-1887. Email contact links and up
+to date contact information can be found at the Foundation’s website
+and official page at www.gutenberg.org/contact
+
+Section 4. Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg™ depends upon and cannot survive without widespread
+public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine-readable form accessible by the widest
+array of equipment including outdated equipment. Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular state
+visit www.gutenberg.org/donate.
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: www.gutenberg.org/donate.
+
+Section 5. General Information About Project Gutenberg™ electronic works
+
+Professor Michael S. Hart was the originator of the Project
+Gutenberg™ concept of a library of electronic works that could be
+freely shared with anyone. For forty years, he produced and
+distributed Project Gutenberg™ eBooks with only a loose network of
+volunteer support.
+
+Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as not protected by copyright in
+the U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.
+
+Most people start at our website which has the main PG search
+facility: www.gutenberg.org.
+
+This website includes information about Project Gutenberg™,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+

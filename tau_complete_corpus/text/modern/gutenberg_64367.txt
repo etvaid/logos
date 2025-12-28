@@ -1,0 +1,2750 @@
+﻿The Project Gutenberg eBook of A trachisi nők
+    
+This ebook is for the use of anyone anywhere in the United States and
+most other parts of the world at no cost and with almost no restrictions
+whatsoever. You may copy it, give it away or re-use it under the terms
+of the Project Gutenberg License included with this ebook or online
+at www.gutenberg.org. If you are not located in the United States,
+you will have to check the laws of the country where you are located
+before using this eBook.
+
+Title: A trachisi nők
+
+Author: Sophocles
+
+Translator: Gergely Csiky
+
+Release date: January 22, 2021 [eBook #64367]
+                Most recently updated: October 18, 2024
+
+Language: Hungarian
+
+Credits: Albert László from page images generously made available by the Google Books Library Project
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK A TRACHISI NŐK ***
+
+SOPHOKLES
+
+*
+
+A TRACHISI NŐK.
+
+FORDITOTTA
+
+CSIKY GERGELY.
+
+MÁSODIK KIADÁS.
+
+BUDAPEST.
+
+FRANKLIN-TÁRSULAT
+
+MAGYAR IROD. INTÉZET ÉS KÖNYVNYOMDA.
+
+1899.
+
+
+
+
+SZEMÉLYEK.
+
+  Dejanira.
+  Dajka.
+  Hyllos.
+  Kar: trachisi nők.
+  Hirmondó.
+  Lichas.
+  Aggastyán.
+  Herakles.
+
+FRANKLIN-TÁRSULAT NYOMDÁJA.
+
+
+
+
+BEVEZETÉS.
+
+Sophoklesnek ezen tragœdiája nevét a benne szereplő kartól nyerte, ámbár
+ez a cselekvényre semmi befolyással sincs, s a karok szokása szerint
+csupán helyeslőleg, rosszalólag, tanácsadólag, vigasztalólag és
+részvevőleg kiséri a működő személyek tetteit. A tragœdia tulajdonképeni
+hősnője Dejanira, Herakles szerető neje, ki midőn férje szerelmét
+biztosítani óhajtja, tragikus tévedése által életét veszi el, s
+kétségbeesésében utána hal.
+
+Oeneus, pleuroni király leányát a szörnyü folyam-isten, Achelóos kivánta
+nőül, s a szerencsétlen király-leány már-már áldozatul esett atyja
+kényszerítésének, midőn Herakles megjelent, s heves küzdelemben
+legyőzvén a folyam-istent, elnyerte Dejanira kezét. Nemsokára ezután
+Trachisba kényszerülvén menekülni, utközben a mély Euenos folyón kellett
+átszállniok. Az óriás termetü Herakles könnyen átkelt, de nejének rá
+kellett magát biznia Nessosra, a kentaurosra, ki e folyón bérért szokta
+átszállítni az utasokat. A folyó közepén Nessos illetlen módon találta
+érinteni a vállán ülő Dejanirát, s ennek sikoltására Herakles tüstént
+visszafordult s mérgezett nyilával halálra sebezte a vakmerő kentaurost.
+A boszúvágyó szörny haldokolva azon tanácsot adta Dejanirának, hogy a
+nyilsebből ömlő vért, mint hathatós balzsamot őrizze meg, mert ennek oly
+ereje van, hogy általa Herakles szerelmét mindenkorra biztosíthatja. A
+férje szerelmeért aggódó nő hallgatott ez ajánlatra s Nessos vérét egy
+edényben magához vette. Herakles Trachisban sem maradt sokáig; új
+kalandokra indult, Lydiában Omphale királynő szolgaságába került, s már
+tizenöt hónapja volt távol minden hir nélkül, midőn végre aggódó hitvese
+azon tudósítást veszi, hogy férje szolgaságából kiszabadulván,
+Oechaliát, Eurytos király városát, haddal elpusztította, s foglyait
+előre küldve, az áldozat bemutatása után maga is haza készül; de
+egyszersmind megtudja azt is, hogy a fogoly nők egyike Jolé, Eurytos
+leánya, kinek szerelmeért dúlta volt fel Herakles Oechaliát: és itt
+kezdődik a tragædia cselekvénye, mely Trachisban a királyi palota előtti
+téren történik. Jolé a darabban mint néma személy szerepel.
+
+(Dejanira és a dajka a palotából jönnek.)
+
+DEJANIRA.
+
+  Az ős időkből származott e példaszó,
+  Hogy ember sorsát, mig sirjába nem jutott,
+  Jónak vagy rossznak nem mondhatni biztosan;
+  De az enyémet, bár nem ére még halál,
+  Boldogtalannak és gyötrelmesnek tudom.
+  Hiszen már Pleuron[1] földén, Oeneus atyám
+  Házában borzalommal tölte el a nász,
+  Minőt Aetoliában még nem érze nő.
+  Mert Achelóos folyam volt a vőlegény,
+  Atyámtól három szín alatt kérvén kezem:
+  Előbb bikának látszott, majd gyűrüzve jött,
+  Mint tarka sárkány, végre emberforma lett
+  Ökörfejjel; bozontos állán gazdagon
+  Csorogtak a forrás vizének árjai.[2]
+  Ily vőlegényhez jutva én boldogtalan,
+  Inkább halál után epedtem szüntelen,
+  Mintsem megoszszam a násznyoszolyát vele.
+  Hosszú idő multával végre megjelent,
+  Nagy örömömre, Zeus s Alkméne hős fia;[3]
+  S amazzal harczra kelve győzedelmesen,
+  Megmente tőle; mint történt a küzdelem,
+  Nem mondom el, mert nem tudom; ki rettegés
+  Nélkül végig nézhette, hadd beszélje el.
+  Én félelemtől elkábulva ültem ott,
+  Nehogy szépségem majdan kínommá legyen.
+  A harczbiró Zeus végét jóra forditá,
+  Ha mégis jó volt; mert mióta Herkules
+  Választott nője lettem, folyton rettegés
+  Gyötör miatta; egyik éj meghozza őt,
+  A másik éj elűzi új munkák után.
+  Vannak bár gyermekink, de egyszer látja csak,
+  Mint a földmives távol fekvő telkeit
+  Csak akkor látja, ha aratni, vetni jő.
+  Ebből áll férjem élte: egyre majd haza,
+  Majd meg hazulról küldi őt szolgálata,[4]
+  És hogy most minden munkának végére járt,
+  Félelmem most miatta még sokkal nagyobb.
+  Mert a mióta megölé hős Iphitost,[5]
+  Száműzetésben, idegen födél[6] alatt
+  Élünk Trachisban, és nem tudja senki sem,
+  Hová ment férjem; azt tudom csak, hogy nekem
+  Merő gyötrelmet hagyva hátra, távozott.
+  Ah! csaknem bizton sejtem, hogy baj érte őt.
+  Mert nem kevés idője mult, tizen felül
+  Öt holdja már, hogy hirt nem adva elmarad.
+  Szörnyü baj történt; hisz midőn eltávozott,
+  Ez irást hagyta hátra, melyért annyiszor
+  Imádkozám, nehogy balvégzetű legyen.
+
+DAJKA.
+
+  Oh úrnőm Dejanira! sokszor láttalak
+  Könyhullatások és kinos panasz között
+  Herakles távozásaért kesergeni;
+  Engedj tehát kevés szót szólnom, ha ugyan
+  Rabszolgától tanácsot a szabad vehet:
+  Miként van az, hogy annyi gyermeked levén,[7]
+  Férjed keresni még sem küldöd egyikét,
+  Hyllost kivált, a kit leginkább illet ez,
+  Ha atyja boldogságát szívén viseli?
+  De itt közelg im fürge lábbal ő maga,
+  S ha mit mondék, helyes volt, itt az alkalom,
+  Tanácsomat követve felhasználni őt.
+
+(Hyllos fellép.)
+
+DEJANIRA.
+
+  Oh gyermekem, oh én fiam! Nemes szavak
+  A nemtelentől is jöhetnek; im e nő,
+  Rabszolga bár, szabadhoz méltóan beszélt.
+
+HYLLOS.
+
+  Mi volt az? Mondd anyám, ha szabad hallanom.
+
+DEJANIRA.
+
+  Hogy oly régóta távolban levő atyád
+  Hollétét nem kutatni, szégyent hoz reád.
+
+HYLLOS.
+
+  Hiszen tudom, ha szóbeszédnek hihetek.
+
+DEJANIRA.
+
+  És mely hazában hallád lenni őt, fiam?
+
+HYLLOS.
+
+  Mondják, a mult év folytán hosszu ideig
+  Egy lydiai asszony rabszolgája volt.
+
+DEJANIRA.
+
+  Ugy mindent várhatunk, ha ezt is eltüré.
+
+HYLLOS.
+
+  De mint hallottam, innen már kiszabadult.
+
+DEJANIRA.
+
+  S most hol van, élő vagy halott? Mit mond a hir?
+
+HYLLOS.
+
+  Euboea földén Eurytos városát[8]
+  Haddal támadta meg, vagy készül ellene.
+
+DEJANIRA.
+
+  Tudod-e, oh fiam! hogy biztos jóslatot
+  Hagyott számomra hátra ez ország felől?
+
+HYLLOS.
+
+  Mily jóslatot, anyám? Ezt még nem ismerem.
+
+DEJANIRA.
+
+  Vagy életének végét éri e helyen,
+  Vagy győzve harczán, boldogságban tölti el
+  Jövőre élte hátralévő napjait.
+  Válságos helyzetében nem sietsz, fiam,
+  Segítni őt? Holott megmentve életét,
+  Mentek vagyunk, s ha elvesz, elveszünk vele.
+
+HYLLOS.
+
+  Igen, anyám, megyek; s ha ezt a jóslatot
+  Ismertem volna, ott lennék régóta már;
+  De hallva most, el nem mulasztok semmit is,
+  Hogy mindenről megtudjam bizton a valót.
+  Bár megszokott szerencséjét ismerve, nincs
+  A félelemre s csügggedésre nagy okunk.
+
+DEJANIRA.
+
+  Menj hát fiam! a későn érkezőnek is
+  A jó szerencse, melyet hall, hasznára van.
+
+(A dajka a palotába, Hyllos másfelé távozik. A kar fellép.)
+
+KAR.[9]
+
+_Első versszak._
+
+  Te kit a csillaghimes éji homály
+  Elhunyva szül és újra ölébe temet,
+  Helios, oh ragyogó nap![10]
+  Kérve kérdlek, hol van Alkmene fia, mondd, hova lett,
+  Oh mondd, sugárfényben lobogó tünemény!
+  A tenger árján nyugszik ő, vagy a világ mely oldalán.
+  Oh mondd, ki mindent látsz szemeddel.
+
+_Első ellenversszak._
+
+  Im érte mint árva madár epedez,
+  Meg nem szünő vágygyal Dejanira, kiért
+  Annyi csatára kelének!
+  Nyugtató álomra ah! nem hunyja kisirt szemeit,
+  A távozott férjért remeg egyre szive,
+  S osztatlan ágyán gyötrelemben várja szörnyü végzetét,
+  Boldogtalan sorsán kesergve.
+
+_Második versszak._
+
+  Mint ha a tenger özönlő
+  Habjai összetolulnak,
+  S éjszaki, déli vihar közt
+  Tornyosul egyre az ár:
+  Ugy hajtja a kadmosi törzs[11]
+  Fiát nehéz harczai közt
+  A viharos sors, Kreta zajos
+  Tengereként.[12] De lépteit
+  Isteni kéz megóvja
+  Hades szomorú lakától.
+
+_Második ellenversszak._
+
+  Halljad azért ajakimról
+  Szende szavakkal a feddést:
+  El ne riaszd kebeledből
+  Égi remény vigaszát.
+  Bánattalan sorsot a föld
+  Fiára nem küld soha sem
+  Jupiter, a mindenségnek ura.
+  Váltva kereng fejünk felett
+  Bánat, öröm, miként az
+  Ég csillaga forg körében.
+
+_Végdal._
+
+  Az éji csillagsereg
+  Sem marad helyén örökre,
+  Sem nyomor, se’ kincs; tovább
+  Megy innen és amarra tér
+  Felváltva bánat és kedv.
+  Reményt ez adjon, oh királyi nő! neked
+  Szünetlenül. Hisz’ ki látta, hogy Zeus
+  Segély nélkűl hagyá övéit!
+
+(Dejanira, ki ezalatt a háttérbe vonult, előre jő.)
+
+DEJANIRA.
+
+  Azért jövél, mint sejtem, mert jól ismered
+  Fájdalmamat; de bár ne éreznéd soha,
+  Mit szívem szenved, a mint most sem érezed.
+  Saját tanyáján lakozik az ifjuság,
+  Hol nem kinozza őt az isten lángheve.
+  Sem zápor, sem vihar nem gyötri életét;
+  Örömben, könnyü szerrel tölti napjait,
+  Mig fölcseréli nő nevével a szüzét,
+  S az éji gondból osztályrészét elnyeri,
+  Majd férjeért aggódva, majd szülöttiért.
+  Önnön sorsát szemlélve, akkor érzené,
+  Melyek rám súlyosodnak, a gyötrelmeket.
+  Könyhullatásra hajh! volt már elég okom.
+  De olyant mondok most, minő eddig nem ért.
+  Hogy végutjára kelve elhagyá lakát
+  Herakles fejdelem, egy régi iratot
+  Hagyott számomra itthon, s az volt irva rá,
+  Mit eddig bár sok küzdelemre indula,
+  Egyetlen egyszer sem mert nyilvánitani,
+  Mert mindig tettre indult s nem meghalni ment.
+  De most, miként ha már nem volna, megszabá,
+  Mit nyerjek özvegyrészemül, s az atyai
+  Birtokból mennyi illet minden gyermeket,
+  Időt határozván: ha esztendőn felül
+  Távol marad honunktól három hónapig,
+  Úgy vagy halál lesz sorsa ez idő alatt,
+  Vagy áthaladva a megirt határnapon,
+  Baj nélkül tölti hátralévő életét.
+  Mondá, ily véget rendelt a nagy istenek
+  Határzata Herakles fáradalminak;
+  Igy hirdeté ezt Dodonában egykoron
+  Az ősi tölgyről két galambnak jós-szava.[13]
+  S itt az idő, mely megmutatja a valót,
+  Miként kell a jóslatnak teljesülnie.
+  Azért oh kedvesim! gyakorta felriaszt
+  Legédesb álmomból a szörnyü rettegés,
+  Hogy túl kell élnem a férjek legjobbikát.
+
+KAR.
+
+  Légy jó reménynyel; im füzérrel homlokán,
+  Örömhirt hozva, itt közelg egy férfiú.[14]
+
+(A hirmondó fellép.)
+
+HIRMONDÓ.
+
+  Legelső hirnökül jövök, félelmedet
+  Elűzni, Dejanira! Alkméné fia,
+  Tudd meg hát, él s a győzedelmes harcz után
+  Zsengéit küldi a hon istenséginek.
+
+DEJANIRA.
+
+  Mit mondasz, oh öreg! mi szót kell hallanom?
+
+HIRMONDÓ.
+
+  Hogy nemsokára hőn óhajtott férjedet
+  Házadban látod győzedelmi fény között.
+
+DEJANIRA.
+
+  S mily idegen vagy polgár mondta ezt neked?
+
+HIRMONDÓ.
+
+  Lichas, a hirnök hirdeté a legelőn
+  Nagy néptömegnek ezt. Alig hallám szavát,
+  Hozzád siettem tüstént első hirnökül,
+  Hogy dijat nyerjek tőled és kegyelmedet.
+
+DEJANIRA.
+
+  S miért nincs ő még itt, ha ily jó hirt hozott?
+
+HIRMONDÓ.
+
+  Nem oly könnyű ezt véghezvinni, asszonyom!
+  Mert Meliának[15] összes népe állja őt
+  Körül kérdésivel, s igy nem mehet tovább;
+  Kiváncsian mindenki vágy őt hallani,
+  S el nem bocsátja, mig nem hallott eleget.
+  Igy kedve ellen kedvükért még ott marad,
+  De nemsokára szinről szinre láthatod.
+
+DEJANIRA.
+
+  Oh Zeus, ki Oeta szűz virányain honolsz,[16]
+  Nekünk is adsz hát valahára örömet!
+  Ujongjatok, oh asszonyok! a házban úgy,
+  Mint a falon kivül; mert nem remélt öröm
+  Világát kelti most e hir fejem fölé.
+
+(Dejanira a palotába megy. A hírmondó másfelé távozik.)
+
+KAR.[17]
+
+  Zengjen ujongva most öröm
+  Danája csarnokidon
+  Oh nászi lak! Vegyüljön egybe hangotok,
+  Legények, zengve pártfogónkat,
+  Apollót, a nyilast! De zengjen
+  Pæant is, Pæant[18] dalotok, oh
+  Szűzleányok! És ortygi Artemist
+  Áldja az ének, a szarvasölőt is, a fáklyatüzűt,[19]
+  És a nymphaserget.[20]
+  Magasra szökellek, és a síp
+  Dalának ellenállni nem tud a szivem.
+  Immáron a borostyán,[21]
+  Evoé![22] felizgat,
+  Tánczra hajtva Bakchos égi mámorában.
+
+(Dejanira kijő a palotából.)
+
+  Ió, ió, Pæan![23]
+
+(Lichas és kisérete fellép a fogoly nőkkel, kik közt van Jolé.)
+
+  Ime, drága asszonyom,
+  Tekintsd saját szemeddel,
+  Előtted állnak immár.
+
+DEJANIRA.
+
+  Jól látom, kedves asszonyok; nem csalta meg
+  Szemem figyelmes őrködését e menet.
+  Örömmel látom oly hosszú idő után
+  A hirnököt, ha ő is örömet hozott.
+
+LICHAS.
+
+  Jóval jövünk valóban s jó üdvözletet
+  Érdemlünk, asszonyom! Ki bátran harczola,
+  A férfiút jó szó jutalma illeti.
+
+DEJANIRA.
+
+  Mondd, kedves ember, legelőször azt, miért
+  Leginkább vágyom: élve látom Herkulest?
+
+LICHAS.
+
+  Én bizonyára jó erőben hagytam őt,
+  Életben, virulóan, kórtól mentesen.
+
+DEJANIRA.
+
+  Hol? Itthon-e vagy idegen földön? Beszélj!
+
+LICHAS.
+
+  Eubœa partján, hol oltárt emel s a föld
+  Gyümölcseit Kenæos Zeusnak szenteli.[24]
+
+DEJANIRA.
+
+  Fogadást teljesitve, vagy jóslat szerint?
+
+LICHAS.
+
+  Fogadásból, hogy meghóditá fegyvere
+  E nők hazáját, kikre most szemed tekint.
+
+DEJANIRA.
+
+  De istenért, kik hát ezek, ki lányai?
+  Ha nem csal sorsuk, részvételt érdemlenek.
+
+LICHAS.
+
+  Megvéve Eurytost, őket szemelte ki
+  Herakles önnön s istenek sajátjaul.
+
+DEJANIRA.
+
+  E vár előtt tölté el hát a végtelen
+  Hosszú időnek számlálhatlan napjait?
+
+LICHAS.
+
+  Nem; Lydiában tölté a legtöbb időt,
+  S mint maga mondá, nem szabadságban, hanem
+  Rabszolgaként. De asszonyom, nem kell ezért
+  Haragra lobbanod, mert Zeus rendelte igy.
+  A barbar Omphalénak eladatva, itt
+  Töltött egy teljes évet, mint mondá maga.
+  De e gyalázat úgy megsebzé bensejét,
+  Hogy megfogadta egyben esküt tett reá,
+  Rabságra vetni nőstül, gyermekestül azt,
+  Ki rá hozá e szégyenitő szenvedést.
+  S nem esküdött hiában; hogy megtisztula,
+  Serget toborzott és Eurytos városa
+  Ellen vonult; mert a halandók közt csupán
+  Csak őt okolta minden szenvedéseért;
+  Kinek házát, hogy régi jó barátjaként
+  Meglátogatta, sértő szókkal illeté,
+  S gyakorta rossz lelküleg ingerlé szivét,
+  Mondván: Herakles íja bár bizton talál,
+  A nyilcsatában többet érnek fiai;
+  Szemére hányta aztán, hogy nem is szabad,
+  Hanem csak szolga; s végre bortól ittasan
+  Kidobta házából. Haragra gyúlt ezért,
+  S hogy a tirynsi[25] halmon látta Iphitost,
+  A mint fürkészte eltévedt mének nyomát,
+  Másutt kalandozván szemével, másfelé
+  Eszével: a tornyos szirtről ledobta őt.
+  E tette volt az, mely Zeust, az Olymp urát,
+  Mindennek apját, felbőszíté ellene;
+  S rabszolgaként eladta, mert nem tűrheté,
+  Hogy csellel gyilkolá meg annyiak közül
+  Ez egyet. Ám ha nyiltan áll boszút, jogos
+  Győzelmét megbocsátja Zeus kétségkivül.
+  A gőgös sértést istenek sem kedvelik.
+  De kik gonosz nyelvökkel hetvenkedtenek,
+  Hades lakóivá lettek mindannyian,
+  És rabbá városuk. Kiket most látsz, e nők,
+  Gyászos sorsot cserélve boldogságukért.
+  Im hozzád jönnek. Férjed igy parancsolá,
+  S parancsát teljesitem, én, hű embere.
+  Őt is magát, mihelyt a tiszta áldozat
+  Be lesz mutatva ős Zeusnak győzelmeért,
+  Azonnal várhatod. Sok szép szavam között
+  Ezt hallanod bizonynyal a legédesebb.
+
+KAR.
+
+  Öröm derül reád most, oh királyi hölgy!
+  E nőket látva s hallva a hirnök szavát.
+
+DEJANIRA.
+
+  Miként ne örvendeznék szivem mélyiből
+  Férjem szerencsés helyzetének hallatán?
+  Szükségkép hozzá kell járulnom nékem is.
+  De jó megfontolás rettegni kényszerit,
+  Nehogy bukás is érje majd a boldogot.
+  Mély szánalom fogá el szívem, kedvesim,
+  Im e szegények láttán, kik hazátlanul,
+  Árván bolyongnak idegen föld térein,
+  S talán szabad szüléktől nyerve éltöket,
+  Osztályrészük most a rabszolga sorsa lett.
+  Oh bajháritó Zeus! ne lássam azt soha,
+  Hogy ily keményen sujtod ivadékomat.
+  S ha mégis tennéd, vajh’ ne éljek akkor én!
+  E nőket látva, oly nagy félelem gyötör.
+
+(Joléhoz.)
+
+  Ki vagy te, oh boldogtalan ifjú leány?
+  Még hajadon? Vagy anya? Nem, külsőd szerint
+  Mindebben járatlan vagy, de nemes szülött.
+  Lichas, kinek leánya ez az idegen?
+  Ki volt az anyja? Mely atya nemzette őt?
+  Beszélj! mindnyája közt legjobban szánom ezt,
+  Ki egyedül látszik balsorsát érteni.
+
+LICHAS.
+
+  Mit tudjam én? Mit kérdesz engem? Meglehet,
+  Nem a legaljasabb családból származott.
+
+DEJANIRA.
+
+  Királyi törzsből? Tán Eurytos magzata?
+
+LICHAS.
+
+  Én nem tudom; nem is kérdeztem hosszasan.
+
+DEJANIRA.
+
+  Nem hallád egyik útitársától nevét?
+
+LICHAS.
+
+  Nem ám; hallgatva végezém el dolgomat.
+
+DEJANIRA.
+
+  Mondd hát te, oh boldogtalan, magad; hiszen
+  Balsors az is, ha nem tudjuk kilétedet.
+
+LICHAS.
+
+  Bizonynyal fel nem nyitja most sem ajkait,
+  Mint eddig sem tevé; egyszer sem hallatá
+  Szavát az úton, sem halkan, sem hangosan;
+  Hanem nehéz sorsán kesergve, szüntelen
+  Csak sir, szegény, mióta elpusztult honát
+  Elhagyta. Bizonyára keserű e sors,
+  Mely érte őt, de elnézést is érdemel.
+
+DEJANIRA.
+
+  Hagyjuk hát nyugton, és a mint kedvére van,
+  Vonuljon palotámba; újabb bánatot
+  A meglevő bajokhoz tőlem ne vegyen;
+  Elég ez is már. Menjünk most mindannyian
+  A ház felé, hogy te siess, hová akarsz,
+  Én meg, mint illik, oda benn rendet tegyek.
+
+(Lichas a foglyokkal a palotába megy. Dejanira utána akar menni, de a
+hirmondó fellép és elállja útját.)
+
+HIRMONDÓ.
+
+  Maradj még itt egy pillanatra, hogy ezek
+  Távollétében halld, házadba kit vezetsz,
+  S megtudd, a mit kell, és mit eddig nem tudál.
+  Mert mindezek felől jól értesültem én.
+
+DEJANIRA.
+
+  Mi ez? Mi végre állod így el útamat?
+
+HIRMONDÓ.
+
+  Maradj s figyelj; nem volt hiú beszéd, előbb
+  Mit tőlem hallottál; hiszem, most sem lesz az.
+
+DEJANIRA
+
+  És vajjon vissza hivjam-e a többit is,
+  Vagy csak velem s e nőkkel kivánsz szólani?
+
+HIRMONDÓ.
+
+  Veled s ezekkel szólok; a többit bocsásd.
+
+DEJANIRA.
+
+  Eltávoztak már, mondd tehát, mi szándokod?
+
+HIRMONDÓ.
+
+  E férfiú, ki most beszéle, semmiben
+  Sem monda igazat; vagy most hamis követ,
+  Vagy akkor volt hazug, midőn előbb beszélt.
+
+DEJANIRA.
+
+  Mit szólasz? Mondd ki tisztán véleményedet;
+  Nem értek semmit abból, a mit hallatál.
+
+HIRMONDÓ.
+
+  Ez ember önnön ajkiról hallottam én,
+  Számos tanúval, hogy csupán ez ifju lány
+  Végett hóditá meg Herakles Eurytost
+  S magas tornyú Oechaliát; az istenek
+  Közt Eros volt csak az, ki harczra birta őt,
+  S nem szolgasága Lydiában, Omphale
+  Rabságában, nem Iphitos halála sem;
+  S ezt elmellőzve, most ellenkezőt beszél.
+  Nem birhatván Herakles arra Eurytost,
+  Hogy lányát titkos nászra adja át neki,
+  Hiú ürügykép fölkap egy csekély panaszt,
+  S haddal rohan e lány honára, hol – miként
+  Amaz mondá – Eurytos ült a trónuson;
+  Megölte atyját, a királyt, és városát
+  Kiirtá. S most, mint látod asszonyom, haza
+  Jő, nem terv nélkül – mint a többit – küldve ezt,
+  Nem is rabszolgaként; távolról se reméld;
+  Hogy is lehetne igy, ha vágytól ég szive?
+  Jónak tartám, királyné, mind elmondani,
+  Mi a hirnök szavából tudtomul jutott;
+  Sokan hallották ezt a trachisi
+  Piacznak kellő közepén s rásüthetik
+  Hazugságát. Ha mit mondék, nem kellemes,
+  Sajnálom, ám igazság volt minden szavam.
+
+DEJANIRA.
+
+  Oh jaj, hová jutottam én boldogtalan?
+  Mily romlást fogadék be öntudatlanul
+  Tetőm alá? Oh én szegény! Nem névtelen
+  Hát e leány, mint kisérője esküvék?
+
+HIRMONDÓ.
+
+  A mily szép szemre, születésre oly nemes;
+  Mert atyja Eurytos, s hazájában neve
+  Jolé volt; törzsét nem nevezte meg sehogy
+  A hirnök, mert bizonynyal nem kutatta azt.
+
+KAR.
+
+  Pusztuljanak a gonoszok, s ha mind nem is:
+  Az veszszen, ki méltatlan rosszat titkon űz.
+
+DEJANIRA.
+
+  Oh mit tevő legyek most, asszonyok; holott
+  Egészen elkábítnak a hallott szavak?
+
+KAR.
+
+  Menj és kérdezd ki Lichast; kétségen kivül
+  Elmond mindent, ha szigorún kivallatod.
+
+DEJANIRA.
+
+  Megyek tüstént; tanácsod nem volt esztelen.
+
+HIRMONDÓ.
+
+  Hát én maradjak, vagy más egyebet tegyek?
+
+DEJANIRA.
+
+  Maradj, im önszántából és nem hirnököm
+  Által hivatva, itt jön ő a ház felől.
+
+(Lichas kijő a palotából.)
+
+LICHAS.
+
+  Mily választ küldesz Heraklesnek, asszonyom?
+  Beszélj; mint látod, induló félben vagyok.
+
+DEJANIRA.
+
+  Miért sietsz oly késő érkezés után,
+  Holott beszélgetésünk meg sem újitám?
+
+LICHAS.
+
+  Ha van mit kérdened még, im jelen vagyok.
+
+DEJANIRA.
+
+  S igéred-e, hogy igazat fogsz mondani?
+
+LICHAS.
+
+  A nagy Zeus látja, azt mindenben, mit tudok.
+
+DEJANIRA.
+
+  Ki hát e nő, kit épen most hozál ide?
+
+LICHAS.
+
+  Eubœából való; ki lánya nem tudom.
+
+HIRMONDÓ.
+
+  Te ember, nézz reám! Tudod kivel beszélsz?
+
+LICHAS.
+
+  Te meg miért fordulsz e kérdéssel felém?
+
+HIRMONDÓ.
+
+  Felelj, ha eszeden vagy, kérdésemre csak.
+
+LICHAS.
+
+  Kivel beszélek: Dejanira, Oeneus
+  Leánya, Herakles neje – ha csak szemem
+  Nem lát rosszul – s királynőm és úrnőm nekem.
+
+HIRMONDÓ.
+
+  Ezt, épen ezt akartam tőled hallani.
+  Urnőd tehát ő, azt mondod.
+
+LICHAS.
+
+  Valóban az.
+
+HIRMONDÓ.
+
+  Nos hát, mi büntetésre tartanád magad
+  Méltónak, ha kitünnék, hogy megcsaltad őt?
+
+LICHAS.
+
+  Hogyan? Megcsaltam? Mily talányokban beszélsz?
+
+HIRMONDÓ.
+
+  Én nem; de te bizonynyal ebben sántikálsz.
+
+LICHAS.
+
+  Megyek; rég balgaság volt, hogy hallgattalak.
+
+HIRMONDÓ.
+
+  Nem addig, mig egy kis kérdésre nem felelsz.
+
+LICHAS.
+
+  Beszélj, mi kell hát; látom nem vagy szófukar.
+
+HIRMONDÓ.
+
+  A hadifoglyot, kit e házba vezetél.
+  Bizonynyal ismered?
+
+LICHAS.
+
+  Mondám. Mért kérded ezt?
+
+HIRMONDÓ.
+
+  Nem mondtad e leányról, kit most nem akarsz
+  Ismerni, hogy Jolé, Eurytos magzata?
+
+LICHAS.
+
+  Kinek mondám? Ki az, honnan jő, hol van az,
+  Ki bizonyságot merne tenni ellenem?
+
+HIRMONDÓ.
+
+  Akárhány polgár. Trachis nyilvános terén
+  Saját ajkadról hallá ézt nagy néptömeg.
+
+LICHAS.
+
+  Igy mondám hallomásból; ám hirt hordani
+  S határozottan szólni – két külön dolog.
+
+HIRMONDÓ.
+
+  Miféle hirt? Nem esküvéssel állitád,
+  Hogy e leányt mint Herakles nejét hozod?
+
+LICHAS.
+
+  Én, mint nejét hozom! Az istenekre, mondd
+  Kedves királyném, kicsoda ez idegen?
+
+HIRMONDÓ.
+
+  Oly ember, a ki hallá tőled, hogy e lány
+  Kedvéért dőlt meg a város; nem Lydia
+  Okozta pusztulását, csak a szerelem.
+
+LICHAS.
+
+  Kergesd el ezt az embert, oh úrnőm! Hiszen
+  Őrülttel nem fecseghet józan férfiú.
+
+DEJANIRA.
+
+  Nem, Zeusra, a ki Oeta erdős ormain
+  Szór villámot – ne titkolj tőlem semmit el.
+  Hisz nem hitvány asszonyhoz intézed szavad,
+  Ki ne ismerné emberek természetét,
+  Hogy egyben mindig nem találnak örömet.
+  Mind esztelen, ki Erossal csatára száll,
+  Bajvívóként kezét emelve ellene;
+  Hisz istenek felett is győz, ha kedve jő;
+  Győzött felettem is, miért ne másokon?
+  Botorság volna kárhoztatnom férjemet
+  E szenvedély miatt, mely keblét égeti,
+  Vagy e leányt, ki semmit el nem követett,
+  Mi szégyent hozna rá, vagy bánatot reám.
+  Távol van tőlem! De hazudni ha talán
+  Gazdád tanitott, nem szép dolgot tanulál;
+  Ha meg te voltál tenmagadnak mestere,
+  Úgy jó óhajtván lenni, rosszként állsz elő.
+  Mondd hát ki hímezés nélkül az igazat,
+  Szabad emberre szégyen a hazug neve.
+  Ne is reméld, hogy eltitkolhass valamit;
+  Mert soknak elmondád, kitől meghallhatom.
+  Ha félelem tart vissza, nincs reá okod,
+  Hisz a bizonytalanság jobban gyötrene.
+  Mi bajt okozhat a valót meghallanom?
+  Nem szeretett-e sok más nőt már Herkules?
+  És egyikét sem érte tőlem bántalom,
+  Sem rossz szó e miatt; bizonynyal erre sem
+  Száll haragom, bármily forrón szeresse őt;
+  Sőt inkább szánalommal nézek rá, hiszen
+  Szépsége volt az, mely megrontá életét,
+  S szülőföldét feldúlta és rabbá tevé
+  Szándéka ellen. Ámde hagyjuk a maga
+  Útjára ezt. De téged intelek: lehetsz
+  Mindenkihez csalárd, de engem meg ne csalj.
+
+KAR.
+
+  Fogadd a jó szót, úgy panaszra ellene
+  Nem lesz okod, s kiérdemled hálámat is.
+
+LICHAS.
+
+  Látom kedves királyné, nem vagy oktalan,
+  És ember dolgát embermódra fontolod:
+  Elmondok hát mindent, semmit sem titkolok.
+  Valóban úgy van, mint ez ember állitá.
+  Forró szerelmi lángra gyúladt egykoron
+  E lányért Herakles, s miatta verte le
+  Oechaliát, szegény hazáját, fegyvere.
+  S ezt ő (mert meg kell adnom, a mi illeti)
+  Nem titkolá s titkolnom nem parancsolá;
+  Én voltam, oh királyné! a ki vétkezém,
+  Rettegvén ily beszéddel kebled gyötreni, –
+  A bűnös én valék, ha bűnnek tartod ezt.
+  És most, hogy mindent, a mi történt, megtudál:
+  Férjednek úgy mint tenmagadnak kedveért,
+  Légy e leányhoz jó szivvel, s miként előbb
+  Beszéltél róla, tartsd meg állandón szavad.
+  Mert őt, ki hős karjával minden mást legyőz,
+  Legyőzte e leány szerelme teljesen.
+
+DEJANIRA.
+
+  Ez szándokom, s a meglevő bajt nem fogom
+  Sulyosbbá tenni istenek ellen való
+  Haszontalan küzdéssel. Térjünk vissza most
+  A házba, hogy átadjam izenetemet,
+  S ajándokáért, mint illik, viszont az én
+  Ajándokom; üres kézzel nem volna szép
+  Távoznod, a ki nagy csapattal érkezél.
+
+(Dejanira és Lichas a palotába mennek. A hirmondó másfelé távozik. A kar
+egyedül marad.)
+
+KAR.[26]
+
+_Első versszak._
+
+  Örökös diadal koszorúzza dicső Kypris fejét.[27]
+  Nem hozom fel
+  A nagy isteneket, se miként szedi rá Kronosfiát,
+  Sem komor éjjeli Hadest,
+  Sem Poseidont, földeket a ki remegtet.[28]
+  Ám Dejanira kezéért
+  Mi dühös viadal vala ketteje közt!
+  Mi szörnyü küzdelemre keltenek
+  A csatatér fövényén.
+
+_Második versszak._
+
+  Achelóos az egyik, alakja bikáé, szarva nagy,
+  Négy a lába,
+  S rohan Oenia tájairól;[29] s a ki szembe száll vele,
+  Bakchosi Theba felől jő,
+  Rázva kézíját, gerelyét s buzogányát:
+  Zeus fia ő. Az aráért
+  Vadul összerohannak a tér közepén;
+  S a harcz birája Kypris egyedül,
+  Nászöröm alkotója.
+
+_Végdal._
+
+  Felharsan az öklök és íj zaja most,
+  Egyben megrecseg a bika szarva;
+  Birkózva egymást
+  Átölelik, dühösen összecsapódnak
+  Homlokaik, nyög a két mell.
+  S távol halmon ül a
+  Szép, gyöngéd menyasszony,
+  Várva a hőst, várva vőlegényét.
+  E harcz felől anyjaként beszélek.
+  Kisirt szemekkel, kesergve várt ott
+  A szűz, a harczi díj,
+  Elszakadva e nyomban anyja
+  Mellől, árva üszőként.
+
+(Dejanira lopva jő a palotából).
+
+DEJANIRA.
+
+  Mig a fogoly leányokhoz búcsúszavát
+  Intézi vendégünk a házfalon belül,
+  Titokban hozzátok siettem, kedvesim,
+  Hogy elbeszéljem, mit készite két kezem,
+  S előttetek sirassam szenvedésemet.
+  Mert, úgy hiszem, nem szűzleány, de asszony az
+  Kit felfogadtam, mint nagy terhet a hajós,
+  Érzelmeim szégyenletes jutalmaul.
+  És most egy ágyon ketten várunk ölelő
+  Karokra. Igy fizet Herakles engemet,
+  Ki mindig jónak és hűnek neveztem őt,
+  És házát oly hosszú időn át őrizém.
+  Bár nem tudok haragra gyúlni ellene,
+  Ki oly gyakorta lett e kórnak rabja már;
+  De mely nő volna képes, egy fedél alatt
+  Lakozni ezzel, egy nászt osztva meg vele?
+  Látom, miként nő ifjuságban e leány,
+  És én miként fogyok; gyönyörrel néz a szem
+  Nyiló virágra, hervadótól elriad.
+  Félek hát, hogy Herakles név szerint uram
+  Lesz bár, de férjül majd ez ifjabb birja őt.
+  Hanem haragra gyúlni, mint mondám, eszes
+  Nőhöz nem illik; s e bajon segiteni
+  Módomban áll még. Halljátok hát, kedvesim:
+  Elrejtve érczedénybe régen őrizem
+  Egy ősi szörnyetegnek ős ajándokát,
+  Mit ifjú lány koromban a halálra vált
+  Szőrös mellű Nessos sebéből nyertem én.
+  Karjával vitte át Evénos mély vizén
+  Bérért az útazókat ő, sem evező,
+  Sem csónak, sem vitorla nem kellett neki;
+  Igy vitt át engem is, midőn atyám lakát
+  Először hagytam el, mint Herakles neje;
+  S hogy vállán űltem, a folyamnak közepén,
+  Hozzám nyult vakmerő kezével; én nagyot
+  Sikolték, s gyorsan megfordulva Zeus fia,
+  Rálőtt szárnyas nyilával. Keblét érte ez,
+  És átszegzé süvöltve tüdejét. A szörny
+  Igy szóla haldokolva: «Halld ősz Oeneus
+  Leánya, kit legvégsőnek szállitok át,
+  Szolgálatomból hasznod lesz, ha szót fogadsz.
+  Ha az aludt vért sebeimből felfogod,
+  Hol a lernæi hydravérnek fekete
+  Mérgébe mártott nyilhegy érte keblemet:[30]
+  Herakles szivét azzal megbűvölheted,
+  Hogy bárminő asszonyra vessen is szemet,
+  Jobban mint téged ne szeresse azt soha.»
+  Megemlékezve erről most, oh kedvesim!
+  (Mert házamban tartám azóta zár alatt,)
+  Bekentem ezt a köntöst, nem feledve el,
+  Mit életében monda. Meg van téve már.
+  Boszorkánysághoz bár nem értek, és nem is
+  Akarnék érteni, s ki igy tesz, gyűlölöm:
+  De hogy ha ily varázs által legyőzhetem
+  E lányt s Herakles szivét megbűvölhetem:
+  A munka kész, ha csak nem látszik vakmerő
+  Dolognak ez; s ha mégis, – felhagyok vele.
+
+KAR.
+
+  Ha van bizalmad abban, a mit készitél,
+  Nekünk nem látszik oktalannak szándokod.
+
+DEJANIRA.
+
+  Bizalmamat csak véleményre épitem,
+  Próbára még nem tettem erejét soha.
+
+KAR.
+
+  De a tudásra tett kell: kisérlet hiján
+  Tudásod is csak látszat lesz és nem való.
+
+DEJANIRA.
+
+  Megtudjuk nemsokára; ime már kijött
+  A házból Lichas: útazása gyors leszen.
+  Csak el ne áruljátok titkom. A homály
+  Megment a szégyentől, tégy bár szégyenletest.
+
+(Lichas kiséretével jő a palotából.)
+
+LICHAS.
+
+  Parancsolj Oeneus leánya mit tegyek?
+  Hosszú időre nyúlt már késedelmem itt.
+
+DEJANIRA.
+
+  Hisz épen ebben jártam, Lichas, mig te benn
+  Az idegen leányokkal beszélgetél;
+  Vidd hát férjemnek, mint kezem ajándokát,
+  E finoman szőtt köntöst s add nevemben át.
+  De átadván, mondd, a halandók közt előbb
+  Mint ő, ne öltse ezt magára senki sem;
+  Ne lássa ezt előbb a nap sugára sem,
+  A szent oltár, az izzó tűzhely fénye sem,
+  Mig nyiltan nem mutatja benne önmagát
+  Az isteneknek a nagy áldozatnapon.
+  Mert felfogadtam, hogyha látom egykoron,
+  Vagy hallom boldog visszatértét, szentül e
+  Köntössel ékesitni s mint új áldozót
+  Új öltönyben mutatni isteneknek őt.
+  Bizonyságúl vidd e gyűrű pecsétjegyét,
+  Könnyen megismerhetni, s ő megismeri.
+  Menj hát, s elsőnek tartsd eszedben e szabályt:
+  Hirnök lévén, felesleges dolgot ne tégy:
+  Hogy így az ő hálája egyesülve az
+  Enyémmel, egyből kétszeres kegygyé legyen.
+
+LICHAS.
+
+  Ha biztosan viszem Hermes szolgálatát,[31]
+  Ne félj, hogy a te dolgodban tegyek hibát;
+  E szekrényt, ugy a mint van, átadom neki,
+  Hiven hozzácsatolva, mit mondál, szavad.
+
+DEJANIRA.
+
+  Most elmehetsz már; hogy mily rendben állanak
+  A házi dolgok, azt eléggé jól tudod.
+
+LICHAS.
+
+  Tudom s elmondom, hogy minden jó rendben áll.
+
+DEJANIRA.
+
+  Azt is tudod, saját szemeddel látva, mily
+  Jó szivvel fogadám az idegen leányt.
+
+LICHAS.
+
+  Hogy láttán szivemet öröm ragadta el.
+
+DEJANIRA.
+
+  Mi mondandód van még? Félek, nehogy előbb
+  Beszélj érette égő vágyaim felől,
+  Mintsem megtudnád, vágy-e értem ő viszont?
+
+(Dejanira a palotába, Lichas kiséretével másfelé távozik.)
+
+KAR.[32]
+
+_Első versszak._
+
+  Kik ott a meleg haboknál,
+  Szirteken s a rév mögött,
+  Fenn laktok az œtai ormon, és ti ott a
+  Melia öblénél,
+  Az aranyijas szűz[33] partjain,
+  Hol Hellas pyli dicső
+  Tanácsa egybegyűle:[34]
+
+_Első ellenversszak._
+
+  Felhangzik a bájdalú síp
+  Hangja köztetek hamar,
+  Nem harczra riasztva, nem, egybefolyva zengő
+  Isteni múzsával,
+  Immár hazatér zsákmányival
+  Zeus és Alkméne dicső
+  Szülötte, hősi diszben:
+
+_Második versszak._
+
+  Tova tengereken, honát
+  Elhagyva bolyonga egész nagy éven át, s hirt
+  Nem adva váratott magára; ám szerelmes hitvesét,
+  Szegény boldogtalan szegény szivét,
+  Bánat gyötörte szüntelen;
+  De most bőszült Ares bevégzé
+  A munka napjait.
+
+_Második ellenversszak._
+
+  Legyen itt, legyen itt! Előbb
+  Ne lelje helyét siető hajója révben,
+  Mig el nem éri városunkat; erre térve a sziget
+  Felől, mely látta áldozatjait:
+  Jöjjön meg onnan e napon
+  A balzsam gerjesztette vágygyal,
+  A szörny tanácsaként!
+
+(Dejanira jő a palotából.)
+
+DEJANIRA.
+
+  Oh asszonyok! mint félek, hogy tán messze is
+  Mentem mindabban, a mit épen most tevék.
+
+KAR.
+
+  Mi történt, Dejanira, Oeneus gyermeke?
+
+DEJANIRA.
+
+  Én nem tudom; de rettegek, jó szándokom
+  Nehogy nagy bajt hozzon fejemre csakhamar.
+
+KAR.
+
+  De csak nem most küldött ajándokod miatt?
+
+DEJANIRA.
+
+  Azért valóban! Nem tanácslom senkinek,
+  Bizonytalan dologban bizni teljesen
+
+KAR.
+
+  Mondd el, ha mondható, mi az, mitől remegsz?
+
+DEJANIRA.
+
+  Olyasmi történt, mit ha nektek, asszonyok,
+  Elmondok: hallatlan csodának vélitek.
+  A bodros bárány tiszta gyapja, melylyel én
+  A köntösön végig keném a balzsamot,
+  Eltünt, de nem más által semmisitve meg
+  Ott benn, hanem önnön magát emésztve fel,
+  És elenyészett a kövön. De hogy egész
+  Valójában megtudd, mi történt, halld tovább.
+  A mit a szörny, a kentauros mondott nekem,
+  Midőn a gyilkos nyíl átszegzé oldalát,
+  Szót sem feledtem abból, nem, megőrizém,
+  Mint érczlap eltörölhetetlen iratát;
+  Ez volt a mit rendelt, s én mindent megtevék:
+  A balzsamot a nap meleg sugárítól
+  S tűztől megóva tartsam jól rejtett helyen,
+  Mig friss kenésre nem használom iziben.
+  Így tettem. S most midőn szükségem volt reá,
+  Titkon szobámba vittem és fölkentem ott
+  Gyapjúval, melyet enbárányomról vevék;
+  Majd összehajtva, napsugártól mentesen,
+  Mint tudjátok, szekrénybe rejtém a ruhát.
+  De visszatérve olyant láttam, mit a szó
+  Leirni nem tud, sem felfogni ember-ész.
+  A gyapjat, melylyel fölkeném a balzsamot,
+  Véletlenül oly helyre dobtam, hol a nap
+  Sugára fénylett. S itt a mint fölmelegült,
+  Egészen eltünt, elporlott a padlaton;
+  Midőn tuskót reszel a fűrész vasfoga,
+  Porát oly módon láthatod szétomlani.
+  Ekként hevert a földön. Ám ott, hol feküdt,
+  Tajtékzó hólyagok bugyogtak fölfelé,
+  Miként ha Bakchos kékes szőlőfürtinek
+  Kövér nedűjét a földön szétöntözik.
+  S most nem tudom, mit véljek én boldogtalan!
+  Mert látom, borzasztó tettet követtem el.[35]
+  Miért lett volna hozzám jó indulatú
+  A haldokló szörny, ki halálát okozám?
+  Oh nem! Megsemmisitni vágyva gyilkosát,
+  Hizelge csak nekem; s én későn ismerem
+  Meg a valót, midőn már minden hasztalan.
+  Mert hogyha nem csal sejtelmem, csak én vagyok
+  Az, oh boldogtalan! ki meggyilkolja őt.
+  Tudom, hogy Chiron isten is sebet kapott[36]
+  E nyiltól, és mihelyt érinté a vadat,
+  Tüstént elhulla mind; s e nyil ütötte seb
+  Fekete vére hogy ne lenne gyilkoló
+  Méreg férjemre is? Ah! bizton sejtem ezt.
+  De föltevém, ha ő meghalna, úgy vele
+  Együtt és egy csapással én is elveszek.
+  Hiszen rossz hirben élni nem tud az a nő,
+  Ki nem-rossz-voltát nagyra szokta tartani.
+
+KAR.
+
+  Veszélyes tettnél szükséges bár félni is,
+  De a reményt ne vesd el, a mig vége nincs.
+
+DEJANIRA.
+
+  Gonosz tetteknél nincs oly sejtelmes remény,
+  Mely a kebelbe bátorságot öntene.
+
+KAR.
+
+  De a boszú nem sujt le arra súlyosan,
+  Ki szándék nélkül vétkezett; így vagy te is.
+
+DEJANIRA.
+
+  Nem igy beszél, kinek a rosszból rész jutott,
+  Hanem csak az, kit otthon nem bánt semmi baj.
+
+KAR.
+
+  Jobb lesz a többi szót elhallgatnod, ha csak
+  Fiad tudtára nem kivánod adni; itt
+  Van ő, ki atyja nyomdokát keresni járt.
+
+(Hyllos fellép.)
+
+HYLLOS.
+
+  Anyám! bár választhatnék e három közül:
+  Volnál halottként sírba téve; vagy ha élsz,
+  Nevezne más anyjának: vagy jobb érzetet
+  Cserélnél, mint a milyen lakja kebledet.
+
+DEJANIRA.
+
+  Mit tett ily gyűlöltté előtted, oh fiam?
+
+HYLLOS.
+
+  Tudd meg tehát, hogy férjedet, kit én magam
+  Atyámnak mondék, meggyilkoltad e napon.
+
+DEJANIRA.
+
+  Oh jaj! mi szó hagyá el ajkadat fiam?
+
+HYLLOS.
+
+  Oly szó, mely tetté vált. Mi egyszer létre jött,
+  Ki volna képes nem történtté tenni azt?
+
+DEJANIRA.
+
+  Mit mondál, oh fiam? Mily ember oktatott,
+  Ily iszonyú bűnnel vádolni engemet?
+
+HYLLOS.
+
+  Nem idegen nyelv mondá, enmagam saját
+  Szememmel láttam atyám szörnyű kínjait.
+
+DEJANIRA.
+
+  De hol találtad őt, hol álltál oldalán?
+
+HYLLOS.
+
+  Mindent elmondok hát, ha tudni akarod.
+  Hogy elpusztítá Eurytos nagy városát,
+  Győzelmi jellel és zsákmánynyal gazdagon,
+  Kenæon tengermosta hegyfokára ért
+  Eubœa földén, hol Zeusnak, ki atyja volt,
+  Oltárt emelt s lombos ligettel övezé;
+  Vágyó örömmel itt láttam először őt.
+  A mint nagyszámú áldozatra készüle,
+  Megjött hazulról Lichas, házi hirnökünk,
+  Hozván ajándokod, a gyilkoló ruhát;
+  Magára öltve ezt, kivánatod szerint,
+  Előbb kiválasztá a préda legjavát,
+  Tizenkét ökröt vágva; aztán összesen
+  Minden fajú baromból százat áldozott.
+  Kezdetben a szegény jó kedvvel végezé
+  Imáját, örvendezve ékes köntösén;
+  De hogy a gyantás ágak és az áldozat
+  Tüzéből fellobbant a véres lángözön,
+  Izzadtság tört ki bőrén, testéhez ragadt
+  A köntös, mintha művész vonta volna fel
+  Minden tagjára, s a vonagló fájdalom
+  Átmetszé csontjait; majd mint a gyilkoló
+  Kigyónak mérge marta megtört tagjait,
+  Reá kiálta ekkor a boldogtalan
+  Lichasra, a ki bűnödben nem osztozott:
+  Mily álnoksággal[37] hozta hozzá e ruhát?
+  Nem tudva semmit e szerencsétlen, csak azt
+  Mondá: ajándokod úgy hozta, mint adád.
+  Ezt hallva fájdalmában, a mint a kinos
+  Vonaglás át meg áthatotta tüdejét,
+  Lábcsuklójánál megragadta hirtelen
+  Amazt, s a hullámverte sziklához dobá;
+  Széttört agyából és keresztül fürtjein
+  Vérrel vegyest ömölt ki a fehér velő,[38]
+  És az egész nép szánakozva jajgatott
+  Ennek halálán és amannak kínjain;
+  De közelébe lépni nem mert senki sem.
+  Mert majd a földön fetrengett, majd felszökött;
+  Ordítva, bőgve; szirtek, Lokris[39] ormai
+  Viszhangoztak reá s Eubœa hegyfoka.
+  A sok vonaglás végre megtöré szegényt,
+  Elbágyasztá a sok keserves jajgatás,
+  Átkozva gyászos ágyadat, boldogtalan,
+  Átkozva Oeneus nászát, melynek élete
+  Irtózatos megrontását köszönheté:
+  Felnyitva ekkor ködtől fellegzett szemét,
+  A nagy tömegben észre vett engem, fiát,
+  Ki ott zokogtam; rám nézett s megszólíta:
+  «Oh! jer közel fiam, gyötrelmimtől ne fuss,
+  Habár halálom által halnod kellene.
+  Vígy innen engem el; legjobb lesz, vígy oda,
+  Hol emberek közül ne lásson senki sem;
+  Ha szánalommal vagy hozzám, minél előbb
+  Vigy el e földről, hogy ne itt haljak meg én.»[40]
+  Parancsát téve csónakot vevénk, s reá
+  Helyezve, sok baj közt e földre érkezénk,
+  Míg ő kínjában ordított. Megláthatod
+  Tüstént, vagy élve, vagy végsőt lehelve ép’.
+  Ime, anyám! ezt terveléd s tevéd atyám
+  Ellen te, hogy büntessen érte boszuló
+  Diké s Erinnys! Ezt kivánom, ha jogos.
+  S jogos bizonynyal, mert te adtál rá jogot,
+  Meggyilkolván az emberek legjobbikát,
+  Kihez hasonlót nem látsz többé itt soha.
+
+(Dejanira a palotába megy.)
+
+KAR.
+
+  Mért távozol hallgatva? Nem tudod, hogy a
+  Vádló szemében vallomás a hallgatás?
+
+HYLLOS.
+
+  Hagyjátok menni. Kedvező szél hadd vigye
+  Minél előbb; ne lássa többé őt szemem.
+  Mit ér hiún ragyogni az anya díszes
+  Nevével, hogyha nem cselekszik anyaként?
+  Menjen hát örvendezve; s jusson részeül
+  Oly élvezet, minőt atyámnak szerze ő! (El.)
+
+KAR.[41]
+
+_Első versszak._
+
+  Látjátok, oh lányok! hogy az isteni szó
+  Ős jóslata mily sietéssel
+  Teljesíti, mit kimondott:
+  Ha beköszönte tízen felül a második vetés,[42]
+  Élete műveinek, keserű fáradalminak
+  Zeus fia végit éri; és valóban
+  Teljesül im a végzet.
+  Mert kit a halál vett el,
+  Soha se’, soha se’ gyötri azt a munka többé.
+
+_Első ellenversszak._
+
+  Hiszen ha álnok végzete átövezé
+  Véres szövetével a szörnynek,
+  S tomporához ért a méreg,
+  Mit a halál szüle és gyarapított a hydratest:
+  A mai napon kívül ah! hogyan érne más napot,
+  Kit kebelére zárt a szörnyű sárkány?
+  S a fekete fürtös szörny
+  Csalfa szava, mint gyilkos
+  Tövis, ereiben össze-vissza járja vérét.
+
+_Második versszak._
+
+  Nem igy érté ezt a szegény,
+  Sem a szörnyü veszélyt, mit a csalfa tanács fedett,
+  Nem sejté ő; de látta remegve
+  Romba dőlni biztosan
+  Házának üdvét új nászi kötés után.
+  Hajh! sóhaja száll immár,
+  Hajh! öntözi orczáját
+  Friss harmata könnyének.
+  Immár kiderült, mily veszedelmet hoza rá
+  A siető végzet.
+
+_Második ellenversszak._
+
+  A könyek forrása kitört;
+  Iszonyú nyavalyája – nagy istenek! – elfogá
+  Zeus szülöttét; nem érte az ellen
+  Keze soha ily keményen őt.
+  Oh hadvezérlő gyászos kelevéz, miért
+  Hozta e leányt győző
+  Harczod a vihar szárnyán
+  Oechalia ormáról?
+  Kypris keze volt, mely diadalmadra segélt,
+  Ő vezeté mindezt.
+
+(A palotában jajgatás hallatszik.)
+
+FÉLKAR.
+
+  Eszemen vagyok-e? Való, a mit hallok?
+  Mi siránkozás tölti be a palotát?
+  Mit mondok?
+
+FÉLKAR.
+
+  Tisztán hallatszik, ámde szivet szaggatón
+  A jajgatás; új baj szülője lett e ház.
+
+(A dajka fellép.)
+
+FÉLKAR.
+
+  Tekintsd ez
+  Agg nőt, sötéten, felhős arczczal jő felénk,
+  Bizonynyal új dolog felől hoz hírt nekünk.
+
+DAJKA.
+
+  Ah gyermekim! mily nagy bajoknak kezdete
+  Volt az ajándék, melyet Herakles kapott.
+
+KAR.
+
+  Mily újabb bánatot jelentesz, oh öreg?
+
+DAJKA.
+
+  Ah! mozdulatlan lábbal Dejanira már
+  Megtette életében a végső utat.
+
+KAR.
+
+  De csak nem mint halott?
+
+DAJKA.
+
+  Mindent hallottatok.
+
+KAR.
+
+  Meghalt tehát szegény?
+
+DAJKA.
+
+  Másodszor hallhatod.
+
+KAR.
+
+  Szegény, oh a szegény! Tudod-e mily halála volt?
+
+DAJKA.
+
+  Iszonyú a csapás, mely érte.
+
+KAR.
+
+  Asszony! oh minő
+  Csapás ölte meg?
+
+DAJKA.
+
+  Önnön magát sujtotta.
+
+KAR.
+
+  Mily őrület, mily láz veré
+  Ah! keblébe a bősz csapást?
+  Halálhoz új halált miként
+  Adhata ő egyedül?
+  Mi vezette kezét?
+
+DAJKA.
+
+  Keblét a gyilkoló vas érte.
+
+KAR.
+
+  S te láttad, szegény, e borzalmat?
+
+DAJKA.
+
+  Bizonynyal láttam, mert ott álltam oldalán.
+
+KAR.
+
+  Ki volt? Mint tevé? Szólj!
+
+DAJKA.
+
+  Önnön kezével hajtá végre önmagán.
+
+KAR.
+
+  Mi szó ez?
+
+DAJKA.
+
+  Valóság.
+
+KAR.
+
+  Ah az új, ah az új ara mily
+  Iszonyú harag boszúját
+  Hozá e födélre!
+
+DAJKA.
+
+  Valóban; ah! de mint szánnád még akkor őt,
+  Ha szemtanúként láttad volna, mit mívelt.
+
+KAR.
+
+  És mindezt gyönge női kéz mivelheté?
+
+DAJKA.
+
+  Borzasztó módon. Hallgass meg és légy tanúm.
+  Midőn a házba visszatért magányosan,
+  És látta gyermekét, a mint ágyat vetett
+  Az udvaron s aztán atyjához készüle:[43]
+  Elrejtezett, hol nem láthatta semmi szem,
+  S az oltár mellett összerogyva, hangosan
+  Keserge árvaságán, s bármi tárgyhoz ért,
+  Mit azelőtt használa, egyre zokogott.
+  Majd fel s alá bolyongva a szobák során,
+  Ha látta kedves házi népe egyikét,
+  Rá néze és sírásban tört ki a szegény,
+  Átkozva gyászos sorsát, hogy gyermektelen
+  Leend ezentúl összerombolt létele.
+  Hogy ez kissé lecsillapúla, hirtelen
+  Herakles násztermébe látom törni őt.
+  Látatlanúl árnyékba álltam, meglesém,
+  Mit lesz teendő; és látom, hogy asszonyunk
+  Herakles ágyát szőnyeggel teríti le.
+  Megtéve ezt a munkát, gyorsan felszökött
+  Az ágyra és ledőlt a nászlak közepén.
+  Kitörtek aztán újra forró könyei,
+  S így szóla: Oh én ágyam, oh én nászlakom!
+  Isten hozzád örökre, nem fogadsz soha
+  Többé szerelmes nőként falaid közé.
+  Ezt mondva, lázas kézzel megragadja és
+  Letépi öltönyét kebléről, hol arany
+  Kapocs kötötte össze; meztelen hagyá
+  Egész baloldalát s balkarját is vele.
+  És én a mint erőm engedte, elfuték,
+  Fiának tudtul adni anyja szándokát.
+  De mig mi erre és amarra futkosánk,
+  Szivén keresztül kétélű kardot döfött
+  Keblébe ő; hozzája érve, így lelők.
+  Ezt látva, jajgatásban tört ki a fiú.
+  Most érté, hogy haragja volt e tett oka,
+  Későn hallván a házi néptől, hogy a szörny
+  Szavára járt el anyja akaratlanul.
+  Nem szűnt meg ekkor a boldogtalan fiú
+  Szemében a köny, ajkain sem a nyögés;
+  Csókokkal árasztá el anyját, és szivét
+  Erősen szivéhez szorítván jajgatott,
+  Hogy oly hamis váddal meré illetni őt;
+  S hogy kettős árvaságra jut most élete,
+  Atyát, anyát egyszerre vesztve egy napon.
+  Im ez történt itt. Balga hát mindaz, ki két
+  Vagy tán több napra mer számolni biztosan;
+  Holott a holnap addig nem tulajdona,
+  Mig boldogul le nem futott a mai nap. (El.)
+
+KAR.[44]
+
+_Első versszak._
+
+  Ki az, kit először sirathatok?
+  Ki az, kit utoljára hagyhatok?
+  Merre tekintsek én szegény?
+
+_Első ellenversszak._
+
+  Itt látom a házban az egyiket,
+  Ott várom epedve a másikat,
+  Innen is, onnan is halál.
+
+_Második versszak._
+
+  Bár kelne minél előbb
+  E ház felől erős karú fuvallat,
+  És vinne messze, messze innen engemet,
+  Hogy meg ne öljön iszonyú
+  Félelmem a pillanatban,
+  Zeus fiát ha látom itt;
+  Mert rettenetes gyötrelmeivel
+  Immár közelegni hallom.
+  Vért fagyaszt e látvány!
+
+_Második ellenversszak._
+
+  Nincs messze a fájdalom,
+  Mit hirdeték kesergő csalogányként:
+  Im idegen csapat közelg e hely felé.
+  Mint hozza őt! Mi csendesen
+  Jő, mily szomorúan erre,
+  Mintha volna jó barát.[45]
+  Jaj! Karjaikon van, szótalanul!
+  Ah! mit hihetek? Halott-e?
+  Vagy csak álmot alszik?
+
+(Több férfi hozza Heraklest; a menetet egy aggastyán vezeti. Hyllos
+szembe jő velök a palotából.)
+
+HYLLOS.
+
+  Oh jaj nekem, jaj!
+  Te miattad atyám, oh jaj nekem!
+  Mit tegyek? Mibe fogjak én? Jaj, jaj!
+
+AGGASTYÁN.
+
+  Csendesen, fiam, ne költsd fel
+  Dühszállta atyád rettenetes kínjait:
+  Mert élve pihen még. Zárd le tehát
+  Ajkadat.
+
+HYLLOS.
+
+  Mit szólsz öreg? Él még?
+
+AGGASTYÁN.
+
+  Álmát el ne riaszd, mely befogta szemét,
+  Ébredése gyötrelem lesz,
+  Mert vele ébred
+  Baja, oh fiam!
+
+HYLLOS.
+
+  Ah! eszemet veszi már
+  A reám nehezült iszonyú sors.
+
+HERAKLES.
+
+  Oh Zeus!
+  Mily földre juték? Kik ezek körülem?
+  Hol fekszem e nem pihenő kínok
+  Közepett? Oh én boldogtalan!
+  Ah! újra mar a gonosz, jaj![46]
+
+AGGASTYÁN (Hilloshoz).
+
+  Ime ládd, mondtam, a némaság
+  Tanácsosabb lett volna, míg igy
+  Szempilláiról
+  Elűzéd álmát.
+
+HYLLOS.
+
+  Oh! de ha nem bírom
+  Hallgatva tekinteni kínját.
+
+HERAKLES.
+
+  Oh! Kenæon szirtoltára,
+  Mi dicső volt rajtad áldozatom,
+  S mi jutalmat adál nekem! Oh Zeus!
+  Mily szörnyű gyalázatba sújtál!
+  Oh vajha szemem soha ormaidat
+  Ne látta volna! Nem érzeném úgy
+  E kiirthatatlan gyötrelmeket.
+  Hol van az orvos, hol van a varázsló,
+  A ki e kínokat oltaná,
+  Ha Zeus nem nyújtja segélyét?
+  Mint várhatnék e csodára!
+  Ah, ah!
+  Hagyjatok engem aludni, nyomorultat,
+  Hagyjatok engem aludni, szegényt;
+  Hol érsz hozzám, hova fektetsz?
+  Hisz ez öl, hisz ez öl!
+  Pihenő kínom is felébredett.
+  Megragadott immár, jaj! jaj! tagom égeti újra!
+  Mely haza szült titeket, hálátlan hellasi népség?
+  Hányszor adám éltem, boldogtalan én, e hazáért,
+  Tengeren, erdőben; s most nincs itt köztetek egy sem,
+  Ki a beteg kínját tűzzel, dárdával eloltsa?
+  Ah, ah!
+  Senki se’ vágja hát le fejem s vele
+  Gyűlölt életemet? Jaj, jaj!
+
+AGGASTYÁN.
+
+  Oh ki e férfiunak fia vagy! nem birja erőm már
+  Ezt a nehéz munkát; jer, tartsd velem őt. Szemeim tán
+  Jobban felfedik a gyógyszert.
+
+HYLLOS.
+
+  Ime felfogom őt már;
+  Oh de szerem nincsen, mely kínjait oltani tudná,
+  Itt sem, a házban sem! csak Zeus adhat segedelmet.
+
+HERAKLES.
+
+  Oh hol vagy, hol fiam?
+  Jöjj ide, jöjj ide, nyújtsd kezedet, segíts!
+  Ah! ah! jaj! jaj! átok!
+  Rám rohan, rám rohan újra
+  Iszonyú kínom,
+  A halálos, az olthatatlan kór.
+  Oh Pallas, Pallas! gyötrelmeit érzem ujonnan.
+  Gyermekem, oh szánj meg, vond ki szeplőtlen aczélod,
+  Üsd vele torkomat át; gyógyítsd meg bősz nyavalyámat,
+  Melyet anyád gyújtott; hogy látnám őt is elesni,
+  Úgy a miként, a miként engem sújt! Jószivű Hades,
+  Isteni Zeus-testvér,
+  Küld a halált, a halált, hogy elaltassa
+  Kínjaimat tüstént!
+
+KAR.
+
+  A borzadás fog el, ha látom, kedvesim,
+  A fájdalmat, mely ily dicső hőst így gyötör.
+
+HERAKLES.
+
+  Oh mennyi munkát bírt már el vállam s karom,
+  Veszélyes munkát, mit kimondni is nehéz!
+  De annyi szenvedésre sem Zeus hitvese,
+  Sem ellenséges Eurystheus nem juttatott,
+  Mint Oeneus hitszegő leánya, e ruha
+  Csalárd hálóját vetve rám, mit furiák
+  Szőttek, hogy elveszítsék éltemet vele.
+  Mert oldalomhoz nőtt s lemarta húsomat,
+  Beszívódott tüdőmig és kiszárítá
+  Az éltető eret; kiszopta véremet,
+  Fölette, szétroncsolta testem tagjait,
+  Rejtélyes lánczként fogva át oldhatlanul.
+  Nem harczi dárda tette ezt, nem földszülött[47]
+  Órjások serege, sem vad szörnyek ereje,
+  Nem Hellas, nem barbár hazának férfia,
+  Sem más hon, melyen tisztogatva áthaték;
+  Nem, asszony volt az, és nem hősi férfiú,
+  Ki kard nélkül meggyilkolt engem egymaga.
+  Oh én fiam! légy méltó és igaz fiam,
+  Ne tartsd nagyobbra nálam rossz anyád nevét.
+  Ragadd ki tenkezeddel a födél alól
+  Szülő anyádat s add kezembe, hadd tudom,
+  Kinek fájdalma gyötri inkább lelkedet,
+  Enyém-e vagy övé, ha boszúm széttöri.
+  Menj, oh fiam, s merd tenni ezt; szánj engemet,
+  Kit szán mindenki; mert miként ifjú leány
+  Sirok kínomban; nincs ember, ki mondaná,
+  Hogy sírni látott volna engem azelőtt;
+  Sóhaj nélkül viseltem mindig én a bajt.
+  De most asszonynyá tett a kín, boldogtalant
+  Lépj közelebb atyádhoz, állj mellém fiam,
+  Tekintsd saját szemeddel, mennyit szenvedek.
+  Im fölemeltem tagjaimról a mezet,
+  Nézzétek hát mindnyájan gyötrött testemet,
+  Nézzétek, én szegény mi nyomorult vagyok.
+  Jaj, jaj, gyötrelem, oh jaj!
+  A kín megint éget már, újra átnyilal,
+  És tomporomba hat; a gyilkos nyavalya
+  Nem enged megpihenni pillanatra sem.
+  Oh nagy Hades, ragadj el!
+  Zeus tüze, sujts fejemre!
+  Csóváld meg, oh isten, felettem, s küld le rám
+  Villámodat, atyám![48] Mert újra megrohan,
+  S növekvő dühvel mardos. Oh kezem, kezem,
+  Oh hátam, mellem és ti kedves karjaim!
+  Ti vagytok hát valóban, melyek egykoron
+  Elpusztíták Nemea szörnyű honosát,
+  A hozzáférhetetlen arszlánt,[49] pásztorok
+  Ijesztő rémét; Lerna hydráját: a két
+  Természetű vad szörnyek dúló seregét,
+  A szemtelen s erőszakos kentaurokat;
+  És Erymanthos vádját; meg a föld alatt
+  Hades háromfejű ebét, az iszonyú
+  Echidna kölykét; és a sárkányt, mely a föld
+  Végső határán aranyalmát őrizett?
+  Ezernyi más küzdelmet izlelék meg én,
+  S kezemből nem birt senki győzedelmi jelt.
+  De most minden tagom megtörve, testemet
+  Szétmarczangolta láthatatlan kór keze,
+  Ki a legjobb anyának viselem nevét,
+  Kinek nemzője Zeus volt, a csillaglakó.
+  De tudjátok meg ezt: bár semmivé levék,
+  Bár lábam sem bir: így is megtorlást veszek
+  Azon, ki ezt tevé. Hadd jöjjön hát elő,
+  Tanulja meg s hirdesse a világ előtt,
+  Hogy élve, halva a gonoszt megbüntetem.
+
+KAR.
+
+  Szegény Hellas! mily gyászba látom arczodat
+  Borulni, ha e hősödtől megfosztanak.
+
+HYLLOS.
+
+  Megengedvén, hogy válaszoljak, oh atyám!
+  Bajod daczára hallgass meg hát csendesen.
+  Nem kérek tőled semmit, a mi jogtalan.
+  Figyelj reám, s ne égjen benned úgy a düh,
+  Miként a kín gyötör; mert máskép nem tudod,
+  Miért vágyódol s mért boszankodol hiún.
+
+HERAKLES.
+
+  Mondd el hamar mondandód s hallgass; kínjaim
+  Között nem értem én e szószátyárkodást.
+
+HYLLOS.
+
+  Anyámról óhajtok beszélni, mostani
+  Sorsáról, s hogy nem vétkezett szándékosan.
+
+HERAKLES.
+
+  Oh te gonosz! fülemnek hallatára mersz
+  Anyádról szólni, ki meggyilkolá atyád?
+
+HYLLOS.
+
+  Olyan történt, miről hallgatni nem szabad.
+
+HERAKLES.
+
+  Bizonynyal nem szabad arról, mit vétkezett.
+
+HYLLOS.
+
+  Nem így fogsz ám arról beszélni, mit ma tett.
+
+HERAKLES.
+
+  Beszélj; de őrizkedjél rossznak látszani.
+
+HYLLOS.
+
+  Beszélek; most ölé meg gyilkoló keze.
+
+HERAKLES.
+
+  Ki ölte meg? Csodát jelent baljós igéd?
+
+HYLLOS.
+
+  Önnön magát ölé meg, nem más kéz tevé.
+
+HERAKLES.
+
+  Hah! mért nem sujthatá karom le jog szerint?
+
+HYLLOS.
+
+  Ha mindent megtudsz, majd lecsillapul dühöd.
+
+HERAKLES.
+
+  Nagy szóba kezdél; szólj tehát, mint érted ezt?
+
+HYLLOS.
+
+  Egy szóval mondom: jót akarva vétkezett.
+
+HERAKLES.
+
+  Hogyan, gonosz! atyád’ megölve jót akart?
+
+HYLLOS.
+
+  Látván az új nászt, bűvös szerrel akará
+  Szerelmedet megóvni, s ebben tévedett.
+
+HERAKLES.
+
+  S ki volt a nagy varázsló Trachis népe közt?
+
+HYLLOS.
+
+  A kentaur Nessos vette rá hajdan, hogy ily
+  Varázslat által gyújtsa fel szerelmedet.
+
+HERAKLES.
+
+  Oh jaj nekem szegénynek, végórám ütött!
+  Elvesztem, elvesztem, nincs már számomra fény!
+  Jaj, jaj, most érzem teljesen balsorsomat!
+  Menj, oh fiam! mert nincsen többé már atyád;
+  Menj s hivd elő testvérid összes fajzatát,
+  Boldogtalan Alkménét is, ki hasztalan
+  Lett Zeus nejévé; hadd hallják a jóslatot
+  Éltem végéről, melyet ah! jól ismerek.
+
+HYLLOS.
+
+  Anyád nincs már itt, más tanyára távozott,
+  Tiryns a parti város lett lakó helye;
+  Nehányát gyermekidnek elvivé oda
+  Nevelni, és a többi Thebában lakik;
+  Hanem mi, kik jelen vagyunk, atyám, ha kell
+  Szolgálatodra állunk; szólj hát, mit kivánsz.
+
+HERAKLES.
+
+  Figyelj tehát szavamra, s mutasd meg azt,
+  Hogy méltó vagy magad fiamnak mondani.
+  Atyám igéje rég megjósolá nekem,
+  Hogy élő lény kezéből nem jő rám halál,
+  Hanem csak attól, a ki Hadest lakja már.
+  És most a szörnyeteg kentaur, az isteni
+  Jóslat szerint, elvette holtan éltemet.
+  De mondok nektek még egy újabb jóslatot,
+  Mely úgy szól, mint a régi, s egyenlő vele;
+  A hegylakó vad sellek[50] szentelt erdején
+  Atyám soknyelvű tölgyéről hallottam ez
+  Igét, s felírtam minden szót, mit jósola:
+  Hogy a jelen napokban megjő az idő,
+  Mely a reám szabott súlyos munkák alól
+  Felszabadít. Boldogságot reméltem én;
+  Pedig mit igért nem más volt, mint a halál:
+  Mert szenvedés nem éri már a holtakat.
+  Tisztán beteljesülvén minden, oh fiam,
+  Légy újra hű segédem abban, mit teszek,
+  S ne várd, hogy zordonabb szavakkal intselek;
+  Kövesd önként parancsomat, s törvényedül
+  Válaszd a legszebbet: fogadd atyád szavát.
+
+HYLLOS.
+
+  Bár reszketés fog el szavadra, oh atyám!
+  De teljesítem mindenben parancsodat.
+
+HERAKLES.
+
+  Nyujtsd jobbodat hát mindenek előtt nekem.
+
+HYLLOS.
+
+  Miért kivánsz e hittel kötni engemet?
+
+HERAKLES.
+
+  Nem nyújtod iziben, nem fogadod szavam?
+
+HYLLOS.
+
+  Im jobb kezem, nem mondok ellent semmiben.
+
+HERAKLES.
+
+  S most Zeus atyám fejére mondd el esküdet.
+
+HYLLOS.
+
+  Nem mondod azt is, eskümet mire teszem?
+
+HERAKLES.
+
+  Esküdjél arra, hogy parancsom megteszed.
+
+HYLLOS.
+
+  Im esküszöm, hatalmas Zeus legyen tanúm.
+
+HERAKLES.
+
+  S ha esküdet nem tartod, átkozd el magad.
+
+HYLLOS.
+
+  Megtartom; s ha megszegném, átkozott legyek.
+
+HERAKLES.
+
+  Isméred Oeta ormát, Zeusnak szent helyét?
+
+HYLLOS.
+
+  Ismérem, sokszor áldozék e hegytetőn.
+
+HERAKLES.
+
+  E csúcsra vidd fel tenkezeddel testemet,
+  Kisérjenek kiválasztott barátaid;
+  Halmozd máglyába mélygyökű tölgy ágait,
+  Vágj hozzá vad olajfa törzséből sokat,[51]
+  És a magas máglyára tedd rá testemet;
+  Fogj azután égő fenyő szövétneket
+  S gyújtsd meg vele. Vigyázz, ne érje semmi köny;
+  Sirás, sóhajtás nélkül tedd meg, ha ugyan
+  Méltó fiam vagy; mert ha nem, az alvilág
+  Mélyéből is üldözni fognak átkaim.
+
+HYLLOS.
+
+  Oh jaj, atyám, mit mondasz? Mit bízál reám!
+
+HERAKLES.
+
+  A mit tenned kell. És ha nem, keress atyát
+  Másutt, ne mondd többé fiamnak magadat.
+
+HYLLOS.
+
+  Jaj, újra jaj! Mily tettre hívsz fel, oh atyám?
+  Hogy éltedet vegyem, hogy gyilkosod legyek?
+
+HERAKLES.
+
+  Nem arra; ám hogy meggyógyítsad kínomat,
+  Hogy fájdalmimnak légy egyetlen orvosa.
+
+HYLLOS.
+
+  Mint gyógyítnám meg tűzhalállal testedet?
+
+HERAKLES.
+
+  Ha ettől borzadsz, tedd a többit legalább.
+
+HYLLOS.
+
+  A hegyoromra felszállítlak szivesen.
+
+HERAKLES,
+
+  A máglyát is felhalmozod, mint rendelém?
+
+HYLLOS.
+
+  Ha csak nem kell, hogy enkezemmel érjelek;
+  A többit megteszem fáradhatatlanul.
+
+HERAKLES.
+
+  Ez is elég lesz; ám e nagy szolgálatot
+  Tetézd csekélyebb szivességgel kedvemért.
+
+HYLLOS.
+
+  Legyen bár legnagyobb, örömmel megteszem.
+
+HERAKLES.
+
+  Eurytos ifjú lányát nemde ismered?
+
+HYLLOS.
+
+  Ha nem csal sejtelmem, Jolé felől beszélsz.
+
+HERAKLES.
+
+  Felőle. Ezt kötöm szivedre még, fiam:
+  Ha elhunytommal híven emlékszel reám,
+  S eszedbe jut az eskü, mit nekem tevél,
+  Vedd nőül e leányt; fogadd atyád szavát;
+  Az emberek közül ne birja senki azt,
+  Rajtad kívül, ki oldalam mellett feküdt.
+  Ágyát te vedd magad gondodba, oh fiam!
+  Fogadj szót. Hisz’ ki nagy dologban engedél,
+  Csekélységben daczolva feldúlnád kegyem.
+
+HYLLOS.
+
+  Oh jaj! betegre vészthozó bár a harag;
+  De mint viselhető el ilyen gondolat?
+
+HERAKLES.
+
+  Úgy szólasz, mintha nem akarnád tenni ezt.
+
+HYLLOS.
+
+  Ki választhatná e leányt, ki egyedül
+  Hozá anyámra a halált s reád e kórt,
+  Mely most gyötör; ha csak nem szállta meg gonosz
+  Szellem? Haljak meg inkább én is, oh atyám!
+  Mint elvegyem legrosszabb ellenségemet.
+
+HERAKLES.
+
+  Ez ember, a mint látom, végső perczemet
+  Sem tartja tiszteletben; ám az istenek
+  Átkozzanak meg, ha nem fogadod szavam.
+
+HYLLOS.
+
+  Ah! látom, tüstént elfog már a szörnyű kór.
+
+HERAKLES.
+
+  Igen, te ébreszted föl alvó kínomat.
+
+HYLLOS.
+
+  Szegény fejem, mi bősz kétségek gyötrenek!
+
+HERAKLES.
+
+  Mért nem hallgatsz rá, a ki adta éltedet.
+
+HYLLOS.
+
+  Gonoszságot tanuljak tőled, oh atyám?
+
+HERAKLES.
+
+  Az nem gonoszság, ha szivem vigasztalod.
+
+HYLLOS.
+
+  Valóban ezt parancsolod tehát nekem?
+
+HERAKLES.
+
+  Valóban ezt. Tanúim rá az istenek.
+
+HYLLOS.
+
+  Úgy megteszem, nem daczolok; az istenek,
+  Látják, te rendeléd így. Nem fogok soha,
+  Parancsod teljesítve, rossznak látszani.
+
+HERAKLES.
+
+  Jól végezéd; csatold hát hozzá, oh fiam,
+  A gyorsaságot, melylyel a máglyára tészsz,
+  Míg új görcs nem ragad meg s újabb dühroham,
+  Előre gyorsan, fogjatok fel! Életem
+  Végével kínjaimtól is megpihenek.
+
+HYLLOS.
+
+  Nem gátol semmi, hogy parancsod megtegyük,
+  Hiszen te rendeled, s te kényszerítsz atyám!
+
+HERAKLES.
+
+  Fel, míg a kór meg nem ragad újra,
+  Fel, erős, kemény lélek! zárd le vas
+  Zabolával az ajkak jajszavait,
+  Ne remegjen a szív, menjen örömmel,
+  Hova kényszerű végzete hajtja!
+
+HYLLOS.
+
+  Vigyétek el, emberek, őt, s legyetek
+  Elnézéssel azért, mit tenni fogok;
+  Lássátok e gyászeseményben
+  Zord szigorát az isteni kéznek.
+  Atyja volt, fiának nevezé:
+  S hidegen szemléli e szörnyű baját.
+
+KAR.[52]
+
+  A jövőt nem látja senki szeme;
+  A mi megtörtént: gyász mi fejünkre,
+  Szégyen övére,
+  De a legkínosabb mindannyia közt
+  A férfiúra, ki szenved.
+  Ifjú lányka ne késsél már e helyen,
+  A hol annyi halált és annyi nyomort
+  Láttak e kurta időn szemeid.
+  És ezt mind Zeus keze tette.
+
+
+
+
+Jegyzetek.
+
+1. Oeneus Aetolia királya volt; országához tartozott Pleuron városa,
+mely az Euenos folyó mellett feküdt.
+
+2. A folyam-isteneket vagy egészen bika, vagy bikafejű ember, vagy
+emberfejű bika alakjában szokták jelképezni. Sophokles ezeken kívül a
+sárkány alakját adja Achelóosnak, mi a folyam kigyózó csavarodásait
+jelentheti.
+
+3. Alkmene Elektryon, mykenei király leánya volt, s Zeustól szülte
+Heraklest.
+
+4. Midőn Herakles már megszületendő volt, Zeus megesküdött, hogy a fiú,
+ki e törzsből éjjel születik, egész családja fölött úr legyen. A
+féltékeny Hera (Juno) tehát egy éjtszakával megkéslelteté Alkmene
+szülését, s így történt, hogy Nikippe, Sthenelosnak, Alkmene
+nagybátyjának neje, előbb hozta világra fiát Eurystheust, ki Zeus
+esküjénél fogva egész családjának s így Heraklesnek is ura lett, s a
+tizenkét nagy munkát végezteté vele.
+
+5. Iphitost, Eurytos fiát, Herakles atyja elleni bosszúból orozva ölte
+meg.
+
+6. Keyx, trachisi királynál.
+
+7. Dejanirának négy fia volt Heraklestől: Hyllos, Glenos, Ktesippos és
+Hodites.
+
+8. Eurytos, Oechalia királya, Herakles mestere volt a nyillövésben.
+Alább a tragœdia szövegében el van beszélve, miért szűnt meg e kettő
+közt a barátság.
+
+9. Dejanira barátnői, kik a kart teszik, először a naphoz könyörögnek,
+hogy adjon valami hírt a távollevő Heraklesről; azután Dejanirát
+vigasztalják részint azzal, hogy férje Zeus különös oltalma alatt áll,
+részint meg azzal, hogy minden ember sorsa öröm és bánat közt hányódik.
+
+10. A naphoz fordulnak, mert ez mindenkit lát.
+
+11. Herakles Thebában született, melyet Kadmos alapított.
+
+12. A kretai tenger nagy viharairól volt nevezetes.
+
+13. Dodona, Epirusban, Zeus jósdája volt s a legrégibb Hellasban.
+Tölgyligetben állott, s az egyik tölgyfáról galambok hirdették a
+jóslatot, melyek alatt papnők is érthetők.
+
+14. Az örömhírek vivői koszorús fővel szoktak megjelenni.
+
+15. Melia Trachisnak szomszédos városa volt.
+
+16. Oeta, magas hegy Trachis mellett, melynek orma Zeusnak volt
+szentelve. Rétjét sohasem kaszálták le, fáit sohasem vágták ki, azért:
+«szűz virányok.»
+
+17. Dejanira felhivására a kar örömdalt énekel, tánczmozdulatokkal.
+
+18. Pæan: ima Apollóhoz; néha Apollót is jelenti.
+
+19. Ortygia, máskép Delos, sziget, Artemis istennő születés helye; innen
+ezen istennő mellékneve. Fáklyatüzűnek neveztetik, mert az éjet, mint a
+hold istennője, megvilágítja.
+
+20. A Trachissal szomszédos hegyek nymphái Artemist állandón kisérték
+vadászataiban.
+
+21. A borostyán Bakchos boristen szentelt növénye volt.
+
+22. Evoe, a bakchosi ünnepeknél szokásos örömkiáltás.
+
+23. Ió, hasonlókép örömriadal.
+
+24. Kenæon, Euboea hegyfoka. Herakles a meghódított föld egy részét
+Zeusnak szenteli, s terméseit az áldozatra szánja.
+
+25. Tiryns, a peloponnesosi Argolis városa, hol Alkmene született s
+Herakles gyakran tartózkodott.
+
+26. Heraklesnek Jolé iránti szerelméből alkalmat véve, a kar a szerelem
+ellenállhatatlan hatalmát dicsőíti, s leírja azon iszonyú harczot,
+melyet Herakles Dejanira szerelmeért Achelóossal vívott.
+
+27. Kypris, Aphrodite (Venus) mellékneve, kinek Cyprus szigete kedvencz
+lakhelye volt.
+
+28. Poseidon (Neptun) a tengerek istene; tőle származtak a földrengések
+is.
+
+29. Oenia, város Akarnaniában, az Acheloos folyó mellett.
+
+30. A lernaei hydrát Herakles ölte meg, s ennek mérges vérével volt
+nyilhegye bekenve.
+
+31. Hermes, az istenek követe és a követek istene.
+
+32. A kar vidám dallal jelenti a környék összes lakóinak Herakles közel
+hazatértét, s óhaját fejezi ki, hogy a küldött varázs minél előbb
+megtegye hatását.
+
+33. Artemis, a vadászat aranyíjas istennője.
+
+34. Pylæ vagy Thermopylæ, mely nevét meleg forrásaitól nyerte, a hires
+hegyszoros Thessalia és Hellas közt. A pylæi tanács alatt az
+amphyktionok értetnek, kik itt tarták üléseiket s a görög államok
+viszályai felett itéltek.
+
+35. Sophokles mesteri keze a tragikai katastropha lassú közeledését ily
+baljóslatú külső körülmények által teszi érezhetővé. Így van Antigonéban
+is, hol először a vihar, azután az áldozat sikertelensége, az oltárok
+megfertőztetése és a madarak riadó visításai jelzik a katastropha
+közeledését.
+
+36. Chiront Herakles véletlenül sebesíté meg, midőn a kentaurok
+barlangjába menekültek. Chiron maga is kentaur volt, de a legigazabb
+közöttük. Megsebesülvén sem meg nem halhatott, sem meg nem
+gyógyulhatott, míg végre Zeus megengedte, hogy Prometheusért az
+alvilágba menjen.
+
+37. Herakles eleinte azt hiszi, hogy Lichas cserélte ki a Dejanira
+küldte köntöst.
+
+38. Lichast is eléri a büntetés, mert meggondolatlan fecsegésével ő volt
+oka Dejanira hibájának.
+
+39. A lokrisiak egy része az eubœai tengerszoros partján lakott,
+szemközt a kenæoni hegyfokkal.
+
+40. Herakles nem akar Eubœában meghalni, azon földön, melyet épen most
+hódított meg diadalmas fegyvere.
+
+41. A kar ismét a szerelem hatalmát zengi, de most azon gyászos
+következményeiben, melyeket Herakles családjára hozott.
+
+42. Tizen felül a második vetés: a tizenkettedik esztendő, midőn a
+dodonai jóslat szerint Herakles fáradalmai végüket érik. Most érti a
+kar, hogy ezen vég a halált jelenti; mert a kentauros vére
+menthetetlenül meggyilkolja Heraklest.
+
+43. Hyllosnak ezen készülete atyja elfogadására fokozza Dejanira
+kétségbeesését.
+
+44. Fájdalmas panaszban tör ki a kar a két szerencsétlen házastárs
+gyászos sorsa felett, s nem tudja, melyiken keseregjen inkább.
+
+45. Heraklest eubœai idegen férfiak hozzák, de oly gyengéden és
+kegyelettel, mintha barátjuk volna.
+
+46. A «gonosz» vagy az «átkozott» a kórt jelenti, mely újra gyötreni
+kezdi Herakles testét.
+
+47. A gigások a föld (Gæa) fiai voltak. Midőn az Olympot ostromolták,
+Zeus Herakles segélyével győzte le őket.
+
+48. Zeus, a villámsujtó, Herakles atyja.
+
+49. A nemeai oroszlánt, a lernæi hydrát és az erymanthosi vadkant,
+melyek messze földön rémei voltak a lakosságnak, Herakles győzte le. A
+cerberust az alvilágból hozta fel és ismét visszavitte. Ennek anyja
+Echidna volt, felül szűz, alul sárkány. Ladont, a sárkányt, mely a föld
+nyugati szélén a Hesperidák aranyalmáit őrizte, Herakles szintén
+legyőzte.
+
+50. A sellek Dodona környékén laktak, közülök kerültek ki a jósda
+papjai.
+
+51. Tölgyágakat kiván, mert tölgyfáról jósolták meg a halált;
+olajágakat, mert az olajfa különösen Heraklesnek volt szentelve.
+
+52. A végsorokra nézve eltérnek egymástól a commentatorok, vajjon
+Hyllosnak vagy a karnak tulajdonítandók-e? Hyllos szemrehányása Zeusra
+vonatkozik, bár a görög szöveg többesszámban «isteneket» említ. Ennek
+megfelelőleg a kar is szemrehányólag szégyent mond Zeus fejére, ki így
+elhagyja veszni fiát. – Hogy az utolsó sorokat csakugyan a kar mondja,
+onnan is valószinűnek látszik, mert Sophokles tragœdiáit mindig kardal
+fejezi be.
+
+
+
+*** END OF THE PROJECT GUTENBERG EBOOK A TRACHISI NŐK ***
+
+
+    
+
+Updated editions will replace the previous one—the old editions will
+be renamed.
+
+Creating the works from print editions not protected by U.S. copyright
+law means that no one owns a United States copyright in these works,
+so the Foundation (and you!) can copy and distribute it in the United
+States without permission and without paying copyright
+royalties. Special rules, set forth in the General Terms of Use part
+of this license, apply to copying and distributing Project
+Gutenberg™ electronic works to protect the PROJECT GUTENBERG™
+concept and trademark. Project Gutenberg is a registered trademark,
+and may not be used if you charge for an eBook, except by following
+the terms of the trademark license, including paying royalties for use
+of the Project Gutenberg trademark. If you do not charge anything for
+copies of this eBook, complying with the trademark license is very
+easy. You may use this eBook for nearly any purpose such as creation
+of derivative works, reports, performances and research. Project
+Gutenberg eBooks may be modified and printed and given away—you may
+do practically ANYTHING in the United States with eBooks not protected
+by U.S. copyright law. Redistribution is subject to the trademark
+license, especially commercial redistribution.
+
+
+START: FULL LICENSE
+
+THE FULL PROJECT GUTENBERG LICENSE
+
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+www.gutenberg.org/license.
+
+Section 1. General Terms of Use and Redistributing Project Gutenberg™
+electronic works
+
+1.A. By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound
+by the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B. “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this
+agreement and help preserve free future access to Project Gutenberg™
+electronic works. See paragraph 1.E below.
+
+1.C. The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is unprotected by copyright law in the
+United States and you are located in the United States, we do not
+claim a right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting
+free access to electronic works by freely sharing Project Gutenberg™
+works in compliance with the terms of this agreement for keeping the
+Project Gutenberg™ name associated with the work. You can easily
+comply with the terms of this agreement by keeping this work in the
+same format with its attached full Project Gutenberg™ License when
+you share it without charge with others.
+
+1.D. The copyright laws of the place where you are located also govern
+what you can do with this work. Copyright laws in most countries are
+in a constant state of change. If you are outside the United States,
+check the laws of your country in addition to the terms of this
+agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work. The Foundation makes no
+representations concerning the copyright status of any work in any
+country other than the United States.
+
+1.E. Unless you have removed all references to Project Gutenberg:
+
+1.E.1. The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:
+
+    This eBook is for the use of anyone anywhere in the United States and most
+    other parts of the world at no cost and with almost no restrictions
+    whatsoever. You may copy it, give it away or re-use it under the terms
+    of the Project Gutenberg License included with this eBook or online
+    at www.gutenberg.org. If you
+    are not located in the United States, you will have to check the laws
+    of the country where you are located before using this eBook.
+  
+1.E.2. If an individual Project Gutenberg™ electronic work is
+derived from texts not protected by U.S. copyright law (does not
+contain a notice indicating that it is posted with permission of the
+copyright holder), the work can be copied and distributed to anyone in
+the United States without paying any fees or charges. If you are
+redistributing or providing access to a work with the phrase “Project
+Gutenberg” associated with or appearing on the work, you must comply
+either with the requirements of paragraphs 1.E.1 through 1.E.7 or
+obtain permission for the use of the work and the Project Gutenberg™
+trademark as set forth in paragraphs 1.E.8 or 1.E.9.
+
+1.E.3. If an individual Project Gutenberg™ electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any
+additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works
+posted with the permission of the copyright holder found at the
+beginning of this work.
+
+1.E.4. Do not unlink or detach or remove the full Project Gutenberg™
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg™.
+
+1.E.5. Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.
+
+1.E.6. You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format
+other than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ website
+(www.gutenberg.org), you must, at no additional cost, fee or expense
+to the user, provide a copy, a means of exporting a copy, or a means
+of obtaining a copy upon request, of the work in its original “Plain
+Vanilla ASCII” or other form. Any alternate format must include the
+full Project Gutenberg™ License as specified in paragraph 1.E.1.
+
+1.E.7. Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8. You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works
+provided that:
+
+    • You pay a royalty fee of 20% of the gross profits you derive from
+        the use of Project Gutenberg™ works calculated using the method
+        you already use to calculate your applicable taxes. The fee is owed
+        to the owner of the Project Gutenberg™ trademark, but he has
+        agreed to donate royalties under this paragraph to the Project
+        Gutenberg Literary Archive Foundation. Royalty payments must be paid
+        within 60 days following each date on which you prepare (or are
+        legally required to prepare) your periodic tax returns. Royalty
+        payments should be clearly marked as such and sent to the Project
+        Gutenberg Literary Archive Foundation at the address specified in
+        Section 4, “Information about donations to the Project Gutenberg
+        Literary Archive Foundation.”
+    
+    • You provide a full refund of any money paid by a user who notifies
+        you in writing (or by e-mail) within 30 days of receipt that s/he
+        does not agree to the terms of the full Project Gutenberg™
+        License. You must require such a user to return or destroy all
+        copies of the works possessed in a physical medium and discontinue
+        all use of and all access to other copies of Project Gutenberg™
+        works.
+    
+    • You provide, in accordance with paragraph 1.F.3, a full refund of
+        any money paid for a work or a replacement copy, if a defect in the
+        electronic work is discovered and reported to you within 90 days of
+        receipt of the work.
+    
+    • You comply with all other terms of this agreement for free
+        distribution of Project Gutenberg™ works.
+    
+
+1.E.9. If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from the Project Gutenberg Literary Archive Foundation, the manager of
+the Project Gutenberg™ trademark. Contact the Foundation as set
+forth in Section 3 below.
+
+1.F.
+
+1.F.1. Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+works not protected by U.S. copyright law in creating the Project
+Gutenberg™ collection. Despite these efforts, Project Gutenberg™
+electronic works, and the medium on which they may be stored, may
+contain “Defects,” such as, but not limited to, incomplete, inaccurate
+or corrupt data, transcription errors, a copyright or other
+intellectual property infringement, a defective or damaged disk or
+other medium, a computer virus, or computer codes that damage or
+cannot be read by your equipment.
+
+1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the “Right
+of Replacement or Refund” described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg™ trademark, and any other party distributing a Project
+Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.
+
+1.F.4. Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you ‘AS-IS’, WITH NO
+OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5. Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.
+
+1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in
+accordance with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.
+
+Section 2. Information about the Mission of Project Gutenberg™
+
+Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need are critical to reaching Project Gutenberg™’s
+goals and ensuring that the Project Gutenberg™ collection will
+remain freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future
+generations. To learn more about the Project Gutenberg Literary
+Archive Foundation and how your efforts and donations can help, see
+Sections 3 and 4 and the Foundation information page at www.gutenberg.org.
+
+Section 3. Information about the Project Gutenberg Literary Archive Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non-profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation’s EIN or federal tax identification
+number is 64-6221541. Contributions to the Project Gutenberg Literary
+Archive Foundation are tax deductible to the full extent permitted by
+U.S. federal laws and your state’s laws.
+
+The Foundation’s business office is located at 809 North 1500 West,
+Salt Lake City, UT 84116, (801) 596-1887. Email contact links and up
+to date contact information can be found at the Foundation’s website
+and official page at www.gutenberg.org/contact
+
+Section 4. Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg™ depends upon and cannot survive without widespread
+public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine-readable form accessible by the widest
+array of equipment including outdated equipment. Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular state
+visit www.gutenberg.org/donate.
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: www.gutenberg.org/donate.
+
+Section 5. General Information About Project Gutenberg™ electronic works
+
+Professor Michael S. Hart was the originator of the Project
+Gutenberg™ concept of a library of electronic works that could be
+freely shared with anyone. For forty years, he produced and
+distributed Project Gutenberg™ eBooks with only a loose network of
+volunteer support.
+
+Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as not protected by copyright in
+the U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.
+
+Most people start at our website which has the main PG search
+facility: www.gutenberg.org.
+
+This website includes information about Project Gutenberg™,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+

@@ -1,0 +1,3655 @@
+﻿The Project Gutenberg eBook of Oedipus király
+    
+This ebook is for the use of anyone anywhere in the United States and
+most other parts of the world at no cost and with almost no restrictions
+whatsoever. You may copy it, give it away or re-use it under the terms
+of the Project Gutenberg License included with this ebook or online
+at www.gutenberg.org. If you are not located in the United States,
+you will have to check the laws of the country where you are located
+before using this eBook.
+
+Title: Oedipus király
+
+Author: Sophocles
+
+Translator: Gergely Csiky
+
+Release date: August 21, 2021 [eBook #66100]
+                Most recently updated: October 18, 2024
+
+Language: Hungarian
+
+Credits: Albert László from page images generously made available by the Google Books Library Project
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK OEDIPUS KIRÁLY ***
+
+SOPHOKLES.
+
+*
+
+OEDIPUS KIRÁLY
+
+FORDÍTOTTA
+
+CSIKY GERGELY.
+
+HARMADIK KIADÁS.
+
+BUDAPEST.
+
+FRANKLIN-TÁRSULAT
+
+MAGYAR IRODALMI INTÉZET ÉS KÖNYVNYOMDA.
+
+1904.
+
+
+
+
+SZEMÉLYEK.
+
+
+Oedipus.
+
+Pap.
+
+Kreon.
+
+Kar: thebai aggastyánok.
+
+Tiresias.
+
+Jokaste.
+
+Korinthi követ.
+
+Pásztor.
+
+Hirmondó.
+
+FRANKLIN-TÁRSULAT NYOMDÁJA.
+
+
+
+
+BEVEZETÉS.
+
+Laïos, Theba királya sok éven át élt Jokaste nejével gyermektelen
+házasságban. A delphii Apollóhoz fordultak végre s tőle azon választ
+nyerték, hogy gyermekök fog ugyan születni, de ez apjának gyilkosa s
+anyjának férje lesz. Megszületett a gyermek; szülei a szörnyü jóslattól
+való félelmökben egyik hű szolgájoknak adták át, hogy Kithæron hegyén
+kitegye; de a szolga szánalomból nem veszíté el a gyermeket, hanem átadá
+egy ismerős korinthi pásztornak, ki hazájába vitte s Polypos királynak
+ajándékozta. A gyermektelen király örökbe fogadta a fiut, kit dagadt
+lábáról Oedipusnak nevezett. A fiu, Polypos gyermekének tartva magát,
+derék ifjúvá nőtt. Egy korinthi ember sértő szavára kételkedni kezdvén
+származása felől, nem elégedett meg vélt szülei feleletével, hanem
+Delphibe ment, bizonyosat hallani eredetére nézve. A jósda erről nem
+világosítá ugyan fel, de azon választ adá, hogy egykor atyját megöli s
+anyját nőül veszi.
+
+Nehogy ez teljesüljön, nem mert visszatérni Korinthba, hanem idegen
+földeken bolyongott szüntelen. Ez útja közben Daulia táján találkozott
+Laïossal, kinek kocsisa a gyalog Oedipust durván félrelöké az útból,
+miből verekedés támadt s Oedipus mind Laïost, mind kísérőit, egynek
+kivételével, megölte. Nem sejtve atyját a megölt aggastyánban, tovább
+haladt s Thebába érkezett hol a nép nagy zavarban és aggodalomban volt.
+Mert a város kapuja előtt megjelent a sphinx, a felül szűz, alul
+oroszlán alakú szárnyas szörnyeteg. Rejtett szavakat adott fel a város
+lakóinak, s mindenkit meggyilkolt, ki hozzá közeledett, mert senki sem
+tudta azokat megoldani. A királyi trón s az özvegy királyné keze volt
+annak igérve, ki a várost megmenti e szörnyetegtől. Oedipus vállalkozott
+erre. A sphinx e rejtett szót adá fel: «Mi az, mi reggel négy lábon,
+délben kettőn, este hármon jár?» Oedipus megoldá: «Az ember» – s a
+sphinx legyőzetve lebukott sziklájáról és a város megszabadult. Oedipus
+elnyerte Jokaste kezét és Theba királyi trónját.
+
+Több év mulva, midőn már négy gyermeke Polynikes, Eteokles, Antigone és
+Ismene született e házasságból, az istenek megsokallták a vérbűnt és
+fertőzetet, s pusztító dögvészt küldöttek a városra. A nép nagy
+csoportokban tódult az oltárakhoz, szabadulásért könyörögve; Oedipus
+pedig elküldé Kreont, Jokaste bátyját, Delphibe, hogy Apollótól kérjen
+tanácsot e csapás megszüntetésére – s itt kezdődik a tragédia
+cselekvénye.
+
+
+
+
+OEDIPUS KIRÁLY
+
+(A háttérben a királyi palota. Oldalt csarnokok, elül oltárok és
+szobrok. A lépcsőkön aggastyánok és gyermekek, részint ülve, részint
+állva; mindegyik kezében olajfalomb, melyet az oltár felé lehajtva
+tartanak. A csoport közepén áll a pap. Oedipus kilép a palotából.)
+
+OEDIPUS.
+
+  Oh, gyermekek, ős Kadmos[1] ifju sarjai,
+  Mért gyültök össze itt e lépcsők fokain,
+  Esdeklő lombot[2] tartva kezetek között?
+  A város tömjén illatával van tele,
+  Könyörgő ének, jajgató hang tölti be.
+  Nem más hirnök szájából vágyva hallani
+  Okát, magam jövék e helyre, gyermekek,
+  Én, Oedipus, a kit dicsőit minden ajk.[3]
+
+(A paphoz.)
+
+  Mondd hát öreg, mert téged illet a beszéd
+  Ezek nevében, mily szándékkal ültök itt?
+  Féltek vagy kértek? Én mindenben kész vagyok
+  Segélyetekre lenni; mert kemény szivű
+  Volnék, ha ily esdeklés nem inditna meg.
+
+PAP.
+
+  Igen, hazám uralkodója, Oedipus,
+  Im, itt látsz minket, minden korból egyaránt,
+  Oltáraidnál: kisdedet, ki gyenge még
+  Nagy útra kelni, kor terhelte papokat,
+  Engem, Zeus áldozóját, s ifjaink színét;
+  A többi nép lombokkal ékesitve ül
+  A téreken, nagy Pallas kettős temploma[4]
+  Előtt, s Ismenos jósló hamvai felett.[5]
+  A város, láthatod magad, meg van nagyon
+  Rendülve, és nem képes felemelni már
+  Fejét a vérözönből, melybe sülyedett,
+  Pusztulva földje termékeny csiráiban,
+  Pusztulva a gulyákban és az asszonyok
+  Gyermektelen szülésiben;[6] reá rohant
+  A gyujtó isten, a borzasztó döghalál,[7]
+  S kiirtja Kadmos házát, a sötét pokol
+  Sóhajban és panaszban gazdagabb leszen.
+  Hozzád jövénk hát, én s e gyermekek velem,
+  Mert nem számitunk bár az istenek közé,
+  De emberek legelsejének gondolunk,
+  Az élet bajai s az ég csapási közt;
+  Ki eljövél s föloldád Kadmos városát
+  A szörnyü dalnok[8] szedte gyász adó alól,
+  Nem nyerve tőlünk semmiféle oktatást,
+  Sem utasítást; mert isten segélyivel
+  Váltád meg életünket, mondjuk s hiszszük ezt.
+  Most is tehát, hatalmas Oedipus király,
+  Esengve kérünk tégedet mindannyian,
+  Segits rajtunk, akár istennek ihlete,
+  Akár halandó ember oktatott reá:
+  Fel, emberek legjobbja, mentsd meg városunk,
+  Fel, vedd gondodba; mert e föld még szüntelen
+  Megváltónak hív régi buzgóságodért.
+  Ne emlékezzünk kormányodra úgy soha,
+  Hogy fölemelt előbb s elejtett azután!
+  Segitsd hát ismét biztosságra városunk:
+  A jó szerencse egykor hozzánk vezetett,
+  Hogy boldogságot hozz ránk: légy olyan megint.
+  Ha úr akarsz e honban lenni – mint vagy is –:
+  Inkább légy emberek, mint puszta föld felett;
+  Nem ér többé semmit sem a torony s hajó,
+  Ha elveszté a népet, mely lakója volt.
+
+OEDIPUS.
+
+  Tudom, hogyan ne tudnám, szegény gyermekek,
+  Mily vágy hozott e helyre. Szenvedtek, tudom,
+  Mindnyájan; ámde bármennyit szenvedjetek,
+  Nem szenved úgy, miként én, egy sem köztetek.
+  Mert mindegyik gyötrelme egymagára szól,
+  S magáért szenved csak, nem másért; ám szivem
+  Egykép keserg miattam, értted s a honért.
+  Nem is álomból költ fel engem hangotok,
+  Mert sok könyet hullattam már, hígyétek el,
+  És sokfelé bolyongtak lelkem gondjai,
+  Mig feltaláltam sok fontolgatás után
+  Az egyetlen mentséget; sógorom Kreont,
+  Menœkeus szülöttét Phœbos pythoi[9]
+  Lakába küldém, hogy tanácsot kérjen ott,
+  Mily tettel, szóval válthatnám meg városunk?
+  És egybevetve távoztával e napot,
+  Aggódom már, hová lett? Mert hosszabb idő
+  Mult el azóta, mint ez útra kellene.
+  De majd ha megjő, hitvány lennék akkor én,
+  Nem téve mindent, mint az isten rendelé.
+
+(Nehányan a paphoz lépnek s halkan szólnak hozzá.)
+
+PAP.
+
+  Lásd, épen jókor szóltál erről, mert ezek
+  Kreon közelgését jelentik most nekem.
+
+OEDIPUS.
+
+  Oh, nagy Apollo, bárcsak hozna ő nekünk
+  Oly jó szerencsét, mint a hogy szeme ragyog!
+
+PAP.
+
+  Örömmel látszik jönni; másképen fejét
+  Nem koszorúzná ily gazdag babérfüzér.[10]
+
+OEDIPUS.
+
+  Megtudjuk tüstént; hozzá juthat már szavam.
+  Testvér, Menœkeus fejdelmi gyermeke,
+  Mily jóslatot hozál az istentől nekünk?
+
+(Kreon föllép.)
+
+KREON.
+
+  Jót; mert úgy vélem, minden jó sikerre jut,
+  Ha a nehéz balvégzet is jó véget ér.[11]
+
+OEDIPUS.
+
+  De mit mondott a jóslat? Mert szavad nem önt
+  Szivembe sem bizalmat, sem balérzetet.
+
+KREON.
+
+  Ezek jelenlétében kivánsz hallani,
+  Avagy bemenni? Én szólásra kész vagyok.
+
+OEDIPUS.
+
+  Beszélj előttök; több gyötrelmet szenvedek
+  Miattok, mintsem ennen életem miatt.
+
+KREON.
+
+  Elmondom hát, mit hallék isten ajkiról.
+  Tisztán[12] kimondja nagy Phœbos király nekünk:
+  Üzzük ki a fertőztetést, melyet hazánk
+  Táplál ölében, s büntetlen ne hagyjuk itt.
+
+OEDIPUS.
+
+  Minő engesztelés kell? Mily fertőzet ez?
+
+KREON.
+
+  Száműzetés, vagy gyilkosságért gyilkolás,
+  Mert vér az, mely megfertőztette városunk.
+
+OEDIPUS.
+
+  S mily ember sorsát érti isten jóslata?
+
+KREON.
+
+  E föld fejdelme Laïos volt, oh király,
+  S te ő utána lettél városunk ura.
+
+OEDIPUS.
+
+  Tudom hallásból; mert nem láttam őt soha.
+
+KREON.
+
+  Ennek halálaért kell bosszut állni most
+  A gyilkosok felett, így rendelé az ég.
+
+OEDIPUS.
+
+  Hol vannak ők? Hol lelhetjük fel biztosan
+  A régi bűnnek elmosódott nyomait?
+
+KREON.
+
+  E honban, mondá. Ha kutatjuk, rájövünk,
+  De elszalasztjuk, ha nem ügyelünk reá.
+
+OEDIPUS.
+
+  Hol lett a gyilkos áldozatja Laïos,
+  Házában, a mezőn, vagy idegen hazán?
+
+KREON.
+
+  Azt mondá, jóslatért megy; ám lakába nem
+  Tért többé vissza, a mióta távozott.
+
+OEDIPUS.
+
+  Nem látta sorsát hirmondó vagy útitárs,
+  Ki kérdésünkre választ adna biztosan?
+
+KREON.
+
+  Meghaltak egyen kivül, a ki elfutott,
+  S a látottakból egyet tud csak mondani.
+
+OEDIPUS.
+
+  Mit? egy dolog sok másnak a nyomára visz,
+  Ha kis reménysugárt gyujt szemeink előtt.
+
+KREON.
+
+  Rablósereg támadt rá – mondja – és nem egy
+  Kéz gyilkolá meg, ám sokaknak fegyvere.
+
+OEDIPUS.
+
+  De hogy mert volna erre vetemedni a
+  Rabló, ha innen[13] pénzzel föl nem bérelik?
+
+KREON.
+
+  Igy látszott akkor. Ám hogy meghalt Laïos,
+  Nem volt, ki megboszulja sok bajunk között.
+
+OEDIPUS.
+
+  S minő baj gátolá meg a fölfedezést,
+  Midőn királytok igy elveszté életét?
+
+KREON.
+
+  A rejtélyes dalú sphinx vitt rá, hogy jelen
+  Bajunkra nézzünk, s hagyjuk el a titkokat.
+
+OEDIPUS.
+
+  Magam fogom hát földerítni a homályt;
+  Mert méltó hozzád, méltó volt Pœboshoz is,
+  Hogy a halott emlékét így felköltitek;
+  Azért jogos, hogy én frigytársatok legyek,
+  Megbosszulván e hont s az istent egyaránt.
+  Hisz nem távol barátok érdekében, ám
+  Ennen magam javára sujtom ezt a bünt.
+  Mert bárki volt az, a ki őt meggyilkolá,
+  Kezével engem is le fog tán sujtani.
+  Amazt szolgálva magamon segitek igy.
+  Fel hát sietve gyermekek, távozzatok
+  E lépcsőkről, vigyétek el a lombokat;[14]
+  Más menjen, gyüjtse össze Kadmos népeit
+  E helyre; mindent megteszek most; mert az ég
+  Most fogja megmutatni: véd-e vagy lesujt?
+
+PAP.
+
+  Oh, gyermekek, keljünk fel, hisz azért jövénk
+  E helyre, a mit ajka igér most nekünk.
+  Phœbos, ki ezt a jóslatot küldé, legyen
+  Megváltónk, s távoztassa tőlünk a csapást.
+
+(Oedipus és Kreon a palotába, a nép másfelé távozik. A kar fellép.)
+
+KAR.
+
+Első versszak.
+
+  Oh, Zeus édes igéje, mi az, mit a thebai népnek
+  Kincses Pytho felől hozál?
+  Megfagy a vér ereimben’, szivem riadozva remeg fél,
+  Oh gyógyító delosi Pæan![15]
+  Félve lesem, mi parancsokat adsz nekem
+  Teljesítésre jelenben, vagy ha befutja körét az év,
+  Mondd, mi az, oh kit arany bizalom szüle, isteni szózat![16]
+
+Első ellenversszak.
+
+  Hozzád fordulok, oh Zeus lánya, Athena először,
+  S hozzád, honvédő Artemis,
+  Ki ragyogó fénytrónodon ülsz a piacz gyürüjében,[17]
+  S te messzelövő nagy Apollo:
+  Hármas erővel, oh, védjetek engemet!
+  Hisz ti üzétek el egykoron innen a szörnyü csapás tüzét,[18]
+  Mely kiölé e hazát: legyetek segedelme ujonnan!
+
+Második versszak.
+
+  Jaj nekem, ah! számtalan nyomor
+  Gyötri szivemet; a nép beteg,
+  S tehetetlen a gondolat arra,
+  Hol vegyen irt e bajára; nem érleli
+  Gyümölcsit a föld; a kinos vajudások
+  Nehéz gyötrelmei közt az anyák oda lesznek.
+  S száll egyik a másik után, sebesebben a tűznél,
+  Mint a repülő madarak raja, esteli
+  Isten sötét honába.[19]
+
+Második ellenversszak.
+
+  Pusztul a nép számlálhatatlanul;
+  Elhagyatva fedik a föld szinét
+  A halált lehelő tetemek már;[20]
+  Hitvesek, őszbe borult anyák sora
+  Köriti emitt is, amott is az oltárt,
+  S zokogva kér segedelmet e szörnyü keservben.
+  Pæan dalával szomorún vegyül egybe panaszhang;
+  Nézz mi reánk szelid arczczal ujonnan, oh
+  Zeus aranyos leánya![21]
+
+Harmadik versszak.
+
+  Üzd el a rettenetes Arest, ki pajzstalan közelg,[22]
+  S vadul kiáltva éget egyre engem,
+  Oh, üzd ki városomból messze tájra őt,
+  Vagy oda, hol Amphitrite
+  Nagy nyoszolyája zajlik,[23]
+  Vagy Thracia zord özönének
+  Sivatag honába.
+  Hiszen mit megkimél az éj,
+  Romba dönti azt a nap.
+  Hatalmas Zeus, atyám,
+  Sujtsd le mennyköveddel őt,
+  Oh, sujtsd le, te, ki az ég tüzét vezérled!
+
+Harmadik ellenversszak.
+
+  Hozzád eseng szavam, oh te farkasirtó nagy király,[24]
+  Röpitsd ki arany ijad legyőzhetetlen
+  Nyilát segélyemül; gyuladj ki Artemis
+  Tűzlángja, mely Lykia
+  Hegyei közt bolyongasz;[25]
+  Meg téged, aranysövegű[26] és
+  Ittas arczu Bakchos,[27]
+  Hazám szülötte,[28] Mænadok
+  Társa,[29] téged kérlek én,
+  Rohanj az istenek
+  Közt legellenségesebb
+  Istenre,[30] jer lobogó szövétnekeddel![31]
+
+(Oedipus föllép.)
+
+OEDIPUS.
+
+  Imádkozol; s a mit kérsz, elnyered, ha rám
+  Hallgatva, teljesíted isten jósszavát,
+  Meggyógyul akkor és megkönnyebbül bajod.
+  Mint a jóslatban és a bünben egyaránt
+  Járatlan szólok; egymagamban nem sokat
+  Kutathatok ki, némi jel ha nem vezet.[32]
+  Legkésőbb jutva hát a polgárok közé,
+  Egész Kadmos népének im ezt hirdetem:
+  Akárki tudja köztetek, mily férfiú
+  Gyilkolta meg Laïost, Labdakos fiát,
+  Parancsolom, jelentsen mindent föl nekem.
+  Ne féljen attól, hogy talán önnönmagát
+  Vádolja majd be; mert nem éri semmi baj,
+  Csupán a várost hagyja el sértetlenül.
+  Ki meg talán egy idegenben ismeri
+  A gyilkost, el ne rejtse tőlem; mert reá
+  Nagy jutalom vár, és hálámban részesül.
+  De ha nem szóltok, s egyik-másik önmagát
+  Avagy barátját féltve, megvetné szavam:
+  Ime halljátok, mit teendek akkor én.
+  Megtiltom, hogy ez embert, bárki légyen is,
+  E földön, melyen mint király uralkodom,
+  Akárki befogadja, vagy szóljon vele,
+  Vagy részesítse őt az áldozatban és
+  Imákban, vagy megszentelt vizzel hintse meg;
+  Mindenki űzze el házából őt, miként
+  Mindnyájunk megfertőztetőjét; ezt adá
+  Tudtomra most isten pythói jóslata.
+  És én mindenben ez istennek s a halott
+  Királynak egykép hű frigytársaként teszek.
+  Reátok bizom, mindezt teljesiteni,
+  Érettem, istenért s e földért, mely kihal
+  Istentől elhagyottan és gyümölcstelen.
+  Ha nem jött volna istenektől e parancs,
+  Engeszteletlen hagyni a legjobb király
+  S ember halálát még akkor sem illenék.
+  Kutatni kell azt. Ámde most, hogy az enyém
+  A hatalom, mely az övé volt egykoron,
+  Enyém lett ágya és atyává tett neje,
+  S testvérekül neveznék egymást gyermekink,
+  Ha gyászos végzet ki nem irtja fajzatát:
+  Most hogy fejére nehezült a sors keze,
+  Én küzdöm érte ezt a harczot, mint saját
+  Atyámért, semmit kisérletlen nem hagyok,
+  A mig föl nem találom azt, ki megölé
+  A Labdakidát, Polydoros fajzatát,
+  Kadmos sarját, kit nemze ősi Agenor.[33]
+  Az istenekhez fordulok: ne adjanak
+  Sem termő földet, sem nejöktől magzatot
+  Azoknak, kik nem teljesítik szavamat;
+  A dögvész szálljon rájok s még rosszabb halál!
+  De a gyilkost megátkozom, bár egyedül
+  Tevé titokban, vagy többekkel frigyesen;
+  Fejezze be hitványul hitvány életét!
+  S ha tán házam lakója volt, s én tudva ezt,
+  Megtürtem tüzhelyemnél, szálljon mind reám
+  Az átok, melyet a gyilkosra mondtam én.
+  De nektek Kadmos népe, kik helyeslitek
+  Szándékomat, legyen Diké oltalmatok,
+  S az istenek áldása védjen szűntelen!
+
+KAR.
+
+  A mint köt átkod, akként szólok, oh király!
+  Sem nem vagyok a gyilkos, sem nem mondhatom
+  Nevét; Phœbosnak, a ki ezt reánk bizá,
+  Lett volna dolga, fölfedezni a bünöst.
+
+OEDIPUS.
+
+  Jól mondod; ám az embernek hatalma nincs,
+  Az istent arra birni, a mit nem akar.
+
+KAR.
+
+  Mondok más módot, melyet jónak gondolok.
+
+OEDIPUS.
+
+  Ha hármat is tudsz, ne habozz kimondani.
+
+KAR.
+
+  Tudom, mit Phœbos isten lát, azt látja jól
+  A jós Tiresias is; megkérdezve őt,
+  Mindent legjobban megtudhatnál, oh király!
+
+OEDIPUS.
+
+  Nem voltam én e tárgyra nézve sem hanyag;
+  Kreon szavára kétszer is meghívtam őt,
+  S csodálkozom, hogy oly sokáig elmarad.
+
+KAR.
+
+  A többi hir bizonynyal kósza szóbeszéd.
+
+OEDIPUS.
+
+  Mily szóbeszéd? Minden szót megvizsgálok én.
+
+KAR.
+
+  Azt mondják, útasok vevék el életét.
+
+OEDIPUS.
+
+  Hallottam én is; ám a tettre nincs tanú.
+
+KAR.
+
+  Ha van szivében még egy szikra félelem,
+  Nem fog habozni, hallva szörnyü átkodat.
+
+OEDIPUS.
+
+  Ki tenni nem félt, szótól meg nem rémül az.
+
+KAR.
+
+  De van, ki fölfedezze: im az isteni
+  Jóst erre vezetik már, egyedül reá
+  Szállt emberek közt az igazság szelleme.
+
+(Oedipus küldöttei föllépnek a vak Tiresiassal, kit egy gyermek kezén
+vezet.)
+
+OEDIPUS.
+
+  Tiresias, ki szellemeddel áthatod
+  Az égnek, földnek nyilt és titkos dolgait,
+  Tudod, bár nem látod szemeddel, mily nehéz
+  Kór gyötri városunkat; s egyedül te vagy,
+  Kiben fölleljük megváltóját, oh uram!
+  Mert Phœbos, mint tán mondák is követjeim,
+  Azt adja kérdésünkre válaszul, hogy úgy
+  Találhatunk csak szörnyü kórunk ellen irt,
+  Ha fölfedezve Laïos gyilkosait,
+  Halált mondunk reájok vagy száműzetést.
+  Ne sajnáld tőlünk hát a jóslatot, melyet
+  Madár szavából vagy máskép szerezhetél,
+  És mentsd meg városunkat, engem s tenmagad
+  Lemosva rólunk a vérbűn fertőzetét.
+  Benned reménylünk; hisz ki jót tesz ott, a hol
+  Hatalma s módja van rá, legszebben tesz az.
+
+TIRESIAS (magában).
+
+  Ah, ah! mily iszonyú baj, tudni azt, minek
+  Tudása nincs javunkra. Jól ismertem ezt,
+  De feledém; máskép nem jöttem volna el.
+
+OEDIPUS.
+
+  Mi történt? Mért jelensz meg oly kedvetlenül?
+
+TIRESIAS.
+
+  Bocsáss lakomba vissza; könnyebb lesz a sors
+  Reád s reám is, ha tanácsomnak hiszesz.
+
+OEDIPUS.
+
+  Nem jog szerint szólsz, s hálátlan vagy városunk
+  Iránt, mely táplált, megtagadva ezt a szót.
+
+TIRESIAS.
+
+  Látom, hogy tenmagad javára sem leszen
+  Szavad; s nehogy hasonló érjen engem is –
+
+OEDIPUS.
+
+  Az égre! el ne menj, ha sejted a valót;
+  Mindnyájan kérünk, lábaidhoz borulunk.
+
+TIRESIAS.
+
+  Mindnyájan dőrék vagytok; nem szólok soha,
+  Nehogy feltárjam a te szörnyü bajodat.
+
+OEDIPUS.
+
+  Mit hallok? Mindent tudsz és szólni nem akarsz?
+  S elárulsz minket, elveszíted a hazát?
+
+TIRESIAS.
+
+  Nem foglak gyötreni sem téged, sem magam;
+  Mit faggatsz hasztalan? Tőlem meg nem tudod.
+
+OEDIPUS.
+
+  Oh, rosszak roszsza! – mert haragra gyujtanád
+  A kősziklát is – nem fogsz végre szólani?
+  Ily érzéketlen és makacs maradsz tehát?
+
+TIRESIAS.
+
+  Makacsságom fellázit; ám a tiedet
+  Nem látod; egyedül bennem találsz hibát.
+
+OEDIPUS.
+
+  Ki az, kit föl nem ingerelne ily beszéd,
+  Hallván, miként veted meg városunk javát?
+
+TIRESIAS.
+
+  Minden megjő, bár hallgatással fedjem is.
+
+OEDIPUS.
+
+  Mi fog megjönni? Ezt kell épen mondanod.
+
+TIRESIAS.
+
+  Nem mondok többet; most, ha tetszik, haragod
+  Törjön ki, bárha legdühöngőbb lánggal is.
+
+OEDIPUS.
+
+  Bizony nem is fogom magamba fojtani
+  Dühömben azt, mit sejtek; tudd meg, rád esik
+  Gyanúm, te terveléd s tevéd meg ezt a bünt,
+  Csakhogy nem tenkezeddel; ha világtalan
+  Nem volnál, téged vádolnálak egyedül.
+
+TIRESIAS.
+
+  Valóban? S én azt mondom, tartsd meg átkodat,
+  Melyet kimondál, s mától fogva ne beszélj
+  Többé soha e férfiakkal, sem velem,
+  Mert tenmagad vagy e föld bűnfertőzete.
+
+OEDIPUS.
+
+  Hah! ily szót mersz arczomba dobni, szemtelen?
+  S azt véled, elkerülöd büntetésedet?
+
+TIRESIAS.
+
+  Már elkerültem; mert igazság van velem.
+
+OEDIPUS.
+
+  Ki oktatott rá? Csak nem jós-művészeted?
+
+TIRESIAS.
+
+  Te, a ki kedvem ellen szólni késztetél.
+
+OEDIPUS.
+
+  Mit? Mondd el ismét, jobban meg kell értenem.
+
+TIRESIAS.
+
+  Nem értéd már meg? Vagy kisérteni akarsz?
+
+OEDIPUS.
+
+  Nem értettem meg tisztán; mondd még egyszer el.
+
+TIRESIAS.
+
+  Azt mondom, hogy te vagy a gyilkos, kit kutatsz.
+
+OEDIPUS.
+
+  Nem fogsz másodszor boszulatlan sérteni.
+
+TIRESIAS.
+
+  Mást mondjak hát, hogy még nagyobb haragra gyúlj?
+
+OEDIPUS.
+
+  Mondhatsz akármit; hasztalan fogsz szólani.
+
+TIRESIAS.
+
+  Szeretteidhez, mondom, öntudatlanul
+  Gyalázat fűz, s nem látod, meddig sülyedél.
+
+OEDIPUS.
+
+  És mindig boszulatlan szólsz így, azt hiszed?
+
+TIRESIAS.
+
+  Igen, ha megvan az igazság ereje.
+
+OEDIPUS.
+
+  Megvan, de nem te benned; mert világtalan
+  Vagy szemre, fülre és lélekre egyaránt.
+
+TIRESIAS.
+
+  Boldogtalan! szememre hányod azt, a mit
+  Mindenki nemsokára rád fog mondani.
+
+OEDIPUS.
+
+  Ej szállt reád, nem árthatsz többé sem nekem,
+  Sem másnak, ki a napvilágot látja még.
+
+TIRESIAS.
+
+  Nem általam hoz végzeted bukást reád;
+  Elég erős Apollo, az ő gondja ez.
+
+OEDIPUS.
+
+  Kreon gondolta ezt ki, vagy te egymagad?
+
+TIRESIAS.
+
+  Kreon nem hoz reád bajt, csak te egy magad.
+
+OEDIPUS.
+
+  Kincs, hatalom, müvészet, mely felülmulod
+  A versengő élet minden művészetét,[34]
+  Oh, mily irígység jár nyomodban szüntelen,
+  Ha már e trónomtól is, mely kéretlenül
+  Jutott ajándékkép a várostól nekem,
+  Kreon, e régi és hűséges jó barát,
+  Alattomos cselekkel vágy megfosztani,
+  Fölbérelvén ez álnok bűvészt ellenem,
+  E csalfa szemfényvesztőt, a kinek szeme
+  Csak nyereségét látja, ám jóslásra vak.
+  Ugyan mondd hát, miben mutathatsz jóserőt?
+  Midőn itt volt a szörnyeteg dalos, miért
+  Nem tudtad a polgárokat megmenteni?
+  Mert minden jött-ment nem tudá megoldani
+  A rejtett szót, nem; jóstehetség kelle ott,
+  Melyet madárjelekből meg nem tanulál,
+  Isten sem ihletett meg; ekkor jöttem én,
+  S elnémítám őt, én, tudatlan Oedipus,
+  Értelmem által, nem madárjelek szerint;
+  Én, kit te megbuktatni vágysz, remélve, hogy
+  Kreon trónjához közelebb fogsz állani.
+  S én azt reménylem, téged és bűntársadat
+  Meg fog rikatni ez engesztelés.[35] Ha nem
+  Volnál ily vén, megkeserülnéd szándokod.
+
+KAR.
+
+  Nekünk úgy látszik, hogy harag sugallta csak
+  Ennek szavát, s a tiedet is, Oedipus,
+  Pedig nincs erre szükség, inkább lássuk azt,
+  Mint oldjuk meg legjobban isten jóslatát.
+
+TIRESIAS.
+
+  Habár király vagy, abban egyenlők vagyunk,
+  Hogy megfeleljek; van jogom rá nékem is.
+  Mert Loxiasnak[36] szolgálok csak, nem neked;
+  Kreonra sem szorultam, hogy védőm legyen.
+  Kimondom hát, mert gúnyolád vakságomat:
+  A te szemed lát, s mégsem látod, mennyire
+  Sülyedtél, mily helyen vagy és kivel lakol.
+  Tudod, kitől születtél? Ellensége vagy
+  Élő s holt kedvesidnek öntudatlanul.
+  Apádnak és anyádnak kettős átka fog
+  Ez országból kiüzni téged egykoron,
+  S ki napfényt látsz most, akkor éj borul reád.
+  Hol van Kithæron,[37] hol a rév mely csakhamar,
+  Nem fogja visszhangozni jajgatásodat,
+  Ha megtudod, mily zátonyos part volt a nász,
+  Hová szerencsésen hajózva eljutál?
+  És nem látod még más bajoknak tengerét,
+  Mely rád és gyermekidre fog zúdulni majd.
+  Most hát gyalázd Kreont, szidalmazd ajkamat;
+  Hisz nincs e földön emberek közt senki sem,
+  Ki iszonyúbban vész el, mint te egykoron.
+
+OEDIPUS.
+
+  Meddig hallgassam még az ily beszédeket?
+  Nem lesz vesztedre? Nem sietsz már? Nem akarsz
+  Házadba térni és elhagyni e helyet?
+
+TIRESIAS.
+
+  Ha nem hivatsz, nem jöttem volna én ide.
+
+OEDIPUS.
+
+  Ha tudhatom, hogy ily botorságot beszélsz,
+  Bizony nem is hivatlak hozzám tégedet.
+
+TIRESIAS.
+
+  Botor vagyok szerinted, ámde szüleid
+  Szemében, kiktől éltet nyertél, bölcs valék.
+
+(Távozni akar.)
+
+OEDIPUS.
+
+  Mi ez? Maradj! Mily ember adta éltemet?
+
+TIRESIAS.
+
+  E mai nap szül és veszít el tégedet.[38]
+
+OEDIPUS.
+
+  Mily rejtelmekben és homályosan beszélsz.
+
+TIRESIAS.
+
+  Rejtett szavakhoz nem legjobban értesz-e?
+
+OEDIPUS.
+
+  Vesd csak szememre azt, mi fényt hozott reám.
+
+TIRESIAS.
+
+  Épen szerencséd tette tönkre éltedet.
+
+OEDIPUS.
+
+  Mit bánom én, ha csak megmentém e hazát.
+
+TIRESIAS.
+
+  Megyek hát; és te gyermekem jövel, vezess.
+
+OEDIPUS.
+
+  Igen, vezessen el; jelenléted zavar,
+  Mig eltávozván, nem fogsz többé gyötreni.
+
+TIRESIAS.
+
+  Megyek, de halld, mért jöttem; mert nem rettegek
+  Arczodtól, nincs hatalmad életem fölött.
+  Kimondom hát: ez ember, kit régen kutatsz,
+  Hirdetve, fenyegetve, – Laïos gyilkosa
+  Itt van, s azt vélik róla most, hogy idegen
+  Bevándorolt, de nemsokára thebai
+  Szülöttnek ismerik fel, s nem lesz öröme
+  E változásban; koldus lesz, ki dús vala,
+  Vak lesz, ki látott, s vándorbottal idegen
+  Országokban fog számüzetve bolygani.
+  Kitűnik majd, hogy önnön gyermekeinek
+  Testvére s atyja, és az asszonynak, kitől
+  Éltét vevé, szülötte s férje egyaránt,
+  Vérfertőző és apagyilkos. Menj be hát,
+  S gondolkozzál felőle; és ha lelsz hazug
+  Szót benne, mondd, hogy elhagyott a jóserő.
+
+(Tiresiast a gyermek elvezeti. Oedipus a palotába megy. A kar egyedül
+marad.)
+
+KAR.
+
+Első versszak.
+
+  Kiről jelenté a pythói szikla jósigéje,
+  Hogy vértől ázott kezeit e szörnyü tettre nyujtá?
+  Szökjék rohanó vihar
+  Szárnyán sebesebben a
+  Futó paripánál.
+  Ime Zeus fia mint rohan ellene már,
+  Tüzes ostora van boszuló keze közt;
+  S léptét a halál vad
+  Szellemei kisérik.
+
+Első ellenversszak.
+
+  Parancsot ád hó boritotta Parnass orma immár,
+  A szó felhangzott, a bűnös nyomát kutassa minden.
+  Mint űzött bika bolyg talán
+  Erdők vadonán, avagy
+  A szirtüregekben,
+  Egyedül, szomorún, nyomorogva szegény,
+  S fut a jóslat elől, mely a föld közepén[39]
+  Hangzik, s a bolyongót
+  Üzi örök erővel.
+
+Második versszak.
+
+  Rettenetest, rettenetest
+  Jósol a bölcs látnoki szó:
+  Elhagy a kétség, el a hit,
+  És agyam eszméje megáll.
+  Sürü éj árnya borult
+  Arra, mi volt, s arra, mi van.
+  Soha sem, most sem, előbb sem
+  Hallottam a harczról, Polybos[40]
+  Gyermeke s a Labdakidák közt;
+  Van-e próba, bizonyság, mely elég biztos, erős,
+  Letiporni dicső hírét a királynak,
+  Hogy boszulója legyek a titkos halálnak,
+  Mely orozva lesujtá a Labdakidát?
+
+Második ellenversszak.
+
+  Ismeri jól, ismeri Zeus
+  S Phœbos az ember szive mély
+  Titkait, ám helytelen azt
+  Mondani, hogy emberi jós
+  Szeme jobb, mint az enyém.
+  Mert tudomány s ész diadalt
+  Ül ugyan más tudományán,
+  De nem hiszem a vádszavakat,
+  Mig csak a tett nem bizonyitja.
+  Ime láttuk a szárnyfedte leány[41] ellen a bölcs
+  Erejét s tudományát, melylyel a várost
+  Megszabaditva, e hont üdvére vezérlé:
+  Soha sem fogom én rossznak mondani őt.
+
+(Kreon föllép.)
+
+KREON.
+
+  Polgárok, értesülvén, hogy mily iszonyú
+  Dolgokkal vádol engem Oedipus király,
+  Ime, jövök leverten; mert ha azt hiszi,
+  Hogy tőlem tettel vagy beszéddel valami
+  Kárt szenvedett jelen gyötrelmeink között,
+  Úgy nem vágyódom többé, ilyen vád alatt.
+  Sokáig élni. Nem csekély a szenvedés,
+  Melyet viselnem kell e megszólás miatt;
+  A legnagyobb kín lesz reám, ha városunk
+  S te rossznak vélsz, s barátim rossznak tartanak.
+
+KAR.
+
+  Talán inkább csak a felingerült harag
+  Sugá e vádat, s nem józan megfontolás.
+
+KREON.
+
+  Miből tűnt az ki, hogy tanácsom biztatá
+  A jós ajkát hazug szavakra ellene?
+
+KAR.
+
+  Igy mondá. Hogy mily értelemben, nem tudom.
+
+KREON.
+
+  S nem volt zavart értelme és tekintete,
+  Midőn kimondá ezt a vádat ellenem?
+
+KAR.
+
+  Azt nem tudom; uralkodóknak tetteit
+  Vizsgálni nem szokásom. Itt jön ő maga.
+
+(Oedipus föllép.)
+
+OEDIPUS.
+
+  S te itt vagy? Mily orczával jösz e hely felé?
+  Hogy mersz házamba lépni, a ki életem
+  Ellen meréd emelni gyilkos kezedet,
+  És nyiltan elrabolni készülsz trónomat?
+  Az égre, mondd, gyávának véltél engemet,
+  Vagy őrültnek, hogy ezt a tervedet szövéd?
+  Azt hitted nem fedem föl titkos cseledet,
+  Vagy rájövén, nem mernék szembe szállani?
+  Nem inkább esztelenség a te szándokod,
+  Pénz és barátok nélkül vágyva trón után,
+  A melyre néppel s kincscsel juthatsz egyedül?
+
+KREON.
+
+  Tudod, mit tégy most? Szavaidra válaszul
+  Hallgasd meg szómat, és meghallgatván, itélj.
+
+OEDIPUS.
+
+  Jól tudsz beszélni, ám én roszul hallgatok
+  Reád; mert ellenséget lát benned szemem.
+
+KREON.
+
+  Ép e felől hallgasd meg szavamat.
+
+OEDIPUS.
+
+  Ép e felől ne mondd, hogy bűntől tiszta vagy.
+
+KREON.
+
+  Ha azt hiszed, hogy oktalan fejeskedés
+  Dicsőségedre válik: helytelen hited.
+
+OEDIPUS.
+
+  Ha azt hiszed, hogy a rokont büntetlenül
+  Illetheted sértéssel: helytelen hited.
+
+KREON.
+
+  Elismerem, hogy a mit mondál, mind helyes;
+  De szólj, minő a sértés, melyet szenvedél?
+
+OEDIPUS.
+
+  Te birtál-e, vagy nem te birtál arra, hogy
+  Magamhoz hivjam a dicső, nagy látnokot?
+
+KREON.
+
+  Ez most is véleményem változatlanul.
+
+OEDIPUS.
+
+  És mily hosszú idője mult, hogy Laïos –
+
+KREON.
+
+  Mit mondasz? Mit tett Laïos? Nem értelek.
+
+OEDIPUS.
+
+  Mikor történt, hogy gyilkos kéztől elveszett?
+
+KREON.
+
+  Hosszú nagy évek teltek el azóta már.
+
+OEDIPUS.
+
+  S a jós gyakorlá akkor is művészetét?
+
+KREON.
+
+  Oly bölcseséggel mint most, s ép úgy tisztelék.
+
+OEDIPUS.
+
+  S azon időben említett-e engemet?
+
+KREON.
+
+  Nem, legalább jelenlétemben sohasem.
+
+OEDIPUS.
+
+  S a gyilkosságnak nem kutattátok nyomát?
+
+KREON.
+
+  Kutattuk; hogy ne? Ám nem jöttünk semmire.
+
+OEDIPUS.
+
+  S mért nem fedezte akkor azt föl ez a bölcs?
+
+KREON.
+
+  Azt nem tudom; s nem tudva, inkább hallgatok.
+
+OEDIPUS.
+
+  De annyit tudsz, és tudva el is mondhatod –
+
+KREON.
+
+  Mi az? Nem hallgatok felőle, ha tudom.
+
+OEDIPUS.
+
+  Hogy az, ha csak egyet nem ért veled, soha
+  Nem fogta volna rám a gyilkosság bünét.
+
+KREON.
+
+  Te tudhatod legjobban, ezt mondotta-e?
+  De most hadd kérdjelek ki, mint te kérdezél.
+
+OEDIPUS.
+
+  Kérdezz; nem bizonyítod rám a gyilkolást.
+
+KREON.
+
+  No hát? Nem vetted hitvesül testvéremet?
+
+OEDIPUS.
+
+  E kérdésedre tagadást nem mondhatok.
+
+KREON.
+
+  És nem osztod meg a hatalmat s trónt vele?
+
+OEDIPUS.
+
+  A mit kivánhat, tőlem mindazt megnyeri.
+
+KREON.
+
+  S nem állok én mind harmadik mellettetek?
+
+OEDIPUS.
+
+  Ép ebből látszik, hogy mily rossz barát valál.
+
+KREON.
+
+  Nem úgy, ha jól megfontolod, mint én tevém.
+  Először is, nézd: hol van az, ki félelem
+  Között akarna inkább trónon ülni, mint
+  Békén pihenni épen oly hatalmasan?
+  Bizonynyal én olyan vagyok, hogy a király
+  Hatalmát inkább óhajtom, mint a nevét;
+  És ilyen minden józanul gondolkodó.
+  Most nyugton élek s tőled megvan mindenem;
+  Mig sokszor kedvem ellen tennék, mint király.
+  Hogy volna mégis kedvesebb a trón nekem,
+  Mint gondtalan uralkodás és hatalom?
+  Még nem sülyedtem oly nagy balgaságba én,
+  Hogy mást kivánjak, mint a szépet s hasznosat.
+  Most minden ember szivesen lát, üdvözöl,
+  S hozzám fordul mindenki, a ki rád szorul;
+  Mert ettől függ kéréseik jó sikere.
+  Mért veszteném el mindezt a király czimért?
+  Nem vetemül ily rosszaságra józan ész.
+  Soha sem voltam én ily szándék embere,
+  Nem is segitnék ebben másokat soha.
+  Bizonyságul, menj, kérdezd Pythóban magad,
+  Hogy híven meghozám-e isten jóslatát;
+  S ha rajta kapsz, hogy a büvészszel közösen
+  Terveltem bármit: ölj meg, nem csupán magad
+  Itéletével, én is hozzá járulok.
+  De zavaros gyanuból vádat ne emelj.
+  Mert nem jogos, ha könnyen jónak gondolod
+  A rossz embert, és rossznak véled azt, ki jó.
+  Ki hű barátját eltaszitja, azt hiszem,
+  Saját éltének legszebb kincsét dobja el.
+  Idővel mindezt biztosan megtudhatod;
+  Mert az idő mutatja csak ki az erényt,
+  Mig a gonoszt egy nap alatt megismered.
+
+KAR.
+
+  Jó volt beszéde annak, ki elesni fél,
+  Király! A gyors itélet nem jár biztosan.
+
+OEDIPUS.
+
+  Midőn gyorsan jő rám a titkos cselvető,
+  Részemről is szükséges gyors határozás.
+  Ha nyugton várok, végre hajtja szándokát,
+  S haszontalan fáradság lesz, mit én teszek.
+
+KREON.
+
+  Mi szándokod hát? Számüzésbe küldsz talán?
+
+OEDIPUS.
+
+  Oh, nem! Halálra s nem futásra szántalak.
+
+KREON.
+
+  De hát előbb mutasd ki, hogy méltán gyülölsz.
+
+OEDIPUS.
+
+  Nem engedsz? nem hiszed szavam, hogy így beszélsz?
+
+KREON.
+
+  Mert látom, nincs eszed.
+
+OEDIPUS.
+
+                  Saját javamra van.
+
+KREON.
+
+  Az én javamra is legyen.
+
+OEDIPUS.
+
+                  Gonosztevő!
+
+KREON.
+
+  De ha tévednél?
+
+OEDIPUS.
+
+                  Tenned kell parancsomat.
+
+KREON.
+
+  Nem, ha rosszul parancsolsz.
+
+OEDIPUS.
+
+                  Oh, én városom!
+
+KREON.
+
+  Nemcsak te, én is a városhoz tartozom.
+
+KAR.
+
+  Hagyjátok ezt, fejdelmek! Épen idején
+  Látom Jokastét házából közelgeni;
+  Előtte föl kell e viszálylyal hagynotok.
+
+(Jokaste föllép.)
+
+JOKASTE.
+
+  Miért kelétek, oh, ti boldogtalanok!
+  E dőre nyelvcsatára; nem szégyenlitek,
+  Az ország ily bajában egymást bántani?
+  Nem mégysz lakodba, s te Kreon nem térsz haza?
+  Vagy semmiből nagy bajt akartok kelteni?
+
+KREON.
+
+  Oh, testvér! szörnyü szándékkal van ellenem
+  Királyi férjed, Oedipus; két rossz közül
+  Vagy számüzéssel, vagy halállal fenyeget.
+
+OEDIPUS.
+
+  Megvallom, oh, nőm, úgy van; rajtakaptam őt,
+  Hogy gonoszul éltemre tör gonosz csele.
+
+KREON.
+
+  Haljak meg átkozottan és boldogtalan,
+  Ha abból, melylyel vádolsz, bármit is tevék.
+
+JOKASTE.
+
+  Az istenekre, hígy szavának, Oedipus;
+  Tartsd tiszteletben, melyet monda, esküjét,
+  Gondolj reám, s ezekre, kik itt állanak.
+
+KAR.
+
+Versszak.
+
+  Fogadd az észnek, szivnek szavát, oh, király!
+
+OEDIPUS.
+
+  Miben kivánod tennem azt?
+
+KAR.
+
+  Hogy őt, ki nem volt előbb sem botor, s eskü véd most, meg ne vesd.
+
+OEDIPUS.
+
+  Tudod, mit kivánsz?
+
+KAR.
+
+                  Jól tudom.
+
+OEDIPUS.
+
+                  Beszélj tehát.
+
+KAR.
+
+  Alaptalan gyanúból el ne itéld
+  A hű barátot, a kit szent eskü véd.
+
+OEDIPUS.
+
+  Tudd meg, hogy ezt kivánva, enhalálomat
+  Kivánod tőlem, vagy száműzetésemet.
+
+KAR.
+
+  Az istenek legelsejére, nagy
+  Heliosra, nem! Veszszek el nyomorultan, hagyjanak el
+  Az ég s emberek, ha ez szándokom.
+  Ámde kín tépi bús szivemet
+  E honnak szenvedésein, ha még
+  Ti is tetézitek a régi bajt.
+
+OEDIPUS.
+
+  Menjen tehát, bár menthetetlenül halál
+  Vagy szégyenítő számüzés vár is reám.
+  Kérő szavad, s nem ő, indítá szivemet
+  Ez irgalomra; őt, bárhol lesz, gyűlölöm.
+
+KREON.
+
+  Gyülölve engedsz, ám ha csillapul dühöd,
+  Magadnak lész terhére. Ily természetek
+  Önnönmagoknak leggyötrelmesb terhei.
+
+OEDIPUS.
+
+  Nem hagysz el hát, nem távozol már?
+
+KREON.
+
+                  Távozom;
+  Te félreismersz, itt a régi maradok.[42]
+
+(El.)
+
+KAR.
+
+Ellenversszak.
+
+  Jokaste, mért nem sietsz ezzel a házba most?
+
+JOKASTE.
+
+  Előbb tudnom kell, mint esett?
+
+KAR.
+
+  A szóbeszédből gyanú lett; hiú bár, de fáj az ilyen is.
+
+JOKASTE.
+
+  Mindkettejök részéről?
+
+KAR.
+
+                  Ugy van.
+
+JOKASTE.
+
+                  És mi volt?
+
+KAR.
+
+  Legyen elég, elég sok bajunk között;
+  Hagyjuk a szót, hol a viszály végződött.
+
+OEDIPUS.
+
+  Látod, hová jutsz? Jó levén a szándokod,
+  Lenézed, eltompitni akarod szivem.
+
+KAR.
+
+  Király, mondám nem egyszer, ime halld:
+  Esztelen botor volnék s helyes itéletre képtelen,
+  Ha elhagyva megtagadnálak én
+  Tégedet, ki nyomor s baj közül
+  Kimentéd egykor drága honomat;
+  Vezéreld most is üdvre, mint tudod.
+
+JOKASTE.
+
+  Az istenekre mondd el, oh király, nekem,
+  Mi volt az ok, mely ily haragra ingerelt?
+
+OEDIPUS.
+
+  Elmondom, mert ezeknél[43] többre tartalak;
+  Halld hát, mily terveket szőtt ellenem Kreon.
+
+JOKASTE.
+
+  Beszélj, mi biztos vádat mondhatsz ellene?
+
+OEDIPUS.
+
+  Azt mondja, hogy én voltam Laïos gyilkosa.
+
+JOKASTE.
+
+  Saját vagy más bizonyságára mondja ezt?
+
+OEDIPUS.
+
+  Egy jóst, egy szemfényvesztőt tolt előre, mert
+  Saját nyelvét mindentől menten tartja ő.
+
+JOKASTE.
+
+  Vesd el most annak gondját, a mit emlitél,
+  S hallgass rám és tanuld meg, hogy az emberek
+  Között nincs egy sem, a ki a jövőbe lát.
+  Bizonyságát rövid szavakban ime halld:
+  Laïos király jós mondatot vett egykoron,
+  Nem mondom, hogy Phœbostól, ám szolgáitól,
+  Hogy a gyermek kezétől kell meghalnia,
+  Ki tőlem s tőle fogja nyerni életét.
+  S mégis, mint híre jár, hármas keresztuton
+  Idegen rablók gyilkolák meg hajdan őt;
+  Fiát pedig, ki életének harmadik
+  Napját sem látta, megkötött lábakkal és
+  Más ember által zord hegyen kitéteté.
+  És igy Apollo nem tölté be jóslatát,
+  Sem a fiú nem lett atyjának gyilkosa,
+  Laïos sem gyermekétől nyerte a halált.
+  Pedig mindezt előre hirdeté a jós!
+  Ne gondolj hát vele. Mit isten föl akar
+  Deritni, könnyen napvilágra hozza azt.
+
+OEDIPUS.
+
+  Mint megzavarja, megrendíti lelkemet
+  A szó, melyet most hallék tőled, hitvesem.
+
+JOKASTE.
+
+  Mily aggódás rendíte meg, hogy igy beszélsz?
+
+OEDIPUS.
+
+  Ugy tetszik, mintha azt mondottad volna, hogy
+  Hármas keresztuton ölték meg Laïost.
+
+JOKASTE.
+
+  Ez volt a hír felőle, s nem szűnt meg ma sem.
+
+OEDIPUS.
+
+  És mely vidéken érte őt e baleset?
+
+JOKASTE.
+
+  Phokisnak mondják a vidéket, s Daulia
+  És Delphi útja egyesül azon helyen.
+
+OEDIPUS.
+
+  És mily hosszú idő mult el azóta már?
+
+JOKASTE.
+
+  Kevéssel az előtt, hogy elfoglaltad ez
+  Országnak trónját, érkezett hozzánk a hir.
+
+OEDIPUS.
+
+  Oh, Zeus, minő végzetre szántál engemet?
+
+JOKASTE.
+
+  Mi az, mit úgy szivedre vettél, Oedipus?
+
+OEDIPUS.
+
+  Ne kérdezz még; de mondd milyen volt alkata
+  Laïosnak, mily előre haladott kora!
+
+JOKASTE.
+
+  Magas volt, őszbe csavarodtak fürtjei,
+  S alakja tőled nem nagyon különbözött.
+
+OEDIPUS.
+
+  Oh, jaj nekem? Magamra szórtam hát ma én
+  A szörnyü átkok árját öntudatlanul.
+
+JOKASTE.
+
+  Mit mondasz? Rettegek rád nézni, oh, király!
+
+OEDIPUS.
+
+  Borzadva aggódom, hogy jól látott a jós;
+  De hogy egészen meggyőzz, mondj még egyet el.
+
+JOKASTE.
+
+  Úgy félek! Ám ha kérdezz, felelek reá.
+
+OEDIPUS.
+
+  Csekély kiséret volt mellette, vagy talán
+  Miként királyhoz illik, számos fegyveres?
+
+JOKASTE.
+
+  Öten voltak mindössze és ezek között
+  A hirnök; s Laïost egyetlen szekér vivé.
+
+OEDIPUS.
+
+  Jaj, jaj, minden világos immár! És ki volt,
+  Oh, asszony, a ki nektek erről hirt hozott?
+
+JOKASTE.
+
+  Szolgája, az egyetlen, ki megmenekült.
+
+OEDIPUS.
+
+  Vajon most is jelen van még a házban ő?
+
+JOKASTE.
+
+  Nincs többé már itt; mert hogy visszatért ide,
+  S a trónon téged látott s halva Laïost,
+  Esengve kére, megragadva kezemet,
+  Bocsássam a mezőre, a juhnyájhoz őt,
+  Hogy a várostól mentől távolabb legyen.
+  El is bocsátám; mert akármily szolga volt,
+  Ennél nagyobb kegyelmet is megérdemelt.
+
+OEDIPUS.
+
+  Lehetne ismét gyorsan visszahivni őt?
+
+JOKASTE.
+
+  Minden bizonynyal; ámde mért kivánod ezt?
+
+OEDIPUS.
+
+  Oh, asszony, félek attól, hogy nagyon sokat
+  Mondottam már, a mért most látni vágyom őt.
+
+JOKASTE.
+
+  El fog hát jönni; ám én is méltó vagyok
+  Megtudni, hogy mi gyötri kebledet, király.
+
+OEDIPUS.
+
+  Nem hallgatok, ha kinzó aggodalmaim
+  Eddig jutottak már. Ki volna kívüled,
+  Kinek méltóbban mondhatnám el sorsomat?
+  Atyám korinthi Polybos volt, és anyám
+  A dorisi Merope. Legnagyobb valék
+  Én ott a polgárok közt, miglen oly eset
+  Történt velem, mely méltán meglepett ugyan,
+  De nem volt méltó haragomra, mely kigyúlt.
+  Egy ember, lakománál, borozás között,
+  Ittas fővel cserélt fiúnak nevezett.
+  Csak nehezen tartottam vissza e napon
+  Boszúmat; s másnap megkérdém szülőimet,
+  Kik e sértésért nagy haragra gyultanak
+  Ez ember ellen, hogy ilyen szót ejte ki.
+  És én elégedett voltam velök; de még
+  Mindig gyötört ez; mert nagyon szétment hire.
+  Szülőim tudtán kivül elmenék tehát
+  Pythóba. És Apollo, bár nem méltatott
+  Válaszra abban, a miért jövék; de más
+  Szörnyű, rettentő sorsot nyilváníta ki,
+  Hogy nászra kell anyámmal lépnem, és e föld
+  Szinére elviselhetetlen fajt hozok,
+  S atyámnak, a ki nemzett, gyilkosa leszek.
+  Ezt hallva elfutottam, s ezután csupán
+  A csillagok szerint mértem ki, merre van
+  Korinth vidéke,[44] hogy ne lássam magamon
+  Beteljesülni ezt a szörnyű jóslatot.
+  S tovább haladva eljuték a tájra, hol
+  – Miként te mondád – meggyilkolták a királyt.
+  Midőn a hármas úthoz már közel valék,
+  Egy fullajtár jött szembe vélem, s fiatal
+  Csikóktól vont szekéren olyan férfiú,
+  Minőt leirtál; a szekérhajtó s maga
+  Az aggastyán erővel félre űztenek.
+  Én haragomban megütöttem a kocsist,
+  Ki eltaszított; az aggastyán látva ezt,
+  S kilesve, a mint a szekérhez érkezém,
+  Kettős hegyű botjával fejtetőmre sujt.[45]
+  De nem hasonló viszonzást nyert; hirtelen
+  Reá sujték botommal, és ő a szekér
+  Öléből tüstént fejtetőre kibukott;
+  Aztán meggyilkolám a többit. Ha talán
+  Rokonság van ez idegen s Laïos között,[46]
+  Ki nyomorultabb akkor, mint ennen magam,
+  Ki az, kit inkább gyűlölnek az istenek?
+  Kit nem fogadhat sem polgár, sem idegen
+  Lakába, nem beszélhet hozzá senki sem;
+  Elűzi házából mindenki. S én magam
+  Mondám fejemre ezt az átkot, senki más.
+  A holtnak ágyát meggyalázzák kezeim,
+  Melyek meggyilkolák őt. Nem vagyok gonosz?
+  Nem minden ízemben tisztátlan? Hogyha el
+  Kell innen futnom, nem szabad enyéimet
+  Meglátnom, sem hazámba tennem lábamat,
+  Nehogy anyámmal nászra lépjek, s Polybost
+  Megöljem, a ki nemzett engem s fölnevelt.
+  Nem eltalálja a valót, ki azt hiszi,
+  Hogy mind e bajt kegyetlen dæmon küldi rám?
+  Soha, soha ne lássam többé e napot,
+  Oh isten szent felsége! Inkább tünjem el
+  Az emberek szeméből, hogysem magamon
+  Betelni lássam ennyi balsors szégyenét.
+
+KAR.
+
+  Reánk is aggasztó ez, oh, király, de mig
+  Ki nem hallgattad a tanút, bizzál s remélj.
+
+OEDIPUS.
+
+  Ugyis csupán ez egyetlen remény maradt
+  Számomra, hogy a pásztort várjam még ide.
+
+JOKASTE.
+
+  És mit vársz tőle, hogyha majd megérkezett?
+
+OEDIPUS.
+
+  Megmondom. Ha megegyezik azzal szava,
+  A mit te mondál, úgy többé nem rettegek.
+
+JOKASTE.
+
+  Mit hallottál te tőlem olyan feltünőt?
+
+OEDIPUS.
+
+  Azt mondád, hogy szerinte rablók voltanak,
+  Kik meggyilkolták Laïost. Ha most is ily
+  Többes számban szól, úgy nem én öltem meg őt;
+  Hiszen egy embert többnek nézni nem lehet.
+  De ha csupán egy vándorról fog szólani,
+  Világos akkor, hogy rám súlyosúl e tett.
+
+JOKASTE.
+
+  Tisztán igy szóla akkor, hidd el biztosan,
+  És nem lehet, hogy visszavonja most szavát;
+  Mert az egész nép hallá, nem csak én magam.
+  De ha első szavától el is térne tán,
+  Mégsem derítené fel bizton, oh, király,
+  Laïos halálát; hisz kimondá Loxias,
+  Hogy gyermekem kezétől kell meghalnia.
+  És e szegény bizonynyal meg nem ölte őt,
+  Mert már előbb elveszté önnön életét.
+  Azért bizony sem erre, sem amarra nem
+  Tekintenék én többé jóslatok miatt.
+
+OEDIPUS.
+
+  Helyes beszéd. De mégis küldj el valakit
+  E szolgáért, hadd jöjjön; ne mulaszd el ezt.
+
+JOKASTE.
+
+  Azonnal érte küldök, s most menjünk haza.
+  Nem tennék semmit, a mi nem kedves neked.
+
+(Oedipus, Jokaste a palotába mennek.)
+
+KAR.
+
+Első versszak.
+
+  Oh, vajha sorsom lehetne,
+  Szüntelen megóvni ajkam s tetteim
+  Szent tisztaságát, mint az égi törvény
+  Rendeli, mely mennyei fény
+  Ölén született, s egyedül Olympos
+  Volt atyja, nem emberi
+  Múló akarat szülé,
+  S melyet nem altat el sohasem a feledés, homály.
+  A nagy isten élteti azt s nem évül el.
+
+Első ellenversszak.
+
+  A büszkeség zsarnokot szül;
+  És ha dőrén felfuvalkodván, magát
+  Eltölti azzal, mi nem üdvös és jó,
+  S fölhatol a legmagasabb
+  Oromra: lehull onnan mély nyomorba,
+  Honnan soha nem viszik
+  Ki lábai. Ám az ég
+  Vezesse győzelemre a harczot honom üdveért.[47]
+  A nagy isten volt s marad útamon vezér.
+
+Második versszak.
+
+  Ámde kinek szavát s kezét a büszkeség ragadja el,
+  Nem tiszteli istenek lakát s Dikétől nem remeg,
+  Azt érje a végzet átka,
+  Gőgje büntetéseül,
+  Ha jogtalan hasznot keres magának,
+  A bűnnek útjain halad,
+  S dőrén az ellen szól, mi sérthetetlen.
+  Az ily bünös keble hogy maradna ment
+  A boszú sujtó nyilától?
+  Mert ha ily tett is jutalmat érdemel:
+  Miért az imádság?
+
+Második ellenversszak.
+
+  Nem megyek áhítattal én a földközép[48] felé soha,
+  Olympia[49] szent helyére, Abæ[50] templomába sem,
+  Ha nem teljesül e jóslat
+  Az egész világ előtt.
+  Mindenható Zeus – hogyha joggal illet
+  E név – ki mindenek fölött
+  Úr vagy, ne légyen rejtve ez előled!
+  Az ősi jóslat, melyet Laïos kapott,
+  Megvetésnek tárgya lett már,
+  És Apollo fénye nem ragyog sehol,
+  Eltűnik a szentség.
+
+(Jokaste jő a palotából hölgyeivel, kik koszorúkat, korsókat s
+illatszereket hoznak.)
+
+JOKASTE.
+
+  Országnagyok, azt gondolám, az istenek
+  Szent templomába térek, felajánlani
+  E koszorúkat és ez illatszereket.
+  Tulságosan kinozza Oedipus szivét
+  Ezernyi gond; s az újat nem fontolja meg,
+  Mint bölcshez illenék, a régiek szerint,[51]
+  Nem; minden szóra hallgat, mely megrémiti.
+
+(Az oltár felé fordul, melyet hölgyei ezalatt megkoszorúztak s rajta
+tüzet gyujtottak, s illatszereket szór a lángok közé.)
+
+  Mivel tanácsom rajta semmit sem segit,
+  Lykeios Phœbos[52] (mert te vagy legközelebb)
+  Ez áldozattal kérve hozzád fordulok:
+  Adj tiszta, szent feloldást bajaink alól;
+  Mert reszketünk mindnyájan, látva, hogy hajónk
+  Kormányosát mily félelem bénitja meg.
+
+(A korinthi követ fellép.)
+
+KÖVET.
+
+  Megtudhatnám-e tőletek, idegenek,
+  Hol lelhetem föl Oedipus király lakát?
+  Vagy inkább mondjátok meg, hol van ő maga.
+
+KAR.
+
+  Ez háza és ő benn van most, oh, jövevény!
+  S e nőben gyermekeinek anyját láthatod.
+
+KÖVET.
+
+  Legyen hát boldog s éljen mindig boldogok
+  Között, e férfiúnak áldott hitvese.
+
+JOKASTE.
+
+  Ezt kívánom viszont neked, oh, idegen,
+  Méltó vagy rá e szives óhajtásodért;
+  De mondd, mi kívánságod, milyen hirt hozál?
+
+KÖVET.
+
+  Jó hírt házadnak es férjednek, asszonyom.
+
+JOKASTE.
+
+  Minő hir az? Kinek részéről küldetél?
+
+KÖVET.
+
+  Korinthból; és a hirnek, a melyet hozok,
+  Örülni fogsz, hogy is ne; s tán bánkódni is.
+
+JOKASTE.
+
+  De mily hir az? Kettős hatása mint lehet?
+
+KÖVET.
+
+  Királyunkká akarják őt választani
+  A földszoros[53] lakói; igy beszélik ott.
+
+JOKASTE.
+
+  Hogyan? Nem ül már trónusán ősz Polybos?
+
+KÖVET.
+
+  Nem többé; sirba rejté őt már a halál.
+
+JOKASTE.
+
+  Mit mondasz, oh, aggastyán! Meghalt Polybos?
+
+KÖVET.
+
+  Ha nem valót beszélek, haljak meg magam.
+
+JOKASTE (egyik hölgyéhez.)
+
+  Leányom, menj sietve tudtul adni ezt
+  Uradnak. És ti, istenek jóslatjai,
+  Hol vagytok? Ez volt, a kit Oedipus került,
+  Félvén, nehogy megölje őt; és ime, most
+  A sors vevé el életét, nem Oedipus.
+
+(Oedipus fellép).
+
+OEDIPUS.
+
+  Oh, szeretett Jokaste, drága nőm, miért
+  Hivattál ki a palotából engemet?
+
+JOKASTE.
+
+  Hallgasd ez embert, s meghallgatva lásd, hová
+  Jutott az istenek felséges jóslata.
+
+OEDIPUS.
+
+  Ki hát ez ember és minő hirt hoz nekem?
+
+JOKASTE.
+
+  Korinth földéről érkezik, jelentve hogy,
+  Nincs már életben, meghalt Polybos, atyád.
+
+OEDIPUS.
+
+  Mit mondasz? Add tudtomra, idegen, magad.
+
+KÖVET.
+
+  Ha ezt kell legelőször tisztán mondanom,
+  Tudd biztosan, hogy elragadta a halál.
+
+OEDIPUS.
+
+  Csalárdság ölte-é meg, avagy kór keze?
+
+KÖVET.
+
+  Megdönt elaggott testet egy könnyű lökés.
+
+OEDIPUS.
+
+  Igy hát, mint látom, kór ölé meg a szegényt.
+
+KÖVET.
+
+  S a kóron kívül élte hosszú évei.
+
+OEDIPUS.
+
+  Ah, ah! Miért hát megkérdezni, hitvesem,
+  A jós Pytho oltárát és a madarak
+  Légben rikoltó hangját! Hisz megjósolák,
+  Hogy meg fogom atyámat ölni, és ime,
+  A föld alatt pihen már ő, s én itt vagyok,
+  Kardot se’ fogva – ha csak nem az ölte meg,
+  Hogy értem vágyott; – így hoztam rá csak halált.
+  Hades keblében nyugszik Polybos, vele
+  A sirba szálltak e hivságos jóslatok.
+
+JOKASTE.
+
+  Nem mondtam én ezt régtől fogva már neked?
+
+OEDIPUS.
+
+  Mondtad; de engem megzavart a félelem.
+
+JOKASTE.
+
+  Ne engedj hát most ennek szívedben helyet.
+
+OEDIPUS.
+
+  Hogyan? S anyámnak ágyától ne féljek-e?
+
+JOKASTE.
+
+  Mit féljen az, kit a véletlen sors vezet,
+  De a jövőben nem lát semmit biztosan?
+  Legjobb vaktában élni, a mint csak lehet.
+  Azért anyád nászától egy cseppet se félj;
+  Sok ember látta már álmában önmagát
+  Mint anyja férjét. Ám ki ezt föl sem veszi,
+  Az könnyedén átéli földi napjait.
+
+OEDIPUS.
+
+  Helyes beszédnek mondanám minden szavad,
+  Ha már anyám nem volna életben; de mert
+  Még él, szükséges félnem, bármi jól beszélj.
+
+JOKASTE.
+
+  Atyádnak sirja mégis nagy vigasz reád.
+
+OEDIPUS.
+
+  Elismerem; de az élőtől rettegek.
+
+KÖVET.
+
+  Mily asszony az, ki ily nagy félelemre készt?
+
+OEDIPUS.
+
+  Merope, oh, aggastyán! Polybos neje.
+
+KÖVET.
+
+  S mi benne az, mi ily nagy rettegésbe ejt?
+
+OEDIPUS.
+
+  Egy isten-küldte szörnyü jóslat, idegen!
+
+KÖVET.
+
+  Elmondható-e? Vagy nem tudhat róla más?
+
+OEDIPUS.
+
+  Sőt inkább. Azt jósolta hajdan Loxias,
+  Hogy frigyesülnöm kell saját anyámmal, és
+  Atyám vérét ennen kezemmel ontanom.
+  Ezért távoztam régtől fogva messzire
+  Korinthtól, és szerencsém volt ez – ah! pedig
+  Nincs édesebb, mint a szülők tekintete.
+
+KÖVET.
+
+  S ettől való féltedben számüzéd magad?
+
+OEDIPUS.
+
+  Hogy ne legyek atyám gyilkosa, oh, öreg!
+
+KÖVET.
+
+  Miért ne oldjalak fel téged, oh, király,
+  E rettegéstől? Hisz jó szándékkal jövék.
+
+OEDIPUS.
+
+  Bizonynyal méltó hála jutna részedül.
+
+KÖVET.
+
+  Azért jövék leginkább, hogy ha egykoron
+  Honodba térsz, jutalmat nyerjek tőled ott.
+
+OEDIPUS.
+
+  Szülőimhez nem térek vissza én soha.
+
+KÖVET.
+
+  Jól látom, nem tudod, mit tészsz, oh, gyermekem!
+
+OEDIPUS.
+
+  Hogyan, öreg? Az égre magyarázd meg ezt!
+
+KÖVET.
+
+  Ha ez az ok, mely a hazától futni keszt.
+
+OEDIPUS.
+
+  Félek, nehogy elérjen Phœbos jóslata.
+
+KÖVET.
+
+  Hogy fertőzet ne érjen szüleid miatt?
+
+OEDIPUS.
+
+  Igen, aggastyán, ettől félék szüntelen.
+
+KÖVET.
+
+  Nos hát tudod, hogy minden ok nélkül remegsz?
+
+OEDIPUS.
+
+  Hogyan? Hát nem vagyok szülőim gyermeke?
+
+KÖVET.
+
+  Mert Polybosnak nincsen törzsedhez köze.
+
+OEDIPUS.
+
+  Mit mondasz! Nem Polybos nemzett engemet?
+
+KÖVET.
+
+  Nem inkább, mint saját magam, csak épen úgy.
+
+OEDIPUS.
+
+  Hogy volna egyenlő atyámmal, ki nem az?
+
+KÖVET.
+
+  Ép úgy nem volt atyád ő, mint én nem vagyok.
+
+OEDIPUS.
+
+  De mért mondott hát gyermekének engemet?
+
+KÖVET.
+
+  Mert, tudd meg, kezeimből nyert ajándokul.
+
+OEDIPUS.
+
+  S más kézből nyerve, oly nagyon szerethetett?
+
+KÖVET.
+
+  Hosszú gyermektelenség birta erre őt.
+
+OEDIPUS.
+
+  S te vettél engem, vagy véletlenül lelél?
+
+KÖVET.
+
+  Kithæron erdős völgytorkában leltelek.
+
+OEDIPUS.
+
+  S miért vevéd ezen vidékre útadat?
+
+KÖVET.
+
+  A nyájat őrzém, mely a hegységben legelt.
+
+OEDIPUS.
+
+  Pásztor valál hát, a ki bérért vándorol?
+
+KÖVET.
+
+  S azon időben megmentőd is, gyermekem.
+
+OEDIPUS.
+
+  Mitől mentél meg? Mily gyötrelmet szenvedék?
+
+KÖVET.
+
+  Bizonyságot tehetnek lábcsuklóid is.
+
+OEDIPUS.
+
+  Oh, jaj, miért emlited régi bajomat?
+
+KÖVET.
+
+  Én oldtam fel keresztül fűzött lábadat.
+
+OEDIPUS.
+
+  Ily szörnyü volt a pólya, melyet viselék!
+
+KÖVET.
+
+  E balszerencse adta aztán nevedet.
+
+OEDIPUS.
+
+  Atyámtól vagy anyámtól? Oh, az égre, szólj!
+
+KÖVET.
+
+  Ezt jobban tudja, a kitől átvettelek.
+
+OEDIPUS.
+
+  Tehát mástól vevél át, nem magad lelél?
+
+KÖVET.
+
+  Nem; más pásztor volt, a ki átadott nekem.
+
+OEDIPUS.
+
+  Ki volt az? Nem tudnád-e megnevezni őt?
+
+KÖVET.
+
+  Ugy mondák, Laïos háznépéhez tartozott.
+
+OEDIPUS.
+
+  Ahhoz, ki egykoron e föld királya volt?
+
+KÖVET.
+
+  Igen, ezen királynak volt ő pásztora.
+
+OEDIPUS.
+
+  És él-e még ez ember, hogy láthassam őt?
+
+KÖVET (a karhoz).
+
+  Ti benszülöttek, legjobban tudjátok ezt.
+
+OEDIPUS.
+
+  Ti, kik mellettem álltok valamennyien,
+  Van köztetek, ki ezt a pásztort ismeri,
+  S akár kinn a mezőn, akár itt látta őt?
+  Beszéljetek; most jő napfényre a titok.
+
+KAR.
+
+  Azt vélem, nem lesz senki más, mint épen az,
+  Kit már előbb kivántál látni; ámde nőd
+  Jokaste legjobban meg tudná mondani.
+
+OEDIPUS.
+
+  Mit gondolsz, asszony, egy személy-e az, a kit
+  Behívatánk, és, az kiről emez beszél?
+
+JOKASTE.
+
+  Mi az? Kiről szólt? Mit törődöl te vele?
+  Hiú beszédét legjobb lesz ha feleded.
+
+OEDIPUS.
+
+  Azt nem teszem, hogy ily nyomokra jutva most,
+  Ne hozzam napvilágra származásomat.
+
+JOKASTE.
+
+  Az istenekre, ne kutasd ezt, ha saját
+  Élteddel gondolsz. Ah! elég az én kinom.
+
+OEDIPUS.
+
+  Bizzál! Legyek bár harmadik anyám szerint
+  Hármas rabszolga, nem hoz az szégyent reád.[54]
+
+JOKASTE.
+
+  Oh, kérlek, hagyj föl ezzel és fogadd szavam.
+
+OEDIPUS.
+
+  Nem tehetem, föl kell derítnem a homályt.
+
+JOKASTE.
+
+  Én jót akarva legjobbat tanácsolok.
+
+OEDIPUS.
+
+  E legjobb az, mi régtől gyötri lelkemet.
+
+JOKASTE.
+
+  Boldogtalan, bár meg ne tudnád, hogy ki vagy!
+
+OEDIPUS (egyik szolgájához).
+
+  Menj és vezesd azonnal a pásztort elém.
+
+(Jokaste felé.)
+
+  Ez meg fényes törzsére büszke hadd legyen.
+
+(A szolga elsiet.)
+
+JOKASTE.
+
+  Jaj, jaj, boldogtalan! Ez egy szóval lehet
+  Téged szólitnom, semmi mással ezután.
+
+(Elrohan a palotába.)
+
+KAR.
+
+  Miért rohant el a királyné, Oedipus,
+  Ily keserű bánattal? Rettegek, nehogy
+  E hallgatásból nagy bajok támadjanak.
+
+OEDIPUS.
+
+  Hadd jöjjön, a minek reám kell jönnie,
+  De törzsöm ismernem kell, bárminő csekély.
+  Amaz meg, nagyralátó asszony létire,
+  Hadd szégyenelje aljas származásomat.
+  Ám én, szerencse-osztó Tyche[55] fiaként
+  Tekintve enmagam, pirúlni nem fogok.
+  Ő volt anyám; s éltem kisérő holdjai
+  Kicsinynyé majd meg nagygyá tettek engemet.
+  Ilyen levén, más czélra törni nem fogok,
+  Mint arra, hogy megtudjam származásomat.
+
+KAR.
+
+Versszak.
+
+  Ha a jövőt látja jós szemem, s agyamban ész honol,
+  Ugy az Olympra, megéred, oh Kithæron,
+  Hogy mihelyt feljő az égre holnap
+  A tele hold, sugarát mint Oedipus
+  Anyja s dajkája köszöntöd,
+  S tánczczal ünneplünk, ki országunk fejedelminek oly nagy
+  Jótevője voltál.
+  Engedd, legyen így kedvedre, gyógyító Phœbos!
+
+Ellenversszak.
+
+  Isteni lányok közül ki volt, kitől éltet nyerél?[56]
+  Kedvese tán a hegyen bolyongó Pánnak?
+  Vagy Apollo karja közt pihent? Mert
+  Kedveli ő is az erdős bérczeket.
+  Tán a kyllenei isten,[57]
+  Vagy hegyormon székelő Bakchos fia, vagy Helikonnak
+  Játszi gyermekétől?[58]
+  Hisz sokszor enyelge ő a bérczi nymphákkal.
+
+(A pásztor föllép.)
+
+OEDIPUS (a karhoz).
+
+  Gyanítom, ámbár nem találkozám vele
+  Előbb soha, hogy azt a pásztort látom itt,
+  Kit régtől fogva keresénk; mert aggkora
+
+(A korinthi követre mutatva.)
+
+  E férfiúval ép’ egyenlővé teszi,
+  S azokban, kik kisérik, jól ráismerek
+  Cselédjeimre; ám te jobban tudhatod,
+  Mint én, hisz ezelőtt is többször láttad őt.
+
+KAR.
+
+  Ráismerek bizonynyal; mert hű pásztora
+  Volt ő Laïosnak mindig, mint tán senki más.
+
+OEDIPUS.
+
+  Először, oh, korinthi idegen, te szólj:
+  Erről beszéltél?
+
+KÖVET.
+
+                  Erről, a kit lát szemed.
+
+OEDIPUS (a pásztorhoz.)
+
+  Te meg, öreg, tekints reám és válaszolj
+  Kérdéseimre. Hajdan Laïos volt urad?
+
+PÁSZTOR.
+
+  Igen, de nem vásárolt; nála születém.
+
+OEDIPUS.
+
+  Minő munkád volt, milyen életét vivél?
+
+PÁSZTOR.
+
+  A nyájat őrzém éltem legtöbb napjain.
+
+OEDIPUS.
+
+  S leginkább mily vidéken választál tanyát?
+
+PÁSZTOR.
+
+  Kithæron hegységében vagy hozzá közel.
+
+OEDIPUS.
+
+  Emlékezel, hogy láttad ott e férfiút?
+
+PÁSZTOR.
+
+  Minő dologban? Milyen férfiról beszélsz?
+
+OEDIPUS.
+
+  Erről, ki itt áll. Volt-e már dolgod vele?
+
+PÁSZTOR.
+
+  Hamarjában nem emlékezhetem reá.
+
+KÖVET.
+
+  Nem is lehet csodálni, oh, király! De én
+  Tisztán eszébe juttatom. Mert jól tudom,
+  Emlékszik arra, hogy Kithæron oldalán
+  (Ő kettős nyájat őrizvén, csak egyet én)
+  Tavasztól őszig én magam s e férfiú
+  Három félévet éltünk szomszédok gyanánt;
+  S a tél jöttével én saját tanyám felé,
+  Ő meg Laïos aklába hajtá nyájait.
+  Akként történt-e, mint elmondám, vagy nem úgy?
+
+PÁSZTOR.
+
+  Való, mit mondasz, bár hosszú idője mult.
+
+KÖVET.
+
+  Mondd hát, emlékszel a fiúra, kit nekem
+  Adál, hogy fölneveljem, mint sajátomat?
+
+PÁSZTOR.
+
+  Mi ez? Mi végre kérdezed most tőlem ezt?
+
+KÖVET (Oedipusra mutat).
+
+  Itt áll, barátom, a fiú, kit átadál.
+
+PÁSZTOR.
+
+  Vesztedre indulsz? Nem hallgatsz el iziben?
+
+OEDIPUS.
+
+  Ah, meg ne ródd e férfiú szavát, öreg,
+  Mert inkább illet téged, mint őt megrovás.
+
+PÁSZTOR.
+
+  De hát miben vétkeztem, oh, legjobb király?
+
+OEDIPUS.
+
+  Nem szólsz, kiről ez kérdez, a fiú felől.
+
+PÁSZTOR.
+
+  Semmit se tudva szólt ez, ámde hasztalan.
+
+OEDIPUS.
+
+  Ha jó szántodból nem beszélsz, majd sírva szólsz.
+
+PÁSZTOR.
+
+  Az égre, kimélj, vén létemre, engemet.
+
+OEDIPUS (szolgáihoz).
+
+  Kössétek tüstént hátra mind a két kezét.
+
+PÁSZTOR.
+
+  Oh jaj, miért? Mit kívánsz tőlem hallani?
+
+OEDIPUS.
+
+  Te adtad ennek a fiút, kiről beszél?
+
+PÁSZTOR.
+
+  Én adtam. Bár meghaltam volna az napon!
+
+OEDIPUS.
+
+  Ma fogsz meghalni, ha nem mondasz igazat.
+
+PÁSZTOR.
+
+  Előbb halok meg, ha kimondom a valót.
+
+OEDIPUS.
+
+  Ez ember, a mint látszik, kibuvót keres.
+
+PÁSZTOR.
+
+  Bizonynyal nem; hisz rég mondám: én adtam át.
+
+OEDIPUS.
+
+  Kitől vevéd? Sajátod volt vagy másoké?
+
+PÁSZTOR.
+
+  Nem volt sajátom, más kezéből vettem át.
+
+OEDIPUS.
+
+  Minő polgártól, milyen házból származott?
+
+PÁSZTOR.
+
+  Ne kérdj, az égre, oh ne kérdj többet, király!
+
+OEDIPUS.
+
+  Meghalsz, ha még másodszor kell ezt kérdenem.
+
+PÁSZTOR.
+
+  A gyermek Laïos háznépéhez tartozott.
+
+OEDIPUS.
+
+  Szolgától vagy királyi törzsből született?
+
+PÁSZTOR.
+
+  Jaj, jaj! rettentő az, mit mondani fogok.
+
+OEDIPUS.
+
+  S én hallani; de még is meg kell hallanom.
+
+PÁSZTOR.
+
+  Laïos fiának mondák; ám nőd oda benn
+  Legjobban elmondhatja, mind ez mint esett.
+
+OEDIPUS.
+
+  Ő adta át tehát neked?
+
+PÁSZTOR.
+
+                  Igen király!
+
+OEDIPUS.
+
+  Minő szándékkal?
+
+PÁSZTOR.
+
+                  Hogy kioltsam életét.
+
+OEDIPUS.
+
+  Saját szülője! Szörnyü!
+
+PÁSZTOR.
+
+                  Bal jóslat miatt.
+
+OEDIPUS.
+
+  Mi volt az?
+
+PÁSZTOR.
+
+  Hogy meg fogja ölni szüleit.
+
+OEDIPUS.
+
+  S miért adád ez aggastyán kezébe őt?
+
+PÁSZTOR.
+
+  A szánalom vitt rá, király, azt vélve, hogy
+  Honába, távol földre fogja vinni őt;
+  De csak szörnyű bajokra tartá fenn. Ha te
+  Vagy az, kiről szólt, úgy bánatra születél.
+
+OEDIPUS.
+
+  Oh, jaj, jaj! Minden tisztán napvilágra jött.
+  Oh, fény, utószor látlak immár téged én,
+  Ki születém, hol nem kellett, ki férj valék,
+  Hol nem lehet, s megöltem azt, kit nem szabad.
+
+(El a palotába. A követ és pásztor másfelé távoznak.)
+
+KAR.
+
+Első versszak.
+
+  Ah, emberek, emberek!
+  Kik itt éltek a föld szinén,
+  Oh, mily semmi az élet!
+  Ki az, hol a férfiú,
+  Hogy több élv juta részeül,
+  Mint mennyit ad a képzelet,
+  Mely képzelve enyészik?
+  Gyász példád im előttem áll,
+  S szörnyü végzeted, Oedipus,
+  És boldognak az ég alatt
+  Senkit se dicsérek.
+
+Első ellenversszak.
+
+  A legmagasabb fokig
+  Jutottál utadon, merő
+  Boldogság vala részed
+  (Oh Zeus!) letiportad a
+  Horgas körmü, dalos szüzet,
+  S védő bástya gyanánt e hont
+  Megmentéd a haláltól.
+  És ezért a királyi trón
+  S fényes Theba uralma lett
+  Osztályrészed, a legnagyobb
+  Fény, tisztelet ére.
+
+Második versszak.
+
+  De most, ki az, kit nagyobb nyomor gyötör,
+  Ki boldogtalanabb az emberek
+  Között, ki sülyedt annyira?
+  Oh, jaj, Oedipus dicső feje!
+  Mért fogadta egy
+  Rév ölébe, ah!
+  Az atyát s fiút,
+  S a szülöttet férj gyanánt?
+  Mint lehet az, miként lehet,
+  Hogy boszulatlan elviselt
+  Ennyi időn át szülői telked?
+
+Második ellenversszak.
+
+  Nyomorba ért a mindent látó idő,
+  Elitélve a szörnyü nászfrigyet,
+  Melyet szülő s szülött kötött.
+  Oh, jaj, Laïos szegény fia!
+  Bár ne láttalak
+  Volna én soha.
+  Nem találhatok
+  Szavakat, keservemet
+  Hogy kifejezzem. Hisz valót
+  Szólva, te adtad éltemet
+  Vissza, te hoztál szememre álmot.
+
+(A hirmondó jő a palotából.)
+
+HIRMONDÓ.
+
+  Ti, e hazának mindig tisztelt nagyjai,
+  Mit fogtok látni, oh, mit fogtok hallani,
+  Mily szörnyü lesz fájdalmatok, ha Labdakos
+  Házát még nagyra tartja honfi kebletek!
+  Mert sem az Ister, sem a Phasis árjai[59]
+  Nem moshatják tisztára e ház rejtező
+  Bünszennyét, s nemsokára napvilágra jő
+  A szándékos, nem kényszerített borzalom.[60]
+  S minden baj közt a szándékos legsúlyosabb.
+
+KAR.
+
+  Mi sem hiányzik abban, a mit már tudunk,
+  A borzalomból; mit mondhatsz ezen kivül?
+
+HIRMONDÓ.
+
+  Kevés szóval kimondhatom s megértheted:
+  A felséges Jokaste már halálra vált.
+
+KAR.
+
+  Boldogtalan! és mi hozott reá halált?
+
+HIRMONDÓ.
+
+  Saját keze. De azt, mi legfájdalmasabb,
+  Nem érezed; mert szemtanúja nem valál;
+  Mégis, mint emlékemben megmaradhatott,
+  Hallgasd meg a szegénynek szenvedéseit.
+  Bősz fájdalmában átfutván a csarnokon,
+  A nászágyas terembe rohant egyenest,
+  Mindkét kezével tépve bomlott fürtjeit.
+  Aztán belülről jól bezárva ajtaját,
+  Laïos nevét kiáltá, a ki rég halott,
+  Emlitve régi nászát, mely megölte őt,
+  És önfiának hagyta hátra özvegyét,
+  Hogy gyermekétől szüljön átkos fajzatot.
+  Siratta ágyát, hol kétszer boldogtalan,
+  A férjtől férjet s gyermektől szült gyermeket.
+  Mily módon halt meg ezután, azt nem tudom;
+  Mert Oedipus orditva tört be ekkor, és
+  Miatta nem láthattuk szenvedéseit;
+  Csak erre néztünk, mint rohant fel és alá.
+  Futkosva kardot kére tőlünk, majd megint
+  Nejét kérdé, ki nem neje, s a kétszeres
+  Anyát, ki őt és önnön sarjait szülé.
+  Egy isten végre megmutatta, hol van ő,
+  Mert a jelenlevőkből egy sem mutatá.
+  Mikéntha titkos kéz vezetné, iszonyún
+  Kiáltva, most a kétszárnyú ajtóra ment,
+  Kiemelé sarkából, s a szobába tört.
+  S itt láttuk a királynét hurkolt kötelen
+  Magasról függve. A mint a boldogtalan
+  Ezt látta, szörnyü ordítással rá rohant,
+  S feloldozá a fonalat. S mig a szegény
+  Földön feküdt, borzasztót láttak szemeink:
+  Kitépte az aranyból készült kapcsokat,
+  Melyek fentarták a királyné öltönyét,
+  S felkapva két szemébe verte, hangosan
+  Kiáltva: Nem láttátok eddig, mit teszek,
+  Nem láttátok, mit szenvedék, mit vétkezém,
+  Lássátok most sötétben, kit nem volt szabad
+  Látnom, s ne ismerjétek, kit kivántatok.[61]
+  Igy átkozódva feltartá pilláit és
+  Többször szemébe szúrt; a vérző szemgolyók
+  Megöntözék orczáit; nem csepegve húllt
+  A vér sebéből; ah! áradva tört elő
+  Szeméből fekete vérének zápora.
+  Kettőtől és nem egytől származott e vész,
+  A férfiút s az asszonyt sujtva egyaránt.
+  A régi áldás, mely e ház fölött pihent,
+  Valóban áldás volt ugyan, de a mai
+  Napon gyalázat, átok, siralom, halál,
+  S mi rossz név csak van, nem hiányzik egy sem itt.
+
+KAR.
+
+  S miként pihent meg gyötrelmében a szegény?
+
+HIRMONDÓ.
+
+  Kiált, nyissák ki a kaput, s a kadmosi
+  Népnek mutassák azt, ki apját megölé,
+  Ki anyját – ah! nem mondhatom szörnyű szavát.
+  Önnön magát akarja most száműzni ő,
+  Mert önmagára mondott átka üldözi,
+  De szükséges számára oltalom s vezér;
+  Mert szenvedése súlyát nem viselheti.
+  Saját szemeddel láthatod. Im a kapu
+  Megnyilik már; oly látvány tűnik most eléd,
+  Mely szánalomra indít ellenséget is.
+
+(Oedipust szolgák vezetik a palotából.)
+
+KAR.
+
+  Oh, iszonyu látvány emberi szemnek!
+  Oh, legiszonyúbb mindannyia közt,
+  Mely előmbe tünt valaha! Oh, nyomorult,
+  Mi vad őrület szállt meg? Melyik isten
+  Sujtotta fejedre csapásainak
+  Legszörnyűbb csapását?
+  Jaj, jaj! Oh, szegény!
+  Nem nézhetem arczodat, ah! pedig én
+  Annyit akarnék kérdeni tőled, tudni felőled,
+  De borzalom fog el engem.
+
+OEDIPUS.
+
+  Jaj, jaj!
+  Oh, boldogtalan én! Hova, mily
+  Földre jutok? Hova hangzik a szó
+  Ajkamról? Sorsom, mire váltál?
+
+KAR.
+
+  Nem látott, hallott borzalommá változott.
+
+OEDIPUS.
+
+Első versszak.
+
+  Oh, iszonyú,
+  Oh, örök éji homály, melynek neve nincs,
+  Nincs irja, határa!
+  Jaj! jaj!
+  És még egyszer jaj! Egyesülve gyötrenek
+  Sebem fájdalma és szörnyű emlékeim!
+
+KAR.
+
+  Ily gyászos, rettentő nyomorban nem csoda,
+  Ha kétszer érzed és panaszlod kínodat.
+
+OEDIPUS.
+
+Első ellenversszak.
+
+  Oh, hű barát,
+  Oldalomon maradál s gondját viseled
+  Annak, kit az éj fed.
+  Jaj! jaj!
+  Mert nem vagy rejtve, tisztán hallom hangodat,
+  S megismerem, bár éjhomály borul reám.
+
+KAR.
+
+  Szörnyű tett! Oh, mint olthatád ki igy szemed
+  Világát? Melyik isten biztatott reá?
+
+OEDIPUS.
+
+Második versszak.
+
+  Apollo, igen, Apollo vala,
+  Betetőzve ekként kinjaimat.
+  De senki más nem sujta rám, saját kezem tevé.
+  Miért a szem nekem,
+  Ki látva semmi kellemest nem láthatok?
+
+KAR.
+
+  Valóban úgy van, mint beszélsz.
+
+OEDIPUS.
+
+  Mi az, mit látnom, szeretnem, mi az, mit hallanom
+  Kedves lehetne rám, barátaim?
+  Oh, vigyetek, vigyetek el innen engemet,
+  Vigyetek el, ki e föld átka vagyok,
+  Leggonoszabb, legméltóbb istenek
+  Gyülöletére.
+
+KAR.
+
+  Boldogtalan, kit sorsod sujt s az öntudat,
+  Oh, bár ne tudtam volna rólad én soha!
+
+OEDIPUS.
+
+Második ellenversszak.
+
+  Oh, átok reá, ki feloldozá
+  Kötelékeitől lábaimat,
+  S kimente a halálból. Átkozott e szánalom!
+  Ha akkor meghalok,
+  Nem gyötreném most enmagam s szerettimet.
+
+KAR.
+
+  Szerintem is jobb volna úgy.
+
+OEDIPUS.
+
+  Nem lettem volna bizonynyal atyámnak gyilkosa,
+  Sem annak férje, ki világra szült.
+  Most bűn fia s az egektől elhagyott vagyok,
+  Megosztva atyámmal a násznyoszolyát,
+  Oh, ha van, a mi rosznál rosszabb:
+  Engemet ért az!
+
+KAR.
+
+  Nem mondhatom helyesnek azt, a mit tevél,
+  Jobb volna nem létezned, mint élned vakon.
+
+OEDIPUS.
+
+  Ne mondd, hogy nem legjobban tettem, mit tevék,
+  Ne oktass erre és ne adj tanácsokat.
+  Mert nem tudom, mily szemmel nézhetném atyám
+  Tekintetét, ha majdan Hadeshez jutok,
+  Avagy szegény anyámat, kikkel azt tevém,
+  Mire bitófa nem elég nagy büntetés?
+  Vagy gyermekim látása volna rám öröm,
+  Kik úgy születtek, a miként születtenek?
+  Oh, nem, az én szememnek nem kivánatos
+  Többé sem ez, sem Theba, sem a várorom,
+  Sem a szent szobrok, melyektől én, nyomorult,
+  Ki származásra Thebában legjobb valék,
+  Ennen magam fosztám meg; én parancsolám,
+  Hogy űzze el mindenki a gonosztevőt,
+  Kit isten s Laïos vére azzá bélyegez.
+  Ekként kinyilvánitva nagy szennyfoltomat,
+  Hogyan lehetne még rátok tekintenem?
+  Sehogy sem. Sőt ha el lehetne tiltani
+  A hangokat fülemtől, pillanatra sem
+  Haboznék, úgy elzárni gyászos testemet,
+  Hogy vak levén, ne halljak semmit sem. Hiszen
+  A szenvedőre édes mit sem érzeni.
+  Oh, jaj Kithæron, mért fogadtál el, miért
+  Nem gyilkolál meg tüstént engem, hogy soha
+  Ne tudta volna senki származásomat?
+  Oh, Polybos, Korinthos és te, őseim
+  Vélt palotája, oh, miért neveltetek
+  Diszes külsőben nagyra ennyi rothadást!
+  Mert rossz vagyok most s rossz szülőknek gyermeke.
+  Oh, hármas ösvény és te rejtett völgy öle,
+  Sötét erdő, hol egyesül a három út,
+  Melyet saját atyám vérével itatott
+  Ennen kezem, oh, emlékeztek még reám,
+  Mily tetteimnek voltatok tanúi, mit
+  Tevék itt újra aztán? Oh, te nász, te nász!
+  Mely engem szültél, s a szülöttől azután
+  Ismét termékenyülve, egy vérből adál
+  Atyát, testvért és egy személyben gyermeket,
+  Anyát, menyasszonyt és nőt,[62] és mindazt, a mi
+  Az emberek szemében szörnyü borzalom.
+  De mert a rút tettekről nem szép szólni sem,
+  Az istenekre, dobjatok ki engemet
+  Ez országból, vagy öljetek meg, rejtsetek
+  Tenger mélyébe, hogy többé ne lássatok.
+  Fel, fel, ragadjátok meg a boldogtalant;
+  Hígyétek, nincs mit félnetek. Hisz átkomat
+  Nem képes ember elviselni kívülem.
+  S ha már az emberekkel nem törődtök is,
+  Tartsátok tiszteletben a nagy Helios
+  Mindent tápláló lángját, leplezetlenül
+  Nem hagyva ily fertőzetet, melyet se’ föld,
+  Sem égi zápor, sem napfény nem türhet el.
+  Vigyétek gyorsan most a házba vissza őt;
+  Mert a rokon fájdalmát, szent szokás szerint,
+  Csak önfajának illik látni s hallani.[63]
+
+KAR.
+
+  Kivánságodra épen jókor jő Kreon,
+  Tanácsot adni s tenni, mert helyedben ő
+  Marad az ország oltalmára egyedül.[64]
+
+OEDIPUS.
+
+  Oh, jaj, minő szavakkal forduljak felé?
+  Mi az, mit tőle joggal várhatok? Holott
+  Előbb hozzá mindenben jogtalan valék?
+
+(Kreon föllép.)
+
+KREON.
+
+  Nem jöttem, gúnyolódni rajtad, Oedipus,
+  Avagy szemedre hányni régi rosszakat.
+
+OEDIPUS.
+
+  Az istenekre, ha reményemen felül
+  Ily jószivű vagy a leggonoszabb iránt,
+  Hallgass meg, kérlek, éretted, nem magamért.
+
+KREON.
+
+  Mi az, mit tőlem ily forrón epedve kérsz?
+
+OEDIPUS.
+
+  E földről gyorsan űzz ki engemet oda,
+  Hol többé nem fér hozzám emberek szava.
+
+KREON.
+
+  Megtenném, hidd el bizton, ha nem kellene
+  Előbb istentől megkérdezni, mit tegyünk.
+
+OEDIPUS.
+
+  Hiszen tisztán kinyilvánitá már szava,
+  Halált mondván a gaz apagyilkosra, rám.
+
+KREON.
+
+  Ezt mondta; ámde most, hogy igy fordult az ügy,
+  Jobb lesz mégis megtudni tőle, mit tegyünk.
+
+OEDIPUS.
+
+  Ily nyomorult sorsáért kéritek szavát?
+
+KREON.
+
+  Az isten jóslatának már te is hihetsz.
+
+OEDIPUS.
+
+  Igen, s te benned bízom s esdve kérlek én,
+  Temesd el azt, ki ott benn van,[65] kedved szerint;
+  Hisz illik ezt megtenned tennen törzsödért.
+  De azt ne várja ősi városom soha,
+  Hogy engem élve lásson falai között;
+  Nem, engedj a hegyekben laknom, ott az én
+  Kithæronomnak ormán, melyet szüleim
+  Még életemben választának siromul;
+  Hadd haljak úgy meg, a miként ők akarák.
+  Bár jól tudom, nem pusztit el se’ kór, se’ más;
+  Hisz nem kerűltem volna már el a halált
+  Hajdan se’, ha nem várna szörnyü kín reám.
+  De menjen hát, a merre indult, végzetem!
+  Figyermekim ne hozzanak gondot reád,
+  Kreon; hisz férfiak, és bárhol legyenek,
+  Nem fog sehol hiányt szenvedni életök;
+  De két leányom, ah szegény kis lányaim!
+  Kiknek számára asztalt nélkülem soha
+  Nem terítének, s mindenben részök vala,
+  Mit én élveztem; – kérlek, két kis lányomat
+  Vedd oltalmadba; és engedd meg most nekem,
+  Hogy átöleljem őket és sirjak velök.
+  Uram, menj!
+  Nemes szülött, menj! Hisz ha őket ölelem,
+  Enyémnek vélem, mint midőn látott szemem.
+
+(Kreon intésére kivezetik a palotából Oedipus két kis leányát, Antigonét
+és Isménét.)
+
+  Mit mondok?
+  Az istenekre, nem két kedves kicsinyem
+  Sirását hallom? Megsajnált tehát Kreon,
+  S előmbe hozta legdrágább szülöttimet?
+  Való ez?
+
+KREON.
+
+  Való; én vezetém elődbe; jól tudám,
+  Hogy örömödre lesz, mit hajdan szeretél.
+
+OEDIPUS.
+
+  Élj boldogul hát, és ez utadért legyen
+  Az isten jobb oltalmad, mint nekem vala.
+  Oh, gyermekim, hol vagytok? Jertek hát ide,
+  Jertek, fogjátok e testvéri kezeket.
+  Melyek okozták, hogy atyátok két szemét,
+  A hajdan fényeset, most igy kell látnotok,
+  Atyátokét, ki nem látott, nem kérdezett,
+  S az által lett atyátok, őt a ki szülé.
+  Könyem hull rátok – ah! mert nincs tekintetem –
+  Ha keserü jövőtöket meggondolom,
+  A mely reátok vár az emberek között.
+  Mert mily körökben, milyen ünnepélyeken
+  Fogtok részt venni, honnan házatokba nem
+  Könyezve tértek vissza, élvezet helyett?
+  S ha egykoron eléritek a nász korát,
+  Hol lesz a férfi, gyermekim, ki botorul
+  Magára venné a szégyent, mely egyaránt
+  Szülőitekre és reátok háramol?
+  Mily borzalom hiányzik? Atyját megölé
+  Atyátok; anyját, a ki életét adá,
+  Nőűl vevé, és onnan nyerte gyermekit,
+  A honnan egykor önnön vére származott.
+  Ezt hányják szemetekre. S igy ki venne el?
+  Oh, gyermekim, nem lesz oly férfi! Násztalan,
+  Meddőn kell élteteknek elhervadnia.
+  S te, oh, Menœkeus fia, ki egyedül
+  Maradsz most atyjok – mert mi, a kik éltöket
+  Adtuk, mindketten elveszénk – rokonidat
+  Ne hagyd szegényen s férjtelen bolyongani,
+  Ne engedd, hogy balsorsom érje őket is.
+  Oh, szánd meg őket; lásd, ily ifjan semmijök
+  Nincs e világon, csak mi tőled jut nekik!
+  Igérd meg, adj kezet rá, oh, nemes rokon!
+  Ti nektek sok tanácsot adnék gyermekim,
+  Ha felfognátok; most csak az kivánatom,
+  Hogy bárhol enged élni sorsotok, legyen
+  Jobb s boldogabb az élet, mint atyátoké.
+
+KREON.
+
+  Már elég a köny, a sóhaj; térj a házba vissza most.
+
+OEDIPUS.
+
+  Engedek, bár nem örömmel.
+
+KREON.
+
+                  Mindennek van ideje.
+
+OEDIPUS.
+
+  Ám tudod, mily kikötéssel?
+
+KREON.
+
+                  Mondd el, akkor megtudom.
+
+OEDIPUS.
+
+  Hogy száműzz e földről engem.
+
+KREON.
+
+                  Isten ítél e fölött.
+
+OEDIPUS.
+
+  Hisz az isten gyűlöl engem.
+
+KREON.
+
+                  Úgy kérésed teljesül.
+
+OEDIPUS.
+
+  Azt hiszed?
+
+KREON.
+
+                  Hiún nem mondom azt ki, mit nem gondolok.
+
+OEDIPUS.
+
+  Úgy vezess el innen engem.
+
+KREON.
+
+                  Jöjj s bocsásd el gyermekid.
+
+OEDIPUS.
+
+  Ne ragadd el tőlem őket.
+
+KREON.
+
+                  Mindent birni ne akarj.
+  Hisz mit birnod sikerült is, híved az sem maradott.
+
+KAR.
+
+  Theba városom lakói, lássátok, ez Oedipus,
+  Ki a rejtett szót megoldá s leghatalmasabb vala,
+  Boldog sorsát irigyelte minden polgár egyaránt:
+  Lássátok, mi szörnyü balsors árja zúdul most reá!
+  Senki hát halandó embert, a kinek még hátra van
+  Végső napja, ne nevezzen boldognak, mig élete
+  Véghatárát bánat nélkül el nem érte biztosan.
+
+
+
+
+JEGYZETEK OEDIPUS KIRÁLYHOZ.
+
+[Footnote 1: Kadmos, Theba alapítója.]
+
+[Footnote 2: Az esdeklők borostyán- vagy olajfalombot tartottak
+kezökben, annak jeléül, hogy magokat az istenek oltalma alá helyezték. A
+lombokat az oltárra tették, s ha az istenek megadták a kért segélyt,
+elvették onnan.]
+
+[Footnote 3: Oedipus nem dicsekvésből mondja ezt, hanem az esdeklők
+vigasztalására, hogy ő, az egész világon dicsőitett király, személyesen
+jő részt venni bánatokban.]
+
+[Footnote 4: Pallast Thebában több név alatt tisztelték, azért nem lehet
+határozottan tudni, hogy sok temploma közül melyik kettőről van szó.]
+
+[Footnote 5: Apollo temploma, Theba kapuja előtt, az Ismenos partján,
+hol az áldozat hamvaiból jósoltak.]
+
+[Footnote 6: A város pusztulása minden éltető forrásában mutatkozik: a
+föld magvai kivesznek, a marhanyájak elpusztulnak, a nők holt
+gyermekeket szülnek.]
+
+[Footnote 7: A döghalált gyujtó istennek nevezi, mert a lobogó tűz
+jelképe a legszörnyűbb pusztításnak.]
+
+[Footnote 8: A sphinx, mely versekben adta elő rejtélyét, s azt, ki meg
+nem oldá, elnyelte.]
+
+[Footnote 9: Pytho, Delphi rége neve.]
+
+[Footnote 10: A kik szerencsés jóslatot nyertek, babérkoszorús fővel
+tértek haza.]
+
+[Footnote 11: Kreon, nem akarván ily tömeg előtt világosan beszélni,
+nehogy a bűnös, ha tán jelen volna, megmenekülhessen, kitérőleg,
+általános kifejezésben beszél: «Jó hírrel jövök, mert szerintem a súlyos
+szerencsétlenség is szerencsére fordul, ha a helyes módon járunk
+végére.»]
+
+[Footnote 12: Mert a jóslatok különben többnyire kétértelműek szoktak
+lenni.]
+
+[Footnote 13: Thebából. Oedipus azt hiszi, hogy a támadás Laïos élete
+ellen Thebából indult ki.]
+
+[Footnote 14: Annak jeléül, hogy az isten meghallgatta a könyörgést.]
+
+[Footnote 15: A jóniai – attikai monda szerint Apollo Delosból ment
+Attikán keresztül Pythóba, míg a boeotiaiak szerint az ő országokban
+született. Sophokles, mint atheni, az attikai mondát követi. Pæan, ima
+Apollohoz: néha, mint itt is, maga Apollo.]
+
+[Footnote 16: Az isteni szózat a jósda oraculuma, melyet az arany
+bizalom, remény szül, mert a kik hozzá fordulnak, a legjobbat
+reménylik.]
+
+[Footnote 17: Artemis oltára és szobra a piacz közepén állt.]
+
+[Footnote 18: A sphinx pusztításait értik, melyet Oedipus a három
+védisten segélyével győzött le.]
+
+[Footnote 19: A esteli isten Hades, mert a homeri felfogás szerint
+lakását a föld nyugati szélén képzelték, hol a nap leáldozik.]
+
+[Footnote 20: A dögvészben elhúnytak, kikhez senki sem mer közeledni,
+mert még halva is a dögvészt terjesztik.]
+
+[Footnote 21: Pallas Athene.]
+
+[Footnote 22: A dögvészt, melyet fölebb gyujtó istennek nevezett, most a
+hadi istennel hasonlítja össze, mert mindkettő halált hoz az emberekre;
+de megkülönböztetésül utána teszi, hogy «pajzstalanul» közelg.]
+
+[Footnote 23: A középtenger, melyet Poseidon neje, Amphitrite ágyának
+nevez.]
+
+[Footnote 24: Apollo, ki megszabadította a sikyoniakat a pusztító
+farkasoktól.]
+
+[Footnote 25: A vadászó Artemis mindkét kezében lobogó fáklyával s
+nymphái kiséretében barangol a neki szentelt Lykia hegyei közt.]
+
+[Footnote 26: Bakchos gazdag fürtjeit tarka kendő szorította össze,
+innen van Chryseomitres mellékneve.]
+
+[Footnote 27: Bakchos a bor istene.]
+
+[Footnote 28: Mert Thebában született Semelétől.]
+
+[Footnote 29: A Mænadok Bakchos állandó kisérőnői.]
+
+[Footnote 30: Az ellenséges isten, ki nem részesül a többi istennel
+egyenlő tiszteletben, Ares.]
+
+[Footnote 31: Bakchos lobogó fáklyák kiséretében szokott a Parnassuson
+járni.]
+
+[Footnote 32: Oedipus erősen hangsulyozza, hogy ő maga teljesen
+ismeretlen azon körülményekkel, melyek Laïos meggyilkolására
+vonatkoznak, s azért csak úgy vezethet sikerre a vizsgálat, ha a thebai
+polgárok némi jelekkel elősegítik kutatását.]
+
+[Footnote 33: Laïos genealogiája. Agenor fia volt Kadmos, ezé Polydor, s
+ettől született Labdakos, Laïos atyja.]
+
+[Footnote 34: Azon művészetét érti Oedipus, melylyel megfejtette a
+sphinx rejtélyét. Apollo említésére hirtelen fölébredt gyanúja Kreon
+ellen, ki épen most jött Delphiből, hogy talán szövetkezett Tiresiassal
+az ő megbuktatására. Azért említi kincsét, hatalmát, melyre Kreon
+vágyik, s művészetét, melyet a jós irigyel tőle.]
+
+[Footnote 35: Gúnyosan mondja, hogy veszedelmökre lesz azon gondolat,
+hogy Oedipus kiüzése által tisztitsák meg a várost.]
+
+[Footnote 36: Loxias, Apollo mellékneve homályos jóslatai miatt.]
+
+[Footnote 37: Kithæron, a határhegy Attika és Boeotia közt. Tiresias
+általában hegy helyett említi külön Kithæront, titkos vonatkozással
+Oedipus kitételére.]
+
+[Footnote 38: Ma fogod megtudni születésed titkát, s ennek következtében
+fogsz elveszni.]
+
+[Footnote 39: A föld közepe Delphi, mert két sas, vagy más monda szerint
+két holló, melyeket Zeus a föld két végén elbocsátott, itt találkozott.]
+
+[Footnote 40: Polybos korinthi királyt tartották Oedipus atyjának.]
+
+[Footnote 41: A sphinx.]
+
+[Footnote 42: Te félreismersz ugyan, de itt, a thebai polgárok szemében,
+még mindig az vagyok, a mi voltam.]
+
+[Footnote 43: A kart érti, melynek igyekezete, hogy az egész viszályt
+elsimítsa, Oedipust ellene is haragra és gyanúra ingerli.]
+
+[Footnote 44: A csillagok állásából számítni ki valamely irányt: e
+kifejezést leginkább azokról használják, kik a tengeren vagy a
+sivatagban utaznak. Oedipus Korinthot vélve hazájának, nehogy
+beteljesüljön a jóslat, nem tér oda vissza, s csak a csillagok állásából
+tudja eztán, merre van Korinth.]
+
+[Footnote 45: A kéthegyű bot, melylyel a régiek lovaikat gyors haladásra
+szokták nógatni.]
+
+[Footnote 46: Oedipus retteg egyenesen kimondani azon gondolatot, hogy
+ez idegen talán maga Laïos volt.]
+
+[Footnote 47: Hogy Laïos gyilkosát fölfedezzék.]
+
+[Footnote 48: Delphi.]
+
+[Footnote 49: Olympiában Zeus ősrégi jósdája volt, hol a papok az
+elégetett áldozatokból jósoltak.]
+
+[Footnote 50: A phokisi Abaeban Apollo temploma és jósdája volt, melyet
+régiebbnek tartottak a delphii jósdánál. E három híres szentély
+fölemlítésével a kar, melynek kegyelete megbotránkozott Jokaste miatt,
+ki oly kicsinylőleg beszélt Apollo jóslatáról, – ezt mondja: Ha az
+isteni jóslat megvetése büntetlenül marad, úgy semmit sem ér többé az
+istenek tisztelete, s nem érdemes többé az isteni jósdákhoz fordulni.]
+
+[Footnote 51: Oedipus az új jóslatot nem itéli meg a régiek szerint,
+melyek nem teljesültek; s azért aggódik hasztalan.]
+
+[Footnote 52: Lykeios Apollo mellékneve, vagy mivel Lykiában született,
+vagy mivel Sikyonban a farkasokat kiirtotta.]
+
+[Footnote 53: Korinth a Hellas és Peloponnesos közötti földszoroson
+feküdt.]
+
+[Footnote 54: «Habár anyám, nagyanyám és szépanyám is rabszolga volt s
+így én három nemzedéken át rabszolgavérből születtem, nem fog az reád
+szégyent hozni.» Oedipus még mindig azon reményben van, hogy a pásztor
+tanúsága fel fogja őt menteni a gyilkosság gyanúja alól; azért, nem
+sejtve Jokaste rettegésének okát, arra magyarázza, mintha a pásztor
+vallomásától azért félne, nehogy Oedipus születése igen alacsonynak
+tünjék ki.]
+
+[Footnote 55: Tyche (a római Fortuna) a szerencse istennője. Oedipus nem
+fél születése titkának földerítésétől, mert bármily törzsből származott
+is, tulajdonképeni anyjának Tychét tekintheti, ki őt eddig különös
+oltalmába vette s a legalsóbb sorsból legmagasabbra emelte.]
+
+[Footnote 56: A Kithæron hegy nymphái közül melyik szülte Oedipust? A
+kar előbb az anyát kérdi, s a következő sorokban találgatja, ki lehetett
+Oedipus atyja; Pan vagy Apollo, vagy Hermes vagy Bakchos nemzette-e őt
+valamely nymphával?]
+
+[Footnote 57: Hermes, kit a nyájak isteneként is tiszteltek, Arkadia
+kyllenei ormán született.]
+
+[Footnote 58: A Helikon nymphái a múzsák, kik a Parnass ormát kedvelő
+Bakchossal gyakori összeköttetésben vannak.]
+
+[Footnote 59: Az Istert (Duna) és a kolchisi Phasist a régiek Európa és
+Ázsia legnagyobb folyóinak tartották.]
+
+[Footnote 60: Mert önkénytesen szúrta ki szemét Oedipus, önkénytesen
+akasztotta fel magát Jokaste.]
+
+[Footnote 61: Gyermekeit érti, kiket soha sem lett volna szabad látnia,
+s szüleit, kiket mindig vágyott ismerni, s kiket most, ha velök Hadesben
+találkozik, nem fog megismerni.]
+
+[Footnote 62: Oedipus, ki egy személyben nejének fia, gyermekeinek
+testvére és atyja, s Jokaste, ki anyja és neje fiának.]
+
+[Footnote 63: Ez utolsó nyolcz verset a kéziratok Kreonnal mondatják el,
+s igy van a Donner-féle fordításban is, Nauck azonban Oedipus szájába
+adja, s helyesen, mert ha Kreon mondaná ezt, úgy Oedipus tovább egy
+perczig sem maradhatna kinn, s leányait sem vezethetnék ki hozzá.
+[Schöll (76. l.) – ki azonban a két utolsó verset mégis Kreonnak
+tulajdonítja.]]
+
+[Footnote 64: Mert Polynikos és Eteokles még kiskorúak.]
+
+[Footnote 65: Jokastét, kinek nevét Oedipus borzad kiejteni.]
+
+
+
+*** END OF THE PROJECT GUTENBERG EBOOK OEDIPUS KIRÁLY ***
+
+
+    
+
+Updated editions will replace the previous one—the old editions will
+be renamed.
+
+Creating the works from print editions not protected by U.S. copyright
+law means that no one owns a United States copyright in these works,
+so the Foundation (and you!) can copy and distribute it in the United
+States without permission and without paying copyright
+royalties. Special rules, set forth in the General Terms of Use part
+of this license, apply to copying and distributing Project
+Gutenberg™ electronic works to protect the PROJECT GUTENBERG™
+concept and trademark. Project Gutenberg is a registered trademark,
+and may not be used if you charge for an eBook, except by following
+the terms of the trademark license, including paying royalties for use
+of the Project Gutenberg trademark. If you do not charge anything for
+copies of this eBook, complying with the trademark license is very
+easy. You may use this eBook for nearly any purpose such as creation
+of derivative works, reports, performances and research. Project
+Gutenberg eBooks may be modified and printed and given away—you may
+do practically ANYTHING in the United States with eBooks not protected
+by U.S. copyright law. Redistribution is subject to the trademark
+license, especially commercial redistribution.
+
+
+START: FULL LICENSE
+
+THE FULL PROJECT GUTENBERG LICENSE
+
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+www.gutenberg.org/license.
+
+Section 1. General Terms of Use and Redistributing Project Gutenberg™
+electronic works
+
+1.A. By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound
+by the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B. “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this
+agreement and help preserve free future access to Project Gutenberg™
+electronic works. See paragraph 1.E below.
+
+1.C. The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is unprotected by copyright law in the
+United States and you are located in the United States, we do not
+claim a right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting
+free access to electronic works by freely sharing Project Gutenberg™
+works in compliance with the terms of this agreement for keeping the
+Project Gutenberg™ name associated with the work. You can easily
+comply with the terms of this agreement by keeping this work in the
+same format with its attached full Project Gutenberg™ License when
+you share it without charge with others.
+
+1.D. The copyright laws of the place where you are located also govern
+what you can do with this work. Copyright laws in most countries are
+in a constant state of change. If you are outside the United States,
+check the laws of your country in addition to the terms of this
+agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work. The Foundation makes no
+representations concerning the copyright status of any work in any
+country other than the United States.
+
+1.E. Unless you have removed all references to Project Gutenberg:
+
+1.E.1. The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:
+
+    This eBook is for the use of anyone anywhere in the United States and most
+    other parts of the world at no cost and with almost no restrictions
+    whatsoever. You may copy it, give it away or re-use it under the terms
+    of the Project Gutenberg License included with this eBook or online
+    at www.gutenberg.org. If you
+    are not located in the United States, you will have to check the laws
+    of the country where you are located before using this eBook.
+  
+1.E.2. If an individual Project Gutenberg™ electronic work is
+derived from texts not protected by U.S. copyright law (does not
+contain a notice indicating that it is posted with permission of the
+copyright holder), the work can be copied and distributed to anyone in
+the United States without paying any fees or charges. If you are
+redistributing or providing access to a work with the phrase “Project
+Gutenberg” associated with or appearing on the work, you must comply
+either with the requirements of paragraphs 1.E.1 through 1.E.7 or
+obtain permission for the use of the work and the Project Gutenberg™
+trademark as set forth in paragraphs 1.E.8 or 1.E.9.
+
+1.E.3. If an individual Project Gutenberg™ electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any
+additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works
+posted with the permission of the copyright holder found at the
+beginning of this work.
+
+1.E.4. Do not unlink or detach or remove the full Project Gutenberg™
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg™.
+
+1.E.5. Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.
+
+1.E.6. You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format
+other than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ website
+(www.gutenberg.org), you must, at no additional cost, fee or expense
+to the user, provide a copy, a means of exporting a copy, or a means
+of obtaining a copy upon request, of the work in its original “Plain
+Vanilla ASCII” or other form. Any alternate format must include the
+full Project Gutenberg™ License as specified in paragraph 1.E.1.
+
+1.E.7. Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8. You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works
+provided that:
+
+    • You pay a royalty fee of 20% of the gross profits you derive from
+        the use of Project Gutenberg™ works calculated using the method
+        you already use to calculate your applicable taxes. The fee is owed
+        to the owner of the Project Gutenberg™ trademark, but he has
+        agreed to donate royalties under this paragraph to the Project
+        Gutenberg Literary Archive Foundation. Royalty payments must be paid
+        within 60 days following each date on which you prepare (or are
+        legally required to prepare) your periodic tax returns. Royalty
+        payments should be clearly marked as such and sent to the Project
+        Gutenberg Literary Archive Foundation at the address specified in
+        Section 4, “Information about donations to the Project Gutenberg
+        Literary Archive Foundation.”
+    
+    • You provide a full refund of any money paid by a user who notifies
+        you in writing (or by e-mail) within 30 days of receipt that s/he
+        does not agree to the terms of the full Project Gutenberg™
+        License. You must require such a user to return or destroy all
+        copies of the works possessed in a physical medium and discontinue
+        all use of and all access to other copies of Project Gutenberg™
+        works.
+    
+    • You provide, in accordance with paragraph 1.F.3, a full refund of
+        any money paid for a work or a replacement copy, if a defect in the
+        electronic work is discovered and reported to you within 90 days of
+        receipt of the work.
+    
+    • You comply with all other terms of this agreement for free
+        distribution of Project Gutenberg™ works.
+    
+
+1.E.9. If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from the Project Gutenberg Literary Archive Foundation, the manager of
+the Project Gutenberg™ trademark. Contact the Foundation as set
+forth in Section 3 below.
+
+1.F.
+
+1.F.1. Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+works not protected by U.S. copyright law in creating the Project
+Gutenberg™ collection. Despite these efforts, Project Gutenberg™
+electronic works, and the medium on which they may be stored, may
+contain “Defects,” such as, but not limited to, incomplete, inaccurate
+or corrupt data, transcription errors, a copyright or other
+intellectual property infringement, a defective or damaged disk or
+other medium, a computer virus, or computer codes that damage or
+cannot be read by your equipment.
+
+1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the “Right
+of Replacement or Refund” described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg™ trademark, and any other party distributing a Project
+Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.
+
+1.F.4. Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you ‘AS-IS’, WITH NO
+OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5. Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.
+
+1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in
+accordance with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.
+
+Section 2. Information about the Mission of Project Gutenberg™
+
+Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need are critical to reaching Project Gutenberg™’s
+goals and ensuring that the Project Gutenberg™ collection will
+remain freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future
+generations. To learn more about the Project Gutenberg Literary
+Archive Foundation and how your efforts and donations can help, see
+Sections 3 and 4 and the Foundation information page at www.gutenberg.org.
+
+Section 3. Information about the Project Gutenberg Literary Archive Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non-profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation’s EIN or federal tax identification
+number is 64-6221541. Contributions to the Project Gutenberg Literary
+Archive Foundation are tax deductible to the full extent permitted by
+U.S. federal laws and your state’s laws.
+
+The Foundation’s business office is located at 809 North 1500 West,
+Salt Lake City, UT 84116, (801) 596-1887. Email contact links and up
+to date contact information can be found at the Foundation’s website
+and official page at www.gutenberg.org/contact
+
+Section 4. Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg™ depends upon and cannot survive without widespread
+public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine-readable form accessible by the widest
+array of equipment including outdated equipment. Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular state
+visit www.gutenberg.org/donate.
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: www.gutenberg.org/donate.
+
+Section 5. General Information About Project Gutenberg™ electronic works
+
+Professor Michael S. Hart was the originator of the Project
+Gutenberg™ concept of a library of electronic works that could be
+freely shared with anyone. For forty years, he produced and
+distributed Project Gutenberg™ eBooks with only a loose network of
+volunteer support.
+
+Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as not protected by copyright in
+the U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.
+
+Most people start at our website which has the main PG search
+facility: www.gutenberg.org.
+
+This website includes information about Project Gutenberg™,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+

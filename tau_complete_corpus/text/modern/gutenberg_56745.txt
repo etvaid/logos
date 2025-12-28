@@ -1,0 +1,2247 @@
+﻿The Project Gutenberg eBook of Elektra
+    
+This ebook is for the use of anyone anywhere in the United States and
+most other parts of the world at no cost and with almost no restrictions
+whatsoever. You may copy it, give it away or re-use it under the terms
+of the Project Gutenberg License included with this ebook or online
+at www.gutenberg.org. If you are not located in the United States,
+you will have to check the laws of the country where you are located
+before using this eBook.
+
+Title: Elektra
+
+Author: Sophocles
+
+Translator: Gergely Csiky
+
+Release date: March 15, 2018 [eBook #56745]
+
+Language: Hungarian
+
+Credits: Produced by Albert László from page images generously made
+        available by the Google Books Library Project
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK ELEKTRA ***
+
+
+
+
+Produced by Albert László from page images generously made
+available by the Google Books Library Project
+
+
+
+
+
+
+SOPHOKLES
+
+ELEKTRA.
+
+GÖRÖGBŐL FORDITOTTA, BEVEZETTE ÉS JEGYZETEKKEL KISÉRTE
+
+CSIKY GERGELY.
+
+NEGYEDIK KIADÁS.
+
+BUDAPEST.
+
+FRANKLIN-TÁRSULAT
+
+MAGYAR IROD. INTÉZET ÉS KÖNYVNYOMDA.
+
+1903.
+
+
+
+
+SZEMÉLYEK.
+
+  Nevelő.
+  Orestes.
+  Elektra.
+  Kar: mykenei nők.
+  Chrysothemis.
+  Klytaemnestra.
+  Aegisthos.
+
+FRANKLIN-TÁRSULAT NYOMDÁJA.
+
+
+
+
+BEVEZETÉS.
+
+Agamemnon, Argos és Mykene királya, Trója ostromára indulván, három
+leányát, Elektrát, Iphianassát és Chrysothemist, s fiát, Orestest,
+otthon hagyta nejével Klytaemnestrával, Iphigenia leányát pedig magával
+vitte. De kedvezőtlen szelek miatt a görög hajóhad kénytelen volt
+Aulisban vesztegelni, mig a jóslat ki nem jelenté, hogy csak úgy
+fordulnak meg a szelek, ha Agamemnon leánya feláldozásával engeszteli
+meg a megsértett Artemis haragját. Agamemnonban győzött a hazafi az atya
+fölött, feláldozta Iphigeniát, s a görög sereg Trója ostromára indult.
+
+Tíz évi hadjárat után Agamemnon visszatért hazájába. De ezalatt
+Klytaemnestra megszegte női hűségét, s bűnös viszonyt kötött
+Aegisthossal. A hazatérő Agamemnont nagy ünnepélylyel fogadták; lakomát
+tartottak, s ennek végén Agamemnont neje s ennek kedvese orozva
+meggyilták. Orestest is meg akarták ölni, de Elektra titkon egy hű
+rabszolga gondjaira bizta s általa Phokisba Strophios királyhoz küldte.
+Orestes itt fölnevelkedett s a király fiával, Pyladessel, szoros
+barátságot kötött.
+
+A gyilkos Aegisthos ezalatt Klytaemnestrával boldogul élt és uralkodott
+Argosban. Mindenki meghajolt igája alatt, nem volt egyetlen férfiu, ki
+bosszút álljon Agamemnon halálaért. Egyedül Elektra nem mondott le a
+bosszú gondolatáról. Atyja gyilkosainak házában élve, nem némítá el
+ajkát a félelem. Szüntelen szemökre veté elkövetett bűnjöket, s
+szenvedte üldözéseiket és bántalmaikat, azon reményben, hogy Orestes
+megjő és bosszút áll atyja gyilkosain.
+
+Végre a delphii oraculum parancsára meg is jelenik Orestes, nevelője és
+Pylades kiséretében; ez utóbbi csak mint néma személy szerepel. Itt
+kezdődik a tragédia cselekvénye, mely Mykenében, a királyi palota előtt
+levő téren folyik le.
+
+
+
+
+
+
+ELEKTRA.
+
+(Hajnal. Orestes jő a nevelővel és Pyladessel.)
+
+    Nevelő. Oh Tróját vívó Agamemnon gyermeke,
+  Most valahára szinről-szinre láthatod
+  A tájat, melyért mindig vágyódott szived.
+  Im itt, miért epedtél, ősi Argosod,[1]
+  A fulánkszurta Inachos-lány[2] ligete;
+  Amott, Orestes, lásd a farkaspusztitó
+  Isten[3] piaczát; Hera[4] híres temploma
+  Balkézre van; s e helytt, hová megérkezénk,
+  A kincsben dús Mykenet szemmel láthatod,
+  A Pelopidák[5] vérontásban dús lakát,
+  Hol meggyilkolt atyádnak gyász halálakor
+  Testvérnénéd kezéből téged egykoron
+  Átvévén megmentélek s fölneveltelek,
+  Hogy felnövén, atyád halálát megboszuld.
+  Most hát Orestes, és te, kedves Pylades,
+  Vegyétek gyorsan fontolóra, mit tegyünk;
+  Mert a kelő nap tündöklő sugára már
+  Felkölti a madarak reggeli dalát,
+  S szétfoszlott a sötét éj csillagfátyola;
+  Mig hát elő nem jő a házból valaki,
+  Egyezzetek meg szóval; mert addig jutánk,
+  Hol nincs idő habozni, hol már tenni kell.
+    Orestes. Oh te, szolgák legjobbja, mint megismerem
+  Hozzánk való hűséged fényes jeleit!
+  Mint a nemes mén, bárha aggkor nyomja is,
+  Nem veszti bátorságát a veszély között,
+  Hanem fülét hegyezve vár rá: úgy te is
+  Biztatsz bennünket, és az elsők közt haladsz.
+  Elmondom hát, mit tartok jónak; te pedig
+  Figyelj szavamra éber füllel és mutass
+  Jobb útat, hogyha egyben-másban tévedek.
+  Midőn a Pythiának[6] kértem jóslatát,
+  Hogy megtanitson arra, mint vegyek boszút
+  Atyám halálaért a gyilkosok felett:
+  E választ adta Phoebos, halljad iziben:
+  Hogy hadsereg és fegyver nélkül, titkosan,
+  Csel által hajtsam végre méltó bosszumat.
+  Hallván tehát a jóslat ilyen szózatát,
+  Indulj a házba, s jó szerét ha ejtheted,
+  Azonnal lépj be, tudd meg, mi történik ott,
+  Hogy látva mindent, biztos hirt hozhass nekünk.
+  Ily aggon és oly hosszú évek mulva nem
+  Ismernek rád, s gyanútól védnek ékeid.[7]
+  Mondd el, hogy idegen vagy, Phokisból[8] jövél,
+  Phanoteus[9] nevében; mert e férfiút
+  Tartják legtöbbre minden frigytársuk között.
+  Jelentsd aztán s erősitsd esküvel szavad,
+  Hogy megölé Orestest zordon végzete,
+  A pythiai harczjátékon[10] lezuhant
+  Gyors szekeréről; igy intézd beszédedet
+  Mi meg előbb atyám sirját, parancs szerint,
+  Ajándokokkal[11] ékesitjük és fejünk
+  Fürtjével; visszatérünk azután ide,
+  Kezünkben lesz az érczből öntött hamvveder,
+  Melyet bokorba rejték, mint te is tudod,
+  És áltató beszéddel kedves hirt hozunk
+  Számukra, hogy már lángok martaléka lett
+  Holttestem és a máglyán porrá hamvadott.
+  Mit árt nekem, ha szóval holtnak mondanak,
+  De tettleg élek és dicsőséget nyerek?
+  Nem tartok rosznak semmi szót, mely hasznot ad.
+  Láttam már gyakran, hogy holt híröket vivék
+  Bölcseknek is, s ha aztán visszatértenek,
+  Több tiszteletben álltak még, mint az előtt.
+  Bizton reménylem én is, hogy e hir után
+  Fénylő csillagként fognak látni ellenim.
+  Oh én hazám s hazámnak intenségei,
+  Fogadjatok be, áldjatok meg útamon,
+  S te is szülői házam; hisz az istenek
+  Küldének, hogy boszúmmal megtisztitsalak;
+  Ne üzzetek el innen szégyenletesen;
+  Hadd állitsam fel újra ősi házamat!
+  Ez volt mondandóm; most pedig készülj, öreg,
+  S legyen gondod rá, hogy jól végezd dolgodat.
+  Mi ketten távozunk; mert a jó alkalom
+  Az ember minden művének legfőbb ura.
+    Elektra (a palotában). Oh jaj nekem!
+    Nevelő. Ugy tetszik, mintha benn a házajtó mögött
+  Cselédnő jajgatását hallanám, fiam!
+    Orestes. Talán szegény Elektra volt? Nem gondolod,
+  Hogy itt maradjunk s meghalljuk keserveit?
+    Nevelő. Nem, nem. Ne fogjunk semmihez, mig Loxias[12]
+  Parancsát meg nem tettük; most első legyen
+  Atyád sirján az áldozat; ez ád nekünk
+  Erőt nehéz munkánkra s fényes diadalt.
+
+(Elmennek. Elektra jő a palotából.)
+
+    Elektra. Oh mennyei fény,
+  S te földölelő lég, mennyiszer
+  Hallád gyászdalomat,
+  Hallád, mint téptem, ütöttem
+  Véresre saját kebelem’,
+  Mikoron eloszolt a sötét éj.
+  Ah! jól tudja gyűlölt nyoszolyám
+  Álmatlan éjjeleim gyötrelmeit,
+  Miként siratom boldogtalan atyámat,
+  Kit a véres Ares idegen
+  Földön nem fogadott be lakába;
+  Hanem itthon vágta le drága fejét
+  Gyilkos bárddal anyám s a lator
+  Aegisthos, mint csert a favágó,
+  S rajtam kivül senki sem ejt
+  Könyet, atyám, hogy ily iszonyu és
+  Szégyenletes volt a halálod.
+
+  Nem fog soha szünni
+  Gyászos sóhajom és panaszom,
+  Mig látom a fényes csillagokat,
+  Látom a nap ragyogását;
+  Mint a fiát vesztett csalogány
+  Hallatom én bús zokogásom’,
+  A szülői ház ajtója előtt.
+  Oh Hades és Persephone tanyája![13]
+  Oh pokoli Hermes,[14] s te felséges Ara![15]
+  És ti Erinysek,[16] isteni szülöttek!
+  Kik látjátok a meggyilkolt tetemét,
+  Kik látjátok a rablott násznyoszolyát,
+  Jertek, adjatok segedelmet,
+  Boszuljátok meg atyám halálát,
+  S adjátok vissza fivérem; mert egyedül
+  Nem birom el immár
+  Gyötrelmeim iszonyu terhét. (A kar fellép.)
+
+
+Első versszak.
+
+    Kar. Oh gyermek, oh szörnyü anyád
+  Leánya, Elektra, miért
+  Hangzik szüntelenül bús panaszod
+  Hős Agamemnon után, kit anyád csele
+  Hajdan orozva megejte, s gonosz keze
+  Halálra külde ravaszul? Veszszen el, a ki ezt
+  Tevé, ha igy szabad beszélnem.
+    Elektra. Oh ti nemes szülöttek!
+  Bánatom enyhületére jövétek;
+  Jól tudom, érezem ezt, szivem ismeri
+  Kebleteket; de ah! én soha nem szünöm
+  Sirni, keseregni atyám gyász sorsa felett.
+  Oh ti, kiket annyi szeretet csatol egybe szivemmel,
+  Engedjetek zokogni,
+  Ah erre kérlek!
+
+
+Első ellenversszak.
+
+    Kar. Sem sóhajtásod, sem imád
+  Nem költi fel Hades örök,
+  Mindent eltemető öléből atyádat.
+  Ám mértéktelenné teszi a fájdalom
+  Mértékét nem szünő keserved,
+  Mig bánatodra nem ad semmi enyhületet.
+  Miért vágyódol szenvedésért?
+    Elektra. Esztelen az, ki feledni
+  Tudja megölt szülei nyomorú halálát.
+  Szivem a bús, panaszos dalu,
+  Egyre Ityst, csak Ityst sirató
+  Félénk csalogányt,[17] Zeus követét szereti.
+  Te vagy istennőm nekem, oh Niobe, szenvedő anya,[18]
+  Ki szikla sirfalak közt
+  Ah! egyre sirsz még.
+
+
+Második versszak.
+
+    Kar. Nem téged ért, gyermekem,
+  Egyedül a fájdalom,
+  Türd te is e gyötrelmeket nyugodtan,
+  Mint azok, a kik törzsed sarjadéki:
+  Ime Crysothemis igy él, igy Iphianassa;
+  Igy rejti el ifjuságát,
+  Miglen a visszatérőt
+  Büszke Mykene földe
+  Ős örökébe fogadja örömmel, –
+  Ő, kit a nagy Zeusz vezet e honba – Orestes.
+    Elektra. Várom őt, ah! szüntelenül, szegény leány én.
+  Bolyongok egyre könyes szemekkel,
+  Férjtelenül, gyermektelenül, végtelen
+  Bánatomat viselem; de ő feledé
+  Tettemet és szavamat. Avagy mért izen
+  Áltató hireket szüntelenül nekem?
+  Szivében ég a vágy,
+  De mégse’ hozza vissza vágya.
+
+
+Második ellenversszak.
+
+    Kar. Bizzál, oh bizzál, gyermek!
+  Fenn a magas égben él
+  Még Jupiter, ki mindent lát s igazgat;
+  Tedd a boszú gondját az ő kezébe,
+  Égő gyűlöleted ne mutasd hevesen, s ne feledd el;
+  Jótékony isten az idő.
+  Nem lesz örökké távol
+  Tőled Agamemnon hős
+  Gyermeke, Krisa füves legelőin,[19]
+  S nem marad el Acheron[20] uralkodója.
+    Elektra. Ah! de reménytelenül oda van, elenyészett
+  Életem java, nem birom el immár;
+  Igy epedek, gyermektelenül, magam,
+  Nincs szerető férjem, kinek óv keze,
+  Ah! idegen vagyok ősi lakomban,
+  Szolga atyám örökébe’, silány ruha
+  Takarja testemet,
+  S üres számomra minden asztal.
+
+
+Harmadik versszak.
+
+    Kar. Jaj volt, hogy visszatére,
+  Jaj volt, hogy ősei ágyán
+  Érte szivét az érczbalta,
+  S megölé sulyos csapása.
+  Szerelem sugalá, csel fejezé be,
+  Szörnyű alakban a szörnyü bűnt,
+  Vajon isten volt, avagy emberi kéz,
+  A mely ezt tehette?
+    Elektra. Oh iszonyú nap, éltem napjai
+  Között legiszonyúbb te!
+  Oh éj, oh szörnyü lakoma
+  Borzadalma!
+  Melyen atyámat a két
+  Nyomorult keze oly gonoszul megölé,
+  És vele megölte az én
+  Elárult éltemet is!
+  A magas Olympos nagy istene
+  Küldje fejökre a boszú tüzét!
+  És ne legyen soha részök öröm, mosoly,
+  Kik ezt a bűnt mivelték!
+
+
+Harmadik ellenversszak.
+
+    Kar. Ne szólj tovább ily hangon,
+  Nem gondolod meg, mi mélyen
+  Sülyedél szégyenletes nyomorba
+  A boldogság ormáról?
+  Szaporán növeléd keserűséged,
+  Mert boszus lelked egyre új
+  Harczokba sodor; nem jó küzdeni így
+  A hatalmasokkal.
+    Elektra. A kín ragadott el, a kín;
+  Jól látom szenvedélyem’,
+  De kínjaim közt nem csillapodnak
+  Panaszaim,
+  Mig szivem élete tart.
+  Ki tud én nekem, oh szeretett barátnők,
+  Enyhületes szót mondani?
+  Ki tanácsot adni nekem?
+  Hagyjatok el, ne vigasztaljatok!
+  Kínom örök, soha meg nem szünő,
+  És nem fog soha sem megszünni keservem,
+  Soha könnyeim folyása.
+
+
+Végdal.
+
+    Kar. Jó indulattal szólok,
+  Mint hű anyád tanácslom:
+  Ne tégy bajodhoz új bajt.
+    Elektra. Ah! lehet-e mérsékleni bánatom’?
+  Illik-e, mondd, feledni a holtakat?
+  Hol van az ember, ki erre képes?
+  Nem kell ilyentől tisztelet;
+  És ha boldogság vár reám,
+  Ne legyen békével enyém,
+  Ha feledve atyámat, elnémul
+  Bús zokogásom.
+  Hiszen ha a halott megsemmisülve lenn
+  Fekszik föld alatt,
+  És a büntetés
+  Nem sujtotta le gyilkosait:
+  Nincs akkor szégyen,
+  Se’ jámborság az emberek közt.
+    Kar. Oh gyermekem, javadra jöttem és magam
+  Javára, ám ha nem szólok jól, úgy legyen
+  A te kivánatod szerint, mi követünk.
+    Elektra. Valóban szégyenelnem kell, oh asszonyok,
+  Hogy oly levertnek tüntet föl a sok panasz;
+  De mert erőszak kényszerit, hogy igy tegyek,
+  Bocsássatok meg. Mily nemes nő tenne mást,
+  Ki szemmel látja atyjának balvégzetét,
+  Miként én látom, éjjel, nappal egyaránt,
+  Nem fogyva, inkább gyarapodva szüntelen?
+  Hiszen szülő anyám kezéből jött reám
+  A legszörnyűbb baj; egy födél alatt lakom
+  Azokkal enházamban, kik meggyilkolák
+  Atyámat; ők parancsolóim; rajtok áll,
+  Megvonni tőlem, vagy megadni részemet.
+  És mit gondoltok, mily órákat élek át,
+  Midőn Aegisthost látom ülni trónusán
+  Atyámnak, látom azt a köntöst tagjain,
+  Melyet atyám viselt, s áldozni látom őt
+  A tűzhely mellett, hol atyámat megölé;
+  És látom azt, mi mindennél több fertelem,
+  Atyámnak nászágyában a gyilkost magát,
+  Boldogtalan anyámmal, ha még mondhatom
+  Anyámnak őt, ki ágyát ezzel osztja meg;
+  Ki vakmerően ily gonosz karjában él,
+  S a boszus fúriáktól nem remeg szive;
+  Nem, mintha még örülne annak, mit müvelt,
+  A hányszor újra fordul az a nap, melyen
+  Atyámat meggyilkolta áruló csele,
+  Dalt, tánczot rendel, és havonkint gödölyét
+  Áldoz fel a védistenek oltárain.
+  És látva ezt a házban, én boldogtalan,
+  Sirok, kesergek a szégyenletes napon,
+  Melyet atyám emléknapjának mondanak –
+  Ah egymagamban! Hisz még azt sem engedik,
+  Hogy annyit sirjak, mennyit szívem sirni vágy.
+  Mert ez az asszony, kit nemesnek mondanak,
+  Szidalmazó szavakkal igy kiált reám:
+  Istentelen teremtés, egyedül a te
+  Atyád veszett el? Nem gyászol más ember is?
+  Halj meg hát nyomorultan és e kínodat
+  Ne oltsák el az alvilági istenek!
+  Igy gúnyol; ám ha azt találja hallani,
+  Hogy jő Orestes: akkor dühvel rám rohan,
+  Sikoltva: Nemde ezt neked köszönhetem?
+  Nem a te műved volt ez, a ki ellopád
+  Orestest tőlem és titokban elvivéd?
+  De tudd meg, elnyered még méltó díjadat!
+  Ekként üvölt rám; híres kedvese pedig
+  Mellette állva még ingerli ellenem,
+  A nyomorult, a mindig gyáva szörnyeteg,
+  Ki asszonyok frigyével küzdi harczait.
+  És én szegény, Orestest várva szüntelen,
+  Hogy sorsomon segítsen, egyre sorvadok.
+  Mert késedelme tönkre tette egyaránt
+  Jelen s jövő reményem minden vígaszát.
+  Ily állapotban ah! ki tudna, kedvesim,
+  Kegyes, türelmes lenni? Hisz rosz végzetünk
+  Magunkat is rossz vágyra, tettre kényszerit.
+    Kar. Ugyan mondd, mig te ily módon beszélsz velünk,
+  Itthon van-e Aegisthos vagy eltávozott?
+    Elektra. Bizonynyal nincs itt. Hisz másképen, azt hiszed,
+  Távozhatnám a házból? A mezőre ment.
+    Kar. Ha igy van, akkor én is többet merhetek,
+  S bátrabban is beszédbe állhatok veled.
+    Elektra. Eltávozott, kérdezz hát tetszésed szerint.
+    Kar. Kérdésem ebből áll: Mit tudsz öcséd felől?
+  Jön-é vagy késik? Ezt szeretném hallani.
+    Elektra. Ezt mondja mindig, ámde mondja s nem teszi.
+    Kar. A férfiú, ha nagy munkába fog, haboz.
+    Elektra. Midőn megmentém éltét, nem haboztam én.
+    Kar. Bizzál; ő jó, s nem hagyja el szeretteit.
+    Elektra. Oh elhiszem; máskép nem élhetnék soká.
+    Kar. Ne szólj tovább; Chrysothemist, testvéredet,
+  Atyád s anyád leányát látja most szemem,
+  A házból jönni áldozattal, a minőt
+  Halottak emlékére szoktak nyujtani.
+
+(Chrysothemis jő a palotából.)
+
+    Chrysothemis. Miért jösz kedves nővér, a kapu elé,
+  Hogy ismét hallasd gyászos jajgatásodat?
+  Nem tanulád meg ily hosszú idő alatt,
+  Hogy hasztalan haragnak át ne add magad?
+  Hisz én is érzem e fájdalmat, engem is
+  Gyötör e kín; s ha volna rá elég erőm,
+  Meg is mutatnám nyiltan azt, mit érezek.
+  De a vitorlát most a vészben bevonom,
+  S nem látszom azt akarni, a mit nem birok.
+  Ohajtom, testvér, bár tennél ekként te is.
+  Lehet, hogy nem az én szavam helyes, hanem
+  A te itéleted; de hogyha szabadon
+  Kivánok élni, az erőnek engedek.
+    Elektra. Oh szégyen! el tudod feledni az atyát,
+  Ki nemze, és csak arra gondolsz, a ki szült.
+  Mert minden intés, melylyel engem oktatál,
+  Ő tőle van, magadtól nem jött semmi sem.
+  Válaszsz tehát: vagy esztelennek mondalak,
+  Vagy józan észszel feledéd szerettidet;
+  Hisz ép’ most mondád, volna csak elég erőd,
+  Ugy megmutatnád gyűlölségedet nekik;
+  S midőn atyámért bosszut állni akarok,
+  Te nem segitsz, de gátolón utamba lépsz.
+  Nem egyesűlne így a bajjal gyávaság?
+  Tanits meg, vagy tanuld meg tőlem, mily haszon
+  Érhetne engem, ha megszünnék panaszom?
+  Hisz rosszul bár, de élek, s ez elég nekem.
+  És gyötröm őket, s a halottat tisztelem,
+  Ha ott alant még érez örömet a szív.
+  Te gyűlöletről szólva, csak szóval gyülölsz,
+  De tettel a gaz gyilkosoknak társa vagy.
+  Én nem hajolnék meg előttök, bárha mind
+  Előmbe raknák gazdag ékességidet,
+  Melyek rajtad ragyognak; légyen asztalod
+  Dúsan teritve, élvezz fényes lakomát:
+  Az én egyetlen táplálékom bánatom
+  Legyen; dicsőséged nem vágyom osztani,
+  Te sem kivánnád józan észszel. Ámde most
+  Legjobb atyádnak mig lehetnél gyermeke,
+  Légy az anyád leánya.[21] Rosznak látszol igy,
+  Elárulván szerettidet s a holt atyát.
+    Kar. Az istenekre, semmi szenvedély! Hiszen
+  Mindkettőtök szavába’ van jó és helyes,
+  Ha te reá hallgatnál, s ő viszont reád.
+    Chrysothemis. Hozzá vagyok már szokva én, oh asszonyok,
+  Az ily beszédhez; most se’ hoztam volna fel,
+  Ha nem hallottam volna, mily szörnyű veszély
+  Közelg felé, hogy elnémitsa panaszát.
+    Elektra. Mondd hát a szörnyűt, és ha rosszabb mostani
+  Gyötrelmemnél, többé nem szólok ellened.
+    Chrysothemis. Elmondom híven mindazt, mit magam tudok.
+  Ha meg nem szűnik panaszod, szándékuk az,
+  Hogy olyan helyre küldenek, hol a napot
+  Többé nem látod, és sötét börtönfalak
+  Között, távol hazánktól, sirhatsz sorsodon.
+  Gondold meg ezt s később majd kinjaid között
+  Ne vádolj engem. Térj eszedre, mig lehet.
+    Elektra. Ez szándokuk hát, igy tennének ők velem?
+    Chrysothemis. Bizonynyal igy, mihelyt Aegisthos visszatér
+    Elektra. Ugy rajta! térjen is hát vissza mielőbb.
+    Chrysothemis. Mit kivánsz e szavaddal, oh boldogtalan?
+    Elektra. Aegisthos visszatértét, ha ez szándoka.
+    Chrysothemis. Hogy szenvedés gyötörjön? Merre tévelyegsz?
+    Elektra. Hogy mentől távolabbra fussak tőletek.
+    Chrysothemis. Nem gondolsz életeddel, mely most a tied?
+    Elektra. Valóban szép, csodálandó egy élet ez.
+    Chrysothemis. Szép lenne, csak te hallgatnád az ész szavát.
+    Elektra. Szeretteimhez rossznak lenni ne tanits.
+    Chrysothemis. Nem is tanitlak; ámde tiszteld az erőst.
+    Elektra. Tiszteld magad; nem illik hozzám ily tanács.
+    Chrysothemis. Pedig szép elkerülni esztelen bukást.
+    Elektra. Ha buknom kell, atyámért küzdve bukjam el.
+    Chrysothemis. Atyám, tudom jól, megbocsátja ezt nekem.
+    Elektra. Ily szókat helyben hagyni rosszakhoz való.
+    Chrysothemis. Nem tartasz hát velem, nem fogadod szavam’?
+    Elektra. Valóban nem. Soh’se legyek ily esztelen!
+    Chrysothemis. Tovább megyek hát, merre küldtek, útamon.
+    Elektra. Hová indulsz? Kiért van e gyászáldozat?
+    Chrysothemis. Atyám sirjára küldi általam anyám.
+    Elektra. Mit? Legnagyobb ellenségének küldi ezt?
+    Chrysothemis. A kit meggyilkolt; ezt akartad mondani.
+    Elektra. Ki gondolt erre? Mily barátja vette rá?
+    Chrysothemis. Azt vélem, rémes éji látománya volt.
+    Elektra. Oh ősi istenim, csak most segitsetek!
+    Chrysothemis. Reményre gerjeszt tán ez éji borzalom?
+    Elektra. Beszéld el álmát, aztán megfelelhetek.
+    Chrysothemis. Kevés az, mit felőle mondhatok neked.
+    Elektra. Beszéld el ezt; kicsiny szó gyakran volt elég,
+  Halandót fölemelni vagy lesujtani.
+    Chrysothemis. Atyánkat látta volna, szóbeszéd szerint,
+  Ismét életre kelve megjelenni és
+  Melléje állni; s megragadva a jogart,
+  Mely hajdan az övé volt, most Aegisthosé,
+  A tűzhely mellett állitá fel; galy fakadt
+  Belőle tüstént, melynek gazdag lombjai
+  Egész Mykene országát beárnyalák.
+  Igy hallám attól, ki jelen volt, a midőn
+  Ez álmát elbeszélte Helios előtt.[22]
+  De ennél többet nem tudok, csak azt tudom,
+  Hogy félelmében küld a sirhoz engemet.
+  Az istenekre kérlek hát, fogadd szavam,
+  S ne vonj magadra vészt meggondolatlanul;
+  Ha nem követsz most, majd a baj rákényszerit.
+    Elektra. Ne tégy atyánk sirjára semmit, kedvesem,
+  Azokból, mik kezedben vannak; sérelem
+  S gonoszság volna, holt atyádnak nyujtani
+  Ez ellenséges asszony adományait;
+  Nem, dobd a vizbe, vagy ásd mélyen föld alá,
+  Honnan ne érjék el atyánk sirját soha;
+  Maradjanak elrejtve drága kincsül ott,
+  E nő számára, majd ha meghal egykoron.
+  Ha nem a nők legvakmerőbbje volna ő,
+  E gyűlölt áldozattal meg nem hintené
+  A férfiúnak sirját, kit meggyilkola.
+  Gondold meg, vajjon szívesen fogadja-e
+  Sirjában tőle a halott ez adományt,
+  Ki aljasul meggyilkolá, mint ellenét
+  Megcsonkitá, és kardja véres foltjait
+  Fejéhez törlé; s azt hiszed, ez áldozat
+  Ki fogja engesztelni a gyilkos bünét?
+  Oh nem! Hagyj fel hát ezzel; vágd le fürtjeid
+  Végszálait; im én szegény, hozzá teszem
+  Saját hajam’ – kevés ez, ámde mindenem
+  Nekem –, áldozd fel egyszerű hajfürtimet,
+  S ez övemet, melyen nem csillog semmi dísz.
+  S a porba hullva kérd őt, jöjjön most a föld
+  Alól, legyen segélyünk ellenink között,
+  Hogy gyermeke Orestes diadalmasan
+  Lábbal tiporja atyja ellenségeit,
+  S mi e csekély ajándékoknál gazdagabb
+  Kezekkel áldozhassunk sirján egykoron.
+  Hiszem, valóban hinni kezdem, ő vala,
+  Ki ezt a szörnyü álomképet küldte rá;
+  De te, oh testvér, tedd meg e szolgálatot,
+  Nekem, magadnak és atyánknak, az emberek
+  Legjobbikának, a ki Hadesben pihen.
+    Kar. Kegyesség szól e szűz ajkán, s te kedvesem.
+  Ha józan kívánsz lenni, megteszed szavát.
+    Chrysothemis. Meg is teszem; mert hol a jog parancsa szól,
+  Ott nem vitázni, ámde gyorsan tenni kell,
+  De míg ezt megkisérlem, titkot tartsatok,
+  Az istenekre kérlek, kedves asszonyok;
+  Mert ha anyám megtudná, biztosan hiszem,
+  Merészségem gyászossá lenne én reám.
+
+(Átveszi Elektra levágott fürtjeit s az övet. Azután el.)
+
+    Kar. Ha nem téved a jós szellem igéje,
+  S nem hagyott el az értelem:
+  Mert jelenti jöttét
+  Az isteni igazság büntető keze,
+  Boszúja nincs messze már, óh gyermekem!
+  Ez éji látomány
+  Enyhe fuvallatára
+  Bennem új remény fakad;
+  Nem fogja elfeledni a hellen vezér, atyád,
+  Az ősi kétélű szekercze ércz csapásait,
+  Melyek gonoszul, gyalázattal megölték őt.
+
+
+Ellenversszak.
+
+  Már a sok karu, sok lábu Erinys[23]
+  Érczlépéseivel közelg
+  Szörnyű leshelyéből.
+  Boszút lihegve a buják fejére, kik
+  Tilos menyegzőt gyilokkal ültenek.
+  Azért reménylem én,
+  Gyász jele lesz ez álom
+  A gonosztevőkre és
+  A czinkosokra. Mert az éjek szörnyü álmai,
+  S az istenek jóshangja – mind hiú káprázatok,
+  Ha nem hoz ez éji látvány üdvöt és áldást.
+
+
+Végdal.
+
+  Oh te, az ősi Pelops
+  Merész versenyfutása!
+  Mennyi nyomorral sujtád
+  Ezt a hont.
+  Mert a mióta Myrtilos
+  Tenger ölében pihen,
+  Melybe az áruló
+  Kéz aranyos szekérről
+  Álnokul ledobta:
+  Nem hagyá
+  El azóta e házat
+  Örök iszonyú átok.[24]
+
+(Klytaemnestra kijő a palotából. Utána hölgyek, áldozati adományokkal.)
+
+    Klytaemnestra. Ugy látszik, ismét fékvesztetten kóborolsz;
+  Mert távol jár Aegisthos, ki meggátola,
+  Hogy a kapun kivül gyalázd tiéidet;
+  De most távollétében nem gondolsz velem
+  Semmit sem. Sokszor és sokaknak kürtöléd,
+  Hogy vakmerően s jogtalan uralkodom,
+  Gyalázattal tetézve téged s dolgaid.
+  Pedig én nem gyalázlak, csak megtorlom azt,
+  A mit te számtalanszor kezdesz ellenem.
+  Atyádat én ölém meg – mert mindig csak ezt
+  Hozod fel ellenemben – úgy van, megölém;
+  Tudom jól; nincs szándékom eltagadni ezt;
+  Diké[25] vevé el éltét, nem csak én magam;
+  Őt kellett volna ész szerint segítened.
+  Mert ez atyád, kiért most egyre húll könyűd,
+  A hellenek közt egyedül merészelé
+  Feláldozni nővéredet, bár atyja volt
+  Csupán, s nem szülte, mint én, fájdalmak között.
+  Ugyan tanits meg hát, kinek javára, mért
+  Áldozta őt fel? Argos népeért talán?
+  Ám ennek nem volt lányom éltéhez joga,
+  De ha Menelaos kedvéért ölte meg
+  Leányomat, nem állhaték jogos boszút?
+  Nem volt-e ennek is két gyermeke, kiket
+  Inkább megölhetének, mint leányomat?
+  Hiszen szülőikért kelt útra a sereg.
+  Avagy tán Hades égőbb vágygyal éhezett
+  Az én szülötteimre, mint övéire?
+  Vagy jobban szereté e rossz atya az én
+  Szülötteimnél Menelaos sarjait?
+  Nem esztelen s gonosz lelkű az ily atya?
+  Én azt hiszem, bár kedved ellen mondom is.
+  De a halott, ha szólna, szint’ ezt mondaná.
+  A mit tevék, nem bántam én meg azt soha;
+  De ha te rossznak tartod véleményemet,
+  Keresd, mi jobb, s csak aztán szólj meg másokat.
+    Elektra. Nem mondhatod, hogy én kezdélek bántani,
+  S csak megtorlásul kelle most ezt hallanom.
+  De ha szabad beszélnem, elmondom neked
+  A holtról és testvéremről az igazat.
+    Klytaemnestra. Beszélj; ha mindig ekként kezdenéd a szót,
+  Nem ingerelne bosszuságra ellened.
+    Elektra. Beszélek hát. Atyámat, mondod, megöléd.
+  Van ennél szégyenítőbb vallomás, akár
+  Joggal téved, akár nem? S én mondom neked,
+  Nem a jogos boszú vezérle, ám e rosz
+  Ember beszélt rá, a kinek most nője vagy.
+  Kérdezd meg a vadászó Artemist: kinek
+  Bünéért zárt el Aulisban minden szelet?
+  Vagy nem, megmondom én: hisz őt nem kérdheted.
+  Atyám ez istennő berkében egykoron
+  Üzőbe vett (igy hallám ezt) egy tarka, szép
+  Agancsu szarvast, és elejtve a vadat,
+  Ajkán dicsekvő szó talált kisiklani.
+  Ezért haragra gyulva Leto gyermeke,
+  Lelánczolá Achaja sergét, míg atyám
+  Váltságul önnön lányát adta a vadért.
+  Ezért áldozták őt fel; máskép a sereg
+  Nem juthatott sem Ilionba, sem haza.
+  Ezért volt kénytelen hosszú küzdés után
+  Od’adni lányát, és nem Menelaosért,
+  De ha – szavad szerint beszélve – kedveért
+  Tevé is mindezt: volt ezért neked jogod
+  Boszúból őt megölni? Mily törvény szerint?
+  Vigyázz, ily törvényt hozva emberek közé,
+  Ne hozz magadra megbánását és szenvedést.
+  Mert ha megöljük egyikért a másikat,
+  Először is te halsz meg méltó jog szerint.
+  Lásd, mily hiú ürügyre épited szavad’.
+  Mert fejtsd meg azt, ha kedved tartja, mért fedi
+  A legborzasztóbb bűnök szennye fejedet,
+  Miért osztod meg a gonoszszal ágyadat,
+  Kivel atyámat egykoron meggyilkolád,
+  S kitől most gyermeket szülsz; és elkergeted
+  A tiszta násznak tiszta sarjadékait.
+  Miként dicsérhetném ezt? Vagy tán erre is
+  Azt mondod, hogy boszúból tetted lányodért?
+  Szégyen reád, ha mondod; mert nem szép soha,
+  Lányod miatt az ellenséggel kötni nászt.
+  De nincs hatalmam téged jóra inteni,
+  Téged, ki egyre azt kiáltod, hogy anyánk
+  Nevét gyalázzuk; bár irántunk, azt hiszem,
+  Inkább úrnőnek, mint anyának mondhatunk;
+  Hisz oly gyász éltet élek, annyi gyötrelem
+  Jut tőled és férjedtől osztályrészemül.
+  S Orestes is, alig kerülve el kezed,
+  Kinnal hurczolja messze földön életét;
+  Kiért oly sokszor vádolál, hogy ellened
+  Boszúra nevelem. Meg is tenném bizony,
+  Ha volna rá hatalmam, tudd meg ezt. Azért
+  Kiálts ki hát gonosznak az egész világ
+  Előtt, akár szájasnak, szemtelennek is!
+  Hiszen ha mind e roszban járatos vagyok,
+  Fajodnak szégyenére úgy nem válhatok.
+    Kar. Látom, haragra lobbant; ám nem látom azt,
+  Hogy számba vennék, jogosan haragszik-e.
+    Klytaemnestra. Ugyan mit szükség számba vennem ez iránt,
+  Ki vakmerőn gyalázza anyjának nevét,
+  S hozzá ily korban? Vajjon mégsem gondolod,
+  Hogy semmitől sem tartja vissza szégyene?
+    Elektra. Tudd meg, szégyen piritja arczomat, habár
+  Nem is teszed fel rólam; azt is jól tudom,
+  Hogy nem hozzám s koromhoz illők tetteim.
+  De a te ellenséges lelked s műveid
+  Erővel ily tettekre kényszerítenek.
+  Rosz tettekből tanuljuk a rosz tetteket.
+    Klytaemnestra. Arczátlan szörny! Valóban tettem és szavam
+  Tulságos sok beszédet engedett neked.
+    Elektra. Magad beszélsz, nem én; hiszen te műveled
+  A tettet, és minden tett megleli nevét.
+    Klytaemnestra. Hatalmas Artemisre! el nem kerülöd
+  A büntetést, mihelyt Aegisthos visszatér.
+    Elektra. No lásd, haragra lobbanál, holott szabad
+  Szót engedél; de meghallgatni nem tudod.
+    Klytaemnestra. De hát nyugodtan még áldozni sem lehet,
+  Mivel szabad pórázra hagytam nyelvedet?
+    Elektra. Csak rajta, áldozz, nem zavarlak. Ajkamat
+  Többé ne vádold, mert egy szót sem szólok én.
+    Klytaemnestra (egyik hölgyéhez). Nyujtsd hát te, ki mellettem állsz, az áldozat
+  Gyümölcseit ez istennek, hogy hallja meg
+  Imáimat jelen borzalmaim között. (Az oltár felé fordul.)
+  Hallgasd meg hát, oh Phoebos, védő istenem,
+  Elfojtott hangom’; mert nem híveim között
+  Beszélek hozzád, és minden szót nem lehet
+  Napfényre hoznom, míg ez itt mellettem áll,
+  Nehogy boszúja és nem pihenő szava
+  Az összes várost csalfa hirrel töltse be.
+  Hallgass meg hát úgy, a mint hozzád szólok én.
+  A kétértelmü álomképet, a melyet
+  Ma éjjel láttam, hogyha kedvezőt jelent,
+  Engedd rajtam beteljesülni, nagy király!
+  De hogyha rossz, úgy forditsd ellenimre azt,
+  S ne hadd, hogy bárki álnok csellel e jelen
+  Jólétemet képes legyen megdönteni;
+  Oh add, hogy éltem mindig felhőtlen legyen,
+  S békével kormányozzam Atreus lakát,
+  Szeretteim körében, kikkel most vagyok;
+  S boldog napokra keljek gyermekim között,
+  Kiket nem lázit ellenem rosz indulat.
+  Hallgasd meg ezt, oh nagy Apollo, kegyesen,
+  És add meg mindnyájunknak, a mit kér imánk;
+  A többi mást, habár szóval nem mondom is,
+  Isten létedre, úgy hiszem, jól ismered.
+  Hisz mindent tisztán látnak Zeus szülöttei.
+
+(A nevelő fellép.)
+
+    Nevelő. Oh idegen nők, mint lehetne biztosan
+  Megtudnom, ez-e Aegisthos király laka?
+    Kar. Valóban ez, oh idegen; jól gondolád.
+    Nevelő. S nem tévedek, ha ezt nejének gondolom?
+  Királynénak mutatja fényes külseje.
+    Kar. Minden bizonynyal; a királyné ez maga.
+    Nevelő. Üdvözlégy, oh királyné! Kedves hirt hozok
+  Neked s férjednek, jó barátod résziről.
+    Klytaemnestra. Örömmel hallom; ámde mindenekelőtt
+  Kivánom tudni, mily embertől küldetél?
+    Nevelő. Phanoteus Phokisból fontos hirt izen.
+    Klytaemnestra. Minő hirt, mondd, oh idegen? Hisz jól tudom,
+  Baráttól csak baráti szót hozhatsz nekünk.
+    Nevelő. Meghalt Orestes; ennyi röviden a hir.
+    Elektra. Oh jaj nekem, meghaltam én is e napon!
+    Klytaemnestra. Mit mondasz, oh mit mondasz? Ne ügyelj reá.
+    Nevelő. Meghalt Orestes, mondtam, s mondom újra most.
+    Elektra. Ah én szegény, elvesztem, semmivé levék!
+    Klytaemnestra. Gondolj magad dolgával. Te meg idegen,
+  Beszéld el a valót nekem. Mint halt meg ő?
+    Nevelő. Ezért küldettem; elmondom hát a valót.
+  Hellas dicső harczünnepére megjövén,
+  Hogy Delphi játékában küzdő részt vegyen,
+  Alig hallá a hirnök harsány szózatát,
+  Versenyfutást hirdetve első harcz gyanánt:
+  Mindenkitől csodálva, megjelent legott,
+  S mint várható volt, megfutván a pályatért,
+  A győzelem dicső jutalmát elnyeré.
+  Hogy a sokat kevés szavakkal mondjam el:
+  Nem láttam ily erőt s ily tetteket soha.
+  Ez egyet halld: a pálya minden versenyén,
+  Mit a harczbírák hirdetének ős szokás
+  Szerint, övé volt minden győzedelmi díj;
+  Mindenki őt magasztalá, az argosit;
+  Orestes – mondák – Agamemnon hős fia,
+  Ki hajdan Hellas híres sergét vezeté.
+  Igy történt; ám ha isten karja sujt reánk,
+  Csapásitól nem óv meg semmi hős erő.
+  Másnap, midőn a fürge lábú paripák
+  Gyors versenyére jött a sor napkeltekor,
+  Számos szekérhajtóval ő is megjelent.
+  Achaja egyet külde, egyet Sparta is,
+  Kettő jött Libyából kettős fogaton;
+  Utánuk ötödiknek ő jött thessali
+  Lovakkal; majd Aetoliából pej csikón
+  A hatodik; magnesi volt a hetedik;
+  Fehér lovakkal külde egyet Aenia;
+  Az isten épitette Athen[26] szülte a
+  Következőt; s boeoti zárta be a sort.
+  Majd rendbe álltak, a miként a harczbirák
+  Tüzték ki sors szerint a szekerek helyét,
+  S az érczkürtnek szavára elszáguldtanak,
+  A méneket biztatva és a zabolát
+  Rángatva; a dübörgő szekerek zaja
+  Betölté az egész utat; magasra szállt
+  A por; egymásra tódult a szekértömeg,
+  És nem kimélte egyikök sem ostorát,
+  Hogy hátra hagyja társa tengelyét s lovát.
+  Mert a küllőket s a versenyzők vállait
+  Habbal szórták be a tajtékzó paripák.
+  De ő a mint kerékagyával súrolá
+  A legszélső korlátot, rudasát szabad
+  Futásra hagyva, visszarántá nyergesét.
+  Kezdetben egyenest haladt a tiz szekér;
+  De nemsokára elragadják Aenia
+  Küldöttét bokros ménei, s a többivel
+  Szemközt rohanva hat-hét forduló után,
+  Homlokkal Barke[27] szekérnek rontanak;
+  Egymásra dőlt ez egy baj folytán mind a két
+  Kocsi, s az egyik széttöré a másikat,
+  Szekér-romok boríták Krisa mezejét.
+  De az ügyes atheni észrevevé ezt,
+  Kitér az útból és megáll, a paripák
+  Zavart hullámit oldalt hagyja hirtelen.
+  A sor végén haladt Orestes, méneit
+  Nem fárasztván, a verseny végében bizott;
+  De látva, hogy csak még egy versenytárs maradt,
+  Utána száguld, harsány hanggal sürgeti
+  Gyors méneit; utól is éri csakhamar,
+  S egymás mellett vágtatnak, majd ez, majd amaz
+  Előzi meg lófejjel társa fogatát,
+  Baj nélkül végze eddiglen futást,
+  Töretlen szekéren állt töretlen a hős;
+  De most a fordulónál meglazitva bal
+  Lovának gyeplőszárát, észrevétlenül
+  A korláthoz csapódott; eltört tengelye,
+  S ő bakjáról lebukva, bekeveredett
+  A szétszakadt szíjakba; és hogy földre húllt,
+  A pályán végig száguldoztak ménei.
+  A néptömeg szemlélve gyászos esetét,
+  Hangos sirással jajgat ez ifjú felett,
+  Ki ily tettekre ily gyötrelmet nyert dijul,
+  A földön vonszoltatva, majd az ég felé
+  Forditva lábát; miglen versenytársai
+  Megálliták nagy fáradsággal méneit,
+  S kioldák vérző testét, melynek nyomorult
+  Alakját meg nem ismeré baráti szem.
+  Égő máglyára tették tüstént, s phokisi
+  Választott férfiak elhozzák most kicsiny
+  Edényben nagy testének gyászos hamvait,
+  Hogy önhazája földén fedje síri hant.
+  Igy történt ez. Fájdalmas elbeszélve is,
+  De látni mindazt, mint mi láttuk: legnagyobb
+  Minden keserv közt, melyet láttam valaha.
+    Kar. Hajh! látom, ős királyaink egész faja
+  Kipusztul immár végső sarjadékaig.
+    Klytaemnestra. Oh Zeus, mi ez? Szerencsének nevezzem-e,
+  Vagy gyásznak, mely hasznot hajt? Mily kinos, saját
+  Gyötrelmem árán váltanom meg éltemet.
+    Nevelő. Mért csügged e beszédre, oh asszony, szived?
+    Klytaemnestra. Hatalmas a szülő szerelme; gyermekét,
+  Bár roszat szenved tőle, nem gyülölheti.
+    Nevelő. Úgy látszik hát, hiában jöttem én ide.
+    Klytaemnestra. Nem úgy. Miként lett volna útad hasztalan.
+  Holott biztos hírt hoztál a halott felől,
+  Ki szivemnek szülötte lévén, elhagyá
+  Emlőmet, ápolásomat, és idegen
+  Földön bujdosva, a mióta távozott
+  E honból, többé szemmel nem tekinte rám,
+  De atyjáért szörnyű boszúval rémitett;
+  Hogy enyhe álom éjjel, nappal egyaránt
+  Kerülte szempillámat; s minden pillanat
+  A haldokló utolsó percze volt reám.
+  De mától fogva többé nem remeg szivem
+  E lánytól s tőle, mert e lány nagyobb csapás
+  Volt rám, lakomban élve s szíva szüntelen
+  Szivemnek tiszta vérét; ámde ezután
+  Nyugodtan élünk, nem ijeszt már bosszuja.
+    Elektra. Oh én boldogtalan! Most már sirathatom
+  Halálodat, Orestes, mert gyász sorsodat
+  Anyád gúnynyal tetézi. Jól van-e ez így?
+    Klytaemnestra. Te nem vagy jól; de az, a mint van, jól van úgy.
+    Elektra. Oh halld ezt, a halottnak bosszu-szelleme!
+    Klytaemnestra. Hallá azt, a mit kelle, s jól meghallgatá.
+    Elektra. Csak gúnyolódjál, hisz szerencse ére most.
+    Klytaemnestra. Bizony Oresteseddel meg nem döntöd azt.
+    Elektra. Ah! megdőltünk mi, s téged meg nem dönthetünk.
+    Klytaemnestra. Nagy hálát érdemelne jöttöd, idegen,
+  Ha ennek nyelvességét is megdöntenéd.
+    Nevelő. Ha minden jól van, úgy én eltávozhatom.
+    Klytaemnestra. Oh nem; méltatlan volna e gyors távozás
+  Hozzám s a küldő jó baráthoz egyaránt.
+  Lépj hát a házba, ám e lányt hagyd ide kinn
+  Jajgatni önnön és szerettinek baján.
+
+(Klytaemnestra kiséretével s a nevelővel a palotába megy.)
+
+    Elektra. Azt vélitek, bánkódik e boldogtalan,
+  Vagy szörnyü fájdalmában könnyet ejt szeme,
+  Hogy így kellett fiának elpusztulnia?
+  Igen, nevetve távozott. Oh én szegény!
+  Orestesem, halálod mily halál reám!
+  Mert elvivéd magaddal a végső reményt,
+  Mely egyedül maradt szivemben vígaszul,
+  Hogy megjösz egykor élve és megbosszulod
+  Atyánkat s engem. Most hová forduljak én?
+  Mert egyedül vagyok, megfosztva tőled és
+  Atyámtól. Rabszolgává kell lennem megint,
+  A leggyülöltebb emberek között, atyám
+  Gyilkosai közt. Nemde szép sors vár reám?
+  De egy födél alatt bizonynyal nem lakom
+  Velök jövőre; nem, itt e kapu előtt
+  Fog elhagyatva elhervadni életem.
+  Hadd öljön meg, kinek terhére van könyem
+  A palotában; jótét lesz rám a halál,
+  És kín az élet, mert nem vágyom élni már.
+
+
+Első versszak.
+
+    Kar. Zeus boszuló villámai és
+  Te ragyogó nap tüze, megvagytok-e még, hogy
+  Ezt látva pihentek?
+    Elektra. Ah, ah! Jaj, jaj!
+    Kar. Oh lányka, miért sirsz?
+    Elektra. Hajh!
+    Kar. Tartsd vissza a nagy szót.
+    Elektra. Ne gyötörj.
+    Kar. Hogy?
+    Elektra. Csak bánatomat gúnyolod úgy,
+  Hogyha azért, kit a halál elragadott, újra reményt
+  Költeni vágysz bennem.
+
+
+Első ellenversszak.
+
+    Kar. Amphiaraost asszonyi csel,[28]
+  Lásd, aranyos tőrbe csalá s földbe sülyeszté.
+  S most Hades ölében –
+    Elektra. Ah, ah! oh jaj!
+    Kar. El nagy hatalomban.
+    Elektra. Jaj!
+    Kar. Jaj ám! A gonosz nő –
+    Elektra. Elesett?
+    Kar. El.
+    Elektra. Tudom, tudom; ah! volt, ki boszút
+  Álljon a bú könyeiért; ámde nekem nincs; a ki volt,
+  Elragadák tőlem.
+
+
+Második versszak.
+
+    Kar. Gyász borul, gyász leánya, rád.
+    Elektra. Ah jól, nagyon jól tudom én ezt,
+  Megtanitottak rá éltem
+  Szörnyű szenvedései.
+    Kar. Látjuk, a mit mondasz.
+    Elektra. Ne terelj hát soha,
+  Soha sem innen el –
+    Kar. Hogyan?
+    Elektra. Kihalt szivem reménye, hogy életemet
+  Védje nemes fivérem.
+
+
+Második ellenversszak.
+
+    Kar. A halandó halál fia.
+    Elektra. De nem úgy, mint ő a szegény volt,
+  Hogy tépett gyeplők öljék meg
+  A gyorslábú versenyen.
+    Kar. Rettenetes balsors.
+    Elektra. Hogy ne! Hisz nélkülem,
+  Idegenek között –
+    Kar. Oh jaj!
+    Elektra. Veszett el élte, s nem fedi sirhalom őt,
+  Nem könnyezünk fölötte.[29]
+
+(Chrysothemis sietve fellép.)
+
+    Chrysothemis. Öröm hajt hozzád, kedvesem! Mellőztem az
+  Illendőséget is, hogy gyorsan itt legyek.
+  Mert örömet jelentek: megszűnt már a baj,
+  Mely eddig annyi könynyel tölté meg szemed.
+    Elektra. Ugyan hol leltél bánatomra enyhülést,
+  Holott gyötrelmeimre nincs sehol sem ír?
+    Chrysothemis. Megérkezett Orestes, hidd szavamra ezt,
+  Oly biztosan, miként engem lát két szemed.
+    Elektra. Megőrültél-e, oh boldogtalan leány,
+  S kigúnyolod az én és ten fájdalmadat?
+    Chrysothemis. Nem, ősi tüzhelyemre, nem volt gúny szavam,
+  Megjött Orestes, újra mondom, hígy nekem.
+    Elektra. Oh jaj nekem szegénynek? És ugyan kitől
+  Hallád e szót, hogy oly erősen áll hited?
+    Chrysothemis. Ennen magamtól, nem mástól tudom; saját
+  Szemem bizonyságára épitém hitem.
+    Elektra. Ugyan minő bizonyság volt az, oh szegény?
+  Mi lobbantá e vészes lángra lelkedet?
+    Chrysothemis. Az istenekre, hallgass hát ki, s azután
+  Itéld meg: józan-e vagy esztelen szavam?
+    Elektra. Beszélj tehát, ha a beszéd kedvedre van.
+    Chrysothemis. Elmondok mindent, mit szememmel láttam én.
+  Midőn atyámnak ős sirjához érkezém,
+  A domb tetőjén frissen öntött tejpatak
+  Ötlött szemembe s a siron körös-körül
+  Mindennemű virágból fűzött koszorúk.
+  Csodálva vettem észre és mindenfelé
+  Tekinték, nincs e a közelben valaki?
+  De nyugalomban látva az egész helyet,
+  Közel menék a sirhoz; s végső szegletén
+  Frissen vágott hajfürtre tévedett szemem;
+  Alig hogy megpillantám, én boldogtalan,
+  Szivemben tüstént megvillant a sejtelem,
+  Hogy drága jó Orestesünknek műve ez;
+  S megérintvén kezemmel, szólni nem merék,
+  Hanem örömkönyekben úsztak szemeim.
+  Most is, mint akkor, rendületlenül hiszem,
+  Hogy tőle, és nem mástól származott e dísz.
+  Mert rajtam s rajtad kívül mást kit illet ez?
+  De én nem tettem, annyit biztosan tudok,
+  S te hogy’ tehetted volna, ki büntetlenül
+  E házból még az istenekhez sem mehetsz?
+  Anyánk pedig bizonynyal nem gondol reá,
+  S különben sem tehetné észrevétlenül.
+  Orestestől lehet csak e gyász tisztelet.
+  Bizzál hát drága testvér, mert az istenek
+  Közül nem lesz mindig csak ugyanaz velünk.
+  Eddig csak gyászt hozott ránk; ámde meglehet,
+  Hogy még e nap sok jónak lészen záloga.
+    Elektra. Ah! mint szánlak régóta dőreségedért.
+    Chrysothemis. Mi ez? Nem volt örvendetes reád szavam?
+    Elektra. Azt sem tudod, hová mégy, azt sem, mit beszélsz.
+    Chrysothemis. Ne tudnám azt, a mit szememmel láttam én?
+    Elektra. Meghalt Orestes, oh boldogtalan! Oda
+  Reményed, hogy megszabadit; ne várj reá.
+    Chrysothemis. Oh jaj nekem! Mily embertől hallottad ezt?
+    Elektra. Ki oldalánál volt, midőn ő elveszett.
+    Chrysothemis. És hol van ez? Valóban bámulat fog el.
+    Elektra. Benn; kedves vendég, nincs anyánk terhére ő.
+    Chrysothemis. Oh jaj nekem, szegénynek! Ám kitől van ott
+  Atyám sirján a sok halotti áldozat?
+    Elektra. Én azt hiszem legbiztosabbnak, a halott
+  Orestes emlékére áldozák fel azt.
+    Chrysothemis. Oh a szegény! S én oly örömmel síeték
+  Hozzád e hirrel, nem tudván, mily végzetes
+  Csapás sujtott ránk; ámde most, hogy megjövék,
+  A régi bánat mellett újat is lelek.
+    Elektra. Valóban igy van; ám, ha szómat fogadod,
+  E bánat súlyos terhét megkönnyitheted.
+    Chrysothemis. Ah, feltámaszthatom-e a halottakat?
+    Elektra. Nem erről szólok; nem vagyok ily esztelen.
+    Chrysothemis. És mit kivánsz, mit teljesitni rajtam áll?
+    Elektra. Hogy merd azt végbevinni, a mit rendelek.
+    Chrysothemis. Hasznát ha látom, vonakodni nem fogok.
+    Elektra. Gondold meg jól, fáradság nélkül nincs haszon.
+    Chrysothemis. Tudom; s erőmhöz képest mindent megteszek.
+    Elektra. Halld meg tehát, mi az, mit tenni szándokom.
+  Te is tudod, hogy több segélyt nem várhatunk
+  Barátainktól, mert az alvilág ura
+  Mind elragadta őket, s egyedül vagyunk.
+  Én, a mig hallám, hogy fivérem viruló
+  Erőben él, mindig reméltem biztosan,
+  Hogy megjön s bosszut áll atyánk halálaért;
+  De most hogy ő nincs többé, rád vetem szemem,
+  Jer, testvéreddel egyetértve ne habozz
+  Megölni Aegisthost, atyánk orgyilkosát.
+  Mert többé tőled semmit el nem titkolok.
+  Meddig maradsz még ily gondatlan, mily reményt
+  Táplálsz szivedben? Csak sóhajtanod szabad,
+  Hogy elvesztéd atyádnak gazdag örökét,
+  Csak bánkódnod szabad, hogy a hosszú idő
+  Pártádban, nász-ágy nélkül hoz aggkort reád.
+  Ne is reméld, hogy ez örömben valaha
+  Részed lesz; mert Aegisthos nem oly esztelen,
+  Hogy a mi törzsökünket felvirágzani
+  Engedje, önmagának biztos vesztire.
+  De ha tanácsaimnak útját követed,
+  Kegyességed dicséretet fog nyerni holt
+  Atyádtól ott lent, s testvéredtől egyaránt;
+  És azután, a mily szabadnak születél,
+  Olyan szabad lészsz, méltó nász jut részedül;
+  Mert a derékre szívesen néz mindenik.
+  Nem látod, mily dicsőség súgarát fogod
+  Reám s magadra, szóm fogadva, hinteni?
+  Mert minket látva mely polgár vagy idegen
+  Nem fog majd ily dicsérettel köszönteni:
+  Lássátok e testvéreket, barátaim.
+  Kik megmentették atyjok ősi hajlokát,
+  S hatalmas ellenségeiknek életét,
+  Önéltöket koczkára vetve, elvevék.
+  Szeressék és tiszteljék őket mindenek;
+  Az ünnepélyeken s a népgyüléseken
+  Nekik hódoljon minden, bátorságukért.
+  Bizonynyal így dicsőit az egész világ,
+  S éljünk vagy haljunk, fényes hírünk élni fog.
+  Fogadj tehát szót, küzdj atyánkért, kedvesem.
+  Segitsd testvéred, ments ki bajaim közül,
+  Mentsd meg magad, mert emlékezzél, hogy nemes
+  Szülöttre szégyen, élni szégyenletesen.
+    Kar. Okos megfontolásra nagy szüksége van
+  Annak, ki szól, s annak, ki hallgat, egyaránt.
+    Chrysothemis. Bizony beszédre nyitva ajkát, asszonyok,
+  Ő is megfontolhatta volna szavait,
+  Jobban, mint most, ha nem zavarná dőreség.
+  Hol jár szemed, hogy ily merész dacz fegyverét
+  Veszed kezedbe, s engem ily segélyre hivsz?
+  Nem látod azt, hogy nő vagy és nem férfiú,
+  S hatalmad ellenségeiddel föl nem ér?
+  Szerencséjök virágzik s napról-napra nő,
+  Mig a mienk enyészik, semmivé leszen.
+  Ki tudná elkerülni a szörnyű veszélyt,
+  Ily ember életére törve vakmerőn?
+  Vigyázz, nehogy rosz sorsunk rosszabbá legyen,
+  Ha valaki meghallja ily beszédedet.
+  Bizony nem lesz javunkra, nem hasznunkra sem,
+  Ha szép hirt nyerve meg kell halnunk dicstelen.
+  Nem a halál legszörnyűbb, ámde az, midőn
+  Halál után epedve meg nem halhatunk.
+  Oh kérlek hát esengve, fékezd haragod’,
+  Mig végleg el nem vesztünk s teljesen ki nem
+  Pusztult családunk. Azt, a mit mondál, örök
+  Titokban tartom, hogy ne hozzon vészt reád;
+  De valahára már tanuld meg azt te is,
+  Hogy engedj az erőnek ott, hol gyenge vagy.
+    Kar. Fogadd szavát; az ember legnagyobb java:
+  A bölcs megfontolás és józan értelem.
+    Elektra. Nem volt váratlan, a mit mondál; jól tudám,
+  Hogy azt, a mit ajánlok, el nem fogadod.
+  Igy hát saját kezemre s egymagamra vár
+  E munka; mert bizonynyal abba nem hagyom.
+    Chrysothemis. Ah!
+  Bár lettél volna ily merész lelkű atyánk
+  Halálakor; mindent kivivtál volna ott.
+    Elektra. Ugy érezék, de nem volt hozzá még eszem.
+    Chrysothemis. Maradj egész élted végéig ily eszű.
+    Elektra. Ilyest tanácsolsz, mert segitni nem akarsz.
+    Chrysothemis. Ki rosszat vállal önmagára, rosszra jut.
+    Elektra. Eszed’ irigylem, gyávaságod’ gyűlölöm.
+    Chrysothemis. Megérem azt, hogy egykor még dicsérni fogsz.
+    Elektra. Ne félj, hogy tőlem ér dicséret valaha.
+    Chrysothemis. Itélni fog majd erről a távol jövő.
+    Elektra. Menj innen; nem veszem már semmi hasznodat.
+    Chrysothemis. Vehetnéd; ámde rám hallgatni nem akarsz.
+    Elektra. Siess anyádhoz, mondj el mindent íziben.
+    Chrysothemis. Ily gyűlölettel nem gyűlöllek téged én.
+    Elektra. Lásd, mégis mint akarsz megszégyeníteni.
+    Chrysothemis. Megszégyenitni nem, csak gondra inteni.
+    Elektra. Követnem kell tehát a te itéleted’?
+    Chrysothemis. Ha józan lesz fejed, akkor majd te vezetsz.
+    Elektra. Mi baj, hogy ily jót mondasz s ily roszat müvelsz!
+    Chrysothemis. Valóban eltaláltad tennen bajodat.
+    Elektra. Hogyan? Azt véled, nem beszéltem jog szerint?
+    Chrysothemis. De meglehet, hogy néha bajba dönt a jog.
+    Elektra. Nincs kedvem élni ilyen törvények szerint.
+    Chrysothemis. Pedig dicsérni fogsz engem, ha megtevéd.
+    Elektra. Bizonynyal megteszem, nem rémit el szavad.
+    Chrysothemis. Igaz tehát? Nem változik meg szándokod?
+    Elektra. Előttem nincs gyülöltebb, mint a rossz tanács.
+    Chrysothemis. Nem hallgatod hát semmiben sem szavamat?
+    Elektra. Régóta áll, nem mától fogva, szándokom.
+    Chrysothemis. Megyek hát; mert te nem leszesz képes soha
+  Szavam, dicsérni, én sem a te módodat.
+    Elektra. Csak menj; nem foglak fölkeresni sohasem,
+  Bármily forrón óhajtanád is; mert hiszen
+  A legnagyobb botorság, űzni árnyakat.
+    Chrysothemis. Ha épen már ily bölcsnek képzeled magad’,
+  Maradj e bölcseséged mellett; majd ha rád
+  Zúdult a vész, helyesled akkor szavamat. (El.)
+
+
+Első versszak.
+
+    Kar. Tekintsd a lég bölcs madarát, mi szorgosan
+  Óvja szülői életét,
+  Gondja mi híven őrzi azt,
+  A ki nevelte: és mi nem
+  Tudjuk e példaadást követni?
+  Zeus villámira és örök
+  Szent Themisre! a büntetés
+  Nem sokára lesujt már.
+  Hir szava, mely a föld sötét
+  Mélyibe hatsz, jelentsd meg az
+  Atreidáknak ott a gyászt,
+  Mondd el e bánatot és e szégyent.
+
+
+Első ellenversszak.
+
+  Az ősi kór gyötri e házat egyre még,
+  S nem kötik a viszálkodó
+  Gyermeki párt baráti frigy
+  Szálai össze boldogan.
+  Ah egyedül maga küzd Elektra,
+  A boldogtalan, atyja gyász
+  Sorsán sírva, epedve, mint
+  A panaszos csalogány;
+  Őt nem ijeszti a halál,
+  Kész odadobni életét
+  A gonoszok halálaért.
+  Ah van-e ily szerető leány több?
+
+
+Második versszak.
+
+  Nem kíván a valódi
+  Jó s nemes szégyenben élni, rosszul és
+  Névtelenül, oh lány!
+  Te is szegény, gyászos éltet vevél magadra,
+  Kerülve a gyalázatot; s egy szóban két dicséret ér:
+  Okosnak és jónak is neveznek.
+
+
+Második ellenversszak.
+
+  Élj dúsan, diadallal,
+  Légy oly urrá ellened fölött, a mily
+  Rabja valál eddig;
+  Mert bár a balsors nehéz karja súlyosult rád,
+  Hiven megőrizéd a legnagyobb parancsot, és szived
+  Kegyes maradt s hű a nagy Zeushoz.
+
+(Orestes jő Pyladessel és kiséretével. Egyik kisérő hamvvedert hoz.)
+
+    Orestes. Jól mondták-e nekünk az útat, asszonyok,
+  És jó helyen járunk-e itt czélunk felé?
+    Kar. Mit kívánsz tudni? Mily szándék hozott ide?
+    Orestes. Régóta keresem Aegisthos lakhelyét.
+    Kar. Ugy jó uton jársz, nem csalt meg a kalauz.
+    Orestes. S ki fogja ott a házban megjelenteni,
+  Hogy, kikre vágyva vártak, együtt megjövénk?
+    Kar (Elektrára mutatva). Ez, ha közel rokonnak kell jelenteni.
+    Orestes. Menj hát, oh asszony, és jelentsd, hogy a királyt
+  Kivánják látni Phokisból jött férfiak.
+    Elektra. Oh jaj nekem! Ti hozzátok talán nekünk
+  A nem rég hallott gyász hir biztos zálogát?
+    Orestes. Nem ismerem, mi hír ez; engem az öreg
+  Strophios küld, Orestesről hirt mondani.
+    Elektra. Minő hirt, idegen? Oly félelem fog el.
+    Orestes. A holt Orestes összegyüjtött hamvait
+  Hozzuk kicsiny edényben, a mint láthatod.
+    Elektra. Oh jaj nekem szegénynek! Ez, valóban ez;
+  Szememmel látom rettentő balsorsomat.
+    Orestes. Ha tán Orestes gyász halálát siratod,
+  Im ez edény takarja földi hamvait.
+    Elektra. Az istenekre, engedd meg hát, idegen,
+  Kezembe fognom ez edényt, ha őt fedi,
+  Hogy megsirassam, meggyászoljam enmagam’
+  S egész fajom’ e gyászos hamv-veder fölött.
+    Orestes (a kisérőkhöz). Adjátok át, akárki légyen ő. Hiszen
+  Nem ellenséges indulattal kéri ezt;
+  Hanem mint jó barátnő, vagy mint vérrokon.
+    Elektra (kezében tartva a hamvvedert). Oh szeretett Orestesem emléke te,
+  Az egyetlen, mi tőle maradál, mi más
+  Reménynyel váltunk el, s igy látlak újra most!
+  Ah! semmivé lett hamvad’ tartja most kezem,
+  S ragyogva távozál hazulról, gyermekem!
+  Inkább vesztettem volna én el éltemet,
+  Mint téged elorozva s a halál elől
+  Megmentve, idegen országba küldjelek;
+  Holtan feküdtél volna úgy azon napon,
+  Atyádnak sirját nyerve osztályrészedül.
+  Most számüzötten, idegen föld térein,
+  És tőlem távol kelle élted vesztened;
+  Nem moshatám meg szerető kezekkel, én
+  Szegény, holttested’, pusztító lángok közül
+  Nem gyüjtém össze hamvadat, jogom szerint.
+  Nem, idegen kéz szolgált, oh boldogtalan,
+  S kis hamvad kis edényben jő hozzám csupán.
+  Ah fájdalom! hiában volt az ápolás,
+  A melylyel hajdan, édes fáradság között,
+  Gondod’ viseltem; mert saját anyád soha
+  Nem szeretett úgy, a mint én szerettelek;
+  Nem volt a házban más dajkád, csak én magam;
+  S te mindig hozzám, testvéredhez, fordulál.
+  Most mindez elenyészett egyetlen napon,
+  Halálod által; mint a pusztitó vihar,
+  Mindent magaddal ragadál. Meghalt atyánk,
+  Meghaltam én, s te porrá, semmivé levél.
+  Kaczagnak ellenségeink, gonosz anyánk
+  Ujong nagy örömében; mert miként nekem
+  Titokban gyakran izenéd, boszús karod
+  Fejére sujtott volna. Ámde most a te
+  Balsorsod s az enyém mindezt elragadá,
+  Mely kedves alakod helyett e hamvakat
+  Vezérli hozzám és erőtlen árnyadat.
+  Oh jaj, jaj!
+  Oly nyomorult test! Jaj, jaj!
+  Oh rettenetes, ah, ah, jaj!
+  Ily sorsra jutva, kedvesem, mint megölél,
+  Oh drága testvér, mint megöltél engemet!
+  Végy hát magad mellé sirodba engem is,
+  Megsemmisültet semmiségbe, hogy veled
+  Lehessek ott lenn. Mert mig ide fenn valál,
+  Mindenben osztoztam veled; most halva is
+  Sirodnak közelében vágyom lenni én.
+  Mert a halottak, látom, kínt nem érzenek.
+    Kar. Elektra, gondold meg, halandó volt atyád
+  Az volt Orestes is; ne sirj tulságosan,
+  E sors jut mindnyájunknak osztályrészeül.
+    Orestes. Ah, ah! mit mondjak? Hol találok szavakat
+  E zavaromban? Többé nem hallgathatok.
+    Elektra. Mily fájdalom gyötör? Mily okból mondod ezt?
+    Orestes. Dicső Elektra színét látják szemeim?
+    Elektra. Önnön magát, de gyász és siralom között.
+    Orestes. Oh jaj nekem, mily szörnyü, rettentő nyomor!
+    Elektra. Csak nem miattam keseregsz, oh idegen?
+    Orestes. Oh gonoszul, gazul elferditett alak!
+    Elektra. Nekem szól és nem másnak jajszód, idegen!
+    Orestes. Ah igy kell élned, elhagyottan, férjtelen!
+    Elektra. Oh idegen, mért nézesz igy jajgatva rám?
+    Orestes. Oh hogy nem ismerém minden gyötrelmemet!
+    Elektra. S miben ismerteté meg azt veled szavam?
+    Orestes. Gyötrelmeid láttára ismerém meg azt.
+    Elektra. Kis részét láttad annak, a mit szenvedek.
+    Orestes. Mi mást láthatnék, a mi ennél iszonyúbb?
+    Elektra. A gyilkosokkal egy födél alatt lakom.
+    Orestes. Mily gyilkosokkal? Mily baj az, miről beszélsz?
+    Elektra. Atyám meggyilkolóival. Rabjok vagyok.
+    Orestes. Ki az, ki ily rabszolgaságra kényszerit?
+    Elektra. Anyának mondják, ámde nem tesz anyaként.
+    Orestes. Hogyan? Ver tán, vagy táplálékod’ vonja meg?
+    Elektra. Ver is, koplaltat is, minden roszszal tetéz.
+    Orestes. Nincs, a ki védjen, a ki meggátolja őt?
+    Elektra. Oh nincs; csak egy volt, s annak hamvait hozod.
+    Orestes. Boldogtalan, mily régen szánlak tégedet!
+    Elektra. E földön egyedül te szánod sorsomat.
+    Orestes. Nekem van egyedül hasonló bánatom.
+    Elektra. Csak nem vagy tán a mi családunkkal rokon?
+    Orestes. Megmondom, ha e nők nem ellenségeink.
+    Elektra. Megbizhatsz bennök, ismerem jó lelköket.
+    Orestes. Add hát e vedret, mindent megtudsz azután.
+    Elektra. Ne vedd el ezt, az istenekre, idegen!
+    Orestes. Fogadd szavam’, nem fogsz tévedni úgy soha.
+    Elektra. Fejedre kérlek, el ne vedd e kincsemet.
+    Orestes. Add át, ha mondom.
+    Elektra. Oh jaj, én boldogtalan!
+  Hamvadtól is megfosztanak, Orestesem!
+    Orestes. Hagyd e baljóslatú szót; ok nélkül zokogsz.
+    Elektra. Ok nélkül sírok meghalt testvérem fölött?
+    Orestes. Nem illik hozzád, róla ily szót mondani.
+    Elektra. Ugy megvet hát engem méltatlant a halott?
+    Orestes. Nem vet meg senki; ám nem téged illet ez.
+
+(A hamvvederre mutat.)
+
+    Elektra. Hiszen Orestes hamvát tartják kezeim.
+    Orestes. Csak annak mondják, ámde nem Orestesé.
+    Elektra. Mily sirban nyugszik hát ő, a boldogtalan?
+    Orestes. Sehol; élők számára nem kell sirhalom.
+    Elektra. Mit mondasz, ifjú?
+    Orestes. Semmit, a mi nem igaz.
+    Elektra. Él hát Orestes?
+    Orestes. Él, ha én holt nem vagyok.
+    Elektra. Te vagy magad hát?
+    Orestes. Im tekintsd meg újjamon
+  Atyám gyürűjét, s lásd, valót beszélek-e?
+    Elektra. Oh drága szép nap!
+    Orestes. Szépnek mondom magam is.
+    Elektra. Édes hang! itt vagy?
+    Orestes. Nem kell mástól hallanod.
+    Elektra. Karomban vagy már?
+    Orestes. Bár maradnék mindig ott.
+    Elektra. Lássátok, oh polgárnők, kedves asszonyok,
+  Orestest, a ki meghalt cselből, és e csel
+  Volt épen az, mely megmenté most életét.
+    Kar. Jól látjuk őt, oh gyermek és örömkönyű
+  Csillog szemünkben e nagy boldogság felett.
+
+
+Versszak.
+
+    Elektra. Oh drága törzs
+  Dicső sarja, drága törzs sarja te!
+  Ah ime eljövél!
+  Megjöttél, láttad, megleléd szerettidet.
+    Orestes. Megjöttem; ámde várj s maradj még csendesen.
+    Elektra. Mi végre?
+    Orestes. Hallgassunk, mert meghallják oda benn szavunk.
+    Elektra. A győzhetetlen
+  Szűz Artemisre, nem
+  Remegek én e nők hiú, gondtalan
+  Csapatjától, mely ott él
+  A házban szünetlen.
+    Orestes. Gondold meg, Ares lángja nők keblében is
+  Loboghat; öntapasztalásból tudhatod.
+    Elektra. Oh jaj, jaj! Oh borzalom!
+  Megnevezéd nyomorunkat, a melynek nincs irja sehol,
+  Melyet soha sem feledünk, nem soha sem,
+  A szörnyü szenvedést.
+    Orestes. Ezt is tudom; de erről majd akkor fogunk
+  Megemlékezni, hogyha itt lesz ideje.
+
+
+Ellenversszak.
+
+    Elektra. Szünetlenül
+  Szüntelen jogom van elmondanom
+  Keserüségemet;
+  Hiszen csak most lett ajkamon szabad a szó.
+    Orestes. Ugy vélem én is; ép’ azért őrizd meg azt.
+    Elektra. Mi által?
+    Orestes. Ne szólj ott hosszasan, hol nincs helyén a szó.
+    Elektra. Ki volna képes,
+  Midőn te megjelensz,
+  Lebilincselni ajka öröm-szavát?
+  Nem várva, nem remélve
+  Jövél most elémbe.
+    Orestes. Akkor jövék, midőn az isten rendelé.
+    Elektra. Örömemet új s nagyobb
+  Örömmel tetézi szavad, mert ha valóban isteni kéz
+  Volt, mely ide visszahozott: ebben az ég
+  Szavára ismerek.
+    Orestes. Sajnálom korlátozni szíved örömét,
+  De félek, hogy erőt vesz rajtad az öröm.
+
+
+Végdal.
+
+    Elektra. Oh kedvesem, ki hosszú idő
+  Után e drága úton végre megjelentél,
+  Látva könyeim özönét, ne foszsz –
+    Orestes. Mitől ne foszszalak meg?
+    Elektra. Oh ne foszsz meg
+  A boldogságtól, látni kedves arczodat.
+    Orestes. Sőt bosszum érne mást is, ki megfosztana.
+    Elektra. Helyesled?
+    Orestes. Miért nem?
+    Elektra. Kedvesim, a soha nem remélt hir hallatára,
+  Néma ajkam
+  A fájdalom s boszú szavát magába
+  Temette. Ámde most karom között vagy,
+  Látom újra kedves arczod’,
+  Nem felejtem ezt nyomor között sem.
+    Orestes. Hagyd el most a felesleges beszédeket,
+  Ne szólj arról se, mily gonosz lelkű anyánk,
+  Arról se, mint pusztitja házunk javait
+  Aegisthos, vagy mint tékozolja, szórja szét.
+  A sok szó közt elfuthat a jó alkalom.
+  Gondoljunk most csak arra, mit e percz kiván,
+  Mutasd, nyiltan vagy elrejtőzve hol lehet
+  Megölnöm ellenségink ajkán a mosolyt.
+  Vigyázz, nehogy a házba lépve, árulód
+  Legyen vidám tekinteted anyánk előtt;
+  Sírj, sóhajts inkább, mintha szíved gyötrené
+  Az álhir hozta balsors; majd ha sikerült
+  Munkánk, örvendhetsz és kaczaghatsz szabadon.
+    Elektra. Oh drága testvér, a mi tetszésedre van,
+  Én azt leszek teendő; hisz ez örömet
+  Kezedből nyertem, nem szereztem enmagam;
+  Nem bántanálak én meg téged a világ
+  Minden kincséért; mert igy rossz szolgálatot
+  Tennék jó végzetünknek, mely most ránk derült.
+  A többit bizonyára jól tudod; hiszen
+  Hallád, hogy nincs Aegisthos itthon, és anyánk
+  Benn van a házban; attól meg ne tarts, hogy ő
+  Mosoly derűjét fogja látni arczomon;
+  Mert él szivemben még a régi gyűlölet,
+  S mióta téged látlak, meg nem szűnt szemem
+  Örömkönyűje. Mint is szünhetnék meg az,
+  Holott egy úton halva s élve láttalak
+  Megjönni? Mit nem sejték, azt tevéd velem;
+  Igen, ha élve jönne most elém atyánk,
+  Hinnék szememnek, nem vélném csodának azt.
+  Most megjövén hát, légy magad vezére ten
+  Kedved szerint; én egyedül ha állanék,
+  Egyet kivivnék e kettőből: vagy dicsőn
+  Elvesznék, vagy dicsőn megmenteném magam’.
+    Orestes. Mondám, légy csendesen; léptek közelgenek
+  A palotából.
+    Elektra (megváltozott hangon). Lépjetek be, emberek,
+  Hisz olyat hoztok, a mit ott benn senki el
+  Nem utasithat, ám örömmel sem fogad.
+
+(A nevelő jön a palotából.)
+
+    Nevelő. Oh kába dőrék, elhagyott az értelem,
+  Hogy semmit sem gondoltok éltetekre már?
+  Ugy elhomályosult hát bennetek az ész,
+  Hogy nem közel a vészhez, ám a legnagyobb
+  Veszélyben lévén, mégsem látjátok be azt?
+  Ha őrt nem álltam volna régtől fogva itt
+  E kapunál, előbb a házba jutna úgy
+  Szándékotoknak híre, mint ti magatok;
+  Csak gondosságom gátolá meg ezt a bajt.
+  Szüntessétek hát e hosszú beszédeket,
+  S örvendezéstek telhetetlen hangjait,
+  És lépjetek be, mert ilyenkor vészthozó
+  A habozás; végezzünk, itt az ideje.
+    Orestes. Mi vár reám megérkeztemkor oda benn?
+    Nevelő. Minden jó; úgy van, hogy nem ismer senki sem.
+    Orestes. Igy hát, mint látom, megvivéd holt híremet.
+    Nevelő. Tudd meg, hogy itt Hades fiának tartanak.
+    Orestes. Örvendenek fölötte? Vagy mit mondanak?
+    Nevelő. Majd megtudod, ha végezénk; mostanra jól
+  Megy minden, még az is, mi nem lesz jó nekik.
+    Elektra. Az istenekre, kedves testvér, szólj, ki ez?
+    Orestes. Nem ismered már?
+    Elektra. Még nem is képzelhetem.
+    Orestes. Tudod, kinek kezére biztál egykoron?
+    Elektra. Kinek? Mit mondasz?
+    Orestes. A ki által titkosan
+  Phokis földére külde gondod engemet.
+    Elektra. Az hát, kit egykor a sokak közt egyedül
+  Találtam hűnek én, atyám halálakor?
+    Orestes. Ő az; ne faggass több kérdéssel ezután.
+    Elektra. Oh kedves napfény! Oh te, a ki egyedül
+  Mentéd meg Agamemnon házát, megjövél?
+  Te vagy hát szabadítónk sok bajunk közül?
+  Oh drága kéz! Oh áldott szolgálat, melyet
+  Nekem lábad tett! Mért hogy hozzám oly közel
+  Levén régóta, elrejtőzél és halált
+  Adott szavad, mig tettel örömet hozál?
+  Atyám üdvözlégy! Mert atyának nézlek én;
+  Üdvözlégy! Tudd meg, hogy ez egy napon nekem
+  A leggyülöltebb voltál és legkedvesebb.
+    Nevelő. Elég is lesz már. Sok nap és sok éjszaka
+  Fordul még, oh Elektra, melyen biztosan
+  Meghallod mindazt, a mit mondandók vagyunk.
+  Nektek pedig, kik itt álltok mindketten, azt
+  Mondom, most tettre int az óra; egyedül
+  Van Klytaemnestra s nincs benn semmi férfiú.
+  Ha késtek, tudjátok meg, ezeken kivül
+  Több s bölcsebb ellenséggel fogtok küzdeni.
+    Orestes. Hosszú beszédre nincs szükségünk, Pylades,
+  Most tenni kell; lépjünk be gyorsan, mint lehet,
+  Imádva a nagy istenek ős szobrait,
+  Melyek hajlékul választák e csarnokot.
+
+(Orestes, a nevelő, Pylades és a kiséret el a palotába.)
+
+    Elektra. Oh nagy Apollo, halld meg őket kegyesen,
+  És engem is, ki bőkezűen annyiszor
+  Áldoztam azt neked, mi tőlem telhetett.
+  S most, oh Phoebos Lykeios, mint tőlem telik,
+  Ugy kérlek, térdre hullva kérlek, légy velünk,
+  E szándokunkban légy jótékony pártfogónk,
+  S mutasd meg a világnak, hogy az istenek
+  Mit szoktak adni a gonoszság díjaúl.
+
+(El a palotába.)
+
+    Kar. Ime miként rohan Ares
+  A boszuló csatára, s vérért liheg.
+  Beléptek már az ősi házfödél alá
+  A kikerülhetetlen ádáz ebek,[30]
+  A bűnt üldözők,
+  Nem tart soká, beteljesül
+  Az álom, melyet látnak lelki szemeim.
+
+
+Ellenversszak.
+
+  A palotába oson már
+  Nesztelenül a boszuló, és belép
+  Atyjának ősi gazdag hajlokába most,
+  Kezei közt halálra vont kardja van;
+  Maja gyermeke[31]
+  Vezérli őt a czél felé,
+  Cselét homálylyal födve; többé nem haboz.
+
+(Elektra gyorsan jő a palotából.)
+
+    Elektra. Oh kedves nők, tüstént bevégzik művöket
+  A férfiak; ti addig csendben várjatok.
+    Kar. Hogyan? Mit tesznek ők most?
+    Elektra. Az a hamv-vedert
+  Diszíti fel, ezek mellette állanak.
+    Kar. De te mért rohanál ki?
+    Elektra. Őrködöm, nehogy
+  Aegisthos visszatérjen észrevétlenül.
+
+
+Második versszak.
+
+    Klytaemnestra (a palotában). Oh jaj! Nincs jó barát
+  Mellettem, gyilkosokkal van a ház tele.
+    Elektra. Sikoltanak benn; nem halljátok kedvesim?
+    Kar. Hallám a nem hallásra valót, borzalom fogott el.
+    Klytaemnestra (a palotában). Ah én boldogtalan! Aegisthos merre vagy?
+    Elektra. Im újra egy sikoltás.
+    Klytaemnestra (a palotában). Oh fiam, fiam!
+  Irgalmazzál anyádnak.
+    Elektra. Nem irgalmazál
+  Te sem fiadnak, sem atyjának egykoron.
+    Kar. Oh ivadéka Pelopsnak, im a végzet
+  Karja lesujt ma reád, s kiirt, kiirt.
+    Klytaemnestra (a palotában). Oh jaj! Találtak.
+    Elektra. Kétszer vágj hozzá, ha tudsz.
+    Klytaemnestra (a palotában). Oh jaj! Másodszor.
+    Elektra. Bár Aegisthos volna ott.
+    Kar. Betelt az átok. Ki sirban feküdt, él megint.
+  Kikelnek föld alól, kik rég meghaltanak,
+  S a gyilkosok vérét kiontják.
+
+(Orestes és Pylades jönnek a palotából.)
+
+    Kar. Itt vannak már; vérrel fedé be kezüket
+  Mars áldozatja. Elnémulnak ajkaim.
+    Elektra. Hogy’ vagytok most, Orestes?
+    Orestes. Benn a házba’ jól,
+  Ha jól rendelte igy Apollo jóslata.
+    Elektra. Meghalt már a boldogtalan?
+    Orestes. Többé ne félj,
+  Hogy elbizott gőgjével meggyaláz anyád.
+
+
+Második ellenversszak.
+
+    Kar. Hallgassatok; látom, immár közelg Aegisthos.
+    Elektra. A házba vissza, gyermekek!
+    Orestes. Hol látod ez
+  Embert?
+    Elektra. Amott jő kivülről felénk, öröm
+  Gyorsitja léptét.
+    Kar. Menjetek a kapu-bolt mögé sietve,
+  Hogy sikerüljön ez is, miként előbb.
+    Orestes. Bizzál, megteszszük.
+    Elektra. Menj hát, merre menni vágysz.
+    Orestes. Elmentem immár.
+
+(El Pyladessel a palotába.)
+
+    Elektra. Itt majd én intézem el.
+    Kar. Jó lenne, ha egynehány szende szót mondanál
+  E férfiu fülébe, hogy gyanutlanul
+  Rohanjon a boszú tőrébe.
+
+(Aegisthos fellép.)
+
+    Aegisthos. Ki mondhatná meg, erre vannak phokisi
+  Vendégeink, kik, hallom, azt a hirt hozák
+  Orestesről, hogy elveszett a versenyen?
+
+(Elektrához.)
+
+  Téged kérdezlek, téged, a ki ezelőtt
+  Oly daczos voltál; téged illet mindenek
+  Fölött ez, s legjobban te adhatsz róla hirt.
+    Elektra. Tudom; miként ne tudnám? Hisz csak ismerem
+  Azok sorsát, kiket legjobban szeretek.
+    Aegisthos. Mondd meg tehát, hol vannak most a hírnökök?
+    Elektra. Benn; czélt érvén a kedves urnő oldalán.
+    Aegisthos. S halottnak mondák minden kétségen felül?
+    Elektra. Meg is mutatták, nem csak szóval hirdeték.
+    Aegisthos. Módomban lesz hát, megláthatni biztosan?
+    Elektra. Bizony módodban, s nem lesz kedves látnod azt.
+    Aegisthos. Szokásod ellen most nagy örömömre szólsz.
+    Elektra. Örvendezzél hát, ha ez örömödre van.
+    Aegisthos. Csendesség légyen, nyiljanak meg a kapuk,
+  Egész Mykene s Argos szemei előtt,
+  Hogy a ki még hiú reményét helyezé
+  E férfiúba, most halottnak látva őt,
+  Fogadja el zablámat, és ne várja, hogy
+  Sujtó karom boszúja hozza észre majd.
+    Elektra. Mi engem illet, igy történt. Mert az idő
+  Már megtanított, az erőssel tartani.
+
+(A palota ajtaja kitárul. Benn látszik Klytaemnestra holtteste lepellel
+takarva. Mellette Orestes, Pylades, a nevelő, Orestes kisérete.)
+
+    Aegisthos. Oh Zeus! az ég haragvó karját látom itt;
+  De ha gonoszság igy beszélni, hallgatok.
+  Vonjátok el egészen róla a lepelt,
+  Hogy a rokonra én is öntsem könnyemet,
+    Orestes. Vond el te; téged illet és nem engemet,
+  Meglátni és elbúcsuztatni holtadat.
+    Aegisthos. Jól mondod, megteszem tanácsodat; te meg
+  Hivd addig Klytaemnestrát a házból ide.
+    Orestes. Ime közel van hozzád, másutt ne keresd.
+    Aegisthos (fölemeli a leplet). Oh jaj! mit látok?
+    Orestes. Mit remegsz? Nem ismered?
+    Aegisthos. Oh én szegény boldogtalan! Mily emberek
+  Tőrébe estem?
+    Orestes. Nem látod régóta, hogy
+  Élőhöz szóltál, kit halottnak gondolál?
+    Aegisthos. Oh jaj; megértém szavadat; mert egyedül
+  Orestes az, ki igy szól hozzám, senki más.
+    Orestes. Kitűnő jós vagy, s oly sokáig tévedél?
+    Aegisthos. Elvesztem én boldogtalan! Engedj csupán
+  Néhány szót szólnom.
+    Elektra. Meg ne engedd azt neki,
+  Az égre, testvér, hogy szót szaporitson itt.
+  Oly ember, a kit annyi rossznak terhe nyom.
+  Mit nyer, ha pillanatra késik a halál?
+  Öld meg halasztás nélkül, és ha megöléd,
+  Add át a sírásóknak, kikhez tartozik,
+  Távol szemünktől; egyedül csak ez lehet
+  Engesztelés sok régi szenvedésemért.
+    Orestes (Aegisthoshoz). Lépj be sietve; nem szavak körül forog
+  Többé a harcz; nem, életed van szóba’ most.
+    Aegisthos. Miért vezetsz a házba? Hogyha jó e tett,
+  Mi szükség van homályra, mért nem ölsz meg itt?
+    Orestes. Ne adj parancsot; menj oda, hol egykoron
+  Meggyilkolád atyámat, halj meg ott te is.
+    Aegisthos. A sors akarja hát, hogy a Pelopidák
+  Jelen s jövő gyötrelmét lássa ez a ház.
+    Orestes. A tiedet bizonynyal; ezt megjósolom.
+    Aegisthos. Jósló müvészeted atyádtól nem nyeréd.
+    Orestes. Régóta feleselsz már, s veszteg maradánk.
+  Indulj!
+    Aegisthos Vezess hát.
+    Orestes. Nem, magad haladj elül.
+    Aegisthos. Hogy meg ne szökjem?
+    Orestes. Hogy ne tenkedved szerint
+  Halj meg; halálod keserű legyen neked.
+  Bár mindenkit nyomában érne a boszú,
+  Ki a törvény s a jog szentségét megveti!
+  Halál reá! Nem volna akkor annyi gaz.
+
+(Mind el a palotába. Az ajtó bezárul.)
+
+    Kar. Oh Atreus faja, mily sok gyötrelem ért,
+  Mig e végcsata drága szabadságod
+  Visszaszerzé valahára.
+
+
+
+
+JEGYZETEK ELEKTRÁHOZ.
+
+1. Mykénéből jól lehetett látni az 50 stadiumra fekvő Argost.
+
+2. Inachos argosi király leányát Iót szerette Zeus, s hogy a féltékeny
+Hera üldözésétől megóvja, tehénné változtatta. De Hera ez alakjában egy
+bőgölyt küldött rá, melynek fulánkjától üldöztetve az egész földet
+megfutotta, míg végre Egyptomban megpihent s egy fiút szült.
+
+3. Apollo a «farkasölő isten» melléknevét viselte, mert megszabadítá a
+sicyoniakat a pusztító farkasoktól. E melléknév alatt volt temploma
+Argos főpiaczán is, mely a Larissa lábánál terült el.
+
+4. Hera Argos és Mykene védistennője volt.
+
+5. Pelops családjának története szakadatlan vérontásból állt. Tantalus,
+megölte fiát Pelopsot, ennek fiai, Atreus és Thyestes megölték
+testvéröket Chrysippust; Atreus Theystes fiait; Aegisthos, Thyestes fia,
+Atreust, aztán Agamemnont gyilkolta meg.
+
+6. Orestesnek a delphii oraculum adott parancsot és utasítást atyja
+megboszulására.
+
+7. Hófehér fürtjeidnek ezüst ékessége nem fogja engedni, hogy ily
+tisztes aggastyánra gyanakodjanak. Mások az ékesség alatt azon koszorút
+értik, melyet a jó hirek vivői szoktak viselni.
+
+8. Phokis, éjszakra Thessaliával, keletre Boeotiával, nyugatra Dorissal,
+délre a korinthi öböllel volt határos. Itt volt a Parnassus hegye, s
+ennek tövében a delphii jósda.
+
+9. Phanoteus király, Strophios nagybátyja, ezzel halálos
+ellenségeskedésben élt; s mivel Strophios volt Orestes nevelőatyja,
+Phanoteus természetesen Aegisthossal tartott.
+
+10. A pythiai harczjátékot Apollo tiszteletére Delphiben tartották,
+melynek ősi neve Pytho volt.
+
+11. A halottak emlékére boráldozattal és hajfürtökkel áldoztak.
+
+12. Loxias, Apollo neve, kétértelmű és homályos jóslatai miatt.
+
+13. Az alvilág.
+
+14. Hermes vezeti a holtakat az alvilágba.
+
+15. Ara az átok istennője, az Erinysek állandó kisérője.
+
+16. Az Erinysek bosszúistennők, a föld és a sötétség leányai.
+
+17. Az ős attikai monda szerint Tereus, Daulia királya, kinek neje
+Prokne volt, szerelemre gyuladt nejének testvére, Philomele iránt, s
+erőszakot tevén rajta, kivágta nyelvét. Prokne ezért boszúból
+meggyilkolta fiát Ityst s feltálalta Tereusnak. Ez megismerve fia
+tagjait, boszút akart állni a testvéreken, s kivont karddal utánuk
+rohant; de Zeus Proknét fülemilévé változtatta, ki azóta mindig Itys
+nevét kiáltja; Philomelét fecskévé, Tereust pedig bankává. Azért
+panaszos mindig a fülemile és a fecske hangja, azért üldözi őket mindig
+a banka. A csalogány és a fecske, mint a tavasz első hírmondói, Zeus
+követeinek neveztetnek. – E mondát Sophokles dramatizálta _Tereus_ czímű
+elveszett tragédiájában.
+
+18. Niobe, Tantalos phrygiai király leánya, miután tizennégy gyermekét
+Apollo és Artemis megölte, fájdalmában a Sipylos ormán örökkön könnyező
+szirtté változott.
+
+19. Krisa, phokisi város, közel Delphihez. Strophios valószinűleg itt
+lakott.
+
+20. Folyó az alvilágban.
+
+21. A gyermekeket rendesen az atya után nevezik; az anya után kivált a
+törvénytelen gyermekeket szokták nevezni; azért e kifejezésben valami
+megbecstelenítő van.
+
+22. Az álmokat Helios isten elé szokták terjeszteni, hogy ez, mint az
+éji sötétség elüzője, ártalmatlanná tegye az éji álmot is.
+
+23. A boszú-istennő sok karú és sok lábú, mert gyorsan jő és
+kikerülhetetlen.
+
+24. Daczára a földerült jó reménységnek, a karnak eszébe jut Pelops
+családjának gyászos végzete, s elmondja ennek okát. Pelops ugyanis nőül
+kérte Hippodamiát, Oenomaos elisi király leányát. De a király csak annak
+akarta oda adni leánya kezét, ki őt a szekérversenyben legyőzi. Pelops
+tehát megvesztegette Myrtilost, a király kocsisát, hogy ne tegyen
+szögeket a kerekek elé. Ily módon Oenomaos szekere széthullt a
+versenyen, s Pelops elnyerte a királyleány kezét. De midőn Myrtilos
+díját követelé, a boszús Pelops a szekér aranyüléséről a tengerbe dobta
+őt. A haldokló Myrtilos Pelopsra s egész nemzetségére átkot mondott,
+mely borzasztóan teljesült.
+
+25. Az igazság istennője.
+
+26. Athent Pallas Athene építette.
+
+27. Barke libyai város, később Ptolemais. Itt különben anachronismus
+van, mert Barke sokkal később épült.
+
+28. Midőn Polynikes a hét fejedelemmel Theba ellen készült vonulni, ezek
+egyike, Amphiaraos, a jós, előre látván vesztét, vonakodott részt venni
+a hadjáratban. De Adrastos, argosi király testvérének Eriphylének, ki
+Amphiaraos neje volt, arany nyakkötőt ajándékozott, hogy férjét a
+hadjáratra bírja. Eriphylének sikerült is ez, és Amphiaraos lovastól és
+szekerestől a föld mélyébe sülyedett. A cselszövő nőt saját fia,
+Alkmæon, megölte. Amphiaraos pedig, mint jós, tovább uralkodott a föld
+alatt.
+
+29. Czélzás Klytæmnestra szivtelenségére.
+
+30. A bűnt üldöző ebek a furiák.
+
+31. Hermes, a csel istene.
+
+
+
+
+
+
+
+
+*** END OF THE PROJECT GUTENBERG EBOOK ELEKTRA ***
+
+
+    
+
+Updated editions will replace the previous one—the old editions will
+be renamed.
+
+Creating the works from print editions not protected by U.S. copyright
+law means that no one owns a United States copyright in these works,
+so the Foundation (and you!) can copy and distribute it in the United
+States without permission and without paying copyright
+royalties. Special rules, set forth in the General Terms of Use part
+of this license, apply to copying and distributing Project
+Gutenberg™ electronic works to protect the PROJECT GUTENBERG™
+concept and trademark. Project Gutenberg is a registered trademark,
+and may not be used if you charge for an eBook, except by following
+the terms of the trademark license, including paying royalties for use
+of the Project Gutenberg trademark. If you do not charge anything for
+copies of this eBook, complying with the trademark license is very
+easy. You may use this eBook for nearly any purpose such as creation
+of derivative works, reports, performances and research. Project
+Gutenberg eBooks may be modified and printed and given away—you may
+do practically ANYTHING in the United States with eBooks not protected
+by U.S. copyright law. Redistribution is subject to the trademark
+license, especially commercial redistribution.
+
+
+START: FULL LICENSE
+
+THE FULL PROJECT GUTENBERG LICENSE
+
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+www.gutenberg.org/license.
+
+Section 1. General Terms of Use and Redistributing Project Gutenberg™
+electronic works
+
+1.A. By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound
+by the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B. “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this
+agreement and help preserve free future access to Project Gutenberg™
+electronic works. See paragraph 1.E below.
+
+1.C. The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is unprotected by copyright law in the
+United States and you are located in the United States, we do not
+claim a right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting
+free access to electronic works by freely sharing Project Gutenberg™
+works in compliance with the terms of this agreement for keeping the
+Project Gutenberg™ name associated with the work. You can easily
+comply with the terms of this agreement by keeping this work in the
+same format with its attached full Project Gutenberg™ License when
+you share it without charge with others.
+
+1.D. The copyright laws of the place where you are located also govern
+what you can do with this work. Copyright laws in most countries are
+in a constant state of change. If you are outside the United States,
+check the laws of your country in addition to the terms of this
+agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work. The Foundation makes no
+representations concerning the copyright status of any work in any
+country other than the United States.
+
+1.E. Unless you have removed all references to Project Gutenberg:
+
+1.E.1. The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:
+
+    This eBook is for the use of anyone anywhere in the United States and most
+    other parts of the world at no cost and with almost no restrictions
+    whatsoever. You may copy it, give it away or re-use it under the terms
+    of the Project Gutenberg License included with this eBook or online
+    at www.gutenberg.org. If you
+    are not located in the United States, you will have to check the laws
+    of the country where you are located before using this eBook.
+  
+1.E.2. If an individual Project Gutenberg™ electronic work is
+derived from texts not protected by U.S. copyright law (does not
+contain a notice indicating that it is posted with permission of the
+copyright holder), the work can be copied and distributed to anyone in
+the United States without paying any fees or charges. If you are
+redistributing or providing access to a work with the phrase “Project
+Gutenberg” associated with or appearing on the work, you must comply
+either with the requirements of paragraphs 1.E.1 through 1.E.7 or
+obtain permission for the use of the work and the Project Gutenberg™
+trademark as set forth in paragraphs 1.E.8 or 1.E.9.
+
+1.E.3. If an individual Project Gutenberg™ electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any
+additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works
+posted with the permission of the copyright holder found at the
+beginning of this work.
+
+1.E.4. Do not unlink or detach or remove the full Project Gutenberg™
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg™.
+
+1.E.5. Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.
+
+1.E.6. You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format
+other than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ website
+(www.gutenberg.org), you must, at no additional cost, fee or expense
+to the user, provide a copy, a means of exporting a copy, or a means
+of obtaining a copy upon request, of the work in its original “Plain
+Vanilla ASCII” or other form. Any alternate format must include the
+full Project Gutenberg™ License as specified in paragraph 1.E.1.
+
+1.E.7. Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8. You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works
+provided that:
+
+    • You pay a royalty fee of 20% of the gross profits you derive from
+        the use of Project Gutenberg™ works calculated using the method
+        you already use to calculate your applicable taxes. The fee is owed
+        to the owner of the Project Gutenberg™ trademark, but he has
+        agreed to donate royalties under this paragraph to the Project
+        Gutenberg Literary Archive Foundation. Royalty payments must be paid
+        within 60 days following each date on which you prepare (or are
+        legally required to prepare) your periodic tax returns. Royalty
+        payments should be clearly marked as such and sent to the Project
+        Gutenberg Literary Archive Foundation at the address specified in
+        Section 4, “Information about donations to the Project Gutenberg
+        Literary Archive Foundation.”
+    
+    • You provide a full refund of any money paid by a user who notifies
+        you in writing (or by e-mail) within 30 days of receipt that s/he
+        does not agree to the terms of the full Project Gutenberg™
+        License. You must require such a user to return or destroy all
+        copies of the works possessed in a physical medium and discontinue
+        all use of and all access to other copies of Project Gutenberg™
+        works.
+    
+    • You provide, in accordance with paragraph 1.F.3, a full refund of
+        any money paid for a work or a replacement copy, if a defect in the
+        electronic work is discovered and reported to you within 90 days of
+        receipt of the work.
+    
+    • You comply with all other terms of this agreement for free
+        distribution of Project Gutenberg™ works.
+    
+
+1.E.9. If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from the Project Gutenberg Literary Archive Foundation, the manager of
+the Project Gutenberg™ trademark. Contact the Foundation as set
+forth in Section 3 below.
+
+1.F.
+
+1.F.1. Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+works not protected by U.S. copyright law in creating the Project
+Gutenberg™ collection. Despite these efforts, Project Gutenberg™
+electronic works, and the medium on which they may be stored, may
+contain “Defects,” such as, but not limited to, incomplete, inaccurate
+or corrupt data, transcription errors, a copyright or other
+intellectual property infringement, a defective or damaged disk or
+other medium, a computer virus, or computer codes that damage or
+cannot be read by your equipment.
+
+1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the “Right
+of Replacement or Refund” described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg™ trademark, and any other party distributing a Project
+Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.
+
+1.F.4. Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you ‘AS-IS’, WITH NO
+OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5. Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.
+
+1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in
+accordance with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.
+
+Section 2. Information about the Mission of Project Gutenberg™
+
+Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need are critical to reaching Project Gutenberg™’s
+goals and ensuring that the Project Gutenberg™ collection will
+remain freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future
+generations. To learn more about the Project Gutenberg Literary
+Archive Foundation and how your efforts and donations can help, see
+Sections 3 and 4 and the Foundation information page at www.gutenberg.org.
+
+Section 3. Information about the Project Gutenberg Literary Archive Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non-profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation’s EIN or federal tax identification
+number is 64-6221541. Contributions to the Project Gutenberg Literary
+Archive Foundation are tax deductible to the full extent permitted by
+U.S. federal laws and your state’s laws.
+
+The Foundation’s business office is located at 809 North 1500 West,
+Salt Lake City, UT 84116, (801) 596-1887. Email contact links and up
+to date contact information can be found at the Foundation’s website
+and official page at www.gutenberg.org/contact
+
+Section 4. Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg™ depends upon and cannot survive without widespread
+public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine-readable form accessible by the widest
+array of equipment including outdated equipment. Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular state
+visit www.gutenberg.org/donate.
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: www.gutenberg.org/donate.
+
+Section 5. General Information About Project Gutenberg™ electronic works
+
+Professor Michael S. Hart was the originator of the Project
+Gutenberg™ concept of a library of electronic works that could be
+freely shared with anyone. For forty years, he produced and
+distributed Project Gutenberg™ eBooks with only a loose network of
+volunteer support.
+
+Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as not protected by copyright in
+the U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.
+
+Most people start at our website which has the main PG search
+facility: www.gutenberg.org.
+
+This website includes information about Project Gutenberg™,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+

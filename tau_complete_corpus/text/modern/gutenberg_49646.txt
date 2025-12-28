@@ -1,0 +1,1582 @@
+﻿The Project Gutenberg eBook of Lauluja Anakreonilta, ynnä myös Laulu Sapfolta
+    
+This ebook is for the use of anyone anywhere in the United States and
+most other parts of the world at no cost and with almost no restrictions
+whatsoever. You may copy it, give it away or re-use it under the terms
+of the Project Gutenberg License included with this ebook or online
+at www.gutenberg.org. If you are not located in the United States,
+you will have to check the laws of the country where you are located
+before using this eBook.
+
+Title: Lauluja Anakreonilta, ynnä myös Laulu Sapfolta
+
+Author: Anacreon
+
+Translator: Erik Aleksander Ingman
+
+Release date: August 7, 2015 [eBook #49646]
+                Most recently updated: October 24, 2024
+
+Language: Finnish
+
+Credits: Produced by Jari Koivisto
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK LAULUJA ANAKREONILTA, YNNÄ MYÖS LAULU SAPFOLTA ***
+
+LAULUJA ANAKREONILTA
+
+ynnä myös Laulu Sapfolta
+
+
+Greekan kielestä suomentanut ja lyhykäisesti selittänyt
+
+ER. ALEKSANDER INGMAN
+
+
+
+HELSINGISSÄ, 1834.
+Pränttäytetty J. C. FRENCKELLIN LUONA
+POHJALAISILTA.
+
+
+
+
+
+
+      Imprimatur. _C. E. Ekelund_.
+
+
+
+
+LUKIALLE.
+
+
+Anakreon, jonka tekemiä nämät tässä Suomeksi käätyt Laulut ovat,
+oli mainio Greekalaisten Runoja. Hänen elämäkerrastansa ei ole
+meillä enään varsin täyttä tietoa. Greekalaisten kirjamiehet
+vaan mainihtevat, hänen syntyneen _Teos_ nimisessä kaupungissa
+_Jònian_[1] maalla vähässä Aasiassa, josta hän, koska Persalaiset,
+joita nyt Kyyros hallihti, alkovat hänen syntymämaatansa rasittaa,
+lähti pakoon Abdeeran kaupunkiin, Thraakian maalla. Sanotaan hänen
+sitten kappaleen aikaa eläneen Samon saarella, johonka Polykrates,
+saaren hallihteva kuningas, häntä kuhtui. Täällä, tämän kuuluisan
+kuninkaan rikkaassa hovissa, oli Anakreonilla varsin hupanen ja
+huoleton elämä; ja kehutaan hänen sulosilla lauluillansa pian niin
+miellyttäneen tämän kolkkoluontosen kuninkaan, että se rupesi hänen
+paraaksi ystäväksensä. Mutta Polykrates ei elänytkään enää kauan;
+hän kuoli pois, ja Anakreon lähti Atheenaan. Tässä mailman muinen
+kuuluisimmassa kaupungissa eli hän nyt Hipparchon turvissa, ja oli
+kaikkien mainittavana. Vaan eipä hänen olonsa täälläkään ollut
+pitkällinen. Sillä kuin Hipparchos murhattiin v. 513. e.Kr.s., muutti
+Anakreon, joka soi rauhassa elää, takasi syntymäkaupunkiinsa; josta
+hänen kuitenki vielä, koska Histiaios nosti Jòniassa kapinat Persian
+valtaa vastoin, täyty uuestansa paeta Abdeeraan. Täällä hän myös
+viimen kuoli 85. vuoen ijässä siitä, että joku Viinapuun marja, jos
+muuten tarina totta puhuu, oli tarttunut häntä kurkkuun ja hänen
+tukeuttanut.
+
+Lauluissansa on hän somaasti ja sorialla kielellä rakkauen ihanuutta
+runoillut ja myös viinan ilahuttavaa voimaa. Aika ei ole kaikkia
+hänen laulujansa meille säilyttänyt; ainuastaan vähänen osa näitä
+on enään jälellä, joista vielä vähempi tässä Lukialle suomennettuna
+annetaan.
+
+       *       *       *       *       *
+
+Sapfo, jonka lauluista ainuastaan yksi tässä nyt suomennettuna
+myös seuraa, oli varsin erinomasen laululahjansa vuoksi ehkä vielä
+Anakreoniaki mainiompi, ja eli nuin 660 vuotta e.Kr.s. Tämä vaimo
+syntyi _Mityleenen_ kaupungissa Lesbon saarella, ja on molemmissa
+vielä tallella olevissa lauluissansa varsin kauniisti runoillut omaa
+hellää ja palavaa rakkauttansa, joka hänelle viimen surmanki tuotti.
+Hän oli muka rakastunut yhteen _Faon_ nimiseen nuorukaiseen; mutta
+hyljättynä tältä suuttu hän elämähänsä, ja, nostua merenrannalla
+olevan korkian vuoren kukkulalle, heittiiksen sieltä päätään myöten
+alas aaltojen pauhinaan, lopettain niin sekä surunsa että päivänsä.
+
+Näitä lauluja kääntäissä on Suomentaja aina kokenut nouattaa
+alkukielen omaa värsylaatua. _Anakreonin_ lauluissa on mitta enimmiten
+seuraavainen:
+
+    --_ | --´ v --´ v | --' _--
+
+eli
+
+    v v | --´ v --´ v | --' _--
+
+elikkä:
+
+    v v | --´ --´ v v | --' _--
+
+Ja Sapfon värsy soipi näin:
+
+    --´ v -- -- --´ v v --´ v --´ --_
+
+    --´ v -- -- --´ v v --´ v --´ --_
+
+    --´ v -- -- --´ v v --´ v --´ --_
+
+        --´ v v --´ --_
+
+Näihin mittoihin ja myös muihinki on Suomentaja luullut kielemme
+paraite sopivan, jos me lauluissamme samati kuin Greekan ja Latinan
+kielissä tavallinen on, ainuastaan sanapolvien eli tavausten
+omaa arvoa (quantitet), se on _pituutta ja lyhyyttä_,[2] tarkoin
+noutelemme, ja tehen sitä myös sallimme että sanojen _aksenttoa_
+välistä turmellaan. Tämä aksenton turmeleminen lienee monenki
+mielestä kummallainen ja sopimaton. Mutta tätä havaitaan myös
+paraissaki Runoissamme, kuin niitä vaan lauletaan taikka niin
+luetaan kuin laulannon laatu vaatii. Se lienee siis Lauluissammeki
+sallittava; vaan ainuastaan sillä eholla, että polvien arvoa myös
+nouatetaan samalla. Suomen Runojat eivät ole tätä asiaa aina
+ahkeroineet; sillä Runoissa usein tavataan semmosiaki värsyjä,
+joissa, kuin lauletaan, sekä polvien arvo että sanojen aksentoki
+surmataan e.m. näissä värsyissä:
+
+    "Minä mies vähäväkinen
+    en ole iso iältä"
+
+Jotka laulettaissa näin kuuluvat:
+
+    Miinä|mies vä-|häävä-|kiinen
+    en o-|lee i-|soo i-|ältä.
+
+Vaan tämänkaltaset värsyt, joissa lyhyet polvet näin venytetään ja
+sanat siis melkein ouoilta kuuluvat, ovat Suomentajan mielestä aivan
+sopimattomat, ja näyttänevät toeksi, etteivät Suomalaisten Runojat
+vielä ole Runoteoissaan aina kahtoneet värsyin ulkonaista kauneutta,
+jota kuitenki valaistuneempi kansa on Runojoiltaan vaativa. --
+Selvemmältä tosiaan ja varsin komialta soivat Runoissamme semmoset
+värsyt, joissa tätä venyttämistä ei kuulla, vaikka niissä aksenttoaki
+turmellaan e.m. tämä värsy:
+
+    "Kante-|leen kä-|tensä | alle"
+
+elikkä tämä:
+
+    "Niin sa-|noopi | Lemmin-|käinen"
+
+Ja vielä selvemmältä, jos sanojen sekä aksento että arvoki samalla
+sopivat yhteen, niinkuin näissä värsyissä:
+
+    "Ihte | vanha | Väinä-möinen
+    Otti | soiton | sormil-|lensa"
+
+Sen tähen pitäisi myös Suomentajan mielestä sekä Runomme että muutki
+Laulumme, olkoot minkä luontoset tahansa, polvien _pituuen ja
+lyhyyen_ mukaan aina rakennettaman, erinomattain siitä syystä, että
+sanat näin tavoin ovat laulannolle mukavammat, ja lauluki selvemmältä
+kuuluu, koska pitkihin ja lyhyihin soitto-äänihin (_toner_)
+sovitellaan pitkä- ja lyhyt-polvisia (_lång- och kortstafviga_)
+sanoja, niin että sekä mainittu lyhyien polvien venyttäminen että
+myös pitkien lyhentäminen elikkä muuten murtaminen vältetään.
+
+Tätäpä kuitenkin ovat pian kaikki nykyset Suomalaisten Laulujen
+tekiät peräti laimin lyöneet, luullen Suomalaisen värsyn pitävän
+samati rakettaman, kuin Ruotin ja muissa Göthiläisissä kielissä
+(joista kuitenki Suomen kieli kokonaan erottaiksen) on tavallinen.
+Muuan Laulu, pantu menneenvuotisen Wiipurin Sanan Saattajan 10:nteen
+Numeroon, ja laulettava kuin: _Skön som Cyperns Herrskarinna_ lienee
+sopiva näyttämään, ettei Suomalainen värsy saa Ruotin eikä Saksan
+kielen jälkeen rakettaa, vaan että se on sovitettava laulannon
+mukaan. Mainitun Laulun nuotti on mitaltansa seuraavainen:
+
+    v v | --´ v --´ v | --´ --_
+
+    v v | --´ v --´ v | --´
+
+Jonka tähen myös se tähän mittaan sovitettu Suomalainen Laulu kuuluu
+laulettaissa näin:
+
+    Kúnní-|à òn | kasva-|vainen
+
+    Miéhuú-|dèstá | mènòs-|sà (!!) j.n.e.
+
+Mut eiköhän värsy näin tehtynä liene tosiaan hankalallainen ja
+laulullensa kankia, ja eikö vielä päällisiksiki useimmmiten siitä
+laausta, että kuin sitä lauletaan, toinen siit' ei ymmärrä pian
+mitään?
+
+Olisi nyt Suomalaisen värsyn rakennuksesta vielä paljokin sanottavaa;
+vaan tässä ei ole tila tästä aineesta enään laviammin puhua. Lopuksi
+vaan mainittakoon, että ne, jotk' eivät suostu näitä lauluja
+mittojensa jälkeen lukemaan, siitä syystä, että aksentto heiän
+mielestä silloin usein surmattaisiin, taitavat heitä lukiissansa,
+niinkuin tottuneet ovat ja niinkuin Runojamme myös luetaan, seurata
+vaan sanojen omaa aksenttoa. Ehkä lieneeki se paras; niinpä moniaat
+oppineet arvelevat Greekalaistenki ja Latinalaisten tehneen, koska
+he aksenttoa turmellen värsynsä rakensivat polvien pituuen ja
+lyhyyen mukaan, kukatiesi vaan saahaksensa näin värsyn laulannolle
+soveliaammaksi.
+
+Mitä nyt näien Laulujen Suomennukseen tulee, niin taitaneepi tarkka
+tutkia havaita siinä paljon vikoja ja puutteita. Vaan hän muistakoon
+myös, että kielemmeki vielä tahtoopi olla kankianlainen, koska sitä
+vasta nykyjään on enämmin ruvettu harjoittamaan, ja että tämä työ
+siis on ollut Suomentajalle usein vaikiata. Oppineille hän myös soisi
+vielä saaha mainita, että hän suomennuksessaan on seurannut enimmiten
+_Gumaeliuksen_ Greekalaista Tekstiä, josta hän kuitenki paikoin on
+erkaunut, nouattaaksensa toista hänen mielestänsä parempaa lukulaatua
+(läsart).
+
+Helsingissä 24:nes päivä Toukokuussa 1834.
+
+
+
+
+
+
+LAULUJA ANAKREONILTA,
+
+
+    I.
+
+    KANTELE.
+
+
+    Laulaa Atreidiloita,
+    Laulaa Kadmookin aivon;
+    Mut kielin kanteloinen
+    Raikkuupi _rakkautta_.
+    Mä kielet vasta vaihoin,
+    Mä vaihoin kanteleenki,
+    Ja soitin työt Heerakleen;
+    Mut tuopa kanteloinen
+    Vaan, raikku _rakkautta_.
+    Jääkää uroot hyvästi!
+    Mun kanteleeni kaunis
+    Vaan _rakkautta_ raikkuu.
+
+
+    II.
+
+    VAIMOT.
+
+    Härälle Luoja sarvet,
+    Hevolle potkat anto,
+    Jäneksillenpä juoksun,
+    Hampaatpa leionaille,
+    Ja uimukset kaloille,
+    Ja siivet lintusille,
+    Ja miehillenpä mielen.
+    Mut  jäikö vaimot ilman?
+    Mit' anto? _kauneuuen_;
+    Kilpein siaan sen saivat,
+    Siaanki laapuritten.
+    Voittaapa myös teräksen,
+    Tulenki vaimo kaunis.
+
+
+    III.
+
+    EROS.
+
+    Syän-yöllä, koska Arktos
+    Aleneepi, kääntyen jo
+    Käsivarrellen Boòteen,
+    Ja imehnosetki kaikki
+    Väsyneinä nukkuvatten;
+    Tuli tuo _Eròs_ ovelle
+    Koputellen salpoaini.
+    "Kuka" -- karjasin -- "koputtaa?
+    Kuka karkottaa unoisen?"
+    Ja _Eròs_ sanoo: "avaappas!
+    Mitä peljännet sä pientä?
+    Satehesta kastununna
+    Kulen yössä kuuttomassa."
+       Suretuinpa tuota kuullen,
+    Heti valkian varustin,
+    Oven aukasin, ja lapsen
+    Näjin siipiset selässä,
+    Oli käissä jous' ja viini.
+    Asetin nyt tuon takalle,
+    Käsiänsä kourissaini
+    Hivutin, ja hiuksistansa
+    Ve'en vuotavan pusersin.
+    Sepä päästyään vilusta
+    Sano: "koitetaanpa suotta
+    Tätä jousta, liekkö jännet
+    Pilauntunut sateessa."
+    Virittää ja lailla paarman
+    Mua maksahan paneepi.
+    Hypätenpä nyt hahottaa:
+    "Mua onnistak, isäntä,
+    Viaton tok' ompi jousi,
+    Kipu rintahas tuleepi."
+
+
+    IV.
+
+    EROS.
+
+    (7:mäs Laulu.)
+
+    Hyakintho-vihtasella
+    Mua löi _Eròs_ ja vaati
+    Peto juoksemaan keralla.
+    Läpi koskienpa tuimain
+    Sekä mehtien ja vuorten
+    Samosin mä nyt hikoillen;
+    Syän nousi sieramiini,
+    Ja tukahtuak jo tahdoin.
+    Tämäp' ohtahan sivauttain
+    Mua silkki-siivillänsä
+    Sano; "et sä voi rakastaa."
+
+
+    V.
+
+    UNONEN
+
+    (8.)
+
+    Minä maatessaini yöllä
+    Punasella vuotehella.
+    Ihanasti päihtynynnä,
+    Näjin unta juoksevaini
+    Viriästi varvaspäillä,
+    Remuten keralla naisten.
+    Pilojaanpa pisti poijat,
+    Ihanammat kuin _Lyaios_,
+    Sekä haukkuivatki hurjat
+    Tähen tyttöjen soreitten.
+    Ja ku suuellak jo mielin,
+    Pakenit unesta kaikki.
+    Minä jäätyäini yksin
+    Polo uotin unta taasen.
+
+
+    VI.
+
+    KYYHKYNEN,
+
+    (9.)
+
+    "Hei, kyyhky kaunukainen,
+    Sanoppa, mistä lennät,
+    Ja mistä voitehetki,
+    Lentäissä alla taivaan,
+    Sä liehoat ja seulot?
+    Mik' oot? mik' ompi työsi?"
+
+    "_Anakreon_ lähetti
+    Mun tuonne luoks' Bathyllon,
+    Tuon haltian nykyisen
+    Ja valtiaanki kaikkein.
+    Mun möi _Kytheere_ kaunis,
+    Ja laulun sai minusta.
+    Mä nyt _Anakreonilla_
+    Oon työssä tämmösessä;
+    Ja kirjojansa, näät sen,
+    Nyt toimitan nopeesti.
+    Hän irrallen lupaapi
+    Mun kohta päästävänsä;
+    Mut vaikka pääsisinki,
+    Mä orjanansa viivyn.
+    Miks' täytynee mun lentää
+    Kankailla, kallioilla,
+    Ja puissa istuskellen
+    Helpeitä syöskennellä?
+    Leip' on nyt ruoka mulla,
+    Mä saan sen hankkimatta
+    _Anakreonin_ käsistä.
+    Hän juuakseinki antaa
+    Minulle viinojansa;
+    Mut juotuain mä tanssaan,
+    Ja varjon haltiaani
+    Siipeini sulkasilla.
+    Uneenpa viimen uuvun,
+    Ja nuokun kanteleella.
+    Nyt tiiät; -- mee' jo tiehes!
+    Mun teit loruisemmaksi,
+    Kuin on harakka häiy."
+
+
+    VII.
+
+    VANHUUS.
+
+    (11.)
+
+    Sanoovat mulle naiset:
+    "Vanh' oot jo, ukko rukka.
+    He peili tässä, kahto,
+    Mitenk' on pääsi paljas,
+    Ja ohta hiuksetonna."
+
+    Lieneekö pääni paljas,
+    Ja ohta hiusta vailla,
+    En tiiä; tuonpa tiiän,
+    Mitenkä miesi vanha,
+    Vaikk' on jo hauta lässä,
+    Lyö leikit tuot' enämmin.
+
+
+    VIII.
+
+    PÄÄSKYNEN.
+
+    Mitään mä, pääsky, tehnen
+    Sinulle, huutokurkku?
+    Puutunko kimppuhuisi,
+    Ja leikkelen kynäisi?
+    Vai viilasenko kohta
+    Sinulta kielen suusta?
+    Sen Teereuski tehnyt.
+    Unesta miksi, lempo,
+    Varaalla huuollaisi
+    Bathyllon pois eroitit?
+
+
+    IX.
+
+    TAPPIO.
+
+    (16.)
+
+    Yks' tappeluita Theeben,
+    Frygein hokeepi toinen,
+    Mä vaan mun tappioita.
+    Ei ratsus voittanut mun,
+    Ei jalkaväk', ei laivat;
+    Muu joukko, uusi vallan,
+    Mun voitti -- silmäparvi.
+
+
+    X.
+
+    JUUA PITÄÄ.
+
+    (19.)
+
+    Maa multanen se juopi,
+    Ja puut ne juovat maata.
+    Ilmaa meretki juovat,
+    Ja merta päivän tähti,
+    Ja kuu se juopi päivää.
+    Miks' siis kinaatte, miehet,
+    Jos juua myös mä tahdon.
+
+
+    XI.
+
+    TYTÖLLE.
+
+    (20.)
+
+    Frygeinpä kallioille
+    Niobee kiveksi muuttui,
+    Ja pääskyläisnä lensi
+    Pandiionin tytärki.
+    Mä olla peili soisin,
+    Jott' aina kahtoisit mun,
+    Mä vaatteheisi oisin,
+    Jott' aina kantaisit mun.
+    Tahtoisin ves'kin olla,
+    Sun poskes' pestäkseni;
+    Myös voiet vielä oisin,
+    Sun, tyttö, voiellakses'.
+    Sidetpä myös nisilläs',
+    Ja koorlu kaulallaisi,
+    Ja kenkäses' mä oisin,
+    Polettaaksein sinulta.
+
+
+    XII.
+
+    PALAVUUS.
+
+    (21.)
+
+    Tuokaappa, tyttö kullat,
+    Heti täysi malja mullen.
+    Minä juomatak jätetty
+    Palavuueltain jo raukeen.
+    Tuokaa myös seppeleitä.
+    Kukat, joilla pääni käärin,
+    Heti kuivivat otalla.
+    Kovan polttehenp' _Eròtein_
+    Miten, raukka, suistanen nyt?
+
+
+    XIII.
+
+    BATHYLLOLLE.
+
+    (22.)
+
+    Tähän varjohon, Bathyllos,
+    Paneumme; puu on pulska.
+    Norian nenässä latvan
+    Vapajaapi lehti kaunis.
+    Sulo-lähdetkin lähellä
+    Lirisee, manaava luokse.
+    Kuka paikan nähtyänsä
+    Ohi käyä hentoneepi.
+
+
+    XIV.
+
+    RIKKAUS.
+
+    (23.)
+
+    Jos rikkaus rahalla
+    Estäisi kuolemasta,
+    Kokoilisinpa tuota,
+    Ja _Tuonen_ pois keraltain
+    Markoilla makseleisin.
+    Mut jos eloo imehnon
+    Ei ostoak olekkaan;
+    Miks' hukkahan mä huokaan,
+    Ja paapotan pahasti?
+    Jos viepi kuollo kuiten,
+    Mitään se kulta auttaa?
+    Mun suokohot siis juua,
+    Ja juuen jaaritella
+    Juur' veikkojen keralla,
+    Myös vuotehilla vielä
+    Hyväillä tyttölöitä.
+
+
+    XV.
+
+    NEUVO SURUA VASTAAN.
+
+    (25.)
+
+    Kuin viinat juon ja ryypin,
+    Makaavat mielalaini.
+    Mitään mureet, mitäänpä muut
+    Kujerruksetki voivat?
+    Mä kuolen, ehk' en soisikkaan.
+    Turhaanko siis harhailen?
+    Juokaamme vaan vireesti
+    Viljaa koreen _Lyaion!_
+    Viinaapa ryypätessä
+    Makaavat mielalamme.
+
+
+    XVI.
+
+    VIINA.
+
+    (26.)
+
+    Kuin päässä viina hyökyy,
+    Makaavat mielalaini.
+    Silloin rikas kuin Kroisos
+    Koreesti laulut lasken;
+    Ja maaten kiehkuroittu,
+    Mä nauran maailmalle.
+    Tapelkohot! -- mä ryypin.
+    Tuos pullo mulle, poika;
+    Toki viinapäin parempi
+    Kun on kuoliaana maata.
+
+
+    XVII.
+
+    RAKKAUS.
+
+    (30.)
+
+    _Rakkauen_ sitehillään
+    Rihmoovat Runoneiot,
+    _Kauneuellepa_ tuovat.
+    Pyytää nyt _Kythereia_
+    Poikaansak vapauttaa,
+    Lunnaatkin lateleepi.
+    Mut jos tuon vapauttaa,
+    Tuop' ei nyt pakenekkaan;
+    Orjuus on tätä mieliks'.
+
+
+    XVIII.
+
+    MORSIANTEN HENKILUKU.
+
+    (32.)
+
+    Jos lehdet puissa kaikki
+    Luettelet minulle,
+    Jos lasket aaltosetki
+    Meren lähellä laajan,
+    Kirjoittamaan sun säädän
+    Mun morsiammiaini.
+    Atheenast' paa aluksi
+    Ees kymmenkunta kaksi,
+    Viistoista muuta vielä.
+    Paneppa laumat sitte
+    Korinthon kaupungista;
+    Sep' ainian Achaia
+    Koto ollut kaunukaisten.
+    Lesbosta sitte vielä
+    Ja Jòniasta saakka,
+    Rodosta, Kaariasta
+    Paa naista kakstuhatta.
+    Noh? -- kirjotappa kaikki!
+    En Syyriasta saanut,
+    Kanòbost' en mä liion,
+    En tyttölöitä Kreetan,
+    Joss' on _Eròs_ kylissä
+    Ain' ollut kunnioittu.
+    Ja maininnenko vielä
+    Gadeiraa loitommalta,
+    Ja lndiaa ja Baktraa
+    Mun mielihauteheini?
+
+
+    XIX.
+
+    PÄÄSKYNEN.
+
+    (33.)
+
+    Sä pieni pääskyläinen
+    Kesäksi tänne ehdit,
+    Ja teet pesäisi täällä;
+    Menetpä talveks' taasen
+    Niilin ja Memfin maille.
+    Mut tuop' Eròs yhekseen
+    Pesii syämmessäini.
+    Himoista yks' jo lentää,
+    Yks' juur' munaksi joutuu,
+    Yks' käy jo kuorestansa,
+    Ja auki suinpa alti
+    Nuo pienet piiskuttaavat;
+    Mut vanhemmat _Eròtit_
+    Nyt ruokkivatten näitä;
+    Ja äsken ruokitut he
+    Jo muita taas muniivat.
+       Mik' on nyt neuvo mulla?
+    Näin monta pois keraltain
+    En suita karkotella.
+
+
+    XX.
+
+    NUORELLE TYTÖLLE.
+
+    (34.)
+
+    --' v v | --' v | --' --
+    --' v v | --' v | --' v
+    --' v v | --' v | --' v
+    v | --' v --' -- | --' v
+    --' v | --' v v | --' --
+
+    v v | --' v v | --' v
+    v | --' v --' v | --' v
+    v | --' v --' v | --' v
+
+    Tyttö äläppä pelkää
+    Ukkoa valkopäistä.
+    Voi älä, vaikka nuori
+    Kukoistelet kuin kukka,
+    Viero' muiskuja vanhan.
+       Näet seppelilöissä
+    Mitenkä kukka valkee
+    Sopii keralle ruusun.
+
+
+    XXI.
+
+    EURÒPEN KUVA.
+
+    (35.)
+
+    Tuo härkä, poikaseini,
+    Zeus totta on minusta.
+    Se viepi nyt selässä
+    Tytön Sidònalaisen;
+    Se ui merenki laajan,
+    Ja veet jakaapi sorkin.
+    Ei totta härkä toinen,
+    Pois mailta mentyänsä,
+    Ois merta tuota uinut,
+    Ellei se ainukainen.
+
+
+    XXII.
+
+    VIINALAU LU.
+
+    (39.)
+
+    Sulo-viinojen keralla
+    Heti rinta riemullisna
+    Mua laulamaan paneepi.
+       Sulo-viinojen keralla
+    Sysäyntyvät mureeni,
+    Kamalatki mielalaini
+    Raju-ilmojen rajoille.
+       Sulo-viinojen keralla
+    Ilon tuottaja _Lyaios_
+    Ihanan kevään kukille
+    Mua tanssimaan taluupi.
+       Sulo-viinojen keralla
+    Kukat kiekkuroiks' punoilen;
+    Sovitan ne pääni päälle,
+    Elämää hiljaista kiittäin.
+       Sulo-viinojen keralla,
+    Sivelöitty voitelulla,
+    Minä tyttöäin halailen,
+    Ja runoilen rakkautta.
+       Sulo-viinojen keralla,
+    Avaranki luona maljan
+    Minä mielellä hyvällä
+    Elelen poikiin parissa.
+       Sulo-viinojen keralla
+    Mun on hyöty ainukainen;
+    _Manalaan_ sen vien muassa.
+    _Manalaanp'_ on meno kaikkein.
+
+
+    XXIII.
+
+    ERÒS.
+
+    (40.)
+
+    _Eròs_ ei mettiäistä
+    Ruusuissa nukkuvaista,
+    Havannut; sormehenpa
+    Se pisti. -- Piiparoien
+    Ja huiskutellen kättä,
+    Hän juosta lennättääpi
+    Emonsa luoksi, huutain:
+    "Nyt oon hukassa, äiti,
+    Hukassa oon, ja kuolen.
+    Sormeeni siipikäärme
+    Pienoinen pisti; -- tuota
+    Sanoovat mettiseksi."
+       Mut äiti näin: "jos pisto
+    Vaivaapi mettiäisen;
+    Kuink' eivät jäytänekki
+    Ne nuolet, joita ammut?"
+
+
+    XXIV.
+
+    TETTIKS.
+
+    (43.)
+
+    Sua, _Tettiks_, autuaaksi
+    Kehun, kuin sä puun nenässä,
+    Ravinnoittu kastehelta,
+    Kuninkaan tavalla laulat.
+    Omas' ompi kaikki tyyni,
+    Mitä maassa kasvoaapi,
+    Mitä mehtäkin tarjoopi.
+    Rakastettu maaväeltä
+    Sinä oot, et heitä haittaa;
+    Ja imeeksi ihmisille
+    Suven ennustat suloisen.
+    Rakas oot Runottarille,
+    Rakas _Foibollenki_ varsin,
+    Joka soiton anto sullen.
+    Sua ei vanhuus vioita,
+    Maanlapsi laulavainen,
+    Veretön ja vaivatonki;
+    Jumaloinpa verta lienet.
+
+
+    XXV.
+
+    UNONEN.
+
+    Näjin unta juoksevaini;
+    Oli hartioilla siivet.
+    Ja _Eròspa_, jolla suuri
+    Oli paino pohkioilla.
+    Ajo jälkehen, ja sautto.
+       Mitä tuo nyt merkinneepi?
+    Tosin, että ahdistettu
+    Usioilt' _Eròtiloilta_,
+    Minä muista irti pääsen,
+    Tähän ainuaanpa puutun.
+
+
+    XXVI.
+
+    EROKSEN NUOLET.
+
+    (45.)
+
+    Tuo ukko _Afrodiiten_
+    Leemnolla ahjossansa
+    Vasamat _Eròtiloitten_
+    Teräksestä telkyttääpi.
+    Väkäset _Kytheere_ sitten
+    Metosessa karkaseepi,
+    Sivelee _Eròs_ sapelia.
+       Tähän tappelusta Aares
+    Tuli kalpo käissä kerran;
+    Sepä moitti nuolt' Eròksen.
+       Ja _Eròs_ sanoo: "Täm' ompi
+    Kova kyllä. Koitteleppas."
+    Vasaman nyt Aares otti;
+    Ja hymyili tuo Kytheere.
+       Sep' on urho uikertaapi:
+    "Kova on, he, vie se poies."
+    Ja _Eròs_ "sen saat" sanoopi.
+
+
+    XXVII.
+
+    LEMPI.
+
+    (46.)
+
+    Paha on rakastamatta;
+    Paha myös rakasna olla;
+    Pahin kaikist' ompi saaha
+    Häjyt rukkaset tytöltä.
+       Sukuhun ei suostu Lempi.
+    Äly tallataan ja taito.
+    Hopioo nyt vaan haluuvat.
+       Periköönpä hukka hurjan,
+    Jok' esin rakastu tuohon.
+    Se jo vanhimmat vihoitti,
+    Veliet se vierastutti,
+    Teki tappelutki tuimat.
+       Ja me rakkahat nyt oomme
+    Paki turmion alaiset.
+
+
+    XXVIII.
+
+    VANHASTA UKOSTA.
+
+    (47.)
+
+    Iloisna äiä kaunis!
+    Ja poika tanssiessa.
+       Se ukko, kuin hän tanssii,
+    On vanha hiuksiltansa,
+    Mut mieleltäänpä nuori.
+
+
+    XXIX.
+
+    AFRODIITEN KUVA, PIIRRETTY DISKOS NIMISEHEN KIEKKAAN.
+
+    (49.)
+
+    Kuka tuon meren kuvaili?
+    Mikä taito taivahainen
+    Lato lainehenki vielä
+    Meren aukian selälle?
+    Kuka myös meren ylitte
+    Pani kaunihin _Kytheeren_,
+    -- Oli järki sillä oiva --
+    Jumaloin emon ikuisen?
+       Sepä näytti tuon alasti;
+    Mitä silmillem' ei suonut,
+    Peto lainehilla peitti.
+    Yli aaltojen ajellen,
+    Jäkälänpä myös tavalla
+    Tyvenällä tuuvitellen
+    Vetosen se niinkuin laiva
+    Sysäjääpi vieriltänsä. --
+    Punaviin nisäin ylitte,
+    Korian alaite kaulan
+    Jakauupi aalto aina;
+    Ja _Kytheere_ vein urassa
+    Vilajaapi kuin kupukka
+    Sinikukkien keralla. --
+       Ilopiossa heiskaroivat
+    Merihyljetten selässä
+    _Himo, Lempi_ myös, hymyillen
+    Kokehille kuolevaisten. --
+    Kalojenki käyrä karja,
+    Värehillä kieriskellen,
+    Remuaa keralla _Kyyprin_;
+    Sepä uipi, suu hymyssä.
+
+
+    XXX.
+
+    RAKKAAT.
+
+    (53.)
+
+    Kupeissa poltinmerkki
+    Hevoilla ompi varma;
+    Ja miesi Partholainen
+    Jo arvataan lakista.
+       Myös rakkahatki kohta
+    Mä nähtyäin eroitan.
+    Niill' on syämmissänsä
+    Yks' poltinmerkki pieni.
+
+
+    XXXI.
+
+    VANHUUS.
+
+    (54.)
+
+    Hapeneet jo harmaantuuvat
+    Lumivalkonen on pääni.
+    Ilon aika armahainen
+    Ohi myös; hampaat hajoovat
+    Ja enään ei päivää monta
+    Ole riemullista mulla.
+       Usiasti tuota itken,
+    Manalaista muistellessa.
+    Kita Tuonen ompi julma;
+    Meno sinne kauhistaapi.
+    Yletäk ei saata sieltä,
+    Joka sinne joutu kerran.
+
+
+    XXXII.
+
+    THRAAKIAN TYTÖLLE.
+
+    (58.)
+
+    Miksi, varsa Thraakiasta,
+    Silmin karsahin katellen,
+    Vierot vimmapäin, ja luulet
+    Etten tietänek mitään?
+       Tiiä' se, koreesti sullen
+    Suitet suuhun solmiaisin;
+    Ohjatenpa myös osaisin
+    Kiistamäärät kiiättää.
+       Nyt sä liehut laitumilla
+    Kirmaellen kiirahasti.
+    Etpä vielä oo tavannut
+    Ratsumiestä oikiaa.
+
+
+    XXXIII.
+
+    (60.)
+
+    Jopa kuollo joutukoon!
+       Toisin ei tulle
+    Ero näistä mielaloista;
+       Ei ikinänsä.
+
+
+    XXXIV.
+
+    (67.)
+
+    Ei mullen rakas oo, joka kolpakon ääressä juuen
+       Riitoja virkkailee, itkuja tappelujen;
+    Mut joka _Laulannon_ sekä _Kyyprin_ lahjoja muistain,
+       Kertoilee ihanaa riemua rakkauen.
+
+
+
+
+LAULU SAPFOLTA.
+
+
+    RAKASTETULLE TYTÖLLE.
+
+    Miesi miekkoinen, jumaloinki verta
+    On se mielestäin, joka vastapäätäs
+    Istuen viipyy, ja puheesi kauniin
+                   Kuiskehen kuulee;
+
+    Tai näkee sun suus' hyminän suloisen.
+    Tuo jo rinnassain syämen sytyttää.
+    Mutta kuin silmäs' minä nään, katoopi
+                   Ääniki kohta.
+
+    Kieli kangistuupi, ja jäytäväinen,
+    Poltto suonissain mua runteleepi;
+    Silmäin peittää pimeys, ja korvatkin kohiseevat.
+    Myöspä kasvoiltain hiki kylmä käypi,
+    Vielä ruumiskin vapisee, ja ruohoo
+    Kalviamp', kuolleen näköseksi muutun,
+                  Henkiä vailla.
+
+
+
+
+SELITYKSIÄ.
+
+
+I.
+
+V. 1, 2. _Laulaa Atreidiloita, Laulaa Kadmookin aivon_. Sanalla
+_Atreidiloita_ ymmärretään tässä (niinkuin Ramler, mainio Saksalainen
+arveleepi) ei ainoastaan Atreuksen poikia, Agamemnoa ja Menelaaoa,
+vaan hänen koko sukukuntaansa. Tämän suvun urhoollisten sekä miesten
+että vaimoin kovat onnen kohtaukset tarjosivat Greekalaisten
+Runojoille yltäkyllin aineita _Tragòdioita_ eli surukuvauksia
+kirjottaissa; samati myös _Kadmon_ onnettomat lapset ja jälkeiset.
+Anakreon ilmoittaa siis yrittäneensä Tragòdioita kirjottamaan, mutta
+että luonto veti häntä runoilemaan rakkautta. -- Ramler sanoo: muuta
+ei näy näissä värsyissä ymmärrettävän.
+
+V. 5-7. _Mä kielet vasta vaihoin, Mä vaihoin kanteleenki, Ja
+soitin työt Heerakleen_. Näillä vaihetuilla kielillä ja kanteleella
+Anakreon kaiketi osottaa toista Runolaatua, nimittäin _urolaulua_;
+ja ilmoittaa nyt koettaneensa runoilla vielä Heerakleenki mainioita
+urotöitä; mutta sanoo, ettei tämäkään ainet ollut sopiva hänen
+luonnollensa, joka vaan mieli rakkautta laulaa.
+
+
+II.
+
+V. 11. _Laapuri_ -- merkihtee samaa kuin _keihäs_,
+
+
+III.
+
+Eròs (Suomeksi _rakkaus_) oli Greekalaisilla taivaallinen
+olento, rakkauen nostaja ja haltia. Tämä pienonen, ihana ja siivillä
+varustettu poika liikku ympäri mailmaa, tulisoitto käessä ja olalla
+viini (_pilkoger_) ja jousi, jolla hän ampu ihmisiä syämmeen ja
+sytytti heissä rakkauen. -- Pian samankaltasta ylenlonnollista olentoa
+myös meiänki esivanhimpamme muinen kunnioittivat, ja vanhoissa
+Runoissa sitä _Lemmeksi_ mainitaan; jonka sanan luulisin myös
+rakkautta merkihtevän. Senpä tähen olenki paikottain, koska Laulun
+luonnet sitä salli, Eròsta tällä Suomalaisella nimellä nimittänyt.
+
+V. 1-3. _Syän-yöllä, koska Arktos Aleneepi, kääntyen jo Käsivarrellen
+Boòteen_. _Arktos_ on sama tähteikkö, jota Suomalaiset _Otavaksi_
+nimittävät, ja joka puoli-yön aikana on alimmallaan. Lähellä tätä on
+toinen tähteikkö, _Boòtes_ nimeltä, jota Greekalaiset, niinkuin myös
+usein muitaki tähtiä, kuvailivat ihmisen haamulla. Tästä ymmärrämme,
+miksi Anakreon sanoo, että Arktos puoli-yön aikana kääntyy Boòteen
+käsivarrelle.
+
+
+V.
+
+V. 8. _Lyaios_ eli Bakhos oli viinojen jumala. Nimi Lyaios (Suomeksi
+_Kirvottaja_) lienee siitä alkunsa saanut, että viina kirvottaapi
+kielet.
+
+
+VI.
+
+V. 8. _Bathyllos_ oli nuori, kaunis poika, jota Anakreon erinomattain
+rakasti ja hyväili.
+
+V. 11. _Kytheere_, jota myös nimitettiin _Kythereia, Kyypris,
+Afrodiite, Kallos_, on Kauneus, oli Zeus nimisen Greekalaisten
+pää-jumalan tytär, kauneuen esikuva ja rakkauen (Eròksen) äiti.
+
+
+VIII.
+
+V. 7. _Sen Teereuski tehnyt_. Teereus, kuningas Thraakiassa, oli
+nainut Proknen, Atheenan kuninkaan Pandiionin tyttären. Tällä
+Proknella oli sisar nimeltä Filomeela, jonka Teereus väkisin makasi.
+Tehtyä sen leikkasi hän Filomeelalta kielen suusta, jottei tämä muka
+taitaisi ilmi antaa tätä häpiätyötä. Sitten salpasi hän Filomeelan
+yksinäisehen mehtämökkiin. Mutta Prokne, saatua tieon tästä, pelasti
+sisaren, piilotti sen huoneessa, ja kostaaksensa Teereuksen julmaa
+kataluutta, hakkasi _Itys_ nimiseltä pieneltä pojaltansa, jonka hän
+Teereukselle oli synnyttänyt, pään poikki, keitti ruumiista ruan
+ja syötti sen isälle. Teereuksen rualla ollessa ilmestyi Filomeela
+ja viskasi hänen eteensä pojan verisen pään. Teereus tarttu nyt
+miekkaansa, ja ajo sisaria takaa. Mutta samalla Jumalat -- niinkuin
+satu kertoo -- muuttivat Teereuksen tarhapöllöksi. Filomeela, joka
+metässä oli onnettomuuttansa päivittänyt, muuttui yörastaaksi, ja
+Prokne pääskyseksi, jolla vielä merkiksi tapetun Ityksen verestä on
+punanen pilkku leuan alla.
+
+
+IX.
+
+V. 1, 2. _Yks' tappeluita Theeben, Frygein hokeepi toinen_. Frygein
+tappeluilla ymmärretään _Troian_ sotaa. _Tròas_, jossa tämä sota
+tapahtui, oli Vähän Frygian aluetta.
+
+
+XI.
+
+V. 2. _Niobee_ oli Tantalon tytär. Satu kertoo, että Apollo ja
+Diaana (molemmat jumalalliset olennot) nuolilla olivat ampuneet
+Niobeen kaikki lapset kuoliaksi, ja että se surusta oli muuttunut
+kiveksi. Luultavasti on tämä satu saanut alkunsa siitä, että Frygian
+kallioilla seisoi kivi, joka kaukaa kahtovalle näytti itkeväisen
+vaimon.
+
+V. 4. _Pandiionin tytär_ on sama Prokne, josta jo ennen mainittiin.
+Lue VIII. v. 7.
+
+
+XII.
+
+V. 5. _seppeleitä eli kiehkuroita_. Ruot. _blomsterkransar_.
+
+
+XVI.
+
+V. 3. _Kroisos_ oli Lyydian rikkaueltansa mainio kuningas.
+
+
+XX.
+
+V. 5. _Muisku_ merkihtee samaa kuin _Suutelus_.
+
+
+XXI.
+
+_Euròpe_, jonka kuvaa Anakreon jollenkullen pojalle on tässä
+selittävinään, oli Sidonin se on Foinikian kuninkaan Ageenorin
+tytär. Tämän oli Zeus -- niinkuin satu kertoo -- miellyttänyt sillä
+keinoin, että hän muutti ihtensä härän haamuun. Euròpe, joka paimensi
+lehmiä Foinikian rannoilla, rupesi nyt tämän kanssa leikittelemään,
+ja nousi viimen sitä selkään. Mutta härkäpä lähti mereen uimaan, ja
+vei neion myötänsä aina Kreetan saarelle. Sinne tultua Zeus taas otti
+miehen muotonsa ja makasi Euròpen. Tämä synnytti lapsia, jotka sitte
+sanotaan kansoittaneen meiän hänen nimellänsä Euròpaksi mainitun
+mailman osan.
+
+
+XXIV.
+
+_Tettiks_ on lentävä sirkka, joka oleskelee puissa Aasian maalla.
+Tämän laulu oli vanhoin mielestä erinomattain kaunis.
+
+V. 13. _Foibos eli Apollo_ oli soiton ja ampukeinon jumala.
+
+
+XXVI.
+
+V. 1. -- _ukko Afrodiiten_ se on _Heefaistos_, joka oli Kytheeren eli
+Afrodiiten aviomies ja taitava Seppä. Leemnon saarella oli hänen
+pajansa, jossa hän tako muien jumaloin tarpehia.
+
+V. 8. _Aares_ oli sotien jumala.
+
+
+XXVII.
+
+_Lempi_ on tässä laulussa sama olento kuin _Eròs eli rakkaus_.
+
+V, 3, 4. _saaha rukkaset_ on Ruot. _få korgen_.
+
+
+XXX.
+
+V. 1, 2. _kupeissa poltinmerkki Hevoilla ompi varma_. Greekalaisilla
+oli tapana polttaa merkit hevosihinsa. Muutamilla oli _koppa_ niminen
+merkki kupeessa, ja näitä nimittivät _koppatias_ eli _koppaforos_.
+Toisia nimitettiin _samforos_, ja niillä oli merkkinä C. Mitä
+näillä merkeillä osottivat ei tarkoin tietä; kukatiesi hyvää taikka
+huonompaa hevoslaatua.
+
+
+
+
+Viiteselitykset:
+
+
+[1] Suomen kielessä ei ole yhtään kirjainta eli puustavia,
+jolla olisi aivan sama ääni, kuin Greekalaisten _o_:lla, ellei
+_uo_ arveltaisi tätä ääntä paraite vastaavan. Mutta koska _uo_,
+kirjotettuna vieraassa sanassa, tekisi sen usein tuntemattomaksi,
+olen sen tähen tämmösiä muukalaisia nimiä koetteeksi kirjottanut
+näin: _Jònia, Eròs, Euròpe_; jotka nimet kuiten ovat aivan niin
+luettavat kuin; _Juonia, Eruos, Euruope_, Tätä olen tehnyt mainion
+vasta kuollehen Prof. Raskin mukaan, joka kirjotaissa Lapin ja
+Suomen kieltä seuraa aivan eri tapaansa. Pitkiä ääniä aa, ee, ii,
+oo, uu, yy, ää, öö kirjottaa hän á, é, í, ó, ú, ý, æ', ö', e.m. ottá
+(ottaa); ja äänet oa (ua), ie, uo, eä, (iä), yö, joita hän nimittää
+_Forslagsselvlyde_, merkitään häneltä näin: à, è, ò, æ`, ö`, (huom:
+ei grave-merkkiä) niinkuin tòli (tuoli). Lue Lappisk Sproglære af
+_R. Rask_. Köph. 1832. Tämä keino olisi minusta varsin sopiva, ja
+kirjottajoille paljo huokiampi.
+
+[2] Polvi on _pitkä_ kahesta syystä: _luonnostaan ja positionin_
+kautta.
+
+a. _Luonnostaan_ pitkä on se polvi, jonka äänike (vokal) taikka on
+pitkä, se on, niinkuin tätä Suomen kielessä nykyjään merkitään,
+kaksinkertasena kirjotettu e.m. sanassa _paatuu_; taikka
+kaksääntäväinen (tveljudande), niinkuin sanoissa: _pouta, lyön, suora_.
+
+b. _Positionin kautta_ pitkä polvi on se, jossa kaksi taikka kolme
+konsonanttia suorastaan seuraavat äänikettä, niinkuin sanoissa
+_putki, karttu_.
+
+_Muistutetaan_: että Positio sanojen ensimmäisessä, kolmannessa,
+viiennessä, seihtemännessä j.n.e. polvessa, se on, niisä polvissa,
+joita _aksentolla_ puhutaan, aina tekee polven pitkäksi, niink.
+sanassa lóppumáttomámpiénki; vaan ei samati toisessa, neljännessä,
+kuuennessa, kaheksannessa j.n.e., jotka polvet ovat, miten sattuu,
+milloin pitkät milloin lyhyet (_ancipites_), niink. ónnéttomílle
+elikkä ón-|néttomílle.
+
+Polvi on _lyhyt_, jossa äänike on lyhyt, se on, ykskertasena
+kirjotettu, ja jossa ei liion ole positionia e.m. sanoissa _tapa,
+puheli_. Muist: Tällainen polvi ei saa koskaan pitkänä piettää,
+muuten siitä usein, varsinki laulaissa, syntyypi erehys, niink.
+sanoissa _tuli ja tuuli_, _puhun ja puuhun_, _suren ja suuren_, ja
+muissa.
+
+
+
+
+
+
+
+
+
+
+*** END OF THE PROJECT GUTENBERG EBOOK LAULUJA ANAKREONILTA, YNNÄ MYÖS LAULU SAPFOLTA ***
+
+
+    
+
+Updated editions will replace the previous one—the old editions will
+be renamed.
+
+Creating the works from print editions not protected by U.S. copyright
+law means that no one owns a United States copyright in these works,
+so the Foundation (and you!) can copy and distribute it in the United
+States without permission and without paying copyright
+royalties. Special rules, set forth in the General Terms of Use part
+of this license, apply to copying and distributing Project
+Gutenberg™ electronic works to protect the PROJECT GUTENBERG™
+concept and trademark. Project Gutenberg is a registered trademark,
+and may not be used if you charge for an eBook, except by following
+the terms of the trademark license, including paying royalties for use
+of the Project Gutenberg trademark. If you do not charge anything for
+copies of this eBook, complying with the trademark license is very
+easy. You may use this eBook for nearly any purpose such as creation
+of derivative works, reports, performances and research. Project
+Gutenberg eBooks may be modified and printed and given away—you may
+do practically ANYTHING in the United States with eBooks not protected
+by U.S. copyright law. Redistribution is subject to the trademark
+license, especially commercial redistribution.
+
+
+START: FULL LICENSE
+
+THE FULL PROJECT GUTENBERG LICENSE
+
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg™ mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase “Project
+Gutenberg”), you agree to comply with all the terms of the Full
+Project Gutenberg™ License available with this file or online at
+www.gutenberg.org/license.
+
+Section 1. General Terms of Use and Redistributing Project Gutenberg™
+electronic works
+
+1.A. By reading or using any part of this Project Gutenberg™
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement. If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or
+destroy all copies of Project Gutenberg™ electronic works in your
+possession. If you paid a fee for obtaining a copy of or access to a
+Project Gutenberg™ electronic work and you do not agree to be bound
+by the terms of this agreement, you may obtain a refund from the person
+or entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B. “Project Gutenberg” is a registered trademark. It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement. There are a few
+things that you can do with most Project Gutenberg™ electronic works
+even without complying with the full terms of this agreement. See
+paragraph 1.C below. There are a lot of things you can do with Project
+Gutenberg™ electronic works if you follow the terms of this
+agreement and help preserve free future access to Project Gutenberg™
+electronic works. See paragraph 1.E below.
+
+1.C. The Project Gutenberg Literary Archive Foundation (“the
+Foundation” or PGLAF), owns a compilation copyright in the collection
+of Project Gutenberg™ electronic works. Nearly all the individual
+works in the collection are in the public domain in the United
+States. If an individual work is unprotected by copyright law in the
+United States and you are located in the United States, we do not
+claim a right to prevent you from copying, distributing, performing,
+displaying or creating derivative works based on the work as long as
+all references to Project Gutenberg are removed. Of course, we hope
+that you will support the Project Gutenberg™ mission of promoting
+free access to electronic works by freely sharing Project Gutenberg™
+works in compliance with the terms of this agreement for keeping the
+Project Gutenberg™ name associated with the work. You can easily
+comply with the terms of this agreement by keeping this work in the
+same format with its attached full Project Gutenberg™ License when
+you share it without charge with others.
+
+1.D. The copyright laws of the place where you are located also govern
+what you can do with this work. Copyright laws in most countries are
+in a constant state of change. If you are outside the United States,
+check the laws of your country in addition to the terms of this
+agreement before downloading, copying, displaying, performing,
+distributing or creating derivative works based on this work or any
+other Project Gutenberg™ work. The Foundation makes no
+representations concerning the copyright status of any work in any
+country other than the United States.
+
+1.E. Unless you have removed all references to Project Gutenberg:
+
+1.E.1. The following sentence, with active links to, or other
+immediate access to, the full Project Gutenberg™ License must appear
+prominently whenever any copy of a Project Gutenberg™ work (any work
+on which the phrase “Project Gutenberg” appears, or with which the
+phrase “Project Gutenberg” is associated) is accessed, displayed,
+performed, viewed, copied or distributed:
+
+    This eBook is for the use of anyone anywhere in the United States and most
+    other parts of the world at no cost and with almost no restrictions
+    whatsoever. You may copy it, give it away or re-use it under the terms
+    of the Project Gutenberg License included with this eBook or online
+    at www.gutenberg.org. If you
+    are not located in the United States, you will have to check the laws
+    of the country where you are located before using this eBook.
+  
+1.E.2. If an individual Project Gutenberg™ electronic work is
+derived from texts not protected by U.S. copyright law (does not
+contain a notice indicating that it is posted with permission of the
+copyright holder), the work can be copied and distributed to anyone in
+the United States without paying any fees or charges. If you are
+redistributing or providing access to a work with the phrase “Project
+Gutenberg” associated with or appearing on the work, you must comply
+either with the requirements of paragraphs 1.E.1 through 1.E.7 or
+obtain permission for the use of the work and the Project Gutenberg™
+trademark as set forth in paragraphs 1.E.8 or 1.E.9.
+
+1.E.3. If an individual Project Gutenberg™ electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any
+additional terms imposed by the copyright holder. Additional terms
+will be linked to the Project Gutenberg™ License for all works
+posted with the permission of the copyright holder found at the
+beginning of this work.
+
+1.E.4. Do not unlink or detach or remove the full Project Gutenberg™
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg™.
+
+1.E.5. Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg™ License.
+
+1.E.6. You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including
+any word processing or hypertext form. However, if you provide access
+to or distribute copies of a Project Gutenberg™ work in a format
+other than “Plain Vanilla ASCII” or other format used in the official
+version posted on the official Project Gutenberg™ website
+(www.gutenberg.org), you must, at no additional cost, fee or expense
+to the user, provide a copy, a means of exporting a copy, or a means
+of obtaining a copy upon request, of the work in its original “Plain
+Vanilla ASCII” or other form. Any alternate format must include the
+full Project Gutenberg™ License as specified in paragraph 1.E.1.
+
+1.E.7. Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg™ works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8. You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg™ electronic works
+provided that:
+
+    • You pay a royalty fee of 20% of the gross profits you derive from
+        the use of Project Gutenberg™ works calculated using the method
+        you already use to calculate your applicable taxes. The fee is owed
+        to the owner of the Project Gutenberg™ trademark, but he has
+        agreed to donate royalties under this paragraph to the Project
+        Gutenberg Literary Archive Foundation. Royalty payments must be paid
+        within 60 days following each date on which you prepare (or are
+        legally required to prepare) your periodic tax returns. Royalty
+        payments should be clearly marked as such and sent to the Project
+        Gutenberg Literary Archive Foundation at the address specified in
+        Section 4, “Information about donations to the Project Gutenberg
+        Literary Archive Foundation.”
+    
+    • You provide a full refund of any money paid by a user who notifies
+        you in writing (or by e-mail) within 30 days of receipt that s/he
+        does not agree to the terms of the full Project Gutenberg™
+        License. You must require such a user to return or destroy all
+        copies of the works possessed in a physical medium and discontinue
+        all use of and all access to other copies of Project Gutenberg™
+        works.
+    
+    • You provide, in accordance with paragraph 1.F.3, a full refund of
+        any money paid for a work or a replacement copy, if a defect in the
+        electronic work is discovered and reported to you within 90 days of
+        receipt of the work.
+    
+    • You comply with all other terms of this agreement for free
+        distribution of Project Gutenberg™ works.
+    
+
+1.E.9. If you wish to charge a fee or distribute a Project
+Gutenberg™ electronic work or group of works on different terms than
+are set forth in this agreement, you must obtain permission in writing
+from the Project Gutenberg Literary Archive Foundation, the manager of
+the Project Gutenberg™ trademark. Contact the Foundation as set
+forth in Section 3 below.
+
+1.F.
+
+1.F.1. Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+works not protected by U.S. copyright law in creating the Project
+Gutenberg™ collection. Despite these efforts, Project Gutenberg™
+electronic works, and the medium on which they may be stored, may
+contain “Defects,” such as, but not limited to, incomplete, inaccurate
+or corrupt data, transcription errors, a copyright or other
+intellectual property infringement, a defective or damaged disk or
+other medium, a computer virus, or computer codes that damage or
+cannot be read by your equipment.
+
+1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the “Right
+of Replacement or Refund” described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg™ trademark, and any other party distributing a Project
+Gutenberg™ electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from. If you
+received the work on a physical medium, you must return the medium
+with your written explanation. The person or entity that provided you
+with the defective work may elect to provide a replacement copy in
+lieu of a refund. If you received the work electronically, the person
+or entity providing it to you may choose to give you a second
+opportunity to receive the work electronically in lieu of a refund. If
+the second copy is also defective, you may demand a refund in writing
+without further opportunities to fix the problem.
+
+1.F.4. Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you ‘AS-IS’, WITH NO
+OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5. Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of
+damages. If any disclaimer or limitation set forth in this agreement
+violates the law of the state applicable to this agreement, the
+agreement shall be interpreted to make the maximum disclaimer or
+limitation permitted by the applicable state law. The invalidity or
+unenforceability of any provision of this agreement shall not void the
+remaining provisions.
+
+1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg™ electronic works in
+accordance with this agreement, and any volunteers associated with the
+production, promotion and distribution of Project Gutenberg™
+electronic works, harmless from all liability, costs and expenses,
+including legal fees, that arise directly or indirectly from any of
+the following which you do or cause to occur: (a) distribution of this
+or any Project Gutenberg™ work, (b) alteration, modification, or
+additions or deletions to any Project Gutenberg™ work, and (c) any
+Defect you cause.
+
+Section 2. Information about the Mission of Project Gutenberg™
+
+Project Gutenberg™ is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of
+computers including obsolete, old, middle-aged and new computers. It
+exists because of the efforts of hundreds of volunteers and donations
+from people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need are critical to reaching Project Gutenberg™’s
+goals and ensuring that the Project Gutenberg™ collection will
+remain freely available for generations to come. In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg™ and future
+generations. To learn more about the Project Gutenberg Literary
+Archive Foundation and how your efforts and donations can help, see
+Sections 3 and 4 and the Foundation information page at www.gutenberg.org.
+
+Section 3. Information about the Project Gutenberg Literary Archive Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non-profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service. The Foundation’s EIN or federal tax identification
+number is 64-6221541. Contributions to the Project Gutenberg Literary
+Archive Foundation are tax deductible to the full extent permitted by
+U.S. federal laws and your state’s laws.
+
+The Foundation’s business office is located at 809 North 1500 West,
+Salt Lake City, UT 84116, (801) 596-1887. Email contact links and up
+to date contact information can be found at the Foundation’s website
+and official page at www.gutenberg.org/contact
+
+Section 4. Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg™ depends upon and cannot survive without widespread
+public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine-readable form accessible by the widest
+array of equipment including outdated equipment. Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States. Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements. We do not solicit donations in locations
+where we have not received written confirmation of compliance. To SEND
+DONATIONS or determine the status of compliance for any particular state
+visit www.gutenberg.org/donate.
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States. U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg web pages for current donation
+methods and addresses. Donations are accepted in a number of other
+ways including checks, online payments and credit card donations. To
+donate, please visit: www.gutenberg.org/donate.
+
+Section 5. General Information About Project Gutenberg™ electronic works
+
+Professor Michael S. Hart was the originator of the Project
+Gutenberg™ concept of a library of electronic works that could be
+freely shared with anyone. For forty years, he produced and
+distributed Project Gutenberg™ eBooks with only a loose network of
+volunteer support.
+
+Project Gutenberg™ eBooks are often created from several printed
+editions, all of which are confirmed as not protected by copyright in
+the U.S. unless a copyright notice is included. Thus, we do not
+necessarily keep eBooks in compliance with any particular paper
+edition.
+
+Most people start at our website which has the main PG search
+facility: www.gutenberg.org.
+
+This website includes information about Project Gutenberg™,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+
