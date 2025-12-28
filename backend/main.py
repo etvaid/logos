@@ -15,10 +15,11 @@ Author: LOGOS Project
 Version: 2.0
 """
 
+from typing import Optional, List, Dict, Any, Union
 from fastapi import FastAPI, Query, HTTPException, Body
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
-from typing import
+from typing import Optional, List, Dict, Any, Union
 
 # Translation imports
 try:
