@@ -1,10 +1,10 @@
-"""LOGOS API - Minimal Working Version"""
+"""LOGOS API - Production Version"""
 from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
 import json
 from pathlib import Path
 
-app = FastAPI(title="LOGOS API", version="1.0", description="Classical Research Platform - 662K passages")
+app = FastAPI(title="LOGOS API", version="1.0", description="Classical Research Platform")
 
 app.add_middleware(
     CORSMiddleware,
@@ -13,19 +13,18 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Load data
 BACKEND = Path(__file__).parent
-EMBEDDINGS_INDEX = {}
+PASSAGES = []
 CONNECTOME = {}
 
 @app.on_event("startup")
 async def load_data():
-    global EMBEDDINGS_INDEX, CONNECTOME
+    global PASSAGES, CONNECTOME
     idx_file = BACKEND / "embeddings_index.json"
     if idx_file.exists():
         with open(idx_file) as f:
-            EMBEDDINGS_INDEX = json.load(f)
-        print(f"✓ Loaded {len(EMBEDDINGS_INDEX)} passages")
+            PASSAGES = json.load(f)
+        print(f"✓ Loaded {len(PASSAGES)} passages")
     
     graph_file = BACKEND / "connectome_graph.json"
     if graph_file.exists():
@@ -38,36 +37,30 @@ async def root():
     return {
         "name": "LOGOS API",
         "version": "1.0",
-        "passages": len(EMBEDDINGS_INDEX),
+        "passages": len(PASSAGES),
         "status": "running"
     }
 
 @app.get("/health")
 async def health():
-    return {"status": "healthy", "passages": len(EMBEDDINGS_INDEX)}
+    return {"status": "healthy", "passages": len(PASSAGES)}
 
 @app.get("/api/passages")
 async def list_passages(limit: int = Query(20, le=100), offset: int = 0):
-    keys = list(EMBEDDINGS_INDEX.keys())[offset:offset+limit]
-    return {"passages": [{**EMBEDDINGS_INDEX[k], "id": k} for k in keys], "total": len(EMBEDDINGS_INDEX)}
+    return {"passages": PASSAGES[offset:offset+limit], "total": len(PASSAGES)}
 
 @app.get("/api/passages/{passage_id}")
 async def get_passage(passage_id: str):
-    if passage_id in EMBEDDINGS_INDEX:
-        return {**EMBEDDINGS_INDEX[passage_id], "id": passage_id}
+    for p in PASSAGES:
+        if p.get("id") == passage_id:
+            return p
     return {"error": "Not found"}
 
 @app.get("/api/search")
-async def search(q: str, limit: int = 20):
-    results = []
+async def search(q: str = Query(...), limit: int = 20):
     q_lower = q.lower()
-    for pid, data in EMBEDDINGS_INDEX.items():
-        text = data.get("text", "").lower()
-        if q_lower in text:
-            results.append({**data, "id": pid})
-            if len(results) >= limit:
-                break
-    return {"results": results, "count": len(results)}
+    results = [p for p in PASSAGES if q_lower in p.get("id", "").lower()][:limit]
+    return {"results": results, "count": len(results), "query": q}
 
 @app.get("/api/connectome")
 async def get_connectome():
@@ -76,7 +69,7 @@ async def get_connectome():
 @app.get("/api/stats")
 async def stats():
     return {
-        "passages": len(EMBEDDINGS_INDEX),
+        "passages": len(PASSAGES),
         "connectome_nodes": len(CONNECTOME.get("nodes", [])),
         "connectome_edges": len(CONNECTOME.get("edges", []))
     }
