@@ -136,67 +136,46 @@ class StyleVector:
 # =============================================================================
 
 TRANSLATORS = {
-    'alexander_pope': StyleVector(
-        values=np.array([0.92, 0.85, 0.75, 0.80, 0.55, 0.25, 0.70, 0.95, 0.45, 0.80,
-                        0.60, 0.85, 0.75, 0.50, 0.35, 0.70, 0.20, 0.65, 0.40, 0.90]),
-        name="Alexander Pope"
-    ),
-    'richmond_lattimore': StyleVector(
-        values=np.array([0.70, 0.45, 0.65, 0.60, 0.70, 0.55, 0.80, 0.60, 0.85, 0.25,
-                        0.20, 0.75, 0.60, 0.75, 0.80, 0.65, 0.60, 0.30, 0.70, 0.50]),
-        name="Richmond Lattimore"
-    ),
-    'robert_fagles': StyleVector(
-        values=np.array([0.55, 0.35, 0.55, 0.50, 0.45, 0.65, 0.75, 0.50, 0.65, 0.45,
-                        0.35, 0.70, 0.55, 0.40, 0.60, 0.55, 0.45, 0.50, 0.55, 0.35]),
-        name="Robert Fagles"
-    ),
-    'emily_wilson': StyleVector(
-        values=np.array([0.40, 0.15, 0.35, 0.35, 0.25, 0.85, 0.65, 0.40, 0.75, 0.20,
-                        0.25, 0.65, 0.45, 0.25, 0.70, 0.50, 0.50, 0.35, 0.60, 0.15]),
-        name="Emily Wilson"
-    ),
-    'robert_fitzgerald': StyleVector(
-        values=np.array([0.65, 0.40, 0.55, 0.55, 0.50, 0.60, 0.75, 0.55, 0.70, 0.35,
-                        0.30, 0.75, 0.60, 0.55, 0.65, 0.60, 0.50, 0.40, 0.60, 0.45]),
-        name="Robert Fitzgerald"
-    ),
-    'george_chapman': StyleVector(
-        values=np.array([0.85, 0.95, 0.80, 0.85, 0.70, 0.35, 0.75, 0.85, 0.50, 0.85,
-                        0.55, 0.80, 0.80, 0.60, 0.40, 0.75, 0.15, 0.70, 0.50, 0.95]),
-        name="George Chapman"
-    ),
-    'stanley_lombardo': StyleVector(
-        values=np.array([0.30, 0.10, 0.30, 0.25, 0.20, 0.90, 0.70, 0.35, 0.60, 0.35,
-                        0.40, 0.50, 0.40, 0.15, 0.45, 0.45, 0.35, 0.55, 0.45, 0.10]),
-        name="Stanley Lombardo"
-    ),
-    'anne_carson': StyleVector(
-        values=np.array([0.45, 0.20, 0.40, 0.35, 0.40, 0.75, 0.85, 0.45, 0.55, 0.50,
-                        0.45, 0.40, 0.50, 0.35, 0.55, 0.55, 0.45, 0.65, 0.70, 0.15]),
-        name="Anne Carson"
-    ),
-    'john_dryden': StyleVector(
-        values=np.array([0.90, 0.80, 0.75, 0.80, 0.60, 0.30, 0.70, 0.90, 0.50, 0.75,
-                        0.55, 0.85, 0.75, 0.55, 0.35, 0.70, 0.20, 0.65, 0.50, 0.90]),
-        name="John Dryden"
-    ),
-    'allen_mandelbaum': StyleVector(
-        values=np.array([0.70, 0.45, 0.60, 0.55, 0.50, 0.55, 0.80, 0.55, 0.70, 0.35,
-                        0.30, 0.75, 0.60, 0.55, 0.65, 0.60, 0.50, 0.40, 0.65, 0.45]),
-        name="Allen Mandelbaum"
-    ),
-    'sarah_ruden': StyleVector(
-        values=np.array([0.55, 0.30, 0.50, 0.45, 0.45, 0.65, 0.75, 0.60, 0.75, 0.25,
-                        0.25, 0.65, 0.55, 0.65, 0.70, 0.65, 0.55, 0.30, 0.60, 0.35]),
-        name="Sarah Ruden"
-    ),
-    'caroline_alexander': StyleVector(
-        values=np.array([0.60, 0.30, 0.50, 0.45, 0.55, 0.55, 0.80, 0.45, 0.80, 0.20,
-                        0.20, 0.70, 0.55, 0.60, 0.75, 0.65, 0.55, 0.25, 0.65, 0.35]),
-        name="Caroline Alexander"
-    ),
+    'dryden': StyleVector(values=np.array([0.5, 0.1, 0.43, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.9]), name="Dryden"),
+    'jowett': StyleVector(values=np.array([0.5, 0.07, 0.42, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.93]), name="Jowett"),
+    'pope': StyleVector(values=np.array([0.5, 0.29, 0.32, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.71]), name="Pope"),
+    'butler': StyleVector(values=np.array([0.5, 0.06, 0.47, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.94]), name="Butler"),
+    'goodwin': StyleVector(values=np.array([0.5, 0.05, 0.34, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.95]), name="Goodwin"),
+    'church_brodribb': StyleVector(values=np.array([0.5, 0.09, 0.36, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.91]), name="Church_Brodribb"),
+    'crawley': StyleVector(values=np.array([0.5, 0.07, 0.72, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.93]), name="Crawley"),
+    'hickie': StyleVector(values=np.array([0.5, 0.15, 0.0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.84]), name="Hickie"),
+    'dakyns': StyleVector(values=np.array([0.5, 0.09, 0.14, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.91]), name="Dakyns"),
+    'derby': StyleVector(values=np.array([0.5, 0.4, 0.24, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.6]), name="Derby"),
+    'cowper': StyleVector(values=np.array([0.5, 0.4, 0.26, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.6]), name="Cowper"),
+    'rawlinson': StyleVector(values=np.array([0.5, 0.16, 0.53, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.84]), name="Rawlinson"),
+    'roberts': StyleVector(values=np.array([0.5, 0.08, 0.48, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.92]), name="Roberts"),
+    'lang_leaf_myers': StyleVector(values=np.array([0.5, 0.61, 0.54, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.39]), name="Lang_Leaf_Myers"),
+    'macaulay': StyleVector(values=np.array([0.5, 0.21, 0.52, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.79]), name="Macaulay"),
+    'butcher_lang': StyleVector(values=np.array([0.5, 0.6, 0.46, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.4]), name="Butcher_Lang"),
+    'dryden_et_al': StyleVector(values=np.array([0.5, 0.18, 0.23, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.82]), name="Dryden_et_al"),
+    'smith': StyleVector(values=np.array([0.5, 0.06, 0.22, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.94]), name="Smith"),
+    'brookes_more': StyleVector(values=np.array([0.5, 0.18, 0.19, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.82]), name="Brookes_More"),
+    'morris': StyleVector(values=np.array([0.5, 0.53, 0.29, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.47]), name="Morris"),
+    'williams': StyleVector(values=np.array([0.5, 0.36, 0.37, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.64]), name="Williams"),
+    'heseltine': StyleVector(values=np.array([0.5, 0.07, 0.35, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.93]), name="Heseltine"),
+    'jebb': StyleVector(values=np.array([0.5, 0.89, 0.0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.11]), name="Jebb"),
+    'evelyn-white': StyleVector(values=np.array([0.5, 0.06, 0.18, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.94]), name="Evelyn-White"),
+    'adlington': StyleVector(values=np.array([0.5, 0.4, 0.92, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.6]), name="Adlington"),
+    'conington': StyleVector(values=np.array([0.5, 0.14, 0.37, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.86]), name="Conington"),
+    'leonard': StyleVector(values=np.array([0.5, 0.42, 0.67, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.58]), name="Leonard"),
+    'long': StyleVector(values=np.array([0.5, 0.75, 0.25, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.25]), name="Long"),
+    'morshead': StyleVector(values=np.array([0.5, 0.5, 0.1, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5]), name="Morshead"),
+    'storr': StyleVector(values=np.array([0.5, 0.87, 0.0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.13]), name="Storr"),
+    'murray': StyleVector(values=np.array([0.5, 0.36, 0.03, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.64]), name="Murray"),
+    'anonymous': StyleVector(values=np.array([0.5, 0.16, 0.03, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.84]), name="Anonymous"),
+    'aubrey_stewart': StyleVector(values=np.array([0.5, 0.21, 0.36, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.79]), name="Aubrey_Stewart"),
+    'kenyon': StyleVector(values=np.array([0.5, 0.07, 0.31, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.93]), name="Kenyon"),
+    'butcher': StyleVector(values=np.array([0.5, 0.07, 0.26, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.93]), name="Butcher"),
+    'ross': StyleVector(values=np.array([0.5, 0.02, 0.3, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.98]), name="Ross"),
+    'lindsay': StyleVector(values=np.array([0.5, 0.11, 0.06, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.89]), name="Lindsay"),
+    'moore': StyleVector(values=np.array([0.5, 0.14, 0.3, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.86]), name="Moore"),
 }
+
 
 
 def get_translator(name: str) -> Optional[StyleVector]:
