@@ -375,14 +375,28 @@ async def get_stats():
 
 @app.get("/api/style/translators")
 async def list_translators():
-    """List all available translator profiles."""
-    return {
-        "count": len(TRANSLATORS),
-        "translators": [
-            {"key": k, "name": v.name}
-            for k, v in TRANSLATORS.items()
-        ]
-    }
+    """List all available translator profiles (database + hardcoded)."""
+    translators = [{"key": k, "name": v.name, "source": "hardcoded"} for k, v in TRANSLATORS.items()]
+    
+    # Add database translators
+    if HAS_DB and os.environ.get("DATABASE_URL"):
+        try:
+            conn = psycopg2.connect(os.environ["DATABASE_URL"], cursor_factory=RealDictCursor)
+            cur = conn.cursor()
+            cur.execute("SELECT translator_name, era, n_translations, total_words_analyzed FROM translator_profiles ORDER BY n_translations DESC")
+            rows = cur.fetchall()
+            cur.close()
+            conn.close()
+            for r in rows:
+                if not any(t["name"].lower() == r["translator_name"].lower() for t in translators):
+                    translators.append({"key": r["translator_name"].lower().replace(" ","_"), 
+                                        "name": r["translator_name"], "source": "computed",
+                                        "n_translations": r["n_translations"], 
+                                        "words_analyzed": r["total_words_analyzed"]})
+        except:
+            pass
+    
+    return {"count": len(translators), "translators": translators}
 
 
 @app.get("/api/style/translator/{name}")
