@@ -27,7 +27,6 @@ try:
     HAS_ANTHROPIC = True
 except ImportError:
     HAS_ANTHROPIC = False
- List, Dict, Optional, Tuple
 import json
 import numpy as np
 from pathlib import Path
