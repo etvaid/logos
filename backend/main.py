@@ -24,7 +24,25 @@ import numpy as np
 from pathlib import Path
 from enum import Enum
 from dataclasses import dataclass, field
+import os
 
+# Database support for computed profiles
+try:
+    import psycopg2
+    from psycopg2.extras import RealDictCursor
+    HAS_DB = True
+except ImportError:
+    HAS_DB = False
+
+import os
+
+# Database support
+try:
+    import psycopg2
+    from psycopg2.extras import RealDictCursor
+    HAS_DB = True
+except ImportError:
+    HAS_DB = False
 
 # =============================================================================
 # APP CONFIGURATION
@@ -182,8 +200,30 @@ TRANSLATORS = {
 
 
 def get_translator(name: str) -> Optional[StyleVector]:
-    """Get translator by name."""
+    """Get translator - database first, then hardcoded."""
     key = name.lower().replace(' ', '_').replace('.', '')
+    
+    # Try database first (computed by MING LOGOS)
+    if HAS_DB and os.environ.get("DATABASE_URL"):
+        try:
+            conn = psycopg2.connect(os.environ["DATABASE_URL"], cursor_factory=RealDictCursor)
+            cur = conn.cursor()
+            cur.execute("""
+                SELECT translator_name, style_vector FROM translator_profiles 
+                WHERE LOWER(REPLACE(translator_name, ' ', '_')) = %s
+                   OR LOWER(translator_name) = %s
+            """, (key, name.lower()))
+            row = cur.fetchone()
+            cur.close()
+            conn.close()
+            if row and row['style_vector']:
+                dims = row['style_vector']
+                values = [dims.get(d.name, 0.5) for d in StyleDimension]
+                return StyleVector(values=np.array(values), name=row['translator_name'])
+        except:
+            pass
+    
+    # Fallback to hardcoded
     if key in TRANSLATORS:
         return TRANSLATORS[key]
     for k, v in TRANSLATORS.items():
