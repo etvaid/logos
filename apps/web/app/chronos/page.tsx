@@ -1,51 +1,105 @@
 'use client';
 
-import { useState } from 'react';
-import Link from 'next/link';
+import React, { useState, useEffect } from 'react';
+import { Search, Loader, AlertCircle } from 'lucide-react';
 
-const eras = ['archaic', 'classical', 'hellenistic', 'imperial', 'late_antique'];
-const eraColors: Record<string, string> = { archaic: '#D97706', classical: '#F59E0B', hellenistic: '#3B82F6', imperial: '#DC2626', late_antique: '#7C3AED' };
-
-export default function ChronosPage() {
+export default function Chronos() {
   const [word, setWord] = useState('');
-  const [result, setResult] = useState<any>(null);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [data, setData] = useState(null);
+  const [selectedEra, setSelectedEra] = useState('Classical');
+  const eras = ['Archaic', 'Classical', 'Hellenistic', 'Roman', 'Late Antique', 'Byzantine'];
+  const eraColors = {
+    'Archaic': '#8B4513',
+    'Classical': '#C9A962',
+    'Hellenistic': '#4A90A4',
+    'Roman': '#9B2335',
+    'Late Antique': '#6B4C8A',
+    'Byzantine': '#2E5A3E'
+  };
 
-  const analyze = async () => {
-    if (!word.trim()) return;
-    setLoading(true);
-    try { const res = await fetch(`/api/words/${encodeURIComponent(word)}`); const data = await res.json(); setResult(data.error ? null : data); } catch (e) { setResult(null); }
-    setLoading(false);
+  useEffect(() => {
+    if (word) {
+      setLoading(true);
+      fetch(`/api/meaning-drift?word=${word}`)
+        .then(response => response.json())
+        .then(data => {
+          setData(data);
+          setError('');
+        })
+        .catch(error => {
+          setError('Failed to fetch data');
+          setData(null);
+        })
+        .finally(() => setLoading(false));
+    }
+  }, [word]);
+
+  const handleWordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setWord(e.target.value);
+  };
+
+  const handleEraChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedEra(e.target.value);
   };
 
   return (
-    <div style={{ backgroundColor: '#0D0D0F', minHeight: '100vh', color: '#F5F4F2' }}>
-      <nav style={{ backgroundColor: '#1E1E24', padding: '16px 24px', borderBottom: '1px solid rgba(201,162,39,0.2)' }}>
-        <Link href="/" style={{ textDecoration: 'none' }}><span style={{ color: '#C9A227', fontSize: 24, fontWeight: 'bold' }}>🏛️ LOGOS</span></Link>
-      </nav>
-      <div style={{ maxWidth: 900, margin: '0 auto', padding: 24 }}>
-        <h1 style={{ color: '#C9A227', marginBottom: 24 }}>⏰ CHRONOS - Word Evolution</h1>
-        <div style={{ display: 'flex', gap: 8, marginBottom: 32 }}>
-          <input type="text" value={word} onChange={(e) => setWord(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && analyze()} placeholder="Enter a word..." style={{ flex: 1, padding: '12px 16px', backgroundColor: '#1E1E24', border: '1px solid #4B5563', borderRadius: 8, color: '#F5F4F2', outline: 'none', fontSize: 18 }} />
-          <button onClick={analyze} style={{ padding: '12px 24px', backgroundColor: '#C9A227', color: '#0D0D0F', border: 'none', borderRadius: 8, cursor: 'pointer', fontWeight: 'bold' }}>Track</button>
-        </div>
-        {loading && <div style={{ color: '#C9A227' }}>Analyzing...</div>}
-        {!loading && result && (
-          <div style={{ backgroundColor: '#1E1E24', borderRadius: 12, padding: 24 }}>
-            <h2 style={{ color: '#C9A227', marginBottom: 24 }}>Evolution of "{result.lemma}"</h2>
-            <div style={{ position: 'relative', paddingLeft: 50 }}>
-              <div style={{ position: 'absolute', left: 20, top: 0, bottom: 0, width: 3, background: 'linear-gradient(to bottom, #D97706, #F59E0B, #3B82F6, #DC2626, #7C3AED)' }} />
-              {eras.map((era, i) => (
-                <div key={era} style={{ marginBottom: 32 }}>
-                  <div style={{ position: 'absolute', left: 12, width: 20, height: 20, borderRadius: '50%', backgroundColor: eraColors[era] }} />
-                  <h3 style={{ color: eraColors[era], textTransform: 'capitalize', marginBottom: 8 }}>{era.replace('_', ' ')}</h3>
-                  <p style={{ color: '#9CA3AF' }}>{result.definition_short}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+    <div style={{ backgroundColor: '#0D0D0F', color: '#F5F3EF', padding: '20px', minHeight: '100vh' }}>
+      <h1 style={{ color: '#C9A962', marginBottom: '20px' }}>Chronos: Word Evolution</h1>
+      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
+        <input
+          type="text"
+          value={word}
+          onChange={handleWordChange}
+          placeholder="Enter a word..."
+          style={{
+            padding: '10px',
+            borderRadius: '5px',
+            marginRight: '10px',
+            background: 'rgba(30,30,36,0.8)',
+            color: '#F5F3EF',
+            border: '1px solid rgba(201,169,98,0.15)'
+          }}
+        />
+        <Search color="#C9A962" />
       </div>
+      <div style={{ marginBottom: '20px' }}>
+        <select onChange={handleEraChange} value={selectedEra} style={{
+          padding: '10px',
+          borderRadius: '5px',
+          background: 'rgba(30,30,36,0.8)',
+          color: '#F5F3EF',
+          border: '1px solid rgba(201,169,98,0.15)'
+        }}>
+          {eras.map(era => (
+            <option key={era} value={era} style={{ color: eraColors[era] }}>{era}</option>
+          ))}
+        </select>
+      </div>
+      {loading ? (
+        <Loader style={{ color: '#C9A962' }} />
+      ) : error ? (
+        <div style={{ color: '#DC2626', display: 'flex', alignItems: 'center' }}>
+          <AlertCircle style={{ marginRight: '5px' }} />
+          {error}
+        </div>
+      ) : data ? (
+        <div>
+          <h2 style={{ color: eraColors[selectedEra] }}>Meaning Drift ({selectedEra} Era)</h2>
+          <p style={{ color: 'rgba(245,243,239,0.7)' }}>{data.meaningDrift[selectedEra]}</p>
+          <h3 style={{ color: '#E8D5A3' }}>Example Quotes:</h3>
+          <ul>
+            {data.quotes[selectedEra].map((quote: string, index: number) => (
+              <li key={index} style={{ marginBottom: '10px', background: 'rgba(30,30,36,0.8)', padding: '10px', borderRadius: '5px', border: '1px solid rgba(201,169,98,0.15)', boxShadow: `0px 4px 6px ${eraColors[selectedEra]}` }}>
+                {quote}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : (
+        <p style={{ color: 'rgba(245,243,239,0.7)' }}>Enter a word to see its evolution.</p>
+      )}
     </div>
   );
 }

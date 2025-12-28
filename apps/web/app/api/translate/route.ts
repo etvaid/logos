@@ -1,14 +1,46 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 
-export async function POST(request: NextRequest) {
+type TranslationRequest = {
+  text: string;
+  sourceLanguage: 'greek' | 'latin';
+  targetLanguage: 'greek' | 'latin';
+};
+
+type TranslationResponse = {
+  originalText: string;
+  translatedText: string;
+  sourceLanguage: 'greek' | 'latin';
+  targetLanguage: 'greek' | 'latin';
+};
+
+export async function POST(request: Request) {
   try {
-    const body = await request.json();
-    const { text, source_lang, style } = body;
-    if (!text) return NextResponse.json({ error: 'Text required' }, { status: 400 });
-    const words = text.split(/\s+/).filter((w: string) => w);
-    const breakdown = words.slice(0, 100).map((word: string) => ({ word, lemma: word.toLowerCase(), parsing: 'form', meaning: '[definition]' }));
-    return NextResponse.json({ translation: '[Translation - connect Claude API for real translation]', breakdown, wordCount: words.length });
+    const body: TranslationRequest = await request.json();
+    const { text, sourceLanguage, targetLanguage } = body;
+
+    if (!text || !sourceLanguage || !targetLanguage) {
+      return NextResponse.json({ error: 'Invalid input' }, { status: 400 });
+    }
+
+    if (sourceLanguage === targetLanguage) {
+      return NextResponse.json({ error: 'Source and target languages must be different' }, { status: 400 });
+    }
+
+    // Mock translation logic
+    const translatedText =
+      sourceLanguage === 'greek'
+        ? text.replace(/a/g, 'α').replace(/b/g, 'β')
+        : text.replace(/alpha/g, 'a').replace(/beta/g, 'b');
+
+    const response: TranslationResponse = {
+      originalText: text,
+      translatedText,
+      sourceLanguage,
+      targetLanguage
+    };
+
+    return NextResponse.json(response, { status: 200 });
   } catch (error) {
-    return NextResponse.json({ error: 'Translation failed' }, { status: 500 });
+    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
   }
 }

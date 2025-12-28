@@ -1,58 +1,147 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { useParams } from 'next/navigation';
+import React, { useState, useEffect } from 'react';
+import { Search, BookOpen, Bookmark, Loader, AlertCircle } from 'lucide-react';
 
-export default function WorkReaderPage() {
-  const params = useParams();
-  const [work, setWork] = useState<any>(null);
+export default function FullWorkReader() {
+  const [text, setText] = useState<string[]>([]);
+  const [translation, setTranslation] = useState<string[]>([]);
+  const [showTranslation, setShowTranslation] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [showTranslation, setShowTranslation] = useState(true);
-  const [selectedWord, setSelectedWord] = useState<string | null>(null);
-  const [wordInfo, setWordInfo] = useState<any>(null);
+  const [error, setError] = useState(false);
+  const [morphology, setMorphology] = useState<string | null>(null);
 
-  useEffect(() => { if (params.workId) fetch(`/api/works/${params.workId}/full`).then(r => r.json()).then(d => { setWork(d); setLoading(false); }).catch(() => setLoading(false)); }, [params.workId]);
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch('/api/full-work');
+        const data = await response.json();
+        setText(data.text);
+        setTranslation(data.translation);
+        setLoading(false);
+      } catch (error) {
+        setError(true);
+        setLoading(false);
+      }
+    }
+    fetchData();
+  }, []);
 
   const handleWordClick = async (word: string) => {
-    const cleanWord = word.replace(/[.,;:!?'"()\[\]]/g, '');
-    setSelectedWord(cleanWord);
-    try { const res = await fetch(`/api/words/${encodeURIComponent(cleanWord)}`); const data = await res.json(); setWordInfo(data); } catch (e) { setWordInfo(null); }
+    try {
+      const response = await fetch(`/api/morphology?word=${word}`);
+      const data = await response.json();
+      setMorphology(data.morphology);
+    } catch (error) {
+      setMorphology('Error fetching morphology');
+    }
   };
 
-  const renderText = (text: string) => {
-    if (!text) return null;
-    return text.split(/\s+/).map((word, i) => (
-      <span key={i} onClick={() => handleWordClick(word)} style={{ cursor: 'pointer', marginRight: 4 }} onMouseEnter={(e) => (e.target as HTMLElement).style.color = '#C9A227'} onMouseLeave={(e) => (e.target as HTMLElement).style.color = '#F5F4F2'}>{word} </span>
-    ));
-  };
+  const toggleTranslation = () => setShowTranslation(!showTranslation);
 
-  if (loading) return <div style={{ backgroundColor: '#0D0D0F', minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#C9A227' }}>Loading...</div>;
-  if (!work) return <div style={{ backgroundColor: '#0D0D0F', minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#EF4444' }}>Work not found</div>;
+  const bookmark = () => alert('Bookmarked!');
+
+  if (loading) {
+    return (
+      <div style={{ color: '#F5F3EF', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+        <Loader style={{ color: '#C9A962' }} />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div style={{ color: '#DC2626', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+        <AlertCircle />
+        <span style={{ marginLeft: '10px' }}>Failed to load text data</span>
+      </div>
+    );
+  }
 
   return (
-    <div style={{ backgroundColor: '#0D0D0F', minHeight: '100vh', color: '#F5F4F2' }}>
-      <nav style={{ backgroundColor: '#1E1E24', padding: '16px 24px', borderBottom: '1px solid rgba(201,162,39,0.2)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <Link href="/" style={{ textDecoration: 'none' }}><span style={{ color: '#C9A227', fontSize: 24, fontWeight: 'bold' }}>🏛️ LOGOS</span></Link>
-        <button onClick={() => setShowTranslation(!showTranslation)} style={{ padding: '8px 16px', backgroundColor: showTranslation ? '#C9A227' : '#1E1E24', color: showTranslation ? '#0D0D0F' : '#9CA3AF', border: '1px solid #4B5563', borderRadius: 4, cursor: 'pointer' }}>{showTranslation ? 'Hide' : 'Show'} Translation</button>
-      </nav>
-      <div style={{ display: 'flex' }}>
-        <div style={{ flex: 1, padding: 24 }}>
-          <h1 style={{ color: '#C9A227', marginBottom: 8 }}>{work.title}</h1>
-          <p style={{ color: '#9CA3AF', marginBottom: 24 }}>{work.author_name}</p>
-          <div style={{ display: 'grid', gridTemplateColumns: showTranslation ? '1fr 1fr' : '1fr', gap: 32 }}>
-            <div><h3 style={{ color: '#6B7280', marginBottom: 16, fontSize: 14 }}>ORIGINAL</h3><div style={{ fontSize: 20, lineHeight: 1.8 }}>{renderText(work.text)}</div></div>
-            {showTranslation && work.translation && (<div><h3 style={{ color: '#6B7280', marginBottom: 16, fontSize: 14 }}>TRANSLATION</h3><div style={{ fontSize: 16, lineHeight: 1.8, color: '#9CA3AF' }}>{work.translation}</div></div>)}
+    <div style={{ backgroundColor: '#0D0D0F', padding: '20px', color: '#F5F3EF' }}>
+      <button
+        onClick={bookmark}
+        style={{
+          background: 'linear-gradient(135deg, #C9A962, #E8D5A3)',
+          color: '#0D0D0F',
+          border: 'none',
+          padding: '10px 20px',
+          borderRadius: '5px',
+          cursor: 'pointer',
+          marginBottom: '10px'
+        }}
+      >
+        <Bookmark /> Bookmark
+      </button>
+      <button
+        onClick={toggleTranslation}
+        style={{
+          background: 'linear-gradient(135deg, #C9A962, #E8D5A3)',
+          color: '#0D0D0F',
+          border: 'none',
+          padding: '10px 20px',
+          borderRadius: '5px',
+          cursor: 'pointer',
+          marginBottom: '10px',
+          marginLeft: '10px'
+        }}
+      >
+        <BookOpen /> {showTranslation ? 'Hide' : 'Show'} Translation
+      </button>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+        {text.map((line, index) => (
+          <div
+            key={index}
+            style={{
+              background: 'rgba(30,30,36,0.8)',
+              border: '1px solid rgba(201,169,98,0.15)',
+              borderRadius: '5px',
+              padding: '10px',
+              backdropFilter: 'blur(10px)',
+              boxShadow: '0 4px 8px 0 rgba(201,169,98,0.3)',
+              display: 'flex',
+              justifyContent: 'space-between'
+            }}
+          >
+            <span style={{ color: '#C9A962', marginRight: '10px' }}>{index + 1}</span>
+            <span>
+              {line.split(' ').map((word, wordIndex) => (
+                <span
+                  key={wordIndex}
+                  onClick={() => handleWordClick(word)}
+                  style={{ cursor: 'pointer', color: '#F5F3EF', marginRight: '5px' }}
+                >
+                  {word}
+                </span>
+              ))}
+            </span>
+            {showTranslation && (
+              <span style={{ color: 'rgba(245,243,239,0.7)', marginLeft: '10px' }}>
+                {translation[index]}
+              </span>
+            )}
           </div>
-        </div>
-        {selectedWord && (
-          <div style={{ width: 300, backgroundColor: '#1E1E24', padding: 24, borderLeft: '1px solid rgba(201,162,39,0.2)' }}>
-            <h3 style={{ color: '#C9A227', marginBottom: 16 }}>{selectedWord}</h3>
-            {wordInfo ? (<><p style={{ color: '#9CA3AF', marginBottom: 8 }}>Lemma: {wordInfo.lemma}</p><p style={{ color: '#F5F4F2' }}>{wordInfo.definition_short}</p></>) : (<p style={{ color: '#6B7280' }}>No definition found</p>)}
-            <button onClick={() => setSelectedWord(null)} style={{ marginTop: 16, padding: '8px 16px', backgroundColor: '#0D0D0F', color: '#9CA3AF', border: '1px solid #4B5563', borderRadius: 4, cursor: 'pointer' }}>Close</button>
-          </div>
-        )}
+        ))}
       </div>
+      {morphology && (
+        <div
+          style={{
+            position: 'fixed',
+            bottom: '20px',
+            left: '20px',
+            background: 'rgba(30,30,36,0.8)',
+            border: '1px solid rgba(201,169,98,0.15)',
+            borderRadius: '5px',
+            padding: '10px',
+            backdropFilter: 'blur(10px)',
+            boxShadow: '0 4px 8px 0 rgba(201,169,98,0.3)',
+            color: '#F5F3EF'
+          }}
+        >
+          <strong>Morphology:</strong> {morphology}
+        </div>
+      )}
     </div>
   );
 }

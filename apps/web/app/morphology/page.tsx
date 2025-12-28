@@ -1,94 +1,111 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import React, { useEffect, useState } from 'react';
+import { Loader, AlertCircle } from 'lucide-react';
 
-export default function MorphologyPage() {
-  const [word, setWord] = useState('');
-  const [analysis, setAnalysis] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+export default function Morphology() {
+    const [word, setWord] = useState('');
+    const [data, setData] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setWord(event.target.value);
-  };
+    const parseWord = async () => {
+        if (!word) return;
+        setLoading(true);
+        setError(null);
+        
+        try {
+            const response = await fetch(`/api/parse?word=${word}`);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const result = await response.json();
+            setData(result);
+        } catch (err) {
+            setError(err.message);
+        } finally {
+            setLoading(false);
+        }
+    };
 
-  const handleParse = async () => {
-    setLoading(true);
-    setError(null);
-    setAnalysis(null);
+    useEffect(() => {
+        if (data) {
+            console.log(data);
+        }
+    }, [data]);
 
-    try {
-      const response = await fetch(`/api/morphology?word=${word}`);
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      const data = await response.json();
-      setAnalysis(data);
-    } catch (e: any) {
-      setError(e.message);
-    } finally {
-      setLoading(false);
-    }
-  };
+    const handleInputChange = (e) => {
+        setWord(e.target.value);
+    };
 
-  return (
-    <div style={{ backgroundColor: '#0D0D0F', color: '#F5F4F2', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      {/* Nav Bar */}
-      <nav style={{ backgroundColor: '#1E1E24', padding: '16px 24px', borderBottom: '1px solid rgba(201,162,39,0.2)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <Link href="/" style={{ color: '#C9A227', fontWeight: 'bold', fontSize: '1.2em', textDecoration: 'none' }}>
-          LOGOS
-        </Link>
-        <div>
-          <Link href="/" style={{ color: '#9CA3AF', textDecoration: 'none', margin: '0 12px', transition: 'all 0.2s' }}>
-            Home
-          </Link>
-          <Link href="/texts" style={{ color: '#9CA3AF', textDecoration: 'none', margin: '0 12px', transition: 'all 0.2s' }}>
-            Texts
-          </Link>
-          <Link href="/morphology" style={{ color: '#9CA3AF', textDecoration: 'none', margin: '0 12px', transition: 'all 0.2s' }}>
-            Morphology
-          </Link>
+    const handleParseClick = () => {
+        parseWord();
+    };
+
+    return (
+        <div style={{ backgroundColor: '#0D0D0F', color: '#F5F3EF', padding: '20px', minHeight: '100vh' }}>
+            <h1 style={{ fontFamily: 'Cormorant Garamond', fontSize: '2em', textAlign: 'center' }}>Morphology</h1>
+            <div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+                <input
+                    type="text"
+                    value={word}
+                    onChange={handleInputChange}
+                    placeholder="Enter a word"
+                    style={{
+                        padding: '10px',
+                        borderRadius: '5px',
+                        border: '1px solid #C9A962',
+                        backgroundColor: '#1E1E24',
+                        color: '#F5F3EF',
+                        fontFamily: 'Crimson Pro',
+                        width: '300px',
+                    }}
+                />
+                <button
+                    onClick={handleParseClick}
+                    style={{
+                        padding: '10px 15px',
+                        marginLeft: '10px',
+                        backgroundColor: '#C9A962',
+                        color: '#0D0D0F',
+                        border: 'none',
+                        borderRadius: '5px',
+                        cursor: 'pointer',
+                        fontFamily: 'Crimson Pro',
+                    }}
+                >
+                    Parse
+                </button>
+            </div>
+
+            {loading && (
+                <div style={{ textAlign: 'center', margin: '20px 0' }}>
+                    <Loader style={{ color: '#C9A962', fontSize: '40px' }} />
+                </div>
+            )}
+
+            {error && (
+                <div style={{ color: '#DC2626', textAlign: 'center', margin: '20px 0' }}>
+                    <AlertCircle style={{ verticalAlign: 'middle' }} /> {error}
+                </div>
+            )}
+
+            {data && (
+                <div style={{ marginTop: '20px', backgroundColor: '#1E1E24', padding: '20px', borderRadius: '5px' }}>
+                    <h2 style={{ fontFamily: 'Cormorant Garamond', fontSize: '1.5em' }}>Parsed Data</h2>
+                    <div style={{ fontFamily: 'Crimson Pro' }}>
+                        <h3 style={{ color: '#C9A962' }}>Word: <span style={{ color: '#F5F3EF' }}>{data.word}</span></h3>
+                        <h4 style={{ color: '#C9A962' }}>Paradigms:</h4>
+                        <ul style={{ listStyleType: 'none', padding: '0' }}>
+                            {data.paradigms.map((paradigm, index) => (
+                                <li key={index} style={{ margin: '5px 0' }}>
+                                    <span style={{ color: '#3B82F6', cursor: 'pointer' }} onClick={() => alert(`Clicked on ${paradigm}`)}>{paradigm}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            )}
         </div>
-      </nav>
-
-      {/* Main Content */}
-      <main style={{ padding: '24px', maxWidth: '960px', margin: '0 auto', width: '100%' }}>
-        <h1 style={{ color: '#F5F4F2', marginBottom: '24px' }}>Morphology Parser</h1>
-
-        {/* Input and Button */}
-        <div style={{ display: 'flex', gap: '16px', marginBottom: '24px' }}>
-          <input
-            type="text"
-            placeholder="Enter a word"
-            value={word}
-            onChange={handleInputChange}
-            style={{ backgroundColor: '#0D0D0F', border: '1px solid #4B5563', borderRadius: 8, padding: '12px 16px', color: '#F5F4F2', width: '100%' }}
-          />
-          <button
-            onClick={handleParse}
-            style={{ backgroundColor: '#C9A227', color: '#0D0D0F', padding: '12px 24px', borderRadius: 8, fontWeight: 'bold', cursor: 'pointer', transition: 'all 0.2s' }}
-          >
-            Parse
-          </button>
-        </div>
-
-        {/* Loading State */}
-        {loading && <p style={{ color: '#9CA3AF' }}>Loading...</p>}
-
-        {/* Error State */}
-        {error && <p style={{ color: '#DC2626' }}>Error: {error}</p>}
-
-        {/* Analysis Display */}
-        {analysis && (
-          <div style={{ backgroundColor: '#1E1E24', borderRadius: 12, padding: 24 }}>
-            <h2 style={{ color: '#F5F4F2', marginBottom: '12px' }}>Analysis</h2>
-            <p style={{ color: '#9CA3AF' }}>Lemma: {analysis.lemma || 'N/A'}</p>
-            <p style={{ color: '#9CA3AF' }}>POS: {analysis.pos || 'N/A'}</p>
-            <p style={{ color: '#9CA3AF' }}>Parsing: {analysis.parsing || 'N/A'}</p>
-          </div>
-        )}
-      </main>
-    </div>
-  );
+    );
 }

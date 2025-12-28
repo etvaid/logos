@@ -1,41 +1,146 @@
 'use client';
 
-import { useState } from 'react';
-import Link from 'next/link';
+import React, { useState, useEffect } from 'react';
+import { Search, BookOpen, Spinner } from 'lucide-react';
 
-export default function TranslatePage() {
+export default function TranslationStudio() {
   const [text, setText] = useState('');
+  const [style, setStyle] = useState('literal');
+  const [translation, setTranslation] = useState('');
+  const [wordBreakdown, setWordBreakdown] = useState([]);
+  const [ltqiScore, setLtqiScore] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [result, setResult] = useState<any>(null);
+  const [error, setError] = useState(null);
 
   const handleTranslate = async () => {
-    if (!text.trim()) return;
     setLoading(true);
-    try { const res = await fetch('/api/translate', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text, source_lang: 'greek', style: 'literary' }) }); const data = await res.json(); setResult(data); } catch (e) { console.error(e); }
-    setLoading(false);
+    setError(null);
+    try {
+      const response = await fetch('/api/translate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text, style }),
+      });
+
+      if (!response.ok) throw new Error('Translation failed');
+
+      const data = await response.json();
+      setTranslation(data.translation);
+      setWordBreakdown(data.wordBreakdown);
+      setLtqiScore(data.ltqiScore);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <div style={{ backgroundColor: '#0D0D0F', minHeight: '100vh', color: '#F5F4F2' }}>
-      <nav style={{ backgroundColor: '#1E1E24', padding: '16px 24px', borderBottom: '1px solid rgba(201,162,39,0.2)' }}>
-        <Link href="/" style={{ textDecoration: 'none' }}><span style={{ color: '#C9A227', fontSize: 24, fontWeight: 'bold' }}>🏛️ LOGOS</span></Link>
-      </nav>
-      <div style={{ maxWidth: 900, margin: '0 auto', padding: 24 }}>
-        <h1 style={{ color: '#C9A227', marginBottom: 24 }}>🔄 Translation Studio</h1>
-        <div style={{ backgroundColor: '#1E1E24', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <textarea value={text} onChange={(e) => setText(e.target.value)} placeholder="Paste Greek or Latin text here..." style={{ width: '100%', minHeight: 200, padding: 16, backgroundColor: '#0D0D0F', border: '1px solid #4B5563', borderRadius: 8, color: '#F5F4F2', outline: 'none', resize: 'vertical', fontSize: 16 }} />
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 16 }}>
-            <span style={{ color: '#6B7280' }}>Words: {text.split(/\s+/).filter(w => w).length}</span>
-            <button onClick={handleTranslate} disabled={loading} style={{ padding: '12px 32px', backgroundColor: loading ? '#4B5563' : '#C9A227', color: '#0D0D0F', border: 'none', borderRadius: 8, cursor: loading ? 'not-allowed' : 'pointer', fontWeight: 'bold' }}>{loading ? 'Translating...' : '🔄 Translate'}</button>
-          </div>
-        </div>
-        {result && (
-          <div style={{ backgroundColor: '#1E1E24', borderRadius: 12, padding: 24 }}>
-            <h3 style={{ color: '#6B7280', marginBottom: 16 }}>TRANSLATION</h3>
-            <p style={{ fontSize: 18, lineHeight: 1.8 }}>{result.translation}</p>
-          </div>
-        )}
+    <div style={{ backgroundColor: '#0D0D0F', color: '#F5F3EF', padding: '20px', minHeight: '100vh' }}>
+      <h1 style={{ color: '#C9A962', marginBottom: '20px' }}>Translation Studio</h1>
+      <textarea
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        style={{
+          width: '100%',
+          height: '100px',
+          backgroundColor: '#1E1E24',
+          border: '1px solid rgba(201,169,98,0.15)',
+          color: '#F5F3EF',
+          marginBottom: '20px',
+          padding: '10px',
+        }}
+      />
+      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '20px' }}>
+        {['literal', 'literary', 'student'].map((type) => (
+          <button
+            key={type}
+            onClick={() => setStyle(type)}
+            style={{
+              background: 'linear-gradient(135deg, #C9A962, #E8D5A3)',
+              color: '#0D0D0F',
+              padding: '10px 20px',
+              border: 'none',
+              cursor: 'pointer',
+              opacity: style === type ? 1 : 0.7,
+            }}
+          >
+            {type.charAt(0).toUpperCase() + type.slice(1)}
+          </button>
+        ))}
       </div>
+      <button
+        onClick={handleTranslate}
+        style={{
+          background: 'linear-gradient(135deg, #C9A962, #E8D5A3)',
+          color: '#0D0D0F',
+          padding: '10px 20px',
+          border: 'none',
+          cursor: 'pointer',
+          marginBottom: '20px',
+        }}
+      >
+        Translate
+      </button>
+      {loading && <Spinner style={{ color: '#C9A962' }} />}
+      {error && <p style={{ color: '#DC2626' }}>{error}</p>}
+      {translation && (
+        <>
+          <div
+            style={{
+              background: 'rgba(30,30,36,0.8)',
+              backdropFilter: 'blur(10px)',
+              padding: '20px',
+              borderRadius: '8px',
+              marginBottom: '20px',
+              boxShadow: '0 4px 8px rgba(201,169,98,0.3)',
+            }}
+          >
+            <h2 style={{ color: '#E8D5A3' }}>Translation</h2>
+            <p>{translation}</p>
+          </div>
+          <div
+            style={{
+              background: 'rgba(30,30,36,0.8)',
+              backdropFilter: 'blur(10px)',
+              padding: '20px',
+              borderRadius: '8px',
+              marginBottom: '20px',
+              boxShadow: '0 4px 8px rgba(201,169,98,0.3)',
+            }}
+          >
+            <h2 style={{ color: '#E8D5A3' }}>Word-by-Word Breakdown</h2>
+            <table style={{ width: '100%', color: '#F5F3EF' }}>
+              <thead>
+                <tr>
+                  <th style={{ borderBottom: '1px solid rgba(201,169,98,0.15)' }}>Word</th>
+                  <th style={{ borderBottom: '1px solid rgba(201,169,98,0.15)' }}>Translation</th>
+                </tr>
+              </thead>
+              <tbody>
+                {wordBreakdown.map((word, index) => (
+                  <tr key={index}>
+                    <td style={{ borderBottom: '1px solid rgba(201,169,98,0.15)', padding: '5px' }}>{word.original}</td>
+                    <td style={{ borderBottom: '1px solid rgba(201,169,98,0.15)', padding: '5px' }}>{word.translation}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div
+            style={{
+              background: 'rgba(30,30,36,0.8)',
+              backdropFilter: 'blur(10px)',
+              padding: '20px',
+              borderRadius: '8px',
+              boxShadow: '0 4px 8px rgba(201,169,98,0.3)',
+            }}
+          >
+            <h2 style={{ color: '#E8D5A3' }}>LTQI Score</h2>
+            <p>{ltqiScore}</p>
+          </div>
+        </>
+      )}
     </div>
   );
 }

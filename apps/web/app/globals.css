@@ -1,8 +1,13 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-body {
-  background-color: #0D0D0F;
-  color: #F5F4F2;
+/* LOGOS Global Styles */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --obsidian: #0D0D0F;
+  --gold: #C9A962;
+  --marble: #F5F3EF;
 }
+body {
+  background-color: var(--obsidian);
+  color: var(--marble);
+  font-family: "Crimson Pro", serif;
+}
+a { color: inherit; }

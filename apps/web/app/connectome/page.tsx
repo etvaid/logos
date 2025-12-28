@@ -1,87 +1,166 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
+import React, { useState, useEffect } from 'react';
+import { Search, BookOpen, ZoomIn, ZoomOut, Download } from 'lucide-react';
+import * as d3 from 'd3';
 
-interface Node { id: string; name: string; era: string; x: number; y: number; }
-interface Edge { source: string; target: string; type: string; strength: number; }
-
-const eraColors: Record<string, string> = { archaic: '#D97706', classical: '#F59E0B', hellenistic: '#3B82F6', imperial: '#DC2626', late_antique: '#7C3AED' };
-
-export default function ConnectomePage() {
-  const [nodes, setNodes] = useState<Node[]>([]);
-  const [edges, setEdges] = useState<Edge[]>([]);
+export default function Connectome() {
+  const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [selected, setSelected] = useState<Node | null>(null);
-  const svgRef = useRef<SVGSVGElement>(null);
-
-  useEffect(() => { fetch('/api/authors/connections').then(r => r.json()).then(d => { setNodes(d.nodes || []); setEdges(d.edges || []); setLoading(false); }).catch(() => setLoading(false)); }, []);
+  const [error, setError] = useState(null);
+  const [selectedNode, setSelectedNode] = useState(null);
+  const [zoom, setZoom] = useState(1);
+  const [filter, setFilter] = useState('all');
 
   useEffect(() => {
-    if (nodes.length === 0) return;
-    const interval = setInterval(() => {
-      setNodes(prev => {
-        const next = prev.map(n => ({ ...n }));
-        for (let i = 0; i < next.length; i++) {
-          for (let j = i + 1; j < next.length; j++) {
-            const dx = next[j].x - next[i].x, dy = next[j].y - next[i].y;
-            const dist = Math.sqrt(dx * dx + dy * dy) || 1;
-            const force = 500 / (dist * dist);
-            next[i].x -= (dx / dist) * force * 0.1; next[j].x += (dx / dist) * force * 0.1;
-            next[i].y -= (dy / dist) * force * 0.1; next[j].y += (dy / dist) * force * 0.1;
-          }
-        }
-        for (const e of edges) {
-          const s = next.find(n => n.id === e.source), t = next.find(n => n.id === e.target);
-          if (s && t) {
-            const dx = t.x - s.x, dy = t.y - s.y, dist = Math.sqrt(dx * dx + dy * dy) || 1;
-            const force = (dist - 80) * 0.01;
-            s.x += (dx / dist) * force; t.x -= (dx / dist) * force;
-            s.y += (dy / dist) * force; t.y -= (dy / dist) * force;
-          }
-        }
-        next.forEach(n => { n.x = Math.max(30, Math.min(570, n.x)); n.y = Math.max(30, Math.min(370, n.y)); });
-        return next;
+    fetch('/api/connectome')
+      .then(response => response.json())
+      .then(data => {
+        setData(data);
+        setLoading(false);
+      })
+      .catch(error => {
+        setError('Failed to load data');
+        setLoading(false);
       });
-    }, 50);
-    return () => clearInterval(interval);
-  }, [nodes.length, edges]);
+  }, []);
 
-  const downloadSVG = () => {
-    if (!svgRef.current) return;
-    const data = new XMLSerializer().serializeToString(svgRef.current);
-    const blob = new Blob([data], { type: 'image/svg+xml' });
-    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'connectome.svg'; a.click();
+  const zoomIn = () => setZoom(zoom + 0.1);
+  const zoomOut = () => setZoom(zoom - 0.1);
+
+  const downloadSvg = () => {
+    const svgElement = document.getElementById('connectome-svg');
+    const serializer = new XMLSerializer();
+    const svgBlob = new Blob([serializer.serializeToString(svgElement)], { type: 'image/svg+xml' });
+    const url = URL.createObjectURL(svgBlob);
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'connectome.svg';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
   };
 
-  if (loading) return <div style={{ backgroundColor: '#0D0D0F', minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#C9A227' }}>Loading...</div>;
+  const renderGraph = () => {
+    const width = 800;
+    const height = 600;
+
+    const svg = d3.select('#connectome-svg')
+      .attr('width', width)
+      .attr('height', height)
+      .style('backgroundColor', '#0D0D0F')
+      .style('border', '1px solid rgba(201,169,98,0.15)');
+
+    const simulation = d3.forceSimulation(data.nodes)
+      .force('link', d3.forceLink(data.links).id(d => d.id))
+      .force('charge', d3.forceManyBody().strength(-200))
+      .force('center', d3.forceCenter(width / 2, height / 2));
+
+    const link = svg.selectAll('.link')
+      .data(data.links.filter(link => filter === 'all' || link.type === filter))
+      .enter().append('line')
+      .attr('class', 'link')
+      .style('stroke', '#C9A962')
+      .style('stroke-width', 2);
+
+    const node = svg.selectAll('.node')
+      .data(data.nodes)
+      .enter().append('circle')
+      .attr('class', 'node')
+      .attr('r', 10)
+      .style('fill', d => {
+        switch (d.era) {
+          case 'Archaic': return '#8B4513';
+          case 'Classical': return '#C9A962';
+          case 'Hellenistic': return '#4A90A4';
+          case 'Roman': return '#9B2335';
+          case 'Late Antique': return '#6B4C8A';
+          case 'Byzantine': return '#2E5A3E';
+          default: return '#F5F3EF';
+        }
+      })
+      .on('click', d => setSelectedNode(d))
+      .call(d3.drag()
+        .on('start', dragstarted)
+        .on('drag', dragged)
+        .on('end', dragended));
+
+    simulation
+      .nodes(data.nodes)
+      .on('tick', ticked);
+
+    simulation.force('link')
+      .links(data.links);
+
+    function ticked() {
+      link
+        .attr('x1', d => d.source.x)
+        .attr('y1', d => d.source.y)
+        .attr('x2', d => d.target.x)
+        .attr('y2', d => d.target.y);
+
+      node
+        .attr('cx', d => d.x)
+        .attr('cy', d => d.y);
+    }
+
+    function dragstarted(event, d) {
+      if (!event.active) simulation.alphaTarget(0.3).restart();
+      d.fx = d.x;
+      d.fy = d.y;
+    }
+
+    function dragged(event, d) {
+      d.fx = event.x;
+      d.fy = event.y;
+    }
+
+    function dragended(event, d) {
+      if (!event.active) simulation.alphaTarget(0);
+      d.fx = null;
+      d.fy = null;
+    }
+  };
+
+  useEffect(() => {
+    if (data) {
+      renderGraph();
+    }
+  }, [data, filter, zoom]);
+
+  if (loading) {
+    return <div style={{ color: '#F5F3EF' }}>Loading...</div>;
+  }
+
+  if (error) {
+    return <div style={{ color: '#DC2626' }}>{error}</div>;
+  }
 
   return (
-    <div style={{ backgroundColor: '#0D0D0F', minHeight: '100vh', color: '#F5F4F2' }}>
-      <nav style={{ backgroundColor: '#1E1E24', padding: '16px 24px', borderBottom: '1px solid rgba(201,162,39,0.2)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <Link href="/" style={{ textDecoration: 'none' }}><span style={{ color: '#C9A227', fontSize: 24, fontWeight: 'bold' }}>🏛️ LOGOS</span></Link>
-        <button onClick={downloadSVG} style={{ padding: '8px 16px', backgroundColor: '#C9A227', color: '#0D0D0F', border: 'none', borderRadius: 4, cursor: 'pointer' }}>📥 Download SVG</button>
-      </nav>
-      <div style={{ padding: 24 }}>
-        <h1 style={{ color: '#C9A227', marginBottom: 24 }}>🕸️ Author Connectome</h1>
-        <div style={{ display: 'flex', gap: 24 }}>
-          <div style={{ flex: 1, backgroundColor: '#1E1E24', borderRadius: 12, padding: 16 }}>
-            <svg ref={svgRef} viewBox="0 0 600 400" style={{ width: '100%', height: 'auto' }}>
-              {edges.map((e, i) => { const s = nodes.find(n => n.id === e.source), t = nodes.find(n => n.id === e.target); if (!s || !t) return null; return <line key={i} x1={s.x} y1={s.y} x2={t.x} y2={t.y} stroke="#4B5563" strokeWidth={e.strength * 2} strokeOpacity={0.6} />; })}
-              {nodes.map(n => (
-                <g key={n.id} onClick={() => setSelected(n)} style={{ cursor: 'pointer' }}>
-                  <circle cx={n.x} cy={n.y} r={15} fill={eraColors[n.era] || '#6B7280'} stroke={selected?.id === n.id ? '#C9A227' : 'none'} strokeWidth={2} />
-                  <text x={n.x} y={n.y - 20} textAnchor="middle" fill="#F5F4F2" fontSize="10">{n.name}</text>
-                </g>
-              ))}
-            </svg>
-          </div>
-          <div style={{ width: 250, backgroundColor: '#1E1E24', borderRadius: 12, padding: 16 }}>
-            {selected ? (<><h3 style={{ color: '#C9A227', marginBottom: 8 }}>{selected.name}</h3><p style={{ color: '#9CA3AF' }}>Era: <span style={{ color: eraColors[selected.era], textTransform: 'capitalize' }}>{selected.era?.replace('_', ' ')}</span></p></>) : (<p style={{ color: '#6B7280' }}>Click a node</p>)}
-            <div style={{ marginTop: 24 }}><h4 style={{ color: '#6B7280', marginBottom: 8 }}>Legend</h4>{Object.entries(eraColors).map(([e, c]) => (<div key={e} style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}><div style={{ width: 12, height: 12, borderRadius: '50%', backgroundColor: c }} /><span style={{ fontSize: 12, textTransform: 'capitalize' }}>{e.replace('_', ' ')}</span></div>))}</div>
-          </div>
+    <div style={{ padding: '20px', backgroundColor: '#0D0D0F' }}>
+      <h1 style={{ color: '#F5F3EF', marginBottom: '20px' }}>Connectome</h1>
+      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '20px' }}>
+        <div>
+          <button onClick={() => setFilter('all')} style={{ background: 'linear-gradient(135deg, #C9A962, #E8D5A3)', color: '#0D0D0F', border: 'none', marginRight: '10px' }}>All</button>
+          <button onClick={() => setFilter('type1')} style={{ background: 'linear-gradient(135deg, #C9A962, #E8D5A3)', color: '#0D0D0F', border: 'none', marginRight: '10px' }}>Type 1</button>
+          <button onClick={() => setFilter('type2')} style={{ background: 'linear-gradient(135deg, #C9A962, #E8D5A3)', color: '#0D0D0F', border: 'none' }}>Type 2</button>
+        </div>
+        <div>
+          <button onClick={zoomIn} style={{ background: 'linear-gradient(135deg, #C9A962, #E8D5A3)', color: '#0D0D0F', border: 'none', marginRight: '10px' }}><ZoomIn size={16} /></button>
+          <button onClick={zoomOut} style={{ background: 'linear-gradient(135deg, #C9A962, #E8D5A3)', color: '#0D0D0F', border: 'none', marginRight: '10px' }}><ZoomOut size={16} /></button>
+          <button onClick={downloadSvg} style={{ background: 'linear-gradient(135deg, #C9A962, #E8D5A3)', color: '#0D0D0F', border: 'none' }}><Download size={16} /></button>
         </div>
       </div>
+      <svg id="connectome-svg" style={{ width: '100%', height: '600px', background: 'rgba(30,30,36,0.8)', backdropFilter: 'blur(10px)' }}></svg>
+      {selectedNode && (
+        <div style={{ color: '#F5F3EF', marginTop: '20px' }}>
+          <h3>Node Details</h3>
+          <p>ID: {selectedNode.id}</p>
+          <p>Era: {selectedNode.era}</p>
+        </div>
+      )}
     </div>
   );
 }

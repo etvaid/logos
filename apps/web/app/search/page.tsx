@@ -1,51 +1,136 @@
 'use client';
-
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
+import React, { useState, useEffect } from 'react';
+import { Search, BookOpen } from 'lucide-react';
 
 export default function SearchPage() {
-  const searchParams = useSearchParams();
-  const [query, setQuery] = useState(searchParams.get('q') || '');
-  const [results, setResults] = useState<any[]>([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [language, setLanguage] = useState('all');
+  const [era, setEra] = useState('all');
+  const [author, setAuthor] = useState('');
+  const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  useEffect(() => { const q = searchParams.get('q'); if (q) { setQuery(q); search(q); } }, [searchParams]);
-
-  const search = async (q: string) => {
-    if (!q.trim()) return;
-    setLoading(true);
-    try { const res = await fetch(`/api/search?q=${encodeURIComponent(q)}&limit=50`); const data = await res.json(); setResults(data.results || []); } catch (e) { console.error(e); }
-    setLoading(false);
-  };
-
-  const handleSubmit = (e: React.FormEvent) => { e.preventDefault(); search(query); window.history.pushState({}, '', `/search?q=${encodeURIComponent(query)}`); };
+  useEffect(() => {
+    if (searchTerm) {
+      setLoading(true);
+      fetch(`/api/search?query=${searchTerm}&language=${language}&era=${era}&author=${author}`)
+        .then(response => response.json())
+        .then(data => {
+          setResults(data);
+          setLoading(false);
+        })
+        .catch(err => {
+          setError('Failed to fetch results');
+          setLoading(false);
+        });
+    }
+  }, [searchTerm, language, era, author]);
 
   return (
-    <div style={{ backgroundColor: '#0D0D0F', minHeight: '100vh', color: '#F5F4F2' }}>
-      <nav style={{ backgroundColor: '#1E1E24', padding: '16px 24px', borderBottom: '1px solid rgba(201,162,39,0.2)' }}>
-        <Link href="/" style={{ textDecoration: 'none' }}><span style={{ color: '#C9A227', fontSize: 24, fontWeight: 'bold' }}>🏛️ LOGOS</span></Link>
-      </nav>
-      <div style={{ maxWidth: 900, margin: '0 auto', padding: 24 }}>
-        <h1 style={{ color: '#C9A227', marginBottom: 24 }}>🔍 Search Corpus</h1>
-        <form onSubmit={handleSubmit} style={{ display: 'flex', gap: 8, marginBottom: 32 }}>
-          <input type="text" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search Greek or Latin..." style={{ flex: 1, padding: '12px 16px', backgroundColor: '#1E1E24', border: '1px solid #4B5563', borderRadius: 8, color: '#F5F4F2', outline: 'none' }} />
-          <button type="submit" style={{ padding: '12px 24px', backgroundColor: '#C9A227', color: '#0D0D0F', border: 'none', borderRadius: 8, cursor: 'pointer', fontWeight: 'bold' }}>Search</button>
-        </form>
-        {loading && <div style={{ color: '#C9A227' }}>Searching...</div>}
-        {!loading && results.length > 0 && (
+    <div style={{ backgroundColor: '#0D0D0F', color: '#F5F3EF', minHeight: '100vh', padding: '20px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
+        <input
+          type="text"
+          value={searchTerm}
+          onChange={e => setSearchTerm(e.target.value)}
+          placeholder="Search..."
+          style={{
+            flex: 1,
+            padding: '10px',
+            borderRadius: '5px',
+            border: '1px solid rgba(201,169,98,0.15)',
+            backgroundColor: 'rgba(30,30,36,0.8)',
+            color: '#F5F3EF',
+            marginRight: '10px'
+          }}
+        />
+        <Search size={20} color="#C9A962" />
+      </div>
+      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
+        <select
+          value={language}
+          onChange={e => setLanguage(e.target.value)}
+          style={{
+            marginRight: '10px',
+            padding: '10px',
+            borderRadius: '5px',
+            border: '1px solid rgba(201,169,98,0.15)',
+            backgroundColor: 'rgba(30,30,36,0.8)',
+            color: '#F5F3EF'
+          }}
+        >
+          <option value="all">All Languages</option>
+          <option value="greek" style={{ color: '#3B82F6' }}>Greek</option>
+          <option value="latin" style={{ color: '#DC2626' }}>Latin</option>
+        </select>
+        <select
+          value={era}
+          onChange={e => setEra(e.target.value)}
+          style={{
+            marginRight: '10px',
+            padding: '10px',
+            borderRadius: '5px',
+            border: '1px solid rgba(201,169,98,0.15)',
+            backgroundColor: 'rgba(30,30,36,0.8)',
+            color: '#F5F3EF'
+          }}
+        >
+          <option value="all">All Eras</option>
+          <option value="archaic" style={{ color: '#8B4513' }}>Archaic</option>
+          <option value="classical" style={{ color: '#C9A962' }}>Classical</option>
+          <option value="hellenistic" style={{ color: '#4A90A4' }}>Hellenistic</option>
+          <option value="roman" style={{ color: '#9B2335' }}>Roman</option>
+          <option value="late-antique" style={{ color: '#6B4C8A' }}>Late Antique</option>
+          <option value="byzantine" style={{ color: '#2E5A3E' }}>Byzantine</option>
+        </select>
+        <input
+          type="text"
+          value={author}
+          onChange={e => setAuthor(e.target.value)}
+          placeholder="Author..."
+          style={{
+            flex: 1,
+            padding: '10px',
+            borderRadius: '5px',
+            border: '1px solid rgba(201,169,98,0.15)',
+            backgroundColor: 'rgba(30,30,36,0.8)',
+            color: '#F5F3EF'
+          }}
+        />
+      </div>
+      <div>
+        {loading ? (
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px' }}>
+            <div style={{
+              width: '40px',
+              height: '40px',
+              border: '4px solid #C9A962',
+              borderTop: '4px solid transparent',
+              borderRadius: '50%',
+              animation: 'spin 1s linear infinite'
+            }} />
+          </div>
+        ) : error ? (
+          <div style={{ color: '#DC2626', padding: '20px' }}>{error}</div>
+        ) : (
           <div>
-            <p style={{ color: '#6B7280', marginBottom: 16 }}>{results.length} results</p>
-            {results.map((r, i) => (
-              <div key={i} style={{ padding: 16, backgroundColor: '#1E1E24', borderRadius: 8, marginBottom: 12, borderLeft: '3px solid #C9A227' }}>
-                <div style={{ color: '#9CA3AF', fontSize: 12, marginBottom: 8 }}>{r.author_name} • {r.work_title}</div>
-                <div style={{ color: '#F5F4F2', fontSize: 18, marginBottom: 8 }}>{r.text_original}</div>
-                {r.translation && <div style={{ color: '#9CA3AF', fontStyle: 'italic' }}>{r.translation}</div>}
+            {results.map((result, index) => (
+              <div key={index} style={{
+                background: 'rgba(30,30,36,0.8)',
+                backdropFilter: 'blur(10px)',
+                border: '1px solid rgba(201,169,98,0.15)',
+                borderRadius: '5px',
+                padding: '15px',
+                marginBottom: '10px',
+                boxShadow: `0 4px 8px ${'rgba(201,169,98,0.3)'}`
+              }}>
+                <h3 style={{ color: '#C9A962' }}>{result.title}</h3>
+                <p style={{ color: 'rgba(245,243,239,0.7)' }}>{result.description}</p>
               </div>
             ))}
           </div>
         )}
-        {!loading && results.length === 0 && query && <div style={{ color: '#6B7280' }}>No results found</div>}
       </div>
     </div>
   );
