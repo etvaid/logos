@@ -1,0 +1,458 @@
+{
+  "nodes": [
+    {
+      "id": "homer",
+      "label": "Homer",
+      "type": "author",
+      "period": "Archaic Greek",
+      "language": "Greek",
+      "genres": [
+        "epic"
+      ],
+      "size": 45
+    },
+    {
+      "id": "hesiod",
+      "label": "Hesiod",
+      "type": "author",
+      "period": "Archaic Greek",
+      "language": "Greek",
+      "genres": [
+        "didactic",
+        "epic"
+      ],
+      "size": 15
+    },
+    {
+      "id": "sappho",
+      "label": "Sappho",
+      "type": "author",
+      "period": "Archaic Greek",
+      "language": "Greek",
+      "genres": [
+        "lyric"
+      ],
+      "size": 10
+    },
+    {
+      "id": "pindar",
+      "label": "Pindar",
+      "type": "author",
+      "period": "Classical Greek",
+      "language": "Greek",
+      "genres": [
+        "lyric",
+        "ode"
+      ],
+      "size": 10
+    },
+    {
+      "id": "aeschylus",
+      "label": "Aeschylus",
+      "type": "author",
+      "period": "Classical Greek",
+      "language": "Greek",
+      "genres": [
+        "tragedy"
+      ],
+      "size": 20
+    },
+    {
+      "id": "sophocles",
+      "label": "Sophocles",
+      "type": "author",
+      "period": "Classical Greek",
+      "language": "Greek",
+      "genres": [
+        "tragedy"
+      ],
+      "size": 15
+    },
+    {
+      "id": "euripides",
+      "label": "Euripides",
+      "type": "author",
+      "period": "Classical Greek",
+      "language": "Greek",
+      "genres": [
+        "tragedy"
+      ],
+      "size": 15
+    },
+    {
+      "id": "aristophanes",
+      "label": "Aristophanes",
+      "type": "author",
+      "period": "Classical Greek",
+      "language": "Greek",
+      "genres": [
+        "comedy"
+      ],
+      "size": 10
+    },
+    {
+      "id": "herodotus",
+      "label": "Herodotus",
+      "type": "author",
+      "period": "Classical Greek",
+      "language": "Greek",
+      "genres": [
+        "history"
+      ],
+      "size": 15
+    },
+    {
+      "id": "thucydides",
+      "label": "Thucydides",
+      "type": "author",
+      "period": "Classical Greek",
+      "language": "Greek",
+      "genres": [
+        "history"
+      ],
+      "size": 20
+    },
+    {
+      "id": "plato",
+      "label": "Plato",
+      "type": "author",
+      "period": "Classical Greek",
+      "language": "Greek",
+      "genres": [
+        "philosophy",
+        "dialogue"
+      ],
+      "size": 20
+    },
+    {
+      "id": "aristotle",
+      "label": "Aristotle",
+      "type": "author",
+      "period": "Hellenistic",
+      "language": "Greek",
+      "genres": [
+        "philosophy",
+        "treatise"
+      ],
+      "size": 20
+    },
+    {
+      "id": "virgil",
+      "label": "Virgil",
+      "type": "author",
+      "period": "Augustan",
+      "language": "Latin",
+      "genres": [
+        "epic",
+        "pastoral"
+      ],
+      "size": 20
+    },
+    {
+      "id": "horace",
+      "label": "Horace",
+      "type": "author",
+      "period": "Augustan",
+      "language": "Latin",
+      "genres": [
+        "lyric",
+        "satire"
+      ],
+      "size": 15
+    },
+    {
+      "id": "ovid",
+      "label": "Ovid",
+      "type": "author",
+      "period": "Augustan",
+      "language": "Latin",
+      "genres": [
+        "elegy",
+        "epic"
+      ],
+      "size": 10
+    },
+    {
+      "id": "catullus",
+      "label": "Catullus",
+      "type": "author",
+      "period": "Late Republic",
+      "language": "Latin",
+      "genres": [
+        "lyric",
+        "elegy"
+      ],
+      "size": 20
+    },
+    {
+      "id": "cicero",
+      "label": "Cicero",
+      "type": "author",
+      "period": "Late Republic",
+      "language": "Latin",
+      "genres": [
+        "oratory",
+        "philosophy"
+      ],
+      "size": 20
+    },
+    {
+      "id": "livy",
+      "label": "Livy",
+      "type": "author",
+      "period": "Augustan",
+      "language": "Latin",
+      "genres": [
+        "history"
+      ],
+      "size": 15
+    },
+    {
+      "id": "seneca",
+      "label": "Seneca",
+      "type": "author",
+      "period": "Imperial",
+      "language": "Latin",
+      "genres": [
+        "tragedy",
+        "philosophy"
+      ],
+      "size": 10
+    },
+    {
+      "id": "tacitus",
+      "label": "Tacitus",
+      "type": "author",
+      "period": "Imperial",
+      "language": "Latin",
+      "genres": [
+        "history"
+      ],
+      "size": 10
+    },
+    {
+      "id": "lucretius",
+      "label": "Lucretius",
+      "type": "author",
+      "period": "Late Republic",
+      "language": "Latin",
+      "genres": [
+        "didactic",
+        "philosophy"
+      ],
+      "size": 15
+    }
+  ],
+  "edges": [
+    {
+      "source": "homer",
+      "target": "hesiod",
+      "type": "contemporary/influence",
+      "weight": 0.9
+    },
+    {
+      "source": "homer",
+      "target": "pindar",
+      "type": "influence",
+      "weight": 0.8
+    },
+    {
+      "source": "homer",
+      "target": "aeschylus",
+      "type": "influence",
+      "weight": 0.9
+    },
+    {
+      "source": "homer",
+      "target": "sophocles",
+      "type": "influence",
+      "weight": 0.9
+    },
+    {
+      "source": "homer",
+      "target": "euripides",
+      "type": "influence",
+      "weight": 0.8
+    },
+    {
+      "source": "aeschylus",
+      "target": "sophocles",
+      "type": "influence",
+      "weight": 0.7
+    },
+    {
+      "source": "aeschylus",
+      "target": "euripides",
+      "type": "influence",
+      "weight": 0.6
+    },
+    {
+      "source": "sophocles",
+      "target": "euripides",
+      "type": "contemporary",
+      "weight": 0.5
+    },
+    {
+      "source": "herodotus",
+      "target": "thucydides",
+      "type": "influence",
+      "weight": 0.7
+    },
+    {
+      "source": "socrates",
+      "target": "plato",
+      "type": "teacher",
+      "weight": 1.0
+    },
+    {
+      "source": "plato",
+      "target": "aristotle",
+      "type": "teacher",
+      "weight": 1.0
+    },
+    {
+      "source": "aristotle",
+      "target": "theophrastus",
+      "type": "teacher",
+      "weight": 0.9
+    },
+    {
+      "source": "homer",
+      "target": "virgil",
+      "type": "influence",
+      "weight": 1.0
+    },
+    {
+      "source": "homer",
+      "target": "ovid",
+      "type": "influence",
+      "weight": 0.8
+    },
+    {
+      "source": "hesiod",
+      "target": "virgil",
+      "type": "influence",
+      "weight": 0.7
+    },
+    {
+      "source": "euripides",
+      "target": "seneca",
+      "type": "influence",
+      "weight": 0.9
+    },
+    {
+      "source": "theocritus",
+      "target": "virgil",
+      "type": "influence",
+      "weight": 0.8
+    },
+    {
+      "source": "callimachus",
+      "target": "catullus",
+      "type": "influence",
+      "weight": 0.8
+    },
+    {
+      "source": "plato",
+      "target": "cicero",
+      "type": "influence",
+      "weight": 0.8
+    },
+    {
+      "source": "aristotle",
+      "target": "cicero",
+      "type": "influence",
+      "weight": 0.7
+    },
+    {
+      "source": "demosthenes",
+      "target": "cicero",
+      "type": "influence",
+      "weight": 0.9
+    },
+    {
+      "source": "polybius",
+      "target": "livy",
+      "type": "influence",
+      "weight": 0.7
+    },
+    {
+      "source": "thucydides",
+      "target": "sallust",
+      "type": "influence",
+      "weight": 0.8
+    },
+    {
+      "source": "thucydides",
+      "target": "tacitus",
+      "type": "influence",
+      "weight": 0.9
+    },
+    {
+      "source": "ennius",
+      "target": "virgil",
+      "type": "influence",
+      "weight": 0.7
+    },
+    {
+      "source": "lucretius",
+      "target": "virgil",
+      "type": "influence",
+      "weight": 0.6
+    },
+    {
+      "source": "catullus",
+      "target": "horace",
+      "type": "contemporary",
+      "weight": 0.5
+    },
+    {
+      "source": "catullus",
+      "target": "ovid",
+      "type": "influence",
+      "weight": 0.7
+    },
+    {
+      "source": "virgil",
+      "target": "ovid",
+      "type": "influence",
+      "weight": 0.8
+    },
+    {
+      "source": "virgil",
+      "target": "lucan",
+      "type": "influence",
+      "weight": 0.9
+    },
+    {
+      "source": "horace",
+      "target": "juvenal",
+      "type": "influence",
+      "weight": 0.6
+    },
+    {
+      "source": "cicero",
+      "target": "seneca",
+      "type": "influence",
+      "weight": 0.7
+    },
+    {
+      "source": "cicero",
+      "target": "quintilian",
+      "type": "influence",
+      "weight": 0.8
+    },
+    {
+      "source": "sallust",
+      "target": "tacitus",
+      "type": "influence",
+      "weight": 0.7
+    },
+    {
+      "source": "livy",
+      "target": "tacitus",
+      "type": "influence",
+      "weight": 0.6
+    }
+  ]
+}
