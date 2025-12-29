@@ -37,3 +37,6 @@ coverage/
 # Misc
 *.pem
 .vercel
+diagnostic_report.json
+diagnostic_report.json
+temp_*.py
