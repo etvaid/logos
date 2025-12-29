@@ -46,7 +46,7 @@ export default function HomePage() {
     const fetchStats = async () => {
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:8000/corpus/availability');
+        const response = await fetch('http://localhost:8001/corpus/availability');
         if (!response.ok) {
           throw new Error('Failed to fetch corpus statistics');
         }

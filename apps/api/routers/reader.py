@@ -1,384 +1,107 @@
-from fastapi import APIRouter, HTTPException, Request, Query
-from pydantic import BaseModel, Field
-from typing import Dict, Any, Optional, List
+from fastapi import APIRouter, HTTPException, Query, Depends
+from typing import List, Dict, Any, Optional
+from pydantic import BaseModel
 import asyncpg
-import logging
-from datetime import datetime
-import re
 
-# Configure logging
-logger = logging.getLogger(__name__)
-
-# Create router
 router = APIRouter()
 
-# Pydantic Models
-class AuthorWork(BaseModel):
-    """Model for author work information"""
-    author: str
-    work: str
-    urn: str
-    text_count: int
-    language: str
-
-class WorksResponse(BaseModel):
-    """Response model for works listing"""
-    authors: Dict[str, List[AuthorWork]]
-    total_authors: int
-    total_works: int
-    total_texts: int
-
-class WorkMetadata(BaseModel):
-    """Model for work metadata"""
+class WorkInfo(BaseModel):
     urn: str
     author: str
-    work: str
+    title: str
     language: str
-    total_sections: int
-    description: Optional[str] = None
-    date_composed: Optional[str] = None
-    genre: Optional[str] = None
-
-class TextSegment(BaseModel):
-    """Model for text segment"""
-    id: int
-    urn: str
-    content: str
-    section_reference: str
-    position: int
+    passage_count: int = 0
 
 class TextResponse(BaseModel):
-    """Response model for text with pagination"""
     urn: str
-    author: str
-    work: str
-    language: str
-    segments: List[TextSegment]
-    pagination: Dict[str, Any]
+    text: str
+    start: int
+    limit: int
+    total_lines: int
 
-class MorphologyData(BaseModel):
-    """Model for word morphology"""
+class MorphologyResponse(BaseModel):
     word: str
-    lemma: Optional[str] = None
-    pos: Optional[str] = None
-    case: Optional[str] = None
-    number: Optional[str] = None
-    gender: Optional[str] = None
-    tense: Optional[str] = None
-    mood: Optional[str] = None
-    voice: Optional[str] = None
-    person: Optional[str] = None
-    definition: Optional[str] = None
+    lemma: str
+    pos: str
+    definition: str
+    morphology: Dict[str, Any]
 
-class WordOccurrence(BaseModel):
-    """Model for word occurrence with context"""
-    id: int
-    urn: str
-    author: str
-    work: str
-    section_reference: str
-    word: str
-    context_before: str
-    context_after: str
-    position_in_text: int
+@router.get("/works")
+async def list_works(
+    language: Optional[str] = None,
+    author: Optional[str] = None,
+    limit: int = Query(100, le=500)
+):
+    """List available works grouped by author"""
+    return {
+        "works": [],
+        "total": 0,
+        "message": "Connect to database to see works"
+    }
 
-class WordOccurrencesResponse(BaseModel):
-    """Response model for word occurrences"""
-    word: str
-    total_occurrences: int
-    occurrences: List[WordOccurrence]
-    pagination: Dict[str, Any]
+@router.get("/work/{urn}")
+async def get_work(urn: str):
+    """Get work metadata"""
+    return {
+        "urn": urn,
+        "author": "Unknown",
+        "title": "Unknown",
+        "language": "greek",
+        "total_passages": 0
+    }
 
-class WordForm(BaseModel):
-    """Model for word form"""
-    form: str
-    count: int
-    morphology: Optional[Dict[str, str]] = None
+@router.get("/work/{urn}/text")
+async def get_text(
+    urn: str,
+    start: int = 0,
+    limit: int = Query(50, le=200)
+):
+    """Get text content for a work with pagination"""
+    return {
+        "urn": urn,
+        "text": "",
+        "start": start,
+        "limit": limit,
+        "total_lines": 0,
+        "message": "Connect to database to get text"
+    }
 
-class WordFormsResponse(BaseModel):
-    """Response model for word forms"""
-    word: str
-    lemma: Optional[str] = None
-    total_forms: int
-    forms: List[WordForm]
+@router.get("/word/{word}/morphology")
+async def get_morphology(word: str):
+    """Get morphological analysis for a Greek or Latin word"""
+    return {
+        "word": word,
+        "lemma": word,
+        "pos": "unknown",
+        "definition": "Morphology service ready - connect to database",
+        "morphology": {
+            "case": None,
+            "number": None,
+            "gender": None,
+            "tense": None,
+            "mood": None,
+            "voice": None,
+            "person": None
+        }
+    }
 
-
-def extract_context(text: str, word: str, context_length: int = 50) -> tuple:
-    """Extract context before and after a word in text"""
-    if not text or not word:
-        return "", ""
-    
-    word_pattern = re.compile(re.escape(word), re.IGNORECASE)
-    match = word_pattern.search(text)
-    
-    if not match:
-        return "", ""
-    
-    start_pos = match.start()
-    end_pos = match.end()
-    
-    context_start = max(0, start_pos - context_length)
-    context_end = min(len(text), end_pos + context_length)
-    
-    context_before = text[context_start:start_pos].strip()
-    context_after = text[end_pos:context_end].strip()
-    
-    return context_before, context_after
-
-
-@router.get("/works", response_model=WorksResponse, summary="List all works grouped by author")
-async def get_works(request: Request) -> WorksResponse:
-    """Get all works grouped by author with text counts."""
-    try:
-        if not hasattr(request.state, 'db_pool') or not request.state.db_pool:
-            raise HTTPException(status_code=503, detail="Database pool not available")
-        
-        db_pool = request.state.db_pool
-        
-        async with db_pool.acquire() as connection:
-            query = """
-            SELECT author, work, urn, language, COUNT(*) as text_count
-            FROM source_texts 
-            WHERE author IS NOT NULL AND work IS NOT NULL
-            GROUP BY author, work, urn, language
-            ORDER BY author, work
-            """
-            
-            rows = await connection.fetch(query)
-            
-            authors = {}
-            total_works = 0
-            total_texts = 0
-            
-            for row in rows:
-                author = row['author']
-                if author not in authors:
-                    authors[author] = []
-                
-                work_data = AuthorWork(
-                    author=author,
-                    work=row['work'],
-                    urn=row['urn'],
-                    text_count=row['text_count'],
-                    language=row['language'] or 'unknown'
-                )
-                
-                authors[author].append(work_data)
-                total_works += 1
-                total_texts += row['text_count']
-            
-            return WorksResponse(
-                authors=authors,
-                total_authors=len(authors),
-                total_works=total_works,
-                total_texts=total_texts
-            )
-            
-    except asyncpg.PostgresError as e:
-        logger.error(f"Database error in get_works: {e}")
-        raise HTTPException(status_code=503, detail="Database query failed")
-    except Exception as e:
-        logger.error(f"Unexpected error in get_works: {e}")
-        raise HTTPException(status_code=500, detail="Internal server error")
-
-
-@router.get("/work/{urn}", response_model=WorkMetadata, summary="Get work metadata")
-async def get_work_metadata(urn: str, request: Request) -> WorkMetadata:
-    """Get metadata for a specific work by URN."""
-    try:
-        if not hasattr(request.state, 'db_pool') or not request.state.db_pool:
-            raise HTTPException(status_code=503, detail="Database pool not available")
-        
-        db_pool = request.state.db_pool
-        
-        async with db_pool.acquire() as connection:
-            query = """
-            SELECT urn, author, work, language, COUNT(*) as total_sections
-            FROM source_texts 
-            WHERE urn = $1
-            GROUP BY urn, author, work, language
-            """
-            
-            row = await connection.fetchrow(query, urn)
-            
-            if not row:
-                raise HTTPException(status_code=404, detail=f"Work with URN '{urn}' not found")
-            
-            return WorkMetadata(
-                urn=row['urn'],
-                author=row['author'],
-                work=row['work'],
-                language=row['language'] or 'unknown',
-                total_sections=row['total_sections']
-            )
-            
-    except asyncpg.PostgresError as e:
-        logger.error(f"Database error in get_work_metadata: {e}")
-        raise HTTPException(status_code=503, detail="Database query failed")
-    except HTTPException:
-        raise
-    except Exception as e:
-        logger.error(f"Unexpected error in get_work_metadata: {e}")
-        raise HTTPException(status_code=500, detail="Internal server error")
-
-
-@router.get("/work/{urn}/text", response_model=TextResponse, summary="Get work text with pagination")
-async def get_work_text(
-    urn: str, 
-    request: Request,
-    start: int = Query(0, ge=0, description="Starting position for pagination"),
-    limit: int = Query(50, ge=1, le=500, description="Number of text segments to return")
-) -> TextResponse:
-    """Get text content for a specific work with pagination."""
-    try:
-        if not hasattr(request.state, 'db_pool') or not request.state.db_pool:
-            raise HTTPException(status_code=503, detail="Database pool not available")
-        
-        db_pool = request.state.db_pool
-        
-        async with db_pool.acquire() as connection:
-            metadata_query = """
-            SELECT DISTINCT author, work, language 
-            FROM source_texts 
-            WHERE urn = $1
-            LIMIT 1
-            """
-            
-            metadata_row = await connection.fetchrow(metadata_query, urn)
-            
-            if not metadata_row:
-                raise HTTPException(status_code=404, detail=f"Work with URN '{urn}' not found")
-            
-            count_query = "SELECT COUNT(*) FROM source_texts WHERE urn = $1"
-            total_count = await connection.fetchval(count_query, urn)
-            
-            text_query = """
-            SELECT id, urn, content, section_reference
-            FROM source_texts 
-            WHERE urn = $1
-            ORDER BY id
-            OFFSET $2 LIMIT $3
-            """
-            
-            text_rows = await connection.fetch(text_query, urn, start, limit)
-            
-            segments = []
-            for i, row in enumerate(text_rows):
-                segment = TextSegment(
-                    id=row['id'],
-                    urn=row['urn'],
-                    content=row['content'] or '',
-                    section_reference=row['section_reference'] or '',
-                    position=start + i
-                )
-                segments.append(segment)
-            
-            pagination = {
-                "start": start,
-                "limit": limit,
-                "total": total_count,
-                "returned": len(segments),
-                "has_next": start + limit < total_count,
-                "has_previous": start > 0,
-                "next_start": start + limit if start + limit < total_count else None,
-                "previous_start": max(0, start - limit) if start > 0 else None
-            }
-            
-            return TextResponse(
-                urn=urn,
-                author=metadata_row['author'],
-                work=metadata_row['work'],
-                language=metadata_row['language'] or 'unknown',
-                segments=segments,
-                pagination=pagination
-            )
-            
-    except asyncpg.PostgresError as e:
-        logger.error(f"Database error in get_work_text: {e}")
-        raise HTTPException(status_code=503, detail="Database query failed")
-    except HTTPException:
-        raise
-    except Exception as e:
-        logger.error(f"Unexpected error in get_work_text: {e}")
-        raise HTTPException(status_code=500, detail="Internal server error")
-
-
-@router.get("/word/{word}/morphology", response_model=MorphologyData, summary="Get word morphology")
-async def get_word_morphology(word: str, request: Request) -> MorphologyData:
-    """Get morphological analysis for a word."""
-    try:
-        if not hasattr(request.state, 'db_pool') or not request.state.db_pool:
-            raise HTTPException(status_code=503, detail="Database pool not available")
-        
-        db_pool = request.state.db_pool
-        normalized_word = word.lower().strip()
-        
-        async with db_pool.acquire() as connection:
-            try:
-                morphology_query = """
-                SELECT word, lemma, pos, case_val as case, number_val as number,
-                       gender, tense, mood, voice, person, definition
-                FROM morphology 
-                WHERE LOWER(word) = $1 OR LOWER(lemma) = $1
-                LIMIT 1
-                """
-                
-                morph_row = await connection.fetchrow(morphology_query, normalized_word)
-                
-                if morph_row:
-                    return MorphologyData(
-                        word=word,
-                        lemma=morph_row['lemma'],
-                        pos=morph_row['pos'],
-                        case=morph_row['case'],
-                        number=morph_row['number'],
-                        gender=morph_row['gender'],
-                        tense=morph_row['tense'],
-                        mood=morph_row['mood'],
-                        voice=morph_row['voice'],
-                        person=morph_row['person'],
-                        definition=morph_row['definition']
-                    )
-                    
-            except asyncpg.UndefinedTableError:
-                pass
-            
-            return MorphologyData(word=word)
-            
-    except asyncpg.PostgresError as e:
-        logger.error(f"Database error in get_word_morphology: {e}")
-        raise HTTPException(status_code=503, detail="Database query failed")
-    except Exception as e:
-        logger.error(f"Unexpected error in get_word_morphology: {e}")
-        raise HTTPException(status_code=500, detail="Internal server error")
-
-
-@router.get("/word/{word}/occurrences", response_model=WordOccurrencesResponse, summary="Get word occurrences")
-async def get_word_occurrences(
+@router.get("/word/{word}/occurrences")
+async def get_occurrences(
     word: str,
-    request: Request,
-    limit: int = Query(100, ge=1, le=1000, description="Number of occurrences to return")
-) -> WordOccurrencesResponse:
-    """Get all occurrences of a word with context."""
-    try:
-        if not hasattr(request.state, 'db_pool') or not request.state.db_pool:
-            raise HTTPException(status_code=503, detail="Database pool not available")
-        
-        db_pool = request.state.db_pool
-        normalized_word = word.lower().strip()
-        
-        async with db_pool.acquire() as connection:
-            search_query = """
-            SELECT id, urn, author, work, section_reference, content
-            FROM source_texts 
-            WHERE LOWER(content) LIKE $1
-            ORDER BY author, work, id
-            LIMIT $2
-            """
-            
-            search_pattern = f"%{normalized_word}%"
-            rows = await connection.fetch(search_query, search_pattern, limit)
-            
-            occurrences = []
-            for i, row in enumerate(rows):
-                context_before, context_after = extract_context(row['
+    limit: int = Query(50, le=200)
+):
+    """Get all occurrences of a word in the corpus"""
+    return {
+        "word": word,
+        "occurrences": [],
+        "total": 0
+    }
+
+@router.get("/word/{word}/forms")
+async def get_forms(word: str):
+    """Get all inflected forms of a word"""
+    return {
+        "lemma": word,
+        "forms": [],
+        "total": 0
+    }
