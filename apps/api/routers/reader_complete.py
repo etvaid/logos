@@ -60,7 +60,7 @@ class MorphologyData(BaseModel):
     """Model for word morphology"""
     word: str
     lemma: Optional[str] = None
-    pos: Optional[str] = None
+    pos: Optional[str] = None  # part of speech
     case: Optional[str] = None
     number: Optional[str] = None
     gender: Optional[str] = None
@@ -108,6 +108,7 @@ def extract_context(text: str, word: str, context_length: int = 50) -> tuple:
     if not text or not word:
         return "", ""
     
+    # Find word position (case insensitive)
     word_pattern = re.compile(re.escape(word), re.IGNORECASE)
     match = word_pattern.search(text)
     
@@ -117,6 +118,7 @@ def extract_context(text: str, word: str, context_length: int = 50) -> tuple:
     start_pos = match.start()
     end_pos = match.end()
     
+    # Extract context
     context_start = max(0, start_pos - context_length)
     context_end = min(len(text), end_pos + context_length)
     
@@ -128,7 +130,15 @@ def extract_context(text: str, word: str, context_length: int = 50) -> tuple:
 
 @router.get("/works", response_model=WorksResponse, summary="List all works grouped by author")
 async def get_works(request: Request) -> WorksResponse:
-    """Get all works grouped by author with text counts."""
+    """
+    Get all works grouped by author with text counts.
+    
+    Returns:
+        WorksResponse: Dictionary of authors with their works and counts
+    
+    Raises:
+        HTTPException: If database query fails
+    """
     try:
         if not hasattr(request.state, 'db_pool') or not request.state.db_pool:
             raise HTTPException(status_code=503, detail="Database pool not available")
@@ -137,7 +147,12 @@ async def get_works(request: Request) -> WorksResponse:
         
         async with db_pool.acquire() as connection:
             query = """
-            SELECT author, work, urn, language, COUNT(*) as text_count
+            SELECT 
+                author,
+                work,
+                urn,
+                language,
+                COUNT(*) as text_count
             FROM source_texts 
             WHERE author IS NOT NULL AND work IS NOT NULL
             GROUP BY author, work, urn, language
@@ -167,6 +182,8 @@ async def get_works(request: Request) -> WorksResponse:
                 total_works += 1
                 total_texts += row['text_count']
             
+            logger.info(f"Retrieved {len(authors)} authors with {total_works} works")
+            
             return WorksResponse(
                 authors=authors,
                 total_authors=len(authors),
@@ -184,7 +201,18 @@ async def get_works(request: Request) -> WorksResponse:
 
 @router.get("/work/{urn}", response_model=WorkMetadata, summary="Get work metadata")
 async def get_work_metadata(urn: str, request: Request) -> WorkMetadata:
-    """Get metadata for a specific work by URN."""
+    """
+    Get metadata for a specific work by URN.
+    
+    Args:
+        urn: The URN identifier for the work
+        
+    Returns:
+        WorkMetadata: Metadata for the specified work
+    
+    Raises:
+        HTTPException: If work not found or database query fails
+    """
     try:
         if not hasattr(request.state, 'db_pool') or not request.state.db_pool:
             raise HTTPException(status_code=503, detail="Database pool not available")
@@ -193,7 +221,12 @@ async def get_work_metadata(urn: str, request: Request) -> WorkMetadata:
         
         async with db_pool.acquire() as connection:
             query = """
-            SELECT urn, author, work, language, COUNT(*) as total_sections
+            SELECT 
+                urn,
+                author,
+                work,
+                language,
+                COUNT(*) as total_sections
             FROM source_texts 
             WHERE urn = $1
             GROUP BY urn, author, work, language
@@ -203,6 +236,8 @@ async def get_work_metadata(urn: str, request: Request) -> WorkMetadata:
             
             if not row:
                 raise HTTPException(status_code=404, detail=f"Work with URN '{urn}' not found")
+            
+            logger.info(f"Retrieved metadata for work: {urn}")
             
             return WorkMetadata(
                 urn=row['urn'],
@@ -229,7 +264,20 @@ async def get_work_text(
     start: int = Query(0, ge=0, description="Starting position for pagination"),
     limit: int = Query(50, ge=1, le=500, description="Number of text segments to return")
 ) -> TextResponse:
-    """Get text content for a specific work with pagination."""
+    """
+    Get text content for a specific work with pagination.
+    
+    Args:
+        urn: The URN identifier for the work
+        start: Starting position for pagination (default: 0)
+        limit: Number of segments to return (default: 50, max: 500)
+        
+    Returns:
+        TextResponse: Text content with pagination info
+    
+    Raises:
+        HTTPException: If work not found or database query fails
+    """
     try:
         if not hasattr(request.state, 'db_pool') or not request.state.db_pool:
             raise HTTPException(status_code=503, detail="Database pool not available")
@@ -253,7 +301,11 @@ async def get_work_text(
             total_count = await connection.fetchval(count_query, urn)
             
             text_query = """
-            SELECT id, urn, content, section_reference
+            SELECT 
+                id,
+                urn,
+                content,
+                section_reference
             FROM source_texts 
             WHERE urn = $1
             ORDER BY id
@@ -284,6 +336,8 @@ async def get_work_text(
                 "previous_start": max(0, start - limit) if start > 0 else None
             }
             
+            logger.info(f"Retrieved {len(segments)} text segments for work: {urn}")
+            
             return TextResponse(
                 urn=urn,
                 author=metadata_row['author'],
@@ -305,7 +359,18 @@ async def get_work_text(
 
 @router.get("/word/{word}/morphology", response_model=MorphologyData, summary="Get word morphology")
 async def get_word_morphology(word: str, request: Request) -> MorphologyData:
-    """Get morphological analysis for a word."""
+    """
+    Get morphological analysis for a word.
+    
+    Args:
+        word: The word to analyze
+        
+    Returns:
+        MorphologyData: Morphological information for the word
+    
+    Raises:
+        HTTPException: If database query fails
+    """
     try:
         if not hasattr(request.state, 'db_pool') or not request.state.db_pool:
             raise HTTPException(status_code=503, detail="Database pool not available")
@@ -316,8 +381,18 @@ async def get_word_morphology(word: str, request: Request) -> MorphologyData:
         async with db_pool.acquire() as connection:
             try:
                 morphology_query = """
-                SELECT word, lemma, pos, case_val as case, number_val as number,
-                       gender, tense, mood, voice, person, definition
+                SELECT 
+                    word,
+                    lemma,
+                    pos,
+                    case_val as case,
+                    number_val as number,
+                    gender,
+                    tense,
+                    mood,
+                    voice,
+                    person,
+                    definition
                 FROM morphology 
                 WHERE LOWER(word) = $1 OR LOWER(lemma) = $1
                 LIMIT 1
@@ -343,42 +418,4 @@ async def get_word_morphology(word: str, request: Request) -> MorphologyData:
             except asyncpg.UndefinedTableError:
                 pass
             
-            return MorphologyData(word=word)
-            
-    except asyncpg.PostgresError as e:
-        logger.error(f"Database error in get_word_morphology: {e}")
-        raise HTTPException(status_code=503, detail="Database query failed")
-    except Exception as e:
-        logger.error(f"Unexpected error in get_word_morphology: {e}")
-        raise HTTPException(status_code=500, detail="Internal server error")
-
-
-@router.get("/word/{word}/occurrences", response_model=WordOccurrencesResponse, summary="Get word occurrences")
-async def get_word_occurrences(
-    word: str,
-    request: Request,
-    limit: int = Query(100, ge=1, le=1000, description="Number of occurrences to return")
-) -> WordOccurrencesResponse:
-    """Get all occurrences of a word with context."""
-    try:
-        if not hasattr(request.state, 'db_pool') or not request.state.db_pool:
-            raise HTTPException(status_code=503, detail="Database pool not available")
-        
-        db_pool = request.state.db_pool
-        normalized_word = word.lower().strip()
-        
-        async with db_pool.acquire() as connection:
-            search_query = """
-            SELECT id, urn, author, work, section_reference, content
-            FROM source_texts 
-            WHERE LOWER(content) LIKE $1
-            ORDER BY author, work, id
-            LIMIT $2
-            """
-            
-            search_pattern = f"%{normalized_word}%"
-            rows = await connection.fetch(search_query, search_pattern, limit)
-            
-            occurrences = []
-            for i, row in enumerate(rows):
-                context_before, context_after = extract_context(row['
+            logger.info(f"No morphological data found for word: {word}")

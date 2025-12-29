@@ -16,14 +16,12 @@ router = APIRouter()
 
 # Pydantic Models
 class SemanticNeighbor(BaseModel):
-    """Model for semantic neighbor"""
     word: str
     similarity: float = Field(..., ge=0.0, le=1.0)
     language: str
     definition: Optional[str] = None
 
 class WordAnalysis(BaseModel):
-    """Model for complete word analysis"""
     word: str
     language: str
     status: str
@@ -33,7 +31,6 @@ class WordAnalysis(BaseModel):
     neighbors: Optional[List[SemanticNeighbor]] = None
 
 class NeighborsResponse(BaseModel):
-    """Response model for semantic neighbors"""
     word: str
     language: str
     status: str
@@ -41,7 +38,6 @@ class NeighborsResponse(BaseModel):
     total_neighbors: int
 
 class ComparisonResponse(BaseModel):
-    """Response model for word comparison"""
     word1: str
     word2: str
     similarity_score: float = Field(..., ge=0.0, le=1.0)
@@ -50,14 +46,12 @@ class ComparisonResponse(BaseModel):
     analysis: Optional[Dict[str, Any]] = None
 
 class EvolutionPeriod(BaseModel):
-    """Model for evolution period"""
     period: str
     definition: str
     usage_frequency: int
     semantic_shift: Optional[float] = None
 
 class EvolutionResponse(BaseModel):
-    """Response model for word evolution"""
     word: str
     language: str
     status: str
@@ -65,21 +59,18 @@ class EvolutionResponse(BaseModel):
     overall_trend: Optional[str] = None
 
 class AuthorUsage(BaseModel):
-    """Model for author usage"""
     author: str
     usage_count: int
     frequency: float
     works: List[str]
 
 class AuthorUsageResponse(BaseModel):
-    """Response model for author usage"""
     word: str
     status: str
     top_authors: List[AuthorUsage]
     total_authors: int
 
 class SemanticSearch(BaseModel):
-    """Model for semantic search result"""
     word: str
     relevance_score: float = Field(..., ge=0.0, le=1.0)
     definition: str
@@ -87,14 +78,12 @@ class SemanticSearch(BaseModel):
     context_examples: Optional[List[str]] = None
 
 class SemanticSearchResponse(BaseModel):
-    """Response model for semantic search"""
     query: str
     results: List[SemanticSearch]
     total_results: int
     search_type: str
 
 class SemanticCluster(BaseModel):
-    """Model for semantic cluster"""
     cluster_id: int
     name: str
     description: str
@@ -103,13 +92,11 @@ class SemanticCluster(BaseModel):
     coherence_score: float = Field(..., ge=0.0, le=1.0)
 
 class ClustersResponse(BaseModel):
-    """Response model for semantic clusters"""
     clusters: List[SemanticCluster]
     total_clusters: int
     clustering_method: str
 
 class SemanticBridge(BaseModel):
-    """Model for semantic bridge"""
     greek_word: str
     latin_word: str
     bridge_strength: float = Field(..., ge=0.0, le=1.0)
@@ -117,7 +104,6 @@ class SemanticBridge(BaseModel):
     translation_confidence: float = Field(..., ge=0.0, le=1.0)
 
 class BridgesResponse(BaseModel):
-    """Response model for semantic bridges"""
     bridges: List[SemanticBridge]
     total_bridges: int
     bridge_types: List[str]
@@ -140,7 +126,7 @@ def cosine_similarity(vec1: List[float], vec2: List[float]) -> float:
             return 0.0
         
         similarity = dot_product / (norm_a * norm_b)
-        return max(0.0, min(1.0, (similarity + 1) / 2))  # Normalize to [0, 1]
+        return max(0.0, min(1.0, (similarity + 1) / 2))
         
     except Exception as e:
         logger.warning(f"Error calculating cosine similarity: {e}")
@@ -148,7 +134,6 @@ def cosine_similarity(vec1: List[float], vec2: List[float]) -> float:
 
 
 def get_not_found_response(word: str, response_type: str = "analysis", word2: str = "") -> Dict[str, Any]:
-    """Get standard not found response"""
     base = {"word": word, "status": "not_found"}
     
     if response_type == "neighbors":
@@ -165,9 +150,9 @@ def get_not_found_response(word: str, response_type: str = "analysis", word2: st
     return base
 
 
-@router.get("/{word}", response_model=WordAnalysis, summary="Full word analysis")
+@router.get("/{word}", response_model=WordAnalysis, summary="Full word semantic analysis")
 async def get_word_analysis(word: str, request: Request) -> WordAnalysis:
-    """Get complete semantic analysis: definition from corpus, usage stats, semantic field"""
+    """Get complete semantic analysis: definition from corpus (NOT dictionary), usage stats, semantic field"""
     try:
         if not hasattr(request.state, 'db_pool') or not request.state.db_pool:
             raise HTTPException(status_code=503, detail="Database pool not available")
@@ -240,9 +225,9 @@ async def get_word_analysis(word: str, request: Request) -> WordAnalysis:
         raise HTTPException(status_code=500, detail="Internal server error")
 
 
-@router.get("/{word}/neighbors", response_model=NeighborsResponse, summary="Top 20 similar words")
+@router.get("/{word}/neighbors", response_model=NeighborsResponse, summary="Top 20 similar words using cosine similarity")
 async def get_word_neighbors(word: str, request: Request, limit: int = Query(20, ge=1, le=50)) -> NeighborsResponse:
-    """Get top similar words using cosine similarity on embeddings"""
+    """Get top 20 similar words using cosine similarity on embeddings: dot(a,b) / (norm(a) * norm(b))"""
     try:
         if not hasattr(request.state, 'db_pool') or not request.state.db_pool:
             raise HTTPException(status_code=503, detail="Database pool not available")
@@ -338,3 +323,17 @@ async def compare_words(word: str, other: str, request: Request) -> ComparisonRe
                     word2_embedding = row['embedding']
             
             if word1_embedding is None or word2_embedding is None:
+                return ComparisonResponse(**get_not_found_response(word, "comparison", other))
+            
+            similarity_score = cosine_similarity(word1_embedding, word2_embedding)
+            
+            # Get shared contexts
+            context_query = """
+            SELECT DISTINCT st1.content, st1.author, st1.work
+            FROM source_texts st1, source_texts st2
+            WHERE LOWER(st1.content) LIKE $1 
+              AND LOWER(st2.content) LIKE $2
+              AND st1.work = st2.work
+            LIMIT 5
+            """
+            context_rows = await connection.fetch(context_query, f"%{normalized_word1}%", f"%{normalized_wor
