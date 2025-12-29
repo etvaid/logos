@@ -1,70 +1,87 @@
-
 from fastapi import APIRouter
 from typing import Dict, Any
+from pydantic import BaseModel
 
 router = APIRouter()
 
 LOST_WORKS = [
     {
-        "id": "sappho_2_9",
-        "title": "Sappho Books 2-9",
+        "id": "sappho_books",
+        "title": "Sappho's Lost Books (2-9)",
         "author": "Sappho",
-        "fragments": 89,
-        "reconstructable": 0.35,
-        "description": "Most of Sappho's nine books of poetry are lost"
+        "original_extent": "9 books of lyric poetry",
+        "surviving": "~650 lines from quotations and papyri",
+        "evidence": "Quotations in Athenaeus, Longinus, papyrus finds",
+        "themes": ["Love", "Wedding songs", "Hymns to Aphrodite"]
     },
     {
         "id": "aristotle_poetics_2",
-        "title": "Poetics II (On Comedy)",
+        "title": "Poetics Book II (On Comedy)",
         "author": "Aristotle",
-        "fragments": 23,
-        "reconstructable": 0.15,
-        "description": "Lost second book on comedy, traces in Tractatus Coislinianus"
+        "original_extent": "Second book of Poetics",
+        "surviving": "None (possibly echoed in Tractatus Coislinianus)",
+        "evidence": "References in Poetics I, later summaries",
+        "themes": ["Comedy", "Catharsis through laughter", "Comic characters"]
     },
     {
         "id": "livy_lost",
-        "title": "Livy Books 11-20, 46-142",
+        "title": "Livy's Lost Books (11-20, 46-142)",
         "author": "Livy",
-        "fragments": 0,
-        "reconstructable": 0.05,
-        "description": "Periochae summaries survive"
+        "original_extent": "142 books total",
+        "surviving": "35 books (1-10, 21-45)",
+        "evidence": "Periochae (summaries), quotations",
+        "themes": ["Roman Republic", "Punic Wars", "Civil Wars"]
     },
     {
         "id": "ennius_annales",
-        "title": "Annales",
+        "title": "Annales (most)",
         "author": "Ennius",
-        "fragments": 67,
-        "reconstructable": 0.20,
-        "description": "Epic history of Rome, major influence on Virgil"
-    }
+        "original_extent": "18 books of epic",
+        "surviving": "~600 lines from quotations",
+        "evidence": "Quotations in Cicero, grammarians",
+        "themes": ["Roman history", "Epic narrative", "Latin meter development"]
+    },
+    {
+        "id": "menander_plays",
+        "title": "Menander's Comedies (most)",
+        "author": "Menander",
+        "original_extent": "~100 plays",
+        "surviving": "1 complete (Dyskolos), substantial fragments of ~6 others",
+        "evidence": "Papyrus finds, Roman adaptations",
+        "themes": ["New Comedy", "Love plots", "Social situations"]
+    },
 ]
 
-@router.get("/works")
-async def list_lost_works() -> Dict[str, Any]:
-    """List cataloged lost works"""
-    return {"works": LOST_WORKS, "total": len(LOST_WORKS)}
+class ReconstructRequest(BaseModel):
+    work_id: str
+    method: str = "contextual"
 
-@router.get("/work/{id}")
-async def get_lost_work(id: str) -> Dict[str, Any]:
-    """Get details about a lost work"""
-    for w in LOST_WORKS:
-        if w["id"] == id:
-            return w
+@router.get("/lost")
+async def get_lost_works() -> Dict[str, Any]:
+    return {"works": LOST_WORKS}
+
+@router.get("/work/{work_id}")
+async def get_work_details(work_id: str) -> Dict[str, Any]:
+    work = next((w for w in LOST_WORKS if w['id'] == work_id), None)
+    if work:
+        return {"work": work}
     return {"error": "Work not found"}
 
-@router.get("/work/{id}/fragments")
-async def get_fragments(id: str) -> Dict[str, Any]:
-    """Get surviving fragments"""
+@router.post("/reconstruct")
+async def reconstruct_work(data: ReconstructRequest) -> Dict[str, Any]:
+    """Generate hypothetical reconstruction"""
+    work = next((w for w in LOST_WORKS if w['id'] == data.work_id), None)
+    if not work:
+        return {"error": "Work not found"}
+    
     return {
-        "work_id": id,
-        "fragments": [],
-        "status": "fragment_collection_pending"
+        "work_id": data.work_id,
+        "method": data.method,
+        "reconstruction": f"[AI-generated hypothetical reconstruction of {work['title']}]\n\nBased on surviving fragments and ancient testimonies...",
+        "confidence": 0.3,
+        "warning": "This is a scholarly speculation, not a recovered text"
     }
 
-@router.post("/reconstruct")
-async def reconstruct() -> Dict[str, Any]:
-    """AI-powered reconstruction attempt"""
-    return {
-        "status": "pending",
-        "message": "Reconstruction requires Claude API integration"
-    }
+@router.get("/")
+async def root() -> Dict[str, Any]:
+    return {"status": "ready", "description": "GHOST - Lost works reconstruction"}
