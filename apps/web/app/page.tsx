@@ -1,155 +1,580 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { Card, Button, Input, LoadingSpinner, Badge } from '@/components/ui';
+import { AnimatedCounter, DonutChart, BarChart, Timeline } from '@/components/charts';
+import { getStats, search } from '@/lib/api';
+import type { CorpusStats, SearchResult } from '@/lib/types';
 
-interface Stats {
-  total_passages: number;
-  total_authors: number;
-  total_words: number;
-  languages: number;
-}
-
-const features = [
-  { name: "Reader", href: "/reader", icon: "📖", desc: "Browse 826 works" },
-  { name: "Search", href: "/search", icon: "🔍", desc: "6.6M passages" },
-  { name: "SEMANTIA", href: "/semantia", icon: "💡", desc: "Word analysis" },
-  { name: "Translate", href: "/translate", icon: "🌐", desc: "4 AI styles" },
-  { name: "CHRONOS", href: "/chronos", icon: "⏳", desc: "Word evolution" },
-  { name: "Connectome", href: "/connectome", icon: "🕸️", desc: "Author network" },
-  { name: "Learn", href: "/learn", icon: "🎓", desc: "64 modules" },
-  { name: "Maps", href: "/maps", icon: "🗺️", desc: "Ancient world" },
-  { name: "Timeline", href: "/timeline", icon: "📅", desc: "800 BCE-600 CE" },
-  { name: "Forensic", href: "/forensic", icon: "🔬", desc: "Stylometry" },
-  { name: "Discovery", href: "/discovery", icon: "✨", desc: "AI patterns" },
-  { name: "Prosody", href: "/prosody", icon: "🎵", desc: "Meter analysis" },
-  { name: "Ghost", href: "/ghost", icon: "👻", desc: "Lost works" },
-  { name: "Authors", href: "/authors", icon: "👤", desc: "380+ profiles" },
-  { name: "Works", href: "/works", icon: "📚", desc: "Complete catalog" },
+// Language distribution data
+const languageDistribution = [
+  { name: 'Greek', value: 4200000, color: '#87CEEB' },
+  { name: 'Latin', value: 2100000, color: '#DDA0DD' },
+  { name: 'Hebrew', value: 250000, color: '#98D8C8' },
+  { name: 'Aramaic', value: 100000, color: '#F7DC6F' },
+  { name: 'Coptic', value: 35000, color: '#F1948A' },
+  { name: 'Syriac', value: 12130, color: '#BB8FCE' },
 ];
 
-export default function Home() {
-  const [stats, setStats] = useState<Stats | null>(null);
+// Top authors by passage count
+const topAuthors = [
+  { name: 'Homer', value: 27000, color: '#87CEEB' },
+  { name: 'Plato', value: 21500, color: '#87CEEB' },
+  { name: 'Aristotle', value: 19800, color: '#87CEEB' },
+  { name: 'Cicero', value: 18200, color: '#DDA0DD' },
+  { name: 'Virgil', value: 15600, color: '#DDA0DD' },
+  { name: 'Xenophon', value: 14300, color: '#87CEEB' },
+  { name: 'Plutarch', value: 13500, color: '#87CEEB' },
+  { name: 'Livy', value: 12800, color: '#DDA0DD' },
+];
+
+// Historical timeline events
+const timelineEvents = [
+  { id: '1', date: -850, title: 'Homer', description: 'Iliad & Odyssey composed', type: 'author' as const },
+  { id: '2', date: -700, title: 'Hesiod', description: 'Theogony, Works and Days', type: 'author' as const },
+  { id: '3', date: -525, title: 'Aeschylus', description: 'Birth of Greek tragedy', type: 'author' as const },
+  { id: '4', date: -469, title: 'Socrates', description: 'Philosophical revolution begins', type: 'author' as const },
+  { id: '5', date: -428, title: 'Plato', description: 'Founder of the Academy', type: 'author' as const },
+  { id: '6', date: -384, title: 'Aristotle', description: 'The Philosopher', type: 'author' as const },
+  { id: '7', date: -106, title: 'Cicero', description: 'Master of Latin prose', type: 'author' as const },
+  { id: '8', date: -70, title: 'Virgil', description: 'Rome\'s epic poet', type: 'author' as const },
+  { id: '9', date: -43, title: 'Ovid', description: 'Metamorphoses', type: 'author' as const },
+  { id: '10', date: 56, title: 'Tacitus', description: 'Rome\'s greatest historian', type: 'author' as const },
+  { id: '11', date: 354, title: 'Augustine', description: 'City of God, Confessions', type: 'author' as const },
+  { id: '12', date: 480, title: 'Boethius', description: 'Consolation of Philosophy', type: 'author' as const },
+];
+
+// Feature modules with enhanced descriptions
+const features = [
+  {
+    name: 'Library',
+    href: '/library',
+    icon: '📚',
+    desc: 'Browse the complete corpus with tree navigation',
+    stats: '74,927 authors',
+    color: 'from-blue-500/20'
+  },
+  {
+    name: 'Reader',
+    href: '/reader',
+    icon: '📖',
+    desc: 'Three-panel reading with analysis',
+    stats: 'Side-by-side translation',
+    color: 'from-green-500/20'
+  },
+  {
+    name: 'Translate',
+    href: '/translate',
+    icon: '🌐',
+    desc: 'AI-powered with 38 persona styles',
+    stats: 'LTQI quality scoring',
+    color: 'from-purple-500/20'
+  },
+  {
+    name: 'SEMANTIA',
+    href: '/semantia',
+    icon: '💡',
+    desc: 'Semantic drift over 2,400 years',
+    stats: 'Word evolution tracking',
+    color: 'from-yellow-500/20'
+  },
+  {
+    name: 'CHRONOS',
+    href: '/chronos',
+    icon: '⏳',
+    desc: 'Interactive D3 timeline',
+    stats: '850 BCE - 600 CE',
+    color: 'from-red-500/20'
+  },
+  {
+    name: 'Connectome',
+    href: '/connectome',
+    icon: '🕸️',
+    desc: 'Force-directed influence graph',
+    stats: 'Network visualization',
+    color: 'from-cyan-500/20'
+  },
+  {
+    name: 'Learn',
+    href: '/learn',
+    icon: '🎓',
+    desc: '64 Greek & Latin modules',
+    stats: 'XP-based progression',
+    color: 'from-orange-500/20'
+  },
+  {
+    name: 'Analysis',
+    href: '/analysis',
+    icon: '🔬',
+    desc: 'Morphology, syntax, scansion',
+    stats: 'Stylometric fingerprinting',
+    color: 'from-pink-500/20'
+  },
+];
+
+// Featured quotes from the corpus
+const featuredQuotes = [
+  {
+    text: 'μῆνιν ἄειδε θεά, Πηληϊάδεω Ἀχιλῆος',
+    translation: 'Sing, O goddess, the anger of Achilles son of Peleus',
+    author: 'Homer',
+    work: 'Iliad 1.1'
+  },
+  {
+    text: 'Arma virumque cano, Troiae qui primus ab oris',
+    translation: 'I sing of arms and the man, who first from the shores of Troy',
+    author: 'Virgil',
+    work: 'Aeneid 1.1'
+  },
+  {
+    text: 'γνῶθι σεαυτόν',
+    translation: 'Know thyself',
+    author: 'Delphic Oracle',
+    work: 'Inscribed at Apollo\'s Temple'
+  },
+];
+
+export default function HomePage() {
+  const router = useRouter();
+  const [stats, setStats] = useState<CorpusStats | null>(null);
   const [loading, setLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
+  const [searching, setSearching] = useState(false);
+  const [currentQuote, setCurrentQuote] = useState(0);
 
   useEffect(() => {
-    fetch("https://logos-backend-production-0d96.up.railway.app/api/stats")
-      .then(res => res.json())
-      .then(data => {
-        setStats({
-          total_passages: data.passages || 662449,
-          total_authors: data.authors || 380,
-          total_words: 331000000,
-          languages: Object.keys(data.languages || {}).length || 3
-        });
-        setLoading(false);
-      })
-      .catch(err => {
-        console.error("Failed to load stats:", err);
-        setLoading(false);
-      });
+    getStats()
+      .then(setStats)
+      .catch(console.error)
+      .finally(() => setLoading(false));
   }, []);
 
+  // Rotate quotes
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentQuote((prev) => (prev + 1) % featuredQuotes.length);
+    }, 8000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleSearch = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!searchQuery.trim()) return;
+
+    setSearching(true);
+    try {
+      const data = await search(searchQuery, { limit: 5 });
+      setSearchResults(data.results);
+    } catch (err) {
+      console.error('Search failed:', err);
+    } finally {
+      setSearching(false);
+    }
+  };
+
+  const goToFullSearch = () => {
+    router.push(`/search?q=${encodeURIComponent(searchQuery)}`);
+  };
+
+  const quote = featuredQuotes[currentQuote];
+
   return (
-    <div className="min-h-screen bg-[#0D0D0F] text-[#F5F3EF]">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#C9A962]/5 to-transparent" />
-        <div className="max-w-7xl mx-auto px-8 py-20 relative">
+      <section className="relative py-16 lg:py-24 overflow-hidden">
+        {/* Background effects */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#C9A962]/5 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#C9A962]/10 via-transparent to-transparent" />
+
+        {/* Animated background particles */}
+        <div className="absolute inset-0 overflow-hidden">
+          {[...Array(20)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-1 h-1 bg-[#C9A962]/20 rounded-full animate-pulse"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 3}s`,
+                animationDuration: `${2 + Math.random() * 3}s`,
+              }}
+            />
+          ))}
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-7xl font-bold mb-4">
-              <span className="text-[#C9A962]">LOGOS</span>
+            {/* Title */}
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-4">
+              <span className="text-[#C9A962] drop-shadow-lg">LOGOS</span>
             </h1>
-            <p className="text-2xl text-[#F5F3EF]/70 mb-2">
+            <p className="text-xl sm:text-2xl text-[#F5F3EF]/70 mb-2">
               The Complete Classical Research Platform
             </p>
-            <p className="text-lg text-[#F5F3EF]/50 max-w-2xl mx-auto">
-              AI-powered analysis of Greek, Latin, and Hebrew texts.
-              Read, translate, analyze, and discover across 6.6 million passages.
+            <p className="text-lg text-[#F5F3EF]/50 max-w-2xl mx-auto mb-8">
+              Read, translate, and analyze Greek, Latin, and ancient texts
+              with AI-powered tools built for scholars and learners
+            </p>
+
+            {/* Search Bar */}
+            <form onSubmit={handleSearch} className="max-w-3xl mx-auto mb-8">
+              <div className="flex gap-3">
+                <div className="flex-1 relative">
+                  <Input
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder="Search 6.7 million passages..."
+                    className="text-lg py-4 pl-12"
+                    icon={
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                      </svg>
+                    }
+                  />
+                </div>
+                <Button type="submit" size="lg" loading={searching}>
+                  Search
+                </Button>
+              </div>
+            </form>
+
+            {/* Quick search results */}
+            {searchResults.length > 0 && (
+              <div className="max-w-3xl mx-auto mb-8">
+                <Card padding="sm">
+                  <div className="text-left">
+                    {searchResults.slice(0, 3).map((r, i) => (
+                      <div key={i} className="py-3 border-b border-[#C9A962]/10 last:border-0">
+                        <div className="text-sm text-[#C9A962]">
+                          {r.author} — {r.work}
+                        </div>
+                        <p className="text-sm text-[#F5F3EF]/70 line-clamp-2 font-serif">
+                          {r.passage}
+                        </p>
+                      </div>
+                    ))}
+                    <Button variant="ghost" size="sm" onClick={goToFullSearch} className="w-full mt-2">
+                      View all results →
+                    </Button>
+                  </div>
+                </Card>
+              </div>
+            )}
+
+            {/* Animated Stats Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+              <Card variant="hover" className="text-center py-6">
+                {loading ? (
+                  <LoadingSpinner size="sm" />
+                ) : (
+                  <AnimatedCounter
+                    value={stats?.passages || 6697130}
+                    className="text-3xl sm:text-4xl font-bold text-[#C9A962]"
+                  />
+                )}
+                <div className="text-sm text-[#F5F3EF]/50 mt-1">Passages</div>
+              </Card>
+              <Card variant="hover" className="text-center py-6">
+                {loading ? (
+                  <LoadingSpinner size="sm" />
+                ) : (
+                  <AnimatedCounter
+                    value={stats?.authors || 74927}
+                    className="text-3xl sm:text-4xl font-bold text-[#C9A962]"
+                  />
+                )}
+                <div className="text-sm text-[#F5F3EF]/50 mt-1">Authors</div>
+              </Card>
+              <Card variant="hover" className="text-center py-6">
+                {loading ? (
+                  <LoadingSpinner size="sm" />
+                ) : (
+                  <AnimatedCounter
+                    value={6}
+                    className="text-3xl sm:text-4xl font-bold text-[#C9A962]"
+                  />
+                )}
+                <div className="text-sm text-[#F5F3EF]/50 mt-1">Languages</div>
+              </Card>
+              <Card variant="hover" className="text-center py-6">
+                {loading ? (
+                  <LoadingSpinner size="sm" />
+                ) : (
+                  <AnimatedCounter
+                    value={2400}
+                    className="text-3xl sm:text-4xl font-bold text-[#C9A962]"
+                  />
+                )}
+                <div className="text-sm text-[#F5F3EF]/50 mt-1">Years Covered</div>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Quote */}
+      <section className="py-12 bg-gradient-to-b from-transparent to-[#C9A962]/5">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="transition-all duration-500">
+            <p className="text-2xl sm:text-3xl font-serif text-[#87CEEB] mb-3 italic">
+              "{quote.text}"
+            </p>
+            <p className="text-lg text-[#F5F3EF]/70 mb-2">
+              "{quote.translation}"
+            </p>
+            <p className="text-sm text-[#C9A962]">
+              — {quote.author}, <span className="text-[#F5F3EF]/50">{quote.work}</span>
             </p>
           </div>
-
-          {/* Stats Bar */}
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="text-center p-6 bg-[#C9A962]/5 rounded-lg border border-[#C9A962]/20">
-              <div className="text-4xl font-bold text-[#C9A962]">
-                {loading ? "..." : stats?.total_passages?.toLocaleString() || "6.6M"}
-              </div>
-              <div className="text-sm text-[#F5F3EF]/50">Passages</div>
-            </div>
-            <div className="text-center p-6 bg-[#C9A962]/5 rounded-lg border border-[#C9A962]/20">
-              <div className="text-4xl font-bold text-[#C9A962]">
-                {loading ? "..." : stats?.total_authors || "380+"}
-              </div>
-              <div className="text-sm text-[#F5F3EF]/50">Authors</div>
-            </div>
-            <div className="text-center p-6 bg-[#C9A962]/5 rounded-lg border border-[#C9A962]/20">
-              <div className="text-4xl font-bold text-[#C9A962]">
-                {loading ? "..." : `${Math.round((stats?.total_words || 331000000) / 1000000)}M`}
-              </div>
-              <div className="text-sm text-[#F5F3EF]/50">Words</div>
-            </div>
-            <div className="text-center p-6 bg-[#C9A962]/5 rounded-lg border border-[#C9A962]/20">
-              <div className="text-4xl font-bold text-[#C9A962]">
-                {loading ? "..." : stats?.languages || 3}
-              </div>
-              <div className="text-sm text-[#F5F3EF]/50">Languages</div>
-            </div>
+          <div className="flex justify-center gap-2 mt-6">
+            {featuredQuotes.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrentQuote(i)}
+                className={`w-2 h-2 rounded-full transition-all ${
+                  i === currentQuote ? 'bg-[#C9A962] w-6' : 'bg-[#C9A962]/30'
+                }`}
+              />
+            ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Features Grid */}
-      <div className="max-w-7xl mx-auto px-8 py-16">
-        <h2 className="text-3xl font-bold text-center mb-12">
-          <span className="text-[#C9A962]">Explore</span> the Ancient World
-        </h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {features.map(feature => (
-            <Link
-              key={feature.name}
-              href={feature.href}
-              className="p-6 bg-[#C9A962]/5 border border-[#C9A962]/20 rounded-lg hover:border-[#C9A962]/60 hover:bg-[#C9A962]/10 transition group"
-            >
-              <div className="text-3xl mb-2">{feature.icon}</div>
-              <h3 className="font-semibold text-[#C9A962] group-hover:text-[#F5F3EF] transition">
-                {feature.name}
+      {/* Charts Section */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">
+            <span className="text-[#C9A962]">Corpus</span> Overview
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Language Distribution */}
+            <Card padding="lg">
+              <h3 className="text-lg font-semibold text-[#C9A962] mb-4 text-center">
+                Language Distribution
               </h3>
-              <p className="text-xs text-[#F5F3EF]/50">{feature.desc}</p>
-            </Link>
-          ))}
+              <DonutChart
+                data={languageDistribution}
+                showLegend
+                centerText="6.7M"
+                centerSubtext="passages"
+              />
+            </Card>
+
+            {/* Top Authors */}
+            <Card padding="lg">
+              <h3 className="text-lg font-semibold text-[#C9A962] mb-4 text-center">
+                Top Authors by Passage Count
+              </h3>
+              <div className="h-64">
+                <BarChart
+                  data={topAuthors}
+                  horizontal
+                  maxBars={8}
+                />
+              </div>
+            </Card>
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* Historical Timeline */}
+      <section className="py-16 bg-[#C9A962]/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-4">
+            <span className="text-[#C9A962]">Historical</span> Timeline
+          </h2>
+          <p className="text-center text-[#F5F3EF]/50 mb-8">
+            2,400 years of classical literature
+          </p>
+
+          <Timeline
+            events={timelineEvents}
+            height={250}
+          />
+        </div>
+      </section>
+
+      {/* Feature Grid */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-4">
+            <span className="text-[#C9A962]">Explore</span> the Platform
+          </h2>
+          <p className="text-center text-[#F5F3EF]/50 mb-12">
+            Eight powerful modules for classical research
+          </p>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {features.map((feature) => (
+              <Link key={feature.name} href={feature.href}>
+                <Card
+                  variant="interactive"
+                  className={`h-full bg-gradient-to-br ${feature.color} to-transparent group`}
+                >
+                  <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">
+                    {feature.icon}
+                  </div>
+                  <h3 className="font-semibold text-[#C9A962] mb-1">
+                    {feature.name}
+                  </h3>
+                  <p className="text-sm text-[#F5F3EF]/60 mb-2">{feature.desc}</p>
+                  <Badge size="sm" variant="default">{feature.stats}</Badge>
+                </Card>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Languages Section */}
-      <div className="max-w-7xl mx-auto px-8 py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold">
-            <span className="text-[#C9A962]">10 Ancient Languages</span>
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+            <span className="text-[#C9A962]">Six</span> Ancient Languages
           </h2>
-          <p className="text-[#F5F3EF]/50 mt-2">
+          <p className="text-[#F5F3EF]/50 mb-8">
             From Homer to the Dead Sea Scrolls
           </p>
-        </div>
-        <div className="flex flex-wrap justify-center gap-4">
-          {["Greek", "Latin", "Hebrew", "Aramaic", "Sanskrit", "Pali", "Coptic", "Syriac", "Avestan", "Old Persian"].map(lang => (
-            <span
-              key={lang}
-              className="px-4 py-2 bg-[#C9A962]/10 border border-[#C9A962]/20 rounded-full text-sm"
-            >
-              {lang}
-            </span>
-          ))}
-        </div>
-      </div>
 
-      {/* Footer */}
-      <footer className="border-t border-[#C9A962]/20 py-8">
-        <div className="max-w-7xl mx-auto px-8 text-center text-[#F5F3EF]/50 text-sm">
-          <p>LOGOS Classical Research Platform</p>
-          <p className="mt-2">Powered by AI • 6.6M passages • 380+ authors</p>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {languageDistribution.map((lang) => (
+              <Link
+                key={lang.name}
+                href={`/library?language=${lang.name.toLowerCase()}`}
+              >
+                <Card variant="interactive" className="text-center py-6">
+                  <div
+                    className="text-3xl font-bold mb-1"
+                    style={{ color: lang.color }}
+                  >
+                    <AnimatedCounter value={lang.value} duration={1500} />
+                  </div>
+                  <div className="font-medium text-[#F5F3EF]">{lang.name}</div>
+                  <div className="text-xs text-[#F5F3EF]/40">passages</div>
+                </Card>
+              </Link>
+            ))}
+          </div>
         </div>
-      </footer>
+      </section>
+
+      {/* Unique Features */}
+      <section className="py-16 bg-gradient-to-b from-[#C9A962]/5 to-transparent">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">
+            <span className="text-[#C9A962]">Unique</span> Capabilities
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <Card padding="lg" className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-[#C9A962]/20 flex items-center justify-center">
+                <span className="text-3xl">📊</span>
+              </div>
+              <h3 className="text-lg font-semibold text-[#C9A962] mb-2">
+                LTQI Scoring
+              </h3>
+              <p className="text-sm text-[#F5F3EF]/60">
+                Loeb Translation Quality Index measures translations across 5 dimensions:
+                literalness, poeticness, formality, accessibility, and scholarly precision.
+              </p>
+            </Card>
+
+            <Card padding="lg" className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-[#C9A962]/20 flex items-center justify-center">
+                <span className="text-3xl">🧬</span>
+              </div>
+              <h3 className="text-lg font-semibold text-[#C9A962] mb-2">
+                Style Vector Arithmetic
+              </h3>
+              <p className="text-sm text-[#F5F3EF]/60">
+                Blend translator personas: "70% Fagles + 30% Lattimore" creates
+                translations that are dramatic yet faithful.
+              </p>
+            </Card>
+
+            <Card padding="lg" className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-[#C9A962]/20 flex items-center justify-center">
+                <span className="text-3xl">🔍</span>
+              </div>
+              <h3 className="text-lg font-semibold text-[#C9A962] mb-2">
+                Stylometric Fingerprinting
+              </h3>
+              <p className="text-sm text-[#F5F3EF]/60">
+                50+ linguistic features per author create unique fingerprints
+                for authorship attribution and literary analysis.
+              </p>
+            </Card>
+
+            <Card padding="lg" className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-[#C9A962]/20 flex items-center justify-center">
+                <span className="text-3xl">📈</span>
+              </div>
+              <h3 className="text-lg font-semibold text-[#C9A962] mb-2">
+                Semantic Drift
+              </h3>
+              <p className="text-sm text-[#F5F3EF]/60">
+                Track how word meanings evolved across 2,400 years.
+                See "ἀρετή" shift from "excellence" to "virtue."
+              </p>
+            </Card>
+
+            <Card padding="lg" className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-[#C9A962]/20 flex items-center justify-center">
+                <span className="text-3xl">🕸️</span>
+              </div>
+              <h3 className="text-lg font-semibold text-[#C9A962] mb-2">
+                Intertextuality Network
+              </h3>
+              <p className="text-sm text-[#F5F3EF]/60">
+                Force-directed graphs reveal how authors influenced each other
+                across centuries of literary tradition.
+              </p>
+            </Card>
+
+            <Card padding="lg" className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-[#C9A962]/20 flex items-center justify-center">
+                <span className="text-3xl">👻</span>
+              </div>
+              <h3 className="text-lg font-semibold text-[#C9A962] mb-2">
+                Lost Works Reconstruction
+              </h3>
+              <p className="text-sm text-[#F5F3EF]/60">
+                AI-assisted reconstruction of fragmentary texts using
+                quotations, citations, and stylometric analysis.
+              </p>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+            Start Your Journey
+          </h2>
+          <p className="text-lg text-[#F5F3EF]/70 mb-8">
+            Whether you're a student, scholar, or curious reader,
+            LOGOS has the tools you need to explore the ancient world.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/library">
+              <Button size="lg">Browse Library</Button>
+            </Link>
+            <Link href="/translate">
+              <Button variant="secondary" size="lg">Try Translation</Button>
+            </Link>
+            <Link href="/learn">
+              <Button variant="ghost" size="lg">Start Learning</Button>
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

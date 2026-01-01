@@ -23,7 +23,15 @@ from routers import (
     prosody,
     ghost,
     atlas,
-    discovery
+    discovery,
+    calibration,
+    style,
+    hypothesis,
+    synoptic,
+    latent,
+    uncertainty,
+    personas,
+    forensic
 )
 
 # Configure logging
@@ -210,7 +218,15 @@ async def root():
             "prosody": "/prosody - Prosodic analysis",
             "ghost": "/ghost - Ghost text detection",
             "atlas": "/atlas - Geographic atlas",
-            "discovery": "/discovery - Discovery tools"
+            "discovery": "/discovery - Discovery tools",
+            "calibration": "/calibration - 4-gate calibration system",
+            "style": "/style - Style residual analysis",
+            "hypothesis": "/hypothesis - Hypothesis factory",
+            "synoptic": "/synoptic - Q reconstruction",
+            "latent": "/latent - Latent factor analysis",
+            "uncertainty": "/uncertainty - Confidence intervals",
+            "personas": "/personas - Editorial personas",
+            "forensic": "/forensic - Textual forensics"
         },
         "timestamp": datetime.utcnow().isoformat()
     }
@@ -262,6 +278,16 @@ app.include_router(prosody.router, prefix="/prosody", tags=["Prosody"])
 app.include_router(ghost.router, prefix="/ghost", tags=["Ghost"])
 app.include_router(atlas.router, prefix="/atlas", tags=["Atlas"])
 app.include_router(discovery.router, prefix="/discovery", tags=["Discovery"])
+
+# New scientific platform routers
+app.include_router(calibration.router, tags=["Calibration"])
+app.include_router(style.router, tags=["Style"])
+app.include_router(hypothesis.router, tags=["Hypothesis"])
+app.include_router(synoptic.router, tags=["Synoptic"])
+app.include_router(latent.router, tags=["Latent Factors"])
+app.include_router(uncertainty.router, tags=["Uncertainty"])
+app.include_router(personas.router, tags=["Personas"])
+app.include_router(forensic.router, tags=["Forensic"])
 
 # Middleware for database pool access
 @app.middleware("http")
