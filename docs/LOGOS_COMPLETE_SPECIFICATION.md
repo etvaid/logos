@@ -223,7 +223,7 @@ our instruments work.
 |---------|-----|
 | Frontend | https://vercellogos-classical.vercel.app |
 | Backend | https://logos-backend-production-0d96.up.railway.app |
-| Database | postgresql://postgres:voqQePIH4adopQUa-1UUaFKnOT-mtsod@maglev.proxy.rlwy.net:49514/railway |
+| Database | postgresql://postgres:$DATABASE_URL (see .env) |
 | GitHub | https://github.com/etvaid/logos |
 
 
