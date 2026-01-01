@@ -1,0 +1,557 @@
+{
+  "computation_date": "2025-12-30T05:10:09.743971",
+  "input_translators": 261,
+  "output_translators": 136,
+  "input_authors": 401,
+  "output_authors": 401,
+  "total_translator_words": 88444051,
+  "total_author_words": 69772330,
+  "translators": [
+    {
+      "name": "Loeb Classical Library",
+      "words": 42488011
+    },
+    {
+      "name": "Unattributed Translations",
+      "words": 24773902
+    },
+    {
+      "name": "Benjamin Jowett",
+      "words": 1410832
+    },
+    {
+      "name": "Charles Duke Yonge",
+      "words": 1361156
+    },
+    {
+      "name": "George Long",
+      "words": 886901
+    },
+    {
+      "name": "Henry Graham Dakyns",
+      "words": 595228
+    },
+    {
+      "name": "Herbert Baldwin Foster",
+      "words": 594661
+    },
+    {
+      "name": "Paulin Paris",
+      "words": 568941
+    },
+    {
+      "name": "David Price",
+      "words": 476623
+    },
+    {
+      "name": "Thomas Taylor",
+      "words": 470449
+    },
+    {
+      "name": "William Cowper",
+      "words": 453748
+    },
+    {
+      "name": "Alexander Pope",
+      "words": 434164
+    },
+    {
+      "name": "Kenneth Sylvan Guthrie",
+      "words": 424477
+    },
+    {
+      "name": "Lewis Evans & William Gifford",
+      "words": 394464
+    },
+    {
+      "name": "George Chapman",
+      "words": 394254
+    },
+    {
+      "name": "Theodore Alois Buckley",
+      "words": 358070
+    },
+    {
+      "name": "Eric Otto Winstedt",
+      "words": 334536
+    },
+    {
+      "name": "William Morris",
+      "words": 324981
+    },
+    {
+      "name": "Bartomeu Pou",
+      "words": 311484
+    },
+    {
+      "name": "Lang, Leaf & Myers",
+      "words": 309539
+    },
+    {
+      "name": "Gilbert Murray",
+      "words": 299978
+    },
+    {
+      "name": "Samuel Butler",
+      "words": 282302
+    },
+    {
+      "name": "William Ellis",
+      "words": 266178
+    },
+    {
+      "name": "William Melmoth",
+      "words": 254839
+    },
+    {
+      "name": "William Hazlitt",
+      "words": 250517
+    },
+    {
+      "name": "John Bostock & Henry Riley",
+      "words": 246853
+    },
+    {
+      "name": "William Adlington",
+      "words": 244803
+    },
+    {
+      "name": "William Ellery Leonard",
+      "words": 240522
+    },
+    {
+      "name": "Aubrey Stewart",
+      "words": 233086
+    },
+    {
+      "name": "Francisco Crivell",
+      "words": 232520
+    },
+    {
+      "name": "Matthew Arnold",
+      "words": 231343
+    },
+    {
+      "name": "William Burnaby",
+      "words": 223092
+    },
+    {
+      "name": "Arthur Livingston",
+      "words": 222783
+    },
+    {
+      "name": "Edvard Rein",
+      "words": 209858
+    },
+    {
+      "name": "Carolus Raeticus",
+      "words": 205104
+    },
+    {
+      "name": "Richard Crawley",
+      "words": 205082
+    },
+    {
+      "name": "George William Featherstonhaugh",
+      "words": 200286
+    },
+    {
+      "name": "Gawin Douglas",
+      "words": 199767
+    },
+    {
+      "name": "Francis Adams",
+      "words": 187596
+    },
+    {
+      "name": "Maurice Platnauer",
+      "words": 184850
+    },
+    {
+      "name": "Thomas North",
+      "words": 184191
+    },
+    {
+      "name": "Theodore C. Williams",
+      "words": 182208
+    },
+    {
+      "name": "Francis Barham",
+      "words": 179496
+    },
+    {
+      "name": "Jacques Amyot",
+      "words": 179102
+    },
+    {
+      "name": "John Conington",
+      "words": 174956
+    },
+    {
+      "name": "Marsilio Ficino",
+      "words": 171047
+    },
+    {
+      "name": "Wallace Smith Murray",
+      "words": 160615
+    },
+    {
+      "name": "Frank Justus Miller",
+      "words": 157640
+    },
+    {
+      "name": "Manmatha Nath Dutt",
+      "words": 152439
+    },
+    {
+      "name": "Arthur Wallace Pickard-Cambridge",
+      "words": 147818
+    },
+    {
+      "name": "Henry Hart Milman",
+      "words": 143731
+    },
+    {
+      "name": "Ninian Hill Thomson",
+      "words": 141248
+    },
+    {
+      "name": "John Henry Newman",
+      "words": 137028
+    },
+    {
+      "name": "Adnah David Jones",
+      "words": 130325
+    },
+    {
+      "name": "Thomas Gordon",
+      "words": 120276
+    },
+    {
+      "name": "John Clarke",
+      "words": 120210
+    },
+    {
+      "name": "Miguel Antonio Caro",
+      "words": 118850
+    },
+    {
+      "name": "Paul Nixon",
+      "words": 118602
+    },
+    {
+      "name": "Charles Cotton",
+      "words": 116930
+    },
+    {
+      "name": "Roger",
+      "words": 112041
+    },
+    {
+      "name": "Walter Miller",
+      "words": 110501
+    },
+    {
+      "name": "John Dryden",
+      "words": 109405
+    },
+    {
+      "name": "Edward Fairfax Taylor",
+      "words": 109211
+    },
+    {
+      "name": "Walter Libby",
+      "words": 108942
+    },
+    {
+      "name": "Katharine Prescott Wormeley",
+      "words": 105013
+    },
+    {
+      "name": "Edward Kennard Rand",
+      "words": 100111
+    },
+    {
+      "name": "David Thomas",
+      "words": 99988
+    },
+    {
+      "name": "Richard Garnett",
+      "words": 95656
+    },
+    {
+      "name": "Alexander Teixeira",
+      "words": 95587
+    },
+    {
+      "name": "Fairfax Harrison",
+      "words": 95153
+    },
+    {
+      "name": "Arthur John Brock",
+      "words": 93317
+    },
+    {
+      "name": "Lewis Campbell",
+      "words": 93172
+    },
+    {
+      "name": "Michael Wodhull",
+      "words": 92028
+    },
+    {
+      "name": "Rolfe Humphries",
+      "words": 89929
+    },
+    {
+      "name": "Thomas Sheldon Green",
+      "words": 86685
+    },
+    {
+      "name": "George Colman",
+      "words": 81173
+    },
+    {
+      "name": "Frederic Whyte",
+      "words": 80825
+    },
+    {
+      "name": "Charles Edwardes",
+      "words": 76457
+    },
+    {
+      "name": "Andrew Dunning",
+      "words": 75885
+    },
+    {
+      "name": "Gergely Csiky",
+      "words": 75783
+    },
+    {
+      "name": "Fernando Brieva Salvatierra",
+      "words": 72971
+    },
+    {
+      "name": "Jerome Beers Thomas",
+      "words": 70270
+    },
+    {
+      "name": "Laurent Tailhade",
+      "words": 64167
+    },
+    {
+      "name": "Harold Edgeworth Butler",
+      "words": 63992
+    },
+    {
+      "name": "Richard Francis Burton",
+      "words": 63369
+    },
+    {
+      "name": "Philip Vellacott",
+      "words": 63333
+    },
+    {
+      "name": "Thomas Linacre",
+      "words": 61909
+    },
+    {
+      "name": "John Watson McCrindle",
+      "words": 60017
+    },
+    {
+      "name": "Philemon Holland",
+      "words": 55404
+    },
+    {
+      "name": "Thomas Roscoe John Yonge",
+      "words": 55053
+    },
+    {
+      "name": "Emma Karinthy Frigyes Karinthy",
+      "words": 54740
+    },
+    {
+      "name": "Henry Cary",
+      "words": 53489
+    },
+    {
+      "name": "Goldwin Smith",
+      "words": 44894
+    },
+    {
+      "name": "Derek Davis",
+      "words": 41742
+    },
+    {
+      "name": "Edward Storer",
+      "words": 41569
+    },
+    {
+      "name": "Willis Barnstone",
+      "words": 40125
+    },
+    {
+      "name": "Francis Storr",
+      "words": 39107
+    },
+    {
+      "name": "Friedrich Bruns",
+      "words": 38274
+    },
+    {
+      "name": "Thomas Francklin",
+      "words": 38238
+    },
+    {
+      "name": "Christopher St",
+      "words": 37406
+    },
+    {
+      "name": "Charles Rann Kennedy",
+      "words": 35804
+    },
+    {
+      "name": "Axel Gabriel Sj",
+      "words": 34977
+    },
+    {
+      "name": "Alfred Gudemann",
+      "words": 30849
+    },
+    {
+      "name": "Charles Stuart Calverley",
+      "words": 30605
+    },
+    {
+      "name": "Frederic",
+      "words": 27281
+    },
+    {
+      "name": "Miles Menander Dawson",
+      "words": 26073
+    },
+    {
+      "name": "Hastings Crossley",
+      "words": 26034
+    },
+    {
+      "name": "Robinson Ellis",
+      "words": 25957
+    },
+    {
+      "name": "Carroll",
+      "words": 24527
+    },
+    {
+      "name": "James Rhoades",
+      "words": 24323
+    },
+    {
+      "name": "Clara Bell",
+      "words": 23925
+    },
+    {
+      "name": "Arthur Singer",
+      "words": 23820
+    },
+    {
+      "name": "Iason Konstantinides",
+      "words": 23644
+    },
+    {
+      "name": "Francis Hickes",
+      "words": 22222
+    },
+    {
+      "name": "Ingram Bywater",
+      "words": 21249
+    },
+    {
+      "name": "Thomas Creech",
+      "words": 19793
+    },
+    {
+      "name": "Jack Lindsay",
+      "words": 17001
+    },
+    {
+      "name": "Louis Le Gendre",
+      "words": 16002
+    },
+    {
+      "name": "Gregory McNamee",
+      "words": 15628
+    },
+    {
+      "name": "Polyvios Demetrakopoulos",
+      "words": 15059
+    },
+    {
+      "name": "Ioannes Kondylakes",
+      "words": 14878
+    },
+    {
+      "name": "Sophia Canoni",
+      "words": 14765
+    },
+    {
+      "name": "Alexandre Machard",
+      "words": 9533
+    },
+    {
+      "name": "Alexandros Rizos Rankaves",
+      "words": 9169
+    },
+    {
+      "name": "Jules",
+      "words": 6969
+    },
+    {
+      "name": "Paulos Gratsiatos",
+      "words": 3165
+    },
+    {
+      "name": "Iason Konstntinides",
+      "words": 2982
+    },
+    {
+      "name": "Iason Konstnatinides",
+      "words": 2951
+    },
+    {
+      "name": "Ioannes Polemes",
+      "words": 2948
+    },
+    {
+      "name": "Aristos Kampanis",
+      "words": 2941
+    },
+    {
+      "name": "Konstantinos Theotokes",
+      "words": 2934
+    },
+    {
+      "name": "Angelos Tanagras",
+      "words": 2931
+    },
+    {
+      "name": "Ioannis Gryparis",
+      "words": 2930
+    },
+    {
+      "name": "Demetrios Anastasopoulos",
+      "words": 2923
+    },
+    {
+      "name": "Konstantinos Chrestomanos",
+      "words": 2923
+    },
+    {
+      "name": "Ioannis Fragkias",
+      "words": 2913
+    }
+  ],
+  "greek_authors": 343,
+  "latin_authors": 57
+}

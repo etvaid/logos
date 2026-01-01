@@ -1,0 +1,15 @@
+{
+  "total_files": 6230,
+  "total_words": 0,
+  "total_passages": 0,
+  "languages": {
+    "greek": 5156,
+    "latin": 1068,
+    "english": 6
+  },
+  "date_range": [
+    -800,
+    600
+  ],
+  "computation_date": "2025-12-30T04:06:36.933795"
+}

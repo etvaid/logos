@@ -1,0 +1,976 @@
+# filepath: backend/analysis/api_mapper.py
+import logging
+import inspect
+import json
+import re
+from typing import List, Dict, Any, Optional, Type, Callable, Union
+from dataclasses import dataclass, asdict, field
+from fastapi import FastAPI, APIRouter
+from fastapi.routing import APIRoute
+from pydantic import BaseModel
+import datetime
+
+# Configure logging for the LOGOS Production System
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+
+@dataclass
+class APIEndpoint:
+    """
+    Represents a mission-critical API endpoint in the LOGOS system.
+    Contains exhaustive metadata for auditing and production monitoring.
+    """
+    path: str
+    method: str
+    handler_name: str
+    summary: Optional[str] = None
+    description: Optional[str] = None
+    request_model: Optional[str] = None
+    response_model: Optional[str] = None
+    tags: List[str] = field(default_factory=list)
+    is_authenticated: bool = False
+    required_permissions: List[str] = field(default_factory=list)
+    deprecated: bool = False
+    rate_limit: Optional[str] = "100/minute"
+    complexity_score: int = 0  # 1-10 scale for performance monitoring
+
+    def to_dict(self) -> Dict[str, Any]:
+        """Converts the endpoint metadata to a serializable dictionary."""
+        return asdict(self)
+
+class APIMapper:
+    """
+    World-class API Mapping engine designed to scan FastAPI instances
+    and generate high-fidelity documentation and structural maps.
+    """
+
+    def __init__(self, app: Optional[FastAPI] = None):
+        """
+        Initializes the mapper with a target FastAPI application.
+        
+        Args:
+            app: The FastAPI instance to analyze.
+        """
+        self.app = app
+        self.endpoints: List[APIEndpoint] = []
+        self.mapping_stats: Dict[str, Any] = {
+            "total_endpoints": 0,
+            "get_count": 0,
+            "post_count": 0,
+            "auth_count": 0,
+            "last_scan": None
+        }
+        logger.info("APIMapper initialized for LOGOS Production System.")
+
+    def scan_routers(self, app_instance: FastAPI) -> List[APIEndpoint]:
+        """
+        Deep-scans the FastAPI application instance for all registered routes.
+        
+        Args:
+            app_instance: The live FastAPI application.
+            
+        Returns:
+            A list of APIEndpoint objects representing the system architecture.
+        """
+        logger.info(f"Initiating deep scan of FastAPI routes for {app_instance.title}")
+        scanned_endpoints = []
+        
+        try:
+            for route in app_instance.routes:
+                if isinstance(route, APIRoute):
+                    # Extracting method logic
+                    for method in route.methods:
+                        endpoint = self._extract_route_details(route, method)
+                        scanned_endpoints.append(endpoint)
+                        
+                        # Update statistics
+                        self.mapping_stats["total_endpoints"] += 1
+                        if method == "GET": self.mapping_stats["get_count"] += 1
+                        if method == "POST": self.mapping_stats["post_count"] += 1
+                        if endpoint.is_authenticated: self.mapping_stats["auth_count"] += 1
+
+            self.endpoints = scanned_endpoints
+            self.mapping_stats["last_scan"] = datetime.datetime.utcnow().isoformat()
+            logger.info(f"Successfully mapped {len(scanned_endpoints)} endpoints.")
+            return scanned_endpoints
+
+        except Exception as e:
+            logger.error(f"Critical failure during router scan: {str(e)}", exc_info=True)
+            raise RuntimeError(f"APIMapper failed to scan routers: {e}")
+
+    def _extract_route_details(self, route: APIRoute, method: str) -> APIEndpoint:
+        """
+        Internal helper to extract granular metadata from a single FastAPI route.
+        
+        Args:
+            route: The APIRoute object.
+            method: The HTTP method string.
+            
+        Returns:
+            A populated APIEndpoint dataclass.
+        """
+        # Logic to determine if auth is required (checking dependencies)
+        is_auth = any("auth" in str(dep.dependency).lower() for dep in route.dependencies)
+        
+        # Extracting Pydantic models for request/response
+        req_model = None
+        if route.body_field:
+            req_model = route.body_field.type_.__name__
+        
+        res_model = None
+        if route.response_model:
+            res_model = route.response_model.__name__
+
+        # Calculate complexity based on logic length and parameters
+        complexity = self._calculate_endpoint_complexity(route)
+
+        return APIEndpoint(
+            path=route.path,
+            method=method,
+            handler_name=route.endpoint.__name__,
+            summary=route.summary or route.endpoint.__doc__.split('\n')[0] if route.endpoint.__doc__ else "No summary",
+            description=route.description or route.endpoint.__doc__,
+            request_model=req_model,
+            response_model=res_model,
+            tags=route.tags or [],
+            is_authenticated=is_auth,
+            complexity_score=complexity
+        )
+
+    def _calculate_endpoint_complexity(self, route: APIRoute) -> int:
+        """
+        Analyzes the handler function to estimate execution complexity.
+        
+        Args:
+            route: The route to analyze.
+            
+        Returns:
+            An integer from 1 to 10.
+        """
+        try:
+            source = inspect.getsource(route.endpoint)
+            lines = len(source.splitlines())
+            
+            # Heuristic: More lines + more parameters = higher complexity
+            param_count = len(inspect.signature(route.endpoint).parameters)
+            score = (lines // 10) + (param_count // 2)
+            
+            return min(max(score, 1), 10)
+        except Exception:
+            return 5 # Default middle-ground complexity
+
+    def map_endpoints_to_json(self, output_path: str) -> bool:
+        """
+        Serializes the current API map to a JSON file for deployment documentation.
+        
+        Args:
+            output_path: Destination file path.
+            
+        Returns:
+            Boolean indicating success.
+        """
+        if not self.endpoints:
+            logger.warning("No endpoints mapped. Run scan_routers() first.")
+            return False
+
+        try:
+            export_data = {
+                "system": "LOGOS Classical Studies API",
+                "version": "1.0.0",
+                "generated_at": datetime.datetime.utcnow().isoformat(),
+                "statistics": self.mapping_stats,
+                "endpoints": [e.to_dict() for e in self.endpoints]
+            }
+            
+            with open(output_path, 'w') as f:
+                json.dump(export_data, f, indent=4)
+            
+            logger.info(f"API map exported successfully to {output_path}")
+            return True
+        except Exception as e:
+            logger.error(f"Failed to export API map: {str(e)}")
+            return False
+
+    def find_endpoint_by_path(self, path: str, method: str = "GET") -> Optional[APIEndpoint]:
+        """
+        Searches the current map for a specific endpoint.
+        
+        Args:
+            path: The URL path.
+            method: The HTTP method.
+            
+        Returns:
+            The matching APIEndpoint or None.
+        """
+        for ep in self.endpoints:
+            if ep.path == path and ep.method.upper() == method.upper():
+                return ep
+        return None
+
+    def get_endpoints_by_tag(self, tag: str) -> List[APIEndpoint]:
+        """
+        Filters endpoints by their architectural tag (e.g., 'texts', 'authors').
+        
+        Args:
+            tag: The tag to filter by.
+            
+        Returns:
+            A list of matching APIEndpoint objects.
+        """
+        return [ep for ep in self.endpoints if tag in ep.tags]
+
+    def get_unauthenticated_endpoints(self) -> List[APIEndpoint]:
+        """
+        Security audit helper: lists all endpoints that do not require authentication.
+        
+        Returns:
+            A list of public APIEndpoint objects.
+        """
+        return [ep for ep in self.endpoints if not ep.is_authenticated]
+
+    def generate_markdown_report(self) -> str:
+        """
+        Generates a human-readable Markdown report of the entire API surface.
+        
+        Returns:
+            A formatted Markdown string.
+        """
+        report = "# LOGOS API Architecture Report\n\n"
+        report += f"**Total Endpoints:** {self.mapping_stats['total_endpoints']}\n"
+        report += f"**Authenticated:** {self.mapping_stats['auth_count']}\n\n"
+        
+        report += "| Path | Method | Handler | Auth | Complexity |\n"
+        report += "|------|--------|---------|------|------------|\n"
+        
+        for ep in sorted(self.endpoints, key=lambda x: x.path):
+            auth_str = "✅" if ep.is_authenticated else "❌"
+            report += f"| `{ep.path}` | {ep.method} | `{ep.handler_name}` | {auth_str} | {ep.complexity_score} |\n"
+            
+        return report
+
+class EndpointValidator:
+    """
+    Validation engine to ensure API endpoints comply with LOGOS production standards.
+    """
+
+    def __init__(self, endpoints: List[APIEndpoint]):
+        self.endpoints = endpoints
+        self.violations: List[Dict[str, str]] = []
+
+    def validate_all(self) -> bool:
+        """
+        Runs a full suite of validation checks.
+        
+        Returns:
+            True if all endpoints pass, False otherwise.
+        """
+        logger.info("Starting comprehensive API validation suite...")
+        
+        self._check_naming_conventions()
+        self._check_missing_descriptions()
+        self._check_security_risks()
+        self._check_tag_consistency()
+        self._check_response_models()
+
+        if self.violations:
+            logger.warning(f"Validation complete: Found {len(self.violations)} violations.")
+            for v in self.violations:
+                logger.warning(f"Violation [{v['type']}]: {v['message']} at {v['path']}")
+            return False
+        
+        logger.info("Validation complete: All endpoints compliant with production standards.")
+        return True
+
+    def _check_naming_conventions(self):
+        """Ensures paths follow RESTful kebab-case standards."""
+        pattern = re.compile(r'^[a-z0-9\-/{}]+$')
+        for ep in self.endpoints:
+            if not pattern.match(ep.path):
+                self.violations.append({
+                    "type": "NAMING",
+                    "path": ep.path,
+                    "message": "Path contains non-standard characters. Use kebab-case."
+                })
+
+    def _check_missing_descriptions(self):
+        """Ensures all production endpoints are documented."""
+        for ep in self.endpoints:
+            if not ep.description or len(ep.description) < 10:
+                self.violations.append({
+                    "type": "DOCUMENTATION",
+                    "path": ep.path,
+                    "message": "Endpoint is missing a comprehensive docstring or description."
+                })
+
+    def _check_security_risks(self):
+        """Identifies potentially dangerous public endpoints."""
+        sensitive_keywords = ["delete", "update", "admin", "config", "internal", "user"]
+        for ep in self.endpoints:
+            if not ep.is_authenticated:
+                if any(kw in ep.path.lower() for kw in sensitive_keywords):
+                    self.violations.append({
+                        "type": "SECURITY",
+                        "path": ep.path,
+                        "message": "Potentially sensitive endpoint is missing authentication."
+                    })
+
+    def _check_tag_consistency(self):
+        """Ensures every endpoint is categorized."""
+        for ep in self.endpoints:
+            if not ep.tags:
+                self.violations.append({
+                    "type": "ARCHITECTURAL",
+                    "path": ep.path,
+                    "message": "Endpoint is missing architectural tags."
+                })
+
+    def _check_response_models(self):
+        """Ensures all endpoints define a response model for type safety."""
+        for ep in self.endpoints:
+            if not ep.response_model:
+                self.violations.append({
+                    "type": "TYPE_SAFETY",
+                    "path": ep.path,
+                    "message": "Endpoint does not define a Pydantic response_model."
+                })
+
+def generate_openapi_stub(endpoints: List[APIEndpoint]) -> Dict[str, Any]:
+    """
+    Generates a minimal OpenAPI-compliant dictionary for external tool integration.
+    
+    Args:
+        endpoints: List of mapped endpoints.
+        
+    Returns:
+        A dictionary following the OpenAPI 3.0.0 specification.
+    """
+    logger.info("Generating OpenAPI stub for manual verification.")
+    
+    openapi = {
+        "openapi": "3.0.0",
+        "info": {
+            "title": "LOGOS Classical Studies API",
+            "version": "1.0.0",
+            "description": "Auto-generated stub from APIMapper analysis."
+        },
+        "paths": {}
+    }
+
+    for ep in endpoints:
+        if ep.path not in openapi["paths"]:
+            openapi["paths"][ep.path] = {}
+        
+        openapi["paths"][ep.path][ep.method.lower()] = {
+            "summary": ep.summary,
+            "description": ep.description,
+            "tags": ep.tags,
+            "responses": {
+                "200": {
+                    "description": "Successful Response",
+                    "content": {
+                        "application/json": {
+                            "schema": {"type": "object"}
+                        }
+                    }
+                }
+            }
+        }
+        
+        if ep.is_authenticated:
+            openapi["paths"][ep.path][ep.method.lower()]["security"] = [{"OAuth2PasswordBearer": []}]
+
+    return openapi
+
+# filepath: backend/analysis/endpoint_tester.py
+import logging
+import asyncio
+import time
+import json
+from typing import List, Dict, Any, Optional, Tuple
+from dataclasses import dataclass, field
+import asyncpg
+import httpx
+from pydantic import ValidationError
+
+# Database connection string for Railway PostgreSQL
+DATABASE_URL = "postgresql://postgres:JKLqDvdTtmRjGnOgDvGFLqLKVkcjQLFs@metro.proxy.rlwy.net:58888/railway"
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+@dataclass
+class EndpointTest:
+    """
+    Represents the result of a production endpoint validation test.
+    """
+    path: str
+    method: str
+    status_code: int
+    response_time_ms: float
+    is_success: bool
+    error_message: Optional[str] = None
+    data_integrity_passed: bool = False
+    timestamp: str = field(default_factory=lambda: time.strftime('%Y-%m-%dT%H:%M:%SZ'))
+
+class EndpointTester:
+    """
+    High-performance testing engine for the LOGOS API.
+    Validates both HTTP responses and underlying database integrity.
+    """
+
+    def __init__(self, base_url: str):
+        """
+        Initializes the tester with the base URL of the deployed API.
+        
+        Args:
+            base_url: The root URL of the API (e.g., 'http://localhost:8000').
+        """
+        self.base_url = base_url.rstrip('/')
+        self.results: List[EndpointTest] = []
+        self.db_pool: Optional[asyncpg.Pool] = None
+        logger.info(f"EndpointTester initialized for {self.base_url}")
+
+    async def initialize_db(self):
+        """Establishes a connection pool to the Railway PostgreSQL database."""
+        try:
+            self.db_pool = await asyncpg.create_pool(DATABASE_URL)
+            logger.info("Database connection pool established for integrity testing.")
+        except Exception as e:
+            logger.error(f"Failed to connect to Railway DB: {e}")
+            raise
+
+    async def close(self):
+        """Gracefully closes all connections."""
+        if self.db_pool:
+            await self.db_pool.close()
+            logger.info("Database connection pool closed.")
+
+    async def test_endpoint(self, path: str, method: str = "GET", payload: Optional[Dict] = None) -> EndpointTest:
+        """
+        Performs a live HTTP request and validates the response.
+        
+        Args:
+            path: The endpoint path.
+            method: HTTP method (GET, POST, etc.).
+            payload: Optional JSON body for POST/PUT.
+            
+        Returns:
+            An EndpointTest result object.
+        """
+        url = f"{self.base_url}{path}"
+        logger.info(f"Testing {method} {url}")
+        
+        start_time = time.perf_counter()
+        
+        try:
+            async with httpx.AsyncClient(timeout=10.0) as client:
+                if method.upper() == "GET":
+                    response = await client.get(url)
+                elif method.upper() == "POST":
+                    response = await client.post(url, json=payload)
+                else:
+                    raise ValueError(f"Unsupported method: {method}")
+            
+            elapsed = (time.perf_counter() - start_time) * 1000
+            
+            is_success = 200 <= response.status_code < 300
+            
+            # Perform Data Integrity Check if it's a critical path
+            integrity_passed = False
+            if is_success:
+                integrity_passed = await self._verify_data_integrity(path, response.json())
+
+            result = EndpointTest(
+                path=path,
+                method=method,
+                status_code=response.status_code,
+                response_time_ms=elapsed,
+                is_success=is_success,
+                data_integrity_passed=integrity_passed
+            )
+            
+            self.results.append(result)
+            return result
+
+        except Exception as e:
+            elapsed = (time.perf_counter() - start_time) * 1000
+            logger.error(f"Test failed for {path}: {str(e)}")
+            result = EndpointTest(
+                path=path,
+                method=method,
+                status_code=500,
+                response_time_ms=elapsed,
+                is_success=False,
+                error_message=str(e)
+            )
+            self.results.append(result)
+            return result
+
+    async def _verify_data_integrity(self, path: str, response_data: Any) -> bool:
+        """
+        Cross-references API output with real database state.
+        Ensures that the API isn't returning stale or corrupted data.
+        """
+        if not self.db_pool:
+            return False
+
+        try:
+            # Example: If testing /texts/1, verify ID 1 exists in 'texts' table
+            if path.startswith("/texts/"):
+                text_id_str = path.split("/")[-1]
+                if text_id_str.isdigit():
+                    text_id = int(text_id_str)
+                    async with self.db_pool.acquire() as conn:
+                        row = await conn.fetchrow("SELECT id FROM texts WHERE id = $1", text_id)
+                        return row is not None
+            
+            # Example: If testing /authors, verify count matches profiles table
+            if path == "/authors":
+                async with self.db_pool.acquire() as conn:
+                    db_count = await conn.fetchval("SELECT COUNT(*) FROM author_profiles")
+                    api_count = len(response_data) if isinstance(response_data, list) else 0
+                    return db_count == api_count
+
+            return True # Default to true for non-critical or unmapped paths
+        except Exception as e:
+            logger.warning(f"Integrity check failed: {e}")
+            return False
+
+    def validate_response_schema(self, response_data: Any, model: Type[BaseModel]) -> bool:
+        """
+        Validates that the API response conforms to a specific Pydantic model.
+        
+        Args:
+            response_data: The JSON response from the API.
+            model: The Pydantic model to validate against.
+            
+        Returns:
+            True if valid, False otherwise.
+        """
+        try:
+            if isinstance(response_data, list):
+                for item in response_data:
+                    model(**item)
+            else:
+                model(**response_data)
+            return True
+        except ValidationError as e:
+            logger.error(f"Schema validation failed: {e.json()}")
+            return False
+
+    async def run_suite(self, test_plan: List[Dict[str, Any]]):
+        """
+        Executes a batch of endpoint tests sequentially.
+        
+        Args:
+            test_plan: List of dicts with 'path', 'method', and 'payload'.
+        """
+        logger.info(f"Starting execution of {len(test_plan)} tests...")
+        for entry in test_plan:
+            await self.test_endpoint(
+                path=entry.get("path", "/"),
+                method=entry.get("method", "GET"),
+                payload=entry.get("payload")
+            )
+        logger.info("Test suite execution complete.")
+
+    def generate_test_report(self) -> Dict[str, Any]:
+        """
+        Aggregates test results into a production-ready quality report.
+        
+        Returns:
+            A dictionary containing summary statistics and detailed results.
+        """
+        total = len(self.results)
+        if total == 0:
+            return {"status": "No tests run"}
+
+        passed = sum(1 for r in self.results if r.is_success)
+        failed = total - passed
+        avg_latency = sum(r.response_time_ms for r in self.results) / total
+        integrity_failures = sum(1 for r in self.results if not r.data_integrity_passed and r.is_success)
+
+        report = {
+            "summary": {
+                "total_tests": total,
+                "passed": passed,
+                "failed": failed,
+                "success_rate": f"{(passed/total)*100:.2f}%",
+                "average_latency_ms": f"{avg_latency:.2f}",
+                "data_integrity_issues": integrity_failures
+            },
+            "details": [asdict(r) for r in self.results],
+            "recommendation": "STABLE" if failed == 0 and integrity_failures == 0 else "CRITICAL_ISSUES_FOUND"
+        }
+        
+        return report
+
+    async def suggest_missing_endpoints(self) -> List[str]:
+        """
+        Analyzes the database schema and suggests endpoints that should exist
+        to provide full coverage of the available classical data.
+        """
+        suggestions = []
+        if not self.db_pool:
+            return suggestions
+
+        try:
+            async with self.db_pool.acquire() as conn:
+                # Get all table names
+                tables = await conn.fetch("""
+                    SELECT table_name 
+                    FROM information_schema.tables 
+                    WHERE table_schema = 'public'
+                """)
+                
+                existing_tables = [t['table_name'] for t in tables]
+                
+                # Check for standard REST patterns
+                for table in existing_tables:
+                    expected_path = f"/{table}"
+                    # Check if we have a test for this path
+                    if not any(r.path.startswith(expected_path) for r in self.results):
+                        suggestions.append(f"Missing GET {expected_path} - Table '{table}' is not exposed via API.")
+                        suggestions.append(f"Missing GET {expected_path}/{{id}} - No detail endpoint for '{table}'.")
+
+                # Specific LOGOS logic: Check for translator-specific endpoints
+                allowed_translators = [
+                    "Jowett", "Dryden", "Dakyns", "Pope", "Murray", "Butler", "Church_Brodribb", 
+                    "Cowper", "Butcher_Lang", "Lang_Leaf_Myers", "Conington", "Goodwin", "Storr", 
+                    "Roberts", "Aubrey_Stewart", "Williams", "Dryden_et_al", "Brookes_More", 
+                    "Ross", "Rawlinson", "Moore", "Evelyn-White", "Morshead", "Heseltine", 
+                    "Crawley", "Long", "Lindsay", "Jebb", "Macaulay", "Leonard", "Adlington", 
+                    "Smith", "Morris", "Butcher", "Derby", "Kenyon", "Hickie", "Anonymous"
+                ]
+                
+                for translator in allowed_translators:
+                    path = f"/translators/{translator.lower()}"
+                    if not any(r.path == path for r in self.results):
+                        suggestions.append(f"Missing coverage for translator: {translator}")
+
+            return suggestions
+        except Exception as e:
+            logger.error(f"Error suggesting endpoints: {e}")
+            return []
+
+    def log_failure_analysis(self):
+        """Prints a detailed breakdown of failed tests for debugging."""
+        failures = [r for r in self.results if not r.is_success]
+        if not failures:
+            logger.info("No failures detected in the last run.")
+            return
+
+        print("\n=== FAILURE ANALYSIS ===")
+        for f in failures:
+            print(f"Endpoint: {f.method} {f.path}")
+            print(f"Status: {f.status_code}")
+            print(f"Error: {f.error_message or 'Unknown Error'}")
+            print(f"Latency: {f.response_time_ms:.2f}ms")
+            print("-" * 25)
+
+# filepath: backend/api/endpoint_registry.py
+import logging
+import functools
+import time
+from typing import List, Dict, Any, Callable, Optional, Type
+from pydantic import BaseModel
+import asyncpg
+
+# Database connection string for Railway PostgreSQL
+DATABASE_URL = "postgresql://postgres:JKLqDvdTtmRjGnOgDvGFLqLKVkcjQLFs@metro.proxy.rlwy.net:58888/railway"
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+class EndpointMetadata(BaseModel):
+    """
+    Production-grade metadata for a registered endpoint.
+    """
+    name: str
+    path: str
+    method: str
+    description: str
+    tags: List[str]
+    version: str = "v1"
+    is_public: bool = False
+    deprecated: bool = False
+    last_verified: Optional[float] = None
+
+class EndpointRegistry:
+    """
+    Singleton Registry for all LOGOS API endpoints.
+    Provides a centralized source of truth for the entire distributed system.
+    """
+    _instance = None
+
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super(EndpointRegistry, cls).__new__(cls)
+            cls._instance._initialized = False
+        return cls._instance
+
+    def __init__(self):
+        if self._initialized:
+            return
+        self.endpoints: Dict[str, EndpointMetadata] = {}
+        self.handlers: Dict[str, Callable] = {}
+        self.metrics: Dict[str, Dict[str, Any]] = {}
+        self._initialized = True
+        logger.info("EndpointRegistry Singleton initialized.")
+
+    def register_endpoint(
+        self, 
+        path: str, 
+        method: str = "GET", 
+        name: Optional[str] = None,
+        description: str = "",
+        tags: List[str] = None,
+        is_public: bool = False
+    ):
+        """
+        Decorator to register a function as a managed LOGOS endpoint.
+        
+        Usage:
+            @registry.register_endpoint("/texts", method="GET", tags=["texts"])
+            async def get_texts(): ...
+        """
+        def decorator(func: Callable):
+            endpoint_name = name or func.__name__
+            metadata = EndpointMetadata(
+                name=endpoint_name,
+                path=path,
+                method=method.upper(),
+                description=description or (func.__doc__ or "No description available"),
+                tags=tags or [],
+                is_public=is_public
+            )
+            
+            key = f"{metadata.method}:{metadata.path}"
+            self.endpoints[key] = metadata
+            self.handlers[key] = func
+            
+            # Initialize metrics
+            self.metrics[key] = {
+                "calls": 0,
+                "errors": 0,
+                "avg_latency": 0.0
+            }
+
+            @functools.wraps(func)
+            async def wrapper(*args, **kwargs):
+                start = time.perf_counter()
+                try:
+                    self.metrics[key]["calls"] += 1
+                    result = await func(*args, **kwargs)
+                    return result
+                except Exception as e:
+                    self.metrics[key]["errors"] += 1
+                    logger.error(f"Error in endpoint {key}: {str(e)}")
+                    raise
+                finally:
+                    latency = (time.perf_counter() - start) * 1000
+                    # Rolling average latency calculation
+                    old_avg = self.metrics[key]["avg_latency"]
+                    count = self.metrics[key]["calls"]
+                    self.metrics[key]["avg_latency"] = ((old_avg * (count - 1)) + latency) / count
+
+            return wrapper
+        return decorator
+
+    def get_all_endpoints(self) -> List[EndpointMetadata]:
+        """Returns a list of all registered endpoint metadata."""
+        return list(self.endpoints.values())
+
+    def get_endpoint_by_name(self, name: str) -> Optional[EndpointMetadata]:
+        """Finds metadata for a specific endpoint by its registered name."""
+        for ep in self.endpoints.values():
+            if ep.name == name:
+                return ep
+        return None
+
+    async def validate_all_endpoints(self) -> Dict[str, bool]:
+        """
+        Performs a system-wide validation check.
+        Verifies that all registered endpoints have valid database backing.
+        """
+        logger.info("Performing global endpoint validation...")
+        results = {}
+        
+        try:
+            conn = await asyncpg.connect(DATABASE_URL)
+            
+            for key, meta in self.endpoints.items():
+                is_valid = True
+                
+                # Logic: If endpoint tag is 'texts', check if 'texts' table exists
+                if "texts" in meta.tags:
+                    exists = await conn.fetchval(
+                        "SELECT EXISTS (SELECT FROM information_schema.tables WHERE table_name = 'texts')"
+                    )
+                    if not exists: is_valid = False
+                
+                # Logic: Check author profiles
+                if "authors" in meta.tags:
+                    exists = await conn.fetchval(
+                        "SELECT EXISTS (SELECT FROM information_schema.tables WHERE table_name = 'author_profiles')"
+                    )
+                    if not exists: is_valid = False
+
+                self.endpoints[key].last_verified = time.time()
+                results[key] = is_valid
+            
+            await conn.close()
+            return results
+
+        except Exception as e:
+            logger.error(f"Validation failed due to database error: {e}")
+            return {key: False for key in self.endpoints}
+
+    def get_performance_report(self) -> Dict[str, Any]:
+        """
+        Generates a performance summary based on endpoint metrics.
+        """
+        report = {}
+        for key, m in self.metrics.items():
+            report[key] = {
+                "total_calls": m["calls"],
+                "error_rate": f"{(m['errors'] / m['calls'] * 100):.2f}%" if m["calls"] > 0 else "0%",
+                "latency_ms": f"{m['avg_latency']:.2f}"
+            }
+        return report
+
+    def update_metadata(self, path: str, method: str, **kwargs):
+        """
+        Updates metadata for an existing endpoint at runtime.
+        """
+        key = f"{method.upper()}:{path}"
+        if key in self.endpoints:
+            current = self.endpoints[key].dict()
+            current.update(kwargs)
+            self.endpoints[key] = EndpointMetadata(**current)
+            logger.info(f"Updated metadata for {key}")
+        else:
+            logger.warning(f"Attempted to update non-existent endpoint: {key}")
+
+    def deprecate_endpoint(self, path: str, method: str):
+        """Marks an endpoint as deprecated in the registry."""
+        self.update_metadata(path, method, deprecated=True)
+        logger.warning(f"Endpoint {method} {path} has been marked as DEPRECATED.")
+
+    def get_public_endpoints(self) -> List[EndpointMetadata]:
+        """Returns all endpoints that do not require authentication."""
+        return [ep for ep in self.endpoints.values() if ep.is_public]
+
+    def get_endpoints_by_tag(self, tag: str) -> List[EndpointMetadata]:
+        """Filters registered endpoints by tag."""
+        return [ep for ep in self.endpoints.values() if tag in ep.tags]
+
+    def clear_metrics(self):
+        """Resets all performance counters."""
+        for key in self.metrics:
+            self.metrics[key] = {"calls": 0, "errors": 0, "avg_latency": 0.0}
+        logger.info("All endpoint metrics have been reset.")
+
+    def export_registry_config(self) -> str:
+        """Exports the entire registry configuration as a JSON string."""
+        data = {
+            "registry_version": "1.0.0",
+            "timestamp": time.time(),
+            "endpoints": [ep.dict() for ep in self.endpoints.values()]
+        }
+        return json.dumps(data, indent=2)
+
+    def import_registry_config(self, config_json: str):
+        """Imports and merges registry configuration from JSON."""
+        try:
+            data = json.loads(config_json)
+            for ep_data in data.get("endpoints", []):
+                meta = EndpointMetadata(**ep_data)
+                key = f"{meta.method}:{meta.path}"
+                self.endpoints[key] = meta
+            logger.info(f"Imported {len(data.get('endpoints', []))} endpoint definitions.")
+        except Exception as e:
+            logger.error(f"Failed to import registry config: {e}")
+
+    def get_health_status(self) -> Dict[str, str]:
+        """Returns the health status of the registry and its endpoints."""
+        status = "HEALTHY"
+        for key, m in self.metrics.items():
+            if m["calls"] > 0 and (m["errors"] / m["calls"]) > 0.1:
+                status = "DEGRADED"
+                break
+        
+        return {
+            "status": status,
+            "total_registered": len(self.endpoints),
+            "active_handlers": len(self.handlers)
+        }
+
+# Global registry instance for use across the application
+registry = EndpointRegistry()
+
+# Example of how the registry would be used in production code:
+@registry.register_endpoint(
+    path="/texts/search", 
+    method="GET", 
+    description="Search classical texts by content using word embeddings.",
+    tags=["texts", "search"],
+    is_public=True
+)
+async def search_texts_example(query: str):
+    """
+    Production implementation for searching texts.
+    This is a stub for the registry logic.
+    """
+    logger.info(f"Searching for: {query}")
+    # In a real scenario, this would call the text service
+    return {"query": query, "results": []}
+
+@registry.register_endpoint(
+    path="/authors/profiles",
+    method="GET",
+    description="Retrieve all author profiles from the database.",
+    tags=["authors"],
+    is_public=True
+)
+async def get_authors_example():
+    """
+    Production implementation for retrieving authors.
+    """
+    async with asyncpg.connect(DATABASE_URL) as conn:
+        rows = await conn.fetch("SELECT * FROM author_profiles LIMIT 10")
+        return [dict(r) for r in rows]
+
+# Verification of the 38 allowed translators
+def verify_translator_access(translator_name: str) -> bool:
+    """
+    Ensures the requested translator is within the legally allowed list.
+    """
+    allowed = [
+        "Jowett", "Dryden", "Dakyns", "Pope", "Murray", "Butler", "Church_Brodribb", 
+        "Cowper", "Butcher_Lang", "Lang_Leaf_Myers", "Conington", "Goodwin", "Storr", 
+        "Roberts", "Aubrey_Stewart", "Williams", "Dryden_et_al", "Brookes_More", 
+        "Ross", "Rawlinson", "Moore", "Evelyn-White", "Morshead", "Heseltine", 
+        "Crawley", "Long", "Lindsay", "Jebb", "Macaulay", "Leonard", "Adlington", 
+        "Smith", "Morris", "Butcher", "Derby", "Kenyon", "Hickie", "Anonymous"
+    ]
+    return translator_name in allowed
+
+async def run_registry_validation():
+    """
+    Convenience function to run validation on startup.
+    """
+    results = await registry.validate_all_endpoints()
+    for endpoint, valid in results.items():
+        if not valid:
+            logger.error(f"CRITICAL: Endpoint {endpoint} failed validation. Check DB schema.")
+        else:
+            logger.info(f"Endpoint {endpoint} validated successfully.")
+
+if __name__ == "__main__":
+    # Self-test logic for the registry
+    asyncio.run(run_registry_validation())
+    print(registry.export_registry_config())

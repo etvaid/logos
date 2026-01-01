@@ -1,0 +1,111 @@
+{
+  "created": "2025-12-31T21:29:21.749735",
+  "source": "/Users/royvaid/Downloads/logos/biblical_downloads/logos_corpora",
+  "output": "/Users/royvaid/Downloads/logos/biblical_downloads/logos_biblical_batch.jsonl",
+  "stats": {
+    "total_passages": 1088,
+    "total_characters": 2076438,
+    "total_words": 364429,
+    "estimated_tokens": 473757
+  },
+  "corpora": {
+    "apostolic_fathers": {
+      "texts": [
+        "1_clement",
+        "2_clement",
+        "barnabas",
+        "didache",
+        "diognetus",
+        "ignatius_ephesians",
+        "ignatius_magnesians",
+        "ignatius_philadelphians",
+        "ignatius_polycarp",
+        "ignatius_romans",
+        "ignatius_smyrnaeans",
+        "ignatius_trallians",
+        "martyrdom_polycarp",
+        "polycarp_philippians",
+        "shepherd_hermas"
+      ],
+      "passages": 270,
+      "text_count": 15
+    },
+    "nag_hammadi": {
+      "texts": [
+        "acts_peter_twelve",
+        "allogenes",
+        "apocalypse_adam",
+        "apocalypse_paul",
+        "apocalypse_peter",
+        "apocryphon_james",
+        "apocryphon_john",
+        "authoritative_teaching",
+        "book_thomas",
+        "dialogue_savior",
+        "eugnostos",
+        "exegesis_soul",
+        "first_apocalypse_james",
+        "gospel_egyptians",
+        "gospel_philip",
+        "gospel_thomas",
+        "gospel_truth",
+        "hypostasis_archons",
+        "interpretation_knowledge",
+        "letter_peter_philip",
+        "marsanes",
+        "melchizedek",
+        "origin_world",
+        "paraphrase_shem",
+        "prayer_apostle_paul",
+        "second_apocalypse_james",
+        "second_treatise_seth",
+        "sophia_jesus_christ",
+        "teachings_silvanus",
+        "testimony_truth",
+        "thought_norea",
+        "three_steles_seth",
+        "thunder_perfect_mind",
+        "treatise_resurrection",
+        "trimorphic_protennoia",
+        "tripartite_tractate",
+        "valentinian_exposition",
+        "zostrianos"
+      ],
+      "passages": 260,
+      "text_count": 38
+    },
+    "nt_apocrypha": {
+      "texts": [
+        "acts_andrew",
+        "acts_john",
+        "acts_paul_thecla",
+        "acts_peter",
+        "acts_thomas",
+        "apocalypse_paul_christian",
+        "apocalypse_peter",
+        "egerton_gospel",
+        "gospel_ebionites_fragments",
+        "gospel_hebrews_fragments",
+        "gospel_nazarenes_fragments",
+        "gospel_nicodemus",
+        "gospel_peter",
+        "infancy_thomas",
+        "odes_solomon",
+        "protevangelium_james",
+        "secret_mark"
+      ],
+      "passages": 538,
+      "text_count": 17
+    },
+    "other_gnostic": {
+      "texts": [
+        "gospel_judas",
+        "gospel_mary",
+        "hymn_pearl",
+        "poimandres"
+      ],
+      "passages": 20,
+      "text_count": 4
+    }
+  }
+}

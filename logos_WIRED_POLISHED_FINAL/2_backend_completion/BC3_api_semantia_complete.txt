@@ -1,0 +1,1005 @@
+# filepath: backend/api/semantia/models.py
+"""
+LOGOS - The Bible for Classical Studies
+SEMANTIA API - Pydantic Models and Data Structures
+
+This module defines the schema for the semantic analysis system. 
+All models are designed for high-performance serialization and strict validation.
+"""
+
+import logging
+from typing import List, Optional, Dict, Any, Union
+from pydantic import BaseModel, Field, validator, RootModel
+from datetime import datetime
+
+# Initialize logging for the models module
+logger = logging.getLogger(__name__)
+
+class SemanticVector(BaseModel):
+    """
+    Represents a 300-dimensional semantic vector for a word or phrase.
+    Validated to ensure data integrity for vector operations.
+    """
+    word: str = Field(..., description="The word associated with this vector")
+    vector: List[float] = Field(..., description="300-dimensional numpy array represented as a list")
+    dimensions: int = Field(default=300, description="The dimensionality of the embedding space")
+
+    @validator('vector')
+    def validate_vector_length(cls, v):
+        """Ensures the vector matches the expected dimensionality of 300."""
+        if len(v) != 300:
+            logger.error(f"Invalid vector dimension detected: {len(v)}")
+            raise ValueError(f"Vector must have exactly 300 dimensions, found {len(v)}")
+        return v
+
+class SemanticNeighbor(BaseModel):
+    """
+    Represents a word that is semantically close to a target word.
+    Includes the similarity score (cosine similarity).
+    """
+    word: str = Field(..., description="The neighboring word")
+    similarity: float = Field(..., description="Cosine similarity score between 0 and 1")
+    rank: int = Field(..., description="The proximity rank relative to the target")
+
+class WordAnalysisResponse(BaseModel):
+    """
+    Comprehensive analysis of a single word within the classical corpus.
+    Combines vector data, frequency, and semantic context.
+    """
+    word: str = Field(..., description="The analyzed word")
+    language: str = Field(default="greek", description="The source language (greek/latin)")
+    frequency: int = Field(..., description="Total occurrences in the texts table")
+    vector_magnitude: float = Field(..., description="L2 norm of the semantic vector")
+    neighbors: List[SemanticNeighbor] = Field(default_factory=list, description="Top semantic neighbors")
+    analysis_timestamp: datetime = Field(default_factory=datetime.utcnow)
+    metadata: Dict[str, Any] = Field(default_factory=dict, description="Additional metadata for scholars")
+
+class ClusterMember(BaseModel):
+    """Represents a word belonging to a semantic cluster."""
+    word: str
+    distance_to_centroid: float
+
+class SemanticCluster(BaseModel):
+    """
+    Represents a group of words that share a semantic field.
+    Useful for thematic analysis in classical studies.
+    """
+    cluster_id: int
+    centroid_word: str = Field(..., description="The word closest to the cluster center")
+    members: List[ClusterMember] = Field(..., description="Words belonging to this cluster")
+    cohesion_score: float = Field(..., description="Internal similarity metric of the cluster")
+
+class ComparisonRequest(BaseModel):
+    """Request model for comparing two or more words semantically."""
+    words: List[str] = Field(..., min_items=2, max_items=10)
+    comparison_metric: str = Field(default="cosine", description="Metric to use (cosine/euclidean)")
+
+class ComparisonResult(BaseModel):
+    """Result of the semantic comparison between words."""
+    word_a: str
+    word_b: str
+    similarity_score: float
+    shared_context_probability: float
+
+class ComparisonResponse(BaseModel):
+    """Wrapper for multiple comparison results."""
+    results: List[ComparisonResult]
+    average_similarity: float
+    most_similar_pair: List[str]
+
+class EtymologyData(BaseModel):
+    """
+    Historical and linguistic development of a word.
+    Note: Data derived from source_texts and texts patterns.
+    """
+    word: str
+    root: Optional[str] = None
+    earliest_occurrence_work: Optional[str] = None
+    historical_usage_trend: List[Dict[str, Any]] = Field(default_factory=list)
+    cognates: List[str] = Field(default_factory=list)
+
+class UsagePattern(BaseModel):
+    """Statistical breakdown of how a word is used across the corpus."""
+    author: str
+    count: int
+    percentage_of_author_corpus: float
+    primary_genre: str
+    typical_context: List[str] = Field(description="Snippets of text containing the word")
+
+class WordUsageResponse(BaseModel):
+    """Complete usage profile for a word."""
+    word: str
+    total_count: int
+    usage_by_author: List[UsagePattern]
+    usage_by_century: Dict[str, int]
+    top_translators: List[str] = Field(description="Translators who use this word most frequently")
+
+class AuthorUsageResponse(BaseModel):
+    """Detailed analysis of how a specific author uses a specific word."""
+    author: str
+    word: str
+    frequency: int
+    relative_frequency: float
+    works_containing_word: List[str]
+    context_examples: List[str]
+    stylistic_notes: Optional[str] = None
+
+class SemanticError(BaseModel):
+    """Standard error response for Semantia API."""
+    error_code: str
+    message: str
+    detail: Optional[str] = None
+    timestamp: datetime = Field(default_factory=datetime.utcnow)
+
+# filepath: backend/api/semantia/vector_ops.py
+"""
+LOGOS - The Bible for Classical Studies
+SEMANTIA API - Vector Operations Engine
+
+This module provides high-performance mathematical operations for semantic vectors.
+Implements cosine similarity, L2 normalization, and clustering algorithms.
+"""
+
+import numpy as np
+import logging
+from typing import List, Tuple, Dict, Any
+from backend.api.semantia.models import SemanticNeighbor
+
+# Configure logger
+logger = logging.getLogger(__name__)
+
+class VectorEngine:
+    """
+    A specialized engine for processing 300-dimensional semantic embeddings.
+    Designed for the LOGOS classical studies corpus.
+    """
+
+    def __init__(self):
+        """Initializes the vector engine with default parameters."""
+        self.dimensions = 300
+        logger.info("VectorEngine initialized for 300-dimensional space.")
+
+    def validate_vector(self, vector: np.ndarray) -> bool:
+        """
+        Validates that the input vector meets production standards.
+        
+        Args:
+            vector: The numpy array to validate.
+            
+        Returns:
+            bool: True if valid.
+            
+        Raises:
+            ValueError: If the vector is malformed.
+        """
+        if not isinstance(vector, np.ndarray):
+            logger.error("Input is not a numpy array.")
+            raise ValueError("Input must be a numpy array.")
+        
+        if vector.shape != (self.dimensions,):
+            logger.error(f"Invalid vector shape: {vector.shape}. Expected ({self.dimensions},)")
+            raise ValueError(f"Vector must be {self.dimensions} dimensions.")
+        
+        if np.isnan(vector).any():
+            logger.error("Vector contains NaN values.")
+            raise ValueError("Vector cannot contain NaN values.")
+            
+        return True
+
+    def cosine_similarity(self, vec_a: np.ndarray, vec_b: np.ndarray) -> float:
+        """
+        Calculates the cosine similarity between two vectors.
+        Formula: (A · B) / (||A|| * ||B||)
+        
+        Args:
+            vec_a: First vector.
+            vec_b: Second vector.
+            
+        Returns:
+            float: Similarity score between -1.0 and 1.0.
+        """
+        try:
+            self.validate_vector(vec_a)
+            self.validate_vector(vec_b)
+            
+            dot_product = np.dot(vec_a, vec_b)
+            norm_a = np.linalg.norm(vec_a)
+            norm_b = np.linalg.norm(vec_b)
+            
+            if norm_a == 0 or norm_b == 0:
+                logger.warning("Zero norm detected in cosine similarity calculation.")
+                return 0.0
+                
+            similarity = dot_product / (norm_a * norm_b)
+            # Clip to range [-1, 1] to handle floating point errors
+            return float(np.clip(similarity, -1.0, 1.0))
+            
+        except Exception as e:
+            logger.error(f"Error calculating cosine similarity: {str(e)}")
+            raise
+
+    def find_top_neighbors(self, target_vec: np.ndarray, 
+                          candidate_map: Dict[str, np.ndarray], 
+                          top_k: int = 10) -> List[SemanticNeighbor]:
+        """
+        Finds the K most similar words to a target vector from a candidate set.
+        
+        Args:
+            target_vec: The vector to compare against.
+            candidate_map: Dictionary mapping words to their vectors.
+            top_k: Number of neighbors to return.
+            
+        Returns:
+            List[SemanticNeighbor]: Sorted list of neighbors.
+        """
+        try:
+            self.validate_vector(target_vec)
+            results = []
+            
+            for word, vec in candidate_map.items():
+                similarity = self.cosine_similarity(target_vec, vec)
+                results.append((word, similarity))
+            
+            # Sort by similarity descending
+            results.sort(key=lambda x: x[1], reverse=True)
+            
+            # Take top K (excluding the word itself if it's in the list)
+            neighbors = []
+            for i, (word, score) in enumerate(results[:top_k]):
+                neighbors.append(SemanticNeighbor(
+                    word=word,
+                    similarity=score,
+                    rank=i + 1
+                ))
+                
+            logger.info(f"Found {len(neighbors)} neighbors for target vector.")
+            return neighbors
+            
+        except Exception as e:
+            logger.error(f"Error finding top neighbors: {str(e)}")
+            return []
+
+    def calculate_centroid(self, vectors: List[np.ndarray]) -> np.ndarray:
+        """
+        Calculates the geometric center (mean) of a set of vectors.
+        
+        Args:
+            vectors: List of numpy arrays.
+            
+        Returns:
+            np.ndarray: The centroid vector.
+        """
+        if not vectors:
+            logger.error("Cannot calculate centroid of empty list.")
+            raise ValueError("Vector list cannot be empty.")
+            
+        try:
+            arr = np.array(vectors)
+            centroid = np.mean(arr, axis=0)
+            self.validate_vector(centroid)
+            return centroid
+        except Exception as e:
+            logger.error(f"Error calculating centroid: {str(e)}")
+            raise
+
+    def k_means_clustering(self, word_vectors: Dict[str, np.ndarray], 
+                           k: int = 5, 
+                           max_iterations: int = 100) -> List[Dict[str, Any]]:
+        """
+        Implements a standard K-Means clustering algorithm for semantic grouping.
+        
+        Args:
+            word_vectors: Map of words to vectors.
+            k: Number of clusters.
+            max_iterations: Convergence limit.
+            
+        Returns:
+            List[Dict]: Cluster definitions including members and centroids.
+        """
+        logger.info(f"Starting K-Means clustering with k={k}")
+        
+        words = list(word_vectors.keys())
+        vectors = np.array(list(word_vectors.values()))
+        
+        if len(vectors) < k:
+            logger.warning("K is larger than the number of vectors. Adjusting K.")
+            k = len(vectors)
+
+        # Randomly initialize centroids
+        indices = np.random.choice(len(vectors), k, replace=False)
+        centroids = vectors[indices]
+        
+        for i in range(max_iterations):
+            # Assign clusters
+            clusters = [[] for _ in range(k)]
+            for idx, vec in enumerate(vectors):
+                distances = [np.linalg.norm(vec - c) for c in centroids]
+                cluster_idx = np.argmin(distances)
+                clusters[cluster_idx].append(idx)
+            
+            # Update centroids
+            new_centroids = []
+            for cluster_indices in clusters:
+                if not cluster_indices:
+                    # Handle empty cluster by picking a random vector
+                    new_centroids.append(vectors[np.random.randint(0, len(vectors))])
+                else:
+                    new_centroids.append(np.mean(vectors[cluster_indices], axis=0))
+            
+            new_centroids = np.array(new_centroids)
+            
+            # Check for convergence
+            if np.allclose(centroids, new_centroids):
+                logger.info(f"K-Means converged after {i} iterations.")
+                break
+            centroids = new_centroids
+
+        # Format results
+        final_clusters = []
+        for cluster_idx, member_indices in enumerate(clusters):
+            members = []
+            for m_idx in member_indices:
+                dist = float(np.linalg.norm(vectors[m_idx] - centroids[cluster_idx]))
+                members.append({"word": words[m_idx], "distance": dist})
+            
+            # Find word closest to centroid for naming
+            centroid_word = members[np.argmin([m["distance"] for m in members])]["word"]
+            
+            final_clusters.append({
+                "cluster_id": cluster_idx,
+                "centroid_word": centroid_word,
+                "members": members,
+                "cohesion": float(np.mean([m["distance"] for m in members])) if members else 0.0
+            })
+            
+        return final_clusters
+
+    def calculate_l2_norm(self, vector: np.ndarray) -> float:
+        """Calculates the L2 norm (magnitude) of a vector."""
+        try:
+            self.validate_vector(vector)
+            return float(np.linalg.norm(vector))
+        except Exception as e:
+            logger.error(f"Error calculating L2 norm: {str(e)}")
+            return 0.0
+
+# filepath: backend/api/semantia/service.py
+"""
+LOGOS - The Bible for Classical Studies
+SEMANTIA API - Business Logic Service
+
+This module handles database interactions with Railway PostgreSQL and 
+orchestrates vector operations for the Semantia API.
+"""
+
+import logging
+import asyncpg
+import numpy as np
+import json
+from typing import List, Dict, Any, Optional
+from datetime import datetime
+
+from backend.api.semantia.models import (
+    WordAnalysisResponse, SemanticNeighbor, WordUsageResponse,
+    AuthorUsageResponse, ComparisonResponse, ComparisonResult,
+    UsagePattern, EtymologyData, SemanticCluster, ClusterMember
+)
+from backend.api.semantia.vector_ops import VectorEngine
+
+# Production Database URL
+DATABASE_URL = "postgresql://postgres:JKLqDvdTtmRjGnOgDvGFLqLKVkcjQLFs@metro.proxy.rlwy.net:58888/railway"
+
+# Allowed Translators List (Strict adherence to requirements)
+ALLOWED_TRANSLATORS = {
+    "Jowett", "Dryden", "Dakyns", "Pope", "Murray", "Butler", "Church_Brodribb", 
+    "Cowper", "Butcher_Lang", "Lang_Leaf_Myers", "Conington", "Goodwin", "Storr", 
+    "Roberts", "Aubrey_Stewart", "Williams", "Dryden_et_al", "Brookes_More", 
+    "Ross", "Rawlinson", "Moore", "Evelyn-White", "Morshead", "Heseltine", 
+    "Crawley", "Long", "Lindsay", "Jebb", "Macaulay", "Leonard", "Adlington", 
+    "Smith", "Morris", "Butcher", "Derby", "Kenyon", "Hickie", "Anonymous"
+}
+
+logger = logging.getLogger(__name__)
+
+class SemantiaService:
+    """
+    Core service class for semantic analysis.
+    Connects to the Railway PostgreSQL database and processes classical texts.
+    """
+
+    def __init__(self):
+        """Initializes the service with the vector engine."""
+        self.vector_engine = VectorEngine()
+        self.db_url = DATABASE_URL
+        logger.info("SemantiaService initialized.")
+
+    async def _get_connection(self):
+        """Creates and returns a database connection."""
+        try:
+            return await asyncpg.connect(self.db_url)
+        except Exception as e:
+            logger.error(f"Database connection failed: {str(e)}")
+            raise
+
+    async def get_word_vector(self, word: str) -> Optional[np.ndarray]:
+        """
+        Retrieves the 300D vector for a word from the word_embeddings table.
+        
+        Args:
+            word: The word to look up.
+            
+        Returns:
+            np.ndarray: The vector or None if not found.
+        """
+        conn = await self._get_connection()
+        try:
+            query = "SELECT vector FROM word_embeddings WHERE word = $1"
+            row = await conn.fetchrow(query, word)
+            
+            if not row:
+                logger.warning(f"Word '{word}' not found in embeddings.")
+                return None
+            
+            # Assuming vector is stored as a float array or binary
+            vector_data = row['vector']
+            if isinstance(vector_data, str):
+                vector_data = json.loads(vector_data)
+                
+            return np.array(vector_data, dtype=np.float32)
+        except Exception as e:
+            logger.error(f"Error fetching vector for {word}: {str(e)}")
+            return None
+        finally:
+            await conn.close()
+
+    async def get_word_analysis(self, word: str) -> WordAnalysisResponse:
+        """
+        Performs a full semantic analysis of a word.
+        
+        Args:
+            word: The word to analyze.
+            
+        Returns:
+            WordAnalysisResponse: Detailed analysis data.
+        """
+        logger.info(f"Performing analysis for word: {word}")
+        conn = await self._get_connection()
+        try:
+            # 1. Get frequency from texts table
+            freq_query = "SELECT COUNT(*) FROM texts WHERE text_content ILIKE $1"
+            frequency = await conn.fetchval(freq_query, f"% {word} %")
+            
+            # 2. Get vector and neighbors
+            target_vector = await self.get_word_vector(word)
+            neighbors = []
+            magnitude = 0.0
+            
+            if target_vector is not None:
+                magnitude = self.vector_engine.calculate_l2_norm(target_vector)
+                
+                # Fetch all vectors for neighbor calculation (limited for performance)
+                all_vec_query = "SELECT word, vector FROM word_embeddings LIMIT 5000"
+                rows = await conn.fetch(all_vec_query)
+                
+                candidate_map = {}
+                for r in rows:
+                    if r['word'] != word:
+                        v = r['vector']
+                        if isinstance(v, str): v = json.loads(v)
+                        candidate_map[r['word']] = np.array(v, dtype=np.float32)
+                
+                neighbors = self.vector_engine.find_top_neighbors(target_vector, candidate_map, top_k=5)
+
+            return WordAnalysisResponse(
+                word=word,
+                frequency=frequency or 0,
+                vector_magnitude=magnitude,
+                neighbors=neighbors,
+                metadata={"source": "LOGOS-Semantia-Engine-v1"}
+            )
+        except Exception as e:
+            logger.error(f"Error in get_word_analysis: {str(e)}")
+            raise
+        finally:
+            await conn.close()
+
+    async def get_word_usage(self, word: str) -> WordUsageResponse:
+        """
+        Analyzes usage patterns across authors and translators.
+        
+        Args:
+            word: The word to analyze.
+            
+        Returns:
+            WordUsageResponse: Usage statistics and patterns.
+        """
+        logger.info(f"Analyzing usage patterns for: {word}")
+        conn = await self._get_connection()
+        try:
+            # Query usage by author and translator
+            query = """
+                SELECT author, translator, count(*) as usage_count 
+                FROM texts 
+                WHERE text_content ILIKE $1 
+                GROUP BY author, translator
+            """
+            rows = await conn.fetch(query, f"% {word} %")
+            
+            usage_by_author = []
+            total_count = 0
+            translators_seen = set()
+            
+            for r in rows:
+                auth = r['author']
+                trans = r['translator']
+                count = r['usage_count']
+                total_count += count
+                
+                if trans in ALLOWED_TRANSLATORS:
+                    translators_seen.add(trans)
+                
+                # Get author profile for genre
+                genre_query = "SELECT genres FROM author_profiles WHERE name = $1"
+                genres = await conn.fetchval(genre_query, auth)
+                
+                usage_by_author.append(UsagePattern(
+                    author=auth,
+                    count=count,
+                    percentage_of_author_corpus=0.0, # Would require author total word count
+                    primary_genre=genres[0] if genres else "Unknown",
+                    typical_context=[] # Placeholder for snippet extraction
+                ))
+
+            return WordUsageResponse(
+                word=word,
+                total_count=total_count,
+                usage_by_author=usage_by_author,
+                usage_by_century={}, # Requires metadata mapping
+                top_translators=list(translators_seen)[:5]
+            )
+        except Exception as e:
+            logger.error(f"Error in get_word_usage: {str(e)}")
+            raise
+        finally:
+            await conn.close()
+
+    async def compare_words(self, words: List[str]) -> ComparisonResponse:
+        """
+        Compares multiple words semantically using their embeddings.
+        
+        Args:
+            words: List of words to compare.
+            
+        Returns:
+            ComparisonResponse: Similarity matrix and analysis.
+        """
+        logger.info(f"Comparing words: {words}")
+        results = []
+        vectors = {}
+        
+        for word in words:
+            vec = await self.get_word_vector(word)
+            if vec is not None:
+                vectors[word] = vec
+        
+        word_list = list(vectors.keys())
+        total_sim = 0.0
+        count = 0
+        
+        for i in range(len(word_list)):
+            for j in range(i + 1, len(word_list)):
+                w1, w2 = word_list[i], word_list[j]
+                sim = self.vector_engine.cosine_similarity(vectors[w1], vectors[w2])
+                results.append(ComparisonResult(
+                    word_a=w1,
+                    word_b=w2,
+                    similarity_score=sim,
+                    shared_context_probability=max(0.0, sim * 0.85)
+                ))
+                total_sim += sim
+                count += 1
+        
+        if not results:
+            return ComparisonResponse(results=[], average_similarity=0.0, most_similar_pair=[])
+
+        most_similar = max(results, key=lambda x: x.similarity_score)
+        
+        return ComparisonResponse(
+            results=results,
+            average_similarity=total_sim / count if count > 0 else 0.0,
+            most_similar_pair=[most_similar.word_a, most_similar.word_b]
+        )
+
+    async def get_semantic_clusters(self, limit: int = 50) -> List[SemanticCluster]:
+        """
+        Generates semantic clusters from a subset of the embedding space.
+        
+        Args:
+            limit: Number of words to include in clustering.
+            
+        Returns:
+            List[SemanticCluster]: Groups of semantically related words.
+        """
+        logger.info(f"Generating {limit} semantic clusters.")
+        conn = await self._get_connection()
+        try:
+            query = "SELECT word, vector FROM word_embeddings LIMIT $1"
+            rows = await conn.fetch(query, limit * 10) # Fetch more to have a good pool
+            
+            word_vectors = {}
+            for r in rows:
+                v = r['vector']
+                if isinstance(v, str): v = json.loads(v)
+                word_vectors[r['word']] = np.array(v, dtype=np.float32)
+            
+            raw_clusters = self.vector_engine.k_means_clustering(word_vectors, k=5)
+            
+            formatted_clusters = []
+            for c in raw_clusters:
+                members = [ClusterMember(word=m["word"], distance_to_centroid=m["distance"]) 
+                          for m in c["members"][:10]]
+                
+                formatted_clusters.append(SemanticCluster(
+                    cluster_id=c["cluster_id"],
+                    centroid_word=c["centroid_word"],
+                    members=members,
+                    cohesion_score=c["cohesion"]
+                ))
+                
+            return formatted_clusters
+        except Exception as e:
+            logger.error(f"Error in get_semantic_clusters: {str(e)}")
+            raise
+        finally:
+            await conn.close()
+
+    async def get_author_usage(self, word: str, author: str) -> AuthorUsageResponse:
+        """
+        Detailed analysis of an author's specific usage of a word.
+        
+        Args:
+            word: The word.
+            author: The author name.
+            
+        Returns:
+            AuthorUsageResponse: Stylistic and frequentist data.
+        """
+        logger.info(f"Fetching author usage: {author} -> {word}")
+        conn = await self._get_connection()
+        try:
+            # Get frequency in author's works
+            query = """
+                SELECT title, text_content 
+                FROM texts 
+                WHERE author = $1 AND text_content ILIKE $2
+            """
+            rows = await conn.fetch(query, author, f"% {word} %")
+            
+            works = []
+            contexts = []
+            for r in rows:
+                works.append(r['title'])
+                # Extract snippet (simple context logic)
+                content = r['text_content']
+                idx = content.lower().find(word.lower())
+                start = max(0, idx - 50)
+                end = min(len(content), idx + 50)
+                contexts.append(f"...{content[start:end]}...")
+
+            return AuthorUsageResponse(
+                author=author,
+                word=word,
+                frequency=len(rows),
+                relative_frequency=len(rows) / 1000.0, # Rough normalization
+                works_containing_word=list(set(works)),
+                context_examples=contexts[:5],
+                stylistic_notes=f"Usage of '{word}' in {author} is primarily found in {len(set(works))} distinct works."
+            )
+        except Exception as e:
+            logger.error(f"Error in get_author_usage: {str(e)}")
+            raise
+        finally:
+            await conn.close()
+
+    async def get_etymology(self, word: str) -> EtymologyData:
+        """
+        Simulates etymological lookup using corpus patterns and source texts.
+        
+        Args:
+            word: The word.
+            
+        Returns:
+            EtymologyData: Historical context.
+        """
+        logger.info(f"Fetching etymology for: {word}")
+        conn = await self._get_connection()
+        try:
+            # Search source_texts for the word in original language
+            query = "SELECT work_id FROM source_texts WHERE content ILIKE $1 LIMIT 1"
+            work_id = await conn.fetchval(query, f"% {word} %")
+            
+            # Find earliest work title
+            earliest_work = "Unknown"
+            if work_id:
+                earliest_work = await conn.fetchval("SELECT title FROM texts WHERE id = $1", work_id)
+
+            return EtymologyData(
+                word=word,
+                root=None, # Requires external linguistic DB
+                earliest_occurrence_work=earliest_work or "Homeric Corpus",
+                historical_usage_trend=[],
+                cognates=[]
+            )
+        except Exception as e:
+            logger.error(f"Error in get_etymology: {str(e)}")
+            return EtymologyData(word=word)
+        finally:
+            await conn.close()
+
+# filepath: backend/api/semantia/router.py
+"""
+LOGOS - The Bible for Classical Studies
+SEMANTIA API - FastAPI Router
+
+This module defines the REST endpoints for the semantic analysis engine.
+Integrates the SemantiaService with FastAPI for high-performance delivery.
+"""
+
+import logging
+from typing import List, Optional
+from fastapi import APIRouter, Depends, HTTPException, Query, Path, status
+from pydantic import ValidationError
+
+from backend.api.semantia.models import (
+    WordAnalysisResponse, SemanticNeighbor, WordUsageResponse,
+    AuthorUsageResponse, ComparisonResponse, ComparisonRequest,
+    EtymologyData, SemanticCluster, SemanticError
+)
+from backend.api.semantia.service import SemantiaService
+
+# Initialize Router
+router = APIRouter(
+    prefix="/api/semantia",
+    tags=["Semantia"],
+    responses={
+        404: {"model": SemanticError, "description": "Word or resource not found"},
+        500: {"model": SemanticError, "description": "Internal server error"}
+    }
+)
+
+# Initialize Logger
+logger = logging.getLogger(__name__)
+
+# Dependency Injection for the service
+def get_semantia_service() -> SemantiaService:
+    """Returns an instance of the SemantiaService."""
+    return SemantiaService()
+
+@router.get(
+    "/word/{word}", 
+    response_model=WordAnalysisResponse,
+    summary="Get comprehensive word analysis",
+    description="Returns semantic vectors, frequency data, and top neighbors for a specific word."
+)
+async def get_word_analysis(
+    word: str = Path(..., min_length=1, description="The word to analyze"),
+    service: SemantiaService = Depends(get_semantia_service)
+):
+    """
+    Endpoint to retrieve semantic analysis for a word.
+    Connects to the word_embeddings and texts tables.
+    """
+    try:
+        logger.info(f"API Request: Word Analysis for '{word}'")
+        analysis = await service.get_word_analysis(word)
+        
+        if not analysis:
+            logger.warning(f"Word analysis failed for '{word}'")
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail=f"Semantic data for word '{word}' could not be generated."
+            )
+            
+        return analysis
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Internal error in get_word_analysis: {str(e)}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="An internal error occurred while processing the semantic analysis."
+        )
+
+@router.get(
+    "/neighbors/{word}", 
+    response_model=List[SemanticNeighbor],
+    summary="Get semantic neighbors",
+    description="Returns the top K semantically similar words based on vector cosine similarity."
+)
+async def get_semantic_neighbors(
+    word: str = Path(..., description="Target word"),
+    limit: int = Query(10, ge=1, le=50, description="Number of neighbors to return"),
+    service: SemantiaService = Depends(get_semantia_service)
+):
+    """
+    Finds semantically related words using vector space proximity.
+    """
+    try:
+        logger.info(f"API Request: Neighbors for '{word}' (limit: {limit})")
+        analysis = await service.get_word_analysis(word)
+        
+        if not analysis.neighbors:
+            return []
+            
+        return analysis.neighbors[:limit]
+    except Exception as e:
+        logger.error(f"Error fetching neighbors: {str(e)}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to retrieve semantic neighbors."
+        )
+
+@router.get(
+    "/clusters", 
+    response_model=List[SemanticCluster],
+    summary="Get semantic clusters",
+    description="Returns groups of words clustered by semantic field."
+)
+async def get_semantic_clusters(
+    limit: int = Query(50, ge=10, le=200, description="Number of words to cluster"),
+    service: SemantiaService = Depends(get_semantia_service)
+):
+    """
+    Retrieves semantic clusters for thematic exploration of the corpus.
+    """
+    try:
+        logger.info(f"API Request: Semantic Clusters (limit: {limit})")
+        clusters = await service.get_semantic_clusters(limit=limit)
+        return clusters
+    except Exception as e:
+        logger.error(f"Error fetching clusters: {str(e)}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to generate semantic clusters."
+        )
+
+@router.post(
+    "/compare", 
+    response_model=ComparisonResponse,
+    summary="Compare words semantically",
+    description="Calculates similarity metrics between a list of provided words."
+)
+async def compare_words(
+    request: ComparisonRequest,
+    service: SemantiaService = Depends(get_semantia_service)
+):
+    """
+    Compares words in the semantic space.
+    """
+    try:
+        logger.info(f"API Request: Comparing {len(request.words)} words.")
+        comparison = await service.compare_words(request.words)
+        return comparison
+    except Exception as e:
+        logger.error(f"Error comparing words: {str(e)}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Semantic comparison failed."
+        )
+
+@router.get(
+    "/etymology/{word}", 
+    response_model=EtymologyData,
+    summary="Get word etymology",
+    description="Returns historical usage and earliest occurrences in the corpus."
+)
+async def get_word_etymology(
+    word: str = Path(..., description="The word to look up"),
+    service: SemantiaService = Depends(get_semantia_service)
+):
+    """
+    Retrieves etymological and historical data for a word.
+    """
+    try:
+        logger.info(f"API Request: Etymology for '{word}'")
+        data = await service.get_etymology(word)
+        return data
+    except Exception as e:
+        logger.error(f"Error fetching etymology: {str(e)}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Etymological lookup failed."
+        )
+
+@router.get(
+    "/usage/{word}", 
+    response_model=WordUsageResponse,
+    summary="Get word usage patterns",
+    description="Returns statistical usage data across authors and authorized translators."
+)
+async def get_word_usage(
+    word: str = Path(..., description="The word to analyze"),
+    service: SemantiaService = Depends(get_semantia_service)
+):
+    """
+    Analyzes how a word is used across the LOGOS corpus.
+    """
+    try:
+        logger.info(f"API Request: Usage patterns for '{word}'")
+        usage = await service.get_word_usage(word)
+        return usage
+    except Exception as e:
+        logger.error(f"Error fetching usage: {str(e)}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Usage analysis failed."
+        )
+
+@router.get(
+    "/author-usage/{word}/{author}", 
+    response_model=AuthorUsageResponse,
+    summary="Get author-specific usage",
+    description="Returns detailed stylistic usage of a word by a specific author."
+)
+async def get_author_usage(
+    word: str = Path(..., description="The word"),
+    author: str = Path(..., description="The author name"),
+    service: SemantiaService = Depends(get_semantia_service)
+):
+    """
+    Provides deep insights into authorial style and word preference.
+    """
+    try:
+        logger.info(f"API Request: Author usage for '{author}' -> '{word}'")
+        usage = await service.get_author_usage(word, author)
+        
+        if usage.frequency == 0:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail=f"No occurrences of '{word}' found for author '{author}'."
+            )
+            
+        return usage
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error fetching author usage: {str(e)}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Author-specific usage analysis failed."
+        )
+
+@router.get(
+    "/health",
+    summary="Semantia Health Check",
+    description="Verifies the semantic engine and database connectivity."
+)
+async def health_check(service: SemantiaService = Depends(get_semantia_service)):
+    """
+    Production health check for the Semantia module.
+    """
+    try:
+        conn = await service._get_connection()
+        val = await conn.fetchval("SELECT 1")
+        await conn.close()
+        
+        if val == 1:
+            return {"status": "healthy", "engine": "Semantia-v1", "database": "connected"}
+        return {"status": "unhealthy", "database": "invalid_response"}
+    except Exception as e:
+        logger.critical(f"Health check failed: {str(e)}")
+        return {"status": "critical", "error": str(e)}
+
+# Additional logic for production logging and monitoring
+@router.on_event("startup")
+async def startup_event():
+    """Logic to execute on API startup."""
+    logger.info("LOGOS Semantia API is starting up...")
+    # Pre-warm vector engine if necessary
+
+@router.on_event("shutdown")
+async def shutdown_event():
+    """Logic to execute on API shutdown."""
+    logger.info("LOGOS Semantia API is shutting down...")
+
+# End of File - LOGOS Semantia API Router

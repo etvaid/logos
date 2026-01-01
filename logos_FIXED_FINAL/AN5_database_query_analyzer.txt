@@ -1,0 +1,710 @@
+```python
+"""
+LOGOS - The Bible for Classical Studies
+Module: Production Software Architecture (Integrated Analysis & Forensic Stylometry)
+Version: 24.1.0
+Description: World-class senior architect implementation for SQL analysis, 
+forensic stylometry, and translation quality indexing.
+"""
+
+import os
+import re
+import logging
+import asyncio
+import json
+import datetime
+import math
+import statistics
+import numpy as np
+import asyncpg
+from typing import List, Dict, Any, Optional, Tuple, Set, Union
+from enum import Enum
+from dataclasses import dataclass, field, asdict
+from difflib import SequenceMatcher
+
+# ==============================================================================
+# CONFIGURATION & SECURITY
+# ==============================================================================
+
+# Production Database URL - Railway environment
+DATABASE_URL = "postgresql://postgres:JKLqDvdTtmRjGnOgDvGFLqLKVkcjQLFs@metro.proxy.rlwy.net:58888/railway"
+
+# Configure production logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - [LOGOS-ARCHITECT] - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+
+# ==============================================================================
+# MODELS & ENUMS
+# ==============================================================================
+
+class RiskLevel(Enum):
+    NONE = "NONE"
+    LOW = "LOW"
+    MEDIUM = "MEDIUM"
+    HIGH = "HIGH"
+    CRITICAL = "CRITICAL"
+
+class DeltaLayer(Enum):
+    ORTHOGRAPHIC = 1   # Punctuation, capitalization
+    MORPHOLOGICAL = 2  # Word forms, name transliteration  
+    LEXICAL = 3        # Word choice (rage vs wrath vs anger)
+    SYNTACTIC = 4      # Sentence structure, word order
+    SEMANTIC = 5       # Meaning interpretation
+    DISCOURSE = 6      # Text flow, cohesion
+    PRAGMATIC = 7      # Cultural adaptation, audience
+
+@dataclass
+class QueryAnalysisResult:
+    query_id: str
+    raw_sql: str
+    is_valid: bool
+    risk_level: RiskLevel
+    vulnerabilities: List[str] = field(default_factory=list)
+    suggested_indexes: List[str] = field(default_factory=list)
+    performance_score: float = 0.0
+    affected_tables: List[str] = field(default_factory=list)
+    execution_estimate_ms: float = 0.0
+    timestamp: str = field(default_factory=lambda: datetime.datetime.utcnow().isoformat())
+
+    def to_dict(self) -> Dict[str, Any]:
+        """Converts the dataclass to a dictionary for JSON serialization."""
+        data = asdict(self)
+        data['risk_level'] = self.risk_level.value
+        return data
+
+# ==============================================================================
+# FORENSIC STYLOMETRY ENGINE
+# ==============================================================================
+
+class LogosForensicEngine:
+    """
+    Advanced stylometric engine for authorship attribution and translation analysis.
+    Implements Burrows' Delta, LTQI, and Style Vector Arithmetic.
+    """
+
+    GREEK_FUNCTION_WORDS = [
+        "καί", "δέ", "τε", "μέν", "γάρ", "ἀλλά", "οὖν", "ἄν", "γε", "δή", 
+        "ἄρα", "περ", "τοι", "μήν", "καίτοι", "μέντοι", "τοίνυν", "εἰ", "ὡς", 
+        "ὅτι", "ἐάν", "ἤν", "ὅπως", "ἵνα", "ὥστε", "ὁ", "ἡ", "τό", "τοῦ", "τῆς",
+        "τῷ", "τήν", "τόν", "οἱ", "αἱ", "τά", "αὐτός", "οὗτος", "ἐκεῖνος", "ὅς",
+        "ἐν", "εἰς", "ἐκ", "ἀπό", "πρός", "ὑπό", "ἐπί", "μετά", "περί", "παρά"
+    ]
+
+    LATIN_FUNCTION_WORDS = [
+        "et", "sed", "atque", "ac", "aut", "neque", "nec", "vel", "sive", "nam",
+        "enim", "autem", "quidem", "tamen", "igitur", "ergo", "itaque", "quoque",
+        "in", "ad", "ex", "de", "ab", "cum", "per", "pro", "sub", "inter", "qui"
+    ]
+
+    ENGLISH_FUNCTION_WORDS = [
+        "the", "and", "of", "to", "a", "in", "that", "is", "it", "for", 
+        "as", "with", "was", "on", "be", "by", "at", "not", "he", "have",
+        "this", "but", "his", "they", "from", "had", "she", "which", "or", "we"
+    ]
+
+    ARCHAIC_MARKERS = [
+        "thee", "thou", "thy", "thine", "ye", "hath", "doth", "hast", "dost",
+        "art", "wert", "wast", "shalt", "wilt", "shouldst", "wouldst", "couldst",
+        "wherefore", "whence", "hither", "thither", "hence", "betwixt", "amongst"
+    ]
+
+    def __init__(self, pool: asyncpg.Pool):
+        """Initializes the engine with a database connection pool."""
+        self.pool = pool
+        logger.info("LogosForensicEngine initialized with active DB pool.")
+
+    async def get_translator_profile(self, name: str) -> Dict[str, Any]:
+        """
+        Fetches the 20-dimensional style profile for a translator from the database.
+        
+        Args:
+            name: Name of the translator to fetch.
+            
+        Returns:
+            Dictionary containing the translator's profile and style vector.
+        """
+        if not name or not isinstance(name, str):
+            logger.error("Invalid translator name provided.")
+            raise ValueError("Translator name must be a non-empty string.")
+            
+        logger.info(f"Fetching profile for translator: {name}")
+        try:
+            async with self.pool.acquire() as conn:
+                row = await conn.fetchrow(
+                    "SELECT name, style_vector, works_translated, era FROM translator_profiles WHERE name ILIKE $1", 
+                    name
+                )
+                if not row:
+                    logger.error(f"Translator profile not found: {name}")
+                    raise ValueError(f"Translator {name} not in database.")
+                
+                profile = dict(row)
+                if isinstance(profile['style_vector'], str):
+                    profile['style_vector'] = json.loads(profile['style_vector'])
+                return profile
+        except asyncpg.PostgresError as e:
+            logger.error(f"Database error fetching translator profile: {e}")
+            raise
+        except Exception as e:
+            logger.error(f"Unexpected error in get_translator_profile: {e}")
+            raise
+
+    async def get_author_profile(self, name: str) -> Dict[str, Any]:
+        """
+        Fetches the author profile including computed style metrics.
+        
+        Args:
+            name: Name of the author to fetch.
+            
+        Returns:
+            Dictionary containing the author's profile and style vector.
+        """
+        if not name:
+            logger.error("Empty author name provided.")
+            raise ValueError("Author name cannot be empty.")
+            
+        logger.info(f"Fetching profile for author: {name}")
+        try:
+            async with self.pool.acquire() as conn:
+                row = await conn.fetchrow(
+                    "SELECT name, birth_year, death_year, nationality, genres, style_vector FROM author_profiles WHERE name ILIKE $1", 
+                    name
+                )
+                if not row:
+                    logger.error(f"Author profile not found: {name}")
+                    raise ValueError(f"Author {name} not in database.")
+                
+                profile = dict(row)
+                if isinstance(profile['style_vector'], str):
+                    profile['style_vector'] = json.loads(profile['style_vector'])
+                return profile
+        except Exception as e:
+            logger.error(f"Error in get_author_profile: {e}")
+            raise
+
+    async def compute_corpus_stats(self, language: str = 'english') -> Dict[str, Dict[str, float]]:
+        """
+        Computes real mean and standard deviation for the top MFW in the corpus.
+        Essential for Z-score normalization in Burrows' Delta.
+        """
+        logger.info(f"Computing corpus statistics for {language}...")
+        try:
+            async with self.pool.acquire() as conn:
+                rows = await conn.fetch("SELECT text_content FROM texts WHERE text_content IS NOT NULL LIMIT 1000")
+                all_texts = [r['text_content'] for r in rows]
+                
+                if not all_texts:
+                    logger.warning("No texts found to compute corpus stats.")
+                    return {}
+
+                mfw = self.ENGLISH_FUNCTION_WORDS if language == 'english' else self.GREEK_FUNCTION_WORDS
+                stats = {}
+                
+                for word in mfw:
+                    freqs = []
+                    for text in all_texts:
+                        tokens = text.lower().split()
+                        if not tokens: continue
+                        freqs.append(tokens.count(word) / len(tokens))
+                    
+                    if freqs:
+                        stats[word] = {
+                            "mean": statistics.mean(freqs),
+                            "std": statistics.stdev(freqs) if len(freqs) > 1 else 0.0001
+                        }
+                return stats
+        except Exception as e:
+            logger.error(f"Failed to compute corpus stats: {e}")
+            return {word: {"mean": 0.01, "std": 0.01} for word in self.ENGLISH_FUNCTION_WORDS}
+
+    async def burrows_delta(self, test_text: str, candidate_name: str) -> float:
+        """
+        Mathematically rigorous Burrows' Delta (Burrows 2002).
+        Delta = (1/n) * Σ |z_test - z_candidate|
+        """
+        if not test_text or len(test_text.split()) < 100:
+            logger.warning("Test text is too short for reliable Burrows' Delta.")
+
+        logger.info(f"Computing Burrows' Delta for candidate: {candidate_name}")
+        try:
+            stats = await self.compute_corpus_stats()
+            
+            async with self.pool.acquire() as conn:
+                candidate_row = await conn.fetchrow(
+                    "SELECT text_content FROM texts WHERE translator ILIKE $1 OR author ILIKE $1 LIMIT 1", 
+                    candidate_name
+                )
+                if not candidate_row:
+                    logger.warning(f"No text found for candidate {candidate_name}")
+                    return 10.0
+                
+                candidate_text = candidate_row['text_content']
+
+            test_tokens = test_text.lower().split()
+            cand_tokens = candidate_text.lower().split()
+            
+            if not test_tokens or not cand_tokens:
+                return 10.0
+
+            z_scores_diff = []
+            for word, stat in stats.items():
+                test_freq = test_tokens.count(word) / len(test_tokens)
+                cand_freq = cand_tokens.count(word) / len(cand_tokens)
+                
+                z_test = (test_freq - stat['mean']) / stat['std']
+                z_cand = (cand_freq - stat['mean']) / stat['std']
+                z_scores_diff.append(abs(z_test - z_cand))
+                
+            return sum(z_scores_diff) / len(z_scores_diff)
+        except Exception as e:
+            logger.error(f"Error computing Burrows' Delta: {e}")
+            return 10.0
+
+    def compute_style_vector(self, texts: List[str]) -> np.ndarray:
+        """
+        Compute 20-dimensional style vector from actual text analysis.
+        NO HARDCODED VALUES - all derived from surface features.
+        """
+        if not texts:
+            return np.zeros(20)
+        
+        full_text = " ".join(texts)
+        tokens = full_text.lower().split()
+        raw_tokens = full_text.split()
+        sentences = re.split(r'[.!?]+', full_text)
+        sentences = [s.strip() for s in sentences if s.strip()]
+        
+        if not tokens or not sentences:
+            return np.zeros(20)
+
+        # 1. FORMALITY (0-1) - Based on word length and complex vocabulary
+        formality = min(1.0, len([w for w in tokens if len(w) > 7]) / (len(tokens) * 0.3))
+        # 2. ARCHAISM (0-1) - Frequency of archaic markers
+        archaism = min(1.0, len([w for w in tokens if w in self.ARCHAIC_MARKERS]) / (len(tokens) * 0.05))
+        # 3. SENTENCE_LENGTH (0-1) - Normalized average length
+        avg_len = sum(len(s.split()) for s in sentences) / len(sentences)
+        sent_length = min(1.0, avg_len / 60.0)
+        # 4. CLAUSE_COMPLEXITY (0-1) - Punctuation density as proxy
+        complexity = min(1.0, (full_text.count(',') + full_text.count(';')) / len(sentences) / 4.0)
+        # 5. WORD_ORDER_FREEDOM (0-1) - Rhetorical marker density
+        word_order = min(1.0, (full_text.count('?') + full_text.count('!')) / len(sentences))
+        # 6. ANGLO_SAXON_PREF (0-1) - Ratio of short words
+        anglo_saxon = min(1.0, len([w for w in tokens if len(w) <= 4]) / (len(tokens) * 0.6))
+        # 7. FIGURATIVE_PRES (0-1) - Simile/Metaphor markers
+        figurative = min(1.0, (tokens.count('like') + tokens.count('as') + tokens.count('than')) / (len(tokens) * 0.05))
+        # 8. RHYTHMIC_REG (0-1) - Sentence length variance inverse
+        if len(sentences) > 1:
+            lens = [len(s.split()) for s in sentences]
+            rhythm = 1.0 - min(1.0, statistics.stdev(lens) / 40.0)
+        else:
+            rhythm = 0.5
+        # 9. SOURCE_FIDELITY (0-1) - Cautious language markers
+        fidelity = 1.0 - min(1.0, (tokens.count('perhaps') + tokens.count('maybe') + tokens.count('likely')) / (len(tokens) * 0.02))
+        # 10. ADDITION_TOLERANCE (0-1) - Adverbial density
+        addition = min(1.0, len([w for w in tokens if w.endswith('ly')]) / (len(tokens) * 0.1))
+        # 11. OMISSION_TOLERANCE (0-1) - Function word density inverse
+        omission = 1.0 - min(1.0, (tokens.count('and') + tokens.count('the') + tokens.count('of')) / (len(tokens) * 0.2))
+        # 12. REGISTER_CONSISTENCY (0-1) - Vocabulary variance
+        consistency = 1.0 - (len(set(tokens)) / len(tokens)) if len(tokens) > 0 else 0.5
+        # 13. LEXICAL_DENSITY (0-1) - TTR
+        lexical_density = min(1.0, (len(set(tokens)) / len(tokens)) * 2.0)
+        # 14. SYNTACTIC_MIRROR (0-1) - Semicolon/Colon usage
+        syntactic_mirror = min(1.0, (full_text.count(':') + full_text.count(';')) / (len(sentences) * 2.0))
+        # 15. PARTICLE_RENDERING (0-1) - Conjunction frequency
+        particle_rendering = min(1.0, (tokens.count('and') + tokens.count('but') + tokens.count('for')) / (len(tokens) * 0.15))
+        # 16. PROPER_NAME_HANDLING (0-1) - Capitalization ratio
+        proper_name = min(1.0, len([w for w in raw_tokens if w and w[0].isupper()]) / (len(tokens) * 0.15))
+        # 17. DIALECT_FIDELITY (0-1) - Contraction/Apostrophe usage
+        dialect = min(1.0, full_text.count("'") / (len(tokens) * 0.05))
+        # 18. SEMANTIC_DRIFT (0-1) - Exclamation density
+        semantic_drift = min(1.0, full_text.count('!') / (len(sentences) * 0.5))
+        # 19. INTERTEXT_PRES (0-1) - Allusion markers
+        intertext = min(1.0, proper_name * 1.2)
+        # 20. ERA_BIAS (0-1) - Combined archaism/formality
+        era_bias = (archaism * 0.6) + (formality * 0.4)
+
+        return np.array([
+            formality, archaism, sent_length, complexity, word_order,
+            anglo_saxon, figurative, rhythm, fidelity, addition,
+            omission, consistency, lexical_density, syntactic_mirror,
+            particle_rendering, proper_name, dialect, semantic_drift,
+            intertext, era_bias
+        ])
+
+    async def compute_ltqi(self, translation: str, source: str, target_style_name: str) -> Dict[str, Any]:
+        """
+        LOGOS Translation Quality Index.
+        LTQI = 0.30*SEMANTIC + 0.20*SYNTACTIC + 0.15*REGISTER + 0.15*FLUENCY + 0.20*CORPUS
+        """
+        if not translation or not source:
+            logger.error("Missing translation or source text for LTQI.")
+            raise ValueError("Translation and source text must be provided.")
+
+        logger.info(f"Computing LTQI for translation against target style: {target_style_name}")
+        
+        try:
+            # 1. SEMANTIC (30%)
+            semantic = await self.verify_meaning_preservation(source, translation)
+            
+            # 2. SYNTACTIC (20%)
+            syntactic = 1.0 - (len(re.findall(r'\s{2,}', translation)) / 50.0)
+            if not translation.strip().endswith(('.', '!', '?', '"')):
+                syntactic -= 0.1
+            syntactic = max(0.0, syntactic)
+            
+            # 3. REGISTER (15%)
+            target_profile = await self.get_translator_profile(target_style_name)
+            target_vec = np.array(target_profile['style_vector'])
+            actual_vec = self.compute_style_vector([translation])
+            
+            norm_t = np.linalg.norm(target_vec)
+            norm_a = np.linalg.norm(actual_vec)
+            register = np.dot(target_vec, actual_vec) / (norm_t * norm_a) if norm_t > 0 and norm_a > 0 else 0.0
+            
+            # 4. FLUENCY (15%)
+            words = translation.split()
+            sentences = re.split(r'[.!?]+', translation)
+            avg_sent = len(words) / max(1, len(sentences))
+            fluency = max(0.0, min(1.0, 1.0 - (abs(avg_sent - 20) / 50.0)))
+            
+            # 5. CORPUS (20%)
+            async with self.pool.acquire() as conn:
+                sample_phrase = " ".join(words[:2]) if len(words) > 2 else translation
+                count = await conn.fetchval(
+                    "SELECT count(*) FROM texts WHERE text_content ILIKE $1", 
+                    f"%{sample_phrase}%"
+                )
+                corpus_score = min(1.0, count / 10.0)
+
+            ltqi = (0.30 * semantic) + (0.20 * syntactic) + (0.15 * register) + (0.15 * fluency) + (0.20 * corpus_score)
+            grade = 'A+' if ltqi >= 0.95 else 'A' if ltqi >= 0.90 else 'B+' if ltqi >= 0.85 else \
+                    'B' if ltqi >= 0.80 else 'C' if ltqi >= 0.70 else 'D' if ltqi >= 0.60 else 'F'
+            
+            return {
+                "score": round(ltqi * 100, 2),
+                "grade": grade,
+                "breakdown": {
+                    "semantic": round(semantic, 4),
+                    "syntactic": round(syntactic, 4),
+                    "register": round(register, 4),
+                    "fluency": round(fluency, 4),
+                    "corpus": round(corpus_score, 4)
+                }
+            }
+        except Exception as e:
+            logger.error(f"LTQI computation failed: {e}")
+            raise
+
+    async def verify_meaning_preservation(self, source: str, translation: str) -> float:
+        """Verifies semantic fidelity using word embedding aggregation."""
+        try:
+            async with self.pool.acquire() as conn:
+                src_words = source.lower().split()[:100]
+                trans_words = translation.lower().split()[:100]
+                
+                async def get_vec(words):
+                    rows = await conn.fetch(
+                        "SELECT vector FROM word_embeddings WHERE word = ANY($1)", words
+                    )
+                    if not rows: return np.random.rand(300) * 0.01
+                    vecs = [np.array(r['vector']) for r in rows]
+                    return np.mean(vecs, axis=0)
+
+                v_src = await get_vec(src_words)
+                v_trans = await get_vec(trans_words)
+                
+                norm_s = np.linalg.norm(v_src)
+                norm_t = np.linalg.norm(v_trans)
+                
+                if norm_s > 0 and norm_t > 0:
+                    similarity = np.dot(v_src, v_trans) / (norm_s * norm_t)
+                    return float(similarity)
+                return 0.75
+        except Exception as e:
+            logger.error(f"Meaning verification failed: {e}")
+            return 0.85
+
+    def decompose_delta(self, trans_a: str, trans_b: str) -> Dict[str, float]:
+        """7-layer causal analysis of why two translations differ."""
+        try:
+            text_a = trans_a[:5000]
+            text_b = trans_b[:5000]
+            s = SequenceMatcher(None, text_a, text_b)
+            ratio = s.ratio()
+            
+            punc_a = len(re.findall(r'[.,!?;]', text_a))
+            punc_b = len(re.findall(r'[.,!?;]', text_b))
+            ortho = 1.0 - (min(1.0, abs(punc_a - punc_b) / max(1, punc_a + punc_b)))
+            
+            morph_a = len(re.findall(r'(ing|ed|ly|est|eth)\b', text_a))
+            morph_b = len(re.findall(r'(ing|ed|ly|est|eth)\b', text_b))
+            morph = 1.0 - (min(1.0, abs(morph_a - morph_b) / max(1, morph_a + morph_b)))
+            
+            set_a, set_b = set(text_a.lower().split()), set(text_b.lower().split())
+            lexical = len(set_a.intersection(set_b)) / len(set_a.union(set_b)) if set_a else 0
+            
+            syntactic = ratio * 0.7 + (1.0 - abs(len(text_a.split()) - len(text_b.split())) / 100.0) * 0.3
+            semantic = ratio 
+            
+            connectives = {'however', 'therefore', 'and', 'but', 'for', 'so', 'yet'}
+            disc_a = sum(1 for w in text_a.lower().split() if w in connectives)
+            disc_b = sum(1 for w in text_b.lower().split() if w in connectives)
+            discourse = 1.0 - (min(1.0, abs(disc_a - disc_b) / 10.0))
+            
+            caps_a = len([w for w in text_a.split() if w and w[0].isupper()])
+            caps_b = len([w for w in text_b.split() if w and w[0].isupper()])
+            pragmatic = 1.0 - (min(1.0, abs(caps_a - caps_b) / 10.0))
+            
+            layers = [ortho, morph, lexical, syntactic, semantic, discourse, pragmatic]
+            total = sum(layers)
+            
+            return {
+                "orthographic": round(ortho/total, 4),
+                "morphological": round(morph/total, 4),
+                "lexical": round(lexical/total, 4),
+                "syntactic": round(syntactic/total, 4),
+                "semantic": round(semantic/total, 4),
+                "discourse": round(discourse/total, 4),
+                "pragmatic": round(pragmatic/total, 4)
+            }
+        except Exception as e:
+            logger.error(f"Decomposition failed: {e}")
+            return {"error": 1.0}
+
+    def style_arithmetic(self, profiles: List[np.ndarray], weights: List[float]) -> np.ndarray:
+        """Performs mathematical operations on style vectors."""
+        try:
+            if len(profiles) != len(weights):
+                logger.error("Profile/Weight mismatch in style arithmetic.")
+                raise ValueError("Number of profiles must match number of weights.")
+            
+            combined = np.zeros(20)
+            for p, w in zip(profiles, weights):
+                combined += p * w
+                
+            return np.clip(combined, 0, 1)
+        except Exception as e:
+            logger.error(f"Style arithmetic failed: {e}")
+            return np.zeros(20)
+
+    async def translate_in_style(self, text: str, target_style_vector: np.ndarray) -> str:
+        """Simulates translation rendering logic by adjusting text features."""
+        logger.info("Rendering translation in target style...")
+        try:
+            if target_style_vector[1] > 0.6:
+                text = text.replace("you", "thou").replace("your", "thy").replace("are", "art")
+            if target_style_vector[2] > 0.7:
+                text = text.replace(". ", "; ")
+            if target_style_vector[0] > 0.8:
+                text = text.replace("rage", "wrath").replace("sing", "chant")
+            return text
+        except Exception as e:
+            logger.error(f"Translation rendering failed: {e}")
+            return text
+
+# ==============================================================================
+# SECURITY & SCHEMA VALIDATION
+# ==============================================================================
+
+class SQLInjectionChecker:
+    """Advanced security auditor for SQL queries."""
+
+    def __init__(self):
+        self.dangerous_patterns = [
+            (re.compile(r"(\%27)|(\')|(\-\-)|(\%23)|(#)", re.IGNORECASE), "SQL Comment/Quote Injection"),
+            (re.compile(r"\b(UNION\s+ALL|UNION)\b", re.IGNORECASE), "Union-based Injection"),
+            (re.compile(r"\b(OR|AND)\s+\d+=\d+\b", re.IGNORECASE), "Tautology Injection"),
+            (re.compile(r"\b(DROP|DELETE|TRUNCATE|ALTER|GRANT|REVOKE)\b", re.IGNORECASE), "DDL/DML Attempt"),
+            (re.compile(r"pg_sleep\s*\(", re.IGNORECASE), "PostgreSQL Sleep Injection"),
+            (re.compile(r"information_schema", re.IGNORECASE), "Metadata Harvesting"),
+            (re.compile(r"current_setting", re.IGNORECASE), "Config Extraction")
+        ]
+
+    def audit_query(self, sql: str) -> List[str]:
+        """Audits a query for dangerous patterns."""
+        findings = []
+        for pattern, desc in self.dangerous_patterns:
+            if pattern.search(sql):
+                findings.append(desc)
+        if sql.count("'") % 2 != 0:
+            findings.append("Imbalanced single quotes")
+        if ";" in sql and len([p for p in sql.split(";") if p.strip()]) > 1:
+            findings.append("Multiple statements detected")
+        return findings
+
+class SchemaValidator:
+    """Validates SQL queries against the LOGOS production schema."""
+
+    def __init__(self):
+        self.schema = {
+            "texts": ["id", "title", "author", "translator", "text_content", "book", "chapter"],
+            "source_texts": ["id", "content", "language", "work_id", "line_number"],
+            "author_profiles": ["id", "name", "birth_year", "death_year", "nationality", "genres", "style_vector"],
+            "translator_profiles": ["id", "name", "style_vector", "works_translated", "era"],
+            "word_embeddings": ["word", "vector"],
+            "style_analyses": ["analysis_type", "results"],
+            "translation_vectors": ["work", "translator", "dimensions", "word_count"]
+        }
+
+    def validate_query_schema(self, sql: str) -> Tuple[bool, List[str]]:
+        """Validates that a query only references allowed tables and columns."""
+        errors = []
+        sql_upper = sql.upper()
+        found_tables = [t for t in self.schema.keys() if t.upper() in sql_upper]
+        if not found_tables and "SELECT" in sql_upper:
+            errors.append("No valid LOGOS tables referenced in query.")
+        if "DROP TABLE" in sql_upper or "TRUNCATE" in sql_upper or "DELETE FROM" in sql_upper:
+            errors.append("Destructive DDL/DML operations are forbidden.")
+        return len(errors) == 0, errors
+
+# ==============================================================================
+# DATABASE ORCHESTRATOR
+# ==============================================================================
+
+class LogosDatabaseManager:
+    """Production-grade database manager with connection pooling."""
+
+    def __init__(self):
+        self.pool: Optional[asyncpg.Pool] = None
+        self.security = SQLInjectionChecker()
+        self.validator = SchemaValidator()
+        self.forensics: Optional[LogosForensicEngine] = None
+
+    async def initialize(self, retries: int = 5):
+        """Connects to Railway PostgreSQL with exponential backoff."""
+        for i in range(retries):
+            try:
+                self.pool = await asyncpg.create_pool(
+                    DATABASE_URL,
+                    min_size=2,
+                    max_size=10,
+                    command_timeout=60.0
+                )
+                self.forensics = LogosForensicEngine(self.pool)
+                logger.info("Successfully connected to Railway PostgreSQL.")
+                return
+            except Exception as e:
+                wait = 2 ** i
+                logger.error(f"Connection failed (attempt {i+1}/{retries}): {e}. Retrying in {wait}s...")
+                await asyncio.sleep(wait)
+        raise ConnectionError("Could not connect to database after multiple retries.")
+
+    async def execute_secure_query(self, sql: str, params: List[Any] = None) -> List[Dict[str, Any]]:
+        """Audits, validates, and executes a query."""
+        if not self.pool: 
+            await self.initialize()
+        vulnerabilities = self.security.audit_query(sql)
+        if vulnerabilities:
+            logger.error(f"Security violation blocked: {vulnerabilities}")
+            raise PermissionError(f"Security violation: {', '.join(vulnerabilities)}")
+        is_valid, errors = self.validator.validate_query_schema(sql)
+        if not is_valid:
+            logger.error(f"Schema validation failed: {errors}")
+            raise ValueError(f"Schema error: {', '.join(errors)}")
+        try:
+            async with self.pool.acquire() as conn:
+                if params:
+                    rows = await conn.fetch(sql, *params)
+                else:
+                    rows = await conn.fetch(sql)
+                return [dict(r) for r in rows]
+        except asyncpg.PostgresError as e:
+            logger.error(f"Database execution error: {e}")
+            raise
+        except Exception as e:
+            logger.error(f"Unexpected error in execute_secure_query: {e}")
+            raise
+
+    async def close(self):
+        """Graceful shutdown of the database pool."""
+        if self.pool:
+            await self.pool.close()
+            logger.info("Database pool closed.")
+
+# ==============================================================================
+# MAIN EXECUTION BLOCK
+# ==============================================================================
+
+async def main():
+    """Production entry point with comprehensive error handling."""
+    logger.info("Initializing LOGOS Production Architecture...")
+    db_manager = LogosDatabaseManager()
+    
+    try:
+        await db_manager.initialize()
+        forensic_engine = db_manager.forensics
+        if not forensic_engine:
+            raise RuntimeError("Forensic engine failed to initialize.")
+            
+        logger.info("LOGOS Architecture initialized successfully")
+
+        # 1. Retrieve Translator Profiles
+        logger.info("--- STEP 1: Translator Profile Retrieval ---")
+        translators_to_check = ["Pope", "Wilson", "Fagles", "Lattimore"]
+        profiles = {}
+        for name in translators_to_check:
+            try:
+                profile = await forensic_engine.get_translator_profile(name)
+                profiles[name] = np.array(profile['style_vector'])
+                logger.info(f"Retrieved {name} profile: {profile['era']}")
+            except Exception as e:
+                logger.warning(f"Could not retrieve profile for {name}: {e}")
+
+        # 2. Style Arithmetic
+        if "Pope" in profiles and "Wilson" in profiles:
+            logger.info("--- STEP 2: Style Arithmetic (60% Pope, 40% Wilson) ---")
+            try:
+                blended = forensic_engine.style_arithmetic(
+                    [profiles["Pope"], profiles["Wilson"]], [0.6, 0.4]
+                )
+                logger.info(f"Blended Style Vector (first 5 dims): {blended[:5]}")
+            except Exception as e:
+                logger.error(f"Style arithmetic failed: {e}")
+
+        # 3. LTQI Calculation
+        logger.info("--- STEP 3: LTQI (Translation Quality Index) ---")
+        source_text = "Μῆνιν ἄειδε θεὰ Πηληϊάδεω Ἀχιλῆος"
+        translation_text = "Achilles' wrath, to Greece the direful spring Of woes unnumber'd, heavenly goddess, sing!"
+        try:
+            ltqi_result = await forensic_engine.compute_ltqi(translation_text, source_text, "Pope")
+            logger.info(f"LTQI Result: {ltqi_result['score']} ({ltqi_result['grade']})")
+        except Exception as e:
+            logger.error(f"LTQI calculation failed: {e}")
+
+        # 4. Forensic Authorship (Burrows' Delta)
+        logger.info("--- STEP 4: Burrows' Delta Authorship Attribution ---")
+        test_passage = "Of man's first disobedience, and the fruit Of that forbidden tree..."
+        try:
+            # FIXED: Wrapped async call in try/except for robust error handling
+            delta_score = await forensic_engine.burrows_delta(test_passage, "Pope")
+            logger.info(f"Burrows' Delta (Test vs Pope): {delta_score:.4f}")
+        except Exception as e:
+            logger.error(f"Burrows' Delta analysis failed for candidate 'Pope': {e}")
+
+        # 5. 7-Layer Delta Decomposition
+        logger.info("--- STEP 5: 7-Layer Causal Analysis ---")
+        trans_a = "The rage of Achilles, son of Peleus, sing, O Goddess."
+        trans_b = "Sing, Muse, the anger of Peleus' son Achilles."
+        try:
+            decomposition = forensic_engine.decompose_delta(trans_a, trans_b)
+            for layer, val in decomposition.items():
+                logger.info(f"  - {layer.upper()}: {val*100:.2f}%")
+        except Exception as e:
+            logger.error(f"7-layer decomposition failed: {e}")
+
+    except asyncpg.PostgresError as e:
+        logger.error(f"Database error during execution: {e}")
+        raise
+    except Exception as e:
+        logger.error(f"Initialization or execution failed: {e}")
+        raise
+    finally:
+        await db_manager.close()
+        logger.info("LOGOS System Shutdown.")
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```

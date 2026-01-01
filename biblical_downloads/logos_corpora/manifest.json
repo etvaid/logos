@@ -1,0 +1,67 @@
+{
+  "created": "2025-12-31T08:22:16.618741",
+  "corpora": {
+    "apostolic_fathers": {
+      "count": 15,
+      "files": [
+        "1_clement.txt",
+        "2_clement.txt",
+        "barnabas.txt",
+        "didache.txt",
+        "diognetus.txt",
+        "ignatius_ephesians.txt",
+        "ignatius_magnesians.txt",
+        "ignatius_philadelphians.txt",
+        "ignatius_polycarp.txt",
+        "ignatius_romans.txt",
+        "ignatius_smyrnaeans.txt",
+        "ignatius_trallians.txt",
+        "martyrdom_polycarp.txt",
+        "polycarp_philippians.txt",
+        "shepherd_hermas.txt"
+      ]
+    },
+    "nag_hammadi": {
+      "count": 0,
+      "files": []
+    },
+    "dead_sea_scrolls": {
+      "count": 0,
+      "files": []
+    },
+    "other_gnostic": {
+      "count": 0,
+      "files": []
+    },
+    "hermetic": {
+      "count": 0,
+      "files": []
+    },
+    "nt_apocrypha": {
+      "count": 17,
+      "files": [
+        "acts_andrew.txt",
+        "acts_john.txt",
+        "acts_paul_thecla.txt",
+        "acts_peter.txt",
+        "acts_thomas.txt",
+        "apocalypse_paul_christian.txt",
+        "apocalypse_peter.txt",
+        "egerton_gospel.txt",
+        "gospel_ebionites_fragments.txt",
+        "gospel_hebrews_fragments.txt",
+        "gospel_nazarenes_fragments.txt",
+        "gospel_nicodemus.txt",
+        "gospel_peter.txt",
+        "infancy_thomas.txt",
+        "odes_solomon.txt",
+        "protevangelium_james.txt",
+        "secret_mark.txt"
+      ]
+    },
+    "ot_pseudepigrapha": {
+      "count": 0,
+      "files": []
+    }
+  }
+}

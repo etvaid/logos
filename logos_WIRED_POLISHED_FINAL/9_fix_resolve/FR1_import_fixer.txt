@@ -1,0 +1,955 @@
+# filepath: tools/import_fixer.py
+"""
+LOGOS - The Bible for Classical Studies
+Module: tools.import_fixer
+Description: Automated resolution of missing, unused, and malformed Python imports 
+using AST analysis and project-wide symbol mapping.
+"""
+
+import ast
+import os
+import sys
+import logging
+import asyncio
+import asyncpg
+import difflib
+import importlib.util
+from typing import List, Dict, Set, Optional, Tuple, Any
+from pathlib import Path
+
+# Configure logging for production audit trails
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler("logs/import_fixer.log"),
+        logging.StreamHandler(sys.stdout)
+    ]
+)
+logger = logging.getLogger(__name__)
+
+class ImportFixer:
+    """
+    A high-performance automated tool for fixing Python imports in the LOGOS system.
+    This class performs deep AST analysis to identify missing symbols and 
+    map them to their correct definitions across the $10M codebase.
+    """
+
+    DATABASE_URL = "postgresql://postgres:JKLqDvdTtmRjGnOgDvGFLqLKVkcjQLFs@metro.proxy.rlwy.net:58888/railway"
+
+    def __init__(self, project_root: str):
+        """
+        Initializes the ImportFixer with project context and symbol maps.
+        
+        Args:
+            project_root: The absolute path to the LOGOS project root directory.
+        """
+        self.project_root = Path(project_root).resolve()
+        self.symbol_map: Dict[str, str] = {}
+        self.standard_lib: Set[str] = set(sys.builtin_module_names)
+        self.db_pool: Optional[asyncpg.Pool] = None
+        
+        if not self.project_root.exists():
+            logger.error(f"Project root {project_root} does not exist.")
+            raise FileNotFoundError(f"Project root {project_root} not found.")
+            
+        logger.info(f"ImportFixer initialized for project at {self.project_root}")
+
+    async def initialize_db(self) -> None:
+        """
+        Establishes a connection to the Railway PostgreSQL database to log 
+        refactoring metrics and fetch known translator/author metadata.
+        """
+        try:
+            self.db_pool = await asyncpg.create_pool(self.DATABASE_URL)
+            async with self.db_pool.acquire() as conn:
+                # Ensure we can connect and the database is responsive
+                version = await conn.fetchval("SELECT version()")
+                logger.info(f"Connected to Railway DB: {version}")
+                
+                # Create a maintenance log table if it doesn't exist
+                await conn.execute("""
+                    CREATE TABLE IF NOT EXISTS system_maintenance_logs (
+                        id SERIAL PRIMARY KEY,
+                        tool_name TEXT NOT NULL,
+                        action_taken TEXT NOT NULL,
+                        file_path TEXT,
+                        timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                    )
+                """)
+        except Exception as e:
+            logger.error(f"Failed to initialize database connection: {str(e)}")
+            raise ConnectionError(f"Database connection failed: {e}")
+
+    async def log_action(self, action: str, file_path: Optional[str] = None) -> None:
+        """
+        Logs a refactoring action to the production database for audit purposes.
+        
+        Args:
+            action: Description of the fix applied.
+            file_path: The file affected by the change.
+        """
+        if not self.db_pool:
+            await self.initialize_db()
+            
+        try:
+            async with self.db_pool.acquire() as conn:
+                await conn.execute(
+                    "INSERT INTO system_maintenance_logs (tool_name, action_taken, file_path) VALUES ($1, $2, $3)",
+                    "ImportFixer", action, file_path
+                )
+        except Exception as e:
+            logger.warning(f"Could not log action to DB: {e}")
+
+    def build_symbol_index(self) -> None:
+        """
+        Scans the entire project to build a mapping of class and function names 
+        to their defining modules. This is critical for resolving missing imports.
+        """
+        logger.info("Building project-wide symbol index...")
+        for py_file in self.project_root.rglob("*.py"):
+            if ".venv" in str(py_file) or "__pycache__" in str(py_file):
+                continue
+                
+            try:
+                with open(py_file, "r", encoding="utf-8") as f:
+                    tree = ast.parse(f.read())
+                
+                module_path = self._get_module_path(py_file)
+                for node in ast.walk(tree):
+                    if isinstance(node, (ast.ClassDef, ast.FunctionDef)):
+                        self.symbol_map[node.name] = module_path
+                        logger.debug(f"Indexed symbol {node.name} in {module_path}")
+            except Exception as e:
+                logger.error(f"Failed to index {py_file}: {e}")
+
+    def _get_module_path(self, file_path: Path) -> str:
+        """
+        Converts a file system path to a Python import dot-notation path.
+        
+        Args:
+            file_path: Absolute Path object to a .py file.
+        
+        Returns:
+            String representing the import path (e.g., 'logos.services.auth').
+        """
+        relative = file_path.relative_to(self.project_root)
+        parts = list(relative.parts)
+        if parts[-1] == "__init__.py":
+            parts.pop()
+        else:
+            parts[-1] = parts[-1].replace(".py", "")
+        return ".".join(parts)
+
+    async def fix_file(self, file_path: str) -> bool:
+        """
+        Analyzes a specific file, identifies missing imports, and injects them.
+        
+        Args:
+            file_path: Path to the target Python file.
+            
+        Returns:
+            bool: True if changes were applied, False otherwise.
+        """
+        path = Path(file_path).resolve()
+        if not path.exists():
+            logger.error(f"File not found: {file_path}")
+            return False
+
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                content = f.read()
+            
+            tree = ast.parse(content)
+            missing_names = self._find_missing_names(tree)
+            
+            if not missing_names:
+                logger.info(f"No missing imports detected in {file_path}")
+                return False
+
+            new_imports = []
+            for name in missing_names:
+                if name in self.symbol_map:
+                    module = self.symbol_map[name]
+                    new_imports.append(f"from {module} import {name}")
+                    logger.info(f"Found missing symbol '{name}' in {module}")
+                else:
+                    logger.warning(f"Could not resolve symbol '{name}' in project index.")
+
+            if not new_imports:
+                return False
+
+            updated_content = self._inject_imports(content, new_imports)
+            
+            with open(path, "w", encoding="utf-8") as f:
+                f.write(updated_content)
+            
+            await self.log_action(f"Fixed missing imports: {', '.join(missing_names)}", str(path))
+            return True
+
+        except SyntaxError as se:
+            logger.error(f"Syntax error in {file_path}: {se}")
+            return False
+        except Exception as e:
+            logger.error(f"Unexpected error fixing {file_path}: {e}")
+            return False
+
+    def _find_missing_names(self, tree: ast.AST) -> Set[str]:
+        """
+        Uses AST analysis to find names that are used but not defined or imported.
+        
+        Args:
+            tree: The AST of the file.
+            
+        Returns:
+            Set of strings representing undefined names.
+        """
+        defined_names = set(self.standard_lib)
+        used_names = set()
+
+        for node in ast.walk(tree):
+            if isinstance(node, (ast.Import, ast.ImportFrom)):
+                for alias in node.names:
+                    defined_names.add(alias.asname or alias.name)
+            elif isinstance(node, (ast.ClassDef, ast.FunctionDef)):
+                defined_names.add(node.name)
+            elif isinstance(node, ast.Name) and isinstance(node.ctx, ast.Load):
+                used_names.add(node.id)
+
+        # Filter out built-ins
+        missing = used_names - defined_names - set(dir(__builtins__))
+        return {m for m in missing if not m.startswith('_')}
+
+    def _inject_imports(self, content: str, new_imports: List[str]) -> str:
+        """
+        Injects new import statements at the top of the file, after existing imports.
+        
+        Args:
+            content: Original file content.
+            new_imports: List of 'from x import y' strings.
+            
+        Returns:
+            Updated file content.
+        """
+        lines = content.splitlines()
+        insert_idx = 0
+        
+        # Find the last import line
+        for i, line in enumerate(lines):
+            if line.startswith(("import ", "from ")):
+                insert_idx = i + 1
+            elif line.strip() and not line.startswith("#") and insert_idx > 0:
+                # We found something that isn't an import or comment after imports started
+                break
+
+        for imp in sorted(new_imports):
+            if imp not in content:
+                lines.insert(insert_idx, imp)
+                insert_idx += 1
+                
+        return "\n".join(lines)
+
+    async def remove_unused_imports(self, file_path: str) -> bool:
+        """
+        Identifies and removes imports that are declared but never used in the code.
+        
+        Args:
+            file_path: Path to the target Python file.
+            
+        Returns:
+            bool: True if changes were applied.
+        """
+        path = Path(file_path).resolve()
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                lines = f.readlines()
+            
+            content = "".join(lines)
+            tree = ast.parse(content)
+            
+            used_names = set()
+            for node in ast.walk(tree):
+                if isinstance(node, ast.Name) and isinstance(node.ctx, ast.Load):
+                    used_names.add(node.id)
+                elif isinstance(node, ast.Attribute):
+                    # Handle cases like 'os.path' where 'os' is used
+                    curr = node.value
+                    while isinstance(curr, ast.Attribute):
+                        curr = curr.value
+                    if isinstance(curr, ast.Name):
+                        used_names.add(curr.id)
+
+            new_lines = []
+            changed = False
+            for line in lines:
+                if line.startswith("import ") or line.startswith("from "):
+                    # Simple heuristic: check if any imported name is in used_names
+                    # This is a production approximation; deep AST analysis on 
+                    # specific import nodes is preferred for $10M systems.
+                    temp_tree = ast.parse(line)
+                    import_node = temp_tree.body[0]
+                    is_used = False
+                    for alias in import_node.names:
+                        name = alias.asname or alias.name
+                        if name in used_names or name == "*":
+                            is_used = True
+                            break
+                    
+                    if is_used:
+                        new_lines.append(line)
+                    else:
+                        logger.info(f"Removing unused import: {line.strip()} in {file_path}")
+                        changed = True
+                else:
+                    new_lines.append(line)
+
+            if changed:
+                with open(path, "w", encoding="utf-8") as f:
+                    f.writelines(new_lines)
+                await self.log_action("Removed unused imports", str(path))
+                return True
+            return False
+
+        except Exception as e:
+            logger.error(f"Error removing unused imports from {file_path}: {e}")
+            return False
+
+    async def run_comprehensive_fix(self) -> None:
+        """
+        Executes a full project scan, fixing missing imports and cleaning unused ones.
+        This is the main entry point for the tool.
+        """
+        logger.info("Starting comprehensive import repair cycle...")
+        self.build_symbol_index()
+        
+        total_fixed = 0
+        for py_file in self.project_root.rglob("*.py"):
+            if ".venv" in str(py_file) or "tests" in str(py_file):
+                continue
+                
+            file_str = str(py_file)
+            fixed_missing = await self.fix_file(file_str)
+            fixed_unused = await self.remove_unused_imports(file_str)
+            
+            if fixed_missing or fixed_unused:
+                total_fixed += 1
+                logger.info(f"Repaired imports in {file_str}")
+
+        logger.info(f"Repair cycle complete. Files modified: {total_fixed}")
+
+    def validate_import_conventions(self, file_path: str) -> List[str]:
+        """
+        Checks if imports follow LOGOS style guidelines (stdlib first, then third party, then local).
+        
+        Returns:
+            List of strings describing violations.
+        """
+        violations = []
+        path = Path(file_path)
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                content = f.read()
+            
+            tree = ast.parse(content)
+            imports = [n for n in tree.body if isinstance(n, (ast.Import, ast.ImportFrom))]
+            
+            # Logic to check grouping and ordering
+            # In a real system, this would use 'isort' logic internally
+            if not imports:
+                return []
+
+            # Example: check for star imports
+            for imp in imports:
+                if isinstance(imp, ast.ImportFrom) and any(a.name == "*" for a in imp.names):
+                    violations.append(f"Star import found in {imp.module} - forbidden in production.")
+
+            return violations
+        except Exception as e:
+            logger.error(f"Validation failed for {file_path}: {e}")
+            return [f"Validation Error: {str(e)}"]
+
+    async def shutdown(self) -> None:
+        """
+        Gracefully closes database connections.
+        """
+        if self.db_pool:
+            await self.db_pool.close()
+            logger.info("Database pool closed.")
+
+# filepath: tools/circular_import_resolver.py
+"""
+LOGOS - The Bible for Classical Studies
+Module: tools.circular_import_resolver
+Description: Detects and resolves circular dependency graphs in Python modules.
+"""
+
+import ast
+import os
+import sys
+import logging
+import asyncio
+from typing import List, Dict, Set, Tuple, Optional
+from pathlib import Path
+
+logger = logging.getLogger(__name__)
+
+class CircularImportResolver:
+    """
+    Advanced utility for analyzing module dependency graphs and breaking 
+    circular references which cause runtime initialization failures.
+    """
+
+    def __init__(self, project_root: str):
+        self.project_root = Path(project_root).resolve()
+        self.dependency_graph: Dict[str, Set[str]] = {}
+        self.file_map: Dict[str, Path] = {}
+
+    def build_dependency_graph(self) -> None:
+        """
+        Parses all files to build a directed graph where nodes are modules
+        and edges are import statements.
+        """
+        logger.info("Constructing module dependency graph...")
+        for py_file in self.project_root.rglob("*.py"):
+            if ".venv" in str(py_file) or "__pycache__" in str(py_file):
+                continue
+            
+            module_name = self._get_module_name(py_file)
+            self.file_map[module_name] = py_file
+            self.dependency_graph[module_name] = set()
+
+            try:
+                with open(py_file, "r", encoding="utf-8") as f:
+                    tree = ast.parse(f.read())
+                
+                for node in ast.walk(tree):
+                    if isinstance(node, ast.Import):
+                        for alias in node.names:
+                            if self._is_local_module(alias.name):
+                                self.dependency_graph[module_name].add(alias.name)
+                    elif isinstance(node, ast.ImportFrom):
+                        if node.module and self._is_local_module(node.module):
+                            self.dependency_graph[module_name].add(node.module)
+            except Exception as e:
+                logger.error(f"Error parsing {py_file} for graph: {e}")
+
+    def _get_module_name(self, path: Path) -> str:
+        rel = path.relative_to(self.project_root)
+        parts = list(rel.parts)
+        if parts[-1] == "__init__.py":
+            parts.pop()
+        else:
+            parts[-1] = parts[-1].replace(".py", "")
+        return ".".join(parts)
+
+    def _is_local_module(self, module_name: str) -> bool:
+        # Check if the module name starts with the project's root package name
+        # Assuming the root package name is 'logos'
+        return module_name.startswith("logos") or any(
+            (self.project_root / (module_name.replace(".", "/") + ".py")).exists()
+            for _ in [1]
+        )
+
+    def find_cycles(self) -> List[List[str]]:
+        """
+        Detects cycles in the dependency graph using Depth First Search.
+        
+        Returns:
+            List of cycles, where each cycle is a list of module names.
+        """
+        cycles = []
+        visited = set()
+        stack = []
+
+        def visit(node: str, path: List[str]):
+            if node in path:
+                cycle_start = path.index(node)
+                cycles.append(path[cycle_start:])
+                return
+            
+            if node in visited:
+                return
+                
+            visited.add(node)
+            path.append(node)
+            
+            for neighbor in self.dependency_graph.get(node, []):
+                visit(neighbor, list(path))
+
+        for node in self.dependency_graph:
+            if node not in visited:
+                visit(node, [])
+        
+        return cycles
+
+    async def resolve_cycle(self, cycle: List[str]) -> bool:
+        """
+        Attempts to break a circular dependency by applying one of three strategies:
+        1. Move imports inside functions/methods (Lazy Loading)
+        2. Wrap imports in TYPE_CHECKING blocks
+        3. Refactor shared logic to a third module
+        """
+        logger.warning(f"Attempting to resolve cycle: {' -> '.join(cycle)}")
+        
+        # Strategy 1: Find an import that can be moved inside a function
+        # We look for the most 'complex' file in the cycle to modify
+        target_module = cycle[0]
+        target_file = self.file_map.get(target_module)
+        
+        if not target_file:
+            return False
+
+        try:
+            with open(target_file, "r", encoding="utf-8") as f:
+                content = f.read()
+            
+            tree = ast.parse(content)
+            next_module_in_cycle = cycle[1]
+            
+            # Logic to find the import statement for next_module_in_cycle
+            # and move it into the first function that uses it.
+            modified = self._move_import_to_local_scope(target_file, next_module_in_cycle)
+            
+            if modified:
+                logger.info(f"Successfully broke cycle by moving {next_module_in_cycle} to local scope in {target_module}")
+                return True
+            
+            # Strategy 2: TYPE_CHECKING
+            modified = self._wrap_in_type_checking(target_file, next_module_in_cycle)
+            if modified:
+                logger.info(f"Successfully broke cycle using TYPE_CHECKING in {target_module}")
+                return True
+
+            return False
+        except Exception as e:
+            logger.error(f"Failed to resolve cycle {cycle}: {e}")
+            return False
+
+    def _move_import_to_local_scope(self, file_path: Path, module_to_move: str) -> bool:
+        """
+        Refactors the file to move a top-level import into the first function body.
+        """
+        with open(file_path, "r", encoding="utf-8") as f:
+            lines = f.readlines()
+
+        import_line_idx = -1
+        import_stmt = ""
+        for i, line in enumerate(lines):
+            if module_to_move in line and (line.startswith("import ") or line.startswith("from ")):
+                import_line_idx = i
+                import_stmt = line
+                break
+        
+        if import_line_idx == -1:
+            return False
+
+        # Find first function definition
+        func_idx = -1
+        for i, line in enumerate(lines):
+            if line.strip().startswith("def ") or line.strip().startswith("async def "):
+                func_idx = i
+                break
+        
+        if func_idx == -1:
+            return False
+
+        # Apply changes
+        lines.pop(import_line_idx)
+        # Re-calculate func_idx if it was after the import
+        if func_idx > import_line_idx:
+            func_idx -= 1
+            
+        indent = "    " # Standard PEP8
+        lines.insert(func_idx + 1, f"{indent}{import_stmt}")
+        
+        with open(file_path, "w", encoding="utf-8") as f:
+            f.writelines(lines)
+        return True
+
+    def _wrap_in_type_checking(self, file_path: Path, module_to_move: str) -> bool:
+        """
+        Wraps a module import in a 'if TYPE_CHECKING:' block to avoid runtime cycles.
+        """
+        with open(file_path, "r", encoding="utf-8") as f:
+            lines = f.readlines()
+
+        has_type_checking_import = any("TYPE_CHECKING" in l for l in lines)
+        import_line_idx = -1
+        import_stmt = ""
+        
+        for i, line in enumerate(lines):
+            if module_to_move in line and (line.startswith("import ") or line.startswith("from ")):
+                import_line_idx = i
+                import_stmt = line
+                break
+
+        if import_line_idx == -1:
+            return False
+
+        new_lines = []
+        if not has_type_checking_import:
+            new_lines.append("from typing import TYPE_CHECKING\n")
+        
+        for i, line in enumerate(lines):
+            if i == import_line_idx:
+                new_lines.append("if TYPE_CHECKING:\n")
+                new_lines.append(f"    {line}")
+            else:
+                new_lines.append(line)
+
+        with open(file_path, "w", encoding="utf-8") as f:
+            f.writelines(new_lines)
+        return True
+
+    async def run_analysis(self) -> None:
+        """
+        Executes the full cycle detection and resolution workflow.
+        """
+        self.build_dependency_graph()
+        cycles = self.find_cycles()
+        
+        if not cycles:
+            logger.info("No circular dependencies detected in the LOGOS project.")
+            return
+
+        logger.warning(f"Detected {len(cycles)} circular dependencies.")
+        for cycle in cycles:
+            success = await self.resolve_cycle(cycle)
+            if success:
+                logger.info(f"Resolved cycle: {cycle}")
+            else:
+                logger.error(f"Manual intervention required for cycle: {cycle}")
+
+# filepath: tools/path_updater.py
+"""
+LOGOS - The Bible for Classical Studies
+Module: tools.path_updater
+Description: Handles mass updates of import paths when files are moved or renamed.
+"""
+
+import os
+import sys
+import logging
+import re
+from typing import List, Dict, Optional
+from pathlib import Path
+
+logger = logging.getLogger(__name__)
+
+class PathUpdater:
+    """
+    Orchestrates the safe renaming of modules and updates all downstream
+    references to maintain system integrity.
+    """
+
+    def __init__(self, project_root: str):
+        self.project_root = Path(project_root).resolve()
+
+    def update_module_references(self, old_module: str, new_module: str) -> int:
+        """
+        Scans all Python files and updates import statements from old_module to new_module.
+        
+        Args:
+            old_module: The original dot-notation path (e.g., 'logos.old_pkg.mod').
+            new_module: The new dot-notation path.
+            
+        Returns:
+            Number of files modified.
+        """
+        logger.info(f"Updating references: {old_module} -> {new_module}")
+        modified_count = 0
+        
+        # Regex to match 'import old_module', 'from old_module import ...', etc.
+        # This handles sub-modules as well.
+        import_pattern = re.compile(rf"(\bimport\s+|\bfrom\s+){re.escape(old_module)}(\b|(?=\.))")
+
+        for py_file in self.project_root.rglob("*.py"):
+            try:
+                with open(py_file, "r", encoding="utf-8") as f:
+                    content = f.read()
+                
+                if old_module in content:
+                    new_content = import_pattern.sub(fr"\1{new_module}", content)
+                    if new_content != content:
+                        with open(py_file, "w", encoding="utf-8") as f:
+                            f.write(new_content)
+                        modified_count += 1
+                        logger.info(f"Updated references in {py_file}")
+            except Exception as e:
+                logger.error(f"Failed to update references in {py_file}: {e}")
+
+        return modified_count
+
+    def rename_file_and_update(self, old_path: str, new_path: str) -> bool:
+        """
+        Physically renames a file and updates all project imports.
+        
+        Args:
+            old_path: Current filesystem path.
+            new_path: Target filesystem path.
+        """
+        old_p = Path(old_path).resolve()
+        new_p = Path(new_path).resolve()
+        
+        if not old_p.exists():
+            logger.error(f"Source file {old_path} does not exist.")
+            return False
+
+        old_module = self._path_to_module(old_p)
+        new_module = self._path_to_module(new_p)
+        
+        try:
+            # Create parent directories if they don't exist
+            new_p.parent.mkdir(parents=True, exist_ok=True)
+            
+            # Move the file
+            os.rename(old_p, new_p)
+            logger.info(f"Moved {old_p} to {new_p}")
+            
+            # Update all references in the project
+            self.update_module_references(old_module, new_module)
+            
+            # If it was a package (directory), we might need more complex logic
+            # but for LOGOS we focus on module-level moves.
+            return True
+        except Exception as e:
+            logger.error(f"Rename failed: {e}")
+            return False
+
+    def _path_to_module(self, path: Path) -> str:
+        try:
+            rel = path.relative_to(self.project_root)
+            parts = list(rel.parts)
+            if parts[-1] == "__init__.py":
+                parts.pop()
+            else:
+                parts[-1] = parts[-1].replace(".py", "")
+            return ".".join(parts)
+        except ValueError:
+            # Path is outside project root
+            return ""
+
+    def batch_rename(self, rename_map: Dict[str, str]) -> None:
+        """
+        Executes multiple renames in a single transaction-like pass.
+        """
+        for old, new in rename_map.items():
+            self.rename_file_and_update(old, new)
+
+    def verify_integrity(self) -> List[str]:
+        """
+        Checks for broken imports across the project.
+        """
+        errors = []
+        for py_file in self.project_root.rglob("*.py"):
+            try:
+                with open(py_file, "r", encoding="utf-8") as f:
+                    tree = ast.parse(f.read())
+                
+                for node in ast.walk(tree):
+                    if isinstance(node, ast.Import):
+                        for alias in node.names:
+                            if not self._module_exists(alias.name):
+                                errors.append(f"Broken import in {py_file}: {alias.name}")
+                    elif isinstance(node, ast.ImportFrom):
+                        if node.module and not self._module_exists(node.module):
+                            errors.append(f"Broken from-import in {py_file}: {node.module}")
+            except Exception as e:
+                errors.append(f"Parse error in {py_file}: {e}")
+        return errors
+
+    def _module_exists(self, module_name: str) -> bool:
+        # Check stdlib
+        if module_name.split('.')[0] in sys.builtin_module_names:
+            return True
+        # Check local
+        path_parts = module_name.split('.')
+        local_path = self.project_root.joinpath(*path_parts)
+        return local_path.with_suffix('.py').exists() or local_path.with_suffix('/__init__.py').exists()
+
+# filepath: tools/ts_import_fixer.ts
+/**
+ * LOGOS - The Bible for Classical Studies
+ * Module: tools/ts_import_fixer.ts
+ * Description: Automated import resolution and path cleanup for TypeScript/React components.
+ */
+
+import * as fs from 'fs';
+import * as path from 'path';
+
+interface ImportFixerConfig {
+    projectRoot: string;
+    aliasMap: Record<string, string>;
+    dryRun: boolean;
+}
+
+class TSImportFixer {
+    private config: ImportFixerConfig;
+    private symbolRegistry: Map<string, string> = new Map();
+
+    constructor(config: ImportFixerConfig) {
+        this.config = config;
+        this.initializeRegistry();
+    }
+
+    /**
+     * Scans the project to map exported classes, interfaces, and functions
+     * to their respective files.
+     */
+    private initializeRegistry(): void {
+        console.log("Initializing TypeScript symbol registry...");
+        this.walkDirectory(this.config.projectRoot, (filePath) => {
+            if (filePath.endsWith('.ts') || filePath.endsWith('.tsx')) {
+                this.indexFile(filePath);
+            }
+        });
+    }
+
+    private walkDirectory(dir: string, callback: (file: string) => void): void {
+        const files = fs.readdirSync(dir);
+        files.forEach((file) => {
+            const fullPath = path.join(dir, file);
+            if (fs.statSync(fullPath).isDirectory()) {
+                if (!fullPath.includes('node_modules') && !fullPath.includes('.next')) {
+                    this.walkDirectory(fullPath, callback);
+                }
+            } else {
+                callback(fullPath);
+            }
+        });
+    }
+
+    private indexFile(filePath: string): void {
+        const content = fs.readFileSync(filePath, 'utf-8');
+        // Regex to find named exports: export const MyVar, export function MyFunc, export class MyClass, export interface MyInt
+        const exportRegex = /export\s+(const|function|class|interface|type|enum)\s+([a-zA-Z0-9_]+)/g;
+        let match;
+        while ((match = exportRegex.exec(content)) !== null) {
+            const symbolName = match[2];
+            const relativePath = path.relative(this.config.projectRoot, filePath)
+                .replace(/\\/g, '/')
+                .replace(/\.tsx?$/, '');
+            this.symbolRegistry.set(symbolName, relativePath);
+        }
+    }
+
+    /**
+     * Fixes missing imports in a specific file.
+     */
+    public async fixFile(filePath: string): Promise<boolean> {
+        const content = fs.readFileSync(filePath, 'utf-8');
+        const lines = content.split('\n');
+        
+        const usedSymbols = this.findUsedSymbols(content);
+        const importedSymbols = this.findImportedSymbols(content);
+        const missingSymbols = usedSymbols.filter(s => !importedSymbols.has(s) && this.symbolRegistry.has(s));
+
+        if (missingSymbols.length === 0) return false;
+
+        console.log(`Fixing ${filePath}: adding ${missingSymbols.join(', ')}`);
+
+        const newImports: string[] = [];
+        missingSymbols.forEach(symbol => {
+            const sourcePath = this.symbolRegistry.get(symbol);
+            if (sourcePath) {
+                // Use alias if available
+                let finalPath = sourcePath;
+                for (const [alias, aliasPath] of Object.entries(this.config.aliasMap)) {
+                    if (sourcePath.startsWith(aliasPath)) {
+                        finalPath = sourcePath.replace(aliasPath, alias);
+                        break;
+                    }
+                }
+                newImports.push(`import { ${symbol} } from '${finalPath}';`);
+            }
+        });
+
+        if (this.config.dryRun) {
+            console.log("Dry run: would add", newImports);
+            return true;
+        }
+
+        const updatedContent = [...newImports, ...lines].join('\n');
+        fs.writeFileSync(filePath, updatedContent);
+        return true;
+    }
+
+    private findUsedSymbols(content: string): string[] {
+        // Simple heuristic: find capitalized words that aren't in strings or comments
+        // In production, we'd use the TypeScript Compiler API (ts-morph)
+        const words = content.match(/\b[A-Z][a-zA-Z0-9_]+\b/g) || [];
+        return Array.from(new Set(words));
+    }
+
+    private findImportedSymbols(content: string): Set<string> {
+        const imported = new Set<string>();
+        const importRegex = /import\s+\{([^}]+)\}\s+from/g;
+        let match;
+        while ((match = importRegex.exec(content)) !== null) {
+            match[1].split(',').forEach(s => imported.add(s.trim()));
+        }
+        return imported;
+    }
+
+    /**
+     * Organizes and sorts imports according to LOGOS project standards.
+     */
+    public organizeImports(filePath: string): void {
+        const content = fs.readFileSync(filePath, 'utf-8');
+        const lines = content.split('\n');
+        
+        const importLines = lines.filter(l => l.startsWith('import '));
+        const nonImportLines = lines.filter(l => !l.startsWith('import '));
+
+        // Sort: React first, then external libs, then internal aliases (@/), then relative paths
+        const sortedImports = importLines.sort((a, b) => {
+            const getPriority = (line: string) => {
+                if (line.includes("'react'")) return 1;
+                if (!line.includes("'./") && !line.includes("'../") && !line.includes("'@/")) return 2;
+                if (line.includes("'@/")) return 3;
+                return 4;
+            };
+            return getPriority(a) - getPriority(b) || a.localeCompare(b);
+        });
+
+        const newContent = [...sortedImports, '', ...nonImportLines].join('\n');
+        fs.writeFileSync(filePath, newContent);
+    }
+
+    /**
+     * Batch processes all files in the project.
+     */
+    public async runAll(): Promise<void> {
+        this.walkDirectory(this.config.projectRoot, async (file) => {
+            if (file.endsWith('.ts') || file.endsWith('.tsx')) {
+                await this.fixFile(file);
+                this.organizeImports(file);
+            }
+        });
+    }
+}
+
+// Example usage for production deployment
+const fixer = new TSImportFixer({
+    projectRoot: path.resolve(__dirname, '../src'),
+    aliasMap: {
+        '@/components': 'components',
+        '@/services': 'services',
+        '@/hooks': 'hooks',
+        '@/utils': 'utils'
+    },
+    dryRun: false
+});
+
+// Run the fixer
+// fixer.runAll().then(() => console.log("TypeScript import repair complete."));
+
+export { TSImportFixer };
+
+/**
+ * PRODUCTION NOTE:
+ * This system is designed to handle the scale of the LOGOS classical studies platform.
+ * It ensures that as the codebase grows to millions of lines, the dependency graph 
+ * remains clean and manageable. The use of AST analysis in Python and regex-based 
+ * heuristics in TypeScript provides a balance of safety and performance.
+ */

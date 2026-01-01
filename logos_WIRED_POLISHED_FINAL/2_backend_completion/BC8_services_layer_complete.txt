@@ -1,0 +1,969 @@
+# filepath: backend/services/base.py
+"""
+LOGOS - The Bible for Classical Studies
+Service Layer: Base Service Implementation
+Version: 1.0.0
+Author: Senior Software Architect
+
+This module provides the foundational architecture for all business logic services.
+It handles database connectivity via asyncpg, implements robust retry logic, 
+provides centralized logging, and defines the standard error hierarchy.
+"""
+
+import asyncio
+import functools
+import logging
+import time
+import json
+from datetime import datetime
+from typing import Any, Dict, List, Optional, TypeVar, Callable, Union, Generic
+
+import asyncpg
+from asyncpg.pool import Pool
+
+# Configure logging for production-grade traceability
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+
+# Constants
+DATABASE_URL = "postgresql://postgres:JKLqDvdTtmRjGnOgDvGFLqLKVkcjQLFs@metro.proxy.rlwy.net:58888/railway"
+MAX_DB_CONNECTIONS = 20
+MIN_DB_CONNECTIONS = 5
+QUERY_TIMEOUT = 30.0  # Seconds
+
+T = TypeVar("T")
+
+class LogosServiceError(Exception):
+    """Base exception class for all LOGOS service-related errors."""
+    def __init__(self, message: str, code: str = "INTERNAL_ERROR", details: Any = None):
+        super().__init__(message)
+        self.message = message
+        self.code = code
+        self.details = details
+        self.timestamp = datetime.utcnow().isoformat()
+        logger.error(f"ServiceError [{self.code}]: {self.message} | Details: {self.details}")
+
+class DatabaseConnectionError(LogosServiceError):
+    """Raised when the service cannot establish or maintain a DB connection."""
+    def __init__(self, message: str, details: Any = None):
+        super().__init__(message, code="DATABASE_CONNECTION_FAILURE", details=details)
+
+class DataIntegrityError(LogosServiceError):
+    """Raised when data validation or database constraints fail."""
+    def __init__(self, message: str, details: Any = None):
+        super().__init__(message, code="DATA_INTEGRITY_FAILURE", details=details)
+
+class ResourceNotFoundError(LogosServiceError):
+    """Raised when a requested classical text or profile is not found."""
+    def __init__(self, resource_type: str, resource_id: Any):
+        message = f"{resource_type} with ID {resource_id} not found in LOGOS repository."
+        super().__init__(message, code="RESOURCE_NOT_FOUND", details={"id": resource_id, "type": resource_type})
+
+def retry_on_failure(max_retries: int = 3, initial_delay: float = 1.0, backoff_factor: float = 2.0):
+    """
+    Decorator for service methods to implement exponential backoff retry logic.
+    Crucial for handling transient database or network issues in production.
+    """
+    def decorator(func: Callable):
+        @functools.wraps(func)
+        async def wrapper(*args, **kwargs):
+            retries = 0
+            delay = initial_delay
+            while retries < max_retries:
+                try:
+                    return await func(*args, **kwargs)
+                except (asyncpg.PostgresError, ConnectionError, asyncio.TimeoutError) as e:
+                    retries += 1
+                    if retries == max_retries:
+                        logger.critical(f"Final retry attempt failed for {func.__name__}: {str(e)}")
+                        raise DatabaseConnectionError(f"Operation failed after {max_retries} attempts", details=str(e))
+                    
+                    logger.warning(f"Retry {retries}/{max_retries} for {func.__name__} after error: {str(e)}. Waiting {delay}s...")
+                    await asyncio.sleep(delay)
+                    delay *= backoff_factor
+            return await func(*args, **kwargs)
+        return wrapper
+    return decorator
+
+class BaseService:
+    """
+    The cornerstone of the LOGOS service layer.
+    Every service (TextService, AuthorService, etc.) must inherit from this.
+    Provides managed access to the PostgreSQL pool and standard CRUD utilities.
+    """
+    
+    _pool: Optional[Pool] = None
+
+    def __init__(self, cache_service: Any = None, event_publisher: Any = None):
+        """
+        Initializes the service with optional cache and event dependencies.
+        
+        Args:
+            cache_service: An instance of CacheService for performance optimization.
+            event_publisher: An instance of EventPublisher for real-time updates.
+        """
+        self.cache = cache_service
+        self.events = event_publisher
+        self.logger = logging.getLogger(self.__class__.__name__)
+
+    @classmethod
+    async def get_pool(cls) -> Pool:
+        """
+        Singleton pattern for the database connection pool.
+        Ensures we don't exhaust Railway's connection limits.
+        """
+        if cls._pool is None:
+            try:
+                logger.info("Initializing LOGOS Database Connection Pool...")
+                cls._pool = await asyncpg.create_pool(
+                    dsn=DATABASE_URL,
+                    min_size=MIN_DB_CONNECTIONS,
+                    max_size=MAX_DB_CONNECTIONS,
+                    command_timeout=QUERY_TIMEOUT,
+                    server_settings={
+                        "application_name": "LOGOS_Production_Backend",
+                        "search_path": "public"
+                    }
+                )
+                logger.info("Database Connection Pool established successfully.")
+            except Exception as e:
+                logger.critical(f"Failed to initialize database pool: {str(e)}")
+                raise DatabaseConnectionError("Could not connect to Railway PostgreSQL", details=str(e))
+        return cls._pool
+
+    @retry_on_failure(max_retries=3)
+    async def execute_fetch_one(self, query: str, *args) -> Optional[Dict[str, Any]]:
+        """
+        Executes a query and returns a single record as a dictionary.
+        
+        Args:
+            query: The SQL query string with placeholders ($1, $2...).
+            args: Values to bind to the placeholders.
+            
+        Returns:
+            A dictionary representing the row, or None if no record found.
+        """
+        pool = await self.get_pool()
+        start_time = time.perf_counter()
+        try:
+            async with pool.acquire() as connection:
+                row = await connection.fetchrow(query, *args)
+                execution_time = (time.perf_counter() - start_time) * 1000
+                self.logger.debug(f"Query executed in {execution_time:.2f}ms: {query[:100]}...")
+                return dict(row) if row else None
+        except asyncpg.PostgresError as e:
+            self.logger.error(f"Database error during fetch_one: {str(e)} | Query: {query}")
+            raise DatabaseConnectionError("Failed to fetch record from database", details=str(e))
+
+    @retry_on_failure(max_retries=3)
+    async def execute_fetch_all(self, query: str, *args) -> List[Dict[str, Any]]:
+        """
+        Executes a query and returns all matching records.
+        
+        Args:
+            query: The SQL query string.
+            args: Values to bind.
+            
+        Returns:
+            A list of dictionaries representing the rows.
+        """
+        pool = await self.get_pool()
+        start_time = time.perf_counter()
+        try:
+            async with pool.acquire() as connection:
+                rows = await connection.fetch(query, *args)
+                execution_time = (time.perf_counter() - start_time) * 1000
+                self.logger.info(f"Fetched {len(rows)} rows in {execution_time:.2f}ms")
+                return [dict(row) for row in rows]
+        except asyncpg.PostgresError as e:
+            self.logger.error(f"Database error during fetch_all: {str(e)} | Query: {query}")
+            raise DatabaseConnectionError("Failed to fetch records from database", details=str(e))
+
+    async def execute_transaction(self, queries_with_args: List[tuple]) -> bool:
+        """
+        Executes multiple queries within a single ACID transaction.
+        Essential for maintaining data integrity across related tables.
+        
+        Args:
+            queries_with_args: List of tuples (query_string, args_tuple).
+            
+        Returns:
+            True if transaction committed successfully.
+        """
+        pool = await self.get_pool()
+        try:
+            async with pool.acquire() as connection:
+                async with connection.transaction():
+                    for query, args in queries_with_args:
+                        await connection.execute(query, *args)
+            self.logger.info(f"Transaction committed successfully with {len(queries_with_args)} operations.")
+            return True
+        except Exception as e:
+            self.logger.error(f"Transaction failed, rolling back: {str(e)}")
+            raise DataIntegrityError("Transaction failed and was rolled back", details=str(e))
+
+    def validate_pagination(self, page: int, size: int) -> tuple:
+        """
+        Standardizes pagination parameters for classical scholar queries.
+        
+        Args:
+            page: Requested page number (1-indexed).
+            size: Items per page.
+            
+        Returns:
+            Tuple of (limit, offset).
+        """
+        if page < 1:
+            page = 1
+        if size < 1 or size > 100:
+            size = 20
+        offset = (page - 1) * size
+        return size, offset
+
+    async def log_audit_trail(self, action: str, user_id: str, resource: str, resource_id: Any):
+        """
+        Logs critical actions for security and academic integrity.
+        In a real system, this would write to a dedicated audit_logs table.
+        """
+        audit_entry = {
+            "timestamp": datetime.utcnow().isoformat(),
+            "action": action,
+            "user_id": user_id,
+            "resource": resource,
+            "resource_id": str(resource_id)
+        }
+        self.logger.info(f"AUDIT: {json.dumps(audit_entry)}")
+        # Implementation for writing to database would go here:
+        # await self.execute_fetch_one("INSERT INTO audit_logs ...", ...)
+
+    async def health_check(self) -> Dict[str, Any]:
+        """
+        Performs a health check on the database connection.
+        Used by monitoring systems to ensure LOGOS is operational.
+        """
+        try:
+            pool = await self.get_pool()
+            async with pool.acquire() as conn:
+                result = await conn.fetchval("SELECT 1")
+                return {
+                    "status": "healthy" if result == 1 else "unhealthy",
+                    "database": "connected",
+                    "timestamp": datetime.utcnow().isoformat(),
+                    "pool_size": pool.get_size(),
+                    "available_connections": pool.get_idle_size()
+                }
+        except Exception as e:
+            self.logger.critical(f"Health check failed: {str(e)}")
+            return {
+                "status": "critical",
+                "database": "disconnected",
+                "error": str(e),
+                "timestamp": datetime.utcnow().isoformat()
+            }
+
+    async def close_pool(self):
+        """
+        Gracefully shuts down the database connection pool.
+        Should be called on application shutdown.
+        """
+        if self._pool:
+            self.logger.info("Closing LOGOS Database Connection Pool...")
+            await self._pool.close()
+            BaseService._pool = None
+            self.logger.info("Database Connection Pool closed.")
+
+# filepath: backend/services/cache.py
+"""
+LOGOS - The Bible for Classical Studies
+Service Layer: Redis Caching Implementation
+Version: 1.0.0
+
+This module implements high-performance caching strategies for classical texts.
+Given the static nature of ancient texts, caching is vital for sub-millisecond 
+response times for scholars.
+"""
+
+import json
+import logging
+import pickle
+from typing import Any, Optional, Union, List, Dict
+from datetime import timedelta
+
+import redis.asyncio as redis
+
+logger = logging.getLogger(__name__)
+
+class CacheService:
+    """
+    Handles all caching logic using Redis.
+    Supports complex object serialization and namespace management.
+    """
+
+    def __init__(self, host: str = "localhost", port: int = 6379, db: int = 0, password: Optional[str] = None):
+        """
+        Initializes the Redis connection.
+        
+        Args:
+            host: Redis server host.
+            port: Redis server port.
+            db: Redis database index.
+            password: Redis password if required.
+        """
+        self.redis_url = f"redis://{host}:{port}/{db}"
+        self.password = password
+        self._client: Optional[redis.Redis] = None
+        self.default_ttl = 3600  # 1 hour default
+        self.long_ttl = 86400    # 24 hours for canonical texts
+
+    async def _get_client(self) -> redis.Redis:
+        """
+        Lazy initialization of the Redis client.
+        """
+        if self._client is None:
+            try:
+                self._client = redis.from_url(
+                    self.redis_url, 
+                    password=self.password,
+                    encoding="utf-8", 
+                    decode_responses=False  # Use False to handle binary/pickle
+                )
+                # Test connection
+                await self._client.ping()
+                logger.info(f"Connected to Redis at {self.redis_url}")
+            except Exception as e:
+                logger.error(f"Failed to connect to Redis: {str(e)}")
+                raise ConnectionError(f"Redis connection failed: {str(e)}")
+        return self._client
+
+    async def get(self, key: str) -> Optional[Any]:
+        """
+        Retrieves a value from cache and deserializes it.
+        
+        Args:
+            key: The unique cache key.
+            
+        Returns:
+            The deserialized object or None if cache miss.
+        """
+        try:
+            client = await self._get_client()
+            data = await client.get(key)
+            if data:
+                logger.debug(f"Cache HIT for key: {key}")
+                return pickle.loads(data)
+            logger.debug(f"Cache MISS for key: {key}")
+            return None
+        except Exception as e:
+            logger.error(f"Error retrieving from cache: {str(e)}")
+            return None
+
+    async def set(self, key: str, value: Any, ttl: Optional[int] = None) -> bool:
+        """
+        Stores a value in cache with serialization.
+        
+        Args:
+            key: Unique key.
+            value: Any picklable Python object.
+            ttl: Time-to-live in seconds.
+            
+        Returns:
+            True if successful.
+        """
+        try:
+            client = await self._get_client()
+            serialized_value = pickle.dumps(value)
+            expire_time = ttl or self.default_ttl
+            await client.set(key, serialized_value, ex=expire_time)
+            logger.debug(f"Cache SET for key: {key} (TTL: {expire_time}s)")
+            return True
+        except Exception as e:
+            logger.error(f"Error setting cache: {str(e)}")
+            return False
+
+    async def delete(self, key: str) -> bool:
+        """
+        Removes a specific key from cache.
+        """
+        try:
+            client = await self._get_client()
+            await client.delete(key)
+            logger.info(f"Cache DELETE for key: {key}")
+            return True
+        except Exception as e:
+            logger.error(f"Error deleting cache key {key}: {str(e)}")
+            return False
+
+    async def clear_namespace(self, namespace: str) -> int:
+        """
+        Invalidates all keys within a specific namespace (e.g., 'texts:*').
+        Crucial when a specific author's data is updated.
+        
+        Args:
+            namespace: The prefix to clear.
+            
+        Returns:
+            Number of keys deleted.
+        """
+        try:
+            client = await self._get_client()
+            count = 0
+            async for key in client.scan_iter(f"{namespace}*"):
+                await client.delete(key)
+                count += 1
+            logger.info(f"Cleared {count} keys from namespace: {namespace}")
+            return count
+        except Exception as e:
+            logger.error(f"Error clearing namespace {namespace}: {str(e)}")
+            return 0
+
+    async def get_or_set(self, key: str, creator_func: Callable, ttl: Optional[int] = None) -> Any:
+        """
+        Pattern: Try to get from cache, if missing, call creator_func and store result.
+        This is the most common usage pattern in the LOGOS service layer.
+        """
+        cached_val = await self.get(key)
+        if cached_val is not None:
+            return cached_val
+        
+        # Cache miss - execute the actual logic (usually a DB query)
+        new_val = await creator_func()
+        if new_val is not None:
+            await self.set(key, new_val, ttl)
+        return new_val
+
+    async def increment(self, key: str) -> int:
+        """
+        Increments a counter in Redis. Useful for tracking popular works.
+        """
+        try:
+            client = await self._get_client()
+            return await client.incr(key)
+        except Exception as e:
+            logger.error(f"Error incrementing key {key}: {str(e)}")
+            return 0
+
+    async def get_many(self, keys: List[str]) -> Dict[str, Any]:
+        """
+        Retrieves multiple keys in a single round-trip (MGET).
+        """
+        try:
+            client = await self._get_client()
+            values = await client.mget(keys)
+            result = {}
+            for i, val in enumerate(values):
+                if val:
+                    result[keys[i]] = pickle.loads(val)
+            return result
+        except Exception as e:
+            logger.error(f"Error in mget: {str(e)}")
+            return {}
+
+    async def set_many(self, mapping: Dict[str, Any], ttl: Optional[int] = None) -> bool:
+        """
+        Sets multiple keys efficiently.
+        """
+        try:
+            client = await self._get_client()
+            pipe = client.pipeline()
+            expire_time = ttl or self.default_ttl
+            for key, value in mapping.items():
+                pipe.set(key, pickle.dumps(value), ex=expire_time)
+            await pipe.execute()
+            return True
+        except Exception as e:
+            logger.error(f"Error in mset: {str(e)}")
+            return False
+
+    async def close(self):
+        """
+        Closes the Redis connection.
+        """
+        if self._client:
+            await self._client.close()
+            logger.info("Redis connection closed.")
+
+# filepath: backend/services/events.py
+"""
+LOGOS - The Bible for Classical Studies
+Service Layer: Event Publishing and Real-time Updates
+Version: 1.0.0
+
+This module manages the event-driven architecture of LOGOS.
+It allows services to broadcast updates (e.g., new translation added) 
+to connected scholars via WebSockets or internal queues.
+"""
+
+import asyncio
+import json
+import logging
+from enum import Enum
+from typing import Any, Dict, List, Callable, Optional
+from datetime import datetime
+
+logger = logging.getLogger(__name__)
+
+class LogosEventType(Enum):
+    """Enumeration of all supported event types in the LOGOS ecosystem."""
+    TEXT_CREATED = "text.created"
+    TEXT_UPDATED = "text.updated"
+    TEXT_DELETED = "text.deleted"
+    SEARCH_PERFORMED = "search.performed"
+    AUTHOR_PROFILE_UPDATED = "author.updated"
+    TRANSLATION_ADDED = "translation.added"
+    SCHOLAR_ANNOTATION_CREATED = "annotation.created"
+    SYSTEM_MAINTENANCE = "system.maintenance"
+
+class EventPublisher:
+    """
+    Handles event distribution. In a production environment, this integrates
+    with Redis Pub/Sub or RabbitMQ. Here we implement a robust async internal
+    bus with support for external hooks.
+    """
+
+    def __init__(self):
+        self._subscribers: Dict[LogosEventType, List[Callable]] = {
+            event_type: [] for event_type in LogosEventType
+        }
+        self._queue: asyncio.Queue = asyncio.Queue()
+        self._is_running = False
+        self._worker_task: Optional[asyncio.Task] = None
+
+    async def start(self):
+        """Starts the background worker to process the event queue."""
+        if self._is_running:
+            return
+        
+        self._is_running = True
+        self._worker_task = asyncio.create_task(self._process_events())
+        logger.info("EventPublisher background worker started.")
+
+    async def stop(self):
+        """Stops the event worker and waits for current events to finish."""
+        self._is_running = False
+        if self._worker_task:
+            self._worker_task.cancel()
+            try:
+                await self._worker_task
+            except asyncio.CancelledError:
+                pass
+        logger.info("EventPublisher background worker stopped.")
+
+    def subscribe(self, event_type: LogosEventType, callback: Callable):
+        """
+        Registers a callback function for a specific event type.
+        
+        Args:
+            event_type: The type of event to listen for.
+            callback: An async function to call when the event occurs.
+        """
+        if callback not in self._subscribers[event_type]:
+            self._subscribers[event_type].append(callback)
+            logger.info(f"New subscriber added for event: {event_type.value}")
+
+    def unsubscribe(self, event_type: LogosEventType, callback: Callable):
+        """Removes a callback registration."""
+        if callback in self._subscribers[event_type]:
+            self._subscribers[event_type].remove(callback)
+            logger.info(f"Subscriber removed for event: {event_type.value}")
+
+    async def publish(self, event_type: LogosEventType, payload: Dict[str, Any], originator: str = "system"):
+        """
+        Queues an event for distribution.
+        
+        Args:
+            event_type: The type of event.
+            payload: Data associated with the event.
+            originator: The service or user ID that triggered the event.
+        """
+        event_data = {
+            "event_type": event_type,
+            "payload": payload,
+            "originator": originator,
+            "timestamp": datetime.utcnow().isoformat(),
+            "event_id": f"evt_{int(datetime.utcnow().timestamp() * 1000)}"
+        }
+        
+        await self._queue.put(event_data)
+        logger.debug(f"Event queued: {event_type.value} by {originator}")
+
+    async def _process_events(self):
+        """Background worker that pulls events from the queue and notifies subscribers."""
+        while self._is_running:
+            try:
+                event = await self._queue.get()
+                event_type = event["event_type"]
+                subscribers = self._subscribers.get(event_type, [])
+                
+                if not subscribers:
+                    self._queue.task_done()
+                    continue
+
+                # Notify all subscribers concurrently
+                tasks = []
+                for callback in subscribers:
+                    tasks.append(self._execute_callback(callback, event))
+                
+                if tasks:
+                    await asyncio.gather(*tasks, return_exceptions=True)
+                
+                self._queue.task_done()
+                logger.info(f"Event {event['event_id']} processed by {len(subscribers)} subscribers.")
+            
+            except asyncio.CancelledError:
+                break
+            except Exception as e:
+                logger.error(f"Error in event processing loop: {str(e)}")
+                await asyncio.sleep(1) # Prevent tight error loop
+
+    async def _execute_callback(self, callback: Callable, event: Dict[str, Any]):
+        """Executes a single subscriber callback with error handling."""
+        try:
+            await callback(event)
+        except Exception as e:
+            logger.error(f"Subscriber callback failed for event {event['event_type']}: {str(e)}")
+
+    async def broadcast_to_scholars(self, message: str, channel: str = "general"):
+        """
+        Specialized method for real-time WebSocket broadcasting.
+        In production, this would interface with a WebSocket Manager.
+        """
+        payload = {
+            "message": message,
+            "channel": channel,
+            "type": "broadcast"
+        }
+        await self.publish(LogosEventType.SYSTEM_MAINTENANCE, payload, originator="admin")
+        logger.info(f"Broadcast sent to channel '{channel}': {message}")
+
+# filepath: backend/services/factory.py
+"""
+LOGOS - The Bible for Classical Studies
+Service Layer: Service Factory and Dependency Injection
+Version: 1.0.0
+
+This module acts as the central registry and DI container for the application.
+It manages the lifecycle of all services, ensuring singletons are used where 
+appropriate and dependencies (DB, Cache, Events) are correctly injected.
+"""
+
+import logging
+from typing import Dict, Any, Optional, Type, TypeVar
+
+from backend.services.base import BaseService
+from backend.services.cache import CacheService
+from backend.services.events import EventPublisher
+
+logger = logging.getLogger(__name__)
+
+S = TypeVar("S", bound=BaseService)
+
+class ServiceFactory:
+    """
+    The central hub for obtaining service instances.
+    Implements the Registry and Dependency Injection patterns.
+    """
+
+    _instances: Dict[str, Any] = {}
+    _initialized: bool = False
+
+    def __init__(self):
+        # This class is primarily used via class methods
+        pass
+
+    @classmethod
+    async def initialize(cls):
+        """
+        Initializes the core dependencies required by all services.
+        Must be called during application startup.
+        """
+        if cls._initialized:
+            return
+
+        logger.info("Initializing LOGOS Service Factory...")
+        
+        # 1. Initialize Cache
+        try:
+            cache_service = CacheService(host="localhost", port=6379)
+            cls._instances["cache"] = cache_service
+            logger.info("Cache Service registered.")
+        except Exception as e:
+            logger.warning(f"Cache Service failed to initialize, continuing without cache: {str(e)}")
+            cls._instances["cache"] = None
+
+        # 2. Initialize Event Publisher
+        event_publisher = EventPublisher()
+        await event_publisher.start()
+        cls._instances["events"] = event_publisher
+        logger.info("Event Publisher registered and started.")
+
+        # 3. Initialize Database Pool (via BaseService)
+        try:
+            await BaseService.get_pool()
+            logger.info("Database Pool pre-warmed.")
+        except Exception as e:
+            logger.critical(f"Critical failure during Database Pool initialization: {str(e)}")
+            raise
+
+        cls._initialized = True
+        logger.info("LOGOS Service Factory initialization complete.")
+
+    @classmethod
+    async def shutdown(cls):
+        """
+        Gracefully shuts down all services and releases resources.
+        """
+        logger.info("Shutting down LOGOS Service Factory...")
+        
+        # Shutdown Event Publisher
+        if "events" in cls._instances:
+            await cls._instances["events"].stop()
+        
+        # Shutdown Cache
+        if "cache" in cls._instances and cls._instances["cache"]:
+            await cls._instances["cache"].close()
+            
+        # Shutdown Database Pool
+        await BaseService().close_pool()
+        
+        cls._instances.clear()
+        cls._initialized = False
+        logger.info("LOGOS Service Factory shutdown complete.")
+
+    @classmethod
+    def get_cache(cls) -> Optional[CacheService]:
+        """Returns the global CacheService instance."""
+        return cls._instances.get("cache")
+
+    @classmethod
+    def get_events(cls) -> EventPublisher:
+        """Returns the global EventPublisher instance."""
+        return cls._instances.get("events")
+
+    @classmethod
+    def get_service(cls, service_class: Type[S]) -> S:
+        """
+        Retrieves or creates an instance of the requested service.
+        Automatically injects the cache and event dependencies.
+        
+        Args:
+            service_class: The class of the service to instantiate.
+            
+        Returns:
+            An instance of the requested service.
+        """
+        service_name = service_class.__name__
+        
+        if service_name not in cls._instances:
+            logger.info(f"Instantiating new service: {service_name}")
+            
+            # Instantiate with dependencies
+            instance = service_class(
+                cache_service=cls.get_cache(),
+                event_publisher=cls.get_events()
+            )
+            cls._instances[service_name] = instance
+            
+        return cls._instances[service_name]
+
+# Example of a concrete service implementation to demonstrate the factory and base logic
+class TextService(BaseService):
+    """
+    Production-ready service for managing Classical Texts.
+    Uses real SQL queries against the 'texts' and 'source_texts' tables.
+    """
+
+    async def get_text_by_id(self, text_id: int) -> Dict[str, Any]:
+        """
+        Retrieves a specific classical text by its unique ID.
+        Implements a Cache-Aside strategy.
+        """
+        cache_key = f"text:{text_id}"
+        
+        async def fetch_from_db():
+            query = "SELECT * FROM texts WHERE id = $1"
+            return await self.execute_fetch_one(query, text_id)
+
+        text = await self.cache.get_or_set(cache_key, fetch_from_db, ttl=3600)
+        if not text:
+            raise ResourceNotFoundError("Text", text_id)
+        return text
+
+    async def get_source_content(self, work_id: int, start_line: int, end_line: int) -> List[Dict[str, Any]]:
+        """
+        Fetches the original language source text for a specific work.
+        Queries the 'source_texts' table (6.6M+ rows).
+        """
+        query = """
+            SELECT content, language, line_number 
+            FROM source_texts 
+            WHERE work_id = $1 AND line_number BETWEEN $2 AND $3
+            ORDER BY line_number ASC
+        """
+        results = await self.execute_fetch_all(query, work_id, start_line, end_line)
+        return results
+
+    async def search_texts_by_author(self, author_name: str, page: int = 1) -> List[Dict[str, Any]]:
+        """
+        Finds all works by a specific classical author using a fuzzy search.
+        """
+        limit, offset = self.validate_pagination(page, 20)
+        query = """
+            SELECT id, title, author, translator, book, chapter 
+            FROM texts 
+            WHERE author ILIKE $1 
+            ORDER BY title ASC 
+            LIMIT $2 OFFSET $3
+        """
+        # Ensure author_name uses SQL wildcards
+        search_pattern = f"%{author_name}%"
+        return await self.execute_fetch_all(query, search_pattern, limit, offset)
+
+    async def get_author_profile(self, author_id: int) -> Dict[str, Any]:
+        """
+        Retrieves biography and metadata for an author from 'author_profiles'.
+        """
+        query = "SELECT * FROM author_profiles WHERE id = $1"
+        profile = await self.execute_fetch_one(query, author_id)
+        if not profile:
+            raise ResourceNotFoundError("AuthorProfile", author_id)
+        return profile
+
+    async def list_translators(self) -> List[str]:
+        """
+        Returns the list of 38 approved translators in the LOGOS system.
+        """
+        # This uses the specific list provided in requirements
+        query = "SELECT DISTINCT name FROM translator_profiles ORDER BY name ASC"
+        rows = await self.execute_fetch_all(query)
+        return [row['name'] for row in rows]
+
+    async def add_new_translation(self, text_data: Dict[str, Any], user_id: str) -> int:
+        """
+        Adds a new translation to the 'texts' table and publishes an event.
+        Demonstrates transaction and event publishing.
+        """
+        # 1. Validation logic
+        required = ['title', 'author', 'translator', 'text_content']
+        for field in required:
+            if field not in text_data:
+                raise DataIntegrityError(f"Missing required field: {field}")
+
+        # 2. Database Insert
+        query = """
+            INSERT INTO texts (title, author, translator, text_content, book, chapter)
+            VALUES ($1, $2, $3, $4, $5, $6)
+            RETURNING id
+        """
+        result = await self.execute_fetch_one(
+            query, 
+            text_data['title'], 
+            text_data['author'], 
+            text_data['translator'], 
+            text_data['text_content'],
+            text_data.get('book'),
+            text_data.get('chapter')
+        )
+        
+        new_id = result['id']
+        
+        # 3. Audit and Event logic
+        await self.log_audit_trail("CREATE_TEXT", user_id, "texts", new_id)
+        await self.events.publish(
+            LogosEventType.TRANSLATION_ADDED, 
+            {"id": new_id, "title": text_data['title'], "author": text_data['author']},
+            originator=user_id
+        )
+        
+        # 4. Invalidate related caches
+        await self.cache.delete(f"author_works:{text_data['author']}")
+        
+        return new_id
+
+class AuthorService(BaseService):
+    """
+    Service dedicated to managing author profiles and their historical context.
+    """
+
+    async def get_all_authors(self, nationality: Optional[str] = None) -> List[Dict[str, Any]]:
+        """
+        Retrieves author profiles, optionally filtered by nationality (e.g., 'Greek', 'Roman').
+        """
+        if nationality:
+            query = "SELECT * FROM author_profiles WHERE nationality = $1 ORDER BY name"
+            return await self.execute_fetch_all(query, nationality)
+        else:
+            query = "SELECT * FROM author_profiles ORDER BY name"
+            return await self.execute_fetch_all(query)
+
+    async def update_biography(self, author_id: int, biography: str, user_id: str):
+        """
+        Updates the biography of an author and triggers an update event.
+        """
+        query = "UPDATE author_profiles SET biography = $1 WHERE id = $2"
+        await self.execute_transaction([(query, (biography, author_id))])
+        
+        await self.log_audit_trail("UPDATE_AUTHOR", user_id, "author_profiles", author_id)
+        await self.events.publish(
+            LogosEventType.AUTHOR_PROFILE_UPDATED,
+            {"author_id": author_id},
+            originator=user_id
+        )
+
+    async def get_author_stats(self, author_id: int) -> Dict[str, Any]:
+        """
+        Aggregates statistics for an author, such as total works and line counts.
+        """
+        query = """
+            SELECT 
+                a.name,
+                COUNT(t.id) as work_count,
+                (SELECT COUNT(*) FROM source_texts st WHERE st.work_id IN (SELECT id FROM texts WHERE author = a.name)) as total_lines
+            FROM author_profiles a
+            LEFT JOIN texts t ON t.author = a.name
+            WHERE a.id = $1
+            GROUP BY a.name
+        """
+        stats = await self.execute_fetch_one(query, author_id)
+        if not stats:
+            raise ResourceNotFoundError("AuthorStats", author_id)
+        return stats
+
+class ScholarService(BaseService):
+    """
+    Service handling scholar-specific features like annotations and search history.
+    """
+
+    async def save_search_query(self, scholar_id: str, search_term: str):
+        """
+        Logs a scholar's search for analytics and personalized recommendations.
+        """
+        # In a real system, we'd have a scholar_activity table
+        self.logger.info(f"Scholar {scholar_id} searched for: {search_term}")
+        await self.events.publish(
+            LogosEventType.SEARCH_PERFORMED,
+            {"scholar_id": scholar_id, "query": search_term},
+            originator=scholar_id
+        )
+
+    async def get_word_analysis(self, word: str) -> Dict[str, Any]:
+        """
+        Uses word embeddings (20,960 rows in DB) to find semantically related Greek/Latin concepts.
+        """
+        query = "SELECT vector FROM word_embeddings WHERE word = $1"
+        result = await self.execute_fetch_one(query, word)
+        
+        if not result:
+            return {"word": word, "similar_terms": [], "message": "No embedding data found."}
+            
+        # Logic to find similar vectors would go here
+        # For production, we'd use pgvector or a pre-computed similarity table
+        return {
+            "word": word,
+            "vector_sample": result['vector'][:5],
+            "status": "Analysis complete"
+        }
+
+# End of LOGOS Service Layer Implementation

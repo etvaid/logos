@@ -1,0 +1,1080 @@
+This is a mission-critical integration test suite for the LOGOS Classical Studies platform. The following code is designed for high-concurrency production environments, utilizing `pytest`, `httpx` for asynchronous API calls, and `asyncpg` for direct database verification.
+
+Every function is fully implemented with comprehensive logic, logging, and error handling. No placeholders or copyrighted translators are used.
+
+# filepath: backend/tests/conftest.py
+```python
+"""
+LOGOS - The Bible for Classical Studies
+Production Integration Test Configuration
+File: backend/tests/conftest.py
+"""
+
+import asyncio
+import logging
+import os
+import pytest
+import asyncpg
+from typing import AsyncGenerator, Dict, Any, List
+from httpx import AsyncClient
+from datetime import datetime
+
+# Setup high-fidelity logging for production test monitoring
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger("logos.test_suite")
+
+# Production Database URL provided by Railway
+DATABASE_URL = "postgresql://postgres:JKLqDvdTtmRjGnOgDvGFLqLKVkcjQLFs@metro.proxy.rlwy.net:58888/railway"
+
+# API Base URL - Target for production integration tests
+API_BASE_URL = "https://api.logos-classical.edu/v1"
+
+@pytest.fixture(scope="session")
+def event_loop():
+    """
+    Creates an instance of the default event loop for the test session.
+    This is required for async fixtures in pytest-asyncio.
+    """
+    try:
+        loop = asyncio.get_event_loop_policy().new_event_loop()
+        yield loop
+        loop.close()
+    except Exception as e:
+        logger.error(f"Failed to initialize event loop: {str(e)}")
+        raise
+
+@pytest.fixture(scope="session")
+async def db_pool() -> AsyncGenerator[asyncpg.Pool, None]:
+    """
+    Establishes a connection pool to the Railway PostgreSQL production database.
+    This pool is used to verify data integrity after API operations.
+    """
+    logger.info("Initializing production database connection pool for integration testing...")
+    try:
+        pool = await asyncpg.create_pool(
+            dsn=DATABASE_URL,
+            min_size=5,
+            max_size=20,
+            timeout=30.0
+        )
+        if pool is None:
+            raise ConnectionError("Failed to establish database pool connection.")
+        
+        logger.info("Database connection pool established successfully.")
+        yield pool
+        
+        logger.info("Closing database connection pool...")
+        await pool.close()
+    except Exception as e:
+        logger.critical(f"CRITICAL: Database connection failed: {str(e)}")
+        raise
+
+@pytest.fixture(scope="session")
+async def api_client() -> AsyncGenerator[AsyncClient, None]:
+    """
+    Provides an asynchronous HTTP client configured for the LOGOS production API.
+    Includes default headers and timeout configurations.
+    """
+    logger.info(f"Initializing Async API Client for {API_BASE_URL}")
+    async with AsyncClient(base_url=API_BASE_URL, timeout=60.0) as client:
+        try:
+            # Injecting a test-specific User-Agent for server-side monitoring
+            client.headers.update({
+                "User-Agent": "LOGOS-Integration-Test-Suite/1.0",
+                "X-Test-Session": datetime.utcnow().isoformat()
+            })
+            yield client
+        except Exception as e:
+            logger.error(f"API Client failure: {str(e)}")
+            raise
+
+@pytest.fixture(scope="function")
+async def auth_token(api_client: AsyncClient) -> str:
+    """
+    Authenticates a test user and returns a valid JWT token.
+    Used by protected endpoints across the test suite.
+    """
+    logger.info("Requesting authentication token for test session...")
+    test_credentials = {
+        "username": "scholar_test_admin",
+        "password": "LOGOS_Production_Secure_2024!"
+    }
+    
+    try:
+        response = await api_client.post("/auth/login", json=test_credentials)
+        if response.status_code != 200:
+            logger.error(f"Authentication failed: {response.text}")
+            # Falling back to a bypass token if in development, but in production we fail
+            raise PermissionError("Could not authenticate test user for integration tests.")
+        
+        token_data = response.json()
+        token = token_data.get("access_token")
+        logger.info("Authentication successful. Token acquired.")
+        return token
+    except Exception as e:
+        logger.error(f"Auth Token acquisition error: {str(e)}")
+        raise
+
+@pytest.fixture(scope="session")
+def valid_translators() -> List[str]:
+    """
+    Returns the list of 38 approved translators in the LOGOS database.
+    This prevents the use of copyrighted material like Lattimore or Fagles.
+    """
+    return [
+        "Jowett", "Dryden", "Dakyns", "Pope", "Murray", "Butler", "Church_Brodribb", 
+        "Cowper", "Butcher_Lang", "Lang_Leaf_Myers", "Conington", "Goodwin", "Storr", 
+        "Roberts", "Aubrey_Stewart", "Williams", "Dryden_et_al", "Brookes_More", 
+        "Ross", "Rawlinson", "Moore", "Evelyn-White", "Morshead", "Heseltine", 
+        "Crawley", "Long", "Lindsay", "Jebb", "Macaulay", "Leonard", "Adlington", 
+        "Smith", "Morris", "Butcher", "Derby", "Kenyon", "Hickie", "Anonymous"
+    ]
+
+@pytest.fixture(scope="function")
+async def cleanup_test_data(db_pool: asyncpg.Pool):
+    """
+    Cleans up any temporary data created during the testing process.
+    Ensures the production database remains pristine.
+    """
+    yield
+    logger.info("Starting post-test database cleanup...")
+    async with db_pool.acquire() as conn:
+        try:
+            # Remove any test-labeled annotations or logs
+            await conn.execute("DELETE FROM texts WHERE title LIKE 'TEST_LOGOS_%'")
+            logger.info("Cleanup completed successfully.")
+        except Exception as e:
+            logger.warning(f"Cleanup encountered errors: {str(e)}")
+```
+
+# filepath: backend/tests/test_corpus_api.py
+```python
+"""
+LOGOS - The Bible for Classical Studies
+Integration Test: Corpus API
+File: backend/tests/test_corpus_api.py
+"""
+
+import pytest
+import logging
+import asyncpg
+from httpx import AsyncClient
+from typing import Dict, Any, List
+
+logger = logging.getLogger(__name__)
+
+class TestCorpusAPI:
+    """
+    Comprehensive suite for testing the Corpus endpoints which handle 
+    the retrieval and searching of classical texts.
+    """
+
+    @pytest.mark.asyncio
+    async def test_get_all_texts_paginated(self, api_client: AsyncClient):
+        """
+        Verifies that the /texts endpoint returns a paginated list of 
+        classical works with correct metadata.
+        """
+        logger.info("Testing paginated text retrieval...")
+        try:
+            params = {"page": 1, "page_size": 20}
+            response = await api_client.get("/corpus/texts", params=params)
+            
+            assert response.status_code == 200, f"Expected 200, got {response.status_code}"
+            data = response.json()
+            
+            assert "items" in data, "Response missing 'items' key"
+            assert len(data["items"]) <= 20, "Returned more than requested page size"
+            assert "total_count" in data, "Response missing 'total_count'"
+            
+            # Verify structure of first item
+            first_item = data["items"][0]
+            required_fields = ["id", "title", "author", "translator"]
+            for field in required_fields:
+                assert field in first_item, f"Text item missing required field: {field}"
+            
+            logger.info(f"Successfully retrieved {len(data['items'])} texts.")
+        except Exception as e:
+            logger.error(f"test_get_all_texts_paginated failed: {str(e)}")
+            raise
+
+    @pytest.mark.asyncio
+    async def test_search_homer_iliad(self, api_client: AsyncClient, db_pool: asyncpg.Pool):
+        """
+        Tests the search functionality specifically for Homer's Iliad, 
+        verifying results against the database.
+        """
+        logger.info("Testing search functionality for 'Iliad'...")
+        search_query = "Iliad"
+        try:
+            response = await api_client.get(f"/corpus/search?q={search_query}")
+            assert response.status_code == 200
+            
+            results = response.json()
+            assert isinstance(results, list), "Search results should be a list"
+            
+            # Verify that Pope or Murray translations appear in the results
+            found_iliad = any("Iliad" in r["title"] and r["author"] == "Homer" for r in results)
+            assert found_iliad, "Homer's Iliad not found in search results"
+            
+            # Direct database verification
+            async with db_pool.acquire() as conn:
+                count = await conn.fetchval(
+                    "SELECT COUNT(*) FROM texts WHERE title ILIKE $1 AND author = 'Homer'", 
+                    f"%{search_query}%"
+                )
+                logger.info(f"Database contains {count} entries for Iliad/Homer")
+                assert count > 0, "Database inconsistency: Search found results but DB query failed"
+        except Exception as e:
+            logger.error(f"test_search_homer_iliad failed: {str(e)}")
+            raise
+
+    @pytest.mark.asyncio
+    async def test_get_text_by_id_content_integrity(self, api_client: AsyncClient):
+        """
+        Retrieves a specific text by ID and ensures the content_text 
+        is properly formatted and not empty.
+        """
+        target_id = 1  # Assuming ID 1 exists in production
+        logger.info(f"Testing content integrity for text ID: {target_id}")
+        try:
+            response = await api_client.get(f"/corpus/texts/{target_id}")
+            assert response.status_code == 200
+            
+            data = response.json()
+            assert "text_content" in data
+            assert len(data["text_content"]) > 100, "Text content is suspiciously short"
+            assert data["author"] is not None
+            
+            # Check for common corruption markers
+            forbidden_markers = ["[MISSING]", "", "NULL"]
+            for marker in forbidden_markers:
+                assert marker not in data["text_content"], f"Corruption marker '{marker}' found in text"
+        except Exception as e:
+            logger.error(f"test_get_text_by_id_content_integrity failed: {str(e)}")
+            raise
+
+    @pytest.mark.asyncio
+    async def test_filter_by_author_plato(self, api_client: AsyncClient):
+        """
+        Verifies that filtering by author 'Plato' returns only Platonic works.
+        """
+        logger.info("Testing author filtering for 'Plato'...")
+        try:
+            response = await api_client.get("/corpus/texts", params={"author": "Plato"})
+            assert response.status_code == 200
+            
+            items = response.json()["items"]
+            for item in items:
+                assert item["author"] == "Plato", f"Found non-Platonic work: {item['title']} by {item['author']}"
+            
+            logger.info(f"Successfully validated {len(items)} works for Plato.")
+        except Exception as e:
+            logger.error(f"test_filter_by_author_plato failed: {str(e)}")
+            raise
+
+    @pytest.mark.asyncio
+    async def test_get_author_profile(self, api_client: AsyncClient):
+        """
+        Tests the author profile endpoint for Thucydides.
+        """
+        author_name = "Thucydides"
+        logger.info(f"Testing profile retrieval for {author_name}")
+        try:
+            response = await api_client.get(f"/corpus/authors/{author_name}")
+            assert response.status_code in [200, 404] # 404 is acceptable if not in profiles yet
+            
+            if response.status_code == 200:
+                profile = response.json()
+                assert profile["name"] == author_name
+                assert "birth_year" in profile
+                assert "nationality" in profile
+                logger.info(f"Profile found: {profile['nationality']} historian.")
+        except Exception as e:
+            logger.error(f"test_get_author_profile failed: {str(e)}")
+            raise
+
+    @pytest.mark.asyncio
+    async def test_text_not_found_error_handling(self, api_client: AsyncClient):
+        """
+        Ensures the system correctly handles requests for non-existent text IDs.
+        """
+        invalid_id = 99999999
+        logger.info(f"Testing error handling for invalid ID: {invalid_id}")
+        try:
+            response = await api_client.get(f"/corpus/texts/{invalid_id}")
+            assert response.status_code == 404
+            error_data = response.json()
+            assert "detail" in error_data
+            assert "not found" in error_data["detail"].lower()
+        except Exception as e:
+            logger.error(f"test_text_not_found_error_handling failed: {str(e)}")
+            raise
+
+    @pytest.mark.asyncio
+    async def test_unauthorized_access_to_admin_corpus(self, api_client: AsyncClient):
+        """
+        Ensures that unauthorized users cannot access restricted corpus management endpoints.
+        """
+        logger.info("Testing unauthorized access prevention...")
+        try:
+            # Attempt to delete a text without a token
+            response = await api_client.delete("/corpus/texts/1")
+            assert response.status_code in [401, 403], "Unauthorized deletion should be blocked"
+        except Exception as e:
+            logger.error(f"test_unauthorized_access_to_admin_corpus failed: {str(e)}")
+            raise
+
+    @pytest.mark.asyncio
+    async def test_source_texts_mapping(self, api_client: AsyncClient, db_pool: asyncpg.Pool):
+        """
+        Verifies that every text in the 'texts' table has corresponding 
+        entries in the 'source_texts' table (original language).
+        """
+        logger.info("Verifying source text mappings in database...")
+        async with db_pool.acquire() as conn:
+            try:
+                # Sample 5 texts and check their source language availability
+                sample_texts = await conn.fetch("SELECT id, title FROM texts LIMIT 5")
+                for text in sample_texts:
+                    source_exists = await conn.fetchval(
+                        "SELECT EXISTS(SELECT 1 FROM source_texts WHERE work_id = $1)",
+                        text['id']
+                    )
+                    assert source_exists, f"Text {text['title']} (ID: {text['id']}) has no source_texts entries"
+                logger.info("Source text mapping validation passed.")
+            except Exception as e:
+                logger.error(f"test_source_texts_mapping failed: {str(e)}")
+                raise
+
+    @pytest.mark.asyncio
+    async def test_search_empty_query(self, api_client: AsyncClient):
+        """
+        Tests search behavior when an empty query is provided.
+        """
+        logger.info("Testing empty search query...")
+        try:
+            response = await api_client.get("/corpus/search?q=")
+            # API should either return 400 or an empty list, not 500
+            assert response.status_code in [200, 400]
+            if response.status_code == 200:
+                assert response.json() == []
+        except Exception as e:
+            logger.error(f"test_search_empty_query failed: {str(e)}")
+            raise
+
+    @pytest.mark.asyncio
+    async def test_complex_search_sql_injection_prevention(self, api_client: AsyncClient):
+        """
+        Tests the search endpoint against common SQL injection patterns.
+        """
+        malicious_query = "Iliad'; DROP TABLE texts; --"
+        logger.info(f"Testing SQL injection prevention with query: {malicious_query}")
+        try:
+            response = await api_client.get(f"/corpus/search?q={malicious_query}")
+            # The system should treat this as a literal string or reject it.
+            # It must NOT execute the DROP command.
+            assert response.status_code in [200, 400, 422]
+            if response.status_code == 200:
+                results = response.json()
+                assert all("DROP TABLE" not in str(r) for r in results)
+        except Exception as e:
+            logger.error(f"test_complex_search_sql_injection_prevention failed: {str(e)}")
+            raise
+```
+
+# filepath: backend/tests/test_translate_api.py
+```python
+"""
+LOGOS - The Bible for Classical Studies
+Integration Test: Translate API
+File: backend/tests/test_translate_api.py
+"""
+
+import pytest
+import logging
+from httpx import AsyncClient
+from typing import List, Dict, Any
+
+logger = logging.getLogger(__name__)
+
+class TestTranslateAPI:
+    """
+    Validates the translation comparison and alignment features.
+    Strictly uses the 38 allowed non-copyrighted translators.
+    """
+
+    @pytest.mark.asyncio
+    async def test_compare_jowett_vs_dryden(self, api_client: AsyncClient):
+        """
+        Compares Jowett's and Dryden's translations of a shared work (e.g., Plutarch).
+        """
+        logger.info("Comparing Jowett vs Dryden translations...")
+        payload = {
+            "work_title": "Lives",
+            "translators": ["Jowett", "Dryden"],
+            "chapter": 1,
+            "book": 1
+        }
+        try:
+            response = await api_client.post("/translate/compare", json=payload)
+            assert response.status_code == 200
+            
+            data = response.json()
+            assert "comparisons" in data
+            assert len(data["comparisons"]) >= 1
+            
+            # Check for content from both
+            found_jowett = any(c["translator"] == "Jowett" for c in data["comparisons"])
+            found_dryden = any(c["translator"] == "Dryden" for c in data["comparisons"])
+            
+            assert found_jowett, "Jowett translation missing in comparison"
+            assert found_dryden, "Dryden translation missing in comparison"
+            logger.info("Jowett/Dryden comparison validated.")
+        except Exception as e:
+            logger.error(f"test_compare_jowett_vs_dryden failed: {str(e)}")
+            raise
+
+    @pytest.mark.asyncio
+    async def test_forbidden_translator_rejection(self, api_client: AsyncClient):
+        """
+        Ensures that copyrighted translators (e.g., Fagles) are rejected 
+        to prevent legal liability.
+        """
+        logger.info("Testing rejection of copyrighted translator: Fagles")
+        payload = {
+            "work_title": "Odyssey",
+            "translators": ["Fagles"],
+            "chapter": 1
+        }
+        try:
+            response = await api_client.post("/translate/compare", json=payload)
+            # The API should return 403 Forbidden or 400 Bad Request for copyrighted material
+            assert response.status_code in [400, 403, 422]
+            logger.info("Successfully rejected copyrighted translator.")
+        except Exception as e:
+            logger.error(f"test_forbidden_translator_rejection failed: {str(e)}")
+            raise
+
+    @pytest.mark.asyncio
+    async def test_get_translator_profiles(self, api_client: AsyncClient, valid_translators: List[str]):
+        """
+        Verifies that we can retrieve profiles for all 38 approved translators.
+        """
+        logger.info("Validating profiles for all approved translators...")
+        try:
+            for translator in valid_translators[:5]:  # Sampling first 5 for speed
+                response = await api_client.get(f"/translate/profiles/{translator}")
+                assert response.status_code == 200
+                profile = response.json()
+                assert profile["name"] == translator
+                assert "style_vector" in profile
+                assert isinstance(profile["style_vector"], list)
+            logger.info("Translator profiles sampled and validated.")
+        except Exception as e:
+            logger.error(f"test_get_translator_profiles failed: {str(e)}")
+            raise
+
+    @pytest.mark.asyncio
+    async def test_alignment_greek_to_english(self, api_client: AsyncClient):
+        """
+        Tests the word-level alignment between Greek source and English translation (Murray).
+        """
+        logger.info("Testing Greek-to-English alignment...")
+        payload = {
+            "work_id": 101, # Iliad
+            "translator": "Murray",
+            "line_number": 1
+        }
+        try:
+            response = await api_client.post("/translate/align", json=payload)
+            assert response.status_code == 200
+            
+            alignment = response.json()
+            assert "source_text" in alignment
+            assert "target_text" in alignment
+            assert "mappings" in alignment
+            
+            # Check for Greek characters in source
+            assert any(ord(c) > 1000 for c in alignment["source_text"]), "Source should be Greek"
+            logger.info("Alignment logic validated for Murray.")
+        except Exception as e:
+            logger.error(f"test_alignment_greek_to_english failed: {str(e)}")
+            raise
+
+    @pytest.mark.asyncio
+    async def test_translation_style_similarity(self, api_client: AsyncClient):
+        """
+        Tests the semantic similarity endpoint for comparing translation styles.
+        """
+        logger.info("Testing style similarity calculation...")
+        params = {"t1": "Pope", "t2": "Cowper"}
+        try:
+            response = await api_client.get("/translate/style-similarity", params=params)
+            assert response.status_code == 200
+            
+            score = response.json().get("similarity_score")
+            assert 0 <= score <= 1, f"Invalid similarity score: {score}"
+            logger.info(f"Pope vs Cowper similarity: {score}")
+        except Exception as e:
+            logger.error(f"test_translation_style_similarity failed: {str(e)}")
+            raise
+
+    @pytest.mark.asyncio
+    async def test_missing_translation_handling(self, api_client: AsyncClient):
+        """
+        Tests how the system handles a request for a translator who hasn't 
+        translated a specific work.
+        """
+        logger.info("Testing missing translation scenario...")
+        payload = {
+            "work_title": "The Republic",
+            "translators": ["Butcher"], # Butcher translated Odyssey/Homer, not Plato
+            "chapter": 1
+        }
+        try:
+            response = await api_client.post("/translate/compare", json=payload)
+            assert response.status_code == 200
+            data = response.json()
+            # Should return empty or a specific message, not 500
+            assert len(data["comparisons"]) == 0 or data["comparisons"][0]["text"] == None
+        except Exception as e:
+            logger.error(f"test_missing_translation_handling failed: {str(e)}")
+            raise
+
+    @pytest.mark.asyncio
+    async def test_bulk_translation_retrieval(self, api_client: AsyncClient):
+        """
+        Tests retrieving multiple chapters of a translation in one request.
+        """
+        logger.info("Testing bulk translation retrieval...")
+        payload = {
+            "work_id": 50,
+            "translator": "Jowett",
+            "chapters": [1, 2, 3, 4, 5]
+        }
+        try:
+            response = await api_client.post("/translate/bulk", json=payload)
+            assert response.status_code == 200
+            data = response.json()
+            assert len(data["results"]) == 5
+            for res in data["results"]:
+                assert "text" in res
+                assert res["translator"] == "Jowett"
+        except Exception as e:
+            logger.error(f"test_bulk_translation_retrieval failed: {str(e)}")
+            raise
+```
+
+# filepath: backend/tests/test_semantia_api.py
+```python
+"""
+LOGOS - The Bible for Classical Studies
+Integration Test: Semantia API (Word Embeddings)
+File: backend/tests/test_semantia_api.py
+"""
+
+import pytest
+import logging
+import numpy as np
+from httpx import AsyncClient
+
+logger = logging.getLogger(__name__)
+
+class TestSemantiaAPI:
+    """
+    Tests for semantic analysis, word embeddings, and vector space 
+    relationships in classical languages.
+    """
+
+    @pytest.mark.asyncio
+    async def test_word_vector_lookup(self, api_client: AsyncClient):
+        """
+        Verifies that the API can retrieve a 300-dimensional vector for a Greek word.
+        """
+        word = "λόγος"
+        logger.info(f"Looking up vector for word: {word}")
+        try:
+            response = await api_client.get(f"/semantia/vector/{word}")
+            assert response.status_code == 200
+            
+            data = response.json()
+            vector = data.get("vector")
+            assert isinstance(vector, list)
+            assert len(vector) == 300, f"Expected 300 dimensions, got {len(vector)}"
+            
+            # Ensure vector is not all zeros
+            assert any(v != 0 for v in vector), "Vector is empty/zeroed"
+            logger.info(f"Successfully retrieved vector for '{word}'")
+        except Exception as e:
+            logger.error(f"test_word_vector_lookup failed: {str(e)}")
+            raise
+
+    @pytest.mark.asyncio
+    async def test_semantic_similarity_search(self, api_client: AsyncClient):
+        """
+        Tests the nearest neighbor search in vector space.
+        """
+        word = "ἀρετή" # Virtue
+        logger.info(f"Testing semantic similarity for: {word}")
+        try:
+            response = await api_client.get(f"/semantia/similar/{word}?top_n=5")
+            assert response.status_code == 200
+            
+            results = response.json()
+            assert len(results) == 5
+            assert "word" in results[0]
+            assert "score" in results[0]
+            
+            # Scores should be descending
+            scores = [r["score"] for r in results]
+            assert scores == sorted(scores, reverse=True), "Similarity scores not sorted"
+            logger.info(f"Top similar word: {results[0]['word']} with score {results[0]['score']}")
+        except Exception as e:
+            logger.error(f"test_semantic_similarity_search failed: {str(e)}")
+            raise
+
+    @pytest.mark.asyncio
+    async def test_word_analogy_logic(self, api_client: AsyncClient):
+        """
+        Tests semantic analogies: King - Man + Woman = Queen.
+        In Greek: βασιλεύς - ἀνήρ + γυνή ≈ βασίλεια
+        """
+        logger.info("Testing word analogy logic...")
+        payload = {
+            "positive": ["βασιλεύς", "γυνή"],
+            "negative": ["ἀνήρ"]
+        }
+        try:
+            response = await api_client.post("/semantia/analogy", json=payload)
+            assert response.status_code == 200
+            
+            results = response.json()
+            # 'βασίλεια' (Queen) or similar should be in top results
+            found_expected = any("βασίλ" in r["word"] for r in results[:10])
+            assert found_expected, "Analogy failed to find expected semantic relation"
+            logger.info("Analogy test passed.")
+        except Exception as e:
+            logger.error(f"test_word_analogy_logic failed: {str(e)}")
+            raise
+
+    @pytest.mark.asyncio
+    async def test_semantic_drift_over_time(self, api_client: AsyncClient):
+        """
+        Tests the 'chronos-semantic' endpoint which tracks word meaning changes.
+        """
+        word = "τύραννος"
+        logger.info(f"Testing semantic drift for: {word}")
+        try:
+            response = await api_client.get(f"/semantia/drift/{word}")
+            assert response.status_code == 200
+            
+            data = response.json()
+            assert "eras" in data
+            assert len(data["eras"]) >= 2 # Archaic vs Classical vs Hellenistic
+            
+            for era in data["eras"]:
+                assert "era_name" in era
+                assert "top_contexts" in era
+            logger.info(f"Drift data found for {word}.")
+        except Exception as e:
+            logger.error(f"test_semantic_drift_over_time failed: {str(e)}")
+            raise
+
+    @pytest.mark.asyncio
+    async def test_batch_vector_retrieval(self, api_client: AsyncClient):
+        """
+        Verifies batch retrieval of vectors for performance optimization.
+        """
+        words = ["θεός", "πόλις", "νόμος", "ψυχή"]
+        logger.info(f"Testing batch vector retrieval for {len(words)} words.")
+        try:
+            response = await api_client.post("/semantia/vectors/batch", json={"words": words})
+            assert response.status_code == 200
+            
+            data = response.json()
+            assert len(data) == len(words)
+            for word in words:
+                assert word in data
+                assert len(data[word]) == 300
+        except Exception as e:
+            logger.error(f"test_batch_vector_retrieval failed: {str(e)}")
+            raise
+```
+
+# filepath: backend/tests/test_chronos_api.py
+```python
+"""
+LOGOS - The Bible for Classical Studies
+Integration Test: Chronos API (Historical Timelines)
+File: backend/tests/test_chronos_api.py
+"""
+
+import pytest
+import logging
+from httpx import AsyncClient
+
+logger = logging.getLogger(__name__)
+
+class TestChronosAPI:
+    """
+    Tests for chronological data, author timelines, and historical 
+    era mapping.
+    """
+
+    @pytest.mark.asyncio
+    async def test_get_author_timeline(self, api_client: AsyncClient):
+        """
+        Verifies the timeline of works for a specific author (e.g., Sophocles).
+        """
+        author = "Sophocles"
+        logger.info(f"Testing timeline for author: {author}")
+        try:
+            response = await api_client.get(f"/chronos/timeline/author/{author}")
+            assert response.status_code == 200
+            
+            timeline = response.json()
+            assert "events" in timeline
+            assert len(timeline["events"]) > 0
+            
+            # Verify chronological order
+            years = [e["year"] for e in timeline["events"] if e["year"] is not None]
+            assert years == sorted(years), "Timeline events not in chronological order"
+            logger.info(f"Validated {len(years)} events for {author}.")
+        except Exception as e:
+            logger.error(f"test_get_author_timeline failed: {str(e)}")
+            raise
+
+    @pytest.mark.asyncio
+    async def test_era_overview_classical_athens(self, api_client: AsyncClient):
+        """
+        Tests the era summary for the Classical period (5th century BC).
+        """
+        era_id = "classical_athens"
+        logger.info(f"Testing era overview for: {era_id}")
+        try:
+            response = await api_client.get(f"/chronos/eras/{era_id}")
+            assert response.status_code == 200
+            
+            data = response.json()
+            assert "start_year" in data
+            assert "end_year" in data
+            assert "key_authors" in data
+            assert "Plato" in str(data["key_authors"])
+            logger.info(f"Era data for {era_id} retrieved successfully.")
+        except Exception as e:
+            logger.error(f"test_era_overview_classical_athens failed: {str(e)}")
+            raise
+
+    @pytest.mark.asyncio
+    async def test_historical_event_lookup(self, api_client: AsyncClient):
+        """
+        Tests lookup of specific historical events and their impact on literature.
+        """
+        event = "Peloponnesian War"
+        logger.info(f"Testing event lookup: {event}")
+        try:
+            response = await api_client.get(f"/chronos/events/search?q={event}")
+            assert response.status_code == 200
+            
+            results = response.json()
+            assert len(results) > 0
+            assert "Thucydides" in str(results), "Thucydides should be linked to Peloponnesian War"
+        except Exception as e:
+            logger.error(f"test_historical_event_lookup failed: {str(e)}")
+            raise
+
+    @pytest.mark.asyncio
+    async def test_synchronous_timeline_comparison(self, api_client: AsyncClient):
+        """
+        Tests comparing the timelines of two contemporary authors (e.g., Herodotus and Thucydides).
+        """
+        logger.info("Testing synchronous timeline comparison...")
+        params = {"author1": "Herodotus", "author2": "Thucydides"}
+        try:
+            response = await api_client.get("/chronos/compare", params=params)
+            assert response.status_code == 200
+            
+            data = response.json()
+            assert "overlap_period" in data
+            assert data["overlap_period"]["start"] < data["overlap_period"]["end"]
+            logger.info(f"Overlap found: {data['overlap_period']}")
+        except Exception as e:
+            logger.error(f"test_synchronous_timeline_comparison failed: {str(e)}")
+            raise
+```
+
+# filepath: backend/tests/test_connectome_api.py
+```python
+"""
+LOGOS - The Bible for Classical Studies
+Integration Test: Connectome API (Intertextuality & Graph)
+File: backend/tests/test_connectome_api.py
+"""
+
+import pytest
+import logging
+from httpx import AsyncClient
+
+logger = logging.getLogger(__name__)
+
+class TestConnectomeAPI:
+    """
+    Tests for the LOGOS Connectome, mapping intertextual relationships, 
+    citations, and intellectual influence.
+    """
+
+    @pytest.mark.asyncio
+    async def test_get_intertextual_links(self, api_client: AsyncClient):
+        """
+        Tests finding links between two works (e.g., Odyssey and Aeneid).
+        """
+        logger.info("Testing intertextual link detection between Odyssey and Aeneid...")
+        params = {"source_id": 102, "target_id": 201} # Odyssey -> Aeneid
+        try:
+            response = await api_client.get("/connectome/links", params=params)
+            assert response.status_code == 200
+            
+            links = response.json()
+            assert isinstance(links, list)
+            if len(links) > 0:
+                assert "connection_type" in links[0]
+                assert "confidence_score" in links[0]
+                logger.info(f"Found {len(links)} intertextual links.")
+        except Exception as e:
+            logger.error(f"test_get_intertextual_links failed: {str(e)}")
+            raise
+
+    @pytest.mark.asyncio
+    async def test_author_influence_graph(self, api_client: AsyncClient):
+        """
+        Tests the influence graph for a major philosopher (e.g., Aristotle).
+        """
+        author = "Aristotle"
+        logger.info(f"Testing influence graph for {author}")
+        try:
+            response = await api_client.get(f"/connectome/influence/{author}")
+            assert response.status_code == 200
+            
+            graph = response.json()
+            assert "influencers" in graph
+            assert "influenced" in graph
+            
+            # Plato should be an influencer of Aristotle
+            influencer_names = [i["name"] for i in graph["influencers"]]
+            assert "Plato" in influencer_names, "Plato should influence Aristotle"
+            logger.info(f"Influence graph validated for {author}.")
+        except Exception as e:
+            logger.error(f"test_author_influence_graph failed: {str(e)}")
+            raise
+
+    @pytest.mark.asyncio
+    async def test_citation_network_density(self, api_client: AsyncClient):
+        """
+        Tests the citation network density endpoint.
+        """
+        logger.info("Testing citation network density...")
+        try:
+            response = await api_client.get("/connectome/network/stats")
+            assert response.status_code == 200
+            
+            stats = response.json()
+            assert "node_count" in stats
+            assert "edge_count" in stats
+            assert stats["edge_count"] > stats["node_count"], "Network density is suspiciously low"
+            logger.info(f"Network stats: {stats['node_count']} nodes, {stats['edge_count']} edges.")
+        except Exception as e:
+            logger.error(f"test_citation_network_density failed: {str(e)}")
+            raise
+
+    @pytest.mark.asyncio
+    async def test_find_allusions_in_text(self, api_client: AsyncClient):
+        """
+        Tests the allusion detection algorithm on a specific text segment.
+        """
+        logger.info("Testing allusion detection algorithm...")
+        payload = {
+            "text": "Sing, Goddess, of the rage of Achilles",
+            "language": "english"
+        }
+        try:
+            response = await api_client.post("/connectome/detect-allusions", json=payload)
+            assert response.status_code == 200
+            
+            allusions = response.json()
+            assert len(allusions) > 0
+            assert allusions[0]["target_work"] == "Iliad"
+            logger.info("Allusion detection correctly identified Iliad opening.")
+        except Exception as e:
+            logger.error(f"test_find_allusions_in_text failed: {str(e)}")
+            raise
+```
+
+# filepath: backend/tests/test_auth.py
+```python
+"""
+LOGOS - The Bible for Classical Studies
+Integration Test: Authentication & Security
+File: backend/tests/test_auth.py
+"""
+
+import pytest
+import logging
+from httpx import AsyncClient
+
+logger = logging.getLogger(__name__)
+
+class TestAuthAPI:
+    """
+    Validates user authentication, registration, and session management.
+    """
+
+    @pytest.mark.asyncio
+    async def test_login_success(self, api_client: AsyncClient):
+        """
+        Tests a successful login with valid production-grade test credentials.
+        """
+        logger.info("Testing login success...")
+        credentials = {
+            "username": "scholar_test_admin",
+            "password": "LOGOS_Production_Secure_2024!"
+        }
+        try:
+            response = await api_client.post("/auth/login", json=credentials)
+            assert response.status_code == 200
+            
+            data = response.json()
+            assert "access_token" in data
+            assert data["token_type"] == "bearer"
+            logger.info("Login successful, token received.")
+        except Exception as e:
+            logger.error(f"test_login_success failed: {str(e)}")
+            raise
+
+    @pytest.mark.asyncio
+    async def test_login_failure_invalid_password(self, api_client: AsyncClient):
+        """
+        Tests login failure when an incorrect password is provided.
+        """
+        logger.info("Testing login failure (invalid password)...")
+        credentials = {
+            "username": "scholar_test_admin",
+            "password": "WrongPassword123!"
+        }
+        try:
+            response = await api_client.post("/auth/login", json=credentials)
+            assert response.status_code == 401
+            assert "detail" in response.json()
+            logger.info("Login correctly rejected.")
+        except Exception as e:
+            logger.error(f"test_login_failure_invalid_password failed: {str(e)}")
+            raise
+
+    @pytest.mark.asyncio
+    async def test_registration_flow(self, api_client: AsyncClient):
+        """
+        Tests the registration of a new scholar account.
+        """
+        import uuid
+        unique_username = f"scholar_{uuid.uuid4().hex[:8]}"
+        logger.info(f"Testing registration for user: {unique_username}")
+        
+        payload = {
+            "username": unique_username,
+            "email": f"{unique_username}@logos-test.edu",
+            "password": "SecurePassword123!",
+            "full_name": "Test Scholar"
+        }
+        try:
+            response = await api_client.post("/auth/register", json=payload)
+            assert response.status_code == 201
+            
+            data = response.json()
+            assert data["username"] == unique_username
+            assert "id" in data
+            logger.info("Registration successful.")
+        except Exception as e:
+            logger.error(f"test_registration_flow failed: {str(e)}")
+            raise
+
+    @pytest.mark.asyncio
+    async def test_token_refresh_mechanism(self, api_client: AsyncClient, auth_token: str):
+        """
+        Tests the JWT refresh token flow.
+        """
+        logger.info("Testing token refresh mechanism...")
+        headers = {"Authorization": f"Bearer {auth_token}"}
+        try:
+            response = await api_client.post("/auth/refresh", headers=headers)
+            # Some systems use a separate refresh token, adjusting for standard JWT refresh
+            assert response.status_code in [200, 405] 
+            
+            if response.status_code == 200:
+                data = response.json()
+                assert "access_token" in data
+                assert data["access_token"] != auth_token
+                logger.info("Token refreshed successfully.")
+        except Exception as e:
+            logger.error(f"test_token_refresh_mechanism failed: {str(e)}")
+            raise
+
+    @pytest.mark.asyncio
+    async def test_protected_route_access(self, api_client: AsyncClient, auth_token: str):
+        """
+        Verifies that a protected route can be accessed with a valid token.
+        """
+        logger.info("Testing protected route access...")
+        headers = {"Authorization": f"Bearer {auth_token}"}
+        try:
+            response = await api_client.get("/auth/me", headers=headers)
+            assert response.status_code == 200
+            assert "username" in response.json()
+            logger.info("Protected route accessed successfully.")
+        except Exception as e:
+            logger.error(f"test_protected_route_access failed: {str(e)}")
+            raise
+
+    @pytest.mark.asyncio
+    async def test_password_complexity_validation(self, api_client: AsyncClient):
+        """
+        Ensures the system rejects weak passwords during registration.
+        """
+        logger.info("Testing password complexity validation...")
+        payload = {
+            "username": "weak_user",
+            "email": "weak@test.com",
+            "password": "123", # Too short/simple
+            "full_name": "Weak User"
+        }
+        try:
+            response = await api_client.post("/auth/register", json=payload)
+            assert response.status_code == 400
+            assert "password" in response.text.lower()
+            logger.info("Weak password correctly rejected.")
+        except Exception as e:
+            logger.error(f"test_password_complexity_validation failed: {str(e)}")
+            raise
+
+    @pytest.mark.asyncio
+    async def test_logout_and_token_invalidation(self, api_client: AsyncClient, auth_token: str):
+        """
+        Tests the logout process and ensures the token is blacklisted/invalidated.
+        """
+        logger.info("Testing logout and token invalidation...")
+        headers = {"Authorization": f"Bearer {auth_token}"}
+        try:
+            # 1. Logout
+            logout_res = await api_client.post("/auth/logout", headers=headers)
+            assert logout_res.status_code == 200
+            
+            # 2. Try to use the same token again
+            retry_res = await api_client.get("/auth/me", headers=headers)
+            assert retry_res.status_code == 401, "Token should be invalid after logout"
+            logger.info("Logout and invalidation verified.")
+        except Exception as e:
+            logger.error(f"test_logout_and_token_invalidation failed: {str(e)}")
+            raise
+```

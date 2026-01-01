@@ -1,0 +1,1458 @@
+This is LOGOS - The Bible for Classical Studies. The following test suite is engineered for the mission-critical frontend components of the LOGOS system. These tests ensure the integrity of the classical scholarship platform, adhering to the strict schema requirements and utilizing only authorized, non-copyrighted translations.
+
+# filepath: frontend/tests/setup.ts
+```typescript
+/**
+ * LOGOS - The Bible for Classical Studies
+ * Global Test Configuration and Environment Setup
+ * 
+ * This file configures the testing environment for the LOGOS production system.
+ * It establishes Mock Service Worker (MSW) for API interception, 
+ * configures global mocks for browser APIs, and ensures strict adherence 
+ * to the production database schema.
+ */
+
+import '@testing-library/jest-dom';
+import { setupServer } from 'msw/node';
+import { rest } from 'msw';
+import { TextEncoder, TextDecoder } from 'util';
+
+// Polyfills for Node environment to support browser-based features
+global.TextEncoder = TextEncoder;
+global.TextDecoder = TextDecoder as any;
+
+/**
+ * PRODUCTION SCHEMA DEFINITION
+ * These constants reflect the exact Railway PostgreSQL schema.
+ */
+export const AUTHORIZED_TRANSLATORS = [
+    "Jowett", "Dryden", "Dakyns", "Pope", "Murray", "Butler", "Church_Brodribb", 
+    "Cowper", "Butcher_Lang", "Lang_Leaf_Myers", "Conington", "Goodwin", "Storr", 
+    "Roberts", "Aubrey_Stewart", "Williams", "Dryden_et_al", "Brookes_More", 
+    "Ross", "Rawlinson", "Moore", "Evelyn-White", "Morshead", "Heseltine", 
+    "Crawley", "Long", "Lindsay", "Jebb", "Macaulay", "Leonard", "Adlington", 
+    "Smith", "Morris", "Butcher", "Derby", "Kenyon", "Hickie", "Anonymous"
+];
+
+/**
+ * Mock Service Worker (MSW) Handlers
+ * Simulates the Python asyncpg backend response logic.
+ */
+export const handlers = [
+    // Mock for the 'texts' table queries
+    rest.get('*/api/texts', (req, res, ctx) => {
+        try {
+            const author = req.url.searchParams.get('author');
+            const translator = req.url.searchParams.get('translator');
+
+            // Validate translator against authorized list (Legal Compliance)
+            if (translator && !AUTHORIZED_TRANSLATORS.includes(translator)) {
+                console.error(`CRITICAL: Unauthorized translator requested: ${translator}`);
+                return res(ctx.status(403), ctx.json({ error: "Copyrighted material restriction" }));
+            }
+
+            return res(
+                ctx.status(200),
+                ctx.json([
+                    {
+                        id: 1,
+                        title: "The Republic",
+                        author: "Plato",
+                        translator: "Jowett",
+                        text_content: "I went down yesterday to the Piraeus...",
+                        book: 1,
+                        chapter: 1
+                    },
+                    {
+                        id: 2,
+                        title: "The Iliad",
+                        author: "Homer",
+                        translator: "Pope",
+                        text_content: "Achilles' wrath, to Greece the direful spring...",
+                        book: 1,
+                        chapter: 1
+                    }
+                ])
+            );
+        } catch (error) {
+            console.error("LOGOS_TEST_ERROR: Failed to handle /api/texts request", error);
+            return res(ctx.status(500), ctx.json({ error: "Internal Server Error" }));
+        }
+    }),
+
+    // Mock for 'word_embeddings' (Semantia)
+    rest.get('*/api/embeddings/:word', (req, res, ctx) => {
+        try {
+            const { word } = req.params;
+            return res(
+                ctx.status(200),
+                ctx.json({
+                    word: word,
+                    vector: Array.from({ length: 300 }, () => Math.random())
+                })
+            );
+        } catch (error) {
+            console.error(`LOGOS_TEST_ERROR: Failed to fetch vector for ${req.params.word}`, error);
+            return res(ctx.status(500), ctx.json({ error: "Vector retrieval failed" }));
+        }
+    })
+];
+
+export const server = setupServer(...handlers);
+
+// Establish API mocking before all tests.
+beforeAll(() => {
+    try {
+        server.listen();
+        console.info("LOGOS_TEST_INFRA: MSW Server established successfully.");
+    } catch (err) {
+        console.error("LOGOS_TEST_INFRA: Failed to start MSW server", err);
+    }
+});
+
+// Reset any request handlers that we may add during the tests,
+// so they don't affect other tests.
+afterEach(() => {
+    try {
+        server.resetHandlers();
+    } catch (err) {
+        console.error("LOGOS_TEST_INFRA: Failed to reset MSW handlers", err);
+    }
+});
+
+// Clean up after the tests are finished.
+afterAll(() => {
+    try {
+        server.close();
+        console.info("LOGOS_TEST_INFRA: MSW Server shut down.");
+    } catch (err) {
+        console.error("LOGOS_TEST_INFRA: Failed to close MSW server", err);
+    }
+});
+
+/**
+ * Global Browser Mocks
+ * Essential for components using Canvas, IntersectionObserver, or Scroll events.
+ */
+class IntersectionObserverMock {
+    readonly root: Element | null = null;
+    readonly rootMargin: string = "";
+    readonly thresholds: ReadonlyArray<number> = [];
+    observe() { return null; }
+    unobserve() { return null; }
+    disconnect() { return null; }
+    takeRecords() { return []; }
+}
+
+Object.defineProperty(window, 'IntersectionObserver', {
+    writable: true,
+    configurable: true,
+    value: IntersectionObserverMock
+});
+
+Object.defineProperty(window, 'scrollTo', {
+    writable: true,
+    configurable: true,
+    value: jest.fn()
+});
+
+/**
+ * Performance Monitoring for Tests
+ */
+export const logTestPerformance = (testName: string, startTime: number) => {
+    const endTime = Date.now();
+    const duration = endTime - startTime;
+    if (duration > 1000) {
+        console.warn(`PERF_WARNING: Test [${testName}] took ${duration}ms`);
+    } else {
+        console.info(`PERF_LOG: Test [${testName}] completed in ${duration}ms`);
+    }
+};
+```
+
+# filepath: frontend/tests/Reader.test.tsx
+```typescript
+/**
+ * LOGOS - The Bible for Classical Studies
+ * Reader Component Integration Tests
+ * 
+ * Tests the core reading interface including text loading, pagination, 
+ * and translator selection.
+ */
+
+import React from 'react';
+import { render, screen, fireEvent, waitFor, act } from '@testing-library/react';
+import { Reader } from '../components/Reader';
+import { server } from './setup';
+import { rest } from 'msw';
+
+describe('Reader Component Production-Grade Tests', () => {
+    const startTime = Date.now();
+
+    /**
+     * Test 1: Verification of Initial State and Data Fetching
+     * Ensures the component correctly queries the 'texts' table.
+     */
+    test('renders initial text content from database', async () => {
+        try {
+            console.info("LOGOS_READER_TEST: Starting initial render test.");
+            render(<Reader defaultWork="Republic" defaultTranslator="Jowett" />);
+
+            // Check for loading state
+            expect(screen.getByTestId('reader-loading')).toBeInTheDocument();
+
+            // Wait for the text from the Jowett translation to appear
+            const textElement = await screen.findByText(/I went down yesterday to the Piraeus/i);
+            expect(textElement).toBeInTheDocument();
+            
+            // Verify author profile data integration
+            expect(screen.getByText(/Plato/i)).toBeInTheDocument();
+            console.info("LOGOS_READER_TEST: Initial render test passed.");
+        } catch (error) {
+            console.error("LOGOS_READER_TEST_FAILURE: Initial render failed", error);
+            throw error;
+        }
+    });
+
+    /**
+     * Test 2: Translator Switching (Legal Compliance)
+     * Ensures only authorized translators (e.g., Pope, Murray) are loadable.
+     */
+    test('switches between authorized translators correctly', async () => {
+        try {
+            console.info("LOGOS_READER_TEST: Testing translator switch logic.");
+            render(<Reader defaultWork="Iliad" defaultTranslator="Pope" />);
+
+            // Wait for Pope translation
+            expect(await screen.findByText(/Achilles' wrath/i)).toBeInTheDocument();
+
+            // Simulate clicking the translator dropdown
+            const dropdown = screen.getByLabelText(/Select Translator/i);
+            fireEvent.change(dropdown, { target: { value: 'Murray' } });
+
+            // Mock the Murray response for this specific test
+            server.use(
+                rest.get('*/api/texts', (req, res, ctx) => {
+                    return res(ctx.json([{
+                        id: 3,
+                        title: "The Iliad",
+                        author: "Homer",
+                        translator: "Murray",
+                        text_content: "The wrath sing, goddess, of Peleus' son Achilles...",
+                        book: 1,
+                        chapter: 1
+                    }]));
+                })
+            );
+
+            // Wait for Murray translation to load
+            await waitFor(() => {
+                expect(screen.getByText(/The wrath sing, goddess/i)).toBeInTheDocument();
+            });
+            console.info("LOGOS_READER_TEST: Translator switch test passed.");
+        } catch (error) {
+            console.error("LOGOS_READER_TEST_FAILURE: Translator switch failed", error);
+            throw error;
+        }
+    });
+
+    /**
+     * Test 3: Unauthorized Translator Rejection
+     * Ensures copyright-protected translators (Fagles, Lattimore) are blocked.
+     */
+    test('blocks unauthorized translators to prevent copyright infringement', async () => {
+        try {
+            console.info("LOGOS_READER_TEST: Testing unauthorized translator rejection.");
+            render(<Reader defaultWork="Iliad" defaultTranslator="Fagles" />);
+
+            // The API should return a 403, and the UI should show an error
+            const errorMessage = await screen.findByText(/Translation not available due to licensing/i);
+            expect(errorMessage).toBeInTheDocument();
+            console.info("LOGOS_READER_TEST: Unauthorized block test passed.");
+        } catch (error) {
+            console.error("LOGOS_READER_TEST_FAILURE: Unauthorized block test failed", error);
+            throw error;
+        }
+    });
+
+    /**
+     * Test 4: Pagination and Chapter Navigation
+     * Verifies interaction with 'book' and 'chapter' columns in the 'texts' table.
+     */
+    test('navigates through chapters and updates content', async () => {
+        try {
+            console.info("LOGOS_READER_TEST: Testing chapter navigation.");
+            render(<Reader defaultWork="Republic" defaultTranslator="Jowett" />);
+
+            const nextButton = await screen.findByRole('button', { name: /Next Chapter/i });
+            
+            // Setup mock for Chapter 2
+            server.use(
+                rest.get('*/api/texts', (req, res, ctx) => {
+                    return res(ctx.json([{
+                        id: 4,
+                        title: "The Republic",
+                        author: "Plato",
+                        translator: "Jowett",
+                        text_content: "With these words I was thinking that I had made an end...",
+                        book: 1,
+                        chapter: 2
+                    }]));
+                })
+            );
+
+            fireEvent.click(nextButton);
+
+            await waitFor(() => {
+                expect(screen.getByText(/With these words I was thinking/i)).toBeInTheDocument();
+            });
+            console.info("LOGOS_READER_TEST: Chapter navigation test passed.");
+        } catch (error) {
+            console.error("LOGOS_READER_TEST_FAILURE: Chapter navigation failed", error);
+            throw error;
+        }
+    });
+
+    /**
+     * Test 5: UI Customization (Font Size)
+     * Scholars require adjustable typography for long-form reading.
+     */
+    test('adjusts font size and persists in local storage', async () => {
+        try {
+            console.info("LOGOS_READER_TEST: Testing typography adjustments.");
+            render(<Reader />);
+
+            const increaseFontBtn = screen.getByRole('button', { name: /Increase Font/i });
+            const textContainer = screen.getByTestId('text-container');
+
+            fireEvent.click(increaseFontBtn);
+            expect(textContainer).toHaveStyle('font-size: 20px'); // Assuming 18px base + 2px
+
+            fireEvent.click(increaseFontBtn);
+            expect(textContainer).toHaveStyle('font-size: 22px');
+
+            // Verify persistence check
+            expect(localStorage.getItem('logos-font-size')).toBe('22');
+            console.info("LOGOS_READER_TEST: Typography adjustment test passed.");
+        } catch (error) {
+            console.error("LOGOS_READER_TEST_FAILURE: Typography adjustment failed", error);
+            throw error;
+        }
+    });
+
+    /**
+     * Test 6: Error Handling for Network Failure
+     */
+    test('displays graceful error message on API failure', async () => {
+        try {
+            server.use(
+                rest.get('*/api/texts', (req, res, ctx) => {
+                    return res(ctx.status(500));
+                })
+            );
+
+            render(<Reader />);
+            const errorBanner = await screen.findByText(/Unable to load classical text/i);
+            expect(errorBanner).toBeInTheDocument();
+            
+            const retryButton = screen.getByRole('button', { name: /Retry/i });
+            expect(retryButton).toBeEnabled();
+        } catch (error) {
+            console.error("LOGOS_READER_TEST_FAILURE: Error handling test failed", error);
+            throw error;
+        }
+    });
+});
+```
+
+# filepath: frontend/tests/Semantia.test.tsx
+```typescript
+/**
+ * LOGOS - The Bible for Classical Studies
+ * SEMANTIA Visualization Integration Tests
+ * 
+ * SEMANTIA handles 300-dimension word embeddings to visualize semantic 
+ * relationships between classical Greek and Latin concepts.
+ */
+
+import React from 'react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { Semantia } from '../components/Semantia';
+import { server } from './setup';
+import { rest } from 'msw';
+
+describe('Semantia Semantic Visualization Tests', () => {
+    
+    /**
+     * Test 1: Vector Space Loading
+     * Verifies that the component can load and process word vectors from word_embeddings table.
+     */
+    test('loads and renders semantic vector space for a given word', async () => {
+        try {
+            console.info("LOGOS_SEMANTIA_TEST: Starting semantic vector load test.");
+            render(<Semantia initialWord="Logos" />);
+
+            // Should show loading for the complex vector calculation
+            expect(screen.getByTestId('semantia-viz-loading')).toBeInTheDocument();
+
+            // Wait for the word "Logos" to appear in the visualization canvas/overlay
+            const wordLabel = await screen.findByText(/Logos/i);
+            expect(wordLabel).toBeInTheDocument();
+
+            // Verify related words are fetched (simulating nearest neighbors)
+            const relatedWord = await screen.findByText(/Ratio/i);
+            expect(relatedWord).toBeInTheDocument();
+            
+            console.info("LOGOS_SEMANTIA_TEST: Semantic vector load test passed.");
+        } catch (error) {
+            console.error("LOGOS_SEMANTIA_TEST_FAILURE: Vector load failed", error);
+            throw error;
+        }
+    });
+
+    /**
+     * Test 2: Dimensionality Reduction Interaction
+     * SEMANTIA uses PCA or t-SNE to project 300D to 2D.
+     */
+    test('switches between projection algorithms (PCA/t-SNE)', async () => {
+        try {
+            console.info("LOGOS_SEMANTIA_TEST: Testing projection algorithm toggle.");
+            render(<Semantia initialWord="Arete" />);
+
+            const algoToggle = screen.getByLabelText(/Projection Method/i);
+            
+            // Switch to t-SNE
+            fireEvent.change(algoToggle, { target: { value: 't-SNE' } });
+            
+            // Confirm the UI reflects the change and triggers a re-calculation
+            expect(screen.getByText(/Recalculating Manifold/i)).toBeInTheDocument();
+            
+            await waitFor(() => {
+                expect(screen.queryByText(/Recalculating/i)).not.toBeInTheDocument();
+            });
+            console.info("LOGOS_SEMANTIA_TEST: Projection toggle test passed.");
+        } catch (error) {
+            console.error("LOGOS_SEMANTIA_TEST_FAILURE: Projection toggle failed", error);
+            throw error;
+        }
+    });
+
+    /**
+     * Test 3: Word Comparison View
+     * Scholars compare semantic shifts across authors (e.g., 'Virtus' in Cicero vs. Seneca).
+     */
+    test('compares semantic clusters between two authors', async () => {
+        try {
+            console.info("LOGOS_SEMANTIA_TEST: Testing author semantic comparison.");
+            render(<Semantia />);
+
+            const authorInput1 = screen.getByPlaceholderText(/First Author/i);
+            const authorInput2 = screen.getByPlaceholderText(/Second Author/i);
+            const compareBtn = screen.getByRole('button', { name: /Compare Clusters/i });
+
+            fireEvent.change(authorInput1, { target: { value: 'Cicero' } });
+            fireEvent.change(authorInput2, { target: { value: 'Seneca' } });
+            fireEvent.click(compareBtn);
+
+            // Wait for the dual-cluster visualization
+            await waitFor(() => {
+                expect(screen.getByTestId('comparison-canvas')).toBeInTheDocument();
+                expect(screen.getByText(/Semantic Delta:/i)).toBeInTheDocument();
+            });
+            console.info("LOGOS_SEMANTIA_TEST: Author comparison test passed.");
+        } catch (error) {
+            console.error("LOGOS_SEMANTIA_TEST_FAILURE: Author comparison failed", error);
+            throw error;
+        }
+    });
+
+    /**
+     * Test 4: Nearest Neighbor Search
+     */
+    test('finds nearest linguistic neighbors in vector space', async () => {
+        try {
+            console.info("LOGOS_SEMANTIA_TEST: Testing nearest neighbor search.");
+            render(<Semantia />);
+
+            const searchInput = screen.getByPlaceholderText(/Search Word Vector/i);
+            fireEvent.change(searchInput, { target: { value: 'Polis' } });
+            fireEvent.keyPress(searchInput, { key: 'Enter', code: 13, charCode: 13 });
+
+            // Mock the API for nearest neighbors
+            server.use(
+                rest.get('*/api/embeddings/neighbors/Polis', (req, res, ctx) => {
+                    return res(ctx.json([
+                        { word: 'Astu', distance: 0.12 },
+                        { word: 'Agora', distance: 0.25 },
+                        { word: 'Oikos', distance: 0.45 }
+                    ]));
+                })
+            );
+
+            const neighbor = await screen.findByText(/Astu/i);
+            expect(neighbor).toBeInTheDocument();
+            console.info("LOGOS_SEMANTIA_TEST: Nearest neighbor test passed.");
+        } catch (error) {
+            console.error("LOGOS_SEMANTIA_TEST_FAILURE: Nearest neighbor search failed", error);
+            throw error;
+        }
+    });
+
+    /**
+     * Test 5: Semantic Trajectory over Time
+     * Uses author_profiles birth_year to show word usage shifts.
+     */
+    test('visualizes semantic trajectory across centuries', async () => {
+        try {
+            console.info("LOGOS_SEMANTIA_TEST: Testing temporal trajectory.");
+            render(<Semantia initialWord="Dike" mode="temporal" />);
+
+            // Check for timeline axis
+            const timeline = await screen.findByTestId('temporal-axis');
+            expect(timeline).toBeInTheDocument();
+
+            // Check for historical markers (e.g., 5th Century BC)
+            expect(screen.getByText(/5th c. BC/i)).toBeInTheDocument();
+            console.info("LOGOS_SEMANTIA_TEST: Temporal trajectory test passed.");
+        } catch (error) {
+            console.error("LOGOS_SEMANTIA_TEST_FAILURE: Temporal trajectory failed", error);
+            throw error;
+        }
+    });
+});
+```
+
+# filepath: frontend/tests/Chronos.test.tsx
+```typescript
+/**
+ * LOGOS - The Bible for Classical Studies
+ * CHRONOS Timeline Integration Tests
+ * 
+ * CHRONOS maps author_profiles and historical events on a high-precision 
+ * chronological axis.
+ */
+
+import React from 'react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { Chronos } from '../components/Chronos';
+import { server } from './setup';
+import { rest } from 'msw';
+
+describe('Chronos Timeline Production Tests', () => {
+
+    /**
+     * Test 1: Timeline Rendering
+     * Validates that authors from author_profiles are plotted correctly.
+     */
+    test('renders author lifespans on the timeline', async () => {
+        try {
+            console.info("LOGOS_CHRONOS_TEST: Starting timeline render test.");
+            
+            // Mock the author profiles response
+            server.use(
+                rest.get('*/api/authors', (req, res, ctx) => {
+                    return res(ctx.json([
+                        { id: 1, name: "Thucydides", birth_year: -460, death_year: -400, nationality: "Athenian" },
+                        { id: 2, name: "Herodotus", birth_year: -484, death_year: -425, nationality: "Halicarnassian" }
+                    ]));
+                })
+            );
+
+            render(<Chronos startYear={-500} endYear={-300} />);
+
+            // Find Thucydides on the timeline
+            const thucydides = await screen.findByText(/Thucydides/i);
+            expect(thucydides).toBeInTheDocument();
+
+            // Verify lifespan calculation (460 - 400 = 60 years)
+            const lifespanBar = screen.getByTestId('lifespan-1');
+            expect(lifespanBar).toHaveAttribute('data-duration', '60');
+            
+            console.info("LOGOS_CHRONOS_TEST: Timeline render test passed.");
+        } catch (error) {
+            console.error("LOGOS_CHRONOS_TEST_FAILURE: Timeline render failed", error);
+            throw error;
+        }
+    });
+
+    /**
+     * Test 2: Historical Context Overlay
+     * Ensures events like the Peloponnesian War appear relative to authors.
+     */
+    test('displays historical events overlapping author lifespans', async () => {
+        try {
+            console.info("LOGOS_CHRONOS_TEST: Testing historical event overlay.");
+            render(<Chronos startYear={-500} endYear={-400} />);
+
+            const event = await screen.findByText(/Peloponnesian War/i);
+            expect(event).toBeInTheDocument();
+            
+            // Check for visual overlap indication
+            const overlapMarker = screen.getByTestId('event-author-overlap');
+            expect(overlapMarker).toBeInTheDocument();
+            console.info("LOGOS_CHRONOS_TEST: Event overlay test passed.");
+        } catch (error) {
+            console.error("LOGOS_CHRONOS_TEST_FAILURE: Event overlay failed", error);
+            throw error;
+        }
+    });
+
+    /**
+     * Test 3: Zoom and Pan Functionality
+     * Scholars need to zoom into specific decades (e.g., the 420s BC).
+     */
+    test('zooms into specific time periods', async () => {
+        try {
+            console.info("LOGOS_CHRONOS_TEST: Testing zoom functionality.");
+            render(<Chronos />);
+
+            const zoomInBtn = screen.getByRole('button', { name: /Zoom In/i });
+            fireEvent.click(zoomInBtn);
+            fireEvent.click(zoomInBtn);
+
+            // Verify the time scale has changed
+            const scaleLabel = screen.getByTestId('timeline-scale');
+            expect(scaleLabel).toHaveTextContent(/10 years per division/i);
+            console.info("LOGOS_CHRONOS_TEST: Zoom functionality test passed.");
+        } catch (error) {
+            console.error("LOGOS_CHRONOS_TEST_FAILURE: Zoom failed", error);
+            throw error;
+        }
+    });
+
+    /**
+     * Test 4: Genre Filtering
+     * Users should be able to filter the timeline by genres (Historians, Poets).
+     */
+    test('filters timeline by author genre', async () => {
+        try {
+            console.info("LOGOS_CHRONOS_TEST: Testing genre filtering.");
+            render(<Chronos />);
+
+            const filterBtn = screen.getByRole('button', { name: /Filter/i });
+            fireEvent.click(filterBtn);
+
+            const historianCheckbox = screen.getByLabelText(/Historians/i);
+            fireEvent.click(historianCheckbox);
+
+            // Mock response with only historians
+            server.use(
+                rest.get('*/api/authors', (req, res, ctx) => {
+                    return res(ctx.json([
+                        { id: 1, name: "Thucydides", genres: ["History"] }
+                    ]));
+                })
+            );
+
+            await waitFor(() => {
+                expect(screen.queryByText(/Sophocles/i)).not.toBeInTheDocument();
+                expect(screen.getByText(/Thucydides/i)).toBeInTheDocument();
+            });
+            console.info("LOGOS_CHRONOS_TEST: Genre filtering test passed.");
+        } catch (error) {
+            console.error("LOGOS_CHRONOS_TEST_FAILURE: Genre filtering failed", error);
+            throw error;
+        }
+    });
+
+    /**
+     * Test 5: Detailed Author Profile Modal
+     */
+    test('opens detailed profile modal on author click', async () => {
+        try {
+            console.info("LOGOS_CHRONOS_TEST: Testing profile modal.");
+            render(<Chronos />);
+
+            const authorLink = await screen.findByText(/Herodotus/i);
+            fireEvent.click(authorLink);
+
+            const modalTitle = await screen.findByRole('heading', { name: /Herodotus of Halicarnassus/i });
+            expect(modalTitle).toBeInTheDocument();
+            
+            // Verify nationality and works are listed in the modal
+            expect(screen.getByText(/Nationality: Halicarnassian/i)).toBeInTheDocument();
+            expect(screen.getByText(/The Histories/i)).toBeInTheDocument();
+            console.info("LOGOS_CHRONOS_TEST: Profile modal test passed.");
+        } catch (error) {
+            console.error("LOGOS_CHRONOS_TEST_FAILURE: Profile modal failed", error);
+            throw error;
+        }
+    });
+});
+```
+
+# filepath: frontend/tests/Connectome.test.tsx
+```typescript
+/**
+ * LOGOS - The Bible for Classical Studies
+ * CONNECTOME Graph Integration Tests
+ * 
+ * CONNECTOME visualizes the intertextual network of the classical world,
+ * mapping references between works and authors.
+ */
+
+import React from 'react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { Connectome } from '../components/Connectome';
+import { server } from './setup';
+import { rest } from 'msw';
+
+describe('Connectome Intertextuality Graph Tests', () => {
+
+    /**
+     * Test 1: Graph Node Rendering
+     * Ensures works from the 'texts' table are represented as nodes.
+     */
+    test('renders nodes for classical works and authors', async () => {
+        try {
+            console.info("LOGOS_CONNECTOME_TEST: Starting node render test.");
+            
+            server.use(
+                rest.get('*/api/graph/network', (req, res, ctx) => {
+                    return res(ctx.json({
+                        nodes: [
+                            { id: 'W1', label: 'The Republic', type: 'work' },
+                            { id: 'A1', label: 'Plato', type: 'author' }
+                        ],
+                        edges: [
+                            { source: 'A1', target: 'W1', relation: 'authored' }
+                        ]
+                    }));
+                })
+            );
+
+            render(<Connectome />);
+
+            // Check for SVG/Canvas elements
+            const graphContainer = await screen.findByTestId('connectome-graph');
+            expect(graphContainer).toBeInTheDocument();
+
+            // Check for node labels
+            const nodeLabel = await screen.findByText(/The Republic/i);
+            expect(nodeLabel).toBeInTheDocument();
+            console.info("LOGOS_CONNECTOME_TEST: Node render test passed.");
+        } catch (error) {
+            console.error("LOGOS_CONNECTOME_TEST_FAILURE: Node render failed", error);
+            throw error;
+        }
+    });
+
+    /**
+     * Test 2: Edge Interaction (Intertextual References)
+     * Verifies that clicking an edge shows the source text citation.
+     */
+    test('displays citation details when clicking a relationship edge', async () => {
+        try {
+            console.info("LOGOS_CONNECTOME_TEST: Testing edge interaction.");
+            render(<Connectome />);
+
+            // Simulate clicking an edge between 'Iliad' and 'Aeneid'
+            const referenceEdge = await screen.findByTestId('edge-iliad-aeneid');
+            fireEvent.click(referenceEdge);
+
+            const citationPanel = await screen.findByTestId('citation-panel');
+            expect(citationPanel).toHaveTextContent(/Homer, Iliad 1.1 referenced in Virgil, Aeneid 1.1/i);
+            console.info("LOGOS_CONNECTOME_TEST: Edge interaction test passed.");
+        } catch (error) {
+            console.error("LOGOS_CONNECTOME_TEST_FAILURE: Edge interaction failed", error);
+            throw error;
+        }
+    });
+
+    /**
+     * Test 3: Centrality Analysis
+     * Scholars use this to find the most influential texts.
+     */
+    test('calculates and highlights PageRank centrality', async () => {
+        try {
+            console.info("LOGOS_CONNECTOME_TEST: Testing centrality analysis.");
+            render(<Connectome />);
+
+            const centralityBtn = screen.getByRole('button', { name: /Show Influential Works/i });
+            fireEvent.click(centralityBtn);
+
+            // The 'Iliad' node should be visually larger/highlighted
+            const iliadNode = await screen.findByTestId('node-iliad');
+            expect(iliadNode).toHaveClass('high-centrality');
+            console.info("LOGOS_CONNECTOME_TEST: Centrality analysis test passed.");
+        } catch (error) {
+            console.error("LOGOS_CONNECTOME_TEST_FAILURE: Centrality analysis failed", error);
+            throw error;
+        }
+    });
+
+    /**
+     * Test 4: Force-Directed Layout Controls
+     */
+    test('adjusts graph physics properties', async () => {
+        try {
+            console.info("LOGOS_CONNECTOME_TEST: Testing physics controls.");
+            render(<Connectome />);
+
+            const repulsionSlider = screen.getByLabelText(/Node Repulsion/i);
+            fireEvent.change(repulsionSlider, { target: { value: '500' } });
+
+            // Ensure the graph engine receives the update
+            expect(screen.getByText(/Physics Engine: Recalculating/i)).toBeInTheDocument();
+            console.info("LOGOS_CONNECTOME_TEST: Physics control test passed.");
+        } catch (error) {
+            console.error("LOGOS_CONNECTOME_TEST_FAILURE: Physics adjustment failed", error);
+            throw error;
+        }
+    });
+
+    /**
+     * Test 5: Search and Focus
+     */
+    test('searches for node and focuses viewport', async () => {
+        try {
+            console.info("LOGOS_CONNECTOME_TEST: Testing node search.");
+            render(<Connectome />);
+
+            const searchInput = screen.getByPlaceholderText(/Search Network/i);
+            fireEvent.change(searchInput, { target: { value: 'Aristotle' } });
+            fireEvent.keyPress(searchInput, { key: 'Enter', code: 13, charCode: 13 });
+
+            await waitFor(() => {
+                const aristotleNode = screen.getByTestId('node-aristotle');
+                expect(aristotleNode).toHaveAttribute('data-focused', 'true');
+            });
+            console.info("LOGOS_CONNECTOME_TEST: Node search test passed.");
+        } catch (error) {
+            console.error("LOGOS_CONNECTOME_TEST_FAILURE: Node search failed", error);
+            throw error;
+        }
+    });
+});
+```
+
+# filepath: frontend/tests/Translation.test.tsx
+```typescript
+/**
+ * LOGOS - The Bible for Classical Studies
+ * Translation Comparison Integration Tests
+ * 
+ * Tests the side-by-side comparison engine using the 38 authorized 
+ * public domain translators.
+ */
+
+import React from 'react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { TranslationComparison } from '../components/TranslationComparison';
+import { server, AUTHORIZED_TRANSLATORS } from './setup';
+import { rest } from 'msw';
+
+describe('Translation Comparison Production Tests', () => {
+
+    /**
+     * Test 1: Dual Pane Rendering
+     * Verifies two different translators can be viewed simultaneously.
+     */
+    test('renders two translations side-by-side', async () => {
+        try {
+            console.info("LOGOS_TRANS_TEST: Starting dual pane render test.");
+            
+            server.use(
+                rest.get('*/api/compare', (req, res, ctx) => {
+                    return res(ctx.json({
+                        left: { translator: "Dryden", text: "Arms and the man I sing..." },
+                        right: { translator: "Williams", text: "I sing of arms and of the man..." }
+                    }));
+                })
+            );
+
+            render(<TranslationComparison work="Aeneid" leftT="Dryden" rightT="Williams" />);
+
+            // Check for both translators
+            expect(await screen.findByText(/Dryden/i)).toBeInTheDocument();
+            expect(await screen.findByText(/Williams/i)).toBeInTheDocument();
+
+            // Verify text content
+            expect(screen.getByText(/Arms and the man I sing/i)).toBeInTheDocument();
+            expect(screen.getByText(/I sing of arms and of the man/i)).toBeInTheDocument();
+            
+            console.info("LOGOS_TRANS_TEST: Dual pane render test passed.");
+        } catch (error) {
+            console.error("LOGOS_TRANS_TEST_FAILURE: Dual pane render failed", error);
+            throw error;
+        }
+    });
+
+    /**
+     * Test 2: Synchronized Scrolling
+     * Essential for comparing line-by-line.
+     */
+    test('synchronizes scrolling between two panes', async () => {
+        try {
+            console.info("LOGOS_TRANS_TEST: Testing synchronized scroll.");
+            render(<TranslationComparison />);
+
+            const leftPane = await screen.findByTestId('pane-left');
+            const rightPane = await screen.findByTestId('pane-right');
+
+            // Scroll the left pane
+            fireEvent.scroll(leftPane, { target: { scrollTop: 500 } });
+
+            // The right pane should match
+            await waitFor(() => {
+                expect(rightPane.scrollTop).toBe(500);
+            });
+            console.info("LOGOS_TRANS_TEST: Sync scroll test passed.");
+        } catch (error) {
+            console.error("LOGOS_TRANS_TEST_FAILURE: Sync scroll failed", error);
+            throw error;
+        }
+    });
+
+    /**
+     * Test 3: Translator Availability Check
+     * Ensures only the 38 authorized translators are available in selection.
+     */
+    test('only lists authorized translators in selection dropdowns', async () => {
+        try {
+            console.info("LOGOS_TRANS_TEST: Verifying translator whitelist.");
+            render(<TranslationComparison />);
+
+            const dropdown = screen.getByLabelText(/Change Left Translator/i);
+            fireEvent.click(dropdown);
+
+            // Check for a few authorized ones
+            expect(screen.getByText(/Jowett/i)).toBeInTheDocument();
+            expect(screen.getByText(/Butcher_Lang/i)).toBeInTheDocument();
+            expect(screen.getByText(/Church_Brodribb/i)).toBeInTheDocument();
+
+            // Ensure unauthorized ones ARE NOT present
+            expect(screen.queryByText(/Fagles/i)).not.toBeInTheDocument();
+            expect(screen.queryByText(/Lattimore/i)).not.toBeInTheDocument();
+            expect(screen.queryByText(/Chapman/i)).not.toBeInTheDocument();
+            
+            console.info("LOGOS_TRANS_TEST: Translator whitelist test passed.");
+        } catch (error) {
+            console.error("LOGOS_TRANS_TEST_FAILURE: Translator whitelist check failed", error);
+            throw error;
+        }
+    });
+
+    /**
+     * Test 4: Line-by-Line Alignment
+     * Uses 'line_number' from source_texts table to align translations.
+     */
+    test('aligns translations by line number', async () => {
+        try {
+            console.info("LOGOS_TRANS_TEST: Testing line alignment.");
+            render(<TranslationComparison work="Odyssey" />);
+
+            const line10Left = await screen.findByTestId('left-line-10');
+            const line10Right = await screen.findByTestId('right-line-10');
+
+            // Get vertical positions
+            const leftPos = line10Left.getBoundingClientRect().top;
+            const rightPos = line10Right.getBoundingClientRect().top;
+
+            expect(leftPos).toBeCloseTo(rightPos, 1);
+            console.info("LOGOS_TRANS_TEST: Line alignment test passed.");
+        } catch (error) {
+            console.error("LOGOS_TRANS_TEST_FAILURE: Line alignment failed", error);
+            throw error;
+        }
+    });
+
+    /**
+     * Test 5: Style Vector Comparison
+     * Visualizes differences in translation style (e.g., Literal vs. Poetic).
+     */
+    test('displays style vector comparison chart', async () => {
+        try {
+            console.info("LOGOS_TRANS_TEST: Testing style vector chart.");
+            render(<TranslationComparison leftT="Pope" rightT="Cowper" />);
+
+            const chart = await screen.findByTestId('style-comparison-chart');
+            expect(chart).toBeInTheDocument();
+            
+            // Pope should be marked as more 'Poetic'
+            expect(screen.getByText(/Pope: High Poeticism/i)).toBeInTheDocument();
+            console.info("LOGOS_TRANS_TEST: Style vector test passed.");
+        } catch (error) {
+            console.error("LOGOS_TRANS_TEST_FAILURE: Style vector test failed", error);
+            throw error;
+        }
+    });
+});
+```
+
+# filepath: frontend/tests/Search.test.tsx
+```typescript
+/**
+ * LOGOS - The Bible for Classical Studies
+ * Search Functionality Integration Tests
+ * 
+ * Tests full-text search across the 'texts' table, including 
+ * advanced filtering by author and translator.
+ */
+
+import React from 'react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { Search } from '../components/Search';
+import { server } from './setup';
+import { rest } from 'msw';
+
+describe('Search System Production Tests', () => {
+
+    /**
+     * Test 1: Full-Text Search Execution
+     * Simulates querying the 'text_content' column.
+     */
+    test('executes search and displays results with highlighting', async () => {
+        try {
+            console.info("LOGOS_SEARCH_TEST: Starting full-text search test.");
+            
+            server.use(
+                rest.get('*/api/search', (req, res, ctx) => {
+                    const query = req.url.searchParams.get('q');
+                    return res(ctx.json([
+                        {
+                            id: 1,
+                            title: "The Republic",
+                            author: "Plato",
+                            snippet: `...the nature of <mark>${query}</mark> is what we seek...`,
+                            rank: 0.98
+                        }
+                    ]));
+                })
+            );
+
+            render(<Search />);
+
+            const input = screen.getByPlaceholderText(/Search the Classics/i);
+            fireEvent.change(input, { target: { value: 'justice' } });
+            fireEvent.click(screen.getByRole('button', { name: /Search/i }));
+
+            // Wait for results
+            const result = await screen.findByText(/The Republic/i);
+            expect(result).toBeInTheDocument();
+
+            // Check for highlighting
+            const highlight = screen.getByText('justice');
+            expect(highlight.tagName).toBe('MARK');
+            
+            console.info("LOGOS_SEARCH_TEST: Full-text search test passed.");
+        } catch (error) {
+            console.error("LOGOS_SEARCH_TEST_FAILURE: Search execution failed", error);
+            throw error;
+        }
+    });
+
+    /**
+     * Test 2: Advanced Filtering
+     * Users often need to filter by author profile data.
+     */
+    test('filters search results by author and translator', async () => {
+        try {
+            console.info("LOGOS_SEARCH_TEST: Testing search filters.");
+            render(<Search />);
+
+            // Open filters
+            fireEvent.click(screen.getByText(/Advanced Filters/i));
+
+            const authorSelect = screen.getByLabelText(/Author/i);
+            fireEvent.change(authorSelect, { target: { value: 'Aristotle' } });
+
+            const translatorSelect = screen.getByLabelText(/Translator/i);
+            fireEvent.change(translatorSelect, { target: { value: 'Ross' } });
+
+            fireEvent.click(screen.getByRole('button', { name: /Apply Filters/i }));
+
+            // Verify API call includes parameters
+            await waitFor(() => {
+                expect(screen.getByText(/Filtering by: Aristotle, Ross/i)).toBeInTheDocument();
+            });
+            console.info("LOGOS_SEARCH_TEST: Filter test passed.");
+        } catch (error) {
+            console.error("LOGOS_SEARCH_TEST_FAILURE: Filter test failed", error);
+            throw error;
+        }
+    });
+
+    /**
+     * Test 3: Search History Persistence
+     */
+    test('saves and retrieves recent searches from local storage', async () => {
+        try {
+            console.info("LOGOS_SEARCH_TEST: Testing search history.");
+            render(<Search />);
+
+            const input = screen.getByPlaceholderText(/Search the Classics/i);
+            fireEvent.change(input, { target: { value: 'Cave Allegory' } });
+            fireEvent.keyPress(input, { key: 'Enter', code: 13, charCode: 13 });
+
+            // Re-render component
+            render(<Search />);
+            
+            const historyItem = await screen.findByText(/Cave Allegory/i);
+            expect(historyItem).toBeInTheDocument();
+            console.info("LOGOS_SEARCH_TEST: History persistence test passed.");
+        } catch (error) {
+            console.error("LOGOS_SEARCH_TEST_FAILURE: History persistence failed", error);
+            throw error;
+        }
+    });
+
+    /**
+     * Test 4: Empty State and No Results
+     */
+    test('displays helpful message when no results are found', async () => {
+        try {
+            console.info("LOGOS_SEARCH_TEST: Testing empty results state.");
+            server.use(
+                rest.get('*/api/search', (req, res, ctx) => {
+                    return res(ctx.json([]));
+                })
+            );
+
+            render(<Search />);
+            const input = screen.getByPlaceholderText(/Search the Classics/i);
+            fireEvent.change(input, { target: { value: 'xyz123nonexistent' } });
+            fireEvent.click(screen.getByRole('button', { name: /Search/i }));
+
+            const emptyMsg = await screen.findByText(/No classical texts found matching your query/i);
+            expect(emptyMsg).toBeInTheDocument();
+            console.info("LOGOS_SEARCH_TEST: Empty results test passed.");
+        } catch (error) {
+            console.error("LOGOS_SEARCH_TEST_FAILURE: Empty results test failed", error);
+            throw error;
+        }
+    });
+
+    /**
+     * Test 5: Search Suggest / Autocomplete
+     */
+    test('provides autocomplete suggestions for author names', async () => {
+        try {
+            console.info("LOGOS_SEARCH_TEST: Testing autocomplete.");
+            render(<Search />);
+
+            const input = screen.getByPlaceholderText(/Search the Classics/i);
+            fireEvent.change(input, { target: { value: 'Plat' } });
+
+            const suggestion = await screen.findByText('Plato');
+            expect(suggestion).toBeInTheDocument();
+
+            fireEvent.click(suggestion);
+            expect(input).toHaveValue('Plato');
+            console.info("LOGOS_SEARCH_TEST: Autocomplete test passed.");
+        } catch (error) {
+            console.error("LOGOS_SEARCH_TEST_FAILURE: Autocomplete test failed", error);
+            throw error;
+        }
+    });
+});
+```
+
+# filepath: frontend/services/DatabaseService.ts
+```typescript
+/**
+ * LOGOS - The Bible for Classical Studies
+ * Database Service Layer
+ * 
+ * This service handles all direct interactions with the backend API,
+ * which in turn queries the Railway PostgreSQL database.
+ * 
+ * SCHEMA REFERENCE:
+ * - texts: [id, title, author, translator, text_content, book, chapter]
+ * - author_profiles: [id, name, birth_year, death_year, nationality, genres]
+ */
+
+import axios, { AxiosResponse } from 'axios';
+
+// Authorized Translator Whitelist
+export const AUTHORIZED_TRANSLATORS = [
+    "Jowett", "Dryden", "Dakyns", "Pope", "Murray", "Butler", "Church_Brodribb", 
+    "Cowper", "Butcher_Lang", "Lang_Leaf_Myers", "Conington", "Goodwin", "Storr", 
+    "Roberts", "Aubrey_Stewart", "Williams", "Dryden_et_al", "Brookes_More", 
+    "Ross", "Rawlinson", "Moore", "Evelyn-White", "Morshead", "Heseltine", 
+    "Crawley", "Long", "Lindsay", "Jebb", "Macaulay", "Leonard", "Adlington", 
+    "Smith", "Morris", "Butcher", "Derby", "Kenyon", "Hickie", "Anonymous"
+];
+
+export interface TextRecord {
+    id: number;
+    title: string;
+    author: string;
+    translator: string;
+    text_content: string;
+    book?: number;
+    chapter?: number;
+}
+
+export interface AuthorProfile {
+    id: number;
+    name: string;
+    birth_year: number;
+    death_year: number;
+    nationality: string;
+    genres: string[];
+}
+
+class DatabaseService {
+    private static instance: DatabaseService;
+    private readonly baseUrl: string = "/api";
+
+    private constructor() {}
+
+    public static getInstance(): DatabaseService {
+        if (!DatabaseService.instance) {
+            DatabaseService.instance = new DatabaseService();
+        }
+        return DatabaseService.instance;
+    }
+
+    /**
+     * Fetches a specific text from the 'texts' table.
+     * Includes strict validation for translator licensing.
+     */
+    public async getText(title: string, translator: string): Promise<TextRecord[]> {
+        try {
+            console.info(`LOGOS_DB_SERVICE: Querying text [${title}] by [${translator}]`);
+
+            // Security Check: Prevent unauthorized translator access at the service level
+            if (!AUTHORIZED_TRANSLATORS.includes(translator)) {
+                console.error(`LOGOS_DB_SERVICE_ERR: Unauthorized translator requested: ${translator}`);
+                throw new Error("LICENSING_ERROR: Translator not available in public domain.");
+            }
+
+            const response: AxiosResponse<TextRecord[]> = await axios.get(`${this.baseUrl}/texts`, {
+                params: { title, translator }
+            });
+
+            if (!response.data || response.data.length === 0) {
+                console.warn(`LOGOS_DB_SERVICE: No results for ${title}`);
+                return [];
+            }
+
+            return response.data;
+        } catch (error) {
+            console.error("LOGOS_DB_SERVICE_ERR: Failed to fetch text record", error);
+            throw error;
+        }
+    }
+
+    /**
+     * Fetches author metadata from 'author_profiles'.
+     */
+    public async getAuthorProfile(name: string): Promise<AuthorProfile | null> {
+        try {
+            console.info(`LOGOS_DB_SERVICE: Fetching profile for author: ${name}`);
+            const response: AxiosResponse<AuthorProfile> = await axios.get(`${this.baseUrl}/authors/${name}`);
+            
+            if (!response.data) {
+                return null;
+            }
+
+            return response.data;
+        } catch (error) {
+            console.error(`LOGOS_DB_SERVICE_ERR: Profile fetch failed for ${name}`, error);
+            return null;
+        }
+    }
+
+    /**
+     * Performs a semantic search using word embeddings.
+     */
+    public async semanticSearch(word: string): Promise<any> {
+        try {
+            console.info(`LOGOS_DB_SERVICE: Performing vector search for: ${word}`);
+            const response = await axios.get(`${this.baseUrl}/embeddings/${word}`);
+            return response.data;
+        } catch (error) {
+            console.error("LOGOS_DB_SERVICE_ERR: Semantic search failed", error);
+            throw error;
+        }
+    }
+
+    /**
+     * Retrieves the intertextual connectome graph.
+     */
+    public async getConnectomeData(): Promise<any> {
+        try {
+            console.info("LOGOS_DB_SERVICE: Fetching full intertextual graph.");
+            const response = await axios.get(`${this.baseUrl}/graph/network`);
+            return response.data;
+        } catch (error) {
+            console.error("LOGOS_DB_SERVICE_ERR: Connectome retrieval failed", error);
+            throw error;
+        }
+    }
+
+    /**
+     * Logs user interactions for analytical scholarship tracking.
+     */
+    public async logInteraction(action: string, metadata: object): Promise<void> {
+        try {
+            await axios.post(`${this.baseUrl}/logs`, {
+                timestamp: new Date().toISOString(),
+                action,
+                ...metadata
+            });
+        } catch (error) {
+            // Non-blocking error
+            console.error("LOGOS_DB_SERVICE_ERR: Failed to log interaction", error);
+        }
+    }
+}
+
+export const dbService = DatabaseService.getInstance();
+```
+
+# filepath: backend/database/query_engine.py
+```python
+"""
+LOGOS - The Bible for Classical Studies
+Production Database Query Engine (Python/asyncpg)
+
+This module provides high-performance, asynchronous access to the 
+Railway PostgreSQL database. It handles the mission-critical 
+classical texts and embeddings.
+"""
+
+import asyncio
+import asyncpg
+import logging
+import json
+from typing import List, Dict, Any, Optional
+
+# Configure production logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+DATABASE_URL = "postgresql://postgres:JKLqDvdTtmRjGnOgDvGFLqLKVkcjQLFs@metro.proxy.rlwy.net:58888/railway"
+
+class LogosQueryEngine:
+    """
+    World-class query engine for the LOGOS system.
+    Handles connection pooling and complex classical text queries.
+    """
+
+    def __init__(self):
+        self.pool: Optional[asyncpg.Pool] = None
+        self.authorized_translators = [
+            "Jowett", "Dryden", "Dakyns", "Pope", "Murray", "Butler", "Church_Brodribb", 
+            "Cowper", "Butcher_Lang", "Lang_Leaf_Myers", "Conington", "Goodwin", "Storr", 
+            "Roberts", "Aubrey_Stewart", "Williams", "Dryden_et_al", "Brookes_More", 
+            "Ross", "Rawlinson", "Moore", "Evelyn-White", "Morshead", "Heseltine", 
+            "Crawley", "Long", "Lindsay", "Jebb", "Macaulay", "Leonard", "Adlington", 
+            "Smith", "Morris", "Butcher", "Derby", "Kenyon", "Hickie", "Anonymous"
+        ]
+
+    async def initialize(self):
+        """Initializes the database connection pool."""
+        try:
+            logger.info("LOGOS_DB_ENGINE: Initializing connection pool...")
+            self.pool = await asyncpg.create_pool(DATABASE_URL, min_size=5, max_size=20)
+            logger.info("LOGOS_DB_ENGINE: Connection pool established.")
+        except Exception as e:
+            logger.error(f"LOGOS_DB_ENGINE_CRITICAL: Failed to connect to Railway DB: {e}")
+            raise
+
+    async def get_text_content(self, title: str, translator: str, book: int = 1) -> List[Dict[str, Any]]:
+        """
+        Retrieves classical text content from the 'texts' table.
+        Strictly enforces translator authorization.
+        """
+        if translator not in self.authorized_translators:
+            logger.warning(f"LOGOS_DB_ENGINE: Unauthorized translator attempt: {translator}")
+            return []
+
+        if not self.pool:
+            await self.initialize()
+
+        try:
+            async with self.pool.acquire() as connection:
+                query = """
+                    SELECT id, title, author, translator, text_content, book, chapter
+                    FROM texts
+                    WHERE title = $1 AND translator = $2 AND book = $3
+                    ORDER BY chapter ASC;
+                """
+                rows = await connection.fetch(query, title, translator, book)
+                
+                results = [dict(row) for row in rows]
+                logger.info(f"LOGOS_DB_ENGINE: Successfully retrieved {len(results)} rows for {title}")
+                return results
+        except Exception as e:
+            logger.error(f"LOGOS_DB_ENGINE_ERR: Query failed for {title}: {e}")
+            return []
+
+    async def search_texts(self, search_term: str, limit: int = 50) -> List[Dict[str, Any]]:
+        """
+        Performs full-text search using PostgreSQL tsvector on the 'text_content' column.
+        """
+        if not self.pool:
+            await self.initialize()
+
+        try:
+            async with self.pool.acquire() as connection:
+                # Using websearch_to_tsquery for scholar-friendly search syntax
+                query = """
+                    SELECT id, title, author, translator, 
+                           ts_headline('english', text_content, websearch_to_tsquery('english', $1)) as snippet,
+                           ts_rank(to_tsvector('english', text_content), websearch_to_tsquery('english', $1)) as rank
+                    FROM texts
+                    WHERE to_tsvector('english', text_content) @@ websearch_to_tsquery('english', $1)
+                    ORDER BY rank DESC
+                    LIMIT $2;
+                """
+                rows = await connection.fetch(query, search_term, limit)
+                return [dict(row) for row in rows]
+        except Exception as e:
+            logger.error(f"LOGOS_DB_ENGINE_ERR: Search failed for '{search_term}': {e}")
+            return []
+
+    async def get_word_vector(self, word: str) -> Optional[List[float]]:
+        """
+        Retrieves a 300-dimension vector from the 'word_embeddings' table.
+        """
+        if not self.pool:
+            await self.initialize()
+
+        try:
+            async with self.pool.acquire() as connection:
+                row = await connection.fetchrow(
+                    "SELECT vector FROM word_embeddings WHERE word = $1", word
+                )
+                if row:
+                    # Vectors are stored as numpy arrays in DB, cast to list for JSON
+                    return list(row['vector'])
+                return None
+        except Exception as e:
+            logger.error(f"LOGOS_DB_ENGINE_ERR: Vector retrieval failed for {word}: {e}")
+            return None
+
+    async def get_author_timeline(self) -> List[Dict[str, Any]]:
+        """
+        Queries 'author_profiles' for the CHRONOS visualization.
+        """
+        if not self.pool:
+            await self.initialize()
+
+        try:
+            async with self.pool.acquire() as connection:
+                query = """
+                    SELECT id, name, birth_year, death_year, nationality, genres
+                    FROM author_profiles
+                    ORDER BY birth_year ASC;
+                """
+                rows = await connection.fetch(query)
+                return [dict(row) for row in rows]
+        except Exception as e:
+            logger.error(f"LOGOS_DB_ENGINE_ERR: Timeline query failed: {e}")
+            return []
+
+    async def close(self):
+        """Gracefully closes the connection pool."""
+        if self.pool:
+            await self.pool.close()
+            logger.info("LOGOS_DB_ENGINE: Connection pool closed.")
+
+# Singleton instance for production use
+logos_engine = LogosQueryEngine()
+```

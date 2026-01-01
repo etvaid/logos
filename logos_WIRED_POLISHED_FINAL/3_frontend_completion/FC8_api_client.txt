@@ -1,0 +1,1018 @@
+This is the complete, production-ready API client layer for **LOGOS - The Bible for Classical Studies**. This implementation follows the strict architectural guidelines: no placeholders, comprehensive error handling, detailed logging, and full TypeScript type safety.
+
+The allowed translators list is strictly enforced within the types and logic to ensure legal compliance.
+
+### File 1: Global Type Definitions
+# filepath: frontend/lib/api/types.ts
+
+```typescript
+/**
+ * LOGOS - The Bible for Classical Studies
+ * Global Type Definitions for API Layer
+ * 
+ * This file contains the foundational interfaces and types used across the 
+ * LOGOS frontend. It mirrors the PostgreSQL schema and ensures type safety 
+ * for all classical scholarship data.
+ */
+
+export type TranslatorName = 
+  | "Jowett" | "Dryden" | "Dakyns" | "Pope" | "Murray" | "Butler" 
+  | "Church_Brodribb" | "Cowper" | "Butcher_Lang" | "Lang_Leaf_Myers" 
+  | "Conington" | "Goodwin" | "Storr" | "Roberts" | "Aubrey_Stewart" 
+  | "Williams" | "Dryden_et_al" | "Brookes_More" | "Ross" | "Rawlinson" 
+  | "Moore" | "Evelyn-White" | "Morshead" | "Heseltine" | "Crawley" 
+  | "Long" | "Lindsay" | "Jebb" | "Macaulay" | "Leonard" | "Adlington" 
+  | "Smith" | "Morris" | "Butcher" | "Derby" | "Kenyon" | "Hickie" 
+  | "Anonymous";
+
+export interface AuthorProfile {
+  id: number;
+  name: string;
+  birth_year: number | null;
+  death_year: number | null;
+  nationality: string;
+  genres: string[];
+  biography?: string;
+  major_works?: string[];
+}
+
+export interface TranslatorProfile {
+  id: number;
+  name: TranslatorName;
+  style_vector: number[]; // 300 dimensions
+  works_translated: string[];
+  era: string;
+  methodology: "literal" | "poetic" | "prose" | "equilinear";
+}
+
+export interface ClassicalText {
+  id: number;
+  title: string;
+  author: string;
+  translator: TranslatorName;
+  text_content: string;
+  book: string | null;
+  chapter: number | null;
+  verse?: number | null;
+  language: "english" | "greek" | "latin";
+}
+
+export interface SourceText {
+  id: number;
+  content: string;
+  language: "grc" | "lat";
+  work_id: number;
+  line_number: string;
+  morphology?: Record<string, any>;
+}
+
+export interface WordEmbedding {
+  word: string;
+  vector: number[]; // 300 dimensions
+  frequency?: number;
+  semantic_cluster?: string;
+}
+
+export interface SearchFilters {
+  author?: string;
+  translator?: TranslatorName;
+  genre?: string;
+  century_start?: number;
+  century_end?: number;
+  language?: string;
+}
+
+export interface PaginatedResponse<T> {
+  items: T[];
+  total_count: number;
+  page: number;
+  page_size: number;
+  has_more: boolean;
+}
+
+export interface APIErrorResponse {
+  error_code: string;
+  message: string;
+  details?: Record<string, any>;
+  timestamp: string;
+  request_id: string;
+}
+
+export interface SemantiaAnalysis {
+  word: string;
+  closest_terms: Array<{ word: string; similarity: number }>;
+  sentiment_score: number;
+  thematic_category: string;
+}
+
+export interface ChronosEvent {
+  id: string;
+  year: number;
+  description: string;
+  associated_authors: string[];
+  associated_works: string[];
+  importance_score: number;
+}
+
+export interface ConnectomeNode {
+  id: string;
+  label: string;
+  type: 'author' | 'work' | 'concept';
+  weight: number;
+}
+
+export interface ConnectomeEdge {
+  source: string;
+  target: string;
+  relationship: string;
+  strength: number;
+}
+
+export interface ConnectomeGraph {
+  nodes: ConnectomeNode[];
+  links: ConnectomeEdge[];
+}
+
+export type APIResult<T> = {
+  data: T | null;
+  error: APIErrorResponse | null;
+  isLoading: boolean;
+};
+```
+
+### File 2: Core API Client
+# filepath: frontend/lib/api/client.ts
+
+```typescript
+import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios';
+import { APIErrorResponse } from './types';
+
+/**
+ * LOGOS Production API Client
+ * Implements robust error handling, interceptors, and retry logic.
+ */
+class LogosApiClient {
+  private instance: AxiosInstance;
+  private readonly baseURL: string = process.env.NEXT_PUBLIC_API_URL || 'https://api.logos-classical.com/v1';
+  private readonly timeout: number = 30000;
+  private retryCount: number = 3;
+
+  constructor() {
+    this.instance = axios.create({
+      baseURL: this.baseURL,
+      timeout: this.timeout,
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Logos-Client': 'Web-Production',
+      },
+    });
+
+    this.setupInterceptors();
+  }
+
+  /**
+   * Configures request and response interceptors for logging and error mapping.
+   */
+  private setupInterceptors(): void {
+    // Request Interceptor
+    this.instance.interceptors.request.use(
+      (config) => {
+        const timestamp = new Date().toISOString();
+        console.log(`[LOGOS API REQUEST] ${config.method?.toUpperCase()} ${config.url} at ${timestamp}`);
+        
+        // In production, we'd inject JWT here
+        const token = typeof window !== 'undefined' ? localStorage.getItem('logos_auth_token') : null;
+        if (token && config.headers) {
+          config.headers.Authorization = `Bearer ${token}`;
+        }
+        
+        return config;
+      },
+      (error) => {
+        console.error('[LOGOS API REQUEST ERROR]', error);
+        return Promise.reject(error);
+      }
+    );
+
+    // Response Interceptor
+    this.instance.interceptors.response.use(
+      (response: AxiosResponse) => {
+        console.log(`[LOGOS API RESPONSE] ${response.status} from ${response.config.url}`);
+        return response;
+      },
+      async (error: AxiosError) => {
+        const originalRequest = error.config as AxiosRequestConfig & { _retry?: boolean };
+        
+        // Implement Exponential Backoff Retry for 5xx errors
+        if (error.response && error.response.status >= 500 && !originalRequest._retry) {
+          originalRequest._retry = true;
+          let currentRetry = 0;
+          
+          while (currentRetry < this.retryCount) {
+            currentRetry++;
+            const delay = Math.pow(2, currentRetry) * 1000;
+            console.warn(`[LOGOS API RETRY] Attempt ${currentRetry} for ${originalRequest.url} after ${delay}ms`);
+            
+            await new Promise(resolve => setTimeout(resolve, delay));
+            
+            try {
+              return await this.instance(originalRequest);
+            } catch (retryError) {
+              if (currentRetry === this.retryCount) {
+                return this.handleError(retryError as AxiosError);
+              }
+            }
+          }
+        }
+
+        return this.handleError(error);
+      }
+    );
+  }
+
+  /**
+   * Standardized error handler for the LOGOS ecosystem.
+   */
+  private handleError(error: AxiosError): Promise<never> {
+    const apiError: APIErrorResponse = {
+      error_code: 'UNKNOWN_ERROR',
+      message: 'An unexpected error occurred in the LOGOS system.',
+      timestamp: new Date().toISOString(),
+      request_id: (error.response?.headers['x-request-id'] as string) || 'N/A',
+    };
+
+    if (error.response) {
+      // Server responded with a status code outside the 2xx range
+      const data = error.response.data as any;
+      apiError.error_code = data?.error_code || `HTTP_${error.response.status}`;
+      apiError.message = data?.message || error.message;
+      apiError.details = data?.details;
+      
+      console.error(`[LOGOS API ERROR] ${apiError.error_code}: ${apiError.message}`, apiError.details);
+    } else if (error.request) {
+      // Request was made but no response received
+      apiError.error_code = 'NETWORK_TIMEOUT';
+      apiError.message = 'The LOGOS server is unreachable. Please check your connection.';
+      console.error('[LOGOS API NETWORK ERROR]', error.request);
+    } else {
+      // Something happened in setting up the request
+      apiError.message = error.message;
+    }
+
+    return Promise.reject(apiError);
+  }
+
+  /**
+   * Generic GET request wrapper
+   */
+  public async get<T>(url: string, config?: AxiosRequestConfig): Promise<T> {
+    try {
+      const response = await this.instance.get<T>(url, config);
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  /**
+   * Generic POST request wrapper
+   */
+  public async post<T>(url: string, data?: any, config?: AxiosRequestConfig): Promise<T> {
+    try {
+      const response = await this.instance.post<T>(url, data, config);
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  /**
+   * Generic PUT request wrapper
+   */
+  public async put<T>(url: string, data?: any, config?: AxiosRequestConfig): Promise<T> {
+    try {
+      const response = await this.instance.put<T>(url, data, config);
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  /**
+   * Generic DELETE request wrapper
+   */
+  public async delete<T>(url: string, config?: AxiosRequestConfig): Promise<T> {
+    try {
+      const response = await this.instance.delete<T>(url, config);
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  }
+}
+
+export const logosApi = new LogosApiClient();
+```
+
+### File 3: Corpus API Layer
+# filepath: frontend/lib/api/corpus.ts
+
+```typescript
+import { logosApi } from './client';
+import { ClassicalText, SourceText, SearchFilters, PaginatedResponse } from './types';
+import { useQuery, UseQueryResult } from '@tanstack/react-query';
+
+/**
+ * LOGOS Corpus Service
+ * Handles all requests related to the primary text database (121,184 rows)
+ * and source texts (6.6M rows).
+ */
+export class CorpusService {
+  /**
+   * Fetches a specific text by its ID.
+   * Includes detailed logging for scholarly audit trails.
+   */
+  static async getTextById(id: number): Promise<ClassicalText> {
+    console.info(`[CorpusService] Fetching text ID: ${id}`);
+    try {
+      const result = await logosApi.get<ClassicalText>(`/texts/${id}`);
+      if (!result || !result.text_content) {
+        throw new Error(`Text with ID ${id} returned empty content.`);
+      }
+      return result;
+    } catch (error) {
+      console.error(`[CorpusService] Failed to fetch text ${id}:`, error);
+      throw error;
+    }
+  }
+
+  /**
+   * Searches the classical corpus with advanced filtering.
+   * Maps to the 'texts' table in the Railway PostgreSQL instance.
+   */
+  static async searchTexts(
+    query: string, 
+    filters: SearchFilters, 
+    page: number = 1, 
+    pageSize: number = 20
+  ): Promise<PaginatedResponse<ClassicalText>> {
+    console.info(`[CorpusService] Searching for "${query}" - Page ${page}`);
+    
+    const params = {
+      q: query,
+      author: filters.author,
+      translator: filters.translator,
+      genre: filters.genre,
+      lang: filters.language,
+      page,
+      page_size: pageSize
+    };
+
+    try {
+      const response = await logosApi.get<PaginatedResponse<ClassicalText>>('/texts/search', { params });
+      return response;
+    } catch (error) {
+      console.error('[CorpusService] Search failed:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Retrieves original Greek/Latin source text lines.
+   * Queries the 'source_texts' table (6.6M rows).
+   */
+  static async getSourceLines(workId: number, startLine: string, endLine: string): Promise<SourceText[]> {
+    console.info(`[CorpusService] Fetching source lines for work ${workId}: ${startLine}-${endLine}`);
+    
+    try {
+      const response = await logosApi.get<SourceText[]>(`/source-texts/${workId}/range`, {
+        params: { start: startLine, end: endLine }
+      });
+      return response;
+    } catch (error) {
+      console.error('[CorpusService] Source line retrieval failed:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Retrieves all works by a specific author.
+   */
+  static async getAuthorWorks(authorName: string): Promise<ClassicalText[]> {
+    console.info(`[CorpusService] Fetching works by author: ${authorName}`);
+    try {
+      return await logosApi.get<ClassicalText[]>(`/authors/${encodeURIComponent(authorName)}/works`);
+    } catch (error) {
+      console.error(`[CorpusService] Failed to fetch works for ${authorName}:`, error);
+      throw error;
+    }
+  }
+}
+
+/**
+ * React Query Hooks for Corpus Data
+ */
+export const useText = (id: number): UseQueryResult<ClassicalText, Error> => {
+  return useQuery({
+    queryKey: ['text', id],
+    queryFn: () => CorpusService.getTextById(id),
+    staleTime: 1000 * 60 * 60, // 1 hour (classical texts don't change often)
+    retry: 2,
+  });
+};
+
+export const useTextSearch = (
+  query: string, 
+  filters: SearchFilters, 
+  page: number
+): UseQueryResult<PaginatedResponse<ClassicalText>, Error> => {
+  return useQuery({
+    queryKey: ['search', query, filters, page],
+    queryFn: () => CorpusService.searchTexts(query, filters, page),
+    enabled: query.length > 2 || Object.keys(filters).length > 0,
+    keepPreviousData: true,
+  });
+};
+```
+
+### File 4: Translation API Layer
+# filepath: frontend/lib/api/translate.ts
+
+```typescript
+import { logosApi } from './client';
+import { TranslatorProfile, ClassicalText, TranslatorName } from './types';
+import { useQuery, UseQueryResult } from '@tanstack/react-query';
+
+/**
+ * LOGOS Translation Service
+ * Manages translator profiles and comparative translation analysis.
+ * Strictly uses the 38 approved historical translators.
+ */
+export class TranslationService {
+  /**
+   * Retrieves the profile and style vector for a specific translator.
+   */
+  static async getTranslatorProfile(name: TranslatorName): Promise<TranslatorProfile> {
+    console.info(`[TranslationService] Fetching profile for: ${name}`);
+    
+    // Validation against forbidden translators
+    const forbidden = ["Chapman", "Lattimore", "Fagles", "Wilson"];
+    if (forbidden.includes(name as string)) {
+      throw new Error(`Translator ${name} is under copyright restriction.`);
+    }
+
+    try {
+      const result = await logosApi.get<TranslatorProfile>(`/translators/${name}`);
+      if (!result) throw new Error(`Translator profile ${name} not found.`);
+      return result;
+    } catch (error) {
+      console.error(`[TranslationService] Error fetching profile for ${name}:`, error);
+      throw error;
+    }
+  }
+
+  /**
+   * Fetches all available translations for a specific book/chapter.
+   * Essential for comparative philology.
+   */
+  static async getComparativeTranslations(
+    author: string, 
+    work: string, 
+    book: string, 
+    chapter: number
+  ): Promise<ClassicalText[]> {
+    console.info(`[TranslationService] Comparing translations for ${work} ${book}.${chapter}`);
+    
+    try {
+      const response = await logosApi.get<ClassicalText[]>('/translations/compare', {
+        params: { author, work, book, chapter }
+      });
+      
+      // Filter out any unauthorized content that might have slipped into the DB
+      const forbidden = ["Chapman", "Lattimore", "Fagles", "Wilson"];
+      return response.filter(t => !forbidden.includes(t.translator));
+    } catch (error) {
+      console.error('[TranslationService] Comparison failed:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Retrieves the full list of available translators in the system.
+   */
+  static async listTranslators(): Promise<TranslatorProfile[]> {
+    console.info('[TranslationService] Listing all translators');
+    try {
+      const translators = await logosApi.get<TranslatorProfile[]>('/translators');
+      return translators.filter(t => t.name !== undefined);
+    } catch (error) {
+      console.error('[TranslationService] Failed to list translators:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Calculates semantic distance between two translators based on style vectors.
+   */
+  static async getStylisticSimilarity(t1: TranslatorName, t2: TranslatorName): Promise<number> {
+    console.info(`[TranslationService] Calculating similarity: ${t1} vs ${t2}`);
+    try {
+      const data = await logosApi.get<{ similarity: number }>(`/translators/compare-style`, {
+        params: { t1, t2 }
+      });
+      return data.similarity;
+    } catch (error) {
+      console.error('[TranslationService] Stylistic calculation failed:', error);
+      throw error;
+    }
+  }
+}
+
+/**
+ * React Query Hooks
+ */
+export const useTranslator = (name: TranslatorName): UseQueryResult<TranslatorProfile, Error> => {
+  return useQuery({
+    queryKey: ['translator', name],
+    queryFn: () => TranslationService.getTranslatorProfile(name),
+    staleTime: Infinity, // Translator profiles are static historical data
+  });
+};
+
+export const useComparativeTexts = (
+  author: string, 
+  work: string, 
+  book: string, 
+  chapter: number
+): UseQueryResult<ClassicalText[], Error> => {
+  return useQuery({
+    queryKey: ['compare', author, work, book, chapter],
+    queryFn: () => TranslationService.getComparativeTranslations(author, work, book, chapter),
+  });
+};
+```
+
+### File 5: Semantia API Layer (Vector Search)
+# filepath: frontend/lib/api/semantia.ts
+
+```typescript
+import { logosApi } from './client';
+import { WordEmbedding, SemantiaAnalysis } from './types';
+import { useQuery, UseQueryResult } from '@tanstack/react-query';
+
+/**
+ * LOGOS Semantia Service
+ * Handles vector-based semantic analysis using the word_embeddings table (20,960 rows).
+ * Implements 300-dimension vector operations.
+ */
+export class SemantiaService {
+  /**
+   * Fetches the vector for a specific word.
+   */
+  static async getWordVector(word: string): Promise<WordEmbedding> {
+    console.info(`[SemantiaService] Fetching vector for word: ${word}`);
+    try {
+      const result = await logosApi.get<WordEmbedding>(`/semantia/vector/${encodeURIComponent(word)}`);
+      if (!result || !result.vector) {
+        throw new Error(`No vector data found for word: ${word}`);
+      }
+      return result;
+    } catch (error) {
+      console.error(`[SemantiaService] Failed to fetch vector for ${word}:`, error);
+      throw error;
+    }
+  }
+
+  /**
+   * Performs semantic search across the corpus.
+   * Finds texts that are semantically similar to the input concept, not just keyword matches.
+   */
+  static async semanticSearch(concept: string, limit: number = 10): Promise<SemantiaAnalysis> {
+    console.info(`[SemantiaService] Performing semantic analysis for: ${concept}`);
+    try {
+      const response = await logosApi.post<SemantiaAnalysis>('/semantia/analyze', {
+        concept,
+        limit,
+        include_closest: true
+      });
+      return response;
+    } catch (error) {
+      console.error('[SemantiaService] Semantic analysis failed:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Finds related terms in the vector space (nearest neighbors).
+   */
+  static async getRelatedTerms(word: string, topK: number = 5): Promise<Array<{ word: string; similarity: number }>> {
+    console.info(`[SemantiaService] Finding ${topK} related terms for: ${word}`);
+    try {
+      const response = await logosApi.get<Array<{ word: string; similarity: number }>>(`/semantia/related/${word}`, {
+        params: { k: topK }
+      });
+      return response;
+    } catch (error) {
+      console.error(`[SemantiaService] Related terms lookup failed for ${word}:`, error);
+      throw error;
+    }
+  }
+
+  /**
+   * Visualizes the semantic cluster of a word.
+   */
+  static async getClusterData(word: string): Promise<WordEmbedding[]> {
+    console.info(`[SemantiaService] Fetching cluster data for: ${word}`);
+    try {
+      return await logosApi.get<WordEmbedding[]>(`/semantia/cluster/${word}`);
+    } catch (error) {
+      console.error('[SemantiaService] Cluster retrieval failed:', error);
+      throw error;
+    }
+  }
+}
+
+/**
+ * React Query Hooks
+ */
+export const useWordAnalysis = (word: string): UseQueryResult<SemantiaAnalysis, Error> => {
+  return useQuery({
+    queryKey: ['semantia', word],
+    queryFn: () => SemantiaService.semanticSearch(word),
+    enabled: word.length > 1,
+    staleTime: 1000 * 60 * 30, // 30 minutes
+  });
+};
+
+export const useRelatedTerms = (word: string): UseQueryResult<Array<{ word: string; similarity: number }>, Error> => {
+  return useQuery({
+    queryKey: ['related-terms', word],
+    queryFn: () => SemantiaService.getRelatedTerms(word),
+    enabled: !!word,
+  });
+};
+```
+
+### File 6: Chronos API Layer (Historical Timeline)
+# filepath: frontend/lib/api/chronos.ts
+
+```typescript
+import { logosApi } from './client';
+import { ChronosEvent, AuthorProfile } from './types';
+import { useQuery, UseQueryResult } from '@tanstack/react-query';
+
+/**
+ * LOGOS Chronos Service
+ * Manages historical timelines and temporal data for classical studies.
+ * Connects author profiles with historical events.
+ */
+export class ChronosService {
+  /**
+   * Retrieves events within a specific year range.
+   * Handles BC/AD logic (BC represented as negative numbers).
+   */
+  static async getTimelineEvents(startYear: number, endYear: number): Promise<ChronosEvent[]> {
+    console.info(`[ChronosService] Fetching events from ${startYear} to ${endYear}`);
+    
+    if (startYear > endYear) {
+      throw new Error("Start year must be before end year.");
+    }
+
+    try {
+      const response = await logosApi.get<ChronosEvent[]>('/chronos/events', {
+        params: { start: startYear, end: endYear }
+      });
+      
+      // Sort chronologically
+      return response.sort((a, b) => a.year - b.year);
+    } catch (error) {
+      console.error('[ChronosService] Timeline event fetch failed:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Fetches the detailed life profile for an author.
+   * Queries the 'author_profiles' table (380 rows).
+   */
+  static async getAuthorProfile(id: number): Promise<AuthorProfile> {
+    console.info(`[ChronosService] Fetching author profile ID: ${id}`);
+    try {
+      const result = await logosApi.get<AuthorProfile>(`/authors/profile/${id}`);
+      if (!result) throw new Error(`Author with ID ${id} not found.`);
+      return result;
+    } catch (error) {
+      console.error(`[ChronosService] Failed to fetch author ${id}:`, error);
+      throw error;
+    }
+  }
+
+  /**
+   * Searches for authors based on nationality or genre.
+   */
+  static async searchAuthors(params: { nationality?: string; genre?: string }): Promise<AuthorProfile[]> {
+    console.info('[ChronosService] Searching authors with params:', params);
+    try {
+      return await logosApi.get<AuthorProfile[]>('/authors/search', { params });
+    } catch (error) {
+      console.error('[ChronosService] Author search failed:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Gets a list of contemporary authors for a given year.
+   */
+  static async getContemporaries(year: number): Promise<AuthorProfile[]> {
+    console.info(`[ChronosService] Finding authors alive in year: ${year}`);
+    try {
+      return await logosApi.get<AuthorProfile[]>(`/authors/alive-during/${year}`);
+    } catch (error) {
+      console.error(`[ChronosService] Contemporaries lookup failed for ${year}:`, error);
+      throw error;
+    }
+  }
+}
+
+/**
+ * React Query Hooks
+ */
+export const useTimeline = (start: number, end: number): UseQueryResult<ChronosEvent[], Error> => {
+  return useQuery({
+    queryKey: ['timeline', start, end],
+    queryFn: () => ChronosService.getTimelineEvents(start, end),
+    staleTime: 1000 * 60 * 60, // 1 hour
+  });
+};
+
+export const useAuthor = (id: number): UseQueryResult<AuthorProfile, Error> => {
+  return useQuery({
+    queryKey: ['author', id],
+    queryFn: () => ChronosService.getAuthorProfile(id),
+  });
+};
+```
+
+### File 7: Connectome API Layer (Graph Analysis)
+# filepath: frontend/lib/api/connectome.ts
+
+```typescript
+import { logosApi } from './client';
+import { ConnectomeGraph, ConnectomeNode } from './types';
+import { useQuery, UseQueryResult } from '@tanstack/react-query';
+
+/**
+ * LOGOS Connectome Service
+ * Handles inter-textual relationships, citations, and scholarly networks.
+ * Provides data for graph visualizations.
+ */
+export class ConnectomeService {
+  /**
+   * Retrieves the network graph for a specific work.
+   * Shows how this work cites others or is cited by others.
+   */
+  static async getWorkConnections(workId: number, depth: number = 1): Promise<ConnectomeGraph> {
+    console.info(`[ConnectomeService] Fetching connections for work ${workId} at depth ${depth}`);
+    
+    if (depth < 1 || depth > 3) {
+      console.warn("[ConnectomeService] Depth restricted to 1-3 for performance.");
+      depth = Math.min(Math.max(depth, 1), 3);
+    }
+
+    try {
+      const response = await logosApi.get<ConnectomeGraph>(`/connectome/work/${workId}`, {
+        params: { depth }
+      });
+      
+      if (!response.nodes || !response.links) {
+        throw new Error("Invalid graph data received from server.");
+      }
+      
+      return response;
+    } catch (error) {
+      console.error(`[ConnectomeService] Graph retrieval failed for work ${workId}:`, error);
+      throw error;
+    }
+  }
+
+  /**
+   * Gets influential nodes (authors/works) in the classical network.
+   */
+  static async getInfluenceNodes(type: 'author' | 'work'): Promise<ConnectomeNode[]> {
+    console.info(`[ConnectomeService] Fetching top influence nodes for type: ${type}`);
+    try {
+      return await logosApi.get<ConnectomeNode[]>(`/connectome/influence`, {
+        params: { type }
+      });
+    } catch (error) {
+      console.error('[ConnectomeService] Influence node fetch failed:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Finds the shortest scholarly path between two authors.
+   */
+  static async getPathBetweenAuthors(startAuthorId: number, endAuthorId: number): Promise<ConnectomeGraph> {
+    console.info(`[ConnectomeService] Finding path: ${startAuthorId} -> ${endAuthorId}`);
+    try {
+      return await logosApi.get<ConnectomeGraph>(`/connectome/path`, {
+        params: { from: startAuthorId, to: endAuthorId }
+      });
+    } catch (error) {
+      console.error('[ConnectomeService] Pathfinding failed:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Retrieves thematic clusters in the classical corpus.
+   */
+  static async getThematicClusters(): Promise<ConnectomeGraph> {
+    console.info('[ConnectomeService] Fetching global thematic clusters');
+    try {
+      return await logosApi.get<ConnectomeGraph>('/connectome/clusters');
+    } catch (error) {
+      console.error('[ConnectomeService] Cluster fetch failed:', error);
+      throw error;
+    }
+  }
+}
+
+/**
+ * React Query Hooks
+ */
+export const useWorkGraph = (workId: number, depth: number = 1): UseQueryResult<ConnectomeGraph, Error> => {
+  return useQuery({
+    queryKey: ['graph', workId, depth],
+    queryFn: () => ConnectomeService.getWorkConnections(workId, depth),
+    enabled: !!workId,
+  });
+};
+
+export const useThematicNetwork = (): UseQueryResult<ConnectomeGraph, Error> => {
+  return useQuery({
+    queryKey: ['thematic-network'],
+    queryFn: () => ConnectomeService.getThematicClusters(),
+    staleTime: 1000 * 60 * 60 * 24, // 24 hours
+  });
+};
+```
+
+### File 8: WebSocket Client
+# filepath: frontend/lib/api/websocket.ts
+
+```typescript
+/**
+ * LOGOS WebSocket Service
+ * Handles real-time updates for collaborative scholarship, 
+ * live annotations, and system status.
+ */
+export class LogosWebSocketClient {
+  private socket: WebSocket | null = null;
+  private readonly url: string = process.env.NEXT_PUBLIC_WS_URL || 'wss://api.logos-classical.com/ws';
+  private reconnectAttempts: number = 0;
+  private readonly maxReconnectAttempts: number = 5;
+  private listeners: Map<string, Function[]> = new Map();
+
+  constructor() {
+    this.connect();
+  }
+
+  /**
+   * Establishes the WebSocket connection with heartbeat and auto-reconnect.
+   */
+  private connect(): void {
+    console.info(`[LOGOS WS] Connecting to ${this.url}...`);
+    
+    try {
+      this.socket = new WebSocket(this.url);
+
+      this.socket.onopen = () => {
+        console.info('[LOGOS WS] Connection established successfully.');
+        this.reconnectAttempts = 0;
+        this.startHeartbeat();
+      };
+
+      this.socket.onmessage = (event) => {
+        try {
+          const data = JSON.parse(event.data);
+          this.handleMessage(data);
+        } catch (err) {
+          console.error('[LOGOS WS] Failed to parse message:', err);
+        }
+      };
+
+      this.socket.onclose = (event) => {
+        console.warn(`[LOGOS WS] Connection closed: ${event.reason}`);
+        this.attemptReconnect();
+      };
+
+      this.socket.onerror = (error) => {
+        console.error('[LOGOS WS] WebSocket error occurred:', error);
+      };
+    } catch (error) {
+      console.error('[LOGOS WS] Initial connection failed:', error);
+      this.attemptReconnect();
+    }
+  }
+
+  /**
+   * Implements exponential backoff for reconnections.
+   */
+  private attemptReconnect(): void {
+    if (this.reconnectAttempts < this.maxReconnectAttempts) {
+      this.reconnectAttempts++;
+      const delay = Math.pow(2, this.reconnectAttempts) * 1000;
+      console.info(`[LOGOS WS] Reconnecting in ${delay}ms (Attempt ${this.reconnectAttempts})...`);
+      setTimeout(() => this.connect(), delay);
+    } else {
+      console.error('[LOGOS WS] Max reconnect attempts reached. Please refresh the page.');
+    }
+  }
+
+  /**
+   * Keeps the connection alive with a ping/pong heartbeat.
+   */
+  private startHeartbeat(): void {
+    const heartbeatInterval = setInterval(() => {
+      if (this.socket?.readyState === WebSocket.OPEN) {
+        this.socket.send(JSON.stringify({ type: 'PING', timestamp: Date.now() }));
+      } else {
+        clearInterval(heartbeatInterval);
+      }
+    }, 30000);
+  }
+
+  /**
+   * Dispatches incoming messages to registered listeners.
+   */
+  private handleMessage(message: any): void {
+    const { type, payload } = message;
+    console.log(`[LOGOS WS] Received message type: ${type}`);
+    
+    const callbacks = this.listeners.get(type);
+    if (callbacks) {
+      callbacks.forEach(callback => callback(payload));
+    }
+  }
+
+  /**
+   * Subscribes to a specific real-time event type.
+   */
+  public subscribe(type: string, callback: (payload: any) => void): void {
+    if (!this.listeners.has(type)) {
+      this.listeners.set(type, []);
+    }
+    this.listeners.get(type)?.push(callback);
+    
+    // Notify server of subscription if connection is active
+    if (this.socket?.readyState === WebSocket.OPEN) {
+      this.socket.send(JSON.stringify({ action: 'SUBSCRIBE', topic: type }));
+    }
+  }
+
+  /**
+   * Unsubscribes from an event type.
+   */
+  public unsubscribe(type: string, callback: (payload: any) => void): void {
+    const callbacks = this.listeners.get(type);
+    if (callbacks) {
+      this.listeners.set(type, callbacks.filter(cb => cb !== callback));
+    }
+  }
+
+  /**
+   * Sends a message to the server.
+   */
+  public send(type: string, payload: any): void {
+    if (this.socket?.readyState === WebSocket.OPEN) {
+      this.socket.send(JSON.stringify({ type, payload, timestamp: Date.now() }));
+    } else {
+      console.error('[LOGOS WS] Cannot send message: Connection not open.');
+    }
+  }
+
+  /**
+   * Gracefully closes the connection.
+   */
+  public close(): void {
+    if (this.socket) {
+      this.socket.close(1000, 'Client closing connection');
+      this.socket = null;
+    }
+  }
+}
+
+// Export as a singleton for the application
+export const logosWs = new LogosWebSocketClient();
+```
+
+### Architectural Summary
+This API client layer provides a robust, type-safe interface for the LOGOS frontend to interact with the high-performance PostgreSQL backend. 
+
+1.  **Safety**: Strict translator validation prevents copyright violations (Chapman, Lattimore, etc. are blocked at the service level).
+2.  **Resilience**: Custom exponential backoff retry logic in `client.ts` ensures high availability during network fluctuations.
+3.  **Performance**: Integration with React Query provides sophisticated caching, reducing unnecessary load on the 6.6M row `source_texts` table.
+4.  **Observability**: Detailed logging across all layers enables rapid debugging in production.
+5.  **Scalability**: The modular service structure allows for independent scaling of Corpus, Translation, and Semantic analysis features.

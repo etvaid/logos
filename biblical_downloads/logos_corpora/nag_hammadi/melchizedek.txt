@@ -1,0 +1,59 @@
+
+
+
+
+
+
+<meta name="description"
+content="Melchizedek, from The Nag Hammadi Library. This site includes the entire Nag Hammadi Library, as well as a large collection of other primary Gnostic scriptures and documents.">
+Melchizedek -- The Nag Hammadi Library
+
+
+<body background="../images/bkg1.jpg" text="#000000" link="#0000EE" vlink="#0000EE"
+alink="#FF0000">
+
+
+  
+    
+    <img src="../images/butnhl.gif" width="140" height="25"
+    alt="Nag Hammadi Library main page">
+    <img src="../images/butintro.gif" width="140" height="25"
+    alt="Introduction to Gnosticism and the Nag Hammadi Library">
+    <img src="../images/butalpha.gif" width="140" height="25"
+    alt="Alphabetic Index of the Nag Hammadi Library">
+    <img src="../images/butcodex.gif" width="140" height="25"
+    alt="Codex Index of the Nag Hammadi Library">
+    <img src="../images/butgth.gif" width="140" height="25"
+    alt="Gospel of Thomas Collection">
+    <img src="../images/butnhlsr.gif" width="140" height="25"
+    alt="Search the Nag Hammadi Library">
+    <img src="../images/libbut.gif" width="140" height="25"
+    alt="Return to The Gnostic Society Library page">
+    <img src="../images/butgnarch.gif" width="140" height="25"
+    alt="Return to The Gnosis Archive main page">
+     
+    (Above image of the Gospel of Thomas courtesy of the
+    Institute for Antiquity and Christianity, Claremont Graduate University) 
+     
+    Visit the Bookstore for
+    a complete selection of translations and books about the Gnostic Gospels.
+    
+    <img
+    src="../images/Bookstore/gnosticgospels.gif"
+    alt="The Gnostic Gospels, by Elaine Pagels (Click to buy the book)" align="left"
+    hspace="10" width="90" height="140" border="2">
+    
+    
+     
+    <img
+    src="../images/Bookstore/naghammadi.gif" width="93" height="140"
+    alt="The Nag Hammadi Library, edited by James Robinson (Click to buy the book)"
+    align="left" hspace="10" vspace="10" border="2">
+
+
+
+     
+      
+    The Nag Hammadi Library 
+    Melchizedek
+    

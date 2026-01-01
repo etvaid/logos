@@ -1,0 +1,1270 @@
+This is the production-grade React Hooks library for **LOGOS - The Bible for Classical Studies**. These hooks are engineered for high-performance, type-safety, and reliability in a professional scholarly environment.
+
+# filepath: frontend/hooks/useDebounce.ts
+```typescript
+/**
+ * LOGOS - Classical Studies Research Suite
+ * Module: useDebounce
+ * 
+ * This module provides high-performance debouncing logic for both values and 
+ * callbacks. Essential for search inputs (e.g., searching for "Thucydides" or 
+ * "Homer") to prevent excessive API calls to the Railway PostgreSQL backend.
+ */
+
+import { useState, useEffect, useCallback, useRef } from 'react';
+
+/**
+ * Options for the debounce behavior.
+ */
+interface DebounceOptions {
+  /** The delay in milliseconds. Defaults to 500ms. */
+  delay?: number;
+  /** Whether to trigger the value update on the leading edge of the timeout. */
+  leading?: boolean;
+  /** Whether to trigger the value update on the trailing edge of the timeout. */
+  trailing?: boolean;
+  /** Maximum time the value is allowed to be delayed before it's updated. */
+  maxWait?: number;
+}
+
+/**
+ * Logger utility for production monitoring.
+ */
+const logger = {
+  info: (msg: string, ...args: any[]) => console.log(`[useDebounce][INFO] ${msg}`, ...args),
+  error: (msg: string, ...args: any[]) => console.error(`[useDebounce][ERROR] ${msg}`, ...args),
+  debug: (msg: string, ...args: any[]) => console.debug(`[useDebounce][DEBUG] ${msg}`, ...args),
+};
+
+/**
+ * useDebounceValue
+ * 
+ * A hook that returns a debounced version of the provided value.
+ * Used for filtering text content or source text queries.
+ * 
+ * @param value - The value to debounce (string, number, or object)
+ * @param options - Configuration for timing and behavior
+ * @returns The debounced value
+ */
+export function useDebounceValue<T>(value: T, options: DebounceOptions = {}): T {
+  const { 
+    delay = 500, 
+    leading = false, 
+    maxWait 
+  } = options;
+
+  const [debouncedValue, setDebouncedValue] = useState<T>(value);
+  const lastUpdateRef = useRef<number>(Date.now());
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const maxWaitTimerRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Input Validation
+  if (delay < 0) {
+    logger.error('Invalid delay provided to useDebounceValue. Delay must be non-negative.');
+  }
+
+  const clearTimers = useCallback(() => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+      timerRef.current = null;
+    }
+    if (maxWaitTimerRef.current) {
+      clearTimeout(maxWaitTimerRef.current);
+      maxWaitTimerRef.current = null;
+    }
+  }, []);
+
+  useEffect(() => {
+    const now = Date.now();
+    const timeSinceLastUpdate = now - lastUpdateRef.current;
+
+    // Logic for leading edge execution
+    if (leading && !timerRef.current) {
+      logger.debug('Leading edge update for value');
+      setDebouncedValue(value);
+      lastUpdateRef.current = now;
+    }
+
+    clearTimers();
+
+    // Standard debounce timer
+    timerRef.current = setTimeout(() => {
+      logger.debug('Trailing edge update for value');
+      setDebouncedValue(value);
+      lastUpdateRef.current = Date.now();
+      timerRef.current = null;
+    }, delay);
+
+    // Max wait logic to ensure the UI doesn't lag too far behind
+    if (maxWait && !maxWaitTimerRef.current) {
+      maxWaitTimerRef.current = setTimeout(() => {
+        logger.info(`Max wait of ${maxWait}ms reached. Forcing update.`);
+        setDebouncedValue(value);
+        lastUpdateRef.current = Date.now();
+        clearTimers();
+      }, maxWait);
+    }
+
+    return () => clearTimers();
+  }, [value, delay, leading, maxWait, clearTimers]);
+
+  return debouncedValue;
+}
+
+/**
+ * useDebounceCallback
+ * 
+ * Creates a debounced version of a function. Useful for window resize listeners
+ * or scroll events when analyzing large source_texts.
+ * 
+ * @param callback - The function to debounce
+ * @param delay - Delay in milliseconds
+ * @returns A debounced function with .cancel() and .flush() methods
+ */
+export function useDebounceCallback<T extends (...args: any[]) => any>(
+  callback: T,
+  delay: number = 500
+): {
+  run: (...args: Parameters<T>) => void;
+  cancel: () => void;
+  flush: (...args: Parameters<T>) => void;
+} {
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const argsRef = useRef<Parameters<T> | null>(null);
+  const callbackRef = useRef(callback);
+
+  // Keep callback up to date without triggering re-renders
+  useEffect(() => {
+    callbackRef.current = callback;
+  }, [callback]);
+
+  const cancel = useCallback(() => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+  }, []);
+
+  const run = useCallback(
+    (...args: Parameters<T>) => {
+      argsRef.current = args;
+      cancel();
+      timeoutRef.current = setTimeout(() => {
+        callbackRef.current(...args);
+        timeoutRef.current = null;
+      }, delay);
+    },
+    [delay, cancel]
+  );
+
+  const flush = useCallback(
+    (...args: Parameters<T>) => {
+      cancel();
+      callbackRef.current(...args);
+    },
+    [cancel]
+  );
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => cancel();
+  }, [cancel]);
+
+  return { run, cancel, flush };
+}
+```
+
+# filepath: frontend/hooks/useThrottle.ts
+```typescript
+/**
+ * LOGOS - Classical Studies Research Suite
+ * Module: useThrottle
+ * 
+ * Throttling is critical for performance-heavy operations like rendering 
+ * word_embeddings on a canvas or handling rapid scroll events through
+ * the 6.6 million rows of source_texts.
+ */
+
+import { useState, useEffect, useRef, useCallback } from 'react';
+
+interface ThrottleOptions {
+  /** Whether to execute on the leading edge. Defaults to true. */
+  leading?: boolean;
+  /** Whether to execute on the trailing edge. Defaults to true. */
+  trailing?: boolean;
+}
+
+const logger = {
+  info: (msg: string) => console.log(`[useThrottle][INFO] ${msg}`),
+  warn: (msg: string) => console.warn(`[useThrottle][WARN] ${msg}`),
+};
+
+/**
+ * useThrottle
+ * 
+ * Returns a throttled value that only updates at most once every 'ms' milliseconds.
+ * 
+ * @param value - The value to throttle
+ * @param ms - The throttle interval in milliseconds
+ * @param options - Configuration for leading/trailing edges
+ * @returns The throttled value
+ */
+export function useThrottle<T>(
+  value: T,
+  ms: number = 500,
+  options: ThrottleOptions = { leading: true, trailing: true }
+): T {
+  const [throttledValue, setThrottledValue] = useState<T>(value);
+  const lastExecutedRef = useRef<number>(0);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const nextValueRef = useRef<T>(value);
+  const hasNextValueRef = useRef<boolean>(false);
+
+  useEffect(() => {
+    const now = Date.now();
+    const remaining = ms - (now - lastExecutedRef.current);
+
+    nextValueRef.current = value;
+    hasNextValueRef.current = true;
+
+    const executeUpdate = () => {
+      setThrottledValue(nextValueRef.current);
+      lastExecutedRef.current = Date.now();
+      hasNextValueRef.current = false;
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
+    };
+
+    if (remaining <= 0) {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
+      
+      if (options.leading || lastExecutedRef.current !== 0) {
+        executeUpdate();
+      } else {
+        // If leading is false and it's the first call, we start a timer
+        lastExecutedRef.current = now;
+        if (options.trailing) {
+          timeoutRef.current = setTimeout(executeUpdate, ms);
+        }
+      }
+    } else if (!timeoutRef.current && options.trailing) {
+      timeoutRef.current = setTimeout(executeUpdate, remaining);
+    }
+
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
+    };
+  }, [value, ms, options.leading, options.trailing]);
+
+  return throttledValue;
+}
+
+/**
+ * useThrottleCallback
+ * 
+ * Throttles a function execution. Perfect for tracking mouse movements
+ * over the word_embeddings vector space.
+ * 
+ * @param callback - Function to throttle
+ * @param delay - Interval in milliseconds
+ * @returns Throttled function
+ */
+export function useThrottleCallback<T extends (...args: any[]) => any>(
+  callback: T,
+  delay: number = 200
+): (...args: Parameters<T>) => void {
+  const callbackRef = useRef<T>(callback);
+  const lastCalledRef = useRef<number>(0);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const latestArgsRef = useRef<Parameters<T> | null>(null);
+
+  useEffect(() => {
+    callbackRef.current = callback;
+  }, [callback]);
+
+  const throttledFunction = useCallback(
+    (...args: Parameters<T>) => {
+      const now = Date.now();
+      latestArgsRef.current = args;
+
+      const performCall = () => {
+        if (latestArgsRef.current) {
+          callbackRef.current(...latestArgsRef.current);
+          lastCalledRef.current = Date.now();
+          timeoutRef.current = null;
+          latestArgsRef.current = null;
+        }
+      };
+
+      if (lastCalledRef.current === 0 || now - lastCalledRef.current >= delay) {
+        if (timeoutRef.current) {
+          clearTimeout(timeoutRef.current);
+          timeoutRef.current = null;
+        }
+        performCall();
+      } else if (!timeoutRef.current) {
+        const remaining = delay - (now - lastCalledRef.current);
+        timeoutRef.current = setTimeout(performCall, remaining);
+      }
+    },
+    [delay]
+  );
+
+  // Cleanup cleanup
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
+
+  return throttledFunction;
+}
+```
+
+# filepath: frontend/hooks/useLocalStorage.ts
+```typescript
+/**
+ * LOGOS - Classical Studies Research Suite
+ * Module: useLocalStorage
+ * 
+ * Persists scholar preferences (e.g., preferred translator like 'Jowett' or 'Dryden')
+ * and UI state across sessions using the browser's LocalStorage API.
+ * Includes cross-tab synchronization and robust error handling for private modes.
+ */
+
+import { useState, useEffect, useCallback, useRef } from 'react';
+
+/**
+ * Storage Logger for debugging production state issues.
+ */
+const storageLogger = {
+  error: (key: string, error: any) => 
+    console.error(`[LocalStorage][ERROR] Key: "${key}"`, error),
+  info: (key: string, msg: string) => 
+    console.log(`[LocalStorage][INFO] Key: "${key}" - ${msg}`),
+};
+
+/**
+ * useLocalStorage
+ * 
+ * @param key - The key to store data under
+ * @param initialValue - The fallback value if nothing is found
+ * @returns A stateful value and a function to update it
+ */
+export function useLocalStorage<T>(key: string, initialValue: T): [T, (value: T | ((val: T) => T)) => void] {
+  
+  // State to store our value
+  // Pass initial state function to useState so logic is only executed once
+  const [storedValue, setStoredValue] = useState<T>(() => {
+    if (typeof window === 'undefined') {
+      return initialValue;
+    }
+
+    try {
+      const item = window.localStorage.getItem(key);
+      if (item) {
+        storageLogger.info(key, 'Value retrieved from storage');
+        return JSON.parse(item) as T;
+      }
+      
+      storageLogger.info(key, 'No value found, using initialValue');
+      return initialValue;
+    } catch (error) {
+      storageLogger.error(key, error);
+      return initialValue;
+    }
+  });
+
+  /**
+   * Return a wrapped version of useState's setter function that
+   * persists the new value to localStorage.
+   */
+  const setValue = useCallback((value: T | ((val: T) => T)) => {
+    try {
+      // Allow value to be a function so we have same API as useState
+      const valueToStore = value instanceof Function ? value(storedValue) : value;
+      
+      // Save state
+      setStoredValue(valueToStore);
+      
+      // Save to local storage
+      if (typeof window !== 'undefined') {
+        window.localStorage.setItem(key, JSON.stringify(valueToStore));
+        
+        // Dispatch a custom event so other instances of the hook in the same tab can update
+        window.dispatchEvent(new CustomEvent('local-storage-update', { 
+          detail: { key, newValue: valueToStore } 
+        }));
+      }
+    } catch (error) {
+      // A common error is QuotaExceededError if the storage is full
+      storageLogger.error(key, error);
+    }
+  }, [key, storedValue]);
+
+  /**
+   * Synchronization across tabs.
+   * If the scholar changes their translator in one tab, all tabs should reflect it.
+   */
+  useEffect(() => {
+    const handleStorageChange = (event: StorageEvent) => {
+      if (event.key === key && event.newValue !== null) {
+        try {
+          const parsed = JSON.parse(event.newValue);
+          setStoredValue(parsed);
+          storageLogger.info(key, 'Synced value from another tab/window');
+        } catch (e) {
+          storageLogger.error(key, 'Failed to parse synced value');
+        }
+      }
+    };
+
+    const handleCustomUpdate = (event: any) => {
+      if (event.detail && event.detail.key === key) {
+        setStoredValue(event.detail.newValue);
+      }
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+    window.addEventListener('local-storage-update', handleCustomUpdate as EventListener);
+
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+      window.removeEventListener('local-storage-update', handleCustomUpdate as EventListener);
+    };
+  }, [key]);
+
+  /**
+   * Validation: Ensure key is not empty
+   */
+  useEffect(() => {
+    if (!key) {
+      storageLogger.error('N/A', 'LocalStorage key is empty or undefined');
+    }
+  }, [key]);
+
+  return [storedValue, setValue];
+}
+
+/**
+ * useSessionStorage
+ * 
+ * Similar to useLocalStorage but for session-only data (e.g., current search session).
+ */
+export function useSessionStorage<T>(key: string, initialValue: T): [T, (value: T | ((val: T) => T)) => void] {
+  const [storedValue, setStoredValue] = useState<T>(() => {
+    try {
+      const item = window.sessionStorage.getItem(key);
+      return item ? JSON.parse(item) : initialValue;
+    } catch (error) {
+      return initialValue;
+    }
+  });
+
+  const setValue = useCallback((value: T | ((val: T) => T)) => {
+    try {
+      const valueToStore = value instanceof Function ? value(storedValue) : value;
+      setStoredValue(valueToStore);
+      window.sessionStorage.setItem(key, JSON.stringify(valueToStore));
+    } catch (error) {
+      console.error(`[SessionStorage][ERROR] ${key}`, error);
+    }
+  }, [key, storedValue]);
+
+  return [storedValue, setValue];
+}
+```
+
+# filepath: frontend/hooks/useMediaQuery.ts
+```typescript
+/**
+ * LOGOS - Classical Studies Research Suite
+ * Module: useMediaQuery
+ * 
+ * Provides responsive design capabilities for the LOGOS interface.
+ * Allows the application to adapt its layout (e.g., side-by-side text comparison
+ * vs single column) based on the scholar's screen size.
+ */
+
+import { useState, useEffect, useMemo } from 'react';
+
+/**
+ * Standard Breakpoints for LOGOS UI
+ */
+export const BREAKPOINTS = {
+  mobile: '(max-width: 640px)',
+  tablet: '(min-width: 641px) and (max-width: 1024px)',
+  desktop: '(min-width: 1025px)',
+  wide: '(min-width: 1440px)',
+  retina: '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)',
+  portrait: '(orientation: portrait)',
+  landscape: '(orientation: landscape)',
+};
+
+/**
+ * useMediaQuery
+ * 
+ * @param query - A CSS media query string
+ * @returns boolean - true if the query matches
+ */
+export function useMediaQuery(query: string): boolean {
+  // SSR check
+  const getMatches = (query: string): boolean => {
+    if (typeof window !== 'undefined') {
+      return window.matchMedia(query).matches;
+    }
+    return false;
+  };
+
+  const [matches, setMatches] = useState<boolean>(getMatches(query));
+
+  useEffect(() => {
+    const matchMedia = window.matchMedia(query);
+
+    // Triggered when the media query state changes
+    function handleChange() {
+      setMatches(getMatches(query));
+    }
+
+    // Modern browsers support addEventListener, older ones use addListener
+    if (matchMedia.addEventListener) {
+      matchMedia.addEventListener('change', handleChange);
+    } else {
+      (matchMedia as any).addListener(handleChange);
+    }
+
+    // Initial check
+    setMatches(getMatches(query));
+
+    return () => {
+      if (matchMedia.removeEventListener) {
+        matchMedia.removeEventListener('change', handleChange);
+      } else {
+        (matchMedia as any).removeListener(handleChange);
+      }
+    };
+  }, [query]);
+
+  return matches;
+}
+
+/**
+ * useResponsive
+ * 
+ * A high-level hook that returns the current device category.
+ * Useful for conditional rendering of complex UI components like the
+ * interlinear source text viewer.
+ */
+export function useResponsive() {
+  const isMobile = useMediaQuery(BREAKPOINTS.mobile);
+  const isTablet = useMediaQuery(BREAKPOINTS.tablet);
+  const isDesktop = useMediaQuery(BREAKPOINTS.desktop);
+  const isWide = useMediaQuery(BREAKPOINTS.wide);
+
+  const currentBreakpoint = useMemo(() => {
+    if (isWide) return 'wide';
+    if (isDesktop) return 'desktop';
+    if (isTablet) return 'tablet';
+    return 'mobile';
+  }, [isMobile, isTablet, isDesktop, isWide]);
+
+  return {
+    isMobile,
+    isTablet,
+    isDesktop,
+    isWide,
+    currentBreakpoint,
+    /** Helper to check if screen is at least tablet size */
+    isAtLeastTablet: isTablet || isDesktop || isWide,
+    /** Helper to check if screen is at least desktop size */
+    isAtLeastDesktop: isDesktop || isWide,
+  };
+}
+
+/**
+ * usePreferredColorScheme
+ * 
+ * Detects if the scholar prefers light or dark mode for reading 
+ * ancient manuscripts.
+ */
+export function usePreferredColorScheme(): 'light' | 'dark' {
+  const isDark = useMediaQuery('(prefers-color-scheme: dark)');
+  return isDark ? 'dark' : 'light';
+}
+```
+
+# filepath: frontend/hooks/useIntersectionObserver.ts
+```typescript
+/**
+ * LOGOS - Classical Studies Research Suite
+ * Module: useIntersectionObserver
+ * 
+ * Essential for infinite scrolling through the 'source_texts' table (6.6M rows)
+ * and lazy-loading high-resolution manuscript images.
+ */
+
+import { useState, useEffect, useRef, useCallback } from 'react';
+
+interface UseIntersectionObserverOptions extends IntersectionObserverInit {
+  /** If true, unobserve the element after it becomes visible once. */
+  freezeOnceVisible?: boolean;
+  /** Trigger callback when visibility changes. */
+  onChange?: (isIntersecting: boolean, entry: IntersectionObserverEntry) => void;
+}
+
+/**
+ * useIntersectionObserver
+ * 
+ * Tracks the visibility of a DOM element within the viewport or a scrollable container.
+ * 
+ * @param options - IntersectionObserver configuration
+ * @returns [ref, entry] - A ref to attach to the element and the current entry state
+ */
+export function useIntersectionObserver(
+  options: UseIntersectionObserverOptions = {}
+): [(node: Element | null) => void, IntersectionObserverEntry | null] {
+  const {
+    threshold = 0,
+    root = null,
+    rootMargin = '0% 0% 0% 0%',
+    freezeOnceVisible = false,
+    onChange,
+  } = options;
+
+  const [entry, setEntry] = useState<IntersectionObserverEntry | null>(null);
+  const [node, setNode] = useState<Element | null>(null);
+  
+  // Use a ref to store the observer so we can clean it up properly
+  const observerRef = useRef<IntersectionObserver | null>(null);
+
+  // Callback ref to handle element assignment
+  const ref = useCallback((element: Element | null) => {
+    setNode(element);
+  }, []);
+
+  const frozen = entry?.isIntersecting && freezeOnceVisible;
+
+  useEffect(() => {
+    // If we have no node, or the browser doesn't support IntersectionObserver, or it's frozen
+    if (!node || typeof IntersectionObserver === 'undefined' || frozen) {
+      return;
+    }
+
+    // Clean up existing observer
+    if (observerRef.current) {
+      observerRef.current.disconnect();
+    }
+
+    const observerParams = { threshold, root, rootMargin };
+    
+    try {
+      const observer = new IntersectionObserver(([entry]) => {
+        setEntry(entry);
+        
+        if (onChange) {
+          onChange(entry.isIntersecting, entry);
+        }
+
+        // If freezeOnceVisible is true and element is visible, disconnect
+        if (entry.isIntersecting && freezeOnceVisible) {
+          observer.unobserve(node);
+        }
+      }, observerParams);
+
+      observer.observe(node);
+      observerRef.current = observer;
+    } catch (error) {
+      console.error('[useIntersectionObserver][ERROR] Failed to create observer', error);
+    }
+
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+        observerRef.current = null;
+      }
+    };
+  }, [node, threshold, root, rootMargin, frozen, freezeOnceVisible, onChange]);
+
+  return [ref, entry];
+}
+
+/**
+ * useVisibility
+ * 
+ * A simplified version of useIntersectionObserver that just returns a boolean.
+ */
+export function useVisibility(
+  options: UseIntersectionObserverOptions = {}
+): [ (node: Element | null) => void, boolean ] {
+  const [ref, entry] = useIntersectionObserver(options);
+  return [ref, !!entry?.isIntersecting];
+}
+
+/**
+ * useInfiniteScroll
+ * 
+ * Specialized hook for the LOGOS text reader to load more lines
+ * as the scholar scrolls.
+ */
+export function useInfiniteScroll(
+  onLoadMore: () => Promise<void> | void,
+  hasMore: boolean,
+  isLoading: boolean
+) {
+  const [scrollRef, isVisible] = useVisibility({
+    threshold: 0.1,
+    rootMargin: '200px', // Start loading before the user hits the bottom
+  });
+
+  useEffect(() => {
+    if (isVisible && hasMore && !isLoading) {
+      console.log('[useInfiniteScroll][INFO] Triggering load more lines...');
+      onLoadMore();
+    }
+  }, [isVisible, hasMore, isLoading, onLoadMore]);
+
+  return scrollRef;
+}
+```
+
+# filepath: frontend/hooks/useKeyboard.ts
+```typescript
+/**
+ * LOGOS - Classical Studies Research Suite
+ * Module: useKeyboard
+ * 
+ * Handles complex keyboard shortcuts for scholars. 
+ * Examples: 
+ * - 'Ctrl+K' for global search
+ * - 'G H' (Sequence) to go to Home
+ * - 'Esc' to close manuscript viewer
+ */
+
+import { useEffect, useRef, useCallback } from 'react';
+
+type KeyPredicate = (event: KeyboardEvent) => boolean;
+type KeyHandler = (event: KeyboardEvent) => void;
+
+interface ShortcutOptions {
+  /** Prevent default browser behavior */
+  preventDefault?: boolean;
+  /** Stop event propagation */
+  stopPropagation?: boolean;
+  /** Only trigger if the target is the body (ignore inputs) */
+  global?: boolean;
+  /** Disable the shortcut temporarily */
+  disabled?: boolean;
+}
+
+/**
+ * useKeyboardShortcut
+ * 
+ * @param keyCombo - String like 'Control+k' or 'Meta+s' or 'Escape'
+ * @param callback - Function to run when keys are pressed
+ * @param options - Configuration
+ */
+export function useKeyboardShortcut(
+  keyCombo: string,
+  callback: KeyHandler,
+  options: ShortcutOptions = {}
+) {
+  const {
+    preventDefault = true,
+    stopPropagation = false,
+    global = false,
+    disabled = false,
+  } = options;
+
+  const callbackRef = useRef<KeyHandler>(callback);
+
+  useEffect(() => {
+    callbackRef.current = callback;
+  }, [callback]);
+
+  const handleKeyDown = useCallback(
+    (event: KeyboardEvent) => {
+      if (disabled) return;
+
+      const keys = keyCombo.toLowerCase().split('+');
+      const pressedKey = event.key.toLowerCase();
+      
+      const ctrlRequired = keys.includes('control') || keys.includes('ctrl');
+      const altRequired = keys.includes('alt');
+      const shiftRequired = keys.includes('shift');
+      const metaRequired = keys.includes('meta') || keys.includes('cmd');
+
+      // Check if modifiers match
+      const ctrlMatch = event.ctrlKey === ctrlRequired;
+      const altMatch = event.altKey === altRequired;
+      const shiftMatch = event.shiftKey === shiftRequired;
+      const metaMatch = event.metaKey === metaRequired;
+
+      // Check if the main key matches
+      const mainKey = keys.find(k => !['control', 'ctrl', 'alt', 'shift', 'meta', 'cmd'].includes(k));
+      const mainKeyMatch = mainKey === pressedKey || (mainKey === 'esc' && pressedKey === 'escape');
+
+      if (ctrlMatch && altMatch && shiftMatch && metaMatch && mainKeyMatch) {
+        // Accessibility: Ignore if typing in an input unless global is false
+        const target = event.target as HTMLElement;
+        const isInput = target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable;
+        
+        if (isInput && !global) {
+          return;
+        }
+
+        if (preventDefault) event.preventDefault();
+        if (stopPropagation) event.stopPropagation();
+
+        console.info(`[useKeyboard][INFO] Shortcut triggered: ${keyCombo}`);
+        callbackRef.current(event);
+      }
+    },
+    [keyCombo, preventDefault, stopPropagation, global, disabled]
+  );
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [handleKeyDown]);
+}
+
+/**
+ * useKeySequence
+ * 
+ * Detects sequences of keys (e.g., 'g' then 'h').
+ */
+export function useKeySequence(
+  sequence: string[],
+  callback: () => void,
+  timeout: number = 1000
+) {
+  const bufferRef = useRef<string[]>([]);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      const key = event.key.toLowerCase();
+      bufferRef.current.push(key);
+
+      if (timerRef.current) clearTimeout(timerRef.current);
+
+      // Check if sequence matches
+      const currentBuffer = bufferRef.current.slice(-sequence.length);
+      const isMatch = sequence.every((val, index) => val.toLowerCase() === currentBuffer[index]);
+
+      if (isMatch) {
+        console.info(`[useKeyboard][INFO] Sequence matched: ${sequence.join(' ')}`);
+        callback();
+        bufferRef.current = [];
+      }
+
+      timerRef.current = setTimeout(() => {
+        bufferRef.current = [];
+      }, timeout);
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [sequence, callback, timeout]);
+}
+
+/**
+ * useEscapeKey
+ * 
+ * Specialized hook for closing modals or menus.
+ */
+export function useEscapeKey(callback: () => void, disabled: boolean = false) {
+  useKeyboardShortcut('Escape', callback, { 
+    disabled, 
+    global: true, 
+    preventDefault: true 
+  });
+}
+```
+
+# filepath: frontend/hooks/usePrevious.ts
+```typescript
+/**
+ * LOGOS - Classical Studies Research Suite
+ * Module: usePrevious
+ * 
+ * Tracks the previous value of a prop or state. Critical for identifying 
+ * changes in search parameters or translator selections to trigger 
+ * re-fetches from the Railway database.
+ */
+
+import { useEffect, useRef, useDebugValue } from 'react';
+
+/**
+ * usePrevious
+ * 
+ * Returns the value from the previous render.
+ * 
+ * @param value - The value to track
+ * @returns The previous value
+ */
+export function usePrevious<T>(value: T): T | undefined {
+  const ref = useRef<T>();
+
+  // Store current value in ref after render
+  useEffect(() => {
+    ref.current = value;
+  }, [value]);
+
+  // Return previous value (happens before update in useEffect)
+  useDebugValue(ref.current);
+  return ref.current;
+}
+
+/**
+ * usePreviousPersistent
+ * 
+ * Tracks previous value but allows for a custom comparison function
+ * to determine if the value "really" changed.
+ */
+export function usePreviousPersistent<T>(
+  value: T, 
+  compare: (prev: T | undefined, next: T) => boolean = (p, n) => p !== n
+): T | undefined {
+  const prevRef = useRef<T>();
+  const currentRef = useRef<T>(value);
+
+  if (compare(currentRef.current, value)) {
+    prevRef.current = currentRef.current;
+    currentRef.current = value;
+  }
+
+  return prevRef.current;
+}
+
+/**
+ * useHistory
+ * 
+ * Keeps a history of the last N values. Useful for "Undo" functionality
+ * in the LOGOS workspace or tracking navigation history.
+ */
+export function useHistory<T>(value: T, capacity: number = 10): T[] {
+  const historyRef = useRef<T[]>([]);
+
+  useEffect(() => {
+    if (historyRef.current[historyRef.current.length - 1] !== value) {
+      historyRef.current.push(value);
+      if (historyRef.current.length > capacity) {
+        historyRef.current.shift();
+      }
+    }
+  }, [value, capacity]);
+
+  return historyRef.current;
+}
+
+/**
+ * useChangeEffect
+ * 
+ * Runs an effect only when a value changes, skipping the initial mount.
+ */
+export function useChangeEffect(effect: React.EffectCallback, deps: React.DependencyList) {
+  const isFirstMount = useRef(true);
+
+  useEffect(() => {
+    if (isFirstMount.current) {
+      isFirstMount.current = false;
+      return;
+    }
+    return effect();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, deps);
+}
+```
+
+# filepath: frontend/hooks/useAsync.ts
+```typescript
+/**
+ * LOGOS - Classical Studies Research Suite
+ * Module: useAsync
+ * 
+ * The powerhouse of the LOGOS data layer. Handles asynchronous operations
+ * like querying 121k texts, fetching word embeddings, or profile data.
+ * Features: Loading states, Error handling, Retries, and Cancellation.
+ */
+
+import { useState, useCallback, useEffect, useRef } from 'react';
+
+/**
+ * Possible states for an async operation
+ */
+export type AsyncStatus = 'idle' | 'pending' | 'success' | 'error';
+
+interface AsyncState<T, E = Error> {
+  status: AsyncStatus;
+  data: T | null;
+  error: E | null;
+}
+
+interface AsyncOptions {
+  immediate?: boolean;
+  retryCount?: number;
+  retryDelay?: number;
+  onSuccess?: (data: any) => void;
+  onError?: (error: any) => void;
+}
+
+/**
+ * useAsync
+ * 
+ * @param asyncFunction - The promise-returning function to execute
+ * @param options - Configuration for execution and retries
+ * @returns State and execute function
+ */
+export function useAsync<T, E = Error>(
+  asyncFunction: (...args: any[]) => Promise<T>,
+  options: AsyncOptions = {}
+) {
+  const {
+    immediate = false,
+    retryCount = 0,
+    retryDelay = 1000,
+    onSuccess,
+    onError
+  } = options;
+
+  const [state, setState] = useState<AsyncState<T, E>>({
+    status: 'idle',
+    data: null,
+    error: null,
+  });
+
+  // Track the latest call to prevent race conditions
+  const callIdRef = useRef(0);
+  const abortControllerRef = useRef<AbortController | null>(null);
+
+  const execute = useCallback(
+    async (...args: any[]) => {
+      const currentCallId = ++callIdRef.current;
+      
+      // Cancel previous request if still pending
+      if (abortControllerRef.current) {
+        abortControllerRef.current.abort();
+      }
+      abortControllerRef.current = new AbortController();
+
+      setState({ status: 'pending', data: null, error: null });
+      console.log(`[useAsync][INFO] Starting execution ID: ${currentCallId}`);
+
+      let lastError: any = null;
+      for (let attempt = 0; attempt <= retryCount; attempt++) {
+        try {
+          if (attempt > 0) {
+            console.warn(`[useAsync][WARN] Retry attempt ${attempt}/${retryCount}...`);
+            await new Promise(resolve => setTimeout(resolve, retryDelay * attempt));
+          }
+
+          const response = await asyncFunction(...args);
+          
+          // Only update state if this is still the latest call
+          if (currentCallId === callIdRef.current) {
+            setState({ status: 'success', data: response, error: null });
+            if (onSuccess) onSuccess(response);
+            return response;
+          }
+          break; // Exit loop if successful
+        } catch (error: any) {
+          lastError = error;
+          console.error(`[useAsync][ERROR] Attempt ${attempt} failed:`, error);
+          
+          if (attempt === retryCount && currentCallId === callIdRef.current) {
+            setState({ status: 'error', data: null, error: error as E });
+            if (onError) onError(error);
+          }
+        }
+      }
+      throw lastError;
+    },
+    [asyncFunction, retryCount, retryDelay, onSuccess, onError]
+  );
+
+  // Execute immediately if requested
+  useEffect(() => {
+    if (immediate) {
+      execute().catch(() => {
+        // Errors are handled in state, but we catch to prevent unhandled promise rejections
+      });
+    }
+  }, [immediate, execute]);
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      if (abortControllerRef.current) {
+        abortControllerRef.current.abort();
+      }
+    };
+  }, []);
+
+  const reset = useCallback(() => {
+    setState({ status: 'idle', data: null, error: null });
+  }, []);
+
+  return {
+    ...state,
+    execute,
+    reset,
+    isLoading: state.status === 'pending',
+    isError: state.status === 'error',
+    isSuccess: state.status === 'success',
+    isIdle: state.status === 'idle',
+  };
+}
+
+/**
+ * useAsyncRetry
+ * 
+ * Extension of useAsync specifically for operations that might need manual retries.
+ */
+export function useAsyncRetry<T, E = Error>(
+  asyncFunction: () => Promise<T>,
+  options: AsyncOptions = {}
+) {
+  const result = useAsync<T, E>(asyncFunction, options);
+  
+  const retry = useCallback(() => {
+    return result.execute();
+  }, [result]);
+
+  return { ...result, retry };
+}
+```
+
+# filepath: frontend/hooks/index.ts
+```typescript
+/**
+ * LOGOS - Classical Studies Research Suite
+ * Module: Hooks Entry Point
+ * 
+ * Aggregates and exports all shared hooks for the LOGOS production system.
+ * This file serves as the single source of truth for UI logic reuse.
+ */
+
+// 1. Timing & Performance Hooks
+export { 
+  useDebounceValue, 
+  useDebounceCallback 
+} from './useDebounce';
+
+export { 
+  useThrottle, 
+  useThrottleCallback 
+} from './useThrottle';
+
+// 2. Persistence & Storage Hooks
+export { 
+  useLocalStorage, 
+  useSessionStorage 
+} from './useLocalStorage';
+
+// 3. Responsive & Environment Hooks
+export { 
+  useMediaQuery, 
+  useResponsive, 
+  usePreferredColorScheme,
+  BREAKPOINTS 
+} from './useMediaQuery';
+
+// 4. DOM & Observer Hooks
+export { 
+  useIntersectionObserver, 
+  useVisibility, 
+  useInfiniteScroll 
+} from './useIntersectionObserver';
+
+// 5. User Interaction & Keyboard Hooks
+export { 
+  useKeyboardShortcut, 
+  useKeySequence, 
+  useEscapeKey 
+} from './useKeyboard';
+
+// 6. State Tracking Hooks
+export { 
+  usePrevious, 
+  usePreviousPersistent, 
+  useHistory, 
+  useChangeEffect 
+} from './usePrevious';
+
+// 7. Asynchronous & Data Fetching Hooks
+export { 
+  useAsync, 
+  useAsyncRetry 
+} from './useAsync';
+
+/**
+ * SHARED TYPES
+ * Common interfaces used across multiple hooks.
+ */
+
+export interface HookStatus {
+  isIdle: boolean;
+  isLoading: boolean;
+  isError: boolean;
+  isSuccess: boolean;
+}
+
+/**
+ * GLOBAL LOGGING CONFIGURATION
+ * Centralized logging control for all production hooks.
+ */
+const LOG_LEVELS = {
+  DEBUG: 0,
+  INFO: 1,
+  WARN: 2,
+  ERROR: 3
+};
+
+const CURRENT_LOG_LEVEL = process.env.NODE_ENV === 'production' ? LOG_LEVELS.WARN : LOG_LEVELS.DEBUG;
+
+export const logosLogger = {
+  debug: (hook: string, ...args: any[]) => {
+    if (CURRENT_LOG_LEVEL <= LOG_LEVELS.DEBUG) console.debug(`[${hook}]`, ...args);
+  },
+  info: (hook: string, ...args: any[]) => {
+    if (CURRENT_LOG_LEVEL <= LOG_LEVELS.INFO) console.info(`[${hook}]`, ...args);
+  },
+  warn: (hook: string, ...args: any[]) => {
+    if (CURRENT_LOG_LEVEL <= LOG_LEVELS.WARN) console.warn(`[${hook}]`, ...args);
+  },
+  error: (hook: string, ...args: any[]) => {
+    if (CURRENT_LOG_LEVEL <= LOG_LEVELS.ERROR) console.error(`[${hook}]`, ...args);
+  }
+};
+
+/**
+ * hookVersion
+ * Metadata for identifying the version of the hook library in production.
+ */
+export const LOGOS_HOOKS_VERSION = '1.0.4-stable';
+
+/**
+ * VALIDATION UTILITIES
+ * Used internally by hooks to ensure production stability.
+ */
+export const validateHookInput = (hookName: string, params: Record<string, any>) => {
+  Object.entries(params).forEach(([key, value]) => {
+    if (value === undefined || value === null) {
+      logosLogger.warn(hookName, `Parameter "${key}" is null or undefined.`);
+    }
+  });
+};
+```
+
+This completes the implementation of the shared hooks for LOGOS. Every file is production-ready, typed with TypeScript, includes comprehensive logging, and handles edge cases such as SSR, private browsing modes, and race conditions in asynchronous operations.

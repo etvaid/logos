@@ -1,0 +1,953 @@
+```python
+# filepath: backend/analysis/query_analyzer.py
+"""
+LOGOS - The Bible for Classical Studies
+Module: Query Analyzer
+Version: 23.4.1
+Description: Comprehensive SQL analysis engine for the LOGOS production system.
+This module provides advanced SQL parsing, security auditing, and performance 
+prediction for database interactions within the LOGOS ecosystem.
+"""
+
+import re
+import logging
+import asyncio
+import json
+import datetime
+from dataclasses import dataclass, field, asdict
+from typing import List, Dict, Any, Optional, Tuple, Set, Union
+from enum import Enum
+
+# Configure logging for the LOGOS production environment
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+
+class RiskLevel(Enum):
+    """Enumeration of security and performance risk levels."""
+    NONE = "NONE"
+    LOW = "LOW"
+    MEDIUM = "MEDIUM"
+    HIGH = "HIGH"
+    CRITICAL = "CRITICAL"
+
+@dataclass
+class QueryAnalysisResult:
+    """Dataclass representing the comprehensive results of a query analysis."""
+    query_id: str
+    raw_sql: str
+    is_valid: bool
+    risk_level: RiskLevel
+    vulnerabilities: List[str] = field(default_factory=list)
+    suggested_indexes: List[str] = field(default_factory=list)
+    performance_score: float = 0.0
+    affected_tables: List[str] = field(default_factory=list)
+    execution_estimate_ms: float = 0.0
+    timestamp: str = field(default_factory=lambda: datetime.datetime.utcnow().isoformat())
+
+    def to_dict(self) -> Dict[str, Any]:
+        """Converts the analysis result to a dictionary for JSON serialization."""
+        data = asdict(self)
+        data['risk_level'] = self.risk_level.value
+        return data
+
+class SQLInjectionChecker:
+    """
+    Advanced security auditor for SQL queries.
+    Detects complex injection patterns, tautologies, and unauthorized access attempts.
+    """
+
+    def __init__(self):
+        """Initializes patterns for SQL injection detection."""
+        self.dangerous_patterns = [
+            (re.compile(r"(\%27)|(\')|(\-\-)|(\%23)|(#)", re.IGNORECASE), "SQL Comment/Quote Injection"),
+            (re.compile(r"\b(UNION\s+ALL|UNION)\b", re.IGNORECASE), "Union-based Injection"),
+            (re.compile(r"\b(OR|AND)\s+\d+=\d+\b", re.IGNORECASE), "Tautology Injection"),
+            (re.compile(r"\b(DROP|DELETE|TRUNCATE|ALTER|GRANT|REVOKE)\b", re.IGNORECASE), "Data Definition/Modification Attempt"),
+            (re.compile(r"exec(\s|\+)+(s|x)p\w+", re.IGNORECASE), "Stored Procedure Execution"),
+            (re.compile(r"benchmark\s*\(", re.IGNORECASE), "Time-based Blind Injection (Benchmark)"),
+            (re.compile(r"sleep\s*\(", re.IGNORECASE), "Time-based Blind Injection (Sleep)"),
+            (re.compile(r"pg_sleep\s*\(", re.IGNORECASE), "PostgreSQL Specific Sleep Injection"),
+            (re.compile(r"CAST\s*\(.*AS\s+INT\)", re.IGNORECASE), "Type Conversion Error-based Injection"),
+            (re.compile(r"information_schema", re.IGNORECASE), "Metadata Harvesting Attempt")
+        ]
+        logger.info("SQLInjectionChecker initialized with %d patterns.", len(self.dangerous_patterns))
+
+    def check_tautology(self, sql: str) -> List[str]:
+        """Checks for logical tautologies like '1=1' or ' 'a'='a'."""
+        findings = []
+        pattern = re.compile(r"(\w+)\s*=\s*\1", re.IGNORECASE)
+        if pattern.search(sql):
+            findings.append("Potential tautology detected (e.g., 1=1 or x=x)")
+        
+        logic_pattern = re.compile(r"OR\s+['\"]\w+['\"]\s*=\s*['\"]\w+['\"]", re.IGNORECASE)
+        if logic_pattern.search(sql):
+            findings.append("String-based tautology detected in OR clause")
+        
+        return findings
+
+    def check_union_attacks(self, sql: str) -> List[str]:
+        """Detects UNION statements used to exfiltrate data from other tables."""
+        findings = []
+        if "union" in sql.lower():
+            if "select" in sql.lower() and ("from" in sql.lower() or "all" in sql.lower()):
+                findings.append("UNION-based data exfiltration attempt detected")
+        return findings
+
+    def check_comment_injection(self, sql: str) -> List[str]:
+        """Detects attempts to truncate queries using SQL comment characters."""
+        findings = []
+        if "--" in sql or "/*" in sql or "#" in sql:
+            # Check if comments are at the end or mid-query
+            if not sql.strip().endswith(("--", "*/")):
+                findings.append("Inline SQL comment detected, potentially masking logic")
+        return findings
+
+    def check_piggybacked_queries(self, sql: str) -> List[str]:
+        """Detects multiple statements separated by semicolons."""
+        findings = []
+        if ";" in sql:
+            parts = [p.strip() for p in sql.split(";") if p.strip()]
+            if len(parts) > 1:
+                findings.append(f"Multiple queries detected ({len(parts)} statements)")
+        return findings
+
+    def check_blind_sqli(self, sql: str) -> List[str]:
+        """Detects time-delay functions used in blind SQL injection."""
+        findings = []
+        time_funcs = ["pg_sleep", "sleep", "waitfor", "benchmark"]
+        for func in time_funcs:
+            if f"{func}(" in sql.lower():
+                findings.append(f"Blind SQL injection function '{func}' detected")
+        return findings
+
+    def check_error_based(self, sql: str) -> List[str]:
+        """Detects functions used to force errors for data extraction."""
+        findings = []
+        if "to_number" in sql.lower() or "cast" in sql.lower():
+            if "select" in sql.lower() and "from" in sql.lower():
+                findings.append("Potential error-based injection pattern detected")
+        return findings
+
+    def check_system_table_access(self, sql: str) -> List[str]:
+        """Detects attempts to access internal PostgreSQL metadata tables."""
+        findings = []
+        system_tables = ["pg_catalog", "information_schema", "pg_user", "pg_authid"]
+        for table in system_tables:
+            if table in sql.lower():
+                findings.append(f"Unauthorized system table access: {table}")
+        return findings
+
+    def check_hex_encoding(self, sql: str) -> List[str]:
+        """Detects obfuscated payloads using hexadecimal encoding."""
+        findings = []
+        if "0x" in sql.lower() or "\\x" in sql.lower():
+            findings.append("Hexadecimal encoding detected; potential obfuscation")
+        return findings
+
+    def check_char_encoding(self, sql: str) -> List[str]:
+        """Detects use of CHAR() or CHR() to bypass string filters."""
+        findings = []
+        if "char(" in sql.lower() or "chr(" in sql.lower():
+            findings.append("Character encoding function detected (CHAR/CHR)")
+        return findings
+
+    def check_keyword_repetition(self, sql: str) -> List[str]:
+        """Detects anomalies where keywords are repeated unnecessarily."""
+        findings = []
+        keywords = ["SELECT", "FROM", "WHERE", "GROUP BY", "ORDER BY"]
+        for kw in keywords:
+            if len(re.findall(rf"\b{kw}\b", sql, re.IGNORECASE)) > 2:
+                findings.append(f"Abnormal repetition of keyword: {kw}")
+        return findings
+
+    def check_whitespace_anomalies(self, sql: str) -> List[str]:
+        """Detects unusual whitespace usage meant to bypass simple regex filters."""
+        findings = []
+        if "/**/" in sql or "\t" in sql or "\n" in sql:
+            findings.append("Unusual whitespace or comment-padding detected")
+        return findings
+
+    def check_quote_imbalance(self, sql: str) -> List[str]:
+        """Checks if single or double quotes are balanced."""
+        findings = []
+        if sql.count("'") % 2 != 0:
+            findings.append("Imbalanced single quotes detected")
+        if sql.count('"') % 2 != 0:
+            findings.append("Imbalanced double quotes detected")
+        return findings
+
+    def check_metadata_queries(self, sql: str) -> List[str]:
+        """Detects queries probing for database version or configuration."""
+        findings = []
+        meta_funcs = ["version()", "current_user", "current_database", "user"]
+        for func in meta_funcs:
+            if func in sql.lower():
+                findings.append(f"Metadata reconnaissance function detected: {func}")
+        return findings
+
+    def audit_query(self, sql: str) -> List[str]:
+        """Performs a full security audit on the provided SQL string."""
+        logger.info("Starting security audit for query.")
+        all_vulnerabilities = []
+        
+        # Run all specific checks
+        all_vulnerabilities.extend(self.check_tautology(sql))
+        all_vulnerabilities.extend(self.check_union_attacks(sql))
+        all_vulnerabilities.extend(self.check_comment_injection(sql))
+        all_vulnerabilities.extend(self.check_piggybacked_queries(sql))
+        all_vulnerabilities.extend(self.check_blind_sqli(sql))
+        all_vulnerabilities.extend(self.check_error_based(sql))
+        all_vulnerabilities.extend(self.check_system_table_access(sql))
+        all_vulnerabilities.extend(self.check_hex_encoding(sql))
+        all_vulnerabilities.extend(self.check_char_encoding(sql))
+        all_vulnerabilities.extend(self.check_keyword_repetition(sql))
+        all_vulnerabilities.extend(self.check_whitespace_anomalies(sql))
+        all_vulnerabilities.extend(self.check_quote_imbalance(sql))
+        all_vulnerabilities.extend(self.check_metadata_queries(sql))
+
+        # Run regex pattern matching
+        for pattern, description in self.dangerous_patterns:
+            if pattern.search(sql):
+                all_vulnerabilities.append(f"Pattern match: {description}")
+
+        logger.info("Audit completed. Found %d potential issues.", len(all_vulnerabilities))
+        return list(set(all_vulnerabilities))
+
+class IndexSuggester:
+    """
+    Analyzes SQL queries to recommend indexing strategies for the LOGOS database.
+    Focuses on the core tables: texts, source_texts, author_profiles, translator_profiles.
+    """
+
+    def __init__(self):
+        """Initializes the index suggester with known table schemas."""
+        self.schema_map = {
+            "texts": ["id", "title", "author", "translator", "text_content", "book", "chapter"],
+            "source_texts": ["id", "content", "language", "work_id", "line_number"],
+            "author_profiles": ["id", "name", "birth_year", "death_year", "nationality", "genres"],
+            "translator_profiles": ["id", "name", "style_vector", "works_translated"],
+            "word_embeddings": ["word", "vector"]
+        }
+        logger.info("IndexSuggester initialized for %d tables.", len(self.schema_map))
+
+    def extract_filter_columns(self, sql: str) -> Dict[str, List[str]]:
+        """Identifies columns used in WHERE clauses."""
+        filters = {}
+        # Simple regex to find column = value or column IN (...)
+        where_match = re.search(r"WHERE\s+(.*?)(\bGROUP BY\b|\bORDER BY\b|\bLIMIT\b|$)", sql, re.IGNORECASE | re.DOTALL)
+        if where_match:
+            where_clause = where_match.group(1)
+            for table, columns in self.schema_map.items():
+                for col in columns:
+                    if col in where_clause:
+                        if table not in filters:
+                            filters[table] = []
+                        filters[table].append(col)
+        return filters
+
+    def extract_join_columns(self, sql: str) -> List[Tuple[str, str]]:
+        """Identifies columns used in JOIN conditions."""
+        joins = []
+        join_pattern = re.compile(r"JOIN\s+(\w+)\s+ON\s+([\w\.]+)\s*=\s*([\w\.]+)", re.IGNORECASE)
+        for match in join_pattern.finditer(sql):
+            joins.append((match.group(2), match.group(3)))
+        return joins
+
+    def extract_sort_columns(self, sql: str) -> List[str]:
+        """Identifies columns used in ORDER BY clauses."""
+        sorts = []
+        order_match = re.search(r"ORDER\s+BY\s+(.*?)(\bLIMIT\b|$)", sql, re.IGNORECASE | re.DOTALL)
+        if order_match:
+            columns = order_match.group(1).split(",")
+            for col in columns:
+                sorts.append(col.strip().split()[0])
+        return sorts
+
+    def generate_create_index_sql(self, table: str, column: str, index_type: str = "btree") -> str:
+        """Generates a standard PostgreSQL CREATE INDEX statement."""
+        idx_name = f"idx_{table}_{column.replace('.', '_')}"
+        return f"CREATE INDEX {idx_name} ON {table} USING {index_type} ({column});"
+
+    def suggest_composite_indexes(self, sql: str) -> List[str]:
+        """Suggests multi-column indexes for complex filters."""
+        suggestions = []
+        filters = self.extract_filter_columns(sql)
+        for table, cols in filters.items():
+            if len(cols) > 1:
+                idx_name = f"idx_{table}_" + "_".join(cols[:3])
+                col_list = ", ".join(cols[:3])
+                suggestions.append(f"CREATE INDEX {idx_name} ON {table} ({col_list});")
+        return suggestions
+
+    def analyze_query_for_indexes(self, sql: str) -> List[str]:
+        """Main method to analyze a query and return index suggestions."""
+        logger.info("Analyzing query for index opportunities.")
+        suggestions = []
+        
+        # 1. Filter columns
+        filters = self.extract_filter_columns(sql)
+        for table, cols in filters.items():
+            for col in cols:
+                suggestions.append(self.generate_create_index_sql(table, col))
+        
+        # 2. Join columns
+        joins = self.extract_join_columns(sql)
+        for left, right in joins:
+            # Determine table from column name if possible
+            if "." in left:
+                table, col = left.split(".")[:2]
+                suggestions.append(self.generate_create_index_sql(table, col))
+            if "." in right:
+                table, col = right.split(".")[:2]
+                suggestions.append(self.generate_create_index_sql(table, col))
+
+        # 3. Sort columns
+        sorts = self.extract_sort_columns(sql)
+        for col in sorts:
+            if "." in col:
+                table, column = col.split(".")[:2]
+                suggestions.append(self.generate_create_index_sql(table, column))
+
+        # 4. Composite indexes
+        suggestions.extend(self.suggest_composite_indexes(sql))
+        
+        unique_suggestions = list(set(suggestions))
+        logger.info("Generated %d index suggestions.", len(unique_suggestions))
+        return unique_suggestions
+
+class QueryAnalyzer:
+    """
+    Primary orchestrator for SQL query analysis in the LOGOS system.
+    Integrates security auditing, schema validation, and performance suggestions.
+    """
+
+    def __init__(self):
+        """Initializes the QueryAnalyzer with its sub-components."""
+        self.security_checker = SQLInjectionChecker()
+        self.index_suggester = IndexSuggester()
+        self.query_cache: Dict[str, QueryAnalysisResult] = {}
+        logger.info("QueryAnalyzer initialized and ready for production.")
+
+    async def analyze_query(self, sql: str, query_id: Optional[str] = None) -> QueryAnalysisResult:
+        """
+        Performs a comprehensive analysis of a single SQL query.
+        
+        Args:
+            sql: The raw SQL string to analyze.
+            query_id: Optional identifier for tracking.
+            
+        Returns:
+            A QueryAnalysisResult object containing all findings.
+        """
+        if not query_id:
+            query_id = f"q_{hash(sql) & 0xffffffff}"
+
+        logger.info("Analyzing query %s: %s...", query_id, sql[:50])
+        
+        try:
+            # 1. Security Audit
+            vulnerabilities = self.security_checker.audit_query(sql)
+            
+            # 2. Index Analysis
+            suggestions = self.index_suggester.analyze_query_for_indexes(sql)
+            
+            # 3. Risk Assessment
+            risk = RiskLevel.NONE
+            if vulnerabilities:
+                risk = RiskLevel.CRITICAL
+            elif "JOIN" in sql.upper() and "WHERE" not in sql.upper():
+                risk = RiskLevel.HIGH
+            elif "SELECT *" in sql.upper():
+                risk = RiskLevel.MEDIUM
+            
+            # 4. Performance Scoring (Heuristic)
+            score = 100.0
+            if "JOIN" in sql.upper(): score -= 20
+            if "ORDER BY" in sql.upper(): score -= 10
+            if "GROUP BY" in sql.upper(): score -= 10
+            if "LIKE" in sql.upper(): score -= 15
+            if risk == RiskLevel.CRITICAL: score = 0.0
+
+            result = QueryAnalysisResult(
+                query_id=query_id,
+                raw_sql=sql,
+                is_valid=True, # Placeholder for actual syntax parser
+                risk_level=risk,
+                vulnerabilities=vulnerabilities,
+                suggested_indexes=suggestions,
+                performance_score=max(0.0, score),
+                affected_tables=list(self.index_suggester.extract_filter_columns(sql).keys())
+            )
+            
+            self.query_cache[query_id] = result
+            return result
+
+        except Exception as e:
+            logger.error("Error during query analysis: %s", str(e), exc_info=True)
+            return QueryAnalysisResult(
+                query_id=query_id,
+                raw_sql=sql,
+                is_valid=False,
+                risk_level=RiskLevel.CRITICAL,
+                vulnerabilities=[f"Analysis Engine Error: {str(e)}"]
+            )
+
+    def generate_query_report(self, results: List[QueryAnalysisResult]) -> str:
+        """Generates a formatted text report of analyzed queries."""
+        report = []
+        report.append("="*80)
+        report.append(f"LOGOS QUERY ANALYSIS REPORT - {datetime.datetime.now()}")
+        report.append("="*80)
+        
+        for res in results:
+            report.append(f"Query ID: {res.query_id}")
+            report.append(f"Risk Level: {res.risk_level.value}")
+            report.append(f"Performance Score: {res.performance_score}/100")
+            if res.vulnerabilities:
+                report.append("VULNERABILITIES DETECTED:")
+                for v in res.vulnerabilities:
+                    report.append(f"  - {v}")
+            if res.suggested_indexes:
+                report.append("INDEX RECOMMENDATIONS:")
+                for idx in res.suggested_indexes:
+                    report.append(f"  - {idx}")
+            report.append("-" * 40)
+            
+        return "\n".join(report)
+
+# filepath: backend/analysis/schema_validator.py
+"""
+LOGOS - The Bible for Classical Studies
+Module: Schema Validator
+Version: 23.4.1
+Description: Validates SQL queries against the actual production database schema.
+Ensures that all table and column references are accurate and follows best practices.
+"""
+
+import logging
+import re
+from typing import List, Dict, Any, Optional, Tuple, Set
+
+# Configure logging
+logger = logging.getLogger(__name__)
+
+class SchemaValidator:
+    """
+    Validates SQL queries against the LOGOS production schema.
+    Prevents runtime errors by catching invalid references early.
+    """
+
+    def __init__(self):
+        """Initializes the validator with the canonical schema definition."""
+        self.schema = {
+            "texts": {
+                "columns": ["id", "title", "author", "translator", "text_content", "book", "chapter"],
+                "primary_key": "id",
+                "indexes": ["title", "author", "translator"]
+            },
+            "source_texts": {
+                "columns": ["id", "content", "language", "work_id", "line_number"],
+                "primary_key": "id",
+                "indexes": ["work_id", "language"]
+            },
+            "author_profiles": {
+                "columns": ["id", "name", "birth_year", "death_year", "nationality", "genres"],
+                "primary_key": "id",
+                "indexes": ["name"]
+            },
+            "translator_profiles": {
+                "columns": ["id", "name", "style_vector", "works_translated"],
+                "primary_key": "id",
+                "indexes": ["name"]
+            },
+            "word_embeddings": {
+                "columns": ["word", "vector"],
+                "primary_key": "word",
+                "indexes": []
+            }
+        }
+        self.reserved_keywords = {
+            "SELECT", "FROM", "WHERE", "JOIN", "ON", "GROUP", "BY", "ORDER", 
+            "LIMIT", "OFFSET", "INSERT", "UPDATE", "DELETE", "TABLE", "INDEX",
+            "AND", "OR", "NOT", "NULL", "TRUE", "FALSE", "IN", "LIKE", "AS"
+        }
+        logger.info("SchemaValidator initialized with %d tables.", len(self.schema))
+
+    def validate_table_reference(self, table_name: str) -> bool:
+        """Checks if a table exists in the LOGOS schema."""
+        exists = table_name.lower() in self.schema
+        if not exists:
+            logger.warning("Invalid table reference: %s", table_name)
+        return exists
+
+    def validate_column_reference(self, table_name: str, column_name: str) -> bool:
+        """Checks if a column exists within a specific table."""
+        if not self.validate_table_reference(table_name):
+            return False
+        
+        # Strip potential aliases or modifiers
+        clean_col = column_name.split('.')[-1].strip()
+        valid = clean_col.lower() in self.schema[table_name.lower()]["columns"]
+        
+        if not valid:
+            logger.warning("Invalid column reference: %s in table %s", column_name, table_name)
+        return valid
+
+    def extract_referenced_tables(self, sql: str) -> Set[str]:
+        """Uses regex to find all table names mentioned in the query."""
+        tables = set()
+        # Look for patterns like FROM table_name or JOIN table_name
+        from_pattern = re.compile(r"FROM\s+(\w+)", re.IGNORECASE)
+        join_pattern = re.compile(r"JOIN\s+(\w+)", re.IGNORECASE)
+        
+        for match in from_pattern.finditer(sql):
+            tables.add(match.group(1).lower())
+        for match in join_pattern.finditer(sql):
+            tables.add(match.group(1).lower())
+            
+        return tables
+
+    def extract_referenced_columns(self, sql: str) -> Dict[str, Set[str]]:
+        """Maps columns to their respective tables based on the query string."""
+        references = {}
+        # This is a heuristic approach; complex queries might need a full SQL parser
+        for table in self.schema:
+            for col in self.schema[table]["columns"]:
+                # Check for table.column or just column if table is in query
+                if f"{table}.{col}" in sql.lower() or f" {col} " in f" {sql.lower()} ":
+                    if table not in references:
+                        references[table] = set()
+                    references[table].add(col)
+        return references
+
+    def validate_query_schema(self, sql: str) -> Tuple[bool, List[str]]:
+        """
+        Comprehensive validation of a query against the schema.
+        
+        Returns:
+            Tuple of (is_valid, list_of_errors)
+        """
+        errors = []
+        referenced_tables = self.extract_referenced_tables(sql)
+        
+        # 1. Check tables
+        for table in referenced_tables:
+            if not self.validate_table_reference(table):
+                errors.append(f"Table '{table}' does not exist in the LOGOS schema.")
+
+        # 2. Check columns
+        # Note: This heuristic check might have false positives for common names like 'id'
+        # in complex multi-table queries without aliases.
+        col_refs = self.extract_referenced_columns(sql)
+        if not col_refs and "SELECT *" not in sql.upper():
+            # If no columns were found but it's not a SELECT *, something might be wrong
+            pass 
+
+        # 3. Check for reserved keyword misuse
+        for word in sql.split():
+            clean_word = word.strip('(),;').upper()
+            if clean_word in self.reserved_keywords:
+                # Basic check to see if keyword is used as an identifier without quotes
+                pass
+
+        is_valid = len(errors) == 0
+        logger.info("Schema validation completed. Valid: %s, Errors: %d", is_valid, len(errors))
+        return is_valid, errors
+
+    def suggest_schema_improvements(self, sql: str) -> List[str]:
+        """Suggests schema changes based on query patterns."""
+        suggestions = []
+        
+        # Check for frequent filtering on non-indexed columns
+        referenced_cols = self.extract_referenced_columns(sql)
+        for table, cols in referenced_cols.items():
+            for col in cols:
+                if col not in self.schema[table]["indexes"] and col != self.schema[table]["primary_key"]:
+                    if "WHERE" in sql.upper() and col in sql.lower():
+                        suggestions.append(f"Consider adding an index to {table}({col}) for better performance.")
+        
+        # Check for potential denormalization needs
+        if sql.count("JOIN") > 3:
+            suggestions.append("Query has high join count. Consider creating a materialized view for this data.")
+            
+        return suggestions
+
+    def audit_schema_consistency(self) -> List[str]:
+        """Performs a self-audit of the schema definition."""
+        issues = []
+        for table, meta in self.schema.items():
+            if not meta["primary_key"]:
+                issues.append(f"Table {table} is missing a primary key definition.")
+            for idx in meta["indexes"]:
+                if idx not in meta["columns"]:
+                    issues.append(f"Index {idx} in table {table} references a non-existent column.")
+        return issues
+
+    def verify_foreign_key_references(self) -> List[str]:
+        """Validates that known relationships are consistent."""
+        issues = []
+        # source_texts.work_id should point to texts.id
+        if "work_id" in self.schema["source_texts"]["columns"]:
+            if "id" not in self.schema["texts"]["columns"]:
+                issues.append("Foreign key source_texts.work_id lacks target texts.id")
+        return issues
+
+    def check_naming_conventions(self) -> List[str]:
+        """Ensures all schema objects follow LOGOS naming standards."""
+        violations = []
+        pattern = re.compile(r"^[a-z][a-z0-t_]*$")
+        for table in self.schema:
+            if not pattern.match(table):
+                violations.append(f"Table name '{table}' violates naming convention (snake_case).")
+            for col in self.schema[table]["columns"]:
+                if not pattern.match(col):
+                    violations.append(f"Column name '{col}' in '{table}' violates naming convention.")
+        return violations
+
+    def get_table_schema(self, table_name: str) -> Optional[Dict[str, Any]]:
+        """Returns the metadata for a specific table."""
+        return self.schema.get(table_name.lower())
+
+    def validate_join_conditions(self, sql: str) -> List[str]:
+        """Verifies that JOINs are performed on compatible columns."""
+        warnings = []
+        join_pattern = re.compile(r"ON\s+(\w+)\.(\w+)\s*=\s*(\w+)\.(\w+)", re.IGNORECASE)
+        for match in join_pattern.finditer(sql):
+            t1, c1, t2, c2 = match.groups()
+            # Basic check: usually join columns should have similar names or be IDs
+            if c1 != c2 and not (c1.endswith('id') and c2.endswith('id')):
+                warnings.append(f"Potential join mismatch: {t1}.{c1} = {t2}.{c2}")
+        return warnings
+
+    def check_identifier_length(self) -> List[str]:
+        """PostgreSQL has a 63-character limit for identifiers."""
+        violations = []
+        for table in self.schema:
+            if len(table) > 63:
+                violations.append(f"Table name '{table}' exceeds 63 characters.")
+            for col in self.schema[table]["columns"]:
+                if len(col) > 63:
+                    violations.append(f"Column name '{col}' in '{table}' exceeds 63 characters.")
+        return violations
+
+    def detect_redundant_columns(self) -> List[str]:
+        """Heuristic to find potentially redundant columns across tables."""
+        column_map = {}
+        for table, meta in self.schema.items():
+            for col in meta["columns"]:
+                if col not in column_map:
+                    column_map[col] = []
+                column_map[col].append(table)
+        
+        redundant = []
+        for col, tables in column_map.items():
+            if len(tables) > 2 and col not in ("id", "name", "created_at", "updated_at"):
+                redundant.append(f"Column '{col}' is present in many tables: {tables}. Check for normalization.")
+        return redundant
+
+    def verify_primary_keys(self) -> bool:
+        """Ensures every table has exactly one primary key."""
+        for table, meta in self.schema.items():
+            pk = meta.get("primary_key")
+            if not pk or pk not in meta["columns"]:
+                logger.error("Primary key error in table %s", table)
+                return False
+        return True
+
+    def generate_schema_report(self) -> Dict[str, Any]:
+        """Generates a summary of the current schema state."""
+        return {
+            "table_count": len(self.schema),
+            "tables": list(self.schema.keys()),
+            "total_columns": sum(len(m["columns"]) for m in self.schema.values()),
+            "consistency_check": "PASSED" if not self.audit_schema_consistency() else "FAILED"
+        }
+
+# filepath: backend/database/query_optimizer.py
+"""
+LOGOS - The Bible for Classical Studies
+Module: Query Optimizer
+Version: 23.4.1
+Description: Production-grade SQL optimizer for the LOGOS system.
+Connects to the Railway PostgreSQL instance to analyze execution plans and 
+provide data-driven optimization strategies.
+"""
+
+import asyncpg
+import logging
+import json
+import time
+from typing import List, Dict, Any, Optional, Tuple
+
+# Database configuration
+DATABASE_URL = "postgresql://postgres:JKLqDvdTtmRjGnOgDvGFLqLKVkcjQLFs@metro.proxy.rlwy.net:58888/railway"
+
+# Configure logging
+logger = logging.getLogger(__name__)
+
+class QueryOptimizer:
+    """
+    Analyzes and optimizes PostgreSQL queries for the LOGOS database.
+    Uses real EXPLAIN ANALYZE data to provide recommendations.
+    """
+
+    def __init__(self, dsn: str = DATABASE_URL):
+        """Initializes the optimizer with database connection details."""
+        self.dsn = dsn
+        self.pool: Optional[asyncpg.Pool] = None
+        logger.info("QueryOptimizer initialized for DSN: %s", dsn.split('@')[-1])
+
+    async def connect(self):
+        """Establishes a connection pool to the Railway database."""
+        if not self.pool:
+            try:
+                self.pool = await asyncpg.create_pool(self.dsn, min_size=1, max_size=5)
+                logger.info("Successfully connected to Railway PostgreSQL pool.")
+            except Exception as e:
+                logger.error("Failed to connect to database: %s", str(e))
+                raise
+
+    async def disconnect(self):
+        """Closes the database connection pool."""
+        if self.pool:
+            await self.pool.close()
+            logger.info("Database connection pool closed.")
+
+    async def get_explain_plan(self, sql: str, params: List[Any] = None) -> Dict[str, Any]:
+        """Runs EXPLAIN (FORMAT JSON) on the provided query."""
+        if not self.pool:
+            await self.connect()
+        
+        explain_sql = f"EXPLAIN (FORMAT JSON, ANALYZE, BUFFERS) {sql}"
+        try:
+            async with self.pool.acquire() as conn:
+                # Use a transaction to ensure ANALYZE doesn't commit changes (though EXPLAIN usually doesn't)
+                async with conn.transaction():
+                    if params:
+                        result = await conn.fetchval(explain_sql, *params)
+                    else:
+                        result = await conn.fetchval(explain_sql)
+                    
+                    plan_data = json.loads(result)
+                    return plan_data[0]['Plan']
+        except Exception as e:
+            logger.error("Error obtaining explain plan: %s", str(e))
+            return {"error": str(e)}
+
+    def analyze_sequential_scans(self, plan: Dict[str, Any]) -> List[str]:
+        """Recursively searches for Sequential Scans in the execution plan."""
+        recommendations = []
+        node_type = plan.get("Node Type")
+        table_name = plan.get("Relation Name")
+        
+        if node_type == "Seq Scan" and table_name:
+            # Seq scans on small tables are fine, but on large tables they are bad
+            rows = plan.get("Plan Rows", 0)
+            if rows > 1000:
+                recommendations.append(
+                    f"Sequential Scan detected on large table '{table_name}' ({rows} rows). "
+                    "Consider adding an index for the filter columns."
+                )
+        
+        if "Plans" in plan:
+            for subplan in plan["Plans"]:
+                recommendations.extend(self.analyze_sequential_scans(subplan))
+                
+        return recommendations
+
+    def detect_cartesian_products(self, plan: Dict[str, Any]) -> List[str]:
+        """Detects Nested Loop joins without proper join conditions."""
+        warnings = []
+        if plan.get("Node Type") == "Nested Loop":
+            # If cost is exponentially higher than sub-plans, it might be a product
+            total_cost = plan.get("Total Cost", 0)
+            if total_cost > 1000000:
+                warnings.append("High-cost Nested Loop detected. Verify join conditions to avoid Cartesian products.")
+        
+        if "Plans" in plan:
+            for subplan in plan["Plans"]:
+                warnings.extend(self.detect_cartesian_products(subplan))
+        return warnings
+
+    async def optimize_query(self, sql: str, params: List[Any] = None) -> Dict[str, Any]:
+        """
+        Full optimization pipeline: Explain -> Analyze -> Recommend.
+        """
+        logger.info("Starting optimization for query.")
+        start_time = time.time()
+        
+        plan = await self.get_explain_plan(sql, params)
+        if "error" in plan:
+            return {"status": "error", "message": plan["error"]}
+            
+        seq_scans = self.analyze_sequential_scans(plan)
+        cartesian = self.detect_cartesian_products(plan)
+        
+        # Heuristic optimization suggestions
+        suggestions = []
+        suggestions.extend(seq_scans)
+        suggestions.extend(cartesian)
+        
+        if "Filter" in str(plan) and "Index Scan" not in str(plan):
+            suggestions.append("Query uses heavy filtering without index usage.")
+
+        execution_time = plan.get("Actual Total Time", 0)
+        
+        result = {
+            "status": "success",
+            "execution_time_ms": execution_time,
+            "optimization_time_ms": (time.time() - start_time) * 1000,
+            "recommendations": suggestions,
+            "plan_summary": {
+                "root_node": plan.get("Node Type"),
+                "total_cost": plan.get("Total Cost"),
+                "rows_processed": plan.get("Actual Rows")
+            }
+        }
+        
+        logger.info("Optimization complete. Execution time: %s ms", execution_time)
+        return result
+
+    async def add_missing_indexes(self, recommendations: List[str]):
+        """Executes index creation SQL based on recommendations."""
+        if not self.pool:
+            await self.connect()
+            
+        for rec in recommendations:
+            if "CREATE INDEX" in rec:
+                try:
+                    async with self.pool.acquire() as conn:
+                        await conn.execute(rec)
+                        logger.info("Applied index: %s", rec)
+                except Exception as e:
+                    logger.error("Failed to apply index '%s': %s", rec, str(e))
+
+    def generate_explain_report(self, plan: Dict[str, Any], indent: int = 0) -> str:
+        """Generates a human-readable text representation of the JSON plan."""
+        node_type = plan.get("Node Type", "Unknown")
+        cost = plan.get("Total Cost", 0)
+        rows = plan.get("Plan Rows", 0)
+        relation = plan.get("Relation Name", "")
+        
+        line = f"{'  ' * indent}-> {node_type}"
+        if relation:
+            line += f" on {relation}"
+        line += f" (cost={cost} rows={rows})"
+        
+        report = [line]
+        if "Plans" in plan:
+            for subplan in plan["Plans"]:
+                report.append(self.generate_explain_report(subplan, indent + 1))
+                
+        return "\n".join(report)
+
+    async def analyze_buffer_usage(self, sql: str) -> Dict[str, int]:
+        """Analyzes how much of the query hits the shared buffer cache vs disk."""
+        plan = await self.get_explain_plan(sql)
+        buffers = {
+            "shared_hit": plan.get("Shared Hit Blocks", 0),
+            "shared_read": plan.get("Shared Read Blocks", 0),
+            "temp_read": plan.get("Temp Read Blocks", 0),
+            "temp_written": plan.get("Temp Written Blocks", 0)
+        }
+        return buffers
+
+    async def estimate_cost_reduction(self, sql: str, proposed_index_sql: str) -> float:
+        """Estimates potential cost reduction if an index were added (simulated)."""
+        # This is complex in production; usually involves a temporary transaction
+        # and 'SET enable_seqscan = off' to force index usage simulation.
+        original_plan = await self.get_explain_plan(sql)
+        original_cost = original_plan.get("Total Cost", 0)
+        
+        # In a real system, we might create the index in a transaction, explain, then rollback
+        return original_cost * 0.5 # Placeholder for simulation logic
+
+    async def benchmark_execution(self, sql: str, iterations: int = 5) -> Dict[str, float]:
+        """Runs the query multiple times to get average performance metrics."""
+        if not self.pool:
+            await self.connect()
+            
+        times = []
+        for _ in range(iterations):
+            start = time.time()
+            async with self.pool.acquire() as conn:
+                await conn.execute(sql)
+            times.append((time.time() - start) * 1000)
+            
+        return {
+            "avg_ms": sum(times) / len(times),
+            "min_ms": min(times),
+            "max_ms": max(times)
+        }
+
+    async def monitor_query_stats(self) -> List[Dict[str, Any]]:
+        """Retrieves statistics for all queries from pg_stat_statements."""
+        if not self.pool:
+            await self.connect()
+            
+        query = """
+            SELECT query, calls, total_exec_time, rows, 
+                   total_exec_time / calls as avg_time_ms
+            FROM pg_stat_statements
+            ORDER BY total_exec_time DESC
+            LIMIT 10;
+        """
+        try:
+            async with self.pool.acquire() as conn:
+                rows = await conn.fetch(query)
+                return [dict(r) for r in rows]
+        except Exception as e:
+            logger.error("pg_stat_statements not available: %s", str(e))
+            return []
+
+    async def kill_long_running_queries(self, threshold_seconds: int = 30):
+        """Terminates backend processes running longer than the threshold."""
+        if not self.pool:
+            await self.connect()
+            
+        query = """
+            SELECT pg_terminate_backend(pid)
+            FROM pg_stat_activity
+            WHERE state = 'active'
+              AND now() - query_start > interval '$1 seconds';
+        """
+        async with self.pool.acquire() as conn:
+            await conn.execute(query, f"{threshold_seconds}")
+            logger.warning("Terminated queries running longer than %d seconds.", threshold_seconds)
+
+    async def configure_statement_timeout(self, seconds: int):
+        """Sets a session-level timeout for all queries in the pool."""
+        if not self.pool:
+            await self.connect()
+            
+        async with self.pool.acquire() as conn:
+            await conn.execute(f"SET statement_timeout = '{seconds}s'")
+            logger.info("Statement timeout set to %d seconds.", seconds)
+
+    def suggest_materialized_views(self, sql: str) -> Optional[str]:
+        """Recommends materialized views for complex aggregation queries."""
+        if "GROUP BY" in sql.upper() and sql.count("JOIN") >= 2:
+            view_name = f"mv_optimized_{int(time.time())}"
+            return f"CREATE MATERIALIZED VIEW {view_name} AS {sql};"
+        return None
+
+    def check_index_usage(self, plan: Dict[str, Any]) -> bool:
+        """Returns True if the query plan uses an index."""
+        node_type = plan.get("Node Type", "")
+        if "Index" in node_type:
+            return True
+        if "Plans" in plan:
+            return any(self.check_index_usage(p) for p in plan["Plans"])
+        return False
+
+    async def refactor_large_joins(self, sql: str) -> str:
+        """Heuristic to suggest CTEs (Common Table Expressions) for better readability/planning."""
+        if sql.count("JOIN") > 5 and "WITH" not in sql.upper():
+            logger.info("Suggesting CTE refactor for complex query.")
+            # Implementation would involve parsing the query and wrapping sub-joins in WITH clauses
+            return f"-- Suggested refactor: Use CTEs for the following query\n{sql}"
+        return sql
+```

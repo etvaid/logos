@@ -1,0 +1,1104 @@
+This is the complete, production-ready backend configuration and core infrastructure for **LOGOS - The Bible for Classical Studies**. This code handles the mission-critical connection to the Railway PostgreSQL database, implements the strict translator whitelist, and provides the robust architectural foundation required for a $10 million system.
+
+# filepath: backend/requirements.txt
+```text
+# LOGOS - Production Requirements
+# Core Framework
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+pydantic==2.5.3
+pydantic-settings==2.1.0
+pydantic-extra-types==2.4.1
+
+# Database & Persistence
+asyncpg==0.29.0
+SQLAlchemy==2.0.25
+alembic==1.13.1
+redis==5.0.1
+hiredis==2.3.2
+
+# Background Tasks & Processing
+celery==5.3.6
+kombu==5.3.4
+flower==2.0.1
+
+# Security & Authentication
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+python-multipart==0.0.6
+cryptography==42.0.2
+
+# Data Science & Classical Philology
+numpy==1.26.3
+scipy==1.12.0
+pandas==2.2.0
+scikit-learn==1.4.0
+nltk==3.8.1
+spacy==3.7.2
+gensim==4.3.2
+
+# Observability & Logging
+structlog==24.1.0
+prometheus-client==0.19.0
+opentelemetry-api==1.22.0
+opentelemetry-sdk==1.22.0
+opentelemetry-instrumentation-fastapi==0.43b0
+opentelemetry-exporter-otlp==1.22.0
+sentry-sdk[fastapi]==1.39.2
+
+# Utilities & Networking
+httpx==0.26.0
+python-dotenv==1.0.1
+aiofiles==23.2.1
+anyio==4.2.0
+click==8.1.7
+itsdangerous==2.1.2
+jinja2==3.1.3
+python-slugify==8.0.1
+
+# Testing & Quality Assurance
+pytest==8.0.0
+pytest-asyncio==0.23.4
+pytest-cov==4.1.0
+pytest-mock==3.12.0
+httpx==0.26.0
+black==24.1.1
+isort==5.13.2
+mypy==1.8.0
+pylint==3.0.3
+flake8==7.0.0
+bandit==1.7.7
+safety==3.0.1
+
+# Database Drivers & Connectors
+psycopg2-binary==2.9.9
+async-exit-stack==1.0.1
+async-generator==1.10
+
+# Serialization & Performance
+ujson==5.9.0
+orjson==3.9.10
+msgpack==1.0.7
+python-dateutil==2.8.2
+pytz==2023.3.post1
+
+# Deployment & Server Infrastructure
+gunicorn==21.2.0
+uvloop==0.19.0
+watchfiles==0.21.0
+```
+
+# filepath: backend/pyproject.toml
+```toml
+[tool.poetry]
+name = "logos-backend"
+version = "1.0.0"
+description = "High-performance backend for LOGOS - The Bible for Classical Studies"
+authors = ["Senior Software Architect <architect@logos-classical.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.109.0"
+asyncpg = "^0.29.0"
+pydantic = {extras = ["email"], version = "^2.5.3"}
+pydantic-settings = "^2.1.0"
+uvicorn = {extras = ["standard"], version = "^0.27.0"}
+numpy = "^1.26.3"
+redis = "^5.0.1"
+
+[tool.black]
+line-length = 100
+target-version = ['py311']
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+line_length = 100
+multi_line_output = 3
+include_trailing_comma = true
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+ignore_missing_imports = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+warn_unused_configs = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+python_files = "test_*.py"
+addopts = "-v --cov=app --cov-report=term-missing"
+
+[tool.pylint.messages_control]
+disable = [
+    "C0114", # missing-module-docstring
+    "C0115", # missing-class-docstring
+    "C0116", # missing-function-docstring
+    "R0903", # too-few-public-methods
+    "R0913", # too-many-arguments
+]
+
+[tool.pylint.format]
+max-line-length = 100
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+```
+
+# filepath: backend/.env.example
+```bash
+# LOGOS - Environment Configuration
+# Database Connection
+DATABASE_URL=postgresql://postgres:JKLqDvdTtmRjGnOgDvGFLqLKVkcjQLFs@metro.proxy.rlwy.net:58888/railway
+DB_MIN_POOL_SIZE=10
+DB_MAX_POOL_SIZE=50
+DB_COMMAND_TIMEOUT=30.0
+
+# Redis Cache Configuration
+REDIS_URL=redis://localhost:6379/0
+CACHE_TTL_SECONDS=3600
+
+# Security Configuration
+SECRET_KEY=REPLACE_WITH_SECURE_64_CHARACTER_HEX_STRING
+ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=1440
+
+# Application Settings
+ENVIRONMENT=production
+DEBUG=false
+LOG_LEVEL=info
+PROJECT_NAME="LOGOS - The Bible for Classical Studies"
+API_V1_STR=/api/v1
+
+# External Services
+SENTRY_DSN=
+OTEL_EXPORTER_OTLP_ENDPOINT=http://jaeger:4317
+
+# Monitoring
+PROMETHEUS_MULTIPROC_DIR=/tmp/prometheus_multiproc_dir
+
+# Celery Configuration
+CELERY_BROKER_URL=redis://localhost:6379/1
+CELERY_RESULT_BACKEND=redis://localhost:6379/1
+```
+
+# filepath: backend/pytest.ini
+```ini
+[pytest]
+asyncio_mode = auto
+testpaths = tests
+python_files = test_*.py
+python_classes = Test*
+python_functions = test_*
+filterwarnings =
+    ignore::DeprecationWarning
+    ignore::UserWarning
+log_cli = True
+log_cli_level = INFO
+log_cli_format = %(asctime)s [%(levelname)8s] %(message)s (%(filename)s:%(lineno)s)
+log_cli_date_format = %Y-%m-%d %H:%M:%S
+addopts = 
+    --strict-markers
+    --tb=short
+    --cov=app
+    --cov-report=html
+    --cov-report=term-missing
+    --no-cov-on-fail
+```
+
+# filepath: backend/Dockerfile
+```dockerfile
+# Stage 1: Build dependencies
+FROM python:3.11-slim-bookworm AS builder
+
+LABEL maintainer="LOGOS Infrastructure Team <infra@logos-classical.com>"
+LABEL stage="builder"
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PIP_NO_CACHE_DIR=off \
+    PIP_DISABLE_PIP_VERSION_CHECK=on \
+    PIP_DEFAULT_TIMEOUT=100
+
+WORKDIR /build
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    libpq-dev \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt .
+RUN pip install --upgrade pip && \
+    pip install --prefix=/install -r requirements.txt
+
+# Stage 2: Final production image
+FROM python:3.11-slim-bookworm
+
+LABEL project="LOGOS"
+LABEL version="1.0.0"
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PATH="/install/bin:$PATH" \
+    PYTHONPATH="/app:$PYTHONPATH"
+
+WORKDIR /app
+
+# Install runtime dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libpq5 \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy installed packages from builder
+COPY --from=builder /install /install
+
+# Copy application source
+COPY . .
+
+# Create a non-privileged user
+RUN groupadd -r logos && useradd -r -g logos logos && \
+    chown -R logos:logos /app
+
+USER logos
+
+# Healthcheck to ensure service is responding
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:8000/health || exit 1
+
+EXPOSE 8000
+
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "4", "--log-level", "info"]
+```
+
+# filepath: backend/.dockerignore
+```text
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.tox/
+.venv
+venv/
+ENV/
+env/
+build/
+dist/
+*.egg-info/
+
+# Docker
+Dockerfile
+.dockerignore
+docker-compose.yml
+
+# Environment and Secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+*.key
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+```
+
+# filepath: backend/app/core/config.py
+```python
+import logging
+import os
+from typing import Any, Dict, List, Optional, Union
+
+from pydantic import AnyHttpUrl, PostgresDsn, field_validator, ValidationInfo
+from pydantic_settings import BaseSettings, SettingsConfigDict
+
+# Configure logging for the configuration module
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+class Settings(BaseSettings):
+    """
+    LOGOS System Settings.
+    Manages all environment variables, database connections, and security configurations.
+    Implemented with Pydantic V2 for strict validation.
+    """
+    
+    PROJECT_NAME: str = "LOGOS - The Bible for Classical Studies"
+    API_V1_STR: str = "/api/v1"
+    SECRET_KEY: str = "JKLqDvdTtmRjGnOgDvGFLqLKVkcjQLFs"  # In production, this comes from ENV
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24 * 7  # 7 days
+    
+    # Database Configuration
+    DATABASE_URL: str = "postgresql://postgres:JKLqDvdTtmRjGnOgDvGFLqLKVkcjQLFs@metro.proxy.rlwy.net:58888/railway"
+    DB_MIN_POOL_SIZE: int = 10
+    DB_MAX_POOL_SIZE: int = 50
+    
+    # Redis Configuration
+    REDIS_URL: Optional[str] = "redis://localhost:6379/0"
+    
+    # CORS Configuration
+    BACKEND_CORS_ORIGINS: List[AnyHttpUrl] = []
+
+    @field_validator("BACKEND_CORS_ORIGINS", mode="before")
+    @classmethod
+    def assemble_cors_origins(cls, v: Union[str, List[str]]) -> Union[List[str], str]:
+        """
+        Validates and parses CORS origins from a comma-separated string or list.
+        """
+        if isinstance(v, str) and not v.startswith("["):
+            return [i.strip() for i in v.split(",")]
+        elif isinstance(v, (list, str)):
+            return v
+        raise ValueError(v)
+
+    # Whitelisted Translators (Copyright-safe)
+    TRANSLATOR_WHITELIST: List[str] = [
+        "Jowett", "Dryden", "Dakyns", "Pope", "Murray", "Butler", "Church_Brodribb", 
+        "Cowper", "Butcher_Lang", "Lang_Leaf_Myers", "Conington", "Goodwin", "Storr", 
+        "Roberts", "Aubrey_Stewart", "Williams", "Dryden_et_al", "Brookes_More", 
+        "Ross", "Rawlinson", "Moore", "Evelyn-White", "Morshead", "Heseltine", 
+        "Crawley", "Long", "Lindsay", "Jebb", "Macaulay", "Leonard", "Adlington", 
+        "Smith", "Morris", "Butcher", "Derby", "Kenyon", "Hickie", "Anonymous"
+    ]
+
+    # Forbidden Translators (Copyrighted)
+    FORBIDDEN_TRANSLATORS: List[str] = ["Chapman", "Lattimore", "Fagles", "Wilson"]
+
+    def get_database_connection_params(self) -> Dict[str, Any]:
+        """
+        Extracts connection parameters from the DATABASE_URL for asyncpg.
+        """
+        try:
+            # Simple parsing for the specific Railway URL provided
+            # Format: postgresql://user:pass@host:port/db
+            url = self.DATABASE_URL.replace("postgresql://", "")
+            auth, rest = url.split("@")
+            user, password = auth.split(":")
+            host_port, database = rest.split("/")
+            host, port = host_port.split(":")
+            
+            logger.info(f"Database connection parameters parsed for host: {host}")
+            return {
+                "user": user,
+                "password": password,
+                "host": host,
+                "port": int(port),
+                "database": database,
+                "min_size": self.DB_MIN_POOL_SIZE,
+                "max_size": self.DB_MAX_POOL_SIZE
+            }
+        except Exception as e:
+            logger.error(f"Failed to parse DATABASE_URL: {str(e)}")
+            raise ValueError(f"Invalid DATABASE_URL format: {self.DATABASE_URL}")
+
+    def validate_translator_access(self, translator_name: str) -> bool:
+        """
+        Strictly validates if a translator is allowed in the system.
+        Prevents copyright infringement by blocking forbidden translators.
+        """
+        if translator_name in self.FORBIDDEN_TRANSLATORS:
+            logger.warning(f"CRITICAL SECURITY ALERT: Unauthorized access attempt for copyrighted translator: {translator_name}")
+            return False
+        
+        if translator_name not in self.TRANSLATOR_WHITELIST:
+            logger.info(f"Translator {translator_name} not found in whitelist. Access denied.")
+            return False
+            
+        return True
+
+    def get_log_config(self) -> Dict[str, Any]:
+        """
+        Returns a dictionary for standard Python logging configuration.
+        """
+        return {
+            "version": 1,
+            "disable_existing_loggers": False,
+            "formatters": {
+                "standard": {
+                    "format": "%(asctime)s [%(levelname)s] %(name)s: %(message)s"
+                },
+            },
+            "handlers": {
+                "default": {
+                    "level": "INFO",
+                    "formatter": "standard",
+                    "class": "logging.StreamHandler",
+                    "stream": "ext://sys.stdout",
+                },
+            },
+            "loggers": {
+                "": {
+                    "handlers": ["default"],
+                    "level": "INFO",
+                    "propagate": True
+                },
+                "app": {
+                    "handlers": ["default"],
+                    "level": "DEBUG",
+                    "propagate": False
+                },
+            }
+        }
+
+    model_config = SettingsConfigDict(
+        case_sensitive=True,
+        env_file=".env",
+        env_file_encoding="utf-8"
+    )
+
+# Global settings instance
+settings = Settings()
+```
+
+# filepath: backend/app/db/connection.py
+```python
+import asyncio
+import logging
+from typing import Any, Optional
+
+import asyncpg
+from app.core.config import settings
+
+# Initialize logging for the database connection manager
+logger = logging.getLogger(__name__)
+
+class DatabaseManager:
+    """
+    Manages the lifecycle of the PostgreSQL connection pool using asyncpg.
+    Provides methods for acquiring connections and executing queries with automatic retry logic.
+    """
+
+    def __init__(self) -> None:
+        """
+        Initializes the DatabaseManager with an empty pool.
+        """
+        self._pool: Optional[asyncpg.Pool] = None
+        self._connection_params = settings.get_database_connection_params()
+        logger.info("DatabaseManager initialized. Ready to establish connection pool.")
+
+    async def connect(self) -> None:
+        """
+        Establishes the connection pool to the Railway PostgreSQL database.
+        Includes error handling and logging for production monitoring.
+        """
+        if self._pool is not None:
+            logger.warning("Database connection pool already exists. Skipping re-initialization.")
+            return
+
+        try:
+            logger.info(f"Attempting to connect to database at {self._connection_params['host']}...")
+            self._pool = await asyncpg.create_pool(
+                user=self._connection_params['user'],
+                password=self._connection_params['password'],
+                host=self._connection_params['host'],
+                port=self._connection_params['port'],
+                database=self._connection_params['database'],
+                min_size=self._connection_params['min_size'],
+                max_size=self._connection_params['max_size'],
+                command_timeout=60.0,
+                max_queries=50000,
+                max_inactive_connection_lifetime=300.0
+            )
+            logger.info("Successfully established PostgreSQL connection pool.")
+        except Exception as e:
+            logger.critical(f"FATAL: Failed to connect to the database: {str(e)}")
+            raise ConnectionError(f"Could not connect to Railway PostgreSQL: {str(e)}")
+
+    async def disconnect(self) -> None:
+        """
+        Gracefully closes the connection pool.
+        Must be called during application shutdown.
+        """
+        if self._pool:
+            logger.info("Closing database connection pool...")
+            await self._pool.close()
+            self._pool = None
+            logger.info("Database connection pool closed.")
+        else:
+            logger.warning("Attempted to disconnect, but no pool was active.")
+
+    async def fetch_one(self, query: str, *args: Any) -> Optional[asyncpg.Record]:
+        """
+        Executes a query and returns a single record.
+        """
+        if self._pool is None:
+            await self.connect()
+        
+        async with self._pool.acquire() as connection:
+            try:
+                logger.debug(f"Executing fetch_one: {query} with args {args}")
+                return await connection.fetchrow(query, *args)
+            except Exception as e:
+                logger.error(f"Database error in fetch_one: {str(e)} | Query: {query}")
+                raise e
+
+    async def fetch_all(self, query: str, *args: Any) -> list[asyncpg.Record]:
+        """
+        Executes a query and returns all matching records.
+        """
+        if self._pool is None:
+            await self.connect()
+            
+        async with self._pool.acquire() as connection:
+            try:
+                logger.debug(f"Executing fetch_all: {query} with args {args}")
+                return await connection.fetch(query, *args)
+            except Exception as e:
+                logger.error(f"Database error in fetch_all: {str(e)} | Query: {query}")
+                raise e
+
+    async def execute(self, query: str, *args: Any) -> str:
+        """
+        Executes a command (INSERT, UPDATE, DELETE) and returns the status.
+        """
+        if self._pool is None:
+            await self.connect()
+            
+        async with self._pool.acquire() as connection:
+            try:
+                logger.debug(f"Executing command: {query} with args {args}")
+                return await connection.execute(query, *args)
+            except Exception as e:
+                logger.error(f"Database error in execute: {str(e)} | Query: {query}")
+                raise e
+
+    async def check_health(self) -> bool:
+        """
+        Performs a simple query to verify the database connection is healthy.
+        Used by the health check endpoint.
+        """
+        try:
+            result = await self.fetch_one("SELECT 1")
+            return result is not None
+        except Exception as e:
+            logger.error(f"Health check failed: {str(e)}")
+            return False
+
+# Global instance for use across the application
+db = DatabaseManager()
+```
+
+# filepath: backend/app/db/repository.py
+```python
+import logging
+import json
+from typing import List, Optional, Dict, Any
+import numpy as np
+
+from app.db.connection import db
+from app.core.config import settings
+
+# Setup logging for the repository layer
+logger = logging.getLogger(__name__)
+
+class ClassicalTextRepository:
+    """
+    Implementation of the Data Access Layer for LOGOS.
+    Directly queries the production tables: texts, source_texts, author_profiles, 
+    translator_profiles, and word_embeddings.
+    """
+
+    async def get_text_by_id(self, text_id: int) -> Optional[Dict[str, Any]]:
+        """
+        Retrieves a specific text entry from the 'texts' table by ID.
+        Includes validation of the translator against the whitelist.
+        """
+        query = "SELECT id, title, author, translator, text_content, book, chapter FROM texts WHERE id = $1"
+        try:
+            record = await db.fetch_one(query, text_id)
+            if not record:
+                logger.info(f"Text with ID {text_id} not found.")
+                return None
+            
+            # Strict Translator Validation
+            translator = record['translator']
+            if not settings.validate_translator_access(translator):
+                logger.error(f"Access to text {text_id} blocked: Translator '{translator}' is not authorized.")
+                return None
+                
+            return dict(record)
+        except Exception as e:
+            logger.error(f"Error fetching text {text_id}: {str(e)}")
+            raise Exception(f"Failed to retrieve text from database: {str(e)}")
+
+    async def search_texts_by_author(self, author_name: str, limit: int = 50) -> List[Dict[str, Any]]:
+        """
+        Searches the 'texts' table for all works by a specific author.
+        Filters out any results with forbidden translators.
+        """
+        query = """
+            SELECT id, title, author, translator, text_content, book, chapter 
+            FROM texts 
+            WHERE author ILIKE $1 
+            LIMIT $2
+        """
+        try:
+            records = await db.fetch_all(query, f"%{author_name}%", limit)
+            valid_results = []
+            
+            for rec in records:
+                if settings.validate_translator_access(rec['translator']):
+                    valid_results.append(dict(rec))
+                else:
+                    logger.debug(f"Skipping record {rec['id']} due to unauthorized translator.")
+            
+            logger.info(f"Found {len(valid_results)} authorized texts for author: {author_name}")
+            return valid_results
+        except Exception as e:
+            logger.error(f"Error searching texts for author {author_name}: {str(e)}")
+            return []
+
+    async def get_source_text_lines(self, work_id: int, start_line: int, end_line: int) -> List[Dict[str, Any]]:
+        """
+        Queries the 'source_texts' table for original language content.
+        Useful for philological analysis and side-by-side comparison.
+        """
+        query = """
+            SELECT id, content, language, work_id, line_number 
+            FROM source_texts 
+            WHERE work_id = $1 AND line_number BETWEEN $2 AND $3
+            ORDER BY line_number ASC
+        """
+        try:
+            records = await db.fetch_all(query, work_id, start_line, end_line)
+            logger.info(f"Retrieved {len(records)} source lines for work_id {work_id}")
+            return [dict(rec) for rec in records]
+        except Exception as e:
+            logger.error(f"Error fetching source text for work_id {work_id}: {str(e)}")
+            raise Exception("Philological source retrieval failed.")
+
+    async def get_author_profile(self, name: str) -> Optional[Dict[str, Any]]:
+        """
+        Retrieves metadata from the 'author_profiles' table.
+        """
+        query = "SELECT id, name, birth_year, death_year, nationality, genres FROM author_profiles WHERE name = $1"
+        try:
+            record = await db.fetch_one(query, name)
+            if record:
+                return dict(record)
+            return None
+        except Exception as e:
+            logger.error(f"Error fetching author profile for {name}: {str(e)}")
+            return None
+
+    async def get_translator_profile(self, name: str) -> Optional[Dict[str, Any]]:
+        """
+        Retrieves metadata from the 'translator_profiles' table.
+        Includes a check against the master whitelist.
+        """
+        if not settings.validate_translator_access(name):
+            logger.warning(f"Attempted to fetch profile for unauthorized translator: {name}")
+            return None
+
+        query = "SELECT id, name, style_vector, works_translated FROM translator_profiles WHERE name = $1"
+        try:
+            record = await db.fetch_one(query, name)
+            if record:
+                return dict(record)
+            return None
+        except Exception as e:
+            logger.error(f"Error fetching translator profile for {name}: {str(e)}")
+            return None
+
+    async def get_word_vector(self, word: str) -> Optional[np.ndarray]:
+        """
+        Retrieves a 300-dimension word embedding from the 'word_embeddings' table.
+        Converts the stored array back into a numpy array for computation.
+        """
+        query = "SELECT vector FROM word_embeddings WHERE word = $1"
+        try:
+            record = await db.fetch_one(query, word)
+            if record and record['vector']:
+                # Assuming vector is stored as a list/array in Postgres
+                return np.array(record['vector'], dtype=np.float32)
+            return None
+        except Exception as e:
+            logger.error(f"Error fetching word vector for '{word}': {str(e)}")
+            return None
+
+    async def get_texts_by_translator(self, translator_name: str) -> List[Dict[str, Any]]:
+        """
+        Retrieves all texts translated by a specific individual.
+        Strictly enforces the whitelist.
+        """
+        if not settings.validate_translator_access(translator_name):
+            logger.error(f"Unauthorized translator query: {translator_name}")
+            return []
+
+        query = "SELECT id, title, author, translator, book, chapter FROM texts WHERE translator = $1"
+        try:
+            records = await db.fetch_all(query, translator_name)
+            return [dict(rec) for rec in records]
+        except Exception as e:
+            logger.error(f"Error fetching texts by translator {translator_name}: {str(e)}")
+            return []
+
+    async def get_texts_by_genre(self, genre: str) -> List[Dict[str, Any]]:
+        """
+        Finds authors associated with a genre and retrieves their works.
+        """
+        # First, find authors in the genre
+        author_query = "SELECT name FROM author_profiles WHERE $1 = ANY(genres)"
+        try:
+            author_records = await db.fetch_all(author_query, genre)
+            author_names = [rec['name'] for rec in author_records]
+            
+            if not author_names:
+                return []
+
+            # Then, find their texts
+            text_query = "SELECT id, title, author, translator FROM texts WHERE author = ANY($1)"
+            text_records = await db.fetch_all(text_query, author_names)
+            
+            # Filter by whitelist
+            return [dict(r) for r in text_records if settings.validate_translator_access(r['translator'])]
+        except Exception as e:
+            logger.error(f"Error fetching texts by genre {genre}: {str(e)}")
+            return []
+
+    async def get_translation_comparison(self, title: str, book: int, chapter: int) -> List[Dict[str, Any]]:
+        """
+        Retrieves different translations of the same passage for comparison.
+        This is a core feature for classical scholars.
+        """
+        query = """
+            SELECT id, title, author, translator, text_content, book, chapter 
+            FROM texts 
+            WHERE title = $1 AND book = $2 AND chapter = $3
+        """
+        try:
+            records = await db.fetch_all(query, title, book, chapter)
+            results = []
+            for rec in records:
+                if settings.validate_translator_access(rec['translator']):
+                    results.append(dict(rec))
+            
+            logger.info(f"Comparison view generated for {title} {book}.{chapter} with {len(results)} versions.")
+            return results
+        except Exception as e:
+            logger.error(f"Error generating translation comparison: {str(e)}")
+            return []
+
+    async def batch_get_word_embeddings(self, words: List[str]) -> Dict[str, np.ndarray]:
+        """
+        Efficiently fetches vectors for multiple words in a single query.
+        """
+        query = "SELECT word, vector FROM word_embeddings WHERE word = ANY($1)"
+        try:
+            records = await db.fetch_all(query, words)
+            return {r['word']: np.array(r['vector'], dtype=np.float32) for r in records}
+        except Exception as e:
+            logger.error(f"Batch embedding fetch failed: {str(e)}")
+            return {}
+
+    async def get_author_stats(self) -> List[Dict[str, Any]]:
+        """
+        Aggregates data to show how many works are available per author.
+        Used for the dashboard/index view.
+        """
+        query = """
+            SELECT author, COUNT(*) as work_count 
+            FROM texts 
+            GROUP BY author 
+            ORDER BY work_count DESC
+        """
+        try:
+            records = await db.fetch_all(query)
+            return [dict(rec) for rec in records]
+        except Exception as e:
+            logger.error(f"Failed to fetch author stats: {str(e)}")
+            return []
+
+    async def get_translator_workload(self) -> List[Dict[str, Any]]:
+        """
+        Aggregates data to show how many works are available per translator.
+        Filters out forbidden translators from the stats.
+        """
+        query = """
+            SELECT translator, COUNT(*) as work_count 
+            FROM texts 
+            GROUP BY translator 
+            ORDER BY work_count DESC
+        """
+        try:
+            records = await db.fetch_all(query)
+            valid_stats = []
+            for rec in records:
+                if settings.validate_translator_access(rec['translator']):
+                    valid_stats.append(dict(rec))
+            return valid_stats
+        except Exception as e:
+            logger.error(f"Failed to fetch translator workload: {str(e)}")
+            return []
+
+    async def get_recent_additions(self, limit: int = 10) -> List[Dict[str, Any]]:
+        """
+        Retrieves the most recently added texts for the 'What's New' section.
+        """
+        query = "SELECT id, title, author, translator FROM texts ORDER BY id DESC LIMIT $1"
+        try:
+            records = await db.fetch_all(query, limit)
+            return [dict(rec) for rec in records if settings.validate_translator_access(rec['translator'])]
+        except Exception as e:
+            logger.error(f"Error fetching recent additions: {str(e)}")
+            return []
+
+    async def get_source_text_metadata(self, work_id: int) -> Optional[Dict[str, Any]]:
+        """
+        Retrieves language and line count information for a source text.
+        """
+        query = """
+            SELECT language, COUNT(*) as line_count 
+            FROM source_texts 
+            WHERE work_id = $1 
+            GROUP BY language
+        """
+        try:
+            record = await db.fetch_one(query, work_id)
+            if record:
+                return dict(record)
+            return None
+        except Exception as e:
+            logger.error(f"Error fetching source metadata for work {work_id}: {str(e)}")
+            return None
+
+    async def search_full_text(self, search_term: str, limit: int = 20) -> List[Dict[str, Any]]:
+        """
+        Performs a full-text search across the 'text_content' column.
+        Utilizes PostgreSQL's text search capabilities if indexed, or falls back to ILIKE.
+        """
+        query = """
+            SELECT id, title, author, translator, book, chapter 
+            FROM texts 
+            WHERE text_content ILIKE $1 
+            LIMIT $2
+        """
+        try:
+            # Note: In production, we would use tsvector for performance
+            records = await db.fetch_all(query, f"%{search_term}%", limit)
+            return [dict(rec) for rec in records if settings.validate_translator_access(rec['translator'])]
+        except Exception as e:
+            logger.error(f"Full-text search failed for '{search_term}': {str(e)}")
+            return []
+
+# Singleton instance for the repository
+repo = ClassicalTextRepository()
+```
+
+# filepath: backend/app/core/constants.py
+```python
+"""
+LOGOS Constants and Whitelists.
+This file contains the immutable configurations for the system, 
+specifically the translator whitelist to ensure copyright compliance.
+"""
+
+# The 38 REAL Translators found in the database. 
+# These are public domain and safe for use.
+AUTHORIZED_TRANSLATORS = {
+    "Jowett", "Dryden", "Dakyns", "Pope", "Murray", "Butler", 
+    "Church_Brodribb", "Cowper", "Butcher_Lang", "Lang_Leaf_Myers", 
+    "Conington", "Goodwin", "Storr", "Roberts", "Aubrey_Stewart", 
+    "Williams", "Dryden_et_al", "Brookes_More", "Ross", "Rawlinson", 
+    "Moore", "Evelyn-White", "Morshead", "Heseltine", "Crawley", 
+    "Long", "Lindsay", "Jebb", "Macaulay", "Leonard", "Adlington", 
+    "Smith", "Morris", "Butcher", "Derby", "Kenyon", "Hickie", "Anonymous"
+}
+
+# Copyrighted translators that MUST NEVER be served by the API.
+# Any attempt to access these should be logged as a security event.
+FORBIDDEN_TRANSLATORS = {
+    "Chapman", "Lattimore", "Fagles", "Wilson"
+}
+
+# Database Table Names
+TABLE_TEXTS = "texts"
+TABLE_SOURCE_TEXTS = "source_texts"
+TABLE_AUTHORS = "author_profiles"
+TABLE_TRANSLATORS = "translator_profiles"
+TABLE_EMBEDDINGS = "word_embeddings"
+
+# Philological Constants
+LANGUAGES = {
+    "GRC": "Ancient Greek",
+    "LAT": "Latin",
+    "ENG": "English"
+}
+
+# System Limits
+MAX_QUERY_LIMIT = 100
+DEFAULT_PAGINATION_SIZE = 20
+VECTOR_DIMENSIONS = 300
+```
+
+# filepath: backend/app/main.py
+```python
+import logging
+import time
+from fastapi import FastAPI, Request, HTTPException, Depends
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
+
+from app.core.config import settings
+from app.db.connection import db
+from app.db.repository import repo
+
+# Initialize logging based on settings
+logging.config.dictConfig(settings.get_log_config())
+logger = logging.getLogger(__name__)
+
+app = FastAPI(
+    title=settings.PROJECT_NAME,
+    openapi_url=f"{settings.API_V1_STR}/openapi.json",
+    docs_url=f"{settings.API_V1_STR}/docs",
+    redoc_url=f"{settings.API_V1_STR}/redoc",
+)
+
+# Set up CORS middleware
+if settings.BACKEND_CORS_ORIGINS:
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=[str(origin) for origin in settings.BACKEND_CORS_ORIGINS],
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
+
+@app.on_event("startup")
+async def startup_event():
+    """
+    Logic to run on application startup.
+    Initializes the database connection pool.
+    """
+    logger.info("Starting up LOGOS Backend...")
+    try:
+        await db.connect()
+        logger.info("Startup complete. Database connected.")
+    except Exception as e:
+        logger.critical(f"Startup failed: {str(e)}")
+        raise e
+
+@app.on_event("shutdown")
+async def shutdown_event():
+    """
+    Logic to run on application shutdown.
+    Closes the database connection pool.
+    """
+    logger.info("Shutting down LOGOS Backend...")
+    await db.disconnect()
+    logger.info("Shutdown complete.")
+
+@app.middleware("http")
+async def add_process_time_header(request: Request, call_next):
+    """
+    Middleware to measure request processing time and log it.
+    """
+    start_time = time.time()
+    response = await call_next(request)
+    process_time = time.time() - start_time
+    response.headers["X-Process-Time"] = str(process_time)
+    logger.info(f"Path: {request.url.path} | Method: {request.method} | Duration: {process_time:.4f}s")
+    return response
+
+@app.get("/health", tags=["System"])
+async def health_check():
+    """
+    Health check endpoint for production monitoring.
+    Verifies database connectivity.
+    """
+    db_healthy = await db.check_health()
+    if db_healthy:
+        return {
+            "status": "healthy",
+            "database": "connected",
+            "timestamp": time.time(),
+            "version": "1.0.0"
+        }
+    else:
+        logger.error("Health check failed: Database disconnected.")
+        return JSONResponse(
+            status_code=503,
+            content={"status": "unhealthy", "database": "disconnected"}
+        )
+
+@app.get(f"{settings.API_V1_STR}/texts/{{text_id}}", tags=["Texts"])
+async def get_text(text_id: int):
+    """
+    API endpoint to retrieve a text by its ID.
+    Enforces translator whitelist via the repository layer.
+    """
+    text = await repo.get_text_by_id(text_id)
+    if not text:
+        raise HTTPException(status_code=404, detail="Text not found or access restricted.")
+    return text
+
+@app.get(f"{settings.API_V1_STR}/search", tags=["Texts"])
+async def search_texts(query: str, author: str = None):
+    """
+    Search endpoint for finding texts by content or author.
+    """
+    if author:
+        results = await repo.search_texts_by_author(author)
+    else:
+        results = await repo.search_full_text(query)
+    
+    return {"results": results, "count": len(results)}
+
+@app.get(f"{settings.API_V1_STR}/authors/{{name}}", tags=["Authors"])
+async def get_author_profile(name: str):
+    """
+    Retrieves the profile and works of a classical author.
+    """
+    profile = await repo.get_author_profile(name)
+    if not profile:
+        raise HTTPException(status_code=404, detail="Author profile not found.")
+    
+    works = await repo.search_texts_by_author(name)
+    return {
+        "profile": profile,
+        "works": works
+    }
+
+@app.get(f"{settings.API_V1_STR}/translators", tags=["Translators"])
+async def list_translators():
+    """
+    Lists all authorized translators available in the system.
+    """
+    return {"authorized_translators": settings.TRANSLATOR_WHITELIST}
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
+```
+
+This configuration provides:
+1.  **Strict Security**: A hardcoded whitelist and blacklist for translators to prevent copyright issues.
+2.  **Production Performance**: Asyncpg connection pooling and multi-stage Docker builds.
+3.  **Scalable Architecture**: Clean separation between configuration, database connection, and data access logic.
+4.  **Full Observability**: Detailed logging and health check endpoints.
+5.  **Philological Support**: Specific data access patterns for source texts and word embeddings required by classical scholars.

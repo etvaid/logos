@@ -1,0 +1,559 @@
+{
+  "timestamp": "2025-12-30T06:39:27.454063",
+  "total_files": 110,
+  "total_issues": 0,
+  "total_fixed": 0,
+  "queued_for_human": 0,
+  "results": [
+    {
+      "filename": "backend/logos_quality_assurance.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/utils/cache_decorators.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "frontend/utils/lazy_loader.ts",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/monitoring/health.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/monitoring/metrics.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/monitoring/sentry_config.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/monitoring/performance.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "scripts/seed_database.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "scripts/seed_database.py (Continued/Expanded)",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/analysis/file_inventory.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/analysis/completeness_checker.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/analysis/gap_report_generator.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/analysis/cli_interface.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/analysis/db_schema_manager.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/analysis/dependency_mapper.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/analysis/import_resolver.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "frontend/analysis/component_tree.ts",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/analysis/endpoint_tester.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/api/endpoint_registry.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/services/analysis_engine.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/analysis/schema_validator.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/database/query_optimizer.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/api/corpus/service.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/api/corpus/router.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/api/translate/ltqi_calculator.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/api/translate/service.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/api/translate/router.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/api/semantia/service.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/api/semantia/router.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/api/chronos/service.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/api/chronos/router.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/api/connectome/service.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/api/connectome/router.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/api/discovery/service.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/api/discovery/hypothesis_generator.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/api/discovery/router.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/database/connection.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/database/queries.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/database/transactions.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/database/migrations.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/database/utils.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/database/search_engine.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/services/base.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/services/cache.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/services/events.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/services/factory.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/services/semantic_service.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/services/chronos_service.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/graph_service.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/services/translation_service.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/services/atlas_service.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/main.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/api/__init__.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/api/deps.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/api/auth.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/api/rate_limit.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/api/validators.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/database_engine.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "unknown",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/app/db/connection.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/app/db/repository.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/app/main.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/database_service.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/migrations/run_migrations.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": ".github/workflows/ci.yml",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "scripts/production_validator.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/infrastructure/health.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "docs/SETUP.md",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "docs/API.md",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "server/app.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "verification/pass1/contract_validator.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "verification/pass1/contract_reporter.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "verification/pass1/python_deps_validator.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "verification/pass1/npm_deps_validator.ts",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "verification/pass1/security_scanner.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/verification/pass1/syntax_validator.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/verification/pass1/import_checker.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/verification/pass1/fix_suggester.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "verification/pass2/placeholder_scanner.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "verification/pass2/implementation_checker.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "verification/pass2/feature_checklist.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "verification/pass2/coverage_reporter.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/verification/pass2/query_validator.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/verification/pass2/schema_checker.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/verification/pass2/performance_analyzer.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "verification/pass2/error_handler_validator.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "verification/pass2/api_error_checker.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "verification/pass2/frontend_error_checker.ts",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "verification/pass2/credential_scanner.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "verification/pass2/injection_checker.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "verification/pass2/xss_scanner.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "verification/pass2/auth_validator.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/tests/conftest.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/tests/test_corpus_api.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/tests/test_translate_api.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/tests/test_semantia_api.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/tests/test_chronos_api.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/tests/test_connectome_api.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/tests/test_auth.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/database/query_engine.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "backend/database/manager.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "app/services/integration_manager.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "app/api/v1/endpoints.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "tools/import_fixer.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "tools/circular_import_resolver.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "tools/placeholder_finder.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "tools/implementation_generator.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "tools/batch_completer.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "tools/async_wrapper.py",
+      "status": "not_found",
+      "results": []
+    },
+    {
+      "filename": "tools/database_integrity_checker.py",
+      "status": "not_found",
+      "results": []
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "timestamp": "2025-12-29T01:57:18.442780",
+  "duration_seconds": 33.226327,
+  "fixes_applied": 7,
+  "screenshots_captured": 0,
+  "results": {
+    "preflight_LOGOS directory": true,
+    "preflight_API directory": true,
+    "preflight_Web directory": true,
+    "preflight_Routers directory": true,
+    "preflight_App directory": true,
+    "preflight_api": true,
+    "preflight_db": true,
+    "endpoints_passed": 14,
+    "endpoints_failed": 2
+  },
+  "fixes": [
+    "Router: translate.py",
+    "Router: semantia.py",
+    "Router: search.py",
+    "Page: translate/page.tsx",
+    "Page: semantia/page.tsx",
+    "Page: search/page.tsx",
+    "Page: page.tsx"
+  ],
+  "screenshots": []
+}

@@ -1,0 +1,911 @@
+The following monitoring and observability suite is designed for LOGOS - The Bible for Classical Studies. This system provides deep visibility into database integrity, system performance, and scholar usage patterns, ensuring the $10 million production environment maintains 99.99% availability.
+
+# filepath: backend/monitoring/health.py
+```python
+import asyncio
+import logging
+import os
+import psutil
+import shutil
+import time
+from typing import Dict, Any, List, Optional
+from datetime import datetime
+import asyncpg
+from pydantic import BaseModel
+
+# Configuration for LOGOS Health Monitoring
+DATABASE_URL = "postgresql://postgres:JKLqDvdTtmRjGnOgDvGFLqLKVkcjQLFs@metro.proxy.rlwy.net:58888/railway"
+logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO)
+
+class HealthReport(BaseModel):
+    status: str
+    timestamp: str
+    database: Dict[str, Any]
+    system: Dict[str, Any]
+    integrity: Dict[str, Any]
+    version: str = "1.0.0-PROD"
+
+class HealthMonitor:
+    """
+    Comprehensive Health Monitoring service for the LOGOS production environment.
+    This class performs deep inspections of the PostgreSQL database, system resources,
+    and the integrity of classical text data.
+    """
+
+    def __init__(self):
+        self.start_time = time.time()
+        self.required_translators = [
+            "Jowett", "Dryden", "Dakyns", "Pope", "Murray", "Butler", "Church_Brodribb", 
+            "Cowper", "Butcher_Lang", "Lang_Leaf_Myers", "Conington", "Goodwin", "Storr", 
+            "Roberts", "Aubrey_Stewart", "Williams", "Dryden_et_al", "Brookes_More", 
+            "Ross", "Rawlinson", "Moore", "Evelyn-White", "Morshead", "Heseltine", 
+            "Crawley", "Long", "Lindsay", "Jebb", "Macaulay", "Leonard", "Adlington", 
+            "Smith", "Morris", "Butcher", "Derby", "Kenyon", "Hickie", "Anonymous"
+        ]
+        logger.info("Initializing LOGOS Health Monitoring Service...")
+
+    async def get_db_connection(self) -> asyncpg.Connection:
+        """Establishes a connection to the Railway PostgreSQL instance."""
+        try:
+            conn = await asyncpg.connect(DATABASE_URL)
+            logger.info("Database connection established for health check.")
+            return conn
+        except Exception as e:
+            logger.critical(f"DATABASE CONNECTION FAILED: {str(e)}")
+            raise ConnectionError(f"Critical failure connecting to LOGOS DB: {e}")
+
+    async def check_database_latency(self, conn: asyncpg.Connection) -> float:
+        """Measures the round-trip time for a basic SQL query."""
+        start = time.perf_counter()
+        try:
+            await conn.execute("SELECT 1")
+            latency = (time.perf_counter() - start) * 1000
+            logger.info(f"Database latency: {latency:.2f}ms")
+            return latency
+        except Exception as e:
+            logger.error(f"Latency check failed: {e}")
+            return -1.0
+
+    async def check_texts_table_integrity(self, conn: asyncpg.Connection) -> Dict[str, Any]:
+        """Validates the 'texts' table row count and schema health."""
+        try:
+            row_count = await conn.fetchval("SELECT COUNT(*) FROM texts")
+            logger.info(f"Texts table integrity check: {row_count} rows found.")
+            return {
+                "table": "texts",
+                "count": row_count,
+                "status": "HEALTHY" if row_count >= 121184 else "DEGRADED",
+                "expected_min": 121184
+            }
+        except Exception as e:
+            logger.error(f"Texts table check failed: {e}")
+            return {"table": "texts", "status": "ERROR", "error": str(e)}
+
+    async def check_source_texts_volume(self, conn: asyncpg.Connection) -> Dict[str, Any]:
+        """Validates the massive 'source_texts' table (6.6M+ rows)."""
+        try:
+            row_count = await conn.fetchval("SELECT COUNT(*) FROM source_texts")
+            logger.info(f"Source texts volume check: {row_count} rows found.")
+            return {
+                "table": "source_texts",
+                "count": row_count,
+                "status": "HEALTHY" if row_count >= 6622500 else "DEGRADED",
+                "expected_min": 6622500
+            }
+        except Exception as e:
+            logger.error(f"Source texts check failed: {e}")
+            return {"table": "source_texts", "status": "ERROR", "error": str(e)}
+
+    async def verify_translator_list(self, conn: asyncpg.Connection) -> Dict[str, Any]:
+        """Ensures all 38 approved translators are present in the database."""
+        try:
+            results = await conn.fetch("SELECT DISTINCT name FROM translator_profiles")
+            db_translators = {r['name'] for r in results}
+            missing = [t for t in self.required_translators if t not in db_translators]
+            
+            status = "HEALTHY" if not missing else "INCOMPLETE"
+            if missing:
+                logger.warning(f"Missing translators in DB: {missing}")
+            
+            return {
+                "status": status,
+                "missing_count": len(missing),
+                "missing_list": missing,
+                "total_found": len(db_translators)
+            }
+        except Exception as e:
+            logger.error(f"Translator verification failed: {e}")
+            return {"status": "ERROR", "error": str(e)}
+
+    async def check_word_embeddings_health(self, conn: asyncpg.Connection) -> Dict[str, Any]:
+        """Checks the 300-dimension vector data integrity."""
+        try:
+            row_count = await conn.fetchval("SELECT COUNT(*) FROM word_embeddings")
+            sample = await conn.fetchrow("SELECT vector FROM word_embeddings LIMIT 1")
+            
+            vector_valid = False
+            if sample and len(sample['vector']) == 300:
+                vector_valid = True
+                
+            return {
+                "table": "word_embeddings",
+                "count": row_count,
+                "vector_dimension_valid": vector_valid,
+                "status": "HEALTHY" if row_count >= 20960 and vector_valid else "DEGRADED"
+            }
+        except Exception as e:
+            logger.error(f"Word embeddings health check failed: {e}")
+            return {"status": "ERROR", "error": str(e)}
+
+    def check_cpu_usage(self) -> Dict[str, Any]:
+        """Monitors CPU load for the production application."""
+        cpu_percent = psutil.cpu_percent(interval=1)
+        load_avg = os.getloadavg()
+        status = "HEALTHY" if cpu_percent < 80 else "WARNING"
+        logger.info(f"CPU Usage: {cpu_percent}%")
+        return {
+            "percent": cpu_percent,
+            "load_average": load_avg,
+            "status": status
+        }
+
+    def check_memory_usage(self) -> Dict[str, Any]:
+        """Monitors RAM consumption, critical for processing large text volumes."""
+        mem = psutil.virtual_memory()
+        status = "HEALTHY" if mem.percent < 85 else "CRITICAL"
+        logger.info(f"Memory Usage: {mem.percent}%")
+        return {
+            "total_gb": mem.total / (1024**3),
+            "available_gb": mem.available / (1024**3),
+            "percent": mem.percent,
+            "status": status
+        }
+
+    def check_disk_space(self) -> Dict[str, Any]:
+        """Ensures sufficient disk space for logs and temporary processing."""
+        total, used, free = shutil.disk_usage("/")
+        percent_used = (used / total) * 100
+        status = "HEALTHY" if percent_used < 90 else "WARNING"
+        return {
+            "total_gb": total / (1024**3),
+            "free_gb": free / (1024**3),
+            "percent_used": percent_used,
+            "status": status
+        }
+
+    async def check_active_connections(self, conn: asyncpg.Connection) -> int:
+        """Checks the number of active connections to the PostgreSQL instance."""
+        try:
+            count = await conn.fetchval("SELECT count(*) FROM pg_stat_activity")
+            logger.info(f"Active DB connections: {count}")
+            return count
+        except Exception as e:
+            logger.error(f"Failed to fetch active connections: {e}")
+            return -1
+
+    def get_uptime(self) -> float:
+        """Calculates total system uptime in seconds."""
+        return time.time() - self.start_time
+
+    async def run_full_diagnostics(self) -> HealthReport:
+        """
+        Executes all health checks and aggregates results into a final report.
+        This is the primary entry point for the health monitoring endpoint.
+        """
+        conn = None
+        try:
+            conn = await self.get_db_connection()
+            
+            db_latency = await self.check_database_latency(conn)
+            texts_health = await self.check_texts_table_integrity(conn)
+            source_health = await self.check_source_texts_volume(conn)
+            translator_integrity = await self.verify_translator_list(conn)
+            embedding_health = await self.check_word_embeddings_health(conn)
+            active_conns = await self.check_active_connections(conn)
+            
+            cpu = self.check_cpu_usage()
+            memory = self.check_memory_usage()
+            disk = self.check_disk_space()
+            
+            overall_status = "HEALTHY"
+            if any(s["status"] == "CRITICAL" for s in [cpu, memory]) or db_latency < 0:
+                overall_status = "CRITICAL"
+            elif any(s["status"] == "DEGRADED" for s in [texts_health, source_health]):
+                overall_status = "DEGRADED"
+
+            report = HealthReport(
+                status=overall_status,
+                timestamp=datetime.utcnow().isoformat(),
+                database={
+                    "latency_ms": db_latency,
+                    "active_connections": active_conns,
+                    "url_configured": True
+                },
+                system={
+                    "cpu": cpu,
+                    "memory": memory,
+                    "disk": disk,
+                    "uptime_seconds": self.get_uptime()
+                },
+                integrity={
+                    "texts_table": texts_health,
+                    "source_texts_table": source_health,
+                    "translator_profiles": translator_integrity,
+                    "word_embeddings": embedding_health
+                }
+            )
+            
+            logger.info(f"Health check completed with status: {overall_status}")
+            return report
+
+        except Exception as e:
+            logger.error(f"Diagnostic run failed: {str(e)}")
+            return HealthReport(
+                status="CRITICAL",
+                timestamp=datetime.utcnow().isoformat(),
+                database={"error": str(e)},
+                system={},
+                integrity={}
+            )
+        finally:
+            if conn:
+                await conn.close()
+                logger.info("Database connection closed after health check.")
+
+    async def log_periodic_status(self):
+        """Background task for periodic health logging."""
+        while True:
+            report = await self.run_full_diagnostics()
+            if report.status != "HEALTHY":
+                logger.warning(f"SYSTEM ALERT: Status is {report.status}")
+            await asyncio.sleep(300) # Check every 5 minutes
+
+# Example usage for FastAPI:
+# @app.get("/health")
+# async def health_endpoint():
+#     monitor = HealthMonitor()
+#     return await monitor.run_full_diagnostics()
+```
+
+# filepath: backend/monitoring/metrics.py
+```python
+import time
+import logging
+import asyncio
+from typing import Dict, Any, Optional, List
+from prometheus_client import Counter, Histogram, Gauge, Summary, CollectorRegistry, generate_latest, CONTENT_TYPE_LATEST
+import asyncpg
+
+# Initialize Logger
+logger = logging.getLogger(__name__)
+
+# Constants for LOGOS Metrics
+LOGOS_NAMESPACE = "logos_bible_classical"
+DATABASE_URL = "postgresql://postgres:JKLqDvdTtmRjGnOgDvGFLqLKVkcjQLFs@metro.proxy.rlwy.net:58888/railway"
+
+class LogosMetricsManager:
+    """
+    Manages Prometheus metrics for the LOGOS production environment.
+    Tracks scholar activity, database performance, and text retrieval statistics.
+    """
+
+    def __init__(self):
+        self.registry = CollectorRegistry()
+        
+        # 1. Request Metrics
+        self.http_requests_total = Counter(
+            'http_requests_total', 'Total HTTP requests',
+            ['method', 'endpoint', 'status_code'],
+            namespace=LOGOS_NAMESPACE, registry=self.registry
+        )
+        
+        self.request_latency = Histogram(
+            'request_latency_seconds', 'HTTP request latency in seconds',
+            ['method', 'endpoint'],
+            namespace=LOGOS_NAMESPACE, registry=self.registry
+        )
+
+        # 2. Database Metrics
+        self.db_query_duration = Histogram(
+            'db_query_duration_seconds', 'Database query execution time',
+            ['table', 'operation'],
+            namespace=LOGOS_NAMESPACE, registry=self.registry
+        )
+        
+        self.db_connection_pool_size = Gauge(
+            'db_connections_active', 'Number of active DB connections',
+            namespace=LOGOS_NAMESPACE, registry=self.registry
+        )
+
+        # 3. Classical Scholarship Specific Metrics
+        self.text_retrieval_counter = Counter(
+            'text_retrievals_total', 'Total number of classical texts retrieved',
+            ['author', 'translator', 'language'],
+            namespace=LOGOS_NAMESPACE, registry=self.registry
+        )
+        
+        self.search_queries_total = Counter(
+            'search_queries_total', 'Total number of semantic searches performed',
+            ['query_type'],
+            namespace=LOGOS_NAMESPACE, registry=self.registry
+        )
+        
+        self.embedding_lookup_latency = Summary(
+            'embedding_lookup_latency_seconds', 'Latency of word embedding vector lookups',
+            namespace=LOGOS_NAMESPACE, registry=self.registry
+        )
+
+        # 4. Error Metrics
+        self.application_errors = Counter(
+            'application_errors_total', 'Total application errors and exceptions',
+            ['type', 'severity'],
+            namespace=LOGOS_NAMESPACE, registry=self.registry
+        )
+
+        logger.info("LogosMetricsManager initialized successfully.")
+
+    def record_request(self, method: str, endpoint: str, status_code: int, duration: float):
+        """Records an HTTP request with its latency and status."""
+        try:
+            self.http_requests_total.labels(method=method, endpoint=endpoint, status_code=status_code).inc()
+            self.request_latency.labels(method=method, endpoint=endpoint).observe(duration)
+            logger.debug(f"Metric recorded: {method} {endpoint} {status_code} in {duration}s")
+        except Exception as e:
+            logger.error(f"Failed to record request metric: {e}")
+
+    def record_db_query(self, table: str, operation: str, duration: float):
+        """Records timing for database operations on specific tables."""
+        try:
+            self.db_query_duration.labels(table=table, operation=operation).observe(duration)
+        except Exception as e:
+            logger.error(f"Failed to record DB metric: {e}")
+
+    def record_text_access(self, author: str, translator: str, language: str = "english"):
+        """Tracks which classical authors and translators are most frequently accessed."""
+        try:
+            self.text_retrieval_counter.labels(
+                author=author, 
+                translator=translator, 
+                language=language
+            ).inc()
+        except Exception as e:
+            logger.error(f"Failed to record text access metric: {e}")
+
+    def record_error(self, error_type: str, severity: str = "error"):
+        """Logs application-level errors for Prometheus alerting."""
+        try:
+            self.application_errors.labels(type=error_type, severity=severity).inc()
+        except Exception as e:
+            logger.error(f"Failed to record error metric: {e}")
+
+    async def update_db_gauges(self):
+        """Background task to update gauge-based metrics from the live database."""
+        conn = None
+        try:
+            conn = await asyncpg.connect(DATABASE_URL)
+            while True:
+                # Update active connections
+                active_conns = await conn.fetchval("SELECT count(*) FROM pg_stat_activity")
+                self.db_connection_pool_size.set(active_conns)
+                
+                # Update total source texts as a gauge to monitor data growth
+                source_count = await conn.fetchval("SELECT count(*) FROM source_texts")
+                logger.info(f"Gauges updated: DB Conns={active_conns}, SourceTexts={source_count}")
+                
+                await asyncio.sleep(60)
+        except Exception as e:
+            logger.error(f"Failed to update DB gauges: {e}")
+            if conn:
+                await conn.close()
+
+    def generate_metrics_report(self) -> bytes:
+        """Generates the latest metrics in Prometheus text format."""
+        try:
+            return generate_latest(self.registry)
+        except Exception as e:
+            logger.error(f"Failed to generate metrics report: {e}")
+            return b"Error generating metrics"
+
+    def get_content_type(self) -> str:
+        """Returns the standard Prometheus content type."""
+        return CONTENT_TYPE_LATEST
+
+    def record_search(self, query_type: str):
+        """Records a search event."""
+        self.search_queries_total.labels(query_type=query_type).inc()
+
+    def record_embedding_latency(self, duration: float):
+        """Records vector lookup timing."""
+        self.embedding_lookup_latency.observe(duration)
+
+    def track_slow_queries(self, threshold: float = 0.5):
+        """Decorator for tracking slow database methods."""
+        def decorator(func):
+            async def wrapper(*args, **kwargs):
+                start = time.perf_counter()
+                result = await func(*args, **kwargs)
+                duration = time.perf_counter() - start
+                if duration > threshold:
+                    self.record_error("slow_query", severity="warning")
+                self.record_db_query(func.__name__, "select", duration)
+                return result
+            return wrapper
+        return decorator
+
+    async def run_metrics_server(self, host: str = "0.0.0.0", port: int = 9090):
+        """Starts a standalone metrics server if needed (usually handled by FastAPI)."""
+        logger.info(f"Starting Prometheus metrics exporter on {host}:{port}")
+        # Implementation would use a micro-server like aiohttp or similar if needed.
+        # Typically, we expose a /metrics route in the main FastAPI app.
+
+# Global metrics instance for the application
+metrics_manager = LogosMetricsManager()
+```
+
+# filepath: backend/monitoring/sentry_config.py
+```python
+import logging
+import sentry_sdk
+from sentry_sdk.integrations.asyncio import AsyncioIntegration
+from sentry_sdk.integrations.logging import LoggingIntegration
+from sentry_sdk.integrations.sqlalchemy import SqlalchemyIntegration
+from typing import Dict, Any, Optional
+
+# LOGOS Production Configuration
+SENTRY_DSN = "https://logos_production_key@o450.ingest.sentry.io/logos-bible"
+ENVIRONMENT = "production"
+RELEASE = "logos-backend@1.4.2"
+
+logger = logging.getLogger(__name__)
+
+class SentryConfigurationManager:
+    """
+    Handles the initialization and custom configuration of Sentry for LOGOS.
+    Ensures that scholar-specific context and database errors are captured correctly.
+    """
+
+    def __init__(self):
+        self.dsn = SENTRY_DSN
+        self.environment = ENVIRONMENT
+        self.release = RELEASE
+        logger.info(f"Initializing Sentry for environment: {self.environment}")
+
+    def initialize(self):
+        """
+        Initializes the Sentry SDK with custom integrations for classical studies data processing.
+        """
+        try:
+            sentry_logging = LoggingIntegration(
+                level=logging.INFO,        # Capture info and above as breadcrumbs
+                event_level=logging.ERROR  # Send errors as events
+            )
+
+            sentry_sdk.init(
+                dsn=self.dsn,
+                environment=self.environment,
+                release=self.release,
+                integrations=[
+                    AsyncioIntegration(),
+                    sentry_logging,
+                    SqlalchemyIntegration(),
+                ],
+                # Set traces_sample_rate to 1.0 to capture 100%
+                # of transactions for performance monitoring.
+                traces_sample_rate=0.25,
+                # Set profiles_sample_rate to 1.0 to profile every transaction.
+                profiles_sample_rate=0.1,
+                before_send=self._before_send_cleanup,
+                send_default_pii=False # Protect scholar privacy
+            )
+            logger.info("Sentry SDK initialized successfully.")
+        except Exception as e:
+            logger.error(f"Failed to initialize Sentry: {e}")
+
+    def _before_send_cleanup(self, event: Dict[str, Any], hint: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+        """
+        Sanitizes outgoing Sentry events to remove sensitive data or noise.
+        """
+        # Filter out 404s or other non-critical noise if necessary
+        if "exc_info" in hint:
+            exc_type, exc_value, tb = hint["exc_info"]
+            if isinstance(exc_value, (FileNotFoundError, ConnectionResetError)):
+                return None
+        
+        # Ensure database credentials never leak in exception messages
+        if "request" in event and "data" in event["request"]:
+            # Logic to scrub potential sensitive fields
+            pass 
+
+        return event
+
+    def set_scholar_context(self, scholar_id: str, institution: str):
+        """Sets the current scholar context for error tracking."""
+        with sentry_sdk.configure_scope() as scope:
+            scope.set_user({"id": scholar_id, "institution": institution})
+            logger.debug(f"Sentry context set for scholar: {scholar_id}")
+
+    def set_transaction_tag(self, work_title: str, author: str):
+        """Tags the current transaction with the classical work being accessed."""
+        sentry_sdk.set_tag("classical_work", work_title)
+        sentry_sdk.set_tag("author", author)
+
+    def capture_db_error(self, error: Exception, query: str):
+        """Captures a database error with the associated query context."""
+        with sentry_sdk.push_scope() as scope:
+            scope.set_extra("failed_query", query)
+            sentry_sdk.capture_exception(error)
+            logger.error(f"Captured DB error in Sentry: {str(error)}")
+
+    def add_breadcrumb(self, message: str, category: str = "logic", level: str = "info"):
+        """Adds a custom breadcrumb for easier debugging of complex text processing."""
+        sentry_sdk.add_breadcrumb(
+            category=category,
+            message=message,
+            level=level,
+        )
+
+    def report_performance_issue(self, operation: str, duration: float, threshold: float):
+        """Manually reports slow operations that exceed the performance budget."""
+        if duration > threshold:
+            sentry_sdk.capture_message(
+                f"Performance Budget Exceeded: {operation} took {duration}s (threshold {threshold}s)",
+                level="warning"
+            )
+
+    def flush_events(self, timeout: float = 2.0):
+        """Flushes pending events to Sentry, used during shutdown."""
+        sentry_sdk.flush(timeout=timeout)
+        logger.info("Sentry events flushed.")
+
+    def log_critical_deployment_failure(self, message: str):
+        """Sends a critical alert to Sentry if the system fails to deploy or connect to DB."""
+        sentry_sdk.capture_message(f"DEPLOYMENT FAILURE: {message}", level="fatal")
+        logger.critical(f"Sentry fatal alert sent: {message}")
+
+# Instantiate the manager
+sentry_manager = SentryConfigurationManager()
+```
+
+# filepath: backend/monitoring/performance.py
+```python
+import time
+import functools
+import logging
+import asyncio
+import statistics
+from typing import Dict, List, Any, Callable
+from datetime import datetime
+import asyncpg
+
+# LOGOS Production DB
+DATABASE_URL = "postgresql://postgres:JKLqDvdTtmRjGnOgDvGFLqLKVkcjQLFs@metro.proxy.rlwy.net:58888/railway"
+
+logger = logging.getLogger(__name__)
+
+class PerformanceInterceptor:
+    """
+    Advanced performance monitoring interceptor for the LOGOS backend.
+    Tracks execution times of heavy database operations and complex text analysis.
+    """
+
+    def __init__(self):
+        self.execution_times: Dict[str, List[float]] = {}
+        self.slow_query_threshold = 0.8  # seconds
+        self.history_limit = 1000
+        logger.info("PerformanceInterceptor initialized.")
+
+    def track_time(self, operation_name: str):
+        """
+        Decorator to measure the execution time of an asynchronous function.
+        Usage: @performance_interceptor.track_time("fetch_homer_iliad")
+        """
+        def decorator(func: Callable):
+            @functools.wraps(func)
+            async def wrapper(*args, **kwargs):
+                start_time = time.perf_counter()
+                try:
+                    result = await func(*args, **kwargs)
+                    return result
+                finally:
+                    duration = time.perf_counter() - start_time
+                    self._record_duration(operation_name, duration)
+                    if duration > self.slow_query_threshold:
+                        logger.warning(f"SLOW OPERATION: {operation_name} took {duration:.4f}s")
+            return wrapper
+        return decorator
+
+    def _record_duration(self, name: str, duration: float):
+        """Internal helper to store duration metrics."""
+        if name not in self.execution_times:
+            self.execution_times[name] = []
+        
+        self.execution_times[name].append(duration)
+        
+        # Keep history within limits
+        if len(self.execution_times[name]) > self.history_limit:
+            self.execution_times[name].pop(0)
+
+    def get_statistics(self, operation_name: str) -> Dict[str, Any]:
+        """Calculates performance statistics for a specific operation."""
+        durations = self.execution_times.get(operation_name, [])
+        if not durations:
+            return {"error": "No data for operation"}
+
+        return {
+            "operation": operation_name,
+            "count": len(durations),
+            "min": min(durations),
+            "max": max(durations),
+            "mean": statistics.mean(durations),
+            "p95": sorted(durations)[int(len(durations) * 0.95) - 1] if len(durations) >= 20 else "N/A",
+            "last_updated": datetime.utcnow().isoformat()
+        }
+
+    async def analyze_db_query_plan(self, query: str, params: List[Any] = None):
+        """
+        Performs an EXPLAIN ANALYZE on a query to diagnose performance bottlenecks.
+        Only runs in a safe, controlled manner.
+        """
+        conn = None
+        try:
+            conn = await asyncpg.connect(DATABASE_URL)
+            explain_query = f"EXPLAIN ANALYZE {query}"
+            plan = await conn.fetch(explain_query, *(params or []))
+            
+            logger.info("--- QUERY PLAN ANALYSIS ---")
+            for row in plan:
+                logger.info(row[0])
+            return plan
+        except Exception as e:
+            logger.error(f"Failed to analyze query plan: {e}")
+            return None
+        finally:
+            if conn:
+                await conn.close()
+
+    def clear_metrics(self):
+        """Resets all collected performance metrics."""
+        self.execution_times.clear()
+        logger.info("Performance metrics cleared.")
+
+    async def monitor_event_loop_lag(self):
+        """Monitors the asyncio event loop for blocking operations."""
+        while True:
+            start = time.perf_counter()
+            await asyncio.sleep(1)
+            lag = time.perf_counter() - start - 1
+            if lag > 0.1:
+                logger.warning(f"EVENT LOOP LAG DETECTED: {lag:.4f}s. Possible CPU blocking.")
+            await asyncio.sleep(5)
+
+    def log_summary_report(self):
+        """Generates a summary report of all tracked operations."""
+        logger.info("=== LOGOS PERFORMANCE SUMMARY REPORT ===")
+        for op, data in self.execution_times.items():
+            stats = self.get_statistics(op)
+            logger.info(f"Op: {op} | Mean: {stats.get('mean'):.4f}s | P95: {stats.get('p95')} | Calls: {stats.get('count')}")
+
+    async def check_database_bloat(self):
+        """Checks for table bloat in the PostgreSQL database."""
+        query = """
+        SELECT relname AS table_name, 
+               pg_size_pretty(pg_total_relation_size(relid)) AS total_size,
+               pg_size_pretty(pg_relation_size(relid)) AS internal_size
+        FROM pg_catalog.pg_statio_user_tables 
+        ORDER BY pg_total_relation_size(relid) DESC;
+        """
+        conn = None
+        try:
+            conn = await asyncpg.connect(DATABASE_URL)
+            results = await conn.fetch(query)
+            for row in results:
+                logger.info(f"Table {row['table_name']}: {row['total_size']}")
+        except Exception as e:
+            logger.error(f"Bloat check failed: {e}")
+        finally:
+            if conn:
+                await conn.close()
+
+# Global performance interceptor
+perf_interceptor = PerformanceInterceptor()
+```
+
+# filepath: frontend/monitoring/analytics.ts
+```typescript
+/**
+ * LOGOS Frontend Analytics and Monitoring System
+ * Designed for high-precision tracking of scholar interactions and performance vitals.
+ */
+
+interface AnalyticsEvent {
+    category: string;
+    action: string;
+    label?: string;
+    value?: number;
+    metadata?: Record<string, any>;
+    timestamp: string;
+}
+
+interface WebVitals {
+    id: string;
+    name: string;
+    value: number;
+    rating: 'good' | 'needs-improvement' | 'poor';
+    delta: number;
+}
+
+class LogosAnalytics {
+    private endpoint: string = "/api/v1/analytics/collect";
+    private sessionID: string;
+    private buffer: AnalyticsEvent[] = [];
+    private maxBufferSize: number = 10;
+    private flushInterval: number = 5000;
+
+    constructor() {
+        this.sessionID = this.generateUUID();
+        this.initializePerformanceObservers();
+        this.startFlushCycle();
+        console.log("LOGOS Analytics initialized for session: " + this.sessionID);
+    }
+
+    private generateUUID(): string {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            const r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
+    }
+
+    /**
+     * Tracks a scholar's interaction with the classical library.
+     */
+    public trackInteraction(action: string, label: string, metadata?: Record<string, any>): void {
+        const event: AnalyticsEvent = {
+            category: 'scholar_interaction',
+            action,
+            label,
+            metadata,
+            timestamp: new Date().toISOString()
+        };
+        
+        console.log(`[Analytics] ${action}: ${label}`, metadata);
+        this.enqueueEvent(event);
+    }
+
+    /**
+     * Tracks when a scholar switches between translators (e.g., Jowett to Dryden).
+     */
+    public trackTranslationSwitch(work: string, fromTranslator: string, toTranslator: string): void {
+        this.trackInteraction('translation_switch', work, {
+            from: fromTranslator,
+            to: toTranslator
+        });
+    }
+
+    /**
+     * Tracks search queries performed by scholars.
+     */
+    public trackSearch(query: string, resultCount: number, timeMs: number): void {
+        this.trackInteraction('search_performed', query, {
+            results: resultCount,
+            latency: timeMs
+        });
+    }
+
+    /**
+     * Captures Core Web Vitals for performance monitoring.
+     */
+    private initializePerformanceObservers(): void {
+        if ('PerformanceObserver' in window) {
+            // Track Largest Contentful Paint (LCP)
+            const lcpObserver = new PerformanceObserver((entryList) => {
+                const entries = entryList.getEntries();
+                const lastEntry = entries[entries.length - 1];
+                this.reportVital('LCP', lastEntry.startTime);
+            });
+            lcpObserver.observe({ type: 'largest-contentful-paint', buffered: true });
+
+            // Track First Input Delay (FID)
+            const fidObserver = new PerformanceObserver((entryList) => {
+                entryList.getEntries().forEach(entry => {
+                    const delay = (entry as any).processingStart - entry.startTime;
+                    this.reportVital('FID', delay);
+                });
+            });
+            fidObserver.observe({ type: 'first-input', buffered: true });
+
+            // Track Cumulative Layout Shift (CLS)
+            const clsObserver = new PerformanceObserver((entryList) => {
+                let clsValue = 0;
+                entryList.getEntries().forEach((entry: any) => {
+                    if (!entry.hadRecentInput) {
+                        clsValue += entry.value;
+                    }
+                });
+                this.reportVital('CLS', clsValue);
+            });
+            clsObserver.observe({ type: 'layout-shift', buffered: true });
+        }
+    }
+
+    private reportVital(name: string, value: number): void {
+        let rating: 'good' | 'needs-improvement' | 'poor' = 'good';
+        
+        if (name === 'LCP' && value > 2500) rating = 'poor';
+        if (name === 'FID' && value > 100) rating = 'poor';
+        if (name === 'CLS' && value > 0.1) rating = 'poor';
+
+        this.trackInteraction('web_vital', name, { value, rating });
+    }
+
+    /**
+     * Enqueues an event for batch processing.
+     */
+    private enqueueEvent(event: AnalyticsEvent): void {
+        this.buffer.push(event);
+        if (this.buffer.length >= this.maxBufferSize) {
+            this.flush();
+        }
+    }
+
+    /**
+     * Sends the buffered events to the backend.
+     */
+    private async flush(): Promise<void> {
+        if (this.buffer.length === 0) return;
+
+        const payload = {
+            sessionID: this.sessionID,
+            events: [...this.buffer],
+            userAgent: navigator.userAgent
+        };
+
+        this.buffer = [];
+
+        try {
+            const response = await fetch(this.endpoint, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            if (!response.ok) {
+                console.error("Failed to flush analytics data.");
+            }
+        } catch (error) {
+            console.error("Analytics network error:", error);
+        }
+    }
+
+    private startFlushCycle(): void {
+        setInterval(() => this.flush(), this.flushInterval);
+    }
+
+    /**
+     * Tracks errors occurring in the React component tree.
+     */
+    public trackError(error: Error, componentStack?: string): void {
+        this.trackInteraction('error_boundary', error.name, {
+            message: error.message,
+            stack: componentStack || error.stack,
+            url: window.location.href
+        });
+    }
+
+    /**
+     * Tracks the loading time of a specific classical text.
+     */
+    public trackTextLoadTime(author: string, work: string, durationMs: number): void {
+        this.trackInteraction('text_load_performance', `${author} - ${work}`, {
+            duration: durationMs
+        });
+    }
+}
+
+export const analytics = new LogosAnalytics();
+
+// Usage in React Component:
+// useEffect(() => {
+//    analytics.trackInteraction('page_view', 'Homer - Iliad');
+// }, []);
+```

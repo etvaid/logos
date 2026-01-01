@@ -1,0 +1,3397 @@
+{
+  "computation_date": "2025-12-30T04:58:22.394530",
+  "iterations": 5,
+  "best_iteration_score": 173742115,
+  "authors_count": 401,
+  "translators_count": 261,
+  "total_author_words": 69772330,
+  "total_translator_words": 103969785,
+  "greek_authors": 343,
+  "latin_authors": 57,
+  "verifications": [
+    {
+      "iteration": 1,
+      "authors_found": 401,
+      "translators_found": 261,
+      "total_author_words": 69772330,
+      "total_translator_words": 103969785,
+      "issues": [
+        "Only processed 3992/6734 XML files"
+      ],
+      "xml_processed": 3992,
+      "txt_processed": 824,
+      "xml_total": 6734,
+      "txt_total": 825
+    },
+    {
+      "iteration": 2,
+      "authors_found": 401,
+      "translators_found": 261,
+      "total_author_words": 69772330,
+      "total_translator_words": 103969785,
+      "issues": [
+        "Only processed 3992/6734 XML files"
+      ],
+      "xml_processed": 3992,
+      "txt_processed": 824,
+      "xml_total": 6734,
+      "txt_total": 825
+    },
+    {
+      "iteration": 3,
+      "authors_found": 401,
+      "translators_found": 261,
+      "total_author_words": 69772330,
+      "total_translator_words": 103969785,
+      "issues": [
+        "Only processed 3992/6734 XML files"
+      ],
+      "xml_processed": 3992,
+      "txt_processed": 824,
+      "xml_total": 6734,
+      "txt_total": 825
+    },
+    {
+      "iteration": 4,
+      "authors_found": 401,
+      "translators_found": 261,
+      "total_author_words": 69772330,
+      "total_translator_words": 103969785,
+      "issues": [
+        "Only processed 3992/6734 XML files"
+      ],
+      "xml_processed": 3992,
+      "txt_processed": 824,
+      "xml_total": 6734,
+      "txt_total": 825
+    },
+    {
+      "iteration": 5,
+      "authors_found": 401,
+      "translators_found": 261,
+      "total_author_words": 69772330,
+      "total_translator_words": 103969785,
+      "issues": [
+        "Only processed 3992/6734 XML files"
+      ],
+      "xml_processed": 3992,
+      "txt_processed": 824,
+      "xml_total": 6734,
+      "txt_total": 825
+    }
+  ],
+  "authors_list": [
+    {
+      "id": "heb010",
+      "name": "heb010",
+      "words": 40896
+    },
+    {
+      "id": "phi0119",
+      "name": "phi0119",
+      "words": 589563
+    },
+    {
+      "id": "phi0134",
+      "name": "phi0134",
+      "words": 185460
+    },
+    {
+      "id": "phi0426",
+      "name": "phi0426",
+      "words": 34692
+    },
+    {
+      "id": "phi0428",
+      "name": "phi0428",
+      "words": 28388
+    },
+    {
+      "id": "phi0430",
+      "name": "phi0430",
+      "words": 16406
+    },
+    {
+      "id": "phi0448",
+      "name": "phi0448",
+      "words": 252362
+    },
+    {
+      "id": "phi0472",
+      "name": "phi0472",
+      "words": 52719
+    },
+    {
+      "id": "phi0474",
+      "name": "phi0474",
+      "words": 2737060
+    },
+    {
+      "id": "phi0478",
+      "name": "phi0478",
+      "words": 11874
+    },
+    {
+      "id": "phi0550",
+      "name": "phi0550",
+      "words": 122991
+    },
+    {
+      "id": "phi0588",
+      "name": "phi0588",
+      "words": 29828
+    },
+    {
+      "id": "phi0620",
+      "name": "phi0620",
+      "words": 25373
+    },
+    {
+      "id": "phi0631",
+      "name": "phi0631",
+      "words": 158477
+    },
+    {
+      "id": "phi0660",
+      "name": "phi0660",
+      "words": 13272
+    },
+    {
+      "id": "phi0690",
+      "name": "phi0690",
+      "words": 214409
+    },
+    {
+      "id": "phi0836",
+      "name": "phi0836",
+      "words": 456423
+    },
+    {
+      "id": "phi0845",
+      "name": "phi0845",
+      "words": 233678
+    },
+    {
+      "id": "phi0860",
+      "name": "phi0860",
+      "words": 73845
+    },
+    {
+      "id": "phi0893",
+      "name": "phi0893",
+      "words": 112759
+    },
+    {
+      "id": "phi0914",
+      "name": "phi0914",
+      "words": 3905467
+    },
+    {
+      "id": "phi0917",
+      "name": "phi0917",
+      "words": 134672
+    },
+    {
+      "id": "phi0959",
+      "name": "phi0959",
+      "words": 621994
+    },
+    {
+      "id": "phi0969",
+      "name": "phi0969",
+      "words": 4871
+    },
+    {
+      "id": "phi0972",
+      "name": "phi0972",
+      "words": 65758
+    },
+    {
+      "id": "phi0975",
+      "name": "phi0975",
+      "words": 26139
+    },
+    {
+      "id": "phi0978",
+      "name": "phi0978",
+      "words": 684952
+    },
+    {
+      "id": "phi1002",
+      "name": "phi1002",
+      "words": 502168
+    },
+    {
+      "id": "phi1014",
+      "name": "phi1014",
+      "words": 98886
+    },
+    {
+      "id": "phi1017",
+      "name": "phi1017",
+      "words": 256419
+    },
+    {
+      "id": "phi1020",
+      "name": "phi1020",
+      "words": 102067
+    },
+    {
+      "id": "phi1035",
+      "name": "phi1035",
+      "words": 46753
+    },
+    {
+      "id": "phi1038",
+      "name": "phi1038",
+      "words": 79113
+    },
+    {
+      "id": "phi1056",
+      "name": "phi1056",
+      "words": 148071
+    },
+    {
+      "id": "phi1212",
+      "name": "phi1212",
+      "words": 174151
+    },
+    {
+      "id": "phi1242",
+      "name": "phi1242",
+      "words": 29456
+    },
+    {
+      "id": "phi1254",
+      "name": "phi1254",
+      "words": 319149
+    },
+    {
+      "id": "phi1276",
+      "name": "phi1276",
+      "words": 26447
+    },
+    {
+      "id": "phi1294",
+      "name": "phi1294",
+      "words": 58090
+    },
+    {
+      "id": "phi1318",
+      "name": "phi1318",
+      "words": 65801
+    },
+    {
+      "id": "phi1345",
+      "name": "phi1345",
+      "words": 76279
+    },
+    {
+      "id": "phi1348",
+      "name": "phi1348",
+      "words": 239598
+    },
+    {
+      "id": "phi1351",
+      "name": "phi1351",
+      "words": 78736
+    },
+    {
+      "id": "phi2331",
+      "name": "phi2331",
+      "words": 121462
+    },
+    {
+      "id": "save",
+      "name": "save",
+      "words": 171340
+    },
+    {
+      "id": "stoa0023",
+      "name": "stoa0023",
+      "words": 391910
+    },
+    {
+      "id": "stoa0040",
+      "name": "stoa0040",
+      "words": 72947
+    },
+    {
+      "id": "stoa0045",
+      "name": "stoa0045",
+      "words": 78712
+    },
+    {
+      "id": "stoa0054",
+      "name": "stoa0054",
+      "words": 70301
+    },
+    {
+      "id": "stoa0058",
+      "name": "stoa0058",
+      "words": 88111
+    },
+    {
+      "id": "stoa0089",
+      "name": "stoa0089",
+      "words": 164245
+    },
+    {
+      "id": "stoa0146",
+      "name": "stoa0146",
+      "words": 6901
+    },
+    {
+      "id": "stoa0162",
+      "name": "stoa0162",
+      "words": 43748
+    },
+    {
+      "id": "stoa0203",
+      "name": "stoa0203",
+      "words": 11668
+    },
+    {
+      "id": "stoa0238",
+      "name": "stoa0238",
+      "words": 59143
+    },
+    {
+      "id": "stoa0255",
+      "name": "stoa0255",
+      "words": 77981
+    },
+    {
+      "id": "stoa0261",
+      "name": "stoa0261",
+      "words": 48703
+    },
+    {
+      "id": "stoa0275",
+      "name": "stoa0275",
+      "words": 322728
+    },
+    {
+      "id": "stoa0276",
+      "name": "stoa0276",
+      "words": 4177
+    },
+    {
+      "id": "tlg0001",
+      "name": "tlg0001",
+      "words": 36658
+    },
+    {
+      "id": "tlg0003",
+      "name": "tlg0003",
+      "words": 150078
+    },
+    {
+      "id": "tlg0004",
+      "name": "tlg0004",
+      "words": 106251
+    },
+    {
+      "id": "tlg0005",
+      "name": "tlg0005",
+      "words": 20481
+    },
+    {
+      "id": "tlg0006",
+      "name": "tlg0006",
+      "words": 162660
+    },
+    {
+      "id": "tlg0007",
+      "name": "tlg0007",
+      "words": 1081820
+    },
+    {
+      "id": "tlg0008",
+      "name": "tlg0008",
+      "words": 509126
+    },
+    {
+      "id": "tlg0010",
+      "name": "tlg0010",
+      "words": 116763
+    },
+    {
+      "id": "tlg0011",
+      "name": "tlg0011",
+      "words": 78831
+    },
+    {
+      "id": "tlg0012",
+      "name": "tlg0012",
+      "words": 187220
+    },
+    {
+      "id": "tlg0013",
+      "name": "tlg0013",
+      "words": 15204
+    },
+    {
+      "id": "tlg0014",
+      "name": "tlg0014",
+      "words": 283735
+    },
+    {
+      "id": "tlg0015",
+      "name": "tlg0015",
+      "words": 45843
+    },
+    {
+      "id": "tlg0016",
+      "name": "tlg0016",
+      "words": 181216
+    },
+    {
+      "id": "tlg0017",
+      "name": "tlg0017",
+      "words": 33470
+    },
+    {
+      "id": "tlg0018",
+      "name": "tlg0018",
+      "words": 1058700
+    },
+    {
+      "id": "tlg0019",
+      "name": "tlg0019",
+      "words": 96942
+    },
+    {
+      "id": "tlg0020",
+      "name": "tlg0020",
+      "words": 15242
+    },
+    {
+      "id": "tlg0022",
+      "name": "tlg0022",
+      "words": 9839
+    },
+    {
+      "id": "tlg0023",
+      "name": "tlg0023",
+      "words": 21594
+    },
+    {
+      "id": "tlg0024",
+      "name": "tlg0024",
+      "words": 12985
+    },
+    {
+      "id": "tlg0026",
+      "name": "tlg0026",
+      "words": 48878
+    },
+    {
+      "id": "tlg0027",
+      "name": "tlg0027",
+      "words": 18045
+    },
+    {
+      "id": "tlg0028",
+      "name": "tlg0028",
+      "words": 19054
+    },
+    {
+      "id": "tlg0029",
+      "name": "tlg0029",
+      "words": 11228
+    },
+    {
+      "id": "tlg0030",
+      "name": "tlg0030",
+      "words": 13288
+    },
+    {
+      "id": "tlg0031",
+      "name": "tlg0031",
+      "words": 133768
+    },
+    {
+      "id": "tlg0032",
+      "name": "tlg0032",
+      "words": 301169
+    },
+    {
+      "id": "tlg0033",
+      "name": "tlg0033",
+      "words": 20414
+    },
+    {
+      "id": "tlg0034",
+      "name": "tlg0034",
+      "words": 11506
+    },
+    {
+      "id": "tlg0035",
+      "name": "tlg0035",
+      "words": 3243
+    },
+    {
+      "id": "tlg0036",
+      "name": "tlg0036",
+      "words": 1727
+    },
+    {
+      "id": "tlg0037",
+      "name": "tlg0037",
+      "words": 1319
+    },
+    {
+      "id": "tlg0041",
+      "name": "tlg0041",
+      "words": 4822
+    },
+    {
+      "id": "tlg0045",
+      "name": "tlg0045",
+      "words": 624
+    },
+    {
+      "id": "tlg0046",
+      "name": "tlg0046",
+      "words": 732
+    },
+    {
+      "id": "tlg0048",
+      "name": "tlg0048",
+      "words": 2330
+    },
+    {
+      "id": "tlg0053",
+      "name": "tlg0053",
+      "words": 17984
+    },
+    {
+      "id": "tlg0055",
+      "name": "tlg0055",
+      "words": 8604
+    },
+    {
+      "id": "tlg0057",
+      "name": "tlg0057",
+      "words": 2426149
+    },
+    {
+      "id": "tlg0058",
+      "name": "tlg0058",
+      "words": 13718
+    },
+    {
+      "id": "tlg0059",
+      "name": "tlg0059",
+      "words": 559995
+    },
+    {
+      "id": "tlg0060",
+      "name": "tlg0060",
+      "words": 375514
+    },
+    {
+      "id": "tlg0061",
+      "name": "tlg0061",
+      "words": 32837
+    },
+    {
+      "id": "tlg0062",
+      "name": "tlg0062",
+      "words": 551477
+    },
+    {
+      "id": "tlg0064",
+      "name": "tlg0064",
+      "words": 632
+    },
+    {
+      "id": "tlg0065",
+      "name": "tlg0065",
+      "words": 8423
+    },
+    {
+      "id": "tlg0066",
+      "name": "tlg0066",
+      "words": 2613
+    },
+    {
+      "id": "tlg0067",
+      "name": "tlg0067",
+      "words": 23473
+    },
+    {
+      "id": "tlg0068",
+      "name": "tlg0068",
+      "words": 5372
+    },
+    {
+      "id": "tlg0069",
+      "name": "tlg0069",
+      "words": 863
+    },
+    {
+      "id": "tlg0070",
+      "name": "tlg0070",
+      "words": 1166
+    },
+    {
+      "id": "tlg0071",
+      "name": "tlg0071",
+      "words": 6116
+    },
+    {
+      "id": "tlg0074",
+      "name": "tlg0074",
+      "words": 111068
+    },
+    {
+      "id": "tlg0075",
+      "name": "tlg0075",
+      "words": 5450
+    },
+    {
+      "id": "tlg0077",
+      "name": "tlg0077",
+      "words": 5682
+    },
+    {
+      "id": "tlg0081",
+      "name": "tlg0081",
+      "words": 428714
+    },
+    {
+      "id": "tlg0082",
+      "name": "tlg0082",
+      "words": 182873
+    },
+    {
+      "id": "tlg0084",
+      "name": "tlg0084",
+      "words": 7337
+    },
+    {
+      "id": "tlg0085",
+      "name": "tlg0085",
+      "words": 88720
+    },
+    {
+      "id": "tlg0086",
+      "name": "tlg0086",
+      "words": 1117989
+    },
+    {
+      "id": "tlg0087",
+      "name": "tlg0087",
+      "words": 431816
+    },
+    {
+      "id": "tlg0088",
+      "name": "tlg0088",
+      "words": 17198
+    },
+    {
+      "id": "tlg0090",
+      "name": "tlg0090",
+      "words": 11606
+    },
+    {
+      "id": "tlg0092",
+      "name": "tlg0092",
+      "words": 4212
+    },
+    {
+      "id": "tlg0093",
+      "name": "tlg0093",
+      "words": 212129
+    },
+    {
+      "id": "tlg0094",
+      "name": "tlg0094",
+      "words": 29554
+    },
+    {
+      "id": "tlg0096",
+      "name": "tlg0096",
+      "words": 68202
+    },
+    {
+      "id": "tlg0097",
+      "name": "tlg0097",
+      "words": 10991
+    },
+    {
+      "id": "tlg0098",
+      "name": "tlg0098",
+      "words": 19723
+    },
+    {
+      "id": "tlg0099",
+      "name": "tlg0099",
+      "words": 313218
+    },
+    {
+      "id": "tlg0199",
+      "name": "tlg0199",
+      "words": 4932
+    },
+    {
+      "id": "tlg0284",
+      "name": "tlg0284",
+      "words": 311055
+    },
+    {
+      "id": "tlg0317",
+      "name": "tlg0317",
+      "words": 19287
+    },
+    {
+      "id": "tlg0319",
+      "name": "tlg0319",
+      "words": 3085
+    },
+    {
+      "id": "tlg0341",
+      "name": "tlg0341",
+      "words": 7198
+    },
+    {
+      "id": "tlg0357",
+      "name": "tlg0357",
+      "words": 1610
+    },
+    {
+      "id": "tlg0358",
+      "name": "tlg0358",
+      "words": 39240
+    },
+    {
+      "id": "tlg0361",
+      "name": "tlg0361",
+      "words": 4820
+    },
+    {
+      "id": "tlg0362",
+      "name": "tlg0362",
+      "words": 941
+    },
+    {
+      "id": "tlg0363",
+      "name": "tlg0363",
+      "words": 323832
+    },
+    {
+      "id": "tlg0385",
+      "name": "tlg0385",
+      "words": 187060
+    },
+    {
+      "id": "tlg0521",
+      "name": "tlg0521",
+      "words": 1577
+    },
+    {
+      "id": "tlg0525",
+      "name": "tlg0525",
+      "words": 214109
+    },
+    {
+      "id": "tlg0526",
+      "name": "tlg0526",
+      "words": 461847
+    },
+    {
+      "id": "tlg0527",
+      "name": "tlg0527",
+      "words": 1113505
+    },
+    {
+      "id": "tlg0529",
+      "name": "tlg0529",
+      "words": 20194
+    },
+    {
+      "id": "tlg0530",
+      "name": "tlg0530",
+      "words": 88878
+    },
+    {
+      "id": "tlg0532",
+      "name": "tlg0532",
+      "words": 40366
+    },
+    {
+      "id": "tlg0533",
+      "name": "tlg0533",
+      "words": 21846
+    },
+    {
+      "id": "tlg0535",
+      "name": "tlg0535",
+      "words": 2011
+    },
+    {
+      "id": "tlg0537",
+      "name": "tlg0537",
+      "words": 11427
+    },
+    {
+      "id": "tlg0540",
+      "name": "tlg0540",
+      "words": 56448
+    },
+    {
+      "id": "tlg0541",
+      "name": "tlg0541",
+      "words": 2292
+    },
+    {
+      "id": "tlg0543",
+      "name": "tlg0543",
+      "words": 306451
+    },
+    {
+      "id": "tlg0544",
+      "name": "tlg0544",
+      "words": 371848
+    },
+    {
+      "id": "tlg0545",
+      "name": "tlg0545",
+      "words": 153282
+    },
+    {
+      "id": "tlg0548",
+      "name": "tlg0548",
+      "words": 35094
+    },
+    {
+      "id": "tlg0550",
+      "name": "tlg0550",
+      "words": 7518
+    },
+    {
+      "id": "tlg0551",
+      "name": "tlg0551",
+      "words": 215606
+    },
+    {
+      "id": "tlg0552",
+      "name": "tlg0552",
+      "words": 98049
+    },
+    {
+      "id": "tlg0553",
+      "name": "tlg0553",
+      "words": 62458
+    },
+    {
+      "id": "tlg0554",
+      "name": "tlg0554",
+      "words": 33971
+    },
+    {
+      "id": "tlg0555",
+      "name": "tlg0555",
+      "words": 287837
+    },
+    {
+      "id": "tlg0556",
+      "name": "tlg0556",
+      "words": 6364
+    },
+    {
+      "id": "tlg0557",
+      "name": "tlg0557",
+      "words": 84478
+    },
+    {
+      "id": "tlg0559",
+      "name": "tlg0559",
+      "words": 118512
+    },
+    {
+      "id": "tlg0560",
+      "name": "tlg0560",
+      "words": 12231
+    },
+    {
+      "id": "tlg0561",
+      "name": "tlg0561",
+      "words": 19241
+    },
+    {
+      "id": "tlg0562",
+      "name": "tlg0562",
+      "words": 28222
+    },
+    {
+      "id": "tlg0563",
+      "name": "tlg0563",
+      "words": 91417
+    },
+    {
+      "id": "tlg0564",
+      "name": "tlg0564",
+      "words": 6901
+    },
+    {
+      "id": "tlg0565",
+      "name": "tlg0565",
+      "words": 55000
+    },
+    {
+      "id": "tlg0572",
+      "name": "tlg0572",
+      "words": 910
+    },
+    {
+      "id": "tlg0579",
+      "name": "tlg0579",
+      "words": 2315
+    },
+    {
+      "id": "tlg0580",
+      "name": "tlg0580",
+      "words": 1182
+    },
+    {
+      "id": "tlg0591",
+      "name": "tlg0591",
+      "words": 1407
+    },
+    {
+      "id": "tlg0592",
+      "name": "tlg0592",
+      "words": 95991
+    },
+    {
+      "id": "tlg0593",
+      "name": "tlg0593",
+      "words": 3656
+    },
+    {
+      "id": "tlg0594",
+      "name": "tlg0594",
+      "words": 6940
+    },
+    {
+      "id": "tlg0606",
+      "name": "tlg0606",
+      "words": 1394
+    },
+    {
+      "id": "tlg0607",
+      "name": "tlg0607",
+      "words": 11139
+    },
+    {
+      "id": "tlg0609",
+      "name": "tlg0609",
+      "words": 2830
+    },
+    {
+      "id": "tlg0610",
+      "name": "tlg0610",
+      "words": 5892
+    },
+    {
+      "id": "tlg0612",
+      "name": "tlg0612",
+      "words": 174086
+    },
+    {
+      "id": "tlg0613",
+      "name": "tlg0613",
+      "words": 14826
+    },
+    {
+      "id": "tlg0614",
+      "name": "tlg0614",
+      "words": 48554
+    },
+    {
+      "id": "tlg0615",
+      "name": "tlg0615",
+      "words": 151049
+    },
+    {
+      "id": "tlg0616",
+      "name": "tlg0616",
+      "words": 88297
+    },
+    {
+      "id": "tlg0620",
+      "name": "tlg0620",
+      "words": 994
+    },
+    {
+      "id": "tlg0623",
+      "name": "tlg0623",
+      "words": 2986
+    },
+    {
+      "id": "tlg0626",
+      "name": "tlg0626",
+      "words": 2406
+    },
+    {
+      "id": "tlg0627",
+      "name": "tlg0627",
+      "words": 456785
+    },
+    {
+      "id": "tlg0628",
+      "name": "tlg0628",
+      "words": 17303
+    },
+    {
+      "id": "tlg0633",
+      "name": "tlg0633",
+      "words": 504
+    },
+    {
+      "id": "tlg0634",
+      "name": "tlg0634",
+      "words": 4394
+    },
+    {
+      "id": "tlg0636",
+      "name": "tlg0636",
+      "words": 2924
+    },
+    {
+      "id": "tlg0637",
+      "name": "tlg0637",
+      "words": 7563
+    },
+    {
+      "id": "tlg0638",
+      "name": "tlg0638",
+      "words": 145965
+    },
+    {
+      "id": "tlg0640",
+      "name": "tlg0640",
+      "words": 29110
+    },
+    {
+      "id": "tlg0641",
+      "name": "tlg0641",
+      "words": 15929
+    },
+    {
+      "id": "tlg0643",
+      "name": "tlg0643",
+      "words": 29010
+    },
+    {
+      "id": "tlg0644",
+      "name": "tlg0644",
+      "words": 61192
+    },
+    {
+      "id": "tlg0645",
+      "name": "tlg0645",
+      "words": 67922
+    },
+    {
+      "id": "tlg0646",
+      "name": "tlg0646",
+      "words": 2537
+    },
+    {
+      "id": "tlg0647",
+      "name": "tlg0647",
+      "words": 4057
+    },
+    {
+      "id": "tlg0648",
+      "name": "tlg0648",
+      "words": 11700
+    },
+    {
+      "id": "tlg0649",
+      "name": "tlg0649",
+      "words": 2121
+    },
+    {
+      "id": "tlg0652",
+      "name": "tlg0652",
+      "words": 6934
+    },
+    {
+      "id": "tlg0653",
+      "name": "tlg0653",
+      "words": 7374
+    },
+    {
+      "id": "tlg0655",
+      "name": "tlg0655",
+      "words": 6369
+    },
+    {
+      "id": "tlg0656",
+      "name": "tlg0656",
+      "words": 194450
+    },
+    {
+      "id": "tlg0657",
+      "name": "tlg0657",
+      "words": 548
+    },
+    {
+      "id": "tlg0658",
+      "name": "tlg0658",
+      "words": 74099
+    },
+    {
+      "id": "tlg0671",
+      "name": "tlg0671",
+      "words": 10797
+    },
+    {
+      "id": "tlg0693",
+      "name": "tlg0693",
+      "words": 14530
+    },
+    {
+      "id": "tlg0708",
+      "name": "tlg0708",
+      "words": 15643
+    },
+    {
+      "id": "tlg0719",
+      "name": "tlg0719",
+      "words": 50295
+    },
+    {
+      "id": "tlg0731",
+      "name": "tlg0731",
+      "words": 14859
+    },
+    {
+      "id": "tlg0732",
+      "name": "tlg0732",
+      "words": 2136455
+    },
+    {
+      "id": "tlg0733",
+      "name": "tlg0733",
+      "words": 6750
+    },
+    {
+      "id": "tlg0751",
+      "name": "tlg0751",
+      "words": 3217
+    },
+    {
+      "id": "tlg1118",
+      "name": "tlg1118",
+      "words": 1046
+    },
+    {
+      "id": "tlg1129",
+      "name": "tlg1129",
+      "words": 1291
+    },
+    {
+      "id": "tlg1131",
+      "name": "tlg1131",
+      "words": 1185
+    },
+    {
+      "id": "tlg1134",
+      "name": "tlg1134",
+      "words": 1754
+    },
+    {
+      "id": "tlg1146",
+      "name": "tlg1146",
+      "words": 2787
+    },
+    {
+      "id": "tlg1147",
+      "name": "tlg1147",
+      "words": 2903
+    },
+    {
+      "id": "tlg1181",
+      "name": "tlg1181",
+      "words": 6838
+    },
+    {
+      "id": "tlg1188",
+      "name": "tlg1188",
+      "words": 5504
+    },
+    {
+      "id": "tlg1193",
+      "name": "tlg1193",
+      "words": 2805
+    },
+    {
+      "id": "tlg1194",
+      "name": "tlg1194",
+      "words": 18773
+    },
+    {
+      "id": "tlg1205",
+      "name": "tlg1205",
+      "words": 39168
+    },
+    {
+      "id": "tlg1210",
+      "name": "tlg1210",
+      "words": 16929
+    },
+    {
+      "id": "tlg1216",
+      "name": "tlg1216",
+      "words": 13201
+    },
+    {
+      "id": "tlg1220",
+      "name": "tlg1220",
+      "words": 3143
+    },
+    {
+      "id": "tlg1247",
+      "name": "tlg1247",
+      "words": 4622
+    },
+    {
+      "id": "tlg1252",
+      "name": "tlg1252",
+      "words": 2845
+    },
+    {
+      "id": "tlg1264",
+      "name": "tlg1264",
+      "words": 143691
+    },
+    {
+      "id": "tlg1269",
+      "name": "tlg1269",
+      "words": 6026
+    },
+    {
+      "id": "tlg1271",
+      "name": "tlg1271",
+      "words": 131130
+    },
+    {
+      "id": "tlg1272",
+      "name": "tlg1272",
+      "words": 25403
+    },
+    {
+      "id": "tlg1286",
+      "name": "tlg1286",
+      "words": 38794
+    },
+    {
+      "id": "tlg1287",
+      "name": "tlg1287",
+      "words": 1523
+    },
+    {
+      "id": "tlg1304",
+      "name": "tlg1304",
+      "words": 9177
+    },
+    {
+      "id": "tlg1309",
+      "name": "tlg1309",
+      "words": 3409
+    },
+    {
+      "id": "tlg1311",
+      "name": "tlg1311",
+      "words": 2126
+    },
+    {
+      "id": "tlg1319",
+      "name": "tlg1319",
+      "words": 1171
+    },
+    {
+      "id": "tlg1320",
+      "name": "tlg1320",
+      "words": 9878
+    },
+    {
+      "id": "tlg1325",
+      "name": "tlg1325",
+      "words": 8663
+    },
+    {
+      "id": "tlg1329",
+      "name": "tlg1329",
+      "words": 535
+    },
+    {
+      "id": "tlg1337",
+      "name": "tlg1337",
+      "words": 648
+    },
+    {
+      "id": "tlg1347",
+      "name": "tlg1347",
+      "words": 1063
+    },
+    {
+      "id": "tlg1367",
+      "name": "tlg1367",
+      "words": 1759
+    },
+    {
+      "id": "tlg1383",
+      "name": "tlg1383",
+      "words": 19877
+    },
+    {
+      "id": "tlg1389",
+      "name": "tlg1389",
+      "words": 37522
+    },
+    {
+      "id": "tlg1390",
+      "name": "tlg1390",
+      "words": 1483
+    },
+    {
+      "id": "tlg1402",
+      "name": "tlg1402",
+      "words": 9837
+    },
+    {
+      "id": "tlg1414",
+      "name": "tlg1414",
+      "words": 13679
+    },
+    {
+      "id": "tlg1416",
+      "name": "tlg1416",
+      "words": 2189
+    },
+    {
+      "id": "tlg1419",
+      "name": "tlg1419",
+      "words": 27991
+    },
+    {
+      "id": "tlg1431",
+      "name": "tlg1431",
+      "words": 29516
+    },
+    {
+      "id": "tlg1434",
+      "name": "tlg1434",
+      "words": 606
+    },
+    {
+      "id": "tlg1441",
+      "name": "tlg1441",
+      "words": 1153
+    },
+    {
+      "id": "tlg1443",
+      "name": "tlg1443",
+      "words": 26266
+    },
+    {
+      "id": "tlg1447",
+      "name": "tlg1447",
+      "words": 21391
+    },
+    {
+      "id": "tlg1463",
+      "name": "tlg1463",
+      "words": 10837
+    },
+    {
+      "id": "tlg1482",
+      "name": "tlg1482",
+      "words": 23165
+    },
+    {
+      "id": "tlg1484",
+      "name": "tlg1484",
+      "words": 2590
+    },
+    {
+      "id": "tlg1486",
+      "name": "tlg1486",
+      "words": 2500
+    },
+    {
+      "id": "tlg1487",
+      "name": "tlg1487",
+      "words": 9304
+    },
+    {
+      "id": "tlg1542",
+      "name": "tlg1542",
+      "words": 6624
+    },
+    {
+      "id": "tlg1548",
+      "name": "tlg1548",
+      "words": 8040
+    },
+    {
+      "id": "tlg1551",
+      "name": "tlg1551",
+      "words": 27185
+    },
+    {
+      "id": "tlg1553",
+      "name": "tlg1553",
+      "words": 7368
+    },
+    {
+      "id": "tlg1562",
+      "name": "tlg1562",
+      "words": 2432
+    },
+    {
+      "id": "tlg1595",
+      "name": "tlg1595",
+      "words": 23707
+    },
+    {
+      "id": "tlg1596",
+      "name": "tlg1596",
+      "words": 1767
+    },
+    {
+      "id": "tlg1600",
+      "name": "tlg1600",
+      "words": 22161
+    },
+    {
+      "id": "tlg1617",
+      "name": "tlg1617",
+      "words": 5880
+    },
+    {
+      "id": "tlg1622",
+      "name": "tlg1622",
+      "words": 1577
+    },
+    {
+      "id": "tlg1634",
+      "name": "tlg1634",
+      "words": 1592
+    },
+    {
+      "id": "tlg1664",
+      "name": "tlg1664",
+      "words": 1580
+    },
+    {
+      "id": "tlg1669",
+      "name": "tlg1669",
+      "words": 1835
+    },
+    {
+      "id": "tlg1692",
+      "name": "tlg1692",
+      "words": 5103
+    },
+    {
+      "id": "tlg1699",
+      "name": "tlg1699",
+      "words": 5837
+    },
+    {
+      "id": "tlg1701",
+      "name": "tlg1701",
+      "words": 13222
+    },
+    {
+      "id": "tlg1719",
+      "name": "tlg1719",
+      "words": 25053
+    },
+    {
+      "id": "tlg1724",
+      "name": "tlg1724",
+      "words": 43283
+    },
+    {
+      "id": "tlg1725",
+      "name": "tlg1725",
+      "words": 41847
+    },
+    {
+      "id": "tlg1750",
+      "name": "tlg1750",
+      "words": 13827
+    },
+    {
+      "id": "tlg1763",
+      "name": "tlg1763",
+      "words": 2011
+    },
+    {
+      "id": "tlg1764",
+      "name": "tlg1764",
+      "words": 105847
+    },
+    {
+      "id": "tlg1765",
+      "name": "tlg1765",
+      "words": 17210
+    },
+    {
+      "id": "tlg1766",
+      "name": "tlg1766",
+      "words": 9961
+    },
+    {
+      "id": "tlg1799",
+      "name": "tlg1799",
+      "words": 217210
+    },
+    {
+      "id": "tlg1801",
+      "name": "tlg1801",
+      "words": 1490
+    },
+    {
+      "id": "tlg1802",
+      "name": "tlg1802",
+      "words": 533
+    },
+    {
+      "id": "tlg1803",
+      "name": "tlg1803",
+      "words": 3771
+    },
+    {
+      "id": "tlg1805",
+      "name": "tlg1805",
+      "words": 8964
+    },
+    {
+      "id": "tlg2000",
+      "name": "tlg2000",
+      "words": 205946
+    },
+    {
+      "id": "tlg2001",
+      "name": "tlg2001",
+      "words": 514980
+    },
+    {
+      "id": "tlg2003",
+      "name": "tlg2003",
+      "words": 120642
+    },
+    {
+      "id": "tlg2016",
+      "name": "tlg2016",
+      "words": 3880
+    },
+    {
+      "id": "tlg2018",
+      "name": "tlg2018",
+      "words": 274942
+    },
+    {
+      "id": "tlg2021",
+      "name": "tlg2021",
+      "words": 313048
+    },
+    {
+      "id": "tlg2022",
+      "name": "tlg2022",
+      "words": 107587
+    },
+    {
+      "id": "tlg2023",
+      "name": "tlg2023",
+      "words": 141063
+    },
+    {
+      "id": "tlg2027",
+      "name": "tlg2027",
+      "words": 19524
+    },
+    {
+      "id": "tlg2029",
+      "name": "tlg2029",
+      "words": 1794
+    },
+    {
+      "id": "tlg2032",
+      "name": "tlg2032",
+      "words": 54946
+    },
+    {
+      "id": "tlg2034",
+      "name": "tlg2034",
+      "words": 231844
+    },
+    {
+      "id": "tlg2035",
+      "name": "tlg2035",
+      "words": 104745
+    },
+    {
+      "id": "tlg2036",
+      "name": "tlg2036",
+      "words": 54646
+    },
+    {
+      "id": "tlg2038",
+      "name": "tlg2038",
+      "words": 27835
+    },
+    {
+      "id": "tlg2039",
+      "name": "tlg2039",
+      "words": 5411
+    },
+    {
+      "id": "tlg2040",
+      "name": "tlg2040",
+      "words": 141049
+    },
+    {
+      "id": "tlg2041",
+      "name": "tlg2041",
+      "words": 6339
+    },
+    {
+      "id": "tlg2042",
+      "name": "tlg2042",
+      "words": 684749
+    },
+    {
+      "id": "tlg2045",
+      "name": "tlg2045",
+      "words": 125830
+    },
+    {
+      "id": "tlg2046",
+      "name": "tlg2046",
+      "words": 56701
+    },
+    {
+      "id": "tlg2048",
+      "name": "tlg2048",
+      "words": 110930
+    },
+    {
+      "id": "tlg2049",
+      "name": "tlg2049",
+      "words": 5120
+    },
+    {
+      "id": "tlg2050",
+      "name": "tlg2050",
+      "words": 2146
+    },
+    {
+      "id": "tlg2057",
+      "name": "tlg2057",
+      "words": 99592
+    },
+    {
+      "id": "tlg2058",
+      "name": "tlg2058",
+      "words": 35584
+    },
+    {
+      "id": "tlg2115",
+      "name": "tlg2115",
+      "words": 227181
+    },
+    {
+      "id": "tlg2135",
+      "name": "tlg2135",
+      "words": 5152
+    },
+    {
+      "id": "tlg2136",
+      "name": "tlg2136",
+      "words": 3680
+    },
+    {
+      "id": "tlg2137",
+      "name": "tlg2137",
+      "words": 5351
+    },
+    {
+      "id": "tlg2140",
+      "name": "tlg2140",
+      "words": 959
+    },
+    {
+      "id": "tlg2178",
+      "name": "tlg2178",
+      "words": 7345
+    },
+    {
+      "id": "tlg2200",
+      "name": "tlg2200",
+      "words": 1339508
+    },
+    {
+      "id": "tlg2233",
+      "name": "tlg2233",
+      "words": 11638
+    },
+    {
+      "id": "tlg2371",
+      "name": "tlg2371",
+      "words": 256782
+    },
+    {
+      "id": "tlg2583",
+      "name": "tlg2583",
+      "words": 18753
+    },
+    {
+      "id": "tlg2586",
+      "name": "tlg2586",
+      "words": 27528
+    },
+    {
+      "id": "tlg2601",
+      "name": "tlg2601",
+      "words": 4648
+    },
+    {
+      "id": "tlg2632",
+      "name": "tlg2632",
+      "words": 2258
+    },
+    {
+      "id": "tlg2640",
+      "name": "tlg2640",
+      "words": 3043
+    },
+    {
+      "id": "tlg2655",
+      "name": "tlg2655",
+      "words": 2301
+    },
+    {
+      "id": "tlg2691",
+      "name": "tlg2691",
+      "words": 881
+    },
+    {
+      "id": "tlg2703",
+      "name": "tlg2703",
+      "words": 621486
+    },
+    {
+      "id": "tlg2733",
+      "name": "tlg2733",
+      "words": 52788
+    },
+    {
+      "id": "tlg2768",
+      "name": "tlg2768",
+      "words": 107681
+    },
+    {
+      "id": "tlg2806",
+      "name": "tlg2806",
+      "words": 23580
+    },
+    {
+      "id": "tlg2934",
+      "name": "tlg2934",
+      "words": 62927
+    },
+    {
+      "id": "tlg2948",
+      "name": "tlg2948",
+      "words": 15509
+    },
+    {
+      "id": "tlg2949",
+      "name": "tlg2949",
+      "words": 2129
+    },
+    {
+      "id": "tlg2959",
+      "name": "tlg2959",
+      "words": 36397
+    },
+    {
+      "id": "tlg2972",
+      "name": "tlg2972",
+      "words": 610
+    },
+    {
+      "id": "tlg3118",
+      "name": "tlg3118",
+      "words": 40425
+    },
+    {
+      "id": "tlg3129",
+      "name": "tlg3129",
+      "words": 1139
+    },
+    {
+      "id": "tlg3135",
+      "name": "tlg3135",
+      "words": 813740
+    },
+    {
+      "id": "tlg3156",
+      "name": "tlg3156",
+      "words": 11801
+    },
+    {
+      "id": "tlg4003",
+      "name": "tlg4003",
+      "words": 14185
+    },
+    {
+      "id": "tlg4013",
+      "name": "tlg4013",
+      "words": 2165563
+    },
+    {
+      "id": "tlg4015",
+      "name": "tlg4015",
+      "words": 2535116
+    },
+    {
+      "id": "tlg4016",
+      "name": "tlg4016",
+      "words": 535200
+    },
+    {
+      "id": "tlg4017",
+      "name": "tlg4017",
+      "words": 151290
+    },
+    {
+      "id": "tlg4018",
+      "name": "tlg4018",
+      "words": 362607
+    },
+    {
+      "id": "tlg4019",
+      "name": "tlg4019",
+      "words": 335362
+    },
+    {
+      "id": "tlg4020",
+      "name": "tlg4020",
+      "words": 197195
+    },
+    {
+      "id": "tlg4021",
+      "name": "tlg4021",
+      "words": 172254
+    },
+    {
+      "id": "tlg4024",
+      "name": "tlg4024",
+      "words": 139531
+    },
+    {
+      "id": "tlg4026",
+      "name": "tlg4026",
+      "words": 94518
+    },
+    {
+      "id": "tlg4027",
+      "name": "tlg4027",
+      "words": 73338
+    },
+    {
+      "id": "tlg4029",
+      "name": "tlg4029",
+      "words": 252683
+    },
+    {
+      "id": "tlg4030",
+      "name": "tlg4030",
+      "words": 141631
+    },
+    {
+      "id": "tlg4031",
+      "name": "tlg4031",
+      "words": 475903
+    },
+    {
+      "id": "tlg4033",
+      "name": "tlg4033",
+      "words": 184046
+    },
+    {
+      "id": "tlg4034",
+      "name": "tlg4034",
+      "words": 473089
+    },
+    {
+      "id": "tlg4036",
+      "name": "tlg4036",
+      "words": 339005
+    },
+    {
+      "id": "tlg4037",
+      "name": "tlg4037",
+      "words": 1447
+    },
+    {
+      "id": "tlg4072",
+      "name": "tlg4072",
+      "words": 35949
+    },
+    {
+      "id": "tlg4075",
+      "name": "tlg4075",
+      "words": 2719
+    },
+    {
+      "id": "tlg4081",
+      "name": "tlg4081",
+      "words": 2262
+    },
+    {
+      "id": "tlg4084",
+      "name": "tlg4084",
+      "words": 61256
+    },
+    {
+      "id": "tlg4086",
+      "name": "tlg4086",
+      "words": 851
+    },
+    {
+      "id": "tlg4089",
+      "name": "tlg4089",
+      "words": 283400
+    },
+    {
+      "id": "tlg4090",
+      "name": "tlg4090",
+      "words": 342090
+    },
+    {
+      "id": "tlg4091",
+      "name": "tlg4091",
+      "words": 3872
+    },
+    {
+      "id": "tlg4102",
+      "name": "tlg4102",
+      "words": 2241835
+    },
+    {
+      "id": "tlg4170",
+      "name": "tlg4170",
+      "words": 1429
+    },
+    {
+      "id": "tlg4174",
+      "name": "tlg4174",
+      "words": 12607
+    },
+    {
+      "id": "tlg4193",
+      "name": "tlg4193",
+      "words": 59498
+    },
+    {
+      "id": "tlg5019",
+      "name": "tlg5019",
+      "words": 18091
+    },
+    {
+      "id": "tlg5022",
+      "name": "tlg5022",
+      "words": 29490
+    },
+    {
+      "id": "tlg5023",
+      "name": "tlg5023",
+      "words": 410501
+    },
+    {
+      "id": "tlg5026",
+      "name": "tlg5026",
+      "words": 907706
+    },
+    {
+      "id": "tlg5028",
+      "name": "tlg5028",
+      "words": 5938
+    },
+    {
+      "id": "tlg5029",
+      "name": "tlg5029",
+      "words": 49868
+    },
+    {
+      "id": "tlg5031",
+      "name": "tlg5031",
+      "words": 32230
+    },
+    {
+      "id": "tlg5034",
+      "name": "tlg5034",
+      "words": 162418
+    },
+    {
+      "id": "tlg5037",
+      "name": "tlg5037",
+      "words": 76117
+    },
+    {
+      "id": "tlg7000",
+      "name": "tlg7000",
+      "words": 130942
+    },
+    {
+      "id": "tlg9004",
+      "name": "tlg9004",
+      "words": 40339
+    },
+    {
+      "id": "tlg9006",
+      "name": "tlg9006",
+      "words": 15500
+    },
+    {
+      "id": "tlg9007",
+      "name": "tlg9007",
+      "words": 7571
+    },
+    {
+      "id": "tlg9010",
+      "name": "tlg9010",
+      "words": 540784
+    },
+    {
+      "id": "tlg9019",
+      "name": "tlg9019",
+      "words": 48480
+    },
+    {
+      "id": "volume_xml",
+      "name": "volume_xml",
+      "words": 11331876
+    }
+  ],
+  "translators_list": [
+    {
+      "id": "adnah_david_jones_release",
+      "name": "Adnah David Jones Release",
+      "words": 130325
+    },
+    {
+      "id": "aeschylus_being",
+      "name": "Aeschylus Being",
+      "words": 80303
+    },
+    {
+      "id": "al_haines",
+      "name": "Al Haines",
+      "words": 801197
+    },
+    {
+      "id": "alexander_pope_contents_introduction",
+      "name": "Alexander Pope Contents Introduction",
+      "words": 434164
+    },
+    {
+      "id": "alexander_teixeira",
+      "name": "Alexander Teixeira",
+      "words": 95587
+    },
+    {
+      "id": "alexandre_machard_release",
+      "name": "Alexandre Machard Release",
+      "words": 9533
+    },
+    {
+      "id": "alexandros_rizos_rankaves_release",
+      "name": "Alexandros Rizos Rankaves Release",
+      "words": 9169
+    },
+    {
+      "id": "alfred_gudemann_release",
+      "name": "Alfred Gudemann Release",
+      "words": 30849
+    },
+    {
+      "id": "ambrose_bierce",
+      "name": "Ambrose Bierce",
+      "words": 66872
+    },
+    {
+      "id": "andrew_dunning",
+      "name": "Andrew Dunning",
+      "words": 75885
+    },
+    {
+      "id": "andrew_lang_walter_leaf",
+      "name": "Andrew Lang Walter Leaf",
+      "words": 256043
+    },
+    {
+      "id": "angelos_tanagras_release",
+      "name": "Angelos Tanagras Release",
+      "words": 2931
+    },
+    {
+      "id": "anonymous_volunteer",
+      "name": "Anonymous Volunteer",
+      "words": 178756
+    },
+    {
+      "id": "archimedes",
+      "name": "Archimedes",
+      "words": 12957
+    },
+    {
+      "id": "aristophanes",
+      "name": "Aristophanes",
+      "words": 15965
+    },
+    {
+      "id": "aristos_kampanis_release",
+      "name": "Aristos Kampanis Release",
+      "words": 2941
+    },
+    {
+      "id": "aristotle",
+      "name": "Aristotle",
+      "words": 130774
+    },
+    {
+      "id": "arthur_john_brock_release",
+      "name": "Arthur John Brock Release",
+      "words": 93317
+    },
+    {
+      "id": "arthur_livingston_release",
+      "name": "Arthur Livingston Release",
+      "words": 222783
+    },
+    {
+      "id": "arthur_singer",
+      "name": "Arthur Singer",
+      "words": 23820
+    },
+    {
+      "id": "aubrey_stewart_release",
+      "name": "Aubrey Stewart Release",
+      "words": 233086
+    },
+    {
+      "id": "axel_gabriel_sj",
+      "name": "Axel Gabriel Sj",
+      "words": 34977
+    },
+    {
+      "id": "bartomeu_pou",
+      "name": "Bartomeu Pou",
+      "words": 311484
+    },
+    {
+      "id": "benjamin_jowett_appendix",
+      "name": "Benjamin Jowett Appendix",
+      "words": 21053
+    },
+    {
+      "id": "benjamin_jowett_contents_introduction",
+      "name": "Benjamin Jowett Contents Introduction",
+      "words": 153630
+    },
+    {
+      "id": "benjamin_jowett_introduction_and",
+      "name": "Benjamin Jowett Introduction And",
+      "words": 546201
+    },
+    {
+      "id": "benjamin_jowett_release",
+      "name": "Benjamin Jowett Release",
+      "words": 689948
+    },
+    {
+      "id": "bret_harte",
+      "name": "Bret Harte",
+      "words": 34689
+    },
+    {
+      "id": "cambridge_university",
+      "name": "Cambridge University",
+      "words": 46178
+    },
+    {
+      "id": "carolus_raeticus",
+      "name": "Carolus Raeticus",
+      "words": 205104
+    },
+    {
+      "id": "carroll",
+      "name": "Carroll",
+      "words": 24527
+    },
+    {
+      "id": "case",
+      "name": "Case",
+      "words": 123961
+    },
+    {
+      "id": "charles_cotton",
+      "name": "Charles Cotton",
+      "words": 116930
+    },
+    {
+      "id": "charles_duke_yonge_release",
+      "name": "Charles Duke Yonge Release",
+      "words": 1361156
+    },
+    {
+      "id": "charles_edwardes_release",
+      "name": "Charles Edwardes Release",
+      "words": 76457
+    },
+    {
+      "id": "charles_rann_kennedy_release",
+      "name": "Charles Rann Kennedy Release",
+      "words": 35804
+    },
+    {
+      "id": "charles_stuart_calverley_release",
+      "name": "Charles Stuart Calverley Release",
+      "words": 30605
+    },
+    {
+      "id": "christopher_st",
+      "name": "Christopher St",
+      "words": 37406
+    },
+    {
+      "id": "chuck_greif",
+      "name": "Chuck Greif",
+      "words": 131523
+    },
+    {
+      "id": "clara_bell_dedication_to",
+      "name": "Clara Bell Dedication To",
+      "words": 23925
+    },
+    {
+      "id": "clara_erskine_clement_waters",
+      "name": "Clara Erskine Clement Waters",
+      "words": 86256
+    },
+    {
+      "id": "clive_bell",
+      "name": "Clive Bell",
+      "words": 56425
+    },
+    {
+      "id": "colonel",
+      "name": "Colonel",
+      "words": 43671
+    },
+    {
+      "id": "cuthbert_bede",
+      "name": "Cuthbert Bede",
+      "words": 117932
+    },
+    {
+      "id": "cyrus",
+      "name": "Cyrus",
+      "words": 449337
+    },
+    {
+      "id": "david_livingstone",
+      "name": "David Livingstone",
+      "words": 297548
+    },
+    {
+      "id": "david_price",
+      "name": "David Price",
+      "words": 476623
+    },
+    {
+      "id": "david_thomas",
+      "name": "David Thomas",
+      "words": 99988
+    },
+    {
+      "id": "david_widger",
+      "name": "David Widger",
+      "words": 1240857
+    },
+    {
+      "id": "dean_milman",
+      "name": "Dean Milman",
+      "words": 143731
+    },
+    {
+      "id": "demetrios_anastasopoulos_release",
+      "name": "Demetrios Anastasopoulos Release",
+      "words": 2923
+    },
+    {
+      "id": "derek_davis_peace",
+      "name": "Derek Davis Peace",
+      "words": 18259
+    },
+    {
+      "id": "derek_davis_the_birds",
+      "name": "Derek Davis The Birds",
+      "words": 23483
+    },
+    {
+      "id": "diego_graci",
+      "name": "Diego Graci",
+      "words": 331777
+    },
+    {
+      "id": "distributed_proofreaders",
+      "name": "Distributed Proofreaders",
+      "words": 70375
+    },
+    {
+      "id": "don_kostuch",
+      "name": "Don Kostuch",
+      "words": 112860
+    },
+    {
+      "id": "donald_lainson",
+      "name": "Donald Lainson",
+      "words": 56109
+    },
+    {
+      "id": "earl",
+      "name": "Earl",
+      "words": 148143
+    },
+    {
+      "id": "ed_brandon",
+      "name": "Ed Brandon",
+      "words": 373604
+    },
+    {
+      "id": "eduardo",
+      "name": "Eduardo",
+      "words": 283060
+    },
+    {
+      "id": "edvard_rein_release",
+      "name": "Edvard Rein Release",
+      "words": 209858
+    },
+    {
+      "id": "edvin_hagfors_release",
+      "name": "Edvin Hagfors Release",
+      "words": 96130
+    },
+    {
+      "id": "edward_clodd",
+      "name": "Edward Clodd",
+      "words": 72074
+    },
+    {
+      "id": "edward_fairfax_taylor_release",
+      "name": "Edward Fairfax Taylor Release",
+      "words": 109211
+    },
+    {
+      "id": "edward_kennard_rand",
+      "name": "Edward Kennard Rand",
+      "words": 100111
+    },
+    {
+      "id": "edward_storer_release",
+      "name": "Edward Storer Release",
+      "words": 41569
+    },
+    {
+      "id": "elbert_hubbard_memorial_edition",
+      "name": "Elbert Hubbard Memorial Edition",
+      "words": 91472
+    },
+    {
+      "id": "elizabeth_twining_hall_release",
+      "name": "Elizabeth Twining Hall Release",
+      "words": 13439
+    },
+    {
+      "id": "ella_isabel_harris_release",
+      "name": "Ella Isabel Harris Release",
+      "words": 23184
+    },
+    {
+      "id": "emil",
+      "name": "Emil",
+      "words": 145207
+    },
+    {
+      "id": "emma_karinthy_frigyes_karinthy",
+      "name": "Emma Karinthy Frigyes Karinthy",
+      "words": 54740
+    },
+    {
+      "id": "enrique_soms",
+      "name": "Enrique Soms",
+      "words": 92796
+    },
+    {
+      "id": "eric_otto_winstedt_release",
+      "name": "Eric Otto Winstedt Release",
+      "words": 334536
+    },
+    {
+      "id": "erik_aleksander_ingman_release",
+      "name": "Erik Aleksander Ingman Release",
+      "words": 6630
+    },
+    {
+      "id": "ernest_myers_release",
+      "name": "Ernest Myers Release",
+      "words": 53496
+    },
+    {
+      "id": "evelyn",
+      "name": "Evelyn",
+      "words": 669103
+    },
+    {
+      "id": "fairfax_harrison_release",
+      "name": "Fairfax Harrison Release",
+      "words": 95153
+    },
+    {
+      "id": "famous_writers",
+      "name": "Famous Writers",
+      "words": 102601
+    },
+    {
+      "id": "federico_bar",
+      "name": "Federico Bar",
+      "words": 187228
+    },
+    {
+      "id": "fernando_segundo_brieva_salvatierra",
+      "name": "Fernando Segundo Brieva Salvatierra",
+      "words": 72971
+    },
+    {
+      "id": "frances_lance_ferrero_release",
+      "name": "Frances Lance Ferrero Release",
+      "words": 56200
+    },
+    {
+      "id": "frances_younghusband_release",
+      "name": "Frances Younghusband Release",
+      "words": 49141
+    },
+    {
+      "id": "francis_adams_release",
+      "name": "Francis Adams Release",
+      "words": 187596
+    },
+    {
+      "id": "francis_barham",
+      "name": "Francis Barham",
+      "words": 179496
+    },
+    {
+      "id": "francis_hickes_release",
+      "name": "Francis Hickes Release",
+      "words": 22222
+    },
+    {
+      "id": "francis_storr_release",
+      "name": "Francis Storr Release",
+      "words": 39107
+    },
+    {
+      "id": "francisco_crivell_release",
+      "name": "Francisco Crivell Release",
+      "words": 232520
+    },
+    {
+      "id": "frank_justus_miller_release",
+      "name": "Frank Justus Miller Release",
+      "words": 157640
+    },
+    {
+      "id": "frederic_whyte_release",
+      "name": "Frederic Whyte Release",
+      "words": 80825
+    },
+    {
+      "id": "friedrich_bruns",
+      "name": "Friedrich Bruns",
+      "words": 38274
+    },
+    {
+      "id": "fritz_leiber",
+      "name": "Fritz Leiber",
+      "words": 34362
+    },
+    {
+      "id": "galen_clark",
+      "name": "Galen Clark",
+      "words": 20445
+    },
+    {
+      "id": "gawin_douglas_release",
+      "name": "Gawin Douglas Release",
+      "words": 199767
+    },
+    {
+      "id": "geoffrey_chaucer_release",
+      "name": "Geoffrey Chaucer Release",
+      "words": 159065
+    },
+    {
+      "id": "george_bernard_shaw",
+      "name": "George Bernard Shaw",
+      "words": 38366
+    },
+    {
+      "id": "george_chapman_release",
+      "name": "George Chapman Release",
+      "words": 394254
+    },
+    {
+      "id": "george_colman_release",
+      "name": "George Colman Release",
+      "words": 81173
+    },
+    {
+      "id": "george_daniel",
+      "name": "George Daniel",
+      "words": 120203
+    },
+    {
+      "id": "george_eliot_contents",
+      "name": "George Eliot Contents",
+      "words": 212097
+    },
+    {
+      "id": "george_long_aubrey_stewart",
+      "name": "George Long Aubrey Stewart",
+      "words": 688202
+    },
+    {
+      "id": "george_long_release",
+      "name": "George Long Release",
+      "words": 198699
+    },
+    {
+      "id": "george_sterling",
+      "name": "George Sterling",
+      "words": 70113
+    },
+    {
+      "id": "george_william_featherstonhaugh_release",
+      "name": "George William Featherstonhaugh Release",
+      "words": 200286
+    },
+    {
+      "id": "gergely_csiky_release",
+      "name": "Gergely Csiky Release",
+      "words": 75783
+    },
+    {
+      "id": "gilbert_murray_nine_greek",
+      "name": "Gilbert Murray Nine Greek",
+      "words": 34966
+    },
+    {
+      "id": "gilbert_murray_release",
+      "name": "Gilbert Murray Release",
+      "words": 265012
+    },
+    {
+      "id": "goldwin_smith_release",
+      "name": "Goldwin Smith Release",
+      "words": 44894
+    },
+    {
+      "id": "gregory_mcnamee_originally",
+      "name": "Gregory Mcnamee Originally",
+      "words": 15628
+    },
+    {
+      "id": "harold_edgeworth_butler_release",
+      "name": "Harold Edgeworth Butler Release",
+      "words": 63992
+    },
+    {
+      "id": "harry_graham",
+      "name": "Harry Graham",
+      "words": 9352
+    },
+    {
+      "id": "hastings_crossley_release",
+      "name": "Hastings Crossley Release",
+      "words": 26034
+    },
+    {
+      "id": "heikki_impiwaara_release",
+      "name": "Heikki Impiwaara Release",
+      "words": 69885
+    },
+    {
+      "id": "henry_cary_release",
+      "name": "Henry Cary Release",
+      "words": 53489
+    },
+    {
+      "id": "henry_graham_dakyns_release",
+      "name": "Henry Graham Dakyns Release",
+      "words": 595228
+    },
+    {
+      "id": "henry_kingsley",
+      "name": "Henry Kingsley",
+      "words": 1064075
+    },
+    {
+      "id": "herbert_baldwin_foster_release",
+      "name": "Herbert Baldwin Foster Release",
+      "words": 594661
+    },
+    {
+      "id": "herbert_kaufman_new",
+      "name": "Herbert Kaufman New",
+      "words": 11651
+    },
+    {
+      "id": "herodotus",
+      "name": "Herodotus",
+      "words": 346151
+    },
+    {
+      "id": "himself",
+      "name": "Himself",
+      "words": 225479
+    },
+    {
+      "id": "homer",
+      "name": "Homer",
+      "words": 142257
+    },
+    {
+      "id": "honore_de_balzac",
+      "name": "Honore De Balzac",
+      "words": 20860
+    },
+    {
+      "id": "hope",
+      "name": "Hope",
+      "words": 100645
+    },
+    {
+      "id": "horace_barnett_samuel_release",
+      "name": "Horace Barnett Samuel Release",
+      "words": 190377
+    },
+    {
+      "id": "horace_meyer_kallen_release",
+      "name": "Horace Meyer Kallen Release",
+      "words": 220524
+    },
+    {
+      "id": "hugh",
+      "name": "Hugh",
+      "words": 90847
+    },
+    {
+      "id": "iames_amiot_abbot",
+      "name": "Iames Amiot Abbot",
+      "words": 66829
+    },
+    {
+      "id": "iason_konstantinides",
+      "name": "Iason Konstantinides",
+      "words": 23644
+    },
+    {
+      "id": "iason_konstnatinides",
+      "name": "Iason Konstnatinides",
+      "words": 2951
+    },
+    {
+      "id": "iason_konstntinides",
+      "name": "Iason Konstntinides",
+      "words": 2982
+    },
+    {
+      "id": "ingram_bywater_release",
+      "name": "Ingram Bywater Release",
+      "words": 21249
+    },
+    {
+      "id": "internet",
+      "name": "Internet",
+      "words": 31941
+    },
+    {
+      "id": "ioannes_kondylakes_release",
+      "name": "Ioannes Kondylakes Release",
+      "words": 14878
+    },
+    {
+      "id": "ioannes_polemes_release",
+      "name": "Ioannes Polemes Release",
+      "words": 2948
+    },
+    {
+      "id": "ioannis_fragkias_release",
+      "name": "Ioannis Fragkias Release",
+      "words": 2913
+    },
+    {
+      "id": "ioannis_gryparis",
+      "name": "Ioannis Gryparis",
+      "words": 2930
+    },
+    {
+      "id": "jack_lindsay_release",
+      "name": "Jack Lindsay Release",
+      "words": 17001
+    },
+    {
+      "id": "jacques_amyot_paul",
+      "name": "Jacques Amyot Paul",
+      "words": 112273
+    },
+    {
+      "id": "james_fenimore_cooper",
+      "name": "James Fenimore Cooper",
+      "words": 8065
+    },
+    {
+      "id": "james_rhoades_release",
+      "name": "James Rhoades Release",
+      "words": 24323
+    },
+    {
+      "id": "james_rusk_little_novels",
+      "name": "James Rusk Little Novels",
+      "words": 145141
+    },
+    {
+      "id": "jerome_beers_thomas_release",
+      "name": "Jerome Beers Thomas Release",
+      "words": 70270
+    },
+    {
+      "id": "john_bostock_henry",
+      "name": "John Bostock Henry",
+      "words": 246853
+    },
+    {
+      "id": "john_clarke_release",
+      "name": "John Clarke Release",
+      "words": 120210
+    },
+    {
+      "id": "john_conington_release",
+      "name": "John Conington Release",
+      "words": 174956
+    },
+    {
+      "id": "john_dryden_contents_book",
+      "name": "John Dryden Contents Book",
+      "words": 109405
+    },
+    {
+      "id": "john_henry_cardinal_newman",
+      "name": "John Henry Cardinal Newman",
+      "words": 137028
+    },
+    {
+      "id": "john_myers",
+      "name": "John Myers",
+      "words": 11721
+    },
+    {
+      "id": "john_watson_mccrindle_release",
+      "name": "John Watson Mccrindle Release",
+      "words": 60017
+    },
+    {
+      "id": "judith_boss",
+      "name": "Judith Boss",
+      "words": 23259
+    },
+    {
+      "id": "jules",
+      "name": "Jules",
+      "words": 6969
+    },
+    {
+      "id": "julian_hawthorne_american",
+      "name": "Julian Hawthorne American",
+      "words": 125173
+    },
+    {
+      "id": "kaarlo_forsman_release",
+      "name": "Kaarlo Forsman Release",
+      "words": 33834
+    },
+    {
+      "id": "kaarlo_koskimies_release",
+      "name": "Kaarlo Koskimies Release",
+      "words": 18264
+    },
+    {
+      "id": "katharine_prescott_wormeley",
+      "name": "Katharine Prescott Wormeley",
+      "words": 105013
+    },
+    {
+      "id": "kelly_foster",
+      "name": "Kelly Foster",
+      "words": 45239
+    },
+    {
+      "id": "kenneth_sylvan_guthrie_release",
+      "name": "Kenneth Sylvan Guthrie Release",
+      "words": 424477
+    },
+    {
+      "id": "konstantin_siitonen_release",
+      "name": "Konstantin Siitonen Release",
+      "words": 82292
+    },
+    {
+      "id": "konstantinos_chrestomanos_release",
+      "name": "Konstantinos Chrestomanos Release",
+      "words": 2923
+    },
+    {
+      "id": "konstantinos_theotokes_release",
+      "name": "Konstantinos Theotokes Release",
+      "words": 2934
+    },
+    {
+      "id": "late",
+      "name": "Late",
+      "words": 301506
+    },
+    {
+      "id": "laurent_tailhade_release",
+      "name": "Laurent Tailhade Release",
+      "words": 64167
+    },
+    {
+      "id": "lauri_soini_release",
+      "name": "Lauri Soini Release",
+      "words": 11864
+    },
+    {
+      "id": "leconte",
+      "name": "Leconte",
+      "words": 144686
+    },
+    {
+      "id": "leicester",
+      "name": "Leicester",
+      "words": 173685
+    },
+    {
+      "id": "lewis_campbell_release",
+      "name": "Lewis Campbell Release",
+      "words": 93172
+    },
+    {
+      "id": "lewis_evans_william_gifford",
+      "name": "Lewis Evans William Gifford",
+      "words": 394464
+    },
+    {
+      "id": "loeb_classical_library",
+      "name": "Loeb Classical Library",
+      "words": 42488011
+    },
+    {
+      "id": "louis_le_gendre_release",
+      "name": "Louis Le Gendre Release",
+      "words": 16002
+    },
+    {
+      "id": "lucan",
+      "name": "Lucan",
+      "words": 84306
+    },
+    {
+      "id": "luis_segal",
+      "name": "Luis Segal",
+      "words": 328887
+    },
+    {
+      "id": "manmatha_nath_dutt",
+      "name": "Manmatha Nath Dutt",
+      "words": 152439
+    },
+    {
+      "id": "marcellus",
+      "name": "Marcellus",
+      "words": 86892
+    },
+    {
+      "id": "marcus_aurelius_contents_notes",
+      "name": "Marcus Aurelius Contents Notes",
+      "words": 72967
+    },
+    {
+      "id": "mark_bear_akrigg",
+      "name": "Mark Bear Akrigg",
+      "words": 98904
+    },
+    {
+      "id": "marsilius_ficinus_william_curry",
+      "name": "Marsilius Ficinus William Curry",
+      "words": 171047
+    },
+    {
+      "id": "matthew_arnold",
+      "name": "Matthew Arnold",
+      "words": 231343
+    },
+    {
+      "id": "maurice_platnauer_release",
+      "name": "Maurice Platnauer Release",
+      "words": 184850
+    },
+    {
+      "id": "maximilian",
+      "name": "Maximilian",
+      "words": 49935
+    },
+    {
+      "id": "means",
+      "name": "Means",
+      "words": 154126
+    },
+    {
+      "id": "messrs",
+      "name": "Messrs",
+      "words": 8253
+    },
+    {
+      "id": "michael_wodhull_editor",
+      "name": "Michael Wodhull Editor",
+      "words": 92028
+    },
+    {
+      "id": "michiel_jan_noordewier_release",
+      "name": "Michiel Jan Noordewier Release",
+      "words": 18526
+    },
+    {
+      "id": "miguel_antonio_caro_release",
+      "name": "Miguel Antonio Caro Release",
+      "words": 118850
+    },
+    {
+      "id": "miles_menander_dawson_release",
+      "name": "Miles Menander Dawson Release",
+      "words": 26073
+    },
+    {
+      "id": "nicolas",
+      "name": "Nicolas",
+      "words": 195788
+    },
+    {
+      "id": "ninian_hill_thomson_release",
+      "name": "Ninian Hill Thomson Release",
+      "words": 141248
+    },
+    {
+      "id": "oskar_blomstedt_release",
+      "name": "Oskar Blomstedt Release",
+      "words": 32019
+    },
+    {
+      "id": "otto_manninen_tyyni_tuulio",
+      "name": "Otto Manninen Tyyni Tuulio",
+      "words": 23734
+    },
+    {
+      "id": "owen_johnson",
+      "name": "Owen Johnson",
+      "words": 62835
+    },
+    {
+      "id": "paul_nixon_dean",
+      "name": "Paul Nixon Dean",
+      "words": 118602
+    },
+    {
+      "id": "paulin_paris_release",
+      "name": "Paulin Paris Release",
+      "words": 568941
+    },
+    {
+      "id": "paulos_gratsiatos_release",
+      "name": "Paulos Gratsiatos Release",
+      "words": 3165
+    },
+    {
+      "id": "philemon_holland_release",
+      "name": "Philemon Holland Release",
+      "words": 55404
+    },
+    {
+      "id": "philip_vellacott",
+      "name": "Philip Vellacott",
+      "words": 63333
+    },
+    {
+      "id": "plutarch_contents_philosophical_essays",
+      "name": "Plutarch Contents Philosophical Essays",
+      "words": 273161
+    },
+    {
+      "id": "polyvios_demetrakopoulos_release",
+      "name": "Polyvios Demetrakopoulos Release",
+      "words": 15059
+    },
+    {
+      "id": "princess_catherine_radziwill",
+      "name": "Princess Catherine Radziwill",
+      "words": 61705
+    },
+    {
+      "id": "randall_garrett",
+      "name": "Randall Garrett",
+      "words": 6548
+    },
+    {
+      "id": "richard_crawley_with",
+      "name": "Richard Crawley With",
+      "words": 205082
+    },
+    {
+      "id": "richard_garnett_mdcccciii_to",
+      "name": "Richard Garnett Mdcccciii To",
+      "words": 95656
+    },
+    {
+      "id": "robert_lynd",
+      "name": "Robert Lynd",
+      "words": 66344
+    },
+    {
+      "id": "robert_mellin_release",
+      "name": "Robert Mellin Release",
+      "words": 9603
+    },
+    {
+      "id": "robinson_ellis_release",
+      "name": "Robinson Ellis Release",
+      "words": 25957
+    },
+    {
+      "id": "roger_frank",
+      "name": "Roger Frank",
+      "words": 63790
+    },
+    {
+      "id": "rolfe_humphries_release",
+      "name": "Rolfe Humphries Release",
+      "words": 89929
+    },
+    {
+      "id": "rowland_smith_author",
+      "name": "Rowland Smith Author",
+      "words": 204904
+    },
+    {
+      "id": "saint_augustine",
+      "name": "Saint Augustine",
+      "words": 111026
+    },
+    {
+      "id": "samuel_butler_release",
+      "name": "Samuel Butler Release",
+      "words": 282302
+    },
+    {
+      "id": "servius",
+      "name": "Servius",
+      "words": 52883
+    },
+    {
+      "id": "sir_arthur_wallace_pickard",
+      "name": "Sir Arthur Wallace Pickard",
+      "words": 147818
+    },
+    {
+      "id": "sir_frederic",
+      "name": "Sir Frederic",
+      "words": 27281
+    },
+    {
+      "id": "sir_richard_francis_burton",
+      "name": "Sir Richard Francis Burton",
+      "words": 63369
+    },
+    {
+      "id": "sir_roger",
+      "name": "Sir Roger",
+      "words": 112041
+    },
+    {
+      "id": "sir_thomas_north",
+      "name": "Sir Thomas North",
+      "words": 184191
+    },
+    {
+      "id": "sophia_canoni",
+      "name": "Sophia Canoni",
+      "words": 14765
+    },
+    {
+      "id": "street_and_smith_corporation",
+      "name": "Street And Smith Corporation",
+      "words": 88528
+    },
+    {
+      "id": "stuart_locke",
+      "name": "Stuart Locke",
+      "words": 33670
+    },
+    {
+      "id": "tacitus",
+      "name": "Tacitus",
+      "words": 49671
+    },
+    {
+      "id": "tapio_riikonen",
+      "name": "Tapio Riikonen",
+      "words": 30899
+    },
+    {
+      "id": "terence_macswiney",
+      "name": "Terence Macswiney",
+      "words": 49563
+    },
+    {
+      "id": "theobald_wolfe_tone",
+      "name": "Theobald Wolfe Tone",
+      "words": 88472
+    },
+    {
+      "id": "theodore_alois_buckley_release",
+      "name": "Theodore Alois Buckley Release",
+      "words": 358070
+    },
+    {
+      "id": "theodore_chickering_williams_release",
+      "name": "Theodore Chickering Williams Release",
+      "words": 182208
+    },
+    {
+      "id": "thomas_creech_release",
+      "name": "Thomas Creech Release",
+      "words": 19793
+    },
+    {
+      "id": "thomas_francklin_release",
+      "name": "Thomas Francklin Release",
+      "words": 38238
+    },
+    {
+      "id": "thomas_gordon_preparer",
+      "name": "Thomas Gordon Preparer",
+      "words": 14218
+    },
+    {
+      "id": "thomas_gordon_release",
+      "name": "Thomas Gordon Release",
+      "words": 106058
+    },
+    {
+      "id": "thomas_linacre_release",
+      "name": "Thomas Linacre Release",
+      "words": 61909
+    },
+    {
+      "id": "thomas_roscoe_john_yonge",
+      "name": "Thomas Roscoe John Yonge",
+      "words": 55053
+    },
+    {
+      "id": "thomas_sheldon_green",
+      "name": "Thomas Sheldon Green",
+      "words": 86685
+    },
+    {
+      "id": "thomas_taylor_author",
+      "name": "Thomas Taylor Author",
+      "words": 27443
+    },
+    {
+      "id": "thomas_taylor_london",
+      "name": "Thomas Taylor London",
+      "words": 11765
+    },
+    {
+      "id": "thomas_taylor_release",
+      "name": "Thomas Taylor Release",
+      "words": 431241
+    },
+    {
+      "id": "thucydides",
+      "name": "Thucydides",
+      "words": 54974
+    },
+    {
+      "id": "titus_quinctius",
+      "name": "Titus Quinctius",
+      "words": 269646
+    },
+    {
+      "id": "tom_cosmas",
+      "name": "Tom Cosmas",
+      "words": 40174
+    },
+    {
+      "id": "upper_room",
+      "name": "Upper Room",
+      "words": 36151
+    },
+    {
+      "id": "various",
+      "name": "Various",
+      "words": 241567
+    },
+    {
+      "id": "veikko_antero_koskenniemi_release",
+      "name": "Veikko Antero Koskenniemi Release",
+      "words": 15619
+    },
+    {
+      "id": "virgil_markham",
+      "name": "Virgil Markham",
+      "words": 129127
+    },
+    {
+      "id": "virginia_tatnall_peacock_illustrated",
+      "name": "Virginia Tatnall Peacock Illustrated",
+      "words": 74437
+    },
+    {
+      "id": "wallace_smith_murray",
+      "name": "Wallace Smith Murray",
+      "words": 160615
+    },
+    {
+      "id": "walter_horatio_pater",
+      "name": "Walter Horatio Pater",
+      "words": 75036
+    },
+    {
+      "id": "walter_libby",
+      "name": "Walter Libby",
+      "words": 108942
+    },
+    {
+      "id": "walter_miller_release",
+      "name": "Walter Miller Release",
+      "words": 110501
+    },
+    {
+      "id": "weikko_pakarinen_lauri_pelkonen",
+      "name": "Weikko Pakarinen Lauri Pelkonen",
+      "words": 76261
+    },
+    {
+      "id": "willem_cornelis_royaards_release",
+      "name": "Willem Cornelis Royaards Release",
+      "words": 16705
+    },
+    {
+      "id": "william_adlington",
+      "name": "William Adlington",
+      "words": 244803
+    },
+    {
+      "id": "william_burnaby",
+      "name": "William Burnaby",
+      "words": 223092
+    },
+    {
+      "id": "william_combe_release",
+      "name": "William Combe Release",
+      "words": 182487
+    },
+    {
+      "id": "william_cowper_release",
+      "name": "William Cowper Release",
+      "words": 453748
+    },
+    {
+      "id": "william_ellery_leonard_release",
+      "name": "William Ellery Leonard Release",
+      "words": 240522
+    },
+    {
+      "id": "william_ellis_release",
+      "name": "William Ellis Release",
+      "words": 266178
+    },
+    {
+      "id": "william_hazlitt",
+      "name": "William Hazlitt",
+      "words": 250517
+    },
+    {
+      "id": "william_le_queux",
+      "name": "William Le Queux",
+      "words": 214131
+    },
+    {
+      "id": "william_melmoth",
+      "name": "William Melmoth",
+      "words": 254839
+    },
+    {
+      "id": "william_morris_release",
+      "name": "William Morris Release",
+      "words": 324981
+    },
+    {
+      "id": "william_patten",
+      "name": "William Patten",
+      "words": 304646
+    },
+    {
+      "id": "william_shakespeare",
+      "name": "William Shakespeare",
+      "words": 187076
+    },
+    {
+      "id": "willis_barnstone",
+      "name": "Willis Barnstone",
+      "words": 40125
+    },
+    {
+      "id": "unattributed_corpus",
+      "name": "Unattributed Translations",
+      "words": 24773902
+    }
+  ]
+}
