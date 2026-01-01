@@ -109,10 +109,7 @@ import logging
 # CONFIGURATION
 # =============================================================================
 
-DATABASE_URL = os.environ.get(
-    "DATABASE_URL",
-    "postgresql://postgres:voqQePIH4adopQUa-1UUaFKnOT-mtsod@maglev.proxy.rlwy.net:49514/railway"
-)
+DATABASE_URL = os.environ.get("DATABASE_URL", "")
 
 OUTPUT_BASE = Path.home() / "Documents" / "logos_exhaustive_corpus"
 OUTPUT_BASE.mkdir(parents=True, exist_ok=True)

@@ -56,7 +56,7 @@ from pathlib import Path
 
 DATABASE_URL = os.environ.get(
     "DATABASE_URL", 
-    "postgresql://postgres:voqQePIH4adopQUa-1UUaFKnOT-mtsod@maglev.proxy.rlwy.net:49514/railway"
+    os.getenv("DATABASE_URL", "")
 )
 
 # API Keys - Set directly

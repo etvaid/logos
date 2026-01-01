@@ -39,8 +39,7 @@ except ImportError:
 # CONFIGURATION
 # =============================================================================
 
-DATABASE_URL = os.environ.get('DATABASE_URL', 
-    'postgres://postgres:voqQePIH4adopQUa-1UUaFKnOT-mtsod@maglev.proxy.rlwy.net:49514/railway')
+DATABASE_URL = os.environ.get('DATABASE_URL', '')
 
 CORPUS_DIR = Path.home() / "Downloads/logos/tau_complete_corpus/text/modern"
 BATCH_SIZE = 500  # Insert in batches

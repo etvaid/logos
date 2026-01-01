@@ -50,8 +50,7 @@ except ImportError:
 # CONFIGURATION
 # =============================================================================
 
-DATABASE_URL = os.environ.get('DATABASE_URL', 
-    'postgresql://postgres:voqQePIH4adopQUa-1UUaFKnOT-mtsod@maglev.proxy.rlwy.net:49514/railway')
+DATABASE_URL = os.environ.get('DATABASE_URL', '')
 
 CORPUS_DIR = Path.home() / "Downloads/logos/tau_complete_corpus/text/modern"
 LOEB_ZIP = CORPUS_DIR / "loeb_complete_545.zip"

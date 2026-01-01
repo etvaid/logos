@@ -21,7 +21,7 @@ from db.schema import ALL_TABLES_SQL, verify_schema
 
 DATABASE_URL = os.getenv(
     "DATABASE_URL",
-    "postgresql://postgres:voqQePIH4adopQUa-1UUaFKnOT-mtsod@maglev.proxy.rlwy.net:49514/railway"
+    os.getenv("DATABASE_URL", "")
 )
 
 

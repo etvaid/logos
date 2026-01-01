@@ -39,7 +39,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Database configuration
-DATABASE_URL = "postgresql://postgres:voqQePIH4adopQUa-1UUaFKnOT-mtsod@maglev.proxy.rlwy.net:49514/railway"
+DATABASE_URL = os.getenv("DATABASE_URL", "")
 MIN_POOL_SIZE = 5
 MAX_POOL_SIZE = 20
 

@@ -2,6 +2,7 @@
 """
 LOGOS Biblical Corpus Processor - FIXED v3
 """
+import os
 import json
 import asyncio
 import aiohttp
@@ -9,7 +10,7 @@ import asyncpg
 from pathlib import Path
 
 GEMINI_KEY = "AIzaSyCWzAtEzVzfmlrSC18UePrHFwSR-rf9hKM"
-DATABASE_URL = "postgresql://postgres:voqQePIH4adopQUa-1UUaFKnOT-mtsod@maglev.proxy.rlwy.net:49514/railway"
+DATABASE_URL = os.environ.get("DATABASE_URL", "")
 INPUT_FILE = "biblical_downloads/logos_biblical_batch.jsonl"
 
 BATCH_SIZE = 10

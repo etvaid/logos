@@ -45,7 +45,7 @@ except ImportError:
 import os
 
 # Database URL - Railway or hardcoded fallback
-DATABASE_URL = os.environ.get("DATABASE_URL") or "postgresql://postgres:voqQePIH4adopQUa-1UUaFKnOT-mtsod@maglev.proxy.rlwy.net:49514/railway"
+DATABASE_URL = os.environ.get("DATABASE_URL", "")
 os.environ["DATABASE_URL"] = DATABASE_URL  # Set for all functions
 
 # Database support
