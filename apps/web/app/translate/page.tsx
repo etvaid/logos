@@ -29,9 +29,17 @@ export default function TranslatePage() {
 
   // Fetch available styles
   useEffect(() => {
-    fetch("http://localhost:8001/translate/styles")
+    fetch("https://logos-backend-production-0d96.up.railway.app/api/translate/styles")
       .then(res => res.json())
-      .then(data => setStyles(data.styles || []))
+      .then(data => {
+        // Map the API response to our expected format
+        const mappedStyles = (data.styles || []).map((s: { name: string; key: string; era: string }) => ({
+          id: s.key || s.name.toLowerCase(),
+          name: s.name,
+          description: `${s.era} translator style`
+        }));
+        setStyles(mappedStyles.slice(0, 20)); // Limit to 20 styles for UI
+      })
       .catch(err => console.error("Failed to load styles:", err));
   }, []);
 
@@ -44,14 +52,15 @@ export default function TranslatePage() {
     setResult(null);
 
     try {
-      const response = await fetch("http://localhost:8001/translate/", {
+      const response = await fetch("https://logos-backend-production-0d96.up.railway.app/api/translate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          text: inputText,
-          source_lang: sourceLang,
-          target_lang: "english",
-          style: selectedStyle
+          source_text: inputText,
+          source_language: sourceLang,
+          target_style: selectedStyle,
+          persona: "curious",
+          include_literal: true
         })
       });
 
@@ -60,11 +69,18 @@ export default function TranslatePage() {
       }
 
       const data = await response.json();
-      
+
       if (data.error) {
         setError(data.error);
       } else {
-        setResult(data);
+        setResult({
+          source: inputText,
+          translation: data.translation || "Translation not available",
+          style: data.style || selectedStyle,
+          style_name: data.style || selectedStyle,
+          source_lang: sourceLang,
+          target_lang: "english"
+        });
       }
     } catch (err) {
       setError(err instanceof Error ? err.message : "Translation failed");

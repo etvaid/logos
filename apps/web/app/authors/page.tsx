@@ -15,7 +15,7 @@ export default function AuthorsPage() {
   const [langFilter, setLangFilter] = useState<string>("all");
 
   useEffect(() => {
-    fetch("http://localhost:8001/authorship/authors")
+    fetch("https://logos-backend-production-0d96.up.railway.app/authorship/authors")
       .then(r => r.json())
       .then(data => {
         setAuthors(data.authors || []);

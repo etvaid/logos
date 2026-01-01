@@ -22,8 +22,8 @@ export default function TimelinePage() {
 
   useEffect(() => {
     Promise.all([
-      fetch("http://localhost:8001/atlas/timeline/events").then(r => r.json()),
-      fetch("http://localhost:8001/atlas/timeline/authors").then(r => r.json())
+      fetch("https://logos-backend-production-0d96.up.railway.app/atlas/timeline/events").then(r => r.json()),
+      fetch("https://logos-backend-production-0d96.up.railway.app/atlas/timeline/authors").then(r => r.json())
     ]).then(([e, a]) => {
       setEvents(e.events || []);
       setAuthors(a.authors || []);

@@ -19,7 +19,7 @@ export default function GhostPage() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:8001/ghost/lost")
+    fetch("https://logos-backend-production-0d96.up.railway.app/ghost/lost")
       .then(r => r.json())
       .then(data => setWorks(data.works || []))
       .catch(console.error);
@@ -28,7 +28,7 @@ export default function GhostPage() {
   const reconstruct = async (workId: string) => {
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:8001/ghost/reconstruct", {
+      const res = await fetch("https://logos-backend-production-0d96.up.railway.app/ghost/reconstruct", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ work_id: workId, method: "contextual" })

@@ -31,9 +31,9 @@ export default function MapsPage() {
 
   useEffect(() => {
     Promise.all([
-      fetch("http://localhost:8001/atlas/cities").then(r => r.json()),
-      fetch("http://localhost:8001/atlas/journeys").then(r => r.json()),
-      fetch("http://localhost:8001/atlas/timeline/events").then(r => r.json())
+      fetch("https://logos-backend-production-0d96.up.railway.app/atlas/cities").then(r => r.json()),
+      fetch("https://logos-backend-production-0d96.up.railway.app/atlas/journeys").then(r => r.json()),
+      fetch("https://logos-backend-production-0d96.up.railway.app/atlas/timeline/events").then(r => r.json())
     ]).then(([c, j, e]) => {
       setCities(c.cities || []);
       setJourneys(j.journeys || []);

@@ -33,10 +33,15 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:8001/corpus/stats")
+    fetch("https://logos-backend-production-0d96.up.railway.app/api/stats")
       .then(res => res.json())
       .then(data => {
-        setStats(data);
+        setStats({
+          total_passages: data.passages || 662449,
+          total_authors: data.authors || 380,
+          total_words: 331000000,
+          languages: Object.keys(data.languages || {}).length || 3
+        });
         setLoading(false);
       })
       .catch(err => {

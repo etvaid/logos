@@ -20,8 +20,8 @@ export default function ConnectomePage() {
 
   useEffect(() => {
     Promise.all([
-      fetch("http://localhost:8001/connectome/network?limit=50").then(r => r.json()),
-      fetch("http://localhost:8001/connectome/influence").then(r => r.json())
+      fetch("https://logos-backend-production-0d96.up.railway.app/connectome/network?limit=50").then(r => r.json()),
+      fetch("https://logos-backend-production-0d96.up.railway.app/connectome/influence").then(r => r.json())
     ]).then(([network, inf]) => {
       setNodes(network.nodes || []);
       setInfluence(inf.authors || []);

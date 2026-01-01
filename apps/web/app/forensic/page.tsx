@@ -24,7 +24,7 @@ export default function ForensicPage() {
   const [loading, setLoading] = useState(false);
 
   useState(() => {
-    fetch("http://localhost:8001/authorship/disputed")
+    fetch("https://logos-backend-production-0d96.up.railway.app/authorship/disputed")
       .then(r => r.json())
       .then(data => setDisputed(data.texts || []))
       .catch(console.error);
@@ -34,7 +34,7 @@ export default function ForensicPage() {
     if (!text.trim()) return;
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:8001/authorship/attribute", {
+      const res = await fetch("https://logos-backend-production-0d96.up.railway.app/authorship/attribute", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text: text.trim(), language })

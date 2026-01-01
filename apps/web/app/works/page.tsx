@@ -18,7 +18,7 @@ export default function WorksPage() {
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:8001/reader/works?limit=500")
+    fetch("https://logos-backend-production-0d96.up.railway.app/reader/works?limit=500")
       .then(r => r.json())
       .then(data => {
         setWorks(data.works || []);

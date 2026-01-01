@@ -30,7 +30,7 @@ export default function LearnPage() {
   const [streak, setStreak] = useState(0);
 
   useEffect(() => {
-    fetch("http://localhost:8001/learn/modules")
+    fetch("https://logos-backend-production-0d96.up.railway.app/learn/modules")
       .then(r => r.json())
       .then(data => setModules(data))
       .catch(console.error);

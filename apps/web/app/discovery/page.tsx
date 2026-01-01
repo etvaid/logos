@@ -28,8 +28,8 @@ export default function DiscoveryPage() {
 
   useEffect(() => {
     Promise.all([
-      fetch("http://localhost:8001/discovery/patterns").then(r => r.json()),
-      fetch("http://localhost:8001/discovery/hypotheses").then(r => r.json())
+      fetch("https://logos-backend-production-0d96.up.railway.app/discovery/patterns").then(r => r.json()),
+      fetch("https://logos-backend-production-0d96.up.railway.app/discovery/hypotheses").then(r => r.json())
     ]).then(([p, h]) => {
       setPatterns(p.patterns || []);
       setHypotheses(h.hypotheses || []);

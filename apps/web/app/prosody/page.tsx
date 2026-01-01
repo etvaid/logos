@@ -26,8 +26,8 @@ export default function ProsodyPage() {
 
   useEffect(() => {
     Promise.all([
-      fetch("http://localhost:8001/prosody/meters").then(r => r.json()),
-      fetch("http://localhost:8001/prosody/presets").then(r => r.json())
+      fetch("https://logos-backend-production-0d96.up.railway.app/prosody/meters").then(r => r.json()),
+      fetch("https://logos-backend-production-0d96.up.railway.app/prosody/presets").then(r => r.json())
     ]).then(([m, p]) => {
       setMeters(m.meters || []);
       setPresets(p.presets || []);
@@ -38,7 +38,7 @@ export default function ProsodyPage() {
     if (!text.trim()) return;
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:8001/prosody/scan", {
+      const res = await fetch("https://logos-backend-production-0d96.up.railway.app/prosody/scan", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text, language })

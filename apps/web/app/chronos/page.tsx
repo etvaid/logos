@@ -22,7 +22,7 @@ export default function ChronosPage() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:8001/chronos/periods")
+    fetch("https://logos-backend-production-0d96.up.railway.app/chronos/periods")
       .then(r => r.json())
       .then(data => setPeriods(data.periods || { greek: [], latin: [] }))
       .catch(console.error);
@@ -32,7 +32,7 @@ export default function ChronosPage() {
     if (!wordQuery.trim()) return;
     setLoading(true);
     try {
-      const res = await fetch(`http://localhost:8001/chronos/${encodeURIComponent(wordQuery.trim())}`);
+      const res = await fetch(`https://logos-backend-production-0d96.up.railway.app/chronos/${encodeURIComponent(wordQuery.trim())}`);
       setWordResult(await res.json());
     } catch (e) {
       console.error(e);

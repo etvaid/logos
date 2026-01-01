@@ -41,7 +41,7 @@ export default function SearchPage() {
       if (language) params.append("language", language);
       if (author) params.append("author", author);
       
-      const res = await fetch(`http://localhost:8001/search/text?${params}`);
+      const res = await fetch(`https://logos-backend-production-0d96.up.railway.app/api/search?${params}`);
       const data = await res.json();
       
       if (data.error) {

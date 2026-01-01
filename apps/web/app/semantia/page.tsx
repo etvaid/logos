@@ -33,18 +33,53 @@ export default function SemantiaPage() {
 
   const analyzeWord = async () => {
     if (!query.trim()) return;
-    
+
     setLoading(true);
     setError(null);
-    
+
     try {
-      const res = await fetch(`http://localhost:8001/semantia/word/${encodeURIComponent(query)}`);
+      // Use search API to find word occurrences
+      const res = await fetch(`https://logos-backend-production-0d96.up.railway.app/api/search?q=${encodeURIComponent(query)}&limit=50`);
       const data = await res.json();
-      
+
       if (data.error) {
         setError(data.error);
       } else {
-        setResult(data);
+        // Transform search results into word analysis format
+        const contexts: Context[] = (data.results || []).map((r: { id: string; author: string; work: string; passage: string; reference: string; language: string }, i: number) => ({
+          id: i,
+          author: r.author || "Unknown",
+          work: r.work || "Unknown",
+          passage: r.passage || "",
+          reference: r.reference || "",
+          language: r.language || "greek"
+        }));
+
+        // Calculate author distribution
+        const authorCounts: { [key: string]: number } = {};
+        contexts.forEach((c: Context) => {
+          authorCounts[c.author] = (authorCounts[c.author] || 0) + 1;
+        });
+        const authorDist: AuthorDist[] = Object.entries(authorCounts)
+          .map(([author, count]) => ({ author, count }))
+          .sort((a, b) => b.count - a.count);
+
+        // Calculate work distribution
+        const workCounts: { [key: string]: number } = {};
+        contexts.forEach((c: Context) => {
+          workCounts[c.work] = (workCounts[c.work] || 0) + 1;
+        });
+        const topWorks = Object.entries(workCounts)
+          .map(([work, count]) => ({ work, count }))
+          .sort((a, b) => b.count - a.count);
+
+        setResult({
+          word: query,
+          frequency: data.total || contexts.length,
+          sample_contexts: contexts.slice(0, 20),
+          author_distribution: authorDist,
+          top_works: topWorks
+        });
       }
     } catch (err) {
       setError(err instanceof Error ? err.message : "Analysis failed");
