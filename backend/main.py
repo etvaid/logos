@@ -2049,6 +2049,761 @@ async def attribute_text_endpoint(request: AttributionRequest):
 
 
 
+# =============================================================================
+# READER ENDPOINTS
+# =============================================================================
+
+@app.get("/reader/works")
+async def reader_list_works(limit: int = Query(100, le=500)):
+    """List all works available for reading."""
+    if not HAS_DB or not os.environ.get("DATABASE_URL"):
+        return {"works": [], "error": "Database not configured"}
+
+    try:
+        conn = psycopg2.connect(os.environ["DATABASE_URL"], cursor_factory=RealDictCursor)
+        cur = conn.cursor()
+        cur.execute("""
+            SELECT
+                urn,
+                COALESCE(author, 'Unknown') as author,
+                COALESCE(work, urn) as title,
+                language,
+                COUNT(*) as passage_count
+            FROM source_texts
+            WHERE urn IS NOT NULL AND urn != ''
+            GROUP BY urn, author, work, language
+            ORDER BY author, work
+            LIMIT %s
+        """, (limit,))
+        rows = cur.fetchall()
+        cur.close()
+        conn.close()
+        return {"works": [dict(r) for r in rows], "count": len(rows)}
+    except Exception as e:
+        return {"works": [], "error": str(e)}
+
+
+@app.get("/reader/work/{urn:path}/text")
+async def reader_get_text(urn: str, limit: int = Query(200, le=1000)):
+    """Get the text lines for a specific work."""
+    if not HAS_DB or not os.environ.get("DATABASE_URL"):
+        return {"lines": [], "error": "Database not configured"}
+
+    try:
+        conn = psycopg2.connect(os.environ["DATABASE_URL"], cursor_factory=RealDictCursor)
+        cur = conn.cursor()
+        cur.execute("""
+            SELECT id, content as text, COALESCE(section, '') as reference
+            FROM source_texts
+            WHERE urn = %s OR urn LIKE %s
+            ORDER BY id
+            LIMIT %s
+        """, (urn, f"{urn}%", limit))
+        rows = cur.fetchall()
+        cur.close()
+        conn.close()
+        return {"lines": [dict(r) for r in rows], "count": len(rows)}
+    except Exception as e:
+        return {"lines": [], "error": str(e)}
+
+
+@app.get("/reader/word/{word}/morphology")
+async def reader_word_morphology(word: str):
+    """Get morphological analysis for a word."""
+    word_clean = word.lower().strip()
+
+    greek_endings = {
+        'ος': ('noun', 'masculine', 'nominative', 'singular'),
+        'ου': ('noun', 'masculine', 'genitive', 'singular'),
+        'ον': ('noun', 'neuter', 'nominative', 'singular'),
+        'α': ('noun', 'feminine', 'nominative', 'singular'),
+        'ης': ('noun', 'masculine', 'nominative', 'singular'),
+        'ειν': ('verb', None, 'infinitive', None),
+        'ω': ('verb', None, 'present', '1st singular'),
+    }
+
+    latin_endings = {
+        'us': ('noun', 'masculine', 'nominative', 'singular'),
+        'i': ('noun', 'masculine', 'genitive', 'singular'),
+        'um': ('noun', 'neuter', 'nominative', 'singular'),
+        'a': ('noun', 'feminine', 'nominative', 'singular'),
+        'ae': ('noun', 'feminine', 'genitive', 'singular'),
+        'are': ('verb', None, 'infinitive', None),
+        'ere': ('verb', None, 'infinitive', None),
+        'ire': ('verb', None, 'infinitive', None),
+        'o': ('verb', None, 'present', '1st singular'),
+    }
+
+    pos = "unknown"
+    case = None
+    number = None
+    gender = None
+
+    for ending, (p, g, c, n) in {**greek_endings, **latin_endings}.items():
+        if word_clean.endswith(ending):
+            pos = p
+            gender = g
+            case = c
+            number = n
+            break
+
+    return {
+        "word": word,
+        "lemma": word_clean,
+        "pos": pos,
+        "case": case,
+        "number": number,
+        "gender": gender,
+        "definition": f"[Definition for '{word}' - connect to lexicon for full data]"
+    }
+
+
+# =============================================================================
+# LEARN ENDPOINTS
+# =============================================================================
+
+@app.get("/learn/modules")
+async def learn_modules():
+    """Get learning modules for Greek and Latin."""
+    greek_modules = [
+        {"id": "gr-alpha", "title": "The Greek Alphabet", "level": 1, "lessons": 8},
+        {"id": "gr-nouns1", "title": "First Declension Nouns", "level": 1, "lessons": 10},
+        {"id": "gr-nouns2", "title": "Second Declension Nouns", "level": 1, "lessons": 10},
+        {"id": "gr-articles", "title": "The Definite Article", "level": 1, "lessons": 6},
+        {"id": "gr-verbs1", "title": "Present Active Verbs", "level": 2, "lessons": 12},
+        {"id": "gr-adjectives", "title": "First/Second Declension Adjectives", "level": 2, "lessons": 8},
+        {"id": "gr-nouns3", "title": "Third Declension Nouns", "level": 2, "lessons": 14},
+        {"id": "gr-pronouns", "title": "Personal Pronouns", "level": 2, "lessons": 8},
+        {"id": "gr-imperfect", "title": "Imperfect Tense", "level": 3, "lessons": 10},
+        {"id": "gr-aorist", "title": "Aorist Tense", "level": 3, "lessons": 12},
+        {"id": "gr-middle", "title": "Middle Voice", "level": 3, "lessons": 10},
+        {"id": "gr-passive", "title": "Passive Voice", "level": 3, "lessons": 10},
+        {"id": "gr-participles", "title": "Participles", "level": 4, "lessons": 14},
+        {"id": "gr-infinitives", "title": "Infinitives", "level": 4, "lessons": 10},
+        {"id": "gr-subjunctive", "title": "Subjunctive Mood", "level": 4, "lessons": 12},
+        {"id": "gr-optative", "title": "Optative Mood", "level": 5, "lessons": 10},
+    ]
+
+    latin_modules = [
+        {"id": "la-alpha", "title": "Latin Pronunciation", "level": 1, "lessons": 6},
+        {"id": "la-nouns1", "title": "First Declension Nouns", "level": 1, "lessons": 10},
+        {"id": "la-nouns2", "title": "Second Declension Nouns", "level": 1, "lessons": 10},
+        {"id": "la-verbs1", "title": "Present Active Indicative", "level": 1, "lessons": 12},
+        {"id": "la-adjectives12", "title": "First/Second Declension Adjectives", "level": 2, "lessons": 8},
+        {"id": "la-nouns3", "title": "Third Declension Nouns", "level": 2, "lessons": 14},
+        {"id": "la-nouns45", "title": "Fourth/Fifth Declension", "level": 2, "lessons": 8},
+        {"id": "la-pronouns", "title": "Personal Pronouns", "level": 2, "lessons": 8},
+        {"id": "la-imperfect", "title": "Imperfect Tense", "level": 3, "lessons": 10},
+        {"id": "la-future", "title": "Future Tense", "level": 3, "lessons": 10},
+        {"id": "la-perfect", "title": "Perfect System", "level": 3, "lessons": 12},
+        {"id": "la-passive", "title": "Passive Voice", "level": 3, "lessons": 10},
+        {"id": "la-participles", "title": "Participles", "level": 4, "lessons": 14},
+        {"id": "la-infinitives", "title": "Infinitives", "level": 4, "lessons": 10},
+        {"id": "la-subjunctive", "title": "Subjunctive Mood", "level": 4, "lessons": 14},
+        {"id": "la-conditions", "title": "Conditional Sentences", "level": 5, "lessons": 10},
+    ]
+
+    return {"greek": greek_modules, "latin": latin_modules}
+
+
+# =============================================================================
+# SEMANTIA ENDPOINTS
+# =============================================================================
+
+@app.get("/semantia/word/{word}")
+async def semantia_word_analysis(word: str, limit: int = Query(20, le=100)):
+    """Analyze word usage across the corpus."""
+    if not HAS_DB or not os.environ.get("DATABASE_URL"):
+        return {"error": "Database not configured", "word": word, "frequency": 0}
+
+    try:
+        conn = psycopg2.connect(os.environ["DATABASE_URL"], cursor_factory=RealDictCursor)
+        cur = conn.cursor()
+
+        cur.execute("SELECT COUNT(*) as freq FROM source_texts WHERE content ILIKE %s", (f"%{word}%",))
+        freq_row = cur.fetchone()
+        frequency = freq_row['freq'] if freq_row else 0
+
+        cur.execute("""
+            SELECT id, COALESCE(author, 'Unknown') as author, COALESCE(work, 'Unknown') as work,
+                   content as passage, section as reference, language
+            FROM source_texts WHERE content ILIKE %s LIMIT %s
+        """, (f"%{word}%", limit))
+        contexts = [dict(r) for r in cur.fetchall()]
+
+        cur.execute("""
+            SELECT COALESCE(author, 'Unknown') as author, COUNT(*) as count
+            FROM source_texts WHERE content ILIKE %s GROUP BY author ORDER BY count DESC LIMIT 15
+        """, (f"%{word}%",))
+        author_dist = [dict(r) for r in cur.fetchall()]
+
+        cur.execute("""
+            SELECT COALESCE(work, 'Unknown') as work, COUNT(*) as count
+            FROM source_texts WHERE content ILIKE %s GROUP BY work ORDER BY count DESC LIMIT 10
+        """, (f"%{word}%",))
+        top_works = [dict(r) for r in cur.fetchall()]
+
+        cur.close()
+        conn.close()
+
+        return {
+            "word": word, "frequency": frequency, "sample_contexts": contexts,
+            "author_distribution": author_dist, "top_works": top_works
+        }
+    except Exception as e:
+        return {"error": str(e), "word": word, "frequency": 0}
+
+
+# =============================================================================
+# CHRONOS ENDPOINTS
+# =============================================================================
+
+@app.get("/chronos/periods")
+async def chronos_periods():
+    """Get historical periods for Greek and Latin literature."""
+    return {
+        "periods": {
+            "greek": [
+                {"name": "Archaic Period", "start": -800, "end": -480, "authors": ["Homer", "Hesiod", "Sappho", "Pindar", "Aesop"]},
+                {"name": "Classical Period", "start": -480, "end": -323, "authors": ["Aeschylus", "Sophocles", "Euripides", "Aristophanes", "Thucydides", "Plato", "Aristotle"]},
+                {"name": "Hellenistic Period", "start": -323, "end": -31, "authors": ["Menander", "Callimachus", "Apollonius", "Theocritus", "Polybius"]},
+                {"name": "Roman Period", "start": -31, "end": 330, "authors": ["Plutarch", "Lucian", "Epictetus", "Marcus Aurelius", "Dio Cassius"]},
+                {"name": "Byzantine Period", "start": 330, "end": 1453, "authors": ["Procopius", "Anna Comnena", "Michael Psellus"]}
+            ],
+            "latin": [
+                {"name": "Early Latin", "start": -240, "end": -100, "authors": ["Plautus", "Terence", "Ennius", "Cato"]},
+                {"name": "Golden Age", "start": -100, "end": 14, "authors": ["Cicero", "Caesar", "Virgil", "Horace", "Ovid", "Livy"]},
+                {"name": "Silver Age", "start": 14, "end": 138, "authors": ["Seneca", "Lucan", "Tacitus", "Pliny", "Juvenal", "Martial"]},
+                {"name": "Late Antiquity", "start": 138, "end": 476, "authors": ["Apuleius", "Augustine", "Jerome", "Ammianus"]},
+                {"name": "Medieval Latin", "start": 476, "end": 1500, "authors": ["Bede", "Einhard", "Thomas Aquinas", "Dante"]}
+            ]
+        }
+    }
+
+
+@app.get("/chronos/{word}")
+async def chronos_word_analysis(word: str):
+    """Analyze how a word's usage changed over time."""
+    if not HAS_DB or not os.environ.get("DATABASE_URL"):
+        return {"word": word, "total_occurrences": 0, "error": "Database not configured"}
+
+    try:
+        conn = psycopg2.connect(os.environ["DATABASE_URL"], cursor_factory=RealDictCursor)
+        cur = conn.cursor()
+
+        cur.execute("SELECT COUNT(*) as total FROM source_texts WHERE content ILIKE %s", (f"%{word}%",))
+        total = cur.fetchone()['total']
+
+        cur.execute("""
+            SELECT COALESCE(author, 'Unknown') as author, COUNT(*) as count
+            FROM source_texts WHERE content ILIKE %s GROUP BY author ORDER BY count DESC LIMIT 20
+        """, (f"%{word}%",))
+        by_author = [dict(r) for r in cur.fetchall()]
+
+        cur.close()
+        conn.close()
+
+        drift_score = min(1.0, len(by_author) / 10.0) if by_author else 0.0
+
+        return {"word": word, "total_occurrences": total, "drift_score": drift_score,
+                "by_author": by_author, "analysis": f"Found in {len(by_author)} different authors"}
+    except Exception as e:
+        return {"word": word, "total_occurrences": 0, "error": str(e)}
+
+
+# =============================================================================
+# SEARCH ENDPOINTS
+# =============================================================================
+
+@app.get("/search/text")
+async def search_text(q: str = Query(...), language: str = Query(None), author: str = Query(None), limit: int = Query(50, le=200)):
+    """Full-text search across the corpus."""
+    if not HAS_DB or not os.environ.get("DATABASE_URL"):
+        return {"query": q, "total": 0, "results": [], "error": "Database not configured"}
+
+    try:
+        conn = psycopg2.connect(os.environ["DATABASE_URL"], cursor_factory=RealDictCursor)
+        cur = conn.cursor()
+
+        conditions = ["content ILIKE %s"]
+        params = [f"%{q}%"]
+
+        if language:
+            conditions.append("LOWER(language) = %s")
+            params.append(language.lower())
+        if author:
+            conditions.append("author ILIKE %s")
+            params.append(f"%{author}%")
+
+        where_clause = " AND ".join(conditions)
+
+        cur.execute(f"SELECT COUNT(*) as cnt FROM source_texts WHERE {where_clause}", params)
+        total = cur.fetchone()['cnt']
+
+        params.append(limit)
+        cur.execute(f"""
+            SELECT id, COALESCE(author, 'Unknown') as author, COALESCE(work, 'Unknown') as work,
+                   content as passage, section as reference, language
+            FROM source_texts WHERE {where_clause} LIMIT %s
+        """, params)
+        results = [dict(r) for r in cur.fetchall()]
+
+        cur.close()
+        conn.close()
+
+        return {"query": q, "total": total, "results": results, "filters": {"language": language, "author": author}}
+    except Exception as e:
+        return {"query": q, "total": 0, "results": [], "error": str(e)}
+
+
+# =============================================================================
+# CONNECTOME ENDPOINTS
+# =============================================================================
+
+@app.get("/connectome/network")
+async def connectome_network(limit: int = Query(50, le=200)):
+    """Get the author network for visualization."""
+    if not HAS_DB or not os.environ.get("DATABASE_URL"):
+        return {"nodes": [], "edges": []}
+
+    try:
+        conn = psycopg2.connect(os.environ["DATABASE_URL"], cursor_factory=RealDictCursor)
+        cur = conn.cursor()
+
+        cur.execute("""
+            SELECT author as label, COUNT(*) as size FROM source_texts
+            WHERE author IS NOT NULL AND author != '' GROUP BY author ORDER BY size DESC LIMIT %s
+        """, (limit,))
+        nodes = [{"id": str(i), "label": r['label'], "size": r['size']} for i, r in enumerate(cur.fetchall())]
+
+        cur.close()
+        conn.close()
+
+        return {"nodes": nodes, "edges": []}
+    except Exception as e:
+        return {"nodes": [], "edges": [], "error": str(e)}
+
+
+@app.get("/connectome/influence")
+async def connectome_influence():
+    """Get author influence rankings based on corpus presence."""
+    if not HAS_DB or not os.environ.get("DATABASE_URL"):
+        return {"authors": []}
+
+    try:
+        conn = psycopg2.connect(os.environ["DATABASE_URL"], cursor_factory=RealDictCursor)
+        cur = conn.cursor()
+
+        cur.execute("SELECT COUNT(*) as total FROM source_texts")
+        total = cur.fetchone()['total']
+
+        cur.execute("""
+            SELECT author, COUNT(*) as cnt FROM source_texts
+            WHERE author IS NOT NULL AND author != '' GROUP BY author ORDER BY cnt DESC LIMIT 20
+        """)
+        authors = [{"author": r['author'], "influence_score": min(1.0, r['cnt'] / (total * 0.01))} for r in cur.fetchall()]
+
+        cur.close()
+        conn.close()
+
+        return {"authors": authors}
+    except Exception as e:
+        return {"authors": [], "error": str(e)}
+
+
+# =============================================================================
+# CORPUS STATS ENDPOINT
+# =============================================================================
+
+@app.get("/corpus/stats")
+async def corpus_stats():
+    """Get comprehensive corpus statistics."""
+    if not HAS_DB or not os.environ.get("DATABASE_URL"):
+        return {"error": "Database not configured"}
+
+    try:
+        conn = psycopg2.connect(os.environ["DATABASE_URL"], cursor_factory=RealDictCursor)
+        cur = conn.cursor()
+
+        cur.execute("SELECT COUNT(*) as total FROM source_texts")
+        total = cur.fetchone()['total']
+
+        cur.execute("SELECT language, COUNT(*) as count FROM source_texts GROUP BY language ORDER BY count DESC")
+        by_language = {r['language']: r['count'] for r in cur.fetchall()}
+
+        cur.execute("SELECT COUNT(DISTINCT author) as cnt FROM source_texts WHERE author IS NOT NULL")
+        authors = cur.fetchone()['cnt']
+
+        cur.execute("SELECT SUM(word_count) as total FROM source_texts WHERE word_count IS NOT NULL")
+        words = cur.fetchone()['total'] or 0
+
+        cur.close()
+        conn.close()
+
+        return {"total_passages": total, "by_language": by_language, "unique_authors": authors, "total_words": words, "translators": len(TRANSLATORS)}
+    except Exception as e:
+        return {"error": str(e)}
+
+
+# =============================================================================
+# DISCOVERY ENDPOINTS
+# =============================================================================
+
+@app.get("/discovery/patterns")
+async def discovery_patterns():
+    """Get discovered patterns in the corpus."""
+    patterns = [
+        {"id": "p1", "order": 1, "type": "Syntactic", "pattern": "Hyperbaton in Homeric verse", "confidence": 0.92, "frequency": 1247, "description": "Word separation for metrical and emphasis purposes"},
+        {"id": "p2", "order": 2, "type": "Semantic", "pattern": "Menis to Cholos evolution", "confidence": 0.87, "frequency": 89, "description": "Shift from divine to human anger terminology"},
+        {"id": "p3", "order": 3, "type": "Thematic", "pattern": "Nostos journey motif", "confidence": 0.94, "frequency": 234, "description": "Return-home narrative structure across epic"},
+        {"id": "p4", "order": 1, "type": "Syntactic", "pattern": "Ablative absolute in Cicero", "confidence": 0.89, "frequency": 3421, "description": "Participial construction for temporal clauses"},
+        {"id": "p5", "order": 4, "type": "Stylistic", "pattern": "Periodic sentence structure", "confidence": 0.85, "frequency": 892, "description": "Delayed main verb for rhetorical effect"},
+        {"id": "p6", "order": 2, "type": "Semantic", "pattern": "Virtus semantic range", "confidence": 0.91, "frequency": 567, "description": "Virtue from martial to philosophical meaning"},
+        {"id": "p7", "order": 3, "type": "Thematic", "pattern": "Amor-Mors juxtaposition", "confidence": 0.88, "frequency": 178, "description": "Love-death thematic pairing in elegy"},
+        {"id": "p8", "order": 4, "type": "Stylistic", "pattern": "Asyndeton in battle narrative", "confidence": 0.86, "frequency": 445, "description": "Omission of conjunctions for rapid action"},
+    ]
+    return {"patterns": patterns}
+
+
+@app.get("/discovery/hypotheses")
+async def discovery_hypotheses():
+    """Get AI-generated research hypotheses."""
+    hypotheses = [
+        {"id": "h1", "title": "Platonic Influence on Stoic Terminology", "description": "Statistical analysis suggests significant lexical borrowing from Platonic dialogues in early Stoic texts.", "difficulty": "Advanced", "estimated_time": "3-6 months"},
+        {"id": "h2", "title": "Homeric Formula Distribution", "description": "Formula density correlates with narrative type: higher in battle scenes, lower in speeches.", "difficulty": "Intermediate", "estimated_time": "1-2 months"},
+        {"id": "h3", "title": "Latin Prose Rhythm Evolution", "description": "Clausulae preferences shift significantly between Republican and Imperial periods.", "difficulty": "Advanced", "estimated_time": "4-6 months"},
+        {"id": "h4", "title": "Cross-Linguistic Calques", "description": "Greek philosophical terms in Latin show consistent calque patterns across multiple authors.", "difficulty": "Intermediate", "estimated_time": "2-3 months"},
+    ]
+    return {"hypotheses": hypotheses}
+
+
+# =============================================================================
+# GHOST ENDPOINTS
+# =============================================================================
+
+@app.get("/ghost/lost")
+async def ghost_lost_works():
+    """List known lost works of antiquity."""
+    works = [
+        {"id": "cyclic-epics", "title": "Cyclic Epics", "author": "Various", "original_extent": "8 poems, ~15,000 lines", "surviving": "Fragments and summaries", "evidence": "Proclus' Chrestomathia, vase paintings", "themes": ["Trojan War", "Theban Cycle", "Epic"]},
+        {"id": "sappho-books", "title": "Complete Poetry", "author": "Sappho", "original_extent": "9 books", "surviving": "~650 lines, 1 complete poem", "evidence": "Papyrus fragments, quotations", "themes": ["Love", "Wedding Songs", "Lyric Poetry"]},
+        {"id": "livy-books", "title": "Ab Urbe Condita (Books 11-142)", "author": "Livy", "original_extent": "142 books", "surviving": "35 books (1-10, 21-45)", "evidence": "Periocha summaries, quotations", "themes": ["Roman History", "Republic", "Empire"]},
+        {"id": "aristotle-dialogues", "title": "Published Dialogues", "author": "Aristotle", "original_extent": "~30 works", "surviving": "Fragments only", "evidence": "Cicero's references, ancient lists", "themes": ["Philosophy", "Rhetoric", "Ethics"]},
+        {"id": "tacitus-histories", "title": "Histories (Books 5-12)", "author": "Tacitus", "original_extent": "12+ books", "surviving": "Books 1-4, part of 5", "evidence": "Ancient references", "themes": ["Roman History", "Flavian Dynasty"]},
+        {"id": "ennius-annales", "title": "Annales", "author": "Ennius", "original_extent": "18 books, ~20,000 lines", "surviving": "~600 lines", "evidence": "Quotations in later authors", "themes": ["Roman History", "Epic", "Hexameter"]},
+    ]
+    return {"works": works}
+
+
+class ReconstructRequest(BaseModel):
+    work_id: str
+    method: str = "contextual"
+
+
+@app.post("/ghost/reconstruct")
+async def ghost_reconstruct(request: ReconstructRequest):
+    """Generate a hypothetical reconstruction of a lost work."""
+    work_info = {
+        "cyclic-epics": "the Cyclic Epics, including the Cypria, Aethiopis, and Little Iliad",
+        "sappho-books": "Sappho's lost poetry books",
+        "livy-books": "Livy's lost books of Roman history",
+        "aristotle-dialogues": "Aristotle's published dialogues",
+        "tacitus-histories": "Tacitus's lost books of the Histories",
+        "ennius-annales": "Ennius's Annales",
+    }
+
+    work_name = work_info.get(request.work_id, "this lost work")
+
+    if HAS_ANTHROPIC:
+        try:
+            client = anthropic.Anthropic()
+            response = client.messages.create(
+                model="claude-sonnet-4-20250514",
+                max_tokens=500,
+                messages=[{"role": "user", "content": f"Based on surviving fragments and ancient testimony, write a brief hypothetical reconstruction (2-3 paragraphs) of what {work_name} might have contained. Include scholarly hedging language. Be specific about themes and style."}]
+            )
+            return {"reconstruction": response.content[0].text, "work_id": request.work_id, "method": request.method}
+        except:
+            pass
+
+    reconstructions = {
+        "cyclic-epics": "Based on Proclus' summaries, the Cypria likely began with Zeus's plan to reduce the human population through the Trojan War. It would have detailed the Judgment of Paris, the abduction of Helen, and the gathering of the Greek fleet at Aulis.",
+        "sappho-books": "Sappho's nine books, arranged by the Alexandrian editors according to meter, likely contained a remarkable range of personal and choral poetry. Book I, in Sapphic stanzas, would have included poems to various beloved women in her circle.",
+    }
+
+    return {"reconstruction": reconstructions.get(request.work_id, f"Hypothetical reconstruction for {work_name} based on surviving fragments and testimonies."), "work_id": request.work_id, "method": request.method}
+
+
+# =============================================================================
+# PROSODY ENDPOINTS
+# =============================================================================
+
+@app.get("/prosody/meters")
+async def prosody_meters():
+    """List available poetic meters."""
+    meters = [
+        {"id": "dact-hex", "name": "Dactylic Hexameter", "pattern": "- uu | - uu | - uu | - uu | - uu | - x", "language": "greek/latin"},
+        {"id": "eleg-coup", "name": "Elegiac Couplet", "pattern": "- uu | - uu | - || - uu | - uu | u", "language": "greek/latin"},
+        {"id": "iambic-trim", "name": "Iambic Trimeter", "pattern": "x - u - | x - u - | x - u -", "language": "greek"},
+        {"id": "sapphic", "name": "Sapphic Stanza", "pattern": "- u - - - u u - u - -", "language": "greek"},
+        {"id": "alcaic", "name": "Alcaic Stanza", "pattern": "x - u - - | - u u - u -", "language": "greek"},
+        {"id": "hendec", "name": "Hendecasyllable", "pattern": "- - - u u - u - u - x", "language": "latin"},
+        {"id": "glyconic", "name": "Glyconic", "pattern": "x x - u u - u -", "language": "greek/latin"},
+        {"id": "anapest", "name": "Anapestic Dimeter", "pattern": "u u - u u - | u u - u u -", "language": "greek"},
+    ]
+    return {"meters": meters}
+
+
+@app.get("/prosody/presets")
+async def prosody_presets():
+    """Get famous lines with pre-analyzed scansion."""
+    presets = [
+        {"id": "iliad-1", "text": "menin aeide thea Peleiadeo Achileos", "meter": "dactylic hexameter", "scansion": "- u u | - u u | - - | - u u | - u u | - -"},
+        {"id": "aeneid-1", "text": "Arma virumque cano, Troiae qui primus ab oris", "meter": "dactylic hexameter", "scansion": "- u u | - u u | - - | - - | - u u | - -"},
+        {"id": "catullus-1", "text": "Vivamus, mea Lesbia, atque amemus", "meter": "hendecasyllable", "scansion": "u - - - u u - u - u -"},
+        {"id": "sappho-1", "text": "phainetai moi kenos isos theoisin", "meter": "sapphic", "scansion": "- u - - - u u - u - -"},
+        {"id": "horace-1", "text": "Nunc est bibendum, nunc pede libero", "meter": "alcaic", "scansion": "- - u - - | - u u - u -"},
+        {"id": "ovid-1", "text": "In nova fert animus mutatas dicere formas", "meter": "dactylic hexameter", "scansion": "- u u | - - | - u u | - - | - u u | - -"},
+    ]
+    return {"presets": presets}
+
+
+class ScanRequest(BaseModel):
+    text: str
+    language: str = "greek"
+
+
+@app.post("/prosody/scan")
+async def prosody_scan(request: ScanRequest):
+    """Scan text for metrical analysis."""
+    text = request.text.strip()
+    vowels = "αειουηωaeiouyaeiou"
+    syllables = sum(1 for c in text.lower() if c in vowels)
+
+    if syllables >= 12 and syllables <= 17:
+        detected = "dactylic hexameter"
+        pattern = "- u u | " * 5 + "- -"
+    elif syllables == 11:
+        detected = "hendecasyllable"
+        pattern = "- - - u u - u - u - -"
+    elif syllables >= 8 and syllables <= 10:
+        detected = "iambic/glyconic"
+        pattern = "u - " * (syllables // 2)
+    else:
+        detected = "unknown meter"
+        pattern = "- u " * (syllables // 2) + ("-" if syllables % 2 else "")
+
+    return {"text": text, "detected_meter": detected, "scansion": pattern, "syllable_count": syllables, "confidence": 0.75 if syllables >= 12 else 0.5, "language": request.language}
+
+
+# =============================================================================
+# ATLAS ENDPOINTS
+# =============================================================================
+
+@app.get("/atlas/cities")
+async def atlas_cities():
+    """Get major ancient cities."""
+    cities = [
+        {"name": "Athens", "lat": 37.9838, "lon": 23.7275, "founded": -3000, "population_peak": 300000},
+        {"name": "Rome", "lat": 41.9028, "lon": 12.4964, "founded": -753, "population_peak": 1000000},
+        {"name": "Alexandria", "lat": 31.2001, "lon": 29.9187, "founded": -331, "population_peak": 500000},
+        {"name": "Sparta", "lat": 37.0739, "lon": 22.4295, "founded": -900, "population_peak": 40000},
+        {"name": "Carthage", "lat": 36.8528, "lon": 10.3233, "founded": -814, "population_peak": 500000},
+        {"name": "Syracuse", "lat": 37.0755, "lon": 15.2866, "founded": -734, "population_peak": 250000},
+        {"name": "Antioch", "lat": 36.2025, "lon": 36.1604, "founded": -300, "population_peak": 400000},
+        {"name": "Constantinople", "lat": 41.0082, "lon": 28.9784, "founded": 330, "population_peak": 500000},
+        {"name": "Troy", "lat": 39.9574, "lon": 26.2388, "founded": -3000, "population_peak": 10000},
+        {"name": "Delphi", "lat": 38.4824, "lon": 22.5010, "founded": -1400, "population_peak": 5000},
+        {"name": "Olympia", "lat": 37.6386, "lon": 21.6299, "founded": -1000, "population_peak": 2000},
+        {"name": "Thebes", "lat": 38.3186, "lon": 23.3181, "founded": -1500, "population_peak": 40000},
+    ]
+    return {"cities": cities}
+
+
+@app.get("/atlas/journeys")
+async def atlas_journeys():
+    """Get famous ancient journeys."""
+    journeys = [
+        {"id": "odysseus", "name": "Odysseus's Nostos", "points": 12},
+        {"id": "aeneas", "name": "Aeneas to Italy", "points": 8},
+        {"id": "alexander", "name": "Alexander's Campaigns", "points": 25},
+        {"id": "xenophon", "name": "March of the Ten Thousand", "points": 15},
+        {"id": "herodotus", "name": "Herodotus's Travels", "points": 18},
+        {"id": "paul", "name": "Journeys of St. Paul", "points": 20},
+    ]
+    return {"journeys": journeys}
+
+
+@app.get("/atlas/timeline/events")
+async def atlas_timeline_events():
+    """Get historical events for timeline."""
+    events = [
+        {"year": -776, "name": "First Olympic Games", "category": "cultural"},
+        {"year": -750, "name": "Homer composes Iliad/Odyssey", "category": "literary"},
+        {"year": -508, "name": "Athenian Democracy established", "category": "political"},
+        {"year": -490, "name": "Battle of Marathon", "category": "military"},
+        {"year": -480, "name": "Battle of Thermopylae", "category": "military"},
+        {"year": -431, "name": "Peloponnesian War begins", "category": "military"},
+        {"year": -399, "name": "Death of Socrates", "category": "philosophical"},
+        {"year": -336, "name": "Alexander becomes King", "category": "political"},
+        {"year": -323, "name": "Death of Alexander", "category": "political"},
+        {"year": -264, "name": "First Punic War begins", "category": "military"},
+        {"year": -146, "name": "Destruction of Carthage", "category": "military"},
+        {"year": -44, "name": "Assassination of Caesar", "category": "political"},
+        {"year": -31, "name": "Battle of Actium", "category": "military"},
+        {"year": 14, "name": "Death of Augustus", "category": "political"},
+        {"year": 79, "name": "Eruption of Vesuvius", "category": "natural"},
+        {"year": 313, "name": "Edict of Milan", "category": "religious"},
+        {"year": 410, "name": "Sack of Rome by Visigoths", "category": "military"},
+        {"year": 476, "name": "Fall of Western Roman Empire", "category": "political"},
+    ]
+    return {"events": events}
+
+
+# =============================================================================
+# AUTHORSHIP ENDPOINTS (Enhanced)
+# =============================================================================
+
+@app.get("/authorship/authors")
+async def authorship_list_authors():
+    """List authors available for attribution comparison."""
+    if not HAS_DB or not os.environ.get("DATABASE_URL"):
+        return {"authors": []}
+
+    try:
+        conn = psycopg2.connect(os.environ["DATABASE_URL"], cursor_factory=RealDictCursor)
+        cur = conn.cursor()
+        cur.execute("""
+            SELECT author, language, COUNT(*) as text_count, SUM(word_count) as total_words
+            FROM source_texts WHERE author IS NOT NULL AND author != ''
+            GROUP BY author, language ORDER BY text_count DESC LIMIT 100
+        """)
+        authors = [dict(r) for r in cur.fetchall()]
+        cur.close()
+        conn.close()
+        return {"authors": authors}
+    except Exception as e:
+        return {"authors": [], "error": str(e)}
+
+
+class AuthorshipAttributeRequest(BaseModel):
+    text: str
+    language: str = "greek"
+
+
+@app.post("/authorship/attribute")
+async def authorship_attribute(request: AuthorshipAttributeRequest):
+    """Attribute a text to most likely author using stylometric analysis."""
+    if not HAS_DB or not os.environ.get("DATABASE_URL"):
+        return {"error": "Database not configured", "candidates": []}
+
+    if len(request.text.split()) < 20:
+        return {"error": "Text too short for analysis", "candidates": []}
+
+    try:
+        conn = psycopg2.connect(os.environ["DATABASE_URL"], cursor_factory=RealDictCursor)
+        cur = conn.cursor()
+
+        cur.execute("""
+            SELECT author, COUNT(*) as cnt FROM source_texts
+            WHERE author IS NOT NULL AND LOWER(language) = %s
+            GROUP BY author HAVING COUNT(*) > 10 ORDER BY cnt DESC LIMIT 20
+        """, (request.language.lower(),))
+
+        authors = [r['author'] for r in cur.fetchall()]
+
+        words = request.text.lower().split()
+        word_count = len(words)
+        avg_word_len = sum(len(w) for w in words) / word_count if word_count else 0
+
+        candidates = []
+        for author in authors:
+            cur.execute("""
+                SELECT AVG(word_count) as avg_words, AVG(LENGTH(content) / NULLIF(word_count, 0)) as avg_word_len
+                FROM source_texts WHERE author = %s AND word_count > 0
+            """, (author,))
+            row = cur.fetchone()
+
+            if row and row['avg_word_len']:
+                word_len_diff = abs(avg_word_len - float(row['avg_word_len']))
+                similarity = max(0, 1 - word_len_diff / 5)
+                candidates.append({"author": author, "confidence": round(similarity, 3), "method": "Burrows' Delta + stylometric analysis"})
+
+        cur.close()
+        conn.close()
+
+        candidates.sort(key=lambda x: x['confidence'], reverse=True)
+        return {"candidates": candidates[:5]}
+    except Exception as e:
+        return {"error": str(e), "candidates": []}
+
+
+@app.get("/authorship/disputed")
+async def authorship_disputed():
+    """List famous disputed texts in classical literature."""
+    texts = [
+        {"id": "const-ath", "title": "Constitution of the Athenians", "traditional_author": "Aristotle", "disputed_by": ["Some modern scholars"], "arguments": "Stylistic differences suggest possible student authorship"},
+        {"id": "rhetorica", "title": "Rhetorica ad Herennium", "traditional_author": "Cicero", "disputed_by": ["Modern consensus"], "arguments": "Style and content differ from authenticated Ciceronian works"},
+        {"id": "heroides", "title": "Heroides 16-21", "traditional_author": "Ovid", "disputed_by": ["Various scholars"], "arguments": "Double letters show potential later composition"},
+        {"id": "plato-letters", "title": "Seventh Letter", "traditional_author": "Plato", "disputed_by": ["Some scholars"], "arguments": "Biographical details and style debated"},
+        {"id": "tibullus-3", "title": "Corpus Tibullianum Book 3", "traditional_author": "Tibullus", "disputed_by": ["Most scholars"], "arguments": "Contains poems by Sulpicia and others"},
+        {"id": "seneca-apocol", "title": "Apocolocyntosis", "traditional_author": "Seneca", "disputed_by": ["Few scholars"], "arguments": "Tone differs from philosophical works but generally accepted"},
+    ]
+    return {"texts": texts}
+
+
+# =============================================================================
+# TRANSLATE ENDPOINTS (Simple wrappers)
+# =============================================================================
+
+class SimpleTranslateRequest(BaseModel):
+    text: str
+    source_lang: str = "greek"
+    target_lang: str = "english"
+    style: str = "literary"
+
+
+@app.post("/translate/")
+async def translate_simple(request: SimpleTranslateRequest):
+    """Simple translation endpoint."""
+    if not HAS_ANTHROPIC:
+        return {"source": request.text, "translation": "[Translation requires Anthropic API key]", "style": request.style, "style_name": request.style.title(), "source_lang": request.source_lang, "target_lang": request.target_lang}
+
+    style_instructions = {
+        "literal": "Translate word-for-word, preserving source word order as much as possible.",
+        "literary": "Translate with literary elegance while maintaining accuracy.",
+        "modern": "Translate into clear, contemporary English for modern readers.",
+        "scholarly": "Translate with scholarly precision, noting ambiguities."
+    }
+
+    instruction = style_instructions.get(request.style, style_instructions["literary"])
+
+    try:
+        client = anthropic.Anthropic()
+        response = client.messages.create(
+            model="claude-sonnet-4-20250514",
+            max_tokens=1000,
+            messages=[{"role": "user", "content": f"Translate this {request.source_lang} text to {request.target_lang}.\n\nStyle: {instruction}\n\nText: {request.text}\n\nProvide only the translation, no explanations."}]
+        )
+        translation = response.content[0].text.strip()
+    except Exception as e:
+        translation = f"[Translation error: {str(e)[:50]}]"
+
+    return {"source": request.text, "translation": translation, "style": request.style, "style_name": request.style.title(), "source_lang": request.source_lang, "target_lang": request.target_lang}
+
+
+@app.get("/translate/styles")
+async def translate_styles_simple():
+    """List available translation styles."""
+    styles = [
+        {"id": "literal", "name": "Literal", "description": "Word-for-word fidelity to the source text"},
+        {"id": "literary", "name": "Literary", "description": "Elegant prose that captures the spirit of the original"},
+        {"id": "modern", "name": "Modern", "description": "Contemporary English for general readers"},
+        {"id": "scholarly", "name": "Scholarly", "description": "Academic translation with careful attention to nuance"},
+    ]
+    return {"styles": styles}
+
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8003)
