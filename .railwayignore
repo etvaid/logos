@@ -1,0 +1,43 @@
+# Virtual environments
+venv/
+.venv/
+env/
+.env/
+
+# Corpus data (loaded from DB, not needed in deploy)
+perseus_corpus/
+tau_complete_corpus/
+biblical_downloads/
+computed_data/
+computed_data_clean/
+computed_data_v2/
+
+# Build artifacts
+logos_ultra_swarm_*/
+logos_WIRED_POLISHED_FINAL/
+logos_FIXED_FINAL/
+logos_fix_reports/
+swarm_reports/
+
+# Node modules (frontend)
+node_modules/
+.next/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+
+# Large build scripts (not needed for runtime)
+LOGOS_*.py
+CREWAI_*.py
+CORPUS_*.py
+FULL_BUILD_*.py
