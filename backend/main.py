@@ -44,6 +44,10 @@ except ImportError:
 
 import os
 
+# Database URL - Railway or hardcoded fallback
+DATABASE_URL = os.environ.get("DATABASE_URL") or "postgresql://postgres:voqQePIH4adopQUa-1UUaFKnOT-mtsod@maglev.proxy.rlwy.net:49514/railway"
+os.environ["DATABASE_URL"] = DATABASE_URL  # Set for all functions
+
 # Database support
 try:
     import psycopg2
@@ -313,17 +317,44 @@ async def root():
     """API status and overview."""
     return {
         "name": "LOGOS API",
-        "version": "2.0",
-        "passages": len(PASSAGES),
-        "translators": len(TRANSLATORS),
+        "version": "2.1",
+        "description": "The Bible for Classical Studies - 662K+ passages of Greek & Latin text",
         "status": "running",
-        "features": [
-            "Corpus Search",
-            "Translation Style Analysis",
-            "LTQI Scoring",
-            "Style Arithmetic",
-            "Connectome Graph"
-        ]
+        "passages_loaded": len(PASSAGES),
+        "translators": len(TRANSLATORS),
+        "docs": "/docs",
+        "endpoints": {
+            "core": {
+                "/api/stats": "Corpus statistics",
+                "/api/passages": "List passages",
+                "/api/passages/{id}": "Get specific passage",
+                "/api/search": "Full-text search across 662K passages",
+                "/api/connectome": "Text connection graph"
+            },
+            "reader": {
+                "/api/reader/authors": "List all authors",
+                "/api/reader/works/{author}": "List works by author",
+                "/api/reader/passages/{author}/{work}": "Get work passages"
+            },
+            "translation": {
+                "/api/translate": "Translate text with style",
+                "/api/translate/styles": "List translator styles",
+                "/api/translate/presets": "Translation presets",
+                "/api/translate/personas": "Display personas"
+            },
+            "style": {
+                "/api/style/translators": "List 44+ translator profiles",
+                "/api/style/translator/{name}": "Get translator style vector",
+                "/api/style/compare": "Compare translator styles",
+                "/api/style/blend": "Blend translator styles",
+                "/api/style/dimensions": "20 style dimensions"
+            },
+            "authorship": {
+                "/api/authors": "List ancient authors",
+                "/api/author/{name}": "Get author profile",
+                "/api/attribute": "Attribute unknown text"
+            }
+        }
     }
 
 
@@ -349,22 +380,202 @@ async def list_passages(
 
 @app.get("/api/passages/{passage_id}")
 async def get_passage(passage_id: str):
-    """Get specific passage by ID."""
+    """Get specific passage by ID from database."""
+    # Try database first
+    if HAS_DB and os.environ.get("DATABASE_URL"):
+        try:
+            conn = psycopg2.connect(os.environ["DATABASE_URL"], cursor_factory=RealDictCursor)
+            cur = conn.cursor()
+            cur.execute("""
+                SELECT id, urn, author, work, content, section, language
+                FROM source_texts WHERE id = %s OR urn = %s
+            """, (passage_id, passage_id))
+            row = cur.fetchone()
+            cur.close()
+            conn.close()
+            if row:
+                return dict(row)
+        except Exception as e:
+            print(f"Database passage lookup error: {e}")
+
+    # Fallback to in-memory
     for p in PASSAGES:
         if p.get("id") == passage_id:
             return p
     raise HTTPException(status_code=404, detail="Passage not found")
 
 
+@app.get("/api/reader/authors")
+async def list_reader_authors():
+    """List all authors with their works for the reader."""
+    if not HAS_DB or not os.environ.get("DATABASE_URL"):
+        return {"error": "Database not configured", "authors": []}
+
+    try:
+        conn = psycopg2.connect(os.environ["DATABASE_URL"], cursor_factory=RealDictCursor)
+        cur = conn.cursor()
+        cur.execute("""
+            SELECT DISTINCT author, language, COUNT(*) as passage_count
+            FROM source_texts
+            WHERE author IS NOT NULL AND author != ''
+            GROUP BY author, language
+            ORDER BY passage_count DESC
+            LIMIT 100
+        """)
+        rows = cur.fetchall()
+        cur.close()
+        conn.close()
+        return {"count": len(rows), "authors": [dict(r) for r in rows]}
+    except Exception as e:
+        return {"error": str(e), "authors": []}
+
+
+@app.get("/api/reader/works/{author}")
+async def list_works_by_author(author: str):
+    """List all works by an author."""
+    if not HAS_DB or not os.environ.get("DATABASE_URL"):
+        return {"error": "Database not configured", "works": []}
+
+    try:
+        conn = psycopg2.connect(os.environ["DATABASE_URL"], cursor_factory=RealDictCursor)
+        cur = conn.cursor()
+        cur.execute("""
+            SELECT DISTINCT work, language, COUNT(*) as passage_count
+            FROM source_texts
+            WHERE LOWER(author) ILIKE %s
+            GROUP BY work, language
+            ORDER BY work
+        """, (f"%{author}%",))
+        rows = cur.fetchall()
+        cur.close()
+        conn.close()
+        return {"author": author, "count": len(rows), "works": [dict(r) for r in rows]}
+    except Exception as e:
+        return {"error": str(e), "works": []}
+
+
+@app.get("/api/reader/passages/{author}/{work}")
+async def get_work_passages(author: str, work: str, limit: int = 100, offset: int = 0):
+    """Get passages from a specific work."""
+    if not HAS_DB or not os.environ.get("DATABASE_URL"):
+        return {"error": "Database not configured", "passages": []}
+
+    try:
+        conn = psycopg2.connect(os.environ["DATABASE_URL"], cursor_factory=RealDictCursor)
+        cur = conn.cursor()
+        cur.execute("""
+            SELECT id, urn, author, work, content, section, language
+            FROM source_texts
+            WHERE LOWER(author) ILIKE %s AND LOWER(work) ILIKE %s
+            ORDER BY section
+            LIMIT %s OFFSET %s
+        """, (f"%{author}%", f"%{work}%", limit, offset))
+        rows = cur.fetchall()
+
+        # Get total count
+        cur.execute("""
+            SELECT COUNT(*) FROM source_texts
+            WHERE LOWER(author) ILIKE %s AND LOWER(work) ILIKE %s
+        """, (f"%{author}%", f"%{work}%"))
+        total = cur.fetchone()['count']
+
+        cur.close()
+        conn.close()
+        return {
+            "author": author,
+            "work": work,
+            "total": total,
+            "limit": limit,
+            "offset": offset,
+            "passages": [dict(r) for r in rows]
+        }
+    except Exception as e:
+        return {"error": str(e), "passages": []}
+
+
 @app.get("/api/search")
 async def search_passages(
     q: str = Query(..., description="Search query"),
-    limit: int = 20
+    language: str = Query(None, description="Filter by language (greek, latin)"),
+    author: str = Query(None, description="Filter by author"),
+    limit: int = Query(50, le=200, description="Max results")
 ):
-    """Search passages by ID pattern."""
+    """Full-text search across the 6.6M passage corpus."""
+    # Try database search first (real content search)
+    if HAS_DB and os.environ.get("DATABASE_URL"):
+        try:
+            conn = psycopg2.connect(os.environ["DATABASE_URL"], cursor_factory=RealDictCursor)
+            cur = conn.cursor()
+
+            # Build query with filters
+            conditions = ["content ILIKE %s"]
+            params = [f"%{q}%"]
+
+            if language:
+                conditions.append("LOWER(language) = %s")
+                params.append(language.lower())
+            if author:
+                conditions.append("LOWER(author) ILIKE %s")
+                params.append(f"%{author.lower()}%")
+
+            where_clause = " AND ".join(conditions)
+            params.append(limit)
+
+            cur.execute(f"""
+                SELECT id, urn, author, work, content, section, language
+                FROM source_texts
+                WHERE {where_clause}
+                LIMIT %s
+            """, params)
+            rows = cur.fetchall()
+
+            # Get total count
+            cur.execute(f"SELECT COUNT(*) FROM source_texts WHERE {where_clause}", params[:-1])
+            total = cur.fetchone()['count']
+
+            cur.close()
+            conn.close()
+
+            # Format results with snippets
+            results = []
+            for r in rows:
+                content = r.get('content', '') or ''
+                q_lower = q.lower()
+                lower_content = content.lower()
+                pos = lower_content.find(q_lower)
+
+                if pos >= 0:
+                    start = max(0, pos - 100)
+                    end = min(len(content), pos + len(q) + 100)
+                    snippet = ("..." if start > 0 else "") + content[start:end] + ("..." if end < len(content) else "")
+                else:
+                    snippet = content[:250] + "..." if len(content) > 250 else content
+
+                results.append({
+                    "id": r.get('id'),
+                    "urn": r.get('urn'),
+                    "author": r.get('author') or "Unknown",
+                    "work": r.get('work') or "Unknown",
+                    "passage": snippet,
+                    "reference": r.get('section'),
+                    "language": r.get('language')
+                })
+
+            return {
+                "query": q,
+                "total": total,
+                "count": len(results),
+                "results": results,
+                "filters": {"language": language, "author": author}
+            }
+        except Exception as e:
+            # Fall through to in-memory search
+            print(f"Database search error: {e}")
+
+    # Fallback: search PASSAGES array (limited - only IDs)
     q_lower = q.lower()
-    results = [p for p in PASSAGES if q_lower in p.get("id", "").lower()][:limit]
-    return {"results": results, "count": len(results), "query": q}
+    results = [p for p in PASSAGES if q_lower in str(p).lower()][:limit]
+    return {"results": results, "count": len(results), "query": q, "note": "In-memory search (limited)"}
 
 
 @app.get("/api/connectome")
@@ -375,13 +586,49 @@ async def get_connectome():
 
 @app.get("/api/stats")
 async def get_stats():
-    """Get corpus statistics."""
-    return {
-        "passages": len(PASSAGES),
+    """Get corpus statistics from database."""
+    stats = {
+        "passages_loaded": len(PASSAGES),
         "connectome_nodes": len(CONNECTOME.get("nodes", [])),
         "connectome_edges": len(CONNECTOME.get("edges", [])),
-        "translators": len(TRANSLATORS)
+        "translators": len(TRANSLATORS),
+        "database": "not connected"
     }
+
+    # Get real stats from database
+    if HAS_DB and os.environ.get("DATABASE_URL"):
+        try:
+            conn = psycopg2.connect(os.environ["DATABASE_URL"], cursor_factory=RealDictCursor)
+            cur = conn.cursor()
+
+            # Get passage count
+            cur.execute("SELECT COUNT(*) as count FROM source_texts")
+            stats["passages"] = cur.fetchone()['count']
+
+            # Get author count
+            cur.execute("SELECT COUNT(DISTINCT author) as count FROM source_texts WHERE author IS NOT NULL")
+            stats["authors"] = cur.fetchone()['count']
+
+            # Get work count
+            cur.execute("SELECT COUNT(DISTINCT work) as count FROM source_texts WHERE work IS NOT NULL")
+            stats["works"] = cur.fetchone()['count']
+
+            # Get language breakdown
+            cur.execute("""
+                SELECT language, COUNT(*) as count
+                FROM source_texts
+                WHERE language IS NOT NULL
+                GROUP BY language
+            """)
+            stats["languages"] = {r['language']: r['count'] for r in cur.fetchall()}
+
+            stats["database"] = "connected"
+            cur.close()
+            conn.close()
+        except Exception as e:
+            stats["database_error"] = str(e)
+
+    return stats
 
 
 # =============================================================================
