@@ -2485,12 +2485,15 @@ async def discovery_hypotheses():
 async def ghost_lost_works():
     """List known lost works of antiquity."""
     works = [
+        {"id": "q-source", "title": "Q Source (Quelle)", "author": "Unknown", "original_extent": "~225 verses, sayings collection", "surviving": "Reconstructed from Matthew/Luke parallels", "evidence": "Double tradition passages in Matthew and Luke absent from Mark", "themes": ["Jesus Sayings", "Wisdom", "Eschatology", "Ethics"]},
         {"id": "cyclic-epics", "title": "Cyclic Epics", "author": "Various", "original_extent": "8 poems, ~15,000 lines", "surviving": "Fragments and summaries", "evidence": "Proclus' Chrestomathia, vase paintings", "themes": ["Trojan War", "Theban Cycle", "Epic"]},
         {"id": "sappho-books", "title": "Complete Poetry", "author": "Sappho", "original_extent": "9 books", "surviving": "~650 lines, 1 complete poem", "evidence": "Papyrus fragments, quotations", "themes": ["Love", "Wedding Songs", "Lyric Poetry"]},
         {"id": "livy-books", "title": "Ab Urbe Condita (Books 11-142)", "author": "Livy", "original_extent": "142 books", "surviving": "35 books (1-10, 21-45)", "evidence": "Periocha summaries, quotations", "themes": ["Roman History", "Republic", "Empire"]},
         {"id": "aristotle-dialogues", "title": "Published Dialogues", "author": "Aristotle", "original_extent": "~30 works", "surviving": "Fragments only", "evidence": "Cicero's references, ancient lists", "themes": ["Philosophy", "Rhetoric", "Ethics"]},
         {"id": "tacitus-histories", "title": "Histories (Books 5-12)", "author": "Tacitus", "original_extent": "12+ books", "surviving": "Books 1-4, part of 5", "evidence": "Ancient references", "themes": ["Roman History", "Flavian Dynasty"]},
         {"id": "ennius-annales", "title": "Annales", "author": "Ennius", "original_extent": "18 books, ~20,000 lines", "surviving": "~600 lines", "evidence": "Quotations in later authors", "themes": ["Roman History", "Epic", "Hexameter"]},
+        {"id": "gospel-hebrews", "title": "Gospel of the Hebrews", "author": "Unknown", "original_extent": "Full gospel narrative", "surviving": "~7 fragments in Church Fathers", "evidence": "Jerome, Clement, Origen quotations", "themes": ["Jewish Christianity", "Jesus Traditions", "Wisdom"]},
+        {"id": "acts-paul", "title": "Acts of Paul (complete)", "author": "Unknown presbyter", "original_extent": "Full narrative with Thecla", "surviving": "Partial, including Acts of Thecla", "evidence": "Tertullian's condemnation, Coptic/Greek fragments", "themes": ["Paul's Journeys", "Thecla", "Martyrdom"]},
     ]
     return {"works": works}
 
@@ -2504,12 +2507,15 @@ class ReconstructRequest(BaseModel):
 async def ghost_reconstruct(request: ReconstructRequest):
     """Generate a hypothetical reconstruction of a lost work."""
     work_info = {
+        "q-source": "the Q Source (Quelle), the hypothetical sayings gospel used by Matthew and Luke, containing Jesus's teachings, beatitudes, parables, and eschatological sayings",
         "cyclic-epics": "the Cyclic Epics, including the Cypria, Aethiopis, and Little Iliad",
         "sappho-books": "Sappho's lost poetry books",
         "livy-books": "Livy's lost books of Roman history",
         "aristotle-dialogues": "Aristotle's published dialogues",
         "tacitus-histories": "Tacitus's lost books of the Histories",
         "ennius-annales": "Ennius's Annales",
+        "gospel-hebrews": "the Gospel of the Hebrews, a Jewish-Christian gospel known to Jerome and other Church Fathers",
+        "acts-paul": "the complete Acts of Paul, including the famous Acts of Thecla",
     }
 
     work_name = work_info.get(request.work_id, "this lost work")
@@ -2527,8 +2533,14 @@ async def ghost_reconstruct(request: ReconstructRequest):
             pass
 
     reconstructions = {
+        "q-source": """Based on the double tradition (material shared by Matthew and Luke but absent from Mark), Q likely began with John the Baptist's preaching and Jesus's temptation, followed by the Sermon on the Mount/Plain containing the Beatitudes, Lord's Prayer, and Golden Rule.
+
+The document appears to have been organized thematically rather than narratively, collecting Jesus's wisdom sayings, parables (Lost Sheep, Mustard Seed, Leaven), and apocalyptic warnings. The "woes" against the Pharisees and laments over Jerusalem suggest a prophetic, confrontational tone.
+
+Q's Christology emphasizes Jesus as Wisdom's envoy and the coming Son of Man, with less focus on his death and resurrection than the canonical gospels. Scholars estimate Q originated in Galilee around 50-70 CE, representing one of the earliest written collections of Jesus traditions.""",
         "cyclic-epics": "Based on Proclus' summaries, the Cypria likely began with Zeus's plan to reduce the human population through the Trojan War. It would have detailed the Judgment of Paris, the abduction of Helen, and the gathering of the Greek fleet at Aulis.",
         "sappho-books": "Sappho's nine books, arranged by the Alexandrian editors according to meter, likely contained a remarkable range of personal and choral poetry. Book I, in Sapphic stanzas, would have included poems to various beloved women in her circle.",
+        "gospel-hebrews": "The Gospel of the Hebrews, used by Jewish Christians in Egypt, likely presented Jesus within a thoroughly Jewish framework. Jerome's fragments suggest it included a unique account of Jesus's baptism where the Holy Spirit (identified as Jesus's 'mother') descended upon him, and a post-resurrection appearance to James the Just.",
     }
 
     return {"reconstruction": reconstructions.get(request.work_id, f"Hypothetical reconstruction for {work_name} based on surviving fragments and testimonies."), "work_id": request.work_id, "method": request.method}
