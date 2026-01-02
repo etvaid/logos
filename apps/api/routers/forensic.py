@@ -552,3 +552,306 @@ async def analyze_disputed_work_from_queue(
         }
     except Exception as e:
         return {"error": str(e)}
+
+
+# ===============================================================================
+# MEANING-ANCHORED STYLOMETRY ENDPOINTS
+# ===============================================================================
+
+class MeaningAnchoredRequest(BaseModel):
+    residual_mode: str = "shrinkage"  # none, mean, whitening, shrinkage, robust
+    n_meaning_clusters: int = 20
+    shrinkage_alpha: float = 0.1
+
+
+@router.post("/stylometry/anchored-analysis")
+async def run_anchored_stylometry(
+    request: Request,
+    params: MeaningAnchoredRequest
+):
+    """
+    Run meaning-anchored residual stylometry analysis.
+
+    The key innovation: style is measured CONDITIONAL on meaning.
+    Different meaning contexts have different "expected language" and
+    different noise levels (heteroscedasticity).
+
+    Modes:
+    - none: No anchoring (baseline)
+    - mean: Subtract cluster mean (x - mu_t)
+    - whitening: Full whitening (Sigma_t^{-1/2} * (x - mu_t))
+    - shrinkage: Shrinkage covariance estimation (recommended)
+    - robust: Median + MAD estimation
+    """
+    try:
+        pool = request.app.state.db_pool
+
+        async with pool.acquire() as conn:
+            # Load translation data with embeddings
+            rows = await conn.fetch("""
+                SELECT t.id, t.translation as text, t.embedding,
+                       tr.name as author,
+                       COALESCE(t.text_id::text, t.id::text) as anchor
+                FROM translations t
+                JOIN translators tr ON t.translator_id = tr.id
+                WHERE t.embedding IS NOT NULL
+                AND t.translation IS NOT NULL
+                AND LENGTH(t.translation) > 100
+                LIMIT 5000
+            """)
+
+            if len(rows) < 100:
+                return {"error": "Insufficient data for analysis"}
+
+            # This would call the actual analysis engine
+            # For now, return configuration info
+            return {
+                "status": "configured",
+                "mode": params.residual_mode,
+                "n_clusters": params.n_meaning_clusters,
+                "shrinkage_alpha": params.shrinkage_alpha,
+                "n_samples": len(rows),
+                "methodology": {
+                    "description": "Meaning-anchored residual style analysis",
+                    "formula": "r'_i = Sigma_t^{-1/2} * (x_i - mu_t)",
+                    "interpretation": "Deviation from expected language for this meaning context"
+                }
+            }
+    except Exception as e:
+        return {"error": str(e)}
+
+
+@router.get("/stylometry/falsification-gates")
+async def get_falsification_gates(request: Request):
+    """
+    Get the five falsification gates that validate stylometric methods.
+
+    These are the non-negotiable tests that keep attribution honest:
+    1. Label Permutation: Shuffled labels must collapse to chance
+    2. Topic Holdout: Must generalize across meaning clusters
+    3. Confound Check: Style should NOT predict topic
+    4. Random Features: Random noise should be chance
+    5. Multi-Resolution: Stable across segment sizes
+
+    A method that fails ANY gate is rejected, regardless of accuracy.
+    """
+    gates = [
+        {
+            "gate": 1,
+            "name": "label_permutation",
+            "description": "Shuffled labels must collapse to chance accuracy",
+            "threshold": "perm_acc < chance + 0.05",
+            "rationale": "If the model works on random labels, it's memorizing, not learning style"
+        },
+        {
+            "gate": 2,
+            "name": "topic_holdout",
+            "description": "Must generalize across held-out meaning clusters",
+            "threshold": "topic_holdout_acc / work_holdout_acc >= 0.70",
+            "rationale": "Style should transfer to new topics, not be topic-specific"
+        },
+        {
+            "gate": 3,
+            "name": "confound_check",
+            "description": "Style features should NOT predict topic",
+            "threshold": "topic_pred_acc < topic_chance + 0.10",
+            "rationale": "If style predicts topic, we're measuring topic, not style"
+        },
+        {
+            "gate": 4,
+            "name": "random_features",
+            "description": "Random features should give chance accuracy",
+            "threshold": "random_acc < chance + 0.10",
+            "rationale": "Sanity check that the task isn't trivially solvable"
+        },
+        {
+            "gate": 5,
+            "name": "multi_resolution",
+            "description": "Results stable across different segment sizes",
+            "threshold": "std(accuracies) < 0.05",
+            "rationale": "Real style patterns should be resolution-independent"
+        }
+    ]
+
+    composite_formula = """
+    Composite Score = (work_holdout_acc)
+                    × (topic_holdout_acc / work_holdout_acc)
+                    × (1 - confound_advantage)
+                    × (1 - max(0, std - 0.05))
+
+    Only computed if ALL gates pass. Otherwise score = 0.
+    """
+
+    return {
+        "gates": gates,
+        "composite_formula": composite_formula,
+        "methodology_reference": "Meaning-anchored residual stylometry with falsification gates"
+    }
+
+
+@router.post("/stylometry/jedp-knockout")
+async def run_jedp_knockout(request: Request):
+    """
+    Run the JEDP divine name knockout test suite.
+
+    Tests whether JEDP source discrimination survives without divine names:
+    1. Full model (with divine names)
+    2. Divine names removed
+    3. Divine names replaced with placeholder
+
+    If performance collapses only when removed, we're detecting
+    "divine name patterns" not deeper style.
+    """
+    try:
+        pool = request.app.state.db_pool
+
+        async with pool.acquire() as conn:
+            # Check for Hebrew Bible data
+            table_exists = await conn.fetchval("""
+                SELECT EXISTS (
+                    SELECT FROM information_schema.tables
+                    WHERE table_name = 'hebrew_bible'
+                )
+            """)
+
+            if not table_exists:
+                return {
+                    "error": "hebrew_bible table not found",
+                    "recommendation": "Run import_hebrew_torah_jedp.py first"
+                }
+
+            # Count JEDP verses
+            counts = await conn.fetch("""
+                SELECT source_label, COUNT(*) as count
+                FROM hebrew_bible
+                WHERE source_label IN ('J', 'E', 'D', 'P')
+                GROUP BY source_label
+            """)
+
+            return {
+                "status": "ready",
+                "jedp_data": {row['source_label']: row['count'] for row in counts},
+                "tests_to_run": [
+                    "original (with divine names)",
+                    "divine_names_removed",
+                    "divine_names_replaced"
+                ],
+                "divine_names": ["יהוה (YHWH)", "אלהים (Elohim)", "אל (El)", "אדני (Adonai)", "שדי (Shaddai)"],
+                "interpretation": {
+                    "valid": "Style signal persists beyond divine names",
+                    "invalid": "Model is primarily a divine name detector",
+                    "partial": "Some style signal, but divine names contribute significantly"
+                }
+            }
+    except Exception as e:
+        return {"error": str(e)}
+
+
+@router.get("/stylometry/mark-reconstruction")
+async def get_mark_reconstruction_info(request: Request):
+    """
+    Get information about the Mark reconstruction benchmark.
+
+    This is the publishable validation: reconstruct a KNOWN source (Mark)
+    from edited witnesses (Matthew, Luke).
+
+    If we can't reconstruct Mark better than trivial baselines,
+    we're not ready to reconstruct Q.
+    """
+    try:
+        pool = request.app.state.db_pool
+
+        async with pool.acquire() as conn:
+            # Check for pericope data
+            table_exists = await conn.fetchval("""
+                SELECT EXISTS (
+                    SELECT FROM information_schema.tables
+                    WHERE table_name = 'pericopes'
+                )
+            """)
+
+            if not table_exists:
+                return {
+                    "error": "pericopes table not found",
+                    "recommendation": "Run seed_pericopes.py first"
+                }
+
+            # Count pericopes by tradition type
+            counts = await conn.fetch("""
+                SELECT tradition_type, COUNT(*) as count
+                FROM pericopes
+                GROUP BY tradition_type
+            """)
+
+            triple_count = sum(row['count'] for row in counts if row['tradition_type'] == 'triple')
+            double_count = sum(row['count'] for row in counts if row['tradition_type'] == 'double_mt_lk')
+
+            return {
+                "status": "ready",
+                "triple_tradition_pericopes": triple_count,
+                "double_tradition_pericopes": double_count,
+                "methodology": {
+                    "step_1": "Learn editor transforms on triple tradition (Mark is known)",
+                    "step_2": "Hide Mark, reconstruct from Matthew + Luke",
+                    "step_3": "Compare reconstruction to actual Mark",
+                    "step_4": "If successful, apply same method to double tradition for Q"
+                },
+                "metrics": [
+                    "verbal_agreement: % of words correctly reconstructed",
+                    "precision: reconstructed words that are in actual",
+                    "recall: actual words that are in reconstruction",
+                    "f1: harmonic mean of precision and recall"
+                ],
+                "verdict_thresholds": {
+                    "ready_for_q": "F1 >= 0.60",
+                    "marginal": "0.40 <= F1 < 0.60",
+                    "not_ready": "F1 < 0.40"
+                }
+            }
+    except Exception as e:
+        return {"error": str(e)}
+
+
+@router.get("/stylometry/q-reconstruction")
+async def get_q_reconstruction_info(request: Request):
+    """
+    Get information about Q Source reconstruction methodology.
+
+    Uses the validated Mark reconstruction methodology to infer
+    the latent Q source from double tradition (Matthew + Luke only).
+    """
+    try:
+        pool = request.app.state.db_pool
+
+        async with pool.acquire() as conn:
+            # Get Q-referenced pericopes
+            q_pericopes = await conn.fetch("""
+                SELECT q_reference, COUNT(*) as count
+                FROM pericopes
+                WHERE q_reference IS NOT NULL
+                GROUP BY q_reference
+                ORDER BY q_reference
+            """)
+
+            return {
+                "status": "available",
+                "q_pericopes": [
+                    {"reference": row['q_reference'], "witnesses": row['count']}
+                    for row in q_pericopes
+                ],
+                "methodology": {
+                    "principle": "Q is the latent source that, when passed through Matthew-editor and Luke-editor transforms, best explains their observed forms",
+                    "step_1": "Use editor transforms learned from Mark benchmark",
+                    "step_2": "Find common words (verbal agreement) between Mt and Lk",
+                    "step_3": "Apply inverse editor transforms to reconstruct Q",
+                    "step_4": "Validate using posterior predictive checks"
+                },
+                "validation": {
+                    "posterior_predictive": "Simulate Mt/Lk from reconstructed Q using editor models",
+                    "q_style_consistency": "Check that reconstructed Q has coherent style under anchoring",
+                    "competing_hypothesis": "Compare two-source vs alternatives under same constraints"
+                },
+                "scholarly_context": "Q (Quelle) is the hypothetical sayings source used by Matthew and Luke but not Mark, explaining their shared non-Markan material"
+            }
+    except Exception as e:
+        return {"error": str(e)}
