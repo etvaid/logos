@@ -465,6 +465,7 @@ class CalibrationPipelineRunner:
         """Get style residuals with translator info, sampling across all translators."""
         async with self.pool.acquire() as conn:
             # Sample up to 500 residuals per translator to ensure diversity
+            # EXCLUDE 'Loeb Translator' - it's a catch-all, not a single style
             rows = await conn.fetch("""
                 WITH ranked AS (
                     SELECT
@@ -476,6 +477,7 @@ class CalibrationPipelineRunner:
                     FROM style_residuals sr
                     JOIN translators t ON sr.translator_id = t.id
                     WHERE sr.residual IS NOT NULL
+                      AND t.name != 'Loeb Translator'
                 )
                 SELECT residual, translator_id, translation_id, translator_name
                 FROM ranked

@@ -1,0 +1,37 @@
+{
+  "study": "JEDP Documentary Hypothesis (Hebrew)",
+  "accuracy": 0.416,
+  "gates_passed": 3,
+  "total_gates": 5,
+  "finding": "Results inconclusive - further validation needed",
+  "relationship": "CONFIRMS",
+  "gate_results": {
+    "label_permutation": {
+      "real": 0.416,
+      "permuted": 0.32200000000000006,
+      "chance": 0.25,
+      "pass": "False"
+    },
+    "multi_resolution": {
+      "accuracies": [
+        0.35353535353535354,
+        0.38235294117647056,
+        0.36538461538461536
+      ],
+      "pass": true
+    },
+    "random_features": {
+      "accuracy": 0.2,
+      "pass": true
+    },
+    "cross_book": {
+      "accuracy": 0.30952380952380953,
+      "pass": false
+    },
+    "feature_importance": {
+      "divine_importance": 0.07977197935230362,
+      "pass": "True"
+    }
+  },
+  "generated": "2026-01-02T04:28:52.755902"
+}

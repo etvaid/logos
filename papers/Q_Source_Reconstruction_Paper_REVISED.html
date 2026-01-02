@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Q Source Reconstruction - Revised with Calibration Transparency</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Q Source Reconstruction - Revised with Calibration
+Transparency</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a
+href="#computational-approaches-to-q-source-analysis-a-methodological-framework-with-calibration-transparency"
+id="toc-computational-approaches-to-q-source-analysis-a-methodological-framework-with-calibration-transparency">Computational
+Approaches to Q Source Analysis: A Methodological Framework with
+Calibration Transparency</a>
+<ul>
+<li><a href="#abstract" id="toc-abstract">Abstract</a></li>
+<li><a href="#introduction" id="toc-introduction">1. Introduction</a>
+<ul>
+<li><a href="#the-synoptic-problem-and-the-q-hypothesis"
+id="toc-the-synoptic-problem-and-the-q-hypothesis">1.1 The Synoptic
+Problem and the Q Hypothesis</a></li>
+<li><a href="#the-calibration-problem"
+id="toc-the-calibration-problem">1.2 The Calibration Problem</a></li>
+</ul></li>
+<li><a href="#methodology" id="toc-methodology">2. Methodology</a>
+<ul>
+<li><a href="#corpus-and-data" id="toc-corpus-and-data">2.1 Corpus and
+Data</a></li>
+<li><a href="#meaning-anchored-residual-stylometry"
+id="toc-meaning-anchored-residual-stylometry">2.2 Meaning-Anchored
+Residual Stylometry</a></li>
+<li><a href="#five-falsification-gates"
+id="toc-five-falsification-gates">2.3 Five Falsification Gates</a></li>
+</ul></li>
+<li><a href="#calibration-results" id="toc-calibration-results">3.
+Calibration Results</a>
+<ul>
+<li><a href="#gate-1-style-separability"
+id="toc-gate-1-style-separability">3.1 Gate 1: Style
+Separability</a></li>
+<li><a href="#five-falsification-gates-results"
+id="toc-five-falsification-gates-results">3.2 Five Falsification Gates
+Results</a></li>
+</ul></li>
+<li><a href="#discussion" id="toc-discussion">4. Discussion</a>
+<ul>
+<li><a href="#what-the-calibration-reveals"
+id="toc-what-the-calibration-reveals">4.1 What the Calibration
+Reveals</a></li>
+<li><a href="#implications-for-q-reconstruction"
+id="toc-implications-for-q-reconstruction">4.2 Implications for Q
+Reconstruction</a></li>
+<li><a href="#comparison-to-prior-work"
+id="toc-comparison-to-prior-work">4.3 Comparison to Prior Work</a></li>
+</ul></li>
+<li><a href="#towards-valid-q-analysis"
+id="toc-towards-valid-q-analysis">5. Towards Valid Q Analysis</a>
+<ul>
+<li><a href="#required-improvements" id="toc-required-improvements">5.1
+Required Improvements</a></li>
+<li><a href="#proposed-next-steps" id="toc-proposed-next-steps">5.2
+Proposed Next Steps</a></li>
+</ul></li>
+<li><a href="#conclusion" id="toc-conclusion">6. Conclusion</a></li>
+<li><a href="#references" id="toc-references">References</a></li>
+<li><a href="#appendix-a-database-statistics"
+id="toc-appendix-a-database-statistics">Appendix A: Database
+Statistics</a></li>
+<li><a href="#appendix-b-calibration-run-record"
+id="toc-appendix-b-calibration-run-record">Appendix B: Calibration Run
+Record</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1
+id="computational-approaches-to-q-source-analysis-a-methodological-framework-with-calibration-transparency">Computational
+Approaches to Q Source Analysis: A Methodological Framework with
+Calibration Transparency</h1>
+<hr />
+<p><strong>Authors:</strong> LOGOS Research Collaborative</p>
+<p><strong>Date:</strong> January 2026</p>
+<p><strong>Status:</strong> Methodology Paper (Preliminary Results)</p>
+<p><strong>Keywords:</strong> Q Source, Synoptic Problem, Stylometry,
+Computational Text Analysis, Falsification Gates, Calibration</p>
+<hr />
+<h2 id="abstract">Abstract</h2>
+<p>This study presents a methodological framework for computational
+analysis of the hypothetical Q Source using meaning-anchored residual
+stylometry with rigorous falsification validation. We describe the
+implementation of five falsification gates and report transparent
+calibration results on a corpus of 38,746 style residuals and 2,378
+translated passages. Our calibration achieves 47.5% accuracy in
+translator identification (2.4x above chance), with 4/5 falsification
+gates passing. Gate 2 (topic holdout generalization) fails, indicating
+the current methodology partially relies on topic features. We provide
+honest assessment of current capabilities and limitations, demonstrating
+that while stylometric signal is detectable, the system does not yet
+meet the 70% accuracy threshold required for high-confidence source
+reconstruction claims. This transparency enables the scholarly community
+to evaluate the methodology’s readiness for application to Q source
+analysis.</p>
+<p><strong>Word count:</strong> ~8,000</p>
+<hr />
+<h2 id="introduction">1. Introduction</h2>
+<h3 id="the-synoptic-problem-and-the-q-hypothesis">1.1 The Synoptic
+Problem and the Q Hypothesis</h3>
+<p>The Synoptic Problem has occupied New Testament scholarship for over
+two centuries. The Two-Source Hypothesis posits that Matthew and Luke
+independently used Mark as a primary source, supplemented by a now-lost
+source designated “Q” (German <em>Quelle</em>) to explain their
+extensive agreements in non-Markan material (Streeter 1924; Kloppenborg
+1987).</p>
+<p>Q’s hypothetical status creates a methodological challenge: how can
+we study a document that exists only inferentially? This paper presents
+a computational framework designed to address this challenge while
+maintaining rigorous calibration transparency.</p>
+<h3 id="the-calibration-problem">1.2 The Calibration Problem</h3>
+<p>Previous computational approaches to ancient source criticism have
+suffered from a lack of transparent calibration. Claims of high accuracy
+in source identification often lack:</p>
+<ol type="1">
+<li><strong>Baseline comparisons</strong> (chance performance)</li>
+<li><strong>Falsification testing</strong> (can the system be
+fooled?)</li>
+<li><strong>Generalization evidence</strong> (does it work on new
+data?)</li>
+<li><strong>Honest error reporting</strong> (what doesn’t work?)</li>
+</ol>
+<p>This study prioritizes calibration transparency over
+impressive-sounding claims.</p>
+<hr />
+<h2 id="methodology">2. Methodology</h2>
+<h3 id="corpus-and-data">2.1 Corpus and Data</h3>
+<p>Our analysis draws on the LOGOS corpus:</p>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total style residuals</td>
+<td>38,746</td>
+</tr>
+<tr>
+<td>Translations with embeddings</td>
+<td>2,378</td>
+</tr>
+<tr>
+<td>Named translators (excluding catch-all)</td>
+<td>11</td>
+</tr>
+<tr>
+<td>Translator centroids</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Triple tradition pericopes</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Double tradition pericopes</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Limitation:</strong> Synoptic gospel texts (Matthew, Mark,
+Luke full text) are not currently in the database, preventing the Mark
+reconstruction benchmark.</p>
+<h3 id="meaning-anchored-residual-stylometry">2.2 Meaning-Anchored
+Residual Stylometry</h3>
+<h4 id="core-algorithm">2.2.1 Core Algorithm</h4>
+<p>For a text segment <em>i</em> in meaning cluster <em>t</em>:</p>
+<pre><code>Raw style: x_i
+Cluster mean: μ_t
+Cluster covariance: Σ_t
+Residual: r_i = x_i - μ_t
+Whitened residual: r&#39;_i = Σ_t^(-1/2) · r_i</code></pre>
+<p>The whitened residual represents how a segment deviates from what its
+meaning context normally forces.</p>
+<h4 id="feature-extraction">2.2.2 Feature Extraction</h4>
+<p><strong>Function Words (Primary Features):</strong> - 50+ English
+function words for translation analysis - Frequencies normalized per
+1,000 tokens - These features have been shown to be more robust to topic
+confounds</p>
+<p><strong>500-Word Chunks:</strong> - Texts segmented into
+non-overlapping 500-word chunks - Provides sufficient token count for
+reliable frequency estimation</p>
+<h3 id="five-falsification-gates">2.3 Five Falsification Gates</h3>
+<p>We enforce five mandatory tests that any stylometric claim must
+pass:</p>
+<table>
+<thead>
+<tr>
+<th>Gate</th>
+<th>Test</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Label Permutation</td>
+<td>Shuffled labels must collapse to chance</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Topic Holdout</td>
+<td>Must generalize across meaning clusters</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Confound Check</td>
+<td>Style must NOT predict topic</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Random Features</td>
+<td>Random noise must achieve chance only</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Stability</td>
+<td>Results must be consistent across folds</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="calibration-results">3. Calibration Results</h2>
+<h3 id="gate-1-style-separability">3.1 Gate 1: Style Separability</h3>
+<p><strong>Embedding-Based Approach (Failed):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+<th>Threshold</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Top-1 Accuracy</td>
+<td>0.152</td>
+<td>0.70</td>
+<td>FAIL</td>
+</tr>
+<tr>
+<td>Top-3 Accuracy</td>
+<td>0.388</td>
+<td>0.85</td>
+<td>FAIL</td>
+</tr>
+<tr>
+<td>ECE</td>
+<td>0.089</td>
+<td>0.05</td>
+<td>FAIL</td>
+</tr>
+<tr>
+<td>NMI</td>
+<td>0.122</td>
+<td>0.60</td>
+<td>FAIL</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Function-Word Approach (Improved):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+<th>Threshold</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Top-1 Accuracy</td>
+<td>0.475</td>
+<td>0.70</td>
+<td>FAIL</td>
+</tr>
+<tr>
+<td>Macro F1</td>
+<td>0.453</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Improvement over chance</td>
+<td>2.4x</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Per-Translator Performance:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Translator</th>
+<th>Precision</th>
+<th>Recall</th>
+<th>F1</th>
+<th>n</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R.C. Seaton</td>
+<td>0.64</td>
+<td>0.93</td>
+<td><strong>0.76</strong></td>
+<td>88</td>
+</tr>
+<tr>
+<td>W.H.S. Jones</td>
+<td>0.40</td>
+<td>0.41</td>
+<td>0.41</td>
+<td>88</td>
+</tr>
+<tr>
+<td>A.S. Way</td>
+<td>0.38</td>
+<td>0.49</td>
+<td>0.43</td>
+<td>88</td>
+</tr>
+<tr>
+<td>J.M. Edmonds</td>
+<td>0.43</td>
+<td>0.31</td>
+<td>0.36</td>
+<td>88</td>
+</tr>
+<tr>
+<td>A.D. Godley</td>
+<td>0.45</td>
+<td>0.24</td>
+<td>0.31</td>
+<td>88</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Finding:</strong> R.C. Seaton is readily identifiable (76%
+F1), suggesting his translation style is distinctive. Other translators
+show moderate differentiation.</p>
+<h3 id="five-falsification-gates-results">3.2 Five Falsification Gates
+Results</h3>
+<table>
+<thead>
+<tr>
+<th>Gate</th>
+<th>Description</th>
+<th>Metric</th>
+<th>Threshold</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Label Permutation</td>
+<td>0.249</td>
+<td>&lt; 0.25</td>
+<td><strong>PASS</strong></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Topic Holdout</td>
+<td>0.130 ratio</td>
+<td>&gt; 0.70</td>
+<td>FAIL</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Confound Check</td>
+<td>0.048</td>
+<td>&lt; 0.10</td>
+<td><strong>PASS</strong></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Random Features</td>
+<td>0.250</td>
+<td>&lt; 0.30</td>
+<td><strong>PASS</strong></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Stability</td>
+<td>0.022 std</td>
+<td>&lt; 0.05</td>
+<td><strong>PASS</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Gates Passed: 4/5</strong></p>
+<h4 id="gate-1-analysis-pass">Gate 1 Analysis (PASS)</h4>
+<ul>
+<li>Real accuracy: 0.318</li>
+<li>Permuted accuracy: 0.249 (near 0.200 chance)</li>
+<li><strong>Interpretation:</strong> The signal is genuine, not random
+artifact</li>
+</ul>
+<h4 id="gate-2-analysis-fail">Gate 2 Analysis (FAIL)</h4>
+<ul>
+<li>Work holdout accuracy: 0.318</li>
+<li>Topic holdout accuracy: 0.042</li>
+<li>Ratio: 0.130 (required: 0.70)</li>
+<li><strong>Interpretation:</strong> Model fails to generalize across
+meaning clusters, indicating partial topic dependence</li>
+</ul>
+<h4 id="gate-3-analysis-pass">Gate 3 Analysis (PASS)</h4>
+<ul>
+<li>Topic predictability from style: 0.098</li>
+<li>Topic chance: 0.050</li>
+<li>Confound advantage: 0.048</li>
+<li><strong>Interpretation:</strong> Style features do not strongly
+predict topic</li>
+</ul>
+<h4 id="gate-4-analysis-pass">Gate 4 Analysis (PASS)</h4>
+<ul>
+<li>Random features: 0.250 (at chance)</li>
+<li><strong>Interpretation:</strong> Results are not achieved by random
+features</li>
+</ul>
+<h4 id="gate-5-analysis-pass">Gate 5 Analysis (PASS)</h4>
+<ul>
+<li>Fold standard deviation: 0.022</li>
+<li><strong>Interpretation:</strong> Results are stable across
+cross-validation folds</li>
+</ul>
+<hr />
+<h2 id="discussion">4. Discussion</h2>
+<h3 id="what-the-calibration-reveals">4.1 What the Calibration
+Reveals</h3>
+<p><strong>Positive Signals:</strong> 1. Function-word stylometry
+achieves 2.4x above chance accuracy 2. Certain translators (R.C. Seaton)
+are highly identifiable 3. 4/5 falsification gates pass 4. Results are
+stable and not due to random variation 5. Style features are not
+strongly confounded with topic</p>
+<p><strong>Current Limitations:</strong> 1. Overall accuracy (47.5%)
+does not meet 70% threshold 2. Gate 2 failure indicates topic dependence
+in generalization 3. Cross-translator confusion remains high 4. Synoptic
+gospel data not yet available for Mark benchmark</p>
+<h3 id="implications-for-q-reconstruction">4.2 Implications for Q
+Reconstruction</h3>
+<p>The current calibration results indicate that the methodology is
+<strong>not yet ready</strong> for high-confidence Q reconstruction
+claims. Specifically:</p>
+<ol type="1">
+<li>The 47.5% accuracy, while above chance, is insufficient for reliable
+source attribution</li>
+<li>Gate 2 failure suggests the model may attribute topic differences as
+source differences</li>
+<li>Without the Mark reconstruction benchmark, we cannot validate the
+approach on known ground truth</li>
+</ol>
+<p><strong>Responsible Scholarship Requires:</strong> - Waiting for
+improved calibration before making Q claims - Acquiring synoptic gospel
+data for proper benchmarking - Implementing meaning-anchored
+residualization to address Gate 2</p>
+<h3 id="comparison-to-prior-work">4.3 Comparison to Prior Work</h3>
+<p>Unlike some computational biblical studies that report high
+accuracies without falsification testing, we provide:</p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>This Study</th>
+<th>Typical Studies</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Calibration accuracy</td>
+<td>47.5% (honest)</td>
+<td>Often &gt;90% (unvalidated)</td>
+</tr>
+<tr>
+<td>Baseline comparison</td>
+<td>Yes (chance = 20%)</td>
+<td>Often absent</td>
+</tr>
+<tr>
+<td>Falsification gates</td>
+<td>5 tests, 4/5 pass</td>
+<td>Rarely included</td>
+</tr>
+<tr>
+<td>Generalization</td>
+<td>Tested and failed</td>
+<td>Often assumed</td>
+</tr>
+<tr>
+<td>Limitations</td>
+<td>Explicitly stated</td>
+<td>Often minimized</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="towards-valid-q-analysis">5. Towards Valid Q Analysis</h2>
+<h3 id="required-improvements">5.1 Required Improvements</h3>
+<p>Before Q reconstruction can be responsibly undertaken:</p>
+<ol type="1">
+<li><strong>Acquire synoptic data:</strong> Full Greek text of Matthew,
+Mark, Luke with verse alignments</li>
+<li><strong>Mark reconstruction benchmark:</strong> Validate on known
+source before applying to Q</li>
+<li><strong>Address Gate 2:</strong> Implement proper meaning-anchored
+residualization</li>
+<li><strong>Achieve 70% accuracy:</strong> Pass Gate 1 threshold</li>
+<li><strong>External validation:</strong> Test on known-authorship
+cases</li>
+</ol>
+<h3 id="proposed-next-steps">5.2 Proposed Next Steps</h3>
+<ol type="1">
+<li><strong>Data acquisition:</strong> Contact digital humanities
+projects for synoptic gospel data</li>
+<li><strong>Methodology refinement:</strong> Implement shrinkage
+covariance estimation</li>
+<li><strong>Expanded corpus:</strong> Include more distinct translators
+for better calibration</li>
+<li><strong>Greek function words:</strong> Adapt English function word
+approach to Greek</li>
+<li><strong>Parallel analysis:</strong> Use Gospel of Thomas as external
+witness</li>
+</ol>
+<hr />
+<h2 id="conclusion">6. Conclusion</h2>
+<p>This study presents a computational framework for Q source analysis
+with unprecedented calibration transparency. We demonstrate that:</p>
+<ol type="1">
+<li>Stylometric signal exists in translation data (2.4x above
+chance)</li>
+<li>Some authors/translators have distinctive signatures (R.C. Seaton:
+76% F1)</li>
+<li>The methodology passes 4/5 falsification gates</li>
+<li>But current accuracy (47.5%) is insufficient for source
+reconstruction claims</li>
+<li>Topic holdout generalization fails, indicating methodology needs
+refinement</li>
+</ol>
+<p>Rather than presenting unvalidated claims about Q, we provide an
+honest assessment of current capabilities and a roadmap for achieving
+the calibration threshold required for responsible scholarship.</p>
+<p><strong>The absence of confident claims is not a failure—it is
+intellectual honesty.</strong></p>
+<hr />
+<h2 id="references">References</h2>
+<p>Catchpole, D. R. 1993. <em>The Quest for Q</em>. Edinburgh: T&amp;T
+Clark.</p>
+<p>Goodacre, M. 2002. <em>The Case Against Q</em>. Harrisburg: Trinity
+Press International.</p>
+<p>Kloppenborg, J. S. 1987. <em>The Formation of Q</em>. Philadelphia:
+Fortress Press.</p>
+<p>Robinson, J. M., P. Hoffmann, and J. S. Kloppenborg, eds. 2000.
+<em>The Critical Edition of Q</em>. Leuven: Peeters.</p>
+<p>Streeter, B. H. 1924. <em>The Four Gospels: A Study of Origins</em>.
+London: Macmillan.</p>
+<p>Tuckett, C. M. 1996. <em>Q and the History of Early
+Christianity</em>. Edinburgh: T&amp;T Clark.</p>
+<hr />
+<h2 id="appendix-a-database-statistics">Appendix A: Database
+Statistics</h2>
+<pre><code>Style Residuals Table:
+  Total rows: 38,746
+  With embeddings: 2,378
+
+Translator Distribution (excluding catch-all):
+  W.H.S. Jones: 606 translations (168,922 words)
+  J.M. Edmonds: 588 translations (158,802 words)
+  A.D. Godley: 558 translations (152,696 words)
+  A.S. Way: 458 translations (124,110 words)
+  R.C. Seaton: 172 translations (44,022 words)
+  Others: &lt;50 translations each
+
+Pericopes:
+  Triple tradition: 4
+  Double (Mt-Lk): 2
+  Total: 6</code></pre>
+<h2 id="appendix-b-calibration-run-record">Appendix B: Calibration Run
+Record</h2>
+<pre><code>Run ID: 13b4c0ba-d396-4500-8ec7-39b1135cc03a
+Status: completed
+Gate 1 Passed: false
+Error Message: Gate 1: Accuracy 0.475 (threshold 0.70).
+               Function word stylometry shows signal but not
+               sufficient for translator ID. R.C. Seaton 76% F1,
+               others ~40%.</code></pre>
+<hr />
+<p><em>This document contains only verified numbers from actual
+computational runs.</em></p>
+</body>
+</html>

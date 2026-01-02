@@ -1,0 +1,23 @@
+{
+  "n_samples": 2438,
+  "n_translators": 9,
+  "n_clusters": 20,
+  "mutual_information": {
+    "raw": 0.9539213015130826,
+    "normalized": 0.4162461713292638,
+    "translator_entropy": 1.6491373002557763,
+    "topic_entropy": 2.9343105112485426
+  },
+  "translator_stats": {
+    "R. C. Seaton": {
+      "name": "R. C. Seaton",
+      "total_samples": 170,
+      "n_clusters_represented": 2,
+      "cluster_coverage_pct": 10.0,
+      "cluster_entropy": 0.605797499372304,
+      "normalized_entropy": 0.20222017325120156,
+      "min_samples_per_cluster": 50,
+      "max_samples_per_cluster": 120,
+      "median_samples_per_cluster": 85.0,
+      "cluster_distribution": {
+        

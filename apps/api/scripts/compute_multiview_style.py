@@ -327,7 +327,7 @@ async def main():
                 'std_fw': std_fw.tolist(),
                 'top_fw': top_fw,
                 'count': int(author_mask.sum()),
-                'tokens': int(sum(len(tokenize(translations[i]['text'])) for i, m in enumerate(author_mask) if m))
+                'tokens': int(sum(len(tokenize(translations[i]['text'])) for i, m in enumerate(author_mask) if bool(m)))
             }
         
         # Store in database

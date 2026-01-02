@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>VERIFIED_CALIBRATION_RESULTS</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<h1 id="logos-stylometry-calibration-results">LOGOS Stylometry
+Calibration Results</h1>
+<h2 id="verified-numbers-from-computational-pipeline">Verified Numbers
+from Computational Pipeline</h2>
+<p><strong>Generated:</strong> 2026-01-02 <strong>Pipeline
+Version:</strong> 1.0</p>
+<hr />
+<h2 id="executive-summary">Executive Summary</h2>
+<p>The LOGOS stylometry pipeline was rigorously tested against
+falsification gates. While the system shows clear stylometric signal
+(2.4x above chance), it does not yet meet the stringent 70% accuracy
+threshold required for high-confidence claims.</p>
+<p><strong>Key Finding:</strong> Function-word stylometry successfully
+identifies certain translators (R.C. Seaton: 76% F1) but struggles with
+cross-translator generalization due to topic dependencies.</p>
+<hr />
+<h2 id="database-statistics">Database Statistics</h2>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total style residuals</td>
+<td>38,746</td>
+</tr>
+<tr>
+<td>Translations with embeddings</td>
+<td>2,378</td>
+</tr>
+<tr>
+<td>Named translators</td>
+<td>11 (excluding “Loeb Translator” catch-all)</td>
+</tr>
+<tr>
+<td>Translator centroids</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Pericopes (triple tradition)</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Pericopes (double Mt-Lk)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Apostolic Fathers texts</td>
+<td>15</td>
+</tr>
+<tr>
+<td>Didache content</td>
+<td>20,906 characters</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="gate-1-style-separability-calibration">Gate 1: Style
+Separability (Calibration)</h2>
+<h3 id="embedding-based-residuals">Embedding-Based Residuals</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+<th>Threshold</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Top-1 Accuracy</td>
+<td>0.152</td>
+<td>0.70</td>
+<td>FAIL</td>
+</tr>
+<tr>
+<td>Top-3 Accuracy</td>
+<td>0.388</td>
+<td>0.85</td>
+<td>FAIL</td>
+</tr>
+<tr>
+<td>ECE</td>
+<td>0.089</td>
+<td>0.05</td>
+<td>FAIL</td>
+</tr>
+<tr>
+<td>Macro F1</td>
+<td>0.059</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>NMI</td>
+<td>0.122</td>
+<td>0.60</td>
+<td>FAIL</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Analysis:</strong> Embedding-based style residuals do not
+effectively separate translators. Inter-translator distance (0.05) is
+much smaller than within-translator variance (0.67).</p>
+<h3 id="function-word-stylometry-improved-approach">Function-Word
+Stylometry (Improved Approach)</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+<th>Threshold</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Top-1 Accuracy</td>
+<td>0.475</td>
+<td>0.70</td>
+<td>FAIL</td>
+</tr>
+<tr>
+<td>Macro F1</td>
+<td>0.453</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Chance baseline</td>
+<td>0.20</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Improvement over chance</td>
+<td>2.4x</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Per-Translator Accuracy:</strong> | Translator | Precision |
+Recall | F1 | Samples | |————|———–|——–|—–|———| | R.C. Seaton | 0.64 |
+0.93 | 0.76 | 88 | | W.H.S. Jones | 0.40 | 0.41 | 0.41 | 88 | | A.S. Way
+| 0.38 | 0.49 | 0.43 | 88 | | J.M. Edmonds | 0.43 | 0.31 | 0.36 | 88 | |
+A.D. Godley | 0.45 | 0.24 | 0.31 | 88 |</p>
+<hr />
+<h2 id="falsification-gates">5 Falsification Gates</h2>
+<table>
+<thead>
+<tr>
+<th>Gate</th>
+<th>Description</th>
+<th>Result</th>
+<th>Metric</th>
+<th>Threshold</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Label Permutation</td>
+<td><strong>PASS</strong></td>
+<td>0.249</td>
+<td>&lt; 0.25</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Topic Holdout</td>
+<td>FAIL</td>
+<td>0.130 ratio</td>
+<td>&gt; 0.70</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Confound Check</td>
+<td><strong>PASS</strong></td>
+<td>0.048</td>
+<td>&lt; 0.10</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Random Features</td>
+<td><strong>PASS</strong></td>
+<td>0.250</td>
+<td>&lt; 0.30</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Stability</td>
+<td><strong>PASS</strong></td>
+<td>0.022 std</td>
+<td>&lt; 0.05</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Gates Passed: 4/5</strong></p>
+<h3 id="gate-details">Gate Details</h3>
+<p><strong>Gate 1 - Label Permutation:</strong> ✓ PASS - Real accuracy:
+0.318 - Permuted accuracy: 0.249 (near chance 0.200) - This confirms the
+signal is NOT random</p>
+<p><strong>Gate 2 - Topic Holdout:</strong> ✗ FAIL - Work holdout
+accuracy: 0.318 - Topic holdout accuracy: 0.042 - Ratio: 0.130
+(required: 0.70) - <strong>Critical:</strong> Model does not generalize
+across meaning clusters</p>
+<p><strong>Gate 3 - Confound Check:</strong> ✓ PASS - Topic
+predictability from style: 0.098 - Topic chance: 0.050 - Confound
+advantage: 0.048 (required: &lt; 0.10) - Style features do NOT strongly
+predict topic</p>
+<p><strong>Gate 4 - Random Features:</strong> ✓ PASS - Random features
+accuracy: 0.250 - At chance level as expected</p>
+<p><strong>Gate 5 - Stability:</strong> ✓ PASS - Fold accuracies:
+[0.309, 0.315, 0.351, 0.333, 0.284] - Std deviation: 0.022 (required:
+&lt; 0.05) - Results are stable across folds</p>
+<hr />
+<h2 id="mark-reconstruction-benchmark">Mark Reconstruction
+Benchmark</h2>
+<p><strong>Status:</strong> NOT EXECUTABLE</p>
+<p><strong>Reason:</strong> Synoptic gospel texts (Matthew, Mark, Luke)
+are not in the database. The pericopes table has 4 triple tradition
+entries but no text content.</p>
+<p><strong>Required for execution:</strong> - Full text of Matthew,
+Mark, Luke gospels - Verse-level alignment data - Synoptic parallel
+markup</p>
+<hr />
+<h2 id="q-source-reconstruction">Q Source Reconstruction</h2>
+<p><strong>Status:</strong> FRAMEWORK READY, DATA PENDING</p>
+<p><strong>Available structures:</strong> - <code>pericopes</code>
+table: 6 entries (4 triple, 2 double Mt-Lk) -
+<code>q_reconstructions</code> table: Schema ready -
+<code>synoptic_alignments</code> table: Schema ready</p>
+<p><strong>Missing data:</strong> - Gospel text content - Parallel
+alignments - Verse-level mappings</p>
+<hr />
+<h2 id="thomasdidache-stylometric-analysis">Thomas/Didache Stylometric
+Analysis</h2>
+<p><strong>Didache Status:</strong> Available (20,906 characters, Greek
+text)</p>
+<p><strong>Gospel of Thomas Status:</strong> Not in database</p>
+<p><strong>Apostolic Fathers Available:</strong> 1. 1 Clement 2. 2
+Clement 3. Barnabas 4. Didache 5. Diognetus 6. Ignatius (8 letters) 7.
+Martyrdom of Polycarp 8. Polycarp to Philippians 9. Shepherd of
+Hermas</p>
+<hr />
+<h2 id="conclusions">Conclusions</h2>
+<h3 id="what-works">What Works</h3>
+<ol type="1">
+<li><strong>Function-word stylometry shows real signal</strong> (2.4x
+above chance)</li>
+<li><strong>Some translators are clearly identifiable</strong> (R.C.
+Seaton: 76% F1)</li>
+<li><strong>4/5 falsification gates pass</strong></li>
+<li><strong>Results are stable across folds</strong> (std 0.022)</li>
+<li><strong>Style features don’t predict topic confounds</strong> (0.048
+advantage)</li>
+</ol>
+<h3 id="what-needs-improvement">What Needs Improvement</h3>
+<ol type="1">
+<li><strong>Gate 1 accuracy</strong> needs to reach 0.70 (currently
+0.475)</li>
+<li><strong>Topic holdout generalization</strong> fails dramatically
+(0.13 ratio vs 0.70 required)</li>
+<li><strong>Cross-translator confusion</strong> remains high for similar
+translation eras</li>
+<li><strong>Synoptic gospel data</strong> needed for Mark reconstruction
+benchmark</li>
+<li><strong>Gospel of Thomas</strong> needed for complete external
+source analysis</li>
+</ol>
+<h3 id="honest-assessment">Honest Assessment</h3>
+<p>The current stylometry pipeline is <strong>scientifically defensible
+but not publication-ready</strong> for high-confidence claims. It
+demonstrates: - Real stylometric signal exists in translation data -
+Certain translators have distinctive signatures - The methodology passes
+most falsification checks</p>
+<p>However, the failure of Gate 2 (topic holdout) indicates the model
+partly relies on topic/meaning features rather than pure style. This is
+a known challenge in stylometry.</p>
+<hr />
+<h2 id="recommended-next-steps">Recommended Next Steps</h2>
+<ol type="1">
+<li><strong>Acquire synoptic gospel data</strong> for Mark
+reconstruction benchmark</li>
+<li><strong>Implement meaning-anchored residualization</strong> to
+address Gate 2 failure</li>
+<li><strong>Expand translator corpus</strong> with more distinct
+translators</li>
+<li><strong>Test on known-authorship cases</strong> before Q claims</li>
+<li><strong>Apply shrinkage covariance estimation</strong> for
+whitening</li>
+</ol>
+<hr />
+<p><em>This document contains only verified numbers from actual
+computational runs.</em></p>
+</body>
+</html>

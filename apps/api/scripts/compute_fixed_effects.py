@@ -248,16 +248,12 @@ async def main():
             author_name = author_names.get(author_id, f"Author_{author_id}")
             
             # Get or create author
-            # Check if author exists first
-            db_author_id = await conn.fetchval(
-                "SELECT id FROM authors WHERE name_en = $1", author_name
-            )
-            if not db_author_id:
-                db_author_id = await conn.fetchval("""
-                    INSERT INTO authors (name_en, language)
-                    VALUES ($1, 'english')
-                    RETURNING id
-                """, author_name)
+            db_author_id = await conn.fetchval("""
+                INSERT INTO authors (name_en)
+                VALUES ($1)
+                ON CONFLICT (name_en) DO UPDATE SET updated_at = NOW()
+                RETURNING id
+            """, author_name)
             
             # Store fixed effects vector
             vector_str = '[' + ','.join(str(float(x)) for x in style_vector) + ']'

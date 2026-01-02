@@ -1,0 +1,789 @@
+{
+  "timestamp": "20260102_183037",
+  "approved_count": 9,
+  "total_count": 16,
+  "best_config": {
+    "n_samples": 2208,
+    "n_features": 50,
+    "n_classes": 4,
+    "chance": 0.25,
+    "work_accuracy": 0.3125,
+    "gate1": {
+      "name": "Label Permutation",
+      "metric": 0.247848731884058,
+      "threshold": 0.3,
+      "passed": "True"
+    },
+    "topic_holdout_accuracy": 0.29138973050326544,
+    "gate2": {
+      "name": "Topic Holdout",
+      "metric": 0.9324471376104494,
+      "threshold": 0.7,
+      "passed": "True"
+    },
+    "gate3": {
+      "name": "Confound Check",
+      "metric": 0.05869565217391304,
+      "threshold": 0.1,
+      "passed": true
+    },
+    "gate4": {
+      "name": "Random Features",
+      "metric": 0.24365942028985507,
+      "threshold": 0.35,
+      "passed": true
+    },
+    "gate5": {
+      "name": "Stability",
+      "metric": 0.02164005268800354,
+      "threshold": 0.05,
+      "passed": "True"
+    },
+    "all_passed": "True",
+    "gates_passed": "5",
+    "config": {
+      "name": "Adversarial (p=10, n=50)",
+      "penalty": 10,
+      "n_features": 50,
+      "model": "logistic"
+    }
+  },
+  "all_results": [
+    {
+      "n_samples": 2208,
+      "n_features": 30,
+      "n_classes": 4,
+      "chance": 0.25,
+      "work_accuracy": 0.32382246376811596,
+      "gate1": {
+        "name": "Label Permutation",
+        "metric": 0.25088315217391305,
+        "threshold": 0.3,
+        "passed": "True"
+      },
+      "topic_holdout_accuracy": 0.25121771209602184,
+      "gate2": {
+        "name": "Topic Holdout",
+        "metric": 0.7757884032279947,
+        "threshold": 0.7,
+        "passed": "True"
+      },
+      "gate3": {
+        "name": "Confound Check",
+        "metric": 0.045108695652173916,
+        "threshold": 0.1,
+        "passed": true
+      },
+      "gate4": {
+        "name": "Random Features",
+        "metric": 0.24818840579710144,
+        "threshold": 0.35,
+        "passed": true
+      },
+      "gate5": {
+        "name": "Stability",
+        "metric": 0.028853098771898518,
+        "threshold": 0.05,
+        "passed": "True"
+      },
+      "all_passed": "True",
+      "gates_passed": "5",
+      "config": {
+        "name": "Adversarial (p=5, n=30)",
+        "penalty": 5,
+        "n_features": 30,
+        "model": "logistic"
+      }
+    },
+    {
+      "n_samples": 2208,
+      "n_features": 50,
+      "n_classes": 4,
+      "chance": 0.25,
+      "work_accuracy": 0.3808876811594203,
+      "gate1": {
+        "name": "Label Permutation",
+        "metric": 0.25403079710144927,
+        "threshold": 0.3,
+        "passed": "True"
+      },
+      "topic_holdout_accuracy": 0.30192685205699155,
+      "gate2": {
+        "name": "Topic Holdout",
+        "metric": 0.7926926151508172,
+        "threshold": 0.7,
+        "passed": "True"
+      },
+      "gate3": {
+        "name": "Confound Check",
+        "metric": 0.06277173913043478,
+        "threshold": 0.1,
+        "passed": true
+      },
+      "gate4": {
+        "name": "Random Features",
+        "metric": 0.2391304347826087,
+        "threshold": 0.35,
+        "passed": true
+      },
+      "gate5": {
+        "name": "Stability",
+        "metric": 0.02540605436927833,
+        "threshold": 0.05,
+        "passed": "True"
+      },
+      "all_passed": "True",
+      "gates_passed": "5",
+      "config": {
+        "name": "Adversarial (p=5, n=50)",
+        "penalty": 5,
+        "n_features": 50,
+        "model": "logistic"
+      }
+    },
+    {
+      "n_samples": 2208,
+      "n_features": 75,
+      "n_classes": 4,
+      "chance": 0.25,
+      "work_accuracy": 0.4207427536231884,
+      "gate1": {
+        "name": "Label Permutation",
+        "metric": 0.2513813405797102,
+        "threshold": 0.3,
+        "passed": "True"
+      },
+      "topic_holdout_accuracy": 0.3260709075120679,
+      "gate2": {
+        "name": "Topic Holdout",
+        "metric": 0.7749887661858406,
+        "threshold": 0.7,
+        "passed": "True"
+      },
+      "gate3": {
+        "name": "Confound Check",
+        "metric": 0.12074275362318841,
+        "threshold": 0.1,
+        "passed": false
+      },
+      "gate4": {
+        "name": "Random Features",
+        "metric": 0.24909420289855072,
+        "threshold": 0.35,
+        "passed": true
+      },
+      "gate5": {
+        "name": "Stability",
+        "metric": 0.013077636347546176,
+        "threshold": 0.05,
+        "passed": "True"
+      },
+      "all_passed": false,
+      "gates_passed": "4",
+      "config": {
+        "name": "Adversarial (p=5, n=75)",
+        "penalty": 5,
+        "n_features": 75,
+        "model": "logistic"
+      }
+    },
+    {
+      "n_samples": 2208,
+      "n_features": 100,
+      "n_classes": 4,
+      "chance": 0.25,
+      "work_accuracy": 0.4375,
+      "gate1": {
+        "name": "Label Permutation",
+        "metric": 0.2477581521739131,
+        "threshold": 0.3,
+        "passed": "True"
+      },
+      "topic_holdout_accuracy": 0.3138363327835235,
+      "gate2": {
+        "name": "Topic Holdout",
+        "metric": 0.7173401892194823,
+        "threshold": 0.7,
+        "passed": "True"
+      },
+      "gate3": {
+        "name": "Confound Check",
+        "metric": 0.16603260869565217,
+        "threshold": 0.1,
+        "passed": false
+      },
+      "gate4": {
+        "name": "Random Features",
+        "metric": 0.254981884057971,
+        "threshold": 0.35,
+        "passed": true
+      },
+      "gate5": {
+        "name": "Stability",
+        "metric": 0.020578864948475335,
+        "threshold": 0.05,
+        "passed": "True"
+      },
+      "all_passed": false,
+      "gates_passed": "4",
+      "config": {
+        "name": "Adversarial (p=5, n=100)",
+        "penalty": 5,
+        "n_features": 100,
+        "model": "logistic"
+      }
+    },
+    {
+      "n_samples": 2208,
+      "n_features": 30,
+      "n_classes": 4,
+      "chance": 0.25,
+      "work_accuracy": 0.276268115942029,
+      "gate1": {
+        "name": "Label Permutation",
+        "metric": 0.25172101449275364,
+        "threshold": 0.3,
+        "passed": "True"
+      },
+      "topic_holdout_accuracy": 0.25693577296717185,
+      "gate2": {
+        "name": "Topic Holdout",
+        "metric": 0.9300232569041237,
+        "threshold": 0.7,
+        "passed": "True"
+      },
+      "gate3": {
+        "name": "Confound Check",
+        "metric": 0.04465579710144928,
+        "threshold": 0.1,
+        "passed": true
+      },
+      "gate4": {
+        "name": "Random Features",
+        "metric": 0.24547101449275363,
+        "threshold": 0.35,
+        "passed": true
+      },
+      "gate5": {
+        "name": "Stability",
+        "metric": 0.017012262697808568,
+        "threshold": 0.05,
+        "passed": "True"
+      },
+      "all_passed": "True",
+      "gates_passed": "5",
+      "config": {
+        "name": "Adversarial (p=10, n=30)",
+        "penalty": 10,
+        "n_features": 30,
+        "model": "logistic"
+      }
+    },
+    {
+      "n_samples": 2208,
+      "n_features": 50,
+      "n_classes": 4,
+      "chance": 0.25,
+      "work_accuracy": 0.3125,
+      "gate1": {
+        "name": "Label Permutation",
+        "metric": 0.247848731884058,
+        "threshold": 0.3,
+        "passed": "True"
+      },
+      "topic_holdout_accuracy": 0.29138973050326544,
+      "gate2": {
+        "name": "Topic Holdout",
+        "metric": 0.9324471376104494,
+        "threshold": 0.7,
+        "passed": "True"
+      },
+      "gate3": {
+        "name": "Confound Check",
+        "metric": 0.05869565217391304,
+        "threshold": 0.1,
+        "passed": true
+      },
+      "gate4": {
+        "name": "Random Features",
+        "metric": 0.24365942028985507,
+        "threshold": 0.35,
+        "passed": true
+      },
+      "gate5": {
+        "name": "Stability",
+        "metric": 0.02164005268800354,
+        "threshold": 0.05,
+        "passed": "True"
+      },
+      "all_passed": "True",
+      "gates_passed": "5",
+      "config": {
+        "name": "Adversarial (p=10, n=50)",
+        "penalty": 10,
+        "n_features": 50,
+        "model": "logistic"
+      }
+    },
+    {
+      "n_samples": 2208,
+      "n_features": 75,
+      "n_classes": 4,
+      "chance": 0.25,
+      "work_accuracy": 0.38269927536231885,
+      "gate1": {
+        "name": "Label Permutation",
+        "metric": 0.2469429347826087,
+        "threshold": 0.3,
+        "passed": "True"
+      },
+      "topic_holdout_accuracy": 0.34087133784872364,
+      "gate2": {
+        "name": "Topic Holdout",
+        "metric": 0.8907028567692092,
+        "threshold": 0.7,
+        "passed": "True"
+      },
+      "gate3": {
+        "name": "Confound Check",
+        "metric": 0.09719202898550723,
+        "threshold": 0.1,
+        "passed": true
+      },
+      "gate4": {
+        "name": "Random Features",
+        "metric": 0.25905797101449274,
+        "threshold": 0.35,
+        "passed": true
+      },
+      "gate5": {
+        "name": "Stability",
+        "metric": 0.017802169828846692,
+        "threshold": 0.05,
+        "passed": "True"
+      },
+      "all_passed": "True",
+      "gates_passed": "5",
+      "config": {
+        "name": "Adversarial (p=10, n=75)",
+        "penalty": 10,
+        "n_features": 75,
+        "model": "logistic"
+      }
+    },
+    {
+      "n_samples": 2208,
+      "n_features": 100,
+      "n_classes": 4,
+      "chance": 0.25,
+      "work_accuracy": 0.4320652173913043,
+      "gate1": {
+        "name": "Label Permutation",
+        "metric": 0.2509284420289855,
+        "threshold": 0.3,
+        "passed": "True"
+      },
+      "topic_holdout_accuracy": 0.3040138641072016,
+      "gate2": {
+        "name": "Topic Holdout",
+        "metric": 0.7036295722732717,
+        "threshold": 0.7,
+        "passed": "True"
+      },
+      "gate3": {
+        "name": "Confound Check",
+        "metric": 0.16693840579710145,
+        "threshold": 0.1,
+        "passed": false
+      },
+      "gate4": {
+        "name": "Random Features",
+        "metric": 0.2441123188405797,
+        "threshold": 0.35,
+        "passed": true
+      },
+      "gate5": {
+        "name": "Stability",
+        "metric": 0.00880047704913873,
+        "threshold": 0.05,
+        "passed": "True"
+      },
+      "all_passed": false,
+      "gates_passed": "4",
+      "config": {
+        "name": "Adversarial (p=10, n=100)",
+        "penalty": 10,
+        "n_features": 100,
+        "model": "logistic"
+      }
+    },
+    {
+      "n_samples": 2208,
+      "n_features": 30,
+      "n_classes": 4,
+      "chance": 0.25,
+      "work_accuracy": 0.2930253623188406,
+      "gate1": {
+        "name": "Label Permutation",
+        "metric": 0.2511322463768116,
+        "threshold": 0.3,
+        "passed": "True"
+      },
+      "topic_holdout_accuracy": 0.2551853039043541,
+      "gate2": {
+        "name": "Topic Holdout",
+        "metric": 0.8708642210522626,
+        "threshold": 0.7,
+        "passed": "True"
+      },
+      "gate3": {
+        "name": "Confound Check",
+        "metric": 0.048731884057971006,
+        "threshold": 0.1,
+        "passed": true
+      },
+      "gate4": {
+        "name": "Random Features",
+        "metric": 0.24682971014492755,
+        "threshold": 0.35,
+        "passed": true
+      },
+      "gate5": {
+        "name": "Stability",
+        "metric": 0.01332407510150285,
+        "threshold": 0.05,
+        "passed": "True"
+      },
+      "all_passed": "True",
+      "gates_passed": "5",
+      "config": {
+        "name": "Adversarial (p=15, n=30)",
+        "penalty": 15,
+        "n_features": 30,
+        "model": "logistic"
+      }
+    },
+    {
+      "n_samples": 2208,
+      "n_features": 50,
+      "n_classes": 4,
+      "chance": 0.25,
+      "work_accuracy": 0.3052536231884058,
+      "gate1": {
+        "name": "Label Permutation",
+        "metric": 0.24952445652173916,
+        "threshold": 0.3,
+        "passed": "True"
+      },
+      "topic_holdout_accuracy": 0.2745670637657121,
+      "gate2": {
+        "name": "Topic Holdout",
+        "metric": 0.8994719240277333,
+        "threshold": 0.7,
+        "passed": "True"
+      },
+      "gate3": {
+        "name": "Confound Check",
+        "metric": 0.05778985507246377,
+        "threshold": 0.1,
+        "passed": true
+      },
+      "gate4": {
+        "name": "Random Features",
+        "metric": 0.23233695652173914,
+        "threshold": 0.35,
+        "passed": true
+      },
+      "gate5": {
+        "name": "Stability",
+        "metric": 0.015376750606748129,
+        "threshold": 0.05,
+        "passed": "True"
+      },
+      "all_passed": "True",
+      "gates_passed": "5",
+      "config": {
+        "name": "Adversarial (p=15, n=50)",
+        "penalty": 15,
+        "n_features": 50,
+        "model": "logistic"
+      }
+    },
+    {
+      "n_samples": 2208,
+      "n_features": 75,
+      "n_classes": 4,
+      "chance": 0.25,
+      "work_accuracy": 0.3740942028985507,
+      "gate1": {
+        "name": "Label Permutation",
+        "metric": 0.24934329710144926,
+        "threshold": 0.3,
+        "passed": "True"
+      },
+      "topic_holdout_accuracy": 0.31190401256183176,
+      "gate2": {
+        "name": "Topic Holdout",
+        "metric": 0.8337579415696423,
+        "threshold": 0.7,
+        "passed": "True"
+      },
+      "gate3": {
+        "name": "Confound Check",
+        "metric": 0.10172101449275363,
+        "threshold": 0.1,
+        "passed": false
+      },
+      "gate4": {
+        "name": "Random Features",
+        "metric": 0.2504528985507246,
+        "threshold": 0.35,
+        "passed": true
+      },
+      "gate5": {
+        "name": "Stability",
+        "metric": 0.023637994845249425,
+        "threshold": 0.05,
+        "passed": "True"
+      },
+      "all_passed": false,
+      "gates_passed": "4",
+      "config": {
+        "name": "Adversarial (p=15, n=75)",
+        "penalty": 15,
+        "n_features": 75,
+        "model": "logistic"
+      }
+    },
+    {
+      "n_samples": 2208,
+      "n_features": 100,
+      "n_classes": 4,
+      "chance": 0.25,
+      "work_accuracy": 0.4116847826086957,
+      "gate1": {
+        "name": "Label Permutation",
+        "metric": 0.24839221014492754,
+        "threshold": 0.3,
+        "passed": "True"
+      },
+      "topic_holdout_accuracy": 0.3196513507734223,
+      "gate2": {
+        "name": "Topic Holdout",
+        "metric": 0.7764468454430324,
+        "threshold": 0.7,
+        "passed": "True"
+      },
+      "gate3": {
+        "name": "Confound Check",
+        "metric": 0.16422101449275361,
+        "threshold": 0.1,
+        "passed": false
+      },
+      "gate4": {
+        "name": "Random Features",
+        "metric": 0.23867753623188406,
+        "threshold": 0.35,
+        "passed": true
+      },
+      "gate5": {
+        "name": "Stability",
+        "metric": 0.011344979155288303,
+        "threshold": 0.05,
+        "passed": "True"
+      },
+      "all_passed": false,
+      "gates_passed": "4",
+      "config": {
+        "name": "Adversarial (p=15, n=100)",
+        "penalty": 15,
+        "n_features": 100,
+        "model": "logistic"
+      }
+    },
+    {
+      "n_samples": 2208,
+      "n_features": 30,
+      "n_classes": 4,
+      "chance": 0.25,
+      "work_accuracy": 0.2898550724637681,
+      "gate1": {
+        "name": "Label Permutation",
+        "metric": 0.25158514492753625,
+        "threshold": 0.3,
+        "passed": "True"
+      },
+      "topic_holdout_accuracy": 0.24417765515669962,
+      "gate2": {
+        "name": "Topic Holdout",
+        "metric": 0.8424129102906136,
+        "threshold": 0.7,
+        "passed": "True"
+      },
+      "gate3": {
+        "name": "Confound Check",
+        "metric": 0.049184782608695646,
+        "threshold": 0.1,
+        "passed": true
+      },
+      "gate4": {
+        "name": "Random Features",
+        "metric": 0.25679347826086957,
+        "threshold": 0.35,
+        "passed": true
+      },
+      "gate5": {
+        "name": "Stability",
+        "metric": 0.02322125449252049,
+        "threshold": 0.05,
+        "passed": "True"
+      },
+      "all_passed": "True",
+      "gates_passed": "5",
+      "config": {
+        "name": "Adversarial (p=20, n=30)",
+        "penalty": 20,
+        "n_features": 30,
+        "model": "logistic"
+      }
+    },
+    {
+      "n_samples": 2208,
+      "n_features": 50,
+      "n_classes": 4,
+      "chance": 0.25,
+      "work_accuracy": 0.30027173913043476,
+      "gate1": {
+        "name": "Label Permutation",
+        "metric": 0.24988677536231885,
+        "threshold": 0.3,
+        "passed": "True"
+      },
+      "topic_holdout_accuracy": 0.2620523804730402,
+      "gate2": {
+        "name": "Topic Holdout",
+        "metric": 0.8727174299916634,
+        "threshold": 0.7,
+        "passed": "True"
+      },
+      "gate3": {
+        "name": "Confound Check",
+        "metric": 0.05869565217391304,
+        "threshold": 0.1,
+        "passed": true
+      },
+      "gate4": {
+        "name": "Random Features",
+        "metric": 0.2554347826086957,
+        "threshold": 0.35,
+        "passed": true
+      },
+      "gate5": {
+        "name": "Stability",
+        "metric": 0.016125318371675725,
+        "threshold": 0.05,
+        "passed": "True"
+      },
+      "all_passed": "True",
+      "gates_passed": "5",
+      "config": {
+        "name": "Adversarial (p=20, n=50)",
+        "penalty": 20,
+        "n_features": 50,
+        "model": "logistic"
+      }
+    },
+    {
+      "n_samples": 2208,
+      "n_features": 75,
+      "n_classes": 4,
+      "chance": 0.25,
+      "work_accuracy": 0.3532608695652174,
+      "gate1": {
+        "name": "Label Permutation",
+        "metric": 0.2539175724637681,
+        "threshold": 0.3,
+        "passed": "True"
+      },
+      "topic_holdout_accuracy": 0.2745044710065546,
+      "gate2": {
+        "name": "Topic Holdout",
+        "metric": 0.7770588102339392,
+        "threshold": 0.7,
+        "passed": "True"
+      },
+      "gate3": {
+        "name": "Confound Check",
+        "metric": 0.10036231884057971,
+        "threshold": 0.1,
+        "passed": false
+      },
+      "gate4": {
+        "name": "Random Features",
+        "metric": 0.24094202898550723,
+        "threshold": 0.35,
+        "passed": true
+      },
+      "gate5": {
+        "name": "Stability",
+        "metric": 0.023211731365773064,
+        "threshold": 0.05,
+        "passed": "True"
+      },
+      "all_passed": false,
+      "gates_passed": "4",
+      "config": {
+        "name": "Adversarial (p=20, n=75)",
+        "penalty": 20,
+        "n_features": 75,
+        "model": "logistic"
+      }
+    },
+    {
+      "n_samples": 2208,
+      "n_features": 100,
+      "n_classes": 4,
+      "chance": 0.25,
+      "work_accuracy": 0.4116847826086957,
+      "gate1": {
+        "name": "Label Permutation",
+        "metric": 0.25403079710144927,
+        "threshold": 0.3,
+        "passed": "True"
+      },
+      "topic_holdout_accuracy": 0.3196513507734223,
+      "gate2": {
+        "name": "Topic Holdout",
+        "metric": 0.7764468454430324,
+        "threshold": 0.7,
+        "passed": "True"
+      },
+      "gate3": {
+        "name": "Confound Check",
+        "metric": 0.16422101449275361,
+        "threshold": 0.1,
+        "passed": false
+      },
+      "gate4": {
+        "name": "Random Features",
+        "metric": 0.2694746376811594,
+        "threshold": 0.35,
+        "passed": true
+      },
+      "gate5": {
+        "name": "Stability",
+        "metric": 0.011344979155288303,
+        "threshold": 0.05,
+        "passed": "True"
+      },
+      "all_passed": false,
+      "gates_passed": "4",
+      "config": {
+        "name": "Adversarial (p=20, n=100)",
+        "penalty": 20,
+        "n_features": 100,
+        "model": "logistic"
+      }
+    }
+  ]
+}

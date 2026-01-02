@@ -192,15 +192,18 @@ class CalibrationEngine:
         thresholds = self.thresholds["gate_1"]
 
         async with self.pool.acquire() as conn:
-            # Get style residuals with translator labels and meaning_anchor_id for grouping
+            # Get style residuals with translator labels and translation_id for grouping
+            # EXCLUDE 'Loeb Translator' - it's a catch-all, not a single style
             data = await conn.fetch("""
                 SELECT
-                    sr.residual_vector,
+                    sr.residual,
                     sr.translator_id,
-                    sr.meaning_anchor_id
+                    sr.translation_id
                 FROM style_residuals sr
-                WHERE sr.residual_vector IS NOT NULL
+                JOIN translators t ON sr.translator_id = t.id
+                WHERE sr.residual IS NOT NULL
                   AND sr.translator_id IS NOT NULL
+                  AND t.name != 'Loeb Translator'
             """)
 
             if len(data) < 100:
@@ -210,13 +213,21 @@ class CalibrationEngine:
                     "n_samples": len(data)
                 }
 
-            # Prepare data
-            X = np.array([
-                np.frombuffer(d['residual_vector'], dtype=np.float32)
-                for d in data
-            ])
+            # Prepare data - parse pgvector format
+            X = []
+            for d in data:
+                residual = d['residual']
+                if isinstance(residual, str):
+                    s = residual.strip()
+                    if s.startswith('[') and s.endswith(']'):
+                        s = s[1:-1]
+                    vec = np.array([float(x.strip()) for x in s.split(',') if x.strip()])
+                else:
+                    vec = np.array(list(residual))
+                X.append(vec)
+            X = np.array(X)
             y = np.array([d['translator_id'] for d in data])
-            groups = np.array([d['meaning_anchor_id'] for d in data])
+            groups = np.array([d['translation_id'] for d in data])
 
             # Get unique translators
             unique_translators = np.unique(y)
@@ -248,9 +259,9 @@ class CalibrationEngine:
                 y_train, y_test = y_mapped[train_idx], y_mapped[test_idx]
 
                 # Train logistic regression (or other classifier)
+                # Note: multi_class parameter removed - sklearn 1.2+ uses multinomial by default for lbfgs
                 clf = LogisticRegression(
                     max_iter=1000,
-                    multi_class='multinomial',
                     solver='lbfgs',
                     class_weight='balanced'
                 )
@@ -289,7 +300,7 @@ class CalibrationEngine:
             )
 
             # NMI for clustering validation
-            kmeans = KMeans(n_clusters=n_translators, random_state=42)
+            kmeans = KMeans(n_clusters=n_translators, random_state=42, n_init=10)
             cluster_labels = kmeans.fit_predict(X)
             nmi = normalized_mutual_info_score(y_mapped, cluster_labels)
             ari = adjusted_rand_score(y_mapped, cluster_labels)

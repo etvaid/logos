@@ -288,16 +288,12 @@ async def main():
         
         for profile in profiles:
             # Get or create author entry
-            # Check if author exists first
-            author_id = await conn.fetchval(
-                "SELECT id FROM authors WHERE name_en = $1", profile.name
-            )
-            if not author_id:
-                author_id = await conn.fetchval("""
-                    INSERT INTO authors (name_en, language)
-                    VALUES ($1, 'english')
-                    RETURNING id
-                """, profile.name)
+            author_id = await conn.fetchval("""
+                INSERT INTO authors (name_en, language, genre)
+                VALUES ($1, 'english', ARRAY['translation'])
+                ON CONFLICT (name_en) DO UPDATE SET updated_at = NOW()
+                RETURNING id
+            """, profile.name)
             
             # Store style vector
             await conn.execute("""

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGOS Study Report: Q Source Reconstruction</title>
+    <style>
+        :root {
+            --pass: #22c55e;
+            --fail: #ef4444;
+            --warn: #f59e0b;
+            --bg: #0f172a;
+            --card: #1e293b;
+            --text: #e2e8f0;
+            --accent: #3b82f6;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'SF Mono', 'Consolas', monospace;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+        h2 {
+            font-size: 1.25rem;
+            color: var(--accent);
+            margin: 1.5rem 0 1rem;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 0.5rem;
+        }
+        .subtitle {
+            color: #94a3b8;
+            margin-bottom: 2rem;
+        }
+        .revolutionary {
+            background: linear-gradient(90deg, #f59e0b, #ef4444);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+        .card {
+            background: var(--card);
+            border-radius: 8px;
+            padding: 1.25rem;
+            border: 1px solid #334155;
+        }
+        .card-title {
+            font-size: 0.875rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+        }
+        .metric {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #fff;
+        }
+        .metric-small {
+            font-size: 1rem;
+            color: #94a3b8;
+        }
+        .pass { color: var(--pass); }
+        .fail { color: var(--fail); }
+        .warn { color: var(--warn); }
+        .gate-list {
+            list-style: none;
+        }
+        .gate-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #334155;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .gate-list li:last-child { border-bottom: none; }
+        .gate-status {
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+        .gate-status.pass { background: rgba(34, 197, 94, 0.2); }
+        .gate-status.fail { background: rgba(239, 68, 68, 0.2); }
+        .feature-bar {
+            display: flex;
+            align-items: center;
+            margin: 0.5rem 0;
+        }
+        .feature-name {
+            width: 80px;
+            font-size: 0.875rem;
+        }
+        .feature-fill {
+            height: 8px;
+            background: var(--accent);
+            border-radius: 4px;
+            margin-left: 0.5rem;
+        }
+        .feature-value {
+            margin-left: 0.5rem;
+            font-size: 0.75rem;
+            color: #94a3b8;
+        }
+        .cluster-tag {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            background: #334155;
+            border-radius: 4px;
+            margin: 0.25rem;
+            font-size: 0.75rem;
+        }
+        .scholarly-box {
+            background: #1e3a5f;
+            border-left: 4px solid var(--accent);
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .scholarly-label {
+            font-size: 0.75rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 0.25rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #334155;
+        }
+        th {
+            color: #94a3b8;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+        .footer {
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid #334155;
+            font-size: 0.75rem;
+            color: #64748b;
+        }
+        @media print {
+            body { background: #fff; color: #000; }
+            .card { border: 1px solid #ccc; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Q Source Reconstruction <span class="revolutionary">★ REVOLUTIONARY</span></h1>
+        <p class="subtitle">Stylometric reconstruction of hypothetical Q document</p>
+
+        <!-- CORE METRICS -->
+        <h2>Core Metrics</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-title">Accuracy (Work-Holdout)</div>
+                <div class="metric">70.0%</div>
+                <div class="metric-small">Work-holdout cross-validation</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Confidence</div>
+                <div class="metric">77.0%</div>
+                <div class="metric-small">Calibrated probability</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Gate Status</div>
+                <div class="metric fail">FAIL</div>
+                <div class="metric-small">3/5 gates passed</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Method Agreement</div>
+                <div class="metric">3/5</div>
+                <div class="metric-small">Function Words validated method</div>
+            </div>
+        </div>
+
+        <!-- FALSIFICATION GATES -->
+        <h2>Falsification Gates (Checklist)</h2>
+        <div class="card">
+            <ul class="gate-list">
+                <li>
+                    <span>Label Permutation</span>
+                    <span>
+                        Real: 70.0% | Perm: 54.0% | Chance: 50.0%
+                        <span class="gate-status pass">PASS</span>
+                    </span>
+                </li>
+                <li>
+                    <span>Topic Holdout</span>
+                    <span>
+                        27.3% on unseen clusters
+                        <span class="gate-status fail">FAIL</span>
+                    </span>
+                </li>
+                <li>
+                    <span>Confound Predictability</span>
+                    <span>
+                        28.0% (should be ~10%)
+                        <span class="gate-status fail">FAIL</span>
+                    </span>
+                </li>
+                <li>
+                    <span>Random Features Baseline</span>
+                    <span>
+                        31.0% (should be ~chance)
+                        <span class="gate-status pass">PASS</span>
+                    </span>
+                </li>
+                <li>
+                    <span>Multi-Resolution Stability</span>
+                    <span>
+                        500t: 70.0% | 1000t: 70.0% | 2000t: 70.0%
+                        <span class="gate-status pass">PASS</span>
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- TOP FEATURES -->
+        <h2>Top Discriminating Features</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-title">Top 5 Function Words</div>
+                
+        <div class="feature-bar">
+            <span class="feature-name">him</span>
+            <div class="feature-fill" style="width: 10px"></div>
+            <span class="feature-value">0.20</span>
+        </div>
+        
+        <div class="feature-bar">
+            <span class="feature-name">were</span>
+            <div class="feature-fill" style="width: 9px"></div>
+            <span class="feature-value">0.20</span>
+        </div>
+        
+        <div class="feature-bar">
+            <span class="feature-name">most</span>
+            <div class="feature-fill" style="width: 9px"></div>
+            <span class="feature-value">0.18</span>
+        </div>
+        
+        <div class="feature-bar">
+            <span class="feature-name">a</span>
+            <div class="feature-fill" style="width: 7px"></div>
+            <span class="feature-value">0.15</span>
+        </div>
+        
+        <div class="feature-bar">
+            <span class="feature-name">them</span>
+            <div class="feature-fill" style="width: 7px"></div>
+            <span class="feature-value">0.15</span>
+        </div>
+        
+            </div>
+            <div class="card">
+                <div class="card-title">Author Distinctive Patterns</div>
+                <div><strong>Loeb Translator:</strong> she: +0.4, some: +0.4, than: +0.3</div><div><strong>A. D. Godley:</strong> were: +0.6, most: +0.6, him: +0.6</div>
+            </div>
+        </div>
+
+        <!-- RESULTS -->
+        <h2>Results</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-title">Cluster Assignments</div>
+                <div><span class="cluster-tag">Loeb Translator</span><span class="cluster-tag">A. D. Godley</span></div>
+            </div>
+            <div class="card">
+                <div class="card-title">Segment Boundaries</div>
+                <div><p>2 authorial segments identified</p></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-title">Data Summary</div>
+            <table>
+                <tr>
+                    <th>Metric</th>
+                    <th>Value</th>
+                </tr>
+                <tr><td>Sample Count</td><td>5000</td></tr>
+                <tr><td>Token Count</td><td>1,131,090</td></tr>
+                <tr><td>Language</td><td>Greek/English</td></tr>
+                <tr><td>Authors Detected</td><td>2</td></tr>
+            </table>
+        </div>
+
+        <!-- SCHOLARLY CONTEXT -->
+        <h2>Scholarly Context</h2>
+        <div class="scholarly-box">
+            <div class="scholarly-label">Consensus View</div>
+            <p>Q is a hypothetical sayings source used by Matthew and Luke</p>
+        </div>
+        <div class="scholarly-box">
+            <div class="scholarly-label">Our Finding</div>
+            <p>Results require further validation</p>
+        </div>
+        <div class="scholarly-box">
+            <div class="scholarly-label">Relationship to Consensus</div>
+            <p class="warn">INCONCLUSIVE</p>
+        </div>
+        <div class="scholarly-box">
+            <div class="scholarly-label">Target Journal</div>
+            <p>Journal of Biblical Literature</p>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <p>Generated by LOGOS Authorship Analysis System</p>
+            <p>Report ID: LOGOS-20260102032113 | Generated: 2026-01-02 03:21:13</p>
+            <p>Method: Function Words Only (Falsification-Validated) | Accuracy: 70.0%</p>
+        </div>
+    </div>
+</body>
+</html>
