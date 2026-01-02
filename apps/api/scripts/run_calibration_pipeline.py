@@ -178,7 +178,7 @@ class CalibrationPipelineRunner:
         all_probs = []
 
         for fold, (train_idx, test_idx) in enumerate(gkf.split(X, y_mapped, groups)):
-            clf = LogisticRegression(max_iter=1000, multi_class='multinomial')
+            clf = LogisticRegression(max_iter=1000)
             clf.fit(X[train_idx], y_mapped[train_idx])
 
             preds = clf.predict(X[test_idx])
@@ -462,36 +462,74 @@ class CalibrationPipelineRunner:
     # ═══════════════════════════════════════════════════════════════════════════════
 
     async def _get_style_residual_data(self) -> List[Dict]:
-        """Get style residuals with translator and anchor info."""
+        """Get style residuals with translator info, sampling across all translators."""
         async with self.pool.acquire() as conn:
+            # Sample up to 500 residuals per translator to ensure diversity
             rows = await conn.fetch("""
-                SELECT
-                    sr.residual_vector,
-                    sr.translator_id,
-                    sr.meaning_anchor_id,
-                    t.name as translator_name
-                FROM style_residuals sr
-                JOIN translators t ON sr.translator_id = t.id
-                WHERE sr.residual_vector IS NOT NULL
-                LIMIT 10000
+                WITH ranked AS (
+                    SELECT
+                        sr.residual,
+                        sr.translator_id,
+                        sr.translation_id,
+                        t.name as translator_name,
+                        ROW_NUMBER() OVER (PARTITION BY sr.translator_id ORDER BY RANDOM()) as rn
+                    FROM style_residuals sr
+                    JOIN translators t ON sr.translator_id = t.id
+                    WHERE sr.residual IS NOT NULL
+                )
+                SELECT residual, translator_id, translation_id, translator_name
+                FROM ranked
+                WHERE rn <= 500
             """)
 
-            return [dict(r) for r in rows]
+            # Parse pgvector format
+            result = []
+            for r in rows:
+                residual = r['residual']
+                if residual is not None:
+                    # Parse vector string "[0.1,0.2,...]" to numpy array
+                    if isinstance(residual, str):
+                        s = residual.strip()
+                        if s.startswith('[') and s.endswith(']'):
+                            s = s[1:-1]
+                        vec = [float(x.strip()) for x in s.split(',') if x.strip()]
+                    else:
+                        vec = list(residual)
+                    result.append({
+                        'residual_vector': vec,
+                        'translator_id': r['translator_id'],
+                        'meaning_anchor_id': r['translation_id'],  # Use translation_id as anchor
+                        'translator_name': r['translator_name']
+                    })
+            return result
 
     async def _compute_translator_profiles_at_window(self, window_size: int) -> Dict[str, np.ndarray]:
         """Compute translator profiles using specific window size."""
-        # For now, use stored residuals (actual implementation would recompute)
+        # For now, use stored centroids (actual implementation would recompute at different windows)
         async with self.pool.acquire() as conn:
             rows = await conn.fetch("""
                 SELECT
                     t.name,
-                    tc.centroid_embedding
+                    tc.centroid
                 FROM translator_centroids tc
                 JOIN translators t ON tc.translator_id = t.id
-                WHERE tc.centroid_embedding IS NOT NULL
+                WHERE tc.centroid IS NOT NULL
             """)
 
-            return {r['name']: np.array(r['centroid_embedding']) for r in rows}
+            profiles = {}
+            for r in rows:
+                centroid = r['centroid']
+                if centroid is not None:
+                    # Parse pgvector format
+                    if isinstance(centroid, str):
+                        s = centroid.strip()
+                        if s.startswith('[') and s.endswith(']'):
+                            s = s[1:-1]
+                        vec = np.array([float(x.strip()) for x in s.split(',') if x.strip()])
+                    else:
+                        vec = np.array(list(centroid))
+                    profiles[r['name']] = vec
+            return profiles
 
     def _compute_f_ratio(self, profiles: Dict[str, np.ndarray]) -> float:
         """Compute F-ratio (between-group / within-group variance)."""
@@ -549,7 +587,7 @@ class CalibrationPipelineRunner:
         async with self.pool.acquire() as conn:
             # Get residuals for each translator
             r1 = await conn.fetch("""
-                SELECT sr.residual_vector
+                SELECT sr.residual
                 FROM style_residuals sr
                 JOIN translators t ON sr.translator_id = t.id
                 WHERE t.name = $1
@@ -557,7 +595,7 @@ class CalibrationPipelineRunner:
             """, t1)
 
             r2 = await conn.fetch("""
-                SELECT sr.residual_vector
+                SELECT sr.residual
                 FROM style_residuals sr
                 JOIN translators t ON sr.translator_id = t.id
                 WHERE t.name = $1
@@ -567,8 +605,17 @@ class CalibrationPipelineRunner:
         if len(r1) < 5 or len(r2) < 5:
             return None
 
-        r1 = [np.array(r['residual_vector']) for r in r1]
-        r2 = [np.array(r['residual_vector']) for r in r2]
+        # Parse pgvector format
+        def parse_vec(raw):
+            if isinstance(raw, str):
+                s = raw.strip()
+                if s.startswith('[') and s.endswith(']'):
+                    s = s[1:-1]
+                return np.array([float(x.strip()) for x in s.split(',') if x.strip()])
+            return np.array(list(raw))
+
+        r1 = [parse_vec(r['residual']) for r in r1]
+        r2 = [parse_vec(r['residual']) for r in r2]
 
         # Split each into train/test
         mid1, mid2 = len(r1) // 2, len(r2) // 2
@@ -599,13 +646,26 @@ class CalibrationPipelineRunner:
         """Get all translator centroids."""
         async with self.pool.acquire() as conn:
             rows = await conn.fetch("""
-                SELECT t.name, tc.centroid_embedding
+                SELECT t.name, tc.centroid
                 FROM translator_centroids tc
                 JOIN translators t ON tc.translator_id = t.id
-                WHERE tc.centroid_embedding IS NOT NULL
+                WHERE tc.centroid IS NOT NULL
             """)
 
-            return {r['name']: np.array(r['centroid_embedding']) for r in rows}
+            centroids = {}
+            for r in rows:
+                centroid = r['centroid']
+                if centroid is not None:
+                    # Parse pgvector format
+                    if isinstance(centroid, str):
+                        s = centroid.strip()
+                        if s.startswith('[') and s.endswith(']'):
+                            s = s[1:-1]
+                        vec = np.array([float(x.strip()) for x in s.split(',') if x.strip()])
+                    else:
+                        vec = np.array(list(centroid))
+                    centroids[r['name']] = vec
+            return centroids
 
     async def _compute_style_family_overlap(
         self,
