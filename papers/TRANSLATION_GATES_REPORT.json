@@ -1,0 +1,394 @@
+{
+  "timestamp": "2026-01-02T22:48:44.850862",
+  "sample_size": 100,
+  "passed": 2,
+  "failed": 98,
+  "pass_rate": 0.02,
+  "results": [
+    {
+      "passage_id": 954,
+      "source_text": "\u03ba\u03b1\u1f76 \u03c4\u1ff6\u03bd\u03b4\u03b5 \u03c4\u1ff6\u03bd \u1f00\u03bd\u03b4\u03c1\u1ff6\u03bd \u03c4\u1f78\u03bd \u1f00\u03c1\u03be\u1f71\u03bc\u03b5\u03bd\u03bf\u03bd \u1f10\u03be\u03b5\u1fe6\u03c1\u03bf\u03bd \u03ba\u03b1\u1f76\n\u03c4\u03bf\u1fd6\u03c2 \u1f51\u03c0\u03b7\u03c1\u1f73\u03c4\u03b1\u03b9\u03c2 \u1f10\u03ba\u1f73\u03bb\u03b5\u03c5\u03bf\u03bd \u1f04\u03b3\u03b5\u03b9\u03bd \u1f10\u03c2 \u03b4\u1f77\u03ba\u03b7\u03bd \u1f10\u03c0\u1f76 \u03c4\u1f78\n\u1f00\u03c1\u03c7\u03b5\u1fd6\u03bf\u03bd...",
+      "translation_text": "bodyguard, he said, \u201cThere is nothing more unlucky than perpetual watching; that is the part of one ...",
+      "overall_passed": false,
+      "gates": [
+        {
+          "name": "T1: Meaning Preservation",
+          "passed": false,
+          "score": 0.4375,
+          "threshold": 0.7,
+          "reasons": [
+            "Number preservation low: 0.0%",
+            "Translation too short: 0.2x source length"
+          ]
+        }
+      ],
+      "timestamp": "2026-01-02T22:48:44.829191"
+    },
+    {
+      "passage_id": 2801,
+      "source_text": "Note: The tonic system has been changed from polytonic to",
+      "translation_text": "\u0391<span class=\"inline\">1. \u03a3\u03a9\u039a\u03a1\u0391\u03a4\u0397\u03a3. <span class=\"inline\">\u03a6\u0391\u0399\u0394\u03a1\u039f\u03a3. <span class=\"inline\">\u03a3\u03a9\u039a\u03a1\u0391\u03a4\u0397\u03a3. <spa...",
+      "overall_passed": false,
+      "gates": [
+        {
+          "name": "T1: Meaning Preservation",
+          "passed": false,
+          "score": 0.5833333333333334,
+          "threshold": 0.7,
+          "reasons": [
+            "Translation too long: 16.1x source length"
+          ]
+        }
+      ],
+      "timestamp": "2026-01-02T22:48:44.829278"
+    },
+    {
+      "passage_id": 424,
+      "source_text": "\u03c4\u03b9\u03c4\u03c1\u03c9\u03c3\u03ba\u1f79\u03bd\u03c4\u03c9\u03bd \u1f24\u03b4\u03b7 \u03c0\u03b1\u03bd\u03c4\u03b1\u03c7\u1f79\u03b8\u03b5\u03bd \u03b1\u1f50\u03c4\u03bf\u1f7b\u03c2, \u03ba\u03b1\u1f76 \u03bf\u1f35\u03b4\u03b5\n\u1f51\u03c0\u03b5\u03c7\u1f7d\u03c1\u03bf\u03c5\u03bd.\n44. \u039a\u03b1\u1f76 \u03b3\u03b5\u03bd\u03bf\u03bc\u1f73\u03bd\u03b7\u03c2 \u03c4\u1fc6\u03c2 \u03bc\u1f71\u03c7\u03b7\u03c2 \u03ba\u03b1\u03b8\u03b1\u03c1\u1fb6\u03c2 \u03b8\u03b7\u03c1\u03b9\u03c9\u03bd,\n...",
+      "translation_text": "took place. These too rushed fiercely upon each other, and Masinissa drove his spear into Hannibal\u2019s...",
+      "overall_passed": false,
+      "gates": [
+        {
+          "name": "T1: Meaning Preservation",
+          "passed": false,
+          "score": 0.5133771929824562,
+          "threshold": 0.7,
+          "reasons": [
+            "Number preservation low: 25.0%",
+            "Translation too short: 0.4x source length",
+            "Negation count mismatch: source=0, trans=3"
+          ]
+        }
+      ],
+      "timestamp": "2026-01-02T22:48:44.829492"
+    },
+    {
+      "passage_id": 3424,
+      "source_text": "Produced by Sophia Canoni. Thanks to George Canonis for",
+      "translation_text": "routed the Barbarians with slaughter, and then captured them and their camp, which was full of all s...",
+      "overall_passed": false,
+      "gates": [
+        {
+          "name": "T1: Meaning Preservation",
+          "passed": false,
+          "score": 0.5833333333333334,
+          "threshold": 0.7,
+          "reasons": [
+            "Translation too long: 30.4x source length"
+          ]
+        }
+      ],
+      "timestamp": "2026-01-02T22:48:44.829553"
+    },
+    {
+      "passage_id": 1524,
+      "source_text": "Produced by Sophia Canoni book provided by Iason Konstantinidis",
+      "translation_text": "up to us and greeted us like old acquaintances, took us with them, put us to sleep and entertained u...",
+      "overall_passed": false,
+      "gates": [
+        {
+          "name": "T1: Meaning Preservation",
+          "passed": false,
+          "score": 0.5833333333333334,
+          "threshold": 0.7,
+          "reasons": [
+            "Translation too long: 32.4x source length"
+          ]
+        }
+      ],
+      "timestamp": "2026-01-02T22:48:44.829621"
+    },
+    {
+      "passage_id": 1602,
+      "source_text": "\u03c4\u1f77\u03ba\u03c4\u03b5\u03b9, \u1f21 <\u03b4\u1f72>16 \u03c0\u03b9\u03bc\u03b5\u03bb\u1f74 \u03bf\u1f37\u03b1 \u1f14\u03bb\u03b1\u03b9\u03bf\u03bd \u1f00\u03c0\u1fbf \u03b1\u1f50\u03c4\u03bf\u1fe6 \u03bb\u03b5\u1f77\u03b2\u03b5\u03c4\u03b1\u03b9.17\n\u03c4\u03bf\u1fe6\u03c4\u03bf \u1f31\u03b5\u03c1\u1f70\u03bd \u1f10\u03c3\u03b8\u1fc6\u03c4\u03b1 \u03c0\u03bf\u03b9\u03bf\u1fe6\u03bd\u03c4\u03b1\u03b9 \u03ba\u03b1\u1f76 \u03b5\u1f34 \u03c4\u03b9\u03c2 \u1f15\u03c4\u03b5...",
+      "translation_text": "rested in their chairs, and Iarchas said to the boy, \u201cBring out the throne of Phraotes for the wise ...",
+      "overall_passed": false,
+      "gates": [
+        {
+          "name": "T1: Meaning Preservation",
+          "passed": false,
+          "score": 0.5674019607843137,
+          "threshold": 0.7,
+          "reasons": [
+            "Number preservation low: 25.0%",
+            "Translation too short: 0.3x source length"
+          ]
+        }
+      ],
+      "timestamp": "2026-01-02T22:48:44.829837"
+    },
+    {
+      "passage_id": 2307,
+      "source_text": "1\u1f27\u03c2 supplied by Krebs.\n2\u03b1\u1f50\u03c4\u1f78\u03bd Bs., \u03b1\u1f50\u03c4\u1f78 Ms.\n3\u1f00\u03bd\u03c4\u03b5\u03bb\u03c0\u1f77\u03c3\u03b1\u03bd\u03c4\u03b1\u03c2\nBk., \u1f00\u03bd\u03c4\u03b5\u03bb\u03c0\u1f77\u03c3\u03b1\u03c2 Ms.\n4\u03c4\u1ff6\u03bd \u03b1\u1f50\u03c4\u1ff6\u03bd \u03c4\u03bf\u1f7b\u03c4\u03c9\u03bd v. ...",
+      "translation_text": "Tzetzes, Chil. 6, 551\u201355. your anger against your countrymen, your friends, your temples, your tombs...",
+      "overall_passed": false,
+      "gates": [
+        {
+          "name": "T1: Meaning Preservation",
+          "passed": false,
+          "score": 0.4079724409448819,
+          "threshold": 0.7,
+          "reasons": [
+            "Number preservation low: 0.0%",
+            "Translation too short: 0.4x source length",
+            "Negation count mismatch: source=0, trans=5"
+          ]
+        }
+      ],
+      "timestamp": "2026-01-02T22:48:44.830038"
+    },
+    {
+      "passage_id": 2066,
+      "source_text": "\u03c3\u2019 \u03b5\u03ba\u03b5\u03af\u03bd\u03bf\u03c5\u03c2 \u03c0\u2019 \u03b1\u03b3\u03b1\u03c0\u03bf\u03cd\u03bc\u03b5;",
+      "translation_text": "But take courage, my son! This sickness of mine returns fiercely and swiftly departs; but, I implore...",
+      "overall_passed": false,
+      "gates": [
+        {
+          "name": "T1: Meaning Preservation",
+          "passed": false,
+          "score": 0.4166666666666667,
+          "threshold": 0.7,
+          "reasons": [
+            "Translation too long: 18.0x source length",
+            "Negation count mismatch: source=0, trans=4"
+          ]
+        }
+      ],
+      "timestamp": "2026-01-02T22:48:44.830065"
+    },
+    {
+      "passage_id": 1012,
+      "source_text": "cap. ii\u03b4\u03bf\u03c1\u03c5\u03c6\u03bf\u03c1\u03b5\u1fd6\u03c3\u03b8\u03b1\u03b9\u0387 \u0394\u1f73\u03ba\u03bc\u03bf\u03bd \u03c4\u03b5 \u03c4\u1f74\u03bd \u1f10\u03b3\u03b3\u1f7a\u03c2 \u039a\u03b5\u03bb\u03c4\u03b9\u03ba\u1f74\u03bd\n\u1f51\u03c0\u03b5\u03c1\u03bf\u03c1\u1fb6\u03c4\u03b5 \u1f14\u03c7\u03bf\u03bd\u03c4\u03b1, \u03ba\u03b1\u1f76 \u03c4\u1f79\u03bd\u03b4\u03b5 \u03c4\u03bf\u1fd6\u03c2 \u1f04\u03bb\u03bb\u03bf\u03b9\u03c2 \u1f41\u03bc\u03bf\u1f77\u03c9\u03c2\n\u03b1\u1f50...",
+      "translation_text": "incur for the legacy which my father directed to be given to the people, and the haste involved in i...",
+      "overall_passed": false,
+      "gates": [
+        {
+          "name": "T1: Meaning Preservation",
+          "passed": false,
+          "score": 0.5234133126934984,
+          "threshold": 0.7,
+          "reasons": [
+            "Number preservation low: 25.0%",
+            "Translation too short: 0.4x source length",
+            "Negation count mismatch: source=0, trans=4"
+          ]
+        }
+      ],
+      "timestamp": "2026-01-02T22:48:44.830272"
+    },
+    {
+      "passage_id": 711,
+      "source_text": "\u1f10\u03c0\u1f73\u03c0\u03bb\u03b5\u03bf\u03bd. \u03b3\u03b5\u03c5\u03c3\u1f71\u03bc\u03b5\u03bd\u03bf\u03b9 \u03b4\u1f72 \u03ba\u03b5\u03c1\u03b4\u1ff6\u03bd \u03bc\u03b5\u03b3\u1f71\u03bb\u03c9\u03bd, \u03bf\u1f50\u03b4\u1fbf\n\u1f21\u03c4\u03c4\u03c9\u03bc\u1f73\u03bd\u03bf\u03c5 \u03ba\u03b1\u1f76 \u03c3\u03c0\u03b5\u03bd\u03b4\u03bf\u03bc\u1f73\u03bd\u03bf\u03c5 \u03c4\u03bf\u1fe6 \u039c\u03b9\u03b8\u03c1\u03b9\u03b4\u1f71\u03c4\u03bf\u03c5 \u03ba\u03b1\u1f76\n\u1f00\u03bd\u03b1\u03c7\u03c9\u03c1\u03bf\u1fe6\u03bd\u03c4...",
+      "translation_text": "and among others the praetor of Sicily on the Sicilian coast itself. No sea could be navigated in sa...",
+      "overall_passed": false,
+      "gates": [
+        {
+          "name": "T1: Meaning Preservation",
+          "passed": false,
+          "score": 0.5275779376498801,
+          "threshold": 0.7,
+          "reasons": [
+            "Number preservation low: 33.3%",
+            "Translation too short: 0.4x source length",
+            "Negation count mismatch: source=0, trans=6"
+          ]
+        }
+      ],
+      "timestamp": "2026-01-02T22:48:44.830464"
+    },
+    {
+      "passage_id": 2869,
+      "source_text": "\u03bb\u1f73\u03b3\u03b5\u03b9\u03c2, \u03ba\u03b1\u1f76 \u03c4\u03bf\u1fe6 \u1f11\u03c4\u03b1\u1f77\u03c1\u03bf\u03c5 \u03c3\u03c5\u03c7\u03bd\u1f78\u03bd \u03b4\u03b9\u03b1\u03bc\u03b1\u03c1\u03c4\u1f71\u03bd\u03b5\u03b9\u03c2, \u03b5\u1f30\n\u03b1\u1f50\u03c4\u1f78\u03bd \u03bf\u1f55\u03c4\u03c9\u03c2 \u1f21\u03b3\u03b5\u1fd6 \u03c4\u03b9\u03bd\u1f70 \u03c8\u03bf\u03c6\u03bf\u03b4\u03b5\u1fb6. \u1f34\u03c3\u03c9\u03c2 \u03b4\u1f72 \u03ba\u03b1\u1f76\n\u03bb\u1f77\u03bc\u03bd\u03b7\u03bd \u1f23\u03bd...",
+      "translation_text": "river forms is called the Styx. Having poured in there and gained formidable force in the water it d...",
+      "overall_passed": false,
+      "gates": [
+        {
+          "name": "T1: Meaning Preservation",
+          "passed": false,
+          "score": 0.3482142857142857,
+          "threshold": 0.7,
+          "reasons": [
+            "Number preservation low: 14.3%",
+            "Translation too short: 0.2x source length",
+            "Negation count mismatch: source=0, trans=3"
+          ]
+        }
+      ],
+      "timestamp": "2026-01-02T22:48:44.830750"
+    },
+    {
+      "passage_id": 1178,
+      "source_text": "\u1f24\u03b3\u03b1\u03b3\u03b5 \u03c4\u03bf\u1f7a\u03c2 \u1f00\u03bc\u03c6\u1f76 \u03c4\u1f78\u03bd \u0392\u03c1\u03bf\u1fe6\u03c4\u03bf\u03bd\u0387 \u03c0\u03c1\u1f78\u03c2 \u03b4\u1f72 \u03c4\u1fc7 \u03bc\u03b5\u03c3\u03b7\u03bc\u03b2\u03c1\u1f77\u1fb3\n\u1f15\u03bb\u03bf\u03c2 \u1f14\u03c3\u03c4\u03b9 \u03ba\u03b1\u1f76 \u03b8\u1f71\u03bb\u03b1\u03c3\u03c3\u03b1 \u03bc\u03b5\u03c4\u1fbf \u03b1\u1f50\u03c4\u1f79, \u03ba\u03b1\u03c4\u1f70 \u03b4\u1f72\n\u03c4\u1f74\u03bd \u1f15\u03c9 \u03c4\u1f70...",
+      "translation_text": "compelled to do as he did, for there was no other hill, and the rest of the plain, lying in a sort o...",
+      "overall_passed": false,
+      "gates": [
+        {
+          "name": "T1: Meaning Preservation",
+          "passed": false,
+          "score": 0.515893470790378,
+          "threshold": 0.7,
+          "reasons": [
+            "Number preservation low: 33.3%",
+            "Translation too short: 0.4x source length",
+            "Negation count mismatch: source=0, trans=4"
+          ]
+        }
+      ],
+      "timestamp": "2026-01-02T22:48:44.830952"
+    },
+    {
+      "passage_id": 1367,
+      "source_text": "Produced by Sophia Canoni",
+      "translation_text": "Yes, if you get home safely from disaster. Well, Dirce\u2019s ford is deep for a retreat. Best counsel is...",
+      "overall_passed": false,
+      "gates": [
+        {
+          "name": "T1: Meaning Preservation",
+          "passed": false,
+          "score": 0.4166666666666667,
+          "threshold": 0.7,
+          "reasons": [
+            "Translation too long: 26.5x source length",
+            "Negation count mismatch: source=0, trans=3"
+          ]
+        }
+      ],
+      "timestamp": "2026-01-02T22:48:44.830986"
+    },
+    {
+      "passage_id": 3174,
+      "source_text": "\u03c3\u03c5\u03c3\u03c3\u1f77\u03c4\u03c9\u03bd \u1f15\u03ba\u03b1\u03c3\u03c4\u03bf\u03c2 \u1f00\u03c0\u03bf\u03bc\u03b1\u03b3\u03b4\u03b1\u03bb\u1f77\u03b1\u03bd \u03b5\u1f30\u03c2 \u03c4\u1f74\u03bd \u03c7\u03b5\u1fd6\u03c1\u03b1,\n\u03c4\u03bf\u1fe6 \u03b4\u03b9\u03b1\u03ba\u1f79\u03bd\u03bf\u03c5 \u03c6\u1f73\u03c1\u03bf\u03bd\u03c4\u03bf\u03c2 \u1f00\u03b3\u03b3\u03b5\u1fd6\u03bf\u03bd \u1f10\u03c0\u1f76 \u03c4\u1fc6\u03c2 \u03ba\u03b5\u03c6\u03b1\u03bb\u1fc6\u03c2,\n\u1f14\u03b2\u03b1\u03bb\u03bb\u03b5 \u03c3...",
+      "translation_text": "might come with vigour to the fulness of their times, and struggle successfully and easily with the ...",
+      "overall_passed": false,
+      "gates": [
+        {
+          "name": "T1: Meaning Preservation",
+          "passed": false,
+          "score": 0.6012711864406779,
+          "threshold": 0.7,
+          "reasons": [
+            "Number preservation low: 0.0%",
+            "Translation too short: 0.5x source length"
+          ]
+        }
+      ],
+      "timestamp": "2026-01-02T22:48:44.831179"
+    },
+    {
+      "passage_id": 2782,
+      "source_text": "\u1f21\u03bc\u1fd6\u03bd \u1f21 \u03c8\u03c5\u03c7\u1f74 \u03c0\u03c1\u1f76\u03bd \u1f10\u03bd \u03c4\u1ff7\u03b4\u03b5 \u03c4\u1ff7 \u1f00\u03bd\u03b8\u03c1\u03c9\u03c0\u1f77\u03bd\u1ff3 \u03b5\u1f34\u03b4\u03b5\u03b9 \u03b3\u03b5\u03bd\u1f73\u03c3\u03b8\u03b1\u03b9\u0387 \u1f65\u03c3\u03c4\u03b5 \u03ba\u03b1\u1f76 \u03c4\u03b1\u1f7b\u03c4\u1fc3 \u1f00\u03b8\u1f71\u03bd\u03b1\u03c4\u03bf\u03bd \u1f21 \u03c8\u03c5\u03c7\u1f75 \u03c4\u03b9 \u1f14\u03bf\u03b9\u03ba\u03b5\u03bd \u03b5\u1f36\u03bd\u03b1\u03b9...",
+      "translation_text": "PHAEDO\u201cIndeed, and do you think everyone can give an explanation for what we were just talking about...",
+      "overall_passed": false,
+      "gates": [
+        {
+          "name": "T1: Meaning Preservation",
+          "passed": false,
+          "score": 0.4375,
+          "threshold": 0.7,
+          "reasons": [
+            "Number preservation low: 0.0%",
+            "Translation too short: 0.0x source length"
+          ]
+        }
+      ],
+      "timestamp": "2026-01-02T22:48:44.832588"
+    },
+    {
+      "passage_id": 2800,
+      "source_text": "\u1f21\u03bc\u1fd6\u03bd \u1f21 \u03c8\u03c5\u03c7\u1f74 \u03c0\u03c1\u1f76\u03bd \u1f10\u03bd \u03c4\u1ff7\u03b4\u03b5 \u03c4\u1ff7 \u1f00\u03bd\u03b8\u03c1\u03c9\u03c0\u1f77\u03bd\u1ff3 \u03b5\u1f34\u03b4\u03b5\u03b9 \u03b3\u03b5\u03bd\u1f73\u03c3\u03b8\u03b1\u03b9\u0387 \u1f65\u03c3\u03c4\u03b5 \u03ba\u03b1\u1f76 \u03c4\u03b1\u1f7b\u03c4\u1fc3 \u1f00\u03b8\u1f71\u03bd\u03b1\u03c4\u03bf\u03bd \u1f21 \u03c8\u03c5\u03c7\u1f75 \u03c4\u03b9 \u1f14\u03bf\u03b9\u03ba\u03b5\u03bd \u03b5\u1f36\u03bd\u03b1\u03b9...",
+      "translation_text": "even, but there\u2019s nothing to stop us saying that when we die the souls of some continue to exist, wi...",
+      "overall_passed": false,
+      "gates": [
+        {
+          "name": "T1: Meaning Preservation",
+          "passed": false,
+          "score": 0.3125,
+          "threshold": 0.7,
+          "reasons": [
+            "Number preservation low: 0.0%",
+            "Translation too short: 0.0x source length",
+            "Negation count mismatch: source=1, trans=6"
+          ]
+        }
+      ],
+      "timestamp": "2026-01-02T22:48:44.833862"
+    },
+    {
+      "passage_id": 3276,
+      "source_text": "Produced by Sophia Canoni. Thanks to George Canonis for",
+      "translation_text": "admiration and released him, and handed him back his sword, reaching it down to him from the tribuna...",
+      "overall_passed": false,
+      "gates": [
+        {
+          "name": "T1: Meaning Preservation",
+          "passed": false,
+          "score": 0.4166666666666667,
+          "threshold": 0.7,
+          "reasons": [
+            "Translation too long: 25.7x source length",
+            "Negation count mismatch: source=0, trans=4"
+          ]
+        }
+      ],
+      "timestamp": "2026-01-02T22:48:44.833924"
+    },
+    {
+      "passage_id": 2774,
+      "source_text": "\u1f40\u03bb\u1f77\u03b3\u03b1\u03b9\u03c2 \u1f21\u03bc\u1f73\u03c1\u03b1\u03b9\u03c2 \u1f10\u03ba\u03ba\u03b5\u03c7\u03c5\u03bc\u1f73\u03bd\u03b1\u03b9 \u03b5\u1f30\u03c3\u1f77\u03bd, \u03ba\u03b1\u1f76 \u03c0\u1f71\u03bb\u03b1\u03b9, \u1f66 \u039a\u03c1\u1f77\u03c4\u03c9\u03bd, | \u1f04\u03c1\u03b1 \u03c4\u03b7\u03bb\u03b9\u03ba\u03bf\u1f77\u03b4\u03b5 \u1f04\u03bd\u03b4\u03c1\u03b5\u03c2 \u03c0\u03c1\u1f78\u03c2 \u1f00\u03bb\u03bb\u1f75\u03bb\u03bf\u03c5\u03c2 \u03c3\u03c0\u03bf\u03c5\u03b4\u1fc7 ...",
+      "translation_text": "this process of coming back to life would be from the dead to the living.\u201d\u201cIndeed.\u201d\u201cIn that way too ...",
+      "overall_passed": false,
+      "gates": [
+        {
+          "name": "T1: Meaning Preservation",
+          "passed": false,
+          "score": 0.3125,
+          "threshold": 0.7,
+          "reasons": [
+            "Number preservation low: 0.0%",
+            "Translation too short: 0.0x source length",
+            "Negation count mismatch: source=0, trans=5"
+          ]
+        }
+      ],
+      "timestamp": "2026-01-02T22:48:44.835366"
+    },
+    {
+      "passage_id": 1020,
+      "source_text": "\u03c0\u03b9\u03c0\u03c1\u1f71\u03c3\u03ba\u03bf\u03bd\u03c4\u03b1\u03c2 \u1f40\u03bb\u03b9\u03b3\u1f77\u03c3\u03c4\u03bf\u03c5, \u03b4\u03b9\u1f71 \u03c4\u03b5 \u03b4\u1f77\u03ba\u03b1\u03c2 \u1f00\u03bc\u03c6\u1f77\u03b2\u03bf\u03bb\u03b1\n\u1f22 \u1f10\u03c0\u1f77\u03c6\u03bf\u03b2\u03b1 \u1f14\u03c4\u03b9 \u1f44\u03bd\u03c4\u03b1 \u03ba\u03b1\u1f76 \u03b4\u03b9\u1f70 \u03c4\u1f74\u03bd \u039a\u03b1\u1f77\u03c3\u03b1\u03c1\u03bf\u03c2\n\u03c3\u03c0\u03bf\u03c5\u03b4\u1f75\u03bd. \u1f05\u03c0\u03b5\u03c1 ...",
+      "translation_text": "having no farther suspicions, returned to Smyrna, leaving a few of their number to follow him. Dolab...",
+      "overall_passed": false,
+      "gates": [
+        {
+          "name": "T1: Meaning Preservation",
+          "passed": false,
+          "score": 0.4739583333333333,
+          "threshold": 0.7,
+          "reasons": [
+            "Number preservation low: 0.0%",
+            "Translation too short: 0.3x source length"
+          ]
+        }
+      ],
+      "timestamp": "2026-01-02T22:48:44.835549"
+    },
+    {
+      "passage_id": 369,
+      "source_text": "\u1f10\u03bd\u03b4\u1f79\u03bd\u03c4\u03c9\u03bd \u03b5\u1f37\u03bb\u03b5 \u03a6\u1f71\u03b2\u03b9\u03bf\u03c2 \u039c\u1f71\u03be\u03b9\u03bc\u03bf\u03c2 \u03bd\u03c5\u03ba\u03c4\u1f79\u03c2, \u03ba\u03b1\u1f76 \u03ba\u03c4\u03b5\u1f77\u03bd\u03b1\u03c2\n\u1f45\u03c3\u03bf\u03c5\u03c2 \u03b7\u1f57\u03c1\u03b5 \u039b\u03b9\u03b2\u1f7b\u03c9\u03bd, \u03c6\u03c1\u03bf\u03c5\u03c1\u1f70\u03bd \u1f10\u03c0\u1f73\u03c3\u03c4\u03b7\u03c3\u03b5 \u03c4\u1fc7 \u03c0\u1f79\u03bb\u03b5\u03b9.\ncap. ...",
+      "translation_text": "Carthaginians. The Roman garrison in Thurii escaped secretly by sea to Brundusium. 35. The Metaponti...",
+      "overall_passed": false,
+      "gates": [
+        {
+          "name": "T1: Meaning Preservation",
+          "passed": false,
+          "score": 0.6512218045112781,
+          "threshold": 0.7,
+          "reasons": [
+            "Number preservation low: 40.0%",
+            "Translation too short: 0.4x source length"
+          ]
+        }
+      ],
+      "timestamp": "2026-01-02T22:48:44.835737"
+    }
+  ]
+}
