@@ -1,0 +1,9 @@
+{
+  "timestamp": "2026-01-02T22:56:40.400902",
+  "source_texts_processed": 20,
+  "anchors_created": 20,
+  "total_translations": 965,
+  "avg_translations_per_source": 48.25,
+  "has_multilingual_model": true,
+  "avg_embedding_variance": 0.09789146997500212
+}
