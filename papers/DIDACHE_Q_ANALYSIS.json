@@ -1,0 +1,121 @@
+{
+  "timestamp": "2026-01-02T21:36:11.415729",
+  "summary": {
+    "sections_analyzed": 7,
+    "q1_sections": 4,
+    "q2_sections": 3,
+    "q1_avg_similarity": 0.4729872494294725,
+    "q2_avg_similarity": 0.7086253797797909
+  },
+  "findings": {
+    "lords_prayer_q_similarity": 0.6976878019044088,
+    "eschatological_q2_similarity": 0.5538138813471122
+  },
+  "results": [
+    {
+      "section": "Did_1:1-2",
+      "expected_layer": "Q1",
+      "q_parallel": "Q 6:31 (Golden Rule)",
+      "similarities": {
+        "Q1": 0.3833520441010259,
+        "Q2": 0.3906472299718174,
+        "Q3": 0.5187574118719391,
+        "Q_overall": 0.4048499250515797
+      },
+      "best_match": "Q3",
+      "best_similarity": 0.5187574118719391,
+      "layer_match": false,
+      "word_count": 51
+    },
+    {
+      "section": "Did_1:3-4",
+      "expected_layer": "Q1",
+      "q_parallel": "Q 6:27-28, 32-33 (Love Enemies)",
+      "similarities": {
+        "Q1": 0.23140671295296072,
+        "Q2": 0.19242376535222308,
+        "Q3": 0.32219143062800504,
+        "Q_overall": 0.23518422061155875
+      },
+      "best_match": "Q3",
+      "best_similarity": 0.32219143062800504,
+      "layer_match": false,
+      "word_count": 49
+    },
+    {
+      "section": "Did_1:5",
+      "expected_layer": "Q1",
+      "q_parallel": "Q 6:30 (Give to those who ask)",
+      "similarities": {
+        "Q1": 0.5570536817293248,
+        "Q2": 0.46218156721854453,
+        "Q3": 0.5076960008450905,
+        "Q_overall": 0.5542270501503428
+      },
+      "best_match": "Q1",
+      "best_similarity": 0.5570536817293248,
+      "layer_match": true,
+      "word_count": 27
+    },
+    {
+      "section": "Did_8:2",
+      "expected_layer": "Q1",
+      "q_parallel": "Q 11:2-4 (Lord's Prayer)",
+      "similarities": {
+        "Q1": 0.6958033257561016,
+        "Q2": 0.6527678499736823,
+        "Q3": 0.5243306434753099,
+        "Q_overall": 0.6976878019044088
+      },
+      "best_match": "Q_overall",
+      "best_similarity": 0.6976878019044088,
+      "layer_match": false,
+      "word_count": 84
+    },
+    {
+      "section": "Did_16:1-2",
+      "expected_layer": "Q2",
+      "q_parallel": "Q 12:35-40 (Be Ready)",
+      "similarities": {
+        "Q1": 0.7009705368513441,
+        "Q2": 0.4808259139872756,
+        "Q3": 0.6387328440121725,
+        "Q_overall": 0.6813203865545185
+      },
+      "best_match": "Q1",
+      "best_similarity": 0.7009705368513441,
+      "layer_match": false,
+      "word_count": 56
+    },
+    {
+      "section": "Did_16:3-4",
+      "expected_layer": "Q2",
+      "q_parallel": "Q 17:23-24, 17:37 (Day of Son of Man)",
+      "similarities": {
+        "Q1": 0.6572735469447648,
+        "Q2": 0.5579152315601819,
+        "Q3": 0.4943058591683342,
+        "Q_overall": 0.6489950510888045
+      },
+      "best_match": "Q1",
+      "best_similarity": 0.6572735469447648,
+      "layer_match": false,
+      "word_count": 46
+    },
+    {
+      "section": "Did_16:6-8",
+      "expected_layer": "Q2",
+      "q_parallel": "Q 17:24 (Lightning), cf. Mark 13",
+      "similarities": {
+        "Q1": 0.8100787162647596,
+        "Q2": 0.6227004984938792,
+        "Q3": 0.6395557027259572,
+        "Q_overall": 0.7955607016960496
+      },
+      "best_match": "Q1",
+      "best_similarity": 0.8100787162647596,
+      "layer_match": false,
+      "word_count": 48
+    }
+  ]
+}
