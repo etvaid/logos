@@ -1,0 +1,69 @@
+{
+  "timestamp": "2026-01-02T22:13:44.444594",
+  "audits_passed": 3,
+  "audits_total": 4,
+  "all_passed": false,
+  "results": {
+    "audit_a": {
+      "audit": "Strict Split",
+      "passed": false,
+      "train_pericopes": 106,
+      "test_pericopes": 26,
+      "overlap_count": 0,
+      "text_overlap_count": 2,
+      "issues": [
+        "Text overlap detected: 2 identical passages"
+      ]
+    },
+    "audit_b": {
+      "audit": "Alignment Sabotage",
+      "passed": true,
+      "baseline_f1": 0.7070902776724648,
+      "permuted_f1": 0.7049275862564899,
+      "swapped_f1": 0.788261421484739,
+      "noise_f1": 0.43256639359484944,
+      "shuffle_f1": 0.4437747035573122,
+      "shuffle_drop": 0.2633155741151526,
+      "noise_drop": 0.27452388407761535,
+      "issues": []
+    },
+    "audit_c": {
+      "audit": "Hyperparameter Leakage",
+      "passed": true,
+      "regular_cv_f1": 0.7070902776724648,
+      "nested_cv_f1": 0.7271869013913418,
+      "gap": -0.020096623718876994,
+      "max_acceptable_gap": 0.1,
+      "issues": []
+    },
+    "audit_d": {
+      "audit": "Feature Leakage",
+      "passed": true,
+      "max_correlation": 0.4189479708718065,
+      "max_single_f1": 0.5337997082888167,
+      "top_correlations": [
+        [
+          59,
+          0.4189479708718065
+        ],
+        [
+          56,
+          0.3356411943927262
+        ],
+        [
+          53,
+          0.28446385587052514
+        ],
+        [
+          54,
+          0.27818824054428115
+        ],
+        [
+          38,
+          0.15168315827158607
+        ]
+      ],
+      "issues": []
+    }
+  }
+}
