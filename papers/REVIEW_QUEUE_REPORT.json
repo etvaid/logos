@@ -1,0 +1,403 @@
+{
+  "timestamp": "2026-01-03T00:10:36.191578",
+  "translations_analyzed": 500,
+  "items_in_queue": 380,
+  "priority_threshold": 10,
+  "issue_counts": {
+    "length_anomaly": 333,
+    "missing_anchor": 256,
+    "meaning_drift": 134
+  },
+  "top_10_items": [
+    {
+      "translation_id": 547,
+      "translator_id": 13,
+      "translator_name": "A. S. Way",
+      "source_text_id": 13707,
+      "source_author": "Unknown",
+      "source_work": "Unknown",
+      "priority_score": 82,
+      "issues": [
+        {
+          "issue_type": "meaning_drift",
+          "severity": "critical",
+          "description": "Meaning score critically low (0.18)",
+          "value": 0.18000000715255737,
+          "threshold": 0.4
+        },
+        {
+          "issue_type": "length_anomaly",
+          "severity": "warning",
+          "description": "Translation too short (ratio: 0.14)",
+          "value": 0.14285714285714285,
+          "threshold": 0.4
+        },
+        {
+          "issue_type": "missing_anchor",
+          "severity": "info",
+          "description": "No meaning anchor available for source text",
+          "value": null,
+          "threshold": null
+        }
+      ],
+      "issue_summary": "1 critical, 1 warning: meaning_drift, length_anomaly",
+      "meaning_score": 0.18000000715255737,
+      "style_score": 1.0,
+      "fluency_score": 0.9399999976158142,
+      "overall_score": 0.49300000071525574,
+      "source_snippet": "\u1f10\u03bb\u03b8\u1f79\u03bd\u03c4\u03b1\u03c2 \u1f14\u03b4\u03b7\u03c3\u03b5\u03bd, \u03b1\u1f30\u03c4\u03b9\u1f7d\u03bc\u03b5\u03bd\u03bf\u03c2 \u03bf\u1f50 \u03c0\u03c1\u1f73\u03c3\u03b2\u03b5\u03b9\u03c2 \u1f00\u03bb\u03bb\u1f70\n\u03ba\u03b1\u03c4\u03b1\u03c3\u03ba\u1f79\u03c0\u03bf\u03c5\u03c2 \u1f10\u03bb\u03b8\u03b5\u1fd6\u03bd. \u1f08\u03bd\u1f77\u03ba\u03b9\u03bf\u03c2 \u03b4\u1f72 \u1fec\u03c9\u03bc\u03b1\u1f77\u03c9\u03bd\n\u03c3\u03c4\u03c1\u03b1\u03c4\u03b7\u03b3\u1f78\u03c2 \u03bb\u1f73\u03bc\u03b2\u03bf\u03c5\u03c2 \u03c4\u03b5 \u03c4\u03bf\u1fe6 \u0393\u03b5\u03bd\u03b8\u1f77\u03bf\u03c5 \u03c4\u03b9\u03bd\u1f70\u03c2 \u03b5\u1f37\u03bb\u03b5\u03bd\n\u1f10\u03c0\u03b9\u03c0\u03bb\u03b5\u1f7b\u03c3\u03b1\u03c2, \u03ba\u03b1\u1f76 \u03ba\u03b1\u03c4\u1f70 \u03b3\u1fc6\u03bd \u03b1\u1f50\u03c4\u1ff7 \u03c3\u03c5\u03bd\u03b5\u03bd\u03b5\u03c7\u03b8\u03b5\u1f76\u03c2\nCAP. II\u1f10\u03ba\u03c1\u1f71\u03c4\u03b5\u03b9 \u03c4\u1f74\u03bd \u03bc\u1f71\u03c7\u03b7\u03bd, \u03ba\u03b1\u1f76",
+      "translation_snippet": "of the army, Antony brought another detachment to Caesar\u2019s aid in Macedonia, he also crossing the Adriatic in mid-winter, and Gabinius led fifteen cohorts of foot and 3000 horse for him by way of Illy"
+    },
+    {
+      "translation_id": 1089,
+      "translator_id": 15,
+      "translator_name": "W. H. S. Jones",
+      "source_text_id": 13870,
+      "source_author": "Unknown",
+      "source_work": "Unknown",
+      "priority_score": 82,
+      "issues": [
+        {
+          "issue_type": "meaning_drift",
+          "severity": "critical",
+          "description": "Meaning score critically low (0.18)",
+          "value": 0.18000000715255737,
+          "threshold": 0.4
+        },
+        {
+          "issue_type": "length_anomaly",
+          "severity": "warning",
+          "description": "Translation too short (ratio: 0.08)",
+          "value": 0.08166189111747851,
+          "threshold": 0.4
+        },
+        {
+          "issue_type": "missing_anchor",
+          "severity": "info",
+          "description": "No meaning anchor available for source text",
+          "value": null,
+          "threshold": null
+        }
+      ],
+      "issue_summary": "1 critical, 1 warning: meaning_drift, length_anomaly",
+      "meaning_score": 0.18000000715255737,
+      "style_score": 0.9371784329414368,
+      "fluency_score": 1.0,
+      "overall_score": 0.4985767602920532,
+      "source_snippet": "\u1f00\u03bd\u03b4\u03c1\u1f76 \u03c4\u03bf\u03c3\u1ff7\u03b4\u03b5, \u03ba\u03c1\u1f7b\u03c6\u03b1 \u03b4\u1fbf \u1f10\u03c0\u1f73\u03c3\u03c4\u03b5\u03bb\u03bb\u03b5\u03bd \u1f08\u03bd\u03c4\u03c9\u03bd\u1f77\u1ff3.\n\u03ba\u03b1\u1f76 \u1f41 \u1f08\u03bd\u03c4\u1f7d\u03bd\u03b9\u1f79\u03c2 \u03c4\u03b9 \u03c0\u03b1\u03b8\u1f7c\u03bd \u1f10\u03c0\u1f76 \u03c4\u1fc7 \u03bc\u03b5\u03c4\u03b1\u03b2\u03bf\u03bb\u1fc7\n\u03bf\u1f50\u03c7 \u1f51\u03c0\u1f73\u03c3\u03c4\u03b7 \u03c4\u1f78\u03bd \u1f04\u03bd\u03b4\u03c1\u03b1 \u1f30\u03b4\u03b5\u1fd6\u03bd, \u1f00\u03bb\u03bb\u1fbf \u1f10\u03ba\u1f73\u03bb\u03b5\u03c5\u03c3\u03b5 \u03c4\u1ff7\n\u039a\u03b1\u03bc\u1f77\u03bb\u1ff3 \u03ba\u03c4\u03b5\u1f77\u03bd\u03b1\u03bd\u03c4\u03b1 \u03c4\u1f74\u03bd \u03ba\u03b5\u03c6\u03b1\u03bb\u1f74\u03bd \u1f10\u03c2 \u03b1\u1f51\u03c4\u1f78\u03bd \u1f10\u03ba\u03c0\u1f73\u03bc\u03c8\u03b1\u03b9\u0387\n\u03ba\u03b1\u1f76 \u03c4\u1f74\u03bd \u03ba\u03b5\u03c6\u03b1\u03bb\u1f74\u03bd \u1f30\u03b4\u1f7c\u03bd \u1f10\u03ba\u1f73",
+      "translation_snippet": "the coming year and for the governorship of the other Gaul. He was the next of the murderers after Trebonius to meet punishment, within a year and a half of the assassination. About the same time Minu"
+    },
+    {
+      "translation_id": 491,
+      "translator_id": 12,
+      "translator_name": "J. M. Edmonds",
+      "source_text_id": 13692,
+      "source_author": "Unknown",
+      "source_work": "Unknown",
+      "priority_score": 82,
+      "issues": [
+        {
+          "issue_type": "meaning_drift",
+          "severity": "critical",
+          "description": "Meaning score critically low (0.18)",
+          "value": 0.18000000715255737,
+          "threshold": 0.4
+        },
+        {
+          "issue_type": "length_anomaly",
+          "severity": "warning",
+          "description": "Translation too short (ratio: 0.40)",
+          "value": 0.39705882352941174,
+          "threshold": 0.4
+        },
+        {
+          "issue_type": "missing_anchor",
+          "severity": "info",
+          "description": "No meaning anchor available for source text",
+          "value": null,
+          "threshold": null
+        }
+      ],
+      "issue_summary": "1 critical, 1 warning: meaning_drift, length_anomaly",
+      "meaning_score": 0.18000000715255737,
+      "style_score": 0.9549382328987122,
+      "fluency_score": 0.9399999976158142,
+      "overall_score": 0.4862407445907593,
+      "source_snippet": "\u03b4\u1fbf \u1f00\u03c0\u03bf\u03c1\u1ff6\u03bd \u1f41 \u039c\u03b1\u03b3\u03ba\u1fd6\u03bd\u03bf\u03c2 \u1f10\u03ba\u1f71\u03bb\u03b5\u03b9 \u03a0\u1f77\u03c3\u03c9\u03bd\u03b1 \u03ba\u03b1\u1f76 \u03c4\u03bf\u1f7a\u03c2\n\u1f38\u03c4\u03c5\u03ba\u03b1\u1f77\u03c9\u03bd \u1f04\u03c1\u03c7\u03bf\u03bd\u03c4\u03b1\u03c2, \u1f10\u03c0\u03b9\u03ba\u03bf\u03c5\u03c1\u03b5\u1fd6\u03bd \u03b1\u1f51\u03c4\u1ff7 \u03ba\u03b9\u03bd\u03b4\u03c5\u03bd\u03b5\u1f7b\u03bf\u03bd\u03c4\u03b9\n\u03ba\u03b1\u1f76 \u03c4\u03c1\u03bf\u03c6\u1f70\u03c2 \u03c6\u1f73\u03c1\u03b5\u03b9\u03bd \u03ba\u03b1\u03c4\u1f70 \u03c3\u03c0\u03bf\u03c5\u03b4\u1f75\u03bd. \u03ba\u03b1\u1f76 \u1f41 \u03bc\u1f72\u03bd\n\u1f14\u03bc\u03b5\u03bb\u03bb\u03b5\u03bd \u1f05\u03bc\u1fbf \u1f15\u1ff3 \u03c0\u03c1\u1f78\u03c2 \u03c4\u1ff6\u03bd \u039a\u03b1\u03c1\u03c7\u03b7\u03b4\u03bf\u03bd\u1f77\u03c9\u03bd \u1f10\u03be\u03c9\u03b8\u03bf\u1f7b\u03bc\u03b5\u03bd\u03bf\u03c2\n\u1f10\u03c2 \u03c4\u03bf\u1f7a\u03c2 \u03ba\u03c1\u03b7\u03bc\u03bd\u03bf\u1f7a\u03c2 \u03c3",
+      "translation_snippet": "won. For this reason the enemy, from the hopeless weakness in which I left him, has risen to such strength, and your labour has been made harder by your laziness. If I considered you to blame for this"
+    },
+    {
+      "translation_id": 2838,
+      "translator_id": 20,
+      "translator_name": "Loeb Translator",
+      "source_text_id": 15405,
+      "source_author": "Unknown",
+      "source_work": "Unknown",
+      "priority_score": 82,
+      "issues": [
+        {
+          "issue_type": "meaning_drift",
+          "severity": "critical",
+          "description": "Meaning score critically low (0.18)",
+          "value": 0.18000000715255737,
+          "threshold": 0.4
+        },
+        {
+          "issue_type": "length_anomaly",
+          "severity": "warning",
+          "description": "Translation too short (ratio: 0.31)",
+          "value": 0.3106508875739645,
+          "threshold": 0.4
+        },
+        {
+          "issue_type": "missing_anchor",
+          "severity": "info",
+          "description": "No meaning anchor available for source text",
+          "value": null,
+          "threshold": null
+        }
+      ],
+      "issue_summary": "1 critical, 1 warning: meaning_drift, length_anomaly",
+      "meaning_score": 0.18000000715255737,
+      "style_score": 0.9316861629486084,
+      "fluency_score": 1.0,
+      "overall_score": 0.49775293469429016,
+      "source_snippet": "\u03c0\u03bf\u03c4\u1f72 \u1f14\u03c3\u03c4\u03b1\u03b9. \u03c4\u03b1\u1fe6\u03c4\u1f71 \u03c4\u03b5 \u03bf\u1f56\u03bd \u03c7\u03c1\u1f75, \u1f66 \u03c0\u03b1\u1fd6, \u03be\u03c5\u03bd\u03bd\u03bf\u03b5\u1fd6\u03bd,\n\u03ba\u03b1\u1f76 \u03b5\u1f30\u03b4\u1f73\u03bd\u03b1\u03b9 \u03c4\u1f74\u03bd \u1f10\u03c1\u03b1\u03c3\u03c4\u03bf\u1fe6 \u03c6\u03b9\u03bb\u1f77\u03b1\u03bd, \u1f45\u03c4\u03b9 \u03bf\u1f50 \u03bc\u03b5\u03c4\u1fbf\n\u03b5\u1f50\u03bd\u03bf\u1f77\u03b1\u03c2 \u03b3\u1f77\u03b3\u03bd\u03b5\u03c4\u03b1\u03b9, \u1f00\u03bb\u03bb\u1f70 \u03c3\u03b9\u03c4\u1f77\u03bf\u03c5 \u03c4\u03c1\u1f79\u03c0\u03bf\u03bd, \u03c7\u1f71\u03c1\u03b9\u03bd\n\u03c0\u03bb\u03b7\u03c3\u03bc\u03bf\u03bd\u1fc6\u03c2,\nD\u1f61\u03c2 \u03bb\u1f7b\u03ba\u03bf\u03b9 \u1f04\u03c1\u03bd \u1f00\u03b3\u03b1\u03c0\u1ff6\u03c3\u1fbf, \u1f63\u03c2 \u03c0\u03b1\u1fd6\u03b4\u03b1 \u03c6\u03b9\u03bb\u03bf\u1fe6\u03c3\u03b9\u03bd\n\u1f10\u03c1\u03b1\u03c3\u03c4\u03b1\u1f77.\n19. ",
+      "translation_snippet": "in no other respect than bigness and that\u2019s why it\u2019s bigger, because of its size, and the smaller is smaller in no other respect than its smallness and that is why it\u2019s smaller. I think you\u2019re afraid "
+    },
+    {
+      "translation_id": 708,
+      "translator_id": 13,
+      "translator_name": "A. S. Way",
+      "source_text_id": 13758,
+      "source_author": "Unknown",
+      "source_work": "Unknown",
+      "priority_score": 82,
+      "issues": [
+        {
+          "issue_type": "meaning_drift",
+          "severity": "critical",
+          "description": "Meaning score critically low (0.38)",
+          "value": 0.3799999952316284,
+          "threshold": 0.4
+        },
+        {
+          "issue_type": "length_anomaly",
+          "severity": "warning",
+          "description": "Translation too short (ratio: 0.38)",
+          "value": 0.3787878787878788,
+          "threshold": 0.4
+        },
+        {
+          "issue_type": "missing_anchor",
+          "severity": "info",
+          "description": "No meaning anchor available for source text",
+          "value": null,
+          "threshold": null
+        }
+      ],
+      "issue_summary": "1 critical, 1 warning: meaning_drift, length_anomaly",
+      "meaning_score": 0.3799999952316284,
+      "style_score": 0.9760571718215942,
+      "fluency_score": 0.9399999976158142,
+      "overall_score": 0.6094085574150085,
+      "source_snippet": "\u03b1\u1f56\u03b8\u03b9\u03c2 \u1f00\u03b3\u03c9\u03bd\u03b9\u03b6\u03bf\u03bc\u1f73\u03bd\u03bf\u03c5, \u03c0\u03b1\u03bb\u1f77\u03bd\u03c4\u03c1\u03bf\u03c0\u03bf\u03c2 \u1f26\u03bd \u1f41 \u1f00\u03b3\u1f7d\u03bd, \u03bc\u1f73\u03c7\u03c1\u03b9\n\u03c4\u1f78\u03bd \u039c\u03b9\u03b8\u03c1\u03b9\u03b4\u1f71\u03c4\u03b7\u03bd, \u03c0\u03bb\u03b7\u03b3\u1f73\u03bd\u03c4\u03b1 \u03bb\u1f77\u03b8\u1ff3 \u03c4\u03b5 \u1f10\u03c2 \u03c4\u1f78 \u03b3\u1f79\u03bd\u03c5 \u03ba\u03b1\u1f76\n\u1f51\u03c0\u1f78 \u03c4\u1f78\u03bd \u1f40\u03c6\u03b8\u03b1\u03bb\u03bc\u1f78\u03bd \u03b2\u1f73\u03bb\u03b5\u03b9, \u03ba\u03b1\u03c4\u1f70 \u03c3\u03c0\u03bf\u03c5\u03b4\u1f74\u03bd \u1f00\u03c0\u03bf\u03ba\u03bf\u03bc\u03b9\u03c3\u03b8\u1fc6\u03bd\u03b1\u03b9,\n\u03ba\u03b1\u1f76 \u03c0\u03bf\u03bb\u03bb\u1f70\u03c2 \u1f21\u03bc\u1f73\u03c1\u03b1\u03c2 \u03c4\u03bf\u1f7a\u03c2 \u03bc\u1f72\u03bd \u03c6\u1f79\u03b2\u1ff3\n\u03c4\u03bf\u1fe6 \u03b2\u03b1\u03c3\u03b9\u03bb\u1f73\u03c9\u03c2 \u03c4\u1fc6\u03c2 \u03c3\u03c9",
+      "translation_snippet": "number of officers had seldom fallen in any single Roman defeat. 90. Mithridates withdrew into the country which the Romans now call Lesser Armenia, taking all the provisions he could and spoiling wha"
+    },
+    {
+      "translation_id": 1282,
+      "translator_id": 15,
+      "translator_name": "W. H. S. Jones",
+      "source_text_id": 14311,
+      "source_author": "Unknown",
+      "source_work": "Unknown",
+      "priority_score": 82,
+      "issues": [
+        {
+          "issue_type": "meaning_drift",
+          "severity": "critical",
+          "description": "Meaning score critically low (0.28)",
+          "value": 0.2800000011920929,
+          "threshold": 0.4
+        },
+        {
+          "issue_type": "length_anomaly",
+          "severity": "warning",
+          "description": "Translation too short (ratio: 0.40)",
+          "value": 0.39943741209563993,
+          "threshold": 0.4
+        },
+        {
+          "issue_type": "missing_anchor",
+          "severity": "info",
+          "description": "No meaning anchor available for source text",
+          "value": null,
+          "threshold": null
+        }
+      ],
+      "issue_summary": "1 critical, 1 warning: meaning_drift, length_anomaly",
+      "meaning_score": 0.2800000011920929,
+      "style_score": 1.0,
+      "fluency_score": 0.9399999976158142,
+      "overall_score": 0.5529999732971191,
+      "source_snippet": "\u1f10\u03be\u03b5\u1f7d\u03b8\u03bf\u03c5\u03bd \u1f00\u03c0\u1fbf \u1f00\u03bb\u03bb\u1f75\u03bb\u03c9\u03bd. \u03c4\u03c1\u03b1\u03c7\u03c5\u03c4\u1f73\u03c1\u03bf\u03c5 \u03b4\u1f72 \u03c4\u03bf\u1fe6 \u03c0\u03bd\u03b5\u1f7b\u03bc\u03b1\u03c4\u03bf\u03c2\n\u03b3\u03b5\u03bd\u03bf\u03bc\u1f73\u03bd\u03bf\u03c5 \u03c3\u03c5\u03bd\u03b5\u03ba\u1f73\u03c7\u03c5\u03c4\u03bf \u03c0\u1f71\u03bd\u03c4\u03b1 \u03ba\u03b1\u1f76 \u03c3\u03c5\u03bd\u03b5\u03c4\u03c1\u1f77\u03b2\u03bf\u03bd\u03c4\u03bf\n\u03b1\u1f31 \u03bd\u1fc6\u03b5\u03c2, \u03c4\u1f70\u03c2 \u1f00\u03b3\u03ba\u1f7b\u03c1\u03b1\u03c2 \u1f00\u03c0\u03bf\u03c1\u03c1\u03b7\u03b3\u03bd\u1f7b\u03bf\u03c5\u03c3\u03b1\u03b9 \u03ba\u03b1\u1f76\n\u1f10\u03c2 \u03c4\u1f74\u03bd \u03b3\u1fc6\u03bd \u1f22 \u1f10\u03c0\u1fbf \u1f00\u03bb\u03bb\u1f75\u03bb\u03b1\u03c2 \u03c4\u03b9\u03bd\u03b1\u03c3\u03c3\u1f79\u03bc\u03b5\u03bd\u03b1\u03b9\u0387 \u03b2\u03bf\u1f75\n\u03c4\u03b5 \u1f26\u03bd \u03c0\u03b1\u03bc\u03bc\u03b9\u03b3\u1f74\u03c2 \u03b4\u03b5\u03b4\u03b9\u1f79\u03c4\u03c9\u03bd",
+      "translation_snippet": "and the whirlpool of the deep, holding everything in its grasp, allowed neither tarrying nor escape. The darkness of a very black night added to their distress. And so they perished, no longer even se"
+    },
+    {
+      "translation_id": 1075,
+      "translator_id": 15,
+      "translator_name": "W. H. S. Jones",
+      "source_text_id": 13866,
+      "source_author": "Unknown",
+      "source_work": "Unknown",
+      "priority_score": 82,
+      "issues": [
+        {
+          "issue_type": "meaning_drift",
+          "severity": "critical",
+          "description": "Meaning score critically low (0.38)",
+          "value": 0.3799999952316284,
+          "threshold": 0.4
+        },
+        {
+          "issue_type": "length_anomaly",
+          "severity": "warning",
+          "description": "Translation too short (ratio: 0.37)",
+          "value": 0.3746355685131195,
+          "threshold": 0.4
+        },
+        {
+          "issue_type": "missing_anchor",
+          "severity": "info",
+          "description": "No meaning anchor available for source text",
+          "value": null,
+          "threshold": null
+        }
+      ],
+      "issue_summary": "1 critical, 1 warning: meaning_drift, length_anomaly",
+      "meaning_score": 0.3799999952316284,
+      "style_score": 0.9844796061515808,
+      "fluency_score": 0.9399999976158142,
+      "overall_score": 0.6106719374656677,
+      "source_snippet": "\u1f22 \u03bc\u03b7\u03bd\u1f77\u03bf\u03bd\u03c4\u03bf\u03c2 \u1f10\u03bd \u1f45\u03c0\u03bb\u03bf\u03b9\u03c2\u0387 \u1f61\u03c2 \u03b4\u1fbf \u1f04\u03bd \u03c4\u03b9 \u03bc\u1f74 \u03c0\u03c1\u1f71\u03be\u03b5\u03b9\u03b5\n\u03c0\u03b1\u03c1\u1f70 \u03c4\u1f78 \u03c4\u1fc7 \u03b2\u03bf\u03c5\u03bb\u1fc7 \u03c3\u03c5\u03bc\u03c6\u1f73\u03c1\u03bf\u03bd, \u1f10\u03ba\u1f73\u03bb\u03b5\u03c5\u03b5\u03bd \u03b1\u1f50\u03c4\u1ff7\n\u03c3\u03c5\u03bd\u03b5\u03bb\u1f73\u03c3\u03b8\u03b1\u03b9 \u03c4\u1ff6\u03bd \u03c4\u03b9\u03bd\u03b1 \u03c0\u03c1\u03b5\u03c3\u03b2\u03c5\u03c4\u1f73\u03c1\u03c9\u03bd \u1f14\u03bc\u03c6\u03c1\u03bf\u03bd\u03b1, \u03c4\u1fc6\u03c2\n\u1f10\u03ba\u03b5\u1f77\u03bd\u03bf\u03c5 \u03bd\u03b5\u1f79\u03c4\u03b7\u03c4\u03bf\u03c2 \u1f10\u03b3\u03ba\u03c1\u03b1\u03c4\u1fc6 \u03c0\u03b1\u03b9\u03b4\u03b1\u03b3\u03c9\u03b3\u1f79\u03bd.\ncap. xii\u1f08\u03bb\u03bb\u1f70 \u039a\u03b9\u03ba\u1f73\u03c1\u03c9\u03bd\u03b1 \u03bc\u1f72\u03bd \u1f25 \u03c4\u03b5 ",
+      "translation_snippet": "The Senate laughed at Cicero\u2019s ambition, and the relatives of the murderers especially opposed him, fearing lest Octavian, as consul, should bring the murderers to punishment, 83. but on various accou"
+    },
+    {
+      "translation_id": 1165,
+      "translator_id": 15,
+      "translator_name": "W. H. S. Jones",
+      "source_text_id": 13892,
+      "source_author": "Unknown",
+      "source_work": "Unknown",
+      "priority_score": 82,
+      "issues": [
+        {
+          "issue_type": "meaning_drift",
+          "severity": "critical",
+          "description": "Meaning score critically low (0.28)",
+          "value": 0.2800000011920929,
+          "threshold": 0.4
+        },
+        {
+          "issue_type": "length_anomaly",
+          "severity": "warning",
+          "description": "Translation too short (ratio: 0.39)",
+          "value": 0.39339752407152684,
+          "threshold": 0.4
+        },
+        {
+          "issue_type": "missing_anchor",
+          "severity": "info",
+          "description": "No meaning anchor available for source text",
+          "value": null,
+          "threshold": null
+        }
+      ],
+      "issue_summary": "1 critical, 1 warning: meaning_drift, length_anomaly",
+      "meaning_score": 0.2800000011920929,
+      "style_score": 0.9622710943222046,
+      "fluency_score": 1.0,
+      "overall_score": 0.5623406767845154,
+      "source_snippet": "\u03ba\u03b1\u1f76 \u1f38\u03bb\u03bb\u03c5\u03c1\u03b9\u03bf\u1f76 \u03a0\u03b1\u03c1\u03b8\u03b7\u03bd\u03bf\u1f76 \u03ba\u03b1\u1f76 \u0398\u03b5\u03c3\u03c3\u03b1\u03bb\u03bf\u1f76 \u03b4\u03b9\u03c3\u03c7\u1f77\u03bb\u03b9\u03bf\u03b9,\n\u039a\u03b1\u03c3\u03c3\u1f77\u1ff3 \u03b4\u1f72 \u1f3c\u03b2\u03b7\u03c1\u1f73\u03c2 \u03c4\u03b5 \u03ba\u03b1\u1f76 \u039a\u03b5\u03bb\u03c4\u03bf\u1f76 \u03b4\u03b9\u03c3\u03c7\u1f77\u03bb\u03b9\u03bf\u03b9 \u03ba\u03b1\u1f76\n\u1f31\u03c0\u03c0\u03bf\u03c4\u03bf\u03be\u1f79\u03c4\u03b1\u03b9 \u1f0c\u03c1\u03b1\u03b2\u1f73\u03c2 \u03c4\u03b5 \u03ba\u03b1\u1f76 \u039c\u1fc6\u03b4\u03bf\u03b9 \u03ba\u03b1\u1f76 \u03a0\u03b1\u03c1\u03b8\u03c5\u03b1\u1fd6\u03bf\u03b9\n\u03c4\u03b5\u03c4\u03c1\u03b1\u03ba\u03b9\u03c3\u03c7\u1f77\u03bb\u03b9\u03bf\u03b9. \u03c3\u1f7b\u03bc\u03bc\u03b1\u03c7\u03bf\u03b9 \u03b4\u1f72 \u03b5\u1f35\u03c0\u03bf\u03bd\u03c4\u03bf \u03b2\u03b1\u03c3\u03b9\u03bb\u1f73\u03b5\u03c2\n\u03ba\u03b1\u1f76 \u03c4\u03b5\u03c4\u03c1\u1f71\u03c1\u03c7\u03b1\u03b9 \u0393\u03b1\u03bb\u03b1",
+      "translation_snippet": "You, of the people, when you go to the wars, obey your generals as masters in everything, but in time of peace you resume your mastery over us. The Senate deliberates first, in order that you may not "
+    },
+    {
+      "translation_id": 2833,
+      "translator_id": 20,
+      "translator_name": "Loeb Translator",
+      "source_text_id": 15404,
+      "source_author": "Unknown",
+      "source_work": "Unknown",
+      "priority_score": 82,
+      "issues": [
+        {
+          "issue_type": "meaning_drift",
+          "severity": "critical",
+          "description": "Meaning score critically low (0.18)",
+          "value": 0.18000000715255737,
+          "threshold": 0.4
+        },
+        {
+          "issue_type": "length_anomaly",
+          "severity": "warning",
+          "description": "Translation too short (ratio: 0.21)",
+          "value": 0.20676402767102228,
+          "threshold": 0.4
+        },
+        {
+          "issue_type": "missing_anchor",
+          "severity": "info",
+          "description": "No meaning anchor available for source text",
+          "value": null,
+          "threshold": null
+        }
+      ],
+      "issue_summary": "1 critical, 1 warning: meaning_drift, length_anomaly",
+      "meaning_score": 0.18000000715255737,
+      "style_score": 1.0,
+      "fluency_score": 0.9399999976158142,
+      "overall_score": 0.49300000071525574,
+      "source_snippet": "\u03bf\u1f35\u03b1\u03bd \u03c4\u03b5 \u03ba\u03b1\u1f76 \u1f61\u03c2 \u03b8\u03b5\u03c1\u03b1\u03c0\u03b5\u1f7b\u03c3\u03b5\u03b9 \u03bf\u1f57 \u1f02\u03bd \u03b3\u1f73\u03bd\u03b7\u03c4\u03b1\u03b9 \u03ba\u1f7b\u03c1\u03b9\u03bf\u03c2,\n\u1f43\u03c2 \u1f21\u03b4\u1f7a \u03c0\u03c1\u1f78 \u1f00\u03b3\u03b1\u03b8\u03bf\u1fe6 \u1f20\u03bd\u1f71\u03b3\u03ba\u03b1\u03c3\u03c4\u03b1\u03b9 \u03b4\u03b9\u1f7d\u03ba\u03b5\u03b9\u03bd, \u03b4\u03b5\u1fd6 \u03bc\u03b5\u03c4\u1f70\n\u03c4\u03b1\u1fe6\u03c4\u03b1 \u1f30\u03b4\u03b5\u1fd6\u03bd. \u1f40\u03c6\u03b8\u1f75\u03c3\u03b5\u03c4\u03b1\u03b9 \u03b4\u1f721 \u03bc\u03b1\u03bb\u03b8\u03b1\u03ba\u1f79\u03bd \u03c4\u03b9\u03bd\u03b1 \u03ba\u03b1\u1f76 \u03bf\u1f50\n\u03c3\u03c4\u03b5\u03c1\u03b5\u1f78\u03bd \u03b4\u03b9\u1f7d\u03ba\u03c9\u03bd, \u03bf\u1f50\u03b4\u1fbf \u1f10\u03bd \u1f21\u03bb\u1f77\u1ff3 \u03ba\u03b1\u03b8\u03b1\u03c1\u1ff7 \u03c4\u03b5\u03b8\u03c1\u03b1\u03bc\u03bc\u1f73\u03bd\u03bf\u03bd\n\u1f00\u03bb\u03bb\u1fbf \u1f51\u03c0\u1f78 ",
+      "translation_snippet": "dog,99 99these sinews and bones would have been somewhere in Megara or Boeotia long ago, carried along by my opinion of what is best, if I hadn\u2019t thought it was more just and finer to accept whatever "
+    },
+    {
+      "translation_id": 1161,
+      "translator_id": 15,
+      "translator_name": "W. H. S. Jones",
+      "source_text_id": 13891,
+      "source_author": "Unknown",
+      "source_work": "Unknown",
+      "priority_score": 82,
+      "issues": [
+        {
+          "issue_type": "meaning_drift",
+          "severity": "critical",
+          "description": "Meaning score critically low (0.28)",
+          "value": 0.2800000011920929,
+          "threshold": 0.4
+        },
+        {
+          "issue_type": "length_anomaly",
+          "severity": "warning",
+          "description": "Translation too short (ratio: 0.39)",
+          "value": 0.3889695210449927,
+          "threshold": 0.4
+        },
+        {
+          "issue_type": "missing_anchor",
+          "severity": "info",
+          "description": "No meaning anchor available for source text",
+          "value": null,
+          "threshold": null
+        }
+      ],
+      "issue_summary": "1 critical, 1 warning: meaning_drift, length_anomaly",
+      "meaning_score": 0.2800000011920929,
+      "style_score": 0.9791163802146912,
+      "fluency_score": 0.9399999976158142,
+      "overall_score": 0.5498674511909485,
+      "source_snippet": "\u03b1\u1f50\u03c4\u1ff7, \u03b1\u1f31 \u1f10\u03c2 \u1f10\u03c0\u03b9\u03bd\u1f77\u03ba\u03b9\u03b1 \u03c4\u03bf\u1fd6\u03c2 \u03c3\u03c4\u03c1\u03b1\u03c4\u03bf\u1fd6\u03c2 \u1f10\u03c0\u03b7\u03b3\u03b3\u03b5\u03bb\u03bc\u1f73\u03bd\u03b1\u03b9.\ncap. xi\u03c4\u03b1\u1fd6\u03c2 \u03b3\u1f70\u03c1 \u03b4\u1f74 \u03b3\u03bd\u1f7d\u03bc\u03b1\u03b9\u03c2 \u03b1\u1f35\u03b4\u03b5 \u03bc\u1f71\u03bb\u03b9\u03c3\u03c4\u03b1 \u03c4\u1f74\u03bd \u03bd\u1f77\u03ba\u03b7\u03bd \u03c4\u1ff6\u03bd\n\u03c4\u03c1\u03b9\u1ff6\u03bd \u1f00\u03bd\u03b4\u03c1\u1ff6\u03bd \u1f00\u03c0\u03b5\u1f7b\u03c7\u03bf\u03bd\u03c4\u03bf \u03ba\u03b1\u1f77, \u1f45\u03c3\u03b1 \u03b4\u1f7b\u03bd\u03b1\u03b9\u03bd\u03c4\u03bf, \u03ba\u03c1\u1f7b\u03c6\u03b1\n\u1f00\u03bd\u03c4\u1f73\u03c0\u03c1\u03b1\u03c3\u03c3\u03bf\u03bd\u0387 \u1f00\u03c0\u03bf\u03b4\u03b9\u03b4\u03c1\u1f71\u03c3\u03ba\u03bf\u03bd\u03c4\u1f73\u03c2 \u03c4\u03b5 \u03c4\u1ff6\u03bd \u03c0\u03b1\u03c4\u03c1\u1f77\u03b4\u03c9\u03bd\n\u1f61\u03c2 \u03bf",
+      "translation_snippet": "straits, where he repaired what was left of his damaged and wasted fleet. 86. When Octavian arrived he gave a solemn promise to the inhabitants of Rhegium and Vibo that they should be exempt from the "
+    }
+  ]
+}
