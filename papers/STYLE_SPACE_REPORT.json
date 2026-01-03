@@ -1,0 +1,179 @@
+{
+  "timestamp": "2026-01-02T23:05:40.080525",
+  "n_translations": 1000,
+  "n_translators": 8,
+  "n_features_selected": 50,
+  "confound_penalty": 1.0,
+  "top_features": [
+    {
+      "name": "punc_.",
+      "f_translator": 33.657944682101125,
+      "f_author": 7.765478285631595,
+      "f_work": 12.974025040229238,
+      "f_genre": 0.0,
+      "adversarial_score": 20.68391964187189
+    },
+    {
+      "name": "fw_is",
+      "f_translator": 29.79914557885683,
+      "f_author": 9.764388841882072,
+      "f_work": 15.371025455268764,
+      "f_genre": 0.0,
+      "adversarial_score": 14.428120123588066
+    },
+    {
+      "name": "bg_this_is",
+      "f_translator": 15.534246385330718,
+      "f_author": 1.4282869494671069,
+      "f_work": 2.097610395127016,
+      "f_genre": 0.0,
+      "adversarial_score": 13.436635990203701
+    },
+    {
+      "name": "cg_had",
+      "f_translator": 15.454180327677232,
+      "f_author": 3.93630904047158,
+      "f_work": 6.005813318314616,
+      "f_genre": 0.0,
+      "adversarial_score": 9.448367009362617
+    },
+    {
+      "name": "cg_hat",
+      "f_translator": 11.001681537190928,
+      "f_author": 1.6459960602169277,
+      "f_work": 2.1019939481434244,
+      "f_genre": 0.0,
+      "adversarial_score": 8.899687589047502
+    },
+    {
+      "name": "fw_had",
+      "f_translator": 32.30245398481304,
+      "f_author": 15.549813351894912,
+      "f_work": 23.547259841317622,
+      "f_genre": 0.0,
+      "adversarial_score": 8.75519414349542
+    },
+    {
+      "name": "cg_ad ",
+      "f_translator": 13.612345486787277,
+      "f_author": 3.7769278461437628,
+      "f_work": 5.763283919143157,
+      "f_genre": 0.0,
+      "adversarial_score": 7.84906156764412
+    },
+    {
+      "name": "fw_having",
+      "f_translator": 13.09066553912112,
+      "f_author": 3.894496115197213,
+      "f_work": 5.86621332490148,
+      "f_genre": 0.0,
+      "adversarial_score": 7.224452214219641
+    },
+    {
+      "name": "cg_tha",
+      "f_translator": 8.38639787069625,
+      "f_author": 0.9460229292000321,
+      "f_work": 1.1682439578290418,
+      "f_genre": 0.0,
+      "adversarial_score": 7.2181539128672085
+    },
+    {
+      "name": "cg_at ",
+      "f_translator": 7.754091625948795,
+      "f_author": 1.0125521926403556,
+      "f_work": 0.658802872438497,
+      "f_genre": 0.0,
+      "adversarial_score": 6.741539433308439
+    },
+    {
+      "name": "bg_in_order",
+      "f_translator": 12.983277230586557,
+      "f_author": 4.075653440820135,
+      "f_work": 6.287725195650408,
+      "f_genre": 0.0,
+      "adversarial_score": 6.695552034936149
+    },
+    {
+      "name": "fw_against",
+      "f_translator": 11.251189495629601,
+      "f_author": 3.8681191448533294,
+      "f_work": 5.48213127311138,
+      "f_genre": 0.0,
+      "adversarial_score": 5.769058222518222
+    },
+    {
+      "name": "cg_ it",
+      "f_translator": 6.471098899416624,
+      "f_author": 0.6648007837087616,
+      "f_work": 0.9122212353454489,
+      "f_genre": 0.0,
+      "adversarial_score": 5.558877664071176
+    },
+    {
+      "name": "fw_them",
+      "f_translator": 21.589440667904388,
+      "f_author": 10.831881481494147,
+      "f_work": 16.198465959175792,
+      "f_genre": 0.0,
+      "adversarial_score": 5.390974708728596
+    },
+    {
+      "name": "fw_until",
+      "f_translator": 8.335195593461547,
+      "f_author": 2.079744437007703,
+      "f_work": 3.037248468814215,
+      "f_genre": 0.0,
+      "adversarial_score": 5.297947124647332
+    },
+    {
+      "name": "cg_ is",
+      "f_translator": 12.92930914758693,
+      "f_author": 4.877972787958303,
+      "f_work": 7.667262801012371,
+      "f_genre": 0.0,
+      "adversarial_score": 5.262046346574558
+    },
+    {
+      "name": "cg_XX ",
+      "f_translator": 23.38804584846762,
+      "f_author": 12.269088575172567,
+      "f_work": 18.327144951678303,
+      "f_genre": 0.0,
+      "adversarial_score": 5.060900896789317
+    },
+    {
+      "name": "cg_t X",
+      "f_translator": 7.39364233184436,
+      "f_author": 1.5270637437761274,
+      "f_work": 2.34357003337473,
+      "f_genre": 0.0,
+      "adversarial_score": 5.05007229846963
+    },
+    {
+      "name": "cg_is ",
+      "f_translator": 7.7960293183069025,
+      "f_author": 2.0309443210269076,
+      "f_work": 2.9869796829884274,
+      "f_genre": 0.0,
+      "adversarial_score": 4.809049635318475
+    },
+    {
+      "name": "fw_should",
+      "f_translator": 7.692197820621418,
+      "f_author": 2.951192745542419,
+      "f_work": 3.6402484600675407,
+      "f_genre": 0.0,
+      "adversarial_score": 4.051949360553877
+    }
+  ],
+  "translator_distribution": {
+    "Loeb Translator": 598,
+    "A. D. Godley": 114,
+    "W. H. S. Jones": 104,
+    "J. M. Edmonds": 95,
+    "A. S. Way": 70,
+    "A. T. Murray": 9,
+    "H. Rackham": 5,
+    "R. C. Seaton": 5
+  }
+}
