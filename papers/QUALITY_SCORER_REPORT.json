@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-01-02T23:49:49.901842",
+  "n_scored": 500,
+  "tier_distribution": {
+    "excellent": 0,
+    "good": 0,
+    "acceptable": 23,
+    "needs_review": 477
+  },
+  "avg_meaning_score": 0.3524111688495054,
+  "avg_style_score": 0.9750361908454731,
+  "avg_fluency_score": 0.951272619047619,
+  "avg_overall_score": 0.595520284698429,
+  "std_overall_score": 0.06439382144849377,
+  "pass_rate": 0.046
+}
