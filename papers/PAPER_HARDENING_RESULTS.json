@@ -1,0 +1,109 @@
+{
+  "timestamp": "2026-01-02T22:24:45.115276",
+  "artifact": "synoptic_canonical_17ec0fd1c4a2.pkl",
+  "ablation": {
+    "baseline": {
+      "f1": 0.7300067369943146,
+      "precision": 0.7905198987807684,
+      "recall": 0.6811965811965812,
+      "n_features": 60
+    },
+    "ablations": {
+      "function_words": {
+        "f1_without": 0.7215420759731582,
+        "delta_f1": 0.008464661021156394,
+        "contribution_pct": 1.1595319045969732,
+        "feature_range": [
+          0,
+          50
+        ]
+      },
+      "sentence_structure": {
+        "f1_without": 0.7044866689422384,
+        "delta_f1": 0.025520068052076184,
+        "contribution_pct": 3.495867470641567,
+        "feature_range": [
+          50,
+          60
+        ]
+      }
+    },
+    "function_words_only_f1": 0.7044866689422384
+  },
+  "summary": {
+    "dataset": {
+      "total_passages": 282,
+      "q_passages": 132,
+      "mark_passages": 150,
+      "class_balance": 0.46808510638297873
+    },
+    "cross_validation": {
+      "f1_mean": 0.7300067369943146,
+      "f1_std": 0.0688241303629689,
+      "f1_95ci": [
+        0.5951114414828955,
+        0.8649020325057337
+      ],
+      "precision_mean": 0.7905198987807684,
+      "precision_std": 0.07056047246958158,
+      "recall_mean": 0.6811965811965812,
+      "recall_std": 0.08317624661469812,
+      "accuracy_mean": 0.7657894736842105,
+      "accuracy_std": 0.05735756118257348
+    },
+    "confusion_matrix": {
+      "true_positive": 132,
+      "true_negative": 150,
+      "false_positive": 0,
+      "false_negative": 0,
+      "sensitivity": 1.0,
+      "specificity": 1.0
+    },
+    "q_reconstruction": {
+      "n_passages": 132,
+      "mean_confidence": 0.8712878787878787,
+      "median_confidence": 0.9,
+      "high_confidence_count": 121,
+      "high_confidence_pct": 91.66666666666666
+    }
+  },
+  "latex_tables": {
+    "performance": "\n\\begin{table}[h]\n\\centering\n\\caption{Q Source Classification Performance (5-fold CV)}\n\\begin{tabular}{lcc}\n\\hline\n\\textbf{Metric} & \\textbf{Mean} & \\textbf{Std} \\\\\n\\hline\nF1 Score & 0.730 & 0.069 \\\\\nPrecision & 0.791 & 0.071 \\\\\nRecall & 0.681 & 0.083 \\\\\nAccuracy & 0.766 & 0.057 \\\\\n\\hline\n\\end{tabular}\n\\label{tab:performance}\n\\end{table}\n",
+    "ablation": "\n\\begin{table}[h]\n\\centering\n\\caption{Feature Family Ablation Study}\n\\begin{tabular}{lccc}\n\\hline\n\\textbf{Feature Family} & \\textbf{F1 w/o} & \\textbf{$\\Delta$F1} & \\textbf{Contrib.} \\\\\n\\hline\nAll Features & 0.730 & --- & 100\\% \\\\\n\\hline\nSentence Structure & 0.704 & 0.026 & 3.5\\%\nFunction Words & 0.722 & 0.008 & 1.2\\% \\\\\n\\hline\n\\end{tabular}\n\\label{tab:ablation}\n\\end{table}\n"
+  },
+  "precision_recall": {
+    "average_precision": 0.8391337458952889,
+    "operating_points": [
+      {
+        "target_precision": 0.8,
+        "achieved_precision": 0.8165137614678899,
+        "recall": 0.6742424242424242,
+        "threshold": 0.52
+      },
+      {
+        "target_precision": 0.85,
+        "achieved_precision": 0.8571428571428571,
+        "recall": 0.6363636363636364,
+        "threshold": 0.54
+      },
+      {
+        "target_precision": 0.9,
+        "achieved_precision": 0.926829268292683,
+        "recall": 0.5757575757575758,
+        "threshold": 0.62
+      },
+      {
+        "target_precision": 0.95,
+        "achieved_precision": 0.95,
+        "recall": 0.4318181818181818,
+        "threshold": 0.76
+      }
+    ],
+    "default_threshold": {
+      "threshold": 0.5,
+      "precision": 0.7894736842105263,
+      "recall": 0.6818181818181818,
+      "f1": 0.7317073170731707
+    }
+  }
+}
