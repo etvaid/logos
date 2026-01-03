@@ -32,18 +32,18 @@ const topAuthors = [
 
 // Historical timeline events
 const timelineEvents = [
-  { id: '1', date: -850, title: 'Homer', description: 'Iliad & Odyssey composed', type: 'author' as const },
-  { id: '2', date: -700, title: 'Hesiod', description: 'Theogony, Works and Days', type: 'author' as const },
-  { id: '3', date: -525, title: 'Aeschylus', description: 'Birth of Greek tragedy', type: 'author' as const },
-  { id: '4', date: -469, title: 'Socrates', description: 'Philosophical revolution begins', type: 'author' as const },
-  { id: '5', date: -428, title: 'Plato', description: 'Founder of the Academy', type: 'author' as const },
-  { id: '6', date: -384, title: 'Aristotle', description: 'The Philosopher', type: 'author' as const },
-  { id: '7', date: -106, title: 'Cicero', description: 'Master of Latin prose', type: 'author' as const },
-  { id: '8', date: -70, title: 'Virgil', description: 'Rome\'s epic poet', type: 'author' as const },
-  { id: '9', date: -43, title: 'Ovid', description: 'Metamorphoses', type: 'author' as const },
-  { id: '10', date: 56, title: 'Tacitus', description: 'Rome\'s greatest historian', type: 'author' as const },
-  { id: '11', date: 354, title: 'Augustine', description: 'City of God, Confessions', type: 'author' as const },
-  { id: '12', date: 480, title: 'Boethius', description: 'Consolation of Philosophy', type: 'author' as const },
+  { id: '1', year: -850, title: 'Homer', description: 'Iliad & Odyssey composed', type: 'author' as const },
+  { id: '2', year: -700, title: 'Hesiod', description: 'Theogony, Works and Days', type: 'author' as const },
+  { id: '3', year: -525, title: 'Aeschylus', description: 'Birth of Greek tragedy', type: 'author' as const },
+  { id: '4', year: -469, title: 'Socrates', description: 'Philosophical revolution begins', type: 'author' as const },
+  { id: '5', year: -428, title: 'Plato', description: 'Founder of the Academy', type: 'author' as const },
+  { id: '6', year: -384, title: 'Aristotle', description: 'The Philosopher', type: 'author' as const },
+  { id: '7', year: -106, title: 'Cicero', description: 'Master of Latin prose', type: 'author' as const },
+  { id: '8', year: -70, title: 'Virgil', description: 'Rome\'s epic poet', type: 'author' as const },
+  { id: '9', year: -43, title: 'Ovid', description: 'Metamorphoses', type: 'author' as const },
+  { id: '10', year: 56, title: 'Tacitus', description: 'Rome\'s greatest historian', type: 'author' as const },
+  { id: '11', year: 354, title: 'Augustine', description: 'City of God, Confessions', type: 'author' as const },
+  { id: '12', year: 480, title: 'Boethius', description: 'Consolation of Philosophy', type: 'author' as const },
 ];
 
 // Feature modules with enhanced descriptions
@@ -392,10 +392,7 @@ export default function HomePage() {
             2,400 years of classical literature
           </p>
 
-          <Timeline
-            events={timelineEvents}
-            height={250}
-          />
+          <Timeline events={timelineEvents} />
         </div>
       </section>
 

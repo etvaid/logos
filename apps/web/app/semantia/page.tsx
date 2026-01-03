@@ -271,9 +271,6 @@ export default function SemantiaPage() {
                     { dataKey: 'secondary', name: 'Secondary Meaning', color: '#87CEEB' },
                     { dataKey: 'tertiary', name: 'Tertiary Meaning', color: '#DDA0DD' },
                   ]}
-                  xAxisKey="name"
-                  xAxisLabel="Time Period"
-                  yAxisLabel="Prevalence"
                 />
               </div>
               <div className="flex justify-center gap-6 mt-4">

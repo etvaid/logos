@@ -120,9 +120,12 @@ export default function BarChart({
         )}
         <XAxis
           dataKey="name"
-          tick={{ fill: '#F5F3EF', fontSize: 10, angle: -45, textAnchor: 'end' }}
+          tick={{ fill: '#F5F3EF', fontSize: 10 }}
           tickLine={false}
           axisLine={{ stroke: 'rgba(201, 169, 98, 0.2)' }}
+          interval={0}
+          angle={-45}
+          textAnchor="end"
           height={60}
         />
         <YAxis

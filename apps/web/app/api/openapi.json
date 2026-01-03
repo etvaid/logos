@@ -1,0 +1,380 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "LOGOS API",
+    "description": "API for classical text analysis, translation quality, and intertextual research",
+    "version": "1.0.0"
+  },
+  "servers": [
+    { "url": "/api", "description": "Local API" },
+    { "url": "https://logos-backend-production-0d96.up.railway.app", "description": "Production backend" }
+  ],
+  "paths": {
+    "/passages/{urn}": {
+      "get": {
+        "summary": "Get passage by CTS URN",
+        "tags": ["Passages"],
+        "parameters": [
+          { "name": "urn", "in": "path", "required": true, "schema": { "type": "string" }, "example": "urn:cts:greekLit:tlg0012.tlg001.perseus-grc1:1.1" }
+        ],
+        "responses": {
+          "200": {
+            "description": "Passage with source text and translations",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Passage" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/passages/{urn}/intertexts": {
+      "get": {
+        "summary": "Get intertextual connections for a passage",
+        "tags": ["Intertexts"],
+        "parameters": [
+          { "name": "urn", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Intertext" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/translations": {
+      "get": {
+        "summary": "List translations with quality scores",
+        "tags": ["Translations"],
+        "parameters": [
+          { "name": "translator", "in": "query", "schema": { "type": "string" } },
+          { "name": "flagged", "in": "query", "schema": { "type": "boolean" } },
+          { "name": "limit", "in": "query", "schema": { "type": "integer", "default": 50 } },
+          { "name": "offset", "in": "query", "schema": { "type": "integer", "default": 0 } }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "items": { "type": "array", "items": { "$ref": "#/components/schemas/TranslationQuality" } },
+                    "total": { "type": "integer" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/translations/{id}/scores": {
+      "get": {
+        "summary": "Get detailed quality breakdown for a translation",
+        "tags": ["Translations"],
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/QualityScores" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/q/pericopes": {
+      "get": {
+        "summary": "List Q source pericopes with confidence scores",
+        "tags": ["Q Source"],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/QPericope" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/q/pericopes/{id}": {
+      "get": {
+        "summary": "Get synoptic comparison for a Q pericope",
+        "tags": ["Q Source"],
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/QComparison" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/intertexts": {
+      "get": {
+        "summary": "Get all intertextual connections for graph visualization",
+        "tags": ["Intertexts"],
+        "parameters": [
+          { "name": "minStrength", "in": "query", "schema": { "type": "number", "default": 0.3 } },
+          { "name": "type", "in": "query", "schema": { "type": "string", "enum": ["quotation", "allusion", "echo", "parallel"] } }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/IntertextGraph" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/terms/{term}/drift": {
+      "get": {
+        "summary": "Get semantic drift data for a term over time",
+        "tags": ["Semantics"],
+        "parameters": [
+          { "name": "term", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/SemanticDrift" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/words/{lemma}": {
+      "get": {
+        "summary": "Get word analysis (morphology, related words, occurrences)",
+        "tags": ["Analysis"],
+        "parameters": [
+          { "name": "lemma", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/WordAnalysis" }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Passage": {
+        "type": "object",
+        "properties": {
+          "urn": { "type": "string" },
+          "work": { "type": "string" },
+          "author": { "type": "string" },
+          "section": { "type": "string" },
+          "language": { "type": "string" },
+          "sourceText": { "type": "string" },
+          "words": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "form": { "type": "string" },
+                "lemma": { "type": "string" },
+                "pos": { "type": "string" },
+                "morph": { "type": "string" }
+              }
+            }
+          },
+          "translations": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Translation" }
+          }
+        }
+      },
+      "Translation": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "translator": { "type": "string" },
+          "style": { "type": "string" },
+          "text": { "type": "string" },
+          "qualityScore": { "type": "number" }
+        }
+      },
+      "TranslationQuality": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "urn": { "type": "string" },
+          "translator": { "type": "string" },
+          "style": { "type": "string" },
+          "sourceText": { "type": "string" },
+          "translatedText": { "type": "string" },
+          "scores": { "$ref": "#/components/schemas/QualityScores" },
+          "flagged": { "type": "boolean" },
+          "flagReason": { "type": "string" }
+        }
+      },
+      "QualityScores": {
+        "type": "object",
+        "properties": {
+          "overall": { "type": "number" },
+          "semanticFidelity": { "type": "number", "description": "SF - How well meaning is preserved" },
+          "registerMatch": { "type": "number", "description": "RM - Tone/formality consistency" },
+          "literalness": { "type": "number", "description": "LT - Word-for-word vs interpretive" },
+          "readability": { "type": "number", "description": "RD - English fluency score" },
+          "styleConsistency": { "type": "number", "description": "SC - Matches translator persona" },
+          "translatorBias": { "type": "number", "description": "TB - Genre-conditioned deviation" }
+        }
+      },
+      "Intertext": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "sourceUrn": { "type": "string" },
+          "targetUrn": { "type": "string" },
+          "sourceText": { "type": "string" },
+          "targetText": { "type": "string" },
+          "type": { "type": "string", "enum": ["quotation", "allusion", "echo", "parallel"] },
+          "strength": { "type": "number" },
+          "evidence": { "type": "string" }
+        }
+      },
+      "IntertextGraph": {
+        "type": "object",
+        "properties": {
+          "nodes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": { "type": "string" },
+                "label": { "type": "string" },
+                "author": { "type": "string" },
+                "year": { "type": "integer" },
+                "size": { "type": "number" }
+              }
+            }
+          },
+          "edges": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "source": { "type": "string" },
+                "target": { "type": "string" },
+                "type": { "type": "string" },
+                "strength": { "type": "number" }
+              }
+            }
+          }
+        }
+      },
+      "QPericope": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "matthewRef": { "type": "string" },
+          "lukeRef": { "type": "string" },
+          "confidence": { "type": "number" },
+          "theme": { "type": "string" },
+          "reconstructedText": { "type": "string" }
+        }
+      },
+      "QComparison": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "matthewText": { "type": "string" },
+          "lukeText": { "type": "string" },
+          "reconstructedQ": { "type": "string" },
+          "agreements": { "type": "array", "items": { "type": "string" } },
+          "matthewRedaction": { "type": "array", "items": { "type": "string" } },
+          "lukeRedaction": { "type": "array", "items": { "type": "string" } },
+          "scholarlyNotes": { "type": "array", "items": { "type": "string" } }
+        }
+      },
+      "SemanticDrift": {
+        "type": "object",
+        "properties": {
+          "term": { "type": "string" },
+          "language": { "type": "string" },
+          "periods": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": { "type": "string" },
+                "startYear": { "type": "integer" },
+                "endYear": { "type": "integer" },
+                "primaryMeaning": { "type": "string" },
+                "secondaryMeanings": { "type": "array", "items": { "type": "string" } },
+                "frequency": { "type": "number" },
+                "examples": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "urn": { "type": "string" },
+                      "text": { "type": "string" },
+                      "author": { "type": "string" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "WordAnalysis": {
+        "type": "object",
+        "properties": {
+          "lemma": { "type": "string" },
+          "forms": { "type": "array", "items": { "type": "string" } },
+          "pos": { "type": "string" },
+          "definition": { "type": "string" },
+          "etymology": { "type": "string" },
+          "relatedWords": { "type": "array", "items": { "type": "string" } },
+          "occurrences": { "type": "integer" },
+          "topAuthors": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": { "type": "string" },
+                "count": { "type": "integer" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

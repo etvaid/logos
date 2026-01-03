@@ -6,6 +6,7 @@ interface DonutChartProps {
   data: { name: string; value: number; color?: string }[];
   innerRadius?: number;
   outerRadius?: number;
+  size?: number;
   showLegend?: boolean;
   showTooltip?: boolean;
   centerText?: string;
@@ -18,11 +19,15 @@ export default function DonutChart({
   data,
   innerRadius = 60,
   outerRadius = 80,
+  size,
   showLegend = true,
   showTooltip = true,
   centerText,
   centerSubtext,
 }: DonutChartProps) {
+  // If size is provided, calculate inner/outer radius based on it
+  const actualOuterRadius = size ? size / 2 : outerRadius;
+  const actualInnerRadius = size ? (size / 2) * 0.75 : innerRadius;
   const total = data.reduce((sum, item) => sum + item.value, 0);
 
   return (
@@ -33,8 +38,8 @@ export default function DonutChart({
             data={data}
             cx="50%"
             cy="50%"
-            innerRadius={innerRadius}
-            outerRadius={outerRadius}
+            innerRadius={actualInnerRadius}
+            outerRadius={actualOuterRadius}
             paddingAngle={2}
             dataKey="value"
             animationBegin={0}

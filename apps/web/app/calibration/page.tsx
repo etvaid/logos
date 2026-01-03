@@ -305,7 +305,7 @@ export default function CalibrationPage() {
                     </div>
                     <div className="flex justify-between items-center p-3 bg-[#C9A962]/5 rounded-lg">
                       <span>External Validation Rate</span>
-                      <span className="font-mono text-[#87CEEB]">{(latestRun.gates[3].details.match_rate * 100).toFixed(0)}%</span>
+                      <span className="font-mono text-[#87CEEB]">{((latestRun.gates[3]?.details?.match_rate ?? 0) * 100).toFixed(0)}%</span>
                     </div>
                     <div className="flex justify-between items-center p-3 bg-[#C9A962]/5 rounded-lg">
                       <span>Overall Status</span>
@@ -477,8 +477,6 @@ export default function CalibrationPage() {
                     { dataKey: 'Gate 3', name: 'Cross-Era', color: '#DDA0DD' },
                     { dataKey: 'Gate 4 (inv)', name: 'External (inverted)', color: '#F7DC6F' },
                   ]}
-                  xAxisKey="name"
-                  xAxisLabel="Date"
                 />
               </div>
               <p className="text-sm text-[#F5F3EF]/50 mt-4">

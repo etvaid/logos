@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import Link from 'next/link';
 import { useSearchParams, useRouter } from 'next/navigation';
-import { Card, Button, Select, LoadingSpinner, Badge, Modal, Tabs } from '@/components/ui';
+import { Card, Button, Select, LoadingSpinner, Badge, Modal, Tabs, Skeleton, SkeletonText } from '@/components/ui';
 import { RadarChart, BarChart } from '@/components/charts';
 import { getAuthors, getWorksByAuthor, getPassages, search, translate } from '@/lib/api';
 import { cleanWord, detectLanguage, formatNumber } from '@/lib/utils';
@@ -220,8 +220,16 @@ export default function ReaderPage() {
 
             <div className="flex-1 overflow-y-auto p-2">
               {loading ? (
-                <div className="flex justify-center py-8">
-                  <LoadingSpinner />
+                <div className="space-y-2">
+                  {Array.from({ length: 12 }).map((_, i) => (
+                    <div key={i} className="px-3 py-2">
+                      <Skeleton className="h-5 w-3/4 mb-1" />
+                      <div className="flex justify-between">
+                        <Skeleton className="h-3 w-20" />
+                        <Skeleton className="h-4 w-12 rounded-full" />
+                      </div>
+                    </div>
+                  ))}
                 </div>
               ) : (
                 <div className="space-y-1">
@@ -260,8 +268,13 @@ export default function ReaderPage() {
                     Works by {selectedAuthor}
                   </h3>
                   {loadingWorks ? (
-                    <div className="flex justify-center py-4">
-                      <LoadingSpinner size="sm" />
+                    <div className="space-y-1 p-1">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <div key={i} className="px-3 py-2">
+                          <Skeleton className="h-4 w-full mb-1" />
+                          <Skeleton className="h-3 w-20" />
+                        </div>
+                      ))}
                     </div>
                   ) : works.length === 0 ? (
                     <p className="px-2 text-xs text-[#F5F3EF]/50">No works found</p>
@@ -400,8 +413,15 @@ export default function ReaderPage() {
             }`}
           >
             {loadingPassages ? (
-              <div className="flex justify-center py-12">
-                <LoadingSpinner size="lg" />
+              <div className="space-y-6 py-4">
+                {Array.from({ length: 8 }).map((_, i) => (
+                  <div key={i} className="flex gap-4">
+                    <Skeleton className="w-16 h-5" />
+                    <div className="flex-1">
+                      <SkeletonText lines={2} />
+                    </div>
+                  </div>
+                ))}
               </div>
             ) : !selectedAuthor || !selectedWork ? (
               <div className="text-center py-20 col-span-2">
@@ -521,8 +541,22 @@ export default function ReaderPage() {
                   </div>
 
                   {loadingWord ? (
-                    <div className="flex justify-center py-8">
-                      <LoadingSpinner />
+                    <div className="space-y-4">
+                      <Card padding="lg">
+                        <div className="flex items-center justify-between mb-3">
+                          <Skeleton className="h-8 w-24" />
+                          <Skeleton className="h-6 w-16 rounded-full" />
+                        </div>
+                        <div className="grid grid-cols-2 gap-2">
+                          {Array.from({ length: 4 }).map((_, i) => (
+                            <Skeleton key={i} className="h-4" />
+                          ))}
+                        </div>
+                        <div className="mt-3 pt-3 border-t border-[#C9A962]/20">
+                          <Skeleton className="h-3 w-24 mb-1" />
+                          <Skeleton className="h-4 w-32" />
+                        </div>
+                      </Card>
                     </div>
                   ) : analysisTab === 'morphology' ? (
                     <div className="space-y-4">

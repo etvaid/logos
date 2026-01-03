@@ -45,7 +45,7 @@ function NodeIcon({ type, language }: { type: TreeNode['type']; language?: strin
       return (
         <span
           className={`${iconClass} rounded-sm`}
-          style={{ backgroundColor: getLanguageColor(language) }}
+          style={{ backgroundColor: getLanguageColor(language || 'greek') }}
         />
       );
     case 'period':

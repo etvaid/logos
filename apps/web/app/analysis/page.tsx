@@ -541,8 +541,6 @@ export default function AnalysisPage() {
                     <LineChart
                       data={sentenceLengthData}
                       lines={[{ dataKey: 'value', name: 'Sentences', color: '#C9A962' }]}
-                      xAxisKey="name"
-                      xAxisLabel="Words per Sentence"
                     />
                   </div>
                 </Card>

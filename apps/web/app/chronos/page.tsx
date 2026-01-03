@@ -181,9 +181,8 @@ export default function ChronosPage() {
         <Card padding="lg" className="mb-8">
           <h2 className="text-xl font-semibold text-[#C9A962] mb-6">Historical Timeline</h2>
           <Timeline
-            events={filteredEvents}
-            height={350}
-            onEventClick={(event) => setSelectedEvent(event)}
+            events={filteredEvents.map(e => ({ ...e, year: e.date }))}
+            onEventClick={(event) => setSelectedEvent(filteredEvents.find(e => e.id === event.id) || null)}
           />
         </Card>
 

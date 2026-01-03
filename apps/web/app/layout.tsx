@@ -1,6 +1,8 @@
 import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import CommandPalette from '@/components/ui/CommandPalette';
+import Providers from '@/components/layout/Providers';
 
 export const metadata = {
   title: 'LOGOS - The Complete Classical Research Platform',
@@ -24,11 +26,14 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-[#0D0D0F] text-[#F5F3EF] font-sans antialiased">
-        <div className="min-h-screen flex flex-col">
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </div>
+        <Providers>
+          <div className="min-h-screen flex flex-col">
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
+          <CommandPalette />
+        </Providers>
       </body>
     </html>
   );

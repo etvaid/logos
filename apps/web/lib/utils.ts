@@ -134,7 +134,7 @@ export const LEVELS = [
 ] as const;
 
 export function getLevelInfo(xp: number): { level: number; title: string; nextXp: number; progress: number } {
-  let currentLevel = LEVELS[0];
+  let currentLevel: (typeof LEVELS)[number] = LEVELS[0];
 
   for (const l of LEVELS) {
     if (xp >= l.xp) {
