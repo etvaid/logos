@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-01-03T00:21:39.399915",
+  "translations_processed": 100,
+  "gate_t1_pass_rate": 0.78,
+  "avg_meaning_similarity": 0.8604853323758869,
+  "method_distribution": {
+    "llm": 0,
+    "rule-based": 100,
+    "rule-based-fallback": 0
+  },
+  "use_llm": false
+}
