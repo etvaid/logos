@@ -1,0 +1,33 @@
+{
+  "timestamp": "2026-01-03T00:24:34.156707",
+  "translations_processed": 50,
+  "variants_generated": 200,
+  "variants_stored": 199,
+  "use_llm": false,
+  "style_stats": {
+    "formal_academic": {
+      "count": 50,
+      "meaning_preserved": 50,
+      "pass_rate": 1.0,
+      "avg_similarity": 0.9435643867657606
+    },
+    "readable_modern": {
+      "count": 50,
+      "meaning_preserved": 50,
+      "pass_rate": 1.0,
+      "avg_similarity": 0.9431481790223286
+    },
+    "literary_classic": {
+      "count": 50,
+      "meaning_preserved": 49,
+      "pass_rate": 0.98,
+      "avg_similarity": 0.939425822880405
+    },
+    "loeb_traditional": {
+      "count": 50,
+      "meaning_preserved": 50,
+      "pass_rate": 1.0,
+      "avg_similarity": 0.943266458756829
+    }
+  }
+}
