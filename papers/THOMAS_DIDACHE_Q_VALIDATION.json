@@ -1,0 +1,262 @@
+{
+  "timestamp": "2026-01-02T22:21:33.377148",
+  "preregistered_criteria": {
+    "version": "1.0",
+    "registered_date": "2026-01-02",
+    "q_similarity_threshold": 0.5,
+    "q_probability_threshold": 0.6,
+    "expected_thomas_q_parallels": [
+      3,
+      4,
+      5,
+      26,
+      32,
+      33,
+      36,
+      39
+    ],
+    "expected_didache_q_sections": [
+      "Did_8:2",
+      "Did_16:1-2",
+      "Did_16:3-4",
+      "Did_16:6-8"
+    ],
+    "thomas_separation_threshold": 0.0,
+    "didache_lords_prayer_threshold": 0.55,
+    "didache_eschatological_threshold": 0.5,
+    "significance_alpha": 0.05
+  },
+  "thomas": {
+    "success": 1.0,
+    "mean_with_parallel": 0.5161981030159355,
+    "mean_without_parallel": 0.5009745687153229,
+    "separation": 0.015223534300612629,
+    "p_value": 0.30629370629370634,
+    "significant": 0.0,
+    "n_with_parallel": 8,
+    "n_without_parallel": 7,
+    "all_results": [
+      {
+        "q_similarity": 0.37963960330759905,
+        "mark_similarity": 0.566792111457506,
+        "q_probability": 0.35,
+        "is_q_match": false,
+        "logion": 0,
+        "has_q_parallel": false,
+        "expected_q": false
+      },
+      {
+        "q_similarity": 0.5539173183460706,
+        "mark_similarity": 0.579253138344826,
+        "q_probability": 0.29,
+        "is_q_match": true,
+        "logion": 1,
+        "has_q_parallel": false,
+        "expected_q": false
+      },
+      {
+        "q_similarity": 0.812622098163583,
+        "mark_similarity": 0.7083265679573658,
+        "q_probability": 0.51,
+        "is_q_match": true,
+        "logion": 2,
+        "has_q_parallel": false,
+        "expected_q": false
+      },
+      {
+        "q_similarity": 0.6390709267268366,
+        "mark_similarity": 0.6127834680764636,
+        "q_probability": 0.55,
+        "is_q_match": true,
+        "logion": 3,
+        "has_q_parallel": true,
+        "expected_q": true
+      },
+      {
+        "q_similarity": 0.5691062588511104,
+        "mark_similarity": 0.5033382454591141,
+        "q_probability": 0.44,
+        "is_q_match": true,
+        "logion": 4,
+        "has_q_parallel": true,
+        "expected_q": true
+      },
+      {
+        "q_similarity": 0.34999767531800396,
+        "mark_similarity": 0.2511922292391824,
+        "q_probability": 0.46,
+        "is_q_match": false,
+        "logion": 5,
+        "has_q_parallel": true,
+        "expected_q": true
+      },
+      {
+        "q_similarity": 0.5174029226798228,
+        "mark_similarity": 0.4698008376873731,
+        "q_probability": 0.6,
+        "is_q_match": true,
+        "logion": 26,
+        "has_q_parallel": true,
+        "expected_q": true
+      },
+      {
+        "q_similarity": 0.4385463992131624,
+        "mark_similarity": 0.3175663478060766,
+        "q_probability": 0.38,
+        "is_q_match": false,
+        "logion": 27,
+        "has_q_parallel": false,
+        "expected_q": false
+      },
+      {
+        "q_similarity": 0.4747729975589529,
+        "mark_similarity": 0.43973978905985944,
+        "q_probability": 0.37,
+        "is_q_match": false,
+        "logion": 28,
+        "has_q_parallel": false,
+        "expected_q": false
+      },
+      {
+        "q_similarity": 0.3300387988096846,
+        "mark_similarity": 0.20937260392498808,
+        "q_probability": 0.19,
+        "is_q_match": false,
+        "logion": 30,
+        "has_q_parallel": false,
+        "expected_q": false
+      },
+      {
+        "q_similarity": 0.5172847656082076,
+        "mark_similarity": 0.5112276799567074,
+        "q_probability": 0.48,
+        "is_q_match": true,
+        "logion": 31,
+        "has_q_parallel": false,
+        "expected_q": false
+      },
+      {
+        "q_similarity": 0.6304790615299645,
+        "mark_similarity": 0.4256733350725795,
+        "q_probability": 0.35,
+        "is_q_match": true,
+        "logion": 32,
+        "has_q_parallel": true,
+        "expected_q": true
+      },
+      {
+        "q_similarity": 0.39012829919179554,
+        "mark_similarity": 0.425930973735085,
+        "q_probability": 0.26,
+        "is_q_match": false,
+        "logion": 33,
+        "has_q_parallel": true,
+        "expected_q": true
+      },
+      {
+        "q_similarity": 0.6789183055818883,
+        "mark_similarity": 0.4161138170766836,
+        "q_probability": 0.24,
+        "is_q_match": true,
+        "logion": 36,
+        "has_q_parallel": true,
+        "expected_q": true
+      },
+      {
+        "q_similarity": 0.3544813742480619,
+        "mark_similarity": 0.43613687135679846,
+        "q_probability": 0.27,
+        "is_q_match": false,
+        "logion": 39,
+        "has_q_parallel": true,
+        "expected_q": true
+      }
+    ]
+  },
+  "didache": {
+    "success": 1.0,
+    "lords_prayer": {
+      "q_similarity": 0.8233416171207778,
+      "threshold": 0.55,
+      "success": true
+    },
+    "eschatological": {
+      "mean_q_similarity": 0.6247266438019614,
+      "threshold": 0.5,
+      "success": 1.0,
+      "n_sections": 3
+    },
+    "all_results": [
+      {
+        "q_similarity": 0.5580748882644251,
+        "mark_similarity": 0.47692812572165066,
+        "q_probability": 0.65,
+        "is_q_match": true,
+        "section": "Did_1:1-2",
+        "q_parallel": "Q 6:31 (Golden Rule)",
+        "expected_layer": "Q1",
+        "expected_q": false
+      },
+      {
+        "q_similarity": 0.414293998046968,
+        "mark_similarity": 0.3688881692865583,
+        "q_probability": 0.71,
+        "is_q_match": true,
+        "section": "Did_1:3-4",
+        "q_parallel": "Q 6:27-28, 32-33 (Love Enemies)",
+        "expected_layer": "Q1",
+        "expected_q": false
+      },
+      {
+        "q_similarity": 0.8233416171207778,
+        "mark_similarity": 0.702325250239705,
+        "q_probability": 0.87,
+        "is_q_match": true,
+        "section": "Did_8:2",
+        "q_parallel": "Q 11:2-4 (Lord's Prayer)",
+        "expected_layer": "Q1",
+        "expected_q": true
+      },
+      {
+        "q_similarity": 0.66946289587787,
+        "mark_similarity": 0.6855368828690596,
+        "q_probability": 0.74,
+        "is_q_match": true,
+        "section": "Did_16:1-2",
+        "q_parallel": "Q 12:35-40 (Be Ready)",
+        "expected_layer": "Q2",
+        "expected_q": true
+      },
+      {
+        "q_similarity": 0.4686991305220837,
+        "mark_similarity": 0.5657659871235379,
+        "q_probability": 0.49,
+        "is_q_match": false,
+        "section": "Did_16:3-4",
+        "q_parallel": "Q 17:23-24, 17:37 (Day of Son of Man)",
+        "expected_layer": "Q2",
+        "expected_q": true
+      },
+      {
+        "q_similarity": 0.7360179050059306,
+        "mark_similarity": 0.7185619456333983,
+        "q_probability": 0.8,
+        "is_q_match": true,
+        "section": "Did_16:6-8",
+        "q_parallel": "Q 17:24 (Lightning), cf. Mark 13",
+        "expected_layer": "Q2",
+        "expected_q": true
+      }
+    ]
+  },
+  "negative_control": {
+    "success": 1.0,
+    "random_mean": 0.4093961560952735,
+    "q_mean": 0.6297771217435449,
+    "separation": 0.22038096564827142,
+    "random_match_rate": 0.1,
+    "p_value": 2.9697359181087988e-08,
+    "n_samples": 20
+  },
+  "overall_success": 1.0
+}
