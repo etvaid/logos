@@ -3,6 +3,7 @@
 import React, { useState, useCallback, useMemo, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
+import TranslationStyleDial from '@/components/reader/TranslationStyleDial'
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // TYPES
@@ -291,14 +292,31 @@ export default function ReaderPage() {
       <header className="sticky top-0 z-40 bg-[#0D0D0F]/95 backdrop-blur border-b border-[#C9A962]/20">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div>
-              <Link href="/" className="text-[#C9A962] font-serif text-2xl hover:text-[#E8D5A3] transition">
-                LOGOS
-              </Link>
-              <span className="mx-3 text-[#F5F3EF]/30">|</span>
-              <span className="text-[#F5F3EF]/70">Reader</span>
+            <div className="flex items-center gap-4">
+              <div>
+                <Link href="/" className="text-[#C9A962] font-serif text-2xl hover:text-[#E8D5A3] transition">
+                  LOGOS
+                </Link>
+                <span className="mx-3 text-[#F5F3EF]/30">|</span>
+                <span className="text-[#F5F3EF]/70">Reader</span>
+              </div>
+
+              {/* Author/Translator Selection Dial */}
+              <TranslationStyleDial
+                onChange={(persona, translator) => {
+                  console.log('Selected:', persona, translator)
+                  // Map translator to translation style
+                  if (translator === 'plain' || translator === 'rouse') {
+                    setTranslationStyle('student')
+                  } else if (translator === 'lattimore' || translator === 'loeb') {
+                    setTranslationStyle('literal')
+                  } else {
+                    setTranslationStyle('literary')
+                  }
+                }}
+              />
             </div>
-            
+
             <div className="flex items-center gap-4">
               {/* Translation Style */}
               <div className="flex bg-[#1A1A1F] rounded-lg p-1">

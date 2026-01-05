@@ -357,7 +357,11 @@ const ClusterView: React.FC = () => {
                   <Download className="w-4 h-4" />
                 </button>
                 <button
-                  onClick={() => {}}
+                  onClick={() => {
+                    const url = window.location.href
+                    navigator.clipboard.writeText(url)
+                    alert('Link copied to clipboard!')
+                  }}
                   className="p-2 bg-white/5 hover:bg-white/10 rounded-lg transition-colors"
                   title="Share view"
                 >

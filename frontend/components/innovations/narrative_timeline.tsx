@@ -892,6 +892,7 @@ function NarrativeTimeline({
   const [selectedMeaningId, setSelectedMeaningId] = useState<string | null>(null)
   const [hoveredMeaningId, setHoveredMeaningId] = useState<string | null>(null)
   const [selectedAuthorId, setSelectedAuthorId] = useState<string | null>(null)
+  const [selectedTransitionId, setSelectedTransitionId] = useState<string | null>(null)
   const [hoveredDate, setHoveredDate] = useState<number | null>(null)
   const [viewMode, setViewMode] = useState<'meanings' | 'authors' | 'both'>('both')
   const [zoomLevel, setZoomLevel] = useState(1)
@@ -1061,7 +1062,7 @@ function NarrativeTimeline({
                       toPosition={toMeaning.coordinates}
                       isVisible={showTransitions}
                       animationDelay={index * 0.2}
-                      onClick={() => {}}
+                      onClick={setSelectedTransitionId}
                       containerWidth={timelineRef.current?.clientWidth ? timelineRef.current.clientWidth - 64 : 800}
                       containerHeight={timelineRef.current?.clientHeight ? timelineRef.current.clientHeight - 120 : 400}
                     />

@@ -68,7 +68,6 @@ interface Material {
   category: string
   difficulty: string
   usage: number
-  thumbnail: string
   tags: string[]
   isShared: boolean
   collaborators: number
@@ -84,7 +83,6 @@ interface SharedResource {
   description: string
   tags: string[]
   createdAt: string
-  thumbnail: string
   isVerified: boolean
 }
 
@@ -215,7 +213,6 @@ export default function PedagogyEnginePage() {
             category: 'reading',
             difficulty: 'Intermediate',
             usage: 234,
-            thumbnail: '/api/placeholder/300/200',
             tags: ['Caesar', 'Narrative', 'War', 'Beginner-Friendly'],
             isShared: true,
             collaborators: 3
@@ -229,7 +226,6 @@ export default function PedagogyEnginePage() {
             category: 'grammar',
             difficulty: 'Advanced',
             usage: 156,
-            thumbnail: '/api/placeholder/300/200',
             tags: ['Grammar', 'Subjunctive', 'Progressive'],
             isShared: false,
             collaborators: 1
@@ -243,7 +239,6 @@ export default function PedagogyEnginePage() {
             category: 'vocabulary',
             difficulty: 'Intermediate',
             usage: 445,
-            thumbnail: '/api/placeholder/300/200',
             tags: ['Cicero', 'Rhetoric', 'Advanced Vocabulary'],
             isShared: true,
             collaborators: 7
@@ -261,7 +256,6 @@ export default function PedagogyEnginePage() {
             description: 'Comprehensive commentary with grammatical notes, cultural context, and discussion questions for all 12 books',
             tags: ['Vergil', 'Epic', 'Commentary', 'Complete'],
             createdAt: '2023-09-15',
-            thumbnail: '/api/placeholder/300/200',
             isVerified: true
           },
           {
@@ -274,7 +268,6 @@ export default function PedagogyEnginePage() {
             description: 'Progressive exercises in Latin composition with model answers and style guides',
             tags: ['Composition', 'Prose', 'Exercises', 'Style'],
             createdAt: '2023-10-22',
-            thumbnail: '/api/placeholder/300/200',
             isVerified: true
           },
           {
@@ -287,7 +280,6 @@ export default function PedagogyEnginePage() {
             description: 'Interactive timeline connecting historical events with literary texts and primary sources',
             tags: ['History', 'Timeline', 'Interactive', 'Context'],
             createdAt: '2023-11-08',
-            thumbnail: '/api/placeholder/300/200',
             isVerified: true
           }
         ])
