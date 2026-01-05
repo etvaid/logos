@@ -1,0 +1,674 @@
+{
+  "timestamp": "2026-01-05T10:08:29.574125",
+  "embedding_infra": {
+    "columns": [
+      {
+        "table": "ai_reconstructions",
+        "column": "embedding",
+        "type": "USER-DEFINED"
+      },
+      {
+        "table": "author_fingerprints",
+        "column": "style_vector",
+        "type": "jsonb"
+      },
+      {
+        "table": "author_profiles",
+        "column": "style_vector",
+        "type": "jsonb"
+      },
+      {
+        "table": "author_profiles_v2",
+        "column": "style_vector_20d",
+        "type": "bytea"
+      },
+      {
+        "table": "author_style_vectors",
+        "column": "burrows_delta_vector",
+        "type": "ARRAY"
+      },
+      {
+        "table": "author_style_vectors",
+        "column": "char_ngram_vector",
+        "type": "ARRAY"
+      },
+      {
+        "table": "author_style_vectors",
+        "column": "fixed_effects_vector",
+        "type": "USER-DEFINED"
+      },
+      {
+        "table": "author_style_vectors",
+        "column": "function_word_vector",
+        "type": "ARRAY"
+      },
+      {
+        "table": "author_style_vectors",
+        "column": "invariant_vector",
+        "type": "USER-DEFINED"
+      },
+      {
+        "table": "author_style_vectors",
+        "column": "pos_ngram_vector",
+        "type": "ARRAY"
+      },
+      {
+        "table": "author_style_vectors",
+        "column": "stylometric_vector",
+        "type": "USER-DEFINED"
+      },
+      {
+        "table": "author_style_vectors_v2",
+        "column": "style_vector",
+        "type": "ARRAY"
+      },
+      {
+        "table": "author_style_vectors_v3",
+        "column": "elasticity_vector",
+        "type": "ARRAY"
+      },
+      {
+        "table": "author_style_vectors_v3",
+        "column": "global_style_vector",
+        "type": "ARRAY"
+      },
+      {
+        "table": "author_style_vectors_v3",
+        "column": "style_vector",
+        "type": "ARRAY"
+      },
+      {
+        "table": "authorship_comparisons",
+        "column": "embedding_cosine_sim",
+        "type": "double precision"
+      },
+      {
+        "table": "authorship_fingerprints",
+        "column": "fingerprint_embedding",
+        "type": "USER-DEFINED"
+      },
+      {
+        "table": "biblical_passages",
+        "column": "embedding",
+        "type": "USER-DEFINED"
+      },
+      {
+        "table": "bridge_embeddings",
+        "column": "embedding",
+        "type": "USER-DEFINED"
+      },
+      {
+        "table": "bridge_embeddings",
+        "column": "source_embedding",
+        "type": "USER-DEFINED"
+      },
+      {
+        "table": "chunk_bridge_embeddings",
+        "column": "embedding",
+        "type": "USER-DEFINED"
+      },
+      {
+        "table": "chunk_embeddings",
+        "column": "embedding_b64",
+        "type": "text"
+      },
+      {
+        "table": "computed_translator_profiles",
+        "column": "style_vector",
+        "type": "jsonb"
+      },
+      {
+        "table": "disputed_analyses",
+        "column": "stylometric_vector",
+        "type": "ARRAY"
+      },
+      {
+        "table": "doctrinal_axes",
+        "column": "axis_vector",
+        "type": "USER-DEFINED"
+      },
+      {
+        "table": "editorial_personas",
+        "column": "style_vector",
+        "type": "USER-DEFINED"
+      },
+      {
+        "table": "embedding_cache",
+        "column": "embedding",
+        "type": "bytea"
+      },
+      {
+        "table": "embedding_cache",
+        "column": "embedding_model",
+        "type": "text"
+      },
+      {
+        "table": "embeddings",
+        "column": "embedding",
+        "type": "jsonb"
+      },
+      {
+        "table": "hebrew_torah",
+        "column": "function_word_vector",
+        "type": "ARRAY"
+      },
+      {
+        "table": "intertextual_links",
+        "column": "embedding_similarity",
+        "type": "double precision"
+      },
+      {
+        "table": "latent_axes",
+        "column": "axis_vector",
+        "type": "USER-DEFINED"
+      },
+      {
+        "table": "meaning_anchor_stats",
+        "column": "mean_embedding",
+        "type": "USER-DEFINED"
+      },
+      {
+        "table": "meaning_anchors",
+        "column": "anchor_embedding",
+        "type": "USER-DEFINED"
+      },
+      {
+        "table": "meaning_anchors",
+        "column": "embedding_variance",
+        "type": "double precision"
+      },
+      {
+        "table": "multiview_author_profiles",
+        "column": "mean_fw_vector",
+        "type": "ARRAY"
+      },
+      {
+        "table": "multiview_author_profiles",
+        "column": "std_fw_vector",
+        "type": "ARRAY"
+      },
+      {
+        "table": "multiview_style_features",
+        "column": "function_word_vector",
+        "type": "ARRAY"
+      },
+      {
+        "table": "parallel_index",
+        "column": "consensus_embedding",
+        "type": "bytea"
+      },
+      {
+        "table": "parallel_index",
+        "column": "source_embedding",
+        "type": "bytea"
+      },
+      {
+        "table": "parallel_translations",
+        "column": "embedding",
+        "type": "USER-DEFINED"
+      },
+      {
+        "table": "passage_consensus",
+        "column": "embedding",
+        "type": "USER-DEFINED"
+      },
+      {
+        "table": "passage_style_variants",
+        "column": "embedding",
+        "type": "USER-DEFINED"
+      },
+      {
+        "table": "passage_style_variants",
+        "column": "style_vector",
+        "type": "USER-DEFINED"
+      },
+      {
+        "table": "passages",
+        "column": "embedding",
+        "type": "USER-DEFINED"
+      },
+      {
+        "table": "passages",
+        "column": "style_vector",
+        "type": "USER-DEFINED"
+      },
+      {
+        "table": "style_directions",
+        "column": "direction_vector",
+        "type": "bytea"
+      },
+      {
+        "table": "style_evidence_layer",
+        "column": "embedding",
+        "type": "USER-DEFINED"
+      },
+      {
+        "table": "style_invariant_embeddings",
+        "column": "invariant_embedding",
+        "type": "USER-DEFINED"
+      },
+      {
+        "table": "style_invariant_embeddings",
+        "column": "original_embedding",
+        "type": "USER-DEFINED"
+      },
+      {
+        "table": "style_windows",
+        "column": "anchor_mean_embedding",
+        "type": "USER-DEFINED"
+      },
+      {
+        "table": "style_windows",
+        "column": "char_ngram_vector",
+        "type": "ARRAY"
+      },
+      {
+        "table": "style_windows",
+        "column": "embedding",
+        "type": "USER-DEFINED"
+      },
+      {
+        "table": "style_windows",
+        "column": "function_word_vector",
+        "type": "ARRAY"
+      },
+      {
+        "table": "stylometric_features",
+        "column": "feature_vector",
+        "type": "ARRAY"
+      },
+      {
+        "table": "swarm_complete_metrics",
+        "column": "burrows_delta_vector",
+        "type": "jsonb"
+      },
+      {
+        "table": "swarm_complete_metrics",
+        "column": "embedding",
+        "type": "jsonb"
+      },
+      {
+        "table": "swarm_complete_metrics",
+        "column": "style_vector_20",
+        "type": "jsonb"
+      },
+      {
+        "table": "temporal_embeddings",
+        "column": "embedding",
+        "type": "ARRAY"
+      },
+      {
+        "table": "text_style_vectors",
+        "column": "style_vector",
+        "type": "jsonb"
+      },
+      {
+        "table": "texts",
+        "column": "embedding",
+        "type": "USER-DEFINED"
+      },
+      {
+        "table": "translation_system_health",
+        "column": "bridge_embedding_count",
+        "type": "bigint"
+      },
+      {
+        "table": "translations",
+        "column": "embedding",
+        "type": "USER-DEFINED"
+      },
+      {
+        "table": "translations",
+        "column": "style_vector",
+        "type": "USER-DEFINED"
+      },
+      {
+        "table": "translator_profiles",
+        "column": "style_vector",
+        "type": "jsonb"
+      },
+      {
+        "table": "translator_profiles_v2",
+        "column": "style_vector_20d",
+        "type": "bytea"
+      },
+      {
+        "table": "word_embeddings",
+        "column": "embedding",
+        "type": "ARRAY"
+      },
+      {
+        "table": "word_embeddings",
+        "column": "embedding_dim",
+        "type": "integer"
+      },
+      {
+        "table": "word_embeddings",
+        "column": "vector",
+        "type": "USER-DEFINED"
+      }
+    ],
+    "dimensions": {
+      "translations": 768,
+      "style_invariant_original": 768,
+      "style_invariant_invariant": 768
+    },
+    "primary_store": "embeddings table",
+    "embeddings_table_columns": [
+      {
+        "column": "urn",
+        "type": "text"
+      },
+      {
+        "column": "embedding",
+        "type": "jsonb"
+      }
+    ]
+  },
+  "source_counts": {
+    "latin": 6058306,
+    "english": 401655,
+    "greek": 164568,
+    "aramaic": 50806,
+    "hebrew": 34148,
+    "coptic": 38
+  },
+  "total_sources": 6709521,
+  "embedding_coverage": {
+    "total": 6709521,
+    "with_embeddings": 1279950,
+    "missing": 5429571,
+    "coverage_percent": 19.076622608379942
+  },
+  "translation_coverage": {
+    "total": 38746,
+    "with_embeddings": 38746,
+    "unique_urns": 0,
+    "multi_translation_urns": 0,
+    "table_columns": [
+      "id",
+      "text_id",
+      "urn",
+      "style",
+      "translation",
+      "notes",
+      "created_at",
+      "embedding",
+      "style_vector",
+      "style_residual",
+      "ltqi_score",
+      "semantic_score",
+      "translator_id"
+    ]
+  },
+  "morphology_coverage": {
+    "morph_entries": 708821,
+    "passage_tokens": 2419842
+  },
+  "backfill_jobs_exists": true,
+  "indexes": [
+    {
+      "name": "author_style_vectors_author_id_model_version_key",
+      "definition": "CREATE UNIQUE INDEX author_style_vectors_author_id_model_version_key ON public.author_style_vectors USING btree (author_id, model_version)"
+    },
+    {
+      "name": "author_style_vectors_pkey",
+      "definition": "CREATE UNIQUE INDEX author_style_vectors_pkey ON public.author_style_vectors USING btree (id)"
+    },
+    {
+      "name": "author_style_vectors_v2_pkey",
+      "definition": "CREATE UNIQUE INDEX author_style_vectors_v2_pkey ON public.author_style_vectors_v2 USING btree (model_version, author_name)"
+    },
+    {
+      "name": "author_style_vectors_v3_author_name_context_id_model_versio_key",
+      "definition": "CREATE UNIQUE INDEX author_style_vectors_v3_author_name_context_id_model_versio_key ON public.author_style_vectors_v3 USING btree (author_name, context_id, model_version)"
+    },
+    {
+      "name": "author_style_vectors_v3_pkey",
+      "definition": "CREATE UNIQUE INDEX author_style_vectors_v3_pkey ON public.author_style_vectors_v3 USING btree (id)"
+    },
+    {
+      "name": "bridge_embeddings_urn_key",
+      "definition": "CREATE UNIQUE INDEX bridge_embeddings_urn_key ON public.bridge_embeddings USING btree (urn)"
+    },
+    {
+      "name": "chunk_bridge_embeddings_urn_chunk_index_key",
+      "definition": "CREATE UNIQUE INDEX chunk_bridge_embeddings_urn_chunk_index_key ON public.chunk_bridge_embeddings USING btree (urn, chunk_index)"
+    },
+    {
+      "name": "concept_members_cluster_id_urn_key",
+      "definition": "CREATE UNIQUE INDEX concept_members_cluster_id_urn_key ON public.concept_members USING btree (cluster_id, urn)"
+    },
+    {
+      "name": "entity_mentions_urn_entity_id_char_start_key",
+      "definition": "CREATE UNIQUE INDEX entity_mentions_urn_entity_id_char_start_key ON public.entity_mentions USING btree (urn, entity_id, char_start)"
+    },
+    {
+      "name": "entity_mentions_urn_idx",
+      "definition": "CREATE INDEX entity_mentions_urn_idx ON public.entity_mentions USING btree (urn)"
+    },
+    {
+      "name": "external_attestations_dataset_source_urn_target_urn_key",
+      "definition": "CREATE UNIQUE INDEX external_attestations_dataset_source_urn_target_urn_key ON public.external_attestations USING btree (dataset, source_urn, target_urn)"
+    },
+    {
+      "name": "fragments_urn_key",
+      "definition": "CREATE UNIQUE INDEX fragments_urn_key ON public.fragments USING btree (urn)"
+    },
+    {
+      "name": "idx_author_style_author",
+      "definition": "CREATE INDEX idx_author_style_author ON public.author_style_vectors USING btree (author_id)"
+    },
+    {
+      "name": "idx_author_style_name",
+      "definition": "CREATE INDEX idx_author_style_name ON public.author_style_vectors USING btree (author_name)"
+    },
+    {
+      "name": "idx_author_style_version",
+      "definition": "CREATE INDEX idx_author_style_version ON public.author_style_vectors USING btree (model_version)"
+    },
+    {
+      "name": "idx_authorship_fingerprints_embedding_hnsw",
+      "definition": "CREATE INDEX idx_authorship_fingerprints_embedding_hnsw ON public.authorship_fingerprints USING hnsw (fingerprint_embedding vector_cosine_ops) WITH (m='16', ef_construction='200')"
+    },
+    {
+      "name": "idx_bridge_embedding_hnsw",
+      "definition": "CREATE INDEX idx_bridge_embedding_hnsw ON public.bridge_embeddings USING hnsw (embedding vector_cosine_ops) WITH (m='16', ef_construction='64')"
+    },
+    {
+      "name": "idx_bridge_language",
+      "definition": "CREATE INDEX idx_bridge_language ON public.bridge_embeddings USING btree (language)"
+    },
+    {
+      "name": "idx_bridge_urn",
+      "definition": "CREATE INDEX idx_bridge_urn ON public.bridge_embeddings USING btree (urn)"
+    },
+    {
+      "name": "idx_chunk_bridge_embedding_hnsw",
+      "definition": "CREATE INDEX idx_chunk_bridge_embedding_hnsw ON public.chunk_bridge_embeddings USING hnsw (embedding vector_cosine_ops) WITH (m='16', ef_construction='64')"
+    },
+    {
+      "name": "idx_chunk_bridge_urn",
+      "definition": "CREATE INDEX idx_chunk_bridge_urn ON public.chunk_bridge_embeddings USING btree (urn)"
+    },
+    {
+      "name": "idx_clusters_centroid_hnsw",
+      "definition": "CREATE INDEX idx_clusters_centroid_hnsw ON public.concept_clusters USING hnsw (centroid vector_cosine_ops) WITH (m='16', ef_construction='64')"
+    },
+    {
+      "name": "idx_consensus_language",
+      "definition": "CREATE INDEX idx_consensus_language ON public.passage_consensus USING btree (source_language)"
+    },
+    {
+      "name": "idx_consensus_urn",
+      "definition": "CREATE INDEX idx_consensus_urn ON public.passage_consensus USING btree (urn)"
+    },
+    {
+      "name": "idx_disputed_urn",
+      "definition": "CREATE INDEX idx_disputed_urn ON public.disputed_text_analysis USING btree (text_urn)"
+    },
+    {
+      "name": "idx_entity_mentions_urn",
+      "definition": "CREATE INDEX idx_entity_mentions_urn ON public.entity_mentions USING btree (urn)"
+    },
+    {
+      "name": "idx_meaning_anchors_embedding_hnsw",
+      "definition": "CREATE INDEX idx_meaning_anchors_embedding_hnsw ON public.meaning_anchors USING hnsw (anchor_embedding vector_cosine_ops) WITH (m='16', ef_construction='200')"
+    },
+    {
+      "name": "idx_members_language",
+      "definition": "CREATE INDEX idx_members_language ON public.concept_members USING btree (language)"
+    },
+    {
+      "name": "idx_members_urn",
+      "definition": "CREATE INDEX idx_members_urn ON public.concept_members USING btree (urn)"
+    },
+    {
+      "name": "idx_parallel_index_urn",
+      "definition": "CREATE INDEX idx_parallel_index_urn ON public.parallel_index USING btree (cts_urn)"
+    },
+    {
+      "name": "idx_passage_payloads_urn",
+      "definition": "CREATE INDEX idx_passage_payloads_urn ON public.passage_payloads USING btree (urn)"
+    },
+    {
+      "name": "idx_passages_urn",
+      "definition": "CREATE INDEX idx_passages_urn ON public.passages USING btree (urn)"
+    },
+    {
+      "name": "idx_runs_urn",
+      "definition": "CREATE INDEX idx_runs_urn ON public.translation_runs USING btree (urn)"
+    },
+    {
+      "name": "idx_segments_urn",
+      "definition": "CREATE INDEX idx_segments_urn ON public.authorship_segments USING btree (work_urn)"
+    },
+    {
+      "name": "idx_source_language",
+      "definition": "CREATE INDEX idx_source_language ON public.source_texts USING btree (language)"
+    },
+    {
+      "name": "idx_source_texts_urn",
+      "definition": "CREATE INDEX idx_source_texts_urn ON public.source_texts USING btree (urn)"
+    },
+    {
+      "name": "idx_style_text_id",
+      "definition": "CREATE INDEX idx_style_text_id ON public.text_style_vectors USING btree (text_id)"
+    },
+    {
+      "name": "idx_style_urn",
+      "definition": "CREATE INDEX idx_style_urn ON public.text_style_vectors USING btree (urn)"
+    },
+    {
+      "name": "idx_style_variants_urn",
+      "definition": "CREATE INDEX idx_style_variants_urn ON public.passage_style_variants USING btree (urn)"
+    },
+    {
+      "name": "idx_sw_language",
+      "definition": "CREATE INDEX idx_sw_language ON public.style_windows USING btree (language)"
+    },
+    {
+      "name": "idx_token_annotations_urn",
+      "definition": "CREATE INDEX idx_token_annotations_urn ON public.token_annotations USING btree (urn)"
+    },
+    {
+      "name": "morph_entries_language_idx",
+      "definition": "CREATE INDEX morph_entries_language_idx ON public.morph_entries USING btree (language)"
+    },
+    {
+      "name": "morph_entries_language_lemma_pos_feats_key",
+      "definition": "CREATE UNIQUE INDEX morph_entries_language_lemma_pos_feats_key ON public.morph_entries USING btree (language, lemma, pos, feats)"
+    },
+    {
+      "name": "mv_passage_entities_urn_idx",
+      "definition": "CREATE UNIQUE INDEX mv_passage_entities_urn_idx ON public.mv_passage_entities USING btree (urn)"
+    },
+    {
+      "name": "mv_passage_intertexts_urn_idx",
+      "definition": "CREATE UNIQUE INDEX mv_passage_intertexts_urn_idx ON public.mv_passage_intertexts USING btree (urn)"
+    },
+    {
+      "name": "named_entities_entity_type_canonical_name_language_key",
+      "definition": "CREATE UNIQUE INDEX named_entities_entity_type_canonical_name_language_key ON public.named_entities USING btree (entity_type, canonical_name, language)"
+    },
+    {
+      "name": "passage_consensus_urn_key",
+      "definition": "CREATE UNIQUE INDEX passage_consensus_urn_key ON public.passage_consensus USING btree (urn)"
+    },
+    {
+      "name": "passage_payloads_urn_key",
+      "definition": "CREATE UNIQUE INDEX passage_payloads_urn_key ON public.passage_payloads USING btree (urn)"
+    },
+    {
+      "name": "passage_themes_urn_idx",
+      "definition": "CREATE INDEX passage_themes_urn_idx ON public.passage_themes USING btree (urn)"
+    },
+    {
+      "name": "passage_themes_urn_tag_id_key",
+      "definition": "CREATE UNIQUE INDEX passage_themes_urn_tag_id_key ON public.passage_themes USING btree (urn, tag_id)"
+    },
+    {
+      "name": "passage_tokens_language_idx",
+      "definition": "CREATE INDEX passage_tokens_language_idx ON public.passage_tokens USING btree (language)"
+    },
+    {
+      "name": "source_texts_urn_key",
+      "definition": "CREATE UNIQUE INDEX source_texts_urn_key ON public.source_texts USING btree (urn)"
+    },
+    {
+      "name": "temporal_embeddings_word_language_period_key",
+      "definition": "CREATE UNIQUE INDEX temporal_embeddings_word_language_period_key ON public.temporal_embeddings USING btree (word, language, period)"
+    },
+    {
+      "name": "text_style_vectors_pkey",
+      "definition": "CREATE UNIQUE INDEX text_style_vectors_pkey ON public.text_style_vectors USING btree (id)"
+    },
+    {
+      "name": "texts_urn_key",
+      "definition": "CREATE UNIQUE INDEX texts_urn_key ON public.texts USING btree (urn)"
+    },
+    {
+      "name": "translation_memory_idiom_source_idiom_source_language_idiom_key",
+      "definition": "CREATE UNIQUE INDEX translation_memory_idiom_source_idiom_source_language_idiom_key ON public.translation_memory_idiom USING btree (source_idiom, source_language, idiomatic_translation)"
+    },
+    {
+      "name": "translation_memory_lexeme_source_lemma_source_language_targ_key",
+      "definition": "CREATE UNIQUE INDEX translation_memory_lexeme_source_lemma_source_language_targ_key ON public.translation_memory_lexeme USING btree (source_lemma, source_language, target_translation, morphological_context)"
+    },
+    {
+      "name": "translation_memory_phrase_source_phrase_source_language_tar_key",
+      "definition": "CREATE UNIQUE INDEX translation_memory_phrase_source_phrase_source_language_tar_key ON public.translation_memory_phrase USING btree (source_phrase, source_language, target_phrase)"
+    },
+    {
+      "name": "translation_order_templates_source_pattern_source_language__key",
+      "definition": "CREATE UNIQUE INDEX translation_order_templates_source_pattern_source_language__key ON public.translation_order_templates USING btree (source_pattern, source_language, target_pattern)"
+    },
+    {
+      "name": "word_embeddings_word_language_key",
+      "definition": "CREATE UNIQUE INDEX word_embeddings_word_language_key ON public.word_embeddings USING btree (word, language)"
+    },
+    {
+      "name": "works_urn_key",
+      "definition": "CREATE UNIQUE INDEX works_urn_key ON public.works USING btree (urn)"
+    }
+  ],
+  "existing_translation_tables": [
+    "translation_review_queue",
+    "translation_memory_lexeme",
+    "translation_memory_phrase",
+    "translation_memory_idiom",
+    "translation_order_templates",
+    "passage_consensus",
+    "passage_style_variants",
+    "translation_runs",
+    "bridge_embeddings",
+    "chunk_bridge_embeddings",
+    "concept_clusters",
+    "concept_members",
+    "concept_edges",
+    "evidence_trails"
+  ],
+  "recommendations": [
+    "Embeddings coverage is 19.1%. 5,429,571 passages need embeddings."
+  ]
+}

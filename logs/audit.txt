@@ -1,0 +1,172 @@
+
+================================================================================
+                        LOGOS DATABASE AUDIT REPORT
+                        2026-01-05T10:08:29.574125
+================================================================================
+
+EMBEDDING INFRASTRUCTURE
+-------------------------
+Primary Store: embeddings table
+
+Vector Columns Found: 69
+  ai_reconstructions: embedding (USER-DEFINED)
+  author_fingerprints: style_vector (jsonb)
+  author_profiles: style_vector (jsonb)
+  author_profiles_v2: style_vector_20d (bytea)
+  author_style_vectors: burrows_delta_vector (ARRAY), char_ngram_vector (ARRAY), fixed_effects_vector (USER-DEFINED), function_word_vector (ARRAY), invariant_vector (USER-DEFINED), pos_ngram_vector (ARRAY), stylometric_vector (USER-DEFINED)
+  author_style_vectors_v2: style_vector (ARRAY)
+  author_style_vectors_v3: elasticity_vector (ARRAY), global_style_vector (ARRAY), style_vector (ARRAY)
+  authorship_comparisons: embedding_cosine_sim (double precision)
+  authorship_fingerprints: fingerprint_embedding (USER-DEFINED)
+  biblical_passages: embedding (USER-DEFINED)
+  bridge_embeddings: embedding (USER-DEFINED), source_embedding (USER-DEFINED)
+  chunk_bridge_embeddings: embedding (USER-DEFINED)
+  chunk_embeddings: embedding_b64 (text)
+  computed_translator_profiles: style_vector (jsonb)
+  disputed_analyses: stylometric_vector (ARRAY)
+  doctrinal_axes: axis_vector (USER-DEFINED)
+  editorial_personas: style_vector (USER-DEFINED)
+  embedding_cache: embedding (bytea), embedding_model (text)
+  embeddings: embedding (jsonb)
+  hebrew_torah: function_word_vector (ARRAY)
+  intertextual_links: embedding_similarity (double precision)
+  latent_axes: axis_vector (USER-DEFINED)
+  meaning_anchor_stats: mean_embedding (USER-DEFINED)
+  meaning_anchors: anchor_embedding (USER-DEFINED), embedding_variance (double precision)
+  multiview_author_profiles: mean_fw_vector (ARRAY), std_fw_vector (ARRAY)
+  multiview_style_features: function_word_vector (ARRAY)
+  parallel_index: consensus_embedding (bytea), source_embedding (bytea)
+  parallel_translations: embedding (USER-DEFINED)
+  passage_consensus: embedding (USER-DEFINED)
+  passage_style_variants: embedding (USER-DEFINED), style_vector (USER-DEFINED)
+  passages: embedding (USER-DEFINED), style_vector (USER-DEFINED)
+  style_directions: direction_vector (bytea)
+  style_evidence_layer: embedding (USER-DEFINED)
+  style_invariant_embeddings: invariant_embedding (USER-DEFINED), original_embedding (USER-DEFINED)
+  style_windows: anchor_mean_embedding (USER-DEFINED), char_ngram_vector (ARRAY), embedding (USER-DEFINED), function_word_vector (ARRAY)
+  stylometric_features: feature_vector (ARRAY)
+  swarm_complete_metrics: burrows_delta_vector (jsonb), embedding (jsonb), style_vector_20 (jsonb)
+  temporal_embeddings: embedding (ARRAY)
+  text_style_vectors: style_vector (jsonb)
+  texts: embedding (USER-DEFINED)
+  translation_system_health: bridge_embedding_count (bigint)
+  translations: embedding (USER-DEFINED), style_vector (USER-DEFINED)
+  translator_profiles: style_vector (jsonb)
+  translator_profiles_v2: style_vector_20d (bytea)
+  word_embeddings: embedding (ARRAY), embedding_dim (integer), vector (USER-DEFINED)
+
+Detected Dimensions:
+  translations: 768
+  style_invariant_original: 768
+  style_invariant_invariant: 768
+
+Embeddings Table Structure:
+  urn: text
+  embedding: jsonb
+
+SOURCE TEXT COUNTS
+------------------
+Total: 6,709,521
+  latin: 6,058,306
+  english: 401,655
+  greek: 164,568
+  aramaic: 50,806
+  hebrew: 34,148
+  coptic: 38
+
+EMBEDDING COVERAGE
+------------------
+Total Passages: 6,709,521
+With Embeddings: 1,279,950
+Missing: 5,429,571
+Coverage: 19.08%
+
+TRANSLATION COVERAGE
+--------------------
+Total Translations: 38,746
+With Embeddings: 38,746
+Unique URNs: 0
+Multi-Translation URNs (>=2): 0
+Table Columns: id, text_id, urn, style, translation, notes, created_at, embedding, style_vector, style_residual, ltqi_score, semantic_score, translator_id
+
+MORPHOLOGY COVERAGE
+-------------------
+Morph Entries: 708,821
+Passage Tokens: 2,419,842
+
+INFRASTRUCTURE STATUS
+---------------------
+backfill_jobs table exists: YES
+Existing translation system tables: translation_review_queue, translation_memory_lexeme, translation_memory_phrase, translation_memory_idiom, translation_order_templates, passage_consensus, passage_style_variants, translation_runs, bridge_embeddings, chunk_bridge_embeddings, concept_clusters, concept_members, concept_edges, evidence_trails
+
+VECTOR INDEXES
+--------------
+  author_style_vectors_author_id_model_version_key
+  author_style_vectors_pkey
+  author_style_vectors_v2_pkey
+  author_style_vectors_v3_author_name_context_id_model_versio_key
+  author_style_vectors_v3_pkey
+  bridge_embeddings_urn_key
+  chunk_bridge_embeddings_urn_chunk_index_key
+  concept_members_cluster_id_urn_key
+  entity_mentions_urn_entity_id_char_start_key
+  entity_mentions_urn_idx
+  external_attestations_dataset_source_urn_target_urn_key
+  fragments_urn_key
+  idx_author_style_author
+  idx_author_style_name
+  idx_author_style_version
+  idx_authorship_fingerprints_embedding_hnsw
+  idx_bridge_embedding_hnsw
+  idx_bridge_language
+  idx_bridge_urn
+  idx_chunk_bridge_embedding_hnsw
+  idx_chunk_bridge_urn
+  idx_clusters_centroid_hnsw
+  idx_consensus_language
+  idx_consensus_urn
+  idx_disputed_urn
+  idx_entity_mentions_urn
+  idx_meaning_anchors_embedding_hnsw
+  idx_members_language
+  idx_members_urn
+  idx_parallel_index_urn
+  idx_passage_payloads_urn
+  idx_passages_urn
+  idx_runs_urn
+  idx_segments_urn
+  idx_source_language
+  idx_source_texts_urn
+  idx_style_text_id
+  idx_style_urn
+  idx_style_variants_urn
+  idx_sw_language
+  idx_token_annotations_urn
+  morph_entries_language_idx
+  morph_entries_language_lemma_pos_feats_key
+  mv_passage_entities_urn_idx
+  mv_passage_intertexts_urn_idx
+  named_entities_entity_type_canonical_name_language_key
+  passage_consensus_urn_key
+  passage_payloads_urn_key
+  passage_themes_urn_idx
+  passage_themes_urn_tag_id_key
+  passage_tokens_language_idx
+  source_texts_urn_key
+  temporal_embeddings_word_language_period_key
+  text_style_vectors_pkey
+  texts_urn_key
+  translation_memory_idiom_source_idiom_source_language_idiom_key
+  translation_memory_lexeme_source_lemma_source_language_targ_key
+  translation_memory_phrase_source_phrase_source_language_tar_key
+  translation_order_templates_source_pattern_source_language__key
+  word_embeddings_word_language_key
+  works_urn_key
+
+RECOMMENDATIONS
+---------------
+  1. Embeddings coverage is 19.1%. 5,429,571 passages need embeddings.
+
+================================================================================
+                              END OF AUDIT REPORT
+================================================================================

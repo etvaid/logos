@@ -1,0 +1,11 @@
+{
+  "phase": "phase2_tm_build",
+  "step": "processing_translations",
+  "processed": 1500,
+  "total": 1919,
+  "start_time": "2026-01-05T10:08:46.657452",
+  "last_update": "2026-01-05T10:10:07.611460",
+  "lexeme_count": 0,
+  "phrase_count": 0,
+  "idiom_count": 0
+}

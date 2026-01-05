@@ -1,0 +1,31 @@
+{
+  "timestamp": "20260105_045230",
+  "backed_up_at": "2026-01-05T04:55:07.977870",
+  "results": [
+    {
+      "table": "translations",
+      "status": "success",
+      "rows": 38746
+    },
+    {
+      "table": "translation_review_queue",
+      "status": "success",
+      "rows": 380
+    },
+    {
+      "table": "style_invariant_embeddings",
+      "status": "success",
+      "rows": 38746
+    },
+    {
+      "table": "embeddings",
+      "status": "success",
+      "rows": 1000
+    },
+    {
+      "table": "source_texts",
+      "status": "success",
+      "rows": 1000
+    }
+  ]
+}
