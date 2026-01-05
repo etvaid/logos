@@ -159,10 +159,11 @@ const ScholarWorkbench = () => {
           description: 'AI assistant that remembers your entire research journey',
           category: 'research-workspace',
           icon: <Brain className="w-5 h-5" />,
-          status: 'coming-soon',
+          status: 'available',
           isFavorite: false,
           tags: ['ai', 'memory', 'assistant'],
-          aiPowered: true
+          aiPowered: true,
+          lastUsed: new Date('2024-01-14')
         },
         {
           id: 'collaborative-editor',
@@ -261,10 +262,11 @@ const ScholarWorkbench = () => {
           description: 'Visualize literary influence networks across time',
           category: 'corpus-explorer',
           icon: <Network className="w-5 h-5" />,
-          status: 'coming-soon',
+          status: 'available',
           isFavorite: false,
           tags: ['influence', 'networks', 'visualization'],
-          aiPowered: true
+          aiPowered: true,
+          lastUsed: new Date('2024-01-11')
         },
         {
           id: 'manuscript-viewer',

@@ -669,10 +669,132 @@ export default function TranslationMemoryStudio() {
               {viewMode === 'semantic' && <SemanticClusterView />}
               
               {viewMode === 'timeline' && (
-                <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-8 text-center">
-                  <Clock className="w-16 h-16 text-[#C9A962] mx-auto mb-4" />
-                  <h3 className="text-xl font-medium text-[#F5F3EF]/80 mb-2">Timeline View</h3>
-                  <p className="text-[#F5F3EF]/60">Coming soon - visualize translation evolution over time</p>
+                <div className="space-y-8">
+                  {/* Timeline Header */}
+                  <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <Clock className="w-6 h-6 text-[#C9A962]" />
+                      <h3 className="text-xl font-serif text-[#F5F3EF]">Translation Evolution Timeline</h3>
+                    </div>
+                    <p className="text-[#F5F3EF]/60 text-sm">
+                      Explore how key terms have been translated across different historical periods
+                    </p>
+                  </div>
+
+                  {/* Evolution Charts for Each Concept */}
+                  {semanticClusters.map((cluster, clusterIndex) => (
+                    <motion.div
+                      key={cluster.concept}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: clusterIndex * 0.1 }}
+                      className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-6"
+                    >
+                      <div className="flex items-center justify-between mb-6">
+                        <div>
+                          <h4 className="text-lg font-serif text-[#C9A962] mb-1">{cluster.concept}</h4>
+                          <p className="text-sm text-[#F5F3EF]/60">{cluster.frequency} occurrences across corpus</p>
+                        </div>
+                        <div className="flex gap-2">
+                          {cluster.translations.slice(0, 3).map(t => (
+                            <span key={t} className="px-2 py-1 bg-white/10 text-[#F5F3EF]/70 text-xs rounded-full">
+                              {t}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Timeline Visualization */}
+                      <div className="relative">
+                        {/* Timeline Line */}
+                        <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#C9A962] via-[#7C9885] to-[#8B7355]" />
+
+                        {/* Timeline Points */}
+                        <div className="space-y-6 pl-12">
+                          {cluster.evolution.map((evo, evoIndex) => (
+                            <motion.div
+                              key={evo.period}
+                              initial={{ opacity: 0, x: -20 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: clusterIndex * 0.1 + evoIndex * 0.05 }}
+                              className="relative"
+                            >
+                              {/* Timeline Dot */}
+                              <div className="absolute -left-12 top-1 w-8 h-8 bg-[#0D0D0F] rounded-full border-2 border-[#C9A962] flex items-center justify-center">
+                                <div className="w-3 h-3 bg-[#C9A962] rounded-full" />
+                              </div>
+
+                              {/* Period Card */}
+                              <div className="bg-white/5 border border-white/10 rounded-lg p-4 hover:border-[#C9A962]/30 transition-colors">
+                                <div className="flex items-center justify-between mb-2">
+                                  <span className="text-[#C9A962] font-medium">{evo.period}</span>
+                                  <span className="text-sm text-[#7C9885]">{evo.usage_percentage}% of translations</span>
+                                </div>
+                                <div className="flex items-center gap-3">
+                                  <Quote className="w-4 h-4 text-[#F5F3EF]/40" />
+                                  <span className="text-[#F5F3EF] font-serif italic">"{evo.dominant_translation}"</span>
+                                </div>
+                                {/* Usage Bar */}
+                                <div className="mt-3 h-2 bg-white/10 rounded-full overflow-hidden">
+                                  <motion.div
+                                    initial={{ width: 0 }}
+                                    animate={{ width: `${evo.usage_percentage}%` }}
+                                    transition={{ duration: 0.8, delay: clusterIndex * 0.1 + evoIndex * 0.1 }}
+                                    className="h-full bg-gradient-to-r from-[#C9A962] to-[#7C9885] rounded-full"
+                                  />
+                                </div>
+                              </div>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Context Tags */}
+                      <div className="mt-6 pt-4 border-t border-white/10">
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <span className="text-xs text-[#F5F3EF]/50">Contexts:</span>
+                          {cluster.contexts.map(ctx => (
+                            <span key={ctx} className="px-2 py-1 bg-[#7C9885]/20 text-[#7C9885] text-xs rounded-full">
+                              {ctx}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+
+                  {/* Recent Translation Activity */}
+                  <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <TrendingUp className="w-5 h-5 text-[#7C9885]" />
+                      <h4 className="text-lg font-medium text-[#F5F3EF]">Recent Translation Activity</h4>
+                    </div>
+                    <div className="space-y-3">
+                      {filteredMemories.slice(0, 5).map((memory, idx) => (
+                        <motion.div
+                          key={memory.id}
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ delay: idx * 0.05 }}
+                          className="flex items-center justify-between py-3 border-b border-white/5 last:border-0"
+                        >
+                          <div className="flex items-center gap-4">
+                            <div className="text-sm text-[#F5F3EF]/40">
+                              {memory.timestamp.toLocaleDateString()}
+                            </div>
+                            <div>
+                              <span className="text-[#C9A962] font-serif">{memory.sourceText}</span>
+                              <ArrowRight className="inline w-4 h-4 mx-2 text-[#F5F3EF]/30" />
+                              <span className="text-[#F5F3EF]">{memory.translation}</span>
+                            </div>
+                          </div>
+                          <div className="text-xs text-[#F5F3EF]/50">
+                            {memory.author}, {memory.work}
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               )}
             </motion.div>
