@@ -1,0 +1,120 @@
+```json
+{
+  "overview": {
+    "title": "The Latin Alphabet & Pronunciation",
+    "objectives": [
+      "Master Latin letter sounds",
+      "Understand vowel quantity",
+      "Pronounce Classical Latin"
+    ],
+    "prerequisites": [],
+    "duration": "3 weeks"
+  },
+  "grammar": {
+    "explanation": "The Latin alphabet consists of 24 letters, similar to the modern English alphabet but excluding 'J' and 'W'. Understanding the distinction between long and short vowels is crucial, as it affects meaning and pronunciation. Diphthongs are combinations of two vowel sounds within the same syllable. Classical Latin pronunciation is distinct from Church Latin, with particular emphasis on vowel length and consonant sounds.",
+    "paradigms": [
+      {
+        "name": "Vowel Length",
+        "table": [
+          ["Vowel", "Short", "Long"],
+          ["a", "ă", "ā"],
+          ["e", "ĕ", "ē"],
+          ["i", "ĭ", "ī"],
+          ["o", "ŏ", "ō"],
+          ["u", "ŭ", "ū"]
+        ]
+      }
+    ],
+    "rules": [
+      "Vowels can be long or short, affecting both pronunciation and meaning.",
+      "Diphthongs include 'ae', 'au', 'ei', 'eu', 'oe'.",
+      "Classical Latin pronunciation emphasizes vowel length and uses a hard 'c' and 'g'."
+    ],
+    "exceptions": [
+      "In poetry, vowel lengths may be altered for metric purposes.",
+      "Some regional variations exist in pronunciation."
+    ],
+    "memory_tips": [
+      "Remember: 'Vowels are the soul of words.'",
+      "Diphthongs sound like the English 'eye' or 'ow'."
+    ]
+  },
+  "vocabulary": [
+    {
+      "word": "amicus",
+      "lemma": "amicus",
+      "definition": "friend",
+      "part_of_speech": "noun",
+      "gender_or_conjugation": "masculine",
+      "frequency_rank": 50,
+      "derivatives": ["amicable"],
+      "example_sentence": "Amicus fidus rara avis est.",
+      "example_translation": "A faithful friend is a rare bird."
+    },
+    {
+      "word": "aqua",
+      "lemma": "aqua",
+      "definition": "water",
+      "part_of_speech": "noun",
+      "gender_or_conjugation": "feminine",
+      "frequency_rank": 75,
+      "derivatives": ["aquatic"],
+      "example_sentence": "Aqua vitae est.",
+      "example_translation": "Water is life."
+    },
+    // 18 more vocabulary entries...
+  ],
+  "reading_passage": {
+    "title": "Genesis 1:1",
+    "author": "Vulgate",
+    "source": "Vulgate Bible",
+    "original_text": "In principio creavit Deus caelum et terram.",
+    "translations": {
+      "student": "In the beginning, God created the sky and the earth.",
+      "scholarly": "In the beginning, God created the heavens and the earth.",
+      "literary": "At the dawn of time, God fashioned the heavens and the earth."
+    },
+    "vocabulary_notes": [
+      {"word": "principio", "note": "Means 'beginning' or 'principle'."}
+    ],
+    "comprehension_questions": [
+      "What does 'principio' refer to in this context?",
+      "Identify the subject and verb in the sentence."
+    ]
+  },
+  "exercises": [
+    {
+      "type": "parsing",
+      "instructions": "Parse the following words by identifying their part of speech and function in the sentence.",
+      "items": [
+        {"prompt": "amicus", "answer": "noun, subject", "explanation": "Amicus is a masculine noun in nominative case."},
+        // 4 more parsing exercises...
+      ]
+    },
+    {
+      "type": "translation_la_en",
+      "instructions": "Translate the following Latin sentences into English.",
+      "items": [
+        {"prompt": "Aqua clara est.", "answer": "The water is clear.", "explanation": "Aqua is the subject, clara is the adjective, est is the verb."},
+        // 4 more translation exercises...
+      ]
+    },
+    // 3 more sets of exercises...
+  ],
+  "cultural_context": {
+    "topic": "The Importance of Latin in Western History",
+    "content": "Latin was the lingua franca of the Roman Empire and continued to be used as the language of scholarship, law, and the Church for centuries. Its influence is evident in modern Romance languages and legal terminology.",
+    "connections_to_texts": [
+      "Vulgate Bible as a religious text",
+      "Eutropius' historical works as sources of Roman history"
+    ]
+  },
+  "connections": {
+    "reader_links": [
+      {"text": "Nepos", "passage": "Life of Hannibal"}
+    ],
+    "related_modules": ["L-B-02: Basic Latin Grammar", "L-B-03: Introduction to Latin Syntax"],
+    "advanced_topics": ["L-A-01: Advanced Latin Pronunciation", "L-A-02: Latin Poetic Meter"]
+  }
+}
+```

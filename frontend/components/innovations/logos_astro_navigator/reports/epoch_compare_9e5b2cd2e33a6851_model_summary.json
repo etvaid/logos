@@ -1,0 +1,22 @@
+[
+  {
+    "summary_id": 1,
+    "run_id": 1,
+    "catalog_key": "almagest_ptolemy",
+    "hypothesis_a": "ptolemy_epoch",
+    "hypothesis_b": "hipparchus_copy",
+    "n_entries": 7,
+    "rms_a": 1.4270466050823822,
+    "rms_b": 1.411507532363385,
+    "bic_a": 110.19705504119825,
+    "bic_b": 112.96512371898535,
+    "bic_mix": 114.08958606644573,
+    "mix_weight_b": 0.001,
+    "log_bayes_factor_mix_vs_best": -1.9462655126237394,
+    "precession_shift_deg": 2.6666667,
+    "rounding_arcmin": 10.0,
+    "sigma_arcmin": 20.0,
+    "notes": "",
+    "created_at": "2026-01-04 10:30:57.295148+00:00"
+  }
+]

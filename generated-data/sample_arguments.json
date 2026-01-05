@@ -1,0 +1,332 @@
+[
+  {
+    "id": "arg_001",
+    "question": "How did Romans view Greek philosophy?",
+    "thesis": "Roman elite attitudes toward Greek philosophy evolved from suspicious admiration in the Republic to sophisticated appropriation under the Empire.",
+    "abstract": "Analysis of 1,847 relevant passages reveals a complex and evolving Roman engagement with Greek philosophical traditions, characterized initially by suspicion and eventual integration, reflecting broader cultural and political shifts.",
+    "confidence": 0.87,
+    "passages_analyzed": 1847,
+    "key_points": [
+      {
+        "point": "Republican suspicion",
+        "evidence_summary": "Cato's speeches and Senatorial debates show early elite resistance",
+        "evidence_count": 234,
+        "confidence": 0.82
+      }
+    ],
+    "counter_evidence": {
+      "summary": "However, 167 passages suggest elite Greeks maintained claims of cultural superiority",
+      "passages_count": 167,
+      "impact_on_confidence": -0.08
+    },
+    "methodology": "Semantic analysis of passages mentioning Greek/philosophy in Roman authors, filtered by sentiment markers"
+  },
+  {
+    "id": "arg_002",
+    "question": "What role did religion play in the political framework of the Roman Empire?",
+    "thesis": "Religion in the Roman Empire was deeply intertwined with political authority, serving as both a legitimizing force and a tool for social control.",
+    "abstract": "By examining 2,362 historical and religious texts, it is evident that religious practices and institutions were strategically utilized by Roman rulers to reinforce political power and maintain public order.",
+    "confidence": 0.91,
+    "passages_analyzed": 2362,
+    "key_points": [
+      {
+        "point": "Religious festivals as control",
+        "evidence_summary": "Seneca and Tacitus recount emperors leveraging religious rituals to unite Rome’s diverse populace.",
+        "evidence_count": 310,
+        "confidence": 0.88
+      }
+    ],
+    "counter_evidence": {
+      "summary": "Some local entities resisted enforced religious practices, as noted in 193 accounts of regional uprisings.",
+      "passages_count": 193,
+      "impact_on_confidence": -0.05
+    },
+    "methodology": "Cross-referential textual analysis of political and religious texts from the Roman period."
+  },
+  {
+    "id": "arg_003",
+    "question": "How did gender roles influence Roman education?",
+    "thesis": "Gender roles fundamentally dictated the scope and content of education in Ancient Rome, reinforcing social hierarchies.",
+    "abstract": "Through the analysis of educational treatises and societal records numbering 1,578, gender-specific educational paths emerged, limiting women's access but providing them vital roles within domestic spheres.",
+    "confidence": 0.85,
+    "passages_analyzed": 1578,
+    "key_points": [
+      {
+        "point": "Curriculum disparity",
+        "evidence_summary": "Quintilian’s works highlight gender-based curriculum divisions favoring males for public life education.",
+        "evidence_count": 219,
+        "confidence": 0.84
+      }
+    ],
+    "counter_evidence": {
+      "summary": "A minority of sources depict women receiving advanced education in private settings.",
+      "passages_count": 88,
+      "impact_on_confidence": -0.04
+    },
+    "methodology": "Content analysis of Roman educational texts and gender literature, focusing on curricular references and social commentary."
+  },
+  {
+    "id": "arg_004",
+    "question": "In what ways did rhetoric serve as a tool of power in classical Athens?",
+    "thesis": "Rhetoric in classical Athens was not only a means of persuasion but a foundational component of democratic power and social mobility.",
+    "abstract": "Analysis of 1,402 speeches and rhetorical works reveals rhetoric's role as a crucial skill for political ascendancy and influence in Athenian democracy.",
+    "confidence": 0.89,
+    "passages_analyzed": 1402,
+    "key_points": [
+      {
+        "point": "Rhetoric as empowerment",
+        "evidence_summary": "Demosthenes and Isocrates emphasize rhetoric’s role in citizen empowerment and policy-making.",
+        "evidence_count": 267,
+        "confidence": 0.86
+      }
+    ],
+    "counter_evidence": {
+      "summary": "Skepticism about rhetoric as manipulation appears in 143 critiques by Athenian philosophers.",
+      "passages_count": 143,
+      "impact_on_confidence": -0.07
+    },
+    "methodology": "Rhetorical analysis of Athenian oratory, supplemented by philosophical commentaries on rhetoric."
+  },
+  {
+    "id": "arg_005",
+    "question": "Did slavery affect societal structure in Ancient Greece?",
+    "thesis": "Slavery was a foundational institution in Ancient Greek society, fundamentally shaping economic, social, and political systems.",
+    "abstract": "The scrutiny of 1,925 accounts indicates that slavery permeated all aspects of Greek life, reinforcing economic hierarchies and enabling political participation for free citizens.",
+    "confidence": 0.92,
+    "passages_analyzed": 1925,
+    "key_points": [
+      {
+        "point": "Economic dependency on slaves",
+        "evidence_summary": "Plato and Xenophon document the critical role of slaves in maintaining economic stability.",
+        "evidence_count": 311,
+        "confidence": 0.9
+      }
+    ],
+    "counter_evidence": {
+      "summary": "Isolated systems in Crete operated with minimal reliance on slavery, as per 89 records.",
+      "passages_count": 89,
+      "impact_on_confidence": -0.03
+    },
+    "methodology": "Examination of economic treatises and sociopolitical commentaries, focusing on references to slavery."
+  },
+  {
+    "id": "arg_006",
+    "question": "What was the role of fate in Roman literature?",
+    "thesis": "Fate in Roman literature served as a narrative device to explore human limitations and divine will.",
+    "abstract": "Analysis of 1,768 literary works elucidates fate’s thematic prominence, used to reflect societal uncertainties and religious beliefs.",
+    "confidence": 0.88,
+    "passages_analyzed": 1768,
+    "key_points": [
+      {
+        "point": "Fate as a moral guide",
+        "evidence_summary": "Virgil and Ovid utilize fate to depict moral consequences and divine justice.",
+        "evidence_count": 276,
+        "confidence": 0.87
+      }
+    ],
+    "counter_evidence": {
+      "summary": "Stoic writings offer dissenting views that emphasize free will over fate in 151 debates.",
+      "passages_count": 151,
+      "impact_on_confidence": -0.06
+    },
+    "methodology": "Literary thematic analysis of Roman epics, dramas, and philosophical discourses."
+  },
+  {
+    "id": "arg_007",
+    "question": "How did conceptions of virtue differ between the Stoics and Epicureans?",
+    "thesis": "Stoic and Epicurean schools diverged fundamentally in their conceptions of virtue, with Stoicism emphasizing universal rationality and Epicureanism prioritizing personal pleasure and pain avoidance.",
+    "abstract": "A detailed examination of 1,978 philosophical texts highlights the central distinctions in virtue ethics between these influential schools, impacting broader Hellenistic thought.",
+    "confidence": 0.9,
+    "passages_analyzed": 1978,
+    "key_points": [
+      {
+        "point": "Virtue as rationality",
+        "evidence_summary": "Stoic writings from Epictetus focus on rational living as the highest virtue.",
+        "evidence_count": 330,
+        "confidence": 0.89
+      }
+    ],
+    "counter_evidence": {
+      "summary": "Cross-school debates indicate shared ethical practices among adherents, noted in 125 discourses.",
+      "passages_count": 125,
+      "impact_on_confidence": -0.04
+    },
+    "methodology": "Comparative analysis of primary philosophical texts from Stoic and Epicurean philosophers."
+  },
+  {
+    "id": "arg_008",
+    "question": "How did the structure of the Athenian democracy influence its rhetorical practices?",
+    "thesis": "The democratic framework of Athens necessitated the development of advanced rhetorical practices to facilitate public debate, citizen participation, and decision-making.",
+    "abstract": "Through 1,455 analysis of Athenian legal and political documents, rhetoric is shown to be integral to the function of democracy, shaping policies and legal outcomes.",
+    "confidence": 0.86,
+    "passages_analyzed": 1455,
+    "key_points": [
+      {
+        "point": "Rhetoric in legal contexts",
+        "evidence_summary": "Court speeches from Antiphon and Lysias highlight rhetoric's role in legal decisions.",
+        "evidence_count": 290,
+        "confidence": 0.84
+      }
+    ],
+    "counter_evidence": {
+      "summary": "Criticisms of rhetorical manipulation are noted in 110 philosophical essays.",
+      "passages_count": 110,
+      "impact_on_confidence": -0.05
+    },
+    "methodology": "Rhetorical and legal analysis of Athenian court and assembly speeches."
+  },
+  {
+    "id": "arg_009",
+    "question": "What impact did the Roman Empire have on local religious practices?",
+    "thesis": "The Roman Empire acted both as a suppressive force and a catalytic agent for the transformation of local religious practices through syncretism and official policy.",
+    "abstract": "Examining 2,043 records of religious interactions in the provinces reveals a complex process of religious syncretism and resistance under imperial rule.",
+    "confidence": 0.89,
+    "passages_analyzed": 2043,
+    "key_points": [
+      {
+        "point": "Syncretic practices",
+        "evidence_summary": "Archaeological findings show local deities being assimilated into Roman worship.",
+        "evidence_count": 347,
+        "confidence": 0.87
+      }
+    ],
+    "counter_evidence": {
+      "summary": "Regional records of religious enclaves resisting Roman influence in 134 texts.",
+      "passages_count": 134,
+      "impact_on_confidence": -0.06
+    },
+    "methodology": "Evaluation of archaeological records and religious documents in Roman provinces."
+  },
+  {
+    "id": "arg_010",
+    "question": "How did Roman conceptions of empire shape their political ideology?",
+    "thesis": "Roman conceptions of empire as a divine mandate justified expansive political ideology and the incorporation of diverse cultures.",
+    "abstract": "An analysis of 1,678 historical and philosophical texts reveals the ideological frameworks that supported Roman expansion and governance.",
+    "confidence": 0.91,
+    "passages_analyzed": 1678,
+    "key_points": [
+      {
+        "point": "Empire as destiny",
+        "evidence_summary": "The Aeneid and other foundational texts frame empire as a fated expansion.",
+        "evidence_count": 285,
+        "confidence": 0.88
+      }
+    ],
+    "counter_evidence": {
+      "summary": "Some Roman voices critiqued the moral costs of imperial ambition, as reflected in 115 writings.",
+      "passages_count": 115,
+      "impact_on_confidence": -0.05
+    },
+    "methodology": "Textual analysis of Roman literature and political philosophy regarding imperial ideology."
+  },
+  {
+    "id": "arg_011",
+    "question": "In what ways did beliefs about the afterlife influence Roman burial practices?",
+    "thesis": "Roman beliefs about the afterlife significantly influenced burial customs, reflecting broader religious and social values.",
+    "abstract": "Through the study of 1,552 epitaphs and funerary inscriptions, it becomes evident that burial practices were highly symbolic, incorporating elements of Roman religion and views of eternity.",
+    "confidence": 0.88,
+    "passages_analyzed": 1552,
+    "key_points": [
+      {
+        "point": "Symbolism in burial",
+        "evidence_summary": "Continuity of soul and commemoration practices are documented by gravestone texts.",
+        "evidence_count": 260,
+        "confidence": 0.86
+      }
+    ],
+    "counter_evidence": {
+      "summary": "Alternative practices, such as cremation, reflect varying beliefs about the body and soul, noted in 100 inscriptions.",
+      "passages_count": 100,
+      "impact_on_confidence": -0.03
+    },
+    "methodology": "Epigraphic analysis of funerary inscriptions across different Roman provinces."
+  },
+  {
+    "id": "arg_012",
+    "question": "How was the concept of time perceived in Ancient Rome?",
+    "thesis": "Time in Ancient Rome was perceived cyclically and functionally, influencing everything from agriculture to political processes.",
+    "abstract": "Analysis of 1,432 literary and historical documents sheds light on Roman temporal structures and their impact on daily life and ritual practices.",
+    "confidence": 0.85,
+    "passages_analyzed": 1432,
+    "key_points": [
+      {
+        "point": "Seasonal cycles",
+        "evidence_summary": "Cicero’s treatises reflect the alignment of social activities with seasonal rhythms.",
+        "evidence_count": 253,
+        "confidence": 0.84
+      }
+    ],
+    "counter_evidence": {
+      "summary": "Fragmentary accounts from minor authors discuss linear and eschatological views.",
+      "passages_count": 95,
+      "impact_on_confidence": -0.04
+    },
+    "methodology": "Historical analysis of Roman calendars and ritual practices."
+  },
+  {
+    "id": "arg_013",
+    "question": "What did the concept of virtue entail in Roman education?",
+    "thesis": "In Roman education, virtue was conceived as a composite of moral and practical elements, aiming to produce effective citizens and leaders.",
+    "abstract": "Analysis of 1,602 educational and philosophical texts demonstrates how the Romans integrated moral teachings with practical skills in their educational system.",
+    "confidence": 0.89,
+    "passages_analyzed": 1602,
+    "key_points": [
+      {
+        "point": "Comprehensive curriculum",
+        "evidence_summary": "Quintilian’s Institutes reveal education designed to cultivate virtue through rhetoric, law, and philosophy.",
+        "evidence_count": 271,
+        "confidence": 0.87
+      }
+    ],
+    "counter_evidence": {
+      "summary": "A minority of sources argue virtue was secondary to family wealth and connections, as noted in 120 accounts.",
+      "passages_count": 120,
+      "impact_on_confidence": -0.05
+    },
+    "methodology": "Content analysis of Roman educational texts and philosophical treatises on virtue."
+  },
+  {
+    "id": "arg_014",
+    "question": "How did spatial concepts in Roman architecture reflect political ideology?",
+    "thesis": "Roman architectural design was deeply embedded with political ideology, using spatial concepts to symbolize power and control.",
+    "abstract": "Through 1,320 analyses of Roman architectural and archaeological records, spatial configurations in public buildings are found to reflect and reinforce Roman political structures and ideologies.",
+    "confidence": 0.9,
+    "passages_analyzed": 1320,
+    "key_points": [
+      {
+        "point": "Centralized authority",
+        "evidence_summary": "Structures like the Forum and the Colosseum centralized spatial hierarchy, as documented by ancient architects.",
+        "evidence_count": 238,
+        "confidence": 0.88
+      }
+    ],
+    "counter_evidence": {
+      "summary": "Localized designs sometimes deviated from imperial norms, as seen in 95 provincial records.",
+      "passages_count": 95,
+      "impact_on_confidence": -0.04
+    },
+    "methodology": "Archaeological and theoretical analysis of Roman architecture."
+  },
+  {
+    "id": "arg_015",
+    "question": "How did the Roman Empire influence the concept of public and private space?",
+    "thesis": "The Roman Empire uniquely influenced the delineation of public and private spaces, reflecting the social and political stratification of its society.",
+    "abstract": "Analysis of 1,535 narratives and architectural studies indicates Roman ideals distinctly shaped urban planning, with clear demarcations reflecting hierarchical status and communal values.",
+    "confidence": 0.87,
+    "passages_analyzed": 1535,
+    "key_points": [
+      {
+        "point": "Urban stratification",
+        "evidence_summary": "Vitruvius notes architectural distinction between public forums and private villas.",
+        "evidence_count": 226,
+        "confidence": 0.85
+      }
+    ],
+    "counter_evidence": {
+      "summary": "Certain rural areas blurred these distinctions, as revealed in 107 rural accounts.",
+      "passages_count": 107,
+      "impact_on_confidence": -0.05
+    },
+    "methodology": "Critical analysis of Roman urban planning texts and architectural designs."
+  }
+]

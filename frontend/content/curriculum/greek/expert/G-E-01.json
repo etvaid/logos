@@ -1,0 +1,123 @@
+```json
+{
+  "overview": {
+    "title": "Homeric Greek",
+    "objectives": [
+      "Develop a deep understanding of the Homeric dialect and its unique features.",
+      "Analyze the use of formulaic expressions in Homeric epics.",
+      "Understand the historical significance and usage of the digamma in Homeric texts."
+    ],
+    "prerequisites": [
+      "Advanced knowledge of Classical Greek grammar and vocabulary.",
+      "Familiarity with Greek epic poetry and its historical context."
+    ],
+    "duration": "12 weeks"
+  },
+  "grammar": {
+    "explanation": "Homeric Greek is a complex dialect that combines elements of Ionic and Aeolic Greek. It is characterized by its use of archaic forms, specific syntactic structures, and unique vocabulary. Key features include the use of the digamma, which indicates a lost 'w' sound, and formulaic expressions, which are repetitive phrases used within the epic to aid in oral composition.",
+    "paradigms": [
+      {
+        "name": "Homeric Noun Declensions",
+        "table": [
+          ["Case", "Singular", "Plural"],
+          ["Nominative", "ἄνθρωπος", "ἄνθρωποι"],
+          ["Genitive", "ἀνθρώπου", "ἀνθρώπων"],
+          ["Dative", "ἀνθρώπῳ", "ἀνθρώποις"],
+          ["Accusative", "ἄνθρωπον", "ἄνθρωπους"],
+          ["Vocative", "ἄνθρωπε", "ἄνθρωποι"]
+        ]
+      }
+    ],
+    "rules": [
+      "The digamma (ϝ) appears in some Homeric texts and affects meter and pronunciation.",
+      "Epic formulae often follow specific syntactic patterns to fit the dactylic hexameter."
+    ],
+    "exceptions": [
+      "Certain words retain archaic forms not found in later Greek."
+    ],
+    "memory_tips": [
+      "Remember that Homeric Greek is a blend of dialects; focus on patterns rather than strict rules.",
+      "Use mnemonic devices to recall irregular forms and archaic vocabulary."
+    ]
+  },
+  "vocabulary": [
+    {
+      "word": "ἄναξ",
+      "lemma": "ἄναξ",
+      "definition": "king, lord",
+      "part_of_speech": "noun",
+      "gender_or_conjugation": "masculine",
+      "frequency_rank": 10,
+      "derivatives": ["anarchy", "monarch"],
+      "example_sentence": "ἄναξ ἀνδρῶν Ἀγαμέμνων",
+      "example_translation": "Agamemnon, king of men"
+    },
+    {
+      "word": "θάλασσα",
+      "lemma": "θάλασσα",
+      "definition": "sea",
+      "part_of_speech": "noun",
+      "gender_or_conjugation": "feminine",
+      "frequency_rank": 25,
+      "derivatives": ["thalassocracy"],
+      "example_sentence": "ἡ θάλασσα μεγίστη ἐστίν.",
+      "example_translation": "The sea is vast."
+    }
+    // ...Additional vocabulary items...
+  ],
+  "reading_passage": {
+    "title": "The Rage of Achilles",
+    "author": "Homer",
+    "source": "Iliad, Book 1, Lines 1-10",
+    "original_text": "Μῆνιν ἄειδε, θεά, Πηληϊάδεω Ἀχιλῆος...",
+    "translations": {
+      "student": "Sing, goddess, the anger of Achilles son of Peleus...",
+      "scholarly": "Invoke, O Muse, the wrath of Achilles, son of Peleus...",
+      "literary": "Goddess, sing the rage of Peleus' son Achilles..."
+    },
+    "vocabulary_notes": [
+      {"word": "μῆνις", "note": "Refers to a specific type of anger reserved for gods and heroes."}
+    ],
+    "comprehension_questions": [
+      "What is the cause of Achilles' rage in the opening lines of the Iliad?",
+      "How does the invocation of the Muse set the tone for the epic?"
+    ]
+  },
+  "exercises": [
+    {
+      "type": "parsing",
+      "instructions": "Parse the following Homeric Greek sentences, identifying the cases, tenses, and functions of each word.",
+      "items": [
+        {
+          "prompt": "ἄναξ ἀνδρῶν Ἀγαμέμνων",
+          "answer": "ἄναξ (nominative singular), ἀνδρῶν (genitive plural), Ἀγαμέμνων (nominative singular)",
+          "explanation": "The phrase identifies Agamemnon as the 'king of men'."
+        }
+        // ...Additional parsing items...
+      ]
+    },
+    // ...Additional exercises...
+  ],
+  "cultural_context": {
+    "topic": "The Oral Tradition in Homeric Poetry",
+    "content": "Homeric epics were composed in an oral tradition, which relied heavily on formulaic expressions and repetitive structures to aid memorization and recitation. This oral culture influenced the development of epic poetry and its transmission across generations.",
+    "connections_to_texts": [
+      "The use of epithets in the Iliad and the Odyssey.",
+      "The role of bards in ancient Greek society."
+    ]
+  },
+  "connections": {
+    "reader_links": [
+      {"text": "The Odyssey", "passage": "Odyssey, Book 1, Lines 1-10"}
+    ],
+    "related_modules": [
+      "G-E-02: Advanced Greek Syntax",
+      "G-E-03: Greek Lyric Poetry"
+    ],
+    "advanced_topics": [
+      "Comparative analysis of Homeric and Classical Greek.",
+      "The influence of Homeric epics on later Greek literature."
+    ]
+  }
+}
+```

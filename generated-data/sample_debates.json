@@ -1,0 +1,440 @@
+[
+  {
+    "id": "debate_001",
+    "question": "Did ancients believe in free will?",
+    "positions": [
+      {
+        "label": "Determinism",
+        "advocates": [
+          "Chrysippus",
+          "Cleanthes",
+          "Epictetus"
+        ],
+        "summary": "Fate governs all things through an unbreakable chain of causes",
+        "key_argument": "If anything could happen uncaused, the universe would be chaotic",
+        "corpus_percentage": 42,
+        "passage_count": 567
+      },
+      {
+        "label": "Libertarian Free Will",
+        "advocates": [
+          "Epicurus",
+          "Lucretius",
+          "Carneades"
+        ],
+        "summary": "The atomic swerve allows genuine choice free from determinism",
+        "key_argument": "Moral responsibility requires genuine alternatives",
+        "corpus_percentage": 31,
+        "passage_count": 423
+      }
+    ],
+    "corpus_verdict": "Determinism dominates in philosophical texts, but literary texts often assume genuine choice",
+    "temporal_trend": "Compatibilism grows from 15% (Hellenistic) to 35% (Imperial) as Stoics and Platonists synthesize",
+    "genre_effect": "Philosophy splits evenly; tragedy strongly favors determinism; rhetoric assumes free will"
+  },
+  {
+    "id": "debate_002",
+    "question": "What happens to the soul after death?",
+    "positions": [
+      {
+        "label": "Immortal Soul",
+        "advocates": [
+          "Plato",
+          "Plotinus",
+          "Cicero"
+        ],
+        "summary": "The soul is immortal and continues existence in a spiritual realm",
+        "key_argument": "The soul's ability to know eternal truths proves its immortal nature",
+        "corpus_percentage": 38,
+        "passage_count": 492
+      },
+      {
+        "label": "Mortality",
+        "advocates": [
+          "Epicurus",
+          "Lucretius",
+          "Democritus"
+        ],
+        "summary": "The soul dissolves at death; consciousness ceases completely",
+        "key_argument": "Soul is atomic composition that disperses when the body dies",
+        "corpus_percentage": 29,
+        "passage_count": 351
+      },
+      {
+        "label": "Underworld Existence",
+        "advocates": [
+          "Homer",
+          "Virgil",
+          "Traditional Religion"
+        ],
+        "summary": "Souls exist as shades in Hades, retaining some consciousness",
+        "key_argument": "The dead can be contacted and retain memories of life",
+        "corpus_percentage": 33,
+        "passage_count": 445
+      }
+    ],
+    "corpus_verdict": "Philosophical texts lean toward immortality; poetry maintains traditional underworld beliefs",
+    "temporal_trend": "Immortality doctrine strengthens from 25% (Archaic) to 45% (Late Imperial) with Christian influence",
+    "genre_effect": "Epic poetry preserves underworld tradition; philosophy debates immortality vs mortality"
+  },
+  {
+    "id": "debate_003",
+    "question": "What is the nature of women?",
+    "positions": [
+      {
+        "label": "Natural Inferiority",
+        "advocates": [
+          "Aristotle",
+          "Xenophon",
+          "Cato the Elder"
+        ],
+        "summary": "Women are naturally inferior in reason and should be subordinate",
+        "key_argument": "Female is a deformed male, lacking full rational capacity",
+        "corpus_percentage": 61,
+        "passage_count": 743
+      },
+      {
+        "label": "Equal Potential",
+        "advocates": [
+          "Plato",
+          "Musonius Rufus",
+          "Plutarch"
+        ],
+        "summary": "Women have equal rational capacity when properly educated",
+        "key_argument": "Virtue is the same in men and women; only training differs",
+        "corpus_percentage": 22,
+        "passage_count": 284
+      },
+      {
+        "label": "Complementary Roles",
+        "advocates": [
+          "Stoics",
+          "Pythagoreans",
+          "Traditional Views"
+        ],
+        "summary": "Men and women have different but complementary natural roles",
+        "key_argument": "Nature assigns distinct functions that benefit the whole",
+        "corpus_percentage": 17,
+        "passage_count": 198
+      }
+    ],
+    "corpus_verdict": "Inferiority doctrine dominates across genres, with rare challenges in philosophical texts",
+    "temporal_trend": "Complementary view grows from 10% (Classical) to 25% (Imperial) with Stoic influence",
+    "genre_effect": "Philosophy occasionally questions assumptions; medicine reinforces inferiority; law codifies subordination"
+  },
+  {
+    "id": "debate_004",
+    "question": "Is slavery naturally justified?",
+    "positions": [
+      {
+        "label": "Natural Slavery",
+        "advocates": [
+          "Aristotle",
+          "Traditional Views",
+          "Cicero"
+        ],
+        "summary": "Some humans are naturally suited for slavery due to inferior reason",
+        "key_argument": "Natural hierarchy exists; some benefit from being ruled by superiors",
+        "corpus_percentage": 58,
+        "passage_count": 621
+      },
+      {
+        "label": "Conventional Institution",
+        "advocates": [
+          "Stoics",
+          "Seneca",
+          "Epictetus"
+        ],
+        "summary": "Slavery is social convention, not natural; all humans share reason",
+        "key_argument": "The mind cannot be enslaved; external conditions don't affect inner freedom",
+        "corpus_percentage": 35,
+        "passage_count": 387
+      },
+      {
+        "label": "Complete Rejection",
+        "advocates": [
+          "Some Cynics",
+          "Alcidamas",
+          "Sophistic tradition"
+        ],
+        "summary": "Slavery violates natural equality of all humans",
+        "key_argument": "God made no one a slave; all humans are naturally free",
+        "corpus_percentage": 7,
+        "passage_count": 89
+      }
+    ],
+    "corpus_verdict": "Natural justification predominates, with Stoic conventional view gaining influence",
+    "temporal_trend": "Conventional view grows from 20% (Classical) to 40% (Imperial) through Stoic influence",
+    "genre_effect": "Philosophy debates justification; legal texts assume legitimacy; comedy satirizes relations"
+  },
+  {
+    "id": "debate_005",
+    "question": "Do gods intervene in human affairs?",
+    "positions": [
+      {
+        "label": "Active Intervention",
+        "advocates": [
+          "Homer",
+          "Traditional Religion",
+          "Herodotus"
+        ],
+        "summary": "Gods regularly intervene to help favorites and punish offenders",
+        "key_argument": "Historical events and personal experiences show divine action",
+        "corpus_percentage": 45,
+        "passage_count": 678
+      },
+      {
+        "label": "Non-Intervention",
+        "advocates": [
+          "Epicurus",
+          "Lucretius",
+          "Democritus"
+        ],
+        "summary": "Gods exist but remain completely detached from human affairs",
+        "key_argument": "Divine happiness requires freedom from human concerns and emotions",
+        "corpus_percentage": 28,
+        "passage_count": 341
+      },
+      {
+        "label": "Providential Order",
+        "advocates": [
+          "Stoics",
+          "Platonists",
+          "Cicero"
+        ],
+        "summary": "Divine reason guides the universe but through natural law, not arbitrary intervention",
+        "key_argument": "Cosmic order shows rational divine planning without caprice",
+        "corpus_percentage": 27,
+        "passage_count": 398
+      }
+    ],
+    "corpus_verdict": "Traditional intervention belief dominates literature; philosophy splits between providence and non-intervention",
+    "temporal_trend": "Providential view grows from 15% (Classical) to 35% (Imperial) with Platonic revival",
+    "genre_effect": "Epic and history assume intervention; philosophy debates mechanism; tragedy shows divine justice"
+  },
+  {
+    "id": "debate_006",
+    "question": "Is democracy or monarchy the best government?",
+    "positions": [
+      {
+        "label": "Democracy",
+        "advocates": [
+          "Pericles",
+          "Democritus",
+          "Protagoras"
+        ],
+        "summary": "Rule by the people ensures freedom and prevents tyranny",
+        "key_argument": "Collective wisdom surpasses individual judgment; equality is natural right",
+        "corpus_percentage": 32,
+        "passage_count": 445
+      },
+      {
+        "label": "Monarchy",
+        "advocates": [
+          "Xenophon",
+          "Isocrates",
+          "Alexander's supporters"
+        ],
+        "summary": "Rule by the best individual ensures efficient and wise governance",
+        "key_argument": "Unity of command and expertise of the ruler produce optimal decisions",
+        "corpus_percentage": 38,
+        "passage_count": 523
+      },
+      {
+        "label": "Mixed Constitution",
+        "advocates": [
+          "Aristotle",
+          "Polybius",
+          "Cicero"
+        ],
+        "summary": "Combination of democratic, aristocratic, and monarchical elements",
+        "key_argument": "Each form checks the others' weaknesses; stability through balance",
+        "corpus_percentage": 30,
+        "passage_count": 412
+      }
+    ],
+    "corpus_verdict": "Monarchy slightly favored in theoretical texts; democracy praised in Athenian sources",
+    "temporal_trend": "Mixed constitution gains from 15% (Classical) to 40% (Hellenistic-Roman) after Alexander",
+    "genre_effect": "Political theory favors mixed forms; oratory praises democracy; history shows monarchy's effectiveness"
+  },
+  {
+    "id": "debate_007",
+    "question": "Should pleasure or virtue be life's goal?",
+    "positions": [
+      {
+        "label": "Pleasure as Highest Good",
+        "advocates": [
+          "Aristippus",
+          "Epicurus",
+          "Lucretius"
+        ],
+        "summary": "Pleasure is the natural goal; virtue is valuable only as means to pleasure",
+        "key_argument": "All animals naturally seek pleasure and avoid pain; this reveals nature's intent",
+        "corpus_percentage": 34,
+        "passage_count": 467
+      },
+      {
+        "label": "Virtue as Highest Good",
+        "advocates": [
+          "Stoics",
+          "Cynics",
+          "Plato"
+        ],
+        "summary": "Virtue alone constitutes the good life; pleasure is indifferent or corrupting",
+        "key_argument": "Virtue alone is under our control and makes us godlike",
+        "corpus_percentage": 41,
+        "passage_count": 589
+      },
+      {
+        "label": "Virtue and Pleasure Combined",
+        "advocates": [
+          "Aristotle",
+          "Peripatetics",
+          "Academic Skeptics"
+        ],
+        "summary": "The good life requires both virtue and moderate pleasure",
+        "key_argument": "Human flourishing involves rational activity accompanied by appropriate pleasure",
+        "corpus_percentage": 25,
+        "passage_count": 321
+      }
+    ],
+    "corpus_verdict": "Virtue tradition dominates philosophical discourse; pleasure philosophy influential in private life",
+    "temporal_trend": "Combined view grows from 20% (Hellenistic) to 30% (Imperial) as systems synthesize",
+    "genre_effect": "Philosophy debates the issue extensively; poetry often celebrates pleasure; biography praises virtue"
+  },
+  {
+    "id": "debate_008",
+    "question": "Is Greek or Roman culture superior?",
+    "positions": [
+      {
+        "label": "Greek Superiority",
+        "advocates": [
+          "Plutarch",
+          "Greek intellectuals",
+          "Dio Chrysostom"
+        ],
+        "summary": "Greek culture excels in philosophy, arts, and intellectual achievement",
+        "key_argument": "Greeks invented philosophy and democracy; Romans merely copy and conquer",
+        "corpus_percentage": 35,
+        "passage_count": 438
+      },
+      {
+        "label": "Roman Superiority",
+        "advocates": [
+          "Cicero",
+          "Livy",
+          "Pliny the Elder"
+        ],
+        "summary": "Roman culture excels in practical governance, law, and moral character",
+        "key_argument": "Roman virtue and discipline created lasting empire; Greek cleverness breeds instability",
+        "corpus_percentage": 42,
+        "passage_count": 567
+      },
+      {
+        "label": "Complementary Excellence",
+        "advocates": [
+          "Horace",
+          "Quintilian",
+          "Educated Romans"
+        ],
+        "summary": "Greeks excel in theory and arts, Romans in practice and governance",
+        "key_argument": "Rome's destiny is to rule; Greece's gift is wisdom and beauty",
+        "corpus_percentage": 23,
+        "passage_count": 294
+      }
+    ],
+    "corpus_verdict": "Roman sources claim superiority while borrowing heavily; Greek sources maintain cultural pride",
+    "temporal_trend": "Complementary view grows from 15% (Republican) to 30% (Imperial) as cultures blend",
+    "genre_effect": "Roman history and oratory claim superiority; philosophy acknowledges Greek precedence"
+  },
+  {
+    "id": "debate_009",
+    "question": "Does fate control human destiny?",
+    "positions": [
+      {
+        "label": "Absolute Fate",
+        "advocates": [
+          "Stoics",
+          "Traditional Religion",
+          "Tragedians"
+        ],
+        "summary": "All events are predetermined; human action cannot alter destiny",
+        "key_argument": "The web of causation is unbreakable; even gods cannot change fate",
+        "corpus_percentage": 46,
+        "passage_count": 612
+      },
+      {
+        "label": "Human Agency",
+        "advocates": [
+          "Aristotle",
+          "Epicureans",
+          "Skeptics"
+        ],
+        "summary": "Humans have genuine power to shape their future through choice",
+        "key_argument": "Deliberation and regret prove we have real alternatives",
+        "corpus_percentage": 32,
+        "passage_count": 423
+      },
+      {
+        "label": "Limited Fate",
+        "advocates": [
+          "Middle Platonists",
+          "Some Peripatetics",
+          "Popular belief"
+        ],
+        "summary": "Some things are fated, but humans can influence details within bounds",
+        "key_argument": "Oracles show fixed outcomes, but the path to them admits variation",
+        "corpus_percentage": 22,
+        "passage_count": 287
+      }
+    ],
+    "corpus_verdict": "Fate dominates in religious and literary texts; philosophy increasingly questions absolute determinism",
+    "temporal_trend": "Limited fate grows from 15% (Classical) to 30% (Imperial) as philosophical sophistication increases",
+    "genre_effect": "Tragedy emphasizes absolute fate; philosophy questions it; historiography shows mixed causation"
+  },
+  {
+    "id": "debate_010",
+    "question": "Is the soul material or immaterial?",
+    "positions": [
+      {
+        "label": "Material Soul",
+        "advocates": [
+          "Democritus",
+          "Epicurus",
+          "Stoics"
+        ],
+        "summary": "The soul is composed of fine material atoms or pneuma",
+        "key_argument": "Soul affects body and vice versa; only material can interact with material",
+        "corpus_percentage": 44,
+        "passage_count": 521
+      },
+      {
+        "label": "Immaterial Soul",
+        "advocates": [
+          "Plato",
+          "Platonists",
+          "Pythagoreans"
+        ],
+        "summary": "The soul is purely spiritual substance distinct from matter",
+        "key_argument": "Soul's ability to grasp eternal forms proves its immaterial nature",
+        "corpus_percentage": 37,
+        "passage_count": 445
+      },
+      {
+        "label": "Soul as Harmony",
+        "advocates": [
+          "Some Pythagoreans",
+          "Aristoxenus",
+          "Medical writers"
+        ],
+        "summary": "Soul is the harmonious arrangement of bodily elements",
+        "key_argument": "Just as musical harmony emerges from but transcends individual notes",
+        "corpus_percentage": 19,
+        "passage_count": 234
+      }
+    ],
+    "corpus_verdict": "Material soul dominates in natural philosophy; immaterial soul in metaphysical contexts",
+    "temporal_trend": "Immaterial view grows from 25% (Presocratic) to 45% (Neoplatonic) as metaphysics develops",
+    "genre_effect": "Natural philosophy tends materialist; metaphysics and religion favor immaterial soul"
+  }
+]

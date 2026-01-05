@@ -1,0 +1,5 @@
+object_key,canonical_name,constellation,entry_no,recorded_lon,recorded_lat,magnitude_int,hip_id,description
+rohini,Aldebaran,Tau,1,49.33,-5.17,1,21421,Nakshatra Rohini (example longitude)
+magha,Regulus,Leo,2,129.00,0.17,1,49669,Nakshatra Magha (example longitude)
+chitra,Spica,Vir,3,180.00,-2.00,1,65474,Nakshatra Chitra (example longitude)
+swati,Arcturus,Boo,4,199.00,31.50,1,69673,Nakshatra Swati (example longitude)

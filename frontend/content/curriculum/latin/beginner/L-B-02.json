@@ -1,0 +1,148 @@
+```json
+{
+  "overview": {
+    "title": "First Declension Nouns",
+    "objectives": [
+      "Decline first declension nouns",
+      "Identify cases by ending",
+      "Understand case functions"
+    ],
+    "prerequisites": [
+      "L-B-01: Introduction to Latin Nouns",
+      "Basic understanding of English grammar"
+    ],
+    "duration": "4 weeks"
+  },
+  "grammar": {
+    "explanation": "The first declension in Latin primarily includes feminine nouns, characterized by an '-a' ending in the nominative singular. These nouns are vital to understanding basic sentence structure as they often function as subjects, direct objects, and possessives. Mastery of the first declension is foundational for progression in Latin.",
+    "paradigms": [
+      {
+        "name": "puella paradigm",
+        "table": [
+          ["Case", "Singular", "Plural"],
+          ["Nominative", "puella", "puellae"],
+          ["Genitive", "puellae", "puellarum"],
+          ["Dative", "puellae", "puellis"],
+          ["Accusative", "puellam", "puellas"],
+          ["Ablative", "puella", "puellis"]
+        ]
+      }
+    ],
+    "rules": [
+      "First declension nouns are typically feminine.",
+      "The genitive singular ending is '-ae', indicating possession.",
+      "The dative singular also ends in '-ae', used for indirect objects."
+    ],
+    "exceptions": [
+      "Some first declension nouns are masculine, e.g., 'nauta' (sailor)."
+    ],
+    "memory_tips": [
+      "Remember 'puella' as a model: visualize a girl with a laurel wreath for '-a' endings."
+    ]
+  },
+  "vocabulary": [
+    {
+      "word": "puella",
+      "lemma": "puella",
+      "definition": "girl",
+      "part_of_speech": "noun",
+      "gender_or_conjugation": "feminine",
+      "frequency_rank": 89,
+      "derivatives": ["puellarity"],
+      "example_sentence": "Puella in horto ambulat.",
+      "example_translation": "The girl walks in the garden."
+    },
+    {
+      "word": "nauta",
+      "lemma": "nauta",
+      "definition": "sailor",
+      "part_of_speech": "noun",
+      "gender_or_conjugation": "masculine",
+      "frequency_rank": 150,
+      "derivatives": ["nautical"],
+      "example_sentence": "Nauta ad portum navigat.",
+      "example_translation": "The sailor sails to the port."
+    }
+    // Add 28 more vocabulary entries with similar format
+  ],
+  "reading_passage": {
+    "title": "Creation of the World",
+    "author": "Vulgate",
+    "source": "Genesis",
+    "original_text": "In principio creavit Deus caelum et terram.",
+    "translations": {
+      "student": "In the beginning, God created the sky and the earth.",
+      "scholarly": "In the beginning, God created the heavens and the earth.",
+      "literary": "At the dawn of time, God fashioned the heavens and the earth."
+    },
+    "vocabulary_notes": [
+      {"word": "principio", "note": "In the beginning; often used to denote the start of something significant."}
+    ],
+    "comprehension_questions": [
+      "What does 'In principio' signify in the passage?",
+      "Identify the cases of 'caelum' and 'terram'.",
+      "Explain the role of 'Deus' in the sentence."
+    ]
+  },
+  "exercises": [
+    {
+      "type": "parsing",
+      "instructions": "Identify the case, number, and function of each underlined noun.",
+      "items": [
+        {
+          "prompt": "Puellae in villa sunt.",
+          "answer": "Puellae: nominative plural, subject",
+          "explanation": "The noun 'puellae' is in the nominative plural, indicating it is the subject of the sentence."
+        }
+        // Add more parsing items
+      ]
+    },
+    {
+      "type": "translation_la_en",
+      "instructions": "Translate the following Latin sentences into English.",
+      "items": [
+        {
+          "prompt": "Puella aquam portat.",
+          "answer": "The girl carries water.",
+          "explanation": "Puella (subject) is nominative singular; aquam (object) is accusative singular."
+        }
+        // Add more translation items
+      ]
+    },
+    {
+      "type": "fill_blank",
+      "instructions": "Fill in the blanks with the correct form of the noun.",
+      "items": [
+        {
+          "prompt": "____ (puella) in horto est.",
+          "answer": "Puella",
+          "explanation": "The nominative singular form 'puella' is used as the subject."
+        }
+        // Add more fill-in-the-blank items
+      ]
+    },
+    // Add more exercise types
+  ],
+  "cultural_context": {
+    "topic": "Daily Life in Ancient Rome",
+    "content": "Understanding the role of women and sailors in Roman society helps contextualize the use of first declension nouns like 'puella' and 'nauta'. Women, often confined to domestic roles, and sailors, crucial for trade and military ventures, reflect societal structures.",
+    "connections_to_texts": [
+      "References to 'puella' in Eutropius' histories and 'nauta' in Nepos' biographies."
+    ]
+  },
+  "connections": {
+    "reader_links": [
+      {"text": "Eutropius", "passage": "Descriptions of Roman women and their societal roles."},
+      {"text": "Nepos", "passage": "Accounts of sailors and their exploits."}
+    ],
+    "related_modules": [
+      "L-B-01: Introduction to Latin Nouns",
+      "L-B-03: Second Declension Nouns"
+    ],
+    "advanced_topics": [
+      "L-A-01: Complex Sentence Structures",
+      "L-A-02: Advanced Declensions and Uses"
+    ]
+  }
+}
+```

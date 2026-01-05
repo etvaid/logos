@@ -1,0 +1,8 @@
+object_key,canonical_name,constellation,entry_no,recorded_lon,recorded_lat,magnitude_int,hip_id,description
+arcturus,Arcturus,Boo,1,177.17,31.50,1,69673,High proper motion diagnostic star
+sirius,Sirius,CMa,2,77.50,-39.17,1,32349,High proper motion diagnostic star
+procyon,Procyon,CMi,3,92.67,-16.17,1,37279,High proper motion diagnostic star
+capella,Capella,Aur,4,55.33,22.50,1,24608,High proper motion diagnostic star
+aldebaran,Aldebaran,Tau,5,42.67,-5.17,1,21421,Zodiac anchor
+regulus,Regulus,Leo,6,122.50,0.17,1,49669,Zodiac anchor
+spica,Spica,Vir,7,176.67,-2.00,1,65474,Zodiac anchor

@@ -1,0 +1,24 @@
+- object_key: arcturus
+  canonical_name: Arcturus
+  constellation: Boo
+  aliases:
+    - {text: "Arcturus", language: "en", source: "manual"}
+    - {text: "Swati", language: "sa", source: "nakshatra"}
+- object_key: aldebaran
+  canonical_name: Aldebaran
+  constellation: Tau
+  aliases:
+    - {text: "Aldebaran", language: "en", source: "manual"}
+    - {text: "Rohini", language: "sa", source: "nakshatra"}
+- object_key: regulus
+  canonical_name: Regulus
+  constellation: Leo
+  aliases:
+    - {text: "Regulus", language: "en", source: "manual"}
+    - {text: "Magha", language: "sa", source: "nakshatra"}
+- object_key: spica
+  canonical_name: Spica
+  constellation: Vir
+  aliases:
+    - {text: "Spica", language: "en", source: "manual"}
+    - {text: "Chitra", language: "sa", source: "nakshatra"}

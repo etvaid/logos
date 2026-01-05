@@ -1,0 +1,696 @@
+{
+  "sites": [
+    {
+      "name": "Athens",
+      "lat": 37.9838,
+      "lng": 23.7275,
+      "type": "city",
+      "period": "1400 BCE - present",
+      "significance": "Center of Classical Greek culture, democracy, philosophy"
+    },
+    {
+      "name": "Sparta",
+      "lat": 37.0742,
+      "lng": 22.4302,
+      "type": "city",
+      "period": "900 BCE - 192 BCE",
+      "significance": "Military power, dual kingship"
+    },
+    {
+      "name": "Corinth",
+      "lat": 37.906,
+      "lng": 22.8808,
+      "type": "city",
+      "period": "700 BCE - 146 BCE",
+      "significance": "Trade center, temple of Aphrodite"
+    },
+    {
+      "name": "Thebes",
+      "lat": 38.3192,
+      "lng": 23.3175,
+      "type": "city",
+      "period": "1400 BCE - 335 BCE",
+      "significance": "Boeotian power, Oedipus legend"
+    },
+    {
+      "name": "Delphi",
+      "lat": 38.4824,
+      "lng": 22.501,
+      "type": "sanctuary",
+      "period": "800 BCE - 390 CE",
+      "significance": "Oracle of Apollo, Panhellenic sanctuary"
+    },
+    {
+      "name": "Olympia",
+      "lat": 37.6386,
+      "lng": 21.6299,
+      "type": "sanctuary",
+      "period": "776 BCE - 393 CE",
+      "significance": "Olympic Games, Temple of Zeus"
+    },
+    {
+      "name": "Epidaurus",
+      "lat": 37.5958,
+      "lng": 23.0794,
+      "type": "sanctuary",
+      "period": "600 BCE - 200 CE",
+      "significance": "Healing cult of Asclepius, theater"
+    },
+    {
+      "name": "Delos",
+      "lat": 37.3965,
+      "lng": 25.2676,
+      "type": "sanctuary",
+      "period": "900 BCE - 88 BCE",
+      "significance": "Apollo birthplace, trade center"
+    },
+    {
+      "name": "Eleusis",
+      "lat": 38.0417,
+      "lng": 23.5363,
+      "type": "sanctuary",
+      "period": "1500 BCE - 392 CE",
+      "significance": "Eleusinian Mysteries, Demeter cult"
+    },
+    {
+      "name": "Mycenae",
+      "lat": 37.7306,
+      "lng": 22.7563,
+      "type": "city",
+      "period": "1600 BCE - 1100 BCE",
+      "significance": "Bronze Age palace culture, Agamemnon"
+    },
+    {
+      "name": "Knossos",
+      "lat": 35.2979,
+      "lng": 25.163,
+      "type": "city",
+      "period": "2000 BCE - 1350 BCE",
+      "significance": "Minoan palace, labyrinth legend"
+    },
+    {
+      "name": "Troy",
+      "lat": 39.9575,
+      "lng": 26.2387,
+      "type": "city",
+      "period": "3000 BCE - 500 CE",
+      "significance": "Homeric epic, archaeology landmark"
+    },
+    {
+      "name": "Miletus",
+      "lat": 37.5307,
+      "lng": 27.2781,
+      "type": "city",
+      "period": "1000 BCE - 500 CE",
+      "significance": "Ionian philosophy birthplace"
+    },
+    {
+      "name": "Ephesus",
+      "lat": 37.9394,
+      "lng": 27.3417,
+      "type": "city",
+      "period": "1000 BCE - 263 CE",
+      "significance": "Temple of Artemis, early Christianity"
+    },
+    {
+      "name": "Pergamon",
+      "lat": 39.1217,
+      "lng": 27.1842,
+      "type": "city",
+      "period": "281 BCE - 133 BCE",
+      "significance": "Hellenistic kingdom, library, altar"
+    },
+    {
+      "name": "Halicarnassus",
+      "lat": 37.0378,
+      "lng": 27.4241,
+      "type": "city",
+      "period": "500 BCE - 300 CE",
+      "significance": "Mausoleum, Herodotus birthplace"
+    },
+    {
+      "name": "Sardis",
+      "lat": 38.4883,
+      "lng": 28.0394,
+      "type": "city",
+      "period": "1200 BCE - 616 CE",
+      "significance": "Lydian capital, early coinage"
+    },
+    {
+      "name": "Smyrna",
+      "lat": 38.4192,
+      "lng": 27.1287,
+      "type": "city",
+      "period": "1000 BCE - present",
+      "significance": "Ionian city, Homer's claimed birthplace"
+    },
+    {
+      "name": "Rome",
+      "lat": 41.9028,
+      "lng": 12.4964,
+      "type": "city",
+      "period": "753 BCE - present",
+      "significance": "Capital of Roman Empire"
+    },
+    {
+      "name": "Pompeii",
+      "lat": 40.7508,
+      "lng": 14.4869,
+      "type": "city",
+      "period": "600 BCE - 79 CE",
+      "significance": "Preserved Roman city"
+    },
+    {
+      "name": "Herculaneum",
+      "lat": 40.806,
+      "lng": 14.3476,
+      "type": "city",
+      "period": "600 BCE - 79 CE",
+      "significance": "Preserved Roman town, papyri"
+    },
+    {
+      "name": "Ostia",
+      "lat": 41.7556,
+      "lng": 12.2917,
+      "type": "city",
+      "period": "400 BCE - 500 CE",
+      "significance": "Rome's port city"
+    },
+    {
+      "name": "Ravenna",
+      "lat": 44.4184,
+      "lng": 12.2035,
+      "type": "city",
+      "period": "402 CE - 751 CE",
+      "significance": "Late Roman/Byzantine capital"
+    },
+    {
+      "name": "Mediolanum",
+      "lat": 45.4642,
+      "lng": 9.19,
+      "type": "city",
+      "period": "400 BCE - present",
+      "significance": "Western imperial capital (Milan)"
+    },
+    {
+      "name": "Aquileia",
+      "lat": 45.7697,
+      "lng": 13.3694,
+      "type": "city",
+      "period": "181 BCE - 452 CE",
+      "significance": "Roman Italy, patriarchate"
+    },
+    {
+      "name": "Syracuse",
+      "lat": 37.0755,
+      "lng": 15.2866,
+      "type": "city",
+      "period": "734 BCE - 212 BCE",
+      "significance": "Greek Sicily, Archimedes"
+    },
+    {
+      "name": "Tarentum",
+      "lat": 40.4644,
+      "lng": 17.247,
+      "type": "city",
+      "period": "706 BCE - 209 BCE",
+      "significance": "Spartan colony, Pythagoreans"
+    },
+    {
+      "name": "Croton",
+      "lat": 39.081,
+      "lng": 17.1272,
+      "type": "city",
+      "period": "710 BCE - 277 BCE",
+      "significance": "Pythagorean community"
+    },
+    {
+      "name": "Neapolis",
+      "lat": 40.8518,
+      "lng": 14.2681,
+      "type": "city",
+      "period": "470 BCE - present",
+      "significance": "Greek colony (Naples)"
+    },
+    {
+      "name": "Cumae",
+      "lat": 40.8469,
+      "lng": 14.0536,
+      "type": "city",
+      "period": "750 BCE - 421 BCE",
+      "significance": "Oldest Greek colony Italy, Sibyl"
+    },
+    {
+      "name": "Paestum",
+      "lat": 40.4219,
+      "lng": 15.005,
+      "type": "city",
+      "period": "600 BCE - 273 BCE",
+      "significance": "Greek temples in Italy"
+    },
+    {
+      "name": "Agrigentum",
+      "lat": 37.2911,
+      "lng": 13.5765,
+      "type": "city",
+      "period": "582 BCE - 406 BCE",
+      "significance": "Greek Sicily, Valley of Temples"
+    },
+    {
+      "name": "Massilia",
+      "lat": 43.2965,
+      "lng": 5.3698,
+      "type": "city",
+      "period": "600 BCE - present",
+      "significance": "Greek colony (Marseille)"
+    },
+    {
+      "name": "Alexandria",
+      "lat": 31.2001,
+      "lng": 29.9187,
+      "type": "city",
+      "period": "331 BCE - 641 CE",
+      "significance": "Hellenistic capital, Library, Pharos"
+    },
+    {
+      "name": "Antioch",
+      "lat": 36.2021,
+      "lng": 36.1604,
+      "type": "city",
+      "period": "300 BCE - 637 CE",
+      "significance": "Seleucid capital, early Christianity"
+    },
+    {
+      "name": "Seleucia",
+      "lat": 33.097,
+      "lng": 44.5178,
+      "type": "city",
+      "period": "305 BCE - 165 CE",
+      "significance": "Seleucid capital on Tigris"
+    },
+    {
+      "name": "Petra",
+      "lat": 30.3285,
+      "lng": 35.4444,
+      "type": "city",
+      "period": "312 BCE - 663 CE",
+      "significance": "Nabataean capital"
+    },
+    {
+      "name": "Palmyra",
+      "lat": 34.5502,
+      "lng": 38.2705,
+      "type": "city",
+      "period": "200 BCE - 273 CE",
+      "significance": "Desert trade city, Zenobia"
+    },
+    {
+      "name": "Carthage",
+      "lat": 36.8529,
+      "lng": 10.3237,
+      "type": "city",
+      "period": "814 BCE - 698 CE",
+      "significance": "Punic power, Roman Africa"
+    },
+    {
+      "name": "Leptis Magna",
+      "lat": 32.6379,
+      "lng": 14.2917,
+      "type": "city",
+      "period": "1000 BCE - 647 CE",
+      "significance": "Roman Africa, Septimius Severus"
+    },
+    {
+      "name": "Cyrene",
+      "lat": 32.8244,
+      "lng": 21.8569,
+      "type": "city",
+      "period": "631 BCE - 365 CE",
+      "significance": "Greek colony in Libya"
+    },
+    {
+      "name": "Londinium",
+      "lat": 51.5074,
+      "lng": -0.1278,
+      "type": "city",
+      "period": "47 CE - 410 CE",
+      "significance": "Roman Britain capital"
+    },
+    {
+      "name": "Lutetia",
+      "lat": 48.8566,
+      "lng": 2.3522,
+      "type": "city",
+      "period": "52 BCE - present",
+      "significance": "Roman Gaul (Paris)"
+    },
+    {
+      "name": "Augusta Treverorum",
+      "lat": 49.7571,
+      "lng": 6.641,
+      "type": "city",
+      "period": "16 BCE - 475 CE",
+      "significance": "Imperial residence (Trier)"
+    },
+    {
+      "name": "Colonia Agrippina",
+      "lat": 50.9375,
+      "lng": 6.9603,
+      "type": "city",
+      "period": "38 BCE - present",
+      "significance": "Roman Germany (Cologne)"
+    },
+    {
+      "name": "Constantinople",
+      "lat": 41.0082,
+      "lng": 28.9784,
+      "type": "city",
+      "period": "330 CE - 1453 CE",
+      "significance": "Eastern Roman/Byzantine capital"
+    },
+    {
+      "name": "Jerusalem",
+      "lat": 31.7683,
+      "lng": 35.2137,
+      "type": "city",
+      "period": "1000 BCE - present",
+      "significance": "Religious center, Temple"
+    },
+    {
+      "name": "Caesarea Maritima",
+      "lat": 32.4997,
+      "lng": 34.8908,
+      "type": "city",
+      "period": "25 BCE - 640 CE",
+      "significance": "Roman Judaea capital"
+    },
+    {
+      "name": "Thessalonica",
+      "lat": 40.6401,
+      "lng": 22.9444,
+      "type": "city",
+      "period": "315 BCE - present",
+      "significance": "Roman Greece, early Christianity"
+    },
+    {
+      "name": "Philippi",
+      "lat": 41.0144,
+      "lng": 24.2872,
+      "type": "city",
+      "period": "356 BCE - 600 CE",
+      "significance": "Battle site, Pauline mission"
+    },
+    {
+      "name": "Nicaea",
+      "lat": 40.4292,
+      "lng": 29.721,
+      "type": "city",
+      "period": "316 BCE - 1331 CE",
+      "significance": "Council of Nicaea (Iznik)"
+    },
+    {
+      "name": "Tyre",
+      "lat": 33.2705,
+      "lng": 35.1968,
+      "type": "city",
+      "period": "2750 BCE - present",
+      "significance": "Phoenician maritime power"
+    },
+    {
+      "name": "Sidon",
+      "lat": 33.5594,
+      "lng": 35.3717,
+      "type": "city",
+      "period": "4000 BCE - present",
+      "significance": "Phoenician city-state"
+    },
+    {
+      "name": "Baalbek",
+      "lat": 34.0047,
+      "lng": 36.211,
+      "type": "sanctuary",
+      "period": "100 BCE - 637 CE",
+      "significance": "Roman temples"
+    },
+    {
+      "name": "Academy (Athens)",
+      "lat": 37.9933,
+      "lng": 23.7106,
+      "type": "school",
+      "period": "387 BCE - 529 CE",
+      "significance": "Plato's Academy"
+    },
+    {
+      "name": "Lyceum (Athens)",
+      "lat": 37.975,
+      "lng": 23.745,
+      "type": "school",
+      "period": "335 BCE - 86 BCE",
+      "significance": "Aristotle's school"
+    },
+    {
+      "name": "Stoa Poikile",
+      "lat": 37.975,
+      "lng": 23.725,
+      "type": "school",
+      "period": "300 BCE - 200 CE",
+      "significance": "Stoic philosophy origin"
+    },
+    {
+      "name": "Garden (Athens)",
+      "lat": 37.98,
+      "lng": 23.72,
+      "type": "school",
+      "period": "307 BCE - 529 CE",
+      "significance": "Epicurean school"
+    },
+    {
+      "name": "Library of Alexandria",
+      "lat": 31.201,
+      "lng": 29.915,
+      "type": "library",
+      "period": "283 BCE - 48 BCE",
+      "significance": "Greatest ancient library"
+    },
+    {
+      "name": "Library of Pergamon",
+      "lat": 39.132,
+      "lng": 27.178,
+      "type": "library",
+      "period": "197 BCE - 133 BCE",
+      "significance": "Second greatest library"
+    },
+    {
+      "name": "Marathon",
+      "lat": 38.1536,
+      "lng": 23.9703,
+      "type": "battlefield",
+      "period": "490 BCE",
+      "significance": "Persian Wars, Athenian victory"
+    },
+    {
+      "name": "Thermopylae",
+      "lat": 38.7967,
+      "lng": 22.5356,
+      "type": "battlefield",
+      "period": "480 BCE",
+      "significance": "300 Spartans last stand"
+    },
+    {
+      "name": "Salamis",
+      "lat": 37.95,
+      "lng": 23.5,
+      "type": "battlefield",
+      "period": "480 BCE",
+      "significance": "Naval victory over Persia"
+    },
+    {
+      "name": "Plataea",
+      "lat": 38.2183,
+      "lng": 23.2853,
+      "type": "battlefield",
+      "period": "479 BCE",
+      "significance": "End of Persian invasion"
+    },
+    {
+      "name": "Chaeronea",
+      "lat": 38.4969,
+      "lng": 22.845,
+      "type": "battlefield",
+      "period": "338 BCE",
+      "significance": "Philip II defeats Greeks"
+    },
+    {
+      "name": "Gaugamela",
+      "lat": 36.4333,
+      "lng": 43.3167,
+      "type": "battlefield",
+      "period": "331 BCE",
+      "significance": "Alexander defeats Darius"
+    },
+    {
+      "name": "Cannae",
+      "lat": 41.305,
+      "lng": 16.1333,
+      "type": "battlefield",
+      "period": "216 BCE",
+      "significance": "Hannibal's greatest victory"
+    },
+    {
+      "name": "Zama",
+      "lat": 35.8833,
+      "lng": 9.4333,
+      "type": "battlefield",
+      "period": "202 BCE",
+      "significance": "Scipio defeats Hannibal"
+    },
+    {
+      "name": "Pharsalus",
+      "lat": 39.2833,
+      "lng": 22.3833,
+      "type": "battlefield",
+      "period": "48 BCE",
+      "significance": "Caesar defeats Pompey"
+    },
+    {
+      "name": "Actium",
+      "lat": 38.95,
+      "lng": 20.7667,
+      "type": "battlefield",
+      "period": "31 BCE",
+      "significance": "Octavian defeats Antony"
+    },
+    {
+      "name": "Teutoburg Forest",
+      "lat": 52.4167,
+      "lng": 8.1333,
+      "type": "battlefield",
+      "period": "9 CE",
+      "significance": "Germanic defeat of Rome"
+    },
+    {
+      "name": "Adrianople",
+      "lat": 41.6772,
+      "lng": 26.5558,
+      "type": "battlefield",
+      "period": "378 CE",
+      "significance": "Goths defeat Rome"
+    },
+    {
+      "name": "Babylon",
+      "lat": 32.5421,
+      "lng": 44.421,
+      "type": "city",
+      "period": "1894 BCE - 275 BCE",
+      "significance": "Mesopotamian capital"
+    },
+    {
+      "name": "Persepolis",
+      "lat": 29.9352,
+      "lng": 52.8914,
+      "type": "city",
+      "period": "518 BCE - 330 BCE",
+      "significance": "Persian Empire capital"
+    },
+    {
+      "name": "Susa",
+      "lat": 32.1942,
+      "lng": 48.2436,
+      "type": "city",
+      "period": "4000 BCE - 640 CE",
+      "significance": "Elamite/Persian capital"
+    },
+    {
+      "name": "Ecbatana",
+      "lat": 34.7989,
+      "lng": 48.515,
+      "type": "city",
+      "period": "700 BCE - 330 BCE",
+      "significance": "Median capital"
+    },
+    {
+      "name": "Memphis",
+      "lat": 29.8448,
+      "lng": 31.2508,
+      "type": "city",
+      "period": "3100 BCE - 641 CE",
+      "significance": "Ancient Egyptian capital"
+    },
+    {
+      "name": "Thebes (Egypt)",
+      "lat": 25.7188,
+      "lng": 32.6573,
+      "type": "city",
+      "period": "2055 BCE - 664 BCE",
+      "significance": "Egyptian religious center"
+    },
+    {
+      "name": "Giza",
+      "lat": 29.9792,
+      "lng": 31.1342,
+      "type": "monument",
+      "period": "2560 BCE - present",
+      "significance": "Great Pyramids, Sphinx"
+    },
+    {
+      "name": "Vindolanda",
+      "lat": 54.9911,
+      "lng": -2.3608,
+      "type": "fort",
+      "period": "85 CE - 410 CE",
+      "significance": "Roman fort, writing tablets"
+    },
+    {
+      "name": "Hadrian's Wall",
+      "lat": 55.024,
+      "lng": -2.259,
+      "type": "fortification",
+      "period": "122 CE - 410 CE",
+      "significance": "Roman Britain frontier"
+    },
+    {
+      "name": "Carnuntum",
+      "lat": 48.1167,
+      "lng": 16.85,
+      "type": "city",
+      "period": "50 CE - 430 CE",
+      "significance": "Roman Pannonia capital"
+    },
+    {
+      "name": "Sirmium",
+      "lat": 44.97,
+      "lng": 19.6117,
+      "type": "city",
+      "period": "100 BCE - 582 CE",
+      "significance": "Imperial residence"
+    },
+    {
+      "name": "Timgad",
+      "lat": 35.4851,
+      "lng": 6.4683,
+      "type": "city",
+      "period": "100 CE - 700 CE",
+      "significance": "Roman colonial grid city"
+    },
+    {
+      "name": "Volubilis",
+      "lat": 34.0722,
+      "lng": -5.5547,
+      "type": "city",
+      "period": "200 BCE - 788 CE",
+      "significance": "Roman Morocco"
+    }
+  ],
+  "total": 85,
+  "types": [
+    "fort",
+    "library",
+    "city",
+    "monument",
+    "fortification",
+    "sanctuary",
+    "battlefield",
+    "school"
+  ],
+  "generated_at": "2025-12-24T11:18:47.821432"
+}
