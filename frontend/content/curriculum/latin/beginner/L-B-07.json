@@ -1,0 +1,205 @@
+{
+  "id": "L-B-07",
+  "title": "Third Declension Nouns",
+  "level": "beginner",
+  "language": "latin",
+  "estimatedTime": "55 minutes",
+  "objectives": [
+    "Recognize third declension nouns by their varied nominative forms",
+    "Use the genitive singular to find the stem",
+    "Decline third declension masculine and feminine nouns",
+    "Decline third declension neuter nouns",
+    "Distinguish i-stem nouns from consonant stems"
+  ],
+  "vocabulary": [
+    {
+      "word": "rex",
+      "translation": "king",
+      "partOfSpeech": "noun",
+      "declension": "3rd",
+      "gender": "masculine",
+      "genitive": "regis",
+      "examples": ["Rex patriam regit."]
+    },
+    {
+      "word": "dux",
+      "translation": "leader, general",
+      "partOfSpeech": "noun",
+      "declension": "3rd",
+      "gender": "masculine",
+      "genitive": "ducis",
+      "examples": ["Dux milites ducit."]
+    },
+    {
+      "word": "miles",
+      "translation": "soldier",
+      "partOfSpeech": "noun",
+      "declension": "3rd",
+      "gender": "masculine",
+      "genitive": "militis",
+      "examples": ["Milites fortiter pugnant."]
+    },
+    {
+      "word": "pater",
+      "translation": "father",
+      "partOfSpeech": "noun",
+      "declension": "3rd",
+      "gender": "masculine",
+      "genitive": "patris",
+      "examples": ["Pater filium amat."]
+    },
+    {
+      "word": "mater",
+      "translation": "mother",
+      "partOfSpeech": "noun",
+      "declension": "3rd",
+      "gender": "feminine",
+      "genitive": "matris",
+      "examples": ["Mater liberos curat."]
+    },
+    {
+      "word": "frater",
+      "translation": "brother",
+      "partOfSpeech": "noun",
+      "declension": "3rd",
+      "gender": "masculine",
+      "genitive": "fratris",
+      "examples": ["Frater meus bonus est."]
+    },
+    {
+      "word": "soror",
+      "translation": "sister",
+      "partOfSpeech": "noun",
+      "declension": "3rd",
+      "gender": "feminine",
+      "genitive": "sororis",
+      "examples": ["Soror in horto ambulat."]
+    },
+    {
+      "word": "civis",
+      "translation": "citizen",
+      "partOfSpeech": "noun",
+      "declension": "3rd (i-stem)",
+      "gender": "masc/fem",
+      "genitive": "civis",
+      "examples": ["Cives Romani sunt."]
+    },
+    {
+      "word": "urbs",
+      "translation": "city",
+      "partOfSpeech": "noun",
+      "declension": "3rd (i-stem)",
+      "gender": "feminine",
+      "genitive": "urbis",
+      "examples": ["Urbs magna est."]
+    },
+    {
+      "word": "nomen",
+      "translation": "name",
+      "partOfSpeech": "noun",
+      "declension": "3rd",
+      "gender": "neuter",
+      "genitive": "nominis",
+      "examples": ["Nomen meum Marcus est."]
+    },
+    {
+      "word": "corpus",
+      "translation": "body",
+      "partOfSpeech": "noun",
+      "declension": "3rd",
+      "gender": "neuter",
+      "genitive": "corporis",
+      "examples": ["Corpus sanum mens sana."]
+    },
+    {
+      "word": "tempus",
+      "translation": "time",
+      "partOfSpeech": "noun",
+      "declension": "3rd",
+      "gender": "neuter",
+      "genitive": "temporis",
+      "examples": ["Tempus fugit."]
+    }
+  ],
+  "grammar": {
+    "topic": "Third Declension Nouns",
+    "explanation": "The third declension is the largest and most varied. Nouns can be masculine, feminine, or neuter with many different nominative endings. The key is to learn the genitive singular (-is) which reveals the stem for all other cases.",
+    "paradigms": [
+      {
+        "name": "rex, regis (m) - consonant stem",
+        "headers": ["Case", "Singular", "Plural"],
+        "rows": [
+          ["Nominative", "rex", "reges"],
+          ["Genitive", "regis", "regum"],
+          ["Dative", "regi", "regibus"],
+          ["Accusative", "regem", "reges"],
+          ["Ablative", "rege", "regibus"]
+        ]
+      },
+      {
+        "name": "civis, civis (m/f) - i-stem",
+        "headers": ["Case", "Singular", "Plural"],
+        "rows": [
+          ["Nominative", "civis", "cives"],
+          ["Genitive", "civis", "civium"],
+          ["Dative", "civi", "civibus"],
+          ["Accusative", "civem", "cives"],
+          ["Ablative", "cive", "civibus"]
+        ]
+      },
+      {
+        "name": "nomen, nominis (n) - neuter",
+        "headers": ["Case", "Singular", "Plural"],
+        "rows": [
+          ["Nominative", "nomen", "nomina"],
+          ["Genitive", "nominis", "nominum"],
+          ["Dative", "nomini", "nominibus"],
+          ["Accusative", "nomen", "nomina"],
+          ["Ablative", "nomine", "nominibus"]
+        ]
+      }
+    ],
+    "rules": [
+      "Always learn the genitive with the nominative (rex, regis)",
+      "The stem is found by removing -is from the genitive singular",
+      "Neuter nom/acc are identical; neuter plurals end in -a",
+      "I-stems have -ium in genitive plural (not -um)"
+    ]
+  },
+  "exercises": [
+    {
+      "type": "parsing",
+      "question": "What is the stem of 'miles, militis'?",
+      "answer": "milit-",
+      "hints": ["Remove -is from the genitive"]
+    },
+    {
+      "type": "translation",
+      "question": "Translate: Dux milites in proelium ducit.",
+      "answer": "The general leads the soldiers into battle.",
+      "hints": ["proelium = battle"]
+    },
+    {
+      "type": "declension",
+      "question": "Give the dative plural of 'rex, regis'",
+      "answer": "regibus",
+      "hints": ["Stem reg- + -ibus"]
+    },
+    {
+      "type": "composition",
+      "prompt": "Write 'The citizens love the king' in Latin",
+      "sampleAnswer": "Cives regem amant."
+    }
+  ],
+  "culturalNote": "The Roman family (familia) was the foundation of society. The paterfamilias had absolute authority over his household. Terms like pater, mater, frater, and soror remain recognizable in Romance languages today.",
+  "readingPassage": {
+    "latin": "Rex Romanus populum regit. Milites ducis fortes sunt. Pater et mater liberos amant. Fratres et sorores in villa habitant. Nomen regis clarum est.",
+    "translation": "The Roman king rules the people. The soldiers of the general are brave. The father and mother love their children. The brothers and sisters live in the villa. The name of the king is famous.",
+    "notes": [
+      "populus: people, nation",
+      "fortis: brave, strong",
+      "liberi: children (literally 'free ones')",
+      "clarus: famous, clear"
+    ]
+  }
+}

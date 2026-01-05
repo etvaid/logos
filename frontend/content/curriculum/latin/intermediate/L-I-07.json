@@ -1,0 +1,63 @@
+{
+  "id": "L-I-07",
+  "title": "Purpose and Result Clauses",
+  "level": "intermediate",
+  "language": "latin",
+  "estimatedTime": "60 minutes",
+  "objectives": [
+    "Recognize purpose clauses with ut/ne + subjunctive",
+    "Recognize result clauses with ut/ut non + subjunctive",
+    "Distinguish purpose from result by context and signpost words",
+    "Use relative clauses of purpose",
+    "Translate purpose and result clauses idiomatically"
+  ],
+  "vocabulary": [
+    {"word": "ut", "form": "conjunction", "definition": "so that, in order that (purpose); so that, with the result that (result)"},
+    {"word": "ne", "form": "conjunction", "definition": "so that...not, lest (negative purpose)"},
+    {"word": "quo", "form": "conjunction", "definition": "so that (purpose with comparative)"},
+    {"word": "tam", "form": "adverb", "definition": "so (signals result)"},
+    {"word": "tantus", "form": "adjective", "definition": "so great (signals result)"},
+    {"word": "ita", "form": "adverb", "definition": "so, in such a way (signals result)"},
+    {"word": "talis", "form": "adjective", "definition": "such (signals result)"},
+    {"word": "tot", "form": "adjective", "definition": "so many (signals result)"}
+  ],
+  "grammar": {
+    "topic": "Purpose and Result Clauses",
+    "explanation": "Purpose clauses tell why an action is done (goal). Result clauses tell what happens as a consequence (outcome). Both use ut + subjunctive, but they differ in negation and signpost words.",
+    "paradigms": [
+      {
+        "name": "Purpose vs Result",
+        "headers": ["Feature", "Purpose", "Result"],
+        "rows": [
+          ["Conjunction", "ut (ne)", "ut (ut non)"],
+          ["Negative", "ne", "ut non, ut nemo, ut nihil"],
+          ["Signposts", "(none)", "tam, tantus, ita, talis, tot"],
+          ["Translation", "in order to, so that", "with the result that, so...that"]
+        ]
+      }
+    ],
+    "rules": [
+      "Purpose negative = ne; Result negative = ut non",
+      "Result clauses have signpost words in main clause",
+      "Both use subjunctive (sequence of tenses applies)",
+      "Relative clause of purpose: qui/quae/quod + subjunctive"
+    ]
+  },
+  "exercises": [
+    {
+      "type": "identification",
+      "question": "Purpose or result? 'Tam fortiter pugnavit ut hostes fugerent.'",
+      "answer": "Result - tam is a signpost word"
+    },
+    {
+      "type": "translation",
+      "question": "Translate: Veni ut viderem.",
+      "answer": "I came in order to see. / I came so that I might see."
+    }
+  ],
+  "readingPassage": {
+    "latin": "Caesar milites misit ut pontem facerent. Milites tam celeriter laboraverunt ut pons intra tres dies perfectus esset. Legatos misit qui pacem peterent.",
+    "translation": "Caesar sent soldiers to build a bridge (purpose). The soldiers worked so quickly that the bridge was completed within three days (result). He sent envoys to seek peace (relative purpose).",
+    "notes": ["Note the different clause types and their translations"]
+  }
+}

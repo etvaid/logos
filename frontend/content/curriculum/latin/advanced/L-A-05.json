@@ -1,0 +1,41 @@
+{
+  "id": "L-A-05",
+  "title": "Reading Virgil - Aeneid Book I",
+  "level": "advanced",
+  "language": "latin",
+  "estimatedTime": "90 minutes",
+  "objectives": [
+    "Read extended passages of Virgil fluently",
+    "Analyze Virgilian style and technique",
+    "Understand epic conventions and intertextuality",
+    "Recognize allusions to Homer",
+    "Appreciate the interplay of meter and meaning"
+  ],
+  "grammar": {
+    "topic": "Reading Virgil",
+    "explanation": "Reading Virgil requires integration of all previous skills: grammar, syntax, meter, rhetoric, and cultural knowledge. The Aeneid responds to Homer while creating a distinctly Roman epic.",
+    "paradigms": [
+      {
+        "name": "Epic Conventions",
+        "content": ["Invocation to the Muse", "In medias res opening", "Epic similes", "Catalogues", "Divine machinery", "Prophecies and visions"]
+      },
+      {
+        "name": "Virgilian Technique",
+        "content": ["Imitative allusion to Homer", "Subjective style and pathos", "Complex narrative structure", "Symbolic geography", "Political allegory"]
+      }
+    ]
+  },
+  "readingPassage": {
+    "source": "Virgil, Aeneid 1.1-11",
+    "latin": "Arma virumque cano, Troiae qui primus ab oris\nItaliam, fato profugus, Laviniaque venit\nlitora, multum ille et terris iactatus et alto\nvi superum saevae memorem Iunonis ob iram;\nmulta quoque et bello passus, dum conderet urbem,\ninferretque deos Latio, genus unde Latinum,\nAlbanique patres, atque altae moenia Romae.\nMusa, mihi causas memora, quo numine laeso,\nquidve dolens, regina deum tot volvere casus\ninsignem pietate virum, tot adire labores\nimpulerit. Tantaene animis caelestibus irae?",
+    "translation": "Arms and the man I sing, who first from the shores of Troy, exiled by fate, came to Italy and the Lavinian shores; much was he tossed both on land and sea by the power of the gods above, because of the unforgetting wrath of cruel Juno; much too did he suffer in war, until he could found a city and bring his gods to Latium; from which the Latin race, the Alban fathers, and the walls of lofty Rome. Muse, recall to me the causes, by what offense to her divinity, or grieving for what, the queen of gods drove a man distinguished for piety to undergo so many misfortunes, to face so many labors. Is there such great anger in heavenly minds?",
+    "analysis": "The proem echoes both Iliad (arma/war) and Odyssey (virum/man). Pius Aeneas contrasts with the wrath of Juno. The rhetorical question at the end challenges the justice of divine anger."
+  },
+  "exercises": [
+    {
+      "type": "analysis",
+      "question": "How does Virgil's invocation differ from Homer's?",
+      "answer": "Homer invokes the Muse to 'sing' (imperative); Virgil says 'I sing' (cano) then asks the Muse to 'recall' (memora). Virgil asserts more authorial control."
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "L-I-03",
+  "title": "Passive Voice",
+  "level": "intermediate",
+  "language": "latin",
+  "estimatedTime": "60 minutes",
+  "objectives": [
+    "Form the present passive for all conjugations",
+    "Form the perfect passive using participle + esse",
+    "Express agent with a/ab + ablative",
+    "Convert active sentences to passive",
+    "Recognize deponent verbs"
+  ],
+  "vocabulary": [
+    {"word": "amatur", "lemma": "amo", "form": "3rd sg pres pass", "definition": "he/she/it is loved"},
+    {"word": "monetur", "lemma": "moneo", "form": "3rd sg pres pass", "definition": "he/she/it is warned"},
+    {"word": "ducitur", "lemma": "duco", "form": "3rd sg pres pass", "definition": "he/she/it is led"},
+    {"word": "auditur", "lemma": "audio", "form": "3rd sg pres pass", "definition": "he/she/it is heard"},
+    {"word": "loquor", "lemma": "loquor", "form": "deponent", "definition": "I speak (passive form, active meaning)"},
+    {"word": "sequor", "lemma": "sequor", "form": "deponent", "definition": "I follow"},
+    {"word": "morior", "lemma": "morior", "form": "deponent", "definition": "I die"},
+    {"word": "nascor", "lemma": "nascor", "form": "deponent", "definition": "I am born"}
+  ],
+  "grammar": {
+    "topic": "Passive Voice",
+    "explanation": "In the passive voice, the subject receives the action. Present tense passives add -r to active endings. Perfect passives use the perfect passive participle + sum. Deponent verbs are passive in form but active in meaning.",
+    "paradigms": [
+      {
+        "name": "Present Passive Endings",
+        "headers": ["Person", "Singular", "Plural"],
+        "rows": [
+          ["1st", "-or/-r", "-mur"],
+          ["2nd", "-ris/-re", "-mini"],
+          ["3rd", "-tur", "-ntur"]
+        ]
+      },
+      {
+        "name": "Perfect Passive (amo)",
+        "headers": ["Person", "Singular", "Plural"],
+        "rows": [
+          ["1st", "amatus/a sum", "amati/ae sumus"],
+          ["2nd", "amatus/a es", "amati/ae estis"],
+          ["3rd", "amatus/a/um est", "amati/ae/a sunt"]
+        ]
+      }
+    ],
+    "rules": [
+      "Agent (doer) = a/ab + ablative",
+      "Instrument (means) = ablative alone (no preposition)",
+      "Perfect passive participle agrees with subject in gender/number",
+      "Deponents: passive form, active meaning, active principal parts"
+    ]
+  },
+  "exercises": [
+    {
+      "type": "transformation",
+      "question": "Change to passive: 'Caesar hostes vicit'",
+      "answer": "Hostes a Caesare victi sunt",
+      "hints": ["Subject becomes agent with a/ab"]
+    },
+    {
+      "type": "translation",
+      "question": "Translate: Urbs a militibus capta est.",
+      "answer": "The city was captured by the soldiers."
+    }
+  ],
+  "readingPassage": {
+    "latin": "Roma a Romulo condita est. Multi hostes a Romanis victi sunt. Captivi in urbem ducti sunt. Senatus convocatus est et de victoria locutus est.",
+    "translation": "Rome was founded by Romulus. Many enemies were conquered by the Romans. Captives were led into the city. The senate was convened and spoke about the victory.",
+    "notes": ["locutus est: perfect of deponent loquor"]
+  }
+}

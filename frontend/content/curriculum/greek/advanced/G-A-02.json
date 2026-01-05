@@ -1,0 +1,44 @@
+{
+  "id": "G-A-02",
+  "title": "Greek Prose Style and Rhetoric",
+  "level": "advanced",
+  "language": "greek",
+  "estimatedTime": "75 minutes",
+  "objectives": [
+    "Analyze rhetorical structures in Greek prose",
+    "Identify figures of speech (anaphora, chiasmus, etc.)",
+    "Recognize differences between Attic and Koine style",
+    "Compare prose rhythms and clausulae",
+    "Apply rhetorical analysis to interpretation"
+  ],
+  "grammar": {
+    "topic": "Greek Rhetoric and Style",
+    "explanation": "Greek rhetoric was highly developed, influencing all subsequent Western literature. Orators like Demosthenes and Isocrates created models of style that persisted through the Hellenistic period and into Koine.",
+    "paradigms": [
+      {
+        "name": "Rhetorical Figures",
+        "headers": ["Figure", "Definition", "Example"],
+        "rows": [
+          ["Anaphora", "Repetition at start of clauses", "πάντα δι' αὐτοῦ...πάντα"],
+          ["Chiasmus", "ABBA word arrangement", "ἐν ἀρχῇ...λόγος / λόγος...θεόν"],
+          ["Isocolon", "Parallel clauses of equal length", "μακάριοι...μακάριοι..."],
+          ["Antithesis", "Contrasting ideas in parallel", "οὐ...ἀλλά"],
+          ["Asyndeton", "Omission of conjunctions", "ἦλθον, εἶδον, ἐνίκησα"],
+          ["Hyperbaton", "Unusual word order for emphasis", "μέγα τὸ μυστήριον"]
+        ]
+      }
+    ]
+  },
+  "readingPassage": {
+    "source": "John 1:1-5",
+    "greek": "Ἐν ἀρχῇ ἦν ὁ λόγος, καὶ ὁ λόγος ἦν πρὸς τὸν θεόν, καὶ θεὸς ἦν ὁ λόγος. οὗτος ἦν ἐν ἀρχῇ πρὸς τὸν θεόν.",
+    "analysis": "Chiastic structure: ἐν ἀρχῇ...λόγος...θεόν / θεὸς...λόγος...ἐν ἀρχῇ. Anaphora of καί creates rhythmic parallelism. λόγος bridges Greek philosophical and Hebrew wisdom traditions."
+  },
+  "exercises": [
+    {
+      "type": "analysis",
+      "question": "Identify the rhetorical structure in the Prologue of John",
+      "answer": "Chiasmus (ABBA), staircase parallelism (anadiplosis), antithesis (light/darkness)"
+    }
+  ]
+}

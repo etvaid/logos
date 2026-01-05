@@ -1,0 +1,41 @@
+{
+  "id": "G-A-05",
+  "title": "Reading Homer - Iliad Book I",
+  "level": "advanced",
+  "language": "greek",
+  "estimatedTime": "90 minutes",
+  "objectives": [
+    "Read extended Homeric passages fluently",
+    "Analyze Homeric narrative technique",
+    "Understand epic conventions",
+    "Appreciate the interplay of meter and meaning",
+    "Interpret themes of wrath, honor, and mortality"
+  ],
+  "grammar": {
+    "topic": "Reading Homer",
+    "explanation": "Reading the Iliad requires integrating grammar, meter, dialect, and cultural knowledge. Book I establishes the poem's central conflict: Achilles' withdrawal from battle due to dishonor by Agamemnon.",
+    "paradigms": [
+      {
+        "name": "Epic Conventions in Iliad I",
+        "content": ["Proem: invocation, statement of theme (μῆνιν)", "In medias res: tenth year of war", "Divine machinery: Apollo's plague, Thetis's appeal to Zeus", "Speeches: formal rhetoric, exchanges of insults", "Type scene: assembly, supplication"]
+      },
+      {
+        "name": "Key Themes",
+        "content": ["μῆνις: wrath as destructive force", "τιμή: honor as social currency", "κλέος: glory that survives death", "μοῖρα: fate and mortality", "Divine/human interaction"]
+      }
+    ]
+  },
+  "readingPassage": {
+    "source": "Homer, Iliad 1.1-7",
+    "greek": "Μῆνιν ἄειδε, θεά, Πηληϊάδεω Ἀχιλῆος\nοὐλομένην, ἣ μυρί᾽ Ἀχαιοῖς ἄλγε᾽ ἔθηκε,\nπολλὰς δ᾽ ἰφθίμους ψυχὰς Ἄϊδι προΐαψεν\nἡρώων, αὐτοὺς δὲ ἑλώρια τεῦχε κύνεσσιν\nοἰωνοῖσί τε πᾶσι, Διὸς δ᾽ ἐτελείετο βουλή,\nἐξ οὗ δὴ τὰ πρῶτα διαστήτην ἐρίσαντε\nἈτρεΐδης τε ἄναξ ἀνδρῶν καὶ δῖος Ἀχιλλεύς.",
+    "translation": "Sing, goddess, the wrath of Peleus's son Achilles, the destructive wrath that brought countless sorrows upon the Achaeans and hurled many mighty souls of heroes to Hades, making them prey for dogs and all birds, and the will of Zeus was accomplished, from when first they parted in strife, Atreus's son, lord of men, and brilliant Achilles.",
+    "analysis": "The proem in seven lines introduces theme (μῆνις), consequence (ἄλγεα, death), divine plan (Διὸς βουλή), and protagonists (Agamemnon, Achilles). The contrast between souls (ψυχαί) sent to Hades and bodies (αὐτούς) left as prey reflects Greek views of death."
+  },
+  "exercises": [
+    {
+      "type": "analysis",
+      "question": "How does the proem establish the poem's scope and themes?",
+      "answer": "μῆνιν as first word announces theme; οὐλομένην shows destructive nature; consequences unfold in hierarchy from pain to death to dishonor of corpses; Διὸς βουλή frames narrative in divine plan."
+    }
+  ]
+}

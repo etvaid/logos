@@ -1,0 +1,143 @@
+{
+  "id": "cicero-catiline-1",
+  "title": "In Catilinam I - Opening",
+  "author": "Marcus Tullius Cicero",
+  "work": "In Catilinam",
+  "book": 1,
+  "dateComposed": "63 BCE",
+  "difficulty": "advanced",
+  "genre": "oratory",
+  "description": "Cicero's first speech against Catiline, delivered in the Roman Senate. One of the most famous examples of Latin rhetoric.",
+  "sections": [
+    {
+      "id": "1.1",
+      "latin": "Quo usque tandem abutere, Catilina, patientia nostra? Quam diu etiam furor iste tuus nos eludet? Quem ad finem sese effrenata iactabit audacia?",
+      "translation": "How long, Catiline, will you abuse our patience? How long will that madness of yours mock us? To what limit will your unbridled audacity flaunt itself?",
+      "vocabulary": [
+        {"word": "Quo", "lemma": "quo", "form": "adv", "definition": "how far, to what point"},
+        {"word": "usque", "lemma": "usque", "form": "adv", "definition": "continuously, all the way"},
+        {"word": "tandem", "lemma": "tandem", "form": "adv", "definition": "at length, finally (expressing impatience)"},
+        {"word": "abutere", "lemma": "abutor", "form": "2nd sg fut ind dep", "definition": "will you abuse, misuse"},
+        {"word": "Catilina", "lemma": "Catilina", "form": "voc sg m", "definition": "Catiline"},
+        {"word": "patientia", "lemma": "patientia", "form": "abl sg f", "definition": "patience"},
+        {"word": "nostra", "lemma": "noster", "form": "abl sg f", "definition": "our"},
+        {"word": "Quam diu", "lemma": "quam diu", "form": "adv", "definition": "how long"},
+        {"word": "etiam", "lemma": "etiam", "form": "adv", "definition": "still, also"},
+        {"word": "furor", "lemma": "furor", "form": "nom sg m", "definition": "madness, frenzy"},
+        {"word": "iste", "lemma": "iste", "form": "nom sg m", "definition": "that (of yours, contemptuous)"},
+        {"word": "eludet", "lemma": "eludo", "form": "3rd sg fut act ind", "definition": "will mock, elude"},
+        {"word": "Quem ad finem", "lemma": "quem ad finem", "form": "phrase", "definition": "to what limit, how far"},
+        {"word": "sese", "lemma": "sui", "form": "acc reflexive", "definition": "itself"},
+        {"word": "effrenata", "lemma": "effrenatus", "form": "nom sg f", "definition": "unbridled"},
+        {"word": "iactabit", "lemma": "iacto", "form": "3rd sg fut act ind", "definition": "will flaunt, brandish"},
+        {"word": "audacia", "lemma": "audacia", "form": "nom sg f", "definition": "boldness, audacity"}
+      ],
+      "rhetoricalNotes": [
+        "Tricolon: three rhetorical questions of increasing intensity",
+        "Anaphora: repetition of interrogative structure",
+        "iste: demonstrative with contemptuous force"
+      ]
+    },
+    {
+      "id": "1.2",
+      "latin": "Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae, nihil timor populi, nihil concursus bonorum omnium, nihil hic munitissimus habendi senatus locus, nihil horum ora voltusque moverunt?",
+      "translation": "Did the nocturnal guard of the Palatine move you not at all, did not the watches of the city, not the fear of the people, not the gathering of all good men, not this most fortified place for holding the senate, not the faces and expressions of these men?",
+      "vocabulary": [
+        {"word": "Nihilne", "lemma": "nihil", "form": "adv + -ne", "definition": "not at all? (interrogative)"},
+        {"word": "nocturnum", "lemma": "nocturnus", "form": "acc sg n", "definition": "nocturnal, of the night"},
+        {"word": "praesidium", "lemma": "praesidium", "form": "nom sg n", "definition": "guard, garrison"},
+        {"word": "Palati", "lemma": "Palatium", "form": "gen sg n", "definition": "of the Palatine"},
+        {"word": "urbis", "lemma": "urbs", "form": "gen sg f", "definition": "of the city"},
+        {"word": "vigiliae", "lemma": "vigilia", "form": "nom pl f", "definition": "watches, guards"},
+        {"word": "timor", "lemma": "timor", "form": "nom sg m", "definition": "fear"},
+        {"word": "populi", "lemma": "populus", "form": "gen sg m", "definition": "of the people"},
+        {"word": "concursus", "lemma": "concursus", "form": "nom sg m", "definition": "gathering, assembly"},
+        {"word": "bonorum", "lemma": "bonus", "form": "gen pl m", "definition": "of good men"},
+        {"word": "munitissimus", "lemma": "munitus", "form": "nom sg m superl", "definition": "most fortified"},
+        {"word": "habendi", "lemma": "habeo", "form": "gerund gen", "definition": "of holding"},
+        {"word": "senatus", "lemma": "senatus", "form": "gen sg m", "definition": "of the senate"},
+        {"word": "locus", "lemma": "locus", "form": "nom sg m", "definition": "place"},
+        {"word": "ora", "lemma": "os", "form": "nom pl n", "definition": "faces"},
+        {"word": "voltusque", "lemma": "voltus", "form": "nom pl m", "definition": "and expressions"},
+        {"word": "moverunt", "lemma": "moveo", "form": "3rd pl perf act ind", "definition": "moved, affected"}
+      ],
+      "rhetoricalNotes": [
+        "Anaphora of nihil: sixfold repetition builds climax",
+        "Asyndeton: absence of conjunctions increases urgency",
+        "The senate is meeting in the Temple of Jupiter Stator, a fortified location"
+      ]
+    },
+    {
+      "id": "1.3",
+      "latin": "Patere tua consilia non sentis, constrictam iam horum omnium scientia teneri coniurationem tuam non vides? Quid proxima, quid superiore nocte egeris, ubi fueris, quos convocaveris, quid consilii ceperis, quem nostrum ignorare arbitraris?",
+      "translation": "Do you not perceive that your plans are exposed, do you not see that your conspiracy is already held in check by the knowledge of all these men? What you did last night, what you did the night before, where you were, whom you summoned, what plan you adopted—which of us do you think is ignorant of these things?",
+      "vocabulary": [
+        {"word": "Patere", "lemma": "pateo", "form": "pres act inf", "definition": "to be exposed, lie open"},
+        {"word": "consilia", "lemma": "consilium", "form": "acc pl n", "definition": "plans, designs"},
+        {"word": "sentis", "lemma": "sentio", "form": "2nd sg pres act ind", "definition": "you perceive"},
+        {"word": "constrictam", "lemma": "constringo", "form": "perf pass part acc sg f", "definition": "bound, checked"},
+        {"word": "scientia", "lemma": "scientia", "form": "abl sg f", "definition": "by the knowledge"},
+        {"word": "teneri", "lemma": "teneo", "form": "pres pass inf", "definition": "to be held"},
+        {"word": "coniurationem", "lemma": "coniuratio", "form": "acc sg f", "definition": "conspiracy"},
+        {"word": "proxima", "lemma": "proximus", "form": "abl sg f", "definition": "last (night)"},
+        {"word": "superiore", "lemma": "superior", "form": "abl sg f", "definition": "the previous"},
+        {"word": "nocte", "lemma": "nox", "form": "abl sg f", "definition": "night"},
+        {"word": "egeris", "lemma": "ago", "form": "2nd sg perf subj act", "definition": "you did"},
+        {"word": "fueris", "lemma": "sum", "form": "2nd sg perf subj", "definition": "you were"},
+        {"word": "convocaveris", "lemma": "convoco", "form": "2nd sg perf subj act", "definition": "you summoned"},
+        {"word": "consilii", "lemma": "consilium", "form": "gen sg n", "definition": "of plan"},
+        {"word": "ceperis", "lemma": "capio", "form": "2nd sg perf subj act", "definition": "you adopted"},
+        {"word": "ignorare", "lemma": "ignoro", "form": "pres act inf", "definition": "to be ignorant of"},
+        {"word": "arbitraris", "lemma": "arbitror", "form": "2nd sg pres ind dep", "definition": "you think"}
+      ],
+      "rhetoricalNotes": [
+        "Indirect questions with perfect subjunctive",
+        "Cicero reveals detailed knowledge of Catiline's activities",
+        "Rhetorical questions imply Catiline's guilt is obvious"
+      ]
+    },
+    {
+      "id": "1.4",
+      "latin": "O tempora, o mores! Senatus haec intellegit. Consul videt; hic tamen vivit. Vivit? Immo vero etiam in senatum venit, fit publici consilii particeps, notat et designat oculis ad caedem unum quemque nostrum.",
+      "translation": "O the times, O the customs! The senate understands these things. The consul sees them; yet this man lives. Lives? Indeed he even comes into the senate, becomes a participant in public deliberation, marks and designates with his eyes each one of us for slaughter.",
+      "vocabulary": [
+        {"word": "O tempora", "lemma": "tempus", "form": "acc pl n", "definition": "O the times"},
+        {"word": "o mores", "lemma": "mos", "form": "acc pl m", "definition": "O the customs"},
+        {"word": "Senatus", "lemma": "senatus", "form": "nom sg m", "definition": "the senate"},
+        {"word": "intellegit", "lemma": "intellego", "form": "3rd sg pres act ind", "definition": "understands"},
+        {"word": "Consul", "lemma": "consul", "form": "nom sg m", "definition": "the consul"},
+        {"word": "videt", "lemma": "video", "form": "3rd sg pres act ind", "definition": "sees"},
+        {"word": "hic", "lemma": "hic", "form": "nom sg m", "definition": "this man"},
+        {"word": "tamen", "lemma": "tamen", "form": "adv", "definition": "nevertheless"},
+        {"word": "vivit", "lemma": "vivo", "form": "3rd sg pres act ind", "definition": "lives"},
+        {"word": "Immo vero", "lemma": "immo vero", "form": "adv", "definition": "indeed, in fact"},
+        {"word": "senatum", "lemma": "senatus", "form": "acc sg m", "definition": "senate"},
+        {"word": "venit", "lemma": "venio", "form": "3rd sg pres act ind", "definition": "comes"},
+        {"word": "fit", "lemma": "fio", "form": "3rd sg pres ind", "definition": "becomes"},
+        {"word": "publici", "lemma": "publicus", "form": "gen sg n", "definition": "of public"},
+        {"word": "consilii", "lemma": "consilium", "form": "gen sg n", "definition": "of deliberation"},
+        {"word": "particeps", "lemma": "particeps", "form": "nom sg m", "definition": "participant"},
+        {"word": "notat", "lemma": "noto", "form": "3rd sg pres act ind", "definition": "marks"},
+        {"word": "designat", "lemma": "designo", "form": "3rd sg pres act ind", "definition": "designates"},
+        {"word": "oculis", "lemma": "oculus", "form": "abl pl m", "definition": "with his eyes"},
+        {"word": "caedem", "lemma": "caedes", "form": "acc sg f", "definition": "slaughter, murder"},
+        {"word": "unum quemque", "lemma": "unusquisque", "form": "acc sg m", "definition": "each one"},
+        {"word": "nostrum", "lemma": "nos", "form": "gen pl", "definition": "of us"}
+      ],
+      "rhetoricalNotes": [
+        "O tempora, o mores: one of the most famous phrases in Latin",
+        "Exclamatio: expression of strong emotion",
+        "Correctio: Vivit? Immo vero... - correction intensifies the point",
+        "Climax: from living to attending senate to marking senators for death"
+      ]
+    }
+  ],
+  "historicalContext": "In 63 BCE, Lucius Sergius Catilina (Catiline) led a conspiracy to overthrow the Roman Republic. Cicero, as consul, exposed the plot and delivered four speeches against Catiline. This first speech was delivered in the Senate on November 8, 63 BCE.",
+  "literaryFeatures": [
+    "Master class in Roman oratory",
+    "Use of rhetorical questions to build tension",
+    "Anaphora and climax as persuasive devices",
+    "Direct address to opponent (apostrophe)",
+    "Famous exclamation 'O tempora, o mores!'"
+  ]
+}

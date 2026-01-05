@@ -1,0 +1,73 @@
+{
+  "id": "L-I-08",
+  "title": "Indirect Statement (Accusative-Infinitive)",
+  "level": "intermediate",
+  "language": "latin",
+  "estimatedTime": "65 minutes",
+  "objectives": [
+    "Recognize indirect statement structure",
+    "Use accusative subject + infinitive verb",
+    "Choose correct infinitive tense (present, perfect, future)",
+    "Identify verbs that introduce indirect statement",
+    "Translate indirect statements naturally"
+  ],
+  "vocabulary": [
+    {"word": "dico", "definition": "I say (introduces ind. statement)"},
+    {"word": "puto", "definition": "I think"},
+    {"word": "credo", "definition": "I believe"},
+    {"word": "scio", "definition": "I know"},
+    {"word": "audio", "definition": "I hear (that)"},
+    {"word": "video", "definition": "I see (that)"},
+    {"word": "spero", "definition": "I hope"},
+    {"word": "nego", "definition": "I deny, say...not"}
+  ],
+  "grammar": {
+    "topic": "Indirect Statement",
+    "explanation": "After verbs of saying, thinking, knowing, perceiving, Latin uses an accusative subject + infinitive verb (not a 'that' clause). The infinitive tense shows time relative to the main verb: present = same time, perfect = earlier, future = later.",
+    "paradigms": [
+      {
+        "name": "Infinitive Tenses",
+        "headers": ["Tense", "Active", "Passive", "Time"],
+        "rows": [
+          ["Present", "amare", "amari", "Same time as main verb"],
+          ["Perfect", "amavisse", "amatus esse", "Before main verb"],
+          ["Future", "amaturus esse", "amatum iri", "After main verb"]
+        ]
+      },
+      {
+        "name": "Examples",
+        "headers": ["Latin", "Translation"],
+        "rows": [
+          ["Dico eum venire", "I say that he is coming"],
+          ["Dixi eum venire", "I said that he was coming"],
+          ["Dico eum venisse", "I say that he came/has come"],
+          ["Dico eum venturum esse", "I say that he will come"]
+        ]
+      }
+    ],
+    "rules": [
+      "Subject of infinitive = accusative (eum, eam, eos, etc.)",
+      "Reflexive (se) refers back to subject of main verb",
+      "Present infinitive = same time as main verb",
+      "Perfect infinitive = time before main verb",
+      "Future infinitive = time after main verb"
+    ]
+  },
+  "exercises": [
+    {
+      "type": "translation",
+      "question": "Translate: Caesar dixit se vicisse.",
+      "answer": "Caesar said that he had conquered."
+    },
+    {
+      "type": "analysis",
+      "question": "Why 'se' not 'eum' in 'Caesar dixit se vicisse'?",
+      "answer": "se refers back to Caesar (the subject of dixit); eum would mean someone else"
+    }
+  ],
+  "readingPassage": {
+    "latin": "Nuntii dixerunt hostes adventare. Caesar credidit eos mox venturos esse. Milites sperabant se victoria potituros esse. Omnes sciebant bellum grave futurum esse.",
+    "translation": "Messengers said that the enemy was approaching. Caesar believed that they would soon come. The soldiers hoped that they would gain victory. Everyone knew that the war would be serious.",
+    "notes": ["Note the different infinitive tenses expressing time relationships"]
+  }
+}

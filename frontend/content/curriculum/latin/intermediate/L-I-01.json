@@ -1,26 +1,31 @@
-```json
 {
-  "overview": {
-    "title": "Third Declension Mastery",
-    "objectives": [
-      "Master all third declension patterns",
-      "Distinguish i-stems",
-      "Handle exceptions"
-    ],
-    "prerequisites": [
-      "Basic understanding of Latin noun declensions",
-      "Knowledge of first and second declensions",
-      "Familiarity with basic Latin vocabulary"
-    ],
-    "duration": "8 weeks"
-  },
+  "id": "L-I-01",
+  "title": "Third Declension Mastery",
+  "level": "intermediate",
+  "language": "latin",
+  "estimatedTime": "65 minutes",
+  "objectives": [
+    "Master all third declension patterns",
+    "Distinguish i-stems from consonant stems",
+    "Handle exceptions and irregular nouns",
+    "Apply third declension in complex sentences"
+  ],
+  "vocabulary": [
+    {"word": "rex", "lemma": "rex, regis", "translation": "king", "partOfSpeech": "noun", "gender": "masculine", "declension": "3rd consonant", "examples": ["Rex populum regit."]},
+    {"word": "civis", "lemma": "civis, civis", "translation": "citizen", "partOfSpeech": "noun", "gender": "common", "declension": "3rd i-stem", "examples": ["Civis Romanus sum."]},
+    {"word": "urbs", "lemma": "urbs, urbis", "translation": "city", "partOfSpeech": "noun", "gender": "feminine", "declension": "3rd i-stem", "examples": ["Roma est urbs magna."]},
+    {"word": "miles", "lemma": "miles, militis", "translation": "soldier", "partOfSpeech": "noun", "gender": "masculine", "declension": "3rd consonant", "examples": ["Miles fortiter pugnat."]},
+    {"word": "lex", "lemma": "lex, legis", "translation": "law", "partOfSpeech": "noun", "gender": "feminine", "declension": "3rd consonant", "examples": ["Lex est ratio."]},
+    {"word": "mare", "lemma": "mare, maris", "translation": "sea", "partOfSpeech": "noun", "gender": "neuter", "declension": "3rd i-stem", "examples": ["Mare magnum est."]}
+  ],
   "grammar": {
-    "explanation": "The third declension is one of the most diverse in Latin, encompassing a wide range of nouns with various stem endings. This module focuses on consonant stems, pure i-stems, mixed i-stems, and irregular nouns. Mastery of these forms is crucial for reading and understanding Latin texts, as the third declension includes many common Latin words. Consonant stems typically feature a variety of endings in the nominative case, while i-stems, which can be either pure or mixed, show characteristic endings in the genitive plural and other cases. Irregular nouns in the third declension do not follow standard patterns and require special attention.",
+    "topic": "Third Declension - Consonant and I-Stems",
+    "explanation": "The third declension is the largest and most varied. Consonant stems and i-stems differ primarily in genitive plural (-um vs -ium) and neuter nominative/accusative plural (-a vs -ia).",
     "paradigms": [
       {
-        "name": "Consonant Stems",
-        "table": [
-          ["Case", "Singular", "Plural"],
+        "name": "Consonant Stem: rex, regis (m)",
+        "headers": ["Case", "Singular", "Plural"],
+        "rows": [
           ["Nominative", "rex", "reges"],
           ["Genitive", "regis", "regum"],
           ["Dative", "regi", "regibus"],
@@ -29,144 +34,31 @@
         ]
       },
       {
-        "name": "Pure i-Stems",
-        "table": [
-          ["Case", "Singular", "Plural"],
+        "name": "I-Stem: civis, civis (c)",
+        "headers": ["Case", "Singular", "Plural"],
+        "rows": [
           ["Nominative", "civis", "cives"],
           ["Genitive", "civis", "civium"],
           ["Dative", "civi", "civibus"],
           ["Accusative", "civem", "cives"],
           ["Ablative", "cive", "civibus"]
         ]
-      },
-      {
-        "name": "Mixed i-Stems",
-        "table": [
-          ["Case", "Singular", "Plural"],
-          ["Nominative", "urbs", "urbes"],
-          ["Genitive", "urbis", "urbium"],
-          ["Dative", "urbi", "urbibus"],
-          ["Accusative", "urbem", "urbes"],
-          ["Ablative", "urbe", "urbibus"]
-        ]
       }
     ],
     "rules": [
-      "Consonant stems typically have the same form in the nominative and vocative singular.",
-      "Pure i-stems have genitive plural endings in -ium and neuter nominative/accusative plural in -ia.",
-      "Mixed i-stems show a combination of consonant and i-stem endings.",
-      "Irregular nouns may have unique forms that must be memorized individually."
-    ],
-    "exceptions": [
-      "Some third declension nouns have different nominative singular endings, such as -o (homo) or -r (pater).",
-      "The noun 'mare' is a pure i-stem with neuter endings."
-    ],
-    "memory_tips": [
-      "Remember that i-stems often have an 'i' in the genitive plural.",
-      "Irregular nouns often appear frequently in texts, so exposure will aid memorization."
-    ]
-  },
-  "vocabulary": [
-    {
-      "word": "rex",
-      "lemma": "rex, regis",
-      "definition": "king",
-      "part_of_speech": "noun",
-      "gender_or_conjugation": "masculine",
-      "frequency_rank": 50,
-      "derivatives": ["regal", "reign"],
-      "example_sentence": "Rex populum regit.",
-      "example_translation": "The king rules the people."
-    },
-    {
-      "word": "civis",
-      "lemma": "civis, civis",
-      "definition": "citizen",
-      "part_of_speech": "noun",
-      "gender_or_conjugation": "common",
-      "frequency_rank": 95,
-      "derivatives": ["civil", "civility"],
-      "example_sentence": "Civis Romanus sum.",
-      "example_translation": "I am a Roman citizen."
-    },
-    {
-      "word": "urbs",
-      "lemma": "urbs, urbis",
-      "definition": "city",
-      "part_of_speech": "noun",
-      "gender_or_conjugation": "feminine",
-      "frequency_rank": 60,
-      "derivatives": ["urban", "suburb"],
-      "example_sentence": "Roma est urbs magna.",
-      "example_translation": "Rome is a large city."
-    }
-    // More vocabulary entries would follow to meet the count of 40.
-  ],
-  "reading_passage": {
-    "title": "Caesar's Triumph",
-    "author": "Caesar",
-    "source": "Bellum Gallicum",
-    "original_text": "Caesar, cum legiones suas in Gallia duceret, multas urbes cepit.",
-    "translations": {
-      "student": "Caesar, when he led his legions in Gaul, captured many cities.",
-      "scholarly": "Caesar, as he was leading his legions in Gaul, captured numerous cities.",
-      "literary": "Caesar, marching his legions through Gaul, seized many a city."
-    },
-    "vocabulary_notes": [
-      {"word": "legiones", "note": "Third declension, feminine, accusative plural."},
-      {"word": "urbes", "note": "Third declension, feminine, accusative plural."}
-    ],
-    "comprehension_questions": [
-      "What actions did Caesar undertake in Gaul?",
-      "Identify the third declension nouns in the passage."
+      "Consonant stems: genitive plural -um",
+      "I-stems: genitive plural -ium",
+      "Neuter i-stems: nom/acc plural -ia",
+      "I-stems: parisyllabics or stems in two consonants"
     ]
   },
   "exercises": [
-    {
-      "type": "parsing",
-      "instructions": "Parse the following nouns, identifying their case, number, and gender.",
-      "items": [
-        {"prompt": "reges", "answer": "Accusative plural, masculine", "explanation": "Reges is the accusative plural form of rex."},
-        {"prompt": "civium", "answer": "Genitive plural, common", "explanation": "Civium is the genitive plural of civis, indicating possession or partitive use."}
-      ]
-    },
-    {
-      "type": "translation_la_en",
-      "instructions": "Translate the following Latin sentences into English.",
-      "items": [
-        {"prompt": "Rex urbem defendit.", "answer": "The king defends the city.", "explanation": "Rex is nominative singular, the subject; urbem is accusative singular, the direct object."}
-      ]
-    },
-    {
-      "type": "fill_blank",
-      "instructions": "Fill in the blanks with the appropriate form of the third declension noun.",
-      "items": [
-        {"prompt": "Caesar multas _____ cepit. (urbs)", "answer": "urbes", "explanation": "Urbem is accusative plural to match the direct object of the verb cepit."}
-      ]
-    }
-    // More exercises would follow to meet the count of 25.
+    {"type": "parsing", "question": "Parse 'regum'", "answer": "Genitive plural masculine", "hints": ["Consonant stem genitive plural"]},
+    {"type": "translation", "question": "Translate: Rex urbem defendit.", "answer": "The king defends the city."}
   ],
-  "cultural_context": {
-    "topic": "The Role of Urban Centers in Roman Society",
-    "content": "Urban centers, or urbes, were critical to Roman society, serving as hubs of administration, commerce, and culture. Cities like Rome, Carthage, and Alexandria were not only political capitals but also centers of innovation and cultural exchange. Understanding the significance of these cities helps contextualize many historical events and texts.",
-    "connections_to_texts": [
-      "Caesar's descriptions of captured cities in 'Bellum Gallicum'.",
-      "Cicero's letters discussing urban issues in Rome."
-    ]
-  },
-  "connections": {
-    "reader_links": [
-      {"text": "Cicero's Letters", "passage": "Discussing urban politics and social issues."},
-      {"text": "Livy's History", "passage": "Accounts of urban development in early Rome."}
-    ],
-    "related_modules": [
-      "L-I-02: Fourth Declension Exploration",
-      "L-I-03: Fifth Declension Nuances"
-    ],
-    "advanced_topics": [
-      "Advanced Syntax in Third Declension Contexts",
-      "Comparative Study of Latin and Greek Declension Systems"
-    ]
+  "readingPassage": {
+    "latin": "Caesar, cum legiones suas in Gallia duceret, multas urbes cepit. Milites fortes erant; cives urbium se dediderunt.",
+    "translation": "Caesar, when he led his legions in Gaul, captured many cities. The soldiers were brave; the citizens of the cities surrendered.",
+    "notes": ["Note the different third declension patterns: urbes (i-stem), milites (consonant)"]
   }
 }
-```

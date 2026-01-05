@@ -1,148 +1,340 @@
-```json
 {
-  "overview": {
-    "title": "The Greek Alphabet",
-    "objectives": [
-      "Recognize and write the 24 letters of the Greek alphabet",
-      "Understand and correctly pronounce each letter",
-      "Identify basic phonetic rules associated with the Greek script"
-    ],
-    "prerequisites": [
-      "Basic knowledge of the Latin alphabet",
-      "Interest in Ancient Greek language and culture"
-    ],
-    "duration": "4 weeks"
-  },
+  "id": "G-B-01",
+  "title": "The Greek Alphabet - Letters and Sounds",
+  "level": "beginner",
+  "language": "greek",
+  "estimatedTime": "45 minutes",
+  "objectives": [
+    "Recognize and write all 24 letters of the Greek alphabet",
+    "Pronounce each letter correctly using classical pronunciation",
+    "Identify letter groups: vowels, consonants, and double consonants",
+    "Understand the historical significance of the Greek alphabet"
+  ],
+  "vocabulary": [
+    {
+      "word": "ἄλφα",
+      "transliteration": "alpha",
+      "translation": "the letter alpha; the first",
+      "partOfSpeech": "noun",
+      "declension": "1st",
+      "gender": "neuter",
+      "examples": [
+        "τὸ ἄλφα καὶ τὸ ὦ - the alpha and the omega"
+      ]
+    },
+    {
+      "word": "γράμμα",
+      "transliteration": "gramma",
+      "translation": "letter, written character",
+      "partOfSpeech": "noun",
+      "declension": "3rd",
+      "gender": "neuter",
+      "examples": [
+        "τὰ γράμματα μανθάνω - I am learning the letters"
+      ]
+    },
+    {
+      "word": "φωνή",
+      "transliteration": "phone",
+      "translation": "voice, sound",
+      "partOfSpeech": "noun",
+      "declension": "1st",
+      "gender": "feminine",
+      "examples": [
+        "ἡ φωνὴ τοῦ διδασκάλου - the voice of the teacher"
+      ]
+    },
+    {
+      "word": "λόγος",
+      "transliteration": "logos",
+      "translation": "word, speech, reason",
+      "partOfSpeech": "noun",
+      "declension": "2nd",
+      "gender": "masculine",
+      "examples": [
+        "ὁ λόγος ἐστὶν ἀληθής - the word is true"
+      ]
+    },
+    {
+      "word": "βίβλος",
+      "transliteration": "biblos",
+      "translation": "book, scroll",
+      "partOfSpeech": "noun",
+      "declension": "2nd",
+      "gender": "feminine",
+      "examples": [
+        "ἡ βίβλος τῆς γενέσεως - the book of genesis"
+      ]
+    },
+    {
+      "word": "ὄνομα",
+      "transliteration": "onoma",
+      "translation": "name",
+      "partOfSpeech": "noun",
+      "declension": "3rd",
+      "gender": "neuter",
+      "examples": [
+        "τί ἐστιν τὸ ὄνομά σου; - what is your name?"
+      ]
+    },
+    {
+      "word": "γράφω",
+      "transliteration": "grapho",
+      "translation": "I write",
+      "partOfSpeech": "verb",
+      "declension": "1st conjugation",
+      "gender": "n/a",
+      "examples": [
+        "γράφω τὰ γράμματα - I write the letters"
+      ]
+    },
+    {
+      "word": "λέγω",
+      "transliteration": "lego",
+      "translation": "I say, I speak",
+      "partOfSpeech": "verb",
+      "declension": "1st conjugation",
+      "gender": "n/a",
+      "examples": [
+        "λέγω τὴν ἀλήθειαν - I speak the truth"
+      ]
+    }
+  ],
   "grammar": {
-    "explanation": "The Greek alphabet consists of 24 letters, each with a distinct sound and form. It is the basis for reading, writing, and understanding Ancient Greek. Mastery of the alphabet is crucial for progressing in the language.",
+    "topic": "The Greek Alphabet",
+    "explanation": "The Greek alphabet consists of 24 letters, developed around the 8th century BCE from the Phoenician alphabet. Unlike English, Greek has distinct symbols for long and short vowels.",
     "paradigms": [
       {
-        "name": "Greek Alphabet",
-        "table": [
-          ["Letter (Upper)", "Letter (Lower)", "Name", "Pronunciation"],
-          ["Α", "α", "Alpha", "A as in 'father'"],
-          ["Β", "β", "Beta", "B as in 'bat'"],
-          ["Γ", "γ", "Gamma", "G as in 'go'"],
-          ["Δ", "δ", "Delta", "D as in 'dog'"],
-          ["Ε", "ε", "Epsilon", "E as in 'pet'"],
-          ["Ζ", "ζ", "Zeta", "Z as in 'zoo'"],
-          ["Η", "η", "Eta", "E as in 'they'"],
-          ["Θ", "θ", "Theta", "TH as in 'think'"],
-          ["Ι", "ι", "Iota", "I as in 'machine'"],
-          ["Κ", "κ", "Kappa", "K as in 'kite'"],
-          ["Λ", "λ", "Lambda", "L as in 'lion'"],
-          ["Μ", "μ", "Mu", "M as in 'mother'"],
-          ["Ν", "ν", "Nu", "N as in 'net'"],
-          ["Ξ", "ξ", "Xi", "X as in 'axe'"],
-          ["Ο", "ο", "Omicron", "O as in 'not'"],
-          ["Π", "π", "Pi", "P as in 'spot'"],
-          ["Ρ", "ρ", "Rho", "R as in 'roll'"],
-          ["Σ", "σ/ς", "Sigma", "S as in 'see'"],
-          ["Τ", "τ", "Tau", "T as in 'top'"],
-          ["Υ", "υ", "Upsilon", "U as in 'put'"],
-          ["Φ", "φ", "Phi", "PH as in 'phone'"],
-          ["Χ", "χ", "Chi", "CH as in 'Bach'"],
-          ["Ψ", "ψ", "Psi", "PS as in 'lapse'"],
-          ["Ω", "ω", "Omega", "O as in 'tone'"]
+        "name": "The Complete Greek Alphabet",
+        "headers": [
+          "Uppercase",
+          "Lowercase",
+          "Name",
+          "Transliteration",
+          "Sound"
+        ],
+        "rows": [
+          [
+            "Α",
+            "α",
+            "alpha",
+            "a",
+            "a as in father"
+          ],
+          [
+            "Β",
+            "β",
+            "beta",
+            "b",
+            "b as in boy"
+          ],
+          [
+            "Γ",
+            "γ",
+            "gamma",
+            "g",
+            "g as in go"
+          ],
+          [
+            "Δ",
+            "δ",
+            "delta",
+            "d",
+            "d as in dog"
+          ],
+          [
+            "Ε",
+            "ε",
+            "epsilon",
+            "e",
+            "e as in pet"
+          ],
+          [
+            "Ζ",
+            "ζ",
+            "zeta",
+            "z",
+            "dz or z"
+          ],
+          [
+            "Η",
+            "η",
+            "eta",
+            "e long",
+            "a as in they"
+          ],
+          [
+            "Θ",
+            "θ",
+            "theta",
+            "th",
+            "th as in thick"
+          ],
+          [
+            "Ι",
+            "ι",
+            "iota",
+            "i",
+            "i as in machine"
+          ],
+          [
+            "Κ",
+            "κ",
+            "kappa",
+            "k",
+            "k as in king"
+          ],
+          [
+            "Λ",
+            "λ",
+            "lambda",
+            "l",
+            "l as in lion"
+          ],
+          [
+            "Μ",
+            "μ",
+            "mu",
+            "m",
+            "m as in mother"
+          ],
+          [
+            "Ν",
+            "ν",
+            "nu",
+            "n",
+            "n as in now"
+          ],
+          [
+            "Ξ",
+            "ξ",
+            "xi",
+            "x",
+            "x as in axe"
+          ],
+          [
+            "Ο",
+            "ο",
+            "omicron",
+            "o",
+            "o as in off"
+          ],
+          [
+            "Π",
+            "π",
+            "pi",
+            "p",
+            "p as in spin"
+          ],
+          [
+            "Ρ",
+            "ρ",
+            "rho",
+            "r",
+            "r rolled"
+          ],
+          [
+            "Σ",
+            "σ/ς",
+            "sigma",
+            "s",
+            "s as in see"
+          ],
+          [
+            "Τ",
+            "τ",
+            "tau",
+            "t",
+            "t as in stop"
+          ],
+          [
+            "Υ",
+            "υ",
+            "upsilon",
+            "u/y",
+            "u as French lune"
+          ],
+          [
+            "Φ",
+            "φ",
+            "phi",
+            "ph",
+            "aspirated p"
+          ],
+          [
+            "Χ",
+            "χ",
+            "chi",
+            "ch",
+            "aspirated k"
+          ],
+          [
+            "Ψ",
+            "ψ",
+            "psi",
+            "ps",
+            "ps as in lapse"
+          ],
+          [
+            "Ω",
+            "ω",
+            "omega",
+            "o long",
+            "o as in note"
+          ]
         ]
       }
     ],
     "rules": [
-      "Sigma has two forms: 'σ' in the middle of a word and 'ς' at the end.",
-      "Gamma before another gamma, kappa, chi, or xi is pronounced as 'ng'."
-    ],
-    "exceptions": [
-      "Some dialects may vary in pronunciation, especially in ancient texts."
-    ],
-    "memory_tips": [
-      "Associate letters with familiar words or names.",
-      "Use mnemonic devices, like singing the alphabet to a tune."
-    ]
-  },
-  "vocabulary": [
-    {
-      "word": "λόγος",
-      "lemma": "λόγος",
-      "definition": "word, reason, account",
-      "part_of_speech": "noun",
-      "gender_or_conjugation": "masculine",
-      "frequency_rank": 50,
-      "derivatives": ["logic", "logistics"],
-      "example_sentence": "Ἐν ἀρχῇ ἦν ὁ λόγος.",
-      "example_translation": "In the beginning was the Word."
-    },
-    {
-      "word": "βίος",
-      "lemma": "βίος",
-      "definition": "life",
-      "part_of_speech": "noun",
-      "gender_or_conjugation": "masculine",
-      "frequency_rank": 200,
-      "derivatives": ["biology", "biography"],
-      "example_sentence": "Ὁ βίος ἐστὶ καλός.",
-      "example_translation": "Life is beautiful."
-    },
-    // 23 more vocabulary entries...
-  ],
-  "reading_passage": {
-    "title": "In the Beginning",
-    "author": "John",
-    "source": "New Testament",
-    "original_text": "Ἐν ἀρχῇ ἦν ὁ λόγος, καὶ ὁ λόγος ἦν πρὸς τὸν θεόν, καὶ θεὸς ἦν ὁ λόγος.",
-    "translations": {
-      "student": "In the beginning was the word, and the word was with God, and God was the word.",
-      "scholarly": "In the beginning was the Word, and the Word was with God, and the Word was God.",
-      "literary": "At the dawn of time, the Word existed; the Word was in communion with God, and the Word was divine."
-    },
-    "vocabulary_notes": [
-      {"word": "λόγος", "note": "Can mean 'word', 'reason', or 'principle'."},
-      {"word": "ἀρχή", "note": "Means 'beginning' or 'origin'."}
-    ],
-    "comprehension_questions": [
-      "What is the significance of 'λόγος' in this passage?",
-      "How does the structure of this sentence reflect its meaning?"
+      "Sigma has two lowercase forms: σ within words, ς at word end",
+      "Gamma before another velar sounds like ng",
+      "ξ and ψ are double consonants representing ks and ps"
     ]
   },
   "exercises": [
     {
-      "type": "parsing",
-      "instructions": "Parse the following words from the passage.",
+      "type": "identification",
+      "instructions": "Identify the Greek letter",
       "items": [
-        {"prompt": "λόγος", "answer": "noun, masculine, nominative singular", "explanation": "It is the subject of the sentence."},
-        {"prompt": "ἦν", "answer": "verb, imperfect indicative active, third person singular", "explanation": "It indicates a past continuous action."}
+        {
+          "prompt": "What is lowercase Alpha?",
+          "answer": "α"
+        },
+        {
+          "prompt": "What is lowercase Omega?",
+          "answer": "ω"
+        },
+        {
+          "prompt": "What is uppercase Sigma?",
+          "answer": "Σ"
+        }
       ]
     },
     {
-      "type": "fill_blank",
-      "instructions": "Fill in the blanks with the appropriate Greek letters.",
+      "type": "transliteration",
+      "instructions": "Transliterate into English letters",
       "items": [
-        {"prompt": "Α _ _ α (alpha)", "answer": "Αλφα", "explanation": "The missing letters are 'λ', 'φ'."},
-        {"prompt": "_ ε _ α (beta)", "answer": "Βετα", "explanation": "The missing letters are 'β', 'τ'."}
+        {
+          "prompt": "λόγος",
+          "answer": "logos"
+        },
+        {
+          "prompt": "θεός",
+          "answer": "theos"
+        },
+        {
+          "prompt": "φιλοσοφία",
+          "answer": "philosophia"
+        }
       ]
-    },
-    // 18 more exercises...
+    }
   ],
-  "cultural_context": {
-    "topic": "The Greek Alphabet's Historical Influence",
-    "content": "The Greek alphabet has been the foundation for many modern alphabets, including Latin and Cyrillic. Its development reflects the rich history and culture of Ancient Greece, influencing art, literature, and philosophy.",
-    "connections_to_texts": [
-      "Xenophon's 'Anabasis' demonstrates the use of the Greek language in historical narratives.",
-      "The New Testament, especially John's writings, shows the theological and philosophical depth of Greek."
-    ]
-  },
-  "connections": {
-    "reader_links": [
-      {"text": "Xenophon (Anabasis)", "passage": "The march of the Ten Thousand"},
-      {"text": "Aesop's Fables", "passage": "The Tortoise and the Hare"}
-    ],
-    "related_modules": [
-      "G-B-02: Basic Greek Grammar",
-      "G-B-03: Introduction to Greek Mythology"
-    ],
-    "advanced_topics": [
-      "Greek Dialects and Their Evolution",
-      "The Influence of Greek on Modern Languages"
-    ]
+  "culturalNote": "The Greek alphabet is one of humanity's most influential inventions. Adapted from Phoenician script around 800 BCE, Greeks added vowels, creating the first true alphabet.",
+  "readingPassage": {
+    "title": "The Beginning of Johns Gospel",
+    "source": "John 1:1",
+    "greek": "Ἐν ἀρχῇ ἦν ὁ λόγος, καὶ ὁ λόγος ἦν πρὸς τὸν θεόν, καὶ θεὸς ἦν ὁ λόγος.",
+    "transliteration": "En arche en ho logos, kai ho logos en pros ton theon, kai theos en ho logos.",
+    "translation": "In the beginning was the Word, and the Word was with God, and the Word was God."
   }
 }
-```

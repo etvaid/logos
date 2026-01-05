@@ -1,0 +1,70 @@
+{
+  "id": "G-I-07",
+  "title": "The Optative Mood",
+  "level": "intermediate",
+  "language": "greek",
+  "estimatedTime": "55 minutes",
+  "objectives": [
+    "Recognize optative forms",
+    "Form present and aorist optative",
+    "Understand optative uses (wish, potential, indirect speech)",
+    "Distinguish optative from subjunctive",
+    "Use the optative in conditional sentences"
+  ],
+  "vocabulary": [
+    {"word": "εἴθε", "transliteration": "eithe", "definition": "would that, if only (+ optative)"},
+    {"word": "μὴ γένοιτο", "transliteration": "mē genoito", "definition": "may it not be! (emphatic denial)"},
+    {"word": "ἄν", "transliteration": "an", "definition": "particle with potential optative"},
+    {"word": "εἰ", "transliteration": "ei", "definition": "if (with optative in less vivid conditions)"}
+  ],
+  "grammar": {
+    "topic": "The Optative Mood",
+    "explanation": "The optative expresses wish, potentiality, or softened assertion. It uses the mood suffix -ι- or -ιη-/-οι-. Less common in Koine than in Classical Greek, it still appears in wishes, potential statements, and after secondary sequence verbs.",
+    "paradigms": [
+      {
+        "name": "Present Optative (λύω)",
+        "headers": ["Person", "Active", "Middle/Passive"],
+        "rows": [
+          ["1st Sg", "λύοιμι", "λυοίμην"],
+          ["2nd Sg", "λύοις", "λύοιο"],
+          ["3rd Sg", "λύοι", "λύοιτο"],
+          ["1st Pl", "λύοιμεν", "λυοίμεθα"],
+          ["2nd Pl", "λύοιτε", "λύοισθε"],
+          ["3rd Pl", "λύοιεν", "λύοιντο"]
+        ]
+      },
+      {
+        "name": "Optative Uses",
+        "headers": ["Use", "Example", "Translation"],
+        "rows": [
+          ["Wish (obtainable)", "γένοιτο", "may it happen!"],
+          ["Wish (unobtainable)", "εἴθε παρῆν", "would that he were here!"],
+          ["Potential", "λύσαιμι ἄν", "I might/could loose"],
+          ["Less Vivid Future", "εἰ λύσειε, εὐδαίμων ἂν εἴη", "if he should loose, he would be happy"]
+        ]
+      }
+    ],
+    "rules": [
+      "Optative marker: -οι- (thematic) or -ιη-/-ι- (athematic)",
+      "No augment in any optative form",
+      "Potential optative uses ἄν",
+      "Less common in Koine; sometimes replaced by subjunctive"
+    ]
+  },
+  "exercises": [
+    {
+      "type": "translation",
+      "question": "Translate: μὴ γένοιτο!",
+      "answer": "May it never be! / By no means! / God forbid!"
+    },
+    {
+      "type": "identification",
+      "question": "What mood? τί ἂν θέλοι τοῦτο λέγειν;",
+      "answer": "Optative (θέλοι) - potential ('What could this mean?')"
+    }
+  ],
+  "readingPassage": {
+    "greek": "Εἴ τις ἔχοι σοφίαν, εὐδαίμων ἂν εἴη. Μὴ γένοιτο ἡμᾶς ἀπολέσθαι. Ὁ κύριος ὑμῖν δῴη εἰρήνην.",
+    "translation": "If someone should have wisdom, he would be happy. May it not happen that we perish. May the Lord give you peace."
+  }
+}

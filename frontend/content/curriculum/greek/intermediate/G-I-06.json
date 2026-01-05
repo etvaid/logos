@@ -1,0 +1,71 @@
+{
+  "id": "G-I-06",
+  "title": "The Subjunctive Mood",
+  "level": "intermediate",
+  "language": "greek",
+  "estimatedTime": "60 minutes",
+  "objectives": [
+    "Form present and aorist subjunctive",
+    "Recognize the lengthened thematic vowel",
+    "Use subjunctive in purpose clauses (ἵνα, ὅπως)",
+    "Use hortatory and prohibitive subjunctive",
+    "Recognize conditional subjunctive"
+  ],
+  "vocabulary": [
+    {"word": "ἵνα", "transliteration": "hina", "definition": "in order that, so that (+ subjunctive)"},
+    {"word": "ὅπως", "transliteration": "hopōs", "definition": "so that, in order that"},
+    {"word": "μή", "transliteration": "mē", "definition": "not (with subjunctive)"},
+    {"word": "ἐάν", "transliteration": "ean", "definition": "if (+ subjunctive)"},
+    {"word": "ὅταν", "transliteration": "hotan", "definition": "whenever (+ subjunctive)"}
+  ],
+  "grammar": {
+    "topic": "The Subjunctive Mood",
+    "explanation": "The Greek subjunctive is formed by lengthening the thematic vowel (ο → ω, ε → η). It expresses purpose, possibility, exhortation, or prohibition. In dependent clauses, it follows ἵνα, ὅπως, ἐάν, ὅταν, etc.",
+    "paradigms": [
+      {
+        "name": "Present Subjunctive (λύω)",
+        "headers": ["Person", "Active", "Middle/Passive"],
+        "rows": [
+          ["1st Sg", "λύω", "λύωμαι"],
+          ["2nd Sg", "λύῃς", "λύῃ"],
+          ["3rd Sg", "λύῃ", "λύηται"],
+          ["1st Pl", "λύωμεν", "λυώμεθα"],
+          ["2nd Pl", "λύητε", "λύησθε"],
+          ["3rd Pl", "λύωσι(ν)", "λύωνται"]
+        ]
+      },
+      {
+        "name": "Subjunctive Uses",
+        "headers": ["Use", "Construction", "Example"],
+        "rows": [
+          ["Purpose", "ἵνα + subj", "ἔρχομαι ἵνα ἴδω (I come to see)"],
+          ["Hortatory", "1st pl subj", "ἴωμεν (let us go)"],
+          ["Prohibition", "μή + aor subj", "μὴ γράψῃς (do not write)"],
+          ["Conditional", "ἐάν + subj", "ἐὰν ἔλθῃ (if he comes)"]
+        ]
+      }
+    ],
+    "rules": [
+      "Subjunctive has ω/η vowel (vs indicative ο/ε)",
+      "Aorist subjunctive has NO augment",
+      "Purpose: ἵνα/ὅπως + subjunctive",
+      "Prohibition: μή + aorist subjunctive (2nd/3rd person)"
+    ]
+  },
+  "exercises": [
+    {
+      "type": "formation",
+      "question": "Form the aorist subjunctive 3rd singular of γράφω",
+      "answer": "γράψῃ"
+    },
+    {
+      "type": "translation",
+      "question": "Translate: ἦλθεν ἵνα μαρτυρήσῃ περὶ τοῦ φωτός.",
+      "answer": "He came in order that he might testify concerning the light."
+    }
+  ],
+  "readingPassage": {
+    "greek": "Ἵνα πάντες πιστεύσωσιν δι' αὐτοῦ. Ἐὰν εἴπωμεν ὅτι ἁμαρτίαν οὐκ ἔχομεν, ἑαυτοὺς πλανῶμεν. Ἴδωμεν τί γίνεται.",
+    "translation": "So that all might believe through him. If we say that we have no sin, we deceive ourselves. Let us see what happens."
+  }
+}

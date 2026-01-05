@@ -1,0 +1,176 @@
+{
+  "id": "L-B-10",
+  "title": "Review and Reading Practice",
+  "level": "beginner",
+  "language": "latin",
+  "estimatedTime": "60 minutes",
+  "objectives": [
+    "Review all five noun declensions (focus on 1st, 2nd, 3rd)",
+    "Review all four verb conjugations in present tense",
+    "Practice adjective-noun agreement",
+    "Review prepositions and their cases",
+    "Read and translate connected Latin passages"
+  ],
+  "vocabulary": [
+    {
+      "word": "nunc",
+      "translation": "now",
+      "partOfSpeech": "adverb",
+      "examples": ["Nunc discimus."]
+    },
+    {
+      "word": "semper",
+      "translation": "always",
+      "partOfSpeech": "adverb",
+      "examples": ["Roma semper stat."]
+    },
+    {
+      "word": "saepe",
+      "translation": "often",
+      "partOfSpeech": "adverb",
+      "examples": ["Saepe ad forum ambulamus."]
+    },
+    {
+      "word": "numquam",
+      "translation": "never",
+      "partOfSpeech": "adverb",
+      "examples": ["Numquam desistimus."]
+    },
+    {
+      "word": "et",
+      "translation": "and",
+      "partOfSpeech": "conjunction",
+      "examples": ["Pater et mater."]
+    },
+    {
+      "word": "sed",
+      "translation": "but",
+      "partOfSpeech": "conjunction",
+      "examples": ["Parva sed bona."]
+    },
+    {
+      "word": "nam",
+      "translation": "for, because",
+      "partOfSpeech": "conjunction",
+      "examples": ["Festinamus, nam tempus fugit."]
+    },
+    {
+      "word": "igitur",
+      "translation": "therefore",
+      "partOfSpeech": "conjunction",
+      "examples": ["Cogito, igitur sum."]
+    },
+    {
+      "word": "non",
+      "translation": "not",
+      "partOfSpeech": "adverb",
+      "examples": ["Non timeo."]
+    },
+    {
+      "word": "bene",
+      "translation": "well",
+      "partOfSpeech": "adverb",
+      "examples": ["Latine bene loquitur."]
+    },
+    {
+      "word": "male",
+      "translation": "badly",
+      "partOfSpeech": "adverb",
+      "examples": ["Male scribit."]
+    },
+    {
+      "word": "ubi",
+      "translation": "where, when",
+      "partOfSpeech": "adverb",
+      "examples": ["Ubi habitas?"]
+    }
+  ],
+  "grammar": {
+    "topic": "Comprehensive Review",
+    "explanation": "This lesson reviews all major concepts from the beginner curriculum: noun declensions, verb conjugations, adjective agreement, and prepositions. Mastery of these fundamentals is essential for reading Latin texts.",
+    "paradigms": [
+      {
+        "name": "Noun Declension Endings Summary",
+        "headers": ["Case", "1st (f)", "2nd (m)", "2nd (n)", "3rd"],
+        "rows": [
+          ["Nom Sg", "-a", "-us/-er", "-um", "varies"],
+          ["Gen Sg", "-ae", "-i", "-i", "-is"],
+          ["Dat Sg", "-ae", "-o", "-o", "-i"],
+          ["Acc Sg", "-am", "-um", "-um", "-em"],
+          ["Abl Sg", "-a", "-o", "-o", "-e"],
+          ["Nom Pl", "-ae", "-i", "-a", "-es"],
+          ["Gen Pl", "-arum", "-orum", "-orum", "-um"],
+          ["Acc Pl", "-as", "-os", "-a", "-es"]
+        ]
+      },
+      {
+        "name": "Present Active Endings by Conjugation",
+        "headers": ["Person", "1st", "2nd", "3rd", "4th"],
+        "rows": [
+          ["1st Sg", "-o", "-eo", "-o", "-io"],
+          ["2nd Sg", "-as", "-es", "-is", "-is"],
+          ["3rd Sg", "-at", "-et", "-it", "-it"],
+          ["1st Pl", "-amus", "-emus", "-imus", "-imus"],
+          ["2nd Pl", "-atis", "-etis", "-itis", "-itis"],
+          ["3rd Pl", "-ant", "-ent", "-unt", "-iunt"]
+        ]
+      },
+      {
+        "name": "Key Prepositions",
+        "headers": ["+ Ablative", "+ Accusative"],
+        "rows": [
+          ["in (in, on)", "in (into)"],
+          ["ex (out of)", "ad (to, toward)"],
+          ["ab (from, by)", "per (through)"],
+          ["cum (with)", "trans (across)"],
+          ["sine (without)", "post (after)"],
+          ["de (about)", "propter (because of)"]
+        ]
+      }
+    ],
+    "rules": [
+      "Nouns: learn nominative, genitive, and gender for each",
+      "Verbs: learn principal parts; infinitive shows conjugation",
+      "Adjectives: match gender, number, case with their noun",
+      "Word order is flexible; look for endings, not position"
+    ]
+  },
+  "exercises": [
+    {
+      "type": "translation",
+      "question": "Translate: Milites fortes pro patria pugnant.",
+      "answer": "Brave soldiers fight for the fatherland.",
+      "hints": ["fortes agrees with milites"]
+    },
+    {
+      "type": "translation",
+      "question": "Translate: Rex bonus cives amat; cives regem laudant.",
+      "answer": "The good king loves the citizens; the citizens praise the king.",
+      "hints": ["Note the case changes for rex/regem"]
+    },
+    {
+      "type": "parsing",
+      "question": "Parse each word: Poeta fabulam longam narrat.",
+      "answer": "Poeta (nom sg m), fabulam (acc sg f), longam (acc sg f), narrat (3rd sg pres)",
+      "hints": ["longam agrees with fabulam"]
+    },
+    {
+      "type": "composition",
+      "prompt": "Write 'The students always read good books in school' in Latin",
+      "sampleAnswer": "Discipuli libros bonos in schola semper legunt."
+    }
+  ],
+  "culturalNote": "Completing this beginner curriculum prepares you to read adapted Latin texts and begin encountering real Roman authors. The Romans left a vast literary heritage spanning history, philosophy, poetry, and rhetoric.",
+  "readingPassage": {
+    "latin": "Roma urbs magna et antiqua est. In Roma templa pulchra et viae longae sunt. Cives Romani in foro ambulant et de rebus publicis loquuntur. Senatores in Curia sedent et de legibus dicunt. Milites fortes pro patria pugnant. Poetae fabulas narrant; discipuli in scholis libros legunt. Lingua Latina per totum orbem terrarum nota est. Nunc nos quoque Latine discimus et loquimur.",
+    "translation": "Rome is a great and ancient city. In Rome there are beautiful temples and long roads. Roman citizens walk in the forum and speak about public affairs. Senators sit in the Curia and speak about laws. Brave soldiers fight for the fatherland. Poets tell stories; students read books in schools. The Latin language is known throughout the whole world. Now we too learn and speak Latin.",
+    "notes": [
+      "res publica: public affairs, the state",
+      "Curia: the Roman Senate house",
+      "lex, legis: law (3rd declension)",
+      "orbis terrarum: the circle of lands, the world",
+      "notus: known, famous",
+      "quoque: also, too"
+    ]
+  }
+}

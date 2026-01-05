@@ -1,0 +1,99 @@
+{
+  "id": "vulgate-genesis-1",
+  "title": "Genesis - Creation",
+  "author": "Jerome (translator)",
+  "work": "Vulgate Bible",
+  "book": "Genesis",
+  "chapter": 1,
+  "dateComposed": "c. 405 CE (translation)",
+  "difficulty": "beginner",
+  "genre": "biblical narrative",
+  "description": "The Latin Vulgate translation of the creation account in Genesis, used throughout the medieval period.",
+  "sections": [
+    {
+      "id": "1.1-5",
+      "latin": "In principio creavit Deus caelum et terram. Terra autem erat inanis et vacua, et tenebrae erant super faciem abyssi: et spiritus Dei ferebatur super aquas. Dixitque Deus: Fiat lux. Et facta est lux. Et vidit Deus lucem quod esset bona: et divisit lucem a tenebris. Appellavitque lucem Diem, et tenebras Noctem: factumque est vespere et mane, dies unus.",
+      "translation": "In the beginning God created heaven and earth. And the earth was without form and void, and darkness was upon the face of the deep: and the Spirit of God moved over the waters. And God said: Let there be light. And there was light. And God saw the light that it was good: and he divided the light from the darkness. And he called the light Day, and the darkness Night: and there was evening and morning, one day.",
+      "vocabulary": [
+        {"word": "In principio", "lemma": "principium", "form": "abl sg n", "definition": "in the beginning"},
+        {"word": "creavit", "lemma": "creo", "form": "3rd sg perf act ind", "definition": "created"},
+        {"word": "Deus", "lemma": "Deus", "form": "nom sg m", "definition": "God"},
+        {"word": "caelum", "lemma": "caelum", "form": "acc sg n", "definition": "heaven, sky"},
+        {"word": "terram", "lemma": "terra", "form": "acc sg f", "definition": "earth, land"},
+        {"word": "inanis", "lemma": "inanis", "form": "nom sg f", "definition": "empty, void"},
+        {"word": "vacua", "lemma": "vacuus", "form": "nom sg f", "definition": "empty, void"},
+        {"word": "tenebrae", "lemma": "tenebrae", "form": "nom pl f", "definition": "darkness"},
+        {"word": "faciem", "lemma": "facies", "form": "acc sg f", "definition": "face, surface"},
+        {"word": "abyssi", "lemma": "abyssus", "form": "gen sg f", "definition": "of the deep, abyss"},
+        {"word": "spiritus", "lemma": "spiritus", "form": "nom sg m", "definition": "spirit, breath"},
+        {"word": "ferebatur", "lemma": "fero", "form": "3rd sg impf pass ind", "definition": "was moving, was carried"},
+        {"word": "aquas", "lemma": "aqua", "form": "acc pl f", "definition": "waters"},
+        {"word": "Dixit", "lemma": "dico", "form": "3rd sg perf act ind", "definition": "said"},
+        {"word": "Fiat", "lemma": "fio", "form": "3rd sg pres subj", "definition": "let there be"},
+        {"word": "lux", "lemma": "lux", "form": "nom sg f", "definition": "light"},
+        {"word": "facta est", "lemma": "facio", "form": "3rd sg perf pass ind", "definition": "was made, came to be"},
+        {"word": "vidit", "lemma": "video", "form": "3rd sg perf act ind", "definition": "saw"},
+        {"word": "esset", "lemma": "sum", "form": "3rd sg impf subj", "definition": "it was"},
+        {"word": "bona", "lemma": "bonus", "form": "nom sg f", "definition": "good"},
+        {"word": "divisit", "lemma": "divido", "form": "3rd sg perf act ind", "definition": "divided"},
+        {"word": "appellavit", "lemma": "appello", "form": "3rd sg perf act ind", "definition": "called, named"},
+        {"word": "Diem", "lemma": "dies", "form": "acc sg m", "definition": "Day"},
+        {"word": "Noctem", "lemma": "nox", "form": "acc sg f", "definition": "Night"},
+        {"word": "vespere", "lemma": "vesper", "form": "abl sg n", "definition": "evening"},
+        {"word": "mane", "lemma": "mane", "form": "adv/n", "definition": "morning"},
+        {"word": "dies unus", "lemma": "dies", "form": "nom sg m", "definition": "one day"}
+      ],
+      "grammaticalNotes": [
+        "Fiat: jussive subjunctive 'let there be'",
+        "quod esset bona: indirect statement with subjunctive",
+        "factumque est: perfect passive 'and it was made'"
+      ]
+    },
+    {
+      "id": "1.26-28",
+      "latin": "Et ait: Faciamus hominem ad imaginem et similitudinem nostram: et praesit piscibus maris, et volatilibus caeli, et bestiis, universaeque terrae, omnique reptili quod movetur in terra. Et creavit Deus hominem ad imaginem suam: ad imaginem Dei creavit illum, masculum et feminam creavit eos. Benedixitque illis Deus, et ait: Crescite et multiplicamini, et replete terram, et subicite eam.",
+      "translation": "And he said: Let us make man in our image, after our likeness: and let him have dominion over the fish of the sea, and the fowl of the air, and the beasts, and the whole earth, and every creeping thing that moves upon the earth. And God created man in his own image: in the image of God he created him, male and female he created them. And God blessed them, and said: Increase and multiply, and fill the earth, and subdue it.",
+      "vocabulary": [
+        {"word": "ait", "lemma": "aio", "form": "3rd sg pres ind", "definition": "says, said"},
+        {"word": "Faciamus", "lemma": "facio", "form": "1st pl pres subj", "definition": "let us make"},
+        {"word": "hominem", "lemma": "homo", "form": "acc sg m", "definition": "man, human"},
+        {"word": "imaginem", "lemma": "imago", "form": "acc sg f", "definition": "image"},
+        {"word": "similitudinem", "lemma": "similitudo", "form": "acc sg f", "definition": "likeness"},
+        {"word": "nostram", "lemma": "noster", "form": "acc sg f", "definition": "our"},
+        {"word": "praesit", "lemma": "praesum", "form": "3rd sg pres subj", "definition": "let him preside, rule"},
+        {"word": "piscibus", "lemma": "piscis", "form": "dat pl m", "definition": "over the fish"},
+        {"word": "maris", "lemma": "mare", "form": "gen sg n", "definition": "of the sea"},
+        {"word": "volatilibus", "lemma": "volatile", "form": "dat pl n", "definition": "over the birds"},
+        {"word": "caeli", "lemma": "caelum", "form": "gen sg n", "definition": "of heaven"},
+        {"word": "bestiis", "lemma": "bestia", "form": "dat pl f", "definition": "over the beasts"},
+        {"word": "reptili", "lemma": "reptile", "form": "dat sg n", "definition": "over the creeping thing"},
+        {"word": "movetur", "lemma": "moveo", "form": "3rd sg pres pass ind", "definition": "is moved, moves"},
+        {"word": "suam", "lemma": "suus", "form": "acc sg f", "definition": "his own"},
+        {"word": "masculum", "lemma": "masculus", "form": "acc sg m", "definition": "male"},
+        {"word": "feminam", "lemma": "femina", "form": "acc sg f", "definition": "female"},
+        {"word": "Benedixit", "lemma": "benedico", "form": "3rd sg perf act ind", "definition": "blessed"},
+        {"word": "Crescite", "lemma": "cresco", "form": "2nd pl pres imper", "definition": "grow, increase"},
+        {"word": "multiplicamini", "lemma": "multiplico", "form": "2nd pl pres pass imper", "definition": "multiply"},
+        {"word": "replete", "lemma": "repleo", "form": "2nd pl pres imper", "definition": "fill"},
+        {"word": "subicite", "lemma": "subicio", "form": "2nd pl pres imper", "definition": "subdue"}
+      ],
+      "grammaticalNotes": [
+        "Faciamus: cohortative subjunctive 'let us make' (divine plural)",
+        "ad imaginem: 'according to/in the image'",
+        "praesit + dative: 'let him rule over'"
+      ],
+      "theologicalNotes": [
+        "imago Dei: foundational concept in Christian anthropology",
+        "Plural 'Faciamus' debated: royal we, Trinity, or divine council",
+        "Dominion mandate over creation"
+      ]
+    }
+  ],
+  "historicalContext": "Jerome's Latin Vulgate (c. 405 CE) became the standard Bible of the Western Church for over a millennium. His translation from Hebrew and Greek aimed for accuracy while maintaining readable Latin.",
+  "literaryFeatures": [
+    "Simple, clear Latin accessible to learners",
+    "Repetitive structure mirrors Hebrew original",
+    "Formulaic phrases: 'et vidit Deus quod esset bonum'",
+    "Historical influence on Western Christianity and Latin literature"
+  ]
+}

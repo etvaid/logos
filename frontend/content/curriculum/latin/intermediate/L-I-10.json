@@ -1,0 +1,63 @@
+{
+  "id": "L-I-10",
+  "title": "Conditions (If-Clauses)",
+  "level": "intermediate",
+  "language": "latin",
+  "estimatedTime": "60 minutes",
+  "objectives": [
+    "Recognize the three types of conditions",
+    "Form simple/factual conditions with indicative",
+    "Form future more vivid conditions",
+    "Form future less vivid conditions with present subjunctive",
+    "Form contrary-to-fact conditions with imperfect/pluperfect subjunctive"
+  ],
+  "vocabulary": [
+    {"word": "si", "definition": "if"},
+    {"word": "nisi", "definition": "if not, unless"},
+    {"word": "sin", "definition": "but if"},
+    {"word": "sive...sive", "definition": "whether...or"},
+    {"word": "si modo", "definition": "if only"},
+    {"word": "si quis", "definition": "if anyone"}
+  ],
+  "grammar": {
+    "topic": "Conditional Sentences",
+    "explanation": "Latin has distinct types of conditions. Simple/factual conditions use indicative (stating what is/was true). Future conditions can be more vivid (likely) or less vivid (hypothetical). Contrary-to-fact conditions express what would (have) happen(ed) if things were different.",
+    "paradigms": [
+      {
+        "name": "Condition Types",
+        "headers": ["Type", "Protasis (if)", "Apodosis (then)", "Example"],
+        "rows": [
+          ["Simple Present", "Present Indicative", "Present Indicative", "Si hoc facis, erras. (If you do this, you err)"],
+          ["Simple Past", "Perfect/Impf Indic", "Perfect/Impf Indic", "Si hoc fecisti, errasti."],
+          ["Future More Vivid", "Future/Fut Perf", "Future", "Si hoc facies, errabis. (If you do this, you will err)"],
+          ["Future Less Vivid", "Present Subj", "Present Subj", "Si hoc facias, erres. (If you should do this, you would err)"],
+          ["Contrary Present", "Imperfect Subj", "Imperfect Subj", "Si hoc faceres, errares. (If you were doing this, you would err)"],
+          ["Contrary Past", "Pluperfect Subj", "Pluperfect Subj", "Si hoc fecisses, erravisses. (If you had done this, you would have erred)"]
+        ]
+      }
+    ],
+    "rules": [
+      "Protasis = 'if' clause; Apodosis = 'then' clause",
+      "Indicative conditions = real, factual",
+      "Subjunctive conditions = hypothetical, contrary-to-fact",
+      "Mixed conditions are possible (different tenses in each clause)"
+    ]
+  },
+  "exercises": [
+    {
+      "type": "identification",
+      "question": "What type? 'Si Romam venisses, Caesarem vidisses.'",
+      "answer": "Contrary-to-fact past (pluperfect subjunctive in both clauses)"
+    },
+    {
+      "type": "translation",
+      "question": "Translate: Si pecuniam haberem, librum emerem.",
+      "answer": "If I had money, I would buy the book. (Contrary present)"
+    }
+  ],
+  "readingPassage": {
+    "latin": "Si diligenter discas, multum proficies. Si Romani vicissent, Carthago deleta esset. Si dux esset fortior, milites non fugerent. Nisi hostes venissent, pax fuisset.",
+    "translation": "If you study diligently, you will make much progress (FMV). If the Romans had conquered, Carthage would have been destroyed (CTF past). If the leader were braver, the soldiers would not flee (CTF present). If the enemy had not come, there would have been peace (CTF past).",
+    "notes": ["FMV = Future More Vivid; CTF = Contrary to Fact"]
+  }
+}

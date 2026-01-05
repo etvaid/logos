@@ -1,0 +1,173 @@
+{
+  "id": "L-B-09",
+  "title": "Prepositions and the Ablative Case",
+  "level": "beginner",
+  "language": "latin",
+  "estimatedTime": "50 minutes",
+  "objectives": [
+    "Learn common prepositions that take the ablative case",
+    "Learn common prepositions that take the accusative case",
+    "Understand the uses of the ablative case without prepositions",
+    "Use prepositions correctly in sentences",
+    "Recognize prepositional phrases in Latin texts"
+  ],
+  "vocabulary": [
+    {
+      "word": "in",
+      "translation": "in, on (+ abl); into (+ acc)",
+      "partOfSpeech": "preposition",
+      "notes": "Ablative = location; Accusative = motion toward",
+      "examples": ["In villa habito.", "In villam ambulo."]
+    },
+    {
+      "word": "ex/e",
+      "translation": "out of, from",
+      "partOfSpeech": "preposition",
+      "notes": "Takes ablative; e before consonants",
+      "examples": ["Ex oppido venit."]
+    },
+    {
+      "word": "ab/a",
+      "translation": "from, by",
+      "partOfSpeech": "preposition",
+      "notes": "Takes ablative; a before consonants",
+      "examples": ["A Roma venimus."]
+    },
+    {
+      "word": "cum",
+      "translation": "with",
+      "partOfSpeech": "preposition",
+      "notes": "Takes ablative",
+      "examples": ["Cum amicis ambulo."]
+    },
+    {
+      "word": "sine",
+      "translation": "without",
+      "partOfSpeech": "preposition",
+      "notes": "Takes ablative",
+      "examples": ["Sine aqua vivere non possumus."]
+    },
+    {
+      "word": "de",
+      "translation": "down from, about, concerning",
+      "partOfSpeech": "preposition",
+      "notes": "Takes ablative",
+      "examples": ["De bello loquitur."]
+    },
+    {
+      "word": "pro",
+      "translation": "in front of, on behalf of, for",
+      "partOfSpeech": "preposition",
+      "notes": "Takes ablative",
+      "examples": ["Pro patria pugnamus."]
+    },
+    {
+      "word": "ad",
+      "translation": "to, toward, near",
+      "partOfSpeech": "preposition",
+      "notes": "Takes accusative",
+      "examples": ["Ad urbem venimus."]
+    },
+    {
+      "word": "per",
+      "translation": "through",
+      "partOfSpeech": "preposition",
+      "notes": "Takes accusative",
+      "examples": ["Per viam ambulamus."]
+    },
+    {
+      "word": "trans",
+      "translation": "across",
+      "partOfSpeech": "preposition",
+      "notes": "Takes accusative",
+      "examples": ["Trans flumen natant."]
+    },
+    {
+      "word": "post",
+      "translation": "after, behind",
+      "partOfSpeech": "preposition",
+      "notes": "Takes accusative",
+      "examples": ["Post bellum pax venit."]
+    },
+    {
+      "word": "propter",
+      "translation": "on account of, because of",
+      "partOfSpeech": "preposition",
+      "notes": "Takes accusative",
+      "examples": ["Propter periculum fugiunt."]
+    }
+  ],
+  "grammar": {
+    "topic": "Prepositions and Case Usage",
+    "explanation": "Latin prepositions govern either the ablative or accusative case. Some prepositions like 'in' and 'sub' take both cases with different meanings: ablative for location/static situations, accusative for motion/direction toward.",
+    "paradigms": [
+      {
+        "name": "Prepositions with Ablative",
+        "headers": ["Preposition", "Meaning", "Example"],
+        "rows": [
+          ["in (+ abl)", "in, on", "in villa (in the house)"],
+          ["ex/e", "out of", "ex urbe (out of the city)"],
+          ["ab/a", "from, by", "ab amico (from a friend)"],
+          ["cum", "with", "cum patre (with father)"],
+          ["sine", "without", "sine mora (without delay)"],
+          ["de", "down from, about", "de monte (down from the mountain)"],
+          ["pro", "for, on behalf of", "pro patria (for the fatherland)"]
+        ]
+      },
+      {
+        "name": "Prepositions with Accusative",
+        "headers": ["Preposition", "Meaning", "Example"],
+        "rows": [
+          ["in (+ acc)", "into, onto", "in villam (into the house)"],
+          ["ad", "to, toward", "ad urbem (to the city)"],
+          ["per", "through", "per silvam (through the forest)"],
+          ["trans", "across", "trans flumen (across the river)"],
+          ["post", "after, behind", "post cenam (after dinner)"],
+          ["propter", "because of", "propter metum (because of fear)"]
+        ]
+      }
+    ],
+    "rules": [
+      "Ablative = location, static position, means, accompaniment",
+      "Accusative = direction, motion toward, extent",
+      "in + ablative = where something IS",
+      "in + accusative = where something is GOING"
+    ]
+  },
+  "exercises": [
+    {
+      "type": "translation",
+      "question": "Translate: Milites trans flumen ambulant.",
+      "answer": "The soldiers walk across the river.",
+      "hints": ["trans takes accusative for motion"]
+    },
+    {
+      "type": "case_selection",
+      "question": "Fill in: Pueri in horto (hortus/hortum) ludunt.",
+      "answer": "horto (ablative - location)",
+      "hints": ["They are playing IN the garden, not going into it"]
+    },
+    {
+      "type": "parsing",
+      "question": "What case follows 'cum' in 'cum amicis'?",
+      "answer": "Ablative plural",
+      "hints": ["cum always takes the ablative"]
+    },
+    {
+      "type": "composition",
+      "prompt": "Write 'We fight for the fatherland' in Latin",
+      "sampleAnswer": "Pro patria pugnamus."
+    }
+  ],
+  "culturalNote": "Pro patria (for the fatherland) was a central Roman concept. Dulce et decorum est pro patria mori ('It is sweet and fitting to die for the fatherland') from Horace encapsulates the Roman ideal of civic duty and sacrifice.",
+  "readingPassage": {
+    "latin": "Milites Romani e castris exeunt. Per silvam ad oppidum hostium ambulant. Trans flumen cum armis natant. Post proelium, sine hostibus ad castra redeunt. Pro Roma semper pugnant.",
+    "translation": "The Roman soldiers go out from the camp. They walk through the forest to the town of the enemies. They swim across the river with their weapons. After the battle, without the enemies they return to the camp. They always fight for Rome.",
+    "notes": [
+      "castra: camp (neuter plural)",
+      "hostis: enemy",
+      "arma: weapons",
+      "redeunt: they return"
+    ]
+  }
+}

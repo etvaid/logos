@@ -1,0 +1,61 @@
+{
+  "id": "L-I-05",
+  "title": "Ablative Absolute",
+  "level": "intermediate",
+  "language": "latin",
+  "estimatedTime": "55 minutes",
+  "objectives": [
+    "Recognize the ablative absolute construction",
+    "Form ablative absolutes with perfect passive participles",
+    "Form ablative absolutes with present active participles",
+    "Translate ablative absolutes idiomatically",
+    "Use ablative absolutes to express circumstance, time, cause, or concession"
+  ],
+  "vocabulary": [
+    {"word": "urbe capta", "form": "abl abs", "definition": "the city having been captured / with the city captured"},
+    {"word": "duce veniente", "form": "abl abs", "definition": "the leader coming / with the leader coming"},
+    {"word": "his dictis", "form": "abl abs", "definition": "these things having been said"},
+    {"word": "sole oriente", "form": "abl abs", "definition": "the sun rising"},
+    {"word": "me invito", "form": "abl abs", "definition": "I being unwilling / against my will"},
+    {"word": "Caesare consule", "form": "abl abs", "definition": "Caesar being consul / when Caesar was consul"}
+  ],
+  "grammar": {
+    "topic": "Ablative Absolute",
+    "explanation": "The ablative absolute is a participial phrase grammatically independent from the main clause. It consists of a noun/pronoun in the ablative + a participle (or adjective/noun) in the ablative. It expresses time, cause, condition, or concession.",
+    "paradigms": [
+      {
+        "name": "Ablative Absolute Patterns",
+        "headers": ["Structure", "Example", "Translation"],
+        "rows": [
+          ["Noun + Perf. Pass. Part.", "urbe capta", "the city having been captured"],
+          ["Noun + Pres. Act. Part.", "hoste veniente", "the enemy coming"],
+          ["Noun + Adjective", "me invito", "I (being) unwilling"],
+          ["Noun + Noun", "Caesare duce", "Caesar (being) leader"]
+        ]
+      }
+    ],
+    "rules": [
+      "The subject of the ablative absolute is NOT the subject of the main verb",
+      "Translate with: when, after, since, although, if, with",
+      "No 'being' verb in Latin; understand 'being' with adjective/noun",
+      "Perfect participle = prior action; present participle = simultaneous action"
+    ]
+  },
+  "exercises": [
+    {
+      "type": "translation",
+      "question": "Translate: Hostibus victis, milites domum redierunt.",
+      "answer": "The enemies having been conquered, the soldiers returned home. / After conquering the enemies, the soldiers returned home."
+    },
+    {
+      "type": "composition",
+      "question": "Write an ablative absolute for 'after the letter was written'",
+      "answer": "epistula scripta"
+    }
+  ],
+  "readingPassage": {
+    "latin": "Sole oriente, agricolae in agros exierunt. Opere confecto, domum redierunt. Patre mortuo, filius familiae praefuit. His rebus gestis, Caesar in Galliam profectus est.",
+    "translation": "The sun rising, the farmers went out into the fields. The work having been completed, they returned home. The father having died, the son presided over the family. These things having been accomplished, Caesar set out for Gaul.",
+    "notes": ["These ablative absolutes show time and cause relationships"]
+  }
+}

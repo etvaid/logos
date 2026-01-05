@@ -1,0 +1,71 @@
+{
+  "id": "G-I-05",
+  "title": "Participles",
+  "level": "intermediate",
+  "language": "greek",
+  "estimatedTime": "70 minutes",
+  "objectives": [
+    "Form present active and middle/passive participles",
+    "Form aorist active, middle, and passive participles",
+    "Form perfect active and middle/passive participles",
+    "Recognize attributive and circumstantial uses",
+    "Translate participles idiomatically"
+  ],
+  "vocabulary": [
+    {"word": "λύων", "transliteration": "lyōn", "lemma": "λύω", "form": "pres act part nom sg m", "definition": "loosing"},
+    {"word": "λύσας", "transliteration": "lysas", "lemma": "λύω", "form": "aor act part nom sg m", "definition": "having loosed"},
+    {"word": "λυθείς", "transliteration": "lytheis", "lemma": "λύω", "form": "aor pass part nom sg m", "definition": "having been loosed"},
+    {"word": "λελυκώς", "transliteration": "lelykōs", "lemma": "λύω", "form": "perf act part nom sg m", "definition": "having loosed (state)"},
+    {"word": "λεγόμενος", "transliteration": "legomenos", "lemma": "λέγω", "form": "pres mid/pass part nom sg m", "definition": "being said"},
+    {"word": "εἰπών", "transliteration": "eipōn", "lemma": "λέγω", "form": "2nd aor act part nom sg m", "definition": "having said"},
+    {"word": "γενόμενος", "transliteration": "genomenos", "lemma": "γίγνομαι", "form": "2nd aor mid part nom sg m", "definition": "having become"},
+    {"word": "ἐλθών", "transliteration": "elthōn", "lemma": "ἔρχομαι", "form": "2nd aor act part nom sg m", "definition": "having come"}
+  ],
+  "grammar": {
+    "topic": "Participles",
+    "explanation": "Greek participles are verbal adjectives that must agree with their antecedent in gender, number, and case. They express relative time to the main verb and can function attributively (with article) or circumstantially (expressing when, why, how, etc.).",
+    "paradigms": [
+      {
+        "name": "Present Active Participle (λύω)",
+        "headers": ["Case", "Masc", "Fem", "Neut"],
+        "rows": [
+          ["Nom Sg", "λύων", "λύουσα", "λῦον"],
+          ["Gen Sg", "λύοντος", "λυούσης", "λύοντος"],
+          ["Dat Sg", "λύοντι", "λυούσῃ", "λύοντι"],
+          ["Acc Sg", "λύοντα", "λύουσαν", "λῦον"]
+        ]
+      },
+      {
+        "name": "Aorist Active Participle (λύω)",
+        "headers": ["Case", "Masc", "Fem", "Neut"],
+        "rows": [
+          ["Nom Sg", "λύσας", "λύσασα", "λῦσαν"],
+          ["Gen Sg", "λύσαντος", "λυσάσης", "λύσαντος"]
+        ]
+      }
+    ],
+    "rules": [
+      "Present participle = action simultaneous with main verb",
+      "Aorist participle = action prior to main verb",
+      "Perfect participle = completed state",
+      "Attributive (with article): 'the one who...'",
+      "Circumstantial (no article): when, because, although, etc."
+    ]
+  },
+  "exercises": [
+    {
+      "type": "translation",
+      "question": "Translate: ταῦτα εἰπὼν ἀπῆλθεν.",
+      "answer": "Having said these things, he departed. / After saying these things, he departed."
+    },
+    {
+      "type": "analysis",
+      "question": "Explain: ὁ λέγων ταῦτα vs λέγων ταῦτα",
+      "answer": "ὁ λέγων ταῦτα = 'the one saying these things' (attributive); λέγων ταῦτα = 'while saying these things' (circumstantial)"
+    }
+  ],
+  "readingPassage": {
+    "greek": "Ὁ Ἰησοῦς ταῦτα εἰπὼν ἐξῆλθεν σὺν τοῖς μαθηταῖς αὐτοῦ. Ἰδὼν τοὺς ὄχλους ἀνέβη εἰς τὸ ὄρος. Οἱ ἀκούοντες τοὺς λόγους αὐτοῦ ἐθαύμαζον.",
+    "translation": "Jesus, having said these things, went out with his disciples. Seeing the crowds, he went up on the mountain. Those hearing his words were amazed."
+  }
+}

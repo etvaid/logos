@@ -1,0 +1,207 @@
+{
+  "id": "L-B-03",
+  "title": "Second Declension Nouns",
+  "level": "beginner",
+  "language": "latin",
+  "estimatedTime": "50 minutes",
+  "objectives": [
+    "Decline second declension masculine nouns (-us, -er)",
+    "Decline second declension neuter nouns (-um)",
+    "Distinguish between masculine and neuter endings",
+    "Apply the neuter rule (nominative = accusative)",
+    "Use second declension nouns in simple sentences"
+  ],
+  "vocabulary": [
+    {
+      "word": "dominus",
+      "translation": "master, lord",
+      "partOfSpeech": "noun",
+      "declension": "2nd",
+      "gender": "masculine",
+      "examples": ["Dominus servum vocat."]
+    },
+    {
+      "word": "servus",
+      "translation": "slave, servant",
+      "partOfSpeech": "noun",
+      "declension": "2nd",
+      "gender": "masculine",
+      "examples": ["Servus laborat."]
+    },
+    {
+      "word": "filius",
+      "translation": "son",
+      "partOfSpeech": "noun",
+      "declension": "2nd",
+      "gender": "masculine",
+      "examples": ["Filius patrem amat."]
+    },
+    {
+      "word": "amicus",
+      "translation": "friend",
+      "partOfSpeech": "noun",
+      "declension": "2nd",
+      "gender": "masculine",
+      "examples": ["Amicus bonus est."]
+    },
+    {
+      "word": "equus",
+      "translation": "horse",
+      "partOfSpeech": "noun",
+      "declension": "2nd",
+      "gender": "masculine",
+      "examples": ["Equus celeriter currit."]
+    },
+    {
+      "word": "puer",
+      "translation": "boy",
+      "partOfSpeech": "noun",
+      "declension": "2nd",
+      "gender": "masculine",
+      "examples": ["Puer in agro ludit."]
+    },
+    {
+      "word": "ager",
+      "translation": "field",
+      "partOfSpeech": "noun",
+      "declension": "2nd",
+      "gender": "masculine",
+      "examples": ["Agricola agrum arat."]
+    },
+    {
+      "word": "liber",
+      "translation": "book",
+      "partOfSpeech": "noun",
+      "declension": "2nd",
+      "gender": "masculine",
+      "examples": ["Liber bonus est."]
+    },
+    {
+      "word": "bellum",
+      "translation": "war",
+      "partOfSpeech": "noun",
+      "declension": "2nd",
+      "gender": "neuter",
+      "examples": ["Bellum longum est."]
+    },
+    {
+      "word": "donum",
+      "translation": "gift",
+      "partOfSpeech": "noun",
+      "declension": "2nd",
+      "gender": "neuter",
+      "examples": ["Donum pulchrum est."]
+    },
+    {
+      "word": "templum",
+      "translation": "temple",
+      "partOfSpeech": "noun",
+      "declension": "2nd",
+      "gender": "neuter",
+      "examples": ["Templum magnum est."]
+    },
+    {
+      "word": "oppidum",
+      "translation": "town",
+      "partOfSpeech": "noun",
+      "declension": "2nd",
+      "gender": "neuter",
+      "examples": ["Oppidum parvum est."]
+    }
+  ],
+  "grammar": {
+    "topic": "Second Declension Nouns",
+    "explanation": "The second declension contains mostly masculine nouns ending in -us or -er, and neuter nouns ending in -um. Neuter nouns follow the special rule that nominative and accusative are always identical.",
+    "paradigms": [
+      {
+        "name": "dominus (masculine -us)",
+        "headers": ["Case", "Singular", "Plural"],
+        "rows": [
+          ["Nominative", "dominus", "domini"],
+          ["Genitive", "domini", "dominorum"],
+          ["Dative", "domino", "dominis"],
+          ["Accusative", "dominum", "dominos"],
+          ["Ablative", "domino", "dominis"],
+          ["Vocative", "domine", "domini"]
+        ]
+      },
+      {
+        "name": "puer (masculine -er, keeps e)",
+        "headers": ["Case", "Singular", "Plural"],
+        "rows": [
+          ["Nominative", "puer", "pueri"],
+          ["Genitive", "pueri", "puerorum"],
+          ["Dative", "puero", "pueris"],
+          ["Accusative", "puerum", "pueros"],
+          ["Ablative", "puero", "pueris"],
+          ["Vocative", "puer", "pueri"]
+        ]
+      },
+      {
+        "name": "ager (masculine -er, loses e)",
+        "headers": ["Case", "Singular", "Plural"],
+        "rows": [
+          ["Nominative", "ager", "agri"],
+          ["Genitive", "agri", "agrorum"],
+          ["Dative", "agro", "agris"],
+          ["Accusative", "agrum", "agros"],
+          ["Ablative", "agro", "agris"],
+          ["Vocative", "ager", "agri"]
+        ]
+      },
+      {
+        "name": "bellum (neuter -um)",
+        "headers": ["Case", "Singular", "Plural"],
+        "rows": [
+          ["Nominative", "bellum", "bella"],
+          ["Genitive", "belli", "bellorum"],
+          ["Dative", "bello", "bellis"],
+          ["Accusative", "bellum", "bella"],
+          ["Ablative", "bello", "bellis"],
+          ["Vocative", "bellum", "bella"]
+        ]
+      }
+    ],
+    "rules": [
+      "Masculine nouns in -us have vocative singular -e (domine)",
+      "Masculine nouns in -er may keep or lose the e (check genitive)",
+      "Neuter nominative and accusative are always identical",
+      "Neuter plural nominative/accusative always end in -a"
+    ]
+  },
+  "exercises": [
+    {
+      "type": "parsing",
+      "question": "Identify the case and number of 'dominorum'",
+      "answer": "Genitive plural",
+      "hints": ["Look at the -orum ending"]
+    },
+    {
+      "type": "translation",
+      "question": "Translate: Servus domini laborat.",
+      "answer": "The slave of the master works.",
+      "hints": ["domini is genitive showing possession"]
+    },
+    {
+      "type": "declension",
+      "question": "Decline 'templum' in the accusative plural",
+      "answer": "templa",
+      "hints": ["Neuter nom/acc plural ends in -a"]
+    },
+    {
+      "type": "composition",
+      "prompt": "Write 'The boys see the temples' in Latin",
+      "sampleAnswer": "Pueri templa vident."
+    }
+  ],
+  "culturalNote": "Roman society was structured around the familia, headed by the paterfamilias (father of the family). Terms like dominus (master) and servus (slave) reflect the hierarchical nature of Roman social organization.",
+  "readingPassage": {
+    "latin": "Dominus servum vocat. Servus in agro laborat. Filius domini librum legit. Templum in oppido magnum est.",
+    "translation": "The master calls the slave. The slave works in the field. The son of the master reads a book. The temple in the town is large.",
+    "notes": [
+      "vocat: calls (from vocare)",
+      "laborat: works (from laborare)",
+      "legit: reads (from legere)"
+    ]
+  }
+}

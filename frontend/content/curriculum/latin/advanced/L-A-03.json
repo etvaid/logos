@@ -1,0 +1,52 @@
+{
+  "id": "L-A-03",
+  "title": "Latin Poetry - Meter and Scansion",
+  "level": "advanced",
+  "language": "latin",
+  "estimatedTime": "75 minutes",
+  "objectives": [
+    "Scan dactylic hexameter lines",
+    "Identify metrical patterns and variations",
+    "Recognize elision and other metrical phenomena",
+    "Understand caesura and its effects",
+    "Apply metrical knowledge to interpretation"
+  ],
+  "grammar": {
+    "topic": "Dactylic Hexameter",
+    "explanation": "The dactylic hexameter is the meter of Latin epic (Virgil, Ovid, Lucretius). Each line has six feet: the first four may be dactyl (-uu) or spondee (--); the fifth is usually dactyl; the sixth is spondee or trochee.",
+    "paradigms": [
+      {
+        "name": "Metrical Feet",
+        "headers": ["Foot", "Pattern", "Symbol"],
+        "rows": [
+          ["Dactyl", "long-short-short", "— ∪ ∪"],
+          ["Spondee", "long-long", "— —"],
+          ["Trochee", "long-short", "— ∪"]
+        ]
+      },
+      {
+        "name": "Hexameter Structure",
+        "content": ["Foot 1-4: Dactyl or Spondee", "Foot 5: Usually Dactyl", "Foot 6: Spondee or Trochee", "Caesura: usually in foot 3 (penthemimeral) or foot 4 (hephthemimeral)"]
+      }
+    ],
+    "rules": [
+      "Vowel quantity determines pattern (not stress)",
+      "Elision: final vowel drops before initial vowel",
+      "Position: short vowel + two consonants = long",
+      "Diaeresis: word end coinciding with foot end"
+    ]
+  },
+  "readingPassage": {
+    "source": "Virgil, Aeneid 1.1",
+    "latin": "Arma virumque cano, Troiae qui primus ab oris",
+    "scansion": "— ∪ ∪ | — ∪ ∪ | — — | — — | — ∪ ∪ | — —",
+    "analysis": "DSS | DSS | SP | SP | DAC | SP. Caesura after 'cano' (penthemimeral). Opening spondees give weight and gravity."
+  },
+  "exercises": [
+    {
+      "type": "scansion",
+      "question": "Scan: Italiam fato profugus Laviniaque venit",
+      "answer": "— ∪ ∪ | — — | — ∪ ∪ | — ∪ ∪ | — ∪ ∪ | — —"
+    }
+  ]
+}

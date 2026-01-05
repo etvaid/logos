@@ -1,14 +1,12 @@
-```json
 {
-    "translation": "Sing, goddess, about the anger of Achilles, son of Peleus.",
-    "notes": [
-        "Achilles is a hero in Greek mythology, known for his role in the Trojan War.",
-        "Peleus is Achilles' father, a mortal king."
-    ],
-    "vocabulary_hints": [
-        "goddess: a female deity",
-        "anger: strong feeling of displeasure",
-        "Achilles: a famous Greek hero"
-    ]
+  "translation": "Sing, goddess, about the anger of Achilles, son of Peleus.",
+  "notes": [
+    "Achilles is a hero in Greek mythology, known for his role in the Trojan War.",
+    "Peleus is Achilles' father, a mortal king."
+  ],
+  "vocabulary_hints": [
+    "goddess: a female deity",
+    "anger: strong feeling of displeasure",
+    "Achilles: a famous Greek hero"
+  ]
 }
-```

@@ -1,0 +1,153 @@
+{
+  "id": "virgil-aeneid-1",
+  "title": "Aeneid - Book I, Proem",
+  "author": "Publius Vergilius Maro",
+  "work": "Aeneid",
+  "book": 1,
+  "dateComposed": "c. 29-19 BCE",
+  "difficulty": "advanced",
+  "genre": "epic poetry",
+  "meter": "dactylic hexameter",
+  "description": "The opening of Virgil's epic, announcing its theme and invoking the Muse.",
+  "sections": [
+    {
+      "id": "1.1-7",
+      "latin": "Arma virumque cano, Troiae qui primus ab oris\nItaliam, fato profugus, Laviniaque venit\nlitora, multum ille et terris iactatus et alto\nvi superum saevae memorem Iunonis ob iram;\nmulta quoque et bello passus, dum conderet urbem,\ninferretque deos Latio, genus unde Latinum,\nAlbanique patres, atque altae moenia Romae.",
+      "translation": "Arms and the man I sing, who first from the shores of Troy, exiled by fate, came to Italy and the Lavinian coast; much was he tossed about both on land and on the deep by the power of the gods above, on account of the unforgetting wrath of cruel Juno; much also did he suffer in war, until he could found a city and bring his gods to Latium, whence came the Latin race, the Alban fathers, and the walls of lofty Rome.",
+      "lineByLine": [
+        {
+          "line": 1,
+          "latin": "Arma virumque cano, Troiae qui primus ab oris",
+          "translation": "Arms and the man I sing, who first from the shores of Troy",
+          "scansion": "— ∪ ∪ | — ∪ ∪ | — — | — — | — ∪ ∪ | — —",
+          "notes": "Arma virumque: hendiadys and echo of Homer's Iliad (arma/war) and Odyssey (virum/man)"
+        },
+        {
+          "line": 2,
+          "latin": "Italiam, fato profugus, Laviniaque venit",
+          "translation": "came to Italy, a fugitive by fate, and to the Lavinian",
+          "scansion": "— ∪ ∪ | — — | — ∪ ∪ | — ∪ ∪ | — ∪ ∪ | — —",
+          "notes": "fato profugus: ablative of cause; Lavinia refers to Lavinium, city founded by Aeneas"
+        },
+        {
+          "line": 3,
+          "latin": "litora, multum ille et terris iactatus et alto",
+          "translation": "shores; much was that man tossed on both land and the deep",
+          "scansion": "— ∪ ∪ | — — | — — | — — | — ∪ ∪ | — —",
+          "notes": "multum: adverbial accusative; alto: 'the deep' (sea)"
+        },
+        {
+          "line": 4,
+          "latin": "vi superum saevae memorem Iunonis ob iram;",
+          "translation": "by the power of the gods above, because of the unforgetting wrath of cruel Juno;",
+          "scansion": "— ∪ ∪ | — — | — — | — ∪ ∪ | — ∪ ∪ | — —",
+          "notes": "superum: genitive plural (= superorum); memorem: Juno remembers the judgment of Paris"
+        },
+        {
+          "line": 5,
+          "latin": "multa quoque et bello passus, dum conderet urbem,",
+          "translation": "having suffered much also in war, until he could found a city",
+          "scansion": "— ∪ ∪ | — — | — — | — — | — ∪ ∪ | — —",
+          "notes": "passus: perfect participle from patior; conderet: imperfect subjunctive in temporal clause"
+        },
+        {
+          "line": 6,
+          "latin": "inferretque deos Latio, genus unde Latinum,",
+          "translation": "and bring his gods to Latium, whence the Latin race,",
+          "scansion": "— — | — — | — — | — ∪ ∪ | — ∪ ∪ | — —",
+          "notes": "deos: the Penates, household gods; unde: from which source"
+        },
+        {
+          "line": 7,
+          "latin": "Albanique patres, atque altae moenia Romae.",
+          "translation": "and the Alban fathers, and the walls of lofty Rome.",
+          "scansion": "— — | — — | — — | — — | — ∪ ∪ | — —",
+          "notes": "Albani patres: the kings of Alba Longa, ancestors of Romulus"
+        }
+      ],
+      "vocabulary": [
+        {"word": "arma", "lemma": "arma", "form": "acc pl n", "definition": "arms, weapons, warfare"},
+        {"word": "virum", "lemma": "vir", "form": "acc sg m", "definition": "man, hero"},
+        {"word": "cano", "lemma": "cano", "form": "1st sg pres act ind", "definition": "I sing"},
+        {"word": "Troiae", "lemma": "Troia", "form": "gen sg f", "definition": "of Troy"},
+        {"word": "primus", "lemma": "primus", "form": "nom sg m", "definition": "first"},
+        {"word": "oris", "lemma": "ora", "form": "abl pl f", "definition": "shores, coasts"},
+        {"word": "fato", "lemma": "fatum", "form": "abl sg n", "definition": "by fate"},
+        {"word": "profugus", "lemma": "profugus", "form": "nom sg m", "definition": "fugitive, exile"},
+        {"word": "Lavinia", "lemma": "Lavinius", "form": "acc pl n", "definition": "Lavinian"},
+        {"word": "litora", "lemma": "litus", "form": "acc pl n", "definition": "shores"},
+        {"word": "iactatus", "lemma": "iacto", "form": "perf pass part nom sg m", "definition": "tossed, driven"},
+        {"word": "alto", "lemma": "altum", "form": "abl sg n", "definition": "the deep, the sea"},
+        {"word": "superum", "lemma": "superi", "form": "gen pl m", "definition": "of the gods above"},
+        {"word": "saevae", "lemma": "saevus", "form": "gen sg f", "definition": "of cruel"},
+        {"word": "memorem", "lemma": "memor", "form": "acc sg f", "definition": "mindful, unforgetting"},
+        {"word": "Iunonis", "lemma": "Iuno", "form": "gen sg f", "definition": "of Juno"},
+        {"word": "iram", "lemma": "ira", "form": "acc sg f", "definition": "wrath, anger"},
+        {"word": "passus", "lemma": "patior", "form": "perf part nom sg m", "definition": "having suffered"},
+        {"word": "conderet", "lemma": "condo", "form": "impf subj act 3rd sg", "definition": "might found"},
+        {"word": "inferret", "lemma": "infero", "form": "impf subj act 3rd sg", "definition": "might bring in"},
+        {"word": "genus", "lemma": "genus", "form": "nom sg n", "definition": "race, people"},
+        {"word": "moenia", "lemma": "moenia", "form": "nom pl n", "definition": "walls, fortifications"}
+      ]
+    },
+    {
+      "id": "1.8-11",
+      "latin": "Musa, mihi causas memora, quo numine laeso,\nquidve dolens, regina deum tot volvere casus\ninsignem pietate virum, tot adire labores\nimpulerit. Tantaene animis caelestibus irae?",
+      "translation": "Muse, recall to me the causes, by what offense to her divinity, or grieving for what, the queen of the gods drove a man distinguished for piety to undergo so many misfortunes, to face so many trials. Is there such great anger in heavenly minds?",
+      "lineByLine": [
+        {
+          "line": 8,
+          "latin": "Musa, mihi causas memora, quo numine laeso,",
+          "translation": "Muse, recall to me the causes, by what offense to her divinity,",
+          "notes": "Invocation to the Muse; quo numine laeso: ablative absolute"
+        },
+        {
+          "line": 9,
+          "latin": "quidve dolens, regina deum tot volvere casus",
+          "translation": "or grieving for what, the queen of gods [drove him] to undergo so many misfortunes",
+          "notes": "regina deum: Juno; deum = deorum; volvere: infinitive with impulerit"
+        },
+        {
+          "line": 10,
+          "latin": "insignem pietate virum, tot adire labores",
+          "translation": "a man distinguished for piety, to face so many trials",
+          "notes": "pietate: ablative of specification; pietas = duty to gods, country, family"
+        },
+        {
+          "line": 11,
+          "latin": "impulerit. Tantaene animis caelestibus irae?",
+          "translation": "drove [him]. Is there such great anger in heavenly minds?",
+          "notes": "Rhetorical question: how can gods harbor such wrath?"
+        }
+      ],
+      "vocabulary": [
+        {"word": "Musa", "lemma": "Musa", "form": "voc sg f", "definition": "Muse"},
+        {"word": "mihi", "lemma": "ego", "form": "dat sg", "definition": "to me"},
+        {"word": "causas", "lemma": "causa", "form": "acc pl f", "definition": "causes, reasons"},
+        {"word": "memora", "lemma": "memoro", "form": "2nd sg pres act imper", "definition": "recall, tell"},
+        {"word": "numine", "lemma": "numen", "form": "abl sg n", "definition": "divinity, divine will"},
+        {"word": "laeso", "lemma": "laedo", "form": "perf pass part abl sg n", "definition": "offended, injured"},
+        {"word": "dolens", "lemma": "doleo", "form": "pres part nom sg f", "definition": "grieving"},
+        {"word": "regina", "lemma": "regina", "form": "nom sg f", "definition": "queen"},
+        {"word": "deum", "lemma": "deus", "form": "gen pl m", "definition": "of the gods"},
+        {"word": "volvere", "lemma": "volvo", "form": "pres act inf", "definition": "to undergo, experience"},
+        {"word": "casus", "lemma": "casus", "form": "acc pl m", "definition": "misfortunes, falls"},
+        {"word": "insignem", "lemma": "insignis", "form": "acc sg m", "definition": "distinguished, notable"},
+        {"word": "pietate", "lemma": "pietas", "form": "abl sg f", "definition": "piety, duty"},
+        {"word": "labores", "lemma": "labor", "form": "acc pl m", "definition": "labors, trials"},
+        {"word": "impulerit", "lemma": "impello", "form": "perf subj act 3rd sg", "definition": "drove, impelled"},
+        {"word": "Tantaene", "lemma": "tantus", "form": "nom pl f + -ne", "definition": "such great? (interrogative)"},
+        {"word": "animis", "lemma": "animus", "form": "dat/abl pl m", "definition": "in minds, spirits"},
+        {"word": "caelestibus", "lemma": "caelestis", "form": "dat/abl pl", "definition": "heavenly, divine"},
+        {"word": "irae", "lemma": "ira", "form": "nom pl f", "definition": "angers, wraths"}
+      ]
+    }
+  ],
+  "historicalContext": "Virgil composed the Aeneid over ten years (29-19 BCE) under Augustus's patronage. The epic links Rome's origins to Troy and legitimizes the Augustan regime by tracing Augustus's Julian family to Aeneas and Venus.",
+  "literaryFeatures": [
+    "Opening echoes both Homeric epics: Iliad (arms/war) and Odyssey (man/wandering)",
+    "Dactylic hexameter with masterful use of spondees for gravity",
+    "Central theme of pietas (duty to gods, family, country)",
+    "Juno's wrath parallels Poseidon's anger in the Odyssey"
+  ]
+}

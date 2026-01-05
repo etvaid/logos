@@ -1,0 +1,94 @@
+{
+  "id": "plato-apology-1",
+  "title": "Apology - Opening Defense",
+  "author": "Plato",
+  "work": "Apology of Socrates",
+  "dateComposed": "c. 399-387 BCE",
+  "difficulty": "intermediate",
+  "genre": "philosophical dialogue / forensic oratory",
+  "description": "Socrates' defense speech at his trial for impiety and corrupting the youth of Athens.",
+  "sections": [
+    {
+      "id": "17a-17b",
+      "greek": "Ὅτι μὲν ὑμεῖς, ὦ ἄνδρες Ἀθηναῖοι, πεπόνθατε ὑπὸ τῶν ἐμῶν κατηγόρων, οὐκ οἶδα· ἐγὼ δ᾽ οὖν καὶ αὐτὸς ὑπ᾽ αὐτῶν ὀλίγου ἐμαυτοῦ ἐπελαθόμην, οὕτω πιθανῶς ἔλεγον. καίτοι ἀληθές γε ὡς ἔπος εἰπεῖν οὐδὲν εἰρήκασιν.",
+      "translation": "How you, men of Athens, have been affected by my accusers, I do not know; but I, for my part, almost forgot who I was because of them, so persuasively did they speak. And yet they have said practically nothing true.",
+      "vocabulary": [
+        {"word": "ὑμεῖς", "lemma": "σύ", "form": "nom pl", "definition": "you"},
+        {"word": "ἄνδρες", "lemma": "ἀνήρ", "form": "voc pl m", "definition": "men"},
+        {"word": "Ἀθηναῖοι", "lemma": "Ἀθηναῖος", "form": "voc pl m", "definition": "Athenians"},
+        {"word": "πεπόνθατε", "lemma": "πάσχω", "form": "2nd pl perf act ind", "definition": "you have been affected, experienced"},
+        {"word": "κατηγόρων", "lemma": "κατήγορος", "form": "gen pl m", "definition": "of accusers"},
+        {"word": "οἶδα", "lemma": "οἶδα", "form": "1st sg perf act ind", "definition": "I know"},
+        {"word": "ὀλίγου", "lemma": "ὀλίγος", "form": "gen sg n", "definition": "almost (genitive of degree)"},
+        {"word": "ἐμαυτοῦ", "lemma": "ἐμαυτοῦ", "form": "gen sg m", "definition": "myself"},
+        {"word": "ἐπελαθόμην", "lemma": "ἐπιλανθάνομαι", "form": "1st sg aor mid ind", "definition": "I forgot"},
+        {"word": "πιθανῶς", "lemma": "πιθανός", "form": "adv", "definition": "persuasively"},
+        {"word": "ἔλεγον", "lemma": "λέγω", "form": "3rd pl impf act ind", "definition": "they were speaking"},
+        {"word": "καίτοι", "lemma": "καίτοι", "form": "conj", "definition": "and yet"},
+        {"word": "ἀληθές", "lemma": "ἀληθής", "form": "acc sg n", "definition": "true (thing)"},
+        {"word": "ὡς ἔπος εἰπεῖν", "lemma": "ὡς ἔπος εἰπεῖν", "form": "phrase", "definition": "so to speak, practically"},
+        {"word": "εἰρήκασιν", "lemma": "λέγω", "form": "3rd pl perf act ind", "definition": "they have said"}
+      ],
+      "grammaticalNotes": [
+        "ὅτι μέν...ἐγὼ δ᾽ οὖν: balanced contrast between you and I",
+        "ὀλίγου + genitive: 'by a little' = almost",
+        "ὡς ἔπος εἰπεῖν: parenthetical phrase softening the statement"
+      ]
+    },
+    {
+      "id": "17c-17d",
+      "greek": "ἐγὼ δ᾽ οὖν ὑμῖν τὴν ἀλήθειαν ἐρῶ. οὐ μέντοι μὰ Δία, ὦ ἄνδρες Ἀθηναῖοι, κεκαλλιεπημένους γε λόγους, ὥσπερ οἱ τούτων, ῥήμασί τε καὶ ὀνόμασιν οὐδὲ κεκοσμημένους, ἀλλ᾽ ἀκούσεσθε εἰκῇ λεγόμενα τοῖς ἐπιτυχοῦσιν ὀνόμασιν.",
+      "translation": "But I shall tell you the truth. Not, by Zeus, men of Athens, speeches adorned with fine phrases and words, like theirs, nor embellished, but you will hear things spoken at random in whatever words occur to me.",
+      "vocabulary": [
+        {"word": "ἀλήθειαν", "lemma": "ἀλήθεια", "form": "acc sg f", "definition": "truth"},
+        {"word": "ἐρῶ", "lemma": "λέγω", "form": "1st sg fut act ind", "definition": "I shall say"},
+        {"word": "μέντοι", "lemma": "μέντοι", "form": "particle", "definition": "however, indeed"},
+        {"word": "μὰ Δία", "lemma": "μὰ Δία", "form": "oath", "definition": "by Zeus"},
+        {"word": "κεκαλλιεπημένους", "lemma": "καλλιεπέω", "form": "perf mid part acc pl m", "definition": "adorned with fine phrases"},
+        {"word": "λόγους", "lemma": "λόγος", "form": "acc pl m", "definition": "speeches, words"},
+        {"word": "ῥήμασι", "lemma": "ῥῆμα", "form": "dat pl n", "definition": "with words, phrases"},
+        {"word": "ὀνόμασιν", "lemma": "ὄνομα", "form": "dat pl n", "definition": "with words, names"},
+        {"word": "κεκοσμημένους", "lemma": "κοσμέω", "form": "perf mid part acc pl m", "definition": "embellished, adorned"},
+        {"word": "ἀκούσεσθε", "lemma": "ἀκούω", "form": "2nd pl fut mid ind", "definition": "you will hear"},
+        {"word": "εἰκῇ", "lemma": "εἰκῇ", "form": "adv", "definition": "at random, carelessly"},
+        {"word": "λεγόμενα", "lemma": "λέγω", "form": "pres pass part acc pl n", "definition": "things being said"},
+        {"word": "ἐπιτυχοῦσιν", "lemma": "ἐπιτυγχάνω", "form": "aor act part dat pl n", "definition": "that happen to occur"}
+      ],
+      "grammaticalNotes": [
+        "Socrates contrasts rhetorical style with simple truth",
+        "κεκαλλιεπημένους, κεκοσμημένους: perfect participles showing completed states",
+        "τοῖς ἐπιτυχοῦσιν ὀνόμασιν: 'with whatever words occur'"
+      ]
+    },
+    {
+      "id": "18a",
+      "greek": "πιστεύω γὰρ δίκαια εἶναι ἃ λέγω, καὶ μηδεὶς ὑμῶν προσδοκησάτω ἄλλως· οὐδὲ γὰρ ἂν δήπου πρέποι, ὦ ἄνδρες, τῇδε τῇ ἡλικίᾳ ὥσπερ μειρακίῳ πλάττοντι λόγους εἰς ὑμᾶς εἰσιέναι.",
+      "translation": "For I believe that what I say is just, and let none of you expect otherwise; for surely it would not be fitting, men, for one of my age to come before you like a youth fashioning speeches.",
+      "vocabulary": [
+        {"word": "πιστεύω", "lemma": "πιστεύω", "form": "1st sg pres act ind", "definition": "I believe, trust"},
+        {"word": "δίκαια", "lemma": "δίκαιος", "form": "acc pl n", "definition": "just things"},
+        {"word": "εἶναι", "lemma": "εἰμί", "form": "pres inf", "definition": "to be"},
+        {"word": "προσδοκησάτω", "lemma": "προσδοκάω", "form": "3rd sg aor act imper", "definition": "let him expect"},
+        {"word": "ἄλλως", "lemma": "ἄλλως", "form": "adv", "definition": "otherwise"},
+        {"word": "δήπου", "lemma": "δήπου", "form": "particle", "definition": "surely, I suppose"},
+        {"word": "πρέποι", "lemma": "πρέπω", "form": "3rd sg pres opt act", "definition": "it would be fitting"},
+        {"word": "ἡλικίᾳ", "lemma": "ἡλικία", "form": "dat sg f", "definition": "age"},
+        {"word": "μειρακίῳ", "lemma": "μειράκιον", "form": "dat sg n", "definition": "young person, youth"},
+        {"word": "πλάττοντι", "lemma": "πλάττω", "form": "pres act part dat sg m", "definition": "fashioning, molding"},
+        {"word": "εἰσιέναι", "lemma": "εἴσειμι", "form": "pres inf", "definition": "to come in, enter"}
+      ],
+      "grammaticalNotes": [
+        "μηδεὶς προσδοκησάτω: negative imperative with aorist",
+        "οὐδὲ γὰρ ἂν πρέποι: potential optative 'it would not be fitting'",
+        "τῇδε τῇ ἡλικίᾳ: dative of reference 'for one of this age'"
+      ]
+    }
+  ],
+  "historicalContext": "In 399 BCE, Socrates was tried and condemned to death on charges of impiety and corrupting the youth. Plato's Apology presents Socrates' defense speech, offering insight into his philosophical method and moral courage.",
+  "literaryFeatures": [
+    "Ironic contrast between rhetoric and truth",
+    "Socrates claims to speak simply while using sophisticated techniques",
+    "Direct address to the Athenian jury",
+    "Socratic irony: claiming ignorance while demonstrating wisdom"
+  ]
+}

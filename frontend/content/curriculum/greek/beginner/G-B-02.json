@@ -1,0 +1,242 @@
+{
+  "id": "G-B-02",
+  "title": "Breathings, Accents, and Pronunciation",
+  "level": "beginner",
+  "language": "greek",
+  "estimatedTime": "45 minutes",
+  "objectives": [
+    "Distinguish between rough and smooth breathings",
+    "Identify the three Greek accent marks",
+    "Understand accent placement rules",
+    "Recognize diphthongs"
+  ],
+  "vocabulary": [
+    {
+      "word": "ἄνθρωπος",
+      "transliteration": "anthropos",
+      "translation": "human being",
+      "partOfSpeech": "noun",
+      "declension": "2nd",
+      "gender": "masculine",
+      "examples": [
+        "ὁ ἄνθρωπος ἀγαθός ἐστιν"
+      ]
+    },
+    {
+      "word": "ὁδός",
+      "transliteration": "hodos",
+      "translation": "road, way",
+      "partOfSpeech": "noun",
+      "declension": "2nd",
+      "gender": "feminine",
+      "examples": [
+        "ἡ ὁδὸς μακρά ἐστιν"
+      ]
+    },
+    {
+      "word": "ἡμέρα",
+      "transliteration": "hemera",
+      "translation": "day",
+      "partOfSpeech": "noun",
+      "declension": "1st",
+      "gender": "feminine",
+      "examples": [
+        "ἡ ἡμέρα καλή ἐστιν"
+      ]
+    },
+    {
+      "word": "οὐρανός",
+      "transliteration": "ouranos",
+      "translation": "heaven, sky",
+      "partOfSpeech": "noun",
+      "declension": "2nd",
+      "gender": "masculine",
+      "examples": [
+        "ὁ οὐρανὸς καλός ἐστιν"
+      ]
+    },
+    {
+      "word": "αἷμα",
+      "transliteration": "haima",
+      "translation": "blood",
+      "partOfSpeech": "noun",
+      "declension": "3rd",
+      "gender": "neuter",
+      "examples": [
+        "τὸ αἷμα τῆς ζωῆς"
+      ]
+    },
+    {
+      "word": "εὑρίσκω",
+      "transliteration": "heurisko",
+      "translation": "I find",
+      "partOfSpeech": "verb",
+      "declension": "1st",
+      "gender": "n/a",
+      "examples": [
+        "εὑρίσκω τὴν ἀλήθειαν"
+      ]
+    },
+    {
+      "word": "ἔχω",
+      "transliteration": "echo",
+      "translation": "I have",
+      "partOfSpeech": "verb",
+      "declension": "1st",
+      "gender": "n/a",
+      "examples": [
+        "ἔχω βίβλον"
+      ]
+    },
+    {
+      "word": "αὐτός",
+      "transliteration": "autos",
+      "translation": "he, self",
+      "partOfSpeech": "pronoun",
+      "declension": "2nd",
+      "gender": "masculine",
+      "examples": [
+        "αὐτὸς λέγει"
+      ]
+    }
+  ],
+  "grammar": {
+    "topic": "Breathings, Accents, and Diphthongs",
+    "explanation": "Every Greek word beginning with a vowel carries a breathing mark. Rough breathing adds an h-sound, smooth breathing indicates no h-sound. Greek uses three accent marks.",
+    "paradigms": [
+      {
+        "name": "Breathing Marks",
+        "headers": [
+          "Type",
+          "Example",
+          "Sound"
+        ],
+        "rows": [
+          [
+            "Smooth",
+            "ἀ ἐ ὀ",
+            "a e o"
+          ],
+          [
+            "Rough",
+            "ἁ ἑ ὁ",
+            "ha he ho"
+          ]
+        ]
+      },
+      {
+        "name": "Accents",
+        "headers": [
+          "Name",
+          "Symbol"
+        ],
+        "rows": [
+          [
+            "Acute",
+            "ά"
+          ],
+          [
+            "Grave",
+            "ὰ"
+          ],
+          [
+            "Circumflex",
+            "ᾶ"
+          ]
+        ]
+      },
+      {
+        "name": "Diphthongs",
+        "headers": [
+          "Form",
+          "Sound",
+          "Example"
+        ],
+        "rows": [
+          [
+            "αι",
+            "ai",
+            "καί"
+          ],
+          [
+            "ει",
+            "ei",
+            "εἰμί"
+          ],
+          [
+            "οι",
+            "oi",
+            "οἶκος"
+          ],
+          [
+            "αυ",
+            "au",
+            "αὐτός"
+          ],
+          [
+            "ευ",
+            "eu",
+            "εὑρίσκω"
+          ],
+          [
+            "ου",
+            "ou",
+            "οὐρανός"
+          ]
+        ]
+      }
+    ],
+    "rules": [
+      "Initial vowels need breathing marks",
+      "Initial υ and ρ have rough breathing",
+      "Acute on last 3 syllables",
+      "Circumflex on last 2 syllables only"
+    ]
+  },
+  "exercises": [
+    {
+      "type": "identification",
+      "instructions": "Identify breathing",
+      "items": [
+        {
+          "prompt": "ἄνθρωπος",
+          "answer": "smooth"
+        },
+        {
+          "prompt": "ὁδός",
+          "answer": "rough"
+        },
+        {
+          "prompt": "ἡμέρα",
+          "answer": "rough"
+        }
+      ]
+    },
+    {
+      "type": "pronunciation",
+      "instructions": "Pronounce",
+      "items": [
+        {
+          "prompt": "καί",
+          "answer": "kai"
+        },
+        {
+          "prompt": "αὐτός",
+          "answer": "autos"
+        },
+        {
+          "prompt": "οὐρανός",
+          "answer": "ouranos"
+        }
+      ]
+    }
+  ],
+  "culturalNote": "Breathing marks preserve ancient pronunciation. History comes from ἱστορία with rough breathing. Romans preserved these distinctions in Latin borrowings.",
+  "readingPassage": {
+    "title": "Lords Prayer",
+    "source": "Matthew 6:9",
+    "greek": "Πάτερ ἡμῶν ὁ ἐν τοῖς οὐρανοῖς, ἁγιασθήτω τὸ ὄνομά σου.",
+    "transliteration": "Pater hemon ho en tois ouranois, hagiastheto to onoma sou.",
+    "translation": "Our Father who is in the heavens, let your name be sanctified."
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "id": "G-I-02",
+  "title": "The Aorist Tense",
+  "level": "intermediate",
+  "language": "greek",
+  "estimatedTime": "60 minutes",
+  "objectives": [
+    "Recognize first (sigmatic) aorist forms",
+    "Recognize second (thematic) aorist forms",
+    "Distinguish aorist aspect from imperfect",
+    "Form aorist active, middle, and passive",
+    "Use the aorist appropriately in narrative"
+  ],
+  "vocabulary": [
+    {"word": "ἔλυσα", "transliteration": "elysa", "lemma": "λύω", "form": "1st aor act 1sg", "definition": "I loosed"},
+    {"word": "ἐλυσάμην", "transliteration": "elysamēn", "lemma": "λύω", "form": "1st aor mid 1sg", "definition": "I loosed for myself"},
+    {"word": "ἐλύθην", "transliteration": "elythēn", "lemma": "λύω", "form": "aor pass 1sg", "definition": "I was loosed"},
+    {"word": "ἔλαβον", "transliteration": "elabon", "lemma": "λαμβάνω", "form": "2nd aor act 1sg", "definition": "I took"},
+    {"word": "ἔβαλον", "transliteration": "ebalon", "lemma": "βάλλω", "form": "2nd aor act 1sg", "definition": "I threw"},
+    {"word": "εἶπον", "transliteration": "eipon", "lemma": "λέγω", "form": "2nd aor act 1sg", "definition": "I said"},
+    {"word": "ἦλθον", "transliteration": "ēlthon", "lemma": "ἔρχομαι", "form": "2nd aor act 1sg", "definition": "I came/went"},
+    {"word": "εἶδον", "transliteration": "eidon", "lemma": "ὁράω", "form": "2nd aor act 1sg", "definition": "I saw"}
+  ],
+  "grammar": {
+    "topic": "The Aorist Tense",
+    "explanation": "The aorist is the simple past tense in Greek, expressing completed action without reference to duration. First aorists add -σα- to the stem; second aorists use a different stem with thematic vowels like the imperfect.",
+    "paradigms": [
+      {
+        "name": "First Aorist Active (λύω)",
+        "headers": ["Person", "Singular", "Plural"],
+        "rows": [
+          ["1st", "ἔλυσα", "ἐλύσαμεν"],
+          ["2nd", "ἔλυσας", "ἐλύσατε"],
+          ["3rd", "ἔλυσε(ν)", "ἔλυσαν"]
+        ]
+      },
+      {
+        "name": "Second Aorist Active (λαμβάνω)",
+        "headers": ["Person", "Singular", "Plural"],
+        "rows": [
+          ["1st", "ἔλαβον", "ἐλάβομεν"],
+          ["2nd", "ἔλαβες", "ἐλάβετε"],
+          ["3rd", "ἔλαβε(ν)", "ἔλαβον"]
+        ]
+      }
+    ],
+    "rules": [
+      "Aorist = undefined aspect (simple occurrence)",
+      "Augment (ἐ-) in indicative only",
+      "First aorist: stem + σα + endings",
+      "Second aorist: different stem + thematic vowels (like imperfect)"
+    ]
+  },
+  "exercises": [
+    {
+      "type": "identification",
+      "question": "Is ἔγραψα first or second aorist?",
+      "answer": "First aorist (σ marker: ἔγραψα from γράφω)"
+    },
+    {
+      "type": "translation",
+      "question": "Translate: οἱ στρατιῶται τὴν πόλιν ἔλαβον.",
+      "answer": "The soldiers took the city."
+    }
+  ],
+  "readingPassage": {
+    "greek": "Ὁ διδάσκαλος εἶπεν τοῖς μαθηταῖς· ἦλθον πρὸς ὑμᾶς καὶ εἶδον τὰ ἔργα ὑμῶν. Ἐλάβομεν τοὺς λόγους αὐτοῦ καὶ ἐγράψαμεν αὐτούς.",
+    "translation": "The teacher said to the students: I came to you and saw your works. We received his words and wrote them down."
+  }
+}

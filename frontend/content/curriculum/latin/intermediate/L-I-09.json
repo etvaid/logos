@@ -1,0 +1,71 @@
+{
+  "id": "L-I-09",
+  "title": "Indirect Questions and Commands",
+  "level": "intermediate",
+  "language": "latin",
+  "estimatedTime": "55 minutes",
+  "objectives": [
+    "Recognize indirect questions",
+    "Use interrogative words to introduce indirect questions",
+    "Apply sequence of tenses in indirect questions",
+    "Form indirect commands with ut/ne + subjunctive",
+    "Distinguish indirect questions from purpose clauses"
+  ],
+  "vocabulary": [
+    {"word": "quis", "definition": "who (indirect: who)"},
+    {"word": "quid", "definition": "what (indirect: what)"},
+    {"word": "cur", "definition": "why"},
+    {"word": "ubi", "definition": "where"},
+    {"word": "quando", "definition": "when"},
+    {"word": "quomodo", "definition": "how"},
+    {"word": "utrum...an", "definition": "whether...or"},
+    {"word": "num", "definition": "whether (expects negative)"}
+  ],
+  "grammar": {
+    "topic": "Indirect Questions and Commands",
+    "explanation": "Indirect questions report questions rather than asking directly. They use interrogative words + subjunctive, following sequence of tenses. Indirect commands (jussive noun clauses) use ut/ne + subjunctive after verbs of commanding, asking, persuading.",
+    "paradigms": [
+      {
+        "name": "Indirect Question Examples",
+        "headers": ["Direct", "Indirect"],
+        "rows": [
+          ["Quis venit?", "Rogo quis veniat. (I ask who is coming)"],
+          ["Quid fecit?", "Scio quid fecerit. (I know what he did)"],
+          ["Ubi est?", "Nescio ubi sit. (I don't know where he is)"]
+        ]
+      },
+      {
+        "name": "Indirect Command Examples",
+        "headers": ["Latin", "Translation"],
+        "rows": [
+          ["Imperavit ut venirent", "He ordered that they come"],
+          ["Oravit ne abirent", "He begged that they not leave"],
+          ["Persuasit ei ut maneret", "He persuaded him to stay"]
+        ]
+      }
+    ],
+    "rules": [
+      "Indirect questions: interrogative word + subjunctive",
+      "Sequence of tenses: primary → present/perfect subj; secondary → imperfect/pluperfect subj",
+      "Indirect commands: ut (positive) / ne (negative) + subjunctive",
+      "Verbs of commanding: impero, iubeo, moneo, rogo, oro, persuadeo, etc."
+    ]
+  },
+  "exercises": [
+    {
+      "type": "transformation",
+      "question": "Change to indirect: 'Quid facis?' → Rogo...",
+      "answer": "Rogo quid facias."
+    },
+    {
+      "type": "translation",
+      "question": "Translate: Dux militibus imperavit ut castra ponerent.",
+      "answer": "The general ordered the soldiers to pitch camp."
+    }
+  ],
+  "readingPassage": {
+    "latin": "Caesar quaesivit quis esset dux hostium. Exploratores nescierunt ubi hostes castra posuissent. Caesar militibus imperavit ne timerent. Oravit ut fortiter pugnarent.",
+    "translation": "Caesar asked who the leader of the enemy was. The scouts did not know where the enemy had pitched camp. Caesar ordered the soldiers not to be afraid. He begged them to fight bravely.",
+    "notes": ["Note indirect questions and indirect commands"]
+  }
+}

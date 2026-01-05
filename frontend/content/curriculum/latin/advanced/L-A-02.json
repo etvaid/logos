@@ -1,0 +1,46 @@
+{
+  "id": "L-A-02",
+  "title": "Latin Prose Style and Rhetoric",
+  "level": "advanced",
+  "language": "latin",
+  "estimatedTime": "70 minutes",
+  "objectives": [
+    "Identify rhetorical devices in Latin prose",
+    "Recognize anaphora, chiasmus, tricolon",
+    "Analyze Ciceronian and Sallustian style",
+    "Understand prose rhythm and clausulae",
+    "Apply rhetorical analysis to translation"
+  ],
+  "grammar": {
+    "topic": "Rhetorical Figures",
+    "explanation": "Roman orators employed sophisticated rhetorical techniques. Understanding these enhances both comprehension and appreciation of Latin prose.",
+    "paradigms": [
+      {
+        "name": "Key Rhetorical Devices",
+        "headers": ["Device", "Definition", "Example"],
+        "rows": [
+          ["Anaphora", "Repetition at start", "nihil...nihil...nihil"],
+          ["Chiasmus", "ABBA word order", "veni, vidi, vici"],
+          ["Tricolon", "Three parallel elements", "veni, vidi, vici"],
+          ["Asyndeton", "Omission of conjunctions", "abiit, excessit, evasit, erupit"],
+          ["Hendiadys", "Two words for one concept", "vi et armis (= armed force)"],
+          ["Litotes", "Understatement via negation", "non ignoro (= I know well)"],
+          ["Hyperbaton", "Unusual word order", "magnam...rem (separated adj/noun)"]
+        ]
+      }
+    ]
+  },
+  "readingPassage": {
+    "source": "Cicero, In Catilinam I.2",
+    "latin": "Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae, nihil timor populi, nihil concursus bonorum omnium, nihil hic munitissimus habendi senatus locus, nihil horum ora voltusque moverunt?",
+    "translation": "Did the nocturnal guard of the Palatine not move you at all, nor the city watches, nor the fear of the people, nor the gathering of all good citizens, nor this most fortified place for holding the senate, nor the faces and expressions of these men?",
+    "analysis": "Sixfold anaphora of 'nihil' builds overwhelming rhetorical force. Climax moves from abstract (guard, fear) to concrete (faces)."
+  },
+  "exercises": [
+    {
+      "type": "analysis",
+      "question": "Identify the rhetorical devices in: 'abiit, excessit, evasit, erupit'",
+      "answer": "Asyndeton (no conjunctions), Climax (increasing intensity), Tetracolon (four parallel verbs)"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "id": "G-I-03",
+  "title": "The Perfect Tense System",
+  "level": "intermediate",
+  "language": "greek",
+  "estimatedTime": "60 minutes",
+  "objectives": [
+    "Recognize the reduplication pattern",
+    "Form perfect active indicative",
+    "Form perfect middle/passive indicative",
+    "Understand perfect aspect (completed state)",
+    "Distinguish perfect from aorist"
+  ],
+  "vocabulary": [
+    {"word": "λέλυκα", "transliteration": "lelyka", "lemma": "λύω", "form": "perf act 1sg", "definition": "I have loosed"},
+    {"word": "γέγραφα", "transliteration": "gegrapha", "lemma": "γράφω", "form": "perf act 1sg", "definition": "I have written"},
+    {"word": "πεπίστευκα", "transliteration": "pepisteuka", "lemma": "πιστεύω", "form": "perf act 1sg", "definition": "I have believed"},
+    {"word": "οἶδα", "transliteration": "oida", "lemma": "οἶδα", "form": "perf (pres meaning)", "definition": "I know"},
+    {"word": "ἕστηκα", "transliteration": "hestēka", "lemma": "ἵστημι", "form": "perf act 1sg", "definition": "I stand (have stood)"},
+    {"word": "γέγονα", "transliteration": "gegona", "lemma": "γίγνομαι", "form": "perf 1sg", "definition": "I have become"},
+    {"word": "λέλυμαι", "transliteration": "lelymai", "lemma": "λύω", "form": "perf mid/pass 1sg", "definition": "I have been loosed"},
+    {"word": "γέγραμμαι", "transliteration": "gegrammai", "lemma": "γράφω", "form": "perf mid/pass 1sg", "definition": "I have been written"}
+  ],
+  "grammar": {
+    "topic": "The Perfect Tense",
+    "explanation": "The Greek perfect expresses a present state resulting from a past action. It is formed with reduplication (repeating the initial consonant + ε) and special endings. The perfect emphasizes the continuing relevance of a completed action.",
+    "paradigms": [
+      {
+        "name": "Perfect Active (λύω)",
+        "headers": ["Person", "Singular", "Plural"],
+        "rows": [
+          ["1st", "λέλυκα", "λελύκαμεν"],
+          ["2nd", "λέλυκας", "λελύκατε"],
+          ["3rd", "λέλυκε(ν)", "λελύκασι(ν)"]
+        ]
+      },
+      {
+        "name": "Perfect Middle/Passive (λύω)",
+        "headers": ["Person", "Singular", "Plural"],
+        "rows": [
+          ["1st", "λέλυμαι", "λελύμεθα"],
+          ["2nd", "λέλυσαι", "λέλυσθε"],
+          ["3rd", "λέλυται", "λέλυνται"]
+        ]
+      }
+    ],
+    "rules": [
+      "Reduplication: consonant + ε + stem (λύω → λελυ-)",
+      "Vowel-initial stems: augment-like lengthening",
+      "Aspirates reduplicate with non-aspirate (φ → πεφ-)",
+      "οἶδα is a perfect with present meaning"
+    ]
+  },
+  "exercises": [
+    {
+      "type": "formation",
+      "question": "Form the perfect active 1st singular of πιστεύω",
+      "answer": "πεπίστευκα"
+    },
+    {
+      "type": "translation",
+      "question": "Translate: γέγραπται ἐν τῇ βίβλῳ.",
+      "answer": "It has been written in the book. / It stands written in the book."
+    }
+  ],
+  "readingPassage": {
+    "greek": "Ταῦτα γέγραπται ἵνα πιστεύσητε. Οἴδαμεν ὅτι ἀληθής ἐστιν ἡ μαρτυρία αὐτοῦ. Πεπιστεύκαμεν καὶ ἐγνώκαμεν ὅτι σὺ εἶ ὁ ἅγιος τοῦ θεοῦ.",
+    "translation": "These things have been written so that you may believe. We know that his testimony is true. We have believed and have come to know that you are the Holy One of God."
+  }
+}

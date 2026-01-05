@@ -1,0 +1,234 @@
+{
+  "id": "G-B-08",
+  "title": "The Verb εἰμί (to be)",
+  "level": "beginner",
+  "language": "greek",
+  "estimatedTime": "45 minutes",
+  "objectives": [
+    "Conjugate εἰμί in the present indicative",
+    "Recognize εἰμί as an irregular but common verb",
+    "Understand predicate nominative constructions",
+    "Use εἰμί in simple sentences"
+  ],
+  "vocabulary": [
+    {
+      "word": "εἰμί",
+      "transliteration": "eimi",
+      "translation": "I am",
+      "partOfSpeech": "verb",
+      "declension": "irregular",
+      "gender": "n/a",
+      "examples": [
+        "ἐγώ εἰμι ὁ ποιμὴν ὁ καλός"
+      ]
+    },
+    {
+      "word": "ἐγώ",
+      "transliteration": "ego",
+      "translation": "I",
+      "partOfSpeech": "pronoun",
+      "declension": "1st person",
+      "gender": "n/a",
+      "examples": [
+        "ἐγώ εἰμι"
+      ]
+    },
+    {
+      "word": "σύ",
+      "transliteration": "su",
+      "translation": "you (sg)",
+      "partOfSpeech": "pronoun",
+      "declension": "2nd person",
+      "gender": "n/a",
+      "examples": [
+        "σὺ εἶ ὁ υἱός"
+      ]
+    },
+    {
+      "word": "ἡμεῖς",
+      "transliteration": "hemeis",
+      "translation": "we",
+      "partOfSpeech": "pronoun",
+      "declension": "1st person pl",
+      "gender": "n/a",
+      "examples": [
+        "ἡμεῖς ἐσμεν μαθηταί"
+      ]
+    },
+    {
+      "word": "ὑμεῖς",
+      "transliteration": "humeis",
+      "translation": "you (pl)",
+      "partOfSpeech": "pronoun",
+      "declension": "2nd person pl",
+      "gender": "n/a",
+      "examples": [
+        "ὑμεῖς ἐστε τὸ φῶς"
+      ]
+    },
+    {
+      "word": "μαθητής",
+      "transliteration": "mathetes",
+      "translation": "disciple",
+      "partOfSpeech": "noun",
+      "declension": "1st",
+      "gender": "masculine",
+      "examples": [
+        "ὁ μαθητής ἐστι πιστός"
+      ]
+    },
+    {
+      "word": "διδάσκαλος",
+      "transliteration": "didaskalos",
+      "translation": "teacher",
+      "partOfSpeech": "noun",
+      "declension": "2nd",
+      "gender": "masculine",
+      "examples": [
+        "ὁ διδάσκαλος ἀγαθός ἐστιν"
+      ]
+    },
+    {
+      "word": "φῶς",
+      "transliteration": "phos",
+      "translation": "light",
+      "partOfSpeech": "noun",
+      "declension": "3rd",
+      "gender": "neuter",
+      "examples": [
+        "ὑμεῖς ἐστε τὸ φῶς τοῦ κόσμου"
+      ]
+    }
+  ],
+  "grammar": {
+    "topic": "The Verb εἰμί",
+    "explanation": "εἰμί (I am) is the most irregular verb in Greek but one of the most common. It links subject to predicate and takes predicate nominative rather than accusative.",
+    "paradigms": [
+      {
+        "name": "Present Indicative of εἰμί",
+        "headers": [
+          "Person",
+          "Singular",
+          "Plural"
+        ],
+        "rows": [
+          [
+            "1st",
+            "εἰμί (I am)",
+            "ἐσμέν (we are)"
+          ],
+          [
+            "2nd",
+            "εἶ (you are)",
+            "ἐστέ (you are)"
+          ],
+          [
+            "3rd",
+            "ἐστί(ν) (he/she/it is)",
+            "εἰσί(ν) (they are)"
+          ]
+        ]
+      },
+      {
+        "name": "Enclitic Forms",
+        "headers": [
+          "Form",
+          "Usage"
+        ],
+        "rows": [
+          [
+            "ἐστί(ν)",
+            "Usually enclitic, throws accent back"
+          ],
+          [
+            "εἰσί(ν)",
+            "Usually enclitic"
+          ]
+        ]
+      }
+    ],
+    "rules": [
+      "εἰμί takes predicate nominative, not accusative",
+      "Most forms are enclitic (lose accent to previous word)",
+      "Movable ν added before vowels or at sentence end",
+      "No aorist; imperfect ἦν (I was) used for past",
+      "Word order often: subject - predicate - εἰμί"
+    ]
+  },
+  "exercises": [
+    {
+      "type": "conjugation",
+      "instructions": "Give the form of εἰμί",
+      "items": [
+        {
+          "prompt": "1st singular",
+          "answer": "εἰμί"
+        },
+        {
+          "prompt": "2nd singular",
+          "answer": "εἶ"
+        },
+        {
+          "prompt": "3rd singular",
+          "answer": "ἐστί(ν)"
+        },
+        {
+          "prompt": "1st plural",
+          "answer": "ἐσμέν"
+        },
+        {
+          "prompt": "3rd plural",
+          "answer": "εἰσί(ν)"
+        }
+      ]
+    },
+    {
+      "type": "translation",
+      "instructions": "Translate",
+      "items": [
+        {
+          "prompt": "ἐγώ εἰμι ἡ ὁδός",
+          "answer": "I am the way"
+        },
+        {
+          "prompt": "σὺ εἶ ὁ Χριστός",
+          "answer": "You are the Christ"
+        },
+        {
+          "prompt": "ὁ θεὸς ἀγάπη ἐστίν",
+          "answer": "God is love"
+        },
+        {
+          "prompt": "ἡμεῖς ἐσμεν τέκνα θεοῦ",
+          "answer": "We are children of God"
+        }
+      ]
+    },
+    {
+      "type": "fill_blank",
+      "instructions": "Fill in correct form of εἰμί",
+      "items": [
+        {
+          "prompt": "ἐγώ ___ μαθητής",
+          "answer": "εἰμί"
+        },
+        {
+          "prompt": "ὁ λόγος ___ ἀληθής",
+          "answer": "ἐστίν"
+        },
+        {
+          "prompt": "ὑμεῖς ___ τὸ φῶς",
+          "answer": "ἐστέ"
+        }
+      ]
+    }
+  ],
+  "culturalNote": "The phrase ἐγώ εἰμι (I am) carries immense weight in biblical Greek. In John Gospel, Jesus uses it in seven declarations (I am the bread, light, door, shepherd, resurrection, way, vine). The phrase echoes Gods self-revelation to Moses as ὁ ὤν (the Being One).",
+  "readingPassage": {
+    "title": "I Am Sayings",
+    "source": "John 8:12",
+    "greek": "ἐγώ εἰμι τὸ φῶς τοῦ κόσμου",
+    "transliteration": "ego eimi to phos tou kosmou",
+    "translation": "I am the light of the world"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "id": "xenophon-anabasis-1",
+  "title": "Anabasis - Book I, Opening",
+  "author": "Xenophon",
+  "work": "Anabasis",
+  "book": 1,
+  "dateComposed": "c. 370 BCE",
+  "difficulty": "intermediate",
+  "genre": "historical prose",
+  "description": "Xenophon's account of the Greek mercenary expedition into Persia. Clear prose style makes it ideal for intermediate readers.",
+  "sections": [
+    {
+      "id": "1.1.1-2",
+      "greek": "Δαρείου καὶ Παρυσάτιδος γίγνονται παῖδες δύο, πρεσβύτερος μὲν Ἀρταξέρξης, νεώτερος δὲ Κῦρος. ἐπεὶ δὲ ἠσθένει Δαρεῖος καὶ ὑπώπτευε τελευτὴν τοῦ βίου, ἐβούλετο τὼ παῖδε ἀμφοτέρω παρεῖναι.",
+      "translation": "Of Darius and Parysatis were born two sons, the elder Artaxerxes, the younger Cyrus. When Darius was ill and suspected the end of his life, he wanted both sons to be present.",
+      "vocabulary": [
+        {"word": "Δαρείου", "lemma": "Δαρεῖος", "form": "gen sg m", "definition": "of Darius"},
+        {"word": "Παρυσάτιδος", "lemma": "Παρύσατις", "form": "gen sg f", "definition": "of Parysatis"},
+        {"word": "γίγνονται", "lemma": "γίγνομαι", "form": "3rd pl pres mid ind", "definition": "are born"},
+        {"word": "παῖδες", "lemma": "παῖς", "form": "nom pl m", "definition": "children, sons"},
+        {"word": "δύο", "lemma": "δύο", "form": "nom", "definition": "two"},
+        {"word": "πρεσβύτερος", "lemma": "πρεσβύτερος", "form": "nom sg m", "definition": "elder"},
+        {"word": "νεώτερος", "lemma": "νεώτερος", "form": "nom sg m", "definition": "younger"},
+        {"word": "Κῦρος", "lemma": "Κῦρος", "form": "nom sg m", "definition": "Cyrus"},
+        {"word": "ἐπεί", "lemma": "ἐπεί", "form": "conj", "definition": "when, since"},
+        {"word": "ἠσθένει", "lemma": "ἀσθενέω", "form": "3rd sg impf act ind", "definition": "was sick, was weak"},
+        {"word": "ὑπώπτευε", "lemma": "ὑποπτεύω", "form": "3rd sg impf act ind", "definition": "suspected"},
+        {"word": "τελευτήν", "lemma": "τελευτή", "form": "acc sg f", "definition": "end, death"},
+        {"word": "βίου", "lemma": "βίος", "form": "gen sg m", "definition": "of life"},
+        {"word": "ἐβούλετο", "lemma": "βούλομαι", "form": "3rd sg impf mid ind", "definition": "wanted, wished"},
+        {"word": "τὼ παῖδε", "lemma": "παῖς", "form": "acc dual m", "definition": "both sons"},
+        {"word": "ἀμφοτέρω", "lemma": "ἀμφότερος", "form": "acc dual m", "definition": "both"},
+        {"word": "παρεῖναι", "lemma": "πάρειμι", "form": "pres inf", "definition": "to be present"}
+      ],
+      "grammaticalNotes": [
+        "Genitive absolute: Δαρείου καὶ Παρυσάτιδος - parentage",
+        "μέν...δέ construction: balanced contrast between brothers",
+        "Dual forms: τὼ παῖδε, ἀμφοτέρω - referring to exactly two"
+      ]
+    },
+    {
+      "id": "1.1.3-4",
+      "greek": "ὁ μὲν οὖν πρεσβύτερος παρὼν ἐτύγχανε· Κῦρον δὲ μεταπέμπεται ἀπὸ τῆς ἀρχῆς ἧς αὐτὸν σατράπην ἐποίησε. ἀναβαίνει οὖν ὁ Κῦρος λαβὼν Τισσαφέρνην ὡς φίλον, καὶ τῶν Ἑλλήνων δὲ ἔχων ὁπλίτας ἀνέβη τριακοσίους.",
+      "translation": "The elder happened to be present; but he sent for Cyrus from the province of which he had made him satrap. So Cyrus went up, taking Tissaphernes as a friend, and also having three hundred Greek hoplites he went up.",
+      "vocabulary": [
+        {"word": "παρών", "lemma": "πάρειμι", "form": "pres part nom sg m", "definition": "being present"},
+        {"word": "ἐτύγχανε", "lemma": "τυγχάνω", "form": "3rd sg impf act ind", "definition": "happened (+ participle)"},
+        {"word": "μεταπέμπεται", "lemma": "μεταπέμπω", "form": "3rd sg pres mid ind", "definition": "sends for"},
+        {"word": "ἀρχῆς", "lemma": "ἀρχή", "form": "gen sg f", "definition": "province, command"},
+        {"word": "ἧς", "lemma": "ὅς", "form": "gen sg f", "definition": "of which"},
+        {"word": "σατράπην", "lemma": "σατράπης", "form": "acc sg m", "definition": "satrap (Persian governor)"},
+        {"word": "ἐποίησε", "lemma": "ποιέω", "form": "3rd sg aor act ind", "definition": "made"},
+        {"word": "ἀναβαίνει", "lemma": "ἀναβαίνω", "form": "3rd sg pres act ind", "definition": "goes up (inland)"},
+        {"word": "λαβών", "lemma": "λαμβάνω", "form": "aor act part nom sg m", "definition": "having taken"},
+        {"word": "Τισσαφέρνην", "lemma": "Τισσαφέρνης", "form": "acc sg m", "definition": "Tissaphernes"},
+        {"word": "φίλον", "lemma": "φίλος", "form": "acc sg m", "definition": "friend"},
+        {"word": "Ἑλλήνων", "lemma": "Ἕλλην", "form": "gen pl m", "definition": "of Greeks"},
+        {"word": "ὁπλίτας", "lemma": "ὁπλίτης", "form": "acc pl m", "definition": "hoplites (heavy infantry)"},
+        {"word": "ἀνέβη", "lemma": "ἀναβαίνω", "form": "3rd sg aor act ind", "definition": "went up"},
+        {"word": "τριακοσίους", "lemma": "τριακόσιοι", "form": "acc pl m", "definition": "three hundred"}
+      ],
+      "grammaticalNotes": [
+        "ἐτύγχανε + participle: 'happened to be'",
+        "ἀναβαίνω: 'go up' - from coast inland into Asia",
+        "ὡς φίλον: 'as a friend' - dramatic irony as Tissaphernes later betrays"
+      ]
+    }
+  ],
+  "historicalContext": "In 401 BCE, Cyrus the Younger led an army of Greek mercenaries against his brother Artaxerxes II for the Persian throne. After Cyrus's death at Cunaxa, Xenophon led the famous 'March of the Ten Thousand' back to Greece.",
+  "literaryFeatures": [
+    "Clear, straightforward prose style",
+    "Historical present tense for vividness",
+    "First-person eyewitness account (Xenophon was there)",
+    "Ideal text for intermediate Greek students"
+  ]
+}

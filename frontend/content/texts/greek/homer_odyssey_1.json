@@ -1,0 +1,132 @@
+{
+  "id": "homer-odyssey-1",
+  "title": "Odyssey - Book I, The Council of the Gods",
+  "author": "Homer",
+  "work": "Odyssey",
+  "book": 1,
+  "dateComposed": "c. 8th century BCE",
+  "difficulty": "advanced",
+  "genre": "epic poetry",
+  "meter": "dactylic hexameter",
+  "description": "The opening of Homer's Odyssey, introducing Odysseus and his long journey home from Troy.",
+  "sections": [
+    {
+      "id": "1.1-10",
+      "greek": "Ἄνδρα μοι ἔννεπε, Μοῦσα, πολύτροπον, ὃς μάλα πολλὰ\nπλάγχθη, ἐπεὶ Τροίης ἱερὸν πτολίεθρον ἔπερσε·\nπολλῶν δ᾽ ἀνθρώπων ἴδεν ἄστεα καὶ νόον ἔγνω,\nπολλὰ δ᾽ ὅ γ᾽ ἐν πόντῳ πάθεν ἄλγεα ὃν κατὰ θυμόν,\nἀρνύμενος ἥν τε ψυχὴν καὶ νόστον ἑταίρων.\nἀλλ᾽ οὐδ᾽ ὣς ἑτάρους ἐρρύσατο, ἱέμενός περ·\nαὐτῶν γὰρ σφετέρῃσιν ἀτασθαλίῃσιν ὄλοντο,\nνήπιοι, οἳ κατὰ βοῦς Ὑπερίονος Ἠελίοιο\nἤσθιον· αὐτὰρ ὁ τοῖσιν ἀφείλετο νόστιμον ἦμαρ.\nτῶν ἁμόθεν γε, θεά, θύγατερ Διός, εἰπὲ καὶ ἡμῖν.",
+      "translation": "Tell me, Muse, of the man of many ways, who wandered far and wide after he sacked the sacred citadel of Troy. Many were the men whose cities he saw and whose minds he learned, and many the pains he suffered in his heart upon the sea, striving to save his own life and the homecoming of his companions. But even so he could not save his companions, eager though he was, for they perished through their own blind folly, the fools, who devoured the cattle of Helios Hyperion; and he took from them the day of their return. Of these things, goddess, daughter of Zeus, beginning from somewhere, tell us also.",
+      "lineByLine": [
+        {
+          "line": 1,
+          "greek": "Ἄνδρα μοι ἔννεπε, Μοῦσα, πολύτροπον, ὃς μάλα πολλὰ",
+          "transliteration": "Andra moi ennepe, Mousa, polytropon, hos mala polla",
+          "translation": "Tell me, Muse, of the man of many turns, who very much",
+          "notes": "ἄνδρα: echoes Virgil's virum; πολύτροπον: 'of many turns' - cunning, versatile"
+        },
+        {
+          "line": 2,
+          "greek": "πλάγχθη, ἐπεὶ Τροίης ἱερὸν πτολίεθρον ἔπερσε·",
+          "transliteration": "planchthē, epei Troiēs hieron ptoliethron eperse",
+          "translation": "wandered, after he sacked the sacred citadel of Troy",
+          "notes": "πτολίεθρον: poetic form of πόλις; ἔπερσε: aorist of πέρθω, 'sack'"
+        },
+        {
+          "line": 3,
+          "greek": "πολλῶν δ᾽ ἀνθρώπων ἴδεν ἄστεα καὶ νόον ἔγνω",
+          "transliteration": "pollōn d' anthrōpōn iden astea kai noon egnō",
+          "translation": "and saw the cities of many men and knew their mind",
+          "notes": "νόον ἔγνω: 'knew their mind' - Odysseus learns from experience"
+        },
+        {
+          "line": 4,
+          "greek": "πολλὰ δ᾽ ὅ γ᾽ ἐν πόντῳ πάθεν ἄλγεα ὃν κατὰ θυμόν",
+          "transliteration": "polla d' ho g' en pontō pathen algea hon kata thymon",
+          "translation": "and many pains he suffered on the sea in his heart",
+          "notes": "πόντος: the sea (especially open sea); θυμός: heart, spirit"
+        },
+        {
+          "line": 5,
+          "greek": "ἀρνύμενος ἥν τε ψυχὴν καὶ νόστον ἑταίρων",
+          "transliteration": "arnymenos hēn te psychēn kai noston hetairōn",
+          "translation": "striving to win his own life and the homecoming of his companions",
+          "notes": "νόστος: homecoming - the central theme of the poem"
+        },
+        {
+          "line": 6,
+          "greek": "ἀλλ᾽ οὐδ᾽ ὣς ἑτάρους ἐρρύσατο, ἱέμενός περ·",
+          "transliteration": "all' oud' hōs hetarous errysato, hiemenos per",
+          "translation": "but even so he could not save his companions, eager though he was",
+          "notes": "ἱέμενός περ: 'though striving' - concessive participle"
+        },
+        {
+          "line": 7,
+          "greek": "αὐτῶν γὰρ σφετέρῃσιν ἀτασθαλίῃσιν ὄλοντο",
+          "transliteration": "autōn gar spheterēisin atasthalīēisin olonto",
+          "translation": "for they perished through their own blind folly",
+          "notes": "ἀτασθαλίαι: reckless folly - the companions' tragic flaw"
+        },
+        {
+          "line": 8,
+          "greek": "νήπιοι, οἳ κατὰ βοῦς Ὑπερίονος Ἠελίοιο",
+          "transliteration": "nēpioi, hoi kata bous Hyperionos Hēelioio",
+          "translation": "fools, who the cattle of Helios Hyperion",
+          "notes": "νήπιοι: 'fools, children' - moral judgment on the crew"
+        },
+        {
+          "line": 9,
+          "greek": "ἤσθιον· αὐτὰρ ὁ τοῖσιν ἀφείλετο νόστιμον ἦμαρ",
+          "transliteration": "ēsthion; autar ho toisin apheileto nostimon hēmar",
+          "translation": "devoured; but he [Helios] took from them the day of return",
+          "notes": "νόστιμον ἦμαρ: 'day of homecoming' - death is loss of return"
+        },
+        {
+          "line": 10,
+          "greek": "τῶν ἁμόθεν γε, θεά, θύγατερ Διός, εἰπὲ καὶ ἡμῖν",
+          "transliteration": "tōn hamothen ge, thea, thygater Dios, eipe kai hēmin",
+          "translation": "Of these things, from some point, goddess, daughter of Zeus, tell us also",
+          "notes": "ἁμόθεν: 'from somewhere' - poet invites Muse to begin where she wishes"
+        }
+      ],
+      "vocabulary": [
+        {"word": "Ἄνδρα", "lemma": "ἀνήρ", "form": "acc sg m", "definition": "man"},
+        {"word": "ἔννεπε", "lemma": "ἐνέπω", "form": "2nd sg pres act imper", "definition": "tell, speak of"},
+        {"word": "Μοῦσα", "lemma": "Μοῦσα", "form": "voc sg f", "definition": "Muse"},
+        {"word": "πολύτροπον", "lemma": "πολύτροπος", "form": "acc sg m", "definition": "of many turns, versatile"},
+        {"word": "πλάγχθη", "lemma": "πλάζω", "form": "3rd sg aor pass ind", "definition": "was driven, wandered"},
+        {"word": "Τροίης", "lemma": "Τροίη", "form": "gen sg f", "definition": "of Troy"},
+        {"word": "ἱερόν", "lemma": "ἱερός", "form": "acc sg n", "definition": "sacred"},
+        {"word": "πτολίεθρον", "lemma": "πτολίεθρον", "form": "acc sg n", "definition": "citadel, city"},
+        {"word": "ἔπερσε", "lemma": "πέρθω", "form": "3rd sg aor act ind", "definition": "sacked, destroyed"},
+        {"word": "ἄστεα", "lemma": "ἄστυ", "form": "acc pl n", "definition": "cities"},
+        {"word": "νόον", "lemma": "νόος", "form": "acc sg m", "definition": "mind, thought"},
+        {"word": "ἔγνω", "lemma": "γιγνώσκω", "form": "3rd sg aor act ind", "definition": "knew, learned"},
+        {"word": "πόντῳ", "lemma": "πόντος", "form": "dat sg m", "definition": "on the sea"},
+        {"word": "πάθεν", "lemma": "πάσχω", "form": "3rd sg aor act ind", "definition": "suffered"},
+        {"word": "ἄλγεα", "lemma": "ἄλγος", "form": "acc pl n", "definition": "pains, griefs"},
+        {"word": "θυμόν", "lemma": "θυμός", "form": "acc sg m", "definition": "heart, spirit"},
+        {"word": "ἀρνύμενος", "lemma": "ἄρνυμαι", "form": "pres mid part nom sg m", "definition": "striving to win"},
+        {"word": "ψυχήν", "lemma": "ψυχή", "form": "acc sg f", "definition": "life, soul"},
+        {"word": "νόστον", "lemma": "νόστος", "form": "acc sg m", "definition": "homecoming, return"},
+        {"word": "ἑταίρων", "lemma": "ἑταῖρος", "form": "gen pl m", "definition": "of companions"},
+        {"word": "ἐρρύσατο", "lemma": "ῥύομαι", "form": "3rd sg aor mid ind", "definition": "saved, rescued"},
+        {"word": "ἀτασθαλίῃσιν", "lemma": "ἀτασθαλία", "form": "dat pl f", "definition": "through reckless folly"},
+        {"word": "ὄλοντο", "lemma": "ὄλλυμι", "form": "3rd pl aor mid ind", "definition": "perished"},
+        {"word": "νήπιοι", "lemma": "νήπιος", "form": "nom pl m", "definition": "fools, children"},
+        {"word": "βοῦς", "lemma": "βοῦς", "form": "acc pl m/f", "definition": "cattle, oxen"},
+        {"word": "Ὑπερίονος", "lemma": "Ὑπερίων", "form": "gen sg m", "definition": "of Hyperion"},
+        {"word": "Ἠελίοιο", "lemma": "Ἥλιος", "form": "gen sg m", "definition": "of Helios"},
+        {"word": "ἤσθιον", "lemma": "ἐσθίω", "form": "3rd pl impf act ind", "definition": "were eating, devoured"},
+        {"word": "ἀφείλετο", "lemma": "ἀφαιρέω", "form": "3rd sg aor mid ind", "definition": "took away"},
+        {"word": "νόστιμον", "lemma": "νόστιμος", "form": "acc sg n", "definition": "of return"},
+        {"word": "ἦμαρ", "lemma": "ἦμαρ", "form": "acc sg n", "definition": "day"}
+      ]
+    }
+  ],
+  "historicalContext": "The Odyssey, Homer's second epic, tells of Odysseus's ten-year journey home from Troy. It explores themes of homecoming, identity, and the tension between adventure and domestic life.",
+  "literaryFeatures": [
+    "Focus on a single hero (ἄνδρα) vs. the Iliad's focus on wrath",
+    "πολύτροπος captures Odysseus's defining quality: cunning adaptability",
+    "Foreshadowing of the crew's fate in the proem",
+    "νόστος (homecoming) as central theme",
+    "Contrast between hero who survives and companions who perish"
+  ]
+}

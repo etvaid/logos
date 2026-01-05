@@ -1,0 +1,71 @@
+{
+  "id": "G-I-04",
+  "title": "Middle and Passive Voice",
+  "level": "intermediate",
+  "language": "greek",
+  "estimatedTime": "55 minutes",
+  "objectives": [
+    "Distinguish middle from passive voice",
+    "Recognize middle voice meanings (reflexive, intensive, etc.)",
+    "Form present middle/passive for all conjugations",
+    "Express agent with ὑπό + genitive",
+    "Understand deponent verbs"
+  ],
+  "vocabulary": [
+    {"word": "λούομαι", "transliteration": "louomai", "lemma": "λούω", "form": "pres mid 1sg", "definition": "I wash myself"},
+    {"word": "παύομαι", "transliteration": "pauomai", "lemma": "παύω", "form": "pres mid 1sg", "definition": "I stop myself, cease"},
+    {"word": "ἔρχομαι", "transliteration": "erchomai", "lemma": "ἔρχομαι", "form": "deponent", "definition": "I come, go"},
+    {"word": "γίγνομαι", "transliteration": "gignomai", "lemma": "γίγνομαι", "form": "deponent", "definition": "I become"},
+    {"word": "δέχομαι", "transliteration": "dechomai", "lemma": "δέχομαι", "form": "deponent", "definition": "I receive"},
+    {"word": "βούλομαι", "transliteration": "boulomai", "lemma": "βούλομαι", "form": "deponent", "definition": "I wish, want"},
+    {"word": "δύναμαι", "transliteration": "dynamai", "lemma": "δύναμαι", "form": "deponent", "definition": "I am able, can"},
+    {"word": "ἀποκρίνομαι", "transliteration": "apokrinomai", "lemma": "ἀποκρίνομαι", "form": "deponent", "definition": "I answer"}
+  ],
+  "grammar": {
+    "topic": "Middle and Passive Voice",
+    "explanation": "In the present, imperfect, and perfect, Greek uses the same forms for middle and passive. Context determines which is meant. The middle expresses action done to or for oneself; the passive expresses receiving action.",
+    "paradigms": [
+      {
+        "name": "Present Middle/Passive (λύω)",
+        "headers": ["Person", "Singular", "Plural"],
+        "rows": [
+          ["1st", "λύομαι", "λυόμεθα"],
+          ["2nd", "λύῃ/λύει", "λύεσθε"],
+          ["3rd", "λύεται", "λύονται"]
+        ]
+      },
+      {
+        "name": "Middle Voice Meanings",
+        "headers": ["Type", "Example", "Translation"],
+        "rows": [
+          ["Reflexive", "λούομαι", "I wash myself"],
+          ["Intensive/Personal Interest", "ποιοῦμαι", "I make for myself"],
+          ["Reciprocal", "μάχονται", "They fight (each other)"],
+          ["Causative", "διδάσκομαι", "I have myself taught"]
+        ]
+      }
+    ],
+    "rules": [
+      "Agent of passive: ὑπό + genitive",
+      "Deponent verbs: middle/passive form, active meaning",
+      "Aorist has distinct forms for middle (-σάμην) and passive (-θην)",
+      "Future middle/passive also distinguished in form"
+    ]
+  },
+  "exercises": [
+    {
+      "type": "identification",
+      "question": "Middle or passive? ὁ παῖς λούεται.",
+      "answer": "Middle (the child washes himself)"
+    },
+    {
+      "type": "translation",
+      "question": "Translate: ὁ λόγος ἐλέχθη ὑπὸ τοῦ προφήτου.",
+      "answer": "The word was spoken by the prophet."
+    }
+  ],
+  "readingPassage": {
+    "greek": "Οἱ μαθηταὶ ἀπεκρίναντο τῷ διδασκάλῳ. Βουλόμεθα τὴν ἀλήθειαν μαθεῖν. Οὐ δυνάμεθα τοῦτο ποιεῖν. Ὁ λόγος τοῦ θεοῦ κηρύσσεται ἐν πάσῃ τῇ γῇ.",
+    "translation": "The disciples answered the teacher. We wish to learn the truth. We are not able to do this. The word of God is being preached in all the earth."
+  }
+}

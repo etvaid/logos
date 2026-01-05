@@ -1,0 +1,59 @@
+{
+  "id": "G-I-09",
+  "title": "Conditional Sentences",
+  "level": "intermediate",
+  "language": "greek",
+  "estimatedTime": "65 minutes",
+  "objectives": [
+    "Identify the four main types of Greek conditions",
+    "Form simple/factual conditions with indicative",
+    "Form future more vivid with ἐάν + subjunctive",
+    "Form less vivid/contrary-to-fact with optative/indicative",
+    "Translate conditions appropriately"
+  ],
+  "vocabulary": [
+    {"word": "εἰ", "transliteration": "ei", "definition": "if (with indicative or optative)"},
+    {"word": "ἐάν", "transliteration": "ean", "definition": "if (= εἰ + ἄν, with subjunctive)"},
+    {"word": "ἄν", "transliteration": "an", "definition": "particle marking potential/conditional"},
+    {"word": "εἴπερ", "transliteration": "eiper", "definition": "if indeed, if really"}
+  ],
+  "grammar": {
+    "topic": "Conditional Sentences",
+    "explanation": "Greek conditions are classified by their protasis (if-clause) and apodosis (then-clause). The mood and tense indicate how the speaker views the condition: real, likely, possible, or contrary to fact.",
+    "paradigms": [
+      {
+        "name": "Condition Types",
+        "headers": ["Type", "Protasis", "Apodosis", "Example"],
+        "rows": [
+          ["Simple/Factual", "εἰ + indicative", "indicative", "εἰ τοῦτο ποιεῖς, ἁμαρτάνεις"],
+          ["Future More Vivid", "ἐάν + subjunctive", "future indicative", "ἐὰν ἔλθῃ, ὄψῃ"],
+          ["Future Less Vivid", "εἰ + optative", "optative + ἄν", "εἰ ἔλθοι, ἴδοι ἄν"],
+          ["Contrary Present", "εἰ + impf ind", "impf ind + ἄν", "εἰ ἐποίει, ἥμαρτεν ἄν"],
+          ["Contrary Past", "εἰ + aor ind", "aor ind + ἄν", "εἰ ἐποίησε, ἥμαρτεν ἄν"]
+        ]
+      }
+    ],
+    "rules": [
+      "εἰ + indicative = factual or assumed true",
+      "ἐάν + subjunctive = probable future",
+      "εἰ + optative = less likely future",
+      "εἰ + past indicative (with ἄν in apodosis) = contrary to fact"
+    ]
+  },
+  "exercises": [
+    {
+      "type": "identification",
+      "question": "What type? εἰ ἦλθες, εἶδες ἄν αὐτόν.",
+      "answer": "Contrary-to-fact past (aorist indicative + ἄν): 'If you had come, you would have seen him.'"
+    },
+    {
+      "type": "translation",
+      "question": "Translate: ἐὰν μείνητε ἐν τῷ λόγῳ τῷ ἐμῷ, ἀληθῶς μαθηταί μού ἐστε.",
+      "answer": "If you remain in my word, you are truly my disciples."
+    }
+  ],
+  "readingPassage": {
+    "greek": "Ἐὰν ἀγαπᾶτε με, τὰς ἐντολὰς τὰς ἐμὰς τηρήσετε. Εἰ ἐκ τοῦ κόσμου ἦτε, ὁ κόσμος ἂν τὸ ἴδιον ἐφίλει. Εἰ ὧδε ἦς, οὐκ ἂν ἀπέθανεν ὁ ἀδελφός μου.",
+    "translation": "If you love me, you will keep my commandments. If you were of the world, the world would love its own. If you had been here, my brother would not have died."
+  }
+}

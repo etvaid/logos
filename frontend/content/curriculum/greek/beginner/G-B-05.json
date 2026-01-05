@@ -1,0 +1,252 @@
+{
+  "id": "G-B-05",
+  "title": "The Article",
+  "level": "beginner",
+  "language": "greek",
+  "estimatedTime": "45 minutes",
+  "objectives": [
+    "Fully decline the Greek article in all cases, numbers, and genders",
+    "Understand the various uses of the article",
+    "Recognize when the article is present and absent",
+    "Use the article to identify noun properties"
+  ],
+  "vocabulary": [
+    {
+      "word": "ὁ",
+      "transliteration": "ho",
+      "translation": "the (masc nom sg)",
+      "partOfSpeech": "article",
+      "declension": "n/a",
+      "gender": "masculine",
+      "examples": [
+        "ὁ λόγος - the word"
+      ]
+    },
+    {
+      "word": "ἡ",
+      "transliteration": "he",
+      "translation": "the (fem nom sg)",
+      "partOfSpeech": "article",
+      "declension": "n/a",
+      "gender": "feminine",
+      "examples": [
+        "ἡ ἀλήθεια - the truth"
+      ]
+    },
+    {
+      "word": "τό",
+      "transliteration": "to",
+      "translation": "the (neut nom sg)",
+      "partOfSpeech": "article",
+      "declension": "n/a",
+      "gender": "neuter",
+      "examples": [
+        "τὸ ἔργον - the work"
+      ]
+    },
+    {
+      "word": "κύριος",
+      "transliteration": "kyrios",
+      "translation": "lord, master, Lord",
+      "partOfSpeech": "noun",
+      "declension": "2nd",
+      "gender": "masculine",
+      "examples": [
+        "ὁ κύριος ἡμῶν - our Lord"
+      ]
+    },
+    {
+      "word": "υἱός",
+      "transliteration": "huios",
+      "translation": "son",
+      "partOfSpeech": "noun",
+      "declension": "2nd",
+      "gender": "masculine",
+      "examples": [
+        "ὁ υἱὸς τοῦ θεοῦ"
+      ]
+    },
+    {
+      "word": "πατήρ",
+      "transliteration": "pater",
+      "translation": "father",
+      "partOfSpeech": "noun",
+      "declension": "3rd",
+      "gender": "masculine",
+      "examples": [
+        "ὁ πατὴρ ἡμῶν"
+      ]
+    },
+    {
+      "word": "πνεῦμα",
+      "transliteration": "pneuma",
+      "translation": "spirit, breath",
+      "partOfSpeech": "noun",
+      "declension": "3rd",
+      "gender": "neuter",
+      "examples": [
+        "τὸ πνεῦμα τὸ ἅγιον"
+      ]
+    },
+    {
+      "word": "βασιλεία",
+      "transliteration": "basileia",
+      "translation": "kingdom",
+      "partOfSpeech": "noun",
+      "declension": "1st",
+      "gender": "feminine",
+      "examples": [
+        "ἡ βασιλεία τοῦ θεοῦ"
+      ]
+    }
+  ],
+  "grammar": {
+    "topic": "The Greek Definite Article",
+    "explanation": "The Greek article (ὁ, ἡ, τό) is more versatile than English the. It agrees in gender, number, case with its noun. It can make nouns definite, function as pronoun, substantivize adjectives, and indicate abstract concepts.",
+    "paradigms": [
+      {
+        "name": "Complete Article",
+        "headers": [
+          "Case",
+          "M Sg",
+          "F Sg",
+          "N Sg",
+          "M Pl",
+          "F Pl",
+          "N Pl"
+        ],
+        "rows": [
+          [
+            "Nom",
+            "ὁ",
+            "ἡ",
+            "τό",
+            "οἱ",
+            "αἱ",
+            "τά"
+          ],
+          [
+            "Gen",
+            "τοῦ",
+            "τῆς",
+            "τοῦ",
+            "τῶν",
+            "τῶν",
+            "τῶν"
+          ],
+          [
+            "Dat",
+            "τῷ",
+            "τῇ",
+            "τῷ",
+            "τοῖς",
+            "ταῖς",
+            "τοῖς"
+          ],
+          [
+            "Acc",
+            "τόν",
+            "τήν",
+            "τό",
+            "τούς",
+            "τάς",
+            "τά"
+          ]
+        ]
+      },
+      {
+        "name": "With 2nd Declension",
+        "headers": [
+          "Case",
+          "Masc",
+          "Neut"
+        ],
+        "rows": [
+          [
+            "Nom Sg",
+            "ὁ λόγος",
+            "τὸ ἔργον"
+          ],
+          [
+            "Gen Sg",
+            "τοῦ λόγου",
+            "τοῦ ἔργου"
+          ],
+          [
+            "Dat Sg",
+            "τῷ λόγῳ",
+            "τῷ ἔργῳ"
+          ],
+          [
+            "Acc Sg",
+            "τὸν λόγον",
+            "τὸ ἔργον"
+          ]
+        ]
+      }
+    ],
+    "rules": [
+      "Article agrees in gender, number, case",
+      "All genitive plurals are τῶν",
+      "Article can substantivize any word",
+      "Proper nouns may take article for known persons",
+      "Abstract nouns often take article in Greek"
+    ]
+  },
+  "exercises": [
+    {
+      "type": "identification",
+      "instructions": "Identify case/number/gender",
+      "items": [
+        {
+          "prompt": "τῆς",
+          "answer": "gen sg fem"
+        },
+        {
+          "prompt": "τοῖς",
+          "answer": "dat pl masc/neut"
+        },
+        {
+          "prompt": "τήν",
+          "answer": "acc sg fem"
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "instructions": "Match article to noun",
+      "items": [
+        {
+          "prompt": "___ λόγον",
+          "answer": "τὸν λόγον"
+        },
+        {
+          "prompt": "___ ψυχῆς",
+          "answer": "τῆς ψυχῆς"
+        }
+      ]
+    },
+    {
+      "type": "translation",
+      "instructions": "Translate",
+      "items": [
+        {
+          "prompt": "ὁ υἱὸς τοῦ ἀνθρώπου",
+          "answer": "the Son of Man"
+        },
+        {
+          "prompt": "οἱ ἀγαθοί",
+          "answer": "the good ones"
+        }
+      ]
+    }
+  ],
+  "culturalNote": "Article usage is theologically significant. In John 1:1, θεὸς ἦν ὁ λόγος has the article on λόγος but not θεός, sparking centuries of debate about whether it means the Word was God or the Word was divine.",
+  "readingPassage": {
+    "title": "Kingdom Proclamation",
+    "source": "Matthew 4:17",
+    "greek": "μετανοεῖτε· ἤγγικεν γὰρ ἡ βασιλεία τῶν οὐρανῶν",
+    "transliteration": "metanoeite; engiken gar he basileia ton ouranon",
+    "translation": "Repent, for the kingdom of the heavens has drawn near"
+  }
+}

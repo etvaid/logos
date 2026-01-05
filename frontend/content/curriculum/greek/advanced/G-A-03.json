@@ -1,0 +1,48 @@
+{
+  "id": "G-A-03",
+  "title": "Greek Poetry - Meter and Scansion",
+  "level": "advanced",
+  "language": "greek",
+  "estimatedTime": "80 minutes",
+  "objectives": [
+    "Scan dactylic hexameter in Greek",
+    "Recognize other common meters (elegiac, iambic)",
+    "Identify metrical phenomena (elision, synizesis, correption)",
+    "Analyze caesura and its effects",
+    "Connect meter to meaning in Homer"
+  ],
+  "grammar": {
+    "topic": "Greek Meter",
+    "explanation": "Greek poetry is quantitative, based on syllable length rather than stress. The dactylic hexameter, used in Homer and Hesiod, consists of six feet, each a dactyl (— ∪ ∪) or spondee (— —), with the fifth foot usually dactylic and sixth always spondaic.",
+    "paradigms": [
+      {
+        "name": "Dactylic Hexameter Structure",
+        "content": ["Feet 1-4: Dactyl (— ∪ ∪) or Spondee (— —)", "Foot 5: Usually Dactyl", "Foot 6: Spondee (— ×)", "Caesura: penthemimeral (after 5th half-foot) or bucolic diaeresis (after 4th foot)"]
+      },
+      {
+        "name": "Metrical Phenomena",
+        "headers": ["Term", "Definition"],
+        "rows": [
+          ["Elision", "Final short vowel drops before initial vowel"],
+          ["Synizesis", "Two vowels pronounced as one"],
+          ["Correption", "Long vowel shortened before another vowel"],
+          ["Hiatus", "Two vowels meeting without elision (rare)"],
+          ["Digamma", "Lost letter (ϝ) sometimes makes position"]
+        ]
+      }
+    ]
+  },
+  "readingPassage": {
+    "source": "Homer, Iliad 1.1",
+    "greek": "Μῆνιν ἄειδε, θεά, Πηληϊάδεω Ἀχιλῆος",
+    "scansion": "— ∪ ∪ | — ∪ ∪ | — — | — — | — ∪ ∪ | — —",
+    "analysis": "DAC | DAC | SPOND | SPOND | DAC | SPOND. Penthemimeral caesura after θεά. The heavy spondees give weight to the opening. Πηληϊάδεω shows synizesis."
+  },
+  "exercises": [
+    {
+      "type": "scansion",
+      "question": "Scan: οὐλομένην, ἣ μυρί᾽ Ἀχαιοῖς ἄλγε᾽ ἔθηκε",
+      "answer": "— ∪ ∪ | — — | — ∪ ∪ | — — | — ∪ ∪ | — —"
+    }
+  ]
+}

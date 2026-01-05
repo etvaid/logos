@@ -1,0 +1,196 @@
+{
+  "id": "L-B-08",
+  "title": "Third and Fourth Conjugation Verbs",
+  "level": "beginner",
+  "language": "latin",
+  "estimatedTime": "55 minutes",
+  "objectives": [
+    "Identify third conjugation verbs by their -ere (short e) infinitive",
+    "Conjugate third conjugation verbs in present indicative active",
+    "Learn the special third conjugation -io verbs",
+    "Identify and conjugate fourth conjugation verbs (-ire)",
+    "Distinguish all four conjugations by their infinitive endings"
+  ],
+  "vocabulary": [
+    {
+      "word": "duco",
+      "translation": "I lead",
+      "partOfSpeech": "verb",
+      "conjugation": "3rd",
+      "principalParts": "duco, ducere, duxi, ductum",
+      "examples": ["Dux exercitum ducit."]
+    },
+    {
+      "word": "scribo",
+      "translation": "I write",
+      "partOfSpeech": "verb",
+      "conjugation": "3rd",
+      "principalParts": "scribo, scribere, scripsi, scriptum",
+      "examples": ["Poeta carmen scribit."]
+    },
+    {
+      "word": "lego",
+      "translation": "I read, gather",
+      "partOfSpeech": "verb",
+      "conjugation": "3rd",
+      "principalParts": "lego, legere, legi, lectum",
+      "examples": ["Discipulus librum legit."]
+    },
+    {
+      "word": "dico",
+      "translation": "I say, speak",
+      "partOfSpeech": "verb",
+      "conjugation": "3rd",
+      "principalParts": "dico, dicere, dixi, dictum",
+      "examples": ["Verum dico."]
+    },
+    {
+      "word": "mitto",
+      "translation": "I send",
+      "partOfSpeech": "verb",
+      "conjugation": "3rd",
+      "principalParts": "mitto, mittere, misi, missum",
+      "examples": ["Nuntium ad regem mittimus."]
+    },
+    {
+      "word": "pono",
+      "translation": "I put, place",
+      "partOfSpeech": "verb",
+      "conjugation": "3rd",
+      "principalParts": "pono, ponere, posui, positum",
+      "examples": ["Librum in mensa pono."]
+    },
+    {
+      "word": "capio",
+      "translation": "I take, capture",
+      "partOfSpeech": "verb",
+      "conjugation": "3rd-io",
+      "principalParts": "capio, capere, cepi, captum",
+      "examples": ["Milites urbem capiunt."]
+    },
+    {
+      "word": "facio",
+      "translation": "I make, do",
+      "partOfSpeech": "verb",
+      "conjugation": "3rd-io",
+      "principalParts": "facio, facere, feci, factum",
+      "examples": ["Quid facis?"]
+    },
+    {
+      "word": "audio",
+      "translation": "I hear",
+      "partOfSpeech": "verb",
+      "conjugation": "4th",
+      "principalParts": "audio, audire, audivi, auditum",
+      "examples": ["Vocem magistri audimus."]
+    },
+    {
+      "word": "venio",
+      "translation": "I come",
+      "partOfSpeech": "verb",
+      "conjugation": "4th",
+      "principalParts": "venio, venire, veni, ventum",
+      "examples": ["Ad forum venimus."]
+    },
+    {
+      "word": "scio",
+      "translation": "I know",
+      "partOfSpeech": "verb",
+      "conjugation": "4th",
+      "principalParts": "scio, scire, scivi, scitum",
+      "examples": ["Nihil scio."]
+    },
+    {
+      "word": "dormio",
+      "translation": "I sleep",
+      "partOfSpeech": "verb",
+      "conjugation": "4th",
+      "principalParts": "dormio, dormire, dormivi, dormitum",
+      "examples": ["Pueri in cubiculis dormiunt."]
+    }
+  ],
+  "grammar": {
+    "topic": "Third and Fourth Conjugation Verbs",
+    "explanation": "Third conjugation verbs have -ere (short e) infinitives and show an -i- theme vowel in most forms. Fourth conjugation verbs have -ire infinitives. Third conjugation -io verbs (like capio) conjugate like fourth conjugation in the present.",
+    "paradigms": [
+      {
+        "name": "duco (3rd) - Present Indicative Active",
+        "headers": ["Person", "Singular", "Plural"],
+        "rows": [
+          ["1st", "duco", "ducimus"],
+          ["2nd", "ducis", "ducitis"],
+          ["3rd", "ducit", "ducunt"]
+        ]
+      },
+      {
+        "name": "capio (3rd-io) - Present Indicative Active",
+        "headers": ["Person", "Singular", "Plural"],
+        "rows": [
+          ["1st", "capio", "capimus"],
+          ["2nd", "capis", "capitis"],
+          ["3rd", "capit", "capiunt"]
+        ]
+      },
+      {
+        "name": "audio (4th) - Present Indicative Active",
+        "headers": ["Person", "Singular", "Plural"],
+        "rows": [
+          ["1st", "audio", "audimus"],
+          ["2nd", "audis", "auditis"],
+          ["3rd", "audit", "audiunt"]
+        ]
+      },
+      {
+        "name": "All Four Conjugations Compared",
+        "headers": ["Conj", "Infinitive", "1st Sg", "3rd Sg", "3rd Pl"],
+        "rows": [
+          ["1st", "-are", "amo", "amat", "amant"],
+          ["2nd", "-ere (long)", "moneo", "monet", "monent"],
+          ["3rd", "-ere (short)", "duco", "ducit", "ducunt"],
+          ["4th", "-ire", "audio", "audit", "audiunt"]
+        ]
+      }
+    ],
+    "rules": [
+      "3rd conjugation uses -i- as theme vowel (ducit, not *ducet)",
+      "3rd person plural: 3rd conj = -unt, 4th conj = -iunt",
+      "3rd-io verbs (capio) look like 4th conj in present tense",
+      "Check the infinitive to identify the conjugation"
+    ]
+  },
+  "exercises": [
+    {
+      "type": "conjugation",
+      "question": "Conjugate 'scribo' in 3rd person singular",
+      "answer": "scribit",
+      "hints": ["Stem scrib- + -it"]
+    },
+    {
+      "type": "translation",
+      "question": "Translate: Discipuli libros legunt et scribunt.",
+      "answer": "The students read and write books.",
+      "hints": ["Both verbs are 3rd person plural"]
+    },
+    {
+      "type": "identification",
+      "question": "What conjugation is 'venire'?",
+      "answer": "Fourth conjugation (-ire infinitive)",
+      "hints": ["Look at the infinitive ending"]
+    },
+    {
+      "type": "composition",
+      "prompt": "Write 'We hear the voice of the king' in Latin",
+      "sampleAnswer": "Vocem regis audimus."
+    }
+  ],
+  "culturalNote": "Scribo and lego represent the importance of literacy in Roman society. While not universal, literacy was valued for commerce, law, and administration. Romans wrote on wax tablets and papyrus scrolls.",
+  "readingPassage": {
+    "latin": "Discipuli in schola sedent. Magister librum legit; discipuli audiunt et scribunt. 'Quid facitis?' magister dicit. 'Scribimus,' discipuli respondent. Post scholam, pueri ad forum veniunt.",
+    "translation": "The students sit in the school. The teacher reads a book; the students listen and write. 'What are you doing?' says the teacher. 'We are writing,' the students reply. After school, the boys come to the forum.",
+    "notes": [
+      "sedent: they sit (sedeo, 2nd conj)",
+      "post: after (+ accusative)",
+      "respondent: they reply"
+    ]
+  }
+}

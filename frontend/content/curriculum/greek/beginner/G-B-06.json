@@ -1,0 +1,225 @@
+{
+  "id": "G-B-06",
+  "title": "Present Active Indicative",
+  "level": "beginner",
+  "language": "greek",
+  "estimatedTime": "45 minutes",
+  "objectives": [
+    "Conjugate verbs in present active indicative",
+    "Recognize and parse present tense forms",
+    "Understand principal parts",
+    "Translate present tense sentences"
+  ],
+  "vocabulary": [
+    {
+      "word": "λύω",
+      "transliteration": "luo",
+      "translation": "I loose, destroy",
+      "partOfSpeech": "verb",
+      "declension": "1st conjugation",
+      "gender": "n/a",
+      "examples": [
+        "λύω τὸν δοῦλον - I free the slave"
+      ]
+    },
+    {
+      "word": "γράφω",
+      "transliteration": "grapho",
+      "translation": "I write",
+      "partOfSpeech": "verb",
+      "declension": "1st conjugation",
+      "gender": "n/a",
+      "examples": [
+        "γράφω ἐπιστολήν - I write a letter"
+      ]
+    },
+    {
+      "word": "διδάσκω",
+      "transliteration": "didasko",
+      "translation": "I teach",
+      "partOfSpeech": "verb",
+      "declension": "1st conjugation",
+      "gender": "n/a",
+      "examples": [
+        "διδάσκω τοὺς μαθητάς"
+      ]
+    },
+    {
+      "word": "πιστεύω",
+      "transliteration": "pisteuo",
+      "translation": "I believe, trust",
+      "partOfSpeech": "verb",
+      "declension": "1st conjugation",
+      "gender": "n/a",
+      "examples": [
+        "πιστεύω εἰς τὸν θεόν"
+      ]
+    },
+    {
+      "word": "ἀκούω",
+      "transliteration": "akouo",
+      "translation": "I hear, listen",
+      "partOfSpeech": "verb",
+      "declension": "1st conjugation",
+      "gender": "n/a",
+      "examples": [
+        "ἀκούω τὸν λόγον"
+      ]
+    },
+    {
+      "word": "βλέπω",
+      "transliteration": "blepo",
+      "translation": "I see, look",
+      "partOfSpeech": "verb",
+      "declension": "1st conjugation",
+      "gender": "n/a",
+      "examples": [
+        "βλέπω τὸ ἱερόν"
+      ]
+    },
+    {
+      "word": "λαμβάνω",
+      "transliteration": "lambano",
+      "translation": "I take, receive",
+      "partOfSpeech": "verb",
+      "declension": "1st conjugation",
+      "gender": "n/a",
+      "examples": [
+        "λαμβάνω τὸ δῶρον"
+      ]
+    },
+    {
+      "word": "λέγω",
+      "transliteration": "lego",
+      "translation": "I say, speak",
+      "partOfSpeech": "verb",
+      "declension": "1st conjugation",
+      "gender": "n/a",
+      "examples": [
+        "λέγω τὴν ἀλήθειαν"
+      ]
+    }
+  ],
+  "grammar": {
+    "topic": "Present Active Indicative",
+    "explanation": "The present active indicative expresses ongoing action. Greek verbs have stem plus personal endings. The paradigm verb λύω shows the pattern.",
+    "paradigms": [
+      {
+        "name": "λύω conjugation",
+        "headers": [
+          "Person",
+          "Singular",
+          "Plural"
+        ],
+        "rows": [
+          [
+            "1st",
+            "λύω (I loose)",
+            "λύομεν (we loose)"
+          ],
+          [
+            "2nd",
+            "λύεις (you loose)",
+            "λύετε (you all loose)"
+          ],
+          [
+            "3rd",
+            "λύει (he/she looses)",
+            "λύουσι(ν) (they loose)"
+          ]
+        ]
+      },
+      {
+        "name": "Personal Endings",
+        "headers": [
+          "Person",
+          "Sg",
+          "Pl"
+        ],
+        "rows": [
+          [
+            "1st",
+            "-ω",
+            "-ομεν"
+          ],
+          [
+            "2nd",
+            "-εις",
+            "-ετε"
+          ],
+          [
+            "3rd",
+            "-ει",
+            "-ουσι(ν)"
+          ]
+        ]
+      }
+    ],
+    "rules": [
+      "Present expresses ongoing/repeated action",
+      "Endings show person and number",
+      "Subject pronouns usually omitted",
+      "3rd pl adds movable ν before vowels"
+    ]
+  },
+  "exercises": [
+    {
+      "type": "conjugation",
+      "instructions": "Conjugate",
+      "items": [
+        {
+          "prompt": "γράφω 1st pl",
+          "answer": "γράφομεν"
+        },
+        {
+          "prompt": "πιστεύω 3rd sg",
+          "answer": "πιστεύει"
+        },
+        {
+          "prompt": "ἀκούω 2nd pl",
+          "answer": "ἀκούετε"
+        }
+      ]
+    },
+    {
+      "type": "parsing",
+      "instructions": "Parse",
+      "items": [
+        {
+          "prompt": "λύουσιν",
+          "answer": "pres act ind 3pl"
+        },
+        {
+          "prompt": "διδάσκεις",
+          "answer": "pres act ind 2sg"
+        },
+        {
+          "prompt": "βλέπομεν",
+          "answer": "pres act ind 1pl"
+        }
+      ]
+    },
+    {
+      "type": "translation",
+      "instructions": "Translate",
+      "items": [
+        {
+          "prompt": "ὁ διδάσκαλος διδάσκει",
+          "answer": "The teacher teaches"
+        },
+        {
+          "prompt": "πιστεύομεν εἰς τὸν θεόν",
+          "answer": "We believe in God"
+        }
+      ]
+    }
+  ],
+  "culturalNote": "Greek verbs pack enormous information into single words. λύω alone means I loose, showing person and number. This efficiency made Greek the language of philosophy and theology.",
+  "readingPassage": {
+    "title": "Believing in the Son",
+    "source": "John 3:16",
+    "greek": "ἵνα πᾶς ὁ πιστεύων εἰς αὐτὸν μὴ ἀπόληται ἀλλ᾿ ἔχῃ ζωὴν αἰώνιον",
+    "transliteration": "hina pas ho pisteuon eis auton me apoletai all eche zoen aionion",
+    "translation": "that everyone believing in him should not perish but have eternal life"
+  }
+}

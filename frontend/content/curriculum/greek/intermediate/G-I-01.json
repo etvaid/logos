@@ -1,163 +1,63 @@
-```json
 {
-  "overview": {
-    "title": "Third Declension",
-    "objectives": [
-      "Understand and apply the rules of the third declension",
-      "Identify and use all stem types in the third declension",
-      "Recognize and manage syncopation in third declension nouns"
-    ],
-    "prerequisites": [
-      "Familiarity with first and second declensions",
-      "Basic understanding of Greek noun cases and functions"
-    ],
-    "duration": "4 weeks"
-  },
+  "id": "G-I-01",
+  "title": "Third Declension Nouns",
+  "level": "intermediate",
+  "language": "greek",
+  "estimatedTime": "60 minutes",
+  "objectives": [
+    "Understand and apply the rules of the third declension",
+    "Identify and use all stem types in the third declension",
+    "Recognize patterns in consonant and vowel stem nouns",
+    "Apply third declension in reading Greek texts"
+  ],
+  "vocabulary": [
+    {"word": "ἄρχων", "transliteration": "archon", "lemma": "ἄρχων, ἄρχοντος", "translation": "ruler, leader", "partOfSpeech": "noun", "gender": "masculine", "examples": ["ὁ ἄρχων δικαιοσύνην φυλάσσει."]},
+    {"word": "γένος", "transliteration": "genos", "lemma": "γένος, γένους", "translation": "race, kind", "partOfSpeech": "noun", "gender": "neuter", "examples": ["τὸ γένος ἀνθρώπων ἐστὶ πολυπληθές."]},
+    {"word": "πατήρ", "transliteration": "pater", "lemma": "πατήρ, πατρός", "translation": "father", "partOfSpeech": "noun", "gender": "masculine", "examples": ["ὁ πατὴρ τὸν υἱὸν φιλεῖ."]},
+    {"word": "πόλις", "transliteration": "polis", "lemma": "πόλις, πόλεως", "translation": "city", "partOfSpeech": "noun", "gender": "feminine", "examples": ["ἡ πόλις μεγάλη ἐστίν."]},
+    {"word": "ἀνήρ", "transliteration": "aner", "lemma": "ἀνήρ, ἀνδρός", "translation": "man, husband", "partOfSpeech": "noun", "gender": "masculine", "examples": ["ὁ ἀνὴρ σοφός ἐστιν."]}
+  ],
   "grammar": {
-    "explanation": "The third declension in Greek encompasses a diverse range of nouns characterized by a variety of stem types, including consonant and vowel stems. These nouns often exhibit complex patterns of inflection, including syncopation, where sounds are omitted for ease of pronunciation. Understanding these patterns is essential for reading and translating Greek texts with fluency.",
+    "topic": "Third Declension Nouns",
+    "explanation": "The third declension in Greek encompasses a diverse range of nouns with consonant and vowel stems. The genitive singular reveals the true stem, which is essential for declining the noun correctly.",
     "paradigms": [
       {
-        "name": "Consonant Stems (e.g., πατήρ)",
-        "table": [
-          ["Case", "Singular", "Plural"],
+        "name": "Consonant Stems: πατήρ, πατρός (m)",
+        "headers": ["Case", "Singular", "Plural"],
+        "rows": [
           ["Nominative", "πατήρ", "πατέρες"],
           ["Genitive", "πατρός", "πατέρων"],
-          ["Dative", "πατρί", "πατράσι"],
+          ["Dative", "πατρί", "πατράσι(ν)"],
           ["Accusative", "πατέρα", "πατέρας"],
           ["Vocative", "πάτερ", "πατέρες"]
         ]
       },
       {
-        "name": "Vowel Stems (e.g., πόλις)",
-        "table": [
-          ["Case", "Singular", "Plural"],
+        "name": "Vowel Stems: πόλις, πόλεως (f)",
+        "headers": ["Case", "Singular", "Plural"],
+        "rows": [
           ["Nominative", "πόλις", "πόλεις"],
           ["Genitive", "πόλεως", "πόλεων"],
-          ["Dative", "πόλει", "πόλεσι"],
+          ["Dative", "πόλει", "πόλεσι(ν)"],
           ["Accusative", "πόλιν", "πόλεις"],
           ["Vocative", "πόλι", "πόλεις"]
         ]
       }
     ],
     "rules": [
-      "Third declension nouns can have stems ending in consonants or vowels.",
-      "Syncopation often occurs in the genitive and dative forms.",
-      "The nominative singular can be irregular and must be memorized."
-    ],
-    "exceptions": [
-      "Some nouns have irregular nominative endings that do not follow the standard patterns.",
-      "Certain nouns may have dual forms in the dative plural."
-    ],
-    "memory_tips": [
-      "Remember that the genitive singular often reveals the true stem of the noun.",
-      "Visualize the paradigm tables to solidify patterns in memory."
-    ]
-  },
-  "vocabulary": [
-    {
-      "word": "ἄρχων",
-      "lemma": "ἄρχων",
-      "definition": "ruler, leader",
-      "part_of_speech": "noun",
-      "gender_or_conjugation": "masculine",
-      "frequency_rank": 45,
-      "derivatives": ["archon, monarchy"],
-      "example_sentence": "ὁ ἄρχων δικαιοσύνην φυλάσσει.",
-      "example_translation": "The ruler guards justice."
-    },
-    {
-      "word": "γένος",
-      "lemma": "γένος",
-      "definition": "race, kind",
-      "part_of_speech": "noun",
-      "gender_or_conjugation": "neuter",
-      "frequency_rank": 60,
-      "derivatives": ["genus, genetic"],
-      "example_sentence": "τὸ γένος ἀνθρώπων ἐστὶ πολυπληθές.",
-      "example_translation": "The race of humans is numerous."
-    }
-    // Additional 23 vocabulary entries would follow in the same format
-  ],
-  "reading_passage": {
-    "title": "The Defense of Socrates",
-    "author": "Plato",
-    "source": "Apology",
-    "original_text": "ἄνδρες Ἀθηναῖοι, οὐκ οἶδα ὅπως ὑμεῖς πεπόνθατε πρὸς τοὺς ἐμοὺς κατηγόρους...",
-    "translations": {
-      "student": "Men of Athens, I do not know how you have been affected by my accusers...",
-      "scholarly": "Men of Athens, I am not aware of the effect my accusers have had upon you...",
-      "literary": "O Athenians, I am unaware of the effect that my accusers have wrought upon you..."
-    },
-    "vocabulary_notes": [
-      {"word": "ἄνδρες", "note": "Nominative plural of ἀνήρ, meaning 'men'"},
-      {"word": "κατηγόρους", "note": "Accusative plural of κατήγορος, meaning 'accusers'"}
-    ],
-    "comprehension_questions": [
-      "What is Socrates' primary concern about his accusers?",
-      "How does Socrates address the men of Athens in his opening?"
+      "Learn the genitive singular to find the stem",
+      "Consonant stems show stem changes in different cases",
+      "Vowel stems often show contraction",
+      "The nominative singular is often irregular"
     ]
   },
   "exercises": [
-    {
-      "type": "parsing",
-      "instructions": "Parse the following nouns from the reading passage.",
-      "items": [
-        {
-          "prompt": "ἄνδρες",
-          "answer": "Nominative plural masculine",
-          "explanation": "The word 'ἄνδρες' is the nominative plural form of ἀνήρ."
-        },
-        {
-          "prompt": "κατηγόρους",
-          "answer": "Accusative plural masculine",
-          "explanation": "The word 'κατηγόρους' is the accusative plural form of κατήγορος."
-        }
-      ]
-    },
-    {
-      "type": "translation_la_en",
-      "instructions": "Translate the following sentences into English.",
-      "items": [
-        {
-          "prompt": "ὁ ἄρχων δικαιοσύνην φυλάσσει.",
-          "answer": "The ruler guards justice.",
-          "explanation": "The sentence is a simple declarative statement with a subject, verb, and object."
-        }
-      ]
-    },
-    {
-      "type": "fill_blank",
-      "instructions": "Fill in the blanks with the correct form of the noun in parentheses.",
-      "items": [
-        {
-          "prompt": "ὁ ἄνθρωπος τῆς (πόλις) εἰρήνην ζητεῖ.",
-          "answer": "πόλεως",
-          "explanation": "The genitive singular form of πόλις is πόλεως."
-        }
-      ]
-    }
-    // Additional exercises would follow in similar formats
+    {"type": "parsing", "question": "Parse 'πατρός'", "answer": "Genitive singular masculine", "hints": ["The stem πατρ- is visible"]},
+    {"type": "translation", "question": "Translate: ὁ ἄρχων δικαιοσύνην φυλάσσει.", "answer": "The ruler guards justice."}
   ],
-  "cultural_context": {
-    "topic": "The Role of the Archon in Athenian Society",
-    "content": "The archon was a crucial magistrate in ancient Athens, responsible for various civic, religious, and military duties. Understanding the function and significance of an archon provides insight into the governance and societal structure of classical Athens.",
-    "connections_to_texts": [
-      "References to archons appear frequently in the works of Herodotus and Lysias, highlighting their importance in historical and legal contexts."
-    ]
-  },
-  "connections": {
-    "reader_links": [
-      {"text": "Plato's Republic", "passage": "Discussions on justice and governance"},
-      {"text": "Herodotus' Histories", "passage": "Accounts of Athenian political figures"}
-    ],
-    "related_modules": [
-      "G-I-02: Greek Verbs - Present and Imperfect",
-      "G-I-03: Syntax and Sentence Structure"
-    ],
-    "advanced_topics": [
-      "Advanced Morphology of Greek Nouns",
-      "Dialectical Variations in Greek"
-    ]
+  "readingPassage": {
+    "greek": "ἄνδρες Ἀθηναῖοι, οὐκ οἶδα ὅπως ὑμεῖς πεπόνθατε ὑπὸ τῶν ἐμῶν κατηγόρων.",
+    "translation": "Men of Athens, I do not know how you have been affected by my accusers.",
+    "notes": ["ἄνδρες: vocative plural of ἀνήρ", "κατηγόρων: genitive plural of κατήγορος"]
   }
 }
-```

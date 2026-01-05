@@ -1,0 +1,72 @@
+{
+  "id": "G-I-08",
+  "title": "Infinitives and Their Uses",
+  "level": "intermediate",
+  "language": "greek",
+  "estimatedTime": "60 minutes",
+  "objectives": [
+    "Form infinitives in all tenses and voices",
+    "Use the articular infinitive",
+    "Express purpose with infinitive constructions",
+    "Recognize infinitive in indirect statement",
+    "Understand subject of infinitive (accusative)"
+  ],
+  "vocabulary": [
+    {"word": "λύειν", "transliteration": "lyein", "lemma": "λύω", "form": "pres act inf", "definition": "to loose"},
+    {"word": "λῦσαι", "transliteration": "lysai", "lemma": "λύω", "form": "aor act inf", "definition": "to loose (aorist)"},
+    {"word": "λελυκέναι", "transliteration": "lelykenai", "lemma": "λύω", "form": "perf act inf", "definition": "to have loosed"},
+    {"word": "λύεσθαι", "transliteration": "lyesthai", "lemma": "λύω", "form": "pres mid/pass inf", "definition": "to loose for oneself / to be loosed"},
+    {"word": "λυθῆναι", "transliteration": "lythēnai", "lemma": "λύω", "form": "aor pass inf", "definition": "to be loosed"},
+    {"word": "μέλλω", "transliteration": "mellō", "definition": "I am about to (+ infinitive)"},
+    {"word": "δεῖ", "transliteration": "dei", "definition": "it is necessary (+ infinitive)"},
+    {"word": "ἔξεστι(ν)", "transliteration": "exesti(n)", "definition": "it is permitted (+ infinitive)"}
+  ],
+  "grammar": {
+    "topic": "Infinitives",
+    "explanation": "Greek infinitives are verbal nouns that can take an article. The tense of the infinitive expresses aspect (kind of action), not time. With the article, infinitives can function as subjects, objects, or in prepositional phrases.",
+    "paradigms": [
+      {
+        "name": "Infinitive Forms (λύω)",
+        "headers": ["Tense", "Active", "Middle", "Passive"],
+        "rows": [
+          ["Present", "λύειν", "λύεσθαι", "λύεσθαι"],
+          ["Aorist", "λῦσαι", "λύσασθαι", "λυθῆναι"],
+          ["Perfect", "λελυκέναι", "λελύσθαι", "λελύσθαι"]
+        ]
+      },
+      {
+        "name": "Articular Infinitive Uses",
+        "headers": ["Construction", "Meaning", "Example"],
+        "rows": [
+          ["τό + inf", "Subject/Object", "τὸ λέγειν (speaking)"],
+          ["τοῦ + inf", "Purpose/Cause", "τοῦ λῦσαι (in order to loose)"],
+          ["τῷ + inf", "Means/Cause", "τῷ λέγειν (by speaking)"],
+          ["πρὸ τοῦ + inf", "Before", "πρὸ τοῦ ἐλθεῖν (before coming)"],
+          ["μετὰ τό + inf", "After", "μετὰ τὸ ἀκοῦσαι (after hearing)"]
+        ]
+      }
+    ],
+    "rules": [
+      "Infinitive aspect: present = ongoing; aorist = simple; perfect = completed",
+      "Subject of infinitive = accusative case",
+      "Negative with infinitive = μή (not οὐ)",
+      "Articular infinitive: neuter article + infinitive"
+    ]
+  },
+  "exercises": [
+    {
+      "type": "translation",
+      "question": "Translate: δεῖ ἡμᾶς ἀγαπᾶν ἀλλήλους.",
+      "answer": "It is necessary for us to love one another."
+    },
+    {
+      "type": "analysis",
+      "question": "What is the function of τὸ ἀποθανεῖν in: τὸ ἀποθανεῖν κέρδος;",
+      "answer": "Subject: 'To die [is] gain.' / 'Dying is gain.'"
+    }
+  ],
+  "readingPassage": {
+    "greek": "Πρὸ τοῦ ἐλθεῖν αὐτὸν ἠτοιμάσαμεν τὰ πάντα. Ἦλθεν τοῦ σῶσαι τοὺς ἀπολλυμένους. Τὸ ζῆν Χριστὸς καὶ τὸ ἀποθανεῖν κέρδος.",
+    "translation": "Before he came, we prepared all things. He came to save those who are perishing. To live is Christ and to die is gain."
+  }
+}

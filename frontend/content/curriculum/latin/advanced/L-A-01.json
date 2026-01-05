@@ -1,35 +1,38 @@
-```json
 {
-  "overview": {
-    "title": "Subjunctive Mastery",
-    "objectives": [
-      "Master all subjunctive forms",
-      "Handle complex subordination",
-      "Apply sequence of tenses"
-    ],
-    "prerequisites": [
-      "Intermediate Latin grammar",
-      "Basic understanding of subjunctive mood",
-      "Previous exposure to Latin literature"
-    ],
-    "duration": "10 weeks"
-  },
+  "id": "L-A-01",
+  "title": "Subjunctive Mastery",
+  "level": "advanced",
+  "language": "latin",
+  "estimatedTime": "75 minutes",
+  "objectives": [
+    "Master all subjunctive forms including perfect and pluperfect",
+    "Handle complex subordination with multiple subjunctives",
+    "Apply sequence of tenses correctly",
+    "Recognize subjunctive in various clause types"
+  ],
+  "vocabulary": [
+    {"word": "timeo", "lemma": "timeo, timere, timui", "translation": "to fear", "partOfSpeech": "verb", "conjugation": "2nd", "examples": ["Timeo ne veniat."]},
+    {"word": "ut", "lemma": "ut", "translation": "so that, in order that", "partOfSpeech": "conjunction", "examples": ["Laboravit ut pecuniam haberet."]},
+    {"word": "cum", "lemma": "cum", "translation": "when, since, although", "partOfSpeech": "conjunction", "examples": ["Cum venisset, omnes laeti erant."]},
+    {"word": "ne", "lemma": "ne", "translation": "lest, that...not", "partOfSpeech": "conjunction", "examples": ["Timeo ne veniat."]}
+  ],
   "grammar": {
-    "explanation": "The subjunctive mood in Latin is used to express doubt, potentiality, wishes, and hypothetical scenarios. At the advanced level, understanding the nuances of the perfect and pluperfect subjunctive is crucial. These forms often appear in complex sentence structures, such as result clauses, fear clauses, and cum clauses. Mastery of the sequence of tenses is essential for correctly interpreting and constructing Latin texts.",
+    "topic": "Advanced Subjunctive Uses",
+    "explanation": "The subjunctive mood expresses doubt, potentiality, wishes, and hypothetical scenarios. Mastering the perfect and pluperfect subjunctive is essential for reading complex Latin texts.",
     "paradigms": [
       {
-        "name": "Perfect Subjunctive Active",
-        "table": [
-          ["Person", "Singular", "Plural"],
+        "name": "Perfect Subjunctive Active (amo)",
+        "headers": ["Person", "Singular", "Plural"],
+        "rows": [
           ["1st", "amaverim", "amaverimus"],
           ["2nd", "amaveris", "amaveritis"],
           ["3rd", "amaverit", "amaverint"]
         ]
       },
       {
-        "name": "Pluperfect Subjunctive Active",
-        "table": [
-          ["Person", "Singular", "Plural"],
+        "name": "Pluperfect Subjunctive Active (amo)",
+        "headers": ["Person", "Singular", "Plural"],
+        "rows": [
           ["1st", "amavissem", "amavissemus"],
           ["2nd", "amavisses", "amavissetis"],
           ["3rd", "amavisset", "amavissent"]
@@ -37,137 +40,19 @@
       }
     ],
     "rules": [
-      "The perfect subjunctive is typically used in primary sequence to express completed action.",
-      "The pluperfect subjunctive is used in secondary sequence to express action completed before another past action.",
-      "Result clauses are introduced by 'ut' and express an outcome or result."
-    ],
-    "exceptions": [
-      "In poetry, sequence of tenses can be flexible for metrical reasons.",
-      "Some verbs, such as 'timeo', introduce fear clauses with 'ne' instead of 'ut'."
-    ],
-    "memory_tips": [
-      "Remember 'We beat a liar' for forming the present subjunctive.",
-      "Link the '-isse-' of pluperfect subjunctive to 'pastness'."
-    ]
-  },
-  "vocabulary": [
-    {
-      "word": "timeo",
-      "lemma": "timeo, timere, timui",
-      "definition": "to fear",
-      "part_of_speech": "verb",
-      "gender_or_conjugation": "2nd conjugation",
-      "frequency_rank": 150,
-      "derivatives": ["timid", "timorous"],
-      "example_sentence": "Timeo ne veniat.",
-      "example_translation": "I fear that he may come."
-    },
-    {
-      "word": "ut",
-      "lemma": "ut",
-      "definition": "so that, in order that",
-      "part_of_speech": "conjunction",
-      "gender_or_conjugation": null,
-      "frequency_rank": 20,
-      "derivatives": ["utmost", "utter"],
-      "example_sentence": "Laboravit ut pecuniam haberet.",
-      "example_translation": "He worked so that he might have money."
-    },
-    {
-      "word": "cum",
-      "lemma": "cum",
-      "definition": "when, since, although",
-      "part_of_speech": "conjunction",
-      "gender_or_conjugation": null,
-      "frequency_rank": 45,
-      "derivatives": ["cumulative", "cumulate"],
-      "example_sentence": "Cum venisset, omnes laeti erant.",
-      "example_translation": "When he had come, everyone was happy."
-    }
-    // Add 27 more vocabulary entries
-  ],
-  "reading_passage": {
-    "title": "The Siege of Alesia",
-    "author": "Julius Caesar",
-    "source": "Commentarii de Bello Gallico",
-    "original_text": "Cum Caesar ad Alesiam accessisset, hostes se in castra receperunt.",
-    "translations": {
-      "student": "When Caesar approached Alesia, the enemies retreated into the camp.",
-      "scholarly": "Upon Caesar's approach to Alesia, the enemies withdrew into their fortifications.",
-      "literary": "As Caesar neared Alesia, the foes took refuge within their stronghold."
-    },
-    "vocabulary_notes": [
-      {
-        "word": "accessisset",
-        "note": "Pluperfect subjunctive, indicating a completed action before another past action."
-      }
-    ],
-    "comprehension_questions": [
-      "What is the significance of the pluperfect subjunctive in this passage?",
-      "How does the use of 'cum' affect the meaning of the sentence?"
+      "Perfect subjunctive: perfect stem + -eri- + personal endings",
+      "Pluperfect subjunctive: perfect stem + -isse- + personal endings",
+      "Primary sequence: present/perfect subjunctive",
+      "Secondary sequence: imperfect/pluperfect subjunctive"
     ]
   },
   "exercises": [
-    {
-      "type": "parsing",
-      "instructions": "Parse the following verbs and identify their mood, tense, and voice.",
-      "items": [
-        {
-          "prompt": "amaverit",
-          "answer": "Perfect subjunctive active, 3rd singular",
-          "explanation": "The ending '-erit' indicates perfect subjunctive active."
-        }
-        // Add 29 more parsing items
-      ]
-    },
-    {
-      "type": "translation_la_en",
-      "instructions": "Translate the following sentences from Latin to English.",
-      "items": [
-        {
-          "prompt": "Cum venisset, omnes laeti erant.",
-          "answer": "When he had come, everyone was happy.",
-          "explanation": "The pluperfect subjunctive 'venisset' indicates an action completed before the past action 'erant'."
-        }
-        // Add more translation items
-      ]
-    },
-    {
-      "type": "fill_blank",
-      "instructions": "Fill in the blanks with the correct form of the verb.",
-      "items": [
-        {
-          "prompt": "Si hoc ___ (facere), laetissimi fuissemus.",
-          "answer": "fecisses",
-          "explanation": "Pluperfect subjunctive is used for contrary-to-fact conditions in past time."
-        }
-        // Add more fill in the blank items
-      ]
-    }
-    // Add two more types of exercises
+    {"type": "parsing", "question": "Parse 'amaverit'", "answer": "Perfect subjunctive active 3rd singular", "hints": ["The -eri- indicates perfect subjunctive"]},
+    {"type": "translation", "question": "Translate: Cum venisset, omnes laeti erant.", "answer": "When he had come, everyone was happy."}
   ],
-  "cultural_context": {
-    "topic": "The Role of the Subjunctive in Roman Oratory",
-    "content": "The subjunctive mood was a powerful tool in Roman oratory, allowing speakers like Cicero to express subtle nuances and hypothetical scenarios. Its use in persuasive language helped orators sway audiences by presenting potential outcomes and emphasizing the uncertainty or potentiality of events.",
-    "connections_to_texts": [
-      "Cicero's speeches often employ the subjunctive to question opponents' motives or to propose alternative scenarios."
-    ]
-  },
-  "connections": {
-    "reader_links": [
-      {
-        "text": "Vergil's Aeneid",
-        "passage": "Aeneas's internal conflicts often expressed through subjunctive mood."
-      }
-    ],
-    "related_modules": [
-      "L-I-03: Intermediate Subjunctive",
-      "L-A-02: Advanced Conditional Sentences"
-    ],
-    "advanced_topics": [
-      "Subjunctive in Indirect Discourse",
-      "Poetic Uses of the Subjunctive"
-    ]
+  "readingPassage": {
+    "latin": "Cum Caesar ad Alesiam accessisset, hostes se in castra receperunt. Timebant ne a Romanis caperentur. Caesar imperavit ut milites muros facerent.",
+    "translation": "When Caesar had approached Alesia, the enemies retreated into the camp. They feared that they might be captured by the Romans. Caesar ordered that the soldiers make walls.",
+    "notes": ["accessisset: pluperfect subjunctive in cum clause", "caperentur: imperfect subjunctive in fear clause"]
   }
 }
-```

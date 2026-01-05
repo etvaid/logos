@@ -1,0 +1,110 @@
+{
+  "id": "caesar-dbg-1",
+  "title": "De Bello Gallico - Book I, Opening",
+  "author": "Gaius Julius Caesar",
+  "work": "De Bello Gallico",
+  "book": 1,
+  "dateComposed": "c. 50 BCE",
+  "difficulty": "intermediate",
+  "genre": "historical prose",
+  "description": "Caesar's account of the Gallic Wars, written in third person. This opening describes the geography and peoples of Gaul.",
+  "sections": [
+    {
+      "id": "1.1",
+      "latin": "Gallia est omnis divisa in partes tres, quarum unam incolunt Belgae, aliam Aquitani, tertiam qui ipsorum lingua Celtae, nostra Galli appellantur.",
+      "translation": "All Gaul is divided into three parts, one of which the Belgae inhabit, another the Aquitani, and a third those who in their own language are called Celts, in ours Gauls.",
+      "vocabulary": [
+        {"word": "Gallia", "lemma": "Gallia", "form": "nom sg f", "definition": "Gaul"},
+        {"word": "omnis", "lemma": "omnis", "form": "nom sg f", "definition": "all, every"},
+        {"word": "divisa", "lemma": "divido", "form": "perf pass part nom sg f", "definition": "divided"},
+        {"word": "partes", "lemma": "pars", "form": "acc pl f", "definition": "parts"},
+        {"word": "tres", "lemma": "tres", "form": "acc pl", "definition": "three"},
+        {"word": "quarum", "lemma": "qui", "form": "gen pl f", "definition": "of which"},
+        {"word": "unam", "lemma": "unus", "form": "acc sg f", "definition": "one"},
+        {"word": "incolunt", "lemma": "incolo", "form": "3rd pl pres act ind", "definition": "inhabit"},
+        {"word": "Belgae", "lemma": "Belgae", "form": "nom pl m", "definition": "the Belgae"},
+        {"word": "aliam", "lemma": "alius", "form": "acc sg f", "definition": "another"},
+        {"word": "Aquitani", "lemma": "Aquitani", "form": "nom pl m", "definition": "the Aquitani"},
+        {"word": "tertiam", "lemma": "tertius", "form": "acc sg f", "definition": "the third"},
+        {"word": "ipsorum", "lemma": "ipse", "form": "gen pl m", "definition": "their own"},
+        {"word": "lingua", "lemma": "lingua", "form": "abl sg f", "definition": "language"},
+        {"word": "Celtae", "lemma": "Celtae", "form": "nom pl m", "definition": "Celts"},
+        {"word": "nostra", "lemma": "noster", "form": "abl sg f", "definition": "our"},
+        {"word": "Galli", "lemma": "Galli", "form": "nom pl m", "definition": "Gauls"},
+        {"word": "appellantur", "lemma": "appello", "form": "3rd pl pres pass ind", "definition": "are called"}
+      ],
+      "grammaticalNotes": [
+        "Gallia est divisa: periphrastic perfect passive (est + perfect participle)",
+        "quarum: genitive of the whole (partitive genitive)",
+        "qui...appellantur: relative clause with implied antecedent"
+      ]
+    },
+    {
+      "id": "1.2",
+      "latin": "Hi omnes lingua, institutis, legibus inter se differunt.",
+      "translation": "All these differ among themselves in language, customs, and laws.",
+      "vocabulary": [
+        {"word": "Hi", "lemma": "hic", "form": "nom pl m", "definition": "these"},
+        {"word": "omnes", "lemma": "omnis", "form": "nom pl m", "definition": "all"},
+        {"word": "lingua", "lemma": "lingua", "form": "abl sg f", "definition": "in language"},
+        {"word": "institutis", "lemma": "institutum", "form": "abl pl n", "definition": "in customs"},
+        {"word": "legibus", "lemma": "lex", "form": "abl pl f", "definition": "in laws"},
+        {"word": "inter", "lemma": "inter", "form": "prep + acc", "definition": "among"},
+        {"word": "se", "lemma": "sui", "form": "acc pl", "definition": "themselves"},
+        {"word": "differunt", "lemma": "differo", "form": "3rd pl pres act ind", "definition": "differ"}
+      ],
+      "grammaticalNotes": [
+        "lingua, institutis, legibus: ablatives of respect/specification",
+        "inter se: reflexive with preposition meaning 'among themselves'"
+      ]
+    },
+    {
+      "id": "1.3",
+      "latin": "Gallos ab Aquitanis Garumna flumen, a Belgis Matrona et Sequana dividit.",
+      "translation": "The Garonne river separates the Gauls from the Aquitani, the Marne and Seine from the Belgae.",
+      "vocabulary": [
+        {"word": "Gallos", "lemma": "Galli", "form": "acc pl m", "definition": "the Gauls"},
+        {"word": "ab", "lemma": "ab", "form": "prep + abl", "definition": "from"},
+        {"word": "Aquitanis", "lemma": "Aquitani", "form": "abl pl m", "definition": "the Aquitani"},
+        {"word": "Garumna", "lemma": "Garumna", "form": "nom sg m", "definition": "the Garonne"},
+        {"word": "flumen", "lemma": "flumen", "form": "nom sg n", "definition": "river"},
+        {"word": "Belgis", "lemma": "Belgae", "form": "abl pl m", "definition": "the Belgae"},
+        {"word": "Matrona", "lemma": "Matrona", "form": "nom sg f", "definition": "the Marne"},
+        {"word": "Sequana", "lemma": "Sequana", "form": "nom sg f", "definition": "the Seine"},
+        {"word": "dividit", "lemma": "divido", "form": "3rd sg pres act ind", "definition": "separates, divides"}
+      ],
+      "grammaticalNotes": [
+        "ab Aquitanis, a Belgis: ablative of separation with preposition",
+        "Double subject (Matrona et Sequana) with singular verb (dividit) - common in Latin"
+      ]
+    },
+    {
+      "id": "1.4",
+      "latin": "Horum omnium fortissimi sunt Belgae, propterea quod a cultu atque humanitate provinciae longissime absunt.",
+      "translation": "Of all these, the Belgae are the bravest, because they are furthest from the civilization and refinement of the Province.",
+      "vocabulary": [
+        {"word": "Horum", "lemma": "hic", "form": "gen pl m", "definition": "of these"},
+        {"word": "omnium", "lemma": "omnis", "form": "gen pl m", "definition": "of all"},
+        {"word": "fortissimi", "lemma": "fortis", "form": "nom pl m superl", "definition": "bravest"},
+        {"word": "propterea quod", "lemma": "propterea quod", "form": "conj", "definition": "because"},
+        {"word": "cultu", "lemma": "cultus", "form": "abl sg m", "definition": "civilization, culture"},
+        {"word": "humanitate", "lemma": "humanitas", "form": "abl sg f", "definition": "refinement, humanity"},
+        {"word": "provinciae", "lemma": "provincia", "form": "gen sg f", "definition": "of the Province"},
+        {"word": "longissime", "lemma": "longe", "form": "adv superl", "definition": "furthest"},
+        {"word": "absunt", "lemma": "absum", "form": "3rd pl pres act ind", "definition": "are distant, are away"}
+      ],
+      "grammaticalNotes": [
+        "Horum omnium: partitive genitive with superlative",
+        "propterea quod: causal conjunction (because)",
+        "a cultu: ablative of separation with absum"
+      ]
+    }
+  ],
+  "historicalContext": "Caesar wrote the Commentarii de Bello Gallico during his campaigns in Gaul (58-50 BCE). The work served both as a military report to the Senate and as political propaganda to enhance his reputation in Rome.",
+  "literaryFeatures": [
+    "Third-person narrative (Caesar refers to himself as 'Caesar')",
+    "Clear, direct prose style",
+    "Ethnographic digressions on Gallic and Germanic customs",
+    "Careful attention to geography and logistics"
+  ]
+}

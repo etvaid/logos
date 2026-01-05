@@ -1,0 +1,311 @@
+{
+  "id": "G-B-04",
+  "title": "First Declension Nouns",
+  "level": "beginner",
+  "language": "greek",
+  "estimatedTime": "45 minutes",
+  "objectives": [
+    "Decline feminine first declension nouns ending in -η",
+    "Decline feminine first declension nouns ending in -α",
+    "Distinguish pure alpha and mixed alpha stems",
+    "Identify masculine first declension nouns"
+  ],
+  "vocabulary": [
+    {
+      "word": "ψυχή",
+      "transliteration": "psyche",
+      "translation": "soul, life",
+      "partOfSpeech": "noun",
+      "declension": "1st",
+      "gender": "feminine",
+      "examples": [
+        "ἡ ψυχή μου - my soul"
+      ]
+    },
+    {
+      "word": "δόξα",
+      "transliteration": "doxa",
+      "translation": "glory, honor",
+      "partOfSpeech": "noun",
+      "declension": "1st",
+      "gender": "feminine",
+      "examples": [
+        "ἡ δόξα τοῦ θεοῦ - the glory of God"
+      ]
+    },
+    {
+      "word": "ἀλήθεια",
+      "transliteration": "aletheia",
+      "translation": "truth",
+      "partOfSpeech": "noun",
+      "declension": "1st",
+      "gender": "feminine",
+      "examples": [
+        "ἡ ἀλήθεια ἐλευθερώσει ὑμᾶς"
+      ]
+    },
+    {
+      "word": "ἐκκλησία",
+      "transliteration": "ekklesia",
+      "translation": "assembly, church",
+      "partOfSpeech": "noun",
+      "declension": "1st",
+      "gender": "feminine",
+      "examples": [
+        "ἡ ἐκκλησία τοῦ θεοῦ"
+      ]
+    },
+    {
+      "word": "ἡμέρα",
+      "transliteration": "hemera",
+      "translation": "day",
+      "partOfSpeech": "noun",
+      "declension": "1st",
+      "gender": "feminine",
+      "examples": [
+        "ἐν ἐκείνῃ τῇ ἡμέρᾳ"
+      ]
+    },
+    {
+      "word": "καρδία",
+      "transliteration": "kardia",
+      "translation": "heart",
+      "partOfSpeech": "noun",
+      "declension": "1st",
+      "gender": "feminine",
+      "examples": [
+        "ἐκ τῆς καρδίας"
+      ]
+    },
+    {
+      "word": "ζωή",
+      "transliteration": "zoe",
+      "translation": "life",
+      "partOfSpeech": "noun",
+      "declension": "1st",
+      "gender": "feminine",
+      "examples": [
+        "ἐγώ εἰμι ἡ ζωή"
+      ]
+    },
+    {
+      "word": "προφήτης",
+      "transliteration": "prophetes",
+      "translation": "prophet",
+      "partOfSpeech": "noun",
+      "declension": "1st",
+      "gender": "masculine",
+      "examples": [
+        "ὁ προφήτης λέγει"
+      ]
+    }
+  ],
+  "grammar": {
+    "topic": "First Declension Nouns",
+    "explanation": "First declension contains feminine nouns and some masculines. Three patterns: eta throughout (ψυχή), pure alpha after ε/ι/ρ (ἀλήθεια), mixed alpha/eta (δόξα).",
+    "paradigms": [
+      {
+        "name": "Eta Pattern ψυχή",
+        "headers": [
+          "Case",
+          "Sg",
+          "Pl"
+        ],
+        "rows": [
+          [
+            "Nom",
+            "ψυχή",
+            "ψυχαί"
+          ],
+          [
+            "Gen",
+            "ψυχῆς",
+            "ψυχῶν"
+          ],
+          [
+            "Dat",
+            "ψυχῇ",
+            "ψυχαῖς"
+          ],
+          [
+            "Acc",
+            "ψυχήν",
+            "ψυχάς"
+          ],
+          [
+            "Voc",
+            "ψυχή",
+            "ψυχαί"
+          ]
+        ]
+      },
+      {
+        "name": "Pure Alpha ἀλήθεια",
+        "headers": [
+          "Case",
+          "Sg",
+          "Pl"
+        ],
+        "rows": [
+          [
+            "Nom",
+            "ἀλήθεια",
+            "ἀλήθειαι"
+          ],
+          [
+            "Gen",
+            "ἀληθείας",
+            "ἀληθειῶν"
+          ],
+          [
+            "Dat",
+            "ἀληθείᾳ",
+            "ἀληθείαις"
+          ],
+          [
+            "Acc",
+            "ἀλήθειαν",
+            "ἀληθείας"
+          ],
+          [
+            "Voc",
+            "ἀλήθεια",
+            "ἀλήθειαι"
+          ]
+        ]
+      },
+      {
+        "name": "Mixed Alpha δόξα",
+        "headers": [
+          "Case",
+          "Sg",
+          "Pl"
+        ],
+        "rows": [
+          [
+            "Nom",
+            "δόξα",
+            "δόξαι"
+          ],
+          [
+            "Gen",
+            "δόξης",
+            "δοξῶν"
+          ],
+          [
+            "Dat",
+            "δόξῃ",
+            "δόξαις"
+          ],
+          [
+            "Acc",
+            "δόξαν",
+            "δόξας"
+          ],
+          [
+            "Voc",
+            "δόξα",
+            "δόξαι"
+          ]
+        ]
+      },
+      {
+        "name": "Masculine προφήτης",
+        "headers": [
+          "Case",
+          "Sg",
+          "Pl"
+        ],
+        "rows": [
+          [
+            "Nom",
+            "προφήτης",
+            "προφῆται"
+          ],
+          [
+            "Gen",
+            "προφήτου",
+            "προφητῶν"
+          ],
+          [
+            "Dat",
+            "προφήτῃ",
+            "προφήταις"
+          ],
+          [
+            "Acc",
+            "προφήτην",
+            "προφήτας"
+          ],
+          [
+            "Voc",
+            "προφῆτα",
+            "προφῆται"
+          ]
+        ]
+      }
+    ],
+    "rules": [
+      "After ε/ι/ρ, alpha remains throughout (pure alpha)",
+      "Otherwise, alpha in nom/voc/acc but eta in gen/dat (mixed)",
+      "Plural identical for all feminine first declension",
+      "Masculine first declension gen sg ends in -ου"
+    ]
+  },
+  "exercises": [
+    {
+      "type": "declension",
+      "instructions": "Decline",
+      "items": [
+        {
+          "prompt": "ζωή singular",
+          "answer": "ζωή, ζωῆς, ζωῇ, ζωήν, ζωή"
+        },
+        {
+          "prompt": "καρδία singular",
+          "answer": "καρδία, καρδίας, καρδίᾳ, καρδίαν, καρδία"
+        }
+      ]
+    },
+    {
+      "type": "pattern",
+      "instructions": "Identify pattern",
+      "items": [
+        {
+          "prompt": "φωνή",
+          "answer": "eta pattern"
+        },
+        {
+          "prompt": "ἁμαρτία",
+          "answer": "pure alpha"
+        },
+        {
+          "prompt": "γλῶσσα",
+          "answer": "mixed alpha"
+        }
+      ]
+    },
+    {
+      "type": "translation",
+      "instructions": "Translate",
+      "items": [
+        {
+          "prompt": "ἡ ἀλήθεια τοῦ εὐαγγελίου",
+          "answer": "the truth of the gospel"
+        },
+        {
+          "prompt": "ἐν ταῖς καρδίαις",
+          "answer": "in the hearts"
+        }
+      ]
+    }
+  ],
+  "culturalNote": "Many first declension nouns carry profound meaning. ψυχή (psyche) gives us psychology. ἐκκλησία meant assembly before becoming church. ἀλήθεια (truth) means un-hiddenness, reality unveiled.",
+  "readingPassage": {
+    "title": "The Way Truth Life",
+    "source": "John 14:6",
+    "greek": "ἐγώ εἰμι ἡ ὁδὸς καὶ ἡ ἀλήθεια καὶ ἡ ζωή",
+    "transliteration": "ego eimi he hodos kai he aletheia kai he zoe",
+    "translation": "I am the way and the truth and the life"
+  }
+}

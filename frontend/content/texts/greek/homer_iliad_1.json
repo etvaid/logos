@@ -1,0 +1,131 @@
+{
+  "id": "homer-iliad-1",
+  "title": "Iliad - Book I, The Wrath of Achilles",
+  "author": "Homer",
+  "work": "Iliad",
+  "book": 1,
+  "dateComposed": "c. 8th century BCE",
+  "difficulty": "advanced",
+  "genre": "epic poetry",
+  "meter": "dactylic hexameter",
+  "description": "The opening of Homer's Iliad, announcing the theme of Achilles' wrath and its devastating consequences for the Greeks.",
+  "sections": [
+    {
+      "id": "1.1-7",
+      "greek": "Μῆνιν ἄειδε, θεά, Πηληϊάδεω Ἀχιλῆος\nοὐλομένην, ἣ μυρί᾽ Ἀχαιοῖς ἄλγε᾽ ἔθηκε,\nπολλὰς δ᾽ ἰφθίμους ψυχὰς Ἄϊδι προΐαψεν\nἡρώων, αὐτοὺς δὲ ἑλώρια τεῦχε κύνεσσιν\nοἰωνοῖσί τε πᾶσι, Διὸς δ᾽ ἐτελείετο βουλή,\nἐξ οὗ δὴ τὰ πρῶτα διαστήτην ἐρίσαντε\nἈτρεΐδης τε ἄναξ ἀνδρῶν καὶ δῖος Ἀχιλλεύς.",
+      "translation": "Sing, goddess, of the wrath of Peleus' son Achilles, the accursed wrath that brought countless sorrows upon the Achaeans, and hurled many mighty souls of heroes to Hades, and made them prey for dogs and all birds, and the will of Zeus was being fulfilled, from when first they parted in strife, Atreus' son, lord of men, and brilliant Achilles.",
+      "lineByLine": [
+        {
+          "line": 1,
+          "greek": "Μῆνιν ἄειδε, θεά, Πηληϊάδεω Ἀχιλῆος",
+          "transliteration": "Mēnin aeide, thea, Pēlēïadeō Achilēos",
+          "translation": "Sing, goddess, of the wrath of Achilles, son of Peleus",
+          "scansion": "— ∪ ∪ | — ∪ ∪ | — — | — ∪ ∪ | — ∪ ∪ | — —",
+          "notes": "Μῆνιν: the first word sets the theme; Πηληϊάδεω: patronymic genitive"
+        },
+        {
+          "line": 2,
+          "greek": "οὐλομένην, ἣ μυρί᾽ Ἀχαιοῖς ἄλγε᾽ ἔθηκε",
+          "transliteration": "oulomenēn, hē myri' Achaiois alge' ethēke",
+          "translation": "the accursed [wrath], which brought countless sorrows upon the Achaeans",
+          "notes": "οὐλομένην: 'destructive, accursed'; μυρία: 'countless, ten thousand'"
+        },
+        {
+          "line": 3,
+          "greek": "πολλὰς δ᾽ ἰφθίμους ψυχὰς Ἄϊδι προΐαψεν",
+          "transliteration": "pollas d' iphthimous psychas Aïdi proïapsen",
+          "translation": "and hurled many mighty souls to Hades",
+          "notes": "ἰφθίμους: 'mighty, strong'; Ἄϊδι: dative of Hades"
+        },
+        {
+          "line": 4,
+          "greek": "ἡρώων, αὐτοὺς δὲ ἑλώρια τεῦχε κύνεσσιν",
+          "transliteration": "hērōōn, autous de helōria teukhe kynessin",
+          "translation": "of heroes, and made them [their bodies] prey for dogs",
+          "notes": "ἑλώρια: 'prey, spoil'; contrast ψυχάς (souls) with αὐτούς (bodies)"
+        },
+        {
+          "line": 5,
+          "greek": "οἰωνοῖσί τε πᾶσι, Διὸς δ᾽ ἐτελείετο βουλή",
+          "transliteration": "oiōnoisi te pasi, Dios d' eteleïeto boulē",
+          "translation": "and all birds, and the will of Zeus was being fulfilled",
+          "notes": "βουλή: 'will, plan' - Zeus's larger purpose in the war"
+        },
+        {
+          "line": 6,
+          "greek": "ἐξ οὗ δὴ τὰ πρῶτα διαστήτην ἐρίσαντε",
+          "transliteration": "ex hou dē ta prōta diastētēn erisante",
+          "translation": "from when first they parted in strife",
+          "notes": "διαστήτην: dual form - 'the two stood apart'"
+        },
+        {
+          "line": 7,
+          "greek": "Ἀτρεΐδης τε ἄναξ ἀνδρῶν καὶ δῖος Ἀχιλλεύς",
+          "transliteration": "Atreidēs te anax andrōn kai dios Achilleus",
+          "translation": "Atreus' son, lord of men, and brilliant Achilles",
+          "notes": "ἄναξ ἀνδρῶν: formulaic epithet for Agamemnon; δῖος: 'divine, brilliant'"
+        }
+      ],
+      "vocabulary": [
+        {"word": "Μῆνιν", "lemma": "μῆνις", "form": "acc sg f", "definition": "wrath, rage"},
+        {"word": "ἄειδε", "lemma": "ἀείδω", "form": "2nd sg pres act imper", "definition": "sing"},
+        {"word": "θεά", "lemma": "θεά", "form": "voc sg f", "definition": "goddess"},
+        {"word": "Πηληϊάδεω", "lemma": "Πηληϊάδης", "form": "gen sg m", "definition": "son of Peleus"},
+        {"word": "Ἀχιλῆος", "lemma": "Ἀχιλλεύς", "form": "gen sg m", "definition": "of Achilles"},
+        {"word": "οὐλομένην", "lemma": "ὄλλυμι", "form": "pres mid part acc sg f", "definition": "destructive, accursed"},
+        {"word": "μυρία", "lemma": "μυρίος", "form": "acc pl n", "definition": "countless, ten thousand"},
+        {"word": "Ἀχαιοῖς", "lemma": "Ἀχαιοί", "form": "dat pl m", "definition": "for/upon the Achaeans"},
+        {"word": "ἄλγεα", "lemma": "ἄλγος", "form": "acc pl n", "definition": "pains, sorrows"},
+        {"word": "ἔθηκε", "lemma": "τίθημι", "form": "3rd sg aor act ind", "definition": "placed, caused"},
+        {"word": "ἰφθίμους", "lemma": "ἴφθιμος", "form": "acc pl f", "definition": "mighty, strong"},
+        {"word": "ψυχάς", "lemma": "ψυχή", "form": "acc pl f", "definition": "souls, spirits"},
+        {"word": "Ἄϊδι", "lemma": "Ἅιδης", "form": "dat sg m", "definition": "to Hades"},
+        {"word": "προΐαψεν", "lemma": "προϊάπτω", "form": "3rd sg aor act ind", "definition": "sent forth, hurled"},
+        {"word": "ἡρώων", "lemma": "ἥρως", "form": "gen pl m", "definition": "of heroes"},
+        {"word": "ἑλώρια", "lemma": "ἑλώριον", "form": "acc pl n", "definition": "prey, spoil"},
+        {"word": "τεῦχε", "lemma": "τεύχω", "form": "3rd sg impf act ind", "definition": "made, fashioned"},
+        {"word": "κύνεσσιν", "lemma": "κύων", "form": "dat pl m", "definition": "for dogs"},
+        {"word": "οἰωνοῖσι", "lemma": "οἰωνός", "form": "dat pl m", "definition": "for birds"},
+        {"word": "βουλή", "lemma": "βουλή", "form": "nom sg f", "definition": "will, counsel, plan"},
+        {"word": "ἐτελείετο", "lemma": "τελέω", "form": "3rd sg impf mid/pass ind", "definition": "was being fulfilled"},
+        {"word": "διαστήτην", "lemma": "διΐστημι", "form": "3rd dual aor act ind", "definition": "they two stood apart"},
+        {"word": "ἐρίσαντε", "lemma": "ἐρίζω", "form": "aor act part nom dual m", "definition": "having quarreled"},
+        {"word": "ἄναξ", "lemma": "ἄναξ", "form": "nom sg m", "definition": "lord, king"},
+        {"word": "δῖος", "lemma": "δῖος", "form": "nom sg m", "definition": "divine, brilliant"}
+      ]
+    },
+    {
+      "id": "1.8-12",
+      "greek": "Τίς τ᾽ ἄρ σφωε θεῶν ἔριδι ξυνέηκε μάχεσθαι;\nΛητοῦς καὶ Διὸς υἱός· ὃ γὰρ βασιλῆϊ χολωθεὶς\nνοῦσον ἀνὰ στρατὸν ὄρσε κακήν, ὀλέκοντο δὲ λαοί,\nοὕνεκα τὸν Χρύσην ἠτίμασεν ἀρητῆρα\nἈτρεΐδης.",
+      "translation": "Which of the gods then set these two to fight in strife? The son of Leto and Zeus; for he, angered at the king, stirred up an evil plague throughout the army, and the people were perishing, because the son of Atreus had dishonored the priest Chryses.",
+      "vocabulary": [
+        {"word": "Τίς", "lemma": "τίς", "form": "nom sg m", "definition": "who, which"},
+        {"word": "σφωε", "lemma": "σφώ", "form": "acc dual", "definition": "these two"},
+        {"word": "θεῶν", "lemma": "θεός", "form": "gen pl m", "definition": "of the gods"},
+        {"word": "ἔριδι", "lemma": "ἔρις", "form": "dat sg f", "definition": "in strife"},
+        {"word": "ξυνέηκε", "lemma": "συνίημι", "form": "3rd sg aor act ind", "definition": "brought together"},
+        {"word": "μάχεσθαι", "lemma": "μάχομαι", "form": "pres mid inf", "definition": "to fight"},
+        {"word": "Λητοῦς", "lemma": "Λητώ", "form": "gen sg f", "definition": "of Leto"},
+        {"word": "υἱός", "lemma": "υἱός", "form": "nom sg m", "definition": "son"},
+        {"word": "βασιλῆϊ", "lemma": "βασιλεύς", "form": "dat sg m", "definition": "at the king"},
+        {"word": "χολωθείς", "lemma": "χολόω", "form": "aor pass part nom sg m", "definition": "having been angered"},
+        {"word": "νοῦσον", "lemma": "νοῦσος", "form": "acc sg f", "definition": "disease, plague"},
+        {"word": "στρατόν", "lemma": "στρατός", "form": "acc sg m", "definition": "army"},
+        {"word": "ὄρσε", "lemma": "ὄρνυμι", "form": "3rd sg aor act ind", "definition": "stirred up, roused"},
+        {"word": "ὀλέκοντο", "lemma": "ὄλλυμι", "form": "3rd pl impf mid ind", "definition": "were perishing"},
+        {"word": "λαοί", "lemma": "λαός", "form": "nom pl m", "definition": "people, troops"},
+        {"word": "Χρύσην", "lemma": "Χρύσης", "form": "acc sg m", "definition": "Chryses"},
+        {"word": "ἠτίμασεν", "lemma": "ἀτιμάζω", "form": "3rd sg aor act ind", "definition": "dishonored"},
+        {"word": "ἀρητῆρα", "lemma": "ἀρητήρ", "form": "acc sg m", "definition": "priest"}
+      ]
+    }
+  ],
+  "historicalContext": "The Iliad, composed in the 8th century BCE, is the oldest work of Western literature. It depicts a few weeks during the tenth year of the Trojan War, focusing on Achilles' withdrawal from battle and its consequences.",
+  "literaryFeatures": [
+    "In medias res: begins in the middle of the war",
+    "Invocation to the Muse (proem)",
+    "Oral-formulaic composition with recurring epithets",
+    "The contrast between souls (ψυχαί) and bodies reveals Greek views of death",
+    "Zeus's plan (βουλή) frames the narrative"
+  ]
+}

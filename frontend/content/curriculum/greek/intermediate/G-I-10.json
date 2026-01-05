@@ -1,0 +1,69 @@
+{
+  "id": "G-I-10",
+  "title": "Relative Clauses and Indirect Discourse",
+  "level": "intermediate",
+  "language": "greek",
+  "estimatedTime": "60 minutes",
+  "objectives": [
+    "Use relative pronouns correctly",
+    "Recognize attraction of the relative",
+    "Form indirect statements with ὅτι/ὡς",
+    "Form indirect statements with infinitive",
+    "Form indirect statements with participle"
+  ],
+  "vocabulary": [
+    {"word": "ὅς, ἥ, ὅ", "transliteration": "hos, hē, ho", "definition": "who, which, that (relative pronoun)"},
+    {"word": "ὅστις, ἥτις, ὅ τι", "transliteration": "hostis, hētis, ho ti", "definition": "whoever, whatever (indefinite relative)"},
+    {"word": "ὅτι", "transliteration": "hoti", "definition": "that, because (introduces ind. statement or cause)"},
+    {"word": "ὡς", "transliteration": "hōs", "definition": "that, as (introduces ind. statement)"},
+    {"word": "φημί", "transliteration": "phēmi", "definition": "I say (+ infinitive in ind. statement)"}
+  ],
+  "grammar": {
+    "topic": "Relative Clauses and Indirect Discourse",
+    "explanation": "Relative pronouns agree with their antecedent in gender and number but take their case from their function in the relative clause. Greek has three constructions for indirect statement: ὅτι/ὡς + indicative, accusative + infinitive, and participle.",
+    "paradigms": [
+      {
+        "name": "Relative Pronoun (ὅς, ἥ, ὅ)",
+        "headers": ["Case", "Masc", "Fem", "Neut"],
+        "rows": [
+          ["Nom Sg", "ὅς", "ἥ", "ὅ"],
+          ["Gen Sg", "οὗ", "ἧς", "οὗ"],
+          ["Dat Sg", "ᾧ", "ᾗ", "ᾧ"],
+          ["Acc Sg", "ὅν", "ἥν", "ὅ"],
+          ["Nom Pl", "οἵ", "αἵ", "ἅ"]
+        ]
+      },
+      {
+        "name": "Indirect Statement Constructions",
+        "headers": ["Verb Type", "Construction", "Example"],
+        "rows": [
+          ["λέγω, φημί", "ὅτι/ὡς + ind", "λέγει ὅτι ἔρχεται (he says that he is coming)"],
+          ["νομίζω, οἴομαι", "acc + inf", "νομίζω αὐτὸν ἔρχεσθαι (I think him to be coming)"],
+          ["ὁράω, ἀκούω", "participle", "ὁρῶ αὐτὸν ἐρχόμενον (I see him coming)"]
+        ]
+      }
+    ],
+    "rules": [
+      "Relative attraction: relative assimilated to case of antecedent",
+      "ὅτι keeps original tense of direct statement",
+      "Infinitive tense = aspect (present ongoing, aorist simple)",
+      "Participle agrees with accusative subject in ind. statement"
+    ]
+  },
+  "exercises": [
+    {
+      "type": "translation",
+      "question": "Translate: οἶδα ὅτι ὁ υἱὸς τοῦ θεοῦ ἥκει.",
+      "answer": "I know that the Son of God has come."
+    },
+    {
+      "type": "analysis",
+      "question": "Explain the attraction in: πάντων ὧν ἐποίησε",
+      "answer": "ὧν (genitive) attracted from accusative ἅ to match antecedent πάντων: 'of all things which he did'"
+    }
+  ],
+  "readingPassage": {
+    "greek": "Ἀκούομεν ὅτι ἔρχεται. Βλέπομεν αὐτὸν ἐρχόμενον. Πάντα ὅσα ἂν θέλητε ἵνα ποιῶσιν ὑμῖν οἱ ἄνθρωποι, οὕτως καὶ ὑμεῖς ποιεῖτε αὐτοῖς.",
+    "translation": "We hear that he is coming. We see him coming. All things whatsoever you wish that people should do to you, so also you do to them."
+  }
+}

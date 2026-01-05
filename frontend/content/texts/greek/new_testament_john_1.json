@@ -1,0 +1,113 @@
+{
+  "id": "nt-john-1",
+  "title": "Gospel of John - Prologue",
+  "author": "John the Evangelist",
+  "work": "Gospel According to John",
+  "dateComposed": "c. 90-110 CE",
+  "difficulty": "intermediate",
+  "genre": "gospel",
+  "description": "The prologue to John's Gospel, presenting the Logos theology and the incarnation of the Word.",
+  "sections": [
+    {
+      "id": "1.1-5",
+      "greek": "Ἐν ἀρχῇ ἦν ὁ λόγος, καὶ ὁ λόγος ἦν πρὸς τὸν θεόν, καὶ θεὸς ἦν ὁ λόγος. οὗτος ἦν ἐν ἀρχῇ πρὸς τὸν θεόν. πάντα δι᾽ αὐτοῦ ἐγένετο, καὶ χωρὶς αὐτοῦ ἐγένετο οὐδὲ ἕν. ὃ γέγονεν ἐν αὐτῷ ζωὴ ἦν, καὶ ἡ ζωὴ ἦν τὸ φῶς τῶν ἀνθρώπων· καὶ τὸ φῶς ἐν τῇ σκοτίᾳ φαίνει, καὶ ἡ σκοτία αὐτὸ οὐ κατέλαβεν.",
+      "translation": "In the beginning was the Word, and the Word was with God, and the Word was God. He was in the beginning with God. All things came into being through him, and without him not one thing came into being. What has come into being in him was life, and the life was the light of humanity. And the light shines in the darkness, and the darkness did not overcome it.",
+      "vocabulary": [
+        {"word": "Ἐν", "lemma": "ἐν", "form": "prep + dat", "definition": "in"},
+        {"word": "ἀρχῇ", "lemma": "ἀρχή", "form": "dat sg f", "definition": "beginning"},
+        {"word": "ἦν", "lemma": "εἰμί", "form": "3rd sg impf ind", "definition": "was"},
+        {"word": "λόγος", "lemma": "λόγος", "form": "nom sg m", "definition": "word, reason, Word"},
+        {"word": "πρός", "lemma": "πρός", "form": "prep + acc", "definition": "with, toward"},
+        {"word": "θεόν", "lemma": "θεός", "form": "acc sg m", "definition": "God"},
+        {"word": "θεός", "lemma": "θεός", "form": "nom sg m", "definition": "God (predicate)"},
+        {"word": "οὗτος", "lemma": "οὗτος", "form": "nom sg m", "definition": "this one, he"},
+        {"word": "πάντα", "lemma": "πᾶς", "form": "nom pl n", "definition": "all things"},
+        {"word": "δι᾽", "lemma": "διά", "form": "prep + gen", "definition": "through"},
+        {"word": "αὐτοῦ", "lemma": "αὐτός", "form": "gen sg m", "definition": "him"},
+        {"word": "ἐγένετο", "lemma": "γίνομαι", "form": "3rd sg aor mid ind", "definition": "came into being"},
+        {"word": "χωρίς", "lemma": "χωρίς", "form": "prep + gen", "definition": "without, apart from"},
+        {"word": "οὐδέ", "lemma": "οὐδέ", "form": "conj", "definition": "not even"},
+        {"word": "ἕν", "lemma": "εἷς", "form": "nom sg n", "definition": "one thing"},
+        {"word": "γέγονεν", "lemma": "γίνομαι", "form": "3rd sg perf act ind", "definition": "has come into being"},
+        {"word": "ζωή", "lemma": "ζωή", "form": "nom sg f", "definition": "life"},
+        {"word": "φῶς", "lemma": "φῶς", "form": "nom sg n", "definition": "light"},
+        {"word": "ἀνθρώπων", "lemma": "ἄνθρωπος", "form": "gen pl m", "definition": "of humans"},
+        {"word": "σκοτίᾳ", "lemma": "σκοτία", "form": "dat sg f", "definition": "darkness"},
+        {"word": "φαίνει", "lemma": "φαίνω", "form": "3rd sg pres act ind", "definition": "shines"},
+        {"word": "κατέλαβεν", "lemma": "καταλαμβάνω", "form": "3rd sg aor act ind", "definition": "overcame, grasped"}
+      ],
+      "grammaticalNotes": [
+        "Ἐν ἀρχῇ: echoes Genesis 1:1 (בְּרֵאשִׁית, ἐν ἀρχῇ)",
+        "θεὸς ἦν ὁ λόγος: predicate nominative without article - qualitative",
+        "πρὸς τὸν θεόν: 'toward' suggests relationship, communion"
+      ],
+      "theologicalNotes": [
+        "λόγος combines Greek philosophical concept with Hebrew 'word of God'",
+        "Pre-existence of Christ asserted",
+        "Light/darkness imagery central to Johannine theology"
+      ]
+    },
+    {
+      "id": "1.6-9",
+      "greek": "Ἐγένετο ἄνθρωπος ἀπεσταλμένος παρὰ θεοῦ, ὄνομα αὐτῷ Ἰωάννης· οὗτος ἦλθεν εἰς μαρτυρίαν, ἵνα μαρτυρήσῃ περὶ τοῦ φωτός, ἵνα πάντες πιστεύσωσιν δι᾽ αὐτοῦ. οὐκ ἦν ἐκεῖνος τὸ φῶς, ἀλλ᾽ ἵνα μαρτυρήσῃ περὶ τοῦ φωτός. Ἦν τὸ φῶς τὸ ἀληθινόν, ὃ φωτίζει πάντα ἄνθρωπον, ἐρχόμενον εἰς τὸν κόσμον.",
+      "translation": "There was a man sent from God, whose name was John. He came as a witness to testify concerning the light, so that all might believe through him. He was not the light, but came to testify concerning the light. The true light, which enlightens everyone, was coming into the world.",
+      "vocabulary": [
+        {"word": "ἀπεσταλμένος", "lemma": "ἀποστέλλω", "form": "perf pass part nom sg m", "definition": "sent, having been sent"},
+        {"word": "παρά", "lemma": "παρά", "form": "prep + gen", "definition": "from (beside)"},
+        {"word": "ὄνομα", "lemma": "ὄνομα", "form": "nom sg n", "definition": "name"},
+        {"word": "Ἰωάννης", "lemma": "Ἰωάννης", "form": "nom sg m", "definition": "John"},
+        {"word": "ἦλθεν", "lemma": "ἔρχομαι", "form": "3rd sg aor act ind", "definition": "came"},
+        {"word": "μαρτυρίαν", "lemma": "μαρτυρία", "form": "acc sg f", "definition": "witness, testimony"},
+        {"word": "ἵνα", "lemma": "ἵνα", "form": "conj", "definition": "in order that, so that"},
+        {"word": "μαρτυρήσῃ", "lemma": "μαρτυρέω", "form": "3rd sg aor subj act", "definition": "he might testify"},
+        {"word": "περί", "lemma": "περί", "form": "prep + gen", "definition": "concerning"},
+        {"word": "πιστεύσωσιν", "lemma": "πιστεύω", "form": "3rd pl aor subj act", "definition": "they might believe"},
+        {"word": "ἐκεῖνος", "lemma": "ἐκεῖνος", "form": "nom sg m", "definition": "that one, he"},
+        {"word": "ἀληθινόν", "lemma": "ἀληθινός", "form": "nom sg n", "definition": "true, genuine"},
+        {"word": "φωτίζει", "lemma": "φωτίζω", "form": "3rd sg pres act ind", "definition": "enlightens"},
+        {"word": "ἐρχόμενον", "lemma": "ἔρχομαι", "form": "pres mid part acc sg n", "definition": "coming"},
+        {"word": "κόσμον", "lemma": "κόσμος", "form": "acc sg m", "definition": "world"}
+      ],
+      "grammaticalNotes": [
+        "ἵνα + subjunctive: purpose clause",
+        "οὐκ ἦν ἐκεῖνος τὸ φῶς: emphatic denial that John is the light",
+        "ἐρχόμενον: can modify φῶς or ἄνθρωπον - ambiguity preserved"
+      ]
+    },
+    {
+      "id": "1.14",
+      "greek": "Καὶ ὁ λόγος σὰρξ ἐγένετο καὶ ἐσκήνωσεν ἐν ἡμῖν, καὶ ἐθεασάμεθα τὴν δόξαν αὐτοῦ, δόξαν ὡς μονογενοῦς παρὰ πατρός, πλήρης χάριτος καὶ ἀληθείας.",
+      "translation": "And the Word became flesh and dwelt among us, and we have seen his glory, glory as of the only Son from the Father, full of grace and truth.",
+      "vocabulary": [
+        {"word": "σάρξ", "lemma": "σάρξ", "form": "nom sg f", "definition": "flesh"},
+        {"word": "ἐγένετο", "lemma": "γίνομαι", "form": "3rd sg aor mid ind", "definition": "became"},
+        {"word": "ἐσκήνωσεν", "lemma": "σκηνόω", "form": "3rd sg aor act ind", "definition": "dwelt, tabernacled"},
+        {"word": "ἡμῖν", "lemma": "ἐγώ", "form": "dat pl", "definition": "among us"},
+        {"word": "ἐθεασάμεθα", "lemma": "θεάομαι", "form": "1st pl aor mid ind", "definition": "we have seen, beheld"},
+        {"word": "δόξαν", "lemma": "δόξα", "form": "acc sg f", "definition": "glory"},
+        {"word": "μονογενοῦς", "lemma": "μονογενής", "form": "gen sg m", "definition": "only begotten, unique"},
+        {"word": "πατρός", "lemma": "πατήρ", "form": "gen sg m", "definition": "of the Father"},
+        {"word": "πλήρης", "lemma": "πλήρης", "form": "nom sg", "definition": "full"},
+        {"word": "χάριτος", "lemma": "χάρις", "form": "gen sg f", "definition": "of grace"},
+        {"word": "ἀληθείας", "lemma": "ἀλήθεια", "form": "gen sg f", "definition": "of truth"}
+      ],
+      "grammaticalNotes": [
+        "σὰρξ ἐγένετο: the incarnation stated directly",
+        "ἐσκήνωσεν: 'pitched tent' - alludes to tabernacle/Shekinah",
+        "μονογενής: 'one of a kind' or 'only begotten'"
+      ],
+      "theologicalNotes": [
+        "Central verse for incarnation theology",
+        "ἐσκήνωσεν echoes the tabernacle (σκηνή) in the wilderness",
+        "δόξα corresponds to Hebrew כָּבוֹד (kabod)"
+      ]
+    }
+  ],
+  "historicalContext": "The Gospel of John, written late in the first century, presents a distinctive portrait of Jesus emphasizing his divine nature. The Prologue establishes the theological framework for the entire Gospel.",
+  "literaryFeatures": [
+    "Hymnic structure in the prologue",
+    "Key terms: Logos, light, life, glory, truth",
+    "Parallelism and repetition",
+    "Possible incorporation of an early Christian hymn"
+  ]
+}

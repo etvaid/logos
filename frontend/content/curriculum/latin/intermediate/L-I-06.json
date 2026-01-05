@@ -1,0 +1,79 @@
+{
+  "id": "L-I-06",
+  "title": "Subjunctive Mood - Present and Imperfect",
+  "level": "intermediate",
+  "language": "latin",
+  "estimatedTime": "65 minutes",
+  "objectives": [
+    "Form the present subjunctive for all conjugations",
+    "Form the imperfect subjunctive for all conjugations",
+    "Recognize independent uses: hortatory, jussive, optative",
+    "Understand the subjunctive as mood of possibility/wish",
+    "Use the subjunctive in main clauses"
+  ],
+  "vocabulary": [
+    {"word": "amemus", "lemma": "amo", "form": "1st pl pres subj", "definition": "let us love"},
+    {"word": "vivat", "lemma": "vivo", "form": "3rd sg pres subj", "definition": "may he/she live"},
+    {"word": "fiat", "lemma": "fio", "form": "3rd sg pres subj", "definition": "let it be done"},
+    {"word": "utinam", "lemma": "utinam", "form": "particle", "definition": "would that, if only"},
+    {"word": "ne", "lemma": "ne", "form": "particle", "definition": "not, lest (with subjunctive)"},
+    {"word": "velim", "lemma": "volo", "form": "1st sg pres subj", "definition": "I would wish"}
+  ],
+  "grammar": {
+    "topic": "Subjunctive Mood - Formation and Independent Uses",
+    "explanation": "The subjunctive expresses actions that are possible, wished, commanded, or hypothetical rather than actual. In main clauses, it expresses commands (jussive), wishes (optative), or exhortations (hortatory).",
+    "paradigms": [
+      {
+        "name": "Present Subjunctive Formation",
+        "headers": ["Conjugation", "Method", "Example (1st sg)"],
+        "rows": [
+          ["1st", "Change -a- to -e-", "amem (not amam)"],
+          ["2nd", "Add -a-", "moneam"],
+          ["3rd", "Add -a-", "ducam"],
+          ["3rd-io", "Add -a-", "capiam"],
+          ["4th", "Add -a-", "audiam"]
+        ]
+      },
+      {
+        "name": "Imperfect Subjunctive",
+        "headers": ["Person", "Formation", "Example"],
+        "rows": [
+          ["All", "Infinitive + personal endings", "amarem, amares, amaret..."]
+        ]
+      },
+      {
+        "name": "Independent Subjunctive Uses",
+        "headers": ["Use", "Example", "Translation"],
+        "rows": [
+          ["Hortatory (1st pl)", "Eamus!", "Let us go!"],
+          ["Jussive (3rd person)", "Veniat!", "Let him come!"],
+          ["Optative (wish)", "Utinam veniat!", "May he come!"],
+          ["Deliberative", "Quid faciam?", "What am I to do?"]
+        ]
+      }
+    ],
+    "rules": [
+      "Present subjunctive: 1st conj changes vowel; others add -a-",
+      "Imperfect subjunctive = infinitive + endings (-m, -s, -t, -mus, -tis, -nt)",
+      "Negative: use ne (not non) with independent subjunctives",
+      "Hortatory = 'Let us...'; Jussive = 'Let him/them...'"
+    ]
+  },
+  "exercises": [
+    {
+      "type": "translation",
+      "question": "Translate: Gaudeamus igitur!",
+      "answer": "Therefore let us rejoice!"
+    },
+    {
+      "type": "formation",
+      "question": "Form the present subjunctive 3rd singular of 'venio'",
+      "answer": "veniat"
+    }
+  ],
+  "readingPassage": {
+    "latin": "Gaudeamus, amici! Vita brevis est. Bibamus et cantemus! Utinam semper felices simus. Ne laboremus hodie. Cras laborabimus.",
+    "translation": "Let us rejoice, friends! Life is short. Let us drink and sing! May we always be happy. Let us not work today. Tomorrow we shall work.",
+    "notes": ["Series of hortatory and optative subjunctives"]
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "id": "ovid-met-1",
+  "title": "Metamorphoses - Book I, Creation and Flood",
+  "author": "Publius Ovidius Naso",
+  "work": "Metamorphoses",
+  "book": 1,
+  "dateComposed": "c. 8 CE",
+  "difficulty": "intermediate",
+  "genre": "epic poetry",
+  "meter": "dactylic hexameter",
+  "description": "Ovid's poem of transformations, opening with the creation of the world from Chaos.",
+  "sections": [
+    {
+      "id": "1.1-4",
+      "latin": "In nova fert animus mutatas dicere formas\ncorpora; di, coeptis (nam vos mutastis et illas)\nadspirate meis primaque ab origine mundi\nad mea perpetuum deducite tempora carmen!",
+      "translation": "My mind moves me to tell of forms changed into new bodies; gods, favor my undertaking (for you have changed even those forms), and from the first origin of the world lead down my continuous song to my own times!",
+      "lineByLine": [
+        {
+          "line": 1,
+          "latin": "In nova fert animus mutatas dicere formas",
+          "translation": "My mind moves me to tell of forms changed into new",
+          "notes": "in nova...corpora: hyperbaton (separation of adjective and noun)"
+        },
+        {
+          "line": 2,
+          "latin": "corpora; di, coeptis (nam vos mutastis et illas)",
+          "translation": "bodies; gods, favor my undertakings (for you have changed even those forms)",
+          "notes": "di = dei; coeptis: dative plural with adspirate"
+        },
+        {
+          "line": 3,
+          "latin": "adspirate meis primaque ab origine mundi",
+          "translation": "breathe upon my [work] and from the first origin of the world",
+          "notes": "adspirate: 'breathe upon' = inspire, favor"
+        },
+        {
+          "line": 4,
+          "latin": "ad mea perpetuum deducite tempora carmen!",
+          "translation": "lead down my continuous song to my own times!",
+          "notes": "deducite: metaphor from spinning thread; perpetuum carmen: unbroken song"
+        }
+      ],
+      "vocabulary": [
+        {"word": "nova", "lemma": "novus", "form": "acc pl n", "definition": "new"},
+        {"word": "fert", "lemma": "fero", "form": "3rd sg pres act ind", "definition": "carries, moves"},
+        {"word": "animus", "lemma": "animus", "form": "nom sg m", "definition": "mind, spirit"},
+        {"word": "mutatas", "lemma": "muto", "form": "perf pass part acc pl f", "definition": "changed"},
+        {"word": "dicere", "lemma": "dico", "form": "pres act inf", "definition": "to tell, speak"},
+        {"word": "formas", "lemma": "forma", "form": "acc pl f", "definition": "forms, shapes"},
+        {"word": "corpora", "lemma": "corpus", "form": "acc pl n", "definition": "bodies"},
+        {"word": "coeptis", "lemma": "coeptum", "form": "dat pl n", "definition": "undertakings, beginnings"},
+        {"word": "mutastis", "lemma": "muto", "form": "2nd pl perf act ind", "definition": "you have changed"},
+        {"word": "adspirate", "lemma": "adspiro", "form": "2nd pl pres act imper", "definition": "breathe upon, favor"},
+        {"word": "origine", "lemma": "origo", "form": "abl sg f", "definition": "origin, beginning"},
+        {"word": "mundi", "lemma": "mundus", "form": "gen sg m", "definition": "of the world"},
+        {"word": "perpetuum", "lemma": "perpetuus", "form": "acc sg n", "definition": "continuous, unbroken"},
+        {"word": "deducite", "lemma": "deduco", "form": "2nd pl pres act imper", "definition": "lead down, spin out"},
+        {"word": "carmen", "lemma": "carmen", "form": "acc sg n", "definition": "song, poem"}
+      ]
+    },
+    {
+      "id": "1.5-9",
+      "latin": "Ante mare et terras et quod tegit omnia caelum\nunus erat toto naturae vultus in orbe,\nquem dixere chaos: rudis indigestaque moles\nnec quicquam nisi pondus iners congestaque eodem\nnon bene iunctarum discordia semina rerum.",
+      "translation": "Before the sea and lands and the sky that covers all, nature had one face throughout the whole world, which they called Chaos: a rough and unformed mass, nothing except inert weight and discordant seeds of things not well joined, heaped together in the same place.",
+      "vocabulary": [
+        {"word": "Ante", "lemma": "ante", "form": "prep + acc", "definition": "before"},
+        {"word": "mare", "lemma": "mare", "form": "acc sg n", "definition": "sea"},
+        {"word": "terras", "lemma": "terra", "form": "acc pl f", "definition": "lands"},
+        {"word": "tegit", "lemma": "tego", "form": "3rd sg pres act ind", "definition": "covers"},
+        {"word": "caelum", "lemma": "caelum", "form": "nom sg n", "definition": "sky, heaven"},
+        {"word": "unus", "lemma": "unus", "form": "nom sg m", "definition": "one"},
+        {"word": "naturae", "lemma": "natura", "form": "gen sg f", "definition": "of nature"},
+        {"word": "vultus", "lemma": "vultus", "form": "nom sg m", "definition": "face, appearance"},
+        {"word": "orbe", "lemma": "orbis", "form": "abl sg m", "definition": "world, circle"},
+        {"word": "dixere", "lemma": "dico", "form": "3rd pl perf act ind", "definition": "they called"},
+        {"word": "chaos", "lemma": "chaos", "form": "nom/acc sg n", "definition": "chaos (Greek word)"},
+        {"word": "rudis", "lemma": "rudis", "form": "nom sg f", "definition": "rough, unformed"},
+        {"word": "indigesta", "lemma": "indigestus", "form": "nom sg f", "definition": "unarranged, disordered"},
+        {"word": "moles", "lemma": "moles", "form": "nom sg f", "definition": "mass, heap"},
+        {"word": "pondus", "lemma": "pondus", "form": "nom sg n", "definition": "weight"},
+        {"word": "iners", "lemma": "iners", "form": "nom sg n", "definition": "inert, inactive"},
+        {"word": "congesta", "lemma": "congero", "form": "perf pass part nom pl n", "definition": "heaped together"},
+        {"word": "discordia", "lemma": "discors", "form": "nom pl n", "definition": "discordant"},
+        {"word": "semina", "lemma": "semen", "form": "nom pl n", "definition": "seeds"},
+        {"word": "rerum", "lemma": "res", "form": "gen pl f", "definition": "of things"}
+      ]
+    },
+    {
+      "id": "1.89-93",
+      "latin": "Sanctius his animal mentisque capacius altae\ndeerat adhuc et quod dominari in cetera posset:\nnatus homo est, sive hunc divino semine fecit\nille opifex rerum, mundi melioris origo,\nsive recens tellus seductaque nuper ab alto...",
+      "translation": "A holier creature than these, more capable of high mind, was still lacking, one that could rule over the rest: man was born—whether that craftsman of things, the origin of a better world, made him from divine seed, or whether the fresh earth, recently separated from the high heaven...",
+      "vocabulary": [
+        {"word": "Sanctius", "lemma": "sanctus", "form": "nom sg n comp", "definition": "more sacred, holier"},
+        {"word": "animal", "lemma": "animal", "form": "nom sg n", "definition": "living being, creature"},
+        {"word": "mentis", "lemma": "mens", "form": "gen sg f", "definition": "of mind"},
+        {"word": "capacius", "lemma": "capax", "form": "nom sg n comp", "definition": "more capable"},
+        {"word": "altae", "lemma": "altus", "form": "gen sg f", "definition": "high, lofty"},
+        {"word": "deerat", "lemma": "desum", "form": "3rd sg impf act ind", "definition": "was lacking"},
+        {"word": "dominari", "lemma": "dominor", "form": "pres inf dep", "definition": "to rule, dominate"},
+        {"word": "cetera", "lemma": "ceteri", "form": "acc pl n", "definition": "the rest, other things"},
+        {"word": "natus", "lemma": "nascor", "form": "perf part nom sg m", "definition": "born"},
+        {"word": "homo", "lemma": "homo", "form": "nom sg m", "definition": "man, human"},
+        {"word": "divino", "lemma": "divinus", "form": "abl sg n", "definition": "divine"},
+        {"word": "semine", "lemma": "semen", "form": "abl sg n", "definition": "from seed"},
+        {"word": "opifex", "lemma": "opifex", "form": "nom sg m", "definition": "craftsman, maker"},
+        {"word": "rerum", "lemma": "res", "form": "gen pl f", "definition": "of things"},
+        {"word": "origo", "lemma": "origo", "form": "nom sg f", "definition": "origin, source"},
+        {"word": "melioris", "lemma": "melior", "form": "gen sg m", "definition": "of a better"},
+        {"word": "recens", "lemma": "recens", "form": "nom sg f", "definition": "fresh, recent"},
+        {"word": "tellus", "lemma": "tellus", "form": "nom sg f", "definition": "earth"},
+        {"word": "seducta", "lemma": "seduco", "form": "perf pass part nom sg f", "definition": "separated"},
+        {"word": "nuper", "lemma": "nuper", "form": "adv", "definition": "recently"},
+        {"word": "alto", "lemma": "altum", "form": "abl sg n", "definition": "from the high (heaven)"}
+      ]
+    }
+  ],
+  "historicalContext": "Ovid's Metamorphoses, completed around 8 CE, tells myths of transformation from creation to Julius Caesar's deification. It became one of the most influential works of classical literature, inspiring artists and writers for two millennia.",
+  "literaryFeatures": [
+    "Epic scope with elegiac wit and irony",
+    "Continuous narrative of mythological transformations",
+    "Philosophical cosmogony drawing on Greek sources",
+    "Masterful transitions between stories"
+  ]
+}

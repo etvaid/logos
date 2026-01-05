@@ -1,0 +1,282 @@
+{
+  "id": "G-B-09",
+  "title": "Third Declension Nouns Introduction",
+  "level": "beginner",
+  "language": "greek",
+  "estimatedTime": "45 minutes",
+  "objectives": [
+    "Recognize third declension noun patterns",
+    "Decline common third declension nouns",
+    "Identify stem changes in third declension",
+    "Understand consonant and vowel stem nouns"
+  ],
+  "vocabulary": [
+    {
+      "word": "σάρξ",
+      "transliteration": "sarx",
+      "translation": "flesh, body",
+      "partOfSpeech": "noun",
+      "declension": "3rd",
+      "gender": "feminine",
+      "examples": [
+        "ἡ σὰρξ ἀσθενής - the flesh is weak"
+      ]
+    },
+    {
+      "word": "πνεῦμα",
+      "transliteration": "pneuma",
+      "translation": "spirit, breath, wind",
+      "partOfSpeech": "noun",
+      "declension": "3rd",
+      "gender": "neuter",
+      "examples": [
+        "τὸ πνεῦμα τὸ ἅγιον - the Holy Spirit"
+      ]
+    },
+    {
+      "word": "ὄνομα",
+      "transliteration": "onoma",
+      "translation": "name",
+      "partOfSpeech": "noun",
+      "declension": "3rd",
+      "gender": "neuter",
+      "examples": [
+        "τὸ ὄνομα τοῦ κυρίου - the name of the Lord"
+      ]
+    },
+    {
+      "word": "πατήρ",
+      "transliteration": "pater",
+      "translation": "father",
+      "partOfSpeech": "noun",
+      "declension": "3rd",
+      "gender": "masculine",
+      "examples": [
+        "ὁ πατὴρ ἡμῶν - our Father"
+      ]
+    },
+    {
+      "word": "μήτηρ",
+      "transliteration": "meter",
+      "translation": "mother",
+      "partOfSpeech": "noun",
+      "declension": "3rd",
+      "gender": "feminine",
+      "examples": [
+        "ἡ μήτηρ αὐτοῦ - his mother"
+      ]
+    },
+    {
+      "word": "ἀνήρ",
+      "transliteration": "aner",
+      "translation": "man, husband",
+      "partOfSpeech": "noun",
+      "declension": "3rd",
+      "gender": "masculine",
+      "examples": [
+        "ὁ ἀνὴρ λέγει - the man speaks"
+      ]
+    },
+    {
+      "word": "γυνή",
+      "transliteration": "gune",
+      "translation": "woman, wife",
+      "partOfSpeech": "noun",
+      "declension": "3rd",
+      "gender": "feminine",
+      "examples": [
+        "ἡ γυνὴ πιστεύει - the woman believes"
+      ]
+    },
+    {
+      "word": "πόλις",
+      "transliteration": "polis",
+      "translation": "city",
+      "partOfSpeech": "noun",
+      "declension": "3rd",
+      "gender": "feminine",
+      "examples": [
+        "ἡ πόλις μεγάλη - the city is great"
+      ]
+    }
+  ],
+  "grammar": {
+    "topic": "Third Declension Nouns",
+    "explanation": "Third declension is the most diverse. Nouns end in consonants or vowels, with stems sometimes changing. The key is learning the genitive singular to find the true stem.",
+    "paradigms": [
+      {
+        "name": "Consonant Stem σάρξ (flesh)",
+        "headers": [
+          "Case",
+          "Singular",
+          "Plural"
+        ],
+        "rows": [
+          [
+            "Nominative",
+            "σάρξ",
+            "σάρκες"
+          ],
+          [
+            "Genitive",
+            "σαρκός",
+            "σαρκῶν"
+          ],
+          [
+            "Dative",
+            "σαρκί",
+            "σαρξί(ν)"
+          ],
+          [
+            "Accusative",
+            "σάρκα",
+            "σάρκας"
+          ]
+        ]
+      },
+      {
+        "name": "Neuter -μα Stem πνεῦμα",
+        "headers": [
+          "Case",
+          "Singular",
+          "Plural"
+        ],
+        "rows": [
+          [
+            "Nominative",
+            "πνεῦμα",
+            "πνεύματα"
+          ],
+          [
+            "Genitive",
+            "πνεύματος",
+            "πνευμάτων"
+          ],
+          [
+            "Dative",
+            "πνεύματι",
+            "πνεύμασι(ν)"
+          ],
+          [
+            "Accusative",
+            "πνεῦμα",
+            "πνεύματα"
+          ]
+        ]
+      },
+      {
+        "name": "Endings Summary",
+        "headers": [
+          "Case",
+          "Masc/Fem",
+          "Neuter"
+        ],
+        "rows": [
+          [
+            "Nom Sg",
+            "varies",
+            "-"
+          ],
+          [
+            "Gen Sg",
+            "-ος",
+            "-ος"
+          ],
+          [
+            "Dat Sg",
+            "-ι",
+            "-ι"
+          ],
+          [
+            "Acc Sg",
+            "-α/-ν",
+            "-"
+          ],
+          [
+            "Nom Pl",
+            "-ες",
+            "-α"
+          ],
+          [
+            "Gen Pl",
+            "-ων",
+            "-ων"
+          ],
+          [
+            "Dat Pl",
+            "-σι(ν)",
+            "-σι(ν)"
+          ],
+          [
+            "Acc Pl",
+            "-ας",
+            "-α"
+          ]
+        ]
+      }
+    ],
+    "rules": [
+      "Find stem from genitive singular by removing -ος",
+      "Third declension genitive singular always -ος",
+      "Neuter nom/acc identical as always",
+      "Stem may show changes when endings added",
+      "Dative plural -σι can cause consonant changes"
+    ]
+  },
+  "exercises": [
+    {
+      "type": "stem_finding",
+      "instructions": "Find the stem from genitive",
+      "items": [
+        {
+          "prompt": "πνεύματος",
+          "answer": "πνευματ-"
+        },
+        {
+          "prompt": "σαρκός",
+          "answer": "σαρκ-"
+        },
+        {
+          "prompt": "ὀνόματος",
+          "answer": "ὀνοματ-"
+        }
+      ]
+    },
+    {
+      "type": "declension",
+      "instructions": "Decline",
+      "items": [
+        {
+          "prompt": "ὄνομα singular",
+          "answer": "ὄνομα, ὀνόματος, ὀνόματι, ὄνομα"
+        },
+        {
+          "prompt": "πατήρ singular",
+          "answer": "πατήρ, πατρός, πατρί, πατέρα"
+        }
+      ]
+    },
+    {
+      "type": "translation",
+      "instructions": "Translate",
+      "items": [
+        {
+          "prompt": "ἐν ὀνόματι τοῦ πατρός",
+          "answer": "in the name of the Father"
+        },
+        {
+          "prompt": "τὸ πνεῦμα τῆς ἀληθείας",
+          "answer": "the Spirit of truth"
+        }
+      ]
+    }
+  ],
+  "culturalNote": "Third declension includes some of the most theologically significant words: πνεῦμα (Spirit), σάρξ (flesh), πατήρ (Father), ὄνομα (name). The contrast between πνεῦμα and σάρξ runs throughout Paul letters as the spiritual versus fleshly life.",
+  "readingPassage": {
+    "title": "Spirit and Flesh",
+    "source": "John 3:6",
+    "greek": "τὸ γεγεννημένον ἐκ τῆς σαρκὸς σάρξ ἐστιν, καὶ τὸ γεγεννημένον ἐκ τοῦ πνεύματος πνεῦμά ἐστιν",
+    "transliteration": "to gegenemenon ek tes sarkos sarx estin, kai to gegenemenon ek tou pneumatos pneuma estin",
+    "translation": "That which is born of the flesh is flesh, and that which is born of the Spirit is spirit"
+  }
+}

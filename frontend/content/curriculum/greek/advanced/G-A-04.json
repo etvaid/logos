@@ -1,0 +1,48 @@
+{
+  "id": "G-A-04",
+  "title": "Homeric Greek",
+  "level": "advanced",
+  "language": "greek",
+  "estimatedTime": "85 minutes",
+  "objectives": [
+    "Recognize distinctive Homeric forms",
+    "Understand Homeric dialect features",
+    "Identify formulaic phrases and epithets",
+    "Navigate Homeric syntax",
+    "Appreciate oral-formulaic composition"
+  ],
+  "grammar": {
+    "topic": "Homeric Dialect",
+    "explanation": "Homeric Greek is an artificial literary dialect combining Ionic, Aeolic, and archaic features. It preserves forms lost in classical Attic and employs formulaic language reflecting oral composition.",
+    "paradigms": [
+      {
+        "name": "Homeric Forms vs Attic",
+        "headers": ["Feature", "Homer", "Attic"],
+        "rows": [
+          ["Gen sg 1st decl (masc)", "-αο, -εω", "-ου"],
+          ["Gen sg 2nd decl", "-οιο, -ου", "-ου"],
+          ["Dat pl", "-εσσι, -οισι", "-σι(ν), -οις"],
+          ["3rd pl verb ending", "-ον (thematic 2nd aor)", "-ον"],
+          ["Infinitive", "-μεναι, -μεν, -ειν", "-ειν, -ναι"],
+          ["Digamma (ϝ)", "Sometimes affects meter", "Lost"]
+        ]
+      },
+      {
+        "name": "Oral-Formulaic Features",
+        "content": ["Epithets: πόδας ὠκὺς Ἀχιλλεύς (swift-footed Achilles)", "Type scenes: arming, sacrifice, messenger", "Ring composition: ABBA structure", "Noun-epithet phrases fill metrical slots"]
+      }
+    ]
+  },
+  "readingPassage": {
+    "source": "Homer, Iliad 1.1-7",
+    "greek": "Μῆνιν ἄειδε, θεά, Πηληϊάδεω Ἀχιλῆος οὐλομένην...",
+    "analysis": "Πηληϊάδεω: genitive in -εω (Ionic) rather than -ου. θεά: vocative to the Muse. Oral formulaic style: μῆνιν announces theme immediately."
+  },
+  "exercises": [
+    {
+      "type": "identification",
+      "question": "What dialect features appear in: τὸν δ᾽ ἀπαμειβόμενος προσέφη πόδας ὠκὺς Ἀχιλλεύς",
+      "answer": "Formula: πόδας ὠκὺς Ἀχιλλεύς (epithet). Line-type: speech introduction formula."
+    }
+  ]
+}

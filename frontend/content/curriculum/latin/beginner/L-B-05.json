@@ -1,0 +1,182 @@
+{
+  "id": "L-B-05",
+  "title": "Second Conjugation Verbs - Present Tense",
+  "level": "beginner",
+  "language": "latin",
+  "estimatedTime": "50 minutes",
+  "objectives": [
+    "Identify second conjugation verbs by their -ere (long e) infinitive",
+    "Conjugate second conjugation verbs in present indicative active",
+    "Distinguish between second conjugation (-ere) and third conjugation (-ere)",
+    "Build sentences combining nouns and verbs",
+    "Expand vocabulary with common second conjugation verbs"
+  ],
+  "vocabulary": [
+    {
+      "word": "habeo",
+      "translation": "I have, hold",
+      "partOfSpeech": "verb",
+      "conjugation": "2nd",
+      "principalParts": "habeo, habere, habui, habitum",
+      "examples": ["Pecuniam non habeo."]
+    },
+    {
+      "word": "video",
+      "translation": "I see",
+      "partOfSpeech": "verb",
+      "conjugation": "2nd",
+      "principalParts": "video, videre, vidi, visum",
+      "examples": ["Templum videmus."]
+    },
+    {
+      "word": "moneo",
+      "translation": "I warn, advise",
+      "partOfSpeech": "verb",
+      "conjugation": "2nd",
+      "principalParts": "moneo, monere, monui, monitum",
+      "examples": ["Magister discipulos monet."]
+    },
+    {
+      "word": "timeo",
+      "translation": "I fear",
+      "partOfSpeech": "verb",
+      "conjugation": "2nd",
+      "principalParts": "timeo, timere, timui, —",
+      "examples": ["Lupum timemus."]
+    },
+    {
+      "word": "teneo",
+      "translation": "I hold, keep",
+      "partOfSpeech": "verb",
+      "conjugation": "2nd",
+      "principalParts": "teneo, tenere, tenui, tentum",
+      "examples": ["Puer librum tenet."]
+    },
+    {
+      "word": "doceo",
+      "translation": "I teach",
+      "partOfSpeech": "verb",
+      "conjugation": "2nd",
+      "principalParts": "doceo, docere, docui, doctum",
+      "examples": ["Magister pueros docet."]
+    },
+    {
+      "word": "maneo",
+      "translation": "I remain, stay",
+      "partOfSpeech": "verb",
+      "conjugation": "2nd",
+      "principalParts": "maneo, manere, mansi, mansum",
+      "examples": ["In oppido manemus."]
+    },
+    {
+      "word": "debeo",
+      "translation": "I owe, ought",
+      "partOfSpeech": "verb",
+      "conjugation": "2nd",
+      "principalParts": "debeo, debere, debui, debitum",
+      "examples": ["Pecuniam tibi debeo."]
+    },
+    {
+      "word": "terreo",
+      "translation": "I frighten",
+      "partOfSpeech": "verb",
+      "conjugation": "2nd",
+      "principalParts": "terreo, terrere, terrui, territum",
+      "examples": ["Lupus pueros terret."]
+    },
+    {
+      "word": "moveo",
+      "translation": "I move",
+      "partOfSpeech": "verb",
+      "conjugation": "2nd",
+      "principalParts": "moveo, movere, movi, motum",
+      "examples": ["Saxum non movemus."]
+    },
+    {
+      "word": "respondeo",
+      "translation": "I answer, reply",
+      "partOfSpeech": "verb",
+      "conjugation": "2nd",
+      "principalParts": "respondeo, respondere, respondi, responsum",
+      "examples": ["Discipulus magistro respondet."]
+    },
+    {
+      "word": "iubeo",
+      "translation": "I order, command",
+      "partOfSpeech": "verb",
+      "conjugation": "2nd",
+      "principalParts": "iubeo, iubere, iussi, iussum",
+      "examples": ["Dominus servum laborare iubet."]
+    }
+  ],
+  "grammar": {
+    "topic": "Second Conjugation - Present Indicative Active",
+    "explanation": "Second conjugation verbs have -ere as their infinitive ending with a LONG e. This distinguishes them from third conjugation verbs which also have -ere but with a SHORT e. The theme vowel is 'e' which appears throughout the conjugation.",
+    "paradigms": [
+      {
+        "name": "moneo - Present Indicative Active",
+        "headers": ["Person", "Singular", "Plural"],
+        "rows": [
+          ["1st", "moneo (I warn)", "monemus (we warn)"],
+          ["2nd", "mones (you warn)", "monetis (you all warn)"],
+          ["3rd", "monet (he/she/it warns)", "monent (they warn)"]
+        ]
+      },
+      {
+        "name": "Comparison: 1st vs 2nd Conjugation",
+        "headers": ["Person", "1st Conj (amo)", "2nd Conj (moneo)"],
+        "rows": [
+          ["1st sg", "amo", "moneo"],
+          ["2nd sg", "amas", "mones"],
+          ["3rd sg", "amat", "monet"],
+          ["1st pl", "amamus", "monemus"],
+          ["2nd pl", "amatis", "monetis"],
+          ["3rd pl", "amant", "monent"]
+        ]
+      }
+    ],
+    "rules": [
+      "Second conjugation infinitives end in -ere (long e)",
+      "The theme vowel 'e' appears before personal endings",
+      "In 1st person singular, -e + -o contracts to -eo",
+      "Compare: amat (1st) vs monet (2nd) - the vowel before -t differs"
+    ]
+  },
+  "exercises": [
+    {
+      "type": "conjugation",
+      "question": "Conjugate 'video' in the 1st person plural",
+      "answer": "videmus",
+      "hints": ["Add -mus to the stem vide-"]
+    },
+    {
+      "type": "translation",
+      "question": "Translate: Magister discipulos bene docet.",
+      "answer": "The teacher teaches the students well.",
+      "hints": ["bene means 'well'"]
+    },
+    {
+      "type": "parsing",
+      "question": "Identify person and number of 'timent'",
+      "answer": "3rd person plural (they fear)",
+      "hints": ["The -nt ending indicates 3rd plural"]
+    },
+    {
+      "type": "composition",
+      "prompt": "Write 'The boys see the horse' in Latin",
+      "sampleAnswer": "Pueri equum vident."
+    }
+  ],
+  "culturalNote": "The verb doceo gives us 'doctor' (learned one) and 'doctrine.' Roman education valued rhetoric and was conducted by private tutors. The magister (teacher) held an important but not highly paid position in society.",
+  "readingPassage": {
+    "latin": "Magister discipulos in schola docet. Discipuli magistrum timent sed etiam amant. Pueri libros habent et bene student. Lupum in silva videmus; nos terret.",
+    "translation": "The teacher teaches the students in the school. The students fear the teacher but also love him. The boys have books and study well. We see a wolf in the forest; it frightens us.",
+    "notes": [
+      "sed: but",
+      "etiam: also, even",
+      "bene: well",
+      "silva: forest",
+      "nos: us (accusative)"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "L-A-04",
+  "title": "Poetic Syntax and Style",
+  "level": "advanced",
+  "language": "latin",
+  "estimatedTime": "70 minutes",
+  "objectives": [
+    "Recognize distinctively poetic constructions",
+    "Understand poetic word order variations",
+    "Identify archaic and elevated diction",
+    "Analyze enjambment and its effects",
+    "Interpret synchysis (interlocking word order)"
+  ],
+  "grammar": {
+    "topic": "Poetic Syntax",
+    "explanation": "Latin poetry employs syntax that differs from prose: freer word order, archaic forms, Greek constructions, and distinctive uses of case and mood. These create density, ambiguity, and aesthetic effects.",
+    "paradigms": [
+      {
+        "name": "Poetic Constructions",
+        "headers": ["Feature", "Prose", "Poetry"],
+        "rows": [
+          ["Infinitive of Purpose", "ut + subjunctive", "infinitive alone (Greek acc.)"],
+          ["Genitive of Material", "ex + ablative", "genitive alone"],
+          ["Accusative of Respect", "ablative", "accusative (Greek)"],
+          ["Tmesis", "compound together", "prefix separated from verb"]
+        ]
+      },
+      {
+        "name": "Synchysis (Interlocking Order)",
+        "content": ["Pattern: ABAB (adjective-noun interlocked)", "Example: aurea purpuream subnectit fibula vestem", "= aurea fibula purpuream vestem subnectit"]
+      }
+    ]
+  },
+  "readingPassage": {
+    "source": "Virgil, Aeneid 1.81",
+    "latin": "incubuere mari totumque a sedibus imis\nuna Eurusque Notusque ruunt creberque procellis\nAfricus",
+    "translation": "They fell upon the sea and from its lowest depths East Wind and South Wind together rush, and the Southwest heavy with storms",
+    "analysis": "Enjambment at 'Africus' - the word bursts into the new line like the storm itself. Word order mimics chaos."
+  },
+  "exercises": [
+    {
+      "type": "analysis",
+      "question": "Analyze the word order in: 'saevae memorem Iunonis ob iram'",
+      "answer": "Hyperbaton: saevae...Iunonis surrounds memorem...iram. Creates emphasis on Juno's wrath."
+    }
+  ]
+}

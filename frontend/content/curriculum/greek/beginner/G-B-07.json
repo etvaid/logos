@@ -1,0 +1,226 @@
+{
+  "id": "G-B-07",
+  "title": "Adjectives (First and Second Declension)",
+  "level": "beginner",
+  "language": "greek",
+  "estimatedTime": "45 minutes",
+  "objectives": [
+    "Decline first and second declension adjectives",
+    "Understand adjective agreement with nouns",
+    "Recognize attributive and predicate positions",
+    "Use adjectives in simple sentences"
+  ],
+  "vocabulary": [
+    {
+      "word": "ἀγαθός",
+      "transliteration": "agathos",
+      "translation": "good",
+      "partOfSpeech": "adjective",
+      "declension": "2-1-2",
+      "gender": "m/f/n",
+      "examples": [
+        "ὁ ἀγαθὸς ἄνθρωπος"
+      ]
+    },
+    {
+      "word": "καλός",
+      "transliteration": "kalos",
+      "translation": "beautiful, good",
+      "partOfSpeech": "adjective",
+      "declension": "2-1-2",
+      "gender": "m/f/n",
+      "examples": [
+        "ἡ καλὴ γυνή"
+      ]
+    },
+    {
+      "word": "πιστός",
+      "transliteration": "pistos",
+      "translation": "faithful",
+      "partOfSpeech": "adjective",
+      "declension": "2-1-2",
+      "gender": "m/f/n",
+      "examples": [
+        "ὁ πιστὸς δοῦλος"
+      ]
+    },
+    {
+      "word": "κακός",
+      "transliteration": "kakos",
+      "translation": "bad, evil",
+      "partOfSpeech": "adjective",
+      "declension": "2-1-2",
+      "gender": "m/f/n",
+      "examples": [
+        "τὸ κακὸν ἔργον"
+      ]
+    },
+    {
+      "word": "πρῶτος",
+      "transliteration": "protos",
+      "translation": "first",
+      "partOfSpeech": "adjective",
+      "declension": "2-1-2",
+      "gender": "m/f/n",
+      "examples": [
+        "ἡ πρώτη ἡμέρα"
+      ]
+    },
+    {
+      "word": "ἔσχατος",
+      "transliteration": "eschatos",
+      "translation": "last",
+      "partOfSpeech": "adjective",
+      "declension": "2-1-2",
+      "gender": "m/f/n",
+      "examples": [
+        "ἡ ἐσχάτη ἡμέρα"
+      ]
+    },
+    {
+      "word": "ἅγιος",
+      "transliteration": "hagios",
+      "translation": "holy",
+      "partOfSpeech": "adjective",
+      "declension": "2-1-2",
+      "gender": "m/f/n",
+      "examples": [
+        "τὸ πνεῦμα τὸ ἅγιον"
+      ]
+    },
+    {
+      "word": "δίκαιος",
+      "transliteration": "dikaios",
+      "translation": "righteous, just",
+      "partOfSpeech": "adjective",
+      "declension": "2-1-2",
+      "gender": "m/f/n",
+      "examples": [
+        "ὁ δίκαιος κριτής"
+      ]
+    }
+  ],
+  "grammar": {
+    "topic": "First and Second Declension Adjectives",
+    "explanation": "Greek adjectives agree with nouns in gender, number, and case. Most adjectives follow 2-1-2 pattern: masculine like λόγος, feminine like ψυχή, neuter like ἔργον.",
+    "paradigms": [
+      {
+        "name": "ἀγαθός (good)",
+        "headers": [
+          "Case",
+          "Masc",
+          "Fem",
+          "Neut"
+        ],
+        "rows": [
+          [
+            "Nom Sg",
+            "ἀγαθός",
+            "ἀγαθή",
+            "ἀγαθόν"
+          ],
+          [
+            "Gen Sg",
+            "ἀγαθοῦ",
+            "ἀγαθῆς",
+            "ἀγαθοῦ"
+          ],
+          [
+            "Dat Sg",
+            "ἀγαθῷ",
+            "ἀγαθῇ",
+            "ἀγαθῷ"
+          ],
+          [
+            "Acc Sg",
+            "ἀγαθόν",
+            "ἀγαθήν",
+            "ἀγαθόν"
+          ],
+          [
+            "Nom Pl",
+            "ἀγαθοί",
+            "ἀγαθαί",
+            "ἀγαθά"
+          ],
+          [
+            "Gen Pl",
+            "ἀγαθῶν",
+            "ἀγαθῶν",
+            "ἀγαθῶν"
+          ],
+          [
+            "Dat Pl",
+            "ἀγαθοῖς",
+            "ἀγαθαῖς",
+            "ἀγαθοῖς"
+          ],
+          [
+            "Acc Pl",
+            "ἀγαθούς",
+            "ἀγαθάς",
+            "ἀγαθά"
+          ]
+        ]
+      }
+    ],
+    "rules": [
+      "Adjectives agree in gender, number, case",
+      "Attributive: article-adjective-noun or article-noun-article-adjective",
+      "Predicate: adjective without repeated article",
+      "Adjective can function as noun with article"
+    ]
+  },
+  "exercises": [
+    {
+      "type": "declension",
+      "instructions": "Decline",
+      "items": [
+        {
+          "prompt": "καλός masc sg",
+          "answer": "καλός, καλοῦ, καλῷ, καλόν"
+        },
+        {
+          "prompt": "ἀγαθή fem sg",
+          "answer": "ἀγαθή, ἀγαθῆς, ἀγαθῇ, ἀγαθήν"
+        }
+      ]
+    },
+    {
+      "type": "agreement",
+      "instructions": "Match adjective to noun",
+      "items": [
+        {
+          "prompt": "___ ψυχή (good)",
+          "answer": "ἀγαθή ψυχή"
+        },
+        {
+          "prompt": "___ ἔργον (holy)",
+          "answer": "ἅγιον ἔργον"
+        }
+      ]
+    },
+    {
+      "type": "translation",
+      "instructions": "Translate",
+      "items": [
+        {
+          "prompt": "ὁ ἀγαθὸς διδάσκαλος",
+          "answer": "the good teacher"
+        },
+        {
+          "prompt": "ἡ ἐκκλησία ἁγία ἐστίν",
+          "answer": "the church is holy"
+        }
+      ]
+    }
+  ],
+  "culturalNote": "The word ἅγιος (holy) comes from a root meaning set apart. In Greek thought, holiness implied separation from the common. The substantive use οἱ ἅγιοι (the holy ones/the saints) became central to Christian vocabulary.",
+  "readingPassage": {
+    "title": "The Good Shepherd",
+    "source": "John 10:11",
+    "greek": "ἐγώ εἰμι ὁ ποιμὴν ὁ καλός",
+    "transliteration": "ego eimi ho poimen ho kalos",
+    "translation": "I am the good shepherd"
+  }
+}

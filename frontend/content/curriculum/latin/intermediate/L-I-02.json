@@ -1,0 +1,83 @@
+{
+  "id": "L-I-02",
+  "title": "Perfect and Imperfect Tense System",
+  "level": "intermediate",
+  "language": "latin",
+  "estimatedTime": "60 minutes",
+  "objectives": [
+    "Form the perfect active tense for all conjugations",
+    "Form the imperfect active tense for all conjugations",
+    "Distinguish between perfect (completed) and imperfect (ongoing) aspect",
+    "Recognize perfect stem changes",
+    "Translate narratives using multiple past tenses"
+  ],
+  "vocabulary": [
+    {"word": "vici", "lemma": "vinco", "form": "1st sg perf", "definition": "I conquered (vincere, vici, victum)"},
+    {"word": "dixi", "lemma": "dico", "form": "1st sg perf", "definition": "I said (dicere, dixi, dictum)"},
+    {"word": "feci", "lemma": "facio", "form": "1st sg perf", "definition": "I made/did (facere, feci, factum)"},
+    {"word": "vidi", "lemma": "video", "form": "1st sg perf", "definition": "I saw (videre, vidi, visum)"},
+    {"word": "cepi", "lemma": "capio", "form": "1st sg perf", "definition": "I took (capere, cepi, captum)"},
+    {"word": "misi", "lemma": "mitto", "form": "1st sg perf", "definition": "I sent (mittere, misi, missum)"},
+    {"word": "scripsi", "lemma": "scribo", "form": "1st sg perf", "definition": "I wrote (scribere, scripsi, scriptum)"},
+    {"word": "duxi", "lemma": "duco", "form": "1st sg perf", "definition": "I led (ducere, duxi, ductum)"}
+  ],
+  "grammar": {
+    "topic": "Perfect and Imperfect Tenses",
+    "explanation": "Latin distinguishes aspect in the past: the imperfect describes ongoing, habitual, or repeated actions, while the perfect describes completed, single actions. The imperfect uses -ba- as a tense marker; the perfect uses a special stem.",
+    "paradigms": [
+      {
+        "name": "Perfect Active Indicative (amo)",
+        "headers": ["Person", "Singular", "Plural"],
+        "rows": [
+          ["1st", "amavi (I loved/have loved)", "amavimus"],
+          ["2nd", "amavisti", "amavistis"],
+          ["3rd", "amavit", "amaverunt"]
+        ]
+      },
+      {
+        "name": "Imperfect Active Indicative (amo)",
+        "headers": ["Person", "Singular", "Plural"],
+        "rows": [
+          ["1st", "amabam (I was loving)", "amabamus"],
+          ["2nd", "amabas", "amabatis"],
+          ["3rd", "amabat", "amabant"]
+        ]
+      },
+      {
+        "name": "Perfect Stem Types",
+        "headers": ["Type", "Example", "Perfect Stem"],
+        "rows": [
+          ["v-perfect", "amavi", "amav-"],
+          ["u-perfect", "habui", "habu-"],
+          ["s-perfect", "scripsi", "scrips-"],
+          ["Reduplication", "cecidi (cado)", "cecid-"],
+          ["Lengthening", "vidi (video)", "vid-"]
+        ]
+      }
+    ],
+    "rules": [
+      "Imperfect: stem + ba + personal endings",
+      "Perfect: perfect stem + special endings (-i, -isti, -it, -imus, -istis, -erunt)",
+      "Imperfect = was doing, used to do, kept doing",
+      "Perfect = did, has done, completed action"
+    ]
+  },
+  "exercises": [
+    {
+      "type": "translation",
+      "question": "Translate: Caesar venit, vidit, vicit.",
+      "answer": "Caesar came, saw, conquered.",
+      "hints": ["Three perfects showing completed actions"]
+    },
+    {
+      "type": "tense_identification",
+      "question": "What is the difference: 'scribebat' vs 'scripsit'?",
+      "answer": "scribebat = was writing (imperfect/ongoing); scripsit = wrote (perfect/completed)"
+    }
+  ],
+  "readingPassage": {
+    "latin": "Romani hostes vicerunt. Dux milites per campos ducebat. Subito hostes apparuerunt. Milites fortiter pugnaverunt et victoriam reportaverunt.",
+    "translation": "The Romans conquered the enemies. The leader was leading the soldiers through the fields. Suddenly enemies appeared. The soldiers fought bravely and brought back victory.",
+    "notes": ["Note the shift between imperfect (ducebat - background) and perfect (apparuerunt - sudden action)"]
+  }
+}

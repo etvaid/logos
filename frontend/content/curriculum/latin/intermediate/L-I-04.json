@@ -1,0 +1,75 @@
+{
+  "id": "L-I-04",
+  "title": "Participles",
+  "level": "intermediate",
+  "language": "latin",
+  "estimatedTime": "65 minutes",
+  "objectives": [
+    "Form and recognize present active participles",
+    "Form and recognize perfect passive participles",
+    "Form and recognize future active participles",
+    "Use participles to express time relationships",
+    "Translate participial phrases idiomatically"
+  ],
+  "vocabulary": [
+    {"word": "amans", "lemma": "amo", "form": "pres act part", "definition": "loving"},
+    {"word": "amatus", "lemma": "amo", "form": "perf pass part", "definition": "having been loved"},
+    {"word": "amaturus", "lemma": "amo", "form": "fut act part", "definition": "about to love, intending to love"},
+    {"word": "dicens", "lemma": "dico", "form": "pres act part", "definition": "saying"},
+    {"word": "dictus", "lemma": "dico", "form": "perf pass part", "definition": "having been said"},
+    {"word": "dicturus", "lemma": "dico", "form": "fut act part", "definition": "about to say"},
+    {"word": "veniens", "lemma": "venio", "form": "pres act part", "definition": "coming"},
+    {"word": "venturus", "lemma": "venio", "form": "fut act part", "definition": "about to come"}
+  ],
+  "grammar": {
+    "topic": "Participles",
+    "explanation": "Participles are verbal adjectives. They have tense (relative time to main verb) and voice. Present participle = action simultaneous with main verb; perfect participle = action prior; future participle = action subsequent or intended.",
+    "paradigms": [
+      {
+        "name": "Participle Forms",
+        "headers": ["Tense/Voice", "Formation", "Example"],
+        "rows": [
+          ["Present Active", "stem + -ns, -ntis (3rd decl)", "amans, amantis"],
+          ["Perfect Passive", "4th principal part", "amatus, -a, -um"],
+          ["Future Active", "4th pp stem + -urus", "amaturus, -a, -um"]
+        ]
+      },
+      {
+        "name": "Present Participle Declension (amans)",
+        "headers": ["Case", "M/F Sg", "N Sg", "M/F Pl", "N Pl"],
+        "rows": [
+          ["Nom", "amans", "amans", "amantes", "amantia"],
+          ["Gen", "amantis", "amantis", "amantium", "amantium"],
+          ["Dat", "amanti", "amanti", "amantibus", "amantibus"],
+          ["Acc", "amantem", "amans", "amantes", "amantia"],
+          ["Abl", "amante/amanti", "amante/amanti", "amantibus", "amantibus"]
+        ]
+      }
+    ],
+    "rules": [
+      "Participle agrees with noun it modifies in gender, number, case",
+      "Present = same time as main verb",
+      "Perfect = action completed before main verb",
+      "Future = action subsequent to or intended after main verb",
+      "Latin has no present passive or perfect active participle"
+    ]
+  },
+  "exercises": [
+    {
+      "type": "translation",
+      "question": "Translate: Milites victores urbem intrant.",
+      "answer": "The conquering soldiers enter the city. / The soldiers, having conquered, enter the city.",
+      "hints": ["victores = nom pl of victor (substantive participle)"]
+    },
+    {
+      "type": "analysis",
+      "question": "Analyze: 'Caesar haec dicens milites hortabatur'",
+      "answer": "Saying these things, Caesar was encouraging the soldiers. (dicens = simultaneous with hortabatur)"
+    }
+  ],
+  "readingPassage": {
+    "latin": "Hannibal, Alpes transgressus, in Italiam venit. Milites fessi sed victores erant. Romani, periculo cognito, exercitum paraverunt. Hannibal, Romam capturus, versus urbem processit.",
+    "translation": "Hannibal, having crossed the Alps, came into Italy. The soldiers were tired but victorious. The Romans, the danger having been learned, prepared an army. Hannibal, about to capture Rome, advanced toward the city.",
+    "notes": ["transgressus: perfect participle of transgredior", "periculo cognito: ablative absolute", "capturus: future participle showing intention"]
+  }
+}

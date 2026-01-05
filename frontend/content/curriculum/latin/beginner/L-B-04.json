@@ -1,0 +1,177 @@
+{
+  "id": "L-B-04",
+  "title": "First Conjugation Verbs - Present Tense",
+  "level": "beginner",
+  "language": "latin",
+  "estimatedTime": "50 minutes",
+  "objectives": [
+    "Identify first conjugation verbs by their -are infinitive",
+    "Conjugate first conjugation verbs in present indicative active",
+    "Understand personal endings for all six persons",
+    "Form basic Latin sentences with subject and verb",
+    "Recognize that Latin can omit subject pronouns"
+  ],
+  "vocabulary": [
+    {
+      "word": "amo",
+      "translation": "I love",
+      "partOfSpeech": "verb",
+      "conjugation": "1st",
+      "principalParts": "amo, amare, amavi, amatum",
+      "examples": ["Puella matrem amat."]
+    },
+    {
+      "word": "laudo",
+      "translation": "I praise",
+      "partOfSpeech": "verb",
+      "conjugation": "1st",
+      "principalParts": "laudo, laudare, laudavi, laudatum",
+      "examples": ["Magister discipulum laudat."]
+    },
+    {
+      "word": "voco",
+      "translation": "I call",
+      "partOfSpeech": "verb",
+      "conjugation": "1st",
+      "principalParts": "voco, vocare, vocavi, vocatum",
+      "examples": ["Mater filium vocat."]
+    },
+    {
+      "word": "porto",
+      "translation": "I carry",
+      "partOfSpeech": "verb",
+      "conjugation": "1st",
+      "principalParts": "porto, portare, portavi, portatum",
+      "examples": ["Servus aquam portat."]
+    },
+    {
+      "word": "laboro",
+      "translation": "I work",
+      "partOfSpeech": "verb",
+      "conjugation": "1st",
+      "principalParts": "laboro, laborare, laboravi, laboratum",
+      "examples": ["Agricolae in agris laborant."]
+    },
+    {
+      "word": "ambulo",
+      "translation": "I walk",
+      "partOfSpeech": "verb",
+      "conjugation": "1st",
+      "principalParts": "ambulo, ambulare, ambulavi, ambulatum",
+      "examples": ["In via ambulamus."]
+    },
+    {
+      "word": "specto",
+      "translation": "I watch, look at",
+      "partOfSpeech": "verb",
+      "conjugation": "1st",
+      "principalParts": "specto, spectare, spectavi, spectatum",
+      "examples": ["Pueri ludos spectant."]
+    },
+    {
+      "word": "narro",
+      "translation": "I tell, narrate",
+      "partOfSpeech": "verb",
+      "conjugation": "1st",
+      "principalParts": "narro, narrare, narravi, narratum",
+      "examples": ["Poeta fabulam narrat."]
+    },
+    {
+      "word": "paro",
+      "translation": "I prepare",
+      "partOfSpeech": "verb",
+      "conjugation": "1st",
+      "principalParts": "paro, parare, paravi, paratum",
+      "examples": ["Coquus cenam parat."]
+    },
+    {
+      "word": "habito",
+      "translation": "I live, dwell",
+      "partOfSpeech": "verb",
+      "conjugation": "1st",
+      "principalParts": "habito, habitare, habitavi, habitatum",
+      "examples": ["In villa habitamus."]
+    },
+    {
+      "word": "navigo",
+      "translation": "I sail",
+      "partOfSpeech": "verb",
+      "conjugation": "1st",
+      "principalParts": "navigo, navigare, navigavi, navigatum",
+      "examples": ["Nauta ad insulam navigat."]
+    },
+    {
+      "word": "pugno",
+      "translation": "I fight",
+      "partOfSpeech": "verb",
+      "conjugation": "1st",
+      "principalParts": "pugno, pugnare, pugnavi, pugnatum",
+      "examples": ["Milites fortiter pugnant."]
+    }
+  ],
+  "grammar": {
+    "topic": "First Conjugation - Present Indicative Active",
+    "explanation": "First conjugation verbs are identified by the -are ending in the infinitive. To conjugate in the present tense, remove -re from the infinitive and add personal endings. The theme vowel 'a' appears throughout (except in 1st singular where it combines with -o).",
+    "paradigms": [
+      {
+        "name": "amo - Present Indicative Active",
+        "headers": ["Person", "Singular", "Plural"],
+        "rows": [
+          ["1st", "amo (I love)", "amamus (we love)"],
+          ["2nd", "amas (you love)", "amatis (you all love)"],
+          ["3rd", "amat (he/she/it loves)", "amant (they love)"]
+        ]
+      },
+      {
+        "name": "Personal Endings (Active)",
+        "headers": ["Person", "Singular", "Plural"],
+        "rows": [
+          ["1st", "-o", "-mus"],
+          ["2nd", "-s", "-tis"],
+          ["3rd", "-t", "-nt"]
+        ]
+      }
+    ],
+    "rules": [
+      "First conjugation infinitives end in -are",
+      "The theme vowel 'a' appears before personal endings",
+      "In 1st person singular, -a + -o contracts to just -o",
+      "Latin does not require subject pronouns; the ending indicates the person"
+    ]
+  },
+  "exercises": [
+    {
+      "type": "conjugation",
+      "question": "Conjugate 'laudo' in the 3rd person plural",
+      "answer": "laudant",
+      "hints": ["3rd plural ending is -nt"]
+    },
+    {
+      "type": "translation",
+      "question": "Translate: Puellae in horto ambulant.",
+      "answer": "The girls walk in the garden.",
+      "hints": ["ambulant is 3rd plural"]
+    },
+    {
+      "type": "parsing",
+      "question": "Identify person and number of 'portamus'",
+      "answer": "1st person plural (we carry)",
+      "hints": ["The -mus ending indicates 1st plural"]
+    },
+    {
+      "type": "composition",
+      "prompt": "Write 'We praise the poet' in Latin",
+      "sampleAnswer": "Poetam laudamus."
+    }
+  ],
+  "culturalNote": "Verbs like laboro and navigo reveal Roman values. Labor was considered essential to Roman virtue, while navigation enabled Rome's vast maritime trade network across the Mediterranean.",
+  "readingPassage": {
+    "latin": "Agricola in agro laborat. Puellae aquam ad villam portant. Nauta ad Graeciam navigat. Poetam laudamus, nam fabulas bonas narrat.",
+    "translation": "The farmer works in the field. The girls carry water to the farmhouse. The sailor sails to Greece. We praise the poet, for he tells good stories.",
+    "notes": [
+      "nam: for, because",
+      "Graecia: Greece",
+      "villa: farmhouse, country estate"
+    ]
+  }
+}

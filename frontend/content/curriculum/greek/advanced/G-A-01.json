@@ -1,35 +1,38 @@
-```json
 {
-  "overview": {
-    "title": "Perfect System",
-    "objectives": [
-      "Master the use and formation of the perfect and pluperfect tenses in Ancient Greek.",
-      "Understand and apply the concept of reduplication in verb formation.",
-      "Develop the ability to read and comprehend advanced Greek literature fluently."
-    ],
-    "prerequisites": [
-      "Solid understanding of Greek verb conjugation in the present, future, and aorist tenses.",
-      "Familiarity with basic Greek syntax and sentence structure.",
-      "Ability to read intermediate Greek texts with comprehension."
-    ],
-    "duration": "6 weeks"
-  },
+  "id": "G-A-01",
+  "title": "The Perfect System",
+  "level": "advanced",
+  "language": "greek",
+  "estimatedTime": "70 minutes",
+  "objectives": [
+    "Master the use and formation of the perfect and pluperfect tenses",
+    "Understand and apply the concept of reduplication",
+    "Distinguish perfect aspect from aorist",
+    "Read advanced Greek literature with comprehension of perfect system"
+  ],
+  "vocabulary": [
+    {"word": "λέλυκα", "transliteration": "lelyka", "lemma": "λύω", "translation": "I have loosed", "partOfSpeech": "verb", "form": "perfect active indicative 1sg", "examples": ["λέλυκα τὸν δεσμόν."]},
+    {"word": "γέγραφα", "transliteration": "gegrapha", "lemma": "γράφω", "translation": "I have written", "partOfSpeech": "verb", "form": "perfect active indicative 1sg", "examples": ["γέγραφα τὴν ἐπιστολήν."]},
+    {"word": "πεπίστευκα", "transliteration": "pepisteuka", "lemma": "πιστεύω", "translation": "I have believed", "partOfSpeech": "verb", "form": "perfect active indicative 1sg", "examples": ["πεπίστευκα τῷ λόγῳ."]},
+    {"word": "οἶδα", "transliteration": "oida", "lemma": "οἶδα", "translation": "I know", "partOfSpeech": "verb", "form": "perfect with present meaning", "examples": ["οἶδα τὴν ἀλήθειαν."]}
+  ],
   "grammar": {
-    "explanation": "The perfect system in Ancient Greek consists of the perfect, pluperfect, and future perfect tenses. The perfect tense indicates a completed action with present relevance, the pluperfect indicates an action completed in the past relative to another past action, and the future perfect indicates an action that will be completed before a future time. Reduplication is a key feature of the perfect system, typically involving the repetition of the initial consonant of the verb root, often with an 'ε' vowel inserted.",
+    "topic": "The Perfect System",
+    "explanation": "The Greek perfect expresses a present state resulting from a completed action. It is formed with reduplication (repeating initial consonant + ε) and special perfect endings. The pluperfect adds augment and secondary endings.",
     "paradigms": [
       {
-        "name": "Perfect Active Indicative",
-        "table": [
-          ["Person", "Singular", "Plural"],
+        "name": "Perfect Active Indicative (λύω)",
+        "headers": ["Person", "Singular", "Plural"],
+        "rows": [
           ["1st", "λέλυκα", "λελύκαμεν"],
           ["2nd", "λέλυκας", "λελύκατε"],
           ["3rd", "λέλυκε(ν)", "λελύκασι(ν)"]
         ]
       },
       {
-        "name": "Pluperfect Active Indicative",
-        "table": [
-          ["Person", "Singular", "Plural"],
+        "name": "Pluperfect Active Indicative (λύω)",
+        "headers": ["Person", "Singular", "Plural"],
+        "rows": [
           ["1st", "ἐλελύκειν", "ἐλελύκειμεν"],
           ["2nd", "ἐλελύκεις", "ἐλελύκειτε"],
           ["3rd", "ἐλελύκει", "ἐλελύκεσαν"]
@@ -37,99 +40,19 @@
       }
     ],
     "rules": [
-      "Reduplication is formed by repeating the initial consonant of the verb root and adding an 'ε' (e.g., λυ- becomes λελυ-).",
-      "Perfect tense endings are a blend of present and aorist personal endings.",
-      "The augment (ἐ-) is used in the pluperfect indicative."
-    ],
-    "exceptions": [
-      "Verbs beginning with a vowel typically undergo vowel lengthening instead of reduplication.",
-      "Some irregular verbs do not follow standard reduplication patterns and must be memorized individually."
-    ],
-    "memory_tips": [
-      "Associate reduplication with the concept of doubling, as you are 'doubling' the emphasis on the action's completion.",
-      "Remember the perfect tense as 'perfected' action with present relevance."
-    ]
-  },
-  "vocabulary": [
-    {
-      "word": "λέλυκα",
-      "lemma": "λύω",
-      "definition": "I have loosed",
-      "part_of_speech": "verb",
-      "gender_or_conjugation": "perfect active indicative",
-      "frequency_rank": 50,
-      "derivatives": ["analysis"],
-      "example_sentence": "λέλυκα τὸν δεσμόν.",
-      "example_translation": "I have loosed the bond."
-    },
-    {
-      "word": "γέγραφα",
-      "lemma": "γράφω",
-      "definition": "I have written",
-      "part_of_speech": "verb",
-      "gender_or_conjugation": "perfect active indicative",
-      "frequency_rank": 60,
-      "derivatives": ["graphic"],
-      "example_sentence": "γέγραφα τὴν ἐπιστολήν.",
-      "example_translation": "I have written the letter."
-    },
-    // Additional 23 vocabulary entries omitted for brevity
-  ],
-  "reading_passage": {
-    "title": "The Republic",
-    "author": "Plato",
-    "source": "Book VII, 514a–517a",
-    "original_text": "ἰδοὺ γὰρ ἔφη, ἄνθρωποι ἐν σπηλαίῳ οἰκοῦντες...",
-    "translations": {
-      "student": "Behold, he said, people living in a cave...",
-      "scholarly": "Consider, he said, humans dwelling in a cave...",
-      "literary": "Imagine, he said, a group of people inhabiting a cavern..."
-    },
-    "vocabulary_notes": [
-      {"word": "σπηλαίῳ", "note": "Cave; used metaphorically for ignorance."}
-    ],
-    "comprehension_questions": [
-      "What is the significance of the cave in Plato's allegory?",
-      "How does the concept of enlightenment relate to the perfect tense?"
+      "Reduplication: consonant + ε + stem (λύω → λελυ-)",
+      "Aspirates reduplicate with non-aspirate (φ → πεφ-)",
+      "Vowel-initial verbs: lengthening instead of reduplication",
+      "Perfect aspect: completed action with present relevance"
     ]
   },
   "exercises": [
-    {
-      "type": "parsing",
-      "instructions": "Parse the following verbs.",
-      "items": [
-        {"prompt": "λέλυκεν", "answer": "3rd person singular perfect active indicative", "explanation": "Root 'λύω', with reduplication and perfect endings."}
-      ]
-    },
-    {
-      "type": "translation_la_en",
-      "instructions": "Translate the following sentences into English.",
-      "items": [
-        {"prompt": "λέλυκα τὸν δεσμόν.", "answer": "I have loosed the bond.", "explanation": "λέλυκα is the perfect tense of λύω, indicating a completed action."}
-      ]
-    },
-    {
-      "type": "fill_blank",
-      "instructions": "Fill in the blanks with the correct perfect tense forms.",
-      "items": [
-        {"prompt": "ἐγώ _____ (γράφω) τὴν ἐπιστολήν.", "answer": "γέγραφα", "explanation": "The perfect form of γράφω is γέγραφα."}
-      ]
-    }
-    // Additional exercises omitted for brevity
+    {"type": "parsing", "question": "Parse 'λέλυκεν'", "answer": "3rd person singular perfect active indicative", "hints": ["Reduplication λε- + stem λυ- + perfect ending -κεν"]},
+    {"type": "translation", "question": "Translate: γέγραφα τὴν ἐπιστολήν.", "answer": "I have written the letter."}
   ],
-  "cultural_context": {
-    "topic": "The Perfect Tense in Greek Philosophy",
-    "content": "The perfect tense often appears in philosophical texts to denote completed understanding or enlightenment, reflecting a state of being rather than mere action.",
-    "connections_to_texts": [
-      "Plato's allegory of the cave uses perfect tense to describe the realization of truth."
-    ]
-  },
-  "connections": {
-    "reader_links": [
-      {"text": "Thucydides", "passage": "The Melian Dialogue"}
-    ],
-    "related_modules": ["G-I-02: Aorist System", "G-A-02: Subjunctive and Optative Moods"],
-    "advanced_topics": ["Aspectual Nuances in Greek Tenses", "The Role of Reduplication in Greek Morphology"]
+  "readingPassage": {
+    "greek": "ταῦτα γέγραπται ἵνα πιστεύσητε. οἴδαμεν ὅτι ἀληθής ἐστιν ἡ μαρτυρία αὐτοῦ.",
+    "translation": "These things have been written so that you may believe. We know that his testimony is true.",
+    "notes": ["γέγραπται: perfect passive 'stands written'", "οἴδαμεν: perfect with present meaning 'we know'"]
   }
 }
-```

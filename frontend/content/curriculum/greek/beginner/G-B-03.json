@@ -1,0 +1,229 @@
+{
+  "id": "G-B-03",
+  "title": "Second Declension Nouns",
+  "level": "beginner",
+  "language": "greek",
+  "estimatedTime": "45 minutes",
+  "objectives": [
+    "Decline masculine second declension nouns",
+    "Decline neuter second declension nouns",
+    "Understand grammatical case",
+    "Use nouns in sentences"
+  ],
+  "vocabulary": [
+    {
+      "word": "λόγος",
+      "transliteration": "logos",
+      "translation": "word, speech, reason",
+      "partOfSpeech": "noun",
+      "declension": "2nd",
+      "gender": "masculine",
+      "examples": [
+        "ὁ λόγος τοῦ θεοῦ"
+      ]
+    },
+    {
+      "word": "ἔργον",
+      "transliteration": "ergon",
+      "translation": "work, deed",
+      "partOfSpeech": "noun",
+      "declension": "2nd",
+      "gender": "neuter",
+      "examples": [
+        "τὸ ἔργον καλόν ἐστιν"
+      ]
+    },
+    {
+      "word": "θεός",
+      "transliteration": "theos",
+      "translation": "god, God",
+      "partOfSpeech": "noun",
+      "declension": "2nd",
+      "gender": "masculine",
+      "examples": [
+        "ὁ θεὸς ἀγαθός ἐστιν"
+      ]
+    },
+    {
+      "word": "κόσμος",
+      "transliteration": "kosmos",
+      "translation": "world",
+      "partOfSpeech": "noun",
+      "declension": "2nd",
+      "gender": "masculine",
+      "examples": [
+        "ὁ κόσμος καλός"
+      ]
+    },
+    {
+      "word": "δοῦλος",
+      "transliteration": "doulos",
+      "translation": "slave, servant",
+      "partOfSpeech": "noun",
+      "declension": "2nd",
+      "gender": "masculine",
+      "examples": [
+        "ὁ δοῦλος ἐργάζεται"
+      ]
+    },
+    {
+      "word": "τέκνον",
+      "transliteration": "teknon",
+      "translation": "child",
+      "partOfSpeech": "noun",
+      "declension": "2nd",
+      "gender": "neuter",
+      "examples": [
+        "τὸ τέκνον μανθάνει"
+      ]
+    },
+    {
+      "word": "εὐαγγέλιον",
+      "transliteration": "euangelion",
+      "translation": "gospel",
+      "partOfSpeech": "noun",
+      "declension": "2nd",
+      "gender": "neuter",
+      "examples": [
+        "τὸ εὐαγγέλιον"
+      ]
+    },
+    {
+      "word": "ἱερόν",
+      "transliteration": "hieron",
+      "translation": "temple",
+      "partOfSpeech": "noun",
+      "declension": "2nd",
+      "gender": "neuter",
+      "examples": [
+        "τὸ ἱερὸν μέγα"
+      ]
+    }
+  ],
+  "grammar": {
+    "topic": "Second Declension Nouns",
+    "explanation": "Greek nouns change endings for case, number, gender. Second declension has masculine -ος and neuter -ον nouns.",
+    "paradigms": [
+      {
+        "name": "Masculine λόγος",
+        "headers": [
+          "Case",
+          "Sg",
+          "Pl"
+        ],
+        "rows": [
+          [
+            "Nom",
+            "λόγος",
+            "λόγοι"
+          ],
+          [
+            "Gen",
+            "λόγου",
+            "λόγων"
+          ],
+          [
+            "Dat",
+            "λόγῳ",
+            "λόγοις"
+          ],
+          [
+            "Acc",
+            "λόγον",
+            "λόγους"
+          ],
+          [
+            "Voc",
+            "λόγε",
+            "λόγοι"
+          ]
+        ]
+      },
+      {
+        "name": "Neuter ἔργον",
+        "headers": [
+          "Case",
+          "Sg",
+          "Pl"
+        ],
+        "rows": [
+          [
+            "Nom",
+            "ἔργον",
+            "ἔργα"
+          ],
+          [
+            "Gen",
+            "ἔργου",
+            "ἔργων"
+          ],
+          [
+            "Dat",
+            "ἔργῳ",
+            "ἔργοις"
+          ],
+          [
+            "Acc",
+            "ἔργον",
+            "ἔργα"
+          ],
+          [
+            "Voc",
+            "ἔργον",
+            "ἔργα"
+          ]
+        ]
+      }
+    ],
+    "rules": [
+      "Neuter nom/acc/voc identical",
+      "Neuter plural nom/acc in -α",
+      "Gen/dat same for masc/neut",
+      "Neuter plural takes singular verb"
+    ]
+  },
+  "exercises": [
+    {
+      "type": "declension",
+      "instructions": "Decline",
+      "items": [
+        {
+          "prompt": "θεός singular",
+          "answer": "θεός, θεοῦ, θεῷ, θεόν, θεέ"
+        }
+      ]
+    },
+    {
+      "type": "parsing",
+      "instructions": "Parse",
+      "items": [
+        {
+          "prompt": "λόγους",
+          "answer": "acc pl m"
+        },
+        {
+          "prompt": "ἔργῳ",
+          "answer": "dat sg n"
+        }
+      ]
+    },
+    {
+      "type": "translation",
+      "instructions": "Translate",
+      "items": [
+        {
+          "prompt": "ὁ λόγος τοῦ θεοῦ",
+          "answer": "the word of God"
+        }
+      ]
+    }
+  ],
+  "culturalNote": "The case system gives Greek flexibility. Endings show function, so word order is freer than English.",
+  "readingPassage": {
+    "title": "The Logos",
+    "source": "John 1:1",
+    "greek": "Ἐν ἀρχῇ ἦν ὁ λόγος, καὶ ὁ λόγος ἦν πρὸς τὸν θεόν, καὶ θεὸς ἦν ὁ λόγος.",
+    "transliteration": "En arche en ho logos...",
+    "translation": "In the beginning was the Word..."
+  }
+}

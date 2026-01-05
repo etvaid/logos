@@ -1,0 +1,183 @@
+{
+  "id": "L-B-06",
+  "title": "Adjectives of the First and Second Declension",
+  "level": "beginner",
+  "language": "latin",
+  "estimatedTime": "55 minutes",
+  "objectives": [
+    "Understand that adjectives agree with nouns in gender, number, and case",
+    "Decline first/second declension adjectives (bonus, -a, -um type)",
+    "Decline adjectives in -er (pulcher, liber type)",
+    "Position adjectives correctly in Latin sentences",
+    "Use adjectives as substantives"
+  ],
+  "vocabulary": [
+    {
+      "word": "bonus",
+      "translation": "good",
+      "partOfSpeech": "adjective",
+      "declension": "1st/2nd",
+      "forms": "bonus, -a, -um",
+      "examples": ["Vir bonus est."]
+    },
+    {
+      "word": "malus",
+      "translation": "bad, evil",
+      "partOfSpeech": "adjective",
+      "declension": "1st/2nd",
+      "forms": "malus, -a, -um",
+      "examples": ["Consilium malum est."]
+    },
+    {
+      "word": "magnus",
+      "translation": "large, great",
+      "partOfSpeech": "adjective",
+      "declension": "1st/2nd",
+      "forms": "magnus, -a, -um",
+      "examples": ["Templum magnum videmus."]
+    },
+    {
+      "word": "parvus",
+      "translation": "small",
+      "partOfSpeech": "adjective",
+      "declension": "1st/2nd",
+      "forms": "parvus, -a, -um",
+      "examples": ["Puella parva currit."]
+    },
+    {
+      "word": "novus",
+      "translation": "new",
+      "partOfSpeech": "adjective",
+      "declension": "1st/2nd",
+      "forms": "novus, -a, -um",
+      "examples": ["Librum novum habeo."]
+    },
+    {
+      "word": "antiquus",
+      "translation": "ancient, old",
+      "partOfSpeech": "adjective",
+      "declension": "1st/2nd",
+      "forms": "antiquus, -a, -um",
+      "examples": ["Roma urbs antiqua est."]
+    },
+    {
+      "word": "pulcher",
+      "translation": "beautiful, handsome",
+      "partOfSpeech": "adjective",
+      "declension": "1st/2nd",
+      "forms": "pulcher, pulchra, pulchrum",
+      "examples": ["Femina pulchra est."]
+    },
+    {
+      "word": "miser",
+      "translation": "wretched, unhappy",
+      "partOfSpeech": "adjective",
+      "declension": "1st/2nd",
+      "forms": "miser, misera, miserum",
+      "examples": ["Servus miser laborat."]
+    },
+    {
+      "word": "liber",
+      "translation": "free",
+      "partOfSpeech": "adjective",
+      "declension": "1st/2nd",
+      "forms": "liber, libera, liberum",
+      "examples": ["Homo liber sum."]
+    },
+    {
+      "word": "longus",
+      "translation": "long",
+      "partOfSpeech": "adjective",
+      "declension": "1st/2nd",
+      "forms": "longus, -a, -um",
+      "examples": ["Via longa est."]
+    },
+    {
+      "word": "latus",
+      "translation": "wide, broad",
+      "partOfSpeech": "adjective",
+      "declension": "1st/2nd",
+      "forms": "latus, -a, -um",
+      "examples": ["Flumen latum est."]
+    },
+    {
+      "word": "altus",
+      "translation": "high, deep",
+      "partOfSpeech": "adjective",
+      "declension": "1st/2nd",
+      "forms": "altus, -a, -um",
+      "examples": ["Murus altus oppidum defendit."]
+    }
+  ],
+  "grammar": {
+    "topic": "First and Second Declension Adjectives",
+    "explanation": "Latin adjectives must agree with the noun they modify in gender, number, and case. First/second declension adjectives use second declension endings for masculine and neuter forms, and first declension endings for feminine forms.",
+    "paradigms": [
+      {
+        "name": "bonus, -a, -um (good)",
+        "headers": ["Case", "Masc Sg", "Fem Sg", "Neut Sg", "Masc Pl", "Fem Pl", "Neut Pl"],
+        "rows": [
+          ["Nom", "bonus", "bona", "bonum", "boni", "bonae", "bona"],
+          ["Gen", "boni", "bonae", "boni", "bonorum", "bonarum", "bonorum"],
+          ["Dat", "bono", "bonae", "bono", "bonis", "bonis", "bonis"],
+          ["Acc", "bonum", "bonam", "bonum", "bonos", "bonas", "bona"],
+          ["Abl", "bono", "bona", "bono", "bonis", "bonis", "bonis"]
+        ]
+      },
+      {
+        "name": "pulcher, pulchra, pulchrum (beautiful)",
+        "headers": ["Case", "Masc Sg", "Fem Sg", "Neut Sg"],
+        "rows": [
+          ["Nom", "pulcher", "pulchra", "pulchrum"],
+          ["Gen", "pulchri", "pulchrae", "pulchri"],
+          ["Dat", "pulchro", "pulchrae", "pulchro"],
+          ["Acc", "pulchrum", "pulchram", "pulchrum"],
+          ["Abl", "pulchro", "pulchra", "pulchro"]
+        ]
+      }
+    ],
+    "rules": [
+      "Adjectives agree with nouns in gender, number, and case",
+      "Agreement does NOT mean identical endings (e.g., poeta bonus)",
+      "Adjectives in -er: some keep -e- (miser), some drop it (pulcher)",
+      "Adjectives can stand alone as nouns (substantives): boni = good people"
+    ]
+  },
+  "exercises": [
+    {
+      "type": "agreement",
+      "question": "What form of 'magnus' agrees with 'templum' (neut. nom. sg.)?",
+      "answer": "magnum",
+      "hints": ["Neuter nominative singular"]
+    },
+    {
+      "type": "translation",
+      "question": "Translate: Puellae pulchrae in horto ambulant.",
+      "answer": "The beautiful girls walk in the garden.",
+      "hints": ["pulchrae agrees with puellae"]
+    },
+    {
+      "type": "parsing",
+      "question": "Explain the agreement in 'poetae bono'",
+      "answer": "Both are dative singular masculine (to/for the good poet)",
+      "hints": ["poeta is masculine despite -a ending"]
+    },
+    {
+      "type": "composition",
+      "prompt": "Write 'We see the large temple' in Latin",
+      "sampleAnswer": "Templum magnum videmus."
+    }
+  ],
+  "culturalNote": "The concept of 'liber' (free) was central to Roman identity. Roman citizens proudly distinguished themselves from slaves and foreigners. The goddess Libertas was worshipped, and 'libertas' became a rallying cry during the Republic.",
+  "readingPassage": {
+    "latin": "Roma urbs magna et antiqua est. Templa pulchra in foro videmus. Cives Romani liberi sunt; servos non amant. Poeta bonus fabulas longas narrat. Boni semper vincunt.",
+    "translation": "Rome is a great and ancient city. We see beautiful temples in the forum. Roman citizens are free; they do not love slaves. A good poet tells long stories. The good always win.",
+    "notes": [
+      "urbs: city (3rd declension)",
+      "forum: the Roman forum, public square",
+      "civis: citizen",
+      "semper: always",
+      "vincunt: they win, conquer"
+    ]
+  }
+}

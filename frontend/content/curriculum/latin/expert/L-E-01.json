@@ -1,140 +1,97 @@
-```json
 {
-  "overview": {
-    "title": "Textual Criticism",
-    "objectives": [
-      "Read critical apparatus",
-      "Evaluate textual variants",
-      "Apply stemmatic method"
-    ],
-    "prerequisites": [
-      "Intermediate proficiency in Latin",
-      "Familiarity with basic Latin literature",
-      "Understanding of historical linguistics"
-    ],
-    "duration": "12 weeks"
-  },
-  "grammar": {
-    "explanation": "This module focuses on the specialized grammar of textual criticism, including the identification and interpretation of variant readings, understanding textual transmission, and applying methodologies for reconstructing texts.",
-    "paradigms": [
-      {
-        "name": "Critical Apparatus Symbols",
-        "table": [
-          ["Symbol", "Meaning"],
-          ["codd.", "manuscripts"],
-          ["om.", "omit"],
-          ["add.", "add"],
-          ["conj.", "conjecture"]
-        ]
-      }
-    ],
-    "rules": [
-      "Manuscript abbreviations must be understood to interpret the apparatus criticus.",
-      "The stemmatic method requires the identification of common errors to establish manuscript relationships."
-    ],
-    "exceptions": [
-      "Some variants may not fit into a clear stemmatic relationship due to contamination or independent development."
-    ],
-    "memory_tips": [
-      "Remember 'codd.' as 'codices,' indicating multiple manuscripts.",
-      "Link 'om.' to 'omit' by recalling 'omission'."
-    ]
-  },
+  "id": "L-E-01",
+  "title": "Textual Criticism",
+  "level": "expert",
+  "language": "latin",
+  "estimatedTime": "90 minutes",
+  "objectives": [
+    "Read critical apparatus",
+    "Evaluate textual variants",
+    "Apply stemmatic method"
+  ],
+  "prerequisites": [
+    "Intermediate proficiency in Latin",
+    "Familiarity with basic Latin literature",
+    "Understanding of historical linguistics"
+  ],
   "vocabulary": [
     {
       "word": "codex",
       "lemma": "codex, codicis",
-      "definition": "manuscript book",
-      "part_of_speech": "noun",
-      "gender_or_conjugation": "masculine",
-      "frequency_rank": 450,
-      "derivatives": ["codex"],
-      "example_sentence": "Codex Vaticanus est vetustissimus.",
-      "example_translation": "The Vatican Codex is very old."
+      "translation": "manuscript book",
+      "partOfSpeech": "noun",
+      "gender": "masculine",
+      "examples": ["Codex Vaticanus est vetustissimus."]
     },
     {
       "word": "emendatio",
       "lemma": "emendatio, emendationis",
-      "definition": "correction, emendation",
-      "part_of_speech": "noun",
-      "gender_or_conjugation": "feminine",
-      "frequency_rank": 678,
-      "derivatives": ["emendation"],
-      "example_sentence": "Emendationes in textu necessariae sunt.",
-      "example_translation": "Corrections in the text are necessary."
-    }
-    // Add 23 more vocabulary entries similarly
-  ],
-  "reading_passage": {
-    "title": "Tacitus: Annales",
-    "author": "Tacitus",
-    "source": "Book 1, Chapter 1",
-    "original_text": "Urbem Romam a principio reges habuere; libertatem et consulatum L. Brutus instituit.",
-    "translations": {
-      "student": "The city of Rome was originally ruled by kings; L. Brutus established freedom and the consulship.",
-      "scholarly": "Originally, kings held the city of Rome; L. Brutus instituted freedom and the consulship.",
-      "literary": "In its earliest days, Rome was ruled by kings; it was L. Brutus who brought freedom and the consulship."
+      "translation": "correction, emendation",
+      "partOfSpeech": "noun",
+      "gender": "feminine",
+      "examples": ["Emendationes in textu necessariae sunt."]
     },
-    "vocabulary_notes": [
+    {
+      "word": "archetypus",
+      "lemma": "archetypus, -i",
+      "translation": "archetype, original manuscript",
+      "partOfSpeech": "noun",
+      "gender": "masculine",
+      "examples": ["Archetypus amissus est."]
+    },
+    {
+      "word": "lectio",
+      "lemma": "lectio, lectionis",
+      "translation": "reading, variant",
+      "partOfSpeech": "noun",
+      "gender": "feminine",
+      "examples": ["Lectio difficilior potior est."]
+    }
+  ],
+  "grammar": {
+    "topic": "Critical Apparatus and Textual Criticism",
+    "explanation": "This module focuses on the specialized grammar of textual criticism, including the identification and interpretation of variant readings, understanding textual transmission, and applying methodologies for reconstructing texts.",
+    "paradigms": [
       {
-        "word": "habuere",
-        "note": "An archaic form of 'habuerunt,' used in historical texts."
+        "name": "Critical Apparatus Symbols",
+        "headers": ["Symbol", "Meaning"],
+        "rows": [
+          ["codd.", "manuscripts (codices)"],
+          ["om.", "omit (omittit)"],
+          ["add.", "add (addit)"],
+          ["conj.", "conjecture (coniecit)"],
+          ["del.", "delete (delevit)"],
+          ["corr.", "corrected (correxit)"]
+        ]
       }
     ],
-    "comprehension_questions": [
-      "What political change did L. Brutus bring about?",
-      "How does Tacitus describe the initial governance of Rome?"
+    "rules": [
+      "Manuscript abbreviations must be understood to interpret the apparatus criticus",
+      "The stemmatic method requires the identification of common errors to establish manuscript relationships",
+      "Lectio difficilior potior: the more difficult reading is preferable",
+      "Lectio brevior potior: the shorter reading is preferable (with exceptions)"
     ]
   },
   "exercises": [
     {
       "type": "parsing",
-      "instructions": "Parse the following Latin words from Tacitus' Annales.",
-      "items": [
-        {
-          "prompt": "instituit",
-          "answer": "3rd person singular perfect active indicative of 'instituo'",
-          "explanation": "Derived from 'instituo,' meaning 'to establish'."
-        }
-        // Add more items similarly
-      ]
+      "question": "Parse 'instituit' from Tacitus",
+      "answer": "3rd person singular perfect active indicative of 'instituo'",
+      "hints": ["The -it ending indicates 3rd person singular perfect"]
     },
     {
-      "type": "translation_la_en",
-      "instructions": "Translate the following passage into English.",
-      "items": [
-        {
-          "prompt": "Libertatem et consulatum L. Brutus instituit.",
-          "answer": "L. Brutus established freedom and the consulship.",
-          "explanation": "Focus on the role of L. Brutus in Roman history."
-        }
-        // Add more items similarly
-      ]
+      "type": "translation",
+      "question": "Translate: Libertatem et consulatum L. Brutus instituit.",
+      "answer": "L. Brutus established freedom and the consulship."
     }
-    // Add more exercises similarly
   ],
-  "cultural_context": {
-    "topic": "Textual Transmission in Antiquity",
-    "content": "The transmission of Latin texts from antiquity to the present involved manual copying by scribes, leading to variations and errors. Understanding this process is crucial for textual criticism.",
-    "connections_to_texts": [
-      "Tacitus' Annales",
-      "Lucretius' De Rerum Natura"
+  "readingPassage": {
+    "latin": "Urbem Romam a principio reges habuere; libertatem et consulatum L. Brutus instituit.",
+    "translation": "The city of Rome was originally held by kings; L. Brutus established freedom and the consulship.",
+    "notes": [
+      "habuere: archaic form of habuerunt",
+      "This opening from Tacitus' Annales demonstrates classical prose style"
     ]
   },
-  "connections": {
-    "reader_links": [
-      {
-        "text": "Lucretius' De Rerum Natura",
-        "passage": "Discuss the textual variants in Book 3."
-      }
-    ],
-    "related_modules": [
-      "L-E-02: Advanced Latin Paleography"
-    ],
-    "advanced_topics": [
-      "The role of conjecture in textual criticism",
-      "The history of Latin manuscripts"
-    ]
-  }
+  "culturalNote": "The transmission of Latin texts from antiquity to the present involved manual copying by scribes, leading to variations and errors. Understanding this process is crucial for textual criticism."
 }
-```
