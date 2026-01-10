@@ -1,12 +1,12 @@
-FROM node:18-alpine
+FROM node:18-alpine AS builder
 
 WORKDIR /app
 
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies
-RUN npm ci --only=production=false
+# Install all dependencies (including dev)
+RUN npm install
 
 # Copy source code
 COPY . .
@@ -14,12 +14,21 @@ COPY . .
 # Build the app
 RUN npm run build
 
-# Set environment
+# Production stage
+FROM node:18-alpine AS runner
+
+WORKDIR /app
+
 ENV NODE_ENV=production
-ENV PORT=3000
+
+# Copy built assets from builder
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json ./package.json
+COPY --from=builder /app/public ./public 2>/dev/null || true
 
 # Expose port
 EXPOSE 3000
 
-# Start the app - use PORT from environment
-CMD ["sh", "-c", "npm start -- -p ${PORT:-3000}"]
+# Start using next directly - Railway provides PORT env var
+CMD sh -c "node_modules/.bin/next start -p \${PORT:-3000}"
