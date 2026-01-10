@@ -9,3 +9,4 @@ cmds = ["cd frontend && npm run build"]
 
 [start]
 cmd = "cd frontend && npm start"
+# Force rebuild
