@@ -1,17 +1,16 @@
 from fastapi import APIRouter, HTTPException, Query
 from pydantic import BaseModel
 from typing import List, Optional, Dict, Any
-import numpy as np
 import json
 import os
 import asyncio
-from cachetools import cached, LRUCache
+from functools import lru_cache
 
 # Initialize router
 router = APIRouter()
 
-# Define cache
-cache = LRUCache(maxsize=100)
+# Simple in-memory cache
+_data_cache: Dict[str, Any] = {}
 
 # Pydantic models for request and response validation
 class PathRequest(BaseModel):
@@ -25,38 +24,27 @@ class PathResponse(BaseModel):
 
 # File paths
 PASSAGES_PATH = os.path.expanduser('~/Downloads/logos_corpus/output/passages_combined.jsonl')
-EMBEDDINGS_PATH = os.path.expanduser('~/Downloads/logos_corpus/output/embeddings.npy')
 
-# Load corpus and embeddings synchronously (avoiding asyncio.run issues)
+# Load corpus synchronously (avoiding asyncio.run issues)
 def load_corpus_data_sync():
     passages = []
-    embeddings = np.array([])
     try:
         with open(PASSAGES_PATH, 'r') as f:
             passages = [json.loads(line) for line in f.readlines()]
     except FileNotFoundError:
         print(f"Warning: Passages file not found at {PASSAGES_PATH}")
 
-    try:
-        embeddings = np.load(EMBEDDINGS_PATH)
-    except FileNotFoundError:
-        print(f"Warning: Embeddings file not found at {EMBEDDINGS_PATH}")
+    return passages
 
-    return passages, embeddings
-
-# Cache loaded data to prevent re-loading every time
-@cached(cache)
-def get_data():
-    return load_corpus_data_sync()
-
-# Helper function to get the passages and embeddings
-def get_corpus_and_embeddings():
-    passages, embeddings = get_data()
-    return passages, embeddings
+# Helper function to get the passages with simple caching
+def get_corpus():
+    if 'passages' not in _data_cache:
+        _data_cache['passages'] = load_corpus_data_sync()
+    return _data_cache['passages']
 
 # Local implementation of find_semantic_paths
 async def find_semantic_paths(start_idea: str, end_idea: Optional[str], max_steps: int,
-                               passages: List[Dict], embeddings: np.ndarray) -> List[List[str]]:
+                               passages: List[Dict]) -> List[List[str]]:
     """Find semantic paths between ideas based on embeddings."""
     # Placeholder implementation - returns mock paths
     await asyncio.sleep(0.1)  # Simulate async processing
@@ -72,17 +60,16 @@ async def find_paths(request: PathRequest):
     if not request.start_idea:
         raise HTTPException(status_code=400, detail="Start idea must be provided")
 
-    # Load corpus data and embeddings
-    passages, embeddings = get_corpus_and_embeddings()
+    # Load corpus data
+    passages = get_corpus()
 
     # Use an AI utility to find semantic paths
     try:
         paths = await find_semantic_paths(
-            start_idea=request.start_idea, 
+            start_idea=request.start_idea,
             end_idea=request.end_idea,
             max_steps=request.max_steps,
-            passages=passages,
-            embeddings=embeddings
+            passages=passages
         )
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error finding paths: {str(e)}")

@@ -2,39 +2,30 @@ from fastapi import APIRouter, HTTPException, status, Depends
 from pydantic import BaseModel, Field
 from typing import List, Optional, Dict, Any
 import json
-import numpy as np
 import os
 import asyncio
-from cachetools import LRUCache, cached
 
 # Router setup
 router = APIRouter()
 
 # Paths to corpus data
 CORPUS_JSONL_PATH = os.path.expanduser("~/Downloads/logos_corpus/output/passages_combined.jsonl")
-CORPUS_EMBEDDINGS_PATH = os.path.expanduser("~/Downloads/logos_corpus/output/embeddings.npy")
 
 # Load corpus data with graceful error handling
 def load_corpus_data():
     passages = []
-    embeddings = np.array([])
     try:
         with open(CORPUS_JSONL_PATH, 'r', encoding='utf-8') as file:
             passages = [json.loads(line) for line in file if line.strip()]
     except FileNotFoundError:
         print(f"Warning: Corpus file not found at {CORPUS_JSONL_PATH}")
 
-    try:
-        embeddings = np.load(CORPUS_EMBEDDINGS_PATH)
-    except FileNotFoundError:
-        print(f"Warning: Embeddings file not found at {CORPUS_EMBEDDINGS_PATH}")
+    return passages
 
-    return passages, embeddings
+passages = load_corpus_data()
 
-passages, embeddings = load_corpus_data()
-
-# Caching setup
-cache = LRUCache(maxsize=100)
+# Simple in-memory cache (replaces cachetools LRUCache)
+_findings_cache: Dict[str, Dict[str, Any]] = {}
 
 # Pydantic models
 class FindingModel(BaseModel):
@@ -54,7 +45,7 @@ async def process_finding(content: str) -> str:
 
 # Dependency for getting corpus data
 async def get_corpus_data():
-    return passages, embeddings
+    return passages
 
 # Routes
 @router.post("/", response_model=FindingResponseModel)
@@ -63,10 +54,10 @@ async def save_finding(finding: FindingModel, corpus=Depends(get_corpus_data)):
         # Implement AI semantic processing
         processed_content = await process_finding(finding.content)
 
-        # Caching demo (e.g., save finding content by id)
+        # Simple caching (e.g., save finding content by id)
         if finding.id:
-            cache[finding.id] = {"content": processed_content, "tags": finding.tags}
-        
+            _findings_cache[finding.id] = {"content": processed_content, "tags": finding.tags}
+
         response = FindingResponseModel(
             success=True,
             data={"id": finding.id, "content": processed_content, "tags": finding.tags},
