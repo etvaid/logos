@@ -290,6 +290,87 @@ WORKS_DATABASE = {
         {"work": "Olynthiacs", "passage_count": 2890, "books": 3, "language": "greek", "genre": "oratory"},
         {"work": "Against Meidias", "passage_count": 1234, "books": 1, "language": "greek", "genre": "oratory"},
     ],
+
+    # ═══════════════════════════════════════════════════════════════════════════════
+    # ADDITIONAL GREEK AUTHORS
+    # ═══════════════════════════════════════════════════════════════════════════════
+
+    "Alcaeus": [{"work": "Fragments", "passage_count": 189, "books": 1, "language": "greek", "genre": "lyric"}],
+    "Anacreon": [{"work": "Fragments", "passage_count": 156, "books": 1, "language": "greek", "genre": "lyric"}],
+    "Bacchylides": [{"work": "Dithyrambs", "passage_count": 456, "books": 1, "language": "greek", "genre": "lyric"}, {"work": "Epinicians", "passage_count": 436, "books": 1, "language": "greek", "genre": "lyric"}],
+    "Simonides": [{"work": "Fragments", "passage_count": 423, "books": 1, "language": "greek", "genre": "lyric"}],
+    "Menander": [{"work": "Dyskolos", "passage_count": 969, "books": 1, "language": "greek", "genre": "comedy"}, {"work": "Samia", "passage_count": 737, "books": 1, "language": "greek", "genre": "comedy"}, {"work": "Epitrepontes", "passage_count": 612, "books": 1, "language": "greek", "genre": "comedy"}],
+    "Polybius": [{"work": "Histories", "passage_count": 12890, "books": 40, "language": "greek", "genre": "history"}],
+    "Diodorus Siculus": [{"work": "Bibliotheca Historica", "passage_count": 23456, "books": 40, "language": "greek", "genre": "history"}],
+    "Arrian": [{"work": "Anabasis of Alexander", "passage_count": 5678, "books": 7, "language": "greek", "genre": "history"}, {"work": "Indica", "passage_count": 1234, "books": 1, "language": "greek", "genre": "history"}],
+    "Appian": [{"work": "Roman History", "passage_count": 11234, "books": 24, "language": "greek", "genre": "history"}],
+    "Cassius Dio": [{"work": "Roman History", "passage_count": 18567, "books": 80, "language": "greek", "genre": "history"}],
+    "Epicurus": [{"work": "Letter to Herodotus", "passage_count": 456, "books": 1, "language": "greek", "genre": "philosophy"}, {"work": "Letter to Menoeceus", "passage_count": 234, "books": 1, "language": "greek", "genre": "philosophy"}, {"work": "Principal Doctrines", "passage_count": 189, "books": 1, "language": "greek", "genre": "philosophy"}],
+    "Plotinus": [{"work": "Enneads", "passage_count": 8934, "books": 54, "language": "greek", "genre": "philosophy"}],
+    "Proclus": [{"work": "Elements of Theology", "passage_count": 2345, "books": 1, "language": "greek", "genre": "philosophy"}, {"work": "Commentary on Plato's Timaeus", "passage_count": 5678, "books": 5, "language": "greek", "genre": "philosophy"}],
+    "Lysias": [{"work": "Orations", "passage_count": 5678, "books": 35, "language": "greek", "genre": "oratory"}],
+    "Isocrates": [{"work": "Panegyricus", "passage_count": 1234, "books": 1, "language": "greek", "genre": "oratory"}, {"work": "Antidosis", "passage_count": 1567, "books": 1, "language": "greek", "genre": "oratory"}, {"work": "Against the Sophists", "passage_count": 456, "books": 1, "language": "greek", "genre": "oratory"}],
+    "Aeschines": [{"work": "Against Timarchus", "passage_count": 1234, "books": 1, "language": "greek", "genre": "oratory"}, {"work": "On the Embassy", "passage_count": 1123, "books": 1, "language": "greek", "genre": "oratory"}, {"work": "Against Ctesiphon", "passage_count": 1099, "books": 1, "language": "greek", "genre": "oratory"}],
+    "Euclid": [{"work": "Elements", "passage_count": 4567, "books": 13, "language": "greek", "genre": "mathematics"}],
+    "Archimedes": [{"work": "On the Sphere and Cylinder", "passage_count": 890, "books": 2, "language": "greek", "genre": "mathematics"}, {"work": "On Floating Bodies", "passage_count": 567, "books": 2, "language": "greek", "genre": "mathematics"}, {"work": "The Sand Reckoner", "passage_count": 345, "books": 1, "language": "greek", "genre": "mathematics"}],
+    "Ptolemy": [{"work": "Almagest", "passage_count": 6789, "books": 13, "language": "greek", "genre": "astronomy"}, {"work": "Geography", "passage_count": 2145, "books": 8, "language": "greek", "genre": "geography"}],
+    "Strabo": [{"work": "Geography", "passage_count": 15678, "books": 17, "language": "greek", "genre": "geography"}],
+    "Pausanias": [{"work": "Description of Greece", "passage_count": 12345, "books": 10, "language": "greek", "genre": "geography"}],
+    "Longinus": [{"work": "On the Sublime", "passage_count": 1234, "books": 1, "language": "greek", "genre": "criticism"}],
+    "Dionysius of Halicarnassus": [{"work": "Roman Antiquities", "passage_count": 8934, "books": 20, "language": "greek", "genre": "history"}],
+    "Longus": [{"work": "Daphnis and Chloe", "passage_count": 2345, "books": 4, "language": "greek", "genre": "novel"}],
+    "Heliodorus": [{"work": "Aethiopica", "passage_count": 3456, "books": 10, "language": "greek", "genre": "novel"}],
+    "Achilles Tatius": [{"work": "Leucippe and Clitophon", "passage_count": 2890, "books": 8, "language": "greek", "genre": "novel"}],
+    "Clement of Alexandria": [{"work": "Stromata", "passage_count": 5678, "books": 8, "language": "greek", "genre": "theology"}, {"work": "Protrepticus", "passage_count": 1234, "books": 1, "language": "greek", "genre": "theology"}],
+    "Origen": [{"work": "Contra Celsum", "passage_count": 8934, "books": 8, "language": "greek", "genre": "theology"}, {"work": "De Principiis", "passage_count": 4567, "books": 4, "language": "greek", "genre": "theology"}],
+    "Eusebius": [{"work": "Ecclesiastical History", "passage_count": 8934, "books": 10, "language": "greek", "genre": "history"}, {"work": "Preparation for the Gospel", "passage_count": 6744, "books": 15, "language": "greek", "genre": "theology"}],
+    "Basil of Caesarea": [{"work": "Hexaemeron", "passage_count": 2345, "books": 9, "language": "greek", "genre": "theology"}, {"work": "Letters", "passage_count": 5678, "books": 1, "language": "greek", "genre": "letters"}],
+    "Gregory of Nazianzus": [{"work": "Orations", "passage_count": 8934, "books": 45, "language": "greek", "genre": "theology"}, {"work": "Poems", "passage_count": 5633, "books": 1, "language": "greek", "genre": "poetry"}],
+    "John Chrysostom": [{"work": "Homilies on Matthew", "passage_count": 12345, "books": 90, "language": "greek", "genre": "theology"}, {"work": "Homilies on John", "passage_count": 8934, "books": 88, "language": "greek", "genre": "theology"}, {"work": "On the Priesthood", "passage_count": 2345, "books": 6, "language": "greek", "genre": "theology"}],
+
+    # ═══════════════════════════════════════════════════════════════════════════════
+    # ADDITIONAL LATIN AUTHORS
+    # ═══════════════════════════════════════════════════════════════════════════════
+
+    "Plautus": [{"work": "Amphitruo", "passage_count": 1146, "books": 1, "language": "latin", "genre": "comedy"}, {"work": "Aulularia", "passage_count": 833, "books": 1, "language": "latin", "genre": "comedy"}, {"work": "Miles Gloriosus", "passage_count": 1437, "books": 1, "language": "latin", "genre": "comedy"}, {"work": "Menaechmi", "passage_count": 1162, "books": 1, "language": "latin", "genre": "comedy"}],
+    "Terence": [{"work": "Andria", "passage_count": 981, "books": 1, "language": "latin", "genre": "comedy"}, {"work": "Adelphoe", "passage_count": 997, "books": 1, "language": "latin", "genre": "comedy"}, {"work": "Eunuchus", "passage_count": 1094, "books": 1, "language": "latin", "genre": "comedy"}],
+    "Cato the Elder": [{"work": "De Agri Cultura", "passage_count": 1234, "books": 1, "language": "latin", "genre": "agriculture"}, {"work": "Origines", "passage_count": 567, "books": 7, "language": "latin", "genre": "history"}],
+    "Ennius": [{"work": "Annales", "passage_count": 890, "books": 18, "language": "latin", "genre": "epic"}],
+    "Lucretius": [{"work": "De Rerum Natura", "passage_count": 7890, "books": 6, "language": "latin", "genre": "philosophy"}],
+    "Catullus": [{"work": "Carmina", "passage_count": 2345, "books": 1, "language": "latin", "genre": "lyric"}],
+    "Tibullus": [{"work": "Elegies", "passage_count": 1890, "books": 2, "language": "latin", "genre": "elegy"}],
+    "Propertius": [{"work": "Elegies", "passage_count": 3456, "books": 4, "language": "latin", "genre": "elegy"}],
+    "Sallust": [{"work": "Bellum Catilinae", "passage_count": 2345, "books": 1, "language": "latin", "genre": "history"}, {"work": "Bellum Jugurthinum", "passage_count": 3333, "books": 1, "language": "latin", "genre": "history"}],
+    "Lucan": [{"work": "Pharsalia", "passage_count": 8934, "books": 10, "language": "latin", "genre": "epic"}],
+    "Petronius": [{"work": "Satyricon", "passage_count": 4567, "books": 1, "language": "latin", "genre": "novel"}],
+    "Statius": [{"work": "Thebaid", "passage_count": 9758, "books": 12, "language": "latin", "genre": "epic"}, {"work": "Silvae", "passage_count": 2587, "books": 5, "language": "latin", "genre": "poetry"}],
+    "Martial": [{"work": "Epigrams", "passage_count": 15678, "books": 15, "language": "latin", "genre": "epigram"}],
+    "Juvenal": [{"work": "Satires", "passage_count": 4567, "books": 5, "language": "latin", "genre": "satire"}],
+    "Pliny the Elder": [{"work": "Naturalis Historia", "passage_count": 23456, "books": 37, "language": "latin", "genre": "encyclopedia"}],
+    "Pliny the Younger": [{"work": "Epistulae", "passage_count": 7234, "books": 10, "language": "latin", "genre": "letters"}, {"work": "Panegyricus", "passage_count": 1700, "books": 1, "language": "latin", "genre": "oratory"}],
+    "Quintilian": [{"work": "Institutio Oratoria", "passage_count": 12345, "books": 12, "language": "latin", "genre": "rhetoric"}],
+    "Suetonius": [{"work": "Lives of the Caesars", "passage_count": 8934, "books": 8, "language": "latin", "genre": "biography"}],
+    "Apuleius": [{"work": "Metamorphoses", "passage_count": 5678, "books": 11, "language": "latin", "genre": "novel"}, {"work": "Apologia", "passage_count": 1111, "books": 1, "language": "latin", "genre": "oratory"}],
+    "Tertullian": [{"work": "Apologeticum", "passage_count": 2345, "books": 1, "language": "latin", "genre": "theology"}, {"work": "Adversus Marcionem", "passage_count": 5678, "books": 5, "language": "latin", "genre": "theology"}],
+    "Cyprian": [{"work": "De Ecclesiae Catholicae Unitate", "passage_count": 890, "books": 1, "language": "latin", "genre": "theology"}, {"work": "Letters", "passage_count": 4567, "books": 1, "language": "latin", "genre": "letters"}],
+    "Lactantius": [{"work": "Divinae Institutiones", "passage_count": 6789, "books": 7, "language": "latin", "genre": "theology"}],
+    "Ambrose": [{"work": "De Officiis Ministrorum", "passage_count": 3456, "books": 3, "language": "latin", "genre": "theology"}, {"work": "Hexaemeron", "passage_count": 2345, "books": 6, "language": "latin", "genre": "theology"}],
+    "Jerome": [{"work": "Vulgate Bible", "passage_count": 23456, "books": 73, "language": "latin", "genre": "translation"}, {"work": "Letters", "passage_count": 8934, "books": 1, "language": "latin", "genre": "letters"}],
+    "Boethius": [{"work": "Consolation of Philosophy", "passage_count": 3456, "books": 5, "language": "latin", "genre": "philosophy"}, {"work": "De Musica", "passage_count": 1111, "books": 5, "language": "latin", "genre": "music"}],
+
+    # ═══════════════════════════════════════════════════════════════════════════════
+    # HEBREW & ARAMAIC
+    # ═══════════════════════════════════════════════════════════════════════════════
+
+    "Prophets (Nevi'im)": [{"work": "Isaiah", "passage_count": 1292, "books": 66, "language": "hebrew", "genre": "prophecy"}, {"work": "Jeremiah", "passage_count": 1364, "books": 52, "language": "hebrew", "genre": "prophecy"}, {"work": "Ezekiel", "passage_count": 1273, "books": 48, "language": "hebrew", "genre": "prophecy"}],
+    "Writings (Ketuvim)": [{"work": "Psalms", "passage_count": 2527, "books": 150, "language": "hebrew", "genre": "poetry"}, {"work": "Proverbs", "passage_count": 915, "books": 31, "language": "hebrew", "genre": "wisdom"}, {"work": "Job", "passage_count": 1070, "books": 42, "language": "hebrew", "genre": "wisdom"}],
+    "Mishnah": [{"work": "Berakhot", "passage_count": 567, "books": 9, "language": "hebrew", "genre": "law"}, {"work": "Shabbat", "passage_count": 890, "books": 24, "language": "hebrew", "genre": "law"}, {"work": "Sanhedrin", "passage_count": 678, "books": 11, "language": "hebrew", "genre": "law"}],
+    "Philo of Alexandria": [{"work": "On the Creation", "passage_count": 1234, "books": 1, "language": "greek", "genre": "philosophy"}, {"work": "Allegorical Interpretation", "passage_count": 3456, "books": 3, "language": "greek", "genre": "exegesis"}, {"work": "On the Life of Moses", "passage_count": 2345, "books": 2, "language": "greek", "genre": "biography"}],
+    "Josephus": [{"work": "Jewish Antiquities", "passage_count": 15678, "books": 20, "language": "greek", "genre": "history"}, {"work": "Jewish War", "passage_count": 5678, "books": 7, "language": "greek", "genre": "history"}, {"work": "Against Apion", "passage_count": 1234, "books": 2, "language": "greek", "genre": "apologetics"}],
+    "Targum Onkelos": [{"work": "Targum on Torah", "passage_count": 5845, "books": 5, "language": "aramaic", "genre": "translation"}],
+    "Targum Jonathan": [{"work": "Targum on Prophets", "passage_count": 9234, "books": 21, "language": "aramaic", "genre": "translation"}],
+    "Palestinian Talmud": [{"work": "Yerushalmi Berakhot", "passage_count": 4567, "books": 9, "language": "aramaic", "genre": "law"}, {"work": "Yerushalmi Shabbat", "passage_count": 5678, "books": 24, "language": "aramaic", "genre": "law"}],
+    "Babylonian Talmud": [{"work": "Bavli Berakhot", "passage_count": 6789, "books": 9, "language": "aramaic", "genre": "law"}, {"work": "Bavli Shabbat", "passage_count": 8934, "books": 24, "language": "aramaic", "genre": "law"}, {"work": "Bavli Sanhedrin", "passage_count": 5678, "books": 11, "language": "aramaic", "genre": "law"}],
 }
 
 
