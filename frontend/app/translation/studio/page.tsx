@@ -144,17 +144,64 @@ const TranslationStudio = () => {
 
   const handleTranslate = async () => {
     if (!sourceText.trim()) return
-    
+
     setLoading(true)
     setError(null)
-    
+
     try {
-      // Simulate AI translation processing
-      await new Promise(resolve => setTimeout(resolve, 2000))
+      // Call real translation API
+      const response = await fetch('/api/translation/translate_passage', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          text: sourceText,
+          style: 'scholarly',
+          include_parsing: true,
+          context: semanticContext.work
+        })
+      })
+
+      if (!response.ok) {
+        throw new Error(`Translation failed: ${response.statusText}`)
+      }
+
+      const data = await response.json()
+
+      // Convert API response to our Translation format
+      const aiTranslation: Translation = {
+        id: '1',
+        text: data.translation,
+        confidence: data.fidelity_score || 0.85,
+        source: 'ai',
+        context: `${data.source_language} - ${data.style} style`,
+        notes: `Translated ${data.tokens?.length || 0} tokens with ${Math.round((data.fidelity_score || 0) * 100)}% fidelity`,
+        timestamp: new Date()
+      }
+
+      // Add token-level dictionary entries
+      const dictEntries: DictionaryEntry[] = (data.tokens || [])
+        .filter((t: any) => t.translation)
+        .slice(0, 10)
+        .map((t: any) => ({
+          word: t.token,
+          lemma: t.lemma || t.token,
+          definition: t.translation,
+          etymology: '',
+          frequency: 100,
+          contexts: [t.semantic_domain || 'general'],
+          relatedTerms: []
+        }))
+
+      setTranslations([aiTranslation, ...mockTranslations.slice(1)])
+      setDictionaryEntries(dictEntries.length > 0 ? dictEntries : mockDictionary)
+    } catch (err) {
+      console.error('Translation error:', err)
+      setError('Translation failed. Please try again.')
+      // Fall back to mock data on error
       setTranslations(mockTranslations)
       setDictionaryEntries(mockDictionary)
-    } catch (err) {
-      setError('Translation failed. Please try again.')
     } finally {
       setLoading(false)
     }
