@@ -284,7 +284,7 @@ def calculate_relevance(query: str, text: str, author: str, work: str, is_transl
     return min(score, 1.0)
 
 
-@router.get("/text")
+@router.get("/")
 async def search_text(
     q: str = Query(..., description="Search query"),
     language: Optional[str] = Query(None, description="Filter by language (greek, latin, hebrew)"),
