@@ -1,19 +1,39 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
+import './globals.css';
+import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
 
-const inter = Inter({ subsets: ['latin'] })
+// Lazy load heavy components - they won't block initial page render
+const Header = dynamic(() => import('@/components/layout/Header'), { ssr: false });
+const Footer = dynamic(() => import('@/components/layout/Footer'), { ssr: false });
+const CommandPalette = dynamic(() => import('@/components/ui/CommandPalette'), { ssr: false });
+const KeyboardShortcutsProvider = dynamic(
+  () => import('@/components/layout/KeyboardShortcutsProvider'),
+  { ssr: false }
+);
 
 export const metadata = {
-  title: 'LOGOS - Classical Research Platform',
-  description: 'Revolutionary tools for classical scholarship',
-}
+  title: 'LOGOS - The Complete Classical Research Platform',
+  description: '6.7M passages of Greek, Latin, and ancient texts with AI-powered analysis, translation, and discovery tools.',
+};
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-[#0D0D0F] text-[#F5F3EF] min-h-screen antialiased`}>
-        {children}
+      <body className="bg-[#0D0D0F] text-[#F5F3EF] antialiased">
+        <Suspense fallback={null}>
+          <Header />
+        </Suspense>
+        <main className="min-h-screen">{children}</main>
+        <Suspense fallback={null}>
+          <Footer />
+          <CommandPalette />
+          <KeyboardShortcutsProvider />
+        </Suspense>
       </body>
     </html>
-  )
+  );
 }

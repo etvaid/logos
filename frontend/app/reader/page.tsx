@@ -1,475 +1,695 @@
-"use client"
+'use client';
 
-import React, { useState, useCallback, useMemo, useRef, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import Link from 'next/link'
-import TranslationStyleDial from '@/components/reader/TranslationStyleDial'
+import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
+import Link from 'next/link';
+import { useSearchParams, useRouter } from 'next/navigation';
+import { useVirtualizer } from '@tanstack/react-virtual';
+import { Card, Button, Badge, LoadingSpinner, Tabs } from '@/components/ui';
+import { getAuthors, getWorksByAuthor, getPassages, getInstantTranslation } from '@/lib/api';
+import { detectLanguage, detectPassageLanguage, formatNumber } from '@/lib/utils';
+import type { Author, Work, Passage } from '@/lib/types';
 
-// ═══════════════════════════════════════════════════════════════════════════════
-// TYPES
-// ═══════════════════════════════════════════════════════════════════════════════
+// Language configuration with display info
+const LANGUAGES = [
+  { key: 'greek', label: 'Greek', badge: 'greek', icon: 'Α' },
+  { key: 'latin', label: 'Latin', badge: 'latin', icon: 'L' },
+  { key: 'hebrew', label: 'Hebrew', badge: 'hebrew', icon: 'א' },
+  { key: 'aramaic', label: 'Aramaic', badge: 'aramaic', icon: 'ܐ' },
+  { key: 'coptic', label: 'Coptic', badge: 'coptic', icon: 'Ⲁ' },
+  { key: 'english', label: 'Translations', badge: 'success', icon: '📖' },
+] as const;
 
-interface Word {
-  id: string
-  text: string
-  lemma: string
-  pos: string
-  morph: {
-    case?: string
-    number?: string
-    gender?: string
-    tense?: string
-    mood?: string
-    voice?: string
-    person?: string
-    dialect?: string
+// Simple cache for API responses (reduces redundant network calls)
+const apiCache = new Map<string, { data: any; timestamp: number }>();
+const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+
+function getCachedData(key: string) {
+  const cached = apiCache.get(key);
+  if (cached && Date.now() - cached.timestamp < CACHE_TTL) {
+    return cached.data;
   }
-  definition: string
-  etymology?: string
-  frequency: number
-  semantiaDefinition?: string
+  return null;
 }
 
-interface Line {
-  id: string
-  lineNumber: number
-  words: Word[]
-  translation: string
-  literalTranslation?: string
-  studentTranslation?: string
-  notes?: string[]
+function setCachedData(key: string, data: any) {
+  apiCache.set(key, { data, timestamp: Date.now() });
 }
-
-// ═══════════════════════════════════════════════════════════════════════════════
-// DEMO DATA - ILIAD BOOK 1, LINES 1-10
-// ═══════════════════════════════════════════════════════════════════════════════
-
-const DEMO_LINES: Line[] = [
-  {
-    id: "1",
-    lineNumber: 1,
-    words: [
-      { id: "1-1", text: "μῆνιν", lemma: "μῆνις", pos: "noun", morph: { case: "accusative", number: "singular", gender: "feminine" }, definition: "wrath, anger", etymology: "PIE *méh₁nis 'passion'", frequency: 12, semantiaDefinition: "Divine or heroic rage that drives the narrative; not ordinary anger but cosmic fury" },
-      { id: "1-2", text: "ἄειδε", lemma: "ἀείδω", pos: "verb", morph: { tense: "present", mood: "imperative", voice: "active", person: "2nd" }, definition: "sing, celebrate", etymology: "PIE *h₂weyd- 'speak solemnly'", frequency: 45, semantiaDefinition: "Ritual invocation of the Muse; the bard becomes vessel for divine song" },
-      { id: "1-3", text: "θεά", lemma: "θεά", pos: "noun", morph: { case: "vocative", number: "singular", gender: "feminine" }, definition: "goddess", etymology: "PIE *dʰéh₁s 'deity'", frequency: 234, semantiaDefinition: "The Muse, daughter of Memory (Mnemosyne); source of poetic authority" },
-      { id: "1-4", text: "Πηληϊάδεω", lemma: "Πηληϊάδης", pos: "noun", morph: { case: "genitive", number: "singular", gender: "masculine" }, definition: "son of Peleus", frequency: 89, semantiaDefinition: "Patronymic for Achilles; emphasizes divine lineage through Thetis" },
-      { id: "1-5", text: "Ἀχιλῆος", lemma: "Ἀχιλλεύς", pos: "noun", morph: { case: "genitive", number: "singular", gender: "masculine" }, definition: "Achilles", frequency: 312, semantiaDefinition: "Central hero; his name possibly from ἄχος + λαός 'grief of the people'" },
-    ],
-    translation: "Sing, goddess, the wrath of Achilles son of Peleus",
-    literalTranslation: "Wrath sing, goddess, of-Peleus-son of-Achilles",
-    studentTranslation: "Goddess, please sing about the anger of Achilles, who was Peleus's son",
-  },
-  {
-    id: "2",
-    lineNumber: 2,
-    words: [
-      { id: "2-1", text: "οὐλομένην", lemma: "ὄλλυμι", pos: "participle", morph: { case: "accusative", number: "singular", gender: "feminine", tense: "aorist", voice: "middle" }, definition: "destructive, accursed", etymology: "PIE *h₃elh₁- 'destroy'", frequency: 8, semantiaDefinition: "Fatally destructive; literally 'the destroying one' - personifies wrath as active agent" },
-      { id: "2-2", text: "ἣ", lemma: "ὅς", pos: "pronoun", morph: { case: "nominative", number: "singular", gender: "feminine" }, definition: "which, who", frequency: 2341, semantiaDefinition: "Relative pronoun referring to μῆνις; grammatically feminine" },
-      { id: "2-3", text: "μυρί᾽", lemma: "μυρίος", pos: "adjective", morph: { case: "accusative", number: "plural", gender: "neuter" }, definition: "countless, ten thousand", etymology: "Unknown, pre-Greek", frequency: 67, semantiaDefinition: "Innumerable; the conventional epic number for 'countless'" },
-      { id: "2-4", text: "Ἀχαιοῖς", lemma: "Ἀχαιός", pos: "noun", morph: { case: "dative", number: "plural", gender: "masculine" }, definition: "Achaeans, Greeks", frequency: 456, semantiaDefinition: "One of three names Homer uses for Greeks (also Danaans, Argives)" },
-      { id: "2-5", text: "ἄλγε᾽", lemma: "ἄλγος", pos: "noun", morph: { case: "accusative", number: "plural", gender: "neuter" }, definition: "pains, sufferings", etymology: "PIE *h₂elǵ- 'cold, frost'", frequency: 34, semantiaDefinition: "Physical and mental suffering; the cost of Achilles' withdrawal" },
-      { id: "2-6", text: "ἔθηκε", lemma: "τίθημι", pos: "verb", morph: { tense: "aorist", mood: "indicative", voice: "active", person: "3rd", number: "singular" }, definition: "placed, caused", etymology: "PIE *dʰeh₁- 'put, place'", frequency: 234, semantiaDefinition: "Causative action; wrath as subject actively 'placed' suffering" },
-    ],
-    translation: "the accursed wrath that brought countless sufferings upon the Achaeans",
-    literalTranslation: "destructive, which countless upon-Achaeans pains placed",
-    studentTranslation: "that terrible anger which caused so much pain for the Greek army",
-  },
-  {
-    id: "3",
-    lineNumber: 3,
-    words: [
-      { id: "3-1", text: "πολλὰς", lemma: "πολύς", pos: "adjective", morph: { case: "accusative", number: "plural", gender: "feminine" }, definition: "many", etymology: "PIE *polh₁ú- 'much'", frequency: 890, semantiaDefinition: "Emphatic quantity; paired with ἰφθίμους for rhetorical effect" },
-      { id: "3-2", text: "δ᾽", lemma: "δέ", pos: "particle", morph: {}, definition: "and, but", frequency: 8934, semantiaDefinition: "Continuative particle; connects clauses without strong contrast" },
-      { id: "3-3", text: "ἰφθίμους", lemma: "ἴφθιμος", pos: "adjective", morph: { case: "accusative", number: "plural", gender: "feminine" }, definition: "valiant, mighty", frequency: 23, semantiaDefinition: "Epic epithet for strong warriors; emphasizes what was lost" },
-      { id: "3-4", text: "ψυχὰς", lemma: "ψυχή", pos: "noun", morph: { case: "accusative", number: "plural", gender: "feminine" }, definition: "souls, lives", etymology: "PIE *bʰes- 'breathe'", frequency: 156, semantiaDefinition: "In Homer: breath-soul that departs at death, not immortal soul of later philosophy" },
-      { id: "3-5", text: "Ἄϊδι", lemma: "Ἅιδης", pos: "noun", morph: { case: "dative", number: "singular", gender: "masculine" }, definition: "to Hades", etymology: "PIE *n̥-wid- 'unseen'", frequency: 89, semantiaDefinition: "The underworld; literally 'the unseen place'" },
-      { id: "3-6", text: "προΐαψεν", lemma: "προϊάπτω", pos: "verb", morph: { tense: "aorist", mood: "indicative", voice: "active", person: "3rd", number: "singular" }, definition: "sent forth, hurled", frequency: 4, semantiaDefinition: "Violent dispatch; souls hurled down to death" },
-    ],
-    translation: "and hurled many valiant souls of heroes to Hades",
-    literalTranslation: "many and valiant souls to-Hades sent-forth",
-    studentTranslation: "and sent the brave souls of many warriors down to the underworld",
-  },
-  {
-    id: "4",
-    lineNumber: 4,
-    words: [
-      { id: "4-1", text: "ἡρώων", lemma: "ἥρως", pos: "noun", morph: { case: "genitive", number: "plural", gender: "masculine" }, definition: "of heroes", etymology: "Pre-Greek, possibly from Hera", frequency: 234, semantiaDefinition: "Semi-divine warriors; Homeric heroes are stronger than modern men" },
-      { id: "4-2", text: "αὐτοὺς", lemma: "αὐτός", pos: "pronoun", morph: { case: "accusative", number: "plural", gender: "masculine" }, definition: "themselves", frequency: 3456, semantiaDefinition: "Emphatic: their very selves/bodies (contrasted with souls)" },
-      { id: "4-3", text: "δὲ", lemma: "δέ", pos: "particle", morph: {}, definition: "but, and", frequency: 8934, semantiaDefinition: "Here mildly contrastive: souls vs. bodies" },
-      { id: "4-4", text: "ἑλώρια", lemma: "ἑλώριον", pos: "noun", morph: { case: "accusative", number: "plural", gender: "neuter" }, definition: "prey, spoil", frequency: 3, semantiaDefinition: "Rare word for carrion; bodies as food for scavengers" },
-      { id: "4-5", text: "τεῦχε", lemma: "τεύχω", pos: "verb", morph: { tense: "imperfect", mood: "indicative", voice: "active", person: "3rd", number: "singular" }, definition: "made, rendered", etymology: "PIE *dʰewgʰ- 'produce'", frequency: 123, semantiaDefinition: "Creative making; wrath 'made' bodies into carrion" },
-      { id: "4-6", text: "κύνεσσιν", lemma: "κύων", pos: "noun", morph: { case: "dative", number: "plural", gender: "masculine" }, definition: "for dogs", etymology: "PIE *ḱwṓ 'dog'", frequency: 67, semantiaDefinition: "Ultimate dishonor: denial of proper burial" },
-    ],
-    translation: "and made the heroes themselves prey for dogs",
-    literalTranslation: "of-heroes themselves and prey made for-dogs",
-    studentTranslation: "and left the bodies of the heroes to be eaten by dogs",
-  },
-  {
-    id: "5",
-    lineNumber: 5,
-    words: [
-      { id: "5-1", text: "οἰωνοῖσί", lemma: "οἰωνός", pos: "noun", morph: { case: "dative", number: "plural", gender: "masculine" }, definition: "for birds", etymology: "PIE *h₂ewi- 'bird'", frequency: 34, semantiaDefinition: "Birds of prey, especially vultures; carrion birds" },
-      { id: "5-2", text: "τε", lemma: "τε", pos: "particle", morph: {}, definition: "and", frequency: 6789, semantiaDefinition: "Enclitic connective; τε...τε = both...and" },
-      { id: "5-3", text: "πᾶσι", lemma: "πᾶς", pos: "adjective", morph: { case: "dative", number: "plural", gender: "masculine" }, definition: "for all", etymology: "Unknown", frequency: 567, semantiaDefinition: "Universal: every kind of carrion bird" },
-      { id: "5-4", text: "Διὸς", lemma: "Ζεύς", pos: "noun", morph: { case: "genitive", number: "singular", gender: "masculine" }, definition: "of Zeus", etymology: "PIE *dyḗws 'sky god'", frequency: 678, semantiaDefinition: "King of gods; his will (βουλή) frames the entire narrative" },
-      { id: "5-5", text: "δ᾽", lemma: "δέ", pos: "particle", morph: {}, definition: "and", frequency: 8934, semantiaDefinition: "Transitional: shifts to divine causation" },
-      { id: "5-6", text: "ἐτελείετο", lemma: "τελέω", pos: "verb", morph: { tense: "imperfect", mood: "indicative", voice: "middle", person: "3rd", number: "singular" }, definition: "was being accomplished", etymology: "PIE *kwel- 'turn, revolve'", frequency: 56, semantiaDefinition: "Divine plan unfolding; imperfect shows ongoing process" },
-      { id: "5-7", text: "βουλή", lemma: "βουλή", pos: "noun", morph: { case: "nominative", number: "singular", gender: "feminine" }, definition: "will, plan, counsel", etymology: "PIE *gʷelh₃- 'throw'", frequency: 89, semantiaDefinition: "Zeus's overarching plan; everything happens according to divine design" },
-    ],
-    translation: "and for all the birds, and the will of Zeus was being accomplished",
-    literalTranslation: "for-birds and for-all of-Zeus and was-being-accomplished will",
-    studentTranslation: "and for all the birds to eat, and Zeus's plan was coming true",
-  },
-]
-
-// ═══════════════════════════════════════════════════════════════════════════════
-// COLOR SCHEME
-// ═══════════════════════════════════════════════════════════════════════════════
-
-const POS_COLORS: Record<string, string> = {
-  noun: "#C9A962",
-  verb: "#3B82F6",
-  adjective: "#10B981",
-  participle: "#8B5CF6",
-  pronoun: "#EC4899",
-  particle: "#6B7280",
-  adverb: "#F59E0B",
-}
-
-// ═══════════════════════════════════════════════════════════════════════════════
-// WORD POPUP COMPONENT
-// ═══════════════════════════════════════════════════════════════════════════════
-
-interface WordPopupProps {
-  word: Word
-  position: { x: number; y: number }
-  onClose: () => void
-}
-
-const WordPopup: React.FC<WordPopupProps> = ({ word, position, onClose }) => {
-  const popupRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (popupRef.current && !popupRef.current.contains(e.target as Node)) {
-        onClose()
-      }
-    }
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => document.removeEventListener('mousedown', handleClickOutside)
-  }, [onClose])
-
-  return (
-    <motion.div
-      ref={popupRef}
-      initial={{ opacity: 0, y: 10, scale: 0.95 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      exit={{ opacity: 0, y: 10, scale: 0.95 }}
-      className="fixed z-50 w-96 max-h-[80vh] overflow-y-auto"
-      style={{
-        left: Math.min(position.x, window.innerWidth - 400),
-        top: Math.min(position.y + 20, window.innerHeight - 400),
-      }}
-    >
-      <div className="bg-[#1A1A1F] border border-[#C9A962]/30 rounded-xl shadow-2xl overflow-hidden">
-        {/* Header */}
-        <div className="bg-gradient-to-r from-[#C9A962]/20 to-[#8B7355]/20 p-4 border-b border-[#C9A962]/20">
-          <div className="flex justify-between items-start">
-            <div>
-              <h3 className="text-2xl font-serif text-[#C9A962]">{word.text}</h3>
-              <p className="text-[#F5F3EF]/60 text-sm">
-                {word.lemma} • <span style={{ color: POS_COLORS[word.pos] || '#fff' }}>{word.pos}</span>
-              </p>
-            </div>
-            <button
-              onClick={onClose}
-              className="text-[#F5F3EF]/40 hover:text-[#F5F3EF] transition"
-            >
-              ✕
-            </button>
-          </div>
-        </div>
-
-        {/* Content */}
-        <div className="p-4 space-y-4">
-          {/* Morphology */}
-          <div>
-            <h4 className="text-xs uppercase tracking-wider text-[#C9A962]/70 mb-2">Morphology</h4>
-            <div className="flex flex-wrap gap-2">
-              {Object.entries(word.morph).filter(([_, v]) => v).map(([key, value]) => (
-                <span
-                  key={key}
-                  className="px-2 py-1 bg-[#0D0D0F] rounded text-xs text-[#F5F3EF]/80"
-                >
-                  {key}: <span className="text-[#C9A962]">{value}</span>
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Definition */}
-          <div>
-            <h4 className="text-xs uppercase tracking-wider text-[#C9A962]/70 mb-2">LSJ Definition</h4>
-            <p className="text-[#F5F3EF]/80">{word.definition}</p>
-          </div>
-
-          {/* SEMANTIA Definition */}
-          {word.semantiaDefinition && (
-            <div className="bg-[#C9A962]/10 rounded-lg p-3 border border-[#C9A962]/20">
-              <h4 className="text-xs uppercase tracking-wider text-[#C9A962] mb-2 flex items-center gap-2">
-                <span className="w-2 h-2 bg-[#C9A962] rounded-full animate-pulse"></span>
-                SEMANTIA (Corpus-Derived)
-              </h4>
-              <p className="text-[#F5F3EF]/90 text-sm italic">{word.semantiaDefinition}</p>
-            </div>
-          )}
-
-          {/* Etymology */}
-          {word.etymology && (
-            <div>
-              <h4 className="text-xs uppercase tracking-wider text-[#C9A962]/70 mb-2">Etymology</h4>
-              <p className="text-[#F5F3EF]/70 text-sm">{word.etymology}</p>
-            </div>
-          )}
-
-          {/* Frequency */}
-          <div>
-            <h4 className="text-xs uppercase tracking-wider text-[#C9A962]/70 mb-2">Frequency</h4>
-            <div className="flex items-center gap-2">
-              <div className="flex-1 h-2 bg-[#0D0D0F] rounded-full overflow-hidden">
-                <div
-                  className="h-full bg-gradient-to-r from-[#C9A962] to-[#E8D5A3]"
-                  style={{ width: `${Math.min(word.frequency / 10, 100)}%` }}
-                />
-              </div>
-              <span className="text-sm text-[#F5F3EF]/60">{word.frequency}× in corpus</span>
-            </div>
-          </div>
-
-          {/* Actions */}
-          <div className="flex gap-2 pt-2 border-t border-[#C9A962]/10">
-            <button className="flex-1 py-2 px-3 bg-[#C9A962]/10 hover:bg-[#C9A962]/20 text-[#C9A962] rounded-lg text-sm transition">
-              All Occurrences →
-            </button>
-            <button className="flex-1 py-2 px-3 bg-[#3B82F6]/10 hover:bg-[#3B82F6]/20 text-[#3B82F6] rounded-lg text-sm transition">
-              Challenge LSJ
-            </button>
-          </div>
-        </div>
-      </div>
-    </motion.div>
-  )
-}
-
-// ═══════════════════════════════════════════════════════════════════════════════
-// MAIN READER COMPONENT
-// ═══════════════════════════════════════════════════════════════════════════════
 
 export default function ReaderPage() {
-  const [selectedWord, setSelectedWord] = useState<Word | null>(null)
-  const [popupPosition, setPopupPosition] = useState({ x: 0, y: 0 })
-  const [translationStyle, setTranslationStyle] = useState<'literary' | 'literal' | 'student'>('literary')
-  const [showTranslation, setShowTranslation] = useState(true)
-  const [syntaxHighlight, setSyntaxHighlight] = useState(true)
-  const [fontSize, setFontSize] = useState(20)
+  const searchParams = useSearchParams();
+  const router = useRouter();
 
-  const handleWordClick = useCallback((word: Word, event: React.MouseEvent) => {
-    setSelectedWord(word)
-    setPopupPosition({ x: event.clientX, y: event.clientY })
-  }, [])
+  // Core state
+  const [allAuthors, setAllAuthors] = useState<Author[]>([]);
+  const [selectedLanguage, setSelectedLanguage] = useState(searchParams.get('lang') || 'greek');
+  const [selectedAuthor, setSelectedAuthor] = useState<string | null>(searchParams.get('author'));
+  const [selectedWork, setSelectedWork] = useState<string | null>(searchParams.get('work'));
 
-  const getTranslation = (line: Line) => {
-    switch (translationStyle) {
-      case 'literal': return line.literalTranslation || line.translation
-      case 'student': return line.studentTranslation || line.translation
-      default: return line.translation
+  const [works, setWorks] = useState<Work[]>([]);
+  const [passages, setPassages] = useState<Passage[]>([]);
+
+  // Translation state (instant translation per passage)
+  const [passageTranslations, setPassageTranslations] = useState<Record<string, string | null>>({});
+  const [translatingPassage, setTranslatingPassage] = useState<string | null>(null);
+
+  // Loading states
+  const [loading, setLoading] = useState(true);
+  const [loadingWorks, setLoadingWorks] = useState(false);
+  const [loadingPassages, setLoadingPassages] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  // Display options
+  const [fontSize, setFontSize] = useState(18);
+  const [authorSearch, setAuthorSearch] = useState('');
+  const [showCitations, setShowCitations] = useState(true);
+  const [lineSpacing, setLineSpacing] = useState<'compact' | 'normal' | 'relaxed'>('normal');
+
+  // Virtual scrolling setup
+  const parentRef = useRef<HTMLDivElement>(null);
+  const [allPassagesLoaded, setAllPassagesLoaded] = useState(false);
+
+  // Load authors for selected language (optimized - only load what's needed)
+  useEffect(() => {
+    const cacheKey = `authors:${selectedLanguage}`;
+    const cached = getCachedData(cacheKey);
+
+    if (cached) {
+      setAllAuthors(cached.authors || []);
+      setLoading(false);
+      return;
     }
-  }
+
+    setLoading(true);
+    getAuthors(selectedLanguage)
+      .then((data) => {
+        setCachedData(cacheKey, data);
+        setAllAuthors(data.authors || []);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error('Failed to load authors:', err);
+        setLoading(false);
+      });
+  }, [selectedLanguage]);
+
+  // Filter authors by search term (client-side for instant feedback)
+  const filteredAuthors = useMemo(() => {
+    if (!authorSearch.trim()) return allAuthors;
+    const searchLower = authorSearch.toLowerCase();
+    return allAuthors.filter(a =>
+      a.author.toLowerCase().includes(searchLower)
+    );
+  }, [allAuthors, authorSearch]);
+
+  // Load works when author selected
+  useEffect(() => {
+    if (!selectedAuthor) {
+      setWorks([]);
+      return;
+    }
+
+    const cacheKey = `works:${selectedAuthor}:${selectedLanguage}`;
+    const cached = getCachedData(cacheKey);
+
+    if (cached) {
+      setWorks(cached.works || []);
+      setPassages([]);
+      setLoadingWorks(false);
+      return;
+    }
+
+    setLoadingWorks(true);
+    setWorks([]);
+    setPassages([]);
+
+    getWorksByAuthor(selectedAuthor, selectedLanguage)
+      .then((data) => {
+        setCachedData(cacheKey, data);
+        setWorks(data.works || []);
+      })
+      .catch(console.error)
+      .finally(() => setLoadingWorks(false));
+  }, [selectedAuthor, selectedLanguage]);
+
+  // Track total passages and loading strategy
+  const [totalPassages, setTotalPassages] = useState(0);
+  const [loadingMore, setLoadingMore] = useState(false);
+
+  // Load passages when work selected - FAST LOADING (no translations)
+  useEffect(() => {
+    if (!selectedAuthor || !selectedWork) {
+      setPassages([]);
+      setTotalPassages(0);
+      return;
+    }
+
+    setLoadingPassages(true);
+    setPassages([]);
+    setTotalPassages(0);
+    setAllPassagesLoaded(false);
+
+    // Initial fetch: Get first 100 passages + total count
+    getPassages(selectedAuthor, selectedWork, 100, 0, selectedLanguage)
+      .then(async (data) => {
+        const total = data.total || 0;
+        setTotalPassages(total);
+
+        console.log('[Reader] Work loaded:', {
+          work: selectedWork,
+          totalPassages: total,
+          strategy: total < 1000 ? 'LOAD_ALL' : 'PROGRESSIVE',
+          initialLoaded: data.passages?.length || 0
+        });
+
+        if (!data.passages || data.passages.length === 0) {
+          console.warn('[Reader] No passages returned from API');
+          setPassages([]);
+          setError(null);
+          setLoadingPassages(false);
+          return;
+        }
+
+        // SMART LOADING STRATEGY
+        if (total <= 1000) {
+          // Small work: Load ALL passages at once for best UX
+          console.log('[Reader] Loading complete work (≤1000 passages)...');
+          try {
+            const completeData = await getPassages(selectedAuthor, selectedWork, total, 0, selectedLanguage);
+            // Filter passages to match requested language (filters out mislabeled translations)
+            const filteredPassages = (completeData.passages || []).filter(p => {
+              const detectedLang = detectPassageLanguage(p.content);
+              // Match exact language OR allow 'english' for 'latin' requests (translations)
+              return detectedLang === selectedLanguage ||
+                     (selectedLanguage === 'latin' && detectedLang === 'latin') ||
+                     detectedLang === 'unknown';
+            });
+            setPassages(filteredPassages);
+            console.log(`[Reader] ✓ Loaded complete work: ${completeData.passages?.length} passages (${filteredPassages.length} match language filter)`);
+          } catch (err) {
+            console.error('[Reader] Failed to load complete work:', err);
+            // Fallback to initial 100 passages with filtering
+            const filteredFallback = (data.passages || []).filter(p => {
+              const detectedLang = detectPassageLanguage(p.content);
+              return detectedLang === selectedLanguage ||
+                     (selectedLanguage === 'latin' && detectedLang === 'latin') ||
+                     detectedLang === 'unknown';
+            });
+            setPassages(filteredFallback);
+          }
+        } else {
+          // Large work (>1000): Load progressively with filtering
+          console.log('[Reader] Large work detected. Loading first 100 passages...');
+          const filteredProgressive = (data.passages || []).filter(p => {
+            const detectedLang = detectPassageLanguage(p.content);
+            return detectedLang === selectedLanguage ||
+                   (selectedLanguage === 'latin' && detectedLang === 'latin') ||
+                   detectedLang === 'unknown';
+          });
+          setPassages(filteredProgressive);
+          console.log(`[Reader] ✓ Loaded ${data.passages?.length} passages (${filteredProgressive.length} match language filter)`);
+        }
+
+        setError(null);
+      })
+      .catch((err) => {
+        console.error('[Reader] Failed to load passages:', err);
+        setError(err.message || 'Failed to load passages');
+      })
+      .finally(() => setLoadingPassages(false));
+  }, [selectedAuthor, selectedWork, selectedLanguage]);
+
+  // Handle language tab change
+  const handleLanguageChange = (lang: string) => {
+    setSelectedLanguage(lang);
+    setSelectedAuthor(null);
+    setSelectedWork(null);
+    setWorks([]);
+    setPassages([]);
+    router.push(`/reader?lang=${lang}`);
+  };
+
+  // Handle author selection
+  const handleAuthorClick = (authorName: string, isWork?: boolean) => {
+    setSelectedAuthor(authorName);
+
+    // If this is actually a work (Hebrew/Aramaic/Coptic), load passages directly
+    if (isWork) {
+      setSelectedWork('__DIRECT__');
+      setWorks([]);
+      router.push(`/reader?lang=${selectedLanguage}&author=${encodeURIComponent(authorName)}&work=__DIRECT__`);
+    } else {
+      setSelectedWork(null);
+      router.push(`/reader?lang=${selectedLanguage}&author=${encodeURIComponent(authorName)}`);
+    }
+  };
+
+  // Handle work selection
+  const handleWorkClick = (work: string) => {
+    setSelectedWork(work);
+    router.push(`/reader?lang=${selectedLanguage}&author=${encodeURIComponent(selectedAuthor!)}&work=${encodeURIComponent(work)}`);
+  };
+
+  // Virtual scrolling setup
+  const virtualizer = useVirtualizer({
+    count: passages.length,
+    getScrollElement: () => parentRef.current,
+    estimateSize: () => 120,  // Estimated passage height in pixels
+    overscan: 10,  // Render 10 extra items above/below viewport for smooth scrolling
+  });
+
+  // Use total from API if available, otherwise fall back to loaded passages count
+  const displayTotal = totalPassages > 0 ? totalPassages : passages.length;
+
+  // Progressive loading - load more passages when scrolling near the end
+  useEffect(() => {
+    if (!selectedWork || allPassagesLoaded || loadingMore) return;
+
+    const virtualItems = virtualizer.getVirtualItems();
+    const lastItem = virtualItems[virtualItems.length - 1];
+
+    if (!lastItem) return;
+
+    // Load more when approaching end (within last 20 items)
+    if (lastItem.index >= passages.length - 20 && passages.length < totalPassages) {
+      const loadMore = async () => {
+        setLoadingMore(true);
+        try {
+          const nextOffset = passages.length;
+          const nextLimit = Math.min(500, totalPassages - passages.length);
+
+          const data = await getPassages(selectedAuthor!, selectedWork!, nextLimit, nextOffset, selectedLanguage);
+          setPassages(prev => [...prev, ...(data.passages || [])]);
+
+          if (passages.length + (data.passages?.length || 0) >= totalPassages) {
+            setAllPassagesLoaded(true);
+          }
+        } catch (err) {
+          console.error('Failed to load more passages:', err);
+        } finally {
+          setLoadingMore(false);
+        }
+      };
+
+      loadMore();
+    }
+  }, [virtualizer.getVirtualItems(), passages.length, totalPassages, selectedWork, allPassagesLoaded, loadingMore, selectedAuthor, selectedLanguage]);
+
+  // Handle instant translation for a passage
+  const handleTranslatePassage = async (passage: Passage) => {
+    if (!passage.urn) {
+      alert('This passage does not have a URN and cannot be translated instantly.');
+      return;
+    }
+
+    const passageId = passage.id || passage.urn;
+
+    // If already translated, toggle visibility
+    if (passageTranslations[passageId]) {
+      setPassageTranslations(prev => {
+        const newTranslations = { ...prev };
+        delete newTranslations[passageId];
+        return newTranslations;
+      });
+      return;
+    }
+
+    // Fetch instant translation
+    setTranslatingPassage(passageId);
+    try {
+      const result = await getInstantTranslation(passage.urn);
+      if (result && result.translation) {
+        setPassageTranslations(prev => ({
+          ...prev,
+          [passageId]: result.translation
+        }));
+      } else {
+        alert('No instant translation available. Try the AI translation page.');
+      }
+    } catch (error) {
+      console.error('Translation error:', error);
+      alert('Translation failed. Please try again.');
+    } finally {
+      setTranslatingPassage(null);
+    }
+  };
 
   return (
-    <div className="min-h-screen bg-[#0D0D0F] text-[#F5F3EF]">
+    <div className="min-h-screen bg-[#0D0D0F]">
       {/* Header */}
-      <header className="sticky top-0 z-40 bg-[#0D0D0F]/95 backdrop-blur border-b border-[#C9A962]/20">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <div>
-                <Link href="/" className="text-[#C9A962] font-serif text-2xl hover:text-[#E8D5A3] transition">
-                  LOGOS
-                </Link>
-                <span className="mx-3 text-[#F5F3EF]/30">|</span>
-                <span className="text-[#F5F3EF]/70">Reader</span>
-              </div>
-
-              {/* Author/Translator Selection Dial */}
-              <TranslationStyleDial
-                onChange={(persona, translator) => {
-                  console.log('Selected:', persona, translator)
-                  // Map translator to translation style
-                  if (translator === 'plain' || translator === 'rouse') {
-                    setTranslationStyle('student')
-                  } else if (translator === 'lattimore' || translator === 'loeb') {
-                    setTranslationStyle('literal')
-                  } else {
-                    setTranslationStyle('literary')
-                  }
-                }}
-              />
-            </div>
-
-            <div className="flex items-center gap-4">
-              {/* Translation Style */}
-              <div className="flex bg-[#1A1A1F] rounded-lg p-1">
-                {(['literary', 'literal', 'student'] as const).map((style) => (
-                  <button
-                    key={style}
-                    onClick={() => setTranslationStyle(style)}
-                    className={`px-3 py-1 rounded text-sm capitalize transition ${
-                      translationStyle === style
-                        ? 'bg-[#C9A962] text-[#0D0D0F]'
-                        : 'text-[#F5F3EF]/60 hover:text-[#F5F3EF]'
-                    }`}
-                  >
-                    {style}
-                  </button>
-                ))}
-              </div>
-
-              {/* Toggle Buttons */}
-              <button
-                onClick={() => setShowTranslation(!showTranslation)}
-                className={`px-3 py-1 rounded text-sm transition ${
-                  showTranslation ? 'bg-[#C9A962]/20 text-[#C9A962]' : 'text-[#F5F3EF]/40'
-                }`}
-              >
-                Translation
-              </button>
-              <button
-                onClick={() => setSyntaxHighlight(!syntaxHighlight)}
-                className={`px-3 py-1 rounded text-sm transition ${
-                  syntaxHighlight ? 'bg-[#C9A962]/20 text-[#C9A962]' : 'text-[#F5F3EF]/40'
-                }`}
-              >
-                Syntax
-              </button>
-
-              {/* Font Size */}
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={() => setFontSize(Math.max(14, fontSize - 2))}
-                  className="w-8 h-8 rounded bg-[#1A1A1F] text-[#F5F3EF]/60 hover:text-[#F5F3EF]"
-                >
-                  A-
-                </button>
-                <button
-                  onClick={() => setFontSize(Math.min(32, fontSize + 2))}
-                  className="w-8 h-8 rounded bg-[#1A1A1F] text-[#F5F3EF]/60 hover:text-[#F5F3EF]"
-                >
-                  A+
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      {/* Work Title */}
-      <div className="bg-gradient-to-b from-[#C9A962]/10 to-transparent py-8">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h1 className="font-serif text-4xl text-[#C9A962] mb-2">Ἰλιάς</h1>
-          <p className="text-[#F5F3EF]/60">Homer • Iliad • Book 1, Lines 1-5</p>
+      <div className="bg-gradient-to-b from-[#C9A962]/10 to-transparent py-12 md:py-16 border-b border-[#C9A962]/20">
+        <div className="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-3xl font-bold mb-2">
+            <span className="text-[#C9A962]">READER</span>
+          </h1>
+          <p className="text-[#F5F3EF]/70">
+            Browse 6.7M passages across all classical languages
+          </p>
         </div>
       </div>
 
-      {/* Main Content */}
-      <main className="max-w-4xl mx-auto px-6 py-8">
-        <div className="space-y-6">
-          {DEMO_LINES.map((line) => (
-            <div
-              key={line.id}
-              className="group bg-[#1A1A1F]/50 hover:bg-[#1A1A1F] rounded-xl p-6 transition border border-transparent hover:border-[#C9A962]/20"
-            >
-              {/* Line Number */}
-              <div className="flex gap-4">
-                <span className="text-[#C9A962]/50 font-mono text-sm w-8 flex-shrink-0 pt-1">
-                  {line.lineNumber}
-                </span>
-
-                <div className="flex-1 space-y-3">
-                  {/* Greek Text */}
-                  <p
-                    className="font-serif leading-relaxed"
-                    style={{ fontSize: `${fontSize}px` }}
-                  >
-                    {line.words.map((word, i) => (
-                      <React.Fragment key={word.id}>
-                        <span
-                          onClick={(e) => handleWordClick(word, e)}
-                          className="cursor-pointer hover:bg-[#C9A962]/20 rounded px-0.5 transition"
-                          style={{
-                            color: syntaxHighlight ? POS_COLORS[word.pos] || '#F5F3EF' : '#F5F3EF',
-                          }}
-                        >
-                          {word.text}
-                        </span>
-                        {i < line.words.length - 1 && ' '}
-                      </React.Fragment>
-                    ))}
-                  </p>
-
-                  {/* Translation */}
-                  <AnimatePresence>
-                    {showTranslation && (
-                      <motion.p
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="text-[#F5F3EF]/60 text-sm italic border-l-2 border-[#C9A962]/30 pl-4"
-                      >
-                        {getTranslation(line)}
-                      </motion.p>
-                    )}
-                  </AnimatePresence>
-                </div>
-
-                {/* Bookmark */}
-                <button className="opacity-0 group-hover:opacity-100 text-[#F5F3EF]/30 hover:text-[#C9A962] transition">
-                  ☆
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Legend */}
-        <div className="mt-12 p-6 bg-[#1A1A1F] rounded-xl border border-[#C9A962]/20">
-          <h3 className="text-[#C9A962] font-serif text-lg mb-4">Syntax Highlighting Legend</h3>
-          <div className="flex flex-wrap gap-4">
-            {Object.entries(POS_COLORS).map(([pos, color]) => (
-              <div key={pos} className="flex items-center gap-2">
-                <span className="w-3 h-3 rounded-full" style={{ backgroundColor: color }} />
-                <span className="text-sm capitalize text-[#F5F3EF]/70">{pos}</span>
-              </div>
+      {/* Language Tabs */}
+      <div className="border-b border-[#C9A962]/20 bg-[#0D0D0F]/50 sticky top-0 z-30">
+        <div className="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex gap-2 py-3 overflow-x-auto">
+            {LANGUAGES.map((lang) => (
+              <button
+                key={lang.key}
+                onClick={() => handleLanguageChange(lang.key)}
+                className={`px-4 py-2 text-sm font-medium rounded-t-lg transition whitespace-nowrap ${
+                  selectedLanguage === lang.key
+                    ? 'bg-[#C9A962] text-[#0D0D0F]'
+                    : 'bg-[#C9A962]/10 text-[#F5F3EF]/70 hover:bg-[#C9A962]/20'
+                }`}
+              >
+                <span className="mr-2">{lang.icon}</span>
+                {lang.label}
+              </button>
             ))}
           </div>
         </div>
-      </main>
+      </div>
 
-      {/* Word Popup */}
-      <AnimatePresence>
-        {selectedWord && (
-          <WordPopup
-            word={selectedWord}
-            position={popupPosition}
-            onClose={() => setSelectedWord(null)}
-          />
+      <div className="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        {loading ? (
+          <div className="flex items-center justify-center py-12">
+            <LoadingSpinner size="lg" />
+          </div>
+        ) : (
+          <div className="grid grid-cols-12 gap-6">
+            {/* Left Sidebar - Authors & Works */}
+            <div className="col-span-12 lg:col-span-3 space-y-4">
+              {/* Authors List */}
+              <Card padding="sm">
+                <div className="sticky top-24">
+                  <h3 className="text-sm font-semibold text-[#C9A962] mb-3 px-3 py-2 border-b border-[#C9A962]/20">
+                    Authors ({filteredAuthors.length})
+                  </h3>
+                  {/* Search Box */}
+                  <div className="px-3 mb-3">
+                    <input
+                      type="text"
+                      placeholder="Search authors..."
+                      value={authorSearch}
+                      onChange={(e) => setAuthorSearch(e.target.value)}
+                      className="w-full px-3 py-2 text-sm bg-[#1A1410] border border-[#C9A962]/30 rounded text-[#F5F3EF] placeholder-[#F5F3EF]/40 focus:outline-none focus:border-[#C9A962]"
+                    />
+                  </div>
+                  <div className="space-y-1 max-h-[calc(100vh-380px)] overflow-y-auto">
+                    {filteredAuthors.map((author) => (
+                      <button
+                        key={author.author}
+                        onClick={() => handleAuthorClick(author.author, author.is_work)}
+                        className={`w-full text-left px-3 py-2 text-sm rounded transition ${
+                          selectedAuthor === author.author
+                            ? 'bg-[#C9A962]/20 text-[#C9A962]'
+                            : 'hover:bg-[#C9A962]/10 text-[#F5F3EF]/80'
+                        }`}
+                      >
+                        <div className="font-medium">{author.author}</div>
+                        <div className="text-xs text-[#F5F3EF]/50">
+                          {author.is_work
+                            ? `${formatNumber(author.passage_count)} verses`
+                            : `${author.work_count ? `${author.work_count} works · ` : ''}${formatNumber(author.passage_count)} passages`
+                          }
+                        </div>
+                      </button>
+                    ))}
+                    {filteredAuthors.length === 0 && (
+                      <p className="text-sm text-[#F5F3EF]/50 px-3 py-4">
+                        No authors found for {selectedLanguage}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </Card>
+
+              {/* Works List */}
+              {selectedAuthor && (
+                <Card padding="sm">
+                  <h3 className="text-sm font-semibold text-[#C9A962] mb-3 px-3 py-2 border-b border-[#C9A962]/20">
+                    Works by {selectedAuthor}
+                  </h3>
+                  {loadingWorks ? (
+                    <div className="flex justify-center py-6">
+                      <LoadingSpinner />
+                    </div>
+                  ) : (
+                    <div className="space-y-1 max-h-[400px] overflow-y-auto">
+                      {works.map((work) => (
+                        <button
+                          key={work.title}
+                          onClick={() => handleWorkClick(work.title)}
+                          className={`w-full text-left px-3 py-2 text-sm rounded transition ${
+                            selectedWork === work.title
+                              ? 'bg-[#C9A962]/20 text-[#C9A962]'
+                              : 'hover:bg-[#C9A962]/10 text-[#F5F3EF]/80'
+                          }`}
+                        >
+                          <div className="font-medium">{work.title}</div>
+                          <div className="text-xs text-[#F5F3EF]/50">
+                            {formatNumber(work.passage_count)} passages
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </Card>
+              )}
+            </div>
+
+            {/* Main Content - Text Display */}
+            <div className="col-span-12 lg:col-span-9">
+              {!selectedWork ? (
+                <Card padding="lg" className="text-center py-16">
+                  <div className="text-5xl mb-4">📖</div>
+                  <h2 className="text-2xl text-[#C9A962] mb-2">Welcome to the Reader</h2>
+                  <p className="text-[#F5F3EF]/70 max-w-xl mx-auto">
+                    Select a language tab above, then choose an author and work to begin reading.
+                    All texts are displayed in their original language with optional translations.
+                  </p>
+                  <div className="mt-6 text-sm text-[#F5F3EF]/50">
+                    Currently viewing: <Badge variant={(LANGUAGES.find(l => l.key === selectedLanguage)?.badge || 'default') as any}>
+                      {LANGUAGES.find(l => l.key === selectedLanguage)?.label || selectedLanguage}
+                    </Badge>
+                  </div>
+                </Card>
+              ) : loadingPassages ? (
+                <div className="flex items-center justify-center py-16">
+                  <LoadingSpinner size="lg" />
+                </div>
+              ) : (
+                <div className="space-y-4">
+                  {/* Error Display */}
+                  {error && (
+                    <Card padding="md" className="border-red-500/50 bg-red-500/5">
+                      <div className="flex items-center gap-3">
+                        <span className="text-2xl">⚠️</span>
+                        <div>
+                          <h3 className="text-red-400 font-medium">Error Loading Passages</h3>
+                          <p className="text-sm text-[#F5F3EF]/70 mt-1">{error}</p>
+                        </div>
+                      </div>
+                    </Card>
+                  )}
+                  {/* Text Header */}
+                  <Card padding="md">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <h2 className="text-2xl font-serif text-[#C9A962]">{selectedAuthor}</h2>
+                        <p className="text-[#F5F3EF]/70">{selectedWork}</p>
+                        <div className="flex gap-2 mt-2">
+                          <Badge variant={(LANGUAGES.find(l => l.key === selectedLanguage)?.badge || 'default') as any}>
+                            {LANGUAGES.find(l => l.key === selectedLanguage)?.label || selectedLanguage}
+                          </Badge>
+                          <Badge variant="ghost">
+                            {totalPassages > 0 ? (
+                              <>
+                                {formatNumber(totalPassages)} passages
+                                {passages.length < totalPassages && ` (${formatNumber(passages.length)} loaded)`}
+                              </>
+                            ) : (
+                              `${formatNumber(passages.length)} passages`
+                            )}
+                          </Badge>
+                          {loadingMore && (
+                            <Badge variant="ghost">
+                              Loading more...
+                            </Badge>
+                          )}
+                        </div>
+                      </div>
+                      <div className="flex gap-3">
+                        {/* Font Size Controls */}
+                        <Button
+                          size="sm"
+                          variant="ghost"
+                          onClick={() => setFontSize(Math.max(14, fontSize - 2))}
+                        >
+                          A-
+                        </Button>
+                        <Button
+                          size="sm"
+                          variant="ghost"
+                          onClick={() => setFontSize(Math.min(24, fontSize + 2))}
+                        >
+                          A+
+                        </Button>
+
+                        {/* Line Spacing */}
+                        <Button
+                          size="sm"
+                          variant="ghost"
+                          onClick={() => {
+                            const modes: Array<typeof lineSpacing> = ['compact', 'normal', 'relaxed'];
+                            const current = modes.indexOf(lineSpacing);
+                            setLineSpacing(modes[(current + 1) % modes.length]);
+                          }}
+                          title={`Line spacing: ${lineSpacing}`}
+                        >
+                          ≡
+                        </Button>
+
+                        {/* Citations Toggle */}
+                        <Button
+                          size="sm"
+                          variant={showCitations ? 'default' : 'ghost'}
+                          onClick={() => setShowCitations(!showCitations)}
+                          title="Show/hide citations"
+                        >
+                          #
+                        </Button>
+                      </div>
+                    </div>
+                  </Card>
+
+                  {/* Text Content - Enhanced with Infinite Scroll */}
+                  <Card padding="lg" className="h-fit">
+                      <div className="mb-4 pb-3 border-b border-[#C9A962]/20">
+                        <h3 className="text-sm font-semibold text-[#C9A962]">Original Text</h3>
+                        <p className="text-xs text-[#F5F3EF]/50 mt-1">
+                          Showing {passages.length.toLocaleString()} of {displayTotal.toLocaleString()} passages
+                        </p>
+                      </div>
+                      {passages.length === 0 ? (
+                        <div className="text-center py-12">
+                          <div className="text-5xl mb-4">📭</div>
+                          <h3 className="text-xl text-[#C9A962] mb-2">No Passages Found</h3>
+                          <p className="text-[#F5F3EF]/70 mb-4">
+                            No text content available for this work.
+                          </p>
+                          <Button
+                            variant="secondary"
+                            className="mt-4"
+                            onClick={() => {
+                              setSelectedWork(null);
+                              setPassages([]);
+                            }}
+                          >
+                            ← Back to Works
+                          </Button>
+                        </div>
+                      ) : (
+                        <div
+                          ref={parentRef}
+                          className="h-[calc(100vh-400px)] overflow-auto"
+                          style={{ contain: 'strict' }}
+                        >
+                          <div
+                            style={{
+                              height: `${virtualizer.getTotalSize()}px`,
+                              width: '100%',
+                              position: 'relative',
+                            }}
+                          >
+                            {virtualizer.getVirtualItems().map((virtualRow) => {
+                              const passage = passages[virtualRow.index];
+                              const passageKey = passage.id || passage.urn || `${virtualRow.index}`;
+                              return (
+                                <div
+                                  key={virtualRow.key}
+                                  data-index={virtualRow.index}
+                                  ref={virtualizer.measureElement}
+                                  style={{
+                                    position: 'absolute',
+                                    top: 0,
+                                    left: 0,
+                                    width: '100%',
+                                    transform: `translateY(${virtualRow.start}px)`,
+                                  }}
+                                  className="group hover:bg-[#C9A962]/5 p-3 rounded transition"
+                                >
+                                  <div className="flex gap-4">
+                                    {showCitations && (
+                                      <span className="text-[#C9A962]/50 text-sm font-mono shrink-0 w-12 pt-1">
+                                        {virtualRow.index + 1}
+                                      </span>
+                                    )}
+                                    <div className="flex-1" dir={['hebrew', 'aramaic'].includes(selectedLanguage) ? 'rtl' : 'ltr'}>
+                                      <div className="flex items-start gap-2">
+                                        <p
+                                          className={`flex-1 text-[#F5F3EF] ${
+                                            lineSpacing === 'compact' ? 'leading-normal' :
+                                            lineSpacing === 'relaxed' ? 'leading-loose' :
+                                            'leading-relaxed'
+                                          } ${
+                                            selectedLanguage === 'greek' ? 'font-greek' :
+                                            selectedLanguage === 'hebrew' ? 'font-hebrew' :
+                                            selectedLanguage === 'aramaic' ? 'font-aramaic' :
+                                            selectedLanguage === 'coptic' ? 'font-coptic' :
+                                            'font-serif'
+                                          }`}
+                                          style={{ fontSize: `${fontSize}px` }}
+                                        >
+                                          {passage.content}
+                                        </p>
+                                        {passage.urn && (
+                                          <button
+                                            onClick={() => handleTranslatePassage(passage)}
+                                            disabled={translatingPassage === passageKey}
+                                            className="opacity-0 group-hover:opacity-100 transition-opacity shrink-0 p-1.5 hover:bg-[#C9A962]/20 rounded text-[#C9A962] disabled:opacity-50"
+                                            title="Translate passage"
+                                          >
+                                            {translatingPassage === passageKey ? (
+                                              <span className="text-xs">...</span>
+                                            ) : passageTranslations[passageKey] ? (
+                                              <span className="text-base">✓</span>
+                                            ) : (
+                                              <span className="text-base">🌐</span>
+                                            )}
+                                          </button>
+                                        )}
+                                      </div>
+                                      {passageTranslations[passageKey] && (
+                                        <div className="mt-3 pt-3 border-t border-[#C9A962]/20">
+                                          <p className="text-sm text-[#F5F3EF]/80 italic leading-relaxed">
+                                            {passageTranslations[passageKey]}
+                                          </p>
+                                        </div>
+                                      )}
+                                      {showCitations && passage.section && (
+                                        <p className="text-xs text-[#C9A962]/60 mt-2 font-mono">{passage.section}</p>
+                                      )}
+                                    </div>
+                                  </div>
+                                </div>
+                              );
+                            })}
+                          </div>
+                          {loadingMore && (
+                            <div className="flex justify-center py-4">
+                              <LoadingSpinner size="sm" />
+                              <span className="ml-2 text-sm text-[#C9A962]">Loading more passages...</span>
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </Card>
+                </div>
+              )}
+            </div>
+          </div>
         )}
-      </AnimatePresence>
-
-      {/* Keyboard Shortcuts */}
-      <div className="fixed bottom-4 right-4 text-[#F5F3EF]/30 text-xs">
-        Press <kbd className="px-1 bg-[#1A1A1F] rounded">?</kbd> for shortcuts
       </div>
     </div>
-  )
+  );
 }
