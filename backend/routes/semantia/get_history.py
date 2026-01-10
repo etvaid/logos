@@ -50,7 +50,7 @@ async def search_corpus(word: str) -> SemanticNeighborhoodResponse:
     # Returning response in the expected format
     return SemanticNeighborhoodResponse(neighborhood=neighborhood, drift=drift)
 
-@router.get("/semantia/get_history", response_model=SemanticNeighborhoodResponse)
+@router.get("/", response_model=SemanticNeighborhoodResponse)
 async def get_history(word: str):
     if not word:
         raise HTTPException(status_code=400, detail="Word parameter is required.")

@@ -10,15 +10,17 @@ from functools import lru_cache
 # Initialize router
 router = APIRouter()
 
-# Assume we've already defined load functions
-async def load_corpus_data() -> List[Dict[str, Any]]:
-    """Load and return the JSONL corpus data."""
-    with open('~/Downloads/logos_corpus/output/passages_combined.jsonl', 'r') as file:
-        return [json.loads(line) for line in file]
+# Corpus and embeddings are optional
+CORPUS_DATA = []
+EMBEDDINGS = None
 
-async def load_embeddings() -> np.ndarray:
-    """Load and return the embeddings data."""
-    return np.load('~/Downloads/logos_corpus/output/embeddings.npy')
+async def load_corpus_data() -> List[Dict[str, Any]]:
+    """Load and return the JSONL corpus data if available."""
+    return CORPUS_DATA
+
+async def load_embeddings():
+    """Load and return the embeddings data if available."""
+    return EMBEDDINGS
 
 # Define Pydantic models for request and response
 class TimePeriod(BaseModel):
@@ -59,7 +61,7 @@ async def semantic_comparison(word: str, periods: List[TimePeriod]) -> List[EraC
     tasks = [process_period(period) for period in periods]
     return await asyncio.gather(*tasks)
 
-@router.post("/chronos/compare_eras", response_model=CompareResponse)
+@router.post("/", response_model=CompareResponse)
 async def compare_eras(request: CompareRequest):
     """
     Compare semantic evolution of a word across specified time periods.

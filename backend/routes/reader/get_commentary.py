@@ -53,7 +53,7 @@ def get_passage_by_id(passage_id: int) -> str:
         raise HTTPException(status_code=404, detail=f"Passage {passage_id} not found")
 
 # Endpoint for getting commentary
-@router.post("/reader/get_commentary", response_model=CommentaryResponse)
+@router.post("/", response_model=CommentaryResponse)
 async def get_commentary(request: CommentaryRequest):
     # Fetch the target commentary
     commentary = get_passage_by_id(request.passage_id)
@@ -65,10 +65,4 @@ async def get_commentary(request: CommentaryRequest):
     
     return CommentaryResponse(commentary=commentary, related_passages=related_passages)
 
-# Example of handling errors
-@router.exception_handler(Exception)
-async def general_exception_handler(request, exc):
-    return JSONResponse(
-        status_code=500,
-        content={"message": f"An error occurred: {str(exc)}"},
-    )
+# Note: Exception handling is done at the app level, not on APIRouter

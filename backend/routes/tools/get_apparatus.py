@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException, Query
+from fastapi import FastAPI, APIRouter, HTTPException, Query
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 from typing import List, Optional
@@ -6,6 +6,7 @@ import aiofiles
 import asyncio
 import numpy as np
 import json
+import os
 from sklearn.metrics.pairwise import cosine_similarity
 from functools import lru_cache
 import uvicorn
@@ -23,8 +24,8 @@ class ApparatusResponse(BaseModel):
 router = APIRouter()
 
 # Load corpus data and embeddings
-passages_data_file = "~/Downloads/logos_corpus/output/passages_combined.jsonl"
-embeddings_data_file = "~/Downloads/logos_corpus/output/embeddings.npy"
+passages_data_file = os.path.expanduser("~/Downloads/logos_corpus/output/passages_combined.jsonl")
+embeddings_data_file = os.path.expanduser("~/Downloads/logos_corpus/output/embeddings.npy")
 
 # Async function to load JSONL data
 async def load_passages():
@@ -45,7 +46,7 @@ def load_embeddings():
         raise Exception(f"Failed to load embeddings: {str(e)}")
 
 # API Endpoint to get apparatus with related passages
-@router.get("/get_apparatus", response_model=ApparatusResponse)
+@router.get("/", response_model=ApparatusResponse)
 async def get_apparatus(passage_id: int = Query(..., description="ID of the passage")):
     passages = await load_passages()
     embeddings = load_embeddings()

@@ -6,7 +6,6 @@ import json
 import asyncio
 import os
 from functools import lru_cache
-from ai_module import translate_with_memory
 
 # Initialize FastAPI router
 router = APIRouter()
@@ -33,16 +32,28 @@ def load_passages():
         with open(os.path.expanduser(PASSAGES_PATH), 'r') as f:
             return [json.loads(line) for line in f]
     except FileNotFoundError:
-        raise HTTPException(status_code=500, detail="Passages data file not found.")
+        print(f"Warning: Passages data file not found at {PASSAGES_PATH}")
+        return []
 
 @lru_cache(maxsize=32)
 def load_embeddings():
     try:
         return np.load(os.path.expanduser(EMBEDDINGS_PATH))
     except FileNotFoundError:
-        raise HTTPException(status_code=500, detail="Embeddings data file not found.")
+        print(f"Warning: Embeddings data file not found at {EMBEDDINGS_PATH}")
+        return np.array([])
 
-@router.get("/translation/get_alignment", response_model=AlignmentResult)
+# Mocked function for AI translation (to be replaced with actual implementation)
+async def translate_with_memory(source_text, context, passages, embeddings):
+    # This function will integrate AI translation with memory capabilities
+    # Here, it's just a placeholder returning a mock response
+    await asyncio.sleep(0.1)  # Simulate async operation
+    return (
+        f"Translated version of '{source_text}' with context '{context}'.",
+        ["Example Memory Hit"]   # Placeholder for memory hits
+    )
+
+@router.post("/", response_model=AlignmentResult)
 async def get_alignment(request: TranslationRequest):
     try:
         # Load corpus data asynchronously
@@ -66,14 +77,4 @@ async def get_alignment(request: TranslationRequest):
         )
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
-
-# Mocked function for AI translation (to be replaced with actual implementation)
-async def translate_with_memory(source_text, context, passages, embeddings):
-    # This function will integrate AI translation with memory capabilities
-    # Here, it's just a placeholder returning a mock response
-    await asyncio.sleep(0.1)  # Simulate async operation
-    return (
-        f"Translated version of '{source_text}' with context '{context}'.",
-        ["Example Memory Hit"]   # Placeholder for memory hits
-    )
 

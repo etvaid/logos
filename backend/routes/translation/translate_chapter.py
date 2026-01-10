@@ -28,13 +28,37 @@ _pool = None
 
 VALID_STYLES = ['scholarly', 'literary', 'accessible', 'literal']
 
-# Import lexicons from translate_passage
-from .translate_passage import (
-    GREEK_LEXICON, LATIN_LEXICON,
-    detect_language, normalize_text, tokenize,
-    lookup_embedded_lexicon, strip_accents_greek,
-    GREEK_PATTERN, LATIN_PATTERN
-)
+# Try to import lexicons from translate_passage, with fallbacks
+try:
+    from .translate_passage import (
+        GREEK_LEXICON, LATIN_LEXICON,
+        detect_language, normalize_text, tokenize,
+        lookup_embedded_lexicon, strip_accents_greek,
+        GREEK_PATTERN, LATIN_PATTERN
+    )
+except ImportError:
+    # Fallback definitions if relative import fails
+    GREEK_PATTERN = re.compile(r'[\u0370-\u03FF\u1F00-\u1FFF]')
+    LATIN_PATTERN = re.compile(r'[a-zA-ZāēīōūȳĀĒĪŌŪȲàèìòùÀÈÌÒÙ]')
+    GREEK_LEXICON = {}
+    LATIN_LEXICON = {}
+
+    def detect_language(text: str) -> str:
+        greek_count = len(GREEK_PATTERN.findall(text))
+        latin_count = len(LATIN_PATTERN.findall(text))
+        return 'greek' if greek_count > latin_count else 'latin'
+
+    def normalize_text(text: str) -> str:
+        return unicodedata.normalize('NFC', text.strip())
+
+    def strip_accents_greek(text: str) -> str:
+        return unicodedata.normalize('NFD', text).encode('ascii', 'ignore').decode('utf-8')
+
+    def tokenize(text: str) -> list:
+        return re.findall(r'\b\w+\b', text)
+
+    def lookup_embedded_lexicon(tokens: list, source_lang: str) -> dict:
+        return {}
 
 
 # ============================================================================

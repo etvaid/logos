@@ -60,7 +60,7 @@ async def handle_error(term: str):
     raise HTTPException(status_code=404, detail=f"No results found for term: {term}")
 
 # Main route for exporting reports
-@router.post("/discovery/export_report", response_model=ExportResponse)
+@router.post("/", response_model=ExportResponse)
 async def export_report(request: ExportRequest, background_tasks: BackgroundTasks):
     global corpus_data_cache
     

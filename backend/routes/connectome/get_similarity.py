@@ -45,7 +45,7 @@ def calculate_similarity(embeddings: np.ndarray, index: int, top_k: int) -> List
     sorted_indices = np.argsort(similarities)[::-1][1:top_k+1]  # Exclude self
     return sorted_indices.tolist()
 
-@router.get("/connectome/get_similarity", response_model=SimilarityResponseModel)
+@router.get("/", response_model=SimilarityResponseModel)
 async def get_similarity(request: SimilarityRequestModel):
     """
     Retrieve similar passages based on the given passage index and number of top-k similar results.

@@ -50,7 +50,7 @@ async def create_lesson_task(lesson: Lesson, lesson_id: str):
     print(f"Creating lesson `{lesson.title}` with ID: {lesson_id}")
 
 # Main endpoint
-@router.post("/teaching/create_lesson", response_model=CreateLessonResponse)
+@router.post("/", response_model=CreateLessonResponse)
 async def create_lesson(lesson: Lesson, background_tasks: BackgroundTasks):
     try:
         print("Loading corpus data...")

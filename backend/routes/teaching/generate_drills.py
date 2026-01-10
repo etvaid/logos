@@ -6,8 +6,6 @@ import json
 import os
 import asyncio
 import hashlib
-from fastapi_cache import FastAPICache
-from fastapi_cache.decorator import cache
 
 # Define the router
 router = APIRouter()
@@ -38,16 +36,25 @@ async def fetch_semantic_insights(text: str) -> List[str]:
     # Assume AI is highlighting words related to the difficulty level or unknown vocabulary
     return [word for word in text.split() if len(word) > 5]  # Simplified example
 
-# Utility function to load data
+# Utility function to load data with graceful error handling
 def load_corpus_data():
-    with open(os.path.expanduser(PASSAGES_PATH), 'r') as file:
-        passages = [json.loads(line) for line in file]
-    embeddings = np.load(os.path.expanduser(EMBEDDINGS_PATH), allow_pickle=True)
+    passages = []
+    embeddings = np.array([])
+    try:
+        with open(os.path.expanduser(PASSAGES_PATH), 'r') as file:
+            passages = [json.loads(line) for line in file]
+    except FileNotFoundError:
+        print(f"Warning: Passages file not found at {PASSAGES_PATH}")
+
+    try:
+        embeddings = np.load(os.path.expanduser(EMBEDDINGS_PATH), allow_pickle=True)
+    except FileNotFoundError:
+        print(f"Warning: Embeddings file not found at {EMBEDDINGS_PATH}")
+
     return passages, embeddings
 
 # Endpoint to generate drills
-@router.post("/generate_drills", response_model=DrillResponse)
-@cache(expire=60)  # Cache for 60 seconds
+@router.post("/", response_model=DrillResponse)
 async def generate_drills(request: DrillRequest):
     try:
         passages, embeddings = load_corpus_data()
@@ -82,7 +89,4 @@ async def generate_drills(request: DrillRequest):
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-
-# Initialize the cache with memory backend for this example
-FastAPICache.init()
 

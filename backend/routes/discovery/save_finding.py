@@ -14,11 +14,21 @@ router = APIRouter()
 CORPUS_JSONL_PATH = os.path.expanduser("~/Downloads/logos_corpus/output/passages_combined.jsonl")
 CORPUS_EMBEDDINGS_PATH = os.path.expanduser("~/Downloads/logos_corpus/output/embeddings.npy")
 
-# Load corpus data
+# Load corpus data with graceful error handling
 def load_corpus_data():
-    with open(CORPUS_JSONL_PATH, 'r', encoding='utf-8') as file:
-        passages = [json.loads(line) for line in file if line.strip()]
-    embeddings = np.load(CORPUS_EMBEDDINGS_PATH)
+    passages = []
+    embeddings = np.array([])
+    try:
+        with open(CORPUS_JSONL_PATH, 'r', encoding='utf-8') as file:
+            passages = [json.loads(line) for line in file if line.strip()]
+    except FileNotFoundError:
+        print(f"Warning: Corpus file not found at {CORPUS_JSONL_PATH}")
+
+    try:
+        embeddings = np.load(CORPUS_EMBEDDINGS_PATH)
+    except FileNotFoundError:
+        print(f"Warning: Embeddings file not found at {CORPUS_EMBEDDINGS_PATH}")
+
     return passages, embeddings
 
 passages, embeddings = load_corpus_data()
@@ -47,7 +57,7 @@ async def get_corpus_data():
     return passages, embeddings
 
 # Routes
-@router.post("/discovery/save_finding", response_model=FindingResponseModel)
+@router.post("/", response_model=FindingResponseModel)
 async def save_finding(finding: FindingModel, corpus=Depends(get_corpus_data)):
     try:
         # Implement AI semantic processing

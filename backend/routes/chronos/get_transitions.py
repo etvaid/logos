@@ -1,10 +1,9 @@
 from fastapi import APIRouter, HTTPException, Query
-from typing import List, Optional
+from typing import List, Optional, Dict, Any
 from pydantic import BaseModel
 import numpy as np
 import json
 import os
-from aiocache import Cache
 import asyncio
 
 router = APIRouter()
@@ -15,12 +14,20 @@ EMBEDDINGS_PATH = os.path.expanduser("~/Downloads/logos_corpus/output/embeddings
 
 # Load the passage data
 def load_passages():
-    with open(PASSAGES_PATH, 'r', encoding='utf-8') as f:
-        return [json.loads(line) for line in f]
+    try:
+        with open(PASSAGES_PATH, 'r', encoding='utf-8') as f:
+            return [json.loads(line) for line in f]
+    except FileNotFoundError:
+        print(f"Warning: Passages file not found at {PASSAGES_PATH}")
+        return []
 
 # Load the embeddings
 def load_embeddings():
-    return np.load(EMBEDDINGS_PATH)
+    try:
+        return np.load(EMBEDDINGS_PATH)
+    except FileNotFoundError:
+        print(f"Warning: Embeddings file not found at {EMBEDDINGS_PATH}")
+        return np.array([])
 
 # Global variables for simplicity; consider using dependency injection or startup events for actual implementations
 passages = load_passages()
@@ -37,8 +44,8 @@ class SemanticModel:
 # Initialize the mock AI model
 semantic_model = SemanticModel()
 
-# Setting up cache
-cache = Cache(Cache.MEMORY)
+# Simple in-memory cache
+_cache: Dict[str, Any] = {}
 
 # Pydantic model for response
 class TransitionResponse(BaseModel):
@@ -63,7 +70,7 @@ async def get_transitions(word: str, century: int, num_transitions: int) -> List
     return transitions
 
 # Router to handle the /get_transitions endpoint
-@router.get("/chronos/get_transitions", response_model=TransitionResponse)
+@router.get("/", response_model=TransitionResponse)
 async def get_transitions_route(
     word: str = Query(..., description="The word to explore transitions for."),
     century: int = Query(5, description="The century for determining semantic evolution."),
@@ -71,12 +78,12 @@ async def get_transitions_route(
 ):
     try:
         cache_key = f"{word}:{century}:{num_transitions}"
-        transitions = await cache.get(cache_key)
-
-        if transitions is None:
+        if cache_key in _cache:
+            transitions = _cache[cache_key]
+        else:
             transitions = await get_transitions(word, century, num_transitions)
-            await cache.set(cache_key, transitions)
-        
+            _cache[cache_key] = transitions
+
         return TransitionResponse(word=word, transitions=transitions)
 
     except Exception as e:

@@ -54,7 +54,7 @@ async def analyze_query(query: str, passages: List[dict], embeddings: np.ndarray
     return [Passage(id=p["id"], text=p["text"]) for p in top_passages]
 
 # API Route to analyze narrative timelines
-@router.post("/narrative/timeline", response_model=NarrativeResponse)
+@router.post("/", response_model=NarrativeResponse)
 async def get_narrative_timeline(request: NarrativeRequest):
     try:
         # Load data

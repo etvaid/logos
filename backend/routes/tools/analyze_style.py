@@ -6,13 +6,10 @@ from pathlib import Path
 import numpy as np
 import json
 import asyncio
-import aiocache
+import os
 
 # Define the FastAPI router for tools/analyze_style
 router = APIRouter()
-
-# Cache decorator
-cache = aiocache.cached(ttl=60)  # Cache results for 60 seconds
 
 # Define the Pydantic model for input
 class StyleAnalysisRequest(BaseModel):
@@ -26,16 +23,22 @@ class StyleAnalysisResponse(BaseModel):
 
 # Load the corpus data
 def load_corpus_data(file_path: str) -> List[dict]:
-    path = Path(file_path)
+    path = Path(os.path.expanduser(file_path))
     if not path.exists():
-        raise FileNotFoundError(f"File not found: {file_path}")
-    
+        print(f"Warning: File not found: {file_path}")
+        return []
+
     with path.open('r', encoding='utf-8') as file:
         return [json.loads(line) for line in file]
 
 # Load embeddings
 def load_embeddings(file_path: str) -> np.ndarray:
-    return np.load(file_path)
+    path = os.path.expanduser(file_path)
+    try:
+        return np.load(path)
+    except FileNotFoundError:
+        print(f"Warning: Embeddings file not found: {file_path}")
+        return np.array([])
 
 corpus_data = load_corpus_data('~/Downloads/logos_corpus/output/passages_combined.jsonl')
 embeddings = load_embeddings('~/Downloads/logos_corpus/output/embeddings.npy')
@@ -47,8 +50,7 @@ async def perform_ai_style_analysis(text: str, context: Optional[str]) -> dict:
     return {"style_features": {"length": len(text), "context": context}}
 
 # Configure route for style analysis using POST method
-@router.post("/tools/analyze_style", response_model=StyleAnalysisResponse)
-@cache
+@router.post("/", response_model=StyleAnalysisResponse)
 async def analyze_style(request: StyleAnalysisRequest, background_tasks: BackgroundTasks) -> JSONResponse:
     try:
         # Validate and extract input data

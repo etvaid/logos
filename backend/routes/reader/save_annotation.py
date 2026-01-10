@@ -41,7 +41,7 @@ async def load_corpus():
     if 'embeddings' not in cache:
         cache['embeddings'] = np.load(EMBEDDINGS_PATH)
 
-@router.post("/reader/save_annotation", status_code=201)
+@router.post("/", status_code=201)
 async def save_annotation(annotation: Annotation):
     await load_corpus()  # Ensure the corpus data is loaded
 

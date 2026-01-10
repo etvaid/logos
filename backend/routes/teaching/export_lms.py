@@ -49,7 +49,7 @@ def update_cache(user_id, data):
     cache[user_id] = data
 
 # Define the route to handle the export request
-@router.post("/teaching/export_lms")
+@router.post("/")
 async def export_to_lms(export_request: ExportRequest):
     user_id = export_request.user_id
     lms_type = export_request.lms_type

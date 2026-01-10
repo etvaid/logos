@@ -50,7 +50,7 @@ def ai_refine_argument(existing_argument, follow_up):
     # Placeholder AI logic
     return existing_argument + " Refined with follow-up: " + follow_up
 
-@router.post("/api/argue", response_model=Argument, status_code=status.HTTP_201_CREATED)
+@router.post("/", response_model=Argument, status_code=status.HTTP_201_CREATED)
 async def create_argument(request: ArgumentRequest):
     passages, embeddings = load_embeddings()
     generated_argument = ai_generate_argument(request.research_question)
@@ -60,14 +60,14 @@ async def create_argument(request: ArgumentRequest):
     arguments_db[argument_id] = argument
     return argument
 
-@router.get("/api/argue/{id}", response_model=Argument)
+@router.get("/{id}", response_model=Argument)
 async def get_argument(id: str):
     argument = arguments_db.get(id)
     if not argument:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Argument not found")
     return argument
 
-@router.post("/api/argue/{id}/refine", response_model=Argument)
+@router.post("/{id}/refine", response_model=Argument)
 async def refine_argument(id: str, request: FollowUpRequest):
     argument = arguments_db.get(id)
     if not argument:
@@ -76,7 +76,7 @@ async def refine_argument(id: str, request: FollowUpRequest):
     argument.argument_text = refined_text
     return argument
 
-@router.get("/api/argue/{id}/export", response_class=FileResponse)
+@router.get("/{id}/export", response_class=FileResponse)
 async def export_argument(id: str):
     argument = arguments_db.get(id)
     if not argument:

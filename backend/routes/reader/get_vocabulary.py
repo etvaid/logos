@@ -58,7 +58,7 @@ def get_passage_by_id(passage_id: str, passages: List[Dict[str, Any]]) -> Dict[s
     raise KeyError("Passage ID not found.")
 
 # Define the /get_vocabulary endpoint
-@router.post("/reader/get_vocabulary", response_model=VocabularyResponse)
+@router.post("/", response_model=VocabularyResponse)
 async def get_vocabulary(request: VocabularyRequest):
     try:
         # Load data files

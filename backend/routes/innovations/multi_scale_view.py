@@ -1,6 +1,8 @@
 import json
 import numpy as np
 from fastapi import FastAPI, APIRouter, HTTPException, Query
+from fastapi.exceptions import RequestValidationError
+from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 from typing import List
 from functools import lru_cache
@@ -60,7 +62,7 @@ def cached_embedding(query: str):
     return np.random.rand(768)
 
 # Endpoints
-@router.post("/analyze/", response_model=PassageResponse)
+@router.post("/", response_model=PassageResponse)
 async def analyze_passage(request: PassageRequest):
     try:
         query_embedding = cached_embedding(request.query)

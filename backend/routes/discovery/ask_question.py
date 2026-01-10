@@ -48,7 +48,7 @@ def semantic_search(question: str, corpus: List[Any], embeddings: np.ndarray) ->
         ) for i in range(min(5, len(corpus)))
     ]
 
-@router.post("/discovery/ask_question", response_model=List[PassageResponse])
+@router.post("/", response_model=List[PassageResponse])
 async def ask_question(request: QuestionRequest):
     try:
         # Load corpus data and embeddings

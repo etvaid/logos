@@ -57,7 +57,7 @@ async def get_context_examples(word: str) -> List[str]:
     return examples[:5]  # Return top 5 examples
 
 # Async endpoint to analyze a word
-@router.post("/semantia/analyze_word", response_model=SemanticNeighborhoodResponse)
+@router.post("/", response_model=SemanticNeighborhoodResponse)
 async def analyze_word(request: AnalyzeWordRequest):
     try:
         semantic_neighborhood = await find_semantic_neighborhood(request.word)
@@ -76,7 +76,7 @@ async def meaning_drift_visualization(word: str) -> Dict[str, List[str]]:
     }
 
 # Async endpoint to visualize meaning drift
-@router.get("/semantia/meaning_drift/{word}", response_model=MeaningDriftResponse)
+@router.get("/meaning_drift/{word}", response_model=MeaningDriftResponse)
 async def visualize_meaning_drift(word: str):
     try:
         historical_usage = await meaning_drift_visualization(word)

@@ -49,7 +49,7 @@ async def semantic_search(query: str) -> List[str]:
     return ["result1", "result2", "result3"]
 
 # Router endpoint to save translation memory
-@router.post("/translation/save_memory", response_model=TranslationMemory)
+@router.post("/", response_model=TranslationMemory)
 async def save_translation_memory(translation: TranslationMemory):
     # Validate the translation memory and store it in the cache
     if translation.original_text in translation_cache:
@@ -61,7 +61,7 @@ async def save_translation_memory(translation: TranslationMemory):
     return translation
 
 # Router endpoint to load translation memory
-@router.get("/translation/get_memory", response_model=List[TranslationMemory])
+@router.get("/", response_model=List[TranslationMemory])
 async def get_translation_memory(query: str, context: Optional[str] = None):
     results = []
     # Perform a semantic search (dummy logic)
@@ -73,7 +73,7 @@ async def get_translation_memory(query: str, context: Optional[str] = None):
     return results
 
 # Include error handling example
-@router.get("/translation/error_handling_example")
+@router.get("/error_handling_example")
 async def error_handling_example(raise_error: bool = False):
     try:
         if raise_error:

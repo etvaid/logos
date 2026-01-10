@@ -40,7 +40,7 @@ router = APIRouter()
 
 
 # Endpoint for querying counter-evidence
-@router.post("/analyze", response_model=AnalysisResult)
+@router.post("/", response_model=AnalysisResult)
 async def get_counter_evidence(query: str, top_k: Optional[int] = Query(5, gt=0, le=20)):
     try:
         passages, embeddings = load_data()

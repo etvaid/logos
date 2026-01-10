@@ -64,7 +64,7 @@ async def get_query_embedding(query: str):
     await asyncio.sleep(0.1)  # Simulate delay for AI model processing
     return np.random.rand(768)  # Simulated query embedding
 
-@router.post("/analyze", response_model=ComparativeResponse)
+@router.post("/", response_model=ComparativeResponse)
 async def analyze_comparative_frames(request: ComparativeRequest):
     try:
         passages, embeddings = await async_load_items()

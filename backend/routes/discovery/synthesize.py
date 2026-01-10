@@ -37,7 +37,7 @@ async def semantic_search(query: str, top_k: int, passages, embeddings):
     return results
 
 # Router path for discovery/synthesize
-@router.post("/discovery/synthesize")
+@router.post("/")
 async def discovery_synthesize(request: DiscoveryRequest):
     # Validate input
     if request.top_k <= 0:

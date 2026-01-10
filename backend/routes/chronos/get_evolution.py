@@ -3,7 +3,7 @@ from pydantic import BaseModel
 from typing import List, Optional
 import numpy as np
 import json
-from ai_cache import cache
+import os
 import random  # Simulate AI processing for this example
 
 # Initialize the FastAPI router
@@ -12,11 +12,16 @@ router = APIRouter()
 # Load corpus data
 # Normally, this might be done with a database, but for simplicity, we'll load from local files
 def load_corpus_data():
-    with open("~/Downloads/logos_corpus/output/passages_combined.jsonl", 'r') as file:
-        passages = [json.loads(line) for line in file]
-
-    embeddings = np.load("~/Downloads/logos_corpus/output/embeddings.npy")
-    return passages, embeddings
+    passages_path = os.path.expanduser("~/Downloads/logos_corpus/output/passages_combined.jsonl")
+    embeddings_path = os.path.expanduser("~/Downloads/logos_corpus/output/embeddings.npy")
+    try:
+        with open(passages_path, 'r') as file:
+            passages = [json.loads(line) for line in file]
+        embeddings = np.load(embeddings_path)
+        return passages, embeddings
+    except FileNotFoundError as e:
+        print(f"Warning: Corpus data file not found: {e}")
+        return [], np.array([])
 
 passages, embeddings = load_corpus_data()
 
@@ -39,8 +44,7 @@ def process_semantic_evolution(word: str, start_period: Optional[str], end_perio
     return evolution
 
 # Create an async function that handles the endpoint logic
-@router.post("/chronos/get_evolution")
-@cache(expire=3600)  # Cache the results for an hour
+@router.post("/")
 async def get_evolution(request: SemanticEvolutionRequest):
     # Placeholder for input validation and processing logic
     if not request.word:
@@ -59,7 +63,3 @@ async def get_evolution(request: SemanticEvolutionRequest):
     except Exception as e:
         # General error handling
         raise HTTPException(status_code=500, detail=str(e))
-
-# Dummy cache setup for AI_cache package simulation; replace with actual caching in production
-class ai_cache:
-    expire = staticmethod(lambda seconds: lambda func: func)

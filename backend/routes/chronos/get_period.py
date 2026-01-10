@@ -1,14 +1,13 @@
 from fastapi import APIRouter, HTTPException, Query
 from pydantic import BaseModel
-from typing import List, Optional
+from typing import List, Optional, Dict, Any
 import numpy as np
 import json
 import os
-from fastapi_cache import caches, Cache  # For caching
-from fastapi_cache.backends.inmemory import InMemoryCacheBackend
+from functools import lru_cache
 
-# Initialize cache backend
-cache = caches.create_cache(InMemoryCacheBackend())
+# Simple in-memory cache
+_cache: Dict[str, Any] = {}
 
 router = APIRouter()
 
@@ -17,12 +16,14 @@ corpus_data_path = os.path.expanduser("~/Downloads/logos_corpus/output/passages_
 embeddings_path = os.path.expanduser("~/Downloads/logos_corpus/output/embeddings.npy")
 
 # Load passages and embeddings once at the start for efficiency
+corpus_data = []
+embeddings = None
 try:
     with open(corpus_data_path, 'r') as file:
         corpus_data = [json.loads(line) for line in file]
     embeddings = np.load(embeddings_path)
 except Exception as e:
-    raise RuntimeError(f"Failed to load corpus data and embeddings: {e}")
+    print(f"Warning: Failed to load corpus data and embeddings: {e}")
 
 class PeriodRequest(BaseModel):
     word: str
@@ -34,7 +35,7 @@ class PeriodResponse(BaseModel):
     meanings: List[str]
     examples: List[str]
 
-@router.get("/chronos/get_period", response_model=PeriodResponse)
+@router.get("/", response_model=PeriodResponse)
 async def get_period(
     word: str = Query(..., description="The word of interest for semantic analysis"),
     start_period: int = Query(..., description="The starting period for analysis"),
@@ -42,9 +43,8 @@ async def get_period(
 ):
     # Caching logic
     cache_key = f"{word}_{start_period}_{end_period}"
-    cached_result = await cache.get(cache_key)
-    if cached_result:
-        return cached_result
+    if cache_key in _cache:
+        return _cache[cache_key]
 
     # Validate inputs
     if start_period > end_period:
@@ -62,8 +62,8 @@ async def get_period(
     )
 
     # Cache result before returning
-    await cache.set(cache_key, response)
-    
+    _cache[cache_key] = response
+
     return response
 
 async def analyze_semantics(word: str, start_period: int, end_period: int) -> (List[str], List[str]):

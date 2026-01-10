@@ -53,12 +53,12 @@ async def ai_analyze_passages(passage: Passage, keywords: List[str]) -> Analysis
     )
     return fake_result
 
-@router.get("/passages/search", response_model=List[Passage])
+@router.get("/search", response_model=List[Passage])
 async def search_passages(query: Optional[str] = Query(None, title="Query term", description="Term to search in passages")):
     passages = load_passages()
     return [passage for passage in passages if query.lower() in passage.text.lower()]
 
-@router.post("/passages/analyze", response_model=List[AnalysisResult])
+@router.post("/analyze", response_model=List[AnalysisResult])
 async def analyze_passages(keywords: List[str], passage_ids: Optional[List[str]] = None):
     passages = load_passages()
     if passage_ids:

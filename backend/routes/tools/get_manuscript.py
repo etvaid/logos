@@ -44,7 +44,7 @@ async def process_manuscript_query(query: str, top_n: int):
 
     return results
 
-@router.post("/tools/get_manuscript", response_model=List[ManuscriptResponse], status_code=status.HTTP_200_OK)
+@router.post("/", response_model=List[ManuscriptResponse], status_code=status.HTTP_200_OK)
 async def get_manuscript(request: ManuscriptRequest):
     try:
         result = await process_manuscript_query(request.query, request.top_n)
@@ -57,7 +57,7 @@ async def get_manuscript(request: ManuscriptRequest):
 def cache_query_result(query: str, top_n: int):
     return asyncio.run(process_manuscript_query(query, top_n))
 
-@router.get("/tools/get_manuscript_cached", response_model=List[ManuscriptResponse], status_code=status.HTTP_200_OK)
+@router.get("/cached", response_model=List[ManuscriptResponse], status_code=status.HTTP_200_OK)
 async def get_manuscript_cached(query: str = Query(...), top_n: int = 5):
     try:
         result = cache_query_result(query, top_n)

@@ -5,8 +5,7 @@ import json
 import os
 from typing import List, Optional
 import aiofiles
-from fastapi_cache import FastAPICache
-from fastapi_cache.decorator import cache
+from functools import lru_cache
 
 # Define Pydantic models
 class PassageRequest(BaseModel):
@@ -46,8 +45,7 @@ async def ai_semantic_search(embeddings, target_embedding):
     # This should be replaced by a proper semantic search using cosine similarity or other methods
     return [0, 2, 5]
 
-@router.post("/reader/get_text", response_model=PassageResponse)
-@cache()
+@router.post("/", response_model=PassageResponse)
 async def get_text(request: PassageRequest):
     try:
         passages = await load_corpus_data()
@@ -83,10 +81,5 @@ async def get_text(request: PassageRequest):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-# Middleware for caching
-@router.on_event("startup")
-async def startup():
-    FastAPICache.init()
-
-# In a real implementation, the AI functions (e.g., morphological analysis, semantic search) 
+# In a real implementation, the AI functions (e.g., morphological analysis, semantic search)
 # would need comprehensive implementations according to the research insights for immersive reading experiences.

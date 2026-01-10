@@ -94,7 +94,7 @@ def find_connections(idea_id, threshold):
 def connections_hash(idea_id, threshold):
     return hashlib.sha256(f"{idea_id}_{threshold}".encode()).hexdigest()
 
-@router.post("/connectome/get_connections", response_model=ConnectionResponse)
+@router.post("/", response_model=ConnectionResponse)
 async def get_connections(request: ConnectionRequest):
     try:
         connections = find_connections(request.idea_id, request.threshold)

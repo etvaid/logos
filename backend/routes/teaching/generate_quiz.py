@@ -5,24 +5,31 @@ import numpy as np
 import json
 import os
 import asyncio
-from ai_cache import cache  # Hypothetical caching library for async functions
 
 # Load real corpus data
 CORPUS_JSONL_PATH = os.path.expanduser("~/Downloads/logos_corpus/output/passages_combined.jsonl")
 EMBEDDINGS_PATH = os.path.expanduser("~/Downloads/logos_corpus/output/embeddings.npy")
 
-# Load passages and embeddings
+# Load passages and embeddings with graceful error handling
 passages = []
-if os.path.exists(CORPUS_JSONL_PATH):
-    with open(CORPUS_JSONL_PATH, 'r') as file:
-        passages = [json.loads(line) for line in file]
-else:
-    raise FileNotFoundError("Passages file not found.")
+embeddings = np.array([])
 
-if os.path.exists(EMBEDDINGS_PATH):
-    embeddings = np.load(EMBEDDINGS_PATH)
-else:
-    raise FileNotFoundError("Embeddings file not found.")
+try:
+    if os.path.exists(CORPUS_JSONL_PATH):
+        with open(CORPUS_JSONL_PATH, 'r') as file:
+            passages = [json.loads(line) for line in file]
+    else:
+        print(f"Warning: Passages file not found at {CORPUS_JSONL_PATH}")
+except Exception as e:
+    print(f"Warning: Error loading passages: {e}")
+
+try:
+    if os.path.exists(EMBEDDINGS_PATH):
+        embeddings = np.load(EMBEDDINGS_PATH)
+    else:
+        print(f"Warning: Embeddings file not found at {EMBEDDINGS_PATH}")
+except Exception as e:
+    print(f"Warning: Error loading embeddings: {e}")
 
 # Pydantic models
 class QuizRequest(BaseModel):
@@ -53,8 +60,7 @@ async def generate_question(passage: Dict[str, str], difficulty: str) -> QuizQue
     correct_answer = "Key Idea 1"
     return QuizQuestion(question_text=question_text, options=options, correct_answer=correct_answer)
 
-@router.post("/generate_quiz", response_model=QuizResponse)
-@cache(expiration_time=60)  # Cache the response for 60 seconds
+@router.post("/", response_model=QuizResponse)
 async def generate_quiz(quiz_request: QuizRequest):
     try:
         # Step 1: Perform a semantic search to find passages related to the topic

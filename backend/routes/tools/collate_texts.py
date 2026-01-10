@@ -46,7 +46,7 @@ def load_passages():
         print(f"JSON decode error: {e}")
     return passages
 
-@router.get("/tools/collate_texts")
+@router.get("/")
 async def collate_texts(request: CollateTextsRequest):
     """
     Endpoint to collate texts based on AI semantic search.
@@ -75,7 +75,7 @@ async def semantic_search(search_terms: List[str], num_results: int):
     return list(range(num_results))  # Return index list
 
 # Implementation details for a semantic search 
-@router.post("/tools/search_semantics")
+@router.post("/search_semantics")
 async def search_semantics(collate_request: CollateTextsRequest):
     # Perform async AI-powered semantic search
     try:

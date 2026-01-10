@@ -49,7 +49,7 @@ async def ai_suggested_reading(user_id: str, read_embeddings: np.ndarray):
     return ["00456", "00789"]
 
 # Route to track reading progress
-@router.post("/reader/track_progress", response_model=TrackProgressResponse)
+@router.post("/", response_model=TrackProgressResponse)
 async def track_progress(request: TrackProgressRequest):
     # Validate user_id and progress
     if not request.user_id or not request.progress:

@@ -57,7 +57,7 @@ async def compare_words_caching(word: str, context_size: int):
     meaning_drift = await track_meaning_drift(word, passages)
     return neighborhood, meaning_drift
 
-@router.post("/semantia/compare_words", response_model=Dict[str, WordComparisonResponse])
+@router.post("/", response_model=Dict[str, WordComparisonResponse])
 async def compare_words(request: WordComparisonRequest):
     try:
         tasks = [compare_words_caching(word, request.context_size) for word in request.words]
