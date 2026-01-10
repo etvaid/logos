@@ -5,10 +5,11 @@ const nextConfig = {
     domains: [],
   },
   async rewrites() {
+    const apiUrl = process.env.API_URL || 'http://localhost:8003';
     return [
       {
         source: '/api/:path*',
-        destination: 'http://localhost:8003/api/:path*',
+        destination: `${apiUrl}/api/:path*`,
       },
       {
         source: '/astro-api/:path*',
