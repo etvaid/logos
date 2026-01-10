@@ -181,7 +181,7 @@ export default function SearchPage() {
             {/* Results list */}
             {results.results.length === 0 ? (
               <Card className="text-center py-12">
-                <div className="text-4xl mb-4">🔍</div>
+                <div className="text-5xl mb-4 font-serif text-[#C9A962]/50">∅</div>
                 <h3 className="text-xl text-[#C9A962] mb-2">No results found</h3>
                 <p className="text-[#F5F3EF]/50">
                   Try different keywords or remove some filters
@@ -223,7 +223,7 @@ export default function SearchPage() {
         {/* Empty state */}
         {!results && !loading && (
           <div className="text-center py-20">
-            <div className="text-6xl mb-4">🔍</div>
+            <div className="text-6xl mb-4 font-serif text-[#C9A962]">S</div>
             <h2 className="text-2xl text-[#C9A962] mb-2">Full-Text Search</h2>
             <p className="text-[#F5F3EF]/50 max-w-xl mx-auto mb-8">
               Search through the complete LOGOS corpus including Homer, Plato, Aristotle,

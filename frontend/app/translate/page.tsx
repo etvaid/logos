@@ -244,7 +244,7 @@ export default function TranslatePage() {
   return (
     <div className="min-h-screen bg-[#0D0D0F] text-white p-6">
       <div className="max-w-3xl mx-auto">
-        <h1 className="text-3xl font-bold text-[#C9A962] mb-6 text-center">⚡ Translate</h1>
+        <h1 className="text-3xl font-bold text-[#C9A962] mb-6 text-center">Translate</h1>
 
         <textarea
           value={text}
@@ -265,7 +265,7 @@ export default function TranslatePage() {
           disabled={!text.trim()}
           className="w-full py-3 bg-[#C9A962] text-black font-bold rounded-lg hover:bg-[#D4B872] disabled:opacity-50 mb-6"
         >
-          ⚡ Translate
+          Translate
         </button>
 
         {result && (

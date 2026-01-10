@@ -1071,7 +1071,7 @@ export default function LibraryPage() {
 
             {filteredAuthors.length === 0 && (
               <div className="text-center py-16">
-                <div className="text-6xl mb-4">📚</div>
+                <div className="text-6xl mb-4 text-[#C9A962]">Ω</div>
                 <h3 className="text-xl text-[#C9A962] mb-2">No authors found</h3>
                 <p className="text-[#F5F3EF]/50">Try adjusting your search or filters</p>
               </div>
