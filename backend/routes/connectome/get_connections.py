@@ -25,17 +25,26 @@ class ConnectionResponse(BaseModel):
 
 # Load the embeddings into memory (or potentially from a database for large datasets)
 def load_embeddings():
-    embeddings = np.load(CORPUS_EMBEDDINGS_PATH)
-    return embeddings
+    if not os.path.exists(CORPUS_EMBEDDINGS_PATH):
+        return None
+    try:
+        return np.load(CORPUS_EMBEDDINGS_PATH)
+    except Exception:
+        return None
 
 # Async loading JSONL corpus file
 async def load_corpus():
-    entries = []
-    async with aiofiles.open(CORPUS_JSONL_PATH, mode='r') as file:
-        async for line in file:
-            entry = json.loads(line)
-            entries.append(entry)
-    return entries
+    if not os.path.exists(CORPUS_JSONL_PATH):
+        return []
+    try:
+        entries = []
+        async with aiofiles.open(CORPUS_JSONL_PATH, mode='r') as file:
+            async for line in file:
+                entry = json.loads(line)
+                entries.append(entry)
+        return entries
+    except Exception:
+        return []
 
 cached_embeddings = None
 cached_corpus = None
@@ -43,8 +52,12 @@ cached_corpus = None
 @router.on_event("startup")
 async def startup_event():
     global cached_embeddings, cached_corpus
-    cached_embeddings = load_embeddings()
-    cached_corpus = await load_corpus()
+    try:
+        cached_embeddings = load_embeddings()
+        cached_corpus = await load_corpus()
+    except Exception:
+        cached_embeddings = None
+        cached_corpus = []
 
 # Function to calculate cosine similarity
 def cosine_similarity(v1, v2):

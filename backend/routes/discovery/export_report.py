@@ -23,12 +23,16 @@ async def load_corpus_data():
     corpus_file = Path("~/Downloads/logos_corpus/output/passages_combined.jsonl").expanduser()
     embeddings_file = Path("~/Downloads/logos_corpus/output/embeddings.npy").expanduser()
 
-    async with aiofiles.open(corpus_file, mode='r') as f:
-        passages = [json.loads(line) for line in await f.readlines()]
-    
-    embeddings = np.load(embeddings_file)
-    
-    return passages, embeddings
+    if not corpus_file.exists() or not embeddings_file.exists():
+        return [], None
+
+    try:
+        async with aiofiles.open(corpus_file, mode='r') as f:
+            passages = [json.loads(line) for line in await f.readlines()]
+        embeddings = np.load(embeddings_file)
+        return passages, embeddings
+    except Exception:
+        return [], None
 
 # Cache for the loaded data
 corpus_data_cache = None
@@ -38,9 +42,12 @@ load_data_lock = asyncio.Lock()
 @router.on_event("startup")
 async def load_data_into_cache():
     global corpus_data_cache
-    async with load_data_lock:
-        if corpus_data_cache is None:
-            corpus_data_cache = await load_corpus_data()
+    try:
+        async with load_data_lock:
+            if corpus_data_cache is None:
+                corpus_data_cache = await load_corpus_data()
+    except Exception:
+        corpus_data_cache = ([], None)
 
 # AI integration placeholder function
 async def semantic_discovery(term: str, passages: List[Dict[str, Any]]):

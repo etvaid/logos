@@ -26,12 +26,22 @@ router = APIRouter()
 
 # Load corpus data (dummy function for illustration)
 async def load_corpus_data() -> List[Dict]:
-    async with aiofiles.open(CORPUS_JSONL_PATH, 'r') as f:
-        return [json.loads(line) async for line in f]
+    if not os.path.exists(CORPUS_JSONL_PATH):
+        return []
+    try:
+        async with aiofiles.open(CORPUS_JSONL_PATH, 'r') as f:
+            return [json.loads(line) async for line in f]
+    except Exception:
+        return []
 
 # Load embeddings data (dummy function for illustration)
-async def load_embeddings() -> np.ndarray:
-    return np.load(EMBEDDINGS_PATH)
+async def load_embeddings() -> Optional[np.ndarray]:
+    if not os.path.exists(EMBEDDINGS_PATH):
+        return None
+    try:
+        return np.load(EMBEDDINGS_PATH)
+    except Exception:
+        return None
 
 # Dummy AI integration function
 async def semantic_search(query: str) -> List[str]:
@@ -75,8 +85,11 @@ async def error_handling_example(raise_error: bool = False):
 # Function to demonstrate loading corpus and embedding data
 @router.on_event("startup")
 async def initialize_data():
-    # Load data asynchronously on startup
-    asyncio.create_task(load_corpus_data())
-    asyncio.create_task(load_embeddings())
+    # Load data asynchronously on startup (graceful handling if files don't exist)
+    try:
+        asyncio.create_task(load_corpus_data())
+        asyncio.create_task(load_embeddings())
+    except Exception:
+        pass  # Gracefully handle missing corpus files
 
 # The main application should include this router in its setup.

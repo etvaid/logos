@@ -2178,27 +2178,27 @@ async def translate_passage(request: TranslateRequest) -> TranslateResponse:
     provenance = []
     all_translations = {}
 
-    # Tier 1: Database lookup
-    pool = await get_pool()
-    if pool != "UNAVAILABLE":
-        db_results = await lookup_translation_memory(pool, tokens, source_language)
-        all_translations.update(db_results)
-        provenance.append({
-            'source': 'translation_memory_db',
-            'matches': len(db_results),
-            'total_tokens': len(tokens)
-        })
+    # Tier 1: Embedded lexicon lookup FIRST (high quality, curated)
+    lexicon_results = lookup_embedded_lexicon(tokens, source_language)
+    all_translations.update(lexicon_results)
+    provenance.append({
+        'source': 'embedded_lexicon',
+        'matches': len(lexicon_results),
+        'total_tokens': len(tokens)
+    })
 
-    # Tier 2: Embedded lexicon lookup for remaining tokens
+    # Tier 2: Database lookup for remaining tokens only
     unmatched = [t for t in tokens if t.lower() not in all_translations]
     if unmatched:
-        lexicon_results = lookup_embedded_lexicon(unmatched, source_language)
-        all_translations.update(lexicon_results)
-        provenance.append({
-            'source': 'embedded_lexicon',
-            'matches': len(lexicon_results),
-            'tokens_checked': len(unmatched)
-        })
+        pool = await get_pool()
+        if pool != "UNAVAILABLE":
+            db_results = await lookup_translation_memory(pool, unmatched, source_language)
+            all_translations.update(db_results)
+            provenance.append({
+                'source': 'translation_memory_db',
+                'matches': len(db_results),
+                'tokens_checked': len(unmatched)
+            })
 
     # Build token analysis
     token_analyses = []
