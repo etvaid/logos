@@ -105,7 +105,7 @@ export async function search(
   if (options?.offset) params.append('offset', String(options.offset));
   if (options?.sortBy) params.append('sortBy', options.sortBy);
 
-  return fetchAPI(`/api/search/text/?${params}`);
+  return fetchAPI(`/api/search/text/text?${params}`);
 }
 
 // ============================================================================
