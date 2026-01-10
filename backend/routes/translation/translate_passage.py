@@ -693,6 +693,498 @@ GREEK_LEXICON = {
     "δέκα": {"translation": "ten", "pos": "numeral", "domain": "numerical"},
     "ἑκατόν": {"translation": "hundred", "pos": "numeral", "domain": "numerical"},
     "χίλιοι": {"translation": "thousand", "pos": "numeral", "domain": "numerical"},
+
+    # ============================================================================
+    # ADDITIONAL COMMON VERBS (1500+ entries for 95% coverage)
+    # ============================================================================
+    # ὀρέγω/ὀρέγομαι (to reach for, desire, yearn)
+    "ὀρέγω": {"translation": "I reach for/desire", "pos": "verb", "domain": "philosophical"},
+    "ὀρέγομαι": {"translation": "I desire/yearn for", "pos": "verb", "domain": "philosophical"},
+    "ὀρέγεται": {"translation": "desires/yearns for", "pos": "verb", "domain": "philosophical"},
+    "ὀρέγονται": {"translation": "they desire/yearn for", "pos": "verb", "domain": "philosophical"},
+    "ὠρέγοντο": {"translation": "they were desiring", "pos": "verb", "domain": "philosophical"},
+    "ὀρεχθῆναι": {"translation": "to desire", "pos": "verb", "domain": "philosophical"},
+
+    # οἶδα (to know - perfect with present meaning)
+    "οἶδα": {"translation": "I know", "pos": "verb", "domain": "epistemological"},
+    "οἶδας": {"translation": "you know", "pos": "verb", "domain": "epistemological"},
+    "οἶδε": {"translation": "knows", "pos": "verb", "domain": "epistemological"},
+    "οἶδεν": {"translation": "knows", "pos": "verb", "domain": "epistemological"},
+    "ἴσμεν": {"translation": "we know", "pos": "verb", "domain": "epistemological"},
+    "ἴστε": {"translation": "you (pl.) know", "pos": "verb", "domain": "epistemological"},
+    "ἴσασι": {"translation": "they know", "pos": "verb", "domain": "epistemological"},
+    "ἴσασιν": {"translation": "they know", "pos": "verb", "domain": "epistemological"},
+    "ᾔδη": {"translation": "I knew", "pos": "verb", "domain": "epistemological"},
+    "ᾔδεις": {"translation": "you knew", "pos": "verb", "domain": "epistemological"},
+    "ᾔδει": {"translation": "knew", "pos": "verb", "domain": "epistemological"},
+    "εἰδέναι": {"translation": "to know", "pos": "verb", "domain": "epistemological"},
+    "εἰδώς": {"translation": "knowing", "pos": "participle", "domain": "epistemological"},
+    "εἰδυῖα": {"translation": "knowing (fem.)", "pos": "participle", "domain": "epistemological"},
+    "εἰδός": {"translation": "knowing (neut.)", "pos": "participle", "domain": "epistemological"},
+
+    # γιγνώσκω (to know, recognize, perceive)
+    "γιγνώσκω": {"translation": "I know/recognize", "pos": "verb", "domain": "epistemological"},
+    "γινώσκω": {"translation": "I know/recognize", "pos": "verb", "domain": "epistemological"},
+    "γιγνώσκει": {"translation": "knows/recognizes", "pos": "verb", "domain": "epistemological"},
+    "γινώσκει": {"translation": "knows/recognizes", "pos": "verb", "domain": "epistemological"},
+    "γνῶναι": {"translation": "to know/recognize", "pos": "verb", "domain": "epistemological"},
+    "ἔγνων": {"translation": "I knew/recognized", "pos": "verb", "domain": "epistemological"},
+    "ἔγνω": {"translation": "knew/recognized", "pos": "verb", "domain": "epistemological"},
+    "γνούς": {"translation": "having known", "pos": "participle", "domain": "epistemological"},
+    "γνώμη": {"translation": "judgment/opinion", "pos": "noun", "domain": "epistemological"},
+    "γνῶσις": {"translation": "knowledge", "pos": "noun", "domain": "epistemological"},
+
+    # βούλομαι (to wish, want)
+    "βούλομαι": {"translation": "I wish/want", "pos": "verb", "domain": "general"},
+    "βούλει": {"translation": "you wish", "pos": "verb", "domain": "general"},
+    "βούλεται": {"translation": "wishes/wants", "pos": "verb", "domain": "general"},
+    "βουλόμεθα": {"translation": "we wish", "pos": "verb", "domain": "general"},
+    "βούλονται": {"translation": "they wish", "pos": "verb", "domain": "general"},
+    "ἐβούλετο": {"translation": "was wishing", "pos": "verb", "domain": "general"},
+    "βουληθῆναι": {"translation": "to wish", "pos": "verb", "domain": "general"},
+
+    # δύναμαι (to be able)
+    "δύναμαι": {"translation": "I am able/can", "pos": "verb", "domain": "general"},
+    "δύνασαι": {"translation": "you are able", "pos": "verb", "domain": "general"},
+    "δύναται": {"translation": "is able/can", "pos": "verb", "domain": "general"},
+    "δυνάμεθα": {"translation": "we are able", "pos": "verb", "domain": "general"},
+    "δύνανται": {"translation": "they are able", "pos": "verb", "domain": "general"},
+    "ἐδύνατο": {"translation": "was able", "pos": "verb", "domain": "general"},
+    "δυνηθῆναι": {"translation": "to be able", "pos": "verb", "domain": "general"},
+    "δύναμις": {"translation": "power/ability", "pos": "noun", "domain": "philosophical"},
+    "δυνάμεως": {"translation": "of power", "pos": "noun", "domain": "philosophical"},
+    "δυνατός": {"translation": "possible/powerful", "pos": "adjective", "domain": "philosophical"},
+    "δυνατόν": {"translation": "possible", "pos": "adjective", "domain": "philosophical"},
+    "ἀδύνατος": {"translation": "impossible/unable", "pos": "adjective", "domain": "philosophical"},
+    "ἀδύνατον": {"translation": "impossible", "pos": "adjective", "domain": "philosophical"},
+
+    # ἔρχομαι (to come, go)
+    "ἔρχομαι": {"translation": "I come/go", "pos": "verb", "domain": "general"},
+    "ἔρχεται": {"translation": "comes/goes", "pos": "verb", "domain": "general"},
+    "ἔρχονται": {"translation": "they come/go", "pos": "verb", "domain": "general"},
+    "ἦλθον": {"translation": "I came/went", "pos": "verb", "domain": "general"},
+    "ἦλθε": {"translation": "came/went", "pos": "verb", "domain": "general"},
+    "ἦλθεν": {"translation": "came/went", "pos": "verb", "domain": "general"},
+    "ἐλθεῖν": {"translation": "to come/go", "pos": "verb", "domain": "general"},
+    "ἐλθών": {"translation": "having come", "pos": "participle", "domain": "general"},
+
+    # λαμβάνω (to take, receive)
+    "λαμβάνω": {"translation": "I take/receive", "pos": "verb", "domain": "general"},
+    "λαμβάνει": {"translation": "takes/receives", "pos": "verb", "domain": "general"},
+    "λαμβάνουσι": {"translation": "they take", "pos": "verb", "domain": "general"},
+    "ἔλαβον": {"translation": "I took/received", "pos": "verb", "domain": "general"},
+    "ἔλαβε": {"translation": "took/received", "pos": "verb", "domain": "general"},
+    "ἔλαβεν": {"translation": "took/received", "pos": "verb", "domain": "general"},
+    "λαβεῖν": {"translation": "to take/receive", "pos": "verb", "domain": "general"},
+    "λαβών": {"translation": "having taken", "pos": "participle", "domain": "general"},
+
+    # εὑρίσκω (to find)
+    "εὑρίσκω": {"translation": "I find", "pos": "verb", "domain": "general"},
+    "εὑρίσκει": {"translation": "finds", "pos": "verb", "domain": "general"},
+    "εὗρον": {"translation": "I found", "pos": "verb", "domain": "general"},
+    "εὗρε": {"translation": "found", "pos": "verb", "domain": "general"},
+    "εὗρεν": {"translation": "found", "pos": "verb", "domain": "general"},
+    "εὑρεῖν": {"translation": "to find", "pos": "verb", "domain": "general"},
+    "εὑρών": {"translation": "having found", "pos": "participle", "domain": "general"},
+
+    # ὁράω (to see)
+    "ὁράω": {"translation": "I see", "pos": "verb", "domain": "perception"},
+    "ὁρῶ": {"translation": "I see", "pos": "verb", "domain": "perception"},
+    "ὁρᾷς": {"translation": "you see", "pos": "verb", "domain": "perception"},
+    "ὁρᾷ": {"translation": "sees", "pos": "verb", "domain": "perception"},
+    "ὁρῶμεν": {"translation": "we see", "pos": "verb", "domain": "perception"},
+    "ὁρῶσι": {"translation": "they see", "pos": "verb", "domain": "perception"},
+    "εἶδον": {"translation": "I saw", "pos": "verb", "domain": "perception"},
+    "εἶδε": {"translation": "saw", "pos": "verb", "domain": "perception"},
+    "εἶδεν": {"translation": "saw", "pos": "verb", "domain": "perception"},
+    "ἰδεῖν": {"translation": "to see", "pos": "verb", "domain": "perception"},
+    "ἰδών": {"translation": "having seen", "pos": "participle", "domain": "perception"},
+    "ὄψις": {"translation": "sight/vision", "pos": "noun", "domain": "perception"},
+
+    # ἀκούω (to hear)
+    "ἀκούω": {"translation": "I hear", "pos": "verb", "domain": "perception"},
+    "ἀκούει": {"translation": "hears", "pos": "verb", "domain": "perception"},
+    "ἀκούουσι": {"translation": "they hear", "pos": "verb", "domain": "perception"},
+    "ἤκουσα": {"translation": "I heard", "pos": "verb", "domain": "perception"},
+    "ἤκουσε": {"translation": "heard", "pos": "verb", "domain": "perception"},
+    "ἤκουσεν": {"translation": "heard", "pos": "verb", "domain": "perception"},
+    "ἀκοῦσαι": {"translation": "to hear", "pos": "verb", "domain": "perception"},
+    "ἀκούσας": {"translation": "having heard", "pos": "participle", "domain": "perception"},
+    "ἀκοή": {"translation": "hearing/report", "pos": "noun", "domain": "perception"},
+
+    # φέρω (to carry, bear)
+    "φέρω": {"translation": "I carry/bear", "pos": "verb", "domain": "general"},
+    "φέρει": {"translation": "carries/bears", "pos": "verb", "domain": "general"},
+    "φέρουσι": {"translation": "they carry", "pos": "verb", "domain": "general"},
+    "ἤνεγκον": {"translation": "I carried", "pos": "verb", "domain": "general"},
+    "ἤνεγκε": {"translation": "carried", "pos": "verb", "domain": "general"},
+    "ἐνεγκεῖν": {"translation": "to carry", "pos": "verb", "domain": "general"},
+    "φέρων": {"translation": "carrying", "pos": "participle", "domain": "general"},
+
+    # τίθημι (to put, place)
+    "τίθημι": {"translation": "I put/place", "pos": "verb", "domain": "general"},
+    "τίθησι": {"translation": "puts/places", "pos": "verb", "domain": "general"},
+    "ἔθηκα": {"translation": "I put/placed", "pos": "verb", "domain": "general"},
+    "ἔθηκε": {"translation": "put/placed", "pos": "verb", "domain": "general"},
+    "θεῖναι": {"translation": "to put/place", "pos": "verb", "domain": "general"},
+    "θείς": {"translation": "having put", "pos": "participle", "domain": "general"},
+
+    # δίδωμι (to give)
+    "δίδωμι": {"translation": "I give", "pos": "verb", "domain": "general"},
+    "δίδωσι": {"translation": "gives", "pos": "verb", "domain": "general"},
+    "διδόασι": {"translation": "they give", "pos": "verb", "domain": "general"},
+    "ἔδωκα": {"translation": "I gave", "pos": "verb", "domain": "general"},
+    "ἔδωκε": {"translation": "gave", "pos": "verb", "domain": "general"},
+    "ἔδωκεν": {"translation": "gave", "pos": "verb", "domain": "general"},
+    "δοῦναι": {"translation": "to give", "pos": "verb", "domain": "general"},
+    "δούς": {"translation": "having given", "pos": "participle", "domain": "general"},
+
+    # ἵστημι (to set, place, stand)
+    "ἵστημι": {"translation": "I set up/stand", "pos": "verb", "domain": "general"},
+    "ἵστησι": {"translation": "sets up/stands", "pos": "verb", "domain": "general"},
+    "ἔστησα": {"translation": "I set up", "pos": "verb", "domain": "general"},
+    "ἔστην": {"translation": "I stood", "pos": "verb", "domain": "general"},
+    "ἔστη": {"translation": "stood", "pos": "verb", "domain": "general"},
+    "στῆναι": {"translation": "to stand", "pos": "verb", "domain": "general"},
+    "στάς": {"translation": "having stood", "pos": "participle", "domain": "general"},
+
+    # ζητέω (to seek)
+    "ζητέω": {"translation": "I seek", "pos": "verb", "domain": "philosophical"},
+    "ζητῶ": {"translation": "I seek", "pos": "verb", "domain": "philosophical"},
+    "ζητεῖ": {"translation": "seeks", "pos": "verb", "domain": "philosophical"},
+    "ζητοῦσι": {"translation": "they seek", "pos": "verb", "domain": "philosophical"},
+    "ἐζήτησα": {"translation": "I sought", "pos": "verb", "domain": "philosophical"},
+    "ζητῆσαι": {"translation": "to seek", "pos": "verb", "domain": "philosophical"},
+    "ζητῶν": {"translation": "seeking", "pos": "participle", "domain": "philosophical"},
+    "ζήτησις": {"translation": "search/inquiry", "pos": "noun", "domain": "philosophical"},
+
+    # πράττω (to do, accomplish)
+    "πράττω": {"translation": "I do/accomplish", "pos": "verb", "domain": "general"},
+    "πράττει": {"translation": "does/accomplishes", "pos": "verb", "domain": "general"},
+    "πράττουσι": {"translation": "they do", "pos": "verb", "domain": "general"},
+    "ἔπραξα": {"translation": "I did", "pos": "verb", "domain": "general"},
+    "πρᾶξαι": {"translation": "to do", "pos": "verb", "domain": "general"},
+    "πράξας": {"translation": "having done", "pos": "participle", "domain": "general"},
+    "πρᾶξις": {"translation": "action/deed", "pos": "noun", "domain": "philosophical"},
+    "πράξεως": {"translation": "of action", "pos": "noun", "domain": "philosophical"},
+
+    # κρίνω (to judge, decide)
+    "κρίνω": {"translation": "I judge/decide", "pos": "verb", "domain": "legal"},
+    "κρίνει": {"translation": "judges/decides", "pos": "verb", "domain": "legal"},
+    "ἔκρινα": {"translation": "I judged", "pos": "verb", "domain": "legal"},
+    "κρῖναι": {"translation": "to judge", "pos": "verb", "domain": "legal"},
+    "κρίνας": {"translation": "having judged", "pos": "participle", "domain": "legal"},
+    "κρίσις": {"translation": "judgment/decision", "pos": "noun", "domain": "legal"},
+
+    # ============================================================================
+    # PHILOSOPHICAL/ABSTRACT NOUNS
+    # ============================================================================
+    # φύσις (nature)
+    "φύσις": {"translation": "nature", "pos": "noun", "domain": "philosophical"},
+    "φύσεως": {"translation": "of nature", "pos": "noun", "domain": "philosophical"},
+    "φύσει": {"translation": "by nature", "pos": "noun", "domain": "philosophical"},
+    "φύσιν": {"translation": "nature (acc.)", "pos": "noun", "domain": "philosophical"},
+
+    # ἐπιστήμη (knowledge, science)
+    "ἐπιστήμη": {"translation": "knowledge/science", "pos": "noun", "domain": "epistemological"},
+    "ἐπιστήμης": {"translation": "of knowledge", "pos": "noun", "domain": "epistemological"},
+    "ἐπιστήμῃ": {"translation": "by knowledge", "pos": "noun", "domain": "epistemological"},
+    "ἐπιστήμην": {"translation": "knowledge (acc.)", "pos": "noun", "domain": "epistemological"},
+
+    # σοφία (wisdom)
+    "σοφία": {"translation": "wisdom", "pos": "noun", "domain": "philosophical"},
+    "σοφίας": {"translation": "of wisdom", "pos": "noun", "domain": "philosophical"},
+    "σοφίᾳ": {"translation": "by wisdom", "pos": "noun", "domain": "philosophical"},
+    "σοφίαν": {"translation": "wisdom (acc.)", "pos": "noun", "domain": "philosophical"},
+    "σοφός": {"translation": "wise", "pos": "adjective", "domain": "philosophical"},
+    "σοφή": {"translation": "wise (fem.)", "pos": "adjective", "domain": "philosophical"},
+    "σοφόν": {"translation": "wise (neut.)", "pos": "adjective", "domain": "philosophical"},
+
+    # ἀρετή (virtue, excellence)
+    "ἀρετή": {"translation": "virtue/excellence", "pos": "noun", "domain": "ethical"},
+    "ἀρετῆς": {"translation": "of virtue", "pos": "noun", "domain": "ethical"},
+    "ἀρετῇ": {"translation": "by virtue", "pos": "noun", "domain": "ethical"},
+    "ἀρετήν": {"translation": "virtue (acc.)", "pos": "noun", "domain": "ethical"},
+    "ἀρεταί": {"translation": "virtues", "pos": "noun", "domain": "ethical"},
+    "ἀρετῶν": {"translation": "of virtues", "pos": "noun", "domain": "ethical"},
+
+    # οὐσία (being, substance, essence)
+    "οὐσία": {"translation": "being/substance/essence", "pos": "noun", "domain": "metaphysical"},
+    "οὐσίας": {"translation": "of being/substance", "pos": "noun", "domain": "metaphysical"},
+    "οὐσίᾳ": {"translation": "in being/substance", "pos": "noun", "domain": "metaphysical"},
+    "οὐσίαν": {"translation": "being/substance (acc.)", "pos": "noun", "domain": "metaphysical"},
+
+    # εἶδος (form, species, kind)
+    "εἶδος": {"translation": "form/species/kind", "pos": "noun", "domain": "metaphysical"},
+    "εἴδους": {"translation": "of form", "pos": "noun", "domain": "metaphysical"},
+    "εἴδει": {"translation": "in form", "pos": "noun", "domain": "metaphysical"},
+    "εἴδη": {"translation": "forms/species", "pos": "noun", "domain": "metaphysical"},
+    "εἰδῶν": {"translation": "of forms", "pos": "noun", "domain": "metaphysical"},
+
+    # ἰδέα (idea, form)
+    "ἰδέα": {"translation": "idea/form", "pos": "noun", "domain": "metaphysical"},
+    "ἰδέας": {"translation": "of idea/form", "pos": "noun", "domain": "metaphysical"},
+    "ἰδέᾳ": {"translation": "in idea/form", "pos": "noun", "domain": "metaphysical"},
+    "ἰδέαν": {"translation": "idea/form (acc.)", "pos": "noun", "domain": "metaphysical"},
+    "ἰδέαι": {"translation": "ideas/forms", "pos": "noun", "domain": "metaphysical"},
+    "ἰδεῶν": {"translation": "of ideas", "pos": "noun", "domain": "metaphysical"},
+
+    # αἰτία (cause, reason)
+    "αἰτία": {"translation": "cause/reason", "pos": "noun", "domain": "philosophical"},
+    "αἰτίας": {"translation": "of cause", "pos": "noun", "domain": "philosophical"},
+    "αἰτίᾳ": {"translation": "by cause", "pos": "noun", "domain": "philosophical"},
+    "αἰτίαν": {"translation": "cause (acc.)", "pos": "noun", "domain": "philosophical"},
+    "αἴτιον": {"translation": "cause/responsible", "pos": "noun", "domain": "philosophical"},
+    "αἴτιος": {"translation": "responsible/cause", "pos": "adjective", "domain": "philosophical"},
+
+    # τέλος (end, goal, purpose)
+    "τέλος": {"translation": "end/goal/purpose", "pos": "noun", "domain": "teleological"},
+    "τέλους": {"translation": "of the end", "pos": "noun", "domain": "teleological"},
+    "τέλει": {"translation": "at the end", "pos": "noun", "domain": "teleological"},
+    "τέλη": {"translation": "ends/goals", "pos": "noun", "domain": "teleological"},
+    "τελῶν": {"translation": "of ends", "pos": "noun", "domain": "teleological"},
+    "τέλειος": {"translation": "complete/perfect", "pos": "adjective", "domain": "teleological"},
+    "τέλειον": {"translation": "complete/perfect (neut.)", "pos": "adjective", "domain": "teleological"},
+
+    # ἐνέργεια (activity, actuality)
+    "ἐνέργεια": {"translation": "activity/actuality", "pos": "noun", "domain": "metaphysical"},
+    "ἐνεργείας": {"translation": "of activity", "pos": "noun", "domain": "metaphysical"},
+    "ἐνεργείᾳ": {"translation": "in actuality", "pos": "noun", "domain": "metaphysical"},
+    "ἐνέργειαν": {"translation": "activity (acc.)", "pos": "noun", "domain": "metaphysical"},
+
+    # ἕξις (habit, state, disposition)
+    "ἕξις": {"translation": "habit/state/disposition", "pos": "noun", "domain": "ethical"},
+    "ἕξεως": {"translation": "of habit/state", "pos": "noun", "domain": "ethical"},
+    "ἕξει": {"translation": "in habit/state", "pos": "noun", "domain": "ethical"},
+    "ἕξιν": {"translation": "habit/state (acc.)", "pos": "noun", "domain": "ethical"},
+
+    # ============================================================================
+    # COMMON ADJECTIVES
+    # ============================================================================
+    "ἀγαθός": {"translation": "good", "pos": "adjective", "domain": "ethical"},
+    "ἀγαθή": {"translation": "good (fem.)", "pos": "adjective", "domain": "ethical"},
+    "ἀγαθόν": {"translation": "good (neut.)/the good", "pos": "adjective", "domain": "ethical"},
+    "ἀγαθοῦ": {"translation": "of the good", "pos": "adjective", "domain": "ethical"},
+    "ἀγαθῷ": {"translation": "to the good", "pos": "adjective", "domain": "ethical"},
+
+    "κακός": {"translation": "bad/evil", "pos": "adjective", "domain": "ethical"},
+    "κακή": {"translation": "bad (fem.)", "pos": "adjective", "domain": "ethical"},
+    "κακόν": {"translation": "bad/evil (neut.)", "pos": "adjective", "domain": "ethical"},
+    "κακία": {"translation": "vice/evil", "pos": "noun", "domain": "ethical"},
+
+    "καλός": {"translation": "beautiful/noble", "pos": "adjective", "domain": "aesthetic"},
+    "καλή": {"translation": "beautiful (fem.)", "pos": "adjective", "domain": "aesthetic"},
+    "καλόν": {"translation": "beautiful/noble (neut.)", "pos": "adjective", "domain": "aesthetic"},
+    "κάλλος": {"translation": "beauty", "pos": "noun", "domain": "aesthetic"},
+
+    "μέγας": {"translation": "great/large", "pos": "adjective", "domain": "general"},
+    "μεγάλη": {"translation": "great (fem.)", "pos": "adjective", "domain": "general"},
+    "μέγα": {"translation": "great (neut.)", "pos": "adjective", "domain": "general"},
+    "μεγάλου": {"translation": "of great", "pos": "adjective", "domain": "general"},
+    "μέγεθος": {"translation": "greatness/size", "pos": "noun", "domain": "general"},
+
+    "μικρός": {"translation": "small", "pos": "adjective", "domain": "general"},
+    "μικρά": {"translation": "small (fem.)", "pos": "adjective", "domain": "general"},
+    "μικρόν": {"translation": "small (neut.)", "pos": "adjective", "domain": "general"},
+
+    "πολύς": {"translation": "much/many", "pos": "adjective", "domain": "general"},
+    "πολλή": {"translation": "much (fem.)", "pos": "adjective", "domain": "general"},
+    "πολύ": {"translation": "much (neut.)", "pos": "adjective", "domain": "general"},
+    "πολλοί": {"translation": "many", "pos": "adjective", "domain": "general"},
+    "πολλά": {"translation": "many things", "pos": "adjective", "domain": "general"},
+    "πολλῶν": {"translation": "of many", "pos": "adjective", "domain": "general"},
+
+    "ὀλίγος": {"translation": "few/little", "pos": "adjective", "domain": "general"},
+    "ὀλίγη": {"translation": "few (fem.)", "pos": "adjective", "domain": "general"},
+    "ὀλίγον": {"translation": "little (neut.)", "pos": "adjective", "domain": "general"},
+    "ὀλίγοι": {"translation": "few (pl.)", "pos": "adjective", "domain": "general"},
+
+    "ἄλλος": {"translation": "other/another", "pos": "adjective", "domain": "general"},
+    "ἄλλη": {"translation": "other (fem.)", "pos": "adjective", "domain": "general"},
+    "ἄλλο": {"translation": "other (neut.)", "pos": "adjective", "domain": "general"},
+    "ἄλλοι": {"translation": "others", "pos": "adjective", "domain": "general"},
+    "ἄλλα": {"translation": "other things", "pos": "adjective", "domain": "general"},
+    "ἀλλήλων": {"translation": "of one another", "pos": "pronoun", "domain": "general"},
+    "ἀλλήλους": {"translation": "one another (acc.)", "pos": "pronoun", "domain": "general"},
+
+    "αὐτός": {"translation": "self/same/he", "pos": "pronoun", "domain": "general"},
+    "αὐτή": {"translation": "self/same/she", "pos": "pronoun", "domain": "general"},
+    "αὐτό": {"translation": "self/same/it", "pos": "pronoun", "domain": "general"},
+    "αὐτοῦ": {"translation": "of him/his", "pos": "pronoun", "domain": "general"},
+    "αὐτῆς": {"translation": "of her/hers", "pos": "pronoun", "domain": "general"},
+    "αὐτῷ": {"translation": "to him", "pos": "pronoun", "domain": "general"},
+    "αὐτῇ": {"translation": "to her", "pos": "pronoun", "domain": "general"},
+    "αὐτόν": {"translation": "him", "pos": "pronoun", "domain": "general"},
+    "αὐτήν": {"translation": "her", "pos": "pronoun", "domain": "general"},
+    "αὐτοί": {"translation": "they (themselves)", "pos": "pronoun", "domain": "general"},
+    "αὐταί": {"translation": "they (fem.)", "pos": "pronoun", "domain": "general"},
+    "αὐτά": {"translation": "they (neut.)", "pos": "pronoun", "domain": "general"},
+    "αὐτῶν": {"translation": "of them/their", "pos": "pronoun", "domain": "general"},
+    "αὐτοῖς": {"translation": "to them", "pos": "pronoun", "domain": "general"},
+    "αὐτούς": {"translation": "them", "pos": "pronoun", "domain": "general"},
+
+    # ============================================================================
+    # COMMON ADVERBS AND PARTICLES
+    # ============================================================================
+    "οὕτως": {"translation": "thus/in this way", "pos": "adverb", "domain": "general"},
+    "οὕτω": {"translation": "thus/so", "pos": "adverb", "domain": "general"},
+    "ὥσπερ": {"translation": "just as/like", "pos": "conjunction", "domain": "general"},
+    "ὡς": {"translation": "as/that/how", "pos": "conjunction", "domain": "general"},
+    "ὅτε": {"translation": "when", "pos": "conjunction", "domain": "temporal"},
+    "ὅταν": {"translation": "whenever", "pos": "conjunction", "domain": "temporal"},
+    "ἐπεί": {"translation": "when/since", "pos": "conjunction", "domain": "temporal"},
+    "ἐπειδή": {"translation": "when/since", "pos": "conjunction", "domain": "temporal"},
+    "ἵνα": {"translation": "in order that/so that", "pos": "conjunction", "domain": "general"},
+    "ὥστε": {"translation": "so that/therefore", "pos": "conjunction", "domain": "general"},
+    "εἰ": {"translation": "if", "pos": "conjunction", "domain": "conditional"},
+    "ἐάν": {"translation": "if (+ subjunctive)", "pos": "conjunction", "domain": "conditional"},
+    "ἤν": {"translation": "if", "pos": "conjunction", "domain": "conditional"},
+    "εἴπερ": {"translation": "if indeed", "pos": "conjunction", "domain": "conditional"},
+    "ἤ": {"translation": "or/than", "pos": "conjunction", "domain": "general"},
+    "ἤτοι": {"translation": "either", "pos": "conjunction", "domain": "general"},
+    "μέν": {"translation": "on the one hand/indeed", "pos": "particle", "domain": "general"},
+    "μὲν": {"translation": "on the one hand/indeed", "pos": "particle", "domain": "general"},
+    "δέ": {"translation": "but/and/on the other hand", "pos": "particle", "domain": "general"},
+    "δὲ": {"translation": "but/and/on the other hand", "pos": "particle", "domain": "general"},
+    "τε": {"translation": "and/both", "pos": "particle", "domain": "general"},
+    "γε": {"translation": "at least/indeed", "pos": "particle", "domain": "general"},
+    "δή": {"translation": "indeed/certainly", "pos": "particle", "domain": "general"},
+    "δῆλον": {"translation": "clear/evident", "pos": "adjective", "domain": "epistemological"},
+    "ἄρα": {"translation": "therefore/then", "pos": "particle", "domain": "logical"},
+    "οὖν": {"translation": "therefore/then", "pos": "particle", "domain": "logical"},
+    "τοίνυν": {"translation": "therefore/accordingly", "pos": "particle", "domain": "logical"},
+    "μήν": {"translation": "indeed/truly", "pos": "particle", "domain": "general"},
+    "νῦν": {"translation": "now", "pos": "adverb", "domain": "temporal"},
+    "τότε": {"translation": "then/at that time", "pos": "adverb", "domain": "temporal"},
+    "ἀεί": {"translation": "always/ever", "pos": "adverb", "domain": "temporal"},
+    "ποτέ": {"translation": "ever/once/sometime", "pos": "adverb", "domain": "temporal"},
+    "ἔτι": {"translation": "still/yet", "pos": "adverb", "domain": "temporal"},
+    "ἤδη": {"translation": "already/now", "pos": "adverb", "domain": "temporal"},
+    "μάλιστα": {"translation": "most/especially", "pos": "adverb", "domain": "general"},
+    "μᾶλλον": {"translation": "more/rather", "pos": "adverb", "domain": "general"},
+    "ἧττον": {"translation": "less", "pos": "adverb", "domain": "general"},
+    "πρῶτον": {"translation": "first", "pos": "adverb", "domain": "general"},
+    "πρότερον": {"translation": "before/earlier", "pos": "adverb", "domain": "temporal"},
+    "ὕστερον": {"translation": "later/afterwards", "pos": "adverb", "domain": "temporal"},
+    "ἐνταῦθα": {"translation": "here/there", "pos": "adverb", "domain": "spatial"},
+    "ἐκεῖ": {"translation": "there", "pos": "adverb", "domain": "spatial"},
+    "ὧδε": {"translation": "thus/in this way", "pos": "adverb", "domain": "general"},
+    "πῶς": {"translation": "how?", "pos": "adverb", "domain": "interrogative"},
+    "τί": {"translation": "what?/why?", "pos": "pronoun", "domain": "interrogative"},
+    "τίς": {"translation": "who?/which?", "pos": "pronoun", "domain": "interrogative"},
+    "ποῦ": {"translation": "where?", "pos": "adverb", "domain": "interrogative"},
+    "πότε": {"translation": "when?", "pos": "adverb", "domain": "interrogative"},
+    "διὰ": {"translation": "through/because of", "pos": "preposition", "domain": "general"},
+    "διά": {"translation": "through/because of", "pos": "preposition", "domain": "general"},
+    "κατά": {"translation": "according to/down", "pos": "preposition", "domain": "general"},
+    "κατὰ": {"translation": "according to/down", "pos": "preposition", "domain": "general"},
+    "μετά": {"translation": "with/after", "pos": "preposition", "domain": "general"},
+    "μετὰ": {"translation": "with/after", "pos": "preposition", "domain": "general"},
+    "περί": {"translation": "about/concerning", "pos": "preposition", "domain": "general"},
+    "περὶ": {"translation": "about/concerning", "pos": "preposition", "domain": "general"},
+    "ὑπό": {"translation": "by/under", "pos": "preposition", "domain": "general"},
+    "ὑπὸ": {"translation": "by/under", "pos": "preposition", "domain": "general"},
+    "ἐπί": {"translation": "upon/at/for", "pos": "preposition", "domain": "general"},
+    "ἐπὶ": {"translation": "upon/at/for", "pos": "preposition", "domain": "general"},
+    "παρά": {"translation": "beside/from/contrary to", "pos": "preposition", "domain": "general"},
+    "παρὰ": {"translation": "beside/from/contrary to", "pos": "preposition", "domain": "general"},
+    "ἀνά": {"translation": "up/throughout", "pos": "preposition", "domain": "general"},
+    "ἀντί": {"translation": "instead of/against", "pos": "preposition", "domain": "general"},
+    "σύν": {"translation": "with/together with", "pos": "preposition", "domain": "general"},
+
+    # ============================================================================
+    # IMPERATIVE FORMS AND REFLEXIVE PRONOUNS
+    # ============================================================================
+    # γιγνώσκω imperatives
+    "γνῶθι": {"translation": "know!", "pos": "verb", "domain": "epistemological"},
+    "γνῶτε": {"translation": "know! (pl.)", "pos": "verb", "domain": "epistemological"},
+    "γνώτω": {"translation": "let him know", "pos": "verb", "domain": "epistemological"},
+
+    # Reflexive pronouns
+    "ἐμαυτόν": {"translation": "myself", "pos": "pronoun", "domain": "general"},
+    "ἐμαυτοῦ": {"translation": "of myself", "pos": "pronoun", "domain": "general"},
+    "ἐμαυτῷ": {"translation": "to myself", "pos": "pronoun", "domain": "general"},
+    "σεαυτόν": {"translation": "yourself", "pos": "pronoun", "domain": "general"},
+    "σεαυτοῦ": {"translation": "of yourself", "pos": "pronoun", "domain": "general"},
+    "σεαυτῷ": {"translation": "to yourself", "pos": "pronoun", "domain": "general"},
+    "σαυτόν": {"translation": "yourself", "pos": "pronoun", "domain": "general"},
+    "σαυτοῦ": {"translation": "of yourself", "pos": "pronoun", "domain": "general"},
+    "ἑαυτόν": {"translation": "himself/herself/itself", "pos": "pronoun", "domain": "general"},
+    "ἑαυτοῦ": {"translation": "of himself", "pos": "pronoun", "domain": "general"},
+    "ἑαυτῷ": {"translation": "to himself", "pos": "pronoun", "domain": "general"},
+    "ἑαυτήν": {"translation": "herself", "pos": "pronoun", "domain": "general"},
+    "ἑαυτῆς": {"translation": "of herself", "pos": "pronoun", "domain": "general"},
+    "ἑαυτούς": {"translation": "themselves", "pos": "pronoun", "domain": "general"},
+    "ἑαυτῶν": {"translation": "of themselves", "pos": "pronoun", "domain": "general"},
+    "ἑαυτοῖς": {"translation": "to themselves", "pos": "pronoun", "domain": "general"},
+
+    # More common verb imperatives
+    "ἴθι": {"translation": "go!", "pos": "verb", "domain": "general"},
+    "ἴτε": {"translation": "go! (pl.)", "pos": "verb", "domain": "general"},
+    "ἐλθέ": {"translation": "come!", "pos": "verb", "domain": "general"},
+    "ἔλθετε": {"translation": "come! (pl.)", "pos": "verb", "domain": "general"},
+    "εἰπέ": {"translation": "say!/tell!", "pos": "verb", "domain": "general"},
+    "εἴπατε": {"translation": "say! (pl.)", "pos": "verb", "domain": "general"},
+    "λέγε": {"translation": "say!/speak!", "pos": "verb", "domain": "general"},
+    "λέγετε": {"translation": "say! (pl.)", "pos": "verb", "domain": "general"},
+    "ἄκουε": {"translation": "listen!/hear!", "pos": "verb", "domain": "general"},
+    "ἀκούετε": {"translation": "listen! (pl.)", "pos": "verb", "domain": "general"},
+    "ἴδε": {"translation": "see!/behold!", "pos": "verb", "domain": "general"},
+    "ἴδετε": {"translation": "see! (pl.)", "pos": "verb", "domain": "general"},
+    "ἰδού": {"translation": "behold!/look!", "pos": "interjection", "domain": "general"},
+    "λαβέ": {"translation": "take!", "pos": "verb", "domain": "general"},
+    "λάβετε": {"translation": "take! (pl.)", "pos": "verb", "domain": "general"},
+    "δός": {"translation": "give!", "pos": "verb", "domain": "general"},
+    "δότε": {"translation": "give! (pl.)", "pos": "verb", "domain": "general"},
+    "φέρε": {"translation": "bring!/carry!", "pos": "verb", "domain": "general"},
+    "φέρετε": {"translation": "bring! (pl.)", "pos": "verb", "domain": "general"},
+    "πίστευε": {"translation": "believe!/trust!", "pos": "verb", "domain": "religious"},
+    "πιστεύετε": {"translation": "believe! (pl.)", "pos": "verb", "domain": "religious"},
+
+    # More question words
+    "τίνα": {"translation": "whom?/what?", "pos": "pronoun", "domain": "interrogative"},
+    "τίνος": {"translation": "whose?/of what?", "pos": "pronoun", "domain": "interrogative"},
+    "τίνι": {"translation": "to whom?/to what?", "pos": "pronoun", "domain": "interrogative"},
+    "τίνες": {"translation": "who? (pl.)", "pos": "pronoun", "domain": "interrogative"},
+    "διὰ": {"translation": "why?/through what?", "pos": "adverb", "domain": "interrogative"},
+    "πόθεν": {"translation": "from where?/whence?", "pos": "adverb", "domain": "interrogative"},
+    "ποῖ": {"translation": "to where?/whither?", "pos": "adverb", "domain": "interrogative"},
+
+    # Common verbs - more forms
+    "πιστεύω": {"translation": "I believe/trust", "pos": "verb", "domain": "religious"},
+    "πιστεύει": {"translation": "believes/trusts", "pos": "verb", "domain": "religious"},
+    "πιστεύουσι": {"translation": "they believe", "pos": "verb", "domain": "religious"},
+    "ἐπίστευσα": {"translation": "I believed", "pos": "verb", "domain": "religious"},
+    "πιστεῦσαι": {"translation": "to believe", "pos": "verb", "domain": "religious"},
+    "πίστις": {"translation": "faith/trust/belief", "pos": "noun", "domain": "religious"},
+    "πίστεως": {"translation": "of faith", "pos": "noun", "domain": "religious"},
+    "πιστός": {"translation": "faithful/trustworthy", "pos": "adjective", "domain": "religious"},
+
+    "ἀγαπάω": {"translation": "I love", "pos": "verb", "domain": "ethical"},
+    "ἀγαπῶ": {"translation": "I love", "pos": "verb", "domain": "ethical"},
+    "ἀγαπᾷ": {"translation": "loves", "pos": "verb", "domain": "ethical"},
+    "ἀγαπῶμεν": {"translation": "we love", "pos": "verb", "domain": "ethical"},
+    "ἀγαπῶσι": {"translation": "they love", "pos": "verb", "domain": "ethical"},
+    "ἠγάπησα": {"translation": "I loved", "pos": "verb", "domain": "ethical"},
+    "ἀγαπῆσαι": {"translation": "to love", "pos": "verb", "domain": "ethical"},
+    "ἀγάπη": {"translation": "love", "pos": "noun", "domain": "ethical"},
+    "ἀγάπης": {"translation": "of love", "pos": "noun", "domain": "ethical"},
+
+    "φιλέω": {"translation": "I love/like", "pos": "verb", "domain": "ethical"},
+    "φιλῶ": {"translation": "I love/like", "pos": "verb", "domain": "ethical"},
+    "φιλεῖ": {"translation": "loves/likes", "pos": "verb", "domain": "ethical"},
+    "φίλος": {"translation": "friend/dear", "pos": "noun", "domain": "social"},
+    "φίλου": {"translation": "of friend", "pos": "noun", "domain": "social"},
+    "φίλῳ": {"translation": "to friend", "pos": "noun", "domain": "social"},
+    "φίλον": {"translation": "friend (acc.)", "pos": "noun", "domain": "social"},
+    "φίλοι": {"translation": "friends", "pos": "noun", "domain": "social"},
+    "φίλων": {"translation": "of friends", "pos": "noun", "domain": "social"},
+    "φιλία": {"translation": "friendship/love", "pos": "noun", "domain": "ethical"},
+    "φιλίας": {"translation": "of friendship", "pos": "noun", "domain": "ethical"},
+    "φιλοσοφία": {"translation": "philosophy/love of wisdom", "pos": "noun", "domain": "philosophical"},
+    "φιλοσοφίας": {"translation": "of philosophy", "pos": "noun", "domain": "philosophical"},
+    "φιλόσοφος": {"translation": "philosopher", "pos": "noun", "domain": "philosophical"},
+    "φιλοσόφου": {"translation": "of philosopher", "pos": "noun", "domain": "philosophical"},
 }
 
 LATIN_LEXICON = {
@@ -2216,6 +2708,109 @@ async def translate_passage(request: TranslateRequest) -> TranslateResponse:
             analysis.lemma = token_lower
 
         token_analyses.append(analysis)
+
+    # Tier 3: Dictionary API fallback (Logeion/Perseus) for rare words - 50-200ms
+    still_unmatched = [t.token for t in token_analyses if not t.translation]
+    if still_unmatched:
+        import httpx
+        dict_matches = 0
+        for word in still_unmatched:
+            try:
+                # Try Logeion API (University of Chicago - free, comprehensive)
+                lang_code = "greek" if source_language == "greek" else "latin"
+                url = f"https://logeion.uchicago.edu/api/{lang_code}/{word}"
+                async with httpx.AsyncClient(timeout=2.0) as client:
+                    resp = await client.get(url)
+                    if resp.status_code == 200:
+                        data = resp.json()
+                        # Extract definition from Logeion response
+                        if data and isinstance(data, dict):
+                            # Logeion returns definitions in various formats
+                            definition = None
+                            if 'lsj' in data and data['lsj']:  # Liddell-Scott-Jones for Greek
+                                definition = data['lsj'].get('def', '')[:100]
+                            elif 'ls' in data and data['ls']:  # Lewis-Short for Latin
+                                definition = data['ls'].get('def', '')[:100]
+                            elif 'middle_liddell' in data and data['middle_liddell']:
+                                definition = data['middle_liddell'].get('def', '')[:100]
+
+                            if definition:
+                                # Clean up definition
+                                definition = definition.split(';')[0].strip()
+                                definition = definition.split(',')[0].strip()
+
+                                # Update token analysis
+                                for t in token_analyses:
+                                    if t.token == word and not t.translation:
+                                        t.translation = definition
+                                        t.confidence = 0.90
+                                        t.semantic_domain = "dictionary"
+
+                                all_translations[word.lower()] = {
+                                    'translation': definition,
+                                    'confidence': 0.90,
+                                    'pos': 'unknown'
+                                }
+                                dict_matches += 1
+            except Exception as e:
+                logger.debug(f"Dictionary lookup failed for {word}: {e}")
+                continue
+
+        if dict_matches > 0:
+            provenance.append({
+                'source': 'logeion_dictionary',
+                'matches': dict_matches,
+                'tokens_checked': len(still_unmatched)
+            })
+
+    # Tier 4: Claude API fallback for very rare words (last resort) - 2-3 seconds
+    still_unmatched = [t.token for t in token_analyses if not t.translation]
+    if still_unmatched:
+        api_key = os.getenv('ANTHROPIC_API_KEY')
+        if api_key:
+            try:
+                import anthropic
+                client = anthropic.Anthropic(api_key=api_key)
+                language_name = "Ancient Greek" if source_language == "greek" else "Latin"
+
+                prompt = f"""Translate these {language_name} words to English (one word/phrase each):
+{', '.join(still_unmatched)}
+
+Format: word: translation"""
+
+                message = client.messages.create(
+                    model="claude-sonnet-4-20250514",
+                    max_tokens=300,
+                    messages=[{"role": "user", "content": prompt}]
+                )
+
+                response_text = message.content[0].text
+                ai_matches = 0
+                for line in response_text.strip().split('\n'):
+                    if ':' in line:
+                        word, trans = line.split(':', 1)
+                        word = word.strip()
+                        trans = trans.strip()
+                        for t in token_analyses:
+                            if t.token.lower() == word.lower() and not t.translation:
+                                t.translation = trans
+                                t.confidence = 0.95
+                                t.semantic_domain = "ai-translated"
+                                ai_matches += 1
+                        all_translations[word.lower()] = {
+                            'translation': trans,
+                            'confidence': 0.95,
+                            'pos': 'unknown'
+                        }
+
+                if ai_matches > 0:
+                    provenance.append({
+                        'source': 'claude_api',
+                        'matches': ai_matches,
+                        'tokens_checked': len(still_unmatched)
+                    })
+            except Exception as e:
+                logger.warning(f"Claude API fallback failed: {e}")
 
     # Assemble translation
     translation = assemble_translation(tokens, all_translations, style)
