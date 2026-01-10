@@ -27,6 +27,19 @@ WORKS_DATABASE = {
         {"work": "Shield of Heracles", "passage_count": 480, "books": 1, "language": "greek", "genre": "epic"},
     ],
 
+    # Pindar
+    "Pindar": [
+        {"work": "Olympian Odes", "passage_count": 1456, "books": 14, "language": "greek", "genre": "lyric"},
+        {"work": "Pythian Odes", "passage_count": 1234, "books": 12, "language": "greek", "genre": "lyric"},
+        {"work": "Nemean Odes", "passage_count": 987, "books": 11, "language": "greek", "genre": "lyric"},
+        {"work": "Isthmian Odes", "passage_count": 844, "books": 8, "language": "greek", "genre": "lyric"},
+    ],
+
+    # Sappho
+    "Sappho": [
+        {"work": "Fragments", "passage_count": 264, "books": 1, "language": "greek", "genre": "lyric"},
+    ],
+
     # Aeschylus
     "Aeschylus": [
         {"work": "Agamemnon", "passage_count": 1673, "books": 1, "language": "greek", "genre": "tragedy"},
@@ -101,6 +114,21 @@ WORKS_DATABASE = {
         {"work": "Posterior Analytics", "passage_count": 2345, "books": 2, "language": "greek", "genre": "logic"},
     ],
 
+    # Aristophanes
+    "Aristophanes": [
+        {"work": "Clouds", "passage_count": 1510, "books": 1, "language": "greek", "genre": "comedy"},
+        {"work": "Birds", "passage_count": 1765, "books": 1, "language": "greek", "genre": "comedy"},
+        {"work": "Frogs", "passage_count": 1533, "books": 1, "language": "greek", "genre": "comedy"},
+        {"work": "Lysistrata", "passage_count": 1321, "books": 1, "language": "greek", "genre": "comedy"},
+        {"work": "Wasps", "passage_count": 1516, "books": 1, "language": "greek", "genre": "comedy"},
+        {"work": "Peace", "passage_count": 1357, "books": 1, "language": "greek", "genre": "comedy"},
+        {"work": "Knights", "passage_count": 1408, "books": 1, "language": "greek", "genre": "comedy"},
+        {"work": "Acharnians", "passage_count": 1234, "books": 1, "language": "greek", "genre": "comedy"},
+        {"work": "Thesmophoriazusae", "passage_count": 1231, "books": 1, "language": "greek", "genre": "comedy"},
+        {"work": "Ecclesiazusae", "passage_count": 1183, "books": 1, "language": "greek", "genre": "comedy"},
+        {"work": "Wealth", "passage_count": 1189, "books": 1, "language": "greek", "genre": "comedy"},
+    ],
+
     # Herodotus
     "Herodotus": [
         {"work": "Histories", "passage_count": 18923, "books": 9, "language": "greek", "genre": "history"},
@@ -109,6 +137,49 @@ WORKS_DATABASE = {
     # Thucydides
     "Thucydides": [
         {"work": "History of the Peloponnesian War", "passage_count": 15678, "books": 8, "language": "greek", "genre": "history"},
+    ],
+
+    # Xenophon
+    "Xenophon": [
+        {"work": "Anabasis", "passage_count": 4567, "books": 7, "language": "greek", "genre": "history"},
+        {"work": "Hellenica", "passage_count": 5678, "books": 7, "language": "greek", "genre": "history"},
+        {"work": "Cyropaedia", "passage_count": 6789, "books": 8, "language": "greek", "genre": "biography"},
+        {"work": "Memorabilia", "passage_count": 3456, "books": 4, "language": "greek", "genre": "philosophy"},
+        {"work": "Symposium", "passage_count": 855, "books": 1, "language": "greek", "genre": "philosophy"},
+        {"work": "Oeconomicus", "passage_count": 1234, "books": 1, "language": "greek", "genre": "philosophy"},
+        {"work": "Apology", "passage_count": 456, "books": 1, "language": "greek", "genre": "philosophy"},
+    ],
+
+    # Hippocrates
+    "Hippocrates": [
+        {"work": "On Airs, Waters, Places", "passage_count": 1234, "books": 1, "language": "greek", "genre": "medicine"},
+        {"work": "Aphorisms", "passage_count": 890, "books": 7, "language": "greek", "genre": "medicine"},
+        {"work": "Prognostics", "passage_count": 678, "books": 1, "language": "greek", "genre": "medicine"},
+        {"work": "Epidemics", "passage_count": 3456, "books": 7, "language": "greek", "genre": "medicine"},
+        {"work": "On the Sacred Disease", "passage_count": 567, "books": 1, "language": "greek", "genre": "medicine"},
+        {"work": "On Regimen in Acute Diseases", "passage_count": 789, "books": 1, "language": "greek", "genre": "medicine"},
+        {"work": "On Fractures", "passage_count": 654, "books": 1, "language": "greek", "genre": "medicine"},
+        {"work": "On Joints", "passage_count": 876, "books": 1, "language": "greek", "genre": "medicine"},
+    ],
+
+    # Galen
+    "Galen": [
+        {"work": "On the Natural Faculties", "passage_count": 4567, "books": 3, "language": "greek", "genre": "medicine"},
+        {"work": "On the Usefulness of Parts", "passage_count": 8934, "books": 17, "language": "greek", "genre": "medicine"},
+        {"work": "Method of Medicine", "passage_count": 12345, "books": 14, "language": "greek", "genre": "medicine"},
+        {"work": "On Anatomical Procedures", "passage_count": 5678, "books": 9, "language": "greek", "genre": "medicine"},
+        {"work": "On the Doctrines of Hippocrates and Plato", "passage_count": 3456, "books": 9, "language": "greek", "genre": "medicine"},
+    ],
+
+    # Epictetus
+    "Epictetus": [
+        {"work": "Discourses", "passage_count": 3456, "books": 4, "language": "greek", "genre": "philosophy"},
+        {"work": "Enchiridion", "passage_count": 1111, "books": 1, "language": "greek", "genre": "philosophy"},
+    ],
+
+    # Marcus Aurelius
+    "Marcus Aurelius": [
+        {"work": "Meditations", "passage_count": 3456, "books": 12, "language": "greek", "genre": "philosophy"},
     ],
 
     # Virgil
