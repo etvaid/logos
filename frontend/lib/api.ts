@@ -128,6 +128,29 @@ const FALLBACK_WORKS: Record<string, Work[]> = {
   'Thucydides': [
     { work: 'History of the Peloponnesian War', passage_count: 15678, books: 8, language: 'greek', genre: 'History' },
   ],
+  'Augustine': [
+    { work: 'Confessions', passage_count: 13000, books: 13, language: 'latin', genre: 'Autobiography' },
+    { work: 'De Trinitate', passage_count: 15000, books: 15, language: 'latin', genre: 'Theology' },
+    { work: 'City of God', passage_count: 22000, books: 22, language: 'latin', genre: 'Philosophy' },
+  ],
+  'Horace': [
+    { work: 'Odes', passage_count: 3000, books: 4, language: 'latin', genre: 'Lyric Poetry' },
+    { work: 'Satires', passage_count: 2000, books: 2, language: 'latin', genre: 'Satire' },
+    { work: 'Epistles', passage_count: 2000, books: 2, language: 'latin', genre: 'Epistolary' },
+  ],
+  'Ovid': [
+    { work: 'Metamorphoses', passage_count: 12000, books: 15, language: 'latin', genre: 'Epic Poetry' },
+    { work: 'Ars Amatoria', passage_count: 2400, books: 3, language: 'latin', genre: 'Didactic Poetry' },
+    { work: 'Fasti', passage_count: 4000, books: 6, language: 'latin', genre: 'Elegiac Poetry' },
+  ],
+  'Tacitus': [
+    { work: 'Annals', passage_count: 16000, books: 16, language: 'latin', genre: 'History' },
+    { work: 'Histories', passage_count: 5000, books: 5, language: 'latin', genre: 'History' },
+    { work: 'Germania', passage_count: 500, books: 1, language: 'latin', genre: 'Ethnography' },
+  ],
+  'Livy': [
+    { work: 'Ab Urbe Condita', passage_count: 35000, books: 142, language: 'latin', genre: 'History' },
+  ],
 };
 
 export async function getAuthors(language?: string): Promise<{ count: number; authors: Author[] }> {
@@ -219,6 +242,77 @@ const SAMPLE_PASSAGES: Record<string, { total: number; passages: Passage[] }> = 
       { id: 'ot.1', content: 'Ὦ τέκνα, Κάδμου τοῦ πάλαι νέα τροφή,', author: 'Sophocles', work: 'Oedipus Rex', urn: 'urn:cts:greekLit:tlg0011.tlg004:1', language: 'greek' },
       { id: 'ot.2', content: 'τίνας ποθ᾽ ἕδρας τάσδε μοι θοάζετε', author: 'Sophocles', work: 'Oedipus Rex', urn: 'urn:cts:greekLit:tlg0011.tlg004:2', language: 'greek' },
       { id: 'ot.3', content: 'ἱκτηρίοις κλάδοισιν ἐξεστεμμένοι;', author: 'Sophocles', work: 'Oedipus Rex', urn: 'urn:cts:greekLit:tlg0011.tlg004:3', language: 'greek' },
+    ]
+  },
+  'Augustine:Confessions': {
+    total: 13000,
+    passages: [
+      { id: 'conf.1.1', content: 'Magnus es, Domine, et laudabilis valde: magna virtus tua, et sapientiae tuae non est numerus.', author: 'Augustine', work: 'Confessions', urn: 'urn:cts:latinLit:stoa0040.stoa001:1.1', language: 'latin' },
+      { id: 'conf.1.2', content: 'Et laudare te vult homo, aliqua portio creaturae tuae, et homo circumferens mortalitatem suam,', author: 'Augustine', work: 'Confessions', urn: 'urn:cts:latinLit:stoa0040.stoa001:1.2', language: 'latin' },
+      { id: 'conf.1.3', content: 'circumferens testimonium peccati sui et testimonium, quia superbis resistis.', author: 'Augustine', work: 'Confessions', urn: 'urn:cts:latinLit:stoa0040.stoa001:1.3', language: 'latin' },
+      { id: 'conf.1.4', content: 'Et tamen laudare te vult homo, aliqua portio creaturae tuae.', author: 'Augustine', work: 'Confessions', urn: 'urn:cts:latinLit:stoa0040.stoa001:1.4', language: 'latin' },
+      { id: 'conf.1.5', content: 'Tu excitas, ut laudare te delectet, quia fecisti nos ad te et inquietum est cor nostrum, donec requiescat in te.', author: 'Augustine', work: 'Confessions', urn: 'urn:cts:latinLit:stoa0040.stoa001:1.5', language: 'latin' },
+    ]
+  },
+  'Augustine:De Trinitate': {
+    total: 15000,
+    passages: [
+      { id: 'trin.1.1', content: 'Lecturus haec quae de Trinitate disserimus, prius oportet ut noverit stilum nostrum adversus eorum vigilare calumnias,', author: 'Augustine', work: 'De Trinitate', urn: 'urn:cts:latinLit:stoa0040.stoa002:1.1', language: 'latin' },
+      { id: 'trin.1.2', content: 'qui fidei contemnentes initium, immaturo et perverso rationis amore falluntur.', author: 'Augustine', work: 'De Trinitate', urn: 'urn:cts:latinLit:stoa0040.stoa002:1.2', language: 'latin' },
+      { id: 'trin.1.3', content: 'Horum quidam, cum ratione quadam vera qua eos sua vel elatione vel tarditate,', author: 'Augustine', work: 'De Trinitate', urn: 'urn:cts:latinLit:stoa0040.stoa002:1.3', language: 'latin' },
+      { id: 'trin.1.4', content: 'percipere non valent, infirmitatem suam accusantes, non stultitiam suam.', author: 'Augustine', work: 'De Trinitate', urn: 'urn:cts:latinLit:stoa0040.stoa002:1.4', language: 'latin' },
+      { id: 'trin.1.5', content: 'Praescribunt enim sibi de Deo, non ex ipso quod ipse est, sed ex ipsis quod ipsi sunt.', author: 'Augustine', work: 'De Trinitate', urn: 'urn:cts:latinLit:stoa0040.stoa002:1.5', language: 'latin' },
+    ]
+  },
+  'Augustine:City of God': {
+    total: 22000,
+    passages: [
+      { id: 'civ.1.1', content: 'Gloriosissimam civitatem Dei sive in hoc temporum cursu, cum inter impios peregrinatur ex fide vivens,', author: 'Augustine', work: 'City of God', urn: 'urn:cts:latinLit:stoa0040.stoa003:1.1', language: 'latin' },
+      { id: 'civ.1.2', content: 'sive in illa stabilitate sedis aeternae, quam nunc exspectat per patientiam,', author: 'Augustine', work: 'City of God', urn: 'urn:cts:latinLit:stoa0040.stoa003:1.2', language: 'latin' },
+      { id: 'civ.1.3', content: 'quoadusque iustitia convertatur in iudicium, deinceps adeptura per excellentiam victoria ultima et pace perfecta,', author: 'Augustine', work: 'City of God', urn: 'urn:cts:latinLit:stoa0040.stoa003:1.3', language: 'latin' },
+    ]
+  },
+  'Seneca the Younger:Epistulae Morales': {
+    total: 8934,
+    passages: [
+      { id: 'ep.1.1', content: 'Ita fac, mi Lucili: vindica te tibi, et tempus quod adhuc aut auferebatur aut subripiebatur aut excidebat collige et serva.', author: 'Seneca the Younger', work: 'Epistulae Morales', urn: 'urn:cts:latinLit:stoa0255.stoa001:1.1', language: 'latin' },
+      { id: 'ep.1.2', content: 'Persuade tibi hoc sic esse ut scribo: quaedam tempora eripiuntur nobis, quaedam subducuntur, quaedam effluunt.', author: 'Seneca the Younger', work: 'Epistulae Morales', urn: 'urn:cts:latinLit:stoa0255.stoa001:1.2', language: 'latin' },
+      { id: 'ep.1.3', content: 'Turpissima tamen est iactura quae per neglegentiam fit.', author: 'Seneca the Younger', work: 'Epistulae Morales', urn: 'urn:cts:latinLit:stoa0255.stoa001:1.3', language: 'latin' },
+      { id: 'ep.1.4', content: 'Et si volueris attendere, magna pars vitae elabitur male agentibus, maxima nihil agentibus, tota vita aliud agentibus.', author: 'Seneca the Younger', work: 'Epistulae Morales', urn: 'urn:cts:latinLit:stoa0255.stoa001:1.4', language: 'latin' },
+    ]
+  },
+  'Horace:Odes': {
+    total: 3000,
+    passages: [
+      { id: 'odes.1.1.1', content: 'Maecenas atavis edite regibus,', author: 'Horace', work: 'Odes', urn: 'urn:cts:latinLit:phi0893.phi001:1.1.1', language: 'latin' },
+      { id: 'odes.1.1.2', content: 'o et praesidium et dulce decus meum,', author: 'Horace', work: 'Odes', urn: 'urn:cts:latinLit:phi0893.phi001:1.1.2', language: 'latin' },
+      { id: 'odes.1.1.3', content: 'sunt quos curriculo pulverem Olympicum', author: 'Horace', work: 'Odes', urn: 'urn:cts:latinLit:phi0893.phi001:1.1.3', language: 'latin' },
+      { id: 'odes.1.1.4', content: 'collegisse iuvat metaque fervidis', author: 'Horace', work: 'Odes', urn: 'urn:cts:latinLit:phi0893.phi001:1.1.4', language: 'latin' },
+    ]
+  },
+  'Ovid:Metamorphoses': {
+    total: 12000,
+    passages: [
+      { id: 'met.1.1', content: 'In nova fert animus mutatas dicere formas', author: 'Ovid', work: 'Metamorphoses', urn: 'urn:cts:latinLit:phi0959.phi006:1.1', language: 'latin' },
+      { id: 'met.1.2', content: 'corpora; di, coeptis (nam vos mutastis et illas)', author: 'Ovid', work: 'Metamorphoses', urn: 'urn:cts:latinLit:phi0959.phi006:1.2', language: 'latin' },
+      { id: 'met.1.3', content: 'adspirate meis primaque ab origine mundi', author: 'Ovid', work: 'Metamorphoses', urn: 'urn:cts:latinLit:phi0959.phi006:1.3', language: 'latin' },
+      { id: 'met.1.4', content: 'ad mea perpetuum deducite tempora carmen.', author: 'Ovid', work: 'Metamorphoses', urn: 'urn:cts:latinLit:phi0959.phi006:1.4', language: 'latin' },
+    ]
+  },
+  'Tacitus:Annals': {
+    total: 16000,
+    passages: [
+      { id: 'ann.1.1', content: 'Urbem Romam a principio reges habuere; libertatem et consulatum L. Brutus instituit.', author: 'Tacitus', work: 'Annals', urn: 'urn:cts:latinLit:phi1351.phi005:1.1', language: 'latin' },
+      { id: 'ann.1.2', content: 'Dictaturae ad tempus sumebantur; neque decemviralis potestas ultra biennium,', author: 'Tacitus', work: 'Annals', urn: 'urn:cts:latinLit:phi1351.phi005:1.2', language: 'latin' },
+      { id: 'ann.1.3', content: 'neque tribunorum militum consulare ius diu valuit.', author: 'Tacitus', work: 'Annals', urn: 'urn:cts:latinLit:phi1351.phi005:1.3', language: 'latin' },
+    ]
+  },
+  'Livy:Ab Urbe Condita': {
+    total: 35000,
+    passages: [
+      { id: 'liv.praef.1', content: 'Facturusne operae pretium sim si a primordio urbis res populi Romani perscripserim nec satis scio,', author: 'Livy', work: 'Ab Urbe Condita', urn: 'urn:cts:latinLit:phi0914.phi001:praef.1', language: 'latin' },
+      { id: 'liv.praef.2', content: 'nec, si sciam, dicere ausim, quippe qui cum veterem tum vulgatam esse rem videam,', author: 'Livy', work: 'Ab Urbe Condita', urn: 'urn:cts:latinLit:phi0914.phi001:praef.2', language: 'latin' },
+      { id: 'liv.praef.3', content: 'dum novi semper scriptores aut in rebus certius aliquid allaturos se aut scribendi arte rudem vetustatem superaturos credunt.', author: 'Livy', work: 'Ab Urbe Condita', urn: 'urn:cts:latinLit:phi0914.phi001:praef.3', language: 'latin' },
     ]
   },
 };
