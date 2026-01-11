@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { Card, Button, Input, Select, LoadingSpinner, Badge } from '@/components/ui';
@@ -8,7 +8,20 @@ import { search } from '@/lib/api';
 import { formatNumber, highlightSearchTerm, getLanguageName } from '@/lib/utils';
 import type { SearchResult, SearchResponse } from '@/lib/types';
 
+// Main page export with Suspense boundary for useSearchParams
 export default function SearchPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <LoadingSpinner size="lg" />
+      </div>
+    }>
+      <SearchContent />
+    </Suspense>
+  );
+}
+
+function SearchContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const initialQuery = searchParams.get('q') || '';

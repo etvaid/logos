@@ -54,7 +54,7 @@ export async function getHealth(): Promise<{ status: string; passages: number }>
 
 export async function getAuthors(language?: string): Promise<{ count: number; authors: Author[] }> {
   const params = language ? `?language=${language}` : '';
-  return fetchAPI(`/api/reader/authors${params}`);
+  return fetchAPI(`/api/reader/authors/${params}`);
 }
 
 export async function getWorksByAuthor(author: string, language?: string): Promise<{ author: string; count: number; works: Work[] }> {

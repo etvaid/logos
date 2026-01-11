@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
+import { useState, useEffect, useCallback, useMemo, useRef, Suspense } from 'react';
 import Link from 'next/link';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { useVirtualizer } from '@tanstack/react-virtual';
@@ -35,7 +35,20 @@ function setCachedData(key: string, data: any) {
   apiCache.set(key, { data, timestamp: Date.now() });
 }
 
+// Main page export with Suspense boundary for useSearchParams
 export default function ReaderPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-[#0D0D0F] flex items-center justify-center">
+        <LoadingSpinner size="lg" />
+      </div>
+    }>
+      <ReaderContent />
+    </Suspense>
+  );
+}
+
+function ReaderContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
 
