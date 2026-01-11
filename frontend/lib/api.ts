@@ -13,6 +13,7 @@ import type {
   Persona,
 } from './types';
 
+// API base URL - Railway backend
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'https://logos-production-ef2b.up.railway.app';
 
 // ============================================================================
@@ -20,7 +21,9 @@ const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'https://logos-production-ef
 // ============================================================================
 
 async function fetchAPI<T>(endpoint: string, options?: RequestInit): Promise<T> {
-  const url = `${API_BASE}${endpoint}`;
+  // Ensure API_BASE is trimmed (removes any trailing newlines from env vars)
+  const baseUrl = (API_BASE || '').trim();
+  const url = `${baseUrl}${endpoint}`;
   const res = await fetch(url, {
     ...options,
     headers: {
