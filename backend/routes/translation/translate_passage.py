@@ -6817,6 +6817,173 @@ LATIN_LEXICON = {
     "philosophiam": {"translation": "philosophy (acc.)", "pos": "noun", "domain": "philosophical"},
 
     # ============================================================================
+    # VIRGIL/EPIC VOCABULARY (Aeneid, etc.)
+    # ============================================================================
+    # arma (arms/weapons) - 2nd declension neuter plural
+    "arma": {"translation": "arms/weapons", "pos": "noun", "domain": "military"},
+    "armorum": {"translation": "of arms/weapons", "pos": "noun", "domain": "military"},
+    "armis": {"translation": "with/by arms", "pos": "noun", "domain": "military"},
+
+    # vir (man) - 2nd declension masculine
+    "vir": {"translation": "man/hero", "pos": "noun", "domain": "general"},
+    "viri": {"translation": "of the man", "pos": "noun", "domain": "general"},
+    "viro": {"translation": "to/for the man", "pos": "noun", "domain": "general"},
+    "virum": {"translation": "man (acc.)", "pos": "noun", "domain": "general"},
+    "virumque": {"translation": "and the man", "pos": "noun", "domain": "general"},
+    "viros": {"translation": "men (acc.)", "pos": "noun", "domain": "general"},
+    "virorum": {"translation": "of men", "pos": "noun", "domain": "general"},
+    "viris": {"translation": "to/for men", "pos": "noun", "domain": "general"},
+
+    # cano (I sing) - 3rd conjugation verb
+    "cano": {"translation": "I sing", "pos": "verb", "domain": "literary"},
+    "canis": {"translation": "you sing", "pos": "verb", "domain": "literary"},
+    "canit": {"translation": "he/she sings", "pos": "verb", "domain": "literary"},
+    "canimus": {"translation": "we sing", "pos": "verb", "domain": "literary"},
+    "canunt": {"translation": "they sing", "pos": "verb", "domain": "literary"},
+    "canere": {"translation": "to sing", "pos": "verb", "domain": "literary"},
+    "cecini": {"translation": "I sang", "pos": "verb", "domain": "literary"},
+    "cecinit": {"translation": "he/she sang", "pos": "verb", "domain": "literary"},
+    "cantum": {"translation": "song/sung", "pos": "noun", "domain": "literary"},
+
+    # ora (shore/coast) - 1st declension feminine
+    "ora": {"translation": "shore/coast", "pos": "noun", "domain": "geographical"},
+    "orae": {"translation": "of the shore", "pos": "noun", "domain": "geographical"},
+    "oram": {"translation": "shore (acc.)", "pos": "noun", "domain": "geographical"},
+    "oras": {"translation": "shores (acc.)", "pos": "noun", "domain": "geographical"},
+    "oris": {"translation": "shores/coasts", "pos": "noun", "domain": "geographical"},
+    "orarum": {"translation": "of shores", "pos": "noun", "domain": "geographical"},
+
+    # fatum (fate) - 2nd declension neuter
+    "fatum": {"translation": "fate/destiny", "pos": "noun", "domain": "philosophical"},
+    "fati": {"translation": "of fate", "pos": "noun", "domain": "philosophical"},
+    "fato": {"translation": "by fate", "pos": "noun", "domain": "philosophical"},
+    "fata": {"translation": "fates/destinies", "pos": "noun", "domain": "philosophical"},
+    "fatorum": {"translation": "of fates", "pos": "noun", "domain": "philosophical"},
+    "fatis": {"translation": "by fates", "pos": "noun", "domain": "philosophical"},
+
+    # litus (shore) - 3rd declension neuter
+    "litus": {"translation": "shore/beach", "pos": "noun", "domain": "geographical"},
+    "litoris": {"translation": "of the shore", "pos": "noun", "domain": "geographical"},
+    "litore": {"translation": "on the shore", "pos": "noun", "domain": "geographical"},
+    "litora": {"translation": "shores", "pos": "noun", "domain": "geographical"},
+    "litorum": {"translation": "of shores", "pos": "noun", "domain": "geographical"},
+    "litoribus": {"translation": "on the shores", "pos": "noun", "domain": "geographical"},
+
+    # Proper nouns - Troy
+    "troia": {"translation": "Troy", "pos": "noun", "domain": "proper"},
+    "troiae": {"translation": "of Troy", "pos": "noun", "domain": "proper"},
+    "troiam": {"translation": "Troy (acc.)", "pos": "noun", "domain": "proper"},
+    "troianus": {"translation": "Trojan", "pos": "adjective", "domain": "proper"},
+    "troiana": {"translation": "Trojan (fem.)", "pos": "adjective", "domain": "proper"},
+    "troiani": {"translation": "Trojans", "pos": "noun", "domain": "proper"},
+    "troianorum": {"translation": "of Trojans", "pos": "noun", "domain": "proper"},
+
+    # Proper nouns - Italy
+    "italia": {"translation": "Italy", "pos": "noun", "domain": "proper"},
+    "italiae": {"translation": "of Italy", "pos": "noun", "domain": "proper"},
+    "italiam": {"translation": "Italy (acc.)", "pos": "noun", "domain": "proper"},
+
+    # Proper nouns - Lavinium
+    "lavinia": {"translation": "Lavinia/Lavinian", "pos": "noun", "domain": "proper"},
+    "lavinium": {"translation": "Lavinium", "pos": "noun", "domain": "proper"},
+    "lavinaque": {"translation": "and Lavinian", "pos": "adjective", "domain": "proper"},
+    "laviniaque": {"translation": "and Lavinian", "pos": "adjective", "domain": "proper"},
+
+    # profugus (exile)
+    "profugus": {"translation": "exile/fugitive/refugee", "pos": "adjective", "domain": "general"},
+    "profuga": {"translation": "exile (fem.)", "pos": "adjective", "domain": "general"},
+    "profugi": {"translation": "exiles", "pos": "noun", "domain": "general"},
+    "profugum": {"translation": "exile (acc.)", "pos": "adjective", "domain": "general"},
+
+    # Common epic verbs
+    "venio": {"translation": "I come", "pos": "verb", "domain": "motion"},
+    "venis": {"translation": "you come", "pos": "verb", "domain": "motion"},
+    "venit": {"translation": "he/she comes/came", "pos": "verb", "domain": "motion"},
+    "venimus": {"translation": "we come", "pos": "verb", "domain": "motion"},
+    "veniunt": {"translation": "they come", "pos": "verb", "domain": "motion"},
+    "venire": {"translation": "to come", "pos": "verb", "domain": "motion"},
+    "veni": {"translation": "I came/come!", "pos": "verb", "domain": "motion"},
+    "venisti": {"translation": "you came", "pos": "verb", "domain": "motion"},
+    "ventum": {"translation": "arrival/come", "pos": "noun", "domain": "motion"},
+
+    # iactare (to toss/throw)
+    "iacto": {"translation": "I throw/toss", "pos": "verb", "domain": "motion"},
+    "iactat": {"translation": "he/she throws/tosses", "pos": "verb", "domain": "motion"},
+    "iactatus": {"translation": "tossed/thrown", "pos": "participle", "domain": "motion"},
+    "iactata": {"translation": "tossed (fem.)", "pos": "participle", "domain": "motion"},
+    "iactatum": {"translation": "tossed (neut.)", "pos": "participle", "domain": "motion"},
+
+    # altum (the deep/high sea)
+    "altum": {"translation": "the deep/high sea", "pos": "noun", "domain": "geographical"},
+    "alti": {"translation": "of the deep", "pos": "noun", "domain": "geographical"},
+    "alto": {"translation": "on the deep", "pos": "noun", "domain": "geographical"},
+    "alta": {"translation": "the deep/high things", "pos": "adjective", "domain": "geographical"},
+    "altus": {"translation": "high/deep", "pos": "adjective", "domain": "general"},
+
+    # ira (anger) - common in epic
+    "ira": {"translation": "anger/wrath", "pos": "noun", "domain": "emotional"},
+    "irae": {"translation": "of anger", "pos": "noun", "domain": "emotional"},
+    "iram": {"translation": "anger (acc.)", "pos": "noun", "domain": "emotional"},
+    "irarum": {"translation": "of angers", "pos": "noun", "domain": "emotional"},
+
+    # Juno - goddess
+    "iuno": {"translation": "Juno", "pos": "noun", "domain": "proper"},
+    "iunonis": {"translation": "of Juno", "pos": "noun", "domain": "proper"},
+    "iunonem": {"translation": "Juno (acc.)", "pos": "noun", "domain": "proper"},
+
+    # saevus (savage/fierce)
+    "saevus": {"translation": "savage/fierce", "pos": "adjective", "domain": "emotional"},
+    "saeva": {"translation": "savage (fem.)", "pos": "adjective", "domain": "emotional"},
+    "saevae": {"translation": "of savage", "pos": "adjective", "domain": "emotional"},
+    "saevum": {"translation": "savage (neut./acc.)", "pos": "adjective", "domain": "emotional"},
+
+    # memor (mindful)
+    "memor": {"translation": "mindful/remembering", "pos": "adjective", "domain": "psychological"},
+    "memoris": {"translation": "of one mindful", "pos": "adjective", "domain": "psychological"},
+    "memorem": {"translation": "mindful (acc.)", "pos": "adjective", "domain": "psychological"},
+
+    # dolor (pain/grief)
+    "dolor": {"translation": "pain/grief", "pos": "noun", "domain": "emotional"},
+    "doloris": {"translation": "of pain", "pos": "noun", "domain": "emotional"},
+    "dolori": {"translation": "to pain", "pos": "noun", "domain": "emotional"},
+    "dolorem": {"translation": "pain (acc.)", "pos": "noun", "domain": "emotional"},
+    "dolore": {"translation": "by pain", "pos": "noun", "domain": "emotional"},
+
+    # urbs (city)
+    "urbs": {"translation": "city", "pos": "noun", "domain": "political"},
+    "urbis": {"translation": "of the city", "pos": "noun", "domain": "political"},
+    "urbi": {"translation": "to the city", "pos": "noun", "domain": "political"},
+    "urbem": {"translation": "city (acc.)", "pos": "noun", "domain": "political"},
+    "urbe": {"translation": "in the city", "pos": "noun", "domain": "political"},
+    "urbes": {"translation": "cities", "pos": "noun", "domain": "political"},
+    "urbium": {"translation": "of cities", "pos": "noun", "domain": "political"},
+
+    # condo (I found/establish)
+    "condo": {"translation": "I found/establish", "pos": "verb", "domain": "political"},
+    "condis": {"translation": "you found", "pos": "verb", "domain": "political"},
+    "condit": {"translation": "he/she founds", "pos": "verb", "domain": "political"},
+    "condimus": {"translation": "we found", "pos": "verb", "domain": "political"},
+    "condunt": {"translation": "they found", "pos": "verb", "domain": "political"},
+    "condere": {"translation": "to found", "pos": "verb", "domain": "political"},
+    "conderet": {"translation": "he might found", "pos": "verb", "domain": "political"},
+    "condita": {"translation": "founded", "pos": "participle", "domain": "political"},
+
+    # genus (race/kind)
+    "genus": {"translation": "race/kind/birth", "pos": "noun", "domain": "general"},
+    "generis": {"translation": "of the race", "pos": "noun", "domain": "general"},
+    "generi": {"translation": "to the race", "pos": "noun", "domain": "general"},
+    "genere": {"translation": "by birth", "pos": "noun", "domain": "general"},
+    "genera": {"translation": "races/kinds", "pos": "noun", "domain": "general"},
+
+    # Latium - region
+    "latium": {"translation": "Latium", "pos": "noun", "domain": "proper"},
+    "latii": {"translation": "of Latium", "pos": "noun", "domain": "proper"},
+    "latio": {"translation": "in Latium", "pos": "noun", "domain": "proper"},
+    "latinus": {"translation": "Latin", "pos": "adjective", "domain": "proper"},
+    "latina": {"translation": "Latin (fem.)", "pos": "adjective", "domain": "proper"},
+    "latini": {"translation": "Latins", "pos": "noun", "domain": "proper"},
+
+    # ============================================================================
     # ADJECTIVES WITH FORMS
     # ============================================================================
     "bonus": {"translation": "good", "pos": "adjective", "domain": "ethical"},
