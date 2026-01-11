@@ -450,15 +450,15 @@ function ReaderContent() {
                     <div className="space-y-1 max-h-[400px] overflow-y-auto">
                       {works.map((work) => (
                         <button
-                          key={work.title}
-                          onClick={() => handleWorkClick(work.title)}
+                          key={work.work}
+                          onClick={() => handleWorkClick(work.work)}
                           className={`w-full text-left px-3 py-2 text-sm rounded transition ${
-                            selectedWork === work.title
+                            selectedWork === work.work
                               ? 'bg-[#C9A962]/20 text-[#C9A962]'
                               : 'hover:bg-[#C9A962]/10 text-[#F5F3EF]/80'
                           }`}
                         >
-                          <div className="font-medium">{work.title}</div>
+                          <div className="font-medium">{work.work}</div>
                           <div className="text-xs text-[#F5F3EF]/50">
                             {formatNumber(work.passage_count)} passages
                           </div>

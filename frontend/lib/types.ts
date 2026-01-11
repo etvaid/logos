@@ -22,17 +22,21 @@ export interface Author {
   language: string;
   passage_count: number;
   work_count?: number;
+  works_count?: number;
   is_work?: boolean; // True for Hebrew/Aramaic/Coptic where "author" is actually a work
   period?: string;
   genre?: string;
+  dates?: string;
 }
 
 export interface Work {
-  title: string;
-  work?: string;
+  title?: string;
+  work: string;
   language: string;
   passage_count: number;
   author?: string;
+  books?: number;
+  genre?: string;
 }
 
 export interface Passage {

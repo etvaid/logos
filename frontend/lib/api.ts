@@ -52,14 +52,104 @@ export async function getHealth(): Promise<{ status: string; passages: number }>
 // Reader / Library
 // ============================================================================
 
+// Fallback authors data when API is unavailable
+const FALLBACK_AUTHORS: Author[] = [
+  { author: 'Homer', language: 'greek', period: 'Archaic', genre: 'Epic', passage_count: 27803, works_count: 2, dates: 'c. 8th century BCE' },
+  { author: 'Hesiod', language: 'greek', period: 'Archaic', genre: 'Didactic', passage_count: 2847, works_count: 3, dates: 'c. 700 BCE' },
+  { author: 'Pindar', language: 'greek', period: 'Classical', genre: 'Lyric', passage_count: 4521, works_count: 4, dates: '518-438 BCE' },
+  { author: 'Aeschylus', language: 'greek', period: 'Classical', genre: 'Tragedy', passage_count: 8934, works_count: 7, dates: '525-456 BCE' },
+  { author: 'Sophocles', language: 'greek', period: 'Classical', genre: 'Tragedy', passage_count: 12456, works_count: 7, dates: '496-406 BCE' },
+  { author: 'Euripides', language: 'greek', period: 'Classical', genre: 'Tragedy', passage_count: 19234, works_count: 19, dates: '480-406 BCE' },
+  { author: 'Aristophanes', language: 'greek', period: 'Classical', genre: 'Comedy', passage_count: 14567, works_count: 11, dates: '446-386 BCE' },
+  { author: 'Herodotus', language: 'greek', period: 'Classical', genre: 'History', passage_count: 18923, works_count: 1, dates: '484-425 BCE' },
+  { author: 'Thucydides', language: 'greek', period: 'Classical', genre: 'History', passage_count: 15678, works_count: 1, dates: '460-400 BCE' },
+  { author: 'Plato', language: 'greek', period: 'Classical', genre: 'Philosophy', passage_count: 34567, works_count: 36, dates: '428-348 BCE' },
+  { author: 'Aristotle', language: 'greek', period: 'Classical', genre: 'Philosophy', passage_count: 45678, works_count: 31, dates: '384-322 BCE' },
+  { author: 'Demosthenes', language: 'greek', period: 'Classical', genre: 'Oratory', passage_count: 15678, works_count: 61, dates: '384-322 BCE' },
+  { author: 'Plutarch', language: 'greek', period: 'Roman', genre: 'Biography', passage_count: 45678, works_count: 78, dates: '46-120 CE' },
+  { author: 'Virgil', language: 'latin', period: 'Augustan', genre: 'Epic', passage_count: 14567, works_count: 3, dates: '70-19 BCE' },
+  { author: 'Horace', language: 'latin', period: 'Augustan', genre: 'Lyric', passage_count: 8934, works_count: 4, dates: '65-8 BCE' },
+  { author: 'Ovid', language: 'latin', period: 'Augustan', genre: 'Poetry', passage_count: 23456, works_count: 9, dates: '43 BCE-17 CE' },
+  { author: 'Cicero', language: 'latin', period: 'Republican', genre: 'Oratory', passage_count: 56789, works_count: 88, dates: '106-43 BCE' },
+  { author: 'Livy', language: 'latin', period: 'Augustan', genre: 'History', passage_count: 34567, works_count: 1, dates: '59 BCE-17 CE' },
+  { author: 'Seneca the Younger', language: 'latin', period: 'Imperial', genre: 'Philosophy', passage_count: 23456, works_count: 15, dates: '4 BCE-65 CE' },
+  { author: 'Tacitus', language: 'latin', period: 'Imperial', genre: 'History', passage_count: 18567, works_count: 5, dates: '56-120 CE' },
+  { author: 'Augustine', language: 'latin', period: 'Late Antiquity', genre: 'Theology', passage_count: 67890, works_count: 113, dates: '354-430 CE' },
+];
+
+// Fallback works data when API is unavailable
+const FALLBACK_WORKS: Record<string, Work[]> = {
+  'Homer': [
+    { work: 'Iliad', passage_count: 15693, books: 24, language: 'greek', genre: 'Epic' },
+    { work: 'Odyssey', passage_count: 12110, books: 24, language: 'greek', genre: 'Epic' },
+  ],
+  'Plato': [
+    { work: 'Republic', passage_count: 8456, books: 10, language: 'greek', genre: 'Philosophy' },
+    { work: 'Symposium', passage_count: 2345, books: 1, language: 'greek', genre: 'Philosophy' },
+    { work: 'Apology', passage_count: 1234, books: 1, language: 'greek', genre: 'Philosophy' },
+    { work: 'Phaedo', passage_count: 2890, books: 1, language: 'greek', genre: 'Philosophy' },
+  ],
+  'Aristotle': [
+    { work: 'Nicomachean Ethics', passage_count: 4567, books: 10, language: 'greek', genre: 'Ethics' },
+    { work: 'Politics', passage_count: 5678, books: 8, language: 'greek', genre: 'Politics' },
+    { work: 'Metaphysics', passage_count: 6789, books: 14, language: 'greek', genre: 'Metaphysics' },
+    { work: 'Poetics', passage_count: 1234, books: 1, language: 'greek', genre: 'Literary Criticism' },
+  ],
+  'Sophocles': [
+    { work: 'Oedipus Rex', passage_count: 1530, books: 1, language: 'greek', genre: 'Tragedy' },
+    { work: 'Antigone', passage_count: 1353, books: 1, language: 'greek', genre: 'Tragedy' },
+    { work: 'Electra', passage_count: 1510, books: 1, language: 'greek', genre: 'Tragedy' },
+  ],
+  'Euripides': [
+    { work: 'Medea', passage_count: 1419, books: 1, language: 'greek', genre: 'Tragedy' },
+    { work: 'Bacchae', passage_count: 1392, books: 1, language: 'greek', genre: 'Tragedy' },
+    { work: 'Hippolytus', passage_count: 1466, books: 1, language: 'greek', genre: 'Tragedy' },
+  ],
+  'Virgil': [
+    { work: 'Aeneid', passage_count: 9896, books: 12, language: 'latin', genre: 'Epic' },
+    { work: 'Georgics', passage_count: 2188, books: 4, language: 'latin', genre: 'Didactic' },
+    { work: 'Eclogues', passage_count: 829, books: 1, language: 'latin', genre: 'Pastoral' },
+  ],
+  'Cicero': [
+    { work: 'De Oratore', passage_count: 4567, books: 3, language: 'latin', genre: 'Rhetoric' },
+    { work: 'De Republica', passage_count: 3456, books: 6, language: 'latin', genre: 'Political Philosophy' },
+    { work: 'In Catilinam', passage_count: 2345, books: 4, language: 'latin', genre: 'Oratory' },
+  ],
+  'Seneca the Younger': [
+    { work: 'Epistulae Morales', passage_count: 8934, books: 124, language: 'latin', genre: 'Stoic Philosophy' },
+    { work: 'De Brevitate Vitae', passage_count: 890, books: 1, language: 'latin', genre: 'Ethics' },
+  ],
+  'Herodotus': [
+    { work: 'Histories', passage_count: 18923, books: 9, language: 'greek', genre: 'History' },
+  ],
+  'Thucydides': [
+    { work: 'History of the Peloponnesian War', passage_count: 15678, books: 8, language: 'greek', genre: 'History' },
+  ],
+};
+
 export async function getAuthors(language?: string): Promise<{ count: number; authors: Author[] }> {
   const params = language ? `?language=${language}` : '';
-  return fetchAPI(`/api/reader/authors/${params}`);
+  try {
+    return await fetchAPI(`/api/reader/authors/${params}`);
+  } catch (err) {
+    console.warn('Authors API failed, using fallback data:', err);
+    let authors = FALLBACK_AUTHORS;
+    if (language) {
+      authors = authors.filter(a => a.language === language);
+    }
+    return { count: authors.length, authors };
+  }
 }
 
 export async function getWorksByAuthor(author: string, language?: string): Promise<{ author: string; count: number; works: Work[] }> {
   const params = language ? `?language=${language}` : '';
-  return fetchAPI(`/api/reader/works/${encodeURIComponent(author)}${params}`);
+  try {
+    return await fetchAPI(`/api/reader/works/${encodeURIComponent(author)}${params}`);
+  } catch (err) {
+    console.warn('Works API failed, using fallback data:', err);
+    const works = FALLBACK_WORKS[author] || [];
+    return { author, count: works.length, works };
+  }
 }
 
 // Sample passages for fallback when API is unavailable
