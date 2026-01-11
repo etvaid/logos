@@ -1,4 +1,4 @@
-// LOGOS API Client
+// LOGOS API Client - v2.0.1 - Fixed newline issue 2026-01-10
 import type {
   CorpusStats,
   Author,
@@ -13,17 +13,17 @@ import type {
   Persona,
 } from './types';
 
-// API base URL - Railway backend
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'https://logos-production-ef2b.up.railway.app';
+// API base URL - Railway backend (v2.0.1 - trim fix applied)
+const API_BASE_RAW = process.env.NEXT_PUBLIC_API_URL || 'https://logos-production-ef2b.up.railway.app';
+const API_BASE = API_BASE_RAW.trim(); // Fix: strip trailing newlines from env vars
 
 // ============================================================================
 // Helper
 // ============================================================================
 
 async function fetchAPI<T>(endpoint: string, options?: RequestInit): Promise<T> {
-  // Ensure API_BASE is trimmed (removes any trailing newlines from env vars)
-  const baseUrl = (API_BASE || '').trim();
-  const url = `${baseUrl}${endpoint}`;
+  // API_BASE is already trimmed at module level
+  const url = `${API_BASE}${endpoint}`;
   const res = await fetch(url, {
     ...options,
     headers: {
