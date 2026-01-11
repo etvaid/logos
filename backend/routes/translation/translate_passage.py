@@ -36,22 +36,29 @@ GREEK_PATTERN = re.compile(r'[\u0370-\u03FF\u1F00-\u1FFF]')
 LATIN_PATTERN = re.compile(r'[a-zA-ZāēīōūȳĀĒĪŌŪȲàèìòùÀÈÌÒÙ]')
 
 # ============================================================================
-# LOAD LEXICONS FROM JSON FILE
+# LOAD LEXICONS FROM JSON FILE (LAZY LOADING)
 # ============================================================================
 
-def _load_lexicons() -> tuple:
-    """Load Greek and Latin lexicons from JSON file."""
+_lexicons_loaded = False
+GREEK_LEXICON = {}
+LATIN_LEXICON = {}
+
+def _ensure_lexicons_loaded():
+    """Lazy load Greek and Latin lexicons from JSON file."""
+    global _lexicons_loaded, GREEK_LEXICON, LATIN_LEXICON
+    if _lexicons_loaded:
+        return
+
     lexicon_path = Path(__file__).parent / 'lexicons.json'
     try:
         with open(lexicon_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
-        logger.info(f"Loaded lexicons: {len(data.get('greek', {}))} Greek, {len(data.get('latin', {}))} Latin entries")
-        return data.get('greek', {}), data.get('latin', {})
+        GREEK_LEXICON.update(data.get('greek', {}))
+        LATIN_LEXICON.update(data.get('latin', {}))
+        logger.info(f"Loaded lexicons: {len(GREEK_LEXICON)} Greek, {len(LATIN_LEXICON)} Latin entries")
     except Exception as e:
         logger.warning(f"Failed to load lexicons from {lexicon_path}: {e}")
-        return {}, {}
-
-GREEK_LEXICON, LATIN_LEXICON = _load_lexicons()
+    _lexicons_loaded = True
 
 
 # ============================================================================
@@ -189,6 +196,7 @@ async def lookup_translation_memory(pool, tokens: List[str], source_lang: str) -
 
 def lookup_embedded_lexicon(tokens: List[str], source_lang: str) -> Dict[str, Dict]:
     """Look up tokens in the embedded lexicon (fallback)."""
+    _ensure_lexicons_loaded()
     lexicon = GREEK_LEXICON if source_lang == 'greek' else LATIN_LEXICON
     results = {}
 
@@ -500,6 +508,7 @@ async def get_translation_styles():
 @router.get("/lexicon/stats")
 async def get_lexicon_stats():
     """Get embedded lexicon statistics."""
+    _ensure_lexicons_loaded()
     return {
         "greek_entries": len(GREEK_LEXICON),
         "latin_entries": len(LATIN_LEXICON),
