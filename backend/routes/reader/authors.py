@@ -169,6 +169,7 @@ class AuthorsResponse(BaseModel):
     authors: List[AuthorInfo]
 
 
+@router.get("", response_model=AuthorsResponse)
 @router.get("/", response_model=AuthorsResponse)
 async def list_authors(language: Optional[str] = None):
     """

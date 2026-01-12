@@ -1038,7 +1038,7 @@ export default function LibraryPage() {
                               {author.works.map(work => (
                                 <Link
                                   key={work.title}
-                                  href={`/reader?author=${encodeURIComponent(author.name)}&work=${encodeURIComponent(work.title)}`}
+                                  href={`/reader?lang=${author.language}&author=${encodeURIComponent(author.name)}&work=${encodeURIComponent(work.title)}`}
                                   className="group flex items-center gap-3 p-3 rounded-lg hover:bg-[#C9A962]/10 transition"
                                 >
                                   <div className={`w-10 h-10 rounded-lg ${colors.bg} flex items-center justify-center`}>

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Get Passages API - Returns passages for a specific author and work
 Provides sample passages from classical texts for the reader
